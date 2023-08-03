@@ -26,7 +26,7 @@ impl BatchDisassociateResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder,
+    inner: crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder,
 }
 impl BatchDisassociateResourceFluentBuilder {
     /// Creates a new `BatchDisassociateResource`.
@@ -37,7 +37,7 @@ impl BatchDisassociateResourceFluentBuilder {
         }
     }
     /// Access the BatchDisassociateResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDisassociateResourceFluentBuilder {
             crate::operation::batch_disassociate_resource::BatchDisassociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_resource::BatchDisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resource::BatchDisassociateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDisassociateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDisassociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_resource::BatchDisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resource::BatchDisassociateResourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDisassociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_resource::BatchDisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resource::BatchDisassociateResourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl BatchDisassociateResourceFluentBuilder {
             crate::operation::batch_disassociate_resource::BatchDisassociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_resource::BatchDisassociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_resource::BatchDisassociateResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn resource_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn set_resource_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_identifier(input);
         self
     }
@@ -150,10 +133,7 @@ impl BatchDisassociateResourceFluentBuilder {
         self
     }
     /// <p>The uniform resource identifiers (URI) of resources that should be disassociated from the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }

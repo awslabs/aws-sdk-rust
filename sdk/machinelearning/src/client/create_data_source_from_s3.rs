@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataSourceFromS3Output`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Output) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Output::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     /// - On failure, responds with [`SdkError<CreateDataSourceFromS3Error>`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Error)
-    pub fn create_data_source_from_s3(
-        &self,
-    ) -> crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3FluentBuilder
-    {
+    pub fn create_data_source_from_s3(&self) -> crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3FluentBuilder {
         crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3FluentBuilder::new(self.handle.clone())
     }
 }

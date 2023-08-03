@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`remove_auto_registration(bool)`](crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder::remove_auto_registration) / [`set_remove_auto_registration(Option<bool>)`](crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder::set_remove_auto_registration): <p>If true, removes auto registration.</p>
     /// - On success, responds with [`UpdateCaCertificateOutput`](crate::operation::update_ca_certificate::UpdateCaCertificateOutput)
     /// - On failure, responds with [`SdkError<UpdateCACertificateError>`](crate::operation::update_ca_certificate::UpdateCACertificateError)
-    pub fn update_ca_certificate(
-        &self,
-    ) -> crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder {
-        crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ca_certificate(&self) -> crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder {
+        crate::operation::update_ca_certificate::builders::UpdateCACertificateFluentBuilder::new(self.handle.clone())
     }
 }

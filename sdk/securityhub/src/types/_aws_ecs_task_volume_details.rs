@@ -30,9 +30,7 @@ impl AwsEcsTaskVolumeDetails {
 
 /// A builder for [`AwsEcsTaskVolumeDetails`](crate::types::AwsEcsTaskVolumeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskVolumeDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
@@ -58,10 +56,7 @@ impl AwsEcsTaskVolumeDetailsBuilder {
         self
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
-    pub fn set_host(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
-    ) -> Self {
+    pub fn set_host(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>) -> Self {
         self.host = input;
         self
     }

@@ -58,17 +58,14 @@ impl StaleIpPermission {
 
 /// A builder for [`StaleIpPermission`](crate::types::StaleIpPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StaleIpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) user_id_group_pairs:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
+    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
 }
 impl StaleIpPermissionBuilder {
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of -1 indicates all ICMP types. </p>
@@ -111,10 +108,7 @@ impl StaleIpPermissionBuilder {
         self
     }
     /// <p>The IP ranges. Not applicable for stale security group rules.</p>
-    pub fn set_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_ranges = input;
         self
     }
@@ -127,27 +121,19 @@ impl StaleIpPermissionBuilder {
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
     ///
     /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
-    pub fn prefix_list_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
         v.push(input.into());
         self.prefix_list_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.prefix_list_ids = input;
         self
     }
     /// <p>The prefix list IDs. Not applicable for stale security group rules.</p>
-    pub fn get_prefix_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.prefix_list_ids
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code> indicates all ICMP types. </p>
@@ -176,17 +162,12 @@ impl StaleIpPermissionBuilder {
         self
     }
     /// <p>The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the VPC peering connection.</p>
-    pub fn set_user_id_group_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
-    ) -> Self {
+    pub fn set_user_id_group_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>) -> Self {
         self.user_id_group_pairs = input;
         self
     }
     /// <p>The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the VPC peering connection.</p>
-    pub fn get_user_id_group_pairs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
+    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
         &self.user_id_group_pairs
     }
     /// Consumes the builder and constructs a [`StaleIpPermission`](crate::types::StaleIpPermission).

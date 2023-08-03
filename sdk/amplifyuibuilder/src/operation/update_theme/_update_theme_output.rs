@@ -28,9 +28,7 @@ impl UpdateThemeOutput {
 
 /// A builder for [`UpdateThemeOutput`](crate::operation::update_theme::UpdateThemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemeOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::Theme>,
     _request_id: Option<String>,

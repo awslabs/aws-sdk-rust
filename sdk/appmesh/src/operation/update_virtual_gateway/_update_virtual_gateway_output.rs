@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVirtualGatewayOutput {
 }
 impl UpdateVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayOutputBuilder {
         crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualGatewayOutput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualGatewayOutputBuilder {
     pub(crate) virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateVirtualGatewayOutputBuilder {
         self
     }
     /// <p>A full description of the virtual gateway that was updated.</p>
-    pub fn set_virtual_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayData>,
-    ) -> Self {
+    pub fn set_virtual_gateway(mut self, input: ::std::option::Option<crate::types::VirtualGatewayData>) -> Self {
         self.virtual_gateway = input;
         self
     }

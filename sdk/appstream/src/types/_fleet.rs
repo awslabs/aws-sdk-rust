@@ -216,9 +216,7 @@ impl Fleet {
         self.fleet_type.as_ref()
     }
     /// <p>The capacity status for the fleet.</p>
-    pub fn compute_capacity_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComputeCapacityStatus> {
+    pub fn compute_capacity_status(&self) -> ::std::option::Option<&crate::types::ComputeCapacityStatus> {
         self.compute_capacity_status.as_ref()
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
@@ -298,9 +296,7 @@ impl Fleet {
 
 /// A builder for [`Fleet`](crate::types::Fleet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -324,8 +320,7 @@ pub struct FleetBuilder {
     pub(crate) stream_view: ::std::option::Option<crate::types::StreamView>,
     pub(crate) platform: ::std::option::Option<crate::types::PlatformType>,
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
-    pub(crate) usb_device_filter_strings:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl FleetBuilder {
@@ -449,10 +444,7 @@ impl FleetBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -492,10 +484,7 @@ impl FleetBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -600,17 +589,12 @@ impl FleetBuilder {
         self
     }
     /// <p>The capacity status for the fleet.</p>
-    pub fn set_compute_capacity_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeCapacityStatus>,
-    ) -> Self {
+    pub fn set_compute_capacity_status(mut self, input: ::std::option::Option<crate::types::ComputeCapacityStatus>) -> Self {
         self.compute_capacity_status = input;
         self
     }
     /// <p>The capacity status for the fleet.</p>
-    pub fn get_compute_capacity_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputeCapacityStatus> {
+    pub fn get_compute_capacity_status(&self) -> &::std::option::Option<crate::types::ComputeCapacityStatus> {
         &self.compute_capacity_status
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
@@ -681,10 +665,7 @@ impl FleetBuilder {
         self
     }
     /// <p>The time the fleet was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -704,17 +685,12 @@ impl FleetBuilder {
         self
     }
     /// <p>The fleet errors.</p>
-    pub fn set_fleet_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetError>>,
-    ) -> Self {
+    pub fn set_fleet_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetError>>) -> Self {
         self.fleet_errors = input;
         self
     }
     /// <p>The fleet errors.</p>
-    pub fn get_fleet_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetError>> {
+    pub fn get_fleet_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetError>> {
         &self.fleet_errors
     }
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
@@ -723,10 +699,7 @@ impl FleetBuilder {
         self
     }
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_default_internet_access = input;
         self
     }
@@ -740,10 +713,7 @@ impl FleetBuilder {
         self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-    pub fn set_domain_join_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainJoinInfo>,
-    ) -> Self {
+    pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.domain_join_info = input;
         self
     }
@@ -763,10 +733,7 @@ impl FleetBuilder {
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
-    pub fn set_idle_disconnect_timeout_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_idle_disconnect_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_disconnect_timeout_in_seconds = input;
         self
     }
@@ -802,10 +769,7 @@ impl FleetBuilder {
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
-    pub fn set_stream_view(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamView>,
-    ) -> Self {
+    pub fn set_stream_view(mut self, input: ::std::option::Option<crate::types::StreamView>) -> Self {
         self.stream_view = input;
         self
     }
@@ -820,10 +784,7 @@ impl FleetBuilder {
         self
     }
     /// <p>The platform of the fleet.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform = input;
         self
     }
@@ -850,27 +811,19 @@ impl FleetBuilder {
     /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
     ///
     /// <p>The USB device filter strings associated with the fleet.</p>
-    pub fn usb_device_filter_strings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usb_device_filter_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.usb_device_filter_strings.unwrap_or_default();
         v.push(input.into());
         self.usb_device_filter_strings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The USB device filter strings associated with the fleet.</p>
-    pub fn set_usb_device_filter_strings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_usb_device_filter_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.usb_device_filter_strings = input;
         self
     }
     /// <p>The USB device filter strings associated with the fleet.</p>
-    pub fn get_usb_device_filter_strings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_usb_device_filter_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.usb_device_filter_strings
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
@@ -879,17 +832,12 @@ impl FleetBuilder {
         self
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    pub fn set_session_script_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_session_script_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.session_script_s3_location = input;
         self
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    pub fn get_session_script_s3_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3Location> {
+    pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.session_script_s3_location
     }
     /// Consumes the builder and constructs a [`Fleet`](crate::types::Fleet).

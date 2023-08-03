@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`notifications(Option<Vec<Notification>>)`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput::notifications): <p>A list of notifications that are associated with a budget.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeNotificationsForBudgetError>`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError)
-    pub fn describe_notifications_for_budget(&self) -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder{
+    pub fn describe_notifications_for_budget(
+        &self,
+    ) -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder {
         crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDefaultVpcOutput`](crate::operation::create_default_vpc::CreateDefaultVpcOutput) with field(s):
     ///   - [`vpc(Option<Vpc>)`](crate::operation::create_default_vpc::CreateDefaultVpcOutput::vpc): <p>Information about the VPC.</p>
     /// - On failure, responds with [`SdkError<CreateDefaultVpcError>`](crate::operation::create_default_vpc::CreateDefaultVpcError)
-    pub fn create_default_vpc(
-        &self,
-    ) -> crate::operation::create_default_vpc::builders::CreateDefaultVpcFluentBuilder {
-        crate::operation::create_default_vpc::builders::CreateDefaultVpcFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_default_vpc(&self) -> crate::operation::create_default_vpc::builders::CreateDefaultVpcFluentBuilder {
+        crate::operation::create_default_vpc::builders::CreateDefaultVpcFluentBuilder::new(self.handle.clone())
     }
 }

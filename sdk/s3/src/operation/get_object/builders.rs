@@ -10,10 +10,7 @@ impl GetObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_object::GetObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object::GetObjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_object();
         fluent_builder.inner = self;
@@ -110,10 +107,7 @@ impl GetObjectFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_object::GetObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_object::GetObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
     > {
         let handle = self.handle.clone();
@@ -124,10 +118,7 @@ impl GetObjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -169,10 +160,7 @@ impl GetObjectFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_object::GetObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_object::GetObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
     > {
         self.customize_middleware().await
@@ -192,15 +180,9 @@ impl GetObjectFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object::GetObjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError, ::aws_smithy_http::operation::Response>,
     > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         input.presigned(&self.handle.conf, presigning_config).await
     }
     /// <p>The bucket name containing the object. </p>
@@ -246,10 +228,7 @@ impl GetObjectFluentBuilder {
         self
     }
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
-    pub fn set_if_modified_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_if_modified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_if_modified_since(input);
         self
     }
@@ -258,18 +237,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_if_modified_since()
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
-    pub fn if_none_match(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn if_none_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_none_match(input.into());
         self
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
-    pub fn set_if_none_match(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_none_match(input);
         self
     }
@@ -283,10 +256,7 @@ impl GetObjectFluentBuilder {
         self
     }
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
-    pub fn set_if_unmodified_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_if_unmodified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_if_unmodified_since(input);
         self
     }
@@ -329,18 +299,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_range()
     }
     /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
-    pub fn response_cache_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_cache_control(input.into());
         self
     }
     /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
-    pub fn set_response_cache_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_cache_control(input);
         self
     }
@@ -349,40 +313,26 @@ impl GetObjectFluentBuilder {
         self.inner.get_response_cache_control()
     }
     /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
-    pub fn response_content_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_disposition(input.into());
         self
     }
     /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
-    pub fn set_response_content_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_disposition(input);
         self
     }
     /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
-    pub fn get_response_content_disposition(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_response_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_response_content_disposition()
     }
     /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
-    pub fn response_content_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_encoding(input.into());
         self
     }
     /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
-    pub fn set_response_content_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_encoding(input);
         self
     }
@@ -391,18 +341,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_response_content_encoding()
     }
     /// <p>Sets the <code>Content-Language</code> header of the response.</p>
-    pub fn response_content_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_language(input.into());
         self
     }
     /// <p>Sets the <code>Content-Language</code> header of the response.</p>
-    pub fn set_response_content_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_language(input);
         self
     }
@@ -411,18 +355,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_response_content_language()
     }
     /// <p>Sets the <code>Content-Type</code> header of the response.</p>
-    pub fn response_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_type(input.into());
         self
     }
     /// <p>Sets the <code>Content-Type</code> header of the response.</p>
-    pub fn set_response_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_type(input);
         self
     }
@@ -436,10 +374,7 @@ impl GetObjectFluentBuilder {
         self
     }
     /// <p>Sets the <code>Expires</code> header of the response.</p>
-    pub fn set_response_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_response_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_response_expires(input);
         self
     }
@@ -462,18 +397,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_version_id()
     }
     /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
-    pub fn sse_customer_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sse_customer_algorithm(input.into());
         self
     }
     /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
-    pub fn set_sse_customer_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sse_customer_algorithm(input);
         self
     }
@@ -482,18 +411,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_sse_customer_algorithm()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn sse_customer_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sse_customer_key(input.into());
         self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn set_sse_customer_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sse_customer_key(input);
         self
     }
@@ -502,18 +425,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_sse_customer_key()
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn sse_customer_key_md5(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sse_customer_key_md5(input.into());
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_sse_customer_key_md5(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sse_customer_key_md5(input);
         self
     }
@@ -527,10 +444,7 @@ impl GetObjectFluentBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
@@ -553,18 +467,12 @@ impl GetObjectFluentBuilder {
         self.inner.get_part_number()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -578,10 +486,7 @@ impl GetObjectFluentBuilder {
         self
     }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
-    pub fn set_checksum_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumMode>,
-    ) -> Self {
+    pub fn set_checksum_mode(mut self, input: ::std::option::Option<crate::types::ChecksumMode>) -> Self {
         self.inner = self.inner.set_checksum_mode(input);
         self
     }

@@ -22,9 +22,7 @@ impl DeleteRoleAliasInput {
 
 /// A builder for [`DeleteRoleAliasInput`](crate::operation::delete_role_alias::DeleteRoleAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoleAliasInput`](crate::operation::delete_role_alias::DeleteRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_role_alias::DeleteRoleAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_role_alias::DeleteRoleAliasInput {
-            role_alias: self.role_alias,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_role_alias::DeleteRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_role_alias::DeleteRoleAliasInput { role_alias: self.role_alias })
     }
 }

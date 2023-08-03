@@ -5,8 +5,7 @@
 pub struct ListTypeVersionsOutput {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
     #[doc(hidden)]
-    pub type_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
+    pub type_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTypeVersionsOutput {
 }
 impl ListTypeVersionsOutput {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    pub fn type_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TypeVersionSummary]> {
+    pub fn type_version_summaries(&self) -> ::std::option::Option<&[crate::types::TypeVersionSummary]> {
         self.type_version_summaries.as_deref()
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTypeVersionsOutput {
 }
 impl ListTypeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTypeVersionsOutput`](crate::operation::list_type_versions::ListTypeVersionsOutput).
-    pub fn builder() -> crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder {
         crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypeVersionsOutput`](crate::operation::list_type_versions::ListTypeVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypeVersionsOutputBuilder {
-    pub(crate) type_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
+    pub(crate) type_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListTypeVersionsOutputBuilder {
         self
     }
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    pub fn set_type_version_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
-    ) -> Self {
+    pub fn set_type_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>) -> Self {
         self.type_version_summaries = input;
         self
     }
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    pub fn get_type_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>> {
+    pub fn get_type_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>> {
         &self.type_version_summaries
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>

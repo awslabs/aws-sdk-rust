@@ -27,7 +27,7 @@ impl DisassociateFromMasterAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFromMasterAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountInputBuilder,
+    inner: crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountInputBuilder,
 }
 impl DisassociateFromMasterAccountFluentBuilder {
     /// Creates a new `DisassociateFromMasterAccount`.
@@ -38,7 +38,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
         }
     }
     /// Access the DisassociateFromMasterAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
             crate::operation::disassociate_from_master_account::DisassociateFromMasterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DisassociateFromMasterAccountFluentBuilder {
             crate::operation::disassociate_from_master_account::DisassociateFromMasterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError>,
     > {
         self.customize_middleware().await
     }

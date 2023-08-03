@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDynamicThingGroupOutput {
 }
 impl UpdateDynamicThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder {
         crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDynamicThingGroupOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl UpdateDynamicThingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
+    pub fn build(self) -> crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
         crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput {
             version: self.version.unwrap_or_default(),
             _request_id: self._request_id,

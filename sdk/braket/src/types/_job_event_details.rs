@@ -37,9 +37,7 @@ impl JobEventDetails {
 
 /// A builder for [`JobEventDetails`](crate::types::JobEventDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobEventDetailsBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::JobEventType>,
     pub(crate) time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,10 +50,7 @@ impl JobEventDetailsBuilder {
         self
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::JobEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::JobEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -69,10 +64,7 @@ impl JobEventDetailsBuilder {
         self
     }
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
-    pub fn set_time_of_event(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_of_event(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_of_event = input;
         self
     }

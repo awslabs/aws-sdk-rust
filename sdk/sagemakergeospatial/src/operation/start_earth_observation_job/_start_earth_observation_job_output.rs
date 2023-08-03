@@ -32,9 +32,7 @@ pub struct StartEarthObservationJobOutput {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartEarthObservationJobOutput {
@@ -75,11 +73,7 @@ impl StartEarthObservationJobOutput {
         self.execution_role_arn.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -90,16 +84,14 @@ impl ::aws_http::request_id::RequestId for StartEarthObservationJobOutput {
 }
 impl StartEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEarthObservationJobOutput`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput).
-    pub fn builder() -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder {
         crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartEarthObservationJobOutput`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEarthObservationJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -110,9 +102,7 @@ pub struct StartEarthObservationJobOutputBuilder {
     pub(crate) input_config: ::std::option::Option<crate::types::InputConfigOutput>,
     pub(crate) job_config: ::std::option::Option<crate::types::JobConfigInput>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartEarthObservationJobOutputBuilder {
@@ -150,10 +140,7 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -181,10 +168,7 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -212,10 +196,7 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputConfigOutput>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::InputConfigOutput>) -> Self {
         self.input_config = input;
         self
     }
@@ -229,10 +210,7 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobConfigInput>,
-    ) -> Self {
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::JobConfigInput>) -> Self {
         self.job_config = input;
         self
     }
@@ -241,18 +219,12 @@ impl StartEarthObservationJobOutputBuilder {
         &self.job_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -265,32 +237,19 @@ impl StartEarthObservationJobOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -303,9 +262,7 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEarthObservationJobOutput`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
+    pub fn build(self) -> crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
         crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
             name: self.name,
             arn: self.arn,

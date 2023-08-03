@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutputBuilder {
@@ -72,17 +68,12 @@ impl ListCertificatesOutputBuilder {
         self
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>> {
         &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

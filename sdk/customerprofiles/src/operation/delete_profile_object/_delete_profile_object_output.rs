@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteProfileObjectOutput {
 }
 impl DeleteProfileObjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileObjectOutput`](crate::operation::delete_profile_object::DeleteProfileObjectOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_profile_object::builders::DeleteProfileObjectOutputBuilder {
-        crate::operation::delete_profile_object::builders::DeleteProfileObjectOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_profile_object::builders::DeleteProfileObjectOutputBuilder {
+        crate::operation::delete_profile_object::builders::DeleteProfileObjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProfileObjectOutput`](crate::operation::delete_profile_object::DeleteProfileObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileObjectOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

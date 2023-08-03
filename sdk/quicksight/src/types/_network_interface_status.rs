@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkInterfaceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,9 +75,7 @@ pub enum NetworkInterfaceStatus {
 impl ::std::convert::From<&str> for NetworkInterfaceStatus {
     fn from(s: &str) -> Self {
         match s {
-            "ATTACHMENT_FAILED_ROLLBACK_FAILED" => {
-                NetworkInterfaceStatus::AttachmentFailedRollbackFailed
-            }
+            "ATTACHMENT_FAILED_ROLLBACK_FAILED" => NetworkInterfaceStatus::AttachmentFailedRollbackFailed,
             "AVAILABLE" => NetworkInterfaceStatus::Available,
             "CREATING" => NetworkInterfaceStatus::Creating,
             "CREATION_FAILED" => NetworkInterfaceStatus::CreationFailed,
@@ -93,9 +85,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceStatus {
             "DELETION_SCHEDULED" => NetworkInterfaceStatus::DeletionScheduled,
             "UPDATE_FAILED" => NetworkInterfaceStatus::UpdateFailed,
             "UPDATING" => NetworkInterfaceStatus::Updating,
-            other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -110,9 +100,7 @@ impl NetworkInterfaceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NetworkInterfaceStatus::AttachmentFailedRollbackFailed => {
-                "ATTACHMENT_FAILED_ROLLBACK_FAILED"
-            }
+            NetworkInterfaceStatus::AttachmentFailedRollbackFailed => "ATTACHMENT_FAILED_ROLLBACK_FAILED",
             NetworkInterfaceStatus::Available => "AVAILABLE",
             NetworkInterfaceStatus::Creating => "CREATING",
             NetworkInterfaceStatus::CreationFailed => "CREATION_FAILED",

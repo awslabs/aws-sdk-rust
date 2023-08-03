@@ -15,16 +15,14 @@ impl DescribeProtectedResourceInput {
 }
 impl DescribeProtectedResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
-    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder{
+    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder {
         crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProtectedResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeProtectedResourceInputBuilder {
         crate::operation::describe_protected_resource::DescribeProtectedResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_protected_resource::DescribeProtectedResourceInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_protected_resource::DescribeProtectedResourceInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

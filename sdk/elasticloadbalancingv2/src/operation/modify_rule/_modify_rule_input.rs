@@ -36,9 +36,7 @@ impl ModifyRuleInput {
 
 /// A builder for [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyRuleInputBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
@@ -71,17 +69,12 @@ impl ModifyRuleInputBuilder {
         self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
         self.conditions = input;
         self
     }
     /// <p>The conditions.</p>
-    pub fn get_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
         &self.conditions
     }
     /// Appends an item to `actions`.
@@ -96,10 +89,7 @@ impl ModifyRuleInputBuilder {
         self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -108,12 +98,7 @@ impl ModifyRuleInputBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_rule::ModifyRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_rule::ModifyRuleInput {
             rule_arn: self.rule_arn,
             conditions: self.conditions,

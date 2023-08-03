@@ -37,10 +37,7 @@ impl SearchProductsAsAdminFluentBuilder {
         }
     }
     /// Access the SearchProductsAsAdmin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SearchProductsAsAdminFluentBuilder {
             crate::operation::search_products_as_admin::SearchProductsAsAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SearchProductsAsAdminFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SearchProductsAsAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SearchProductsAsAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +105,22 @@ impl SearchProductsAsAdminFluentBuilder {
             crate::operation::search_products_as_admin::SearchProductsAsAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
-        crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
+        crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -151,10 +129,7 @@ impl SearchProductsAsAdminFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -185,23 +160,14 @@ impl SearchProductsAsAdminFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -209,12 +175,7 @@ impl SearchProductsAsAdminFluentBuilder {
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -223,10 +184,7 @@ impl SearchProductsAsAdminFluentBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProductViewSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -282,10 +240,7 @@ impl SearchProductsAsAdminFluentBuilder {
         self
     }
     /// <p>Access level of the source of the product.</p>
-    pub fn set_product_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductSource>,
-    ) -> Self {
+    pub fn set_product_source(mut self, input: ::std::option::Option<crate::types::ProductSource>) -> Self {
         self.inner = self.inner.set_product_source(input);
         self
     }

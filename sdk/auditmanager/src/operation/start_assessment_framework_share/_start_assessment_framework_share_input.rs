@@ -36,16 +36,14 @@ impl StartAssessmentFrameworkShareInput {
 }
 impl StartAssessmentFrameworkShareInput {
     /// Creates a new builder-style object to manufacture [`StartAssessmentFrameworkShareInput`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput).
-    pub fn builder() -> crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder{
+    pub fn builder() -> crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder {
         crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAssessmentFrameworkShareInput`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_account: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl StartAssessmentFrameworkShareInputBuilder {
         &self.framework_id
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn destination_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn set_destination_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_account = input;
         self
     }
@@ -88,18 +80,12 @@ impl StartAssessmentFrameworkShareInputBuilder {
         &self.destination_account
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_region = input;
         self
     }
@@ -128,17 +114,11 @@ impl StartAssessmentFrameworkShareInputBuilder {
         crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput {
-                framework_id: self.framework_id
-                ,
-                destination_account: self.destination_account
-                ,
-                destination_region: self.destination_region
-                ,
-                comment: self.comment
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareInput {
+            framework_id: self.framework_id,
+            destination_account: self.destination_account,
+            destination_region: self.destination_region,
+            comment: self.comment,
+        })
     }
 }

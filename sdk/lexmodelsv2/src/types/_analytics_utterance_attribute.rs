@@ -23,9 +23,7 @@ impl AnalyticsUtteranceAttribute {
 
 /// A builder for [`AnalyticsUtteranceAttribute`](crate::types::AnalyticsUtteranceAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceAttributeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>,
 }
@@ -36,17 +34,12 @@ impl AnalyticsUtteranceAttributeBuilder {
         self
     }
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>) -> Self {
         self.name = input;
         self
     }
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsUtteranceAttributeName> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceAttributeName> {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceAttribute`](crate::types::AnalyticsUtteranceAttribute).

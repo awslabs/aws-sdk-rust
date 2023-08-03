@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the anomaly detector.</p>
     /// - On success, responds with [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<ActivateAnomalyDetectorError>`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorError)
-    pub fn activate_anomaly_detector(
-        &self,
-    ) -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder
-    {
+    pub fn activate_anomaly_detector(&self) -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder {
         crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

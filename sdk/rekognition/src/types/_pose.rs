@@ -37,9 +37,7 @@ impl Pose {
 
 /// A builder for [`Pose`](crate::types::Pose).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoseBuilder {
     pub(crate) roll: ::std::option::Option<f32>,
     pub(crate) yaw: ::std::option::Option<f32>,

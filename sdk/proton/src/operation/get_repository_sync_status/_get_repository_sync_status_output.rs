@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRepositorySyncStatusOutput {
 }
 impl GetRepositorySyncStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositorySyncStatusOutput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusOutputBuilder {
         crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositorySyncStatusOutput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusOutputBuilder {
     pub(crate) latest_sync: ::std::option::Option<crate::types::RepositorySyncAttempt>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetRepositorySyncStatusOutputBuilder {
         self
     }
     /// <p>The repository sync status detail data that's returned by Proton.</p>
-    pub fn set_latest_sync(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositorySyncAttempt>,
-    ) -> Self {
+    pub fn set_latest_sync(mut self, input: ::std::option::Option<crate::types::RepositorySyncAttempt>) -> Self {
         self.latest_sync = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetRepositorySyncStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRepositorySyncStatusOutput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput {
+    pub fn build(self) -> crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput {
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput {
             latest_sync: self.latest_sync,
             _request_id: self._request_id,

@@ -26,8 +26,7 @@ impl ListStackSetOperationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackSetOperationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder,
+    inner: crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder,
 }
 impl ListStackSetOperationsFluentBuilder {
     /// Creates a new `ListStackSetOperations`.
@@ -38,10 +37,7 @@ impl ListStackSetOperationsFluentBuilder {
         }
     }
     /// Access the ListStackSetOperations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListStackSetOperationsFluentBuilder {
             crate::operation::list_stack_set_operations::ListStackSetOperations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operations::ListStackSetOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operations::ListStackSetOperationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListStackSetOperationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListStackSetOperationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operations::ListStackSetOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operations::ListStackSetOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operations::ListStackSetOperationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListStackSetOperationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operations::ListStackSetOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operations::ListStackSetOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operations::ListStackSetOperationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,37 +105,23 @@ impl ListStackSetOperationsFluentBuilder {
             crate::operation::list_stack_set_operations::ListStackSetOperations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operations::ListStackSetOperationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operations::ListStackSetOperationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator
-    {
-        crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator {
+        crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }

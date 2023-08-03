@@ -23,9 +23,7 @@ impl AudioConcatenationConfiguration {
 
 /// A builder for [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }
@@ -36,17 +34,12 @@ impl AudioConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioArtifactsConcatenationState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AudioArtifactsConcatenationState> {
         &self.state
     }
     /// Consumes the builder and constructs a [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).

@@ -42,13 +42,7 @@
 /// H264 Profile
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264Profile {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,14 +95,7 @@ impl H264Profile {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BASELINE",
-            "HIGH",
-            "HIGH_10BIT",
-            "HIGH_422",
-            "HIGH_422_10BIT",
-            "MAIN",
-        ]
+        &["BASELINE", "HIGH", "HIGH_10BIT", "HIGH_422", "HIGH_422_10BIT", "MAIN"]
     }
 }
 impl ::std::convert::AsRef<str> for H264Profile {

@@ -36,17 +36,14 @@ impl UpdateMulticastGroupInput {
 }
 impl UpdateMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::operation::update_multicast_group::UpdateMulticastGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder {
         crate::operation::update_multicast_group::builders::UpdateMulticastGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMulticastGroupInput`](crate::operation::update_multicast_group::UpdateMulticastGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl UpdateMulticastGroupInputBuilder {
         self
     }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticast>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticast>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -116,17 +110,13 @@ impl UpdateMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMulticastGroupInput`](crate::operation::update_multicast_group::UpdateMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_multicast_group::UpdateMulticastGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_multicast_group::UpdateMulticastGroupInput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                lo_ra_wan: self.lo_ra_wan,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_multicast_group::UpdateMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_multicast_group::UpdateMulticastGroupInput {
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            lo_ra_wan: self.lo_ra_wan,
+        })
     }
 }

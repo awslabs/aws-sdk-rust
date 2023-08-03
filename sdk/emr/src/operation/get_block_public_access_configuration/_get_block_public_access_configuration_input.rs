@@ -5,23 +5,23 @@
 pub struct GetBlockPublicAccessConfigurationInput {}
 impl GetBlockPublicAccessConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBlockPublicAccessConfigurationInput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput).
-    pub fn builder() -> crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationInputBuilder {
         crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBlockPublicAccessConfigurationInput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlockPublicAccessConfigurationInputBuilder {}
 impl GetBlockPublicAccessConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetBlockPublicAccessConfigurationInput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput {})
     }
 }

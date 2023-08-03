@@ -10,10 +10,7 @@ impl UpdateGeoMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_geo_match_set();
         fluent_builder.inner = self;
@@ -54,9 +51,7 @@ impl UpdateGeoMatchSetFluentBuilder {
         }
     }
     /// Access the UpdateGeoMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +63,7 @@ impl UpdateGeoMatchSetFluentBuilder {
             crate::operation::update_geo_match_set::UpdateGeoMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +73,7 @@ impl UpdateGeoMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +82,7 @@ impl UpdateGeoMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError>,
     > {
         let op = self
             .inner
@@ -117,9 +105,7 @@ impl UpdateGeoMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -133,25 +119,17 @@ impl UpdateGeoMatchSetFluentBuilder {
             crate::operation::update_geo_match_set::UpdateGeoMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_geo_match_set::UpdateGeoMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.geo_match_set_id(input.into());
         self
     }
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn set_geo_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geo_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_geo_match_set_id(input);
         self
     }
@@ -191,10 +169,7 @@ impl UpdateGeoMatchSetFluentBuilder {
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -203,9 +178,7 @@ impl UpdateGeoMatchSetFluentBuilder {
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
         self.inner.get_updates()
     }
 }

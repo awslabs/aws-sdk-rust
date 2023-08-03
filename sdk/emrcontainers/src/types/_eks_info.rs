@@ -23,9 +23,7 @@ impl EksInfo {
 
 /// A builder for [`EksInfo`](crate::types::EksInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksInfoBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl EksInfoBuilder {
     }
     /// Consumes the builder and constructs a [`EksInfo`](crate::types::EksInfo).
     pub fn build(self) -> crate::types::EksInfo {
-        crate::types::EksInfo {
-            namespace: self.namespace,
-        }
+        crate::types::EksInfo { namespace: self.namespace }
     }
 }

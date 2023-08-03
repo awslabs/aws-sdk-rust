@@ -12,10 +12,7 @@ pub fn ser_batch_get_application_revisions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_revision_location::ser_revision_location(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_revision_location::ser_revision_location(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

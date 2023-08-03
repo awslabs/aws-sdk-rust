@@ -57,9 +57,7 @@ impl ListEphemeridesInput {
 
 /// A builder for [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEphemeridesInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -89,10 +87,7 @@ impl ListEphemeridesInputBuilder {
         self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -106,10 +101,7 @@ impl ListEphemeridesInputBuilder {
         self
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -129,17 +121,12 @@ impl ListEphemeridesInputBuilder {
         self
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn set_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
-    ) -> Self {
+    pub fn set_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>) -> Self {
         self.status_list = input;
         self
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn get_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>> {
+    pub fn get_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>> {
         &self.status_list
     }
     /// <p>Maximum number of ephemerides to return.</p>
@@ -173,10 +160,7 @@ impl ListEphemeridesInputBuilder {
     /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ephemerides::ListEphemeridesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
             satellite_id: self.satellite_id,
             start_time: self.start_time,

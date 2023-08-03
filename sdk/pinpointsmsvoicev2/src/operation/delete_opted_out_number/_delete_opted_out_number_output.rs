@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteOptedOutNumberOutput {
 }
 impl DeleteOptedOutNumberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptedOutNumberOutput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberOutputBuilder {
         crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOptedOutNumberOutput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOptedOutNumberOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ pub struct DeleteOptedOutNumberOutputBuilder {
 }
 impl DeleteOptedOutNumberOutputBuilder {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    pub fn opt_out_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    pub fn set_opt_out_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_arn = input;
         self
     }
@@ -91,18 +81,12 @@ impl DeleteOptedOutNumberOutputBuilder {
         &self.opt_out_list_arn
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -111,18 +95,12 @@ impl DeleteOptedOutNumberOutputBuilder {
         &self.opt_out_list_name
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
-    pub fn opted_out_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opted_out_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opted_out_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
-    pub fn set_opted_out_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opted_out_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opted_out_number = input;
         self
     }
@@ -136,10 +114,7 @@ impl DeleteOptedOutNumberOutputBuilder {
         self
     }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_opted_out_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_opted_out_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.opted_out_timestamp = input;
         self
     }

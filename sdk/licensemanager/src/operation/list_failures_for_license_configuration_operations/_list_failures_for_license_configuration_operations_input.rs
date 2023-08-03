@@ -29,16 +29,16 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn builder() -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder
+    {
         crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsInputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +46,12 @@ pub struct ListFailuresForLicenseConfigurationOperationsInputBuilder {
 }
 impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -94,16 +88,18 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput {
-                license_configuration_arn: self.license_configuration_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                license_configuration_arn: self.license_configuration_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

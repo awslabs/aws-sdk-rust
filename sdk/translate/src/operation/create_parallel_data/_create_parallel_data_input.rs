@@ -50,17 +50,14 @@ impl CreateParallelDataInput {
 }
 impl CreateParallelDataInput {
     /// Creates a new builder-style object to manufacture [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
-    pub fn builder(
-    ) -> crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
+    pub fn builder() -> crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
         crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParallelDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -104,17 +101,12 @@ impl CreateParallelDataInputBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
+    pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
         self.parallel_data_config = input;
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn get_parallel_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+    pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         &self.parallel_data_config
     }
     /// <p>The encryption key used to encrypt this object.</p>
@@ -123,10 +115,7 @@ impl CreateParallelDataInputBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -160,10 +149,7 @@ impl CreateParallelDataInputBuilder {
         self
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -174,19 +160,14 @@ impl CreateParallelDataInputBuilder {
     /// Consumes the builder and constructs a [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_parallel_data::CreateParallelDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_parallel_data::CreateParallelDataInput {
-                name: self.name,
-                description: self.description,
-                parallel_data_config: self.parallel_data_config,
-                encryption_key: self.encryption_key,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_parallel_data::CreateParallelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_parallel_data::CreateParallelDataInput {
+            name: self.name,
+            description: self.description,
+            parallel_data_config: self.parallel_data_config,
+            encryption_key: self.encryption_key,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

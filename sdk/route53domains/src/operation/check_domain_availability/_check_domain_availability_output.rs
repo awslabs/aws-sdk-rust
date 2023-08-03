@@ -140,18 +140,14 @@ impl ::aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
 }
 impl CheckDomainAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityOutput`](crate::operation::check_domain_availability::CheckDomainAvailabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder {
         crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CheckDomainAvailabilityOutput`](crate::operation::check_domain_availability::CheckDomainAvailabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckDomainAvailabilityOutputBuilder {
     pub(crate) availability: ::std::option::Option<crate::types::DomainAvailability>,
     _request_id: Option<String>,
@@ -281,10 +277,7 @@ impl CheckDomainAvailabilityOutputBuilder {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn set_availability(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainAvailability>,
-    ) -> Self {
+    pub fn set_availability(mut self, input: ::std::option::Option<crate::types::DomainAvailability>) -> Self {
         self.availability = input;
         self
     }
@@ -361,9 +354,7 @@ impl CheckDomainAvailabilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CheckDomainAvailabilityOutput`](crate::operation::check_domain_availability::CheckDomainAvailabilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::check_domain_availability::CheckDomainAvailabilityOutput {
+    pub fn build(self) -> crate::operation::check_domain_availability::CheckDomainAvailabilityOutput {
         crate::operation::check_domain_availability::CheckDomainAvailabilityOutput {
             availability: self.availability,
             _request_id: self._request_id,

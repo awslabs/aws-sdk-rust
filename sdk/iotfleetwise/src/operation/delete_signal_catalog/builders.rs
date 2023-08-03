@@ -39,9 +39,7 @@ impl DeleteSignalCatalogFluentBuilder {
         }
     }
     /// Access the DeleteSignalCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteSignalCatalogFluentBuilder {
             crate::operation::delete_signal_catalog::DeleteSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signal_catalog::DeleteSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signal_catalog::DeleteSignalCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteSignalCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signal_catalog::DeleteSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signal_catalog::DeleteSignalCatalogError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signal_catalog::DeleteSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signal_catalog::DeleteSignalCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DeleteSignalCatalogFluentBuilder {
             crate::operation::delete_signal_catalog::DeleteSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signal_catalog::DeleteSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signal_catalog::DeleteSignalCatalogError>,
     > {
         self.customize_middleware().await
     }

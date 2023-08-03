@@ -44,9 +44,7 @@ impl TopicRefreshScheduleSummary {
 
 /// A builder for [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRefreshScheduleSummaryBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -102,17 +100,12 @@ impl TopicRefreshScheduleSummaryBuilder {
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
-    ) -> Self {
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
         self.refresh_schedule = input;
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn get_refresh_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+    pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).

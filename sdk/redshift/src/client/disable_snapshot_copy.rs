@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableSnapshotCopyOutput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<DisableSnapshotCopyError>`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyError)
-    pub fn disable_snapshot_copy(
-        &self,
-    ) -> crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyFluentBuilder {
-        crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_snapshot_copy(&self) -> crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyFluentBuilder {
+        crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyFluentBuilder::new(self.handle.clone())
     }
 }

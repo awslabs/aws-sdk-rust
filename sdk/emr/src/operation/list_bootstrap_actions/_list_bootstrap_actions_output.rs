@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListBootstrapActionsOutput {
 }
 impl ListBootstrapActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsOutputBuilder {
         crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsOutputBuilder {
     pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListBootstrapActionsOutputBuilder {
         self
     }
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub fn set_bootstrap_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
-    ) -> Self {
+    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
         self.bootstrap_actions = input;
         self
     }
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub fn get_bootstrap_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
+    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
         &self.bootstrap_actions
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

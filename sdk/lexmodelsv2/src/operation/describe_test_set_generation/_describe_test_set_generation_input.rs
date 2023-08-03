@@ -15,33 +15,25 @@ impl DescribeTestSetGenerationInput {
 }
 impl DescribeTestSetGenerationInput {
     /// Creates a new builder-style object to manufacture [`DescribeTestSetGenerationInput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput).
-    pub fn builder() -> crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder{
+    pub fn builder() -> crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder {
         crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestSetGenerationInput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestSetGenerationInputBuilder {
     pub(crate) test_set_generation_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTestSetGenerationInputBuilder {
     /// <p>The unique identifier of the test set generation.</p>
-    pub fn test_set_generation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_generation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the test set generation.</p>
-    pub fn set_test_set_generation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_generation_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeTestSetGenerationInputBuilder {
         crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
-                test_set_generation_id: self.test_set_generation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
+            test_set_generation_id: self.test_set_generation_id,
+        })
     }
 }

@@ -2,8 +2,7 @@
 pub fn ser_attach_to_index_headers(
     input: &crate::operation::attach_to_index::AttachToIndexInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.directory_arn {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_attach_to_index_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "directory_arn",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-data-partition", header_value);
@@ -25,14 +21,10 @@ pub fn ser_attach_to_index_headers(
 
 pub fn ser_attach_to_index_input(
     input: &crate::operation::attach_to_index::AttachToIndexInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_attach_to_index_input::ser_attach_to_index_input(
-        &mut object,
-        input,
-    )?;
+    crate::protocol_serde::shape_attach_to_index_input::ser_attach_to_index_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }
@@ -42,233 +34,206 @@ pub fn de_attach_to_index_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_to_index::AttachToIndexOutput,
-    crate::operation::attach_to_index::AttachToIndexError,
-> {
+) -> std::result::Result<crate::operation::attach_to_index::AttachToIndexOutput, crate::operation::attach_to_index::AttachToIndexError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::attach_to_index::AttachToIndexError::unhandled(generic))
-        }
+        None => return Err(crate::operation::attach_to_index::AttachToIndexError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::operation::attach_to_index::AttachToIndexError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::attach_to_index::AttachToIndexError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DirectoryNotEnabledException" => {
-            crate::operation::attach_to_index::AttachToIndexError::DirectoryNotEnabledException({
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DirectoryNotEnabledException" => crate::operation::attach_to_index::AttachToIndexError::DirectoryNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DirectoryNotEnabledExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_directory_not_enabled_exception::de_directory_not_enabled_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IndexedAttributeMissingException" => {
-            crate::operation::attach_to_index::AttachToIndexError::IndexedAttributeMissingException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::IndexedAttributeMissingExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_indexed_attribute_missing_exception::de_indexed_attribute_missing_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InternalServiceException" => {
-            crate::operation::attach_to_index::AttachToIndexError::InternalServiceException({
+                let mut output = crate::types::error::builders::DirectoryNotEnabledExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_directory_not_enabled_exception::de_directory_not_enabled_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "IndexedAttributeMissingException" => crate::operation::attach_to_index::AttachToIndexError::IndexedAttributeMissingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidArnException" => {
-            crate::operation::attach_to_index::AttachToIndexError::InvalidArnException({
+                let mut output = crate::types::error::builders::IndexedAttributeMissingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_indexed_attribute_missing_exception::de_indexed_attribute_missing_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceException" => crate::operation::attach_to_index::AttachToIndexError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidArnExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_arn_exception::de_invalid_arn_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidAttachmentException" => {
-            crate::operation::attach_to_index::AttachToIndexError::InvalidAttachmentException({
+                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => crate::operation::attach_to_index::AttachToIndexError::InvalidArnException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidAttachmentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_attachment_exception::de_invalid_attachment_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::attach_to_index::AttachToIndexError::LimitExceededException({
+                let mut output = crate::types::error::builders::InvalidArnExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_arn_exception::de_invalid_arn_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidAttachmentException" => crate::operation::attach_to_index::AttachToIndexError::InvalidAttachmentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LinkNameAlreadyInUseException" => {
-            crate::operation::attach_to_index::AttachToIndexError::LinkNameAlreadyInUseException({
+                let mut output = crate::types::error::builders::InvalidAttachmentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_attachment_exception::de_invalid_attachment_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::attach_to_index::AttachToIndexError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LinkNameAlreadyInUseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_link_name_already_in_use_exception::de_link_name_already_in_use_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotIndexException" => {
-            crate::operation::attach_to_index::AttachToIndexError::NotIndexException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LinkNameAlreadyInUseException" => crate::operation::attach_to_index::AttachToIndexError::LinkNameAlreadyInUseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotIndexExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_index_exception::de_not_index_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::operation::attach_to_index::AttachToIndexError::ResourceNotFoundException({
+                let mut output = crate::types::error::builders::LinkNameAlreadyInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_link_name_already_in_use_exception::de_link_name_already_in_use_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotIndexException" => crate::operation::attach_to_index::AttachToIndexError::NotIndexException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RetryableConflictException" => {
-            crate::operation::attach_to_index::AttachToIndexError::RetryableConflictException({
+                let mut output = crate::types::error::builders::NotIndexExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_index_exception::de_not_index_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::attach_to_index::AttachToIndexError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::RetryableConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_retryable_conflict_exception::de_retryable_conflict_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::operation::attach_to_index::AttachToIndexError::ValidationException({
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RetryableConflictException" => crate::operation::attach_to_index::AttachToIndexError::RetryableConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::RetryableConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_retryable_conflict_exception::de_retryable_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::attach_to_index::AttachToIndexError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::attach_to_index::AttachToIndexError::generic(generic),
     })
 }
@@ -278,22 +243,13 @@ pub fn de_attach_to_index_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_to_index::AttachToIndexOutput,
-    crate::operation::attach_to_index::AttachToIndexError,
-> {
+) -> std::result::Result<crate::operation::attach_to_index::AttachToIndexOutput, crate::operation::attach_to_index::AttachToIndexError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder::default();
-        output = crate::protocol_serde::shape_attach_to_index::de_attach_to_index(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder::default();
+        output = crate::protocol_serde::shape_attach_to_index::de_attach_to_index(_response_body, output)
+            .map_err(crate::operation::attach_to_index::AttachToIndexError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -301,48 +257,35 @@ pub fn de_attach_to_index_http_response_with_props(
 pub(crate) fn de_attach_to_index(
     value: &[u8],
     mut builder: crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder,
-) -> Result<
-    crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "AttachedObjectIdentifier" => {
-                        builder = builder.set_attached_object_identifier(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AttachedObjectIdentifier" => {
+                    builder = builder.set_attached_object_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

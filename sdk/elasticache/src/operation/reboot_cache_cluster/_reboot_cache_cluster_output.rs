@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RebootCacheClusterOutput {
 }
 impl RebootCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`RebootCacheClusterOutput`](crate::operation::reboot_cache_cluster::RebootCacheClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder {
+    pub fn builder() -> crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder {
         crate::operation::reboot_cache_cluster::builders::RebootCacheClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`RebootCacheClusterOutput`](crate::operation::reboot_cache_cluster::RebootCacheClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootCacheClusterOutputBuilder {
     pub(crate) cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl RebootCacheClusterOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn set_cache_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheCluster>,
-    ) -> Self {
+    pub fn set_cache_cluster(mut self, input: ::std::option::Option<crate::types::CacheCluster>) -> Self {
         self.cache_cluster = input;
         self
     }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`contact_flow_state(ContactFlowState)`](crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataFluentBuilder::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataFluentBuilder::set_contact_flow_state): <p>The state of flow.</p>
     /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateContactFlowMetadataError>`](crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataError)
-    pub fn update_contact_flow_metadata(&self) -> crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataFluentBuilder{
+    pub fn update_contact_flow_metadata(&self) -> crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataFluentBuilder {
         crate::operation::update_contact_flow_metadata::builders::UpdateContactFlowMetadataFluentBuilder::new(self.handle.clone())
     }
 }

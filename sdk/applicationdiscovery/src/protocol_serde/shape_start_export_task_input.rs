@@ -18,10 +18,7 @@ pub fn ser_start_export_task_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_export_filter::ser_export_filter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_export_filter::ser_export_filter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -40,10 +37,7 @@ pub fn ser_start_export_task_input(
     if let Some(var_10) = &input.preferences {
         #[allow(unused_mut)]
         let mut object_11 = object.key("preferences").start_object();
-        crate::protocol_serde::shape_export_preferences::ser_export_preferences(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_export_preferences::ser_export_preferences(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

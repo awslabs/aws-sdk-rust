@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for StartInputDeviceMaintenanceWindowOutp
 }
 impl StartInputDeviceMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput).
-    pub fn builder() -> crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowOutputBuilder{
+    pub fn builder() -> crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowOutputBuilder {
         crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl StartInputDeviceMaintenanceWindowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput).
-    pub fn build(self) -> crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput{
+    pub fn build(self) -> crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput {
         crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput {
             _request_id: self._request_id,
         }

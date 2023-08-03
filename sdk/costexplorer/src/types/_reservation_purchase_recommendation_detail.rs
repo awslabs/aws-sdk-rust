@@ -54,8 +54,7 @@ pub struct ReservationPurchaseRecommendationDetail {
     pub estimated_monthly_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
     #[doc(hidden)]
-    pub estimated_reservation_cost_for_lookback_period:
-        ::std::option::Option<::std::string::String>,
+    pub estimated_reservation_cost_for_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>How much purchasing this instance costs you upfront.</p>
     #[doc(hidden)]
     pub upfront_cost: ::std::option::Option<::std::string::String>,
@@ -130,8 +129,7 @@ impl ReservationPurchaseRecommendationDetail {
     }
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
     pub fn estimated_reservation_cost_for_lookback_period(&self) -> ::std::option::Option<&str> {
-        self.estimated_reservation_cost_for_lookback_period
-            .as_deref()
+        self.estimated_reservation_cost_for_lookback_period.as_deref()
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
     pub fn upfront_cost(&self) -> ::std::option::Option<&str> {
@@ -151,24 +149,17 @@ impl ReservationPurchaseRecommendationDetail {
 
 /// A builder for [`ReservationPurchaseRecommendationDetail`](crate::types::ReservationPurchaseRecommendationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationDetailBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_details: ::std::option::Option<crate::types::InstanceDetails>,
-    pub(crate) recommended_number_of_instances_to_purchase:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) recommended_normalized_units_to_purchase:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) minimum_number_of_instances_used_per_hour:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) recommended_number_of_instances_to_purchase: ::std::option::Option<::std::string::String>,
+    pub(crate) recommended_normalized_units_to_purchase: ::std::option::Option<::std::string::String>,
+    pub(crate) minimum_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
-    pub(crate) maximum_number_of_instances_used_per_hour:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) maximum_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
-    pub(crate) average_number_of_instances_used_per_hour:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) average_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     pub(crate) average_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
     pub(crate) average_utilization: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_break_even_in_months: ::std::option::Option<::std::string::String>,
@@ -176,8 +167,7 @@ pub struct ReservationPurchaseRecommendationDetailBuilder {
     pub(crate) estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_monthly_savings_percentage: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_monthly_on_demand_cost: ::std::option::Option<::std::string::String>,
-    pub(crate) estimated_reservation_cost_for_lookback_period:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) estimated_reservation_cost_for_lookback_period: ::std::option::Option<::std::string::String>,
     pub(crate) upfront_cost: ::std::option::Option<::std::string::String>,
     pub(crate) recurring_standard_monthly_cost: ::std::option::Option<::std::string::String>,
 }
@@ -202,10 +192,7 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         self
     }
     /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn set_instance_details(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceDetails>,
-    ) -> Self {
+    pub fn set_instance_details(mut self, input: ::std::option::Option<crate::types::InstanceDetails>) -> Self {
         self.instance_details = input;
         self
     }
@@ -214,195 +201,124 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         &self.instance_details
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn recommended_number_of_instances_to_purchase(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.recommended_number_of_instances_to_purchase =
-            ::std::option::Option::Some(input.into());
+    pub fn recommended_number_of_instances_to_purchase(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommended_number_of_instances_to_purchase = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn set_recommended_number_of_instances_to_purchase(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_number_of_instances_to_purchase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_number_of_instances_to_purchase = input;
         self
     }
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    pub fn get_recommended_number_of_instances_to_purchase(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_recommended_number_of_instances_to_purchase(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommended_number_of_instances_to_purchase
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    pub fn recommended_normalized_units_to_purchase(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_normalized_units_to_purchase(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_normalized_units_to_purchase = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    pub fn set_recommended_normalized_units_to_purchase(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_normalized_units_to_purchase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_normalized_units_to_purchase = input;
         self
     }
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    pub fn get_recommended_normalized_units_to_purchase(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_recommended_normalized_units_to_purchase(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommended_normalized_units_to_purchase
     }
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn minimum_number_of_instances_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_number_of_instances_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_number_of_instances_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_minimum_number_of_instances_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_number_of_instances_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_number_of_instances_used_per_hour = input;
         self
     }
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_minimum_number_of_instances_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_minimum_number_of_instances_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_number_of_instances_used_per_hour
     }
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn minimum_normalized_units_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_normalized_units_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_normalized_units_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_minimum_normalized_units_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_normalized_units_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_normalized_units_used_per_hour = input;
         self
     }
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_minimum_normalized_units_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_minimum_normalized_units_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_normalized_units_used_per_hour
     }
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn maximum_number_of_instances_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_number_of_instances_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_number_of_instances_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_maximum_number_of_instances_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_number_of_instances_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum_number_of_instances_used_per_hour = input;
         self
     }
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_maximum_number_of_instances_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_maximum_number_of_instances_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.maximum_number_of_instances_used_per_hour
     }
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn maximum_normalized_units_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_normalized_units_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_normalized_units_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_maximum_normalized_units_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_normalized_units_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum_normalized_units_used_per_hour = input;
         self
     }
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_maximum_normalized_units_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_maximum_normalized_units_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.maximum_normalized_units_used_per_hour
     }
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_number_of_instances_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn average_number_of_instances_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.average_number_of_instances_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_average_number_of_instances_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_average_number_of_instances_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.average_number_of_instances_used_per_hour = input;
         self
     }
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_average_number_of_instances_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_average_number_of_instances_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.average_number_of_instances_used_per_hour
     }
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_normalized_units_used_per_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn average_normalized_units_used_per_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.average_normalized_units_used_per_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_average_normalized_units_used_per_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_average_normalized_units_used_per_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.average_normalized_units_used_per_hour = input;
         self
     }
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn get_average_normalized_units_used_per_hour(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_average_normalized_units_used_per_hour(&self) -> &::std::option::Option<::std::string::String> {
         &self.average_normalized_units_used_per_hour
     }
     /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn average_utilization(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn average_utilization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.average_utilization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    pub fn set_average_utilization(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_average_utilization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.average_utilization = input;
         self
     }
@@ -411,40 +327,26 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         &self.average_utilization
     }
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-    pub fn estimated_break_even_in_months(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_break_even_in_months(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_break_even_in_months = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-    pub fn set_estimated_break_even_in_months(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_break_even_in_months(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_break_even_in_months = input;
         self
     }
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-    pub fn get_estimated_break_even_in_months(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_break_even_in_months(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_break_even_in_months
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -453,92 +355,59 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         &self.currency_code
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-    pub fn estimated_monthly_savings_amount(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_savings_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_savings_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-    pub fn set_estimated_monthly_savings_amount(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_savings_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_savings_amount = input;
         self
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-    pub fn get_estimated_monthly_savings_amount(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_monthly_savings_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_savings_amount
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-    pub fn estimated_monthly_savings_percentage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_savings_percentage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_savings_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-    pub fn set_estimated_monthly_savings_percentage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_savings_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_savings_percentage = input;
         self
     }
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-    pub fn get_estimated_monthly_savings_percentage(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_monthly_savings_percentage(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_savings_percentage
     }
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-    pub fn estimated_monthly_on_demand_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_on_demand_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_on_demand_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-    pub fn set_estimated_monthly_on_demand_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_on_demand_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_on_demand_cost = input;
         self
     }
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-    pub fn get_estimated_monthly_on_demand_cost(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_monthly_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_on_demand_cost
     }
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-    pub fn estimated_reservation_cost_for_lookback_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.estimated_reservation_cost_for_lookback_period =
-            ::std::option::Option::Some(input.into());
+    pub fn estimated_reservation_cost_for_lookback_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.estimated_reservation_cost_for_lookback_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-    pub fn set_estimated_reservation_cost_for_lookback_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_reservation_cost_for_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_reservation_cost_for_lookback_period = input;
         self
     }
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-    pub fn get_estimated_reservation_cost_for_lookback_period(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_reservation_cost_for_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_reservation_cost_for_lookback_period
     }
     /// <p>How much purchasing this instance costs you upfront.</p>
@@ -556,25 +425,17 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         &self.upfront_cost
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    pub fn recurring_standard_monthly_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recurring_standard_monthly_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recurring_standard_monthly_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    pub fn set_recurring_standard_monthly_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recurring_standard_monthly_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recurring_standard_monthly_cost = input;
         self
     }
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    pub fn get_recurring_standard_monthly_cost(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_recurring_standard_monthly_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.recurring_standard_monthly_cost
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationDetail`](crate::types::ReservationPurchaseRecommendationDetail).
@@ -582,17 +443,13 @@ impl ReservationPurchaseRecommendationDetailBuilder {
         crate::types::ReservationPurchaseRecommendationDetail {
             account_id: self.account_id,
             instance_details: self.instance_details,
-            recommended_number_of_instances_to_purchase: self
-                .recommended_number_of_instances_to_purchase,
+            recommended_number_of_instances_to_purchase: self.recommended_number_of_instances_to_purchase,
             recommended_normalized_units_to_purchase: self.recommended_normalized_units_to_purchase,
-            minimum_number_of_instances_used_per_hour: self
-                .minimum_number_of_instances_used_per_hour,
+            minimum_number_of_instances_used_per_hour: self.minimum_number_of_instances_used_per_hour,
             minimum_normalized_units_used_per_hour: self.minimum_normalized_units_used_per_hour,
-            maximum_number_of_instances_used_per_hour: self
-                .maximum_number_of_instances_used_per_hour,
+            maximum_number_of_instances_used_per_hour: self.maximum_number_of_instances_used_per_hour,
             maximum_normalized_units_used_per_hour: self.maximum_normalized_units_used_per_hour,
-            average_number_of_instances_used_per_hour: self
-                .average_number_of_instances_used_per_hour,
+            average_number_of_instances_used_per_hour: self.average_number_of_instances_used_per_hour,
             average_normalized_units_used_per_hour: self.average_normalized_units_used_per_hour,
             average_utilization: self.average_utilization,
             estimated_break_even_in_months: self.estimated_break_even_in_months,
@@ -600,8 +457,7 @@ impl ReservationPurchaseRecommendationDetailBuilder {
             estimated_monthly_savings_amount: self.estimated_monthly_savings_amount,
             estimated_monthly_savings_percentage: self.estimated_monthly_savings_percentage,
             estimated_monthly_on_demand_cost: self.estimated_monthly_on_demand_cost,
-            estimated_reservation_cost_for_lookback_period: self
-                .estimated_reservation_cost_for_lookback_period,
+            estimated_reservation_cost_for_lookback_period: self.estimated_reservation_cost_for_lookback_period,
             upfront_cost: self.upfront_cost,
             recurring_standard_monthly_cost: self.recurring_standard_monthly_cost,
         }

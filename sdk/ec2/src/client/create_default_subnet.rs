@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDefaultSubnetOutput`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput) with field(s):
     ///   - [`subnet(Option<Subnet>)`](crate::operation::create_default_subnet::CreateDefaultSubnetOutput::subnet): <p>Information about the subnet.</p>
     /// - On failure, responds with [`SdkError<CreateDefaultSubnetError>`](crate::operation::create_default_subnet::CreateDefaultSubnetError)
-    pub fn create_default_subnet(
-        &self,
-    ) -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetFluentBuilder {
-        crate::operation::create_default_subnet::builders::CreateDefaultSubnetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_default_subnet(&self) -> crate::operation::create_default_subnet::builders::CreateDefaultSubnetFluentBuilder {
+        crate::operation::create_default_subnet::builders::CreateDefaultSubnetFluentBuilder::new(self.handle.clone())
     }
 }

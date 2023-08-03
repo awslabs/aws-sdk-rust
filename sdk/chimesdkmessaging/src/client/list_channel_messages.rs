@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`channel_messages(Option<Vec<ChannelMessageSummary>>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
     ///   - [`sub_channel_id(Option<String>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::sub_channel_id): <p>The ID of the SubChannel in the response.</p>
     /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::operation::list_channel_messages::ListChannelMessagesError)
-    pub fn list_channel_messages(
-        &self,
-    ) -> crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder {
-        crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channel_messages(&self) -> crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder {
+        crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::new(self.handle.clone())
     }
 }

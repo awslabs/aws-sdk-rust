@@ -28,8 +28,7 @@ impl GetIpamPoolAllocationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIpamPoolAllocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder,
+    inner: crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder,
 }
 impl GetIpamPoolAllocationsFluentBuilder {
     /// Creates a new `GetIpamPoolAllocations`.
@@ -40,10 +39,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
         }
     }
     /// Access the GetIpamPoolAllocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
             crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +107,15 @@ impl GetIpamPoolAllocationsFluentBuilder {
             crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_pool_allocations::paginator::GetIpamPoolAllocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_pool_allocations::paginator::GetIpamPoolAllocationsPaginator
-    {
-        crate::operation::get_ipam_pool_allocations::paginator::GetIpamPoolAllocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ipam_pool_allocations::paginator::GetIpamPoolAllocationsPaginator {
+        crate::operation::get_ipam_pool_allocations::paginator::GetIpamPoolAllocationsPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -167,18 +146,12 @@ impl GetIpamPoolAllocationsFluentBuilder {
         self.inner.get_ipam_pool_id()
     }
     /// <p>The ID of the allocation.</p>
-    pub fn ipam_pool_allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_allocation_id(input.into());
         self
     }
     /// <p>The ID of the allocation.</p>
-    pub fn set_ipam_pool_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_allocation_id(input);
         self
     }
@@ -196,10 +169,7 @@ impl GetIpamPoolAllocationsFluentBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

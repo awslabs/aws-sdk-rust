@@ -10,10 +10,7 @@ impl ListFlywheelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_flywheels::ListFlywheelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flywheels::ListFlywheelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flywheels::ListFlywheelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_flywheels();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFlywheelsFluentBuilder {
         }
     }
     /// Access the ListFlywheels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_flywheels::builders::ListFlywheelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_flywheels::builders::ListFlywheelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListFlywheelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListFlywheelsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_flywheels::paginator::ListFlywheelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_flywheels::paginator::ListFlywheelsPaginator {
-        crate::operation::list_flywheels::paginator::ListFlywheelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_flywheels::paginator::ListFlywheelsPaginator {
+        crate::operation::list_flywheels::paginator::ListFlywheelsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
     pub fn filter(mut self, input: crate::types::FlywheelFilter) -> Self {
@@ -131,10 +118,7 @@ impl ListFlywheelsFluentBuilder {
         self
     }
     /// <p>Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

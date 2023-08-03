@@ -23,35 +23,26 @@ impl UpdateControlPanelInput {
 }
 impl UpdateControlPanelInput {
     /// Creates a new builder-style object to manufacture [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
-    pub fn builder(
-    ) -> crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
+    pub fn builder() -> crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
         crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateControlPanelInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) control_panel_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -60,18 +51,12 @@ impl UpdateControlPanelInputBuilder {
         &self.control_panel_arn
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the control panel.</p>
-    pub fn set_control_panel_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_name = input;
         self
     }
@@ -82,15 +67,10 @@ impl UpdateControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_control_panel::UpdateControlPanelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_control_panel::UpdateControlPanelInput {
-                control_panel_arn: self.control_panel_arn,
-                control_panel_name: self.control_panel_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_control_panel::UpdateControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_control_panel::UpdateControlPanelInput {
+            control_panel_arn: self.control_panel_arn,
+            control_panel_name: self.control_panel_name,
+        })
     }
 }

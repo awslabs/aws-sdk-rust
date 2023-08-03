@@ -30,9 +30,7 @@ impl JsonFormatDescriptor {
 
 /// A builder for [`JsonFormatDescriptor`](crate::types::JsonFormatDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JsonFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::JsonFileCompression>,
     pub(crate) charset: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl JsonFormatDescriptorBuilder {
         self
     }
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn set_file_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::JsonFileCompression>,
-    ) -> Self {
+    pub fn set_file_compression(mut self, input: ::std::option::Option<crate::types::JsonFileCompression>) -> Self {
         self.file_compression = input;
         self
     }
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn get_file_compression(
-        &self,
-    ) -> &::std::option::Option<crate::types::JsonFileCompression> {
+    pub fn get_file_compression(&self) -> &::std::option::Option<crate::types::JsonFileCompression> {
         &self.file_compression
     }
     /// <p>The character set in which the source JSON file is written.</p>

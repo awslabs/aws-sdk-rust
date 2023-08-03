@@ -18,8 +18,7 @@ pub struct ConflictException {
     pub error_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes that led to the exception and their values.</p>
     #[doc(hidden)]
-    pub error_arguments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
+    pub error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
@@ -36,9 +35,7 @@ impl ConflictException {
         self.error_id.as_deref()
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn error_arguments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConflictExceptionErrorArgument]> {
+    pub fn error_arguments(&self) -> ::std::option::Option<&[crate::types::ConflictExceptionErrorArgument]> {
         self.error_arguments.as_deref()
     }
 }
@@ -80,16 +77,13 @@ impl ConflictException {
 
 /// A builder for [`ConflictException`](crate::types::error::ConflictException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) error_id: ::std::option::Option<::std::string::String>,
-    pub(crate) error_arguments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
+    pub(crate) error_arguments: ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -122,18 +116,12 @@ impl ConflictExceptionBuilder {
         &self.resource_id
     }
     /// <p>The resource's type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource's type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -167,17 +155,12 @@ impl ConflictExceptionBuilder {
         self
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn set_error_arguments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>,
-    ) -> Self {
+    pub fn set_error_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>>) -> Self {
         self.error_arguments = input;
         self
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn get_error_arguments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>> {
+    pub fn get_error_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictExceptionErrorArgument>> {
         &self.error_arguments
     }
     /// Sets error metadata
@@ -187,10 +170,7 @@ impl ConflictExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

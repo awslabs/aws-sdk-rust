@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetRequestedServiceQuotaChangeOutput`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeOutput) with field(s):
     ///   - [`requested_quota(Option<RequestedServiceQuotaChange>)`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeOutput::requested_quota): <p>Information about the quota increase request.</p>
     /// - On failure, responds with [`SdkError<GetRequestedServiceQuotaChangeError>`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeError)
-    pub fn get_requested_service_quota_change(&self) -> crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeFluentBuilder{
+    pub fn get_requested_service_quota_change(
+        &self,
+    ) -> crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeFluentBuilder {
         crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeFluentBuilder::new(self.handle.clone())
     }
 }

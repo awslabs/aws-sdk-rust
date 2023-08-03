@@ -38,10 +38,7 @@ impl UpdateMemberDetectorsFluentBuilder {
         }
     }
     /// Access the UpdateMemberDetectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateMemberDetectorsFluentBuilder {
             crate::operation::update_member_detectors::UpdateMemberDetectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateMemberDetectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateMemberDetectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_member_detectors::UpdateMemberDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateMemberDetectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_member_detectors::UpdateMemberDetectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateMemberDetectorsFluentBuilder {
             crate::operation::update_member_detectors::UpdateMemberDetectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member_detectors::UpdateMemberDetectorsError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +134,12 @@ impl UpdateMemberDetectorsFluentBuilder {
         self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>A list of member account IDs to be updated.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// <p>Describes which data sources will be updated.</p>
@@ -169,18 +150,13 @@ impl UpdateMemberDetectorsFluentBuilder {
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         self.inner.get_data_sources()
     }
     /// Appends an item to `Features`.
@@ -193,17 +169,12 @@ impl UpdateMemberDetectorsFluentBuilder {
         self
     }
     /// <p>A list of features that will be updated for the specified member accounts.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>>) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
     /// <p>A list of features that will be updated for the specified member accounts.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
         self.inner.get_features()
     }
 }

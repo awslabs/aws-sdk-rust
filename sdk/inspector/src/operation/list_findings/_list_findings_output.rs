@@ -35,9 +35,7 @@ impl ListFindingsOutput {
 
 /// A builder for [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFindingsOutputBuilder {
         self
     }
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_arns = input;
         self
     }
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_arns
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

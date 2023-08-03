@@ -10,10 +10,7 @@ impl GetLensReviewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_lens_review::GetLensReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens_review::GetLensReviewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens_review::GetLensReviewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_lens_review();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLensReviewFluentBuilder {
         }
     }
     /// Access the GetLensReview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_lens_review::builders::GetLensReviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_lens_review::builders::GetLensReviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetLensReviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWirelessDeviceOutput {
 }
 impl DeleteWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceOutputBuilder {
         crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWirelessDeviceOutput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWirelessDeviceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`developer_user_identifier(impl ::std::convert::Into<String>)`](crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityFluentBuilder::developer_user_identifier) / [`set_developer_user_identifier(Option<String>)`](crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityFluentBuilder::set_developer_user_identifier): <p>A unique ID used by your backend authentication process to identify a user.</p>
     /// - On success, responds with [`UnlinkDeveloperIdentityOutput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput)
     /// - On failure, responds with [`SdkError<UnlinkDeveloperIdentityError>`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError)
-    pub fn unlink_developer_identity(
-        &self,
-    ) -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityFluentBuilder
-    {
+    pub fn unlink_developer_identity(&self) -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityFluentBuilder {
         crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityFluentBuilder::new(self.handle.clone())
     }
 }

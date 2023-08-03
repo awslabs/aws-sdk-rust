@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCapacityReservationOutput {
 }
 impl DeleteCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCapacityReservationOutput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput).
-    pub fn builder() -> crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationOutputBuilder {
         crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCapacityReservationOutput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCapacityReservationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteCapacityReservationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCapacityReservationOutput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput {
+    pub fn build(self) -> crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput {
         crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput {
             _request_id: self._request_id,
         }

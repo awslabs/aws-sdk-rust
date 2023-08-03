@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MemberAccountRuleStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for MemberAccountRuleStatus {
             "UPDATE_FAILED" => MemberAccountRuleStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => MemberAccountRuleStatus::UpdateInProgress,
             "UPDATE_SUCCESSFUL" => MemberAccountRuleStatus::UpdateSuccessful,
-            other => MemberAccountRuleStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MemberAccountRuleStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

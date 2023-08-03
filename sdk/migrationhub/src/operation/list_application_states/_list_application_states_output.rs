@@ -5,8 +5,7 @@
 pub struct ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
     #[doc(hidden)]
-    pub application_state_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub application_state_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListApplicationStatesOutput {
 }
 impl ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn application_state_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationState]> {
+    pub fn application_state_list(&self) -> ::std::option::Option<&[crate::types::ApplicationState]> {
         self.application_state_list.as_deref()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationStatesOutput {
 }
 impl ListApplicationStatesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesOutput`](crate::operation::list_application_states::ListApplicationStatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_states::builders::ListApplicationStatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_states::builders::ListApplicationStatesOutputBuilder {
         crate::operation::list_application_states::builders::ListApplicationStatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationStatesOutput`](crate::operation::list_application_states::ListApplicationStatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationStatesOutputBuilder {
-    pub(crate) application_state_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub(crate) application_state_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListApplicationStatesOutputBuilder {
         self
     }
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn set_application_state_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
-    ) -> Self {
+    pub fn set_application_state_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>) -> Self {
         self.application_state_list = input;
         self
     }
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn get_application_state_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
+    pub fn get_application_state_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
         &self.application_state_list
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>

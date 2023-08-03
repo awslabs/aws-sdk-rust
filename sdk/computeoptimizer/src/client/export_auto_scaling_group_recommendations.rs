@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     ///   - [`s3_destination(Option<S3Destination>)`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput::s3_destination): <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     /// - On failure, responds with [`SdkError<ExportAutoScalingGroupRecommendationsError>`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError)
-    pub fn export_auto_scaling_group_recommendations(&self) -> crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsFluentBuilder{
-        crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsFluentBuilder::new(self.handle.clone())
+    pub fn export_auto_scaling_group_recommendations(
+        &self,
+    ) -> crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsFluentBuilder {
+        crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

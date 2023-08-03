@@ -21,7 +21,11 @@ impl super::Client {
     ///   - [`failure_message(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput::failure_code): <p>The failure code.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkServiceAssociationError>`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationError)
-    pub fn get_service_network_service_association(&self) -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationFluentBuilder{
-        crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationFluentBuilder::new(self.handle.clone())
+    pub fn get_service_network_service_association(
+        &self,
+    ) -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationFluentBuilder {
+        crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

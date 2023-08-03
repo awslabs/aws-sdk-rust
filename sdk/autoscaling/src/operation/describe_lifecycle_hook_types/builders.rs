@@ -31,7 +31,7 @@ impl DescribeLifecycleHookTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHookTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder,
+    inner: crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder,
 }
 impl DescribeLifecycleHookTypesFluentBuilder {
     /// Creates a new `DescribeLifecycleHookTypes`.
@@ -42,7 +42,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
         }
     }
     /// Access the DescribeLifecycleHookTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
             crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DescribeLifecycleHookTypesFluentBuilder {
             crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError>,
     > {
         self.customize_middleware().await
     }

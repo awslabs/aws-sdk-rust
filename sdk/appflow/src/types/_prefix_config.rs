@@ -75,14 +75,11 @@ impl PrefixConfig {
 
 /// A builder for [`PrefixConfig`](crate::types::PrefixConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefixConfigBuilder {
     pub(crate) prefix_type: ::std::option::Option<crate::types::PrefixType>,
     pub(crate) prefix_format: ::std::option::Option<crate::types::PrefixFormat>,
-    pub(crate) path_prefix_hierarchy:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
+    pub(crate) path_prefix_hierarchy: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
 }
 impl PrefixConfigBuilder {
     /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
@@ -91,10 +88,7 @@ impl PrefixConfigBuilder {
         self
     }
     /// <p>Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
-    pub fn set_prefix_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefixType>,
-    ) -> Self {
+    pub fn set_prefix_type(mut self, input: ::std::option::Option<crate::types::PrefixType>) -> Self {
         self.prefix_type = input;
         self
     }
@@ -108,10 +102,7 @@ impl PrefixConfigBuilder {
         self
     }
     /// <p>Determines the level of granularity for the date and time that's included in the prefix. </p>
-    pub fn set_prefix_format(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefixFormat>,
-    ) -> Self {
+    pub fn set_prefix_format(mut self, input: ::std::option::Option<crate::types::PrefixFormat>) -> Self {
         self.prefix_format = input;
         self
     }
@@ -169,10 +160,7 @@ impl PrefixConfigBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn set_path_prefix_hierarchy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>,
-    ) -> Self {
+    pub fn set_path_prefix_hierarchy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>>) -> Self {
         self.path_prefix_hierarchy = input;
         self
     }
@@ -196,9 +184,7 @@ impl PrefixConfigBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn get_path_prefix_hierarchy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>> {
+    pub fn get_path_prefix_hierarchy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathPrefix>> {
         &self.path_prefix_hierarchy
     }
     /// Consumes the builder and constructs a [`PrefixConfig`](crate::types::PrefixConfig).

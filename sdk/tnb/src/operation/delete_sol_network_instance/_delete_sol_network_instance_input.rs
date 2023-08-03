@@ -15,35 +15,25 @@ impl DeleteSolNetworkInstanceInput {
 }
 impl DeleteSolNetworkInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder {
         crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSolNetworkInstanceInputBuilder {
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance ID.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteSolNetworkInstanceInputBuilder {
         crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
-                ns_instance_id: self.ns_instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
+            ns_instance_id: self.ns_instance_id,
+        })
     }
 }

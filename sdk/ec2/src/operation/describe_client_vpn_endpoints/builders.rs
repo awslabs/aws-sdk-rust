@@ -26,7 +26,7 @@ impl DescribeClientVpnEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClientVpnEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder,
+    inner: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder,
 }
 impl DescribeClientVpnEndpointsFluentBuilder {
     /// Creates a new `DescribeClientVpnEndpoints`.
@@ -37,7 +37,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeClientVpnEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
             crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeClientVpnEndpointsFluentBuilder {
             crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator {
         crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ClientVpnEndpointIds`.
@@ -131,25 +120,17 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_client_vpn_endpoint_ids`](Self::set_client_vpn_endpoint_ids).
     ///
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_ids(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_ids(input);
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn get_client_vpn_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_vpn_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_vpn_endpoint_ids()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
@@ -198,10 +179,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li>
     /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

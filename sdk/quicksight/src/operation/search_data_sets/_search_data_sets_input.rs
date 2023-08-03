@@ -43,9 +43,7 @@ impl SearchDataSetsInput {
 
 /// A builder for [`SearchDataSetsInput`](crate::operation::search_data_sets::SearchDataSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDataSetsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>,
@@ -54,18 +52,12 @@ pub struct SearchDataSetsInputBuilder {
 }
 impl SearchDataSetsInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -85,17 +77,12 @@ impl SearchDataSetsInputBuilder {
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>> {
         &self.filters
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -129,10 +116,7 @@ impl SearchDataSetsInputBuilder {
     /// Consumes the builder and constructs a [`SearchDataSetsInput`](crate::operation::search_data_sets::SearchDataSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_data_sets::SearchDataSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_data_sets::SearchDataSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_data_sets::SearchDataSetsInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

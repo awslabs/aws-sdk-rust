@@ -30,27 +30,19 @@ impl HashKeyRange {
 
 /// A builder for [`HashKeyRange`](crate::types::HashKeyRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HashKeyRangeBuilder {
     pub(crate) starting_hash_key: ::std::option::Option<::std::string::String>,
     pub(crate) ending_hash_key: ::std::option::Option<::std::string::String>,
 }
 impl HashKeyRangeBuilder {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn set_starting_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_hash_key = input;
         self
     }
@@ -59,18 +51,12 @@ impl HashKeyRangeBuilder {
         &self.starting_hash_key
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ending_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ending_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn set_ending_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ending_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ending_hash_key = input;
         self
     }

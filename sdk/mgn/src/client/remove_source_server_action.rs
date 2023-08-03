@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::remove_source_server_action::builders::RemoveSourceServerActionFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::remove_source_server_action::builders::RemoveSourceServerActionFluentBuilder::set_account_id): <p>Source server post migration account ID.</p>
     /// - On success, responds with [`RemoveSourceServerActionOutput`](crate::operation::remove_source_server_action::RemoveSourceServerActionOutput)
     /// - On failure, responds with [`SdkError<RemoveSourceServerActionError>`](crate::operation::remove_source_server_action::RemoveSourceServerActionError)
-    pub fn remove_source_server_action(&self) -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionFluentBuilder{
+    pub fn remove_source_server_action(&self) -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionFluentBuilder {
         crate::operation::remove_source_server_action::builders::RemoveSourceServerActionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`hit_review_report(Option<ReviewReport>)`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput::hit_review_report): <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListReviewPolicyResultsForHITError>`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError)
-    pub fn list_review_policy_results_for_hit(&self) -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHITFluentBuilder{
+    pub fn list_review_policy_results_for_hit(
+        &self,
+    ) -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHITFluentBuilder {
         crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHITFluentBuilder::new(self.handle.clone())
     }
 }

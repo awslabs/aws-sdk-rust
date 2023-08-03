@@ -36,9 +36,7 @@ impl ListMembershipsInput {
 
 /// A builder for [`ListMembershipsInput`](crate::operation::list_memberships::ListMembershipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembershipsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -79,10 +77,7 @@ impl ListMembershipsInputBuilder {
         self
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
         self.status = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListMembershipsInput`](crate::operation::list_memberships::ListMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_memberships::ListMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_memberships::ListMembershipsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::create_secret::CreateSecretOutput::version_id): <p>The unique identifier associated with the version of the new secret.</p>
     ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::operation::create_secret::CreateSecretOutput::replication_status): <p>A list of the replicas of this secret and their status:</p>  <ul>   <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>   <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>   <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateSecretError>`](crate::operation::create_secret::CreateSecretError)
-    pub fn create_secret(
-        &self,
-    ) -> crate::operation::create_secret::builders::CreateSecretFluentBuilder {
-        crate::operation::create_secret::builders::CreateSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_secret(&self) -> crate::operation::create_secret::builders::CreateSecretFluentBuilder {
+        crate::operation::create_secret::builders::CreateSecretFluentBuilder::new(self.handle.clone())
     }
 }

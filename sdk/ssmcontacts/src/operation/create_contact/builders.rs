@@ -10,10 +10,7 @@ impl CreateContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact::CreateContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateContactFluentBuilder {
         }
     }
     /// Access the CreateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_contact::builders::CreateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_contact::builders::CreateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -180,10 +172,7 @@ impl CreateContactFluentBuilder {
         self
     }
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -192,18 +181,12 @@ impl CreateContactFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

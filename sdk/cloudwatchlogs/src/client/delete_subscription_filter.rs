@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`filter_name(impl ::std::convert::Into<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::set_filter_name): <p>The name of the subscription filter.</p>
     /// - On success, responds with [`DeleteSubscriptionFilterOutput`](crate::operation::delete_subscription_filter::DeleteSubscriptionFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriptionFilterError>`](crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError)
-    pub fn delete_subscription_filter(
-        &self,
-    ) -> crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder
-    {
+    pub fn delete_subscription_filter(&self) -> crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder {
         crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::new(self.handle.clone())
     }
 }

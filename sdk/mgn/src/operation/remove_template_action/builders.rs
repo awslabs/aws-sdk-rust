@@ -37,9 +37,7 @@ impl RemoveTemplateActionFluentBuilder {
         }
     }
     /// Access the RemoveTemplateAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_template_action::builders::RemoveTemplateActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_template_action::builders::RemoveTemplateActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RemoveTemplateActionFluentBuilder {
             crate::operation::remove_template_action::RemoveTemplateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_template_action::RemoveTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_template_action::RemoveTemplateActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RemoveTemplateActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RemoveTemplateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_template_action::RemoveTemplateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_template_action::RemoveTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_template_action::RemoveTemplateActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RemoveTemplateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_template_action::RemoveTemplateActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_template_action::RemoveTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_template_action::RemoveTemplateActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +105,22 @@ impl RemoveTemplateActionFluentBuilder {
             crate::operation::remove_template_action::RemoveTemplateAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_template_action::RemoveTemplateActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_template_action::RemoveTemplateActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_configuration_template_id()
     }
     /// <p>Template post migration custom action ID to remove.</p>

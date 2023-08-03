@@ -26,7 +26,7 @@ impl GetLicenseConversionTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLicenseConversionTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder,
+    inner: crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder,
 }
 impl GetLicenseConversionTaskFluentBuilder {
     /// Creates a new `GetLicenseConversionTask`.
@@ -37,7 +37,7 @@ impl GetLicenseConversionTaskFluentBuilder {
         }
     }
     /// Access the GetLicenseConversionTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetLicenseConversionTaskFluentBuilder {
             crate::operation::get_license_conversion_task::GetLicenseConversionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetLicenseConversionTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetLicenseConversionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_conversion_task::GetLicenseConversionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetLicenseConversionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_conversion_task::GetLicenseConversionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetLicenseConversionTaskFluentBuilder {
             crate::operation::get_license_conversion_task::GetLicenseConversionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_conversion_task::GetLicenseConversionTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn license_conversion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_conversion_task_id(input.into());
         self
     }
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn set_license_conversion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_conversion_task_id(input);
         self
     }

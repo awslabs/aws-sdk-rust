@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`failure_count(i32)`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput::failure_count): <p>The number of things that failed to be provisioned.</p>
     ///   - [`percentage_progress(i32)`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput::percentage_progress): <p>The progress of the bulk provisioning task expressed as a percentage.</p>
     /// - On failure, responds with [`SdkError<DescribeThingRegistrationTaskError>`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskError)
-    pub fn describe_thing_registration_task(&self) -> crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder{
+    pub fn describe_thing_registration_task(
+        &self,
+    ) -> crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder {
         crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder::new(self.handle.clone())
     }
 }

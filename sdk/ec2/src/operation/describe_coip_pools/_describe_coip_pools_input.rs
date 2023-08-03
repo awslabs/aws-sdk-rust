@@ -51,17 +51,14 @@ impl DescribeCoipPoolsInput {
 }
 impl DescribeCoipPoolsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsInputBuilder {
+    pub fn builder() -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsInputBuilder {
         crate::operation::describe_coip_pools::builders::DescribeCoipPoolsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCoipPoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -82,10 +79,7 @@ impl DescribeCoipPoolsInputBuilder {
         self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
@@ -113,10 +107,7 @@ impl DescribeCoipPoolsInputBuilder {
     /// <li> <p> <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
     /// <li> <p> <code>coip-pool.pool-id</code> - The ID of the address pool.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -173,18 +164,13 @@ impl DescribeCoipPoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_coip_pools::DescribeCoipPoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_coip_pools::DescribeCoipPoolsInput {
-                pool_ids: self.pool_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_coip_pools::DescribeCoipPoolsInput {
+            pool_ids: self.pool_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

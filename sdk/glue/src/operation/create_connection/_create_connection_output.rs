@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateConnectionOutput {
 }
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder {
         crate::operation::create_connection::builders::CreateConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionOutputBuilder {
     _request_id: Option<String>,
 }

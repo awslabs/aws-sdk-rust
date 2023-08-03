@@ -37,9 +37,7 @@ impl DescribeNatGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeNatGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeNatGatewaysFluentBuilder {
             crate::operation::describe_nat_gateways::DescribeNatGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_nat_gateways::DescribeNatGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeNatGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeNatGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_nat_gateways::DescribeNatGatewaysError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeNatGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_nat_gateways::DescribeNatGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeNatGatewaysFluentBuilder {
             crate::operation::describe_nat_gateways::DescribeNatGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_nat_gateways::DescribeNatGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_nat_gateways::paginator::DescribeNatGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_nat_gateways::paginator::DescribeNatGatewaysPaginator {
-        crate::operation::describe_nat_gateways::paginator::DescribeNatGatewaysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_nat_gateways::paginator::DescribeNatGatewaysPaginator {
+        crate::operation::describe_nat_gateways::paginator::DescribeNatGatewaysPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -185,10 +167,7 @@ impl DescribeNatGatewaysFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -229,25 +208,17 @@ impl DescribeNatGatewaysFluentBuilder {
     /// To override the contents of this collection use [`set_nat_gateway_ids`](Self::set_nat_gateway_ids).
     ///
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn nat_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_ids(input.into());
         self
     }
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn set_nat_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nat_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nat_gateway_ids(input);
         self
     }
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn get_nat_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nat_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nat_gateway_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

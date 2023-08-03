@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_servers(Option<Vec<ResourceServerType>>)`](crate::operation::list_resource_servers::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_servers::ListResourceServersOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListResourceServersError>`](crate::operation::list_resource_servers::ListResourceServersError)
-    pub fn list_resource_servers(
-        &self,
-    ) -> crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder {
-        crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_servers(&self) -> crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder {
+        crate::operation::list_resource_servers::builders::ListResourceServersFluentBuilder::new(self.handle.clone())
     }
 }

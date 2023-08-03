@@ -26,7 +26,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder,
+    inner: crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder,
 }
 impl SearchAssociatedTranscriptsFluentBuilder {
     /// Creates a new `SearchAssociatedTranscripts`.
@@ -37,7 +37,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         }
     }
     /// Access the SearchAssociatedTranscripts as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
             crate::operation::search_associated_transcripts::SearchAssociatedTranscripts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
             crate::operation::search_associated_transcripts::SearchAssociatedTranscripts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_recommendation_id(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }
@@ -188,10 +171,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self
     }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
-    pub fn set_search_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchOrder>,
-    ) -> Self {
+    pub fn set_search_order(mut self, input: ::std::option::Option<crate::types::SearchOrder>) -> Self {
         self.inner = self.inner.set_search_order(input);
         self
     }
@@ -209,17 +189,12 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>

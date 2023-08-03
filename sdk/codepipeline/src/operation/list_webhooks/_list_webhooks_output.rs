@@ -35,9 +35,7 @@ impl ListWebhooksOutput {
 
 /// A builder for [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebhooksOutputBuilder {
     pub(crate) webhooks: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListWebhooksOutputBuilder {
         self
     }
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub fn set_webhooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>,
-    ) -> Self {
+    pub fn set_webhooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>) -> Self {
         self.webhooks = input;
         self
     }
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub fn get_webhooks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>> {
+    pub fn get_webhooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>> {
         &self.webhooks
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>

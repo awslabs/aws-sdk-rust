@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetAnalyzedResourceOutput {
 }
 impl GetAnalyzedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetAnalyzedResourceOutput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceOutputBuilder {
-        crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceOutputBuilder {
+        crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnalyzedResourceOutput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceOutputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::AnalyzedResource>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetAnalyzedResourceOutputBuilder {
         self
     }
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyzedResource>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::AnalyzedResource>) -> Self {
         self.resource = input;
         self
     }

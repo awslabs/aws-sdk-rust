@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::update_export::UpdateExportOutput::creation_date_time): <p>The date and time that the export was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_export::UpdateExportOutput::last_updated_date_time): <p>The date and time that the export was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateExportError>`](crate::operation::update_export::UpdateExportError)
-    pub fn update_export(
-        &self,
-    ) -> crate::operation::update_export::builders::UpdateExportFluentBuilder {
-        crate::operation::update_export::builders::UpdateExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_export(&self) -> crate::operation::update_export::builders::UpdateExportFluentBuilder {
+        crate::operation::update_export::builders::UpdateExportFluentBuilder::new(self.handle.clone())
     }
 }

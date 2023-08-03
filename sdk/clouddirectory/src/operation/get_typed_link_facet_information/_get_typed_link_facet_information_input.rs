@@ -22,16 +22,14 @@ impl GetTypedLinkFacetInformationInput {
 }
 impl GetTypedLinkFacetInformationInput {
     /// Creates a new builder-style object to manufacture [`GetTypedLinkFacetInformationInput`](crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput).
-    pub fn builder() -> crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder{
+    pub fn builder() -> crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder {
         crate::operation::get_typed_link_facet_information::builders::GetTypedLinkFacetInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTypedLinkFacetInformationInput`](crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTypedLinkFacetInformationInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetTypedLinkFacetInformationInputBuilder {
         crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput {
-                schema_arn: self.schema_arn,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput {
+            schema_arn: self.schema_arn,
+            name: self.name,
+        })
     }
 }

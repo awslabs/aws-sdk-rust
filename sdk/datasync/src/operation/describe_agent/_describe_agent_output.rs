@@ -71,9 +71,7 @@ impl DescribeAgentOutput {
 
 /// A builder for [`DescribeAgentOutput`](crate::operation::describe_agent::DescribeAgentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentOutputBuilder {
     pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -133,10 +131,7 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The time that the agent last connected to DataSync.</p>
-    pub fn set_last_connection_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_connection_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_connection_time = input;
         self
     }
@@ -150,10 +145,7 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The time that the agent was activated (that is, created in your account).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -167,10 +159,7 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
@@ -184,17 +173,12 @@ impl DescribeAgentOutputBuilder {
         self
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    pub fn set_private_link_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateLinkConfig>,
-    ) -> Self {
+    pub fn set_private_link_config(mut self, input: ::std::option::Option<crate::types::PrivateLinkConfig>) -> Self {
         self.private_link_config = input;
         self
     }
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    pub fn get_private_link_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateLinkConfig> {
+    pub fn get_private_link_config(&self) -> &::std::option::Option<crate::types::PrivateLinkConfig> {
         &self.private_link_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

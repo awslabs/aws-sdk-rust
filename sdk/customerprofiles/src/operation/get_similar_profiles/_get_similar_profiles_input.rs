@@ -50,17 +50,14 @@ impl GetSimilarProfilesInput {
 }
 impl GetSimilarProfilesInput {
     /// Creates a new builder-style object to manufacture [`GetSimilarProfilesInput`](crate::operation::get_similar_profiles::GetSimilarProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesInputBuilder {
+    pub fn builder() -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesInputBuilder {
         crate::operation::get_similar_profiles::builders::GetSimilarProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSimilarProfilesInput`](crate::operation::get_similar_profiles::GetSimilarProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSimilarProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -157,19 +154,14 @@ impl GetSimilarProfilesInputBuilder {
     /// Consumes the builder and constructs a [`GetSimilarProfilesInput`](crate::operation::get_similar_profiles::GetSimilarProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_similar_profiles::GetSimilarProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_similar_profiles::GetSimilarProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                domain_name: self.domain_name,
-                match_type: self.match_type,
-                search_key: self.search_key,
-                search_value: self.search_value,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_similar_profiles::GetSimilarProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_similar_profiles::GetSimilarProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            domain_name: self.domain_name,
+            match_type: self.match_type,
+            search_key: self.search_key,
+            search_value: self.search_value,
+        })
     }
 }

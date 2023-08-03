@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateCustomerGatewayOutput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput) with field(s):
     ///   - [`customer_gateway_association(Option<CustomerGatewayAssociation>)`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput::customer_gateway_association): <p>Information about the customer gateway association.</p>
     /// - On failure, responds with [`SdkError<DisassociateCustomerGatewayError>`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayError)
-    pub fn disassociate_customer_gateway(&self) -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayFluentBuilder{
+    pub fn disassociate_customer_gateway(
+        &self,
+    ) -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayFluentBuilder {
         crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayFluentBuilder::new(self.handle.clone())
     }
 }

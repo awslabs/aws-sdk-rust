@@ -10,10 +10,7 @@ impl PutComponentPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_component_policy::PutComponentPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_component_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutComponentPolicyFluentBuilder {
         }
     }
     /// Access the PutComponentPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_component_policy::builders::PutComponentPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_component_policy::builders::PutComponentPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutComponentPolicyFluentBuilder {
             crate::operation::put_component_policy::PutComponentPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutComponentPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutComponentPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_component_policy::PutComponentPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutComponentPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_component_policy::PutComponentPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutComponentPolicyFluentBuilder {
             crate::operation::put_component_policy::PutComponentPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-    pub fn component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-    pub fn set_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_arn(input);
         self
     }

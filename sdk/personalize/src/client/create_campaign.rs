@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCampaignOutput`](crate::operation::create_campaign::CreateCampaignOutput) with field(s):
     ///   - [`campaign_arn(Option<String>)`](crate::operation::create_campaign::CreateCampaignOutput::campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign.</p>
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::operation::create_campaign::CreateCampaignError)
-    pub fn create_campaign(
-        &self,
-    ) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
-        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_campaign(&self) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
+        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(self.handle.clone())
     }
 }

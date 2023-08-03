@@ -20,9 +20,7 @@ impl Integration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`PagerDutyConfiguration`](crate::types::Integration::PagerDutyConfiguration), extracting the inner [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_pager_duty_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PagerDutyConfiguration, &Self> {
+    pub fn as_pager_duty_configuration(&self) -> ::std::result::Result<&crate::types::PagerDutyConfiguration, &Self> {
         if let Integration::PagerDutyConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

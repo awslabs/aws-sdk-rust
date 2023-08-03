@@ -114,15 +114,11 @@ impl UpdateClusterInput {
         self.engine_version.as_deref()
     }
     /// <p>The number of replicas that will reside in each shard</p>
-    pub fn replica_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicaConfigurationRequest> {
+    pub fn replica_configuration(&self) -> ::std::option::Option<&crate::types::ReplicaConfigurationRequest> {
         self.replica_configuration.as_ref()
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn shard_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ShardConfigurationRequest> {
+    pub fn shard_configuration(&self) -> ::std::option::Option<&crate::types::ShardConfigurationRequest> {
         self.shard_configuration.as_ref()
     }
     /// <p>The Access Control List that is associated with the cluster</p>
@@ -139,9 +135,7 @@ impl UpdateClusterInput {
 
 /// A builder for [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -154,8 +148,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
-    pub(crate) replica_configuration:
-        ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
+    pub(crate) replica_configuration: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
     pub(crate) shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
 }
@@ -193,27 +186,19 @@ impl UpdateClusterInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The SecurityGroupIds to update</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The SecurityGroupIds to update</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The SecurityGroupIds to update</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -228,10 +213,7 @@ impl UpdateClusterInputBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -247,10 +229,7 @@ impl UpdateClusterInputBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn set_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_window = input;
         self
     }
@@ -270,18 +249,12 @@ impl UpdateClusterInputBuilder {
         &self.maintenance_window
     }
     /// <p>The SNS topic ARN to update</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SNS topic ARN to update</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -290,18 +263,12 @@ impl UpdateClusterInputBuilder {
         &self.sns_topic_arn
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-    pub fn sns_topic_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-    pub fn set_sns_topic_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_status = input;
         self
     }
@@ -310,18 +277,12 @@ impl UpdateClusterInputBuilder {
         &self.sns_topic_status
     }
     /// <p>The name of the parameter group to update</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group to update</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -330,18 +291,12 @@ impl UpdateClusterInputBuilder {
         &self.parameter_group_name
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-    pub fn snapshot_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-    pub fn set_snapshot_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
@@ -378,18 +333,12 @@ impl UpdateClusterInputBuilder {
         &self.node_type
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -398,25 +347,17 @@ impl UpdateClusterInputBuilder {
         &self.engine_version
     }
     /// <p>The number of replicas that will reside in each shard</p>
-    pub fn replica_configuration(
-        mut self,
-        input: crate::types::ReplicaConfigurationRequest,
-    ) -> Self {
+    pub fn replica_configuration(mut self, input: crate::types::ReplicaConfigurationRequest) -> Self {
         self.replica_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of replicas that will reside in each shard</p>
-    pub fn set_replica_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
-    ) -> Self {
+    pub fn set_replica_configuration(mut self, input: ::std::option::Option<crate::types::ReplicaConfigurationRequest>) -> Self {
         self.replica_configuration = input;
         self
     }
     /// <p>The number of replicas that will reside in each shard</p>
-    pub fn get_replica_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicaConfigurationRequest> {
+    pub fn get_replica_configuration(&self) -> &::std::option::Option<crate::types::ReplicaConfigurationRequest> {
         &self.replica_configuration
     }
     /// <p>The number of shards in the cluster</p>
@@ -425,17 +366,12 @@ impl UpdateClusterInputBuilder {
         self
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn set_shard_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardConfigurationRequest>,
-    ) -> Self {
+    pub fn set_shard_configuration(mut self, input: ::std::option::Option<crate::types::ShardConfigurationRequest>) -> Self {
         self.shard_configuration = input;
         self
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn get_shard_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShardConfigurationRequest> {
+    pub fn get_shard_configuration(&self) -> &::std::option::Option<crate::types::ShardConfigurationRequest> {
         &self.shard_configuration
     }
     /// <p>The Access Control List that is associated with the cluster</p>
@@ -455,10 +391,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster::UpdateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_name: self.cluster_name,
             description: self.description,

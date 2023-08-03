@@ -10,10 +10,7 @@ impl GetRegionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_regions::GetRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regions::GetRegionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regions::GetRegionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_regions();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetRegionsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_regions::GetRegions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_regions::GetRegions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_regions::GetRegionsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetRegionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_regions::GetRegions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_regions::GetRegions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_regions::GetRegionsError>,
     > {
         self.customize_middleware().await
@@ -128,26 +116,16 @@ impl GetRegionsFluentBuilder {
     }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
     pub fn include_relational_database_availability_zones(mut self, input: bool) -> Self {
-        self.inner = self
-            .inner
-            .include_relational_database_availability_zones(input);
+        self.inner = self.inner.include_relational_database_availability_zones(input);
         self
     }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
-    pub fn set_include_relational_database_availability_zones(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_include_relational_database_availability_zones(input);
+    pub fn set_include_relational_database_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_relational_database_availability_zones(input);
         self
     }
     /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
-    pub fn get_include_relational_database_availability_zones(
-        &self,
-    ) -> &::std::option::Option<bool> {
-        self.inner
-            .get_include_relational_database_availability_zones()
+    pub fn get_include_relational_database_availability_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_relational_database_availability_zones()
     }
 }

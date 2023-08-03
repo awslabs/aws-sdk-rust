@@ -26,16 +26,14 @@ impl ResetServiceSpecificCredentialInput {
 }
 impl ResetServiceSpecificCredentialInput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSpecificCredentialInput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput).
-    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder{
+    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder {
         crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetServiceSpecificCredentialInput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetServiceSpecificCredentialInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_specific_credential_id: ::std::option::Option<::std::string::String>,
@@ -60,27 +58,19 @@ impl ResetServiceSpecificCredentialInputBuilder {
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn service_specific_credential_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_service_specific_credential_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_specific_credential_id = input;
         self
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn get_service_specific_credential_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_specific_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_specific_credential_id
     }
     /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialInput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput).
@@ -90,13 +80,9 @@ impl ResetServiceSpecificCredentialInputBuilder {
         crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput {
-                user_name: self.user_name
-                ,
-                service_specific_credential_id: self.service_specific_credential_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput {
+            user_name: self.user_name,
+            service_specific_credential_id: self.service_specific_credential_id,
+        })
     }
 }

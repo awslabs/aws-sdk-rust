@@ -24,17 +24,14 @@ impl ::aws_http::request_id::RequestId for VerifyDomainIdentityOutput {
 }
 impl VerifyDomainIdentityOutput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityOutput`](crate::operation::verify_domain_identity::VerifyDomainIdentityOutput).
-    pub fn builder(
-    ) -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder {
+    pub fn builder() -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder {
         crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyDomainIdentityOutput`](crate::operation::verify_domain_identity::VerifyDomainIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyDomainIdentityOutputBuilder {
     pub(crate) verification_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -42,19 +39,13 @@ pub struct VerifyDomainIdentityOutputBuilder {
 impl VerifyDomainIdentityOutputBuilder {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
-    pub fn verification_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
-    pub fn set_verification_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_token = input;
         self
     }

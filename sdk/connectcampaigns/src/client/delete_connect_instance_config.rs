@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`connect_instance_id(impl ::std::convert::Into<String>)`](crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
     /// - On success, responds with [`DeleteConnectInstanceConfigOutput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectInstanceConfigError>`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError)
-    pub fn delete_connect_instance_config(&self) -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigFluentBuilder{
+    pub fn delete_connect_instance_config(
+        &self,
+    ) -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigFluentBuilder {
         crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigFluentBuilder::new(self.handle.clone())
     }
 }

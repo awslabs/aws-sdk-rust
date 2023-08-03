@@ -5,15 +5,12 @@
 pub struct GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     #[doc(hidden)]
-    pub push_notification_template_response:
-        ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
+    pub push_notification_template_response: ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     _request_id: Option<String>,
 }
 impl GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PushNotificationTemplateResponse> {
+    pub fn push_notification_template_response(&self) -> ::std::option::Option<&crate::types::PushNotificationTemplateResponse> {
         self.push_notification_template_response.as_ref()
     }
 }
@@ -24,43 +21,31 @@ impl ::aws_http::request_id::RequestId for GetPushTemplateOutput {
 }
 impl GetPushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetPushTemplateOutput`](crate::operation::get_push_template::GetPushTemplateOutput).
-    pub fn builder() -> crate::operation::get_push_template::builders::GetPushTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_push_template::builders::GetPushTemplateOutputBuilder {
         crate::operation::get_push_template::builders::GetPushTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPushTemplateOutput`](crate::operation::get_push_template::GetPushTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPushTemplateOutputBuilder {
-    pub(crate) push_notification_template_response:
-        ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
+    pub(crate) push_notification_template_response: ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     _request_id: Option<String>,
 }
 impl GetPushTemplateOutputBuilder {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_response(
-        mut self,
-        input: crate::types::PushNotificationTemplateResponse,
-    ) -> Self {
+    pub fn push_notification_template_response(mut self, input: crate::types::PushNotificationTemplateResponse) -> Self {
         self.push_notification_template_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn set_push_notification_template_response(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
-    ) -> Self {
+    pub fn set_push_notification_template_response(mut self, input: ::std::option::Option<crate::types::PushNotificationTemplateResponse>) -> Self {
         self.push_notification_template_response = input;
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn get_push_notification_template_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::PushNotificationTemplateResponse> {
+    pub fn get_push_notification_template_response(&self) -> &::std::option::Option<crate::types::PushNotificationTemplateResponse> {
         &self.push_notification_template_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

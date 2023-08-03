@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput::severity_levels): <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     /// - On failure, responds with [`SdkError<GetCustomDataIdentifierError>`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierError)
-    pub fn get_custom_data_identifier(
-        &self,
-    ) -> crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder
-    {
+    pub fn get_custom_data_identifier(&self) -> crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder {
         crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

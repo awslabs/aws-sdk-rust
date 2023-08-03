@@ -43,9 +43,7 @@ impl SearchRoomsInput {
 
 /// A builder for [`SearchRoomsInput`](crate::operation::search_rooms::SearchRoomsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRoomsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,10 +91,7 @@ impl SearchRoomsInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -116,10 +111,7 @@ impl SearchRoomsInputBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -128,12 +120,7 @@ impl SearchRoomsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`SearchRoomsInput`](crate::operation::search_rooms::SearchRoomsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_rooms::SearchRoomsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_rooms::SearchRoomsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_rooms::SearchRoomsInput {
             next_token: self.next_token,
             max_results: self.max_results,

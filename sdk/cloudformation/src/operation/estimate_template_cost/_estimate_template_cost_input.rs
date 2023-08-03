@@ -34,17 +34,14 @@ impl EstimateTemplateCostInput {
 }
 impl EstimateTemplateCostInput {
     /// Creates a new builder-style object to manufacture [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
-    pub fn builder(
-    ) -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder {
+    pub fn builder() -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder {
         crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder::default()
     }
 }
 
 /// A builder for [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EstimateTemplateCostInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
@@ -53,19 +50,13 @@ pub struct EstimateTemplateCostInputBuilder {
 impl EstimateTemplateCostInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -103,32 +94,23 @@ impl EstimateTemplateCostInputBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::estimate_template_cost::EstimateTemplateCostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::estimate_template_cost::EstimateTemplateCostInput {
-                template_body: self.template_body,
-                template_url: self.template_url,
-                parameters: self.parameters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::estimate_template_cost::EstimateTemplateCostInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::estimate_template_cost::EstimateTemplateCostInput {
+            template_body: self.template_body,
+            template_url: self.template_url,
+            parameters: self.parameters,
+        })
     }
 }

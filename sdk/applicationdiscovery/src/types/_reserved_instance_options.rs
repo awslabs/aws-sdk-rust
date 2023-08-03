@@ -37,9 +37,7 @@ impl ReservedInstanceOptions {
 
 /// A builder for [`ReservedInstanceOptions`](crate::types::ReservedInstanceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstanceOptionsBuilder {
     pub(crate) purchasing_option: ::std::option::Option<crate::types::PurchasingOption>,
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClass>,
@@ -52,10 +50,7 @@ impl ReservedInstanceOptionsBuilder {
         self
     }
     /// <p> The payment plan to use for your Reserved Instance. </p>
-    pub fn set_purchasing_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PurchasingOption>,
-    ) -> Self {
+    pub fn set_purchasing_option(mut self, input: ::std::option::Option<crate::types::PurchasingOption>) -> Self {
         self.purchasing_option = input;
         self
     }
@@ -69,10 +64,7 @@ impl ReservedInstanceOptionsBuilder {
         self
     }
     /// <p> The flexibility to change the instance types needed for your Reserved Instance. </p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClass>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClass>) -> Self {
         self.offering_class = input;
         self
     }
@@ -86,10 +78,7 @@ impl ReservedInstanceOptionsBuilder {
         self
     }
     /// <p> The preferred duration of the Reserved Instance term. </p>
-    pub fn set_term_length(
-        mut self,
-        input: ::std::option::Option<crate::types::TermLength>,
-    ) -> Self {
+    pub fn set_term_length(mut self, input: ::std::option::Option<crate::types::TermLength>) -> Self {
         self.term_length = input;
         self
     }

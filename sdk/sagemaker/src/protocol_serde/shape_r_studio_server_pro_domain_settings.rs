@@ -10,9 +10,7 @@ pub fn ser_r_studio_server_pro_domain_settings(
         object.key("RStudioConnectUrl").string(var_2.as_str());
     }
     if let Some(var_3) = &input.r_studio_package_manager_url {
-        object
-            .key("RStudioPackageManagerUrl")
-            .string(var_3.as_str());
+        object.key("RStudioPackageManagerUrl").string(var_3.as_str());
     }
     if let Some(var_4) = &input.default_resource_spec {
         #[allow(unused_mut)]
@@ -25,81 +23,57 @@ pub fn ser_r_studio_server_pro_domain_settings(
 
 pub(crate) fn de_r_studio_server_pro_domain_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RStudioServerProDomainSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RStudioServerProDomainSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::RStudioServerProDomainSettingsBuilder::default();
+            let mut builder = crate::types::builders::RStudioServerProDomainSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DomainExecutionRoleArn" => {
-                                builder = builder.set_domain_execution_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DomainExecutionRoleArn" => {
+                            builder = builder.set_domain_execution_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RStudioConnectUrl" => {
-                                builder = builder.set_r_studio_connect_url(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "RStudioPackageManagerUrl" => {
-                                builder = builder.set_r_studio_package_manager_url(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "DefaultResourceSpec" => {
-                                builder = builder.set_default_resource_spec(
-                                    crate::protocol_serde::shape_resource_spec::de_resource_spec(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RStudioConnectUrl" => {
+                            builder = builder.set_r_studio_connect_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RStudioPackageManagerUrl" => {
+                            builder = builder.set_r_studio_package_manager_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DefaultResourceSpec" => {
+                            builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

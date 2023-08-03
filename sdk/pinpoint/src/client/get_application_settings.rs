@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApplicationSettingsOutput`](crate::operation::get_application_settings::GetApplicationSettingsOutput) with field(s):
     ///   - [`application_settings_resource(Option<ApplicationSettingsResource>)`](crate::operation::get_application_settings::GetApplicationSettingsOutput::application_settings_resource): <p>Provides information about an application, including the default settings for an application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationSettingsError>`](crate::operation::get_application_settings::GetApplicationSettingsError)
-    pub fn get_application_settings(
-        &self,
-    ) -> crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder
-    {
+    pub fn get_application_settings(&self) -> crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder {
         crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

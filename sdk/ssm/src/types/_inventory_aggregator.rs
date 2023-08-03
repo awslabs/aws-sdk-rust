@@ -37,13 +37,10 @@ impl InventoryAggregator {
 
 /// A builder for [`InventoryAggregator`](crate::types::InventoryAggregator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryAggregatorBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
-    pub(crate) aggregators:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
+    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>>,
 }
 impl InventoryAggregatorBuilder {
@@ -73,17 +70,12 @@ impl InventoryAggregatorBuilder {
         self
     }
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
         self.aggregators = input;
         self
     }
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    pub fn get_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
         &self.aggregators
     }
     /// Appends an item to `groups`.
@@ -98,17 +90,12 @@ impl InventoryAggregatorBuilder {
         self
     }
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryGroup>> {
         &self.groups
     }
     /// Consumes the builder and constructs a [`InventoryAggregator`](crate::types::InventoryAggregator).

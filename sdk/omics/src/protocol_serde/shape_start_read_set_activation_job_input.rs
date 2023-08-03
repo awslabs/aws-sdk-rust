@@ -12,7 +12,10 @@ pub fn ser_start_read_set_activation_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_start_read_set_activation_job_source_item::ser_start_read_set_activation_job_source_item(&mut object_5, item_4)?;
+                crate::protocol_serde::shape_start_read_set_activation_job_source_item::ser_start_read_set_activation_job_source_item(
+                    &mut object_5,
+                    item_4,
+                )?;
                 object_5.finish();
             }
         }

@@ -30,9 +30,7 @@ impl PropertyNotification {
 
 /// A builder for [`PropertyNotification`](crate::types::PropertyNotification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyNotificationBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::PropertyNotificationState>,
@@ -58,10 +56,7 @@ impl PropertyNotificationBuilder {
         self
     }
     /// <p>The current notification state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyNotificationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PropertyNotificationState>) -> Self {
         self.state = input;
         self
     }

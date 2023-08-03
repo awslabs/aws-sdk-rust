@@ -10,10 +10,7 @@ impl GetShardIteratorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_shard_iterator();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl GetShardIteratorFluentBuilder {
         }
     }
     /// Access the GetShardIterator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl GetShardIteratorFluentBuilder {
             crate::operation::get_shard_iterator::GetShardIterator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl GetShardIteratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl GetShardIteratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl GetShardIteratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl GetShardIteratorFluentBuilder {
             crate::operation::get_shard_iterator::GetShardIterator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         self.customize_middleware().await
     }
@@ -180,10 +164,7 @@ impl GetShardIteratorFluentBuilder {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn set_shard_iterator_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardIteratorType>,
-    ) -> Self {
+    pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.inner = self.inner.set_shard_iterator_type(input);
         self
     }
@@ -196,24 +177,16 @@ impl GetShardIteratorFluentBuilder {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn get_shard_iterator_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShardIteratorType> {
+    pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         self.inner.get_shard_iterator_type()
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    pub fn starting_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.starting_sequence_number(input.into());
         self
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    pub fn set_starting_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_starting_sequence_number(input);
         self
     }
@@ -227,10 +200,7 @@ impl GetShardIteratorFluentBuilder {
         self
     }
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
     }

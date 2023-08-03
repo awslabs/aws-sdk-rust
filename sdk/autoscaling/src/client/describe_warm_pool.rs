@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput::instances): <p>The instances that are currently in the warm pool.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeWarmPoolError>`](crate::operation::describe_warm_pool::DescribeWarmPoolError)
-    pub fn describe_warm_pool(
-        &self,
-    ) -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolFluentBuilder {
-        crate::operation::describe_warm_pool::builders::DescribeWarmPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_warm_pool(&self) -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolFluentBuilder {
+        crate::operation::describe_warm_pool::builders::DescribeWarmPoolFluentBuilder::new(self.handle.clone())
     }
 }

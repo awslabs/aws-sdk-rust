@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNotebookOutput`](crate::operation::create_notebook::CreateNotebookOutput) with field(s):
     ///   - [`notebook_id(Option<String>)`](crate::operation::create_notebook::CreateNotebookOutput::notebook_id): <p>A unique identifier for the notebook.</p>
     /// - On failure, responds with [`SdkError<CreateNotebookError>`](crate::operation::create_notebook::CreateNotebookError)
-    pub fn create_notebook(
-        &self,
-    ) -> crate::operation::create_notebook::builders::CreateNotebookFluentBuilder {
-        crate::operation::create_notebook::builders::CreateNotebookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_notebook(&self) -> crate::operation::create_notebook::builders::CreateNotebookFluentBuilder {
+        crate::operation::create_notebook::builders::CreateNotebookFluentBuilder::new(self.handle.clone())
     }
 }

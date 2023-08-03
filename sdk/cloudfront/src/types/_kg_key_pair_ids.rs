@@ -30,9 +30,7 @@ impl KgKeyPairIds {
 
 /// A builder for [`KgKeyPairIds`](crate::types::KgKeyPairIds).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KgKeyPairIdsBuilder {
     pub(crate) key_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
@@ -58,10 +56,7 @@ impl KgKeyPairIdsBuilder {
         self
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
-    pub fn set_key_pair_ids(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyPairIds>,
-    ) -> Self {
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<crate::types::KeyPairIds>) -> Self {
         self.key_pair_ids = input;
         self
     }

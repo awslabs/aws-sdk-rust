@@ -54,9 +54,7 @@ impl ::std::fmt::Debug for ImportSourceCredentialsInput {
 }
 impl ImportSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsInput`](crate::operation::import_source_credentials::ImportSourceCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder {
         crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder::default()
     }
 }
@@ -106,10 +104,7 @@ impl ImportSourceCredentialsInputBuilder {
         self
     }
     /// <p> The source provider used for this project. </p>
-    pub fn set_server_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerType>,
-    ) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.server_type = input;
         self
     }
@@ -152,15 +147,13 @@ impl ImportSourceCredentialsInputBuilder {
         crate::operation::import_source_credentials::ImportSourceCredentialsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::import_source_credentials::ImportSourceCredentialsInput {
-                username: self.username,
-                token: self.token,
-                server_type: self.server_type,
-                auth_type: self.auth_type,
-                should_overwrite: self.should_overwrite,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::import_source_credentials::ImportSourceCredentialsInput {
+            username: self.username,
+            token: self.token,
+            server_type: self.server_type,
+            auth_type: self.auth_type,
+            should_overwrite: self.should_overwrite,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportSourceCredentialsInputBuilder {

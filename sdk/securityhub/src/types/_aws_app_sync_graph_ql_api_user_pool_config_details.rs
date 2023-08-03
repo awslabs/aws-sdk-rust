@@ -44,9 +44,7 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetails {
 
 /// A builder for [`AwsAppSyncGraphQlApiUserPoolConfigDetails`](crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
     pub(crate) app_id_client_regex: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
 }
 impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
     /// <p> A regular expression for validating the incoming Amazon Cognito user pools app client ID. If this value isn't set, no filtering is applied. </p>
-    pub fn app_id_client_regex(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_id_client_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id_client_regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A regular expression for validating the incoming Amazon Cognito user pools app client ID. If this value isn't set, no filtering is applied. </p>
-    pub fn set_app_id_client_regex(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_id_client_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id_client_regex = input;
         self
     }
@@ -89,18 +81,12 @@ impl AwsAppSyncGraphQlApiUserPoolConfigDetailsBuilder {
         &self.aws_region
     }
     /// <p> The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pools authentication doesn't match the Amazon Cognito user pools configuration. </p>
-    pub fn default_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pools authentication doesn't match the Amazon Cognito user pools configuration. </p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_action = input;
         self
     }

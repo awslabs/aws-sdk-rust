@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AddSourceIdentifierToSubscriptionOutp
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput).
-    pub fn builder() -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionOutputBuilder {
         crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionOutputBuilder {
     pub(crate) event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl AddSourceIdentifierToSubscriptionOutputBuilder {
         self
     }
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn set_event_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSubscription>,
-    ) -> Self {
+    pub fn set_event_subscription(mut self, input: ::std::option::Option<crate::types::EventSubscription>) -> Self {
         self.event_subscription = input;
         self
     }
     /// <p>Detailed information about an event to which you have subscribed.</p>
-    pub fn get_event_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventSubscription> {
+    pub fn get_event_subscription(&self) -> &::std::option::Option<crate::types::EventSubscription> {
         &self.event_subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl AddSourceIdentifierToSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput).
-    pub fn build(self) -> crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput{
+    pub fn build(self) -> crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput {
         crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput {
-            event_subscription: self.event_subscription
-            ,
+            event_subscription: self.event_subscription,
             _request_id: self._request_id,
         }
     }

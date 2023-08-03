@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`cidr_block_association(Option<VpcCidrBlockAssociation>)`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockOutput::cidr_block_association): <p>Information about the IPv4 CIDR block association.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockOutput::vpc_id): <p>The ID of the VPC.</p>
     /// - On failure, responds with [`SdkError<AssociateVpcCidrBlockError>`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockError)
-    pub fn associate_vpc_cidr_block(
-        &self,
-    ) -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockFluentBuilder
-    {
+    pub fn associate_vpc_cidr_block(&self) -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockFluentBuilder {
         crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockFluentBuilder::new(self.handle.clone())
     }
 }

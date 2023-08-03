@@ -5,15 +5,12 @@
 pub struct GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     #[doc(hidden)]
-    pub tls_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
+    pub tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,
 }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn tls_certificates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificate]> {
+    pub fn tls_certificates(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificate]> {
         self.tls_certificates.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetLoadBalancerTlsCertificatesOutput 
 }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
-    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder{
+    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder {
         crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesOutputBuilder {
-    pub(crate) tls_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
+    pub(crate) tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,
 }
 impl GetLoadBalancerTlsCertificatesOutputBuilder {
@@ -52,17 +46,12 @@ impl GetLoadBalancerTlsCertificatesOutputBuilder {
         self
     }
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn set_tls_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
-    ) -> Self {
+    pub fn set_tls_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>) -> Self {
         self.tls_certificates = input;
         self
     }
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn get_tls_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>> {
+    pub fn get_tls_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>> {
         &self.tls_certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,7 @@ impl GetLoadBalancerTlsCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput
-    {
+    pub fn build(self) -> crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput {
         crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput {
             tls_certificates: self.tls_certificates,
             _request_id: self._request_id,

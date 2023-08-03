@@ -15,16 +15,14 @@ impl RejectEnvironmentAccountConnectionInput {
 }
 impl RejectEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder{
+    pub fn builder() -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder {
         crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,12 @@ impl RejectEnvironmentAccountConnectionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput { id: self.id })
     }
 }

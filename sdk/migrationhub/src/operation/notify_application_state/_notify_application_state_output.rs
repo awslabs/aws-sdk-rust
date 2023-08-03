@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for NotifyApplicationStateOutput {
 }
 impl NotifyApplicationStateOutput {
     /// Creates a new builder-style object to manufacture [`NotifyApplicationStateOutput`](crate::operation::notify_application_state::NotifyApplicationStateOutput).
-    pub fn builder(
-    ) -> crate::operation::notify_application_state::builders::NotifyApplicationStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::notify_application_state::builders::NotifyApplicationStateOutputBuilder {
         crate::operation::notify_application_state::builders::NotifyApplicationStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyApplicationStateOutput`](crate::operation::notify_application_state::NotifyApplicationStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyApplicationStateOutputBuilder {
     _request_id: Option<String>,
 }

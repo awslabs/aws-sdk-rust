@@ -37,9 +37,7 @@ impl StartCostEstimationFluentBuilder {
         }
     }
     /// Access the StartCostEstimation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartCostEstimationFluentBuilder {
             crate::operation::start_cost_estimation::StartCostEstimation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_cost_estimation::StartCostEstimationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_cost_estimation::StartCostEstimationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartCostEstimationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartCostEstimationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_cost_estimation::StartCostEstimationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_cost_estimation::StartCostEstimationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_cost_estimation::StartCostEstimationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartCostEstimationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_cost_estimation::StartCostEstimationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_cost_estimation::StartCostEstimationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_cost_estimation::StartCostEstimationError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +105,22 @@ impl StartCostEstimationFluentBuilder {
             crate::operation::start_cost_estimation::StartCostEstimation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_cost_estimation::StartCostEstimationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_cost_estimation::StartCostEstimationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn resource_collection(
-        mut self,
-        input: crate::types::CostEstimationResourceCollectionFilter,
-    ) -> Self {
+    pub fn resource_collection(mut self, input: crate::types::CostEstimationResourceCollectionFilter) -> Self {
         self.inner = self.inner.resource_collection(input);
         self
     }
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>) -> Self {
         self.inner = self.inner.set_resource_collection(input);
         self
     }
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
         self.inner.get_resource_collection()
     }
     /// <p>The idempotency token used to identify each cost estimate request.</p>

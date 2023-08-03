@@ -38,13 +38,7 @@
 /// The scan type of the video source.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputDeviceScanType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputDeviceScanType {
         match s {
             "INTERLACED" => InputDeviceScanType::Interlaced,
             "PROGRESSIVE" => InputDeviceScanType::Progressive,
-            other => InputDeviceScanType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputDeviceScanType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

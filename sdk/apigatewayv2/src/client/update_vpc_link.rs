@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`vpc_link_status_message(Option<String>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_status_message): <p>A message summarizing the cause of the status of the VPC link.</p>
     ///   - [`vpc_link_version(Option<VpcLinkVersion>)`](crate::operation::update_vpc_link::UpdateVpcLinkOutput::vpc_link_version): <p>The version of the VPC link.</p>
     /// - On failure, responds with [`SdkError<UpdateVpcLinkError>`](crate::operation::update_vpc_link::UpdateVpcLinkError)
-    pub fn update_vpc_link(
-        &self,
-    ) -> crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder {
-        crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vpc_link(&self) -> crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder {
+        crate::operation::update_vpc_link::builders::UpdateVpcLinkFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ impl StopCanaryOutput {
 
 /// A builder for [`StopCanaryOutput`](crate::operation::stop_canary::StopCanaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCanaryOutputBuilder {
     _request_id: Option<String>,
 }

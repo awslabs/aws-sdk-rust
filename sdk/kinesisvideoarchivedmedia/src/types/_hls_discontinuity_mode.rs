@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsDiscontinuityMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for HlsDiscontinuityMode {
             "ALWAYS" => HlsDiscontinuityMode::Always,
             "NEVER" => HlsDiscontinuityMode::Never,
             "ON_DISCONTINUITY" => HlsDiscontinuityMode::OnDiscontinuity,
-            other => HlsDiscontinuityMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsDiscontinuityMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

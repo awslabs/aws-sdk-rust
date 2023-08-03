@@ -29,7 +29,7 @@ impl PutPositionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPositionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder,
+    inner: crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder,
 }
 impl PutPositionConfigurationFluentBuilder {
     /// Creates a new `PutPositionConfiguration`.
@@ -40,10 +40,7 @@ impl PutPositionConfigurationFluentBuilder {
         }
     }
     /// Access the PutPositionConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl PutPositionConfigurationFluentBuilder {
             crate::operation::put_position_configuration::PutPositionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_position_configuration::PutPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_position_configuration::PutPositionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl PutPositionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl PutPositionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_position_configuration::PutPositionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_position_configuration::PutPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_position_configuration::PutPositionConfigurationError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl PutPositionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_position_configuration::PutPositionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_position_configuration::PutPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_position_configuration::PutPositionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl PutPositionConfigurationFluentBuilder {
             crate::operation::put_position_configuration::PutPositionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_position_configuration::PutPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_position_configuration::PutPositionConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -152,10 +132,7 @@ impl PutPositionConfigurationFluentBuilder {
         self
     }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -169,17 +146,12 @@ impl PutPositionConfigurationFluentBuilder {
         self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn set_solvers(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverConfigurations>,
-    ) -> Self {
+    pub fn set_solvers(mut self, input: ::std::option::Option<crate::types::PositionSolverConfigurations>) -> Self {
         self.inner = self.inner.set_solvers(input);
         self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn get_solvers(
-        &self,
-    ) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
+    pub fn get_solvers(&self) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
         self.inner.get_solvers()
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>

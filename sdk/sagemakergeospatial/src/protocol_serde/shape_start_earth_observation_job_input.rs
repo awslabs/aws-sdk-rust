@@ -12,10 +12,7 @@ pub fn ser_start_earth_observation_job_input(
     if let Some(var_3) = &input.input_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("InputConfig").start_object();
-        crate::protocol_serde::shape_input_config_input::ser_input_config_input(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_input_config_input::ser_input_config_input(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.job_config {

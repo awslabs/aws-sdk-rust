@@ -4,14 +4,10 @@ pub fn ser_update_approval_rule_template_description_input(
     input: &crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
-        object
-            .key("approvalRuleTemplateName")
-            .string(var_1.as_str());
+        object.key("approvalRuleTemplateName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.approval_rule_template_description {
-        object
-            .key("approvalRuleTemplateDescription")
-            .string(var_2.as_str());
+        object.key("approvalRuleTemplateDescription").string(var_2.as_str());
     }
     Ok(())
 }

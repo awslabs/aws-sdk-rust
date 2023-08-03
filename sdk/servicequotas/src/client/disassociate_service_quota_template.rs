@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateFluentBuilder::send) it.
     /// - On success, responds with [`DisassociateServiceQuotaTemplateOutput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput)
     /// - On failure, responds with [`SdkError<DisassociateServiceQuotaTemplateError>`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError)
-    pub fn disassociate_service_quota_template(&self) -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateFluentBuilder{
+    pub fn disassociate_service_quota_template(
+        &self,
+    ) -> crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateFluentBuilder {
         crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DeleteOptionGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_option_group::DeleteOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_option_group::DeleteOptionGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_option_group::DeleteOptionGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_option_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteOptionGroupFluentBuilder {
         }
     }
     /// Access the DeleteOptionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_option_group::builders::DeleteOptionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteOptionGroupFluentBuilder {
             crate::operation::delete_option_group::DeleteOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_option_group::DeleteOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_option_group::DeleteOptionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteOptionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_option_group::DeleteOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_option_group::DeleteOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_option_group::DeleteOptionGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_option_group::DeleteOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_option_group::DeleteOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_option_group::DeleteOptionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,29 +102,21 @@ impl DeleteOptionGroupFluentBuilder {
             crate::operation::delete_option_group::DeleteOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_option_group::DeleteOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_option_group::DeleteOptionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }

@@ -10,10 +10,7 @@ impl ImportInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_instance::ImportInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_instance::ImportInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_instance();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl ImportInstanceFluentBuilder {
         }
     }
     /// Access the ImportInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_instance::builders::ImportInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_instance::builders::ImportInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl ImportInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,17 +136,12 @@ impl ImportInstanceFluentBuilder {
         self
     }
     /// <p>The disk image.</p>
-    pub fn set_disk_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiskImage>>,
-    ) -> Self {
+    pub fn set_disk_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiskImage>>) -> Self {
         self.inner = self.inner.set_disk_images(input);
         self
     }
     /// <p>The disk image.</p>
-    pub fn get_disk_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
+    pub fn get_disk_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskImage>> {
         self.inner.get_disk_images()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -172,25 +159,17 @@ impl ImportInstanceFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The launch specification.</p>
-    pub fn launch_specification(
-        mut self,
-        input: crate::types::ImportInstanceLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specification(mut self, input: crate::types::ImportInstanceLaunchSpecification) -> Self {
         self.inner = self.inner.launch_specification(input);
         self
     }
     /// <p>The launch specification.</p>
-    pub fn set_launch_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
-    ) -> Self {
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>) -> Self {
         self.inner = self.inner.set_launch_specification(input);
         self
     }
     /// <p>The launch specification.</p>
-    pub fn get_launch_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::ImportInstanceLaunchSpecification> {
         self.inner.get_launch_specification()
     }
     /// <p>The instance operating system.</p>
@@ -199,10 +178,7 @@ impl ImportInstanceFluentBuilder {
         self
     }
     /// <p>The instance operating system.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformValues>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }

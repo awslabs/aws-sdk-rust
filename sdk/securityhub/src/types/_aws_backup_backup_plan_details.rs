@@ -19,9 +19,7 @@ pub struct AwsBackupBackupPlanDetails {
 }
 impl AwsBackupBackupPlanDetails {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn backup_plan(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanBackupPlanDetails> {
+    pub fn backup_plan(&self) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanBackupPlanDetails> {
         self.backup_plan.as_ref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
@@ -46,52 +44,35 @@ impl AwsBackupBackupPlanDetails {
 
 /// A builder for [`AwsBackupBackupPlanDetails`](crate::types::AwsBackupBackupPlanDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanDetailsBuilder {
-    pub(crate) backup_plan:
-        ::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
+    pub(crate) backup_plan: ::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupPlanDetailsBuilder {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn backup_plan(
-        mut self,
-        input: crate::types::AwsBackupBackupPlanBackupPlanDetails,
-    ) -> Self {
+    pub fn backup_plan(mut self, input: crate::types::AwsBackupBackupPlanBackupPlanDetails) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
-    ) -> Self {
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>) -> Self {
         self.backup_plan = input;
         self
     }
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn get_backup_plan(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails> {
+    pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails> {
         &self.backup_plan
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
-    pub fn backup_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
-    pub fn set_backup_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_arn = input;
         self
     }
@@ -100,18 +81,12 @@ impl AwsBackupBackupPlanDetailsBuilder {
         &self.backup_plan_arn
     }
     /// <p>A unique ID for the backup plan. </p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID for the backup plan. </p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }

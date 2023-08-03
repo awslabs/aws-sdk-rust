@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`operation_id(impl ::std::convert::Into<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::set_operation_id): <p> Operation ID. </p>
     /// - On success, responds with [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput)
     /// - On failure, responds with [`SdkError<ResendOperationAuthorizationError>`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationError)
-    pub fn resend_operation_authorization(&self) -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder{
+    pub fn resend_operation_authorization(
+        &self,
+    ) -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder {
         crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

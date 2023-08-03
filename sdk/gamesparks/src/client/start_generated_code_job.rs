@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartGeneratedCodeJobOutput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput) with field(s):
     ///   - [`generated_code_job_id(Option<String>)`](crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput::generated_code_job_id): <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
     /// - On failure, responds with [`SdkError<StartGeneratedCodeJobError>`](crate::operation::start_generated_code_job::StartGeneratedCodeJobError)
-    pub fn start_generated_code_job(
-        &self,
-    ) -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobFluentBuilder
-    {
+    pub fn start_generated_code_job(&self) -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobFluentBuilder {
         crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobFluentBuilder::new(self.handle.clone())
     }
 }

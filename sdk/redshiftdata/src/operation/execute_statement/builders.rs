@@ -10,10 +10,7 @@ impl ExecuteStatementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.execute_statement();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl ExecuteStatementFluentBuilder {
         }
     }
     /// Access the ExecuteStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl ExecuteStatementFluentBuilder {
             crate::operation::execute_statement::ExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl ExecuteStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl ExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl ExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl ExecuteStatementFluentBuilder {
             crate::operation::execute_statement::ExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -147,18 +131,12 @@ impl ExecuteStatementFluentBuilder {
         self.inner.get_sql()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -223,18 +201,12 @@ impl ExecuteStatementFluentBuilder {
         self.inner.get_with_event()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_name(input.into());
         self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_name(input);
         self
     }
@@ -252,32 +224,21 @@ impl ExecuteStatementFluentBuilder {
         self
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
         self.inner.get_parameters()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

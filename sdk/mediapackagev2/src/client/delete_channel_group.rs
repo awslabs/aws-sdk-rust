@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`channel_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder::channel_group_name) / [`set_channel_group_name(Option<String>)`](crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder::set_channel_group_name): <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     /// - On success, responds with [`DeleteChannelGroupOutput`](crate::operation::delete_channel_group::DeleteChannelGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelGroupError>`](crate::operation::delete_channel_group::DeleteChannelGroupError)
-    pub fn delete_channel_group(
-        &self,
-    ) -> crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder {
-        crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel_group(&self) -> crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder {
+        crate::operation::delete_channel_group::builders::DeleteChannelGroupFluentBuilder::new(self.handle.clone())
     }
 }

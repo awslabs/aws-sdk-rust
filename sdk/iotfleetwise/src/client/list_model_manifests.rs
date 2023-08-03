@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<ModelManifestSummary>>)`](crate::operation::list_model_manifests::ListModelManifestsOutput::summaries): <p> A list of information about vehicle models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_manifests::ListModelManifestsOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListModelManifestsError>`](crate::operation::list_model_manifests::ListModelManifestsError)
-    pub fn list_model_manifests(
-        &self,
-    ) -> crate::operation::list_model_manifests::builders::ListModelManifestsFluentBuilder {
-        crate::operation::list_model_manifests::builders::ListModelManifestsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_model_manifests(&self) -> crate::operation::list_model_manifests::builders::ListModelManifestsFluentBuilder {
+        crate::operation::list_model_manifests::builders::ListModelManifestsFluentBuilder::new(self.handle.clone())
     }
 }

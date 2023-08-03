@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`game_sessions(Option<Vec<GameSession>>)`](crate::operation::describe_game_sessions::DescribeGameSessionsOutput::game_sessions): <p>A collection of properties for each game session that matches the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_game_sessions::DescribeGameSessionsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeGameSessionsError>`](crate::operation::describe_game_sessions::DescribeGameSessionsError)
-    pub fn describe_game_sessions(
-        &self,
-    ) -> crate::operation::describe_game_sessions::builders::DescribeGameSessionsFluentBuilder {
-        crate::operation::describe_game_sessions::builders::DescribeGameSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_game_sessions(&self) -> crate::operation::describe_game_sessions::builders::DescribeGameSessionsFluentBuilder {
+        crate::operation::describe_game_sessions::builders::DescribeGameSessionsFluentBuilder::new(self.handle.clone())
     }
 }

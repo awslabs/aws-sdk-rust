@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ground_stations(Option<Vec<String>>)`](crate::operation::get_satellite::GetSatelliteOutput::ground_stations): <p>A list of ground stations to which the satellite is on-boarded.</p>
     ///   - [`current_ephemeris(Option<EphemerisMetaData>)`](crate::operation::get_satellite::GetSatelliteOutput::current_ephemeris): <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     /// - On failure, responds with [`SdkError<GetSatelliteError>`](crate::operation::get_satellite::GetSatelliteError)
-    pub fn get_satellite(
-        &self,
-    ) -> crate::operation::get_satellite::builders::GetSatelliteFluentBuilder {
-        crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_satellite(&self) -> crate::operation::get_satellite::builders::GetSatelliteFluentBuilder {
+        crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::new(self.handle.clone())
     }
 }

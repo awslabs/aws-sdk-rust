@@ -30,27 +30,19 @@ impl ParticipantTokenCredentials {
 
 /// A builder for [`ParticipantTokenCredentials`](crate::types::ParticipantTokenCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipantTokenCredentialsBuilder {
     pub(crate) participant_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiry: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantTokenCredentialsBuilder {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
-    pub fn participant_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
-    pub fn set_participant_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_token = input;
         self
     }

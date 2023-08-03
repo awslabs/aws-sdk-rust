@@ -5,16 +5,16 @@ pub use crate::operation::start_document_classification_job::_start_document_cla
 
 impl StartDocumentClassificationJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_document_classification_job::StartDocumentClassificationJobError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_document_classification_job::StartDocumentClassificationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_document_classification_job();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartDocumentClassificationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDocumentClassificationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobInputBuilder,
+    inner: crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobInputBuilder,
 }
 impl StartDocumentClassificationJobFluentBuilder {
     /// Creates a new `StartDocumentClassificationJob`.
@@ -37,15 +37,20 @@ impl StartDocumentClassificationJobFluentBuilder {
         }
     }
     /// Access the StartDocumentClassificationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_document_classification_job::StartDocumentClassificationJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_document_classification_job::StartDocumentClassificationJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl StartDocumentClassificationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl StartDocumentClassificationJobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_document_classification_job::StartDocumentClassificationJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_document_classification_job::StartDocumentClassificationJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the job.</p>
@@ -109,18 +124,12 @@ impl StartDocumentClassificationJobFluentBuilder {
         self.inner.get_job_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_classifier_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_classifier_arn(input);
         self
     }
@@ -134,10 +143,7 @@ impl StartDocumentClassificationJobFluentBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -151,10 +157,7 @@ impl StartDocumentClassificationJobFluentBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -163,18 +166,12 @@ impl StartDocumentClassificationJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -183,18 +180,12 @@ impl StartDocumentClassificationJobFluentBuilder {
         self.inner.get_data_access_role_arn()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -207,10 +198,7 @@ impl StartDocumentClassificationJobFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_kms_key_id(input.into());
         self
     }
@@ -219,10 +207,7 @@ impl StartDocumentClassificationJobFluentBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_kms_key_id(input);
         self
     }
@@ -258,10 +243,7 @@ impl StartDocumentClassificationJobFluentBuilder {
         self
     }
     /// <p>Tags to associate with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

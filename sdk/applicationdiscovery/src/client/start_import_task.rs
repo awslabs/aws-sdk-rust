@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartImportTaskOutput`](crate::operation::start_import_task::StartImportTaskOutput) with field(s):
     ///   - [`task(Option<ImportTask>)`](crate::operation::start_import_task::StartImportTaskOutput::task): <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     /// - On failure, responds with [`SdkError<StartImportTaskError>`](crate::operation::start_import_task::StartImportTaskError)
-    pub fn start_import_task(
-        &self,
-    ) -> crate::operation::start_import_task::builders::StartImportTaskFluentBuilder {
-        crate::operation::start_import_task::builders::StartImportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_import_task(&self) -> crate::operation::start_import_task::builders::StartImportTaskFluentBuilder {
+        crate::operation::start_import_task::builders::StartImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

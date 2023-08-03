@@ -48,17 +48,14 @@ impl ListContainerRecipesInput {
 }
 impl ListContainerRecipesInput {
     /// Creates a new builder-style object to manufacture [`ListContainerRecipesInput`](crate::operation::list_container_recipes::ListContainerRecipesInput).
-    pub fn builder(
-    ) -> crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder {
+    pub fn builder() -> crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder {
         crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContainerRecipesInput`](crate::operation::list_container_recipes::ListContainerRecipesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContainerRecipesInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -104,10 +101,7 @@ impl ListContainerRecipesInputBuilder {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -152,17 +146,13 @@ impl ListContainerRecipesInputBuilder {
     /// Consumes the builder and constructs a [`ListContainerRecipesInput`](crate::operation::list_container_recipes::ListContainerRecipesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_container_recipes::ListContainerRecipesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_container_recipes::ListContainerRecipesInput {
-                owner: self.owner,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_container_recipes::ListContainerRecipesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_container_recipes::ListContainerRecipesInput {
+            owner: self.owner,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

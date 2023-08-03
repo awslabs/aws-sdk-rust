@@ -38,9 +38,7 @@ impl ListMapRunsInput {
 
 /// A builder for [`ListMapRunsInput`](crate::operation::list_map_runs::ListMapRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMapRunsInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +46,12 @@ pub struct ListMapRunsInputBuilder {
 }
 impl ListMapRunsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -99,12 +91,7 @@ impl ListMapRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMapRunsInput`](crate::operation::list_map_runs::ListMapRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_map_runs::ListMapRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_map_runs::ListMapRunsInput {
             execution_arn: self.execution_arn,
             max_results: self.max_results,

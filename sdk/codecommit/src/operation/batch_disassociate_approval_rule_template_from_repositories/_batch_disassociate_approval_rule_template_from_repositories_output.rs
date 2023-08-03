@@ -5,34 +5,23 @@
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
     #[doc(hidden)]
-    pub disassociated_repository_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disassociated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
-    >,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub fn disassociated_repository_names(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn disassociated_repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.disassociated_repository_names.as_deref()
     }
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError],
-    > {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError]> {
         self.errors.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput
-{
+impl ::aws_http::request_id::RequestId for BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,15 +35,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
 
 /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
-    pub(crate) disassociated_repository_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
-    >,
+    pub(crate) disassociated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
@@ -63,27 +47,19 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
     /// To override the contents of this collection use [`set_disassociated_repository_names`](Self::set_disassociated_repository_names).
     ///
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub fn disassociated_repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disassociated_repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disassociated_repository_names.unwrap_or_default();
         v.push(input.into());
         self.disassociated_repository_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub fn set_disassociated_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disassociated_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disassociated_repository_names = input;
         self
     }
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub fn get_disassociated_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disassociated_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disassociated_repository_names
     }
     /// Appends an item to `errors`.
@@ -91,10 +67,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    pub fn errors(
-        mut self,
-        input: crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
-    ) -> Self {
+    pub fn errors(mut self, input: crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
@@ -103,21 +76,13 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
     pub fn set_errors(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>,
     ) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
-    > {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -130,12 +95,13 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
-    pub fn build(self) -> crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput
+    {
         crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
-            disassociated_repository_names: self.disassociated_repository_names
-            ,
-            errors: self.errors
-            ,
+            disassociated_repository_names: self.disassociated_repository_names,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

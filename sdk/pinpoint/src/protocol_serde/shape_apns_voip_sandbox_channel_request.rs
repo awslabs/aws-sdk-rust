@@ -10,9 +10,7 @@ pub fn ser_apns_voip_sandbox_channel_request(
         object.key("Certificate").string(var_2.as_str());
     }
     if let Some(var_3) = &input.default_authentication_method {
-        object
-            .key("DefaultAuthenticationMethod")
-            .string(var_3.as_str());
+        object.key("DefaultAuthenticationMethod").string(var_3.as_str());
     }
     if let Some(var_4) = &input.enabled {
         object.key("Enabled").boolean(*var_4);

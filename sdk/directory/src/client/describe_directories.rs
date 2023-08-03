@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`directory_descriptions(Option<Vec<DirectoryDescription>>)`](crate::operation::describe_directories::DescribeDirectoriesOutput::directory_descriptions): <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_directories::DescribeDirectoriesOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeDirectoriesError>`](crate::operation::describe_directories::DescribeDirectoriesError)
-    pub fn describe_directories(
-        &self,
-    ) -> crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder {
-        crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_directories(&self) -> crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder {
+        crate::operation::describe_directories::builders::DescribeDirectoriesFluentBuilder::new(self.handle.clone())
     }
 }

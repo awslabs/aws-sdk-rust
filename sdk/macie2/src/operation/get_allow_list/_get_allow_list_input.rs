@@ -22,9 +22,7 @@ impl GetAllowListInput {
 
 /// A builder for [`GetAllowListInput`](crate::operation::get_allow_list::GetAllowListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAllowListInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetAllowListInputBuilder {
     /// Consumes the builder and constructs a [`GetAllowListInput`](crate::operation::get_allow_list::GetAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_allow_list::GetAllowListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_allow_list::GetAllowListInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_allow_list::GetAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_allow_list::GetAllowListInput { id: self.id })
     }
 }

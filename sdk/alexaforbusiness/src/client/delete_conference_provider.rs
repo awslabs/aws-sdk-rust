@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput)
     /// - On failure, responds with [`SdkError<DeleteConferenceProviderError>`](crate::operation::delete_conference_provider::DeleteConferenceProviderError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_conference_provider(
-        &self,
-    ) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder
-    {
+    pub fn delete_conference_provider(&self) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder {
         crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashPlaybackMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DashPlaybackMode {
             "LIVE" => DashPlaybackMode::Live,
             "LIVE_REPLAY" => DashPlaybackMode::LiveReplay,
             "ON_DEMAND" => DashPlaybackMode::OnDemand,
-            other => {
-                DashPlaybackMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DashPlaybackMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

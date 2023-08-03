@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQueueOutboundCallerConfigOutput
 }
 impl UpdateQueueOutboundCallerConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueOutboundCallerConfigOutput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput).
-    pub fn builder() -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigOutputBuilder {
         crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueOutboundCallerConfigOutput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueOutboundCallerConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateQueueOutboundCallerConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQueueOutboundCallerConfigOutput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput
-    {
+    pub fn build(self) -> crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput {
         crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput {
             _request_id: self._request_id,
         }

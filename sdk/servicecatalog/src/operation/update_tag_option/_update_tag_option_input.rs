@@ -36,9 +36,7 @@ impl UpdateTagOptionInput {
 
 /// A builder for [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagOptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTagOptionInput`](crate::operation::update_tag_option::UpdateTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_tag_option::UpdateTagOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_tag_option::UpdateTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_tag_option::UpdateTagOptionInput {
             id: self.id,
             value: self.value,

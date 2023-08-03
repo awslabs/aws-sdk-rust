@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`connection_token(impl ::std::convert::Into<String>)`](crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`DisconnectParticipantOutput`](crate::operation::disconnect_participant::DisconnectParticipantOutput)
     /// - On failure, responds with [`SdkError<DisconnectParticipantError>`](crate::operation::disconnect_participant::DisconnectParticipantError)
-    pub fn disconnect_participant(
-        &self,
-    ) -> crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder
-    {
-        crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disconnect_participant(&self) -> crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder {
+        crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::new(self.handle.clone())
     }
 }

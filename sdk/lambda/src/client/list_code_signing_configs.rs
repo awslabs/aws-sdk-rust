@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`code_signing_configs(Option<Vec<CodeSigningConfig>>)`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput::code_signing_configs): <p>The code signing configurations</p>
     /// - On failure, responds with [`SdkError<ListCodeSigningConfigsError>`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsError)
-    pub fn list_code_signing_configs(
-        &self,
-    ) -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder
-    {
+    pub fn list_code_signing_configs(&self) -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder {
         crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::new(self.handle.clone())
     }
 }

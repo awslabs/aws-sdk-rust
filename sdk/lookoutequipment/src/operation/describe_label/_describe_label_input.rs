@@ -29,27 +29,19 @@ impl DescribeLabelInput {
 
 /// A builder for [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelInputBuilder {
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Returns the name of the group containing the label. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl DescribeLabelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_label::DescribeLabelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_label::DescribeLabelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_label::DescribeLabelInput {
             label_group_name: self.label_group_name,
             label_id: self.label_id,

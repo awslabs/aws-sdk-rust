@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSubscriberNotificationOutput {
 }
 impl DeleteSubscriberNotificationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberNotificationOutput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput).
-    pub fn builder() -> crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationOutputBuilder {
         crate::operation::delete_subscriber_notification::builders::DeleteSubscriberNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriberNotificationOutput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriberNotificationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSubscriberNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSubscriberNotificationOutput`](crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput {
+    pub fn build(self) -> crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput {
         crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput {
             _request_id: self._request_id,
         }

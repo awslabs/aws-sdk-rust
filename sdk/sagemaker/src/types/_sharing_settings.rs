@@ -16,9 +16,7 @@ pub struct SharingSettings {
 }
 impl SharingSettings {
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
-    pub fn notebook_output_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotebookOutputOption> {
+    pub fn notebook_output_option(&self) -> ::std::option::Option<&crate::types::NotebookOutputOption> {
         self.notebook_output_option.as_ref()
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
@@ -39,9 +37,7 @@ impl SharingSettings {
 
 /// A builder for [`SharingSettings`](crate::types::SharingSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SharingSettingsBuilder {
     pub(crate) notebook_output_option: ::std::option::Option<crate::types::NotebookOutputOption>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
@@ -54,32 +50,21 @@ impl SharingSettingsBuilder {
         self
     }
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
-    pub fn set_notebook_output_option(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookOutputOption>,
-    ) -> Self {
+    pub fn set_notebook_output_option(mut self, input: ::std::option::Option<crate::types::NotebookOutputOption>) -> Self {
         self.notebook_output_option = input;
         self
     }
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
-    pub fn get_notebook_output_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookOutputOption> {
+    pub fn get_notebook_output_option(&self) -> &::std::option::Option<crate::types::NotebookOutputOption> {
         &self.notebook_output_option
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }
@@ -88,18 +73,12 @@ impl SharingSettingsBuilder {
         &self.s3_output_path
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    pub fn s3_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    pub fn set_s3_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_kms_key_id = input;
         self
     }

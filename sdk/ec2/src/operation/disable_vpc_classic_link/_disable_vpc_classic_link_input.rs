@@ -22,18 +22,14 @@ impl DisableVpcClassicLinkInput {
 }
 impl DisableVpcClassicLinkInput {
     /// Creates a new builder-style object to manufacture [`DisableVpcClassicLinkInput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput).
-    pub fn builder(
-    ) -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder {
         crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVpcClassicLinkInput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DisableVpcClassicLinkInputBuilder {
     /// Consumes the builder and constructs a [`DisableVpcClassicLinkInput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput {
-                dry_run: self.dry_run,
-                vpc_id: self.vpc_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput {
+            dry_run: self.dry_run,
+            vpc_id: self.vpc_id,
+        })
     }
 }

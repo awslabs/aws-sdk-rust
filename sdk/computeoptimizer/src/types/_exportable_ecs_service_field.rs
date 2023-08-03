@@ -60,13 +60,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,32 +117,36 @@ pub enum ExportableEcsServiceField {
 impl ::std::convert::From<&str> for ExportableEcsServiceField {
     fn from(s: &str) -> Self {
         match s {
-                        "AccountId" => ExportableEcsServiceField::AccountId,
-"CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
-"CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
-"CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
-"CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
-"CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
-"CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
-"Finding" => ExportableEcsServiceField::Finding,
-"FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
-"LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
-"LaunchType" => ExportableEcsServiceField::LaunchType,
-"LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
-"RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
-"RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
-"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
-"RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
-"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-"RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
-"ServiceArn" => ExportableEcsServiceField::ServiceArn,
-"Tags" => ExportableEcsServiceField::Tags,
-"UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
-"UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
-other => ExportableEcsServiceField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "AccountId" => ExportableEcsServiceField::AccountId,
+            "CurrentPerformanceRisk" => ExportableEcsServiceField::CurrentPerformanceRisk,
+            "CurrentServiceConfigurationAutoScalingConfiguration" => ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration,
+            "CurrentServiceConfigurationCpu" => ExportableEcsServiceField::CurrentServiceConfigurationCpu,
+            "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
+            "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
+            "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+            "Finding" => ExportableEcsServiceField::Finding,
+            "FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
+            "LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
+            "LaunchType" => ExportableEcsServiceField::LaunchType,
+            "LookbackPeriodInDays" => ExportableEcsServiceField::LookbackPeriodInDays,
+            "RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
+            "RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
+            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
+                ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
+                ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
+            }
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
+            "ServiceArn" => ExportableEcsServiceField::ServiceArn,
+            "Tags" => ExportableEcsServiceField::Tags,
+            "UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
+            "UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
+            other => ExportableEcsServiceField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for ExportableEcsServiceField {
@@ -162,32 +160,36 @@ impl ExportableEcsServiceField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    ExportableEcsServiceField::AccountId => "AccountId",
-    ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-    ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
-    ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
-    ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
-    ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
-    ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
-    ExportableEcsServiceField::Finding => "Finding",
-    ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
-    ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
-    ExportableEcsServiceField::LaunchType => "LaunchType",
-    ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
-    ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
-    ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
-    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-    ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-    ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-    ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-    ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-    ExportableEcsServiceField::ServiceArn => "ServiceArn",
-    ExportableEcsServiceField::Tags => "Tags",
-    ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-    ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-    ExportableEcsServiceField::Unknown(value) => value.as_str()
-}
+            ExportableEcsServiceField::AccountId => "AccountId",
+            ExportableEcsServiceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => "CurrentServiceConfigurationAutoScalingConfiguration",
+            ExportableEcsServiceField::CurrentServiceConfigurationCpu => "CurrentServiceConfigurationCpu",
+            ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
+            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
+            ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+            ExportableEcsServiceField::Finding => "Finding",
+            ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
+            ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+            ExportableEcsServiceField::LaunchType => "LaunchType",
+            ExportableEcsServiceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
+            ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
+            }
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+            }
+            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+            ExportableEcsServiceField::ServiceArn => "ServiceArn",
+            ExportableEcsServiceField::Tags => "Tags",
+            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+            ExportableEcsServiceField::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

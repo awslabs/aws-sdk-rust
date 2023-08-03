@@ -29,18 +29,14 @@ impl ListDatasourcePackagesInput {
 }
 impl ListDatasourcePackagesInput {
     /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesInput`](crate::operation::list_datasource_packages::ListDatasourcePackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesInputBuilder {
         crate::operation::list_datasource_packages::builders::ListDatasourcePackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasourcePackagesInput`](crate::operation::list_datasource_packages::ListDatasourcePackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasourcePackagesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListDatasourcePackagesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasourcePackagesInput`](crate::operation::list_datasource_packages::ListDatasourcePackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_datasource_packages::ListDatasourcePackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_datasource_packages::ListDatasourcePackagesInput {
-                graph_arn: self.graph_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_datasource_packages::ListDatasourcePackagesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_datasource_packages::ListDatasourcePackagesInput {
+            graph_arn: self.graph_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

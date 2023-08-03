@@ -33,16 +33,14 @@ impl ListResolverDnssecConfigsInput {
 }
 impl ListResolverDnssecConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsInput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput).
-    pub fn builder() -> crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder {
         crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverDnssecConfigsInput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverDnssecConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl ListResolverDnssecConfigsInputBuilder {
         self
     }
     /// <p>An optional specification to return a subset of objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -113,12 +108,10 @@ impl ListResolverDnssecConfigsInputBuilder {
         crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

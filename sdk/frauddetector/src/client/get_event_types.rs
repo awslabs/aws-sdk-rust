@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`event_types(Option<Vec<EventType>>)`](crate::operation::get_event_types::GetEventTypesOutput::event_types): <p>An array of event types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_event_types::GetEventTypesOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetEventTypesError>`](crate::operation::get_event_types::GetEventTypesError)
-    pub fn get_event_types(
-        &self,
-    ) -> crate::operation::get_event_types::builders::GetEventTypesFluentBuilder {
-        crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_types(&self) -> crate::operation::get_event_types::builders::GetEventTypesFluentBuilder {
+        crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::new(self.handle.clone())
     }
 }

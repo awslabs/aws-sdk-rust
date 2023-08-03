@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PageBasedWarningCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum PageBasedWarningCode {
 impl ::std::convert::From<&str> for PageBasedWarningCode {
     fn from(s: &str) -> Self {
         match s {
-            "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL" => {
-                PageBasedWarningCode::InferencingNativeDocumentWithPlaintextTrainedModel
-            }
-            "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL" => {
-                PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel
-            }
-            other => PageBasedWarningCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL" => PageBasedWarningCode::InferencingNativeDocumentWithPlaintextTrainedModel,
+            "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL" => PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel,
+            other => PageBasedWarningCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,12 +68,8 @@ impl PageBasedWarningCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PageBasedWarningCode::InferencingNativeDocumentWithPlaintextTrainedModel => {
-                "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL"
-            }
-            PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel => {
-                "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL"
-            }
+            PageBasedWarningCode::InferencingNativeDocumentWithPlaintextTrainedModel => "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL",
+            PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel => "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL",
             PageBasedWarningCode::Unknown(value) => value.as_str(),
         }
     }

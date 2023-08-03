@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateLinkOutput {
 }
 impl DisassociateLinkOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput).
-    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder {
         crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLinkOutputBuilder {
     pub(crate) link_association: ::std::option::Option<crate::types::LinkAssociation>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DisassociateLinkOutputBuilder {
         self
     }
     /// <p>Information about the link association.</p>
-    pub fn set_link_association(
-        mut self,
-        input: ::std::option::Option<crate::types::LinkAssociation>,
-    ) -> Self {
+    pub fn set_link_association(mut self, input: ::std::option::Option<crate::types::LinkAssociation>) -> Self {
         self.link_association = input;
         self
     }

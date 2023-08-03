@@ -157,9 +157,7 @@ impl ExportDescription {
 
 /// A builder for [`ExportDescription`](crate::types::ExportDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportDescriptionBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
@@ -202,10 +200,7 @@ impl ExportDescriptionBuilder {
         self
     }
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }
@@ -219,10 +214,7 @@ impl ExportDescriptionBuilder {
         self
     }
     /// <p>The time at which the export task began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -236,10 +228,7 @@ impl ExportDescriptionBuilder {
         self
     }
     /// <p>The time at which the export task completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -248,18 +237,12 @@ impl ExportDescriptionBuilder {
         &self.end_time
     }
     /// <p>The name of the manifest file for the export task.</p>
-    pub fn export_manifest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_manifest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the manifest file for the export task.</p>
-    pub fn set_export_manifest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_manifest = input;
         self
     }
@@ -301,10 +284,7 @@ impl ExportDescriptionBuilder {
         self
     }
     /// <p>Point in time from which table data was exported.</p>
-    pub fn set_export_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_export_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.export_time = input;
         self
     }
@@ -341,18 +321,12 @@ impl ExportDescriptionBuilder {
         &self.s3_bucket
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket containing the export.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket containing the export.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
@@ -388,10 +362,7 @@ impl ExportDescriptionBuilder {
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
-    pub fn set_s3_sse_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SseAlgorithm>,
-    ) -> Self {
+    pub fn set_s3_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.s3_sse_algorithm = input;
         self
     }
@@ -404,18 +375,12 @@ impl ExportDescriptionBuilder {
         &self.s3_sse_algorithm
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data is stored (if applicable).</p>
-    pub fn s3_sse_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_sse_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_sse_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data is stored (if applicable).</p>
-    pub fn set_s3_sse_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_sse_kms_key_id = input;
         self
     }
@@ -438,18 +403,12 @@ impl ExportDescriptionBuilder {
         &self.failure_code
     }
     /// <p>Export failure reason description.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export failure reason description.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -463,10 +422,7 @@ impl ExportDescriptionBuilder {
         self
     }
     /// <p>The format of the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    pub fn set_export_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFormat>,
-    ) -> Self {
+    pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::ExportFormat>) -> Self {
         self.export_format = input;
         self
     }

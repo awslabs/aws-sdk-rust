@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteFieldLevelEncryptionProfileOutput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionProfileError>`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError)
-    pub fn delete_field_level_encryption_profile(&self) -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileFluentBuilder{
+    pub fn delete_field_level_encryption_profile(
+        &self,
+    ) -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileFluentBuilder {
         crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileFluentBuilder::new(self.handle.clone())
     }
 }

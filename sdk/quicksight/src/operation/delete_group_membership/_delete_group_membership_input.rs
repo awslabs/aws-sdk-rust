@@ -36,18 +36,14 @@ impl DeleteGroupMembershipInput {
 }
 impl DeleteGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder {
         crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGroupMembershipInputBuilder {
     pub(crate) member_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ impl DeleteGroupMembershipInputBuilder {
         &self.group_name
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl DeleteGroupMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_group_membership::DeleteGroupMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_group_membership::DeleteGroupMembershipInput {
-                member_name: self.member_name,
-                group_name: self.group_name,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_group_membership::DeleteGroupMembershipInput {
+            member_name: self.member_name,
+            group_name: self.group_name,
+            aws_account_id: self.aws_account_id,
+            namespace: self.namespace,
+        })
     }
 }

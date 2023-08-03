@@ -88,9 +88,7 @@ impl AwsEc2EipDetails {
 
 /// A builder for [`AwsEc2EipDetails`](crate::types::AwsEc2EipDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2EipDetailsBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.public_ip
     }
     /// <p>The identifier that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with Amazon VPC.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with Amazon VPC.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -153,18 +145,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.allocation_id
     }
     /// <p>The identifier that represents the association of the Elastic IP address with an EC2 instance.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier that represents the association of the Elastic IP address with an EC2 instance.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -190,18 +176,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.domain
     }
     /// <p>The identifier of an IP address pool. This parameter allows Amazon EC2 to select an IP address from the address pool.</p>
-    pub fn public_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an IP address pool. This parameter allows Amazon EC2 to select an IP address from the address pool.</p>
-    pub fn set_public_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ipv4_pool = input;
         self
     }
@@ -210,18 +190,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.public_ipv4_pool
     }
     /// <p>The name of the location from which the Elastic IP address is advertised.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the location from which the Elastic IP address is advertised.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
@@ -230,18 +204,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.network_border_group
     }
     /// <p>The identifier of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -250,18 +218,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.network_interface_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
-    pub fn network_interface_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
-    pub fn set_network_interface_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_owner_id = input;
         self
     }
@@ -270,18 +232,12 @@ impl AwsEc2EipDetailsBuilder {
         &self.network_interface_owner_id
     }
     /// <p>The private IP address that is associated with the Elastic IP address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address that is associated with the Elastic IP address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }

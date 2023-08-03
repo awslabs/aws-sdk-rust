@@ -29,18 +29,14 @@ impl UpdateUserPhoneConfigInput {
 }
 impl UpdateUserPhoneConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder {
         crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserPhoneConfigInputBuilder {
     pub(crate) phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl UpdateUserPhoneConfigInputBuilder {
         self
     }
     /// <p>Information about phone configuration settings for the user.</p>
-    pub fn set_phone_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPhoneConfig>,
-    ) -> Self {
+    pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::UserPhoneConfig>) -> Self {
         self.phone_config = input;
         self
     }
@@ -95,16 +88,12 @@ impl UpdateUserPhoneConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput {
-                phone_config: self.phone_config,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput {
+            phone_config: self.phone_config,
+            user_id: self.user_id,
+            instance_id: self.instance_id,
+        })
     }
 }

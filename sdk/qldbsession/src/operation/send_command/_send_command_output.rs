@@ -32,9 +32,7 @@ impl SendCommandOutput {
         self.start_session.as_ref()
     }
     /// <p>Contains the details of the started transaction.</p>
-    pub fn start_transaction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StartTransactionResult> {
+    pub fn start_transaction(&self) -> ::std::option::Option<&crate::types::StartTransactionResult> {
         self.start_transaction.as_ref()
     }
     /// <p>Contains the details of the ended session.</p>
@@ -42,21 +40,15 @@ impl SendCommandOutput {
         self.end_session.as_ref()
     }
     /// <p>Contains the details of the committed transaction.</p>
-    pub fn commit_transaction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CommitTransactionResult> {
+    pub fn commit_transaction(&self) -> ::std::option::Option<&crate::types::CommitTransactionResult> {
         self.commit_transaction.as_ref()
     }
     /// <p>Contains the details of the aborted transaction.</p>
-    pub fn abort_transaction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AbortTransactionResult> {
+    pub fn abort_transaction(&self) -> ::std::option::Option<&crate::types::AbortTransactionResult> {
         self.abort_transaction.as_ref()
     }
     /// <p>Contains the details of the executed statement.</p>
-    pub fn execute_statement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecuteStatementResult> {
+    pub fn execute_statement(&self) -> ::std::option::Option<&crate::types::ExecuteStatementResult> {
         self.execute_statement.as_ref()
     }
     /// <p>Contains the details of the fetched page.</p>
@@ -78,9 +70,7 @@ impl SendCommandOutput {
 
 /// A builder for [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendCommandOutputBuilder {
     pub(crate) start_session: ::std::option::Option<crate::types::StartSessionResult>,
     pub(crate) start_transaction: ::std::option::Option<crate::types::StartTransactionResult>,
@@ -98,10 +88,7 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn set_start_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSessionResult>,
-    ) -> Self {
+    pub fn set_start_session(mut self, input: ::std::option::Option<crate::types::StartSessionResult>) -> Self {
         self.start_session = input;
         self
     }
@@ -115,17 +102,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the started transaction.</p>
-    pub fn set_start_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTransactionResult>,
-    ) -> Self {
+    pub fn set_start_transaction(mut self, input: ::std::option::Option<crate::types::StartTransactionResult>) -> Self {
         self.start_transaction = input;
         self
     }
     /// <p>Contains the details of the started transaction.</p>
-    pub fn get_start_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartTransactionResult> {
+    pub fn get_start_transaction(&self) -> &::std::option::Option<crate::types::StartTransactionResult> {
         &self.start_transaction
     }
     /// <p>Contains the details of the ended session.</p>
@@ -134,10 +116,7 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the ended session.</p>
-    pub fn set_end_session(
-        mut self,
-        input: ::std::option::Option<crate::types::EndSessionResult>,
-    ) -> Self {
+    pub fn set_end_session(mut self, input: ::std::option::Option<crate::types::EndSessionResult>) -> Self {
         self.end_session = input;
         self
     }
@@ -151,17 +130,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the committed transaction.</p>
-    pub fn set_commit_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitTransactionResult>,
-    ) -> Self {
+    pub fn set_commit_transaction(mut self, input: ::std::option::Option<crate::types::CommitTransactionResult>) -> Self {
         self.commit_transaction = input;
         self
     }
     /// <p>Contains the details of the committed transaction.</p>
-    pub fn get_commit_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitTransactionResult> {
+    pub fn get_commit_transaction(&self) -> &::std::option::Option<crate::types::CommitTransactionResult> {
         &self.commit_transaction
     }
     /// <p>Contains the details of the aborted transaction.</p>
@@ -170,17 +144,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the aborted transaction.</p>
-    pub fn set_abort_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortTransactionResult>,
-    ) -> Self {
+    pub fn set_abort_transaction(mut self, input: ::std::option::Option<crate::types::AbortTransactionResult>) -> Self {
         self.abort_transaction = input;
         self
     }
     /// <p>Contains the details of the aborted transaction.</p>
-    pub fn get_abort_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::AbortTransactionResult> {
+    pub fn get_abort_transaction(&self) -> &::std::option::Option<crate::types::AbortTransactionResult> {
         &self.abort_transaction
     }
     /// <p>Contains the details of the executed statement.</p>
@@ -189,17 +158,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the executed statement.</p>
-    pub fn set_execute_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteStatementResult>,
-    ) -> Self {
+    pub fn set_execute_statement(mut self, input: ::std::option::Option<crate::types::ExecuteStatementResult>) -> Self {
         self.execute_statement = input;
         self
     }
     /// <p>Contains the details of the executed statement.</p>
-    pub fn get_execute_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecuteStatementResult> {
+    pub fn get_execute_statement(&self) -> &::std::option::Option<crate::types::ExecuteStatementResult> {
         &self.execute_statement
     }
     /// <p>Contains the details of the fetched page.</p>
@@ -208,10 +172,7 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the fetched page.</p>
-    pub fn set_fetch_page(
-        mut self,
-        input: ::std::option::Option<crate::types::FetchPageResult>,
-    ) -> Self {
+    pub fn set_fetch_page(mut self, input: ::std::option::Option<crate::types::FetchPageResult>) -> Self {
         self.fetch_page = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct GetConnectPeerAssociationsOutput {
     /// <p>Displays a list of Connect peer associations.</p>
     #[doc(hidden)]
-    pub connect_peer_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
+    pub connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetConnectPeerAssociationsOutput {
 }
 impl GetConnectPeerAssociationsOutput {
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn connect_peer_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectPeerAssociation]> {
+    pub fn connect_peer_associations(&self) -> ::std::option::Option<&[crate::types::ConnectPeerAssociation]> {
         self.connect_peer_associations.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetConnectPeerAssociationsOutput {
 }
 impl GetConnectPeerAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput).
-    pub fn builder() -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder {
         crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectPeerAssociationsOutputBuilder {
-    pub(crate) connect_peer_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
+    pub(crate) connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetConnectPeerAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_connect_peer_associations`](Self::set_connect_peer_associations).
     ///
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn connect_peer_associations(
-        mut self,
-        input: crate::types::ConnectPeerAssociation,
-    ) -> Self {
+    pub fn connect_peer_associations(mut self, input: crate::types::ConnectPeerAssociation) -> Self {
         let mut v = self.connect_peer_associations.unwrap_or_default();
         v.push(input);
         self.connect_peer_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn set_connect_peer_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>,
-    ) -> Self {
+    pub fn set_connect_peer_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>>) -> Self {
         self.connect_peer_associations = input;
         self
     }
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn get_connect_peer_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>> {
+    pub fn get_connect_peer_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerAssociation>> {
         &self.connect_peer_associations
     }
     /// <p>The token for the next page of results.</p>
@@ -100,9 +86,7 @@ impl GetConnectPeerAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetConnectPeerAssociationsOutput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput {
+    pub fn build(self) -> crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput {
         crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput {
             connect_peer_associations: self.connect_peer_associations,
             next_token: self.next_token,

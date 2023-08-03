@@ -27,7 +27,7 @@ impl DescribeAcceleratorTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder,
+    inner: crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder,
 }
 impl DescribeAcceleratorTypesFluentBuilder {
     /// Creates a new `DescribeAcceleratorTypes`.
@@ -38,10 +38,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
         }
     }
     /// Access the DescribeAcceleratorTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
             crate::operation::describe_accelerator_types::DescribeAcceleratorTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeAcceleratorTypesFluentBuilder {
             crate::operation::describe_accelerator_types::DescribeAcceleratorTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError>,
     > {
         self.customize_middleware().await
     }

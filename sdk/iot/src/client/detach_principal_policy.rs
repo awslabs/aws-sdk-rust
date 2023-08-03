@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetachPrincipalPolicyOutput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyOutput)
     /// - On failure, responds with [`SdkError<DetachPrincipalPolicyError>`](crate::operation::detach_principal_policy::DetachPrincipalPolicyError)
     #[deprecated]
-    pub fn detach_principal_policy(
-        &self,
-    ) -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyFluentBuilder
-    {
-        crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_principal_policy(&self) -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyFluentBuilder {
+        crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl Celebrity {
 
 /// A builder for [`Celebrity`](crate::types::Celebrity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CelebrityBuilder {
     pub(crate) urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl CelebrityBuilder {
         self
     }
     /// <p>An array of URLs pointing to additional information about the celebrity. If there is no additional information about the celebrity, this list is empty.</p>
-    pub fn set_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.urls = input;
         self
     }
@@ -155,10 +150,7 @@ impl CelebrityBuilder {
         self
     }
     /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
-    pub fn set_known_gender(
-        mut self,
-        input: ::std::option::Option<crate::types::KnownGender>,
-    ) -> Self {
+    pub fn set_known_gender(mut self, input: ::std::option::Option<crate::types::KnownGender>) -> Self {
         self.known_gender = input;
         self
     }

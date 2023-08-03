@@ -22,9 +22,7 @@ impl GetPolicyInput {
 
 /// A builder for [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetPolicyInputBuilder {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_policy::GetPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyInput {
-            policy_id: self.policy_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyInput { policy_id: self.policy_id })
     }
 }

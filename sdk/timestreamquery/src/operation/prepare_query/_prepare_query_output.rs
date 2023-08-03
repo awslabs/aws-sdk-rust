@@ -86,17 +86,12 @@ impl PrepareQueryOutputBuilder {
         self
     }
     /// <p>A list of SELECT clause columns of the submitted query string. </p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>A list of SELECT clause columns of the submitted query string. </p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>> {
         &self.columns
     }
     /// Appends an item to `parameters`.
@@ -111,17 +106,12 @@ impl PrepareQueryOutputBuilder {
         self
     }
     /// <p>A list of parameters used in the submitted query string. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of parameters used in the submitted query string. </p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

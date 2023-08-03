@@ -27,8 +27,7 @@ pub struct ContainerOverride {
     pub memory_reservation: ::std::option::Option<i32>,
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
 }
 impl ContainerOverride {
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
@@ -60,9 +59,7 @@ impl ContainerOverride {
         self.memory_reservation
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
+    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
 }
@@ -75,20 +72,16 @@ impl ContainerOverride {
 
 /// A builder for [`ContainerOverride`](crate::types::ContainerOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerOverrideBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    pub(crate) environment_files:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
+    pub(crate) environment_files: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
     pub(crate) cpu: ::std::option::Option<i32>,
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) memory_reservation: ::std::option::Option<i32>,
-    pub(crate) resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
 }
 impl ContainerOverrideBuilder {
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
@@ -117,10 +110,7 @@ impl ContainerOverrideBuilder {
         self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -140,17 +130,12 @@ impl ContainerOverrideBuilder {
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.environment
     }
     /// Appends an item to `environment_files`.
@@ -165,17 +150,12 @@ impl ContainerOverrideBuilder {
         self
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn set_environment_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
-    ) -> Self {
+    pub fn set_environment_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>) -> Self {
         self.environment_files = input;
         self
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn get_environment_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>> {
+    pub fn get_environment_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>> {
         &self.environment_files
     }
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
@@ -232,17 +212,12 @@ impl ContainerOverrideBuilder {
         self
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn set_resource_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
-    ) -> Self {
+    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn get_resource_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
+    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }
     /// Consumes the builder and constructs a [`ContainerOverride`](crate::types::ContainerOverride).

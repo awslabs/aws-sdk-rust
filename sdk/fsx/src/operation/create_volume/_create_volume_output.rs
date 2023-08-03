@@ -28,9 +28,7 @@ impl CreateVolumeOutput {
 
 /// A builder for [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumeOutputBuilder {
     pub(crate) volume: ::std::option::Option<crate::types::Volume>,
     _request_id: Option<String>,

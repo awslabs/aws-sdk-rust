@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppAuthorizationOutput`](crate::operation::create_app_authorization::CreateAppAuthorizationOutput) with field(s):
     ///   - [`app_authorization(Option<AppAuthorization>)`](crate::operation::create_app_authorization::CreateAppAuthorizationOutput::app_authorization): <p>Contains information about an app authorization.</p>
     /// - On failure, responds with [`SdkError<CreateAppAuthorizationError>`](crate::operation::create_app_authorization::CreateAppAuthorizationError)
-    pub fn create_app_authorization(
-        &self,
-    ) -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationFluentBuilder
-    {
+    pub fn create_app_authorization(&self) -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationFluentBuilder {
         crate::operation::create_app_authorization::builders::CreateAppAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

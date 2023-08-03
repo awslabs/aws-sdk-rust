@@ -15,34 +15,25 @@ impl DeleteFeatureGroupInput {
 }
 impl DeleteFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteFeatureGroupInput`](crate::operation::delete_feature_group::DeleteFeatureGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder {
         crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFeatureGroupInput`](crate::operation::delete_feature_group::DeleteFeatureGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureGroupInputBuilder {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFeatureGroupInput`](crate::operation::delete_feature_group::DeleteFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_feature_group::DeleteFeatureGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_feature_group::DeleteFeatureGroupInput {
-                feature_group_name: self.feature_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_feature_group::DeleteFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_feature_group::DeleteFeatureGroupInput {
+            feature_group_name: self.feature_group_name,
+        })
     }
 }

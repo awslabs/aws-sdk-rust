@@ -16,9 +16,7 @@ pub struct InputDeviceConfigurableSettings {
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
-    pub fn configured_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
+    pub fn configured_input(&self) -> ::std::option::Option<&crate::types::InputDeviceConfiguredInput> {
         self.configured_input.as_ref()
     }
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
@@ -39,9 +37,7 @@ impl InputDeviceConfigurableSettings {
 
 /// A builder for [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDeviceConfigurableSettingsBuilder {
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
@@ -54,17 +50,12 @@ impl InputDeviceConfigurableSettingsBuilder {
         self
     }
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
-    pub fn set_configured_input(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
-    ) -> Self {
+    pub fn set_configured_input(mut self, input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>) -> Self {
         self.configured_input = input;
         self
     }
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
-    pub fn get_configured_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
+    pub fn get_configured_input(&self) -> &::std::option::Option<crate::types::InputDeviceConfiguredInput> {
         &self.configured_input
     }
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.

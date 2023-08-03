@@ -26,7 +26,7 @@ impl DeleteUsageReportSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUsageReportSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionInputBuilder,
+    inner: crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionInputBuilder,
 }
 impl DeleteUsageReportSubscriptionFluentBuilder {
     /// Creates a new `DeleteUsageReportSubscription`.
@@ -37,7 +37,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteUsageReportSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
             crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteUsageReportSubscriptionFluentBuilder {
             crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError>,
     > {
         self.customize_middleware().await
     }

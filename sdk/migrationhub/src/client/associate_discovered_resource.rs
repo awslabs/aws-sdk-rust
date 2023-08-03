@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`AssociateDiscoveredResourceOutput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateDiscoveredResourceError>`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError)
-    pub fn associate_discovered_resource(&self) -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceFluentBuilder{
+    pub fn associate_discovered_resource(
+        &self,
+    ) -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceFluentBuilder {
         crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceFluentBuilder::new(self.handle.clone())
     }
 }

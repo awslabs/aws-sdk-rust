@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`security_controls(Option<Vec<SecurityControl>>)`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput::security_controls): <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
     ///   - [`unprocessed_ids(Option<Vec<UnprocessedSecurityControl>>)`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput::unprocessed_ids): <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
     /// - On failure, responds with [`SdkError<BatchGetSecurityControlsError>`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsError)
-    pub fn batch_get_security_controls(&self) -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsFluentBuilder{
+    pub fn batch_get_security_controls(&self) -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsFluentBuilder {
         crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsFluentBuilder::new(self.handle.clone())
     }
 }

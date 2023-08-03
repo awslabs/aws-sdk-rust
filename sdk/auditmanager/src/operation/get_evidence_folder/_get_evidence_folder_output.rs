@@ -10,9 +10,7 @@ pub struct GetEvidenceFolderOutput {
 }
 impl GetEvidenceFolderOutput {
     /// <p> The folder that the evidence is stored in. </p>
-    pub fn evidence_folder(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentEvidenceFolder> {
+    pub fn evidence_folder(&self) -> ::std::option::Option<&crate::types::AssessmentEvidenceFolder> {
         self.evidence_folder.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetEvidenceFolderOutput {
 }
 impl GetEvidenceFolderOutput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput).
-    pub fn builder(
-    ) -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderOutputBuilder {
+    pub fn builder() -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderOutputBuilder {
         crate::operation::get_evidence_folder::builders::GetEvidenceFolderOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderOutputBuilder {
     pub(crate) evidence_folder: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetEvidenceFolderOutputBuilder {
         self
     }
     /// <p> The folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
-    ) -> Self {
+    pub fn set_evidence_folder(mut self, input: ::std::option::Option<crate::types::AssessmentEvidenceFolder>) -> Self {
         self.evidence_folder = input;
         self
     }
     /// <p> The folder that the evidence is stored in. </p>
-    pub fn get_evidence_folder(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentEvidenceFolder> {
+    pub fn get_evidence_folder(&self) -> &::std::option::Option<crate::types::AssessmentEvidenceFolder> {
         &self.evidence_folder
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for TestHypervisorConfigurationInput {
 }
 impl TestHypervisorConfigurationInput {
     /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
-    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder {
         crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder::default()
     }
 }
@@ -124,14 +124,12 @@ impl TestHypervisorConfigurationInputBuilder {
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput {
-                gateway_arn: self.gateway_arn,
-                host: self.host,
-                username: self.username,
-                password: self.password,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput {
+            gateway_arn: self.gateway_arn,
+            host: self.host,
+            username: self.username,
+            password: self.password,
+        })
     }
 }
 impl ::std::fmt::Debug for TestHypervisorConfigurationInputBuilder {

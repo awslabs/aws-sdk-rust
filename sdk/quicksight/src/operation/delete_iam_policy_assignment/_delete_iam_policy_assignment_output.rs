@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteIamPolicyAssignmentOutput {
 }
 impl DeleteIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIamPolicyAssignmentOutput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput).
-    pub fn builder() -> crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder{
+    pub fn builder() -> crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder {
         crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIamPolicyAssignmentOutput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIamPolicyAssignmentOutputBuilder {
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct DeleteIamPolicyAssignmentOutputBuilder {
 }
 impl DeleteIamPolicyAssignmentOutputBuilder {
     /// <p>The name of the assignment. </p>
-    pub fn assignment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assignment. </p>
-    pub fn set_assignment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_name = input;
         self
     }
@@ -110,9 +102,7 @@ impl DeleteIamPolicyAssignmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteIamPolicyAssignmentOutput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput {
+    pub fn build(self) -> crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput {
         crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput {
             assignment_name: self.assignment_name,
             request_id: self.request_id,

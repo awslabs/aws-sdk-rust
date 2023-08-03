@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartMonitoringMemberOutput {
 }
 impl StartMonitoringMemberOutput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder {
         crate::operation::start_monitoring_member::builders::StartMonitoringMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringMemberOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`destination_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationFluentBuilder::destination_arn) / [`set_destination_arn(Option<String>)`](crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationFluentBuilder::set_destination_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
     /// - On success, responds with [`DeleteRumMetricsDestinationOutput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteRumMetricsDestinationError>`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError)
-    pub fn delete_rum_metrics_destination(&self) -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationFluentBuilder{
+    pub fn delete_rum_metrics_destination(
+        &self,
+    ) -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationFluentBuilder {
         crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl CreateEdgePackagingJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEdgePackagingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder,
+    inner: crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder,
 }
 impl CreateEdgePackagingJobFluentBuilder {
     /// Creates a new `CreateEdgePackagingJob`.
@@ -38,10 +37,7 @@ impl CreateEdgePackagingJobFluentBuilder {
         }
     }
     /// Access the CreateEdgePackagingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateEdgePackagingJobFluentBuilder {
             crate::operation::create_edge_packaging_job::CreateEdgePackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateEdgePackagingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateEdgePackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateEdgePackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateEdgePackagingJobFluentBuilder {
             crate::operation::create_edge_packaging_job::CreateEdgePackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_packaging_job_name(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_packaging_job_name(input);
         self
     }
@@ -145,18 +124,12 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner.get_edge_packaging_job_name()
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compilation_job_name(input.into());
         self
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
     }
@@ -179,18 +152,12 @@ impl CreateEdgePackagingJobFluentBuilder {
         self.inner.get_model_name()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version(input);
         self
     }
@@ -218,10 +185,7 @@ impl CreateEdgePackagingJobFluentBuilder {
         self
     }
     /// <p>Provides information about the output location for the packaged model.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -253,10 +217,7 @@ impl CreateEdgePackagingJobFluentBuilder {
         self
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

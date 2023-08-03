@@ -5,15 +5,12 @@
 pub struct ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
     #[doc(hidden)]
-    pub phone_number_countries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
+    pub phone_number_countries: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
     _request_id: Option<String>,
 }
 impl ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
-    pub fn phone_number_countries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PhoneNumberCountry]> {
+    pub fn phone_number_countries(&self) -> ::std::option::Option<&[crate::types::PhoneNumberCountry]> {
         self.phone_number_countries.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ListSupportedPhoneNumberCountriesOutp
 }
 impl ListSupportedPhoneNumberCountriesOutput {
     /// Creates a new builder-style object to manufacture [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput).
-    pub fn builder() -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesOutputBuilder{
+    pub fn builder() -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesOutputBuilder {
         crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesOutputBuilder {
-    pub(crate) phone_number_countries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
+    pub(crate) phone_number_countries: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
     _request_id: Option<String>,
 }
 impl ListSupportedPhoneNumberCountriesOutputBuilder {
@@ -52,17 +46,12 @@ impl ListSupportedPhoneNumberCountriesOutputBuilder {
         self
     }
     /// <p>The supported phone number countries.</p>
-    pub fn set_phone_number_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
-    ) -> Self {
+    pub fn set_phone_number_countries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>) -> Self {
         self.phone_number_countries = input;
         self
     }
     /// <p>The supported phone number countries.</p>
-    pub fn get_phone_number_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>> {
+    pub fn get_phone_number_countries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>> {
         &self.phone_number_countries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,9 @@ impl ListSupportedPhoneNumberCountriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput).
-    pub fn build(self) -> crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput{
+    pub fn build(self) -> crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput {
         crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput {
-            phone_number_countries: self.phone_number_countries
-            ,
+            phone_number_countries: self.phone_number_countries,
             _request_id: self._request_id,
         }
     }

@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<SourceServer>>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::items): <p>An array of Source Servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_source_servers::DescribeSourceServersOutput::next_token): <p>The token of the next Source Server to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::operation::describe_source_servers::DescribeSourceServersError)
-    pub fn describe_source_servers(
-        &self,
-    ) -> crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder
-    {
-        crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_source_servers(&self) -> crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder {
+        crate::operation::describe_source_servers::builders::DescribeSourceServersFluentBuilder::new(self.handle.clone())
     }
 }

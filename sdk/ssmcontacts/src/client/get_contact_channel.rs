@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`delivery_address(Option<ContactChannelAddress>)`](crate::operation::get_contact_channel::GetContactChannelOutput::delivery_address): <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     ///   - [`activation_status(Option<ActivationStatus>)`](crate::operation::get_contact_channel::GetContactChannelOutput::activation_status): <p>A Boolean value indicating if the contact channel has been activated or not.</p>
     /// - On failure, responds with [`SdkError<GetContactChannelError>`](crate::operation::get_contact_channel::GetContactChannelError)
-    pub fn get_contact_channel(
-        &self,
-    ) -> crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder {
-        crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_channel(&self) -> crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder {
+        crate::operation::get_contact_channel::builders::GetContactChannelFluentBuilder::new(self.handle.clone())
     }
 }

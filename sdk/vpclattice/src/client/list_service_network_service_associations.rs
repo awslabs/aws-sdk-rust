@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`items(Option<Vec<ServiceNetworkServiceAssociationSummary>>)`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput::items): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListServiceNetworkServiceAssociationsError>`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError)
-    pub fn list_service_network_service_associations(&self) -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder{
-        crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn list_service_network_service_associations(
+        &self,
+    ) -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder {
+        crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

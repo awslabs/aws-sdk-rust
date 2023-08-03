@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`service(Option<Service>)`](crate::operation::pause_service::PauseServiceOutput::service): <p>A description of the App Runner service that this request just paused.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::pause_service::PauseServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<PauseServiceError>`](crate::operation::pause_service::PauseServiceError)
-    pub fn pause_service(
-        &self,
-    ) -> crate::operation::pause_service::builders::PauseServiceFluentBuilder {
-        crate::operation::pause_service::builders::PauseServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn pause_service(&self) -> crate::operation::pause_service::builders::PauseServiceFluentBuilder {
+        crate::operation::pause_service::builders::PauseServiceFluentBuilder::new(self.handle.clone())
     }
 }

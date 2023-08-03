@@ -9,10 +9,7 @@ impl CreateKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::create_key::CreateKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::create_key::CreateKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -27,27 +24,16 @@ impl CreateKeyInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::create_key::CreateKeyInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +42,13 @@ impl CreateKeyInput {
             fn update_http_builder(
                 input: &crate::operation::create_key::CreateKeyInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +58,9 @@ impl CreateKeyInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_create_key::ser_create_key_input(&self)?,
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_create_key::ser_create_key_input(&self)?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +72,8 @@ impl CreateKeyInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +82,16 @@ impl CreateKeyInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::create_key::CreateKey::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "CreateKey",
-            "kms",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::create_key::CreateKey::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("CreateKey", "kms"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -150,10 +108,7 @@ impl CreateKey {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for CreateKey {
-    type Output = ::std::result::Result<
-        crate::operation::create_key::CreateKeyOutput,
-        crate::operation::create_key::CreateKeyError,
-    >;
+    type Output = ::std::result::Result<crate::operation::create_key::CreateKeyOutput, crate::operation::create_key::CreateKeyError>;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -162,9 +117,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for CreateKey {
         if !success && status != 200 {
             crate::protocol_serde::shape_create_key::de_create_key_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_key::de_create_key_http_response_with_props(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_key::de_create_key_http_response_with_props(status, headers, body)
         }
     }
 }
@@ -188,9 +141,7 @@ pub enum CreateKeyError {
     /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
     /// </ul>
     /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
-    CloudHsmClusterInvalidConfigurationException(
-        crate::types::error::CloudHsmClusterInvalidConfigurationException,
-    ),
+    CloudHsmClusterInvalidConfigurationException(crate::types::error::CloudHsmClusterInvalidConfigurationException),
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>This exception is thrown under the following conditions:</p>
     /// <ul>
@@ -230,9 +181,7 @@ pub enum CreateKeyError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for CreateKeyError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -265,48 +214,20 @@ impl ::std::fmt::Display for CreateKeyError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateKeyError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CloudHsmClusterInvalidConfigurationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CustomKeyStoreInvalidStateException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CustomKeyStoreNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DependencyTimeoutException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidArnException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::KmsInternalException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MalformedPolicyDocumentException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TagException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedOperationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::XksKeyAlreadyInUseException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::XksKeyInvalidConfigurationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::XksKeyNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::CloudHsmClusterInvalidConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CustomKeyStoreInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CustomKeyStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependencyTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MalformedPolicyDocumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::XksKeyAlreadyInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::XksKeyInvalidConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::XksKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
@@ -326,27 +247,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateKeyError {
 impl CreateKeyError {
     /// Creates the `CreateKeyError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `CreateKeyError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -427,12 +335,8 @@ impl CreateKeyError {
 impl ::std::error::Error for CreateKeyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::CloudHsmClusterInvalidConfigurationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::CustomKeyStoreInvalidStateException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::CloudHsmClusterInvalidConfigurationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CustomKeyStoreInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::CustomKeyStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::DependencyTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
@@ -442,9 +346,7 @@ impl ::std::error::Error for CreateKeyError {
             Self::TagException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::XksKeyAlreadyInUseException(_inner) => ::std::option::Option::Some(_inner),
-            Self::XksKeyInvalidConfigurationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::XksKeyInvalidConfigurationException(_inner) => ::std::option::Option::Some(_inner),
             Self::XksKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

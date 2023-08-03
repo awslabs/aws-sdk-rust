@@ -10,10 +10,7 @@ impl CreateBuildInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_build::CreateBuildOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_build::CreateBuildError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_build::CreateBuildError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_build();
         fluent_builder.inner = self;
@@ -57,10 +54,7 @@ impl CreateBuildFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_build::CreateBuild,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_build::CreateBuild, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_build::CreateBuildError>,
     > {
         let handle = self.handle.clone();
@@ -71,10 +65,7 @@ impl CreateBuildFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,10 +107,7 @@ impl CreateBuildFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_build::CreateBuild,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_build::CreateBuild, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_build::CreateBuildError>,
     > {
         self.customize_middleware().await
@@ -160,10 +148,7 @@ impl CreateBuildFluentBuilder {
     }
     /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
     /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0. </p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_storage_location(input);
         self
     }
@@ -182,10 +167,7 @@ impl CreateBuildFluentBuilder {
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p> <note>
     /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
     /// </note>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
@@ -205,10 +187,7 @@ impl CreateBuildFluentBuilder {
         self
     }
     /// <p>A list of labels to assign to the new build resource. Tags are developer defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -217,18 +196,12 @@ impl CreateBuildFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>A server SDK version you used when integrating your game server build with Amazon GameLift. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate games with custom game servers</a>. By default Amazon GameLift sets this value to <code>4.0.2</code>.</p>
-    pub fn server_sdk_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_sdk_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_sdk_version(input.into());
         self
     }
     /// <p>A server SDK version you used when integrating your game server build with Amazon GameLift. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate games with custom game servers</a>. By default Amazon GameLift sets this value to <code>4.0.2</code>.</p>
-    pub fn set_server_sdk_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_sdk_version(input);
         self
     }

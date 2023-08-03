@@ -34,9 +34,7 @@ impl RawMessageContent {
 
 /// A builder for [`RawMessageContent`](crate::types::RawMessageContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RawMessageContentBuilder {
     pub(crate) s3_reference: ::std::option::Option<crate::types::S3Reference>,
 }
@@ -47,10 +45,7 @@ impl RawMessageContentBuilder {
         self
     }
     /// <p>The S3 reference of an email message.</p>
-    pub fn set_s3_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Reference>,
-    ) -> Self {
+    pub fn set_s3_reference(mut self, input: ::std::option::Option<crate::types::S3Reference>) -> Self {
         self.s3_reference = input;
         self
     }

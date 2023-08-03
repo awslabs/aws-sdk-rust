@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`discoverer_id(Option<String>)`](crate::operation::start_discoverer::StartDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::operation::start_discoverer::StartDiscovererOutput::state): <p>The state of the discoverer.</p>
     /// - On failure, responds with [`SdkError<StartDiscovererError>`](crate::operation::start_discoverer::StartDiscovererError)
-    pub fn start_discoverer(
-        &self,
-    ) -> crate::operation::start_discoverer::builders::StartDiscovererFluentBuilder {
-        crate::operation::start_discoverer::builders::StartDiscovererFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_discoverer(&self) -> crate::operation::start_discoverer::builders::StartDiscovererFluentBuilder {
+        crate::operation::start_discoverer::builders::StartDiscovererFluentBuilder::new(self.handle.clone())
     }
 }

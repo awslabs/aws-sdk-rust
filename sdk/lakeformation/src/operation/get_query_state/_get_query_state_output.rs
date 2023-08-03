@@ -48,9 +48,7 @@ impl GetQueryStateOutput {
 
 /// A builder for [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryStateOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::QueryStateString>,
@@ -89,10 +87,7 @@ impl GetQueryStateOutputBuilder {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStateString>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::QueryStateString>) -> Self {
         self.state = input;
         self
     }

@@ -72,9 +72,7 @@ impl PackageDependency {
 
 /// A builder for [`PackageDependency`](crate::types::PackageDependency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageDependencyBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) package: ::std::option::Option<::std::string::String>,
@@ -135,10 +133,7 @@ impl PackageDependencyBuilder {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    pub fn dependency_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dependency_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependency_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -152,10 +147,7 @@ impl PackageDependencyBuilder {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    pub fn set_dependency_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dependency_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dependency_type = input;
         self
     }
@@ -173,18 +165,12 @@ impl PackageDependencyBuilder {
         &self.dependency_type
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    pub fn version_requirement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_requirement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_requirement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    pub fn set_version_requirement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_requirement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_requirement = input;
         self
     }

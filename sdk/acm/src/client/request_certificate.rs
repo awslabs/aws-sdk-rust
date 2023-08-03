@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`RequestCertificateOutput`](crate::operation::request_certificate::RequestCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::operation::request_certificate::RequestCertificateOutput::certificate_arn): <p>String that contains the ARN of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// - On failure, responds with [`SdkError<RequestCertificateError>`](crate::operation::request_certificate::RequestCertificateError)
-    pub fn request_certificate(
-        &self,
-    ) -> crate::operation::request_certificate::builders::RequestCertificateFluentBuilder {
-        crate::operation::request_certificate::builders::RequestCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn request_certificate(&self) -> crate::operation::request_certificate::builders::RequestCertificateFluentBuilder {
+        crate::operation::request_certificate::builders::RequestCertificateFluentBuilder::new(self.handle.clone())
     }
 }

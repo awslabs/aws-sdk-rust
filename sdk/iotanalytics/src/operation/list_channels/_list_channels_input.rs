@@ -31,9 +31,7 @@ impl ListChannelsInput {
 
 /// A builder for [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -71,12 +69,7 @@ impl ListChannelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channels::ListChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsInput {
             next_token: self.next_token,
             max_results: self.max_results,

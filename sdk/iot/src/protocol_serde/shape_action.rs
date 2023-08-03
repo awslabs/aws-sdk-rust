@@ -3,12 +3,7 @@ pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,150 +13,96 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "dynamoDB" => {
-                                builder = builder.set_dynamo_db(
-                                    crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?
-                                );
-                            }
-                            "dynamoDBv2" => {
-                                builder = builder.set_dynamo_d_bv2(
-                                    crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?
-                                );
-                            }
-                            "lambda" => {
-                                builder = builder.set_lambda(
-                                    crate::protocol_serde::shape_lambda_action::de_lambda_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "sns" => {
-                                builder = builder.set_sns(
-                                    crate::protocol_serde::shape_sns_action::de_sns_action(tokens)?,
-                                );
-                            }
-                            "sqs" => {
-                                builder = builder.set_sqs(
-                                    crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens)?,
-                                );
-                            }
-                            "kinesis" => {
-                                builder = builder.set_kinesis(
-                                    crate::protocol_serde::shape_kinesis_action::de_kinesis_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "republish" => {
-                                builder = builder.set_republish(
-                                    crate::protocol_serde::shape_republish_action::de_republish_action(tokens)?
-                                );
-                            }
-                            "s3" => {
-                                builder = builder.set_s3(
-                                    crate::protocol_serde::shape_s3_action::de_s3_action(tokens)?,
-                                );
-                            }
-                            "firehose" => {
-                                builder = builder.set_firehose(
-                                    crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens)?
-                                );
-                            }
-                            "cloudwatchMetric" => {
-                                builder = builder.set_cloudwatch_metric(
-                                    crate::protocol_serde::shape_cloudwatch_metric_action::de_cloudwatch_metric_action(tokens)?
-                                );
-                            }
-                            "cloudwatchAlarm" => {
-                                builder = builder.set_cloudwatch_alarm(
-                                    crate::protocol_serde::shape_cloudwatch_alarm_action::de_cloudwatch_alarm_action(tokens)?
-                                );
-                            }
-                            "cloudwatchLogs" => {
-                                builder = builder.set_cloudwatch_logs(
-                                    crate::protocol_serde::shape_cloudwatch_logs_action::de_cloudwatch_logs_action(tokens)?
-                                );
-                            }
-                            "elasticsearch" => {
-                                builder = builder.set_elasticsearch(
-                                    crate::protocol_serde::shape_elasticsearch_action::de_elasticsearch_action(tokens)?
-                                );
-                            }
-                            "salesforce" => {
-                                builder = builder.set_salesforce(
-                                    crate::protocol_serde::shape_salesforce_action::de_salesforce_action(tokens)?
-                                );
-                            }
-                            "iotAnalytics" => {
-                                builder = builder.set_iot_analytics(
-                                    crate::protocol_serde::shape_iot_analytics_action::de_iot_analytics_action(tokens)?
-                                );
-                            }
-                            "iotEvents" => {
-                                builder = builder.set_iot_events(
-                                    crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens)?
-                                );
-                            }
-                            "iotSiteWise" => {
-                                builder = builder.set_iot_site_wise(
-                                    crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?
-                                );
-                            }
-                            "stepFunctions" => {
-                                builder = builder.set_step_functions(
-                                    crate::protocol_serde::shape_step_functions_action::de_step_functions_action(tokens)?
-                                );
-                            }
-                            "timestream" => {
-                                builder = builder.set_timestream(
-                                    crate::protocol_serde::shape_timestream_action::de_timestream_action(tokens)?
-                                );
-                            }
-                            "http" => {
-                                builder = builder.set_http(
-                                    crate::protocol_serde::shape_http_action::de_http_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "kafka" => {
-                                builder = builder.set_kafka(
-                                    crate::protocol_serde::shape_kafka_action::de_kafka_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "openSearch" => {
-                                builder = builder.set_open_search(
-                                    crate::protocol_serde::shape_open_search_action::de_open_search_action(tokens)?
-                                );
-                            }
-                            "location" => {
-                                builder = builder.set_location(
-                                    crate::protocol_serde::shape_location_action::de_location_action(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "dynamoDB" => {
+                            builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?);
                         }
-                    }
+                        "dynamoDBv2" => {
+                            builder = builder.set_dynamo_d_bv2(crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?);
+                        }
+                        "lambda" => {
+                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_action::de_lambda_action(tokens)?);
+                        }
+                        "sns" => {
+                            builder = builder.set_sns(crate::protocol_serde::shape_sns_action::de_sns_action(tokens)?);
+                        }
+                        "sqs" => {
+                            builder = builder.set_sqs(crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens)?);
+                        }
+                        "kinesis" => {
+                            builder = builder.set_kinesis(crate::protocol_serde::shape_kinesis_action::de_kinesis_action(tokens)?);
+                        }
+                        "republish" => {
+                            builder = builder.set_republish(crate::protocol_serde::shape_republish_action::de_republish_action(tokens)?);
+                        }
+                        "s3" => {
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3_action::de_s3_action(tokens)?);
+                        }
+                        "firehose" => {
+                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens)?);
+                        }
+                        "cloudwatchMetric" => {
+                            builder = builder.set_cloudwatch_metric(
+                                crate::protocol_serde::shape_cloudwatch_metric_action::de_cloudwatch_metric_action(tokens)?,
+                            );
+                        }
+                        "cloudwatchAlarm" => {
+                            builder = builder
+                                .set_cloudwatch_alarm(crate::protocol_serde::shape_cloudwatch_alarm_action::de_cloudwatch_alarm_action(tokens)?);
+                        }
+                        "cloudwatchLogs" => {
+                            builder =
+                                builder.set_cloudwatch_logs(crate::protocol_serde::shape_cloudwatch_logs_action::de_cloudwatch_logs_action(tokens)?);
+                        }
+                        "elasticsearch" => {
+                            builder = builder.set_elasticsearch(crate::protocol_serde::shape_elasticsearch_action::de_elasticsearch_action(tokens)?);
+                        }
+                        "salesforce" => {
+                            builder = builder.set_salesforce(crate::protocol_serde::shape_salesforce_action::de_salesforce_action(tokens)?);
+                        }
+                        "iotAnalytics" => {
+                            builder = builder.set_iot_analytics(crate::protocol_serde::shape_iot_analytics_action::de_iot_analytics_action(tokens)?);
+                        }
+                        "iotEvents" => {
+                            builder = builder.set_iot_events(crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens)?);
+                        }
+                        "iotSiteWise" => {
+                            builder = builder.set_iot_site_wise(crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?);
+                        }
+                        "stepFunctions" => {
+                            builder =
+                                builder.set_step_functions(crate::protocol_serde::shape_step_functions_action::de_step_functions_action(tokens)?);
+                        }
+                        "timestream" => {
+                            builder = builder.set_timestream(crate::protocol_serde::shape_timestream_action::de_timestream_action(tokens)?);
+                        }
+                        "http" => {
+                            builder = builder.set_http(crate::protocol_serde::shape_http_action::de_http_action(tokens)?);
+                        }
+                        "kafka" => {
+                            builder = builder.set_kafka(crate::protocol_serde::shape_kafka_action::de_kafka_action(tokens)?);
+                        }
+                        "openSearch" => {
+                            builder = builder.set_open_search(crate::protocol_serde::shape_open_search_action::de_open_search_action(tokens)?);
+                        }
+                        "location" => {
+                            builder = builder.set_location(crate::protocol_serde::shape_location_action::de_location_action(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }
 
@@ -178,10 +119,7 @@ pub fn ser_action(
     if let Some(var_3) = &input.dynamo_d_bv2 {
         #[allow(unused_mut)]
         let mut object_4 = object.key("dynamoDBv2").start_object();
-        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.lambda {
@@ -211,10 +149,7 @@ pub fn ser_action(
     if let Some(var_13) = &input.republish {
         #[allow(unused_mut)]
         let mut object_14 = object.key("republish").start_object();
-        crate::protocol_serde::shape_republish_action::ser_republish_action(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_republish_action::ser_republish_action(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.s3 {
@@ -232,91 +167,61 @@ pub fn ser_action(
     if let Some(var_19) = &input.cloudwatch_metric {
         #[allow(unused_mut)]
         let mut object_20 = object.key("cloudwatchMetric").start_object();
-        crate::protocol_serde::shape_cloudwatch_metric_action::ser_cloudwatch_metric_action(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_cloudwatch_metric_action::ser_cloudwatch_metric_action(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.cloudwatch_alarm {
         #[allow(unused_mut)]
         let mut object_22 = object.key("cloudwatchAlarm").start_object();
-        crate::protocol_serde::shape_cloudwatch_alarm_action::ser_cloudwatch_alarm_action(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_cloudwatch_alarm_action::ser_cloudwatch_alarm_action(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.cloudwatch_logs {
         #[allow(unused_mut)]
         let mut object_24 = object.key("cloudwatchLogs").start_object();
-        crate::protocol_serde::shape_cloudwatch_logs_action::ser_cloudwatch_logs_action(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_cloudwatch_logs_action::ser_cloudwatch_logs_action(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.elasticsearch {
         #[allow(unused_mut)]
         let mut object_26 = object.key("elasticsearch").start_object();
-        crate::protocol_serde::shape_elasticsearch_action::ser_elasticsearch_action(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_elasticsearch_action::ser_elasticsearch_action(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.salesforce {
         #[allow(unused_mut)]
         let mut object_28 = object.key("salesforce").start_object();
-        crate::protocol_serde::shape_salesforce_action::ser_salesforce_action(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_salesforce_action::ser_salesforce_action(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.iot_analytics {
         #[allow(unused_mut)]
         let mut object_30 = object.key("iotAnalytics").start_object();
-        crate::protocol_serde::shape_iot_analytics_action::ser_iot_analytics_action(
-            &mut object_30,
-            var_29,
-        )?;
+        crate::protocol_serde::shape_iot_analytics_action::ser_iot_analytics_action(&mut object_30, var_29)?;
         object_30.finish();
     }
     if let Some(var_31) = &input.iot_events {
         #[allow(unused_mut)]
         let mut object_32 = object.key("iotEvents").start_object();
-        crate::protocol_serde::shape_iot_events_action::ser_iot_events_action(
-            &mut object_32,
-            var_31,
-        )?;
+        crate::protocol_serde::shape_iot_events_action::ser_iot_events_action(&mut object_32, var_31)?;
         object_32.finish();
     }
     if let Some(var_33) = &input.iot_site_wise {
         #[allow(unused_mut)]
         let mut object_34 = object.key("iotSiteWise").start_object();
-        crate::protocol_serde::shape_iot_site_wise_action::ser_iot_site_wise_action(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_iot_site_wise_action::ser_iot_site_wise_action(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.step_functions {
         #[allow(unused_mut)]
         let mut object_36 = object.key("stepFunctions").start_object();
-        crate::protocol_serde::shape_step_functions_action::ser_step_functions_action(
-            &mut object_36,
-            var_35,
-        )?;
+        crate::protocol_serde::shape_step_functions_action::ser_step_functions_action(&mut object_36, var_35)?;
         object_36.finish();
     }
     if let Some(var_37) = &input.timestream {
         #[allow(unused_mut)]
         let mut object_38 = object.key("timestream").start_object();
-        crate::protocol_serde::shape_timestream_action::ser_timestream_action(
-            &mut object_38,
-            var_37,
-        )?;
+        crate::protocol_serde::shape_timestream_action::ser_timestream_action(&mut object_38, var_37)?;
         object_38.finish();
     }
     if let Some(var_39) = &input.http {
@@ -334,10 +239,7 @@ pub fn ser_action(
     if let Some(var_43) = &input.open_search {
         #[allow(unused_mut)]
         let mut object_44 = object.key("openSearch").start_object();
-        crate::protocol_serde::shape_open_search_action::ser_open_search_action(
-            &mut object_44,
-            var_43,
-        )?;
+        crate::protocol_serde::shape_open_search_action::ser_open_search_action(&mut object_44, var_43)?;
         object_44.finish();
     }
     if let Some(var_45) = &input.location {

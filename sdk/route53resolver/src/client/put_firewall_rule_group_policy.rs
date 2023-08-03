@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput) with field(s):
     ///   - [`return_value(bool)`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput::return_value): <p></p>
     /// - On failure, responds with [`SdkError<PutFirewallRuleGroupPolicyError>`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError)
-    pub fn put_firewall_rule_group_policy(&self) -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyFluentBuilder{
+    pub fn put_firewall_rule_group_policy(
+        &self,
+    ) -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyFluentBuilder {
         crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

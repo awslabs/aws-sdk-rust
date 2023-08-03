@@ -26,7 +26,7 @@ impl StopDataCollectionByAgentIdsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder,
+    inner: crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder,
 }
 impl StopDataCollectionByAgentIdsFluentBuilder {
     /// Creates a new `StopDataCollectionByAgentIds`.
@@ -37,7 +37,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
         }
     }
     /// Access the StopDataCollectionByAgentIds as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
             crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
             crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl StopDataCollectionByAgentIdsFluentBuilder {
         self
     }
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_ids(input);
         self
     }

@@ -26,7 +26,7 @@ impl StartImagePipelineExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImagePipelineExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder,
+    inner: crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder,
 }
 impl StartImagePipelineExecutionFluentBuilder {
     /// Creates a new `StartImagePipelineExecution`.
@@ -37,7 +37,7 @@ impl StartImagePipelineExecutionFluentBuilder {
         }
     }
     /// Access the StartImagePipelineExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartImagePipelineExecutionFluentBuilder {
             crate::operation::start_image_pipeline_execution::StartImagePipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartImagePipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartImagePipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartImagePipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartImagePipelineExecutionFluentBuilder {
             crate::operation::start_image_pipeline_execution::StartImagePipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_pipeline_arn(input);
         self
     }

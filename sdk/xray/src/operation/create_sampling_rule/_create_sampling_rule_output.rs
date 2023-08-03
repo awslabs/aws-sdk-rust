@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateSamplingRuleOutput {
 }
 impl CreateSamplingRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateSamplingRuleOutput`](crate::operation::create_sampling_rule::CreateSamplingRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleOutputBuilder {
+    pub fn builder() -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleOutputBuilder {
         crate::operation::create_sampling_rule::builders::CreateSamplingRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSamplingRuleOutput`](crate::operation::create_sampling_rule::CreateSamplingRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSamplingRuleOutputBuilder {
     pub(crate) sampling_rule_record: ::std::option::Option<crate::types::SamplingRuleRecord>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl CreateSamplingRuleOutputBuilder {
         self
     }
     /// <p>The saved rule definition and metadata.</p>
-    pub fn set_sampling_rule_record(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingRuleRecord>,
-    ) -> Self {
+    pub fn set_sampling_rule_record(mut self, input: ::std::option::Option<crate::types::SamplingRuleRecord>) -> Self {
         self.sampling_rule_record = input;
         self
     }
     /// <p>The saved rule definition and metadata.</p>
-    pub fn get_sampling_rule_record(
-        &self,
-    ) -> &::std::option::Option<crate::types::SamplingRuleRecord> {
+    pub fn get_sampling_rule_record(&self) -> &::std::option::Option<crate::types::SamplingRuleRecord> {
         &self.sampling_rule_record
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

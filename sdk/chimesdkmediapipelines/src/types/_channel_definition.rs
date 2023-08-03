@@ -30,9 +30,7 @@ impl ChannelDefinition {
 
 /// A builder for [`ChannelDefinition`](crate::types::ChannelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelDefinitionBuilder {
     pub(crate) channel_id: ::std::option::Option<i32>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
@@ -58,10 +56,7 @@ impl ChannelDefinitionBuilder {
         self
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }

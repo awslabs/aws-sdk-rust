@@ -36,9 +36,7 @@ pub struct ImageSummary {
     pub output_resources: ::std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
     /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
@@ -93,11 +91,7 @@ impl ImageSummary {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -123,9 +117,7 @@ impl ImageSummary {
 
 /// A builder for [`ImageSummary`](crate::types::ImageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -137,9 +129,7 @@ pub struct ImageSummaryBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) output_resources: ::std::option::Option<crate::types::OutputResources>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) build_type: ::std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
 }
@@ -276,10 +266,7 @@ impl ImageSummaryBuilder {
         self
     }
     /// <p>The output resources that Image Builder produced when it created this image.</p>
-    pub fn set_output_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputResources>,
-    ) -> Self {
+    pub fn set_output_resources(mut self, input: ::std::option::Option<crate::types::OutputResources>) -> Self {
         self.output_resources = input;
         self
     }
@@ -292,32 +279,19 @@ impl ImageSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
@@ -355,10 +329,7 @@ impl ImageSummaryBuilder {
         self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn set_image_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageSource>,
-    ) -> Self {
+    pub fn set_image_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
         self.image_source = input;
         self
     }

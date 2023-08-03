@@ -38,12 +38,9 @@ impl RuntimeConfiguration {
 
 /// A builder for [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeConfigurationBuilder {
-    pub(crate) server_processes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
+    pub(crate) server_processes: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
     pub(crate) max_concurrent_game_session_activations: ::std::option::Option<i32>,
     pub(crate) game_session_activation_timeout_seconds: ::std::option::Option<i32>,
 }
@@ -60,17 +57,12 @@ impl RuntimeConfigurationBuilder {
         self
     }
     /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
-    pub fn set_server_processes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
-    ) -> Self {
+    pub fn set_server_processes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>) -> Self {
         self.server_processes = input;
         self
     }
     /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
-    pub fn get_server_processes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>> {
+    pub fn get_server_processes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>> {
         &self.server_processes
     }
     /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
@@ -79,10 +71,7 @@ impl RuntimeConfigurationBuilder {
         self
     }
     /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
-    pub fn set_max_concurrent_game_session_activations(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_concurrent_game_session_activations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_game_session_activations = input;
         self
     }
@@ -96,10 +85,7 @@ impl RuntimeConfigurationBuilder {
         self
     }
     /// <p>The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.</p>
-    pub fn set_game_session_activation_timeout_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_game_session_activation_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.game_session_activation_timeout_seconds = input;
         self
     }

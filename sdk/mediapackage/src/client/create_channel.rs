@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::create_channel::CreateChannelOutput::ingress_access_logs): Configure ingress access logging.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_channel::CreateChannelOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

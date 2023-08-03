@@ -38,13 +38,7 @@
 /// Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EmbeddedTimecodeOverride {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EmbeddedTimecodeOverride {
         match s {
             "NONE" => EmbeddedTimecodeOverride::None,
             "USE_MDPM" => EmbeddedTimecodeOverride::UseMdpm,
-            other => EmbeddedTimecodeOverride::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EmbeddedTimecodeOverride::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`UpdateFindingsOutput`](crate::operation::update_findings::UpdateFindingsOutput)
     /// - On failure, responds with [`SdkError<UpdateFindingsError>`](crate::operation::update_findings::UpdateFindingsError)
-    pub fn update_findings(
-        &self,
-    ) -> crate::operation::update_findings::builders::UpdateFindingsFluentBuilder {
-        crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_findings(&self) -> crate::operation::update_findings::builders::UpdateFindingsFluentBuilder {
+        crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::new(self.handle.clone())
     }
 }

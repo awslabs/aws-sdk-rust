@@ -26,7 +26,7 @@ impl ListLicenseConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLicenseConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder,
+    inner: crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder,
 }
 impl ListLicenseConfigurationsFluentBuilder {
     /// Creates a new `ListLicenseConfigurations`.
@@ -37,7 +37,7 @@ impl ListLicenseConfigurationsFluentBuilder {
         }
     }
     /// Access the ListLicenseConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListLicenseConfigurationsFluentBuilder {
             crate::operation::list_license_configurations::ListLicenseConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListLicenseConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListLicenseConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_configurations::ListLicenseConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListLicenseConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_configurations::ListLicenseConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListLicenseConfigurationsFluentBuilder {
             crate::operation::list_license_configurations::ListLicenseConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_license_configurations::ListLicenseConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl ListLicenseConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
     ///
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn license_configuration_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arns(input.into());
         self
     }
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn set_license_configuration_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_license_configuration_arns(input);
         self
     }
     /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
-    pub fn get_license_configuration_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_configuration_arns()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -194,10 +175,7 @@ impl ListLicenseConfigurationsFluentBuilder {
     /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

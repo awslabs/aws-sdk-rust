@@ -29,9 +29,7 @@ impl GetExperimentInput {
 
 /// A builder for [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetExperimentInputBuilder {
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_experiment::GetExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_experiment::GetExperimentInput {
             project: self.project,
             experiment: self.experiment,

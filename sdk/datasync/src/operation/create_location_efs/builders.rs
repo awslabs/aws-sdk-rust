@@ -10,10 +10,7 @@ impl CreateLocationEfsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_location_efs::CreateLocationEfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_efs::CreateLocationEfsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_efs::CreateLocationEfsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_location_efs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLocationEfsFluentBuilder {
         }
     }
     /// Access the CreateLocationEfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location_efs::builders::CreateLocationEfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_location_efs::builders::CreateLocationEfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateLocationEfsFluentBuilder {
             crate::operation::create_location_efs::CreateLocationEfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_efs::CreateLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_efs::CreateLocationEfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateLocationEfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateLocationEfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_efs::CreateLocationEfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_efs::CreateLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_efs::CreateLocationEfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateLocationEfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_efs::CreateLocationEfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_efs::CreateLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_efs::CreateLocationEfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateLocationEfsFluentBuilder {
             crate::operation::create_location_efs::CreateLocationEfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_efs::CreateLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_efs::CreateLocationEfsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +127,12 @@ impl CreateLocationEfsFluentBuilder {
         self.inner.get_subdirectory()
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    pub fn efs_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn efs_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.efs_filesystem_arn(input.into());
         self
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    pub fn set_efs_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_efs_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_efs_filesystem_arn(input);
         self
     }
@@ -186,10 +164,7 @@ impl CreateLocationEfsFluentBuilder {
         self
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -198,18 +173,12 @@ impl CreateLocationEfsFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_point_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_point_arn(input);
         self
     }
@@ -218,18 +187,12 @@ impl CreateLocationEfsFluentBuilder {
         self.inner.get_access_point_arn()
     }
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_access_role_arn(input.into());
         self
     }
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn set_file_system_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_access_role_arn(input);
         self
     }
@@ -245,18 +208,13 @@ impl CreateLocationEfsFluentBuilder {
     }
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn set_in_transit_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::EfsInTransitEncryption>,
-    ) -> Self {
+    pub fn set_in_transit_encryption(mut self, input: ::std::option::Option<crate::types::EfsInTransitEncryption>) -> Self {
         self.inner = self.inner.set_in_transit_encryption(input);
         self
     }
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn get_in_transit_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
+    pub fn get_in_transit_encryption(&self) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
         self.inner.get_in_transit_encryption()
     }
 }

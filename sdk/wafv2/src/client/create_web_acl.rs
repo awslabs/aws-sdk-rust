@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput) with field(s):
     ///   - [`summary(Option<WebAclSummary>)`](crate::operation::create_web_acl::CreateWebAclOutput::summary): <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     /// - On failure, responds with [`SdkError<CreateWebACLError>`](crate::operation::create_web_acl::CreateWebACLError)
-    pub fn create_web_acl(
-        &self,
-    ) -> crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder {
-        crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_web_acl(&self) -> crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder {
+        crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder::new(self.handle.clone())
     }
 }

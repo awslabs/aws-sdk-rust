@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::operation::update_account_settings::UpdateAccountSettingsOutput::account_settings): <p>A structure that displays the status of the optional features in the account.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::operation::update_account_settings::UpdateAccountSettingsError)
-    pub fn update_account_settings(
-        &self,
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder
-    {
-        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_account_settings(&self) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder {
+        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,8 +12,7 @@ pub struct InputDataConfig {
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     #[doc(hidden)]
-    pub supplementary_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
+    pub supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -21,9 +20,7 @@ impl InputDataConfig {
         self.dataset_group_arn.as_deref()
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn supplementary_features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SupplementaryFeature]> {
+    pub fn supplementary_features(&self) -> ::std::option::Option<&[crate::types::SupplementaryFeature]> {
         self.supplementary_features.as_deref()
     }
 }
@@ -36,28 +33,19 @@ impl InputDataConfig {
 
 /// A builder for [`InputDataConfig`](crate::types::InputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDataConfigBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) supplementary_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
+    pub(crate) supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -77,17 +65,12 @@ impl InputDataConfigBuilder {
         self
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn set_supplementary_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
-    ) -> Self {
+    pub fn set_supplementary_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>) -> Self {
         self.supplementary_features = input;
         self
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn get_supplementary_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>> {
+    pub fn get_supplementary_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>> {
         &self.supplementary_features
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).

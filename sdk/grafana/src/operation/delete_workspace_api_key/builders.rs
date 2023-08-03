@@ -37,10 +37,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
         }
     }
     /// Access the DeleteWorkspaceApiKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
             crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteWorkspaceApiKeyFluentBuilder {
             crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError>,
     > {
         self.customize_middleware().await
     }

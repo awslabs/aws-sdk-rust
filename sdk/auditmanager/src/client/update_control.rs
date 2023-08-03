@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateControlOutput`](crate::operation::update_control::UpdateControlOutput) with field(s):
     ///   - [`control(Option<Control>)`](crate::operation::update_control::UpdateControlOutput::control): <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     /// - On failure, responds with [`SdkError<UpdateControlError>`](crate::operation::update_control::UpdateControlError)
-    pub fn update_control(
-        &self,
-    ) -> crate::operation::update_control::builders::UpdateControlFluentBuilder {
-        crate::operation::update_control::builders::UpdateControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_control(&self) -> crate::operation::update_control::builders::UpdateControlFluentBuilder {
+        crate::operation::update_control::builders::UpdateControlFluentBuilder::new(self.handle.clone())
     }
 }

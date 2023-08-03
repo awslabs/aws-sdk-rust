@@ -10,10 +10,7 @@ impl DeleteIndexFieldInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_index_field::DeleteIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_index_field::DeleteIndexFieldError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_index_field::DeleteIndexFieldError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_index_field();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteIndexFieldFluentBuilder {
         }
     }
     /// Access the DeleteIndexField as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_index_field::builders::DeleteIndexFieldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteIndexFieldFluentBuilder {
             crate::operation::delete_index_field::DeleteIndexField,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_index_field::DeleteIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_index_field::DeleteIndexFieldError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteIndexFieldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteIndexFieldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_index_field::DeleteIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_index_field::DeleteIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_index_field::DeleteIndexFieldError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteIndexFieldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_index_field::DeleteIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_index_field::DeleteIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_index_field::DeleteIndexFieldError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteIndexFieldFluentBuilder {
             crate::operation::delete_index_field::DeleteIndexField,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_index_field::DeleteIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_index_field::DeleteIndexFieldError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteIndexFieldFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-    pub fn index_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_field_name(input.into());
         self
     }
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-    pub fn set_index_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_index_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_field_name(input);
         self
     }

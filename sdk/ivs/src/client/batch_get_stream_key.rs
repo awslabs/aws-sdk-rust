@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`stream_keys(Option<Vec<StreamKey>>)`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput::stream_keys): <p></p>
     ///   - [`errors(Option<Vec<BatchError>>)`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput::errors): <p></p>
     /// - On failure, responds with [`SdkError<BatchGetStreamKeyError>`](crate::operation::batch_get_stream_key::BatchGetStreamKeyError)
-    pub fn batch_get_stream_key(
-        &self,
-    ) -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyFluentBuilder {
-        crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_stream_key(&self) -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyFluentBuilder {
+        crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyFluentBuilder::new(self.handle.clone())
     }
 }

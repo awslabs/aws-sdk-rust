@@ -66,18 +66,14 @@ impl ::aws_http::request_id::RequestId for GetPackageVersionReadmeOutput {
 }
 impl GetPackageVersionReadmeOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder {
         crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionReadmeOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -160,18 +156,12 @@ impl GetPackageVersionReadmeOutputBuilder {
         &self.version
     }
     /// <p> The current revision associated with the package version. </p>
-    pub fn version_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The current revision associated with the package version. </p>
-    pub fn set_version_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_revision = input;
         self
     }
@@ -203,9 +193,7 @@ impl GetPackageVersionReadmeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
+    pub fn build(self) -> crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
         crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
             format: self.format,
             namespace: self.namespace,

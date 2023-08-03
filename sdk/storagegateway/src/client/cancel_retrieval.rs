@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelRetrievalOutput`](crate::operation::cancel_retrieval::CancelRetrievalOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::cancel_retrieval::CancelRetrievalOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
     /// - On failure, responds with [`SdkError<CancelRetrievalError>`](crate::operation::cancel_retrieval::CancelRetrievalError)
-    pub fn cancel_retrieval(
-        &self,
-    ) -> crate::operation::cancel_retrieval::builders::CancelRetrievalFluentBuilder {
-        crate::operation::cancel_retrieval::builders::CancelRetrievalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_retrieval(&self) -> crate::operation::cancel_retrieval::builders::CancelRetrievalFluentBuilder {
+        crate::operation::cancel_retrieval::builders::CancelRetrievalFluentBuilder::new(self.handle.clone())
     }
 }

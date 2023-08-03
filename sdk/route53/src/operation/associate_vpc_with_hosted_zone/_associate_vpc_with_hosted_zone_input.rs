@@ -32,16 +32,14 @@ impl AssociateVpcWithHostedZoneInput {
 }
 impl AssociateVpcWithHostedZoneInput {
     /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput).
-    pub fn builder() -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder{
+    pub fn builder() -> crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder {
         crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVpcWithHostedZoneInput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVpcWithHostedZoneInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
@@ -50,19 +48,13 @@ pub struct AssociateVpcWithHostedZoneInputBuilder {
 impl AssociateVpcWithHostedZoneInputBuilder {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -106,12 +98,10 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput {
-                hosted_zone_id: self.hosted_zone_id,
-                vpc: self.vpc,
-                comment: self.comment,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput {
+            hosted_zone_id: self.hosted_zone_id,
+            vpc: self.vpc,
+            comment: self.comment,
+        })
     }
 }

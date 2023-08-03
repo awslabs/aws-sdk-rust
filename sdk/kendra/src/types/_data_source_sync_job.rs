@@ -72,9 +72,7 @@ impl DataSourceSyncJob {
 
 /// A builder for [`DataSourceSyncJob`](crate::types::DataSourceSyncJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -106,10 +104,7 @@ impl DataSourceSyncJobBuilder {
         self
     }
     /// <p>The Unix timestamp when the synchronization job started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -123,10 +118,7 @@ impl DataSourceSyncJobBuilder {
         self
     }
     /// <p>The Unix timestamp when the synchronization job completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -140,10 +132,7 @@ impl DataSourceSyncJobBuilder {
         self
     }
     /// <p>The execution status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason for the failure.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -152,18 +141,12 @@ impl DataSourceSyncJobBuilder {
         &self.status
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -186,18 +169,12 @@ impl DataSourceSyncJobBuilder {
         &self.error_code
     }
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
-    pub fn data_source_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the reason that the synchronization failed is due to an error with the underlying data source, this field contains a code that identifies the error.</p>
-    pub fn set_data_source_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_error_code = input;
         self
     }
@@ -211,10 +188,7 @@ impl DataSourceSyncJobBuilder {
         self
     }
     /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobMetrics>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobMetrics>) -> Self {
         self.metrics = input;
         self
     }

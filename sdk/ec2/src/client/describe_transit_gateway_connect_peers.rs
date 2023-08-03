@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`transit_gateway_connect_peers(Option<Vec<TransitGatewayConnectPeer>>)`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput::transit_gateway_connect_peers): <p>Information about the Connect peers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayConnectPeersError>`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersError)
-    pub fn describe_transit_gateway_connect_peers(&self) -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersFluentBuilder{
+    pub fn describe_transit_gateway_connect_peers(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersFluentBuilder {
         crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersFluentBuilder::new(self.handle.clone())
     }
 }

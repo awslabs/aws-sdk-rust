@@ -10,10 +10,7 @@ impl DeleteModelVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_model_version::DeleteModelVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_version::DeleteModelVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_version::DeleteModelVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_model_version();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteModelVersionFluentBuilder {
         }
     }
     /// Access the DeleteModelVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_model_version::builders::DeleteModelVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_model_version::builders::DeleteModelVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteModelVersionFluentBuilder {
             crate::operation::delete_model_version::DeleteModelVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_version::DeleteModelVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_version::DeleteModelVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteModelVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteModelVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_version::DeleteModelVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_version::DeleteModelVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_version::DeleteModelVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteModelVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_version::DeleteModelVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_version::DeleteModelVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_version::DeleteModelVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeleteModelVersionFluentBuilder {
             crate::operation::delete_model_version::DeleteModelVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_model_version::DeleteModelVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_model_version::DeleteModelVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl DeleteModelVersionFluentBuilder {
         self
     }
     /// <p>The model type of the model version to delete.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
@@ -156,18 +137,12 @@ impl DeleteModelVersionFluentBuilder {
         self.inner.get_model_type()
     }
     /// <p>The model version number of the model version to delete.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version_number(input.into());
         self
     }
     /// <p>The model version number of the model version to delete.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version_number(input);
         self
     }

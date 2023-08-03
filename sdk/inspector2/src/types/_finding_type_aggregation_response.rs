@@ -30,9 +30,7 @@ impl FindingTypeAggregationResponse {
 
 /// A builder for [`FindingTypeAggregationResponse`](crate::types::FindingTypeAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingTypeAggregationResponseBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
@@ -58,10 +56,7 @@ impl FindingTypeAggregationResponseBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

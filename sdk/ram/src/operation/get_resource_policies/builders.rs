@@ -37,9 +37,7 @@ impl GetResourcePoliciesFluentBuilder {
         }
     }
     /// Access the GetResourcePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetResourcePoliciesFluentBuilder {
             crate::operation::get_resource_policies::GetResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetResourcePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policies::GetResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policies::GetResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,47 +105,32 @@ impl GetResourcePoliciesFluentBuilder {
             crate::operation::get_resource_policies::GetResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator {
-        crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator {
+        crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `resourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// <p>Specifies the principal.</p>

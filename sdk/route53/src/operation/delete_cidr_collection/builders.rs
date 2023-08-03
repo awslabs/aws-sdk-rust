@@ -37,9 +37,7 @@ impl DeleteCidrCollectionFluentBuilder {
         }
     }
     /// Access the DeleteCidrCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteCidrCollectionFluentBuilder {
             crate::operation::delete_cidr_collection::DeleteCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cidr_collection::DeleteCidrCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteCidrCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cidr_collection::DeleteCidrCollectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteCidrCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cidr_collection::DeleteCidrCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteCidrCollectionFluentBuilder {
             crate::operation::delete_cidr_collection::DeleteCidrCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cidr_collection::DeleteCidrCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cidr_collection::DeleteCidrCollectionError>,
     > {
         self.customize_middleware().await
     }

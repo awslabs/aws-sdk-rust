@@ -26,7 +26,7 @@ impl ListAppComponentCompliancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppComponentCompliancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesInputBuilder,
+    inner: crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesInputBuilder,
 }
 impl ListAppComponentCompliancesFluentBuilder {
     /// Creates a new `ListAppComponentCompliances`.
@@ -37,7 +37,7 @@ impl ListAppComponentCompliancesFluentBuilder {
         }
     }
     /// Access the ListAppComponentCompliances as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAppComponentCompliancesFluentBuilder {
             crate::operation::list_app_component_compliances::ListAppComponentCompliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_component_compliances::ListAppComponentCompliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_compliances::ListAppComponentCompliancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAppComponentCompliancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAppComponentCompliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_component_compliances::ListAppComponentCompliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_compliances::ListAppComponentCompliancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAppComponentCompliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_component_compliances::ListAppComponentCompliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_compliances::ListAppComponentCompliancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListAppComponentCompliancesFluentBuilder {
             crate::operation::list_app_component_compliances::ListAppComponentCompliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_component_compliances::ListAppComponentCompliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_compliances::ListAppComponentCompliancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_component_compliances::paginator::ListAppComponentCompliancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_app_component_compliances::paginator::ListAppComponentCompliancesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_app_component_compliances::paginator::ListAppComponentCompliancesPaginator {
         crate::operation::list_app_component_compliances::paginator::ListAppComponentCompliancesPaginator::new(self.handle, self.inner)
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -155,18 +144,12 @@ impl ListAppComponentCompliancesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }

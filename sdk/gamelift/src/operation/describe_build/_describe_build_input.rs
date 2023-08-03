@@ -22,9 +22,7 @@ impl DescribeBuildInput {
 
 /// A builder for [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBuildInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeBuildInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_build::DescribeBuildInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_build::DescribeBuildInput {
-            build_id: self.build_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_build::DescribeBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_build::DescribeBuildInput { build_id: self.build_id })
     }
 }

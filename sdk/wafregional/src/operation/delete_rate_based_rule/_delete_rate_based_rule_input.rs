@@ -22,18 +22,14 @@ impl DeleteRateBasedRuleInput {
 }
 impl DeleteRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder {
-        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder {
+        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRateBasedRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DeleteRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput {
-                rule_id: self.rule_id,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput {
+            rule_id: self.rule_id,
+            change_token: self.change_token,
+        })
     }
 }

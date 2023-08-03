@@ -15,19 +15,13 @@ pub fn ser_interruption_filter(
     if let Some(var_3) = &input.absolute_time_range {
         #[allow(unused_mut)]
         let mut object_4 = object.key("AbsoluteTimeRange").start_object();
-        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.relative_time_range {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RelativeTimeRange").start_object();
-        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.negate {
@@ -38,17 +32,9 @@ pub fn ser_interruption_filter(
 
 pub(crate) fn de_interruption_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::InterruptionFilter>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::InterruptionFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,65 +44,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Threshold" => {
-                                builder = builder.set_threshold(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Threshold" => {
+                            builder = builder.set_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "ParticipantRole" => {
-                                builder = builder.set_participant_role(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ParticipantRole::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "AbsoluteTimeRange" => {
-                                builder = builder.set_absolute_time_range(
-                                    crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens)?
-                                );
-                            }
-                            "RelativeTimeRange" => {
-                                builder = builder.set_relative_time_range(
-                                    crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens)?
-                                );
-                            }
-                            "Negate" => {
-                                builder = builder.set_negate(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ParticipantRole" => {
+                            builder = builder.set_participant_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ParticipantRole::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AbsoluteTimeRange" => {
+                            builder =
+                                builder.set_absolute_time_range(crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens)?);
+                        }
+                        "RelativeTimeRange" => {
+                            builder =
+                                builder.set_relative_time_range(crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens)?);
+                        }
+                        "Negate" => {
+                            builder = builder.set_negate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

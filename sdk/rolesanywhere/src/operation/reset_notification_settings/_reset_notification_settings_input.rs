@@ -8,8 +8,7 @@ pub struct ResetNotificationSettingsInput {
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
     #[doc(hidden)]
-    pub notification_setting_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
+    pub notification_setting_keys: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
 }
 impl ResetNotificationSettingsInput {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -17,43 +16,32 @@ impl ResetNotificationSettingsInput {
         self.trust_anchor_id.as_deref()
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn notification_setting_keys(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationSettingKey]> {
+    pub fn notification_setting_keys(&self) -> ::std::option::Option<&[crate::types::NotificationSettingKey]> {
         self.notification_setting_keys.as_deref()
     }
 }
 impl ResetNotificationSettingsInput {
     /// Creates a new builder-style object to manufacture [`ResetNotificationSettingsInput`](crate::operation::reset_notification_settings::ResetNotificationSettingsInput).
-    pub fn builder() -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder {
         crate::operation::reset_notification_settings::builders::ResetNotificationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetNotificationSettingsInput`](crate::operation::reset_notification_settings::ResetNotificationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetNotificationSettingsInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_setting_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
+    pub(crate) notification_setting_keys: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
 }
 impl ResetNotificationSettingsInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_anchor_id = input;
         self
     }
@@ -66,27 +54,19 @@ impl ResetNotificationSettingsInputBuilder {
     /// To override the contents of this collection use [`set_notification_setting_keys`](Self::set_notification_setting_keys).
     ///
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn notification_setting_keys(
-        mut self,
-        input: crate::types::NotificationSettingKey,
-    ) -> Self {
+    pub fn notification_setting_keys(mut self, input: crate::types::NotificationSettingKey) -> Self {
         let mut v = self.notification_setting_keys.unwrap_or_default();
         v.push(input);
         self.notification_setting_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn set_notification_setting_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,
-    ) -> Self {
+    pub fn set_notification_setting_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>) -> Self {
         self.notification_setting_keys = input;
         self
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn get_notification_setting_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
+    pub fn get_notification_setting_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
         &self.notification_setting_keys
     }
     /// Consumes the builder and constructs a [`ResetNotificationSettingsInput`](crate::operation::reset_notification_settings::ResetNotificationSettingsInput).
@@ -96,11 +76,9 @@ impl ResetNotificationSettingsInputBuilder {
         crate::operation::reset_notification_settings::ResetNotificationSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_notification_settings::ResetNotificationSettingsInput {
-                trust_anchor_id: self.trust_anchor_id,
-                notification_setting_keys: self.notification_setting_keys,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reset_notification_settings::ResetNotificationSettingsInput {
+            trust_anchor_id: self.trust_anchor_id,
+            notification_setting_keys: self.notification_setting_keys,
+        })
     }
 }

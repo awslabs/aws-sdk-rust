@@ -29,16 +29,14 @@ impl ListBucketInventoryConfigurationsInput {
 }
 impl ListBucketInventoryConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
-    pub fn builder() -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder {
         crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurationsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         &self.bucket
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn continuation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn set_continuation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }
@@ -80,18 +72,12 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         &self.continuation_token
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -100,16 +86,18 @@ impl ListBucketInventoryConfigurationsInputBuilder {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput {
-                bucket: self.bucket
-                ,
-                continuation_token: self.continuation_token
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
+                bucket: self.bucket,
+                continuation_token: self.continuation_token,
+                expected_bucket_owner: self.expected_bucket_owner,
+            },
         )
     }
 }

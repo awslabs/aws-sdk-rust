@@ -10,10 +10,7 @@ impl CreateControlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_control::CreateControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control::CreateControlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_control();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateControlFluentBuilder {
         }
     }
     /// Access the CreateControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_control::builders::CreateControlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_control::builders::CreateControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl CreateControlFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The steps to follow to determine if the control is satisfied. </p>
-    pub fn testing_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn testing_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.testing_information(input.into());
         self
     }
     /// <p> The steps to follow to determine if the control is satisfied. </p>
-    pub fn set_testing_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_testing_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_testing_information(input);
         self
     }
@@ -163,18 +149,12 @@ impl CreateControlFluentBuilder {
         self.inner.get_testing_information()
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn action_plan_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_plan_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_plan_title(input.into());
         self
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn set_action_plan_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_plan_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_plan_title(input);
         self
     }
@@ -183,18 +163,12 @@ impl CreateControlFluentBuilder {
         self.inner.get_action_plan_title()
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn action_plan_instructions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_plan_instructions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_plan_instructions(input.into());
         self
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn set_action_plan_instructions(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_plan_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_plan_instructions(input);
         self
     }
@@ -207,25 +181,17 @@ impl CreateControlFluentBuilder {
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
     ///
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(
-        mut self,
-        input: crate::types::CreateControlMappingSource,
-    ) -> Self {
+    pub fn control_mapping_sources(mut self, input: crate::types::CreateControlMappingSource) -> Self {
         self.inner = self.inner.control_mapping_sources(input);
         self
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn set_control_mapping_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>>,
-    ) -> Self {
+    pub fn set_control_mapping_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>>) -> Self {
         self.inner = self.inner.set_control_mapping_sources(input);
         self
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn get_control_mapping_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>> {
+    pub fn get_control_mapping_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>> {
         self.inner.get_control_mapping_sources()
     }
     /// Adds a key-value pair to `tags`.
@@ -233,30 +199,17 @@ impl CreateControlFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the control. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags that are associated with the control. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags that are associated with the control. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

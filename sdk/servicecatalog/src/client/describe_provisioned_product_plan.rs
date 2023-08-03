@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`resource_changes(Option<Vec<ResourceChange>>)`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput::resource_changes): <p>Information about the resource changes that will occur when the plan is executed.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisionedProductPlanError>`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError)
-    pub fn describe_provisioned_product_plan(&self) -> crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanFluentBuilder{
+    pub fn describe_provisioned_product_plan(
+        &self,
+    ) -> crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanFluentBuilder {
         crate::operation::describe_provisioned_product_plan::builders::DescribeProvisionedProductPlanFluentBuilder::new(self.handle.clone())
     }
 }

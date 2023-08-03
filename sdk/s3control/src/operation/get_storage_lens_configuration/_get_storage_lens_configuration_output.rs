@@ -10,9 +10,7 @@ pub struct GetStorageLensConfigurationOutput {
 }
 impl GetStorageLensConfigurationOutput {
     /// <p>The S3 Storage Lens configuration requested.</p>
-    pub fn storage_lens_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageLensConfiguration> {
+    pub fn storage_lens_configuration(&self) -> ::std::option::Option<&crate::types::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetStorageLensConfigurationOutput {
 }
 impl GetStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput).
-    pub fn builder() -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationOutputBuilder {
         crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStorageLensConfigurationOutput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationOutputBuilder {
-    pub(crate) storage_lens_configuration:
-        ::std::option::Option<crate::types::StorageLensConfiguration>,
+    pub(crate) storage_lens_configuration: ::std::option::Option<crate::types::StorageLensConfiguration>,
     _request_id: Option<String>,
 }
 impl GetStorageLensConfigurationOutputBuilder {
     /// <p>The S3 Storage Lens configuration requested.</p>
-    pub fn storage_lens_configuration(
-        mut self,
-        input: crate::types::StorageLensConfiguration,
-    ) -> Self {
+    pub fn storage_lens_configuration(mut self, input: crate::types::StorageLensConfiguration) -> Self {
         self.storage_lens_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 Storage Lens configuration requested.</p>
-    pub fn set_storage_lens_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensConfiguration>,
-    ) -> Self {
+    pub fn set_storage_lens_configuration(mut self, input: ::std::option::Option<crate::types::StorageLensConfiguration>) -> Self {
         self.storage_lens_configuration = input;
         self
     }
     /// <p>The S3 Storage Lens configuration requested.</p>
-    pub fn get_storage_lens_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
+    pub fn get_storage_lens_configuration(&self) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
         &self.storage_lens_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl GetStorageLensConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationOutput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput {
         crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput {
             storage_lens_configuration: self.storage_lens_configuration,
             _request_id: self._request_id,

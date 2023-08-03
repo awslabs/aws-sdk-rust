@@ -15,40 +15,30 @@ impl DescribeStudioLifecycleConfigInput {
 }
 impl DescribeStudioLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
-    pub fn builder() -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder{
+    pub fn builder() -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder {
         crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = input;
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn get_studio_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_lifecycle_config_name
     }
     /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
@@ -58,11 +48,8 @@ impl DescribeStudioLifecycleConfigInputBuilder {
         crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput {
-                studio_lifecycle_config_name: self.studio_lifecycle_config_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput {
+            studio_lifecycle_config_name: self.studio_lifecycle_config_name,
+        })
     }
 }

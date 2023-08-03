@@ -37,9 +37,7 @@ impl CodeGenEdge {
 
 /// A builder for [`CodeGenEdge`](crate::types::CodeGenEdge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeGenEdgeBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CodeGenEdgeBuilder {
         &self.target
     }
     /// <p>The target of the edge.</p>
-    pub fn target_parameter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target of the edge.</p>
-    pub fn set_target_parameter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_parameter = input;
         self
     }

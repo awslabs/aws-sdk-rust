@@ -25,10 +25,7 @@ pub fn ser_create_bot_alias_input(
     if let Some(var_8) = &input.conversation_log_settings {
         #[allow(unused_mut)]
         let mut object_9 = object.key("conversationLogSettings").start_object();
-        crate::protocol_serde::shape_conversation_log_settings::ser_conversation_log_settings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_conversation_log_settings::ser_conversation_log_settings(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.description {
@@ -37,10 +34,7 @@ pub fn ser_create_bot_alias_input(
     if let Some(var_11) = &input.sentiment_analysis_settings {
         #[allow(unused_mut)]
         let mut object_12 = object.key("sentimentAnalysisSettings").start_object();
-        crate::protocol_serde::shape_sentiment_analysis_settings::ser_sentiment_analysis_settings(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_sentiment_analysis_settings::ser_sentiment_analysis_settings(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.tags {

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder::set_client_request_token): <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
     /// - On success, responds with [`UpdateNotebookOutput`](crate::operation::update_notebook::UpdateNotebookOutput)
     /// - On failure, responds with [`SdkError<UpdateNotebookError>`](crate::operation::update_notebook::UpdateNotebookError)
-    pub fn update_notebook(
-        &self,
-    ) -> crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder {
-        crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_notebook(&self) -> crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder {
+        crate::operation::update_notebook::builders::UpdateNotebookFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_instance::CreateApplicationInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_application_instance::CreateApplicationInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_instance::CreateApplicationInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_application_instance::CreateApplicationInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -64,44 +48,34 @@ where
     }
 }
 impl From<crate::operation::create_application_instance::CreateApplicationInstanceError> for Error {
-    fn from(
-        err: crate::operation::create_application_instance::CreateApplicationInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::create_application_instance::CreateApplicationInstanceError) -> Self {
         match err {
-            crate::operation::create_application_instance::CreateApplicationInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_application_instance::CreateApplicationInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_application_instance::CreateApplicationInstanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_application_instance::CreateApplicationInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_application_instance::CreateApplicationInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_application_instance::CreateApplicationInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_application_instance::CreateApplicationInstanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_application_instance::CreateApplicationInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_application_instance::CreateApplicationInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -113,86 +87,62 @@ impl From<crate::operation::create_job_for_devices::CreateJobForDevicesError> fo
         match err {
             crate::operation::create_job_for_devices::CreateJobForDevicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_job_for_devices::CreateJobForDevicesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_job_for_devices::CreateJobForDevicesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_job_for_devices::CreateJobForDevicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_job_for_devices::CreateJobForDevicesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_job_for_devices::CreateJobForDevicesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_job_for_devices::CreateJobForDevicesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_job_for_devices::CreateJobForDevicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-    ) -> Self {
+impl From<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError> for Error {
+    fn from(err: crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError) -> Self {
         match err {
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package::CreatePackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package::CreatePackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -202,50 +152,24 @@ where
 impl From<crate::operation::create_package::CreatePackageError> for Error {
     fn from(err: crate::operation::create_package::CreatePackageError) -> Self {
         match err {
-            crate::operation::create_package::CreatePackageError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_package::CreatePackageError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_package::CreatePackageError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::create_package::CreatePackageError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_package::CreatePackageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_package::CreatePackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_package::CreatePackageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_package::CreatePackageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_package::CreatePackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_package::CreatePackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_import_job::CreatePackageImportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_package_import_job::CreatePackageImportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -255,36 +179,28 @@ where
 impl From<crate::operation::create_package_import_job::CreatePackageImportJobError> for Error {
     fn from(err: crate::operation::create_package_import_job::CreatePackageImportJobError) -> Self {
         match err {
-            crate::operation::create_package_import_job::CreatePackageImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_package_import_job::CreatePackageImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_package_import_job::CreatePackageImportJobError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_package_import_job::CreatePackageImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_package_import_job::CreatePackageImportJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::create_package_import_job::CreatePackageImportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_package_import_job::CreatePackageImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_device::DeleteDeviceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_device::DeleteDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device::DeleteDeviceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_device::DeleteDeviceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -294,53 +210,25 @@ where
 impl From<crate::operation::delete_device::DeleteDeviceError> for Error {
     fn from(err: crate::operation::delete_device::DeleteDeviceError) -> Self {
         match err {
-            crate::operation::delete_device::DeleteDeviceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_device::DeleteDeviceError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_device::DeleteDeviceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_device::DeleteDeviceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_device::DeleteDeviceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_device::DeleteDeviceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_device::DeleteDeviceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_device::DeleteDeviceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_device::DeleteDeviceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_device::DeleteDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_device::DeleteDeviceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_device::DeleteDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package::DeletePackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_package::DeletePackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -350,53 +238,25 @@ where
 impl From<crate::operation::delete_package::DeletePackageError> for Error {
     fn from(err: crate::operation::delete_package::DeletePackageError) -> Self {
         match err {
-            crate::operation::delete_package::DeletePackageError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_package::DeletePackageError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_package::DeletePackageError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::delete_package::DeletePackageError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_package::DeletePackageError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_package::DeletePackageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_package::DeletePackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_package::DeletePackageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_package::DeletePackageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_package::DeletePackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_package::DeletePackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_package::DeletePackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -404,118 +264,116 @@ where
     }
 }
 impl From<crate::operation::deregister_package_version::DeregisterPackageVersionError> for Error {
-    fn from(
-        err: crate::operation::deregister_package_version::DeregisterPackageVersionError,
-    ) -> Self {
+    fn from(err: crate::operation::deregister_package_version::DeregisterPackageVersionError) -> Self {
         match err {
-            crate::operation::deregister_package_version::DeregisterPackageVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::deregister_package_version::DeregisterPackageVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::deregister_package_version::DeregisterPackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::deregister_package_version::DeregisterPackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::deregister_package_version::DeregisterPackageVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::deregister_package_version::DeregisterPackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_package_version::DeregisterPackageVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::deregister_package_version::DeregisterPackageVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deregister_package_version::DeregisterPackageVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::deregister_package_version::DeregisterPackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance::DescribeApplicationInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance::DescribeApplicationInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_application_instance::DescribeApplicationInstanceError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_application_instance::DescribeApplicationInstanceError,
-    ) -> Self {
+impl From<crate::operation::describe_application_instance::DescribeApplicationInstanceError> for Error {
+    fn from(err: crate::operation::describe_application_instance::DescribeApplicationInstanceError) -> Self {
         match err {
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_application_instance::DescribeApplicationInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_application_instance::DescribeApplicationInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_application_instance::DescribeApplicationInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_application_instance::DescribeApplicationInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError> for Error {
     fn from(err: crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError) -> Self {
         match err {
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device::DescribeDeviceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_device::DescribeDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device::DescribeDeviceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_device::DescribeDeviceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -525,50 +383,24 @@ where
 impl From<crate::operation::describe_device::DescribeDeviceError> for Error {
     fn from(err: crate::operation::describe_device::DescribeDeviceError) -> Self {
         match err {
-            crate::operation::describe_device::DescribeDeviceError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::describe_device::DescribeDeviceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::describe_device::DescribeDeviceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_device::DescribeDeviceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::describe_device::DescribeDeviceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_device::DescribeDeviceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_device::DescribeDeviceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_device::DescribeDeviceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_device::DescribeDeviceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_device::DescribeDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_job::DescribeDeviceJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_device_job::DescribeDeviceJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_job::DescribeDeviceJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_device_job::DescribeDeviceJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -581,34 +413,24 @@ impl From<crate::operation::describe_device_job::DescribeDeviceJobError> for Err
             crate::operation::describe_device_job::DescribeDeviceJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_device_job::DescribeDeviceJobError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::describe_device_job::DescribeDeviceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_device_job::DescribeDeviceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_device_job::DescribeDeviceJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_device_job::DescribeDeviceJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_device_job::DescribeDeviceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::describe_node::DescribeNodeError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_node::DescribeNodeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node::DescribeNodeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_node::DescribeNodeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -618,100 +440,62 @@ where
 impl From<crate::operation::describe_node::DescribeNodeError> for Error {
     fn from(err: crate::operation::describe_node::DescribeNodeError) -> Self {
         match err {
-            crate::operation::describe_node::DescribeNodeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::describe_node::DescribeNodeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::describe_node::DescribeNodeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_node::DescribeNodeError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_node::DescribeNodeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::describe_node::DescribeNodeError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_node::DescribeNodeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_node::DescribeNodeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_node::DescribeNodeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_node::DescribeNodeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_node::DescribeNodeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_node::DescribeNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-    ) -> Self {
+impl From<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError> for Error {
+    fn from(err: crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError) -> Self {
         match err {
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package::DescribePackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_package::DescribePackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package::DescribePackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_package::DescribePackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -721,53 +505,25 @@ where
 impl From<crate::operation::describe_package::DescribePackageError> for Error {
     fn from(err: crate::operation::describe_package::DescribePackageError) -> Self {
         match err {
-            crate::operation::describe_package::DescribePackageError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::describe_package::DescribePackageError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::describe_package::DescribePackageError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::describe_package::DescribePackageError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_package::DescribePackageError::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::operation::describe_package::DescribePackageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_package::DescribePackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_package::DescribePackageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_package::DescribePackageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_package::DescribePackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_package::DescribePackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_package::DescribePackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -775,44 +531,32 @@ where
     }
 }
 impl From<crate::operation::describe_package_import_job::DescribePackageImportJobError> for Error {
-    fn from(
-        err: crate::operation::describe_package_import_job::DescribePackageImportJobError,
-    ) -> Self {
+    fn from(err: crate::operation::describe_package_import_job::DescribePackageImportJobError) -> Self {
         match err {
-            crate::operation::describe_package_import_job::DescribePackageImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_package_import_job::DescribePackageImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::describe_package_import_job::DescribePackageImportJobError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_package_import_job::DescribePackageImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_package_import_job::DescribePackageImportJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_package_import_job::DescribePackageImportJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_package_import_job::DescribePackageImportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::describe_package_import_job::DescribePackageImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_version::DescribePackageVersionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_package_version::DescribePackageVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_version::DescribePackageVersionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_package_version::DescribePackageVersionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -822,85 +566,108 @@ where
 impl From<crate::operation::describe_package_version::DescribePackageVersionError> for Error {
     fn from(err: crate::operation::describe_package_version::DescribePackageVersionError) -> Self {
         match err {
-            crate::operation::describe_package_version::DescribePackageVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_package_version::DescribePackageVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::describe_package_version::DescribePackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_package_version::DescribePackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_package_version::DescribePackageVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_package_version::DescribePackageVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_package_version::DescribePackageVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_package_version::DescribePackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_package_version::DescribePackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError, R>) -> Self {
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError> for Error {
     fn from(err: crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError) -> Self {
         match err {
-            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError> for Error {
-    fn from(err: crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError) -> Self {
-        match err {
-            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
 impl<R>
     From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
-            R,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError, R>,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
+            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError> for Error {
+    fn from(err: crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError) -> Self {
+        match err {
+            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -908,38 +675,28 @@ where
     }
 }
 impl From<crate::operation::list_application_instances::ListApplicationInstancesError> for Error {
-    fn from(
-        err: crate::operation::list_application_instances::ListApplicationInstancesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_application_instances::ListApplicationInstancesError) -> Self {
         match err {
-            crate::operation::list_application_instances::ListApplicationInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_application_instances::ListApplicationInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_application_instances::ListApplicationInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_application_instances::ListApplicationInstancesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_application_instances::ListApplicationInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices::ListDevicesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -949,50 +706,24 @@ where
 impl From<crate::operation::list_devices::ListDevicesError> for Error {
     fn from(err: crate::operation::list_devices::ListDevicesError) -> Self {
         match err {
-            crate::operation::list_devices::ListDevicesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_devices::ListDevicesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_devices::ListDevicesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_devices::ListDevicesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_devices::ListDevicesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_devices::ListDevicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_devices::ListDevicesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_devices::ListDevicesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_devices::ListDevicesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_devices::ListDevicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices_jobs::ListDevicesJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_devices_jobs::ListDevicesJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices_jobs::ListDevicesJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_devices_jobs::ListDevicesJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1011,32 +742,16 @@ impl From<crate::operation::list_devices_jobs::ListDevicesJobsError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1044,36 +759,34 @@ where
     }
 }
 impl From<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError> for Error {
-    fn from(
-        err: crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError) -> Self {
         match err {
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_nodes::ListNodesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1083,47 +796,23 @@ where
 impl From<crate::operation::list_nodes::ListNodesError> for Error {
     fn from(err: crate::operation::list_nodes::ListNodesError) -> Self {
         match err {
-            crate::operation::list_nodes::ListNodesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_nodes::ListNodesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_nodes::ListNodesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_nodes::ListNodesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_nodes::ListNodesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_nodes::ListNodesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_nodes::ListNodesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_nodes::ListNodesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1133,36 +822,28 @@ where
 impl From<crate::operation::list_package_import_jobs::ListPackageImportJobsError> for Error {
     fn from(err: crate::operation::list_package_import_jobs::ListPackageImportJobsError) -> Self {
         match err {
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_package_import_jobs::ListPackageImportJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_package_import_jobs::ListPackageImportJobsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_package_import_jobs::ListPackageImportJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_package_import_jobs::ListPackageImportJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_package_import_jobs::ListPackageImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages::ListPackagesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_packages::ListPackagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1172,53 +853,25 @@ where
 impl From<crate::operation::list_packages::ListPackagesError> for Error {
     fn from(err: crate::operation::list_packages::ListPackagesError) -> Self {
         match err {
-            crate::operation::list_packages::ListPackagesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_packages::ListPackagesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_packages::ListPackagesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_packages::ListPackagesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_packages::ListPackagesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_packages::ListPackagesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_packages::ListPackagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_packages::ListPackagesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_packages::ListPackagesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_packages::ListPackagesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_packages::ListPackagesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_packages::ListPackagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1228,39 +881,27 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_device::ProvisionDeviceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::provision_device::ProvisionDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_device::ProvisionDeviceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::provision_device::ProvisionDeviceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1273,38 +914,24 @@ impl From<crate::operation::provision_device::ProvisionDeviceError> for Error {
             crate::operation::provision_device::ProvisionDeviceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::provision_device::ProvisionDeviceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::provision_device::ProvisionDeviceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::provision_device::ProvisionDeviceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::provision_device::ProvisionDeviceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::provision_device::ProvisionDeviceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::provision_device::ProvisionDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1314,18 +941,60 @@ where
 impl From<crate::operation::register_package_version::RegisterPackageVersionError> for Error {
     fn from(err: crate::operation::register_package_version::RegisterPackageVersionError) -> Self {
         match err {
-            crate::operation::register_package_version::RegisterPackageVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::register_package_version::RegisterPackageVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::register_package_version::RegisterPackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::register_package_version::RegisterPackageVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::register_package_version::RegisterPackageVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::register_package_version::RegisterPackageVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::register_package_version::RegisterPackageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::remove_application_instance::RemoveApplicationInstanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_application_instance::RemoveApplicationInstanceError> for Error {
+    fn from(err: crate::operation::remove_application_instance::RemoveApplicationInstanceError) -> Self {
+        match err {
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
             R,
         >,
     > for Error
@@ -1334,50 +1003,18 @@ where
 {
     fn from(
         err: ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
             R,
         >,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
-        }
-    }
-}
-impl From<crate::operation::remove_application_instance::RemoveApplicationInstanceError> for Error {
-    fn from(
-        err: crate::operation::remove_application_instance::RemoveApplicationInstanceError,
-    ) -> Self {
-        match err {
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::remove_application_instance::RemoveApplicationInstanceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
         }
     }
 }
@@ -1392,28 +1029,16 @@ impl From<crate::operation::signal_application_instance_node_instances::SignalAp
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1423,47 +1048,23 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1473,47 +1074,23 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_metadata::UpdateDeviceMetadataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_device_metadata::UpdateDeviceMetadataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_device_metadata::UpdateDeviceMetadataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_device_metadata::UpdateDeviceMetadataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1525,8 +1102,12 @@ impl From<crate::operation::update_device_metadata::UpdateDeviceMetadataError> f
         match err {
             crate::operation::update_device_metadata::UpdateDeviceMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_device_metadata::UpdateDeviceMetadataError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_device_metadata::UpdateDeviceMetadataError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_device_metadata::UpdateDeviceMetadataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_device_metadata::UpdateDeviceMetadataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_device_metadata::UpdateDeviceMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_device_metadata::UpdateDeviceMetadataError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_device_metadata::UpdateDeviceMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }

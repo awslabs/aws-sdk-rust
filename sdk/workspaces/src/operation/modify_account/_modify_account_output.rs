@@ -19,9 +19,7 @@ impl ModifyAccountOutput {
 
 /// A builder for [`ModifyAccountOutput`](crate::operation::modify_account::ModifyAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAccountOutputBuilder {
     _request_id: Option<String>,
 }

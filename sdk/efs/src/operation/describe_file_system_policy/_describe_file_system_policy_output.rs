@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFileSystemPolicyOutput {
 }
 impl DescribeFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput).
-    pub fn builder() -> crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyOutputBuilder {
         crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemPolicyOutputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct DescribeFileSystemPolicyOutputBuilder {
 }
 impl DescribeFileSystemPolicyOutputBuilder {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -88,9 +80,7 @@ impl DescribeFileSystemPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput {
+    pub fn build(self) -> crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput {
         crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput {
             file_system_id: self.file_system_id,
             policy: self.policy,

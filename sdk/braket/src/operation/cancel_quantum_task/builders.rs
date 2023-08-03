@@ -10,10 +10,7 @@ impl CancelQuantumTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_quantum_task::CancelQuantumTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_quantum_task::CancelQuantumTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_quantum_task::CancelQuantumTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_quantum_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelQuantumTaskFluentBuilder {
         }
     }
     /// Access the CancelQuantumTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelQuantumTaskFluentBuilder {
             crate::operation::cancel_quantum_task::CancelQuantumTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_quantum_task::CancelQuantumTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_quantum_task::CancelQuantumTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelQuantumTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelQuantumTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_quantum_task::CancelQuantumTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_quantum_task::CancelQuantumTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_quantum_task::CancelQuantumTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelQuantumTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_quantum_task::CancelQuantumTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_quantum_task::CancelQuantumTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_quantum_task::CancelQuantumTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CancelQuantumTaskFluentBuilder {
             crate::operation::cancel_quantum_task::CancelQuantumTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_quantum_task::CancelQuantumTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_quantum_task::CancelQuantumTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the task to cancel.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quantum_task_arn(input.into());
         self
     }
     /// <p>The ARN of the task to cancel.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
     }

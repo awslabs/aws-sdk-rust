@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`created_resource_arn(Option<String>)`](crate::operation::describe_restore_job::DescribeRestoreJobOutput::created_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
     ///   - [`resource_type(Option<String>)`](crate::operation::describe_restore_job::DescribeRestoreJobOutput::resource_type): <p>Returns metadata associated with a restore job listed by resource type.</p>
     /// - On failure, responds with [`SdkError<DescribeRestoreJobError>`](crate::operation::describe_restore_job::DescribeRestoreJobError)
-    pub fn describe_restore_job(
-        &self,
-    ) -> crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder {
-        crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_restore_job(&self) -> crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder {
+        crate::operation::describe_restore_job::builders::DescribeRestoreJobFluentBuilder::new(self.handle.clone())
     }
 }

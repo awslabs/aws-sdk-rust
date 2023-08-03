@@ -37,9 +37,7 @@ impl MavenReference {
 
 /// A builder for [`MavenReference`](crate::types::MavenReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MavenReferenceBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_id: ::std::option::Option<::std::string::String>,

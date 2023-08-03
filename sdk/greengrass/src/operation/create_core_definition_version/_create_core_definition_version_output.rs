@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateCoreDefinitionVersionOutput {
 }
 impl CreateCoreDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCoreDefinitionVersionOutput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionOutputBuilder {
         crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCoreDefinitionVersionOutput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateCoreDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -132,9 +124,7 @@ impl CreateCoreDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCoreDefinitionVersionOutput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput {
+    pub fn build(self) -> crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput {
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput {
             arn: self.arn,
             creation_timestamp: self.creation_timestamp,

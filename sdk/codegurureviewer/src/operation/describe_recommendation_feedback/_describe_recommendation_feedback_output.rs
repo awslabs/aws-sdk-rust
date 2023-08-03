@@ -10,9 +10,7 @@ pub struct DescribeRecommendationFeedbackOutput {
 }
 impl DescribeRecommendationFeedbackOutput {
     /// <p>The recommendation feedback given by the user.</p>
-    pub fn recommendation_feedback(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationFeedback> {
+    pub fn recommendation_feedback(&self) -> ::std::option::Option<&crate::types::RecommendationFeedback> {
         self.recommendation_feedback.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeRecommendationFeedbackOutput 
 }
 impl DescribeRecommendationFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackOutput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput).
-    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackOutputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackOutputBuilder {
         crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationFeedbackOutput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackOutputBuilder {
     pub(crate) recommendation_feedback: ::std::option::Option<crate::types::RecommendationFeedback>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeRecommendationFeedbackOutputBuilder {
         self
     }
     /// <p>The recommendation feedback given by the user.</p>
-    pub fn set_recommendation_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationFeedback>,
-    ) -> Self {
+    pub fn set_recommendation_feedback(mut self, input: ::std::option::Option<crate::types::RecommendationFeedback>) -> Self {
         self.recommendation_feedback = input;
         self
     }
     /// <p>The recommendation feedback given by the user.</p>
-    pub fn get_recommendation_feedback(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationFeedback> {
+    pub fn get_recommendation_feedback(&self) -> &::std::option::Option<crate::types::RecommendationFeedback> {
         &self.recommendation_feedback
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,7 @@ impl DescribeRecommendationFeedbackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationFeedbackOutput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput
-    {
+    pub fn build(self) -> crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput {
         crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput {
             recommendation_feedback: self.recommendation_feedback,
             _request_id: self._request_id,

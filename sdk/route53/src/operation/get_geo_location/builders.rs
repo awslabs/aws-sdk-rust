@@ -10,10 +10,7 @@ impl GetGeoLocationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_geo_location::GetGeoLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_geo_location();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl GetGeoLocationFluentBuilder {
         }
     }
     /// Access the GetGeoLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl GetGeoLocationFluentBuilder {
             crate::operation::get_geo_location::GetGeoLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl GetGeoLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl GetGeoLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_geo_location::GetGeoLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl GetGeoLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_geo_location::GetGeoLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl GetGeoLocationFluentBuilder {
             crate::operation::get_geo_location::GetGeoLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_geo_location::GetGeoLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
     > {
         self.customize_middleware().await
     }
@@ -139,10 +123,7 @@ impl GetGeoLocationFluentBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.continent_code(input.into());
         self
     }
@@ -156,10 +137,7 @@ impl GetGeoLocationFluentBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_continent_code(input);
         self
     }
@@ -191,18 +169,12 @@ impl GetGeoLocationFluentBuilder {
         self.inner.get_country_code()
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdivision_code(input.into());
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdivision_code(input);
         self
     }

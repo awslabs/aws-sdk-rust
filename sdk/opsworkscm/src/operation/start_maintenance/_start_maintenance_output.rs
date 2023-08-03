@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMaintenanceOutput {
 }
 impl StartMaintenanceOutput {
     /// Creates a new builder-style object to manufacture [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput).
-    pub fn builder() -> crate::operation::start_maintenance::builders::StartMaintenanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_maintenance::builders::StartMaintenanceOutputBuilder {
         crate::operation::start_maintenance::builders::StartMaintenanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMaintenanceOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,

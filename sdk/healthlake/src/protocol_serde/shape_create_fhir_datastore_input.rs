@@ -12,19 +12,13 @@ pub fn ser_create_fhir_datastore_input(
     if let Some(var_3) = &input.sse_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SseConfiguration").start_object();
-        crate::protocol_serde::shape_sse_configuration::ser_sse_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_sse_configuration::ser_sse_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.preload_data_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("PreloadDataConfig").start_object();
-        crate::protocol_serde::shape_preload_data_config::ser_preload_data_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_preload_data_config::ser_preload_data_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.client_token {

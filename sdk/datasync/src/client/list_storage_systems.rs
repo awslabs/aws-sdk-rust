@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`storage_systems(Option<Vec<StorageSystemListEntry>>)`](crate::operation::list_storage_systems::ListStorageSystemsOutput::storage_systems): <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_storage_systems::ListStorageSystemsOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On failure, responds with [`SdkError<ListStorageSystemsError>`](crate::operation::list_storage_systems::ListStorageSystemsError)
-    pub fn list_storage_systems(
-        &self,
-    ) -> crate::operation::list_storage_systems::builders::ListStorageSystemsFluentBuilder {
-        crate::operation::list_storage_systems::builders::ListStorageSystemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_storage_systems(&self) -> crate::operation::list_storage_systems::builders::ListStorageSystemsFluentBuilder {
+        crate::operation::list_storage_systems::builders::ListStorageSystemsFluentBuilder::new(self.handle.clone())
     }
 }

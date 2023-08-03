@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`destination(Option<String>)`](crate::operation::get_position_configuration::GetPositionConfigurationOutput::destination): <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     /// - On failure, responds with [`SdkError<GetPositionConfigurationError>`](crate::operation::get_position_configuration::GetPositionConfigurationError)
     #[deprecated(note = "This operation is no longer supported.")]
-    pub fn get_position_configuration(
-        &self,
-    ) -> crate::operation::get_position_configuration::builders::GetPositionConfigurationFluentBuilder
-    {
+    pub fn get_position_configuration(&self) -> crate::operation::get_position_configuration::builders::GetPositionConfigurationFluentBuilder {
         crate::operation::get_position_configuration::builders::GetPositionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

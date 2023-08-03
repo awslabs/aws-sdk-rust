@@ -12,8 +12,7 @@ pub struct DeleteMultiplexOutput {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the multiplex output destinations.
     #[doc(hidden)]
-    pub destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ pub struct DeleteMultiplexOutput {
     pub state: ::std::option::Option<crate::types::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteMultiplexOutput {
@@ -49,9 +46,7 @@ impl DeleteMultiplexOutput {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultiplexOutputDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
@@ -79,11 +74,7 @@ impl DeleteMultiplexOutput {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -101,23 +92,18 @@ impl DeleteMultiplexOutput {
 
 /// A builder for [`DeleteMultiplexOutput`](crate::operation::delete_multiplex::DeleteMultiplexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiplexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pipelines_running_count: ::std::option::Option<i32>,
     pub(crate) program_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::MultiplexState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteMultiplexOutputBuilder {
@@ -140,27 +126,19 @@ impl DeleteMultiplexOutputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// A list of availability zones for the multiplex.
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// A list of availability zones for the multiplex.
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `destinations`.
@@ -175,17 +153,12 @@ impl DeleteMultiplexOutputBuilder {
         self
     }
     /// A list of the multiplex output destinations.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// A list of the multiplex output destinations.
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>> {
         &self.destinations
     }
     /// The unique id of the multiplex.
@@ -208,17 +181,12 @@ impl DeleteMultiplexOutputBuilder {
         self
     }
     /// Configuration for a multiplex event.
-    pub fn set_multiplex_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexSettings>,
-    ) -> Self {
+    pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexSettings>) -> Self {
         self.multiplex_settings = input;
         self
     }
     /// Configuration for a multiplex event.
-    pub fn get_multiplex_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+    pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexSettings> {
         &self.multiplex_settings
     }
     /// The name of the multiplex.
@@ -282,32 +250,19 @@ impl DeleteMultiplexOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

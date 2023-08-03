@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipams::DescribeIpamsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipams(Option<Vec<Ipam>>)`](crate::operation::describe_ipams::DescribeIpamsOutput::ipams): <p>Information about the IPAMs.</p>
     /// - On failure, responds with [`SdkError<DescribeIpamsError>`](crate::operation::describe_ipams::DescribeIpamsError)
-    pub fn describe_ipams(
-        &self,
-    ) -> crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder {
-        crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ipams(&self) -> crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder {
+        crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::new(self.handle.clone())
     }
 }

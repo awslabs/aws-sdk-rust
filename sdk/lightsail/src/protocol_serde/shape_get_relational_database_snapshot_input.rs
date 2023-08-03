@@ -4,9 +4,7 @@ pub fn ser_get_relational_database_snapshot_input(
     input: &crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.relational_database_snapshot_name {
-        object
-            .key("relationalDatabaseSnapshotName")
-            .string(var_1.as_str());
+        object.key("relationalDatabaseSnapshotName").string(var_1.as_str());
     }
     Ok(())
 }

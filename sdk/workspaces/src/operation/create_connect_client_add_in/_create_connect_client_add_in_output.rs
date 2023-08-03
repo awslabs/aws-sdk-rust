@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateConnectClientAddInOutput {
 }
 impl CreateConnectClientAddInOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput).
-    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder{
+    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder {
         crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectClientAddInOutputBuilder {
     pub(crate) add_in_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateConnectClientAddInOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
+    pub fn build(self) -> crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
         crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
             add_in_id: self.add_in_id,
             _request_id: self._request_id,

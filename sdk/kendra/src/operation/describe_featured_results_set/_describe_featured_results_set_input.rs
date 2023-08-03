@@ -22,16 +22,14 @@ impl DescribeFeaturedResultsSetInput {
 }
 impl DescribeFeaturedResultsSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeaturedResultsSetInput`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput).
-    pub fn builder() -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder{
+    pub fn builder() -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder {
         crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeaturedResultsSetInput`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeaturedResultsSetInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) featured_results_set_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeFeaturedResultsSetInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
-    pub fn featured_results_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
-    pub fn set_featured_results_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_featured_results_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.featured_results_set_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeFeaturedResultsSetInputBuilder {
         crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput {
-                index_id: self.index_id,
-                featured_results_set_id: self.featured_results_set_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput {
+            index_id: self.index_id,
+            featured_results_set_id: self.featured_results_set_id,
+        })
     }
 }

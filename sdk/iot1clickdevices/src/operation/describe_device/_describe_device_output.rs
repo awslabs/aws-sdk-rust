@@ -28,9 +28,7 @@ impl DescribeDeviceOutput {
 
 /// A builder for [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutputBuilder {
     pub(crate) device_description: ::std::option::Option<crate::types::DeviceDescription>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeDeviceOutputBuilder {
         self
     }
     /// <p>Device details.</p>
-    pub fn set_device_description(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceDescription>,
-    ) -> Self {
+    pub fn set_device_description(mut self, input: ::std::option::Option<crate::types::DeviceDescription>) -> Self {
         self.device_description = input;
         self
     }
     /// <p>Device details.</p>
-    pub fn get_device_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceDescription> {
+    pub fn get_device_description(&self) -> &::std::option::Option<crate::types::DeviceDescription> {
         &self.device_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput) with field(s):
     ///   - [`is_opted_out(bool)`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput::is_opted_out): <p>Indicates whether the phone number is opted out:</p>  <ul>   <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>   <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CheckIfPhoneNumberIsOptedOutError>`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError)
-    pub fn check_if_phone_number_is_opted_out(&self) -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutFluentBuilder{
+    pub fn check_if_phone_number_is_opted_out(
+        &self,
+    ) -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutFluentBuilder {
         crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutFluentBuilder::new(self.handle.clone())
     }
 }

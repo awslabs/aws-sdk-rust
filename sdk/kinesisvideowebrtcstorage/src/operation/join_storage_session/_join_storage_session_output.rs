@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for JoinStorageSessionOutput {
 }
 impl JoinStorageSessionOutput {
     /// Creates a new builder-style object to manufacture [`JoinStorageSessionOutput`](crate::operation::join_storage_session::JoinStorageSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::join_storage_session::builders::JoinStorageSessionOutputBuilder {
+    pub fn builder() -> crate::operation::join_storage_session::builders::JoinStorageSessionOutputBuilder {
         crate::operation::join_storage_session::builders::JoinStorageSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`JoinStorageSessionOutput`](crate::operation::join_storage_session::JoinStorageSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinStorageSessionOutputBuilder {
     _request_id: Option<String>,
 }

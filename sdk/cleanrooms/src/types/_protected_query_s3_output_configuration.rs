@@ -37,9 +37,7 @@ impl ProtectedQueryS3OutputConfiguration {
 
 /// A builder for [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3OutputConfigurationBuilder {
     pub(crate) result_format: ::std::option::Option<crate::types::ResultFormat>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
         self
     }
     /// <p>Intended file format of the result.</p>
-    pub fn set_result_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultFormat>,
-    ) -> Self {
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormat>) -> Self {
         self.result_format = input;
         self
     }

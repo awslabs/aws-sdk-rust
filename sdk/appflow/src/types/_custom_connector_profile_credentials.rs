@@ -51,9 +51,7 @@ impl CustomConnectorProfileCredentials {
 
 /// A builder for [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomConnectorProfileCredentialsBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) basic: ::std::option::Option<crate::types::BasicAuthCredentials>,
@@ -68,17 +66,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
@@ -87,10 +80,7 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
-    pub fn set_basic(
-        mut self,
-        input: ::std::option::Option<crate::types::BasicAuthCredentials>,
-    ) -> Self {
+    pub fn set_basic(mut self, input: ::std::option::Option<crate::types::BasicAuthCredentials>) -> Self {
         self.basic = input;
         self
     }
@@ -104,10 +94,7 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
-    pub fn set_oauth2(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2Credentials>,
-    ) -> Self {
+    pub fn set_oauth2(mut self, input: ::std::option::Option<crate::types::OAuth2Credentials>) -> Self {
         self.oauth2 = input;
         self
     }
@@ -121,10 +108,7 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The API keys required for the authentication of the user.</p>
-    pub fn set_api_key(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiKeyCredentials>,
-    ) -> Self {
+    pub fn set_api_key(mut self, input: ::std::option::Option<crate::types::ApiKeyCredentials>) -> Self {
         self.api_key = input;
         self
     }
@@ -138,10 +122,7 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
-    pub fn set_custom(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomAuthCredentials>,
-    ) -> Self {
+    pub fn set_custom(mut self, input: ::std::option::Option<crate::types::CustomAuthCredentials>) -> Self {
         self.custom = input;
         self
     }

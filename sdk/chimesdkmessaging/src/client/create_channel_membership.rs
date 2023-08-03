@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`member(Option<Identity>)`](crate::operation::create_channel_membership::CreateChannelMembershipOutput::member): <p>The ARN and metadata of the member being added.</p>
     ///   - [`sub_channel_id(Option<String>)`](crate::operation::create_channel_membership::CreateChannelMembershipOutput::sub_channel_id): <p>The ID of the SubChannel in the response.</p>
     /// - On failure, responds with [`SdkError<CreateChannelMembershipError>`](crate::operation::create_channel_membership::CreateChannelMembershipError)
-    pub fn create_channel_membership(
-        &self,
-    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder
-    {
+    pub fn create_channel_membership(&self) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder::new(self.handle.clone())
     }
 }

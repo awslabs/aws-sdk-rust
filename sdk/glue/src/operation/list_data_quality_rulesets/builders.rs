@@ -26,8 +26,7 @@ impl ListDataQualityRulesetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataQualityRulesetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder,
+    inner: crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder,
 }
 impl ListDataQualityRulesetsFluentBuilder {
     /// Creates a new `ListDataQualityRulesets`.
@@ -38,10 +37,7 @@ impl ListDataQualityRulesetsFluentBuilder {
         }
     }
     /// Access the ListDataQualityRulesets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDataQualityRulesetsFluentBuilder {
             crate::operation::list_data_quality_rulesets::ListDataQualityRulesets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDataQualityRulesetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDataQualityRulesetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDataQualityRulesetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListDataQualityRulesetsFluentBuilder {
             crate::operation::list_data_quality_rulesets::ListDataQualityRulesets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator {
         crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::new(self.handle, self.inner)
     }
     /// <p>A paginated token to offset the results.</p>
@@ -167,17 +149,12 @@ impl ListDataQualityRulesetsFluentBuilder {
         self
     }
     /// <p>The filter criteria. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>The filter criteria. </p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityRulesetFilterCriteria> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityRulesetFilterCriteria> {
         self.inner.get_filter()
     }
     /// Adds a key-value pair to `Tags`.
@@ -185,30 +162,17 @@ impl ListDataQualityRulesetsFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pair tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pair tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

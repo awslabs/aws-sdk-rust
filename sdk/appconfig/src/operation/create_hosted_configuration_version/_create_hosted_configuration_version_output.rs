@@ -77,7 +77,7 @@ impl ::aws_http::request_id::RequestId for CreateHostedConfigurationVersionOutpu
 }
 impl CreateHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionOutput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput).
-    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder {
         crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder::default()
     }
 }
@@ -97,18 +97,12 @@ pub struct CreateHostedConfigurationVersionOutputBuilder {
 }
 impl CreateHostedConfigurationVersionOutputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -117,18 +111,12 @@ impl CreateHostedConfigurationVersionOutputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -193,18 +181,12 @@ impl CreateHostedConfigurationVersionOutputBuilder {
         &self.content_type
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -222,26 +204,15 @@ impl CreateHostedConfigurationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionOutput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput
-    {
+    pub fn build(self) -> crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput {
         crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput {
-            application_id: self.application_id
-            ,
-            configuration_profile_id: self.configuration_profile_id
-            ,
-            version_number: self.version_number
-                .unwrap_or_default()
-            ,
-            description: self.description
-            ,
-            content: self.content
-            ,
-            content_type: self.content_type
-            ,
-            version_label: self.version_label
-            ,
+            application_id: self.application_id,
+            configuration_profile_id: self.configuration_profile_id,
+            version_number: self.version_number.unwrap_or_default(),
+            description: self.description,
+            content: self.content,
+            content_type: self.content_type,
+            version_label: self.version_label,
             _request_id: self._request_id,
         }
     }

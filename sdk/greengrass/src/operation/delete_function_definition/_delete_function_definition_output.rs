@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFunctionDefinitionOutput {
 }
 impl DeleteFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionOutputBuilder {
         crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteFunctionDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput {
         crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput {
             _request_id: self._request_id,
         }

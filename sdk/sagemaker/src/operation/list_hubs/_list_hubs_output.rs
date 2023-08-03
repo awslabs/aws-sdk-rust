@@ -35,9 +35,7 @@ impl ListHubsOutput {
 
 /// A builder for [`ListHubsOutput`](crate::operation::list_hubs::ListHubsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHubsOutputBuilder {
     pub(crate) hub_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HubInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListHubsOutputBuilder {
         self
     }
     /// <p>The summaries of the listed hubs.</p>
-    pub fn set_hub_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HubInfo>>,
-    ) -> Self {
+    pub fn set_hub_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HubInfo>>) -> Self {
         self.hub_summaries = input;
         self
     }
     /// <p>The summaries of the listed hubs.</p>
-    pub fn get_hub_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubInfo>> {
+    pub fn get_hub_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HubInfo>> {
         &self.hub_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hubs, use it in the subsequent request.</p>

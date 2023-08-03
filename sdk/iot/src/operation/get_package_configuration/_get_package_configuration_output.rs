@@ -5,15 +5,12 @@
 pub struct GetPackageConfigurationOutput {
     /// <p>The version that is associated to a specific job.</p>
     #[doc(hidden)]
-    pub version_update_by_jobs_config:
-        ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
+    pub version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     _request_id: Option<String>,
 }
 impl GetPackageConfigurationOutput {
     /// <p>The version that is associated to a specific job.</p>
-    pub fn version_update_by_jobs_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VersionUpdateByJobsConfig> {
+    pub fn version_update_by_jobs_config(&self) -> ::std::option::Option<&crate::types::VersionUpdateByJobsConfig> {
         self.version_update_by_jobs_config.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for GetPackageConfigurationOutput {
 }
 impl GetPackageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_package_configuration::builders::GetPackageConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_package_configuration::builders::GetPackageConfigurationOutputBuilder {
         crate::operation::get_package_configuration::builders::GetPackageConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageConfigurationOutputBuilder {
-    pub(crate) version_update_by_jobs_config:
-        ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
+    pub(crate) version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     _request_id: Option<String>,
 }
 impl GetPackageConfigurationOutputBuilder {
     /// <p>The version that is associated to a specific job.</p>
-    pub fn version_update_by_jobs_config(
-        mut self,
-        input: crate::types::VersionUpdateByJobsConfig,
-    ) -> Self {
+    pub fn version_update_by_jobs_config(mut self, input: crate::types::VersionUpdateByJobsConfig) -> Self {
         self.version_update_by_jobs_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version that is associated to a specific job.</p>
-    pub fn set_version_update_by_jobs_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
-    ) -> Self {
+    pub fn set_version_update_by_jobs_config(mut self, input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>) -> Self {
         self.version_update_by_jobs_config = input;
         self
     }
     /// <p>The version that is associated to a specific job.</p>
-    pub fn get_version_update_by_jobs_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+    pub fn get_version_update_by_jobs_config(&self) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
         &self.version_update_by_jobs_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +58,7 @@ impl GetPackageConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_package_configuration::GetPackageConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_package_configuration::GetPackageConfigurationOutput {
         crate::operation::get_package_configuration::GetPackageConfigurationOutput {
             version_update_by_jobs_config: self.version_update_by_jobs_config,
             _request_id: self._request_id,

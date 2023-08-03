@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`upload_id(Option<String>)`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput::upload_id): <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
     /// - On failure, responds with [`SdkError<UploadEntityDefinitionsError>`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn upload_entity_definitions(
-        &self,
-    ) -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsFluentBuilder
-    {
+    pub fn upload_entity_definitions(&self) -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsFluentBuilder {
         crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

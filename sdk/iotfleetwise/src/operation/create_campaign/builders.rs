@@ -10,10 +10,7 @@ impl CreateCampaignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_campaign::CreateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_campaign::CreateCampaignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_campaign();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateCampaignFluentBuilder {
         }
     }
     /// Access the CreateCampaign as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateCampaignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,18 +136,12 @@ impl CreateCampaignFluentBuilder {
         self.inner.get_description()
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
@@ -185,10 +171,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -205,10 +188,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires. </p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiry_time(input);
         self
     }
@@ -225,10 +205,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p> (Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    pub fn set_post_trigger_collection_duration(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_post_trigger_collection_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_post_trigger_collection_duration(input);
         self
     }
@@ -245,10 +222,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p> (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code> </p>
-    pub fn set_diagnostics_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DiagnosticsMode>,
-    ) -> Self {
+    pub fn set_diagnostics_mode(mut self, input: ::std::option::Option<crate::types::DiagnosticsMode>) -> Self {
         self.inner = self.inner.set_diagnostics_mode(input);
         self
     }
@@ -265,10 +239,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code> </p>
-    pub fn set_spooling_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SpoolingMode>,
-    ) -> Self {
+    pub fn set_spooling_mode(mut self, input: ::std::option::Option<crate::types::SpoolingMode>) -> Self {
         self.inner = self.inner.set_spooling_mode(input);
         self
     }
@@ -285,10 +256,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p> (Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used. </p>
     /// <p>Default: <code>SNAPPY</code> </p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::Compression>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::Compression>) -> Self {
         self.inner = self.inner.set_compression(input);
         self
     }
@@ -324,17 +292,12 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>(Optional) A list of information about signals to collect. </p>
-    pub fn set_signals_to_collect(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
-    ) -> Self {
+    pub fn set_signals_to_collect(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>) -> Self {
         self.inner = self.inner.set_signals_to_collect(input);
         self
     }
     /// <p>(Optional) A list of information about signals to collect. </p>
-    pub fn get_signals_to_collect(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
+    pub fn get_signals_to_collect(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
         self.inner.get_signals_to_collect()
     }
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
@@ -343,10 +306,7 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
-    pub fn set_collection_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionScheme>,
-    ) -> Self {
+    pub fn set_collection_scheme(mut self, input: ::std::option::Option<crate::types::CollectionScheme>) -> Self {
         self.inner = self.inner.set_collection_scheme(input);
         self
     }
@@ -361,29 +321,21 @@ impl CreateCampaignFluentBuilder {
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_extra_dimensions(input.into());
         self
     }
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn set_data_extra_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
     }
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn get_data_extra_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_data_extra_dimensions()
     }
     /// Appends an item to `tags`.
@@ -396,10 +348,7 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the campaign.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -421,19 +370,14 @@ impl CreateCampaignFluentBuilder {
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn set_data_destination_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
-    ) -> Self {
+    pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>) -> Self {
         self.inner = self.inner.set_data_destination_configs(input);
         self
     }
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn get_data_destination_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
+    pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
         self.inner.get_data_destination_configs()
     }
 }

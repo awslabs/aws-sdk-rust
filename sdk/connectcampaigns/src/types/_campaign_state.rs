@@ -41,13 +41,7 @@
 /// State of a campaign
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CampaignState {
     /// Campaign is in failed state
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for CampaignState {
             "Paused" => CampaignState::Paused,
             "Running" => CampaignState::Running,
             "Stopped" => CampaignState::Stopped,
-            other => {
-                CampaignState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CampaignState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

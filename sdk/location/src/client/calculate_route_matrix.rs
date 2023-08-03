@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`snapped_destination_positions(Option<Vec<Vec<f64>>>)`](crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput::snapped_destination_positions): <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
     ///   - [`summary(Option<CalculateRouteMatrixSummary>)`](crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput::summary): <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
     /// - On failure, responds with [`SdkError<CalculateRouteMatrixError>`](crate::operation::calculate_route_matrix::CalculateRouteMatrixError)
-    pub fn calculate_route_matrix(
-        &self,
-    ) -> crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixFluentBuilder {
-        crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn calculate_route_matrix(&self) -> crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixFluentBuilder {
+        crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixFluentBuilder::new(self.handle.clone())
     }
 }

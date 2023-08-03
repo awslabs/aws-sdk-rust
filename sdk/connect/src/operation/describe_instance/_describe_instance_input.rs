@@ -15,17 +15,14 @@ impl DescribeInstanceInput {
 }
 impl DescribeInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
-    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceInputBuilder {
         crate::operation::describe_instance::builders::DescribeInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance::DescribeInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_instance::DescribeInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_instance::DescribeInstanceInput {
             instance_id: self.instance_id,
         })

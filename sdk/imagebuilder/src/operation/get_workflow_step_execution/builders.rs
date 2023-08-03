@@ -26,7 +26,7 @@ impl GetWorkflowStepExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder,
+    inner: crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder,
 }
 impl GetWorkflowStepExecutionFluentBuilder {
     /// Creates a new `GetWorkflowStepExecution`.
@@ -37,7 +37,7 @@ impl GetWorkflowStepExecutionFluentBuilder {
         }
     }
     /// Access the GetWorkflowStepExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetWorkflowStepExecutionFluentBuilder {
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetWorkflowStepExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetWorkflowStepExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetWorkflowStepExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetWorkflowStepExecutionFluentBuilder {
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn step_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_execution_id(input.into());
         self
     }
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn set_step_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_execution_id(input);
         self
     }

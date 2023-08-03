@@ -14,10 +14,7 @@ pub fn ser_cache_behaviors(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("CacheBehavior");
-                crate::protocol_serde::shape_cache_behavior::ser_cache_behavior(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_cache_behavior::ser_cache_behavior(list_item_3, inner_writer)?
             }
         }
     }

@@ -22,21 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeRdsDbInstancesOutput {
 }
 impl DescribeRdsDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder {
         crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesOutputBuilder {
-    pub(crate) rds_db_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
+    pub(crate) rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeRdsDbInstancesOutputBuilder {
@@ -52,17 +47,12 @@ impl DescribeRdsDbInstancesOutputBuilder {
         self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn set_rds_db_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
-    ) -> Self {
+    pub fn set_rds_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>) -> Self {
         self.rds_db_instances = input;
         self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn get_rds_db_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>> {
+    pub fn get_rds_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>> {
         &self.rds_db_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,9 +65,7 @@ impl DescribeRdsDbInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
             rds_db_instances: self.rds_db_instances,
             _request_id: self._request_id,

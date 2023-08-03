@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnalysisType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AnalysisType {
             "DATABASE_ANALYSIS" => AnalysisType::DatabaseAnalysis,
             "RUNTIME_ANALYSIS" => AnalysisType::RuntimeAnalysis,
             "SOURCE_CODE_ANALYSIS" => AnalysisType::SourceCodeAnalysis,
-            other => {
-                AnalysisType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnalysisType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AnalysisType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BINARY_ANALYSIS",
-            "DATABASE_ANALYSIS",
-            "RUNTIME_ANALYSIS",
-            "SOURCE_CODE_ANALYSIS",
-        ]
+        &["BINARY_ANALYSIS", "DATABASE_ANALYSIS", "RUNTIME_ANALYSIS", "SOURCE_CODE_ANALYSIS"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalysisType {

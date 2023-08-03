@@ -5,8 +5,7 @@
 pub struct DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
+    pub association_executions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAssociationExecutionsOutput {
 }
 impl DescribeAssociationExecutionsOutput {
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn association_executions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationExecution]> {
+    pub fn association_executions(&self) -> ::std::option::Option<&[crate::types::AssociationExecution]> {
         self.association_executions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAssociationExecutionsOutput {
 }
 impl DescribeAssociationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
-    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder {
         crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsOutputBuilder {
-    pub(crate) association_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
+    pub(crate) association_executions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeAssociationExecutionsOutputBuilder {
         self
     }
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn set_association_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
-    ) -> Self {
+    pub fn set_association_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>) -> Self {
         self.association_executions = input;
         self
     }
     /// <p>A list of the executions for the specified association ID.</p>
-    pub fn get_association_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>> {
+    pub fn get_association_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>> {
         &self.association_executions
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -97,10 +86,7 @@ impl DescribeAssociationExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput {
         crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput {
             association_executions: self.association_executions,
             next_token: self.next_token,

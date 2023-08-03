@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceCapacityReservationAttr
 }
 impl ModifyInstanceCapacityReservationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
-    pub fn builder() -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder{
-        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder {
+        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceCapacityReservationAttributesOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +60,9 @@ impl ModifyInstanceCapacityReservationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
-    pub fn build(self) -> crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput{
+    pub fn build(self) -> crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput {
         crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

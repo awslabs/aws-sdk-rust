@@ -29,18 +29,14 @@ impl ListAssociationVersionsInput {
 }
 impl ListAssociationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociationVersionsInput`](crate::operation::list_association_versions::ListAssociationVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder {
         crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationVersionsInput`](crate::operation::list_association_versions::ListAssociationVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationVersionsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct ListAssociationVersionsInputBuilder {
 }
 impl ListAssociationVersionsInputBuilder {
     /// <p>The association ID for which you want to view all versions.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for which you want to view all versions.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListAssociationVersionsInputBuilder {
         crate::operation::list_association_versions::ListAssociationVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_association_versions::ListAssociationVersionsInput {
-                association_id: self.association_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_association_versions::ListAssociationVersionsInput {
+            association_id: self.association_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

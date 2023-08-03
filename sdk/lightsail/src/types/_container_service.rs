@@ -76,9 +76,7 @@ pub struct ContainerService {
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
     #[doc(hidden)]
-    pub public_domain_names: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub public_domain_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The publicly accessible URL of the container service.</p>
     /// <p>If no public endpoint is specified in the <code>currentDeployment</code>, this URL returns a 404 response.</p>
     #[doc(hidden)]
@@ -139,9 +137,7 @@ impl ContainerService {
     /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    pub fn state_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerServiceStateDetail> {
+    pub fn state_detail(&self) -> ::std::option::Option<&crate::types::ContainerServiceStateDetail> {
         self.state_detail.as_ref()
     }
     /// <p>The scale specification of the container service.</p>
@@ -150,16 +146,12 @@ impl ContainerService {
         self.scale
     }
     /// <p>An object that describes the current container deployment of the container service.</p>
-    pub fn current_deployment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerServiceDeployment> {
+    pub fn current_deployment(&self) -> ::std::option::Option<&crate::types::ContainerServiceDeployment> {
         self.current_deployment.as_ref()
     }
     /// <p>An object that describes the next deployment of the container service.</p>
     /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code> state.</p>
-    pub fn next_deployment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerServiceDeployment> {
+    pub fn next_deployment(&self) -> ::std::option::Option<&crate::types::ContainerServiceDeployment> {
         self.next_deployment.as_ref()
     }
     /// <p>A Boolean value indicating whether the container service is disabled.</p>
@@ -184,9 +176,7 @@ impl ContainerService {
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
     pub fn public_domain_names(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.public_domain_names.as_ref()
     }
     /// <p>The publicly accessible URL of the container service.</p>
@@ -196,9 +186,7 @@ impl ContainerService {
     }
     /// <p>An object that describes the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn private_registry_access(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateRegistryAccess> {
+    pub fn private_registry_access(&self) -> ::std::option::Option<&crate::types::PrivateRegistryAccess> {
         self.private_registry_access.as_ref()
     }
 }
@@ -211,9 +199,7 @@ impl ContainerService {
 
 /// A builder for [`ContainerService`](crate::types::ContainerService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceBuilder {
     pub(crate) container_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -231,26 +217,18 @@ pub struct ContainerServiceBuilder {
     pub(crate) is_disabled: ::std::option::Option<bool>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) private_domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) public_domain_names: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) public_domain_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) private_registry_access: ::std::option::Option<crate::types::PrivateRegistryAccess>,
 }
 impl ContainerServiceBuilder {
     /// <p>The name of the container service.</p>
-    pub fn container_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container service.</p>
-    pub fn set_container_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_service_name = input;
         self
     }
@@ -278,10 +256,7 @@ impl ContainerServiceBuilder {
         self
     }
     /// <p>The timestamp when the container service was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -295,10 +270,7 @@ impl ContainerServiceBuilder {
         self
     }
     /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -312,10 +284,7 @@ impl ContainerServiceBuilder {
         self
     }
     /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -335,10 +304,7 @@ impl ContainerServiceBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -354,10 +320,7 @@ impl ContainerServiceBuilder {
     }
     /// <p>The power specification of the container service.</p>
     /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the container service.</p>
-    pub fn set_power(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServicePowerName>,
-    ) -> Self {
+    pub fn set_power(mut self, input: ::std::option::Option<crate::types::ContainerServicePowerName>) -> Self {
         self.power = input;
         self
     }
@@ -406,10 +369,7 @@ impl ContainerServiceBuilder {
     /// <li> <p> <code>DELETING</code> - The container service is being deleted.</p> </li>
     /// <li> <p> <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are shut down.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ContainerServiceState>) -> Self {
         self.state = input;
         self
     }
@@ -437,19 +397,14 @@ impl ContainerServiceBuilder {
     /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    pub fn set_state_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceStateDetail>,
-    ) -> Self {
+    pub fn set_state_detail(mut self, input: ::std::option::Option<crate::types::ContainerServiceStateDetail>) -> Self {
         self.state_detail = input;
         self
     }
     /// <p>An object that describes the current state of the container service.</p> <note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    pub fn get_state_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceStateDetail> {
+    pub fn get_state_detail(&self) -> &::std::option::Option<crate::types::ContainerServiceStateDetail> {
         &self.state_detail
     }
     /// <p>The scale specification of the container service.</p>
@@ -475,17 +430,12 @@ impl ContainerServiceBuilder {
         self
     }
     /// <p>An object that describes the current container deployment of the container service.</p>
-    pub fn set_current_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceDeployment>,
-    ) -> Self {
+    pub fn set_current_deployment(mut self, input: ::std::option::Option<crate::types::ContainerServiceDeployment>) -> Self {
         self.current_deployment = input;
         self
     }
     /// <p>An object that describes the current container deployment of the container service.</p>
-    pub fn get_current_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceDeployment> {
+    pub fn get_current_deployment(&self) -> &::std::option::Option<crate::types::ContainerServiceDeployment> {
         &self.current_deployment
     }
     /// <p>An object that describes the next deployment of the container service.</p>
@@ -496,18 +446,13 @@ impl ContainerServiceBuilder {
     }
     /// <p>An object that describes the next deployment of the container service.</p>
     /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code> state.</p>
-    pub fn set_next_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceDeployment>,
-    ) -> Self {
+    pub fn set_next_deployment(mut self, input: ::std::option::Option<crate::types::ContainerServiceDeployment>) -> Self {
         self.next_deployment = input;
         self
     }
     /// <p>An object that describes the next deployment of the container service.</p>
     /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code> state.</p>
-    pub fn get_next_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceDeployment> {
+    pub fn get_next_deployment(&self) -> &::std::option::Option<crate::types::ContainerServiceDeployment> {
         &self.next_deployment
     }
     /// <p>A Boolean value indicating whether the container service is disabled.</p>
@@ -526,19 +471,13 @@ impl ContainerServiceBuilder {
     }
     /// <p>The principal ARN of the container service.</p>
     /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal ARN of the container service.</p>
     /// <p>The principal ARN can be used to create a trust relationship between your standard Amazon Web Services account and your Lightsail container service. This allows you to give your service permission to access resources in your standard Amazon Web Services account.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -549,19 +488,13 @@ impl ContainerServiceBuilder {
     }
     /// <p>The private domain name of the container service.</p>
     /// <p>The private domain name is accessible only by other resources within the default virtual private cloud (VPC) of your Lightsail account.</p>
-    pub fn private_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private domain name of the container service.</p>
     /// <p>The private domain name is accessible only by other resources within the default virtual private cloud (VPC) of your Lightsail account.</p>
-    pub fn set_private_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_domain_name = input;
         self
     }
@@ -580,11 +513,7 @@ impl ContainerServiceBuilder {
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
-    pub fn public_domain_names(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn public_domain_names(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.public_domain_names.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.public_domain_names = ::std::option::Option::Some(hash_map);
@@ -598,12 +527,7 @@ impl ContainerServiceBuilder {
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
     pub fn set_public_domain_names(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.public_domain_names = input;
         self
@@ -616,9 +540,7 @@ impl ContainerServiceBuilder {
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for information about how to specify public domain names for your Lightsail container service.</p>
     pub fn get_public_domain_names(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.public_domain_names
     }
     /// <p>The publicly accessible URL of the container service.</p>
@@ -646,18 +568,13 @@ impl ContainerServiceBuilder {
     }
     /// <p>An object that describes the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn set_private_registry_access(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateRegistryAccess>,
-    ) -> Self {
+    pub fn set_private_registry_access(mut self, input: ::std::option::Option<crate::types::PrivateRegistryAccess>) -> Self {
         self.private_registry_access = input;
         self
     }
     /// <p>An object that describes the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn get_private_registry_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateRegistryAccess> {
+    pub fn get_private_registry_access(&self) -> &::std::option::Option<crate::types::PrivateRegistryAccess> {
         &self.private_registry_access
     }
     /// Consumes the builder and constructs a [`ContainerService`](crate::types::ContainerService).

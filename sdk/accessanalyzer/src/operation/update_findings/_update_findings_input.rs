@@ -51,9 +51,7 @@ impl UpdateFindingsInput {
 
 /// A builder for [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FindingStatusUpdate>,
@@ -82,10 +80,7 @@ impl UpdateFindingsInputBuilder {
         self
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingStatusUpdate>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatusUpdate>) -> Self {
         self.status = input;
         self
     }
@@ -105,10 +100,7 @@ impl UpdateFindingsInputBuilder {
         self
     }
     /// <p>The IDs of the findings to update.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -147,10 +139,7 @@ impl UpdateFindingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings::UpdateFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_findings::UpdateFindingsInput {
             analyzer_arn: self.analyzer_arn,
             status: self.status,

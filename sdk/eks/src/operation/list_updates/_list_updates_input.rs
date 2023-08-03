@@ -50,9 +50,7 @@ impl ListUpdatesInput {
 
 /// A builder for [`ListUpdatesInput`](crate::operation::list_updates::ListUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUpdatesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ListUpdatesInputBuilder {
         &self.name
     }
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nodegroup_name = input;
         self
     }
@@ -138,12 +130,7 @@ impl ListUpdatesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUpdatesInput`](crate::operation::list_updates::ListUpdatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_updates::ListUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_updates::ListUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_updates::ListUpdatesInput {
             name: self.name,
             nodegroup_name: self.nodegroup_name,

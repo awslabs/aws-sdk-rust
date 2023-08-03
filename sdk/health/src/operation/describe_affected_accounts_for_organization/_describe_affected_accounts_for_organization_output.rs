@@ -45,16 +45,15 @@ impl ::aws_http::request_id::RequestId for DescribeAffectedAccountsForOrganizati
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder
+    {
         crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationOutputBuilder {
     pub(crate) affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_scope_code: ::std::option::Option<crate::types::EventScopeCode>,
@@ -67,27 +66,19 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// To override the contents of this collection use [`set_affected_accounts`](Self::set_affected_accounts).
     ///
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn affected_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn affected_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.affected_accounts.unwrap_or_default();
         v.push(input.into());
         self.affected_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn set_affected_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_affected_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.affected_accounts = input;
         self
     }
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn get_affected_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_affected_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.affected_accounts
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
@@ -106,10 +97,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
-    pub fn set_event_scope_code(
-        mut self,
-        input: ::std::option::Option<crate::types::EventScopeCode>,
-    ) -> Self {
+    pub fn set_event_scope_code(mut self, input: ::std::option::Option<crate::types::EventScopeCode>) -> Self {
         self.event_scope_code = input;
         self
     }
@@ -146,14 +134,11 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput{
+    pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
         crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
-            affected_accounts: self.affected_accounts
-            ,
-            event_scope_code: self.event_scope_code
-            ,
-            next_token: self.next_token
-            ,
+            affected_accounts: self.affected_accounts,
+            event_scope_code: self.event_scope_code,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

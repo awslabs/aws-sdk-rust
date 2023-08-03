@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`blueprints(Option<Vec<RelationalDatabaseBlueprint>>)`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput::blueprints): <p>An object describing the result of your get relational database blueprints request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseBlueprintsError>`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError)
-    pub fn get_relational_database_blueprints(&self) -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsFluentBuilder{
+    pub fn get_relational_database_blueprints(
+        &self,
+    ) -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsFluentBuilder {
         crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsFluentBuilder::new(self.handle.clone())
     }
 }

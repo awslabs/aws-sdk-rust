@@ -30,9 +30,7 @@ impl DecryptOutput {
         self.plaintext.as_ref()
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
-    pub fn encryption_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
     }
     /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
@@ -112,17 +110,12 @@ impl DecryptOutputBuilder {
         self
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
-    pub fn set_encryption_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
         self.encryption_algorithm = input;
         self
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
-    pub fn get_encryption_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+    pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.encryption_algorithm
     }
     /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
@@ -133,10 +126,7 @@ impl DecryptOutputBuilder {
     }
     /// <p>The plaintext data encrypted with the public key in the attestation document. </p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_ciphertext_for_recipient(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ciphertext_for_recipient(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ciphertext_for_recipient = input;
         self
     }

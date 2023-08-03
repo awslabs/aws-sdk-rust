@@ -97,9 +97,7 @@ impl CreateIpSetInput {
 
 /// A builder for [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIpSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -172,10 +170,7 @@ impl CreateIpSetInputBuilder {
         self
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub fn set_ip_address_version(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressVersion>,
-    ) -> Self {
+    pub fn set_ip_address_version(mut self, input: ::std::option::Option<crate::types::IpAddressVersion>) -> Self {
         self.ip_address_version = input;
         self
     }
@@ -225,10 +220,7 @@ impl CreateIpSetInputBuilder {
     /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
     /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.addresses = input;
         self
     }
@@ -263,10 +255,7 @@ impl CreateIpSetInputBuilder {
         self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -275,12 +264,7 @@ impl CreateIpSetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ip_set::CreateIpSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
             name: self.name,
             scope: self.scope,

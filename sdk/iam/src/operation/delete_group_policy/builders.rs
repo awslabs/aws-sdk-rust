@@ -10,10 +10,7 @@ impl DeleteGroupPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_group_policy::DeleteGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_policy::DeleteGroupPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_policy::DeleteGroupPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_group_policy();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteGroupPolicyFluentBuilder {
         }
     }
     /// Access the DeleteGroupPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_group_policy::builders::DeleteGroupPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_group_policy::builders::DeleteGroupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteGroupPolicyFluentBuilder {
             crate::operation::delete_group_policy::DeleteGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_policy::DeleteGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_policy::DeleteGroupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteGroupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_group_policy::DeleteGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_policy::DeleteGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_policy::DeleteGroupPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_group_policy::DeleteGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_policy::DeleteGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_policy::DeleteGroupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteGroupPolicyFluentBuilder {
             crate::operation::delete_group_policy::DeleteGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_policy::DeleteGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_policy::DeleteGroupPolicyError>,
     > {
         self.customize_middleware().await
     }

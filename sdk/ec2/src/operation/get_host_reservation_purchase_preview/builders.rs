@@ -5,16 +5,16 @@ pub use crate::operation::get_host_reservation_purchase_preview::_get_host_reser
 
 impl GetHostReservationPurchasePreviewInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_host_reservation_purchase_preview();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetHostReservationPurchasePreviewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder,
+    inner: crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder,
 }
 impl GetHostReservationPurchasePreviewFluentBuilder {
     /// Creates a new `GetHostReservationPurchasePreview`.
@@ -38,15 +38,20 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
         }
     }
     /// Access the GetHostReservationPurchasePreview as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreview, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreview,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreview, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreview,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `HostIdSet`.
@@ -105,17 +120,12 @@ impl GetHostReservationPurchasePreviewFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_id_set(input);
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn get_host_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_host_id_set()
     }
     /// <p>The offering ID of the reservation.</p>

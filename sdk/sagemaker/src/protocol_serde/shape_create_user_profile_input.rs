@@ -10,9 +10,7 @@ pub fn ser_create_user_profile_input(
         object.key("UserProfileName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.single_sign_on_user_identifier {
-        object
-            .key("SingleSignOnUserIdentifier")
-            .string(var_3.as_str());
+        object.key("SingleSignOnUserIdentifier").string(var_3.as_str());
     }
     if let Some(var_4) = &input.single_sign_on_user_value {
         object.key("SingleSignOnUserValue").string(var_4.as_str());

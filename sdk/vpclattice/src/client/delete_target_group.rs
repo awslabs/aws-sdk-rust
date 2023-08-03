@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_target_group::DeleteTargetGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
     ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::delete_target_group::DeleteTargetGroupOutput::status): <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
     /// - On failure, responds with [`SdkError<DeleteTargetGroupError>`](crate::operation::delete_target_group::DeleteTargetGroupError)
-    pub fn delete_target_group(
-        &self,
-    ) -> crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder {
-        crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_target_group(&self) -> crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder {
+        crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,8 +29,7 @@ impl RestoreAddressToClassicInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreAddressToClassicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder,
+    inner: crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder,
 }
 impl RestoreAddressToClassicFluentBuilder {
     /// Creates a new `RestoreAddressToClassic`.
@@ -41,10 +40,7 @@ impl RestoreAddressToClassicFluentBuilder {
         }
     }
     /// Access the RestoreAddressToClassic as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl RestoreAddressToClassicFluentBuilder {
             crate::operation::restore_address_to_classic::RestoreAddressToClassic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_address_to_classic::RestoreAddressToClassicError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl RestoreAddressToClassicFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl RestoreAddressToClassicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_address_to_classic::RestoreAddressToClassicError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl RestoreAddressToClassicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_address_to_classic::RestoreAddressToClassicError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl RestoreAddressToClassicFluentBuilder {
             crate::operation::restore_address_to_classic::RestoreAddressToClassic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_address_to_classic::RestoreAddressToClassicError>,
     > {
         self.customize_middleware().await
     }

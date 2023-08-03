@@ -28,7 +28,7 @@ impl DescribeAssetBundleExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobInputBuilder,
+    inner: crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobInputBuilder,
 }
 impl DescribeAssetBundleExportJobFluentBuilder {
     /// Creates a new `DescribeAssetBundleExportJob`.
@@ -39,7 +39,7 @@ impl DescribeAssetBundleExportJobFluentBuilder {
         }
     }
     /// Access the DescribeAssetBundleExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeAssetBundleExportJobFluentBuilder {
             crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeAssetBundleExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeAssetBundleExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeAssetBundleExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeAssetBundleExportJobFluentBuilder {
             crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl DescribeAssetBundleExportJobFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    pub fn asset_bundle_export_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_export_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_bundle_export_job_id(input.into());
         self
     }
     /// <p>The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    pub fn set_asset_bundle_export_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_bundle_export_job_id(input);
         self
     }

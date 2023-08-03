@@ -86,9 +86,7 @@ impl RepositoryMetadata {
 
 /// A builder for [`RepositoryMetadata`](crate::types::RepositoryMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryMetadataBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_id: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl RepositoryMetadataBuilder {
         &self.account_id
     }
     /// <p>The ID of the repository.</p>
-    pub fn repository_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the repository.</p>
-    pub fn set_repository_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_id = input;
         self
     }
@@ -137,18 +129,12 @@ impl RepositoryMetadataBuilder {
         &self.repository_id
     }
     /// <p>The repository's name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository's name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -157,18 +143,12 @@ impl RepositoryMetadataBuilder {
         &self.repository_name
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn repository_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn set_repository_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_description = input;
         self
     }
@@ -177,18 +157,12 @@ impl RepositoryMetadataBuilder {
         &self.repository_description
     }
     /// <p>The repository's default branch name.</p>
-    pub fn default_branch(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_branch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository's default branch name.</p>
-    pub fn set_default_branch(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_branch = input;
         self
     }
@@ -202,10 +176,7 @@ impl RepositoryMetadataBuilder {
         self
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -219,10 +190,7 @@ impl RepositoryMetadataBuilder {
         self
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -231,18 +199,12 @@ impl RepositoryMetadataBuilder {
         &self.creation_date
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn clone_url_http(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn clone_url_http(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.clone_url_http = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn set_clone_url_http(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_clone_url_http(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.clone_url_http = input;
         self
     }
@@ -251,18 +213,12 @@ impl RepositoryMetadataBuilder {
         &self.clone_url_http
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn clone_url_ssh(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn clone_url_ssh(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.clone_url_ssh = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn set_clone_url_ssh(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_clone_url_ssh(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.clone_url_ssh = input;
         self
     }

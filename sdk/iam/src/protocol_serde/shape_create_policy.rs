@@ -4,17 +4,10 @@ pub fn de_create_policy_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_policy::CreatePolicyOutput,
-    crate::operation::create_policy::CreatePolicyError,
-> {
+) -> std::result::Result<crate::operation::create_policy::CreatePolicyOutput, crate::operation::create_policy::CreatePolicyError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -24,107 +17,103 @@ pub fn de_create_policy_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => {
-            crate::operation::create_policy::CreatePolicyError::ConcurrentModificationException({
+        "ConcurrentModification" => crate::operation::create_policy::CreatePolicyError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EntityAlreadyExists" => {
-            crate::operation::create_policy::CreatePolicyError::EntityAlreadyExistsException({
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EntityAlreadyExists" => crate::operation::create_policy::CreatePolicyError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidInput" => {
-            crate::operation::create_policy::CreatePolicyError::InvalidInputException({
+                let mut output = crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => crate::operation::create_policy::CreatePolicyError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceeded" => {
-            crate::operation::create_policy::CreatePolicyError::LimitExceededException({
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => crate::operation::create_policy::CreatePolicyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MalformedPolicyDocument" => {
-            crate::operation::create_policy::CreatePolicyError::MalformedPolicyDocumentException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MalformedPolicyDocument" => crate::operation::create_policy::CreatePolicyError::MalformedPolicyDocumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceFailure" => {
-            crate::operation::create_policy::CreatePolicyError::ServiceFailureException({
+                let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::create_policy::CreatePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_policy::CreatePolicyError::generic(generic),
     })
 }
@@ -134,20 +123,13 @@ pub fn de_create_policy_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_policy::CreatePolicyOutput,
-    crate::operation::create_policy::CreatePolicyError,
-> {
+) -> std::result::Result<crate::operation::create_policy::CreatePolicyOutput, crate::operation::create_policy::CreatePolicyError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_policy::builders::CreatePolicyOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_create_policy::de_create_policy(_response_body, output)
-                .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_policy::builders::CreatePolicyOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_policy::de_create_policy(_response_body, output)
+            .map_err(crate::operation::create_policy::CreatePolicyError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -156,10 +138,7 @@ pub fn de_create_policy_http_response_with_props(
 pub fn de_create_policy(
     inp: &[u8],
     mut builder: crate::operation::create_policy::builders::CreatePolicyOutputBuilder,
-) -> Result<
-    crate::operation::create_policy::builders::CreatePolicyOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_policy::builders::CreatePolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -196,9 +175,7 @@ pub fn de_create_policy(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreatePolicyResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreatePolicyResult tag"));
     };
     Ok(builder)
 }

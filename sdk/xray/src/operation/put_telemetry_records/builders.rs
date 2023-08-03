@@ -37,9 +37,7 @@ impl PutTelemetryRecordsFluentBuilder {
         }
     }
     /// Access the PutTelemetryRecords as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutTelemetryRecordsFluentBuilder {
             crate::operation::put_telemetry_records::PutTelemetryRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_telemetry_records::PutTelemetryRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_telemetry_records::PutTelemetryRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutTelemetryRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutTelemetryRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_telemetry_records::PutTelemetryRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_telemetry_records::PutTelemetryRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_telemetry_records::PutTelemetryRecordsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutTelemetryRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_telemetry_records::PutTelemetryRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_telemetry_records::PutTelemetryRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_telemetry_records::PutTelemetryRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutTelemetryRecordsFluentBuilder {
             crate::operation::put_telemetry_records::PutTelemetryRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_telemetry_records::PutTelemetryRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_telemetry_records::PutTelemetryRecordsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,32 +119,21 @@ impl PutTelemetryRecordsFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_telemetry_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
-    ) -> Self {
+    pub fn set_telemetry_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>) -> Self {
         self.inner = self.inner.set_telemetry_records(input);
         self
     }
     /// <p></p>
-    pub fn get_telemetry_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
+    pub fn get_telemetry_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
         self.inner.get_telemetry_records()
     }
     /// <p></p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_instance_id(input.into());
         self
     }
     /// <p></p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_instance_id(input);
         self
     }

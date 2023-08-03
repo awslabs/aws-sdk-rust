@@ -12,15 +12,13 @@ pub struct AwsAppSyncGraphQlApiDetails {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
     #[doc(hidden)]
-    pub open_id_connect_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
+    pub open_id_connect_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
     /// <p> The API name. </p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the configuration for Lambda function authorization. </p>
     #[doc(hidden)]
-    pub lambda_authorizer_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
+    pub lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
     #[doc(hidden)]
     pub xray_enabled: bool,
@@ -29,8 +27,7 @@ pub struct AwsAppSyncGraphQlApiDetails {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Cognito user pools configuration. </p>
     #[doc(hidden)]
-    pub user_pool_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
+    pub user_pool_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
     #[doc(hidden)]
     pub authentication_type: ::std::option::Option<::std::string::String>,
@@ -39,9 +36,8 @@ pub struct AwsAppSyncGraphQlApiDetails {
     pub log_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>,
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
     #[doc(hidden)]
-    pub additional_authentication_providers: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>,
-    >,
+    pub additional_authentication_providers:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>,
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
     #[doc(hidden)]
     pub waf_web_acl_arn: ::std::option::Option<::std::string::String>,
@@ -56,9 +52,7 @@ impl AwsAppSyncGraphQlApiDetails {
         self.id.as_deref()
     }
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
-    pub fn open_id_connect_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
+    pub fn open_id_connect_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
         self.open_id_connect_config.as_ref()
     }
     /// <p> The API name. </p>
@@ -66,10 +60,7 @@ impl AwsAppSyncGraphQlApiDetails {
         self.name.as_deref()
     }
     /// <p> Specifies the configuration for Lambda function authorization. </p>
-    pub fn lambda_authorizer_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>
-    {
+    pub fn lambda_authorizer_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails> {
         self.lambda_authorizer_config.as_ref()
     }
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
@@ -81,9 +72,7 @@ impl AwsAppSyncGraphQlApiDetails {
         self.arn.as_deref()
     }
     /// <p> The Amazon Cognito user pools configuration. </p>
-    pub fn user_pool_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
+    pub fn user_pool_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
         self.user_pool_config.as_ref()
     }
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
@@ -91,17 +80,13 @@ impl AwsAppSyncGraphQlApiDetails {
         self.authentication_type.as_deref()
     }
     /// <p> The Amazon CloudWatch Logs configuration. </p>
-    pub fn log_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiLogConfigDetails> {
+    pub fn log_config(&self) -> ::std::option::Option<&crate::types::AwsAppSyncGraphQlApiLogConfigDetails> {
         self.log_config.as_ref()
     }
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
     pub fn additional_authentication_providers(
         &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails],
-    > {
+    ) -> ::std::option::Option<&[crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails]> {
         self.additional_authentication_providers.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
@@ -118,27 +103,20 @@ impl AwsAppSyncGraphQlApiDetails {
 
 /// A builder for [`AwsAppSyncGraphQlApiDetails`](crate::types::AwsAppSyncGraphQlApiDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiDetailsBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) open_id_connect_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
+    pub(crate) open_id_connect_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) lambda_authorizer_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
+    pub(crate) lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     pub(crate) xray_enabled: ::std::option::Option<bool>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) user_pool_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
+    pub(crate) user_pool_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
     pub(crate) authentication_type: ::std::option::Option<::std::string::String>,
-    pub(crate) log_config:
-        ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>,
-    pub(crate) additional_authentication_providers: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>,
-    >,
+    pub(crate) log_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>,
+    pub(crate) additional_authentication_providers:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>,
     pub(crate) waf_web_acl_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiDetailsBuilder {
@@ -171,25 +149,17 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
         &self.id
     }
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
-    pub fn open_id_connect_config(
-        mut self,
-        input: crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails,
-    ) -> Self {
+    pub fn open_id_connect_config(mut self, input: crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails) -> Self {
         self.open_id_connect_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
-    pub fn set_open_id_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
-    ) -> Self {
+    pub fn set_open_id_connect_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>) -> Self {
         self.open_id_connect_config = input;
         self
     }
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
-    pub fn get_open_id_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
+    pub fn get_open_id_connect_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
         &self.open_id_connect_config
     }
     /// <p> The API name. </p>
@@ -207,28 +177,20 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
         &self.name
     }
     /// <p> Specifies the configuration for Lambda function authorization. </p>
-    pub fn lambda_authorizer_config(
-        mut self,
-        input: crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails,
-    ) -> Self {
+    pub fn lambda_authorizer_config(mut self, input: crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails) -> Self {
         self.lambda_authorizer_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the configuration for Lambda function authorization. </p>
     pub fn set_lambda_authorizer_config(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     ) -> Self {
         self.lambda_authorizer_config = input;
         self
     }
     /// <p> Specifies the configuration for Lambda function authorization. </p>
-    pub fn get_lambda_authorizer_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>
-    {
+    pub fn get_lambda_authorizer_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails> {
         &self.lambda_authorizer_config
     }
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
@@ -260,40 +222,26 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
         &self.arn
     }
     /// <p> The Amazon Cognito user pools configuration. </p>
-    pub fn user_pool_config(
-        mut self,
-        input: crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails,
-    ) -> Self {
+    pub fn user_pool_config(mut self, input: crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails) -> Self {
         self.user_pool_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The Amazon Cognito user pools configuration. </p>
-    pub fn set_user_pool_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
-    ) -> Self {
+    pub fn set_user_pool_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>) -> Self {
         self.user_pool_config = input;
         self
     }
     /// <p> The Amazon Cognito user pools configuration. </p>
-    pub fn get_user_pool_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
+    pub fn get_user_pool_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
         &self.user_pool_config
     }
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
-    pub fn authentication_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_type = input;
         self
     }
@@ -307,17 +255,12 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
         self
     }
     /// <p> The Amazon CloudWatch Logs configuration. </p>
-    pub fn set_log_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>,
-    ) -> Self {
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>) -> Self {
         self.log_config = input;
         self
     }
     /// <p> The Amazon CloudWatch Logs configuration. </p>
-    pub fn get_log_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails> {
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails> {
         &self.log_config
     }
     /// Appends an item to `additional_authentication_providers`.
@@ -325,10 +268,7 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
     ///
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
-    pub fn additional_authentication_providers(
-        mut self,
-        input: crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails,
-    ) -> Self {
+    pub fn additional_authentication_providers(mut self, input: crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails) -> Self {
         let mut v = self.additional_authentication_providers.unwrap_or_default();
         v.push(input);
         self.additional_authentication_providers = ::std::option::Option::Some(v);
@@ -337,11 +277,7 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
     pub fn set_additional_authentication_providers(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>,
     ) -> Self {
         self.additional_authentication_providers = input;
         self
@@ -349,24 +285,16 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
     pub fn get_additional_authentication_providers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>> {
         &self.additional_authentication_providers
     }
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
-    pub fn waf_web_acl_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn waf_web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.waf_web_acl_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
-    pub fn set_waf_web_acl_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_waf_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.waf_web_acl_arn = input;
         self
     }

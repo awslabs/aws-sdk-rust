@@ -30,9 +30,7 @@ pub struct ForgotPasswordInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ForgotPasswordInput {
     /// <p>The ID of the client associated with the user pool.</p>
@@ -52,9 +50,7 @@ impl ForgotPasswordInput {
         self.username.as_deref()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
-    pub fn analytics_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -67,11 +63,7 @@ impl ForgotPasswordInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
@@ -103,9 +95,7 @@ pub struct ForgotPasswordInputBuilder {
     pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ForgotPasswordInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
@@ -142,17 +132,12 @@ impl ForgotPasswordInputBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_user_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextDataType>,
-    ) -> Self {
+    pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.user_context_data = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn get_user_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+    pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         &self.user_context_data
     }
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
@@ -175,17 +160,12 @@ impl ForgotPasswordInputBuilder {
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         &self.analytics_metadata
     }
     /// Adds a key-value pair to `client_metadata`.
@@ -224,9 +204,7 @@ impl ForgotPasswordInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -241,20 +219,13 @@ impl ForgotPasswordInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`ForgotPasswordInput`](crate::operation::forgot_password::ForgotPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::forgot_password::ForgotPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::forgot_password::ForgotPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::forgot_password::ForgotPasswordInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

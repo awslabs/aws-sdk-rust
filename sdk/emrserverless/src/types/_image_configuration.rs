@@ -30,9 +30,7 @@ impl ImageConfiguration {
 
 /// A builder for [`ImageConfiguration`](crate::types::ImageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageConfigurationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ImageConfigurationBuilder {
         &self.image_uri
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
-    pub fn resolved_image_digest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_image_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
-    pub fn set_resolved_image_digest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_image_digest = input;
         self
     }

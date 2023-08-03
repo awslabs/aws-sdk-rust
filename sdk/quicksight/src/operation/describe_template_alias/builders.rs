@@ -37,10 +37,7 @@ impl DescribeTemplateAliasFluentBuilder {
         }
     }
     /// Access the DescribeTemplateAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_template_alias::builders::DescribeTemplateAliasInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_template_alias::builders::DescribeTemplateAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeTemplateAliasFluentBuilder {
             crate::operation::describe_template_alias::DescribeTemplateAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_alias::DescribeTemplateAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_alias::DescribeTemplateAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeTemplateAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeTemplateAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_template_alias::DescribeTemplateAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_alias::DescribeTemplateAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_alias::DescribeTemplateAliasError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeTemplateAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_template_alias::DescribeTemplateAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_alias::DescribeTemplateAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_alias::DescribeTemplateAliasError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeTemplateAliasFluentBuilder {
             crate::operation::describe_template_alias::DescribeTemplateAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_alias::DescribeTemplateAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_alias::DescribeTemplateAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

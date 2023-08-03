@@ -37,9 +37,7 @@ impl AwsEfsAccessPointPosixUserDetails {
 
 /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::types::AwsEfsAccessPointPosixUserDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointPosixUserDetailsBuilder {
     pub(crate) gid: ::std::option::Option<::std::string::String>,
     pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,27 +63,19 @@ impl AwsEfsAccessPointPosixUserDetailsBuilder {
     /// To override the contents of this collection use [`set_secondary_gids`](Self::set_secondary_gids).
     ///
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn secondary_gids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secondary_gids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secondary_gids.unwrap_or_default();
         v.push(input.into());
         self.secondary_gids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn set_secondary_gids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_secondary_gids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.secondary_gids = input;
         self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn get_secondary_gids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secondary_gids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.secondary_gids
     }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>

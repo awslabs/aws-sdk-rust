@@ -9,10 +9,7 @@ pub fn ser_create_policy_store_input(
     if let Some(var_2) = &input.validation_settings {
         #[allow(unused_mut)]
         let mut object_3 = object.key("validationSettings").start_object();
-        crate::protocol_serde::shape_validation_settings::ser_validation_settings(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_validation_settings::ser_validation_settings(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

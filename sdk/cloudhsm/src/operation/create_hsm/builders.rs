@@ -10,10 +10,7 @@ impl CreateHsmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_hsm::CreateHsmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hsm::CreateHsmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_hsm();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl CreateHsmFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hsm::CreateHsm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hsm::CreateHsm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl CreateHsmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl CreateHsmFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hsm::CreateHsm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hsm::CreateHsm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
     > {
         self.customize_middleware().await
@@ -204,10 +192,7 @@ impl CreateHsmFluentBuilder {
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
-    pub fn set_subscription_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.inner = self.inner.set_subscription_type(input);
         self
     }

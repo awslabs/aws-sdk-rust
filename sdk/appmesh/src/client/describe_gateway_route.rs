@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeGatewayRouteOutput`](crate::operation::describe_gateway_route::DescribeGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::operation::describe_gateway_route::DescribeGatewayRouteOutput::gateway_route): <p>The full description of your gateway route.</p>
     /// - On failure, responds with [`SdkError<DescribeGatewayRouteError>`](crate::operation::describe_gateway_route::DescribeGatewayRouteError)
-    pub fn describe_gateway_route(
-        &self,
-    ) -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteFluentBuilder {
-        crate::operation::describe_gateway_route::builders::DescribeGatewayRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_gateway_route(&self) -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteFluentBuilder {
+        crate::operation::describe_gateway_route::builders::DescribeGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl VirtualRouterStatus {
 
 /// A builder for [`VirtualRouterStatus`](crate::types::VirtualRouterStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
 }
@@ -36,10 +34,7 @@ impl VirtualRouterStatusBuilder {
         self
     }
     /// <p>The current status of the virtual router.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualRouterStatusCode>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl VirtualRouterStatusBuilder {
     }
     /// Consumes the builder and constructs a [`VirtualRouterStatus`](crate::types::VirtualRouterStatus).
     pub fn build(self) -> crate::types::VirtualRouterStatus {
-        crate::types::VirtualRouterStatus {
-            status: self.status,
-        }
+        crate::types::VirtualRouterStatus { status: self.status }
     }
 }

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateClusterV2Output {
 }
 impl CreateClusterV2Output {
     /// Creates a new builder-style object to manufacture [`CreateClusterV2Output`](crate::operation::create_cluster_v2::CreateClusterV2Output).
-    pub fn builder() -> crate::operation::create_cluster_v2::builders::CreateClusterV2OutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cluster_v2::builders::CreateClusterV2OutputBuilder {
         crate::operation::create_cluster_v2::builders::CreateClusterV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterV2Output`](crate::operation::create_cluster_v2::CreateClusterV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterV2OutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
@@ -109,10 +106,7 @@ impl CreateClusterV2OutputBuilder {
         self
     }
     /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
-    pub fn set_cluster_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterType>,
-    ) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::ClusterType>) -> Self {
         self.cluster_type = input;
         self
     }

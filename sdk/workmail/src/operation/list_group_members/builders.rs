@@ -10,10 +10,7 @@ impl ListGroupMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_group_members::ListGroupMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_members::ListGroupMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_members::ListGroupMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_group_members();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListGroupMembersFluentBuilder {
         }
     }
     /// Access the ListGroupMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_group_members::builders::ListGroupMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_group_members::builders::ListGroupMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListGroupMembersFluentBuilder {
             crate::operation::list_group_members::ListGroupMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_members::ListGroupMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_members::ListGroupMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListGroupMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListGroupMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_members::ListGroupMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_members::ListGroupMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_members::ListGroupMembersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListGroupMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_members::ListGroupMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_members::ListGroupMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_members::ListGroupMembersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListGroupMembersFluentBuilder {
             crate::operation::list_group_members::ListGroupMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_members::ListGroupMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_members::ListGroupMembersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_members::paginator::ListGroupMembersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_group_members::paginator::ListGroupMembersPaginator {
-        crate::operation::list_group_members::paginator::ListGroupMembersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_group_members::paginator::ListGroupMembersPaginator {
+        crate::operation::list_group_members::paginator::ListGroupMembersPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

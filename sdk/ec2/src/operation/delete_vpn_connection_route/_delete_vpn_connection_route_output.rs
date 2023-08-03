@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpnConnectionRouteOutput {
 }
 impl DeleteVpnConnectionRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpnConnectionRouteOutput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput).
-    pub fn builder() -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteOutputBuilder{
+    pub fn builder() -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteOutputBuilder {
         crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpnConnectionRouteOutput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpnConnectionRouteOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteVpnConnectionRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVpnConnectionRouteOutput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput {
+    pub fn build(self) -> crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput {
         crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput {
             _request_id: self._request_id,
         }

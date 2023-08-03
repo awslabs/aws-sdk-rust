@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput) with field(s):
     ///   - [`resource_info(Option<ResourceInfo>)`](crate::operation::describe_resource::DescribeResourceOutput::resource_info): <p>A structure containing information about an Lake Formation resource.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::operation::describe_resource::DescribeResourceError)
-    pub fn describe_resource(
-        &self,
-    ) -> crate::operation::describe_resource::builders::DescribeResourceFluentBuilder {
-        crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_resource(&self) -> crate::operation::describe_resource::builders::DescribeResourceFluentBuilder {
+        crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::new(self.handle.clone())
     }
 }

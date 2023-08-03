@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PipelineExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for PipelineExecutionStatus {
             "Stopping" => PipelineExecutionStatus::Stopping,
             "Succeeded" => PipelineExecutionStatus::Succeeded,
             "Superseded" => PipelineExecutionStatus::Superseded,
-            other => PipelineExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PipelineExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl PipelineExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cancelled",
-            "Failed",
-            "InProgress",
-            "Stopped",
-            "Stopping",
-            "Succeeded",
-            "Superseded",
-        ]
+        &["Cancelled", "Failed", "InProgress", "Stopped", "Stopping", "Succeeded", "Superseded"]
     }
 }
 impl ::std::convert::AsRef<str> for PipelineExecutionStatus {

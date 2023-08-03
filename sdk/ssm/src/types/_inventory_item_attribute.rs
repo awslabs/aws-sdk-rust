@@ -30,9 +30,7 @@ impl InventoryItemAttribute {
 
 /// A builder for [`InventoryItemAttribute`](crate::types::InventoryItemAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryItemAttributeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::InventoryAttributeDataType>,
@@ -58,17 +56,12 @@ impl InventoryItemAttributeBuilder {
         self
     }
     /// <p>The data type of the inventory item attribute. </p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryAttributeDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::InventoryAttributeDataType>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The data type of the inventory item attribute. </p>
-    pub fn get_data_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventoryAttributeDataType> {
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::InventoryAttributeDataType> {
         &self.data_type
     }
     /// Consumes the builder and constructs a [`InventoryItemAttribute`](crate::types::InventoryItemAttribute).

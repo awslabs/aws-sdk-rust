@@ -84,27 +84,19 @@ impl UiConfig {
 
 /// A builder for [`UiConfig`](crate::types::UiConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UiConfigBuilder {
     pub(crate) ui_template_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
 impl UiConfigBuilder {
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
-    pub fn ui_template_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ui_template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ui_template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
-    pub fn set_ui_template_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ui_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ui_template_s3_uri = input;
         self
     }
@@ -139,10 +131,7 @@ impl UiConfigBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
-    pub fn human_task_ui_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -173,10 +162,7 @@ impl UiConfigBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
-    pub fn set_human_task_ui_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_arn = input;
         self
     }

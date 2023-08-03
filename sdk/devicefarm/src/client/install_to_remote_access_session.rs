@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput) with field(s):
     ///   - [`app_upload(Option<Upload>)`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput::app_upload): <p>An app to upload or that has been uploaded.</p>
     /// - On failure, responds with [`SdkError<InstallToRemoteAccessSessionError>`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError)
-    pub fn install_to_remote_access_session(&self) -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionFluentBuilder{
+    pub fn install_to_remote_access_session(
+        &self,
+    ) -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionFluentBuilder {
         crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionFluentBuilder::new(self.handle.clone())
     }
 }

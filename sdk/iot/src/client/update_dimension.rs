@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::update_dimension::UpdateDimensionOutput::creation_date): <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::update_dimension::UpdateDimensionOutput::last_modified_date): <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDimensionError>`](crate::operation::update_dimension::UpdateDimensionError)
-    pub fn update_dimension(
-        &self,
-    ) -> crate::operation::update_dimension::builders::UpdateDimensionFluentBuilder {
-        crate::operation::update_dimension::builders::UpdateDimensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dimension(&self) -> crate::operation::update_dimension::builders::UpdateDimensionFluentBuilder {
+        crate::operation::update_dimension::builders::UpdateDimensionFluentBuilder::new(self.handle.clone())
     }
 }

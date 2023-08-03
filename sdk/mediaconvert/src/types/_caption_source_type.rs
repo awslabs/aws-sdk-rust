@@ -50,13 +50,7 @@
 /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CaptionSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for CaptionSourceType {
             "TELETEXT" => CaptionSourceType::Teletext,
             "TTML" => CaptionSourceType::Ttml,
             "WEBVTT" => CaptionSourceType::Webvtt,
-            other => {
-                CaptionSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CaptionSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

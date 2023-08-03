@@ -6,15 +6,12 @@
 pub struct ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
     #[doc(hidden)]
-    pub sql_statement_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
+    pub sql_statement_results: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
     _request_id: Option<String>,
 }
 impl ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
-    pub fn sql_statement_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SqlStatementResult]> {
+    pub fn sql_statement_results(&self) -> ::std::option::Option<&[crate::types::SqlStatementResult]> {
         self.sql_statement_results.as_deref()
     }
 }
@@ -32,12 +29,9 @@ impl ExecuteSqlOutput {
 
 /// A builder for [`ExecuteSqlOutput`](crate::operation::execute_sql::ExecuteSqlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteSqlOutputBuilder {
-    pub(crate) sql_statement_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
+    pub(crate) sql_statement_results: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
     _request_id: Option<String>,
 }
 impl ExecuteSqlOutputBuilder {
@@ -53,17 +47,12 @@ impl ExecuteSqlOutputBuilder {
         self
     }
     /// <p>The results of the SQL statement or statements.</p>
-    pub fn set_sql_statement_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
-    ) -> Self {
+    pub fn set_sql_statement_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>) -> Self {
         self.sql_statement_results = input;
         self
     }
     /// <p>The results of the SQL statement or statements.</p>
-    pub fn get_sql_statement_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>> {
+    pub fn get_sql_statement_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>> {
         &self.sql_statement_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

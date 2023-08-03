@@ -15,10 +15,7 @@ pub fn ser_create_availability_configuration_input(
     if let Some(var_4) = &input.ews_provider {
         #[allow(unused_mut)]
         let mut object_5 = object.key("EwsProvider").start_object();
-        crate::protocol_serde::shape_ews_availability_provider::ser_ews_availability_provider(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_ews_availability_provider::ser_ews_availability_provider(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.lambda_provider {

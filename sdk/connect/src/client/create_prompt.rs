@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`prompt_arn(Option<String>)`](crate::operation::create_prompt::CreatePromptOutput::prompt_arn): <p>The Amazon Resource Name (ARN) of the prompt.</p>
     ///   - [`prompt_id(Option<String>)`](crate::operation::create_prompt::CreatePromptOutput::prompt_id): <p>A unique identifier for the prompt.</p>
     /// - On failure, responds with [`SdkError<CreatePromptError>`](crate::operation::create_prompt::CreatePromptError)
-    pub fn create_prompt(
-        &self,
-    ) -> crate::operation::create_prompt::builders::CreatePromptFluentBuilder {
-        crate::operation::create_prompt::builders::CreatePromptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_prompt(&self) -> crate::operation::create_prompt::builders::CreatePromptFluentBuilder {
+        crate::operation::create_prompt::builders::CreatePromptFluentBuilder::new(self.handle.clone())
     }
 }

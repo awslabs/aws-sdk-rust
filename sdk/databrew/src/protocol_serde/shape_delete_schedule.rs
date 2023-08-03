@@ -4,62 +4,49 @@ pub fn de_delete_schedule_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_schedule::DeleteScheduleOutput,
-    crate::operation::delete_schedule::DeleteScheduleError,
-> {
+) -> std::result::Result<crate::operation::delete_schedule::DeleteScheduleOutput, crate::operation::delete_schedule::DeleteScheduleError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::delete_schedule::DeleteScheduleError::unhandled(generic))
-        }
+        None => return Err(crate::operation::delete_schedule::DeleteScheduleError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::operation::delete_schedule::DeleteScheduleError::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::operation::delete_schedule::DeleteScheduleError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::operation::delete_schedule::DeleteScheduleError::ValidationException({
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::delete_schedule::DeleteScheduleError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_schedule::DeleteScheduleError::generic(generic),
     })
 }
@@ -69,22 +56,13 @@ pub fn de_delete_schedule_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_schedule::DeleteScheduleOutput,
-    crate::operation::delete_schedule::DeleteScheduleError,
-> {
+) -> std::result::Result<crate::operation::delete_schedule::DeleteScheduleOutput, crate::operation::delete_schedule::DeleteScheduleError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder::default();
-        output = crate::protocol_serde::shape_delete_schedule::de_delete_schedule(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_schedule::de_delete_schedule(_response_body, output)
+            .map_err(crate::operation::delete_schedule::DeleteScheduleError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -92,48 +70,35 @@ pub fn de_delete_schedule_http_response_with_props(
 pub(crate) fn de_delete_schedule(
     value: &[u8],
     mut builder: crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder,
-) -> Result<
-    crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::delete_schedule::builders::DeleteScheduleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Name" => {
-                        builder = builder.set_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Name" => {
+                    builder = builder.set_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

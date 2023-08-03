@@ -5,16 +5,16 @@ pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_bal
 
 impl DeleteLoadBalancerTlsCertificateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_load_balancer_tls_certificate();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerTlsCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder,
+    inner: crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder,
 }
 impl DeleteLoadBalancerTlsCertificateFluentBuilder {
     /// Creates a new `DeleteLoadBalancerTlsCertificate`.
@@ -38,15 +38,20 @@ impl DeleteLoadBalancerTlsCertificateFluentBuilder {
         }
     }
     /// Access the DeleteLoadBalancerTlsCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DeleteLoadBalancerTlsCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl DeleteLoadBalancerTlsCertificateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The load balancer name.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The load balancer name.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -116,18 +125,12 @@ impl DeleteLoadBalancerTlsCertificateFluentBuilder {
         self.inner.get_load_balancer_name()
     }
     /// <p>The SSL/TLS certificate name.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The SSL/TLS certificate name.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }

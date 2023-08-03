@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteReplicationSetOutput {
 }
 impl DeleteReplicationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationSetOutput`](crate::operation::delete_replication_set::DeleteReplicationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_set::builders::DeleteReplicationSetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_replication_set::builders::DeleteReplicationSetOutputBuilder {
         crate::operation::delete_replication_set::builders::DeleteReplicationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationSetOutput`](crate::operation::delete_replication_set::DeleteReplicationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationSetOutputBuilder {
     _request_id: Option<String>,
 }

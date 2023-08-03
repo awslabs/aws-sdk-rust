@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`receipt_handle(impl ::std::convert::Into<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::receipt_handle) / [`set_receipt_handle(Option<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::set_receipt_handle): <p>The receipt handle associated with the message to delete.</p>
     /// - On success, responds with [`DeleteMessageOutput`](crate::operation::delete_message::DeleteMessageOutput)
     /// - On failure, responds with [`SdkError<DeleteMessageError>`](crate::operation::delete_message::DeleteMessageError)
-    pub fn delete_message(
-        &self,
-    ) -> crate::operation::delete_message::builders::DeleteMessageFluentBuilder {
-        crate::operation::delete_message::builders::DeleteMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_message(&self) -> crate::operation::delete_message::builders::DeleteMessageFluentBuilder {
+        crate::operation::delete_message::builders::DeleteMessageFluentBuilder::new(self.handle.clone())
     }
 }

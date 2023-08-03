@@ -15,33 +15,25 @@ impl GetApplicationComponentStrategiesInput {
 }
 impl GetApplicationComponentStrategiesInput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
-    pub fn builder() -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder{
+    pub fn builder() -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder {
         crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesInputBuilder {
     pub(crate) application_component_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationComponentStrategiesInputBuilder {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn application_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn set_application_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_component_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl GetApplicationComponentStrategiesInputBuilder {
         &self.application_component_id
     }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput {
-                application_component_id: self.application_component_id
-                ,
-            }
+                application_component_id: self.application_component_id,
+            },
         )
     }
 }

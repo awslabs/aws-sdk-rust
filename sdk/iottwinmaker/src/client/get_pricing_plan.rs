@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`current_pricing_plan(Option<PricingPlan>)`](crate::operation::get_pricing_plan::GetPricingPlanOutput::current_pricing_plan): <p>The chosen pricing plan for the current billing cycle.</p>
     ///   - [`pending_pricing_plan(Option<PricingPlan>)`](crate::operation::get_pricing_plan::GetPricingPlanOutput::pending_pricing_plan): <p>The pending pricing plan.</p>
     /// - On failure, responds with [`SdkError<GetPricingPlanError>`](crate::operation::get_pricing_plan::GetPricingPlanError)
-    pub fn get_pricing_plan(
-        &self,
-    ) -> crate::operation::get_pricing_plan::builders::GetPricingPlanFluentBuilder {
-        crate::operation::get_pricing_plan::builders::GetPricingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_pricing_plan(&self) -> crate::operation::get_pricing_plan::builders::GetPricingPlanFluentBuilder {
+        crate::operation::get_pricing_plan::builders::GetPricingPlanFluentBuilder::new(self.handle.clone())
     }
 }

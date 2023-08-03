@@ -24,9 +24,7 @@ impl UpdateSensitivityInspectionTemplateInput {
     }
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
     /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
-    pub fn excludes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateExcludes> {
+    pub fn excludes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateExcludes> {
         self.excludes.as_ref()
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
@@ -34,24 +32,20 @@ impl UpdateSensitivityInspectionTemplateInput {
         self.id.as_deref()
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
-    pub fn includes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateIncludes> {
+    pub fn includes(&self) -> ::std::option::Option<&crate::types::SensitivityInspectionTemplateIncludes> {
         self.includes.as_ref()
     }
 }
 impl UpdateSensitivityInspectionTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateInput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput).
-    pub fn builder() -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateInputBuilder{
+    pub fn builder() -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateInputBuilder {
         crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSensitivityInspectionTemplateInput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSensitivityInspectionTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,
@@ -81,18 +75,13 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
     }
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
     /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
     /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes> {
+    pub fn get_excludes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes> {
         &self.excludes
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
@@ -115,32 +104,28 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         self
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>) -> Self {
         self.includes = input;
         self
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
+    pub fn get_includes(&self) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
         &self.includes
     }
     /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateInput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput {
-                description: self.description
-                ,
-                excludes: self.excludes
-                ,
-                id: self.id
-                ,
-                includes: self.includes
-                ,
-            }
+                description: self.description,
+                excludes: self.excludes,
+                id: self.id,
+                includes: self.includes,
+            },
         )
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_groups(Option<Vec<InstanceGroup>>)`](crate::operation::list_instance_groups::ListInstanceGroupsOutput::instance_groups): <p>The list of instance groups for the cluster and given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_instance_groups::ListInstanceGroupsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListInstanceGroupsError>`](crate::operation::list_instance_groups::ListInstanceGroupsError)
-    pub fn list_instance_groups(
-        &self,
-    ) -> crate::operation::list_instance_groups::builders::ListInstanceGroupsFluentBuilder {
-        crate::operation::list_instance_groups::builders::ListInstanceGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instance_groups(&self) -> crate::operation::list_instance_groups::builders::ListInstanceGroupsFluentBuilder {
+        crate::operation::list_instance_groups::builders::ListInstanceGroupsFluentBuilder::new(self.handle.clone())
     }
 }

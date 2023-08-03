@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEffectivePolicyOutput {
 }
 impl DescribeEffectivePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder {
         crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyOutputBuilder {
     pub(crate) effective_policy: ::std::option::Option<crate::types::EffectivePolicy>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeEffectivePolicyOutputBuilder {
         self
     }
     /// <p>The contents of the effective policy.</p>
-    pub fn set_effective_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectivePolicy>,
-    ) -> Self {
+    pub fn set_effective_policy(mut self, input: ::std::option::Option<crate::types::EffectivePolicy>) -> Self {
         self.effective_policy = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeEffectivePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
+    pub fn build(self) -> crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
         crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
             effective_policy: self.effective_policy,
             _request_id: self._request_id,

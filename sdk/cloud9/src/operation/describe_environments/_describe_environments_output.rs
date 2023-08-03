@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentsOutput {
 }
 impl DescribeEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder {
         crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentsOutput`](crate::operation::describe_environments::DescribeEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl DescribeEnvironmentsOutputBuilder {
         self
     }
     /// <p>Information about the environments that are returned.</p>
-    pub fn set_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>,
-    ) -> Self {
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>) -> Self {
         self.environments = input;
         self
     }
     /// <p>Information about the environments that are returned.</p>
-    pub fn get_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Environment>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Environment>> {
         &self.environments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

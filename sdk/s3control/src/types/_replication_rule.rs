@@ -68,17 +68,13 @@ impl ReplicationRule {
         self.status.as_ref()
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
-    pub fn source_selection_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
+    pub fn source_selection_criteria(&self) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
         self.source_selection_criteria.as_ref()
     }
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn existing_object_replication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExistingObjectReplication> {
+    pub fn existing_object_replication(&self) -> ::std::option::Option<&crate::types::ExistingObjectReplication> {
         self.existing_object_replication.as_ref()
     }
     /// <p>A container for information about the replication destination and its configurations.</p>
@@ -87,9 +83,7 @@ impl ReplicationRule {
     }
     /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn delete_marker_replication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeleteMarkerReplication> {
+    pub fn delete_marker_replication(&self) -> ::std::option::Option<&crate::types::DeleteMarkerReplication> {
         self.delete_marker_replication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
@@ -106,22 +100,17 @@ impl ReplicationRule {
 
 /// A builder for [`ReplicationRule`](crate::types::ReplicationRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRuleBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ReplicationRuleFilter>,
     pub(crate) status: ::std::option::Option<crate::types::ReplicationRuleStatus>,
-    pub(crate) source_selection_criteria:
-        ::std::option::Option<crate::types::SourceSelectionCriteria>,
-    pub(crate) existing_object_replication:
-        ::std::option::Option<crate::types::ExistingObjectReplication>,
+    pub(crate) source_selection_criteria: ::std::option::Option<crate::types::SourceSelectionCriteria>,
+    pub(crate) existing_object_replication: ::std::option::Option<crate::types::ExistingObjectReplication>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
-    pub(crate) delete_marker_replication:
-        ::std::option::Option<crate::types::DeleteMarkerReplication>,
+    pub(crate) delete_marker_replication: ::std::option::Option<crate::types::DeleteMarkerReplication>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationRuleBuilder {
@@ -185,10 +174,7 @@ impl ReplicationRuleBuilder {
         self
     }
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRuleFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReplicationRuleFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -202,10 +188,7 @@ impl ReplicationRuleBuilder {
         self
     }
     /// <p>Specifies whether the rule is enabled.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationRuleStatus>) -> Self {
         self.status = input;
         self
     }
@@ -214,53 +197,37 @@ impl ReplicationRuleBuilder {
         &self.status
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
-    pub fn source_selection_criteria(
-        mut self,
-        input: crate::types::SourceSelectionCriteria,
-    ) -> Self {
+    pub fn source_selection_criteria(mut self, input: crate::types::SourceSelectionCriteria) -> Self {
         self.source_selection_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
-    pub fn set_source_selection_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceSelectionCriteria>,
-    ) -> Self {
+    pub fn set_source_selection_criteria(mut self, input: ::std::option::Option<crate::types::SourceSelectionCriteria>) -> Self {
         self.source_selection_criteria = input;
         self
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
-    pub fn get_source_selection_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceSelectionCriteria> {
+    pub fn get_source_selection_criteria(&self) -> &::std::option::Option<crate::types::SourceSelectionCriteria> {
         &self.source_selection_criteria
     }
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn existing_object_replication(
-        mut self,
-        input: crate::types::ExistingObjectReplication,
-    ) -> Self {
+    pub fn existing_object_replication(mut self, input: crate::types::ExistingObjectReplication) -> Self {
         self.existing_object_replication = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_existing_object_replication(
-        mut self,
-        input: ::std::option::Option<crate::types::ExistingObjectReplication>,
-    ) -> Self {
+    pub fn set_existing_object_replication(mut self, input: ::std::option::Option<crate::types::ExistingObjectReplication>) -> Self {
         self.existing_object_replication = input;
         self
     }
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn get_existing_object_replication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExistingObjectReplication> {
+    pub fn get_existing_object_replication(&self) -> &::std::option::Option<crate::types::ExistingObjectReplication> {
         &self.existing_object_replication
     }
     /// <p>A container for information about the replication destination and its configurations.</p>
@@ -269,10 +236,7 @@ impl ReplicationRuleBuilder {
         self
     }
     /// <p>A container for information about the replication destination and its configurations.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
@@ -282,27 +246,19 @@ impl ReplicationRuleBuilder {
     }
     /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn delete_marker_replication(
-        mut self,
-        input: crate::types::DeleteMarkerReplication,
-    ) -> Self {
+    pub fn delete_marker_replication(mut self, input: crate::types::DeleteMarkerReplication) -> Self {
         self.delete_marker_replication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn set_delete_marker_replication(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteMarkerReplication>,
-    ) -> Self {
+    pub fn set_delete_marker_replication(mut self, input: ::std::option::Option<crate::types::DeleteMarkerReplication>) -> Self {
         self.delete_marker_replication = input;
         self
     }
     /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn get_delete_marker_replication(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteMarkerReplication> {
+    pub fn get_delete_marker_replication(&self) -> &::std::option::Option<crate::types::DeleteMarkerReplication> {
         &self.delete_marker_replication
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>

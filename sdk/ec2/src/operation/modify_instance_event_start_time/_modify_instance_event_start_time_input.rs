@@ -36,16 +36,14 @@ impl ModifyInstanceEventStartTimeInput {
 }
 impl ModifyInstanceEventStartTimeInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceEventStartTimeInput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput).
-    pub fn builder() -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder {
         crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceEventStartTimeInput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceEventStartTimeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
-    pub fn instance_event_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
-    pub fn set_instance_event_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_event_id = input;
         self
     }
@@ -107,10 +99,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         self
     }
     /// <p>The new date and time when the event will take place.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before = input;
         self
     }
@@ -125,13 +114,11 @@ impl ModifyInstanceEventStartTimeInputBuilder {
         crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput {
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-                instance_event_id: self.instance_event_id,
-                not_before: self.not_before,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput {
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+            instance_event_id: self.instance_event_id,
+            not_before: self.not_before,
+        })
     }
 }

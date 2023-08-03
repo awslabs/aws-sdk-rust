@@ -10,10 +10,7 @@ impl CreateNamespaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_namespace::CreateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_namespace::CreateNamespaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_namespace();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateNamespaceFluentBuilder {
         }
     }
     /// Access the CreateNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateNamespaceFluentBuilder {
             crate::operation::create_namespace::CreateNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_namespace::CreateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_namespace::CreateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_namespace::CreateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_namespace::CreateNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_namespace::CreateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateNamespaceFluentBuilder {
             crate::operation::create_namespace::CreateNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_namespace::CreateNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -163,10 +141,7 @@ impl CreateNamespaceFluentBuilder {
         self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn set_identity_store(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityStore>,
-    ) -> Self {
+    pub fn set_identity_store(mut self, input: ::std::option::Option<crate::types::IdentityStore>) -> Self {
         self.inner = self.inner.set_identity_store(input);
         self
     }
@@ -184,10 +159,7 @@ impl CreateNamespaceFluentBuilder {
         self
     }
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

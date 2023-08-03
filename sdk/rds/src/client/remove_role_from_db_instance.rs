@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`feature_name(impl ::std::convert::Into<String>)`](crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDBInstanceFluentBuilder::feature_name) / [`set_feature_name(Option<String>)`](crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDBInstanceFluentBuilder::set_feature_name): <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     /// - On success, responds with [`RemoveRoleFromDbInstanceOutput`](crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceOutput)
     /// - On failure, responds with [`SdkError<RemoveRoleFromDBInstanceError>`](crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError)
-    pub fn remove_role_from_db_instance(&self) -> crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDBInstanceFluentBuilder{
+    pub fn remove_role_from_db_instance(&self) -> crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDBInstanceFluentBuilder {
         crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

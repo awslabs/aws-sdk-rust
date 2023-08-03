@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StopDataCollectionByAgentIdsOutput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput) with field(s):
     ///   - [`agents_configuration_status(Option<Vec<AgentConfigurationStatus>>)`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput::agents_configuration_status): <p>Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     /// - On failure, responds with [`SdkError<StopDataCollectionByAgentIdsError>`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError)
-    pub fn stop_data_collection_by_agent_ids(&self) -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsFluentBuilder{
+    pub fn stop_data_collection_by_agent_ids(
+        &self,
+    ) -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsFluentBuilder {
         crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateProductInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_product::UpdateProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_product::UpdateProductError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_product::UpdateProductError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_product();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateProductFluentBuilder {
         }
     }
     /// Access the UpdateProduct as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_product::builders::UpdateProductInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_product::builders::UpdateProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,10 +111,7 @@ impl UpdateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -131,10 +120,7 @@ impl UpdateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -217,18 +203,12 @@ impl UpdateProductFluentBuilder {
         self.inner.get_distributor()
     }
     /// <p>The updated support description for the product.</p>
-    pub fn support_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_description(input.into());
         self
     }
     /// <p>The updated support description for the product.</p>
-    pub fn set_support_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_description(input);
         self
     }
@@ -237,18 +217,12 @@ impl UpdateProductFluentBuilder {
         self.inner.get_support_description()
     }
     /// <p>The updated support email for the product.</p>
-    pub fn support_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_email(input.into());
         self
     }
     /// <p>The updated support email for the product.</p>
-    pub fn set_support_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_email(input);
         self
     }
@@ -280,10 +254,7 @@ impl UpdateProductFluentBuilder {
         self
     }
     /// <p>The tags to add to the product.</p>
-    pub fn set_add_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_add_tags(input);
         self
     }
@@ -301,17 +272,12 @@ impl UpdateProductFluentBuilder {
         self
     }
     /// <p>The tags to remove from the product.</p>
-    pub fn set_remove_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_tags(input);
         self
     }
     /// <p>The tags to remove from the product.</p>
-    pub fn get_remove_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_tags()
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
@@ -328,10 +294,7 @@ impl UpdateProductFluentBuilder {
     /// <li> <p> <code>Type</code> </p> </li>
     /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
-    pub fn set_source_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnection>,
-    ) -> Self {
+    pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.inner = self.inner.set_source_connection(input);
         self
     }

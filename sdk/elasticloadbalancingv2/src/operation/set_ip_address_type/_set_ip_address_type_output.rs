@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SetIpAddressTypeOutput {
 }
 impl SetIpAddressTypeOutput {
     /// Creates a new builder-style object to manufacture [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder {
+    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder {
         crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeOutputBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl SetIpAddressTypeOutputBuilder {
         self
     }
     /// <p>The IP address type.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }

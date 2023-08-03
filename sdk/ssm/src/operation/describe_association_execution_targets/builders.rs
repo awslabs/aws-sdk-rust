@@ -5,16 +5,16 @@ pub use crate::operation::describe_association_execution_targets::_describe_asso
 
 impl DescribeAssociationExecutionTargetsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_association_execution_targets();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeAssociationExecutionTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder,
+    inner: crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder,
 }
 impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// Creates a new `DescribeAssociationExecutionTargets`.
@@ -37,15 +37,20 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
         }
     }
     /// Access the DescribeAssociationExecutionTargets as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,44 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator{
-        crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(self) -> crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator {
+        crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The association ID that includes the execution for which you want to view details.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID that includes the execution for which you want to view details.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -150,12 +162,7 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -163,10 +170,7 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

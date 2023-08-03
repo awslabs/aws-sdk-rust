@@ -128,9 +128,7 @@ impl Answer {
 
 /// A builder for [`Answer`](crate::types::Answer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
@@ -180,18 +178,12 @@ impl AnswerBuilder {
         &self.pillar_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_title = input;
         self
     }
@@ -200,18 +192,12 @@ impl AnswerBuilder {
         &self.question_title
     }
     /// <p>The description of the question.</p>
-    pub fn question_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the question.</p>
-    pub fn set_question_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_description = input;
         self
     }
@@ -222,20 +208,14 @@ impl AnswerBuilder {
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn improvement_plan_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn improvement_plan_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.improvement_plan_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn set_improvement_plan_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_improvement_plan_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.improvement_plan_url = input;
         self
     }
@@ -248,20 +228,14 @@ impl AnswerBuilder {
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-    pub fn helpful_resource_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn helpful_resource_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.helpful_resource_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-    pub fn set_helpful_resource_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_helpful_resource_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.helpful_resource_url = input;
         self
     }
@@ -273,27 +247,19 @@ impl AnswerBuilder {
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    pub fn helpful_resource_display_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn helpful_resource_display_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.helpful_resource_display_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    pub fn set_helpful_resource_display_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_helpful_resource_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.helpful_resource_display_text = input;
         self
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    pub fn get_helpful_resource_display_text(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_helpful_resource_display_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.helpful_resource_display_text
     }
     /// Appends an item to `choices`.
@@ -308,10 +274,7 @@ impl AnswerBuilder {
         self
     }
     /// <p>List of choices available for a question.</p>
-    pub fn set_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
-    ) -> Self {
+    pub fn set_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>) -> Self {
         self.choices = input;
         self
     }
@@ -325,10 +288,7 @@ impl AnswerBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
         v.push(input.into());
         self.selected_choices = ::std::option::Option::Some(v);
@@ -336,18 +296,13 @@ impl AnswerBuilder {
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_choices = input;
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_choices
     }
     /// Appends an item to `choice_answers`.
@@ -362,17 +317,12 @@ impl AnswerBuilder {
         self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn set_choice_answers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
-    ) -> Self {
+    pub fn set_choice_answers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>) -> Self {
         self.choice_answers = input;
         self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn get_choice_answers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>> {
+    pub fn get_choice_answers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>> {
         &self.choice_answers
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>

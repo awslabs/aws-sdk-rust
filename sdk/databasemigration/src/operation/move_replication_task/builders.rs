@@ -37,9 +37,7 @@ impl MoveReplicationTaskFluentBuilder {
         }
     }
     /// Access the MoveReplicationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl MoveReplicationTaskFluentBuilder {
             crate::operation::move_replication_task::MoveReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_replication_task::MoveReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_replication_task::MoveReplicationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl MoveReplicationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl MoveReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_replication_task::MoveReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_replication_task::MoveReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_replication_task::MoveReplicationTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl MoveReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_replication_task::MoveReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_replication_task::MoveReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_replication_task::MoveReplicationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl MoveReplicationTaskFluentBuilder {
             crate::operation::move_replication_task::MoveReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_replication_task::MoveReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_replication_task::MoveReplicationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
@@ -143,25 +124,17 @@ impl MoveReplicationTaskFluentBuilder {
         self.inner.get_replication_task_arn()
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn target_replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_replication_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn set_target_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_replication_instance_arn(input);
         self
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn get_target_replication_instance_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_replication_instance_arn()
     }
 }

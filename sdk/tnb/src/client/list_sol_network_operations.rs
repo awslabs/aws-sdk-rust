@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`network_operations(Option<Vec<ListSolNetworkOperationsInfo>>)`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput::network_operations): <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
     /// - On failure, responds with [`SdkError<ListSolNetworkOperationsError>`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsError)
-    pub fn list_sol_network_operations(&self) -> crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder{
+    pub fn list_sol_network_operations(&self) -> crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder {
         crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsFluentBuilder::new(self.handle.clone())
     }
 }

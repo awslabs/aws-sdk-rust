@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`device_pools(Option<Vec<DevicePool>>)`](crate::operation::list_device_pools::ListDevicePoolsOutput::device_pools): <p>Information about the device pools.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_pools::ListDevicePoolsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListDevicePoolsError>`](crate::operation::list_device_pools::ListDevicePoolsError)
-    pub fn list_device_pools(
-        &self,
-    ) -> crate::operation::list_device_pools::builders::ListDevicePoolsFluentBuilder {
-        crate::operation::list_device_pools::builders::ListDevicePoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_pools(&self) -> crate::operation::list_device_pools::builders::ListDevicePoolsFluentBuilder {
+        crate::operation::list_device_pools::builders::ListDevicePoolsFluentBuilder::new(self.handle.clone())
     }
 }

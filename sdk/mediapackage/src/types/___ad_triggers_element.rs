@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdTriggersElement {
     #[allow(missing_docs)] // documentation missing in model
@@ -77,21 +71,13 @@ impl ::std::convert::From<&str> for AdTriggersElement {
         match s {
             "BREAK" => AdTriggersElement::Break,
             "DISTRIBUTOR_ADVERTISEMENT" => AdTriggersElement::DistributorAdvertisement,
-            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => {
-                AdTriggersElement::DistributorOverlayPlacementOpportunity
-            }
-            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => {
-                AdTriggersElement::DistributorPlacementOpportunity
-            }
+            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorOverlayPlacementOpportunity,
+            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => AdTriggersElement::DistributorPlacementOpportunity,
             "PROVIDER_ADVERTISEMENT" => AdTriggersElement::ProviderAdvertisement,
-            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => {
-                AdTriggersElement::ProviderOverlayPlacementOpportunity
-            }
+            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderOverlayPlacementOpportunity,
             "PROVIDER_PLACEMENT_OPPORTUNITY" => AdTriggersElement::ProviderPlacementOpportunity,
             "SPLICE_INSERT" => AdTriggersElement::SpliceInsert,
-            other => {
-                AdTriggersElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AdTriggersElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,16 +94,10 @@ impl AdTriggersElement {
         match self {
             AdTriggersElement::Break => "BREAK",
             AdTriggersElement::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
-            AdTriggersElement::DistributorOverlayPlacementOpportunity => {
-                "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"
-            }
-            AdTriggersElement::DistributorPlacementOpportunity => {
-                "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"
-            }
+            AdTriggersElement::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
+            AdTriggersElement::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
             AdTriggersElement::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
-            AdTriggersElement::ProviderOverlayPlacementOpportunity => {
-                "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"
-            }
+            AdTriggersElement::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
             AdTriggersElement::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
             AdTriggersElement::SpliceInsert => "SPLICE_INSERT",
             AdTriggersElement::Unknown(value) => value.as_str(),

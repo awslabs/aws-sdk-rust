@@ -43,9 +43,7 @@ impl ListChunksInput {
 
 /// A builder for [`ListChunksInput`](crate::operation::list_chunks::ListChunksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChunksInputBuilder {
     pub(crate) storage_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_token: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListChunksInputBuilder {
 }
 impl ListChunksInputBuilder {
     /// Storage job id
-    pub fn storage_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Storage job id
-    pub fn set_storage_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_job_id = input;
         self
     }
@@ -116,12 +108,7 @@ impl ListChunksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChunksInput`](crate::operation::list_chunks::ListChunksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_chunks::ListChunksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_chunks::ListChunksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_chunks::ListChunksInput {
             storage_job_id: self.storage_job_id,
             object_token: self.object_token,

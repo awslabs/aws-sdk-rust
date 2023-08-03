@@ -47,9 +47,7 @@ impl AutoMlJobObjective {
 
 /// A builder for [`AutoMlJobObjective`](crate::types::AutoMlJobObjective).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlJobObjectiveBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
@@ -84,10 +82,7 @@ impl AutoMlJobObjectiveBuilder {
     /// <li> <p>For image or text classification problem types: <code>Accuracy</code> </p> </li>
     /// <li> <p>For time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code> </p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlMetricEnum>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::AutoMlMetricEnum>) -> Self {
         self.metric_name = input;
         self
     }

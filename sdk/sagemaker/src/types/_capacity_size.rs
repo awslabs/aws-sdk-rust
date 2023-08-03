@@ -39,9 +39,7 @@ impl CapacitySize {
 
 /// A builder for [`CapacitySize`](crate::types::CapacitySize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacitySizeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CapacitySizeType>,
     pub(crate) value: ::std::option::Option<i32>,
@@ -61,10 +59,7 @@ impl CapacitySizeBuilder {
     /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
     /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySizeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapacitySizeType>) -> Self {
         self.r#type = input;
         self
     }

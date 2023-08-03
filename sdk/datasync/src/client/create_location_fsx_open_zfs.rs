@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationFsxOpenZfsOutput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput::location_arn): <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxOpenZfsError>`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError)
-    pub fn create_location_fsx_open_zfs(&self) -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsFluentBuilder{
+    pub fn create_location_fsx_open_zfs(&self) -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsFluentBuilder {
         crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsFluentBuilder::new(self.handle.clone())
     }
 }

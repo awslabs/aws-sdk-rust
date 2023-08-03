@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResourceServerOutput`](crate::operation::create_resource_server::CreateResourceServerOutput) with field(s):
     ///   - [`resource_server(Option<ResourceServerType>)`](crate::operation::create_resource_server::CreateResourceServerOutput::resource_server): <p>The newly created resource server.</p>
     /// - On failure, responds with [`SdkError<CreateResourceServerError>`](crate::operation::create_resource_server::CreateResourceServerError)
-    pub fn create_resource_server(
-        &self,
-    ) -> crate::operation::create_resource_server::builders::CreateResourceServerFluentBuilder {
-        crate::operation::create_resource_server::builders::CreateResourceServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource_server(&self) -> crate::operation::create_resource_server::builders::CreateResourceServerFluentBuilder {
+        crate::operation::create_resource_server::builders::CreateResourceServerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,11 +43,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbInstanceOutput`](crate::operation::modify_db_instance::ModifyDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::modify_db_instance::ModifyDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     /// - On failure, responds with [`SdkError<ModifyDBInstanceError>`](crate::operation::modify_db_instance::ModifyDBInstanceError)
-    pub fn modify_db_instance(
-        &self,
-    ) -> crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder {
-        crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_instance(&self) -> crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder {
+        crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

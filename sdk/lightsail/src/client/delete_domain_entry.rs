@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainEntryError>`](crate::operation::delete_domain_entry::DeleteDomainEntryError)
-    pub fn delete_domain_entry(
-        &self,
-    ) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryFluentBuilder {
-        crate::operation::delete_domain_entry::builders::DeleteDomainEntryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_domain_entry(&self) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryFluentBuilder {
+        crate::operation::delete_domain_entry::builders::DeleteDomainEntryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -135,9 +135,7 @@ impl FileSystemDescription {
 
 /// A builder for [`FileSystemDescription`](crate::types::FileSystemDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemDescriptionBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_token: ::std::option::Option<::std::string::String>,
@@ -173,18 +171,12 @@ impl FileSystemDescriptionBuilder {
         &self.owner_id
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn creation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn set_creation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_token = input;
         self
     }
@@ -193,18 +185,12 @@ impl FileSystemDescriptionBuilder {
         &self.creation_token
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -213,18 +199,12 @@ impl FileSystemDescriptionBuilder {
         &self.file_system_id
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-    pub fn file_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-    pub fn set_file_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_arn = input;
         self
     }
@@ -238,10 +218,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -255,10 +232,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The lifecycle phase of the file system.</p>
-    pub fn set_life_cycle_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleState>,
-    ) -> Self {
+    pub fn set_life_cycle_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
         self.life_cycle_state = input;
         self
     }
@@ -300,10 +274,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-    pub fn set_size_in_bytes(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemSize>,
-    ) -> Self {
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<crate::types::FileSystemSize>) -> Self {
         self.size_in_bytes = input;
         self
     }
@@ -317,10 +288,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The performance mode of the file system.</p>
-    pub fn set_performance_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceMode>,
-    ) -> Self {
+    pub fn set_performance_mode(mut self, input: ::std::option::Option<crate::types::PerformanceMode>) -> Self {
         self.performance_mode = input;
         self
     }
@@ -362,10 +330,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-    pub fn set_throughput_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ThroughputMode>,
-    ) -> Self {
+    pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
         self.throughput_mode = input;
         self
     }
@@ -379,10 +344,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
-    pub fn set_provisioned_throughput_in_mibps(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
         self.provisioned_throughput_in_mibps = input;
         self
     }
@@ -391,18 +353,12 @@ impl FileSystemDescriptionBuilder {
         &self.provisioned_throughput_in_mibps
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn availability_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn set_availability_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_name = input;
         self
     }
@@ -411,18 +367,12 @@ impl FileSystemDescriptionBuilder {
         &self.availability_zone_name
     }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -442,10 +392,7 @@ impl FileSystemDescriptionBuilder {
         self
     }
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

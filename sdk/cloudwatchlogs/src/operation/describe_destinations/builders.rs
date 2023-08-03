@@ -37,9 +37,7 @@ impl DescribeDestinationsFluentBuilder {
         }
     }
     /// Access the DescribeDestinations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_destinations::builders::DescribeDestinationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_destinations::builders::DescribeDestinationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDestinationsFluentBuilder {
             crate::operation::describe_destinations::DescribeDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_destinations::DescribeDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_destinations::DescribeDestinationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDestinationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_destinations::DescribeDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_destinations::DescribeDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_destinations::DescribeDestinationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_destinations::DescribeDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_destinations::DescribeDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_destinations::DescribeDestinationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl DescribeDestinationsFluentBuilder {
             crate::operation::describe_destinations::DescribeDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_destinations::DescribeDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_destinations::DescribeDestinationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_destinations::paginator::DescribeDestinationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_destinations::paginator::DescribeDestinationsPaginator {
-        crate::operation::describe_destinations::paginator::DescribeDestinationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_destinations::paginator::DescribeDestinationsPaginator {
+        crate::operation::describe_destinations::paginator::DescribeDestinationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn destination_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_destination_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name_prefix(input);
         self
     }

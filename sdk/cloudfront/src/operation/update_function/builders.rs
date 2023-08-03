@@ -10,10 +10,7 @@ impl UpdateFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_function::UpdateFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function::UpdateFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function::UpdateFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_function();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateFunctionFluentBuilder {
         }
     }
     /// Access the UpdateFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_function::builders::UpdateFunctionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_function::builders::UpdateFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl UpdateFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -150,10 +142,7 @@ impl UpdateFunctionFluentBuilder {
         self
     }
     /// <p>Configuration information about the function.</p>
-    pub fn set_function_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfig>,
-    ) -> Self {
+    pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
         self.inner = self.inner.set_function_config(input);
         self
     }
@@ -167,10 +156,7 @@ impl UpdateFunctionFluentBuilder {
         self
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_function_code(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_function_code(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_function_code(input);
         self
     }

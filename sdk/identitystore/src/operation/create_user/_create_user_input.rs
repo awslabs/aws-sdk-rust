@@ -152,18 +152,12 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -253,10 +247,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn set_emails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
-    ) -> Self {
+    pub fn set_emails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Email>>) -> Self {
         self.emails = input;
         self
     }
@@ -276,10 +267,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
         self.addresses = input;
         self
     }
@@ -299,17 +287,12 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
@@ -341,18 +324,12 @@ impl CreateUserInputBuilder {
         &self.title
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    pub fn preferred_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_language = input;
         self
     }
@@ -389,12 +366,7 @@ impl CreateUserInputBuilder {
         &self.timezone
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user::CreateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             identity_store_id: self.identity_store_id,
             user_name: self.user_name,

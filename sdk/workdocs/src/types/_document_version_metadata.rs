@@ -39,14 +39,10 @@ pub struct DocumentVersionMetadata {
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The thumbnail of the document.</p>
     #[doc(hidden)]
-    pub thumbnail: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
-    >,
+    pub thumbnail: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>>,
     /// <p>The source of the document.</p>
     #[doc(hidden)]
-    pub source: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
-    >,
+    pub source: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>>,
 }
 impl DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
@@ -82,15 +78,11 @@ impl DocumentVersionMetadata {
         self.modified_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn content_created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn content_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The ID of the creator.</p>
@@ -98,19 +90,11 @@ impl DocumentVersionMetadata {
         self.creator_id.as_deref()
     }
     /// <p>The thumbnail of the document.</p>
-    pub fn thumbnail(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
-    > {
+    pub fn thumbnail(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>> {
         self.thumbnail.as_ref()
     }
     /// <p>The source of the document.</p>
-    pub fn source(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
-    > {
+    pub fn source(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>> {
         self.source.as_ref()
     }
 }
@@ -126,10 +110,7 @@ impl ::std::fmt::Debug for DocumentVersionMetadata {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("modified_timestamp", &self.modified_timestamp);
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field(
-            "content_modified_timestamp",
-            &self.content_modified_timestamp,
-        );
+        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("creator_id", &self.creator_id);
         formatter.field("thumbnail", &self.thumbnail);
         formatter.field("source", &self.source);
@@ -158,12 +139,8 @@ pub struct DocumentVersionMetadataBuilder {
     pub(crate) content_created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) content_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creator_id: ::std::option::Option<::std::string::String>,
-    pub(crate) thumbnail: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
-    >,
-    pub(crate) source: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
-    >,
+    pub(crate) thumbnail: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>>,
+    pub(crate) source: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>>,
 }
 impl DocumentVersionMetadataBuilder {
     /// <p>The ID of the version.</p>
@@ -242,10 +219,7 @@ impl DocumentVersionMetadataBuilder {
         self
     }
     /// <p>The status of the document.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DocumentStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -259,10 +233,7 @@ impl DocumentVersionMetadataBuilder {
         self
     }
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -276,10 +247,7 @@ impl DocumentVersionMetadataBuilder {
         self
     }
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub fn set_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_timestamp = input;
         self
     }
@@ -293,17 +261,12 @@ impl DocumentVersionMetadataBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn set_content_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.content_created_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn get_content_created_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_content_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.content_created_timestamp
     }
     /// <p>The timestamp when the content of the document was modified.</p>
@@ -312,17 +275,12 @@ impl DocumentVersionMetadataBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn set_content_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.content_modified_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn get_content_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_content_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.content_modified_timestamp
     }
     /// <p>The ID of the creator.</p>
@@ -344,11 +302,7 @@ impl DocumentVersionMetadataBuilder {
     /// To override the contents of this collection use [`set_thumbnail`](Self::set_thumbnail).
     ///
     /// <p>The thumbnail of the document.</p>
-    pub fn thumbnail(
-        mut self,
-        k: crate::types::DocumentThumbnailType,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbnail(mut self, k: crate::types::DocumentThumbnailType, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.thumbnail.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.thumbnail = ::std::option::Option::Some(hash_map);
@@ -357,19 +311,13 @@ impl DocumentVersionMetadataBuilder {
     /// <p>The thumbnail of the document.</p>
     pub fn set_thumbnail(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>>,
     ) -> Self {
         self.thumbnail = input;
         self
     }
     /// <p>The thumbnail of the document.</p>
-    pub fn get_thumbnail(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
-    > {
+    pub fn get_thumbnail(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>> {
         &self.thumbnail
     }
     /// Adds a key-value pair to `source`.
@@ -377,11 +325,7 @@ impl DocumentVersionMetadataBuilder {
     /// To override the contents of this collection use [`set_source`](Self::set_source).
     ///
     /// <p>The source of the document.</p>
-    pub fn source(
-        mut self,
-        k: crate::types::DocumentSourceType,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source(mut self, k: crate::types::DocumentSourceType, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.source.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.source = ::std::option::Option::Some(hash_map);
@@ -390,19 +334,13 @@ impl DocumentVersionMetadataBuilder {
     /// <p>The source of the document.</p>
     pub fn set_source(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>>,
     ) -> Self {
         self.source = input;
         self
     }
     /// <p>The source of the document.</p>
-    pub fn get_source(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
-    > {
+    pub fn get_source(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>> {
         &self.source
     }
     /// Consumes the builder and constructs a [`DocumentVersionMetadata`](crate::types::DocumentVersionMetadata).
@@ -436,10 +374,7 @@ impl ::std::fmt::Debug for DocumentVersionMetadataBuilder {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("modified_timestamp", &self.modified_timestamp);
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field(
-            "content_modified_timestamp",
-            &self.content_modified_timestamp,
-        );
+        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("creator_id", &self.creator_id);
         formatter.field("thumbnail", &self.thumbnail);
         formatter.field("source", &self.source);

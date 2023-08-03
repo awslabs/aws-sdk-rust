@@ -35,9 +35,7 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDatasetsOutputBuilder {
         self
     }
     /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
-    pub fn set_datasets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
-    ) -> Self {
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
         self.datasets = input;
         self
     }
     /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
-    pub fn get_datasets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
         &self.datasets
     }
     /// <p>A token for getting the next set of datasets (if they exist).</p>

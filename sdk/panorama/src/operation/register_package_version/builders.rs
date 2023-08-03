@@ -37,10 +37,7 @@ impl RegisterPackageVersionFluentBuilder {
         }
     }
     /// Access the RegisterPackageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RegisterPackageVersionFluentBuilder {
             crate::operation::register_package_version::RegisterPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RegisterPackageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RegisterPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_package_version::RegisterPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RegisterPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_package_version::RegisterPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl RegisterPackageVersionFluentBuilder {
             crate::operation::register_package_version::RegisterPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_package_version::RegisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_package_version::RegisterPackageVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An owner account.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>An owner account.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -158,18 +138,12 @@ impl RegisterPackageVersionFluentBuilder {
         self.inner.get_package_id()
     }
     /// <p>A package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p>A package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
@@ -178,18 +152,12 @@ impl RegisterPackageVersionFluentBuilder {
         self.inner.get_package_version()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.patch_version(input.into());
         self
     }
     /// <p>A patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_patch_version(input);
         self
     }

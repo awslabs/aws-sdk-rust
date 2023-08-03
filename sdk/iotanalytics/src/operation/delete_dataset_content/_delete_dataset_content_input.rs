@@ -22,17 +22,14 @@ impl DeleteDatasetContentInput {
 }
 impl DeleteDatasetContentInput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetContentInput`](crate::operation::delete_dataset_content::DeleteDatasetContentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder {
+    pub fn builder() -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder {
         crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDatasetContentInput`](crate::operation::delete_dataset_content::DeleteDatasetContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetContentInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DeleteDatasetContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetContentInput`](crate::operation::delete_dataset_content::DeleteDatasetContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dataset_content::DeleteDatasetContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_dataset_content::DeleteDatasetContentInput {
-                dataset_name: self.dataset_name,
-                version_id: self.version_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_dataset_content::DeleteDatasetContentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_dataset_content::DeleteDatasetContentInput {
+            dataset_name: self.dataset_name,
+            version_id: self.version_id,
+        })
     }
 }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbSecurityGroupOutput`](crate::operation::create_db_security_group::CreateDbSecurityGroupOutput) with field(s):
     ///   - [`db_security_group(Option<DbSecurityGroup>)`](crate::operation::create_db_security_group::CreateDbSecurityGroupOutput::db_security_group): <p>Contains the details for an Amazon RDS DB security group.</p>  <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     /// - On failure, responds with [`SdkError<CreateDBSecurityGroupError>`](crate::operation::create_db_security_group::CreateDBSecurityGroupError)
-    pub fn create_db_security_group(
-        &self,
-    ) -> crate::operation::create_db_security_group::builders::CreateDBSecurityGroupFluentBuilder
-    {
+    pub fn create_db_security_group(&self) -> crate::operation::create_db_security_group::builders::CreateDBSecurityGroupFluentBuilder {
         crate::operation::create_db_security_group::builders::CreateDBSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

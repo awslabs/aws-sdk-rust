@@ -44,9 +44,7 @@ impl ResourceCatalog {
 
 /// A builder for [`ResourceCatalog`](crate::types::ResourceCatalog).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCatalogBuilder {
     pub(crate) resource_catalog_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_catalog_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct ResourceCatalogBuilder {
 }
 impl ResourceCatalogBuilder {
     /// <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-    pub fn resource_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-    pub fn set_resource_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_catalog_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl ResourceCatalogBuilder {
         &self.resource_catalog_arn
     }
     /// <p> The name of the <code>ResourceCatalog</code>. </p>
-    pub fn resource_catalog_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_catalog_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the <code>ResourceCatalog</code>. </p>
-    pub fn set_resource_catalog_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_catalog_name = input;
         self
     }
@@ -114,10 +100,7 @@ impl ResourceCatalogBuilder {
         self
     }
     /// <p> The time the <code>ResourceCatalog</code> was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

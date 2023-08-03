@@ -28,7 +28,7 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeDBSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder,
+    inner: crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder,
 }
 impl RevokeDBSecurityGroupIngressFluentBuilder {
     /// Creates a new `RevokeDBSecurityGroupIngress`.
@@ -39,7 +39,7 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         }
     }
     /// Access the RevokeDBSecurityGroupIngress as a reference.
-    pub fn as_input(&self) -> &crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
             crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
             crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB security group to revoke ingress from.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());
         self
     }
     /// <p>The name of the DB security group to revoke ingress from.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }
@@ -157,18 +140,12 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner.get_cidrip()
     }
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_security_group_name(input.into());
         self
     }
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
     }
@@ -177,18 +154,12 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner.get_ec2_security_group_name()
     }
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_security_group_id(input.into());
         self
     }
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_security_group_id(input);
         self
     }
@@ -197,18 +168,12 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner.get_ec2_security_group_id()
     }
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_security_group_owner_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`r#type(ClientAuthenticationType)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::set_type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     /// - On success, responds with [`DisableClientAuthenticationOutput`](crate::operation::disable_client_authentication::DisableClientAuthenticationOutput)
     /// - On failure, responds with [`SdkError<DisableClientAuthenticationError>`](crate::operation::disable_client_authentication::DisableClientAuthenticationError)
-    pub fn disable_client_authentication(&self) -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder{
+    pub fn disable_client_authentication(
+        &self,
+    ) -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder {
         crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::new(self.handle.clone())
     }
 }

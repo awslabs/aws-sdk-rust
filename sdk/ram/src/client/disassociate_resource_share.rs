@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`resource_share_associations(Option<Vec<ResourceShareAssociation>>)`](crate::operation::disassociate_resource_share::DisassociateResourceShareOutput::resource_share_associations): <p>An array of objects with information about the updated associations for this resource share.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::disassociate_resource_share::DisassociateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<DisassociateResourceShareError>`](crate::operation::disassociate_resource_share::DisassociateResourceShareError)
-    pub fn disassociate_resource_share(&self) -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareFluentBuilder{
+    pub fn disassociate_resource_share(&self) -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareFluentBuilder {
         crate::operation::disassociate_resource_share::builders::DisassociateResourceShareFluentBuilder::new(self.handle.clone())
     }
 }

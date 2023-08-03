@@ -10,10 +10,7 @@ impl DescribeParametersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_parameters();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeParametersFluentBuilder {
         }
     }
     /// Access the DescribeParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeParametersFluentBuilder {
             crate::operation::describe_parameters::DescribeParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl DescribeParametersFluentBuilder {
             crate::operation::describe_parameters::DescribeParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_parameters::paginator::DescribeParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_parameters::paginator::DescribeParametersPaginator {
-        crate::operation::describe_parameters::paginator::DescribeParametersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_parameters::paginator::DescribeParametersPaginator {
+        crate::operation::describe_parameters::paginator::DescribeParametersPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -146,17 +125,12 @@ impl DescribeParametersFluentBuilder {
         self
     }
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `ParameterFilters`.
@@ -169,17 +143,12 @@ impl DescribeParametersFluentBuilder {
         self
     }
     /// <p>Filters to limit the request results.</p>
-    pub fn set_parameter_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
-    ) -> Self {
+    pub fn set_parameter_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
     /// <p>Filters to limit the request results.</p>
-    pub fn get_parameter_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+    pub fn get_parameter_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
         self.inner.get_parameter_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

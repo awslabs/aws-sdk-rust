@@ -19,9 +19,7 @@ impl LaunchAppOutput {
 
 /// A builder for [`LaunchAppOutput`](crate::operation::launch_app::LaunchAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchAppOutputBuilder {
     _request_id: Option<String>,
 }

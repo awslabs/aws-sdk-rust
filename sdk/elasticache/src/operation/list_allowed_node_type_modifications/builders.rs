@@ -5,16 +5,16 @@ pub use crate::operation::list_allowed_node_type_modifications::_list_allowed_no
 
 impl ListAllowedNodeTypeModificationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_allowed_node_type_modifications();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeModificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder,
+    inner: crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder,
 }
 impl ListAllowedNodeTypeModificationsFluentBuilder {
     /// Creates a new `ListAllowedNodeTypeModifications`.
@@ -38,15 +38,20 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
         }
     }
     /// Access the ListAllowedNodeTypeModifications as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,36 +88,39 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -124,20 +133,14 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }

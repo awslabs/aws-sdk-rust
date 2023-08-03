@@ -46,10 +46,7 @@ pub fn ser_create_predictor_input(
     if let Some(var_14) = &input.evaluation_parameters {
         #[allow(unused_mut)]
         let mut object_15 = object.key("EvaluationParameters").start_object();
-        crate::protocol_serde::shape_evaluation_parameters::ser_evaluation_parameters(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_evaluation_parameters::ser_evaluation_parameters(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.hpo_config {
@@ -61,28 +58,19 @@ pub fn ser_create_predictor_input(
     if let Some(var_18) = &input.input_data_config {
         #[allow(unused_mut)]
         let mut object_19 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.featurization_config {
         #[allow(unused_mut)]
         let mut object_21 = object.key("FeaturizationConfig").start_object();
-        crate::protocol_serde::shape_featurization_config::ser_featurization_config(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_featurization_config::ser_featurization_config(&mut object_21, var_20)?;
         object_21.finish();
     }
     if let Some(var_22) = &input.encryption_config {
         #[allow(unused_mut)]
         let mut object_23 = object.key("EncryptionConfig").start_object();
-        crate::protocol_serde::shape_encryption_config::ser_encryption_config(
-            &mut object_23,
-            var_22,
-        )?;
+        crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_23, var_22)?;
         object_23.finish();
     }
     if let Some(var_24) = &input.tags {

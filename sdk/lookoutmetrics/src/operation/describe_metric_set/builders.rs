@@ -10,10 +10,7 @@ impl DescribeMetricSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_set::DescribeMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_set::DescribeMetricSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_set::DescribeMetricSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_metric_set();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeMetricSetFluentBuilder {
         }
     }
     /// Access the DescribeMetricSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeMetricSetFluentBuilder {
             crate::operation::describe_metric_set::DescribeMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_set::DescribeMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_set::DescribeMetricSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeMetricSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_set::DescribeMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_set::DescribeMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_set::DescribeMetricSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_set::DescribeMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_set::DescribeMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_set::DescribeMetricSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DescribeMetricSetFluentBuilder {
             crate::operation::describe_metric_set::DescribeMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_set::DescribeMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_set::DescribeMetricSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_set_arn(input.into());
         self
     }
     /// <p>The ARN of the dataset.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_set_arn(input);
         self
     }

@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::create_group::CreateGroupOutput::group): <p>A structure containing details about the new group.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)
-    pub fn create_group(
-        &self,
-    ) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
+    pub fn create_group(&self) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
         crate::operation::create_group::builders::CreateGroupFluentBuilder::new(self.handle.clone())
     }
 }

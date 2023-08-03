@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput) with field(s):
     ///   - [`server(Option<Server>)`](crate::operation::start_maintenance::StartMaintenanceOutput::server): <p>Contains the response to a <code>StartMaintenance</code> request. </p>
     /// - On failure, responds with [`SdkError<StartMaintenanceError>`](crate::operation::start_maintenance::StartMaintenanceError)
-    pub fn start_maintenance(
-        &self,
-    ) -> crate::operation::start_maintenance::builders::StartMaintenanceFluentBuilder {
-        crate::operation::start_maintenance::builders::StartMaintenanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_maintenance(&self) -> crate::operation::start_maintenance::builders::StartMaintenanceFluentBuilder {
+        crate::operation::start_maintenance::builders::StartMaintenanceFluentBuilder::new(self.handle.clone())
     }
 }

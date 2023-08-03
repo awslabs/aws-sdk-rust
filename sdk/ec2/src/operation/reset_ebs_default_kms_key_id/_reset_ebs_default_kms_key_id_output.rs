@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetEbsDefaultKmsKeyIdOutput {
 }
 impl ResetEbsDefaultKmsKeyIdOutput {
     /// Creates a new builder-style object to manufacture [`ResetEbsDefaultKmsKeyIdOutput`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput).
-    pub fn builder() -> crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdOutputBuilder{
+    pub fn builder() -> crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdOutputBuilder {
         crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetEbsDefaultKmsKeyIdOutput`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetEbsDefaultKmsKeyIdOutputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ResetEbsDefaultKmsKeyIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetEbsDefaultKmsKeyIdOutput`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput {
+    pub fn build(self) -> crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput {
         crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput {
             kms_key_id: self.kms_key_id,
             _request_id: self._request_id,

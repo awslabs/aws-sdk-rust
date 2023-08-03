@@ -36,16 +36,14 @@ impl ConvertRecoveryPointToSnapshotInput {
 }
 impl ConvertRecoveryPointToSnapshotInput {
     /// Creates a new builder-style object to manufacture [`ConvertRecoveryPointToSnapshotInput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput).
-    pub fn builder() -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotInputBuilder {
         crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`ConvertRecoveryPointToSnapshotInput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshotInputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ConvertRecoveryPointToSnapshotInputBuilder {
 }
 impl ConvertRecoveryPointToSnapshotInputBuilder {
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn recovery_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
         &self.recovery_point_id
     }
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -119,10 +105,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the created snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -139,15 +122,11 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput {
-                recovery_point_id: self.recovery_point_id
-                ,
-                snapshot_name: self.snapshot_name
-                ,
-                retention_period: self.retention_period
-                ,
-                tags: self.tags
-                ,
-            }
+                recovery_point_id: self.recovery_point_id,
+                snapshot_name: self.snapshot_name,
+                retention_period: self.retention_period,
+                tags: self.tags,
+            },
         )
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`members(Option<Vec<MemberDetail>>)`](crate::operation::create_members::CreateMembersOutput::members): <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::create_members::CreateMembersOutput::unprocessed_accounts): <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
     /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::operation::create_members::CreateMembersError)
-    pub fn create_members(
-        &self,
-    ) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
-        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_members(&self) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
+        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(self.handle.clone())
     }
 }

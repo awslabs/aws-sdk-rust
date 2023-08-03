@@ -43,9 +43,7 @@ impl ListSchemasInput {
 
 /// A builder for [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl ListSchemasInputBuilder {
         &self.next_token
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -102,18 +94,12 @@ impl ListSchemasInputBuilder {
         &self.registry_name
     }
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-    pub fn schema_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-    pub fn set_schema_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name_prefix = input;
         self
     }
@@ -122,12 +108,7 @@ impl ListSchemasInputBuilder {
         &self.schema_name_prefix
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schemas::ListSchemasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             limit: self.limit,
             next_token: self.next_token,

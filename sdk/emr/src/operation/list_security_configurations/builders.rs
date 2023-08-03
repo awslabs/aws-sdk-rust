@@ -26,7 +26,7 @@ impl ListSecurityConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder,
+    inner: crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder,
 }
 impl ListSecurityConfigurationsFluentBuilder {
     /// Creates a new `ListSecurityConfigurations`.
@@ -37,7 +37,7 @@ impl ListSecurityConfigurationsFluentBuilder {
         }
     }
     /// Access the ListSecurityConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSecurityConfigurationsFluentBuilder {
             crate::operation::list_security_configurations::ListSecurityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configurations::ListSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSecurityConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSecurityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configurations::ListSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSecurityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configurations::ListSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListSecurityConfigurationsFluentBuilder {
             crate::operation::list_security_configurations::ListSecurityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configurations::ListSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator {
         crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>

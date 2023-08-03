@@ -39,13 +39,7 @@
 /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265SceneChangeDetect {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for H265SceneChangeDetect {
             "DISABLED" => H265SceneChangeDetect::Disabled,
             "ENABLED" => H265SceneChangeDetect::Enabled,
             "TRANSITION_DETECTION" => H265SceneChangeDetect::TransitionDetection,
-            other => H265SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H265SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

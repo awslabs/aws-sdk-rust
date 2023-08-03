@@ -44,9 +44,7 @@ impl ImportedSidewalkDevice {
 
 /// A builder for [`ImportedSidewalkDevice`](crate::types::ImportedSidewalkDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportedSidewalkDeviceBuilder {
     pub(crate) sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
     pub(crate) onboarding_status: ::std::option::Option<crate::types::OnboardStatus>,
@@ -55,18 +53,12 @@ pub struct ImportedSidewalkDeviceBuilder {
 }
 impl ImportedSidewalkDeviceBuilder {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
-    pub fn sidewalk_manufacturing_sn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sidewalk_manufacturing_sn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sidewalk_manufacturing_sn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
-    pub fn set_sidewalk_manufacturing_sn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sidewalk_manufacturing_sn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sidewalk_manufacturing_sn = input;
         self
     }
@@ -80,10 +72,7 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
-    pub fn set_onboarding_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OnboardStatus>,
-    ) -> Self {
+    pub fn set_onboarding_status(mut self, input: ::std::option::Option<crate::types::OnboardStatus>) -> Self {
         self.onboarding_status = input;
         self
     }
@@ -92,18 +81,12 @@ impl ImportedSidewalkDeviceBuilder {
         &self.onboarding_status
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
-    pub fn onboarding_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn onboarding_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.onboarding_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
-    pub fn set_onboarding_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_onboarding_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.onboarding_status_reason = input;
         self
     }
@@ -117,10 +100,7 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The time at which the status information was last updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

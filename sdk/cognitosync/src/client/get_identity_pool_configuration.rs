@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`push_sync(Option<PushSync>)`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationOutput::push_sync): <p>Options to apply to this identity pool for push synchronization.</p>
     ///   - [`cognito_streams(Option<CognitoStreams>)`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationOutput::cognito_streams): Options to apply to this identity pool for Amazon Cognito streams.
     /// - On failure, responds with [`SdkError<GetIdentityPoolConfigurationError>`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationError)
-    pub fn get_identity_pool_configuration(&self) -> crate::operation::get_identity_pool_configuration::builders::GetIdentityPoolConfigurationFluentBuilder{
+    pub fn get_identity_pool_configuration(
+        &self,
+    ) -> crate::operation::get_identity_pool_configuration::builders::GetIdentityPoolConfigurationFluentBuilder {
         crate::operation::get_identity_pool_configuration::builders::GetIdentityPoolConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

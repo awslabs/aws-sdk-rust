@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput) with field(s):
     ///   - [`user_profiles(Option<Vec<UserProfile>>)`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput::user_profiles): <p>A <code>Users</code> object that describes the specified users.</p>
     /// - On failure, responds with [`SdkError<DescribeUserProfilesError>`](crate::operation::describe_user_profiles::DescribeUserProfilesError)
-    pub fn describe_user_profiles(
-        &self,
-    ) -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder {
-        crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user_profiles(&self) -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder {
+        crate::operation::describe_user_profiles::builders::DescribeUserProfilesFluentBuilder::new(self.handle.clone())
     }
 }

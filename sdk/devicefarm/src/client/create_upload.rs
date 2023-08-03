@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUploadOutput`](crate::operation::create_upload::CreateUploadOutput) with field(s):
     ///   - [`upload(Option<Upload>)`](crate::operation::create_upload::CreateUploadOutput::upload): <p>The newly created upload.</p>
     /// - On failure, responds with [`SdkError<CreateUploadError>`](crate::operation::create_upload::CreateUploadError)
-    pub fn create_upload(
-        &self,
-    ) -> crate::operation::create_upload::builders::CreateUploadFluentBuilder {
-        crate::operation::create_upload::builders::CreateUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_upload(&self) -> crate::operation::create_upload::builders::CreateUploadFluentBuilder {
+        crate::operation::create_upload::builders::CreateUploadFluentBuilder::new(self.handle.clone())
     }
 }

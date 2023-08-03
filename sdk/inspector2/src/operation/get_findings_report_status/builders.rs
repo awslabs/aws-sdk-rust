@@ -26,8 +26,7 @@ impl GetFindingsReportStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsReportStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder,
+    inner: crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder,
 }
 impl GetFindingsReportStatusFluentBuilder {
     /// Creates a new `GetFindingsReportStatus`.
@@ -38,10 +37,7 @@ impl GetFindingsReportStatusFluentBuilder {
         }
     }
     /// Access the GetFindingsReportStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetFindingsReportStatusFluentBuilder {
             crate::operation::get_findings_report_status::GetFindingsReportStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_report_status::GetFindingsReportStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_report_status::GetFindingsReportStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetFindingsReportStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetFindingsReportStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_findings_report_status::GetFindingsReportStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_report_status::GetFindingsReportStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_report_status::GetFindingsReportStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetFindingsReportStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_findings_report_status::GetFindingsReportStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_report_status::GetFindingsReportStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_report_status::GetFindingsReportStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetFindingsReportStatusFluentBuilder {
             crate::operation::get_findings_report_status::GetFindingsReportStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings_report_status::GetFindingsReportStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings_report_status::GetFindingsReportStatusError>,
     > {
         self.customize_middleware().await
     }

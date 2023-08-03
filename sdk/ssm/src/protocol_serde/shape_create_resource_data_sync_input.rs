@@ -18,10 +18,7 @@ pub fn ser_create_resource_data_sync_input(
     if let Some(var_5) = &input.sync_source {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SyncSource").start_object();
-        crate::protocol_serde::shape_resource_data_sync_source::ser_resource_data_sync_source(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_resource_data_sync_source::ser_resource_data_sync_source(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput) with field(s):
     ///   - [`analysis_id(Option<String>)`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput::analysis_id): <p>The ID that you can use to retrieve the analysis result.</p>
     /// - On failure, responds with [`SdkError<StartDetectorModelAnalysisError>`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError)
-    pub fn start_detector_model_analysis(&self) -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisFluentBuilder{
+    pub fn start_detector_model_analysis(
+        &self,
+    ) -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisFluentBuilder {
         crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

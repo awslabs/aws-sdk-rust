@@ -114,9 +114,7 @@ impl CodeReviewSummary {
 
 /// A builder for [`CodeReviewSummary`](crate::types::CodeReviewSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeReviewSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
@@ -147,18 +145,12 @@ impl CodeReviewSummaryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -167,18 +159,12 @@ impl CodeReviewSummaryBuilder {
         &self.code_review_arn
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -206,10 +192,7 @@ impl CodeReviewSummaryBuilder {
         self
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
@@ -258,10 +241,7 @@ impl CodeReviewSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn set_created_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time_stamp = input;
         self
     }
@@ -275,17 +255,12 @@ impl CodeReviewSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn set_last_updated_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time_stamp = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn get_last_updated_time_stamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time_stamp
     }
     /// <p>The type of the code review.</p>
@@ -303,18 +278,12 @@ impl CodeReviewSummaryBuilder {
         &self.r#type
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -328,10 +297,7 @@ impl CodeReviewSummaryBuilder {
         self
     }
     /// <p>The statistics from the code review.</p>
-    pub fn set_metrics_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSummary>,
-    ) -> Self {
+    pub fn set_metrics_summary(mut self, input: ::std::option::Option<crate::types::MetricsSummary>) -> Self {
         self.metrics_summary = input;
         self
     }
@@ -345,10 +311,7 @@ impl CodeReviewSummaryBuilder {
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn set_source_code_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceCodeType>,
-    ) -> Self {
+    pub fn set_source_code_type(mut self, input: ::std::option::Option<crate::types::SourceCodeType>) -> Self {
         self.source_code_type = input;
         self
     }

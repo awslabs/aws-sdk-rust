@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::create_identity_source::CreateIdentitySourceOutput::last_updated_date): <p>The date and time the identity source was most recently updated.</p>
     ///   - [`policy_store_id(Option<String>)`](crate::operation::create_identity_source::CreateIdentitySourceOutput::policy_store_id): <p>The ID of the policy store that contains the identity source.</p>
     /// - On failure, responds with [`SdkError<CreateIdentitySourceError>`](crate::operation::create_identity_source::CreateIdentitySourceError)
-    pub fn create_identity_source(
-        &self,
-    ) -> crate::operation::create_identity_source::builders::CreateIdentitySourceFluentBuilder {
-        crate::operation::create_identity_source::builders::CreateIdentitySourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_identity_source(&self) -> crate::operation::create_identity_source::builders::CreateIdentitySourceFluentBuilder {
+        crate::operation::create_identity_source::builders::CreateIdentitySourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::description): <p>The description you added to describe the feature.</p>
     ///   - [`parameters(Option<Vec<FeatureParameter>>)`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput::parameters): <p>The key-value pairs that you added to describe the feature.</p>
     /// - On failure, responds with [`SdkError<DescribeFeatureMetadataError>`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataError)
-    pub fn describe_feature_metadata(
-        &self,
-    ) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataFluentBuilder
-    {
+    pub fn describe_feature_metadata(&self) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataFluentBuilder {
         crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataFluentBuilder::new(self.handle.clone())
     }
 }

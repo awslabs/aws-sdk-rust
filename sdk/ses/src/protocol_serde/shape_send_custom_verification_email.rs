@@ -9,97 +9,109 @@ pub fn de_send_custom_verification_email_http_error(
     crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::ConfigurationSetDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConfigurationSetDoesNotExist" => {
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConfigurationSetDoesNotExistExceptionBuilder::default();
                     output = crate::protocol_serde::shape_configuration_set_does_not_exist_exception::de_configuration_set_does_not_exist_exception_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "CustomVerificationEmailTemplateDoesNotExist" => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::CustomVerificationEmailTemplateDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CustomVerificationEmailTemplateDoesNotExist" => {
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::CustomVerificationEmailTemplateDoesNotExistException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_custom_verification_email_template_does_not_exist_exception::de_custom_verification_email_template_does_not_exist_exception_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "FromEmailAddressNotVerified" => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::FromEmailAddressNotVerifiedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder::default();
+                        output = crate::protocol_serde::shape_custom_verification_email_template_does_not_exist_exception::de_custom_verification_email_template_does_not_exist_exception_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "FromEmailAddressNotVerified" => {
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::FromEmailAddressNotVerifiedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FromEmailAddressNotVerifiedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_from_email_address_not_verified_exception::de_from_email_address_not_verified_exception_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_from_email_address_not_verified_exception::de_from_email_address_not_verified_exception_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "MessageRejected" => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::MessageRejected({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MessageRejectedBuilder::default();
-                    output = crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MessageRejectedBuilder::default();
+                output = crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(_response_body, output)
+                    .map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ProductionAccessNotGranted" => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::ProductionAccessNotGrantedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ProductionAccessNotGranted" => {
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::ProductionAccessNotGrantedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProductionAccessNotGrantedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_production_access_not_granted_exception::de_production_access_not_granted_exception_xml_err(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_production_access_not_granted_exception::de_production_access_not_granted_exception_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::generic(generic),
     })
 }
 
@@ -115,16 +127,21 @@ pub fn de_send_custom_verification_email_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder::default();
-        output = crate::protocol_serde::shape_send_custom_verification_email::de_send_custom_verification_email(_response_body, output).map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_send_custom_verification_email::de_send_custom_verification_email(_response_body, output)
+            .map_err(crate::operation::send_custom_verification_email::SendCustomVerificationEmailError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_send_custom_verification_email(inp: &[u8], mut builder: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder) -> Result<crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_send_custom_verification_email(
+    inp: &[u8],
+    mut builder: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
+) -> Result<
+    crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

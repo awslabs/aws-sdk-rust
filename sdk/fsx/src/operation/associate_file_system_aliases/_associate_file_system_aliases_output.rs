@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for AssociateFileSystemAliasesOutput {
 }
 impl AssociateFileSystemAliasesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesOutput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput).
-    pub fn builder() -> crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesOutputBuilder{
+    pub fn builder() -> crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesOutputBuilder {
         crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateFileSystemAliasesOutput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesOutputBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl AssociateFileSystemAliasesOutputBuilder {
         self
     }
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>) -> Self {
         self.aliases = input;
         self
     }
@@ -70,9 +65,7 @@ impl AssociateFileSystemAliasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateFileSystemAliasesOutput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput {
+    pub fn build(self) -> crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput {
         crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput {
             aliases: self.aliases,
             _request_id: self._request_id,

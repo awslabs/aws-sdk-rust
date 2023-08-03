@@ -10,10 +10,7 @@ impl CreateComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_component();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateComponentFluentBuilder {
         }
     }
     /// Access the CreateComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_component::builders::CreateComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateComponentFluentBuilder {
             crate::operation::create_component::CreateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_component::CreateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateComponentFluentBuilder {
             crate::operation::create_component::CreateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +150,12 @@ impl CreateComponentFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
@@ -186,18 +164,12 @@ impl CreateComponentFluentBuilder {
         self.inner.get_service_instance_name()
     }
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -208,20 +180,14 @@ impl CreateComponentFluentBuilder {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn template_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_file(input.into());
         self
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn set_template_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_file(input);
         self
     }
@@ -271,10 +237,7 @@ impl CreateComponentFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -37,10 +37,7 @@ impl ListRecommendedIntentsFluentBuilder {
         }
     }
     /// Access the ListRecommendedIntents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_recommended_intents::builders::ListRecommendedIntentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_recommended_intents::builders::ListRecommendedIntentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListRecommendedIntentsFluentBuilder {
             crate::operation::list_recommended_intents::ListRecommendedIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommended_intents::ListRecommendedIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommended_intents::ListRecommendedIntentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListRecommendedIntentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListRecommendedIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommended_intents::ListRecommendedIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommended_intents::ListRecommendedIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommended_intents::ListRecommendedIntentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListRecommendedIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommended_intents::ListRecommendedIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommended_intents::ListRecommendedIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommended_intents::ListRecommendedIntentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListRecommendedIntentsFluentBuilder {
             crate::operation::list_recommended_intents::ListRecommendedIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommended_intents::ListRecommendedIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommended_intents::ListRecommendedIntentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recommended_intents::paginator::ListRecommendedIntentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_recommended_intents::paginator::ListRecommendedIntentsPaginator
-    {
-        crate::operation::list_recommended_intents::paginator::ListRecommendedIntentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_recommended_intents::paginator::ListRecommendedIntentsPaginator {
+        crate::operation::list_recommended_intents::paginator::ListRecommendedIntentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the bot associated with the recommended intents.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,18 +158,12 @@ impl ListRecommendedIntentsFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_recommendation_id(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }

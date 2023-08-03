@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribePackagesOutput {
 }
 impl DescribePackagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::operation::describe_packages::DescribePackagesOutput).
-    pub fn builder() -> crate::operation::describe_packages::builders::DescribePackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_packages::builders::DescribePackagesOutputBuilder {
         crate::operation::describe_packages::builders::DescribePackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackagesOutput`](crate::operation::describe_packages::DescribePackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagesOutputBuilder {
-    pub(crate) package_details_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
+    pub(crate) package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl DescribePackagesOutputBuilder {
         self
     }
     /// <p>List of <code>PackageDetails</code> objects.</p>
-    pub fn set_package_details_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
-    ) -> Self {
+    pub fn set_package_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>) -> Self {
         self.package_details_list = input;
         self
     }
     /// <p>List of <code>PackageDetails</code> objects.</p>
-    pub fn get_package_details_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>> {
+    pub fn get_package_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>> {
         &self.package_details_list
     }
     #[allow(missing_docs)] // documentation missing in model

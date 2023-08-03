@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPolicyOutput`](crate::operation::get_access_policy::GetAccessPolicyOutput) with field(s):
     ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::operation::get_access_policy::GetAccessPolicyOutput::access_policy_detail): <p>Details about the requested access policy.</p>
     /// - On failure, responds with [`SdkError<GetAccessPolicyError>`](crate::operation::get_access_policy::GetAccessPolicyError)
-    pub fn get_access_policy(
-        &self,
-    ) -> crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder {
-        crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_policy(&self) -> crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder {
+        crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

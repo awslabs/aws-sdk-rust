@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StartChildWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,42 +78,20 @@ pub enum StartChildWorkflowExecutionFailedCause {
 impl ::std::convert::From<&str> for StartChildWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "CHILD_CREATION_RATE_EXCEEDED" => {
-                StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded
-            }
-            "DEFAULT_CHILD_POLICY_UNDEFINED" => {
-                StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined
-            }
+            "CHILD_CREATION_RATE_EXCEEDED" => StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded,
+            "DEFAULT_CHILD_POLICY_UNDEFINED" => StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined,
             "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED" => {
                 StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined
             }
-            "DEFAULT_TASK_LIST_UNDEFINED" => {
-                StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined
-            }
-            "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => {
-                StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined
-            }
-            "OPEN_CHILDREN_LIMIT_EXCEEDED" => {
-                StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded
-            }
-            "OPEN_WORKFLOWS_LIMIT_EXCEEDED" => {
-                StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded
-            }
-            "OPERATION_NOT_PERMITTED" => {
-                StartChildWorkflowExecutionFailedCause::OperationNotPermitted
-            }
-            "WORKFLOW_ALREADY_RUNNING" => {
-                StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning
-            }
-            "WORKFLOW_TYPE_DEPRECATED" => {
-                StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated
-            }
-            "WORKFLOW_TYPE_DOES_NOT_EXIST" => {
-                StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist
-            }
-            other => StartChildWorkflowExecutionFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "DEFAULT_TASK_LIST_UNDEFINED" => StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined,
+            "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED" => StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined,
+            "OPEN_CHILDREN_LIMIT_EXCEEDED" => StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded,
+            "OPEN_WORKFLOWS_LIMIT_EXCEEDED" => StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded,
+            "OPERATION_NOT_PERMITTED" => StartChildWorkflowExecutionFailedCause::OperationNotPermitted,
+            "WORKFLOW_ALREADY_RUNNING" => StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning,
+            "WORKFLOW_TYPE_DEPRECATED" => StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated,
+            "WORKFLOW_TYPE_DOES_NOT_EXIST" => StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist,
+            other => StartChildWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -134,19 +106,21 @@ impl StartChildWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => "CHILD_CREATION_RATE_EXCEEDED",
-    StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
-    StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-    StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-    StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-    StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => "OPEN_CHILDREN_LIMIT_EXCEEDED",
-    StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => "OPEN_WORKFLOWS_LIMIT_EXCEEDED",
-    StartChildWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-    StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => "WORKFLOW_ALREADY_RUNNING",
-    StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
-    StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
-    StartChildWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-}
+            StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => "CHILD_CREATION_RATE_EXCEEDED",
+            StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => "DEFAULT_CHILD_POLICY_UNDEFINED",
+            StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => {
+                "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"
+            }
+            StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+            StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+            StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => "OPEN_CHILDREN_LIMIT_EXCEEDED",
+            StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => "OPEN_WORKFLOWS_LIMIT_EXCEEDED",
+            StartChildWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+            StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => "WORKFLOW_ALREADY_RUNNING",
+            StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => "WORKFLOW_TYPE_DEPRECATED",
+            StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => "WORKFLOW_TYPE_DOES_NOT_EXIST",
+            StartChildWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateLaunchProfileMemberOutput {
 }
 impl UpdateLaunchProfileMemberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileMemberOutput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput).
-    pub fn builder() -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberOutputBuilder{
+    pub fn builder() -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberOutputBuilder {
         crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLaunchProfileMemberOutput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateLaunchProfileMemberOutputBuilder {
         self
     }
     /// <p>The updated member. </p>
-    pub fn set_member(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfileMembership>,
-    ) -> Self {
+    pub fn set_member(mut self, input: ::std::option::Option<crate::types::LaunchProfileMembership>) -> Self {
         self.member = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateLaunchProfileMemberOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLaunchProfileMemberOutput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput {
+    pub fn build(self) -> crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput {
         crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput {
             member: self.member,
             _request_id: self._request_id,

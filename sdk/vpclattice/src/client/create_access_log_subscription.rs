@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the service network or service.</p>
     ///   - [`destination_arn(Option<String>)`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the log destination.</p>
     /// - On failure, responds with [`SdkError<CreateAccessLogSubscriptionError>`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionError)
-    pub fn create_access_log_subscription(&self) -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionFluentBuilder{
+    pub fn create_access_log_subscription(
+        &self,
+    ) -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionFluentBuilder {
         crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

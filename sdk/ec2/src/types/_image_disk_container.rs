@@ -161,10 +161,7 @@ impl ImageDiskContainerBuilder {
         self
     }
     /// <p>The S3 bucket for the disk image.</p>
-    pub fn set_user_bucket(
-        mut self,
-        input: ::std::option::Option<crate::types::UserBucket>,
-    ) -> Self {
+    pub fn set_user_bucket(mut self, input: ::std::option::Option<crate::types::UserBucket>) -> Self {
         self.user_bucket = input;
         self
     }

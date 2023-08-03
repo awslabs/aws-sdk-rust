@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn tag_resource(
-        &self,
-    ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
+    pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())
     }
 }

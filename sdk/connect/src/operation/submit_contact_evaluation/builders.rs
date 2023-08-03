@@ -27,8 +27,7 @@ impl SubmitContactEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitContactEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder,
+    inner: crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder,
 }
 impl SubmitContactEvaluationFluentBuilder {
     /// Creates a new `SubmitContactEvaluation`.
@@ -39,10 +38,7 @@ impl SubmitContactEvaluationFluentBuilder {
         }
     }
     /// Access the SubmitContactEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl SubmitContactEvaluationFluentBuilder {
             crate::operation::submit_contact_evaluation::SubmitContactEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_contact_evaluation::SubmitContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_contact_evaluation::SubmitContactEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl SubmitContactEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl SubmitContactEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_contact_evaluation::SubmitContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_contact_evaluation::SubmitContactEvaluationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl SubmitContactEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_contact_evaluation::SubmitContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_contact_evaluation::SubmitContactEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl SubmitContactEvaluationFluentBuilder {
             crate::operation::submit_contact_evaluation::SubmitContactEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_contact_evaluation::SubmitContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_contact_evaluation::SubmitContactEvaluationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl SubmitContactEvaluationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_id(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }
@@ -164,30 +143,20 @@ impl SubmitContactEvaluationFluentBuilder {
     /// To override the contents of this collection use [`set_answers`](Self::set_answers).
     ///
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn answers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::EvaluationAnswerInput,
-    ) -> Self {
+    pub fn answers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EvaluationAnswerInput) -> Self {
         self.inner = self.inner.answers(k.into(), v);
         self
     }
     /// <p>A map of question identifiers to answer value.</p>
     pub fn set_answers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     ) -> Self {
         self.inner = self.inner.set_answers(input);
         self
     }
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn get_answers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-    > {
+    pub fn get_answers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>> {
         self.inner.get_answers()
     }
     /// Adds a key-value pair to `Notes`.
@@ -195,30 +164,20 @@ impl SubmitContactEvaluationFluentBuilder {
     /// To override the contents of this collection use [`set_notes`](Self::set_notes).
     ///
     /// <p>A map of question identifiers to note value.</p>
-    pub fn notes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::EvaluationNote,
-    ) -> Self {
+    pub fn notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EvaluationNote) -> Self {
         self.inner = self.inner.notes(k.into(), v);
         self
     }
     /// <p>A map of question identifiers to note value.</p>
     pub fn set_notes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
     ) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
     /// <p>A map of question identifiers to note value.</p>
-    pub fn get_notes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-    > {
+    pub fn get_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         self.inner.get_notes()
     }
 }

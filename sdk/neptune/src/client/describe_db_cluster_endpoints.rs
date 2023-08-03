@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`db_cluster_endpoints(Option<Vec<DbClusterEndpoint>>)`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput::db_cluster_endpoints): <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     /// - On failure, responds with [`SdkError<DescribeDBClusterEndpointsError>`](crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError)
-    pub fn describe_db_cluster_endpoints(&self) -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDBClusterEndpointsFluentBuilder{
+    pub fn describe_db_cluster_endpoints(
+        &self,
+    ) -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDBClusterEndpointsFluentBuilder {
         crate::operation::describe_db_cluster_endpoints::builders::DescribeDBClusterEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

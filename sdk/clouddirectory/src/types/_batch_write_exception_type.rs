@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchWriteExceptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -108,32 +102,22 @@ impl ::std::convert::From<&str> for BatchWriteExceptionType {
             "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
             "DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
             "FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
-            "IndexedAttributeMissingException" => {
-                BatchWriteExceptionType::IndexedAttributeMissingException
-            }
+            "IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
             "InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
             "InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
             "InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
             "LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
-            "LinkNameAlreadyInUseException" => {
-                BatchWriteExceptionType::LinkNameAlreadyInUseException
-            }
+            "LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
             "NotIndexException" => BatchWriteExceptionType::NotIndexException,
             "NotNodeException" => BatchWriteExceptionType::NotNodeException,
             "NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
-            "ObjectAlreadyDetachedException" => {
-                BatchWriteExceptionType::ObjectAlreadyDetachedException
-            }
+            "ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
             "ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
             "ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
             "StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
-            "UnsupportedIndexTypeException" => {
-                BatchWriteExceptionType::UnsupportedIndexTypeException
-            }
+            "UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
             "ValidationException" => BatchWriteExceptionType::ValidationException,
-            other => BatchWriteExceptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchWriteExceptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -151,28 +135,20 @@ impl BatchWriteExceptionType {
             BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
             BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
             BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
-            BatchWriteExceptionType::IndexedAttributeMissingException => {
-                "IndexedAttributeMissingException"
-            }
+            BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
             BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
             BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
             BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
             BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
-            BatchWriteExceptionType::LinkNameAlreadyInUseException => {
-                "LinkNameAlreadyInUseException"
-            }
+            BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
             BatchWriteExceptionType::NotIndexException => "NotIndexException",
             BatchWriteExceptionType::NotNodeException => "NotNodeException",
             BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
-            BatchWriteExceptionType::ObjectAlreadyDetachedException => {
-                "ObjectAlreadyDetachedException"
-            }
+            BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
             BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
             BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
             BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
-            BatchWriteExceptionType::UnsupportedIndexTypeException => {
-                "UnsupportedIndexTypeException"
-            }
+            BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
             BatchWriteExceptionType::ValidationException => "ValidationException",
             BatchWriteExceptionType::Unknown(value) => value.as_str(),
         }

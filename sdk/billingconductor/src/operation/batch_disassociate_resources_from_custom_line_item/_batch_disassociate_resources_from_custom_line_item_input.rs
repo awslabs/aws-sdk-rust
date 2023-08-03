@@ -23,29 +23,26 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
         self.resource_arns.as_deref()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput).
-    pub fn builder() -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder
+    {
         crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) billing_period_range:
-        ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
+    pub(crate) billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
@@ -67,62 +64,48 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.billing_period_range = input;
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput {
-                target_arn: self.target_arn
-                ,
-                resource_arns: self.resource_arns
-                ,
-                billing_period_range: self.billing_period_range
-                ,
-            }
+                target_arn: self.target_arn,
+                resource_arns: self.resource_arns,
+                billing_period_range: self.billing_period_range,
+            },
         )
     }
 }

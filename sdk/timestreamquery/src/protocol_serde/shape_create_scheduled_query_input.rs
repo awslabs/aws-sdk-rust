@@ -12,37 +12,26 @@ pub fn ser_create_scheduled_query_input(
     if let Some(var_3) = &input.schedule_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ScheduleConfiguration").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.notification_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("NotificationConfiguration").start_object();
-        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.target_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("TargetConfiguration").start_object();
-        crate::protocol_serde::shape_target_configuration::ser_target_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.client_token {
         object.key("ClientToken").string(var_9.as_str());
     }
     if let Some(var_10) = &input.scheduled_query_execution_role_arn {
-        object
-            .key("ScheduledQueryExecutionRoleArn")
-            .string(var_10.as_str());
+        object.key("ScheduledQueryExecutionRoleArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
         let mut array_12 = object.key("Tags").start_array();
@@ -62,10 +51,7 @@ pub fn ser_create_scheduled_query_input(
     if let Some(var_16) = &input.error_report_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("ErrorReportConfiguration").start_object();
-        crate::protocol_serde::shape_error_report_configuration::ser_error_report_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_error_report_configuration::ser_error_report_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())

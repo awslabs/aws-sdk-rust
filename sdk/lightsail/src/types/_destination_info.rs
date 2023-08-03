@@ -30,9 +30,7 @@ impl DestinationInfo {
 
 /// A builder for [`DestinationInfo`](crate::types::DestinationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

@@ -30,9 +30,7 @@ impl EdgeAgentStatus {
 
 /// A builder for [`EdgeAgentStatus`](crate::types::EdgeAgentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeAgentStatusBuilder {
     pub(crate) last_recorder_status: ::std::option::Option<crate::types::LastRecorderStatus>,
     pub(crate) last_uploader_status: ::std::option::Option<crate::types::LastUploaderStatus>,
@@ -44,17 +42,12 @@ impl EdgeAgentStatusBuilder {
         self
     }
     /// <p>The latest status of a stream’s edge recording job.</p>
-    pub fn set_last_recorder_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastRecorderStatus>,
-    ) -> Self {
+    pub fn set_last_recorder_status(mut self, input: ::std::option::Option<crate::types::LastRecorderStatus>) -> Self {
         self.last_recorder_status = input;
         self
     }
     /// <p>The latest status of a stream’s edge recording job.</p>
-    pub fn get_last_recorder_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LastRecorderStatus> {
+    pub fn get_last_recorder_status(&self) -> &::std::option::Option<crate::types::LastRecorderStatus> {
         &self.last_recorder_status
     }
     /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
@@ -63,17 +56,12 @@ impl EdgeAgentStatusBuilder {
         self
     }
     /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
-    pub fn set_last_uploader_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastUploaderStatus>,
-    ) -> Self {
+    pub fn set_last_uploader_status(mut self, input: ::std::option::Option<crate::types::LastUploaderStatus>) -> Self {
         self.last_uploader_status = input;
         self
     }
     /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
-    pub fn get_last_uploader_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LastUploaderStatus> {
+    pub fn get_last_uploader_status(&self) -> &::std::option::Option<crate::types::LastUploaderStatus> {
         &self.last_uploader_status
     }
     /// Consumes the builder and constructs a [`EdgeAgentStatus`](crate::types::EdgeAgentStatus).

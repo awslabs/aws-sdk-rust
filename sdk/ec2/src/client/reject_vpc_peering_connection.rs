@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RejectVpcPeeringConnectionOutput`](crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<RejectVpcPeeringConnectionError>`](crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionError)
-    pub fn reject_vpc_peering_connection(&self) -> crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionFluentBuilder{
+    pub fn reject_vpc_peering_connection(
+        &self,
+    ) -> crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionFluentBuilder {
         crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionFluentBuilder::new(self.handle.clone())
     }
 }

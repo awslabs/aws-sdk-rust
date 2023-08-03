@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`upload_type(ComplianceUploadType)`](crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder::upload_type) / [`set_upload_type(Option<ComplianceUploadType>)`](crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder::set_upload_type): <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>  <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>   <p>This attribute is only valid for association compliance.</p>  </note>
     /// - On success, responds with [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput)
     /// - On failure, responds with [`SdkError<PutComplianceItemsError>`](crate::operation::put_compliance_items::PutComplianceItemsError)
-    pub fn put_compliance_items(
-        &self,
-    ) -> crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder {
-        crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_compliance_items(&self) -> crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder {
+        crate::operation::put_compliance_items::builders::PutComplianceItemsFluentBuilder::new(self.handle.clone())
     }
 }

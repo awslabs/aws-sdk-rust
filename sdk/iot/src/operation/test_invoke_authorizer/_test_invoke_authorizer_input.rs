@@ -50,17 +50,14 @@ impl TestInvokeAuthorizerInput {
 }
 impl TestInvokeAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
-    pub fn builder(
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+    pub fn builder() -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
         crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder::default()
     }
 }
 
 /// A builder for [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerInputBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ pub struct TestInvokeAuthorizerInputBuilder {
 }
 impl TestInvokeAuthorizerInputBuilder {
     /// <p>The custom authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_name = input;
         self
     }
@@ -105,18 +96,12 @@ impl TestInvokeAuthorizerInputBuilder {
         &self.token
     }
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    pub fn token_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    pub fn set_token_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_signature = input;
         self
     }
@@ -130,10 +115,7 @@ impl TestInvokeAuthorizerInputBuilder {
         self
     }
     /// <p>Specifies a test HTTP authorization request.</p>
-    pub fn set_http_context(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpContext>,
-    ) -> Self {
+    pub fn set_http_context(mut self, input: ::std::option::Option<crate::types::HttpContext>) -> Self {
         self.http_context = input;
         self
     }
@@ -147,10 +129,7 @@ impl TestInvokeAuthorizerInputBuilder {
         self
     }
     /// <p>Specifies a test MQTT authorization request.</p>
-    pub fn set_mqtt_context(
-        mut self,
-        input: ::std::option::Option<crate::types::MqttContext>,
-    ) -> Self {
+    pub fn set_mqtt_context(mut self, input: ::std::option::Option<crate::types::MqttContext>) -> Self {
         self.mqtt_context = input;
         self
     }
@@ -164,10 +143,7 @@ impl TestInvokeAuthorizerInputBuilder {
         self
     }
     /// <p>Specifies a test TLS authorization request.</p>
-    pub fn set_tls_context(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsContext>,
-    ) -> Self {
+    pub fn set_tls_context(mut self, input: ::std::option::Option<crate::types::TlsContext>) -> Self {
         self.tls_context = input;
         self
     }
@@ -178,19 +154,15 @@ impl TestInvokeAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
-                authorizer_name: self.authorizer_name,
-                token: self.token,
-                token_signature: self.token_signature,
-                http_context: self.http_context,
-                mqtt_context: self.mqtt_context,
-                tls_context: self.tls_context,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
+            authorizer_name: self.authorizer_name,
+            token: self.token,
+            token_signature: self.token_signature,
+            http_context: self.http_context,
+            mqtt_context: self.mqtt_context,
+            tls_context: self.tls_context,
+        })
     }
 }

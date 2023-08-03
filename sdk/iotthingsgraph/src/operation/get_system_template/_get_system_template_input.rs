@@ -26,17 +26,14 @@ impl GetSystemTemplateInput {
 }
 impl GetSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder {
+    pub fn builder() -> crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder {
         crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSystemTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_number: ::std::option::Option<i64>,
@@ -79,15 +76,10 @@ impl GetSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_system_template::GetSystemTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_system_template::GetSystemTemplateInput {
-                id: self.id,
-                revision_number: self.revision_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_system_template::GetSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_system_template::GetSystemTemplateInput {
+            id: self.id,
+            revision_number: self.revision_number,
+        })
     }
 }

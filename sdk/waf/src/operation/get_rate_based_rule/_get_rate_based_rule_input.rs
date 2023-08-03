@@ -15,17 +15,14 @@ impl GetRateBasedRuleInput {
 }
 impl GetRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
-    pub fn builder() -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder {
         crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rate_based_rule::GetRateBasedRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_rate_based_rule::GetRateBasedRuleInput {
-                rule_id: self.rule_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_rate_based_rule::GetRateBasedRuleInput { rule_id: self.rule_id })
     }
 }

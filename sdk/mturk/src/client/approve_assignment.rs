@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`override_rejection(bool)`](crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder::override_rejection) / [`set_override_rejection(Option<bool>)`](crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder::set_override_rejection): <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     /// - On success, responds with [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput)
     /// - On failure, responds with [`SdkError<ApproveAssignmentError>`](crate::operation::approve_assignment::ApproveAssignmentError)
-    pub fn approve_assignment(
-        &self,
-    ) -> crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder {
-        crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn approve_assignment(&self) -> crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder {
+        crate::operation::approve_assignment::builders::ApproveAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl DataSourceSyncJobMetrics {
 
 /// A builder for [`DataSourceSyncJobMetrics`](crate::types::DataSourceSyncJobMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobMetricsBuilder {
     pub(crate) documents_added: ::std::option::Option<::std::string::String>,
     pub(crate) documents_modified: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct DataSourceSyncJobMetricsBuilder {
 }
 impl DataSourceSyncJobMetricsBuilder {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
-    pub fn documents_added(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documents_added(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documents_added = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
-    pub fn set_documents_added(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documents_added(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documents_added = input;
         self
     }
@@ -83,18 +75,12 @@ impl DataSourceSyncJobMetricsBuilder {
         &self.documents_added
     }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
-    pub fn documents_modified(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documents_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documents_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
-    pub fn set_documents_modified(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documents_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documents_modified = input;
         self
     }
@@ -103,18 +89,12 @@ impl DataSourceSyncJobMetricsBuilder {
         &self.documents_modified
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
-    pub fn documents_deleted(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documents_deleted(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documents_deleted = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
-    pub fn set_documents_deleted(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documents_deleted(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documents_deleted = input;
         self
     }
@@ -123,18 +103,12 @@ impl DataSourceSyncJobMetricsBuilder {
         &self.documents_deleted
     }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
-    pub fn documents_failed(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documents_failed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documents_failed = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
-    pub fn set_documents_failed(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documents_failed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documents_failed = input;
         self
     }
@@ -143,18 +117,12 @@ impl DataSourceSyncJobMetricsBuilder {
         &self.documents_failed
     }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
-    pub fn documents_scanned(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documents_scanned(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documents_scanned = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
-    pub fn set_documents_scanned(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documents_scanned(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documents_scanned = input;
         self
     }

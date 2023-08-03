@@ -23,9 +23,7 @@ impl CoreDefinitionVersion {
 
 /// A builder for [`CoreDefinitionVersion`](crate::types::CoreDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreDefinitionVersionBuilder {
     pub(crate) cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
 }
@@ -42,10 +40,7 @@ impl CoreDefinitionVersionBuilder {
         self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
-    ) -> Self {
+    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>) -> Self {
         self.cores = input;
         self
     }

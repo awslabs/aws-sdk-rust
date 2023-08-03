@@ -3,10 +3,7 @@
 pub fn de_mail_from_domain_not_verified_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

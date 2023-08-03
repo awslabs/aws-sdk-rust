@@ -74,9 +74,7 @@ impl User {
         self.user_type.as_ref()
     }
     /// <p>The user registration status.</p>
-    pub fn user_registration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn user_registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
         self.user_registration_status.as_ref()
     }
     /// <p>The user invite status.</p>
@@ -92,9 +90,7 @@ impl User {
         self.invited_on.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlexaForBusinessMetadata> {
+    pub fn alexa_for_business_metadata(&self) -> ::std::option::Option<&crate::types::AlexaForBusinessMetadata> {
         self.alexa_for_business_metadata.as_ref()
     }
     /// <p>The user's personal meeting PIN.</p>
@@ -108,10 +104,7 @@ impl ::std::fmt::Debug for User {
         formatter.field("user_id", &self.user_id);
         formatter.field("account_id", &self.account_id);
         formatter.field("primary_email", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "primary_provisioned_number",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("primary_provisioned_number", &"*** Sensitive Data Redacted ***");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("license_type", &self.license_type);
         formatter.field("user_type", &self.user_type);
@@ -119,10 +112,7 @@ impl ::std::fmt::Debug for User {
         formatter.field("user_invitation_status", &self.user_invitation_status);
         formatter.field("registered_on", &self.registered_on);
         formatter.field("invited_on", &self.invited_on);
-        formatter.field(
-            "alexa_for_business_metadata",
-            &self.alexa_for_business_metadata,
-        );
+        formatter.field("alexa_for_business_metadata", &self.alexa_for_business_metadata);
         formatter.field("personal_pin", &self.personal_pin);
         formatter.finish()
     }
@@ -149,8 +139,7 @@ pub struct UserBuilder {
     pub(crate) user_invitation_status: ::std::option::Option<crate::types::InviteStatus>,
     pub(crate) registered_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) invited_on: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) alexa_for_business_metadata:
-        ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
+    pub(crate) alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
     pub(crate) personal_pin: ::std::option::Option<::std::string::String>,
 }
 impl UserBuilder {
@@ -183,18 +172,12 @@ impl UserBuilder {
         &self.account_id
     }
     /// <p>The primary email address of the user.</p>
-    pub fn primary_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary email address of the user.</p>
-    pub fn set_primary_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_email = input;
         self
     }
@@ -203,18 +186,12 @@ impl UserBuilder {
         &self.primary_email
     }
     /// <p>The primary phone number associated with the user.</p>
-    pub fn primary_provisioned_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_provisioned_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_provisioned_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary phone number associated with the user.</p>
-    pub fn set_primary_provisioned_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_provisioned_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_provisioned_number = input;
         self
     }
@@ -270,17 +247,12 @@ impl UserBuilder {
         self
     }
     /// <p>The user registration status.</p>
-    pub fn set_user_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_user_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.user_registration_status = input;
         self
     }
     /// <p>The user registration status.</p>
-    pub fn get_user_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_user_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.user_registration_status
     }
     /// <p>The user invite status.</p>
@@ -289,10 +261,7 @@ impl UserBuilder {
         self
     }
     /// <p>The user invite status.</p>
-    pub fn set_user_invitation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InviteStatus>,
-    ) -> Self {
+    pub fn set_user_invitation_status(mut self, input: ::std::option::Option<crate::types::InviteStatus>) -> Self {
         self.user_invitation_status = input;
         self
     }
@@ -306,10 +275,7 @@ impl UserBuilder {
         self
     }
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    pub fn set_registered_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_on = input;
         self
     }
@@ -323,10 +289,7 @@ impl UserBuilder {
         self
     }
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    pub fn set_invited_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invited_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invited_on = input;
         self
     }
@@ -335,25 +298,17 @@ impl UserBuilder {
         &self.invited_on
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        mut self,
-        input: crate::types::AlexaForBusinessMetadata,
-    ) -> Self {
+    pub fn alexa_for_business_metadata(mut self, input: crate::types::AlexaForBusinessMetadata) -> Self {
         self.alexa_for_business_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn set_alexa_for_business_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
-    ) -> Self {
+    pub fn set_alexa_for_business_metadata(mut self, input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
         self.alexa_for_business_metadata = input;
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn get_alexa_for_business_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
+    pub fn get_alexa_for_business_metadata(&self) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
         &self.alexa_for_business_metadata
     }
     /// <p>The user's personal meeting PIN.</p>
@@ -395,10 +350,7 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.field("user_id", &self.user_id);
         formatter.field("account_id", &self.account_id);
         formatter.field("primary_email", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "primary_provisioned_number",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("primary_provisioned_number", &"*** Sensitive Data Redacted ***");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("license_type", &self.license_type);
         formatter.field("user_type", &self.user_type);
@@ -406,10 +358,7 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.field("user_invitation_status", &self.user_invitation_status);
         formatter.field("registered_on", &self.registered_on);
         formatter.field("invited_on", &self.invited_on);
-        formatter.field(
-            "alexa_for_business_metadata",
-            &self.alexa_for_business_metadata,
-        );
+        formatter.field("alexa_for_business_metadata", &self.alexa_for_business_metadata);
         formatter.field("personal_pin", &self.personal_pin);
         formatter.finish()
     }

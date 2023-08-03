@@ -40,13 +40,7 @@
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmafImageBasedTrickPlay {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for CmafImageBasedTrickPlay {
             "NONE" => CmafImageBasedTrickPlay::None,
             "THUMBNAIL" => CmafImageBasedTrickPlay::Thumbnail,
             "THUMBNAIL_AND_FULLFRAME" => CmafImageBasedTrickPlay::ThumbnailAndFullframe,
-            other => CmafImageBasedTrickPlay::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CmafImageBasedTrickPlay::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetStorageLensConfigurationOutput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput) with field(s):
     ///   - [`storage_lens_configuration(Option<StorageLensConfiguration>)`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput::storage_lens_configuration): <p>The S3 Storage Lens configuration requested.</p>
     /// - On failure, responds with [`SdkError<GetStorageLensConfigurationError>`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError)
-    pub fn get_storage_lens_configuration(&self) -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationFluentBuilder{
+    pub fn get_storage_lens_configuration(
+        &self,
+    ) -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationFluentBuilder {
         crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

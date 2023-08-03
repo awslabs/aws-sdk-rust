@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RestartSimulationJobOutput {
 }
 impl RestartSimulationJobOutput {
     /// Creates a new builder-style object to manufacture [`RestartSimulationJobOutput`](crate::operation::restart_simulation_job::RestartSimulationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::restart_simulation_job::builders::RestartSimulationJobOutputBuilder {
+    pub fn builder() -> crate::operation::restart_simulation_job::builders::RestartSimulationJobOutputBuilder {
         crate::operation::restart_simulation_job::builders::RestartSimulationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestartSimulationJobOutput`](crate::operation::restart_simulation_job::RestartSimulationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestartSimulationJobOutputBuilder {
     _request_id: Option<String>,
 }

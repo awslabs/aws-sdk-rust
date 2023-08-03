@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
     /// - On success, responds with [`DeleteReferenceStoreOutput`](crate::operation::delete_reference_store::DeleteReferenceStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteReferenceStoreError>`](crate::operation::delete_reference_store::DeleteReferenceStoreError)
-    pub fn delete_reference_store(
-        &self,
-    ) -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder {
-        crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_reference_store(&self) -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder {
+        crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::new(self.handle.clone())
     }
 }

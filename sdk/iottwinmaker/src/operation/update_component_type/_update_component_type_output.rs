@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateComponentTypeOutput {
 }
 impl UpdateComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentTypeOutput`](crate::operation::update_component_type::UpdateComponentTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder {
-        crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder {
+        crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateComponentTypeOutput`](crate::operation::update_component_type::UpdateComponentTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentTypeOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -91,18 +87,12 @@ impl UpdateComponentTypeOutputBuilder {
         &self.arn
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }

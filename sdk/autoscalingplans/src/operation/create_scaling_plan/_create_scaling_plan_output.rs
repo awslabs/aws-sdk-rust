@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateScalingPlanOutput {
 }
 impl CreateScalingPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::operation::create_scaling_plan::CreateScalingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::create_scaling_plan::builders::CreateScalingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::create_scaling_plan::builders::CreateScalingPlanOutputBuilder {
         crate::operation::create_scaling_plan::builders::CreateScalingPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateScalingPlanOutput`](crate::operation::create_scaling_plan::CreateScalingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScalingPlanOutputBuilder {
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
     _request_id: Option<String>,

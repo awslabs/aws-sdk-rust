@@ -29,17 +29,14 @@ impl AddRoleToDbInstanceInput {
 }
 impl AddRoleToDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
+    pub fn builder() -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
         crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct AddRoleToDbInstanceInputBuilder {
 }
 impl AddRoleToDbInstanceInputBuilder {
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -97,16 +88,12 @@ impl AddRoleToDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-                role_arn: self.role_arn,
-                feature_name: self.feature_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+            role_arn: self.role_arn,
+            feature_name: self.feature_name,
+        })
     }
 }

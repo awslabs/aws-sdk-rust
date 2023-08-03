@@ -72,9 +72,7 @@ impl AgentPreview {
 
 /// A builder for [`AgentPreview`](crate::types::AgentPreview).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentPreviewBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ impl AgentPreviewBuilder {
         &self.agent_id
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    pub fn auto_scaling_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    pub fn set_auto_scaling_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group = input;
         self
     }
@@ -140,10 +132,7 @@ impl AgentPreviewBuilder {
         self
     }
     /// <p>The health status of the Amazon Inspector Agent.</p>
-    pub fn set_agent_health(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentHealth>,
-    ) -> Self {
+    pub fn set_agent_health(mut self, input: ::std::option::Option<crate::types::AgentHealth>) -> Self {
         self.agent_health = input;
         self
     }
@@ -152,18 +141,12 @@ impl AgentPreviewBuilder {
         &self.agent_health
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
@@ -172,18 +155,12 @@ impl AgentPreviewBuilder {
         &self.agent_version
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_system = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_system = input;
         self
     }
@@ -192,18 +169,12 @@ impl AgentPreviewBuilder {
         &self.operating_system
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn kernel_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kernel_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn set_kernel_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kernel_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_version = input;
         self
     }

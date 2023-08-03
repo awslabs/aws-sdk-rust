@@ -23,9 +23,7 @@ impl IotEventsInputIdentifier {
 
 /// A builder for [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotEventsInputIdentifierBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl IotEventsInputIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
     pub fn build(self) -> crate::types::IotEventsInputIdentifier {
-        crate::types::IotEventsInputIdentifier {
-            input_name: self.input_name,
-        }
+        crate::types::IotEventsInputIdentifier { input_name: self.input_name }
     }
 }

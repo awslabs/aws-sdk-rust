@@ -37,9 +37,7 @@ impl ListVoiceConnectorsFluentBuilder {
         }
     }
     /// Access the ListVoiceConnectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_voice_connectors::builders::ListVoiceConnectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_voice_connectors::builders::ListVoiceConnectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListVoiceConnectorsFluentBuilder {
             crate::operation::list_voice_connectors::ListVoiceConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connectors::ListVoiceConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connectors::ListVoiceConnectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListVoiceConnectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListVoiceConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_voice_connectors::ListVoiceConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connectors::ListVoiceConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connectors::ListVoiceConnectorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListVoiceConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_voice_connectors::ListVoiceConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connectors::ListVoiceConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connectors::ListVoiceConnectorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListVoiceConnectorsFluentBuilder {
             crate::operation::list_voice_connectors::ListVoiceConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_voice_connectors::ListVoiceConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connectors::ListVoiceConnectorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_voice_connectors::paginator::ListVoiceConnectorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_voice_connectors::paginator::ListVoiceConnectorsPaginator {
-        crate::operation::list_voice_connectors::paginator::ListVoiceConnectorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_voice_connectors::paginator::ListVoiceConnectorsPaginator {
+        crate::operation::list_voice_connectors::paginator::ListVoiceConnectorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelBanOutput`](crate::operation::describe_channel_ban::DescribeChannelBanOutput) with field(s):
     ///   - [`channel_ban(Option<ChannelBan>)`](crate::operation::describe_channel_ban::DescribeChannelBanOutput::channel_ban): <p>The details of the ban.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelBanError>`](crate::operation::describe_channel_ban::DescribeChannelBanError)
-    pub fn describe_channel_ban(
-        &self,
-    ) -> crate::operation::describe_channel_ban::builders::DescribeChannelBanFluentBuilder {
-        crate::operation::describe_channel_ban::builders::DescribeChannelBanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_channel_ban(&self) -> crate::operation::describe_channel_ban::builders::DescribeChannelBanFluentBuilder {
+        crate::operation::describe_channel_ban::builders::DescribeChannelBanFluentBuilder::new(self.handle.clone())
     }
 }

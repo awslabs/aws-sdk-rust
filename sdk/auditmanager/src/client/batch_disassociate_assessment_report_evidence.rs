@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`evidence_ids(Option<Vec<String>>)`](crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceOutput::evidence_ids): <p> The identifier for the evidence. </p>
     ///   - [`errors(Option<Vec<AssessmentReportEvidenceError>>)`](crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceOutput::errors): <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     /// - On failure, responds with [`SdkError<BatchDisassociateAssessmentReportEvidenceError>`](crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError)
-    pub fn batch_disassociate_assessment_report_evidence(&self) -> crate::operation::batch_disassociate_assessment_report_evidence::builders::BatchDisassociateAssessmentReportEvidenceFluentBuilder{
-        crate::operation::batch_disassociate_assessment_report_evidence::builders::BatchDisassociateAssessmentReportEvidenceFluentBuilder::new(self.handle.clone())
+    pub fn batch_disassociate_assessment_report_evidence(
+        &self,
+    ) -> crate::operation::batch_disassociate_assessment_report_evidence::builders::BatchDisassociateAssessmentReportEvidenceFluentBuilder {
+        crate::operation::batch_disassociate_assessment_report_evidence::builders::BatchDisassociateAssessmentReportEvidenceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for GetReferenceImportJobOutput {
 }
 impl GetReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder {
         crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReferenceImportJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -90,8 +86,7 @@ pub struct GetReferenceImportJobOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>,
     _request_id: Option<String>,
 }
 impl GetReferenceImportJobOutputBuilder {
@@ -110,18 +105,12 @@ impl GetReferenceImportJobOutputBuilder {
         &self.id
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -149,10 +138,7 @@ impl GetReferenceImportJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceImportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -161,18 +147,12 @@ impl GetReferenceImportJobOutputBuilder {
         &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -186,10 +166,7 @@ impl GetReferenceImportJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -203,10 +180,7 @@ impl GetReferenceImportJobOutputBuilder {
         self
     }
     /// <p>When the job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -226,17 +200,12 @@ impl GetReferenceImportJobOutputBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceSourceItem>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

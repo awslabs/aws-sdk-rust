@@ -10,10 +10,7 @@ impl RegisterMailDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_mail_domain::RegisterMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_mail_domain::RegisterMailDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_mail_domain();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RegisterMailDomainFluentBuilder {
         }
     }
     /// Access the RegisterMailDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RegisterMailDomainFluentBuilder {
             crate::operation::register_mail_domain::RegisterMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_mail_domain::RegisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RegisterMailDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RegisterMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_mail_domain::RegisterMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_mail_domain::RegisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RegisterMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_mail_domain::RegisterMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_mail_domain::RegisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RegisterMailDomainFluentBuilder {
             crate::operation::register_mail_domain::RegisterMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_mail_domain::RegisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_mail_domain::RegisterMailDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl RegisterMailDomainFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization under which you're creating the domain.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

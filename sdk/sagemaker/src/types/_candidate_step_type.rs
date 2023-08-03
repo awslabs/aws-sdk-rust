@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CandidateStepType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for CandidateStepType {
             "AWS::SageMaker::ProcessingJob" => CandidateStepType::Processing,
             "AWS::SageMaker::TrainingJob" => CandidateStepType::Training,
             "AWS::SageMaker::TransformJob" => CandidateStepType::Transform,
-            other => {
-                CandidateStepType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CandidateStepType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

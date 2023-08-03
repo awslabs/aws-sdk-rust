@@ -15,7 +15,10 @@ pub fn ser_create_custom_routing_endpoint_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_custom_routing_destination_configuration::ser_custom_routing_destination_configuration(&mut object_6, item_5)?;
+                crate::protocol_serde::shape_custom_routing_destination_configuration::ser_custom_routing_destination_configuration(
+                    &mut object_6,
+                    item_5,
+                )?;
                 object_6.finish();
             }
         }

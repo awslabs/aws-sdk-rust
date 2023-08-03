@@ -75,9 +75,7 @@ impl UpdateBotInput {
 
 /// A builder for [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -151,10 +149,7 @@ impl UpdateBotInputBuilder {
         self
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    pub fn set_data_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPrivacy>,
-    ) -> Self {
+    pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.data_privacy = input;
         self
     }
@@ -208,26 +203,16 @@ impl UpdateBotInputBuilder {
         self
     }
     /// <p>The list of bot members in the network associated with the update action.</p>
-    pub fn set_bot_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
-    ) -> Self {
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
         self.bot_members = input;
         self
     }
     /// <p>The list of bot members in the network associated with the update action.</p>
-    pub fn get_bot_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bot::UpdateBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot::UpdateBotInput {
             bot_id: self.bot_id,
             bot_name: self.bot_name,

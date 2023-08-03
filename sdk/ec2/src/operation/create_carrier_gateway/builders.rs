@@ -37,9 +37,7 @@ impl CreateCarrierGatewayFluentBuilder {
         }
     }
     /// Access the CreateCarrierGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateCarrierGatewayFluentBuilder {
             crate::operation::create_carrier_gateway::CreateCarrierGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_carrier_gateway::CreateCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_carrier_gateway::CreateCarrierGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateCarrierGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateCarrierGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_carrier_gateway::CreateCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_carrier_gateway::CreateCarrierGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateCarrierGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_carrier_gateway::CreateCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_carrier_gateway::CreateCarrierGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateCarrierGatewayFluentBuilder {
             crate::operation::create_carrier_gateway::CreateCarrierGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_carrier_gateway::CreateCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_carrier_gateway::CreateCarrierGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl CreateCarrierGatewayFluentBuilder {
         self
     }
     /// <p>The tags to associate with the carrier gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to associate with the carrier gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

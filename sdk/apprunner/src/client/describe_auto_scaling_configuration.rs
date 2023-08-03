@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAutoScalingConfigurationOutput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput) with field(s):
     ///   - [`auto_scaling_configuration(Option<AutoScalingConfiguration>)`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput::auto_scaling_configuration): <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoScalingConfigurationError>`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationError)
-    pub fn describe_auto_scaling_configuration(&self) -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationFluentBuilder{
+    pub fn describe_auto_scaling_configuration(
+        &self,
+    ) -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationFluentBuilder {
         crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

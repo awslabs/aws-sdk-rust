@@ -37,10 +37,7 @@ impl CreateThreatIntelSetFluentBuilder {
         }
     }
     /// Access the CreateThreatIntelSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateThreatIntelSetFluentBuilder {
             crate::operation::create_threat_intel_set::CreateThreatIntelSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateThreatIntelSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateThreatIntelSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateThreatIntelSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateThreatIntelSetFluentBuilder {
             crate::operation::create_threat_intel_set::CreateThreatIntelSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl CreateThreatIntelSetFluentBuilder {
         self
     }
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ThreatIntelSetFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ThreatIntelSetFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -215,30 +198,17 @@ impl CreateThreatIntelSetFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be added to a new threat list resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be added to a new threat list resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be added to a new threat list resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -37,9 +37,7 @@ impl InstanceSnapshotInfo {
 
 /// A builder for [`InstanceSnapshotInfo`](crate::types::InstanceSnapshotInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceSnapshotInfoBuilder {
     pub(crate) from_bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) from_blueprint_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct InstanceSnapshotInfoBuilder {
 }
 impl InstanceSnapshotInfoBuilder {
     /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
-    pub fn from_bundle_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
-    pub fn set_from_bundle_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_bundle_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl InstanceSnapshotInfoBuilder {
         &self.from_bundle_id
     }
     /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
-    pub fn from_blueprint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
-    pub fn set_from_blueprint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_blueprint_id = input;
         self
     }
@@ -98,17 +84,12 @@ impl InstanceSnapshotInfoBuilder {
         self
     }
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
-    pub fn set_from_disk_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
-    ) -> Self {
+    pub fn set_from_disk_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>) -> Self {
         self.from_disk_info = input;
         self
     }
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
-    pub fn get_from_disk_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>> {
+    pub fn get_from_disk_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>> {
         &self.from_disk_info
     }
     /// Consumes the builder and constructs a [`InstanceSnapshotInfo`](crate::types::InstanceSnapshotInfo).

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSchedulingPoliciesOutput`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesOutput) with field(s):
     ///   - [`scheduling_policies(Option<Vec<SchedulingPolicyDetail>>)`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesOutput::scheduling_policies): <p>The list of scheduling policies.</p>
     /// - On failure, responds with [`SdkError<DescribeSchedulingPoliciesError>`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesError)
-    pub fn describe_scheduling_policies(&self) -> crate::operation::describe_scheduling_policies::builders::DescribeSchedulingPoliciesFluentBuilder{
+    pub fn describe_scheduling_policies(&self) -> crate::operation::describe_scheduling_policies::builders::DescribeSchedulingPoliciesFluentBuilder {
         crate::operation::describe_scheduling_policies::builders::DescribeSchedulingPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

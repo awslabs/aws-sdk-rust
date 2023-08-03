@@ -33,9 +33,7 @@ pub struct UpdateRuleGroupInput {
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub custom_response_bodies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    >,
+    pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
 }
 impl UpdateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -76,9 +74,7 @@ impl UpdateRuleGroupInput {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn custom_response_bodies(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         self.custom_response_bodies.as_ref()
     }
 }
@@ -91,9 +87,7 @@ impl UpdateRuleGroupInput {
 
 /// A builder for [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -102,9 +96,7 @@ pub struct UpdateRuleGroupInputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_response_bodies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    >,
+    pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
 }
 impl UpdateRuleGroupInputBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -190,10 +182,7 @@ impl UpdateRuleGroupInputBuilder {
         self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -207,10 +196,7 @@ impl UpdateRuleGroupInputBuilder {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VisibilityConfig>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.visibility_config = input;
         self
     }
@@ -239,11 +225,7 @@ impl UpdateRuleGroupInputBuilder {
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CustomResponseBody,
-    ) -> Self {
+    pub fn custom_response_bodies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CustomResponseBody) -> Self {
         let mut hash_map = self.custom_response_bodies.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.custom_response_bodies = ::std::option::Option::Some(hash_map);
@@ -254,9 +236,7 @@ impl UpdateRuleGroupInputBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_custom_response_bodies(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     ) -> Self {
         self.custom_response_bodies = input;
         self
@@ -266,18 +246,13 @@ impl UpdateRuleGroupInputBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn get_custom_response_bodies(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         &self.custom_response_bodies
     }
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule_group::UpdateRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule_group::UpdateRuleGroupInput {
             name: self.name,
             scope: self.scope,

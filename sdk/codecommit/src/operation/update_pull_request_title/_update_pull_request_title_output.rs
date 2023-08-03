@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdatePullRequestTitleOutput {
 }
 impl UpdatePullRequestTitleOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleOutput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleOutputBuilder {
         crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestTitleOutput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestTitleOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdatePullRequestTitleOutputBuilder {
         self
     }
     /// <p>Information about the updated pull request.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdatePullRequestTitleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestTitleOutput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput {
+    pub fn build(self) -> crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput {
         crate::operation::update_pull_request_title::UpdatePullRequestTitleOutput {
             pull_request: self.pull_request,
             _request_id: self._request_id,

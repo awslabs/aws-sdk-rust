@@ -80,10 +80,7 @@ pub fn ser_start_automation_execution_input(
             {
                 #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_target_location::ser_target_location(
-                    &mut object_29,
-                    item_28,
-                )?;
+                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_29, item_28)?;
                 object_29.finish();
             }
         }
@@ -104,10 +101,7 @@ pub fn ser_start_automation_execution_input(
     if let Some(var_34) = &input.alarm_configuration {
         #[allow(unused_mut)]
         let mut object_35 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_35,
-            var_34,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_35, var_34)?;
         object_35.finish();
     }
     Ok(())

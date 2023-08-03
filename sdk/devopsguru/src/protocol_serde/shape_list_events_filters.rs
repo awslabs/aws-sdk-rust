@@ -24,10 +24,7 @@ pub fn ser_list_events_filters(
     if let Some(var_7) = &input.resource_collection {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ResourceCollection").start_object();
-        crate::protocol_serde::shape_resource_collection::ser_resource_collection(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_resource_collection::ser_resource_collection(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

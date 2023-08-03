@@ -5,8 +5,7 @@
 pub struct ListDashboardVersionsOutput {
     /// <p>A structure that contains information about each version of the dashboard.</p>
     #[doc(hidden)]
-    pub dashboard_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>>,
+    pub dashboard_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListDashboardVersionsOutput {
 }
 impl ListDashboardVersionsOutput {
     /// <p>A structure that contains information about each version of the dashboard.</p>
-    pub fn dashboard_version_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DashboardVersionSummary]> {
+    pub fn dashboard_version_summary_list(&self) -> ::std::option::Option<&[crate::types::DashboardVersionSummary]> {
         self.dashboard_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,21 +42,16 @@ impl ::aws_http::request_id::RequestId for ListDashboardVersionsOutput {
 }
 impl ListDashboardVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardVersionsOutput`](crate::operation::list_dashboard_versions::ListDashboardVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsOutputBuilder {
         crate::operation::list_dashboard_versions::builders::ListDashboardVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDashboardVersionsOutput`](crate::operation::list_dashboard_versions::ListDashboardVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDashboardVersionsOutputBuilder {
-    pub(crate) dashboard_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>>,
+    pub(crate) dashboard_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -71,10 +63,7 @@ impl ListDashboardVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_dashboard_version_summary_list`](Self::set_dashboard_version_summary_list).
     ///
     /// <p>A structure that contains information about each version of the dashboard.</p>
-    pub fn dashboard_version_summary_list(
-        mut self,
-        input: crate::types::DashboardVersionSummary,
-    ) -> Self {
+    pub fn dashboard_version_summary_list(mut self, input: crate::types::DashboardVersionSummary) -> Self {
         let mut v = self.dashboard_version_summary_list.unwrap_or_default();
         v.push(input);
         self.dashboard_version_summary_list = ::std::option::Option::Some(v);
@@ -89,9 +78,7 @@ impl ListDashboardVersionsOutputBuilder {
         self
     }
     /// <p>A structure that contains information about each version of the dashboard.</p>
-    pub fn get_dashboard_version_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>> {
+    pub fn get_dashboard_version_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>> {
         &self.dashboard_version_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

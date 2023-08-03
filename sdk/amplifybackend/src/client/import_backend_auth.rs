@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::import_backend_auth::ImportBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::import_backend_auth::ImportBackendAuthOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<ImportBackendAuthError>`](crate::operation::import_backend_auth::ImportBackendAuthError)
-    pub fn import_backend_auth(
-        &self,
-    ) -> crate::operation::import_backend_auth::builders::ImportBackendAuthFluentBuilder {
-        crate::operation::import_backend_auth::builders::ImportBackendAuthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_backend_auth(&self) -> crate::operation::import_backend_auth::builders::ImportBackendAuthFluentBuilder {
+        crate::operation::import_backend_auth::builders::ImportBackendAuthFluentBuilder::new(self.handle.clone())
     }
 }

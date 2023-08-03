@@ -28,9 +28,7 @@ impl CreateAliasOutput {
 
 /// A builder for [`CreateAliasOutput`](crate::operation::create_alias::CreateAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAliasOutputBuilder {
     pub(crate) alias: ::std::option::Option<crate::types::Alias>,
     _request_id: Option<String>,

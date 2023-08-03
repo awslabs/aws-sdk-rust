@@ -37,10 +37,7 @@ impl DescribeStorageSystemFluentBuilder {
         }
     }
     /// Access the DescribeStorageSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeStorageSystemFluentBuilder {
             crate::operation::describe_storage_system::DescribeStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_system::DescribeStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system::DescribeStorageSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeStorageSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_system::DescribeStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_system::DescribeStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system::DescribeStorageSystemError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_system::DescribeStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_system::DescribeStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system::DescribeStorageSystemError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeStorageSystemFluentBuilder {
             crate::operation::describe_storage_system::DescribeStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_system::DescribeStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system::DescribeStorageSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }

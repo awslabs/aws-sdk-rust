@@ -66,9 +66,7 @@ impl DescribeSlotOutput {
         self.slot_type_id.as_deref()
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> ::std::option::Option<&crate::types::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
@@ -101,9 +99,7 @@ impl DescribeSlotOutput {
     }
     /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> ::std::option::Option<&crate::types::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
@@ -125,16 +121,13 @@ impl DescribeSlotOutput {
 
 /// A builder for [`DescribeSlotOutput`](crate::operation::describe_slot::DescribeSlotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSlotOutputBuilder {
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
-    pub(crate) value_elicitation_setting:
-        ::std::option::Option<crate::types::SlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     pub(crate) obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -204,25 +197,17 @@ impl DescribeSlotOutputBuilder {
         &self.slot_type_id
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
-    ) -> Self {
+    pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
         self.value_elicitation_setting = input;
         self
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn get_value_elicitation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+    pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
         &self.value_elicitation_setting
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
@@ -231,17 +216,12 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
+    pub fn set_obfuscation_setting(mut self, input: ::std::option::Option<crate::types::ObfuscationSetting>) -> Self {
         self.obfuscation_setting = input;
         self
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    pub fn get_obfuscation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+    pub fn get_obfuscation_setting(&self) -> &::std::option::Option<crate::types::ObfuscationSetting> {
         &self.obfuscation_setting
     }
     /// <p>The identifier of the bot associated with the slot.</p>
@@ -306,10 +286,7 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -323,17 +300,12 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
@@ -344,18 +316,13 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_multiple_values_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MultipleValuesSetting>,
-    ) -> Self {
+    pub fn set_multiple_values_setting(mut self, input: ::std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
         self.multiple_values_setting = input;
         self
     }
     /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn get_multiple_values_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+    pub fn get_multiple_values_setting(&self) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
         &self.multiple_values_setting
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
@@ -364,10 +331,7 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubSlotSetting>,
-    ) -> Self {
+    pub fn set_sub_slot_setting(mut self, input: ::std::option::Option<crate::types::SubSlotSetting>) -> Self {
         self.sub_slot_setting = input;
         self
     }

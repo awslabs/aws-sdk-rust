@@ -29,11 +29,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceOutput`](crate::operation::create_service::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::create_service::CreateServiceOutput::service): <p>The full description of your service following the create call.</p>  <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>  <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>  <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)
-    pub fn create_service(
-        &self,
-    ) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
-        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service(&self) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
+        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(self.handle.clone())
     }
 }

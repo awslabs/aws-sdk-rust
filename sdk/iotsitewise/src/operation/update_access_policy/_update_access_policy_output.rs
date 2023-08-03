@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccessPolicyOutput {
 }
 impl UpdateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

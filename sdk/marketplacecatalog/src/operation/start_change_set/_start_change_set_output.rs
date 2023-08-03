@@ -35,9 +35,7 @@ impl StartChangeSetOutput {
 
 /// A builder for [`StartChangeSetOutput`](crate::operation::start_change_set::StartChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChangeSetOutputBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct StartChangeSetOutputBuilder {
 }
 impl StartChangeSetOutputBuilder {
     /// <p>Unique identifier generated for the request.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier generated for the request.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl StartChangeSetOutputBuilder {
         &self.change_set_id
     }
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
-    pub fn change_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
-    pub fn set_change_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_arn = input;
         self
     }

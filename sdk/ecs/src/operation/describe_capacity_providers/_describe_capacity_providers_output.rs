@@ -35,19 +35,16 @@ impl ::aws_http::request_id::RequestId for DescribeCapacityProvidersOutput {
 }
 impl DescribeCapacityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
-    pub fn builder() -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersOutputBuilder {
         crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersOutputBuilder {
-    pub(crate) capacity_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
+    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,17 +62,12 @@ impl DescribeCapacityProvidersOutputBuilder {
         self
     }
     /// <p>The list of capacity providers.</p>
-    pub fn set_capacity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
-    ) -> Self {
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>) -> Self {
         self.capacity_providers = input;
         self
     }
     /// <p>The list of capacity providers.</p>
-    pub fn get_capacity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>> {
         &self.capacity_providers
     }
     /// Appends an item to `failures`.
@@ -90,10 +82,7 @@ impl DescribeCapacityProvidersOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }
@@ -125,9 +114,7 @@ impl DescribeCapacityProvidersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput {
+    pub fn build(self) -> crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput {
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput {
             capacity_providers: self.capacity_providers,
             failures: self.failures,

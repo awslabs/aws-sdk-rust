@@ -22,36 +22,26 @@ impl DeleteRetentionPolicyInput {
 }
 impl DeleteRetentionPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder {
         crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionPolicyInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetentionPolicyInputBuilder {
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteRetentionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_retention_policy::DeleteRetentionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
-                organization_id: self.organization_id,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_retention_policy::DeleteRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
+            organization_id: self.organization_id,
+            id: self.id,
+        })
     }
 }

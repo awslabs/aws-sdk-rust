@@ -24,26 +24,18 @@ impl TrackingOptions {
 
 /// A builder for [`TrackingOptions`](crate::types::TrackingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrackingOptionsBuilder {
     pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl TrackingOptionsBuilder {
     /// <p>The domain to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_redirect_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_redirect_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain to use for tracking open and click events.</p>
-    pub fn set_custom_redirect_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_redirect_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_redirect_domain = input;
         self
     }

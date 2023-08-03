@@ -23,9 +23,7 @@ impl RequiredField {
 
 /// A builder for [`RequiredField`](crate::types::RequiredField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequiredFieldBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl RequiredFieldBuilder {
     }
     /// Consumes the builder and constructs a [`RequiredField`](crate::types::RequiredField).
     pub fn build(self) -> crate::types::RequiredField {
-        crate::types::RequiredField {
-            field_id: self.field_id,
-        }
+        crate::types::RequiredField { field_id: self.field_id }
     }
 }

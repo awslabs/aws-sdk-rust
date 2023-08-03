@@ -11,8 +11,7 @@ pub struct UpdateEventDataStoreInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
     #[doc(hidden)]
-    pub advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
@@ -49,9 +48,7 @@ impl UpdateEventDataStoreInput {
         self.name.as_deref()
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn advanced_event_selectors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
+    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
@@ -87,22 +84,18 @@ impl UpdateEventDataStoreInput {
 }
 impl UpdateEventDataStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder {
+    pub fn builder() -> crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder {
         crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -111,18 +104,12 @@ pub struct UpdateEventDataStoreInputBuilder {
 }
 impl UpdateEventDataStoreInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
@@ -156,17 +143,12 @@ impl UpdateEventDataStoreInputBuilder {
         self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.advanced_event_selectors = input;
         self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
@@ -217,10 +199,7 @@ impl UpdateEventDataStoreInputBuilder {
         self
     }
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }
@@ -275,21 +254,17 @@ impl UpdateEventDataStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_data_store::UpdateEventDataStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_event_data_store::UpdateEventDataStoreInput {
-                event_data_store: self.event_data_store,
-                name: self.name,
-                advanced_event_selectors: self.advanced_event_selectors,
-                multi_region_enabled: self.multi_region_enabled,
-                organization_enabled: self.organization_enabled,
-                retention_period: self.retention_period,
-                termination_protection_enabled: self.termination_protection_enabled,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_event_data_store::UpdateEventDataStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_event_data_store::UpdateEventDataStoreInput {
+            event_data_store: self.event_data_store,
+            name: self.name,
+            advanced_event_selectors: self.advanced_event_selectors,
+            multi_region_enabled: self.multi_region_enabled,
+            organization_enabled: self.organization_enabled,
+            retention_period: self.retention_period,
+            termination_protection_enabled: self.termination_protection_enabled,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

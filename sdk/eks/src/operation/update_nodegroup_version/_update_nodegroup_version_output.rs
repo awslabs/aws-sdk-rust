@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateNodegroupVersionOutput {
 }
 impl UpdateNodegroupVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder {
         crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNodegroupVersionOutput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNodegroupVersionOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

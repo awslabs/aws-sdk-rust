@@ -30,9 +30,7 @@ impl Smile {
 
 /// A builder for [`Smile`](crate::types::Smile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmileBuilder {
     pub(crate) value: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,

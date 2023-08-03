@@ -33,8 +33,7 @@ pub struct Comment {
     pub caller_reactions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
     #[doc(hidden)]
-    pub reaction_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub reaction_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Comment {
     /// <p>The system-generated comment ID.</p>
@@ -74,9 +73,7 @@ impl Comment {
         self.caller_reactions.as_deref()
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn reaction_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn reaction_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.reaction_counts.as_ref()
     }
 }
@@ -89,9 +86,7 @@ impl Comment {
 
 /// A builder for [`Comment`](crate::types::Comment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommentBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -102,8 +97,7 @@ pub struct CommentBuilder {
     pub(crate) deleted: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reactions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reaction_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) reaction_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl CommentBuilder {
     /// <p>The system-generated comment ID.</p>
@@ -154,10 +148,7 @@ impl CommentBuilder {
         self
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -171,10 +162,7 @@ impl CommentBuilder {
         self
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -211,18 +199,12 @@ impl CommentBuilder {
         &self.deleted
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -235,27 +217,19 @@ impl CommentBuilder {
     /// To override the contents of this collection use [`set_caller_reactions`](Self::set_caller_reactions).
     ///
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn caller_reactions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reactions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.caller_reactions.unwrap_or_default();
         v.push(input.into());
         self.caller_reactions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn set_caller_reactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_caller_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.caller_reactions = input;
         self
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn get_caller_reactions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_caller_reactions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.caller_reactions
     }
     /// Adds a key-value pair to `reaction_counts`.
@@ -263,28 +237,19 @@ impl CommentBuilder {
     /// To override the contents of this collection use [`set_reaction_counts`](Self::set_reaction_counts).
     ///
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn reaction_counts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn reaction_counts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.reaction_counts.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.reaction_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn set_reaction_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_reaction_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.reaction_counts = input;
         self
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn get_reaction_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_reaction_counts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.reaction_counts
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).

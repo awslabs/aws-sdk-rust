@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`device_positions(Option<Vec<DevicePosition>>)`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput::device_positions): <p>Contains the position history details for the requested device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetDevicePositionHistoryError>`](crate::operation::get_device_position_history::GetDevicePositionHistoryError)
-    pub fn get_device_position_history(&self) -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryFluentBuilder{
+    pub fn get_device_position_history(&self) -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryFluentBuilder {
         crate::operation::get_device_position_history::builders::GetDevicePositionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`next_page_token(Option<String>)`](crate::operation::poll_for_decision_task::PollForDecisionTaskOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     ///   - [`previous_started_event_id(i64)`](crate::operation::poll_for_decision_task::PollForDecisionTaskOutput::previous_started_event_id): <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
     /// - On failure, responds with [`SdkError<PollForDecisionTaskError>`](crate::operation::poll_for_decision_task::PollForDecisionTaskError)
-    pub fn poll_for_decision_task(
-        &self,
-    ) -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskFluentBuilder {
-        crate::operation::poll_for_decision_task::builders::PollForDecisionTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn poll_for_decision_task(&self) -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskFluentBuilder {
+        crate::operation::poll_for_decision_task::builders::PollForDecisionTaskFluentBuilder::new(self.handle.clone())
     }
 }

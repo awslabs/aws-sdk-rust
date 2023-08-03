@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateAnalysisPermissionsError>`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsError)
-    pub fn update_analysis_permissions(&self) -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsFluentBuilder{
+    pub fn update_analysis_permissions(&self) -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsFluentBuilder {
         crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

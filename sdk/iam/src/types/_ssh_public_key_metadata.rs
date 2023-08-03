@@ -45,9 +45,7 @@ impl SshPublicKeyMetadata {
 
 /// A builder for [`SshPublicKeyMetadata`](crate::types::SshPublicKeyMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SshPublicKeyMetadataBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl SshPublicKeyMetadataBuilder {
         &self.user_name
     }
     /// <p>The unique identifier for the SSH public key.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the SSH public key.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_id = input;
         self
     }
@@ -109,10 +101,7 @@ impl SshPublicKeyMetadataBuilder {
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
-    pub fn set_upload_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.upload_date = input;
         self
     }

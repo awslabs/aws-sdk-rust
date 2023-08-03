@@ -10,10 +10,7 @@ impl DeleteKxUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_user::DeleteKxUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_user::DeleteKxUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_user::DeleteKxUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_kx_user();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteKxUserFluentBuilder {
         }
     }
     /// Access the DeleteKxUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_kx_user::builders::DeleteKxUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_kx_user::builders::DeleteKxUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteKxUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DeleteKxUserFluentBuilder {
         self.inner.get_user_name()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

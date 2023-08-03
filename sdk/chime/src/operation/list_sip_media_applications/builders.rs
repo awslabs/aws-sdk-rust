@@ -30,7 +30,7 @@ impl ListSipMediaApplicationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSipMediaApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder,
+    inner: crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder,
 }
 impl ListSipMediaApplicationsFluentBuilder {
     /// Creates a new `ListSipMediaApplications`.
@@ -41,7 +41,7 @@ impl ListSipMediaApplicationsFluentBuilder {
         }
     }
     /// Access the ListSipMediaApplications as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ListSipMediaApplicationsFluentBuilder {
             crate::operation::list_sip_media_applications::ListSipMediaApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sip_media_applications::ListSipMediaApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sip_media_applications::ListSipMediaApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ListSipMediaApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ListSipMediaApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sip_media_applications::ListSipMediaApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sip_media_applications::ListSipMediaApplicationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ListSipMediaApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sip_media_applications::ListSipMediaApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sip_media_applications::ListSipMediaApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +109,14 @@ impl ListSipMediaApplicationsFluentBuilder {
             crate::operation::list_sip_media_applications::ListSipMediaApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sip_media_applications::ListSipMediaApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sip_media_applications::ListSipMediaApplicationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sip_media_applications::paginator::ListSipMediaApplicationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sip_media_applications::paginator::ListSipMediaApplicationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_sip_media_applications::paginator::ListSipMediaApplicationsPaginator {
         crate::operation::list_sip_media_applications::paginator::ListSipMediaApplicationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>

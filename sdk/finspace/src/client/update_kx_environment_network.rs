@@ -25,7 +25,9 @@ impl super::Client {
     ///   - [`update_timestamp(Option<DateTime>)`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput::update_timestamp): <p>The timestamp at which the kdb environment was updated. </p>
     ///   - [`availability_zone_ids(Option<Vec<String>>)`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput::availability_zone_ids): <p>The identifier of the availability zones where subnets for the environment are created.</p>
     /// - On failure, responds with [`SdkError<UpdateKxEnvironmentNetworkError>`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError)
-    pub fn update_kx_environment_network(&self) -> crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkFluentBuilder{
+    pub fn update_kx_environment_network(
+        &self,
+    ) -> crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkFluentBuilder {
         crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`extension_association_id(impl ::std::convert::Into<String>)`](crate::operation::delete_extension_association::builders::DeleteExtensionAssociationFluentBuilder::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::operation::delete_extension_association::builders::DeleteExtensionAssociationFluentBuilder::set_extension_association_id): <p>The ID of the extension association to delete.</p>
     /// - On success, responds with [`DeleteExtensionAssociationOutput`](crate::operation::delete_extension_association::DeleteExtensionAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteExtensionAssociationError>`](crate::operation::delete_extension_association::DeleteExtensionAssociationError)
-    pub fn delete_extension_association(&self) -> crate::operation::delete_extension_association::builders::DeleteExtensionAssociationFluentBuilder{
+    pub fn delete_extension_association(&self) -> crate::operation::delete_extension_association::builders::DeleteExtensionAssociationFluentBuilder {
         crate::operation::delete_extension_association::builders::DeleteExtensionAssociationFluentBuilder::new(self.handle.clone())
     }
 }

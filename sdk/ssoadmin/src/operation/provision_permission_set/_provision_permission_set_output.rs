@@ -5,15 +5,12 @@
 pub struct ProvisionPermissionSetOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
     #[doc(hidden)]
-    pub permission_set_provisioning_status:
-        ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
+    pub permission_set_provisioning_status: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
     _request_id: Option<String>,
 }
 impl ProvisionPermissionSetOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn permission_set_provisioning_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PermissionSetProvisioningStatus> {
+    pub fn permission_set_provisioning_status(&self) -> ::std::option::Option<&crate::types::PermissionSetProvisioningStatus> {
         self.permission_set_provisioning_status.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for ProvisionPermissionSetOutput {
 }
 impl ProvisionPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetOutput`](crate::operation::provision_permission_set::ProvisionPermissionSetOutput).
-    pub fn builder(
-    ) -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetOutputBuilder {
         crate::operation::provision_permission_set::builders::ProvisionPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionPermissionSetOutput`](crate::operation::provision_permission_set::ProvisionPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionPermissionSetOutputBuilder {
-    pub(crate) permission_set_provisioning_status:
-        ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
+    pub(crate) permission_set_provisioning_status: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
     _request_id: Option<String>,
 }
 impl ProvisionPermissionSetOutputBuilder {
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn permission_set_provisioning_status(
-        mut self,
-        input: crate::types::PermissionSetProvisioningStatus,
-    ) -> Self {
+    pub fn permission_set_provisioning_status(mut self, input: crate::types::PermissionSetProvisioningStatus) -> Self {
         self.permission_set_provisioning_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn set_permission_set_provisioning_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
-    ) -> Self {
+    pub fn set_permission_set_provisioning_status(mut self, input: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>) -> Self {
         self.permission_set_provisioning_status = input;
         self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn get_permission_set_provisioning_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionSetProvisioningStatus> {
+    pub fn get_permission_set_provisioning_status(&self) -> &::std::option::Option<crate::types::PermissionSetProvisioningStatus> {
         &self.permission_set_provisioning_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

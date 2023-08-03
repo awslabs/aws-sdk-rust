@@ -35,9 +35,7 @@ impl GetLexiconOutput {
 
 /// A builder for [`GetLexiconOutput`](crate::operation::get_lexicon::GetLexiconOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLexiconOutputBuilder {
     pub(crate) lexicon: ::std::option::Option<crate::types::Lexicon>,
     pub(crate) lexicon_attributes: ::std::option::Option<crate::types::LexiconAttributes>,
@@ -64,17 +62,12 @@ impl GetLexiconOutputBuilder {
         self
     }
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
-    pub fn set_lexicon_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LexiconAttributes>,
-    ) -> Self {
+    pub fn set_lexicon_attributes(mut self, input: ::std::option::Option<crate::types::LexiconAttributes>) -> Self {
         self.lexicon_attributes = input;
         self
     }
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
-    pub fn get_lexicon_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::LexiconAttributes> {
+    pub fn get_lexicon_attributes(&self) -> &::std::option::Option<crate::types::LexiconAttributes> {
         &self.lexicon_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -26,8 +26,7 @@ impl DeleteAccessLogSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder,
+    inner: crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder,
 }
 impl DeleteAccessLogSettingsFluentBuilder {
     /// Creates a new `DeleteAccessLogSettings`.
@@ -38,10 +37,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
         }
     }
     /// Access the DeleteAccessLogSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
             crate::operation::delete_access_log_settings::DeleteAccessLogSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_settings::DeleteAccessLogSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_settings::DeleteAccessLogSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteAccessLogSettingsFluentBuilder {
             crate::operation::delete_access_log_settings::DeleteAccessLogSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError>,
     > {
         self.customize_middleware().await
     }

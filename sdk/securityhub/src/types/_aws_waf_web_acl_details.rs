@@ -44,9 +44,7 @@ impl AwsWafWebAclDetails {
 
 /// A builder for [`AwsWafWebAclDetails`](crate::types::AwsWafWebAclDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafWebAclDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_action: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl AwsWafWebAclDetailsBuilder {
         &self.name
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn default_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_action = input;
         self
     }
@@ -100,17 +92,12 @@ impl AwsWafWebAclDetailsBuilder {
         self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>> {
         &self.rules
     }
     /// <p>A unique identifier for a web ACL.</p>

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePeeringOutput`](crate::operation::delete_peering::DeletePeeringOutput) with field(s):
     ///   - [`peering(Option<Peering>)`](crate::operation::delete_peering::DeletePeeringOutput::peering): <p>Information about a deleted peering connection.</p>
     /// - On failure, responds with [`SdkError<DeletePeeringError>`](crate::operation::delete_peering::DeletePeeringError)
-    pub fn delete_peering(
-        &self,
-    ) -> crate::operation::delete_peering::builders::DeletePeeringFluentBuilder {
-        crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_peering(&self) -> crate::operation::delete_peering::builders::DeletePeeringFluentBuilder {
+        crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::new(self.handle.clone())
     }
 }

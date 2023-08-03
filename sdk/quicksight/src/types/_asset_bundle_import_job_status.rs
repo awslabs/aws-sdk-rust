@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssetBundleImportJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -77,13 +71,9 @@ impl ::std::convert::From<&str> for AssetBundleImportJobStatus {
             "FAILED_ROLLBACK_ERROR" => AssetBundleImportJobStatus::FailedRollbackError,
             "FAILED_ROLLBACK_IN_PROGRESS" => AssetBundleImportJobStatus::FailedRollbackInProgress,
             "IN_PROGRESS" => AssetBundleImportJobStatus::InProgress,
-            "QUEUED_FOR_IMMEDIATE_EXECUTION" => {
-                AssetBundleImportJobStatus::QueuedForImmediateExecution
-            }
+            "QUEUED_FOR_IMMEDIATE_EXECUTION" => AssetBundleImportJobStatus::QueuedForImmediateExecution,
             "SUCCESSFUL" => AssetBundleImportJobStatus::Successful,
-            other => AssetBundleImportJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AssetBundleImportJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +93,7 @@ impl AssetBundleImportJobStatus {
             AssetBundleImportJobStatus::FailedRollbackError => "FAILED_ROLLBACK_ERROR",
             AssetBundleImportJobStatus::FailedRollbackInProgress => "FAILED_ROLLBACK_IN_PROGRESS",
             AssetBundleImportJobStatus::InProgress => "IN_PROGRESS",
-            AssetBundleImportJobStatus::QueuedForImmediateExecution => {
-                "QUEUED_FOR_IMMEDIATE_EXECUTION"
-            }
+            AssetBundleImportJobStatus::QueuedForImmediateExecution => "QUEUED_FOR_IMMEDIATE_EXECUTION",
             AssetBundleImportJobStatus::Successful => "SUCCESSFUL",
             AssetBundleImportJobStatus::Unknown(value) => value.as_str(),
         }

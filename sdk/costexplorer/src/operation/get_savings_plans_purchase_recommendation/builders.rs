@@ -5,16 +5,16 @@ pub use crate::operation::get_savings_plans_purchase_recommendation::_get_saving
 
 impl GetSavingsPlansPurchaseRecommendationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_savings_plans_purchase_recommendation();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder,
+    inner: crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder,
 }
 impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     /// Creates a new `GetSavingsPlansPurchaseRecommendation`.
@@ -37,15 +37,22 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         }
     }
     /// Access the GetSavingsPlansPurchaseRecommendation as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Savings Plans recommendation type that's requested.</p>
@@ -100,17 +117,12 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    pub fn set_savings_plans_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
-    ) -> Self {
+    pub fn set_savings_plans_type(mut self, input: ::std::option::Option<crate::types::SupportedSavingsPlansType>) -> Self {
         self.inner = self.inner.set_savings_plans_type(input);
         self
     }
     /// <p>The Savings Plans recommendation type that's requested.</p>
-    pub fn get_savings_plans_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+    pub fn get_savings_plans_type(&self) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
         self.inner.get_savings_plans_type()
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
@@ -119,10 +131,7 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
-    pub fn set_term_in_years(
-        mut self,
-        input: ::std::option::Option<crate::types::TermInYears>,
-    ) -> Self {
+    pub fn set_term_in_years(mut self, input: ::std::option::Option<crate::types::TermInYears>) -> Self {
         self.inner = self.inner.set_term_in_years(input);
         self
     }
@@ -136,10 +145,7 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The payment option that's used to generate these recommendations.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.inner = self.inner.set_payment_option(input);
         self
     }
@@ -153,10 +159,7 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    pub fn set_account_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountScope>,
-    ) -> Self {
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
         self.inner = self.inner.set_account_scope(input);
         self
     }
@@ -165,18 +168,12 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self.inner.get_account_scope()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -204,17 +201,12 @@ impl GetSavingsPlansPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    pub fn set_lookback_period_in_days(
-        mut self,
-        input: ::std::option::Option<crate::types::LookbackPeriodInDays>,
-    ) -> Self {
+    pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
         self.inner = self.inner.set_lookback_period_in_days(input);
         self
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
-    pub fn get_lookback_period_in_days(
-        &self,
-    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+    pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
         self.inner.get_lookback_period_in_days()
     }
     /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.</p>

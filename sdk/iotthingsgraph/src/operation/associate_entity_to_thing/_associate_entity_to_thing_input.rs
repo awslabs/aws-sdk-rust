@@ -33,18 +33,14 @@ impl AssociateEntityToThingInput {
 }
 impl AssociateEntityToThingInput {
     /// Creates a new builder-style object to manufacture [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
-    pub fn builder(
-    ) -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder {
         crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEntityToThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -106,12 +102,10 @@ impl AssociateEntityToThingInputBuilder {
         crate::operation::associate_entity_to_thing::AssociateEntityToThingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_entity_to_thing::AssociateEntityToThingInput {
-                thing_name: self.thing_name,
-                entity_id: self.entity_id,
-                namespace_version: self.namespace_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_entity_to_thing::AssociateEntityToThingInput {
+            thing_name: self.thing_name,
+            entity_id: self.entity_id,
+            namespace_version: self.namespace_version,
+        })
     }
 }

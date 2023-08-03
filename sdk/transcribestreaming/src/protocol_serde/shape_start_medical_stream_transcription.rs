@@ -2,8 +2,7 @@
 pub fn ser_start_medical_stream_transcription_headers(
     input: &crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.language_code {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "language_code",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-language-code", header_value);
@@ -28,10 +24,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "media_sample_rate_hertz",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-sample-rate", header_value);
@@ -44,10 +37,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "media_encoding",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-media-encoding", header_value);
@@ -60,10 +50,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "vocabulary_name",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-name", header_value);
@@ -76,10 +63,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "specialty",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-specialty", header_value);
@@ -92,10 +76,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "r#type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-type", header_value);
@@ -109,10 +90,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "show_speaker_label",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-show-speaker-label", header_value);
@@ -125,34 +103,24 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "session_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-session-id", header_value);
         }
     }
     if input.enable_channel_identification {
-        let mut encoder =
-            ::aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
         let formatted_16 = encoder.encode();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_channel_identification",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amzn-transcribe-enable-channel-identification",
-                header_value,
-            );
+            builder = builder.header("x-amzn-transcribe-enable-channel-identification", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_17) = &input.number_of_channels {
@@ -163,10 +131,7 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "number_of_channels",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amzn-transcribe-number-of-channels", header_value);
@@ -179,16 +144,10 @@ pub fn ser_start_medical_stream_transcription_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_identification_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amzn-transcribe-content-identification-type",
-                header_value,
-            );
+            builder = builder.header("x-amzn-transcribe-content-identification-type", header_value);
         }
     }
     Ok(builder)
@@ -203,7 +162,10 @@ pub fn de_start_medical_stream_transcription_op_response(
 > {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    crate::protocol_serde::shape_start_medical_stream_transcription::de_start_medical_stream_transcription_http_response_with_props(response, &properties)
+    crate::protocol_serde::shape_start_medical_stream_transcription::de_start_medical_stream_transcription_http_response_with_props(
+        response,
+        &properties,
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -216,97 +178,100 @@ pub fn de_start_medical_stream_transcription_http_error(
     crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ServiceUnavailableException" => {
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "BadRequestException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InternalFailureException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalFailureException" => {
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ConflictException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "LimitExceededException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "LimitExceededException" => {
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::generic(generic),
     })
 }
 
@@ -330,58 +295,102 @@ pub fn de_start_medical_stream_transcription_http_response_with_props(
         let mut output = crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder::default();
         output = output.set_content_identification_type(
             crate::protocol_serde::shape_start_medical_stream_transcription_output::de_content_identification_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
+                .map_err(|_| {
+                    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                        "Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type",
+                    )
+                })?,
         );
         output = output.set_enable_channel_identification(
             crate::protocol_serde::shape_start_medical_stream_transcription_output::de_enable_channel_identification_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
+                .map_err(|_| {
+                    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                        "Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification",
+                    )
+                })?,
         );
         output = output.set_language_code(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_language_code_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_language_code_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse LanguageCode from header `x-amzn-transcribe-language-code",
+                )
+            })?,
         );
         output = output.set_media_encoding(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_encoding_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_encoding_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding",
+                )
+            })?,
         );
         output = output.set_media_sample_rate_hertz(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                        "Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate",
+                    )
+                },
+            )?,
         );
         output = output.set_number_of_channels(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_number_of_channels_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_number_of_channels_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                        "Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels",
+                    )
+                },
+            )?,
         );
         output = output.set_request_id(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_request_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_request_id_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse RequestId from header `x-amzn-request-id",
+                )
+            })?,
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_session_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_session_id_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse SessionId from header `x-amzn-transcribe-session-id",
+                )
+            })?,
         );
         output = output.set_show_speaker_label(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_show_speaker_label_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_show_speaker_label_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                        "Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label",
+                    )
+                },
+            )?,
         );
         output = output.set_specialty(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_specialty_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Specialty from header `x-amzn-transcribe-specialty"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_specialty_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse Specialty from header `x-amzn-transcribe-specialty",
+                )
+            })?,
         );
-        output = output.set_transcript_result_stream(
-            Some(crate::protocol_serde::shape_start_medical_stream_transcription_output::de_transcript_result_stream_payload(_response_body)?)
-        );
+        output = output.set_transcript_result_stream(Some(
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_transcript_result_stream_payload(_response_body)?,
+        ));
         output = output.set_type(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Type from header `x-amzn-transcribe-type"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_type_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse Type from header `x-amzn-transcribe-type",
+                )
+            })?,
         );
         output = output.set_vocabulary_name(
-            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_vocabulary_name_header(_response_headers)
-                                    .map_err(|_|crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
+            crate::protocol_serde::shape_start_medical_stream_transcription_output::de_vocabulary_name_header(_response_headers).map_err(|_| {
+                crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled(
+                    "Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
-        output.build().map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output
+            .build()
+            .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?
     })
 }

@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`command_invocations(Option<Vec<CommandInvocation>>)`](crate::operation::list_command_invocations::ListCommandInvocationsOutput::command_invocations): <p>(Optional) A list of all invocations. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_command_invocations::ListCommandInvocationsOutput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     /// - On failure, responds with [`SdkError<ListCommandInvocationsError>`](crate::operation::list_command_invocations::ListCommandInvocationsError)
-    pub fn list_command_invocations(
-        &self,
-    ) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder
-    {
+    pub fn list_command_invocations(&self) -> crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder {
         crate::operation::list_command_invocations::builders::ListCommandInvocationsFluentBuilder::new(self.handle.clone())
     }
 }

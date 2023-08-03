@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpcPeeringConnectionOutput {
 }
 impl DeleteVpcPeeringConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringConnectionOutput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput).
-    pub fn builder() -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionOutputBuilder {
         crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcPeeringConnectionOutput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl DeleteVpcPeeringConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionOutput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput {
+    pub fn build(self) -> crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput {
         crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

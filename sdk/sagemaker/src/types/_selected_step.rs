@@ -23,9 +23,7 @@ impl SelectedStep {
 
 /// A builder for [`SelectedStep`](crate::types::SelectedStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectedStepBuilder {
     pub(crate) step_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SelectedStepBuilder {
     }
     /// Consumes the builder and constructs a [`SelectedStep`](crate::types::SelectedStep).
     pub fn build(self) -> crate::types::SelectedStep {
-        crate::types::SelectedStep {
-            step_name: self.step_name,
-        }
+        crate::types::SelectedStep { step_name: self.step_name }
     }
 }

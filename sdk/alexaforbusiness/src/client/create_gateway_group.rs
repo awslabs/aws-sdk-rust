@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`gateway_group_arn(Option<String>)`](crate::operation::create_gateway_group::CreateGatewayGroupOutput::gateway_group_arn): <p>The ARN of the created gateway group.</p>
     /// - On failure, responds with [`SdkError<CreateGatewayGroupError>`](crate::operation::create_gateway_group::CreateGatewayGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_gateway_group(
-        &self,
-    ) -> crate::operation::create_gateway_group::builders::CreateGatewayGroupFluentBuilder {
-        crate::operation::create_gateway_group::builders::CreateGatewayGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_gateway_group(&self) -> crate::operation::create_gateway_group::builders::CreateGatewayGroupFluentBuilder {
+        crate::operation::create_gateway_group::builders::CreateGatewayGroupFluentBuilder::new(self.handle.clone())
     }
 }

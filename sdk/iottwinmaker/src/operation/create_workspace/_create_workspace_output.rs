@@ -35,9 +35,7 @@ impl CreateWorkspaceOutput {
 
 /// A builder for [`CreateWorkspaceOutput`](crate::operation::create_workspace::CreateWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspaceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,10 +62,7 @@ impl CreateWorkspaceOutputBuilder {
         self
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }

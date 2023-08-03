@@ -8,8 +8,7 @@ pub struct DescribeConnectionAliasPermissionsOutput {
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions associated with a connection alias.</p>
     #[doc(hidden)]
-    pub connection_alias_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>>,
+    pub connection_alias_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl DescribeConnectionAliasPermissionsOutput {
         self.alias_id.as_deref()
     }
     /// <p>The permissions associated with a connection alias.</p>
-    pub fn connection_alias_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectionAliasPermission]> {
+    pub fn connection_alias_permissions(&self) -> ::std::option::Option<&[crate::types::ConnectionAliasPermission]> {
         self.connection_alias_permissions.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for DescribeConnectionAliasPermissionsOut
 }
 impl DescribeConnectionAliasPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasPermissionsOutput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsOutputBuilder {
         crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionAliasPermissionsOutput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasPermissionsOutputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_alias_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>>,
+    pub(crate) connection_alias_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,10 +69,7 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
     /// To override the contents of this collection use [`set_connection_alias_permissions`](Self::set_connection_alias_permissions).
     ///
     /// <p>The permissions associated with a connection alias.</p>
-    pub fn connection_alias_permissions(
-        mut self,
-        input: crate::types::ConnectionAliasPermission,
-    ) -> Self {
+    pub fn connection_alias_permissions(mut self, input: crate::types::ConnectionAliasPermission) -> Self {
         let mut v = self.connection_alias_permissions.unwrap_or_default();
         v.push(input);
         self.connection_alias_permissions = ::std::option::Option::Some(v);
@@ -93,9 +84,7 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
         self
     }
     /// <p>The permissions associated with a connection alias.</p>
-    pub fn get_connection_alias_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>> {
+    pub fn get_connection_alias_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasPermission>> {
         &self.connection_alias_permissions
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -122,14 +111,11 @@ impl DescribeConnectionAliasPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasPermissionsOutput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput{
+    pub fn build(self) -> crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput {
         crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput {
-            alias_id: self.alias_id
-            ,
-            connection_alias_permissions: self.connection_alias_permissions
-            ,
-            next_token: self.next_token
-            ,
+            alias_id: self.alias_id,
+            connection_alias_permissions: self.connection_alias_permissions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

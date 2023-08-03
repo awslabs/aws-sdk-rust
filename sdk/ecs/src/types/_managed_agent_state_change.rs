@@ -44,9 +44,7 @@ impl ManagedAgentStateChange {
 
 /// A builder for [`ManagedAgentStateChange`](crate::types::ManagedAgentStateChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedAgentStateChangeBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,
@@ -55,18 +53,12 @@ pub struct ManagedAgentStateChangeBuilder {
 }
 impl ManagedAgentStateChangeBuilder {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -80,10 +72,7 @@ impl ManagedAgentStateChangeBuilder {
         self
     }
     /// <p>The name of the managed agent.</p>
-    pub fn set_managed_agent_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedAgentName>,
-    ) -> Self {
+    pub fn set_managed_agent_name(mut self, input: ::std::option::Option<crate::types::ManagedAgentName>) -> Self {
         self.managed_agent_name = input;
         self
     }

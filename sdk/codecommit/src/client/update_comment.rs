@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCommentOutput`](crate::operation::update_comment::UpdateCommentOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::operation::update_comment::UpdateCommentOutput::comment): <p>Information about the updated comment.</p>
     /// - On failure, responds with [`SdkError<UpdateCommentError>`](crate::operation::update_comment::UpdateCommentError)
-    pub fn update_comment(
-        &self,
-    ) -> crate::operation::update_comment::builders::UpdateCommentFluentBuilder {
-        crate::operation::update_comment::builders::UpdateCommentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_comment(&self) -> crate::operation::update_comment::builders::UpdateCommentFluentBuilder {
+        crate::operation::update_comment::builders::UpdateCommentFluentBuilder::new(self.handle.clone())
     }
 }

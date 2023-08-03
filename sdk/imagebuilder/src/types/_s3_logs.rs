@@ -30,27 +30,19 @@ impl S3Logs {
 
 /// A builder for [`S3Logs`](crate::types::S3Logs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LogsBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3LogsBuilder {
     /// <p>The S3 bucket in which to store the logs.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket in which to store the logs.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl S3LogsBuilder {
         &self.s3_bucket_name
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }

@@ -19,10 +19,7 @@ impl super::Client {
     /// - On success, responds with [`StartAutomationExecutionOutput`](crate::operation::start_automation_execution::StartAutomationExecutionOutput) with field(s):
     ///   - [`automation_execution_id(Option<String>)`](crate::operation::start_automation_execution::StartAutomationExecutionOutput::automation_execution_id): <p>The unique ID of a newly scheduled automation execution.</p>
     /// - On failure, responds with [`SdkError<StartAutomationExecutionError>`](crate::operation::start_automation_execution::StartAutomationExecutionError)
-    pub fn start_automation_execution(
-        &self,
-    ) -> crate::operation::start_automation_execution::builders::StartAutomationExecutionFluentBuilder
-    {
+    pub fn start_automation_execution(&self) -> crate::operation::start_automation_execution::builders::StartAutomationExecutionFluentBuilder {
         crate::operation::start_automation_execution::builders::StartAutomationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

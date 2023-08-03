@@ -23,34 +23,26 @@ impl CreateVpcAssociationAuthorizationInput {
 }
 impl CreateVpcAssociationAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput).
-    pub fn builder() -> crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationInputBuilder {
         crate::operation::create_vpc_association_authorization::builders::CreateVpcAssociationAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcAssociationAuthorizationInput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationInputBuilder {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -73,14 +65,17 @@ impl CreateVpcAssociationAuthorizationInputBuilder {
         &self.vpc
     }
     /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationInput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput {
-                hosted_zone_id: self.hosted_zone_id
-                ,
-                vpc: self.vpc
-                ,
-            }
+                hosted_zone_id: self.hosted_zone_id,
+                vpc: self.vpc,
+            },
         )
     }
 }

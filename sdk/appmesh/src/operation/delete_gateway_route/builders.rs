@@ -10,10 +10,7 @@ impl DeleteGatewayRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_route::DeleteGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_gateway_route();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteGatewayRouteFluentBuilder {
         }
     }
     /// Access the DeleteGatewayRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_gateway_route::builders::DeleteGatewayRouteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_gateway_route::builders::DeleteGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteGatewayRouteFluentBuilder {
             crate::operation::delete_gateway_route::DeleteGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_route::DeleteGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_route::DeleteGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteGatewayRouteFluentBuilder {
             crate::operation::delete_gateway_route::DeleteGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_route::DeleteGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the gateway route to delete.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_route_name(input.into());
         self
     }
     /// <p>The name of the gateway route to delete.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_route_name(input);
         self
     }
@@ -157,18 +135,12 @@ impl DeleteGatewayRouteFluentBuilder {
         self.inner.get_mesh_name()
     }
     /// <p>The name of the virtual gateway to delete the route from.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_name(input.into());
         self
     }
     /// <p>The name of the virtual gateway to delete the route from.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }

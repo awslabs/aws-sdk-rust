@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::operation::search_channels::SearchChannelsOutput::channels): <p>A list of the channels in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_channels::SearchChannelsOutput::next_token): <p>The token returned from previous API responses until the number of channels is reached.</p>
     /// - On failure, responds with [`SdkError<SearchChannelsError>`](crate::operation::search_channels::SearchChannelsError)
-    pub fn search_channels(
-        &self,
-    ) -> crate::operation::search_channels::builders::SearchChannelsFluentBuilder {
-        crate::operation::search_channels::builders::SearchChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_channels(&self) -> crate::operation::search_channels::builders::SearchChannelsFluentBuilder {
+        crate::operation::search_channels::builders::SearchChannelsFluentBuilder::new(self.handle.clone())
     }
 }

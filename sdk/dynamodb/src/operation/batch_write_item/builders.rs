@@ -10,10 +10,7 @@ impl BatchWriteItemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_write_item::BatchWriteItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_write_item::BatchWriteItemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_write_item::BatchWriteItemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_write_item();
         fluent_builder.inner = self;
@@ -57,9 +54,7 @@ impl BatchWriteItemFluentBuilder {
         }
     }
     /// Access the BatchWriteItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_write_item::builders::BatchWriteItemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_write_item::builders::BatchWriteItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,9 +66,7 @@ impl BatchWriteItemFluentBuilder {
             crate::operation::batch_write_item::BatchWriteItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_write_item::BatchWriteItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_write_item::BatchWriteItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -83,10 +76,7 @@ impl BatchWriteItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +85,7 @@ impl BatchWriteItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_write_item::BatchWriteItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_write_item::BatchWriteItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_write_item::BatchWriteItemError>,
     > {
         let op = self
             .inner
@@ -120,9 +108,7 @@ impl BatchWriteItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_write_item::BatchWriteItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_write_item::BatchWriteItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_write_item::BatchWriteItemError>,
     > {
         self.send_middleware().await
     }
@@ -136,9 +122,7 @@ impl BatchWriteItemFluentBuilder {
             crate::operation::batch_write_item::BatchWriteItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_write_item::BatchWriteItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_write_item::BatchWriteItemError>,
     > {
         self.customize_middleware().await
     }
@@ -157,11 +141,7 @@ impl BatchWriteItemFluentBuilder {
     /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn request_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::WriteRequest>,
-    ) -> Self {
+    pub fn request_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::WriteRequest>) -> Self {
         self.inner = self.inner.request_items(k.into(), v);
         self
     }
@@ -178,12 +158,7 @@ impl BatchWriteItemFluentBuilder {
     /// </ul>
     pub fn set_request_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::WriteRequest>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::WriteRequest>>>,
     ) -> Self {
         self.inner = self.inner.set_request_items(input);
         self
@@ -201,12 +176,7 @@ impl BatchWriteItemFluentBuilder {
     /// </ul>
     pub fn get_request_items(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::WriteRequest>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::WriteRequest>>> {
         self.inner.get_request_items()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -225,10 +195,7 @@ impl BatchWriteItemFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn set_return_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
-    ) -> Self {
+    pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
     }
@@ -238,31 +205,21 @@ impl BatchWriteItemFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn get_return_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+    pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
-    pub fn return_item_collection_metrics(
-        mut self,
-        input: crate::types::ReturnItemCollectionMetrics,
-    ) -> Self {
+    pub fn return_item_collection_metrics(mut self, input: crate::types::ReturnItemCollectionMetrics) -> Self {
         self.inner = self.inner.return_item_collection_metrics(input);
         self
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
-    pub fn set_return_item_collection_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
-    ) -> Self {
+    pub fn set_return_item_collection_metrics(mut self, input: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>) -> Self {
         self.inner = self.inner.set_return_item_collection_metrics(input);
         self
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
-    pub fn get_return_item_collection_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnItemCollectionMetrics> {
+    pub fn get_return_item_collection_metrics(&self) -> &::std::option::Option<crate::types::ReturnItemCollectionMetrics> {
         self.inner.get_return_item_collection_metrics()
     }
 }

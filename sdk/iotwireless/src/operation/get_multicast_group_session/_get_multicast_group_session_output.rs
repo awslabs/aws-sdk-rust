@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMulticastGroupSessionOutput {
 }
 impl GetMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
-    pub fn builder() -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder{
+    pub fn builder() -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder {
         crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMulticastGroupSessionOutputBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetMulticastGroupSessionOutputBuilder {
         self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -63,9 +58,7 @@ impl GetMulticastGroupSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
+    pub fn build(self) -> crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
         crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
             lo_ra_wan: self.lo_ra_wan,
             _request_id: self._request_id,

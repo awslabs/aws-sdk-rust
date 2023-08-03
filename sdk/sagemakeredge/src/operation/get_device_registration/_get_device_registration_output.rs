@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDeviceRegistrationOutput {
 }
 impl GetDeviceRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::operation::get_device_registration::GetDeviceRegistrationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_device_registration::builders::GetDeviceRegistrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_registration::builders::GetDeviceRegistrationOutputBuilder {
         crate::operation::get_device_registration::builders::GetDeviceRegistrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceRegistrationOutput`](crate::operation::get_device_registration::GetDeviceRegistrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceRegistrationOutputBuilder {
     pub(crate) device_registration: ::std::option::Option<::std::string::String>,
     pub(crate) cache_ttl: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct GetDeviceRegistrationOutputBuilder {
 }
 impl GetDeviceRegistrationOutputBuilder {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    pub fn device_registration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_registration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_registration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    pub fn set_device_registration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_registration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_registration = input;
         self
     }

@@ -23,12 +23,9 @@ impl FreeFormSectionLayoutConfiguration {
 
 /// A builder for [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeFormSectionLayoutConfigurationBuilder {
-    pub(crate) elements:
-        ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
 }
 impl FreeFormSectionLayoutConfigurationBuilder {
     /// Appends an item to `elements`.
@@ -43,23 +40,16 @@ impl FreeFormSectionLayoutConfigurationBuilder {
         self
     }
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>) -> Self {
         self.elements = input;
         self
     }
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn get_elements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>> {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>> {
         &self.elements
     }
     /// Consumes the builder and constructs a [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
     pub fn build(self) -> crate::types::FreeFormSectionLayoutConfiguration {
-        crate::types::FreeFormSectionLayoutConfiguration {
-            elements: self.elements,
-        }
+        crate::types::FreeFormSectionLayoutConfiguration { elements: self.elements }
     }
 }

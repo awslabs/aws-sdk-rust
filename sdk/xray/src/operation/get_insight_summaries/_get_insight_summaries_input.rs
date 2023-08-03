@@ -57,18 +57,14 @@ impl GetInsightSummariesInput {
 }
 impl GetInsightSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder {
-        crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder {
+        crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightSummariesInputBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
@@ -91,17 +87,12 @@ impl GetInsightSummariesInputBuilder {
         self
     }
     /// <p>The list of insight states. </p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>The list of insight states. </p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
         &self.states
     }
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
@@ -138,10 +129,7 @@ impl GetInsightSummariesInputBuilder {
         self
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -155,10 +143,7 @@ impl GetInsightSummariesInputBuilder {
         self
     }
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -197,20 +182,16 @@ impl GetInsightSummariesInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_summaries::GetInsightSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_summaries::GetInsightSummariesInput {
-                states: self.states,
-                group_arn: self.group_arn,
-                group_name: self.group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_summaries::GetInsightSummariesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_insight_summaries::GetInsightSummariesInput {
+            states: self.states,
+            group_arn: self.group_arn,
+            group_name: self.group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl Prompt {
 
 /// A builder for [`Prompt`](crate::types::Prompt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromptBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     pub(crate) max_attempts: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl PromptBuilder {
         self
     }
     /// <p>An array of objects, each of which provides a message string and its type. You can specify the message string in plain text or in Speech Synthesis Markup Language (SSML).</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -84,18 +79,12 @@ impl PromptBuilder {
         &self.max_attempts
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
-    pub fn response_card(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_card(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_card = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code> API response. It substitutes session attributes and slot values for placeholders in the response card. For more information, see <code>ex-resp-card</code>. </p>
-    pub fn set_response_card(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_card(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_card = input;
         self
     }

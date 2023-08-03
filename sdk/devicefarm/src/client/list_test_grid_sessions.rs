@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`test_grid_sessions(Option<Vec<TestGridSession>>)`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput::test_grid_sessions): <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<ListTestGridSessionsError>`](crate::operation::list_test_grid_sessions::ListTestGridSessionsError)
-    pub fn list_test_grid_sessions(
-        &self,
-    ) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder
-    {
-        crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_test_grid_sessions(&self) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder {
+        crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::new(self.handle.clone())
     }
 }

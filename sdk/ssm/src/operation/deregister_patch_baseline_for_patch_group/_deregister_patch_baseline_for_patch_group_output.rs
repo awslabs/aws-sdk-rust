@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeregisterPatchBaselineForPatchGroupO
 }
 impl DeregisterPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterPatchBaselineForPatchGroupOutput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput).
-    pub fn builder() -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupOutputBuilder {
         crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterPatchBaselineForPatchGroupOutput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterPatchBaselineForPatchGroupOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl DeregisterPatchBaselineForPatchGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterPatchBaselineForPatchGroupOutput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput).
-    pub fn build(self) -> crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput{
+    pub fn build(self) -> crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput {
         crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput {
-            baseline_id: self.baseline_id
-            ,
-            patch_group: self.patch_group
-            ,
+            baseline_id: self.baseline_id,
+            patch_group: self.patch_group,
             _request_id: self._request_id,
         }
     }

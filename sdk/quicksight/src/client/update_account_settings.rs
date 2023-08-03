@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_account_settings::UpdateAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_account_settings::UpdateAccountSettingsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::operation::update_account_settings::UpdateAccountSettingsError)
-    pub fn update_account_settings(
-        &self,
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder
-    {
-        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_account_settings(&self) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder {
+        crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

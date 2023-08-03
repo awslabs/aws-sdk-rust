@@ -73,9 +73,7 @@ impl DatasetImportJobSummary {
 
 /// A builder for [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetImportJobSummaryBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct DatasetImportJobSummaryBuilder {
 }
 impl DatasetImportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -152,10 +144,7 @@ impl DatasetImportJobSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -169,32 +158,21 @@ impl DatasetImportJobSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -208,10 +186,7 @@ impl DatasetImportJobSummaryBuilder {
         self
     }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
         self.import_mode = input;
         self
     }

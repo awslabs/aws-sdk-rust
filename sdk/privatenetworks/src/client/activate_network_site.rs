@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput) with field(s):
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::activate_network_site::ActivateNetworkSiteOutput::network_site): <p>Information about the network site.</p>
     /// - On failure, responds with [`SdkError<ActivateNetworkSiteError>`](crate::operation::activate_network_site::ActivateNetworkSiteError)
-    pub fn activate_network_site(
-        &self,
-    ) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteFluentBuilder {
-        crate::operation::activate_network_site::builders::ActivateNetworkSiteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_network_site(&self) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteFluentBuilder {
+        crate::operation::activate_network_site::builders::ActivateNetworkSiteFluentBuilder::new(self.handle.clone())
     }
 }

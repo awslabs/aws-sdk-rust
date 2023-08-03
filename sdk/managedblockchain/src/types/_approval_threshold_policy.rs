@@ -25,9 +25,7 @@ impl ApprovalThresholdPolicy {
         self.proposal_duration_in_hours
     }
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
-    pub fn threshold_comparator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThresholdComparator> {
+    pub fn threshold_comparator(&self) -> ::std::option::Option<&crate::types::ThresholdComparator> {
         self.threshold_comparator.as_ref()
     }
 }
@@ -40,9 +38,7 @@ impl ApprovalThresholdPolicy {
 
 /// A builder for [`ApprovalThresholdPolicy`](crate::types::ApprovalThresholdPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalThresholdPolicyBuilder {
     pub(crate) threshold_percentage: ::std::option::Option<i32>,
     pub(crate) proposal_duration_in_hours: ::std::option::Option<i32>,
@@ -83,17 +79,12 @@ impl ApprovalThresholdPolicyBuilder {
         self
     }
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
-    pub fn set_threshold_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::ThresholdComparator>,
-    ) -> Self {
+    pub fn set_threshold_comparator(mut self, input: ::std::option::Option<crate::types::ThresholdComparator>) -> Self {
         self.threshold_comparator = input;
         self
     }
     /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
-    pub fn get_threshold_comparator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThresholdComparator> {
+    pub fn get_threshold_comparator(&self) -> &::std::option::Option<crate::types::ThresholdComparator> {
         &self.threshold_comparator
     }
     /// Consumes the builder and constructs a [`ApprovalThresholdPolicy`](crate::types::ApprovalThresholdPolicy).

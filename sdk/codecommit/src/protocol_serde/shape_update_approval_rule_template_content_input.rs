@@ -4,17 +4,13 @@ pub fn ser_update_approval_rule_template_content_input(
     input: &crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
-        object
-            .key("approvalRuleTemplateName")
-            .string(var_1.as_str());
+        object.key("approvalRuleTemplateName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.new_rule_content {
         object.key("newRuleContent").string(var_2.as_str());
     }
     if let Some(var_3) = &input.existing_rule_content_sha256 {
-        object
-            .key("existingRuleContentSha256")
-            .string(var_3.as_str());
+        object.key("existingRuleContentSha256").string(var_3.as_str());
     }
     Ok(())
 }

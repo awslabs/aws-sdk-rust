@@ -29,18 +29,14 @@ impl UpdateMitigationActionInput {
 }
 impl UpdateMitigationActionInput {
     /// Creates a new builder-style object to manufacture [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
-    pub fn builder(
-    ) -> crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder {
         crate::operation::update_mitigation_action::builders::UpdateMitigationActionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMitigationActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -81,32 +77,23 @@ impl UpdateMitigationActionInputBuilder {
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.action_params = input;
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn get_action_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         &self.action_params
     }
     /// Consumes the builder and constructs a [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mitigation_action::UpdateMitigationActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_mitigation_action::UpdateMitigationActionInput {
-                action_name: self.action_name,
-                role_arn: self.role_arn,
-                action_params: self.action_params,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_mitigation_action::UpdateMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_mitigation_action::UpdateMitigationActionInput {
+            action_name: self.action_name,
+            role_arn: self.role_arn,
+            action_params: self.action_params,
+        })
     }
 }

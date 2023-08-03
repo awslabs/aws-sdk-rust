@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for EndpointStatus {
             "Delete_Failed" => EndpointStatus::DeleteFailed,
             "Deleting" => EndpointStatus::Deleting,
             "Pending" => EndpointStatus::Pending,
-            other => {
-                EndpointStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EndpointStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl EndpointStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Available",
-            "Create_Failed",
-            "Delete_Failed",
-            "Deleting",
-            "Pending",
-        ]
+        &["Available", "Create_Failed", "Delete_Failed", "Deleting", "Pending"]
     }
 }
 impl ::std::convert::AsRef<str> for EndpointStatus {

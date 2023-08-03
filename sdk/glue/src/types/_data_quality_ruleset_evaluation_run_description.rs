@@ -44,9 +44,7 @@ impl DataQualityRulesetEvaluationRunDescription {
 
 /// A builder for [`DataQualityRulesetEvaluationRunDescription`](crate::types::DataQualityRulesetEvaluationRunDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityRulesetEvaluationRunDescriptionBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
@@ -74,10 +72,7 @@ impl DataQualityRulesetEvaluationRunDescriptionBuilder {
         self
     }
     /// <p>The status for this run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -91,10 +86,7 @@ impl DataQualityRulesetEvaluationRunDescriptionBuilder {
         self
     }
     /// <p>The date and time when the run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -108,10 +100,7 @@ impl DataQualityRulesetEvaluationRunDescriptionBuilder {
         self
     }
     /// <p>The data source (an Glue table) associated with the run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }

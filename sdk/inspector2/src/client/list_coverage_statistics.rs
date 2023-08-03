@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`total_counts(Option<i64>)`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput::total_counts): <p>The total number for all groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListCoverageStatisticsError>`](crate::operation::list_coverage_statistics::ListCoverageStatisticsError)
-    pub fn list_coverage_statistics(
-        &self,
-    ) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsFluentBuilder
-    {
+    pub fn list_coverage_statistics(&self) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsFluentBuilder {
         crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

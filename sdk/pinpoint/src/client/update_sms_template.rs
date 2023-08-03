@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSmsTemplateOutput`](crate::operation::update_sms_template::UpdateSmsTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_sms_template::UpdateSmsTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateSmsTemplateError>`](crate::operation::update_sms_template::UpdateSmsTemplateError)
-    pub fn update_sms_template(
-        &self,
-    ) -> crate::operation::update_sms_template::builders::UpdateSmsTemplateFluentBuilder {
-        crate::operation::update_sms_template::builders::UpdateSmsTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_sms_template(&self) -> crate::operation::update_sms_template::builders::UpdateSmsTemplateFluentBuilder {
+        crate::operation::update_sms_template::builders::UpdateSmsTemplateFluentBuilder::new(self.handle.clone())
     }
 }

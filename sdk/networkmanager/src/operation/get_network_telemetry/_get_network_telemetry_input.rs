@@ -115,18 +115,14 @@ impl GetNetworkTelemetryInput {
 }
 impl GetNetworkTelemetryInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
-    pub fn builder(
-    ) -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder {
-        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder {
+        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkTelemetryInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
@@ -140,18 +136,12 @@ pub struct GetNetworkTelemetryInputBuilder {
 }
 impl GetNetworkTelemetryInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -160,18 +150,12 @@ impl GetNetworkTelemetryInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -180,18 +164,12 @@ impl GetNetworkTelemetryInputBuilder {
         &self.core_network_id
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_gateway_arn = input;
         self
     }
@@ -250,10 +228,7 @@ impl GetNetworkTelemetryInputBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -280,10 +255,7 @@ impl GetNetworkTelemetryInputBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -358,22 +330,18 @@ impl GetNetworkTelemetryInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_telemetry::GetNetworkTelemetryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_network_telemetry::GetNetworkTelemetryInput {
-                global_network_id: self.global_network_id,
-                core_network_id: self.core_network_id,
-                registered_gateway_arn: self.registered_gateway_arn,
-                aws_region: self.aws_region,
-                account_id: self.account_id,
-                resource_type: self.resource_type,
-                resource_arn: self.resource_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_network_telemetry::GetNetworkTelemetryInput {
+            global_network_id: self.global_network_id,
+            core_network_id: self.core_network_id,
+            registered_gateway_arn: self.registered_gateway_arn,
+            aws_region: self.aws_region,
+            account_id: self.account_id,
+            resource_type: self.resource_type,
+            resource_arn: self.resource_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -39,13 +39,7 @@
 /// _Note: `SimulationAppTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SimulationAppTargetStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for SimulationAppTargetStatus {
             "STARTED" => SimulationAppTargetStatus::Started,
             "STOPPED" => SimulationAppTargetStatus::Stopped,
             "UNKNOWN" => SimulationAppTargetStatus::UnknownValue,
-            other => SimulationAppTargetStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationAppTargetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

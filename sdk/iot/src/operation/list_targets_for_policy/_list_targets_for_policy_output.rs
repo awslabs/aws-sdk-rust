@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTargetsForPolicyOutput {
 }
 impl ListTargetsForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder {
         crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsForPolicyOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListTargetsForPolicyOutputBuilder {
         self
     }
     /// <p>The policy targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }

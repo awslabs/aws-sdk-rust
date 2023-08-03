@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ModelTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ModelTypeEnum {
             "ACCOUNT_TAKEOVER_INSIGHTS" => ModelTypeEnum::AccountTakeoverInsights,
             "ONLINE_FRAUD_INSIGHTS" => ModelTypeEnum::OnlineFraudInsights,
             "TRANSACTION_FRAUD_INSIGHTS" => ModelTypeEnum::TransactionFraudInsights,
-            other => {
-                ModelTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ModelTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl ModelTypeEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_TAKEOVER_INSIGHTS",
-            "ONLINE_FRAUD_INSIGHTS",
-            "TRANSACTION_FRAUD_INSIGHTS",
-        ]
+        &["ACCOUNT_TAKEOVER_INSIGHTS", "ONLINE_FRAUD_INSIGHTS", "TRANSACTION_FRAUD_INSIGHTS"]
     }
 }
 impl ::std::convert::AsRef<str> for ModelTypeEnum {

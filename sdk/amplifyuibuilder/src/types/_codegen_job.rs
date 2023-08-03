@@ -36,9 +36,7 @@ pub struct CodegenJob {
     pub asset: ::std::option::Option<crate::types::CodegenJobAsset>,
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time that the code generation job was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,9 +62,7 @@ impl CodegenJob {
         self.render_config.as_ref()
     }
     /// <p>Describes the data schema for a code generation job.</p>
-    pub fn generic_data_schema(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodegenJobGenericDataSchema> {
+    pub fn generic_data_schema(&self) -> ::std::option::Option<&crate::types::CodegenJobGenericDataSchema> {
         self.generic_data_schema.as_ref()
     }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
@@ -90,11 +86,7 @@ impl CodegenJob {
         self.asset.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The time that the code generation job was created.</p>
@@ -115,24 +107,19 @@ impl CodegenJob {
 
 /// A builder for [`CodegenJob`](crate::types::CodegenJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenJobBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
-    pub(crate) generic_data_schema:
-        ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
+    pub(crate) generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
     pub(crate) auto_generate_forms: ::std::option::Option<bool>,
     pub(crate) features: ::std::option::Option<crate::types::CodegenFeatureFlags>,
     pub(crate) status: ::std::option::Option<crate::types::CodegenJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) asset: ::std::option::Option<crate::types::CodegenJobAsset>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -166,18 +153,12 @@ impl CodegenJobBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -191,17 +172,12 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
-    pub fn set_render_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
-    ) -> Self {
+    pub fn set_render_config(mut self, input: ::std::option::Option<crate::types::CodegenJobRenderConfig>) -> Self {
         self.render_config = input;
         self
     }
     /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
-    pub fn get_render_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
+    pub fn get_render_config(&self) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
         &self.render_config
     }
     /// <p>Describes the data schema for a code generation job.</p>
@@ -210,17 +186,12 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>Describes the data schema for a code generation job.</p>
-    pub fn set_generic_data_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
-    ) -> Self {
+    pub fn set_generic_data_schema(mut self, input: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>) -> Self {
         self.generic_data_schema = input;
         self
     }
     /// <p>Describes the data schema for a code generation job.</p>
-    pub fn get_generic_data_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
+    pub fn get_generic_data_schema(&self) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
         &self.generic_data_schema
     }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
@@ -243,10 +214,7 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>Describes the feature flags that you can specify for a code generation job.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenFeatureFlags>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<crate::types::CodegenFeatureFlags>) -> Self {
         self.features = input;
         self
     }
@@ -260,10 +228,7 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>The status of the code generation job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CodegenJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -272,18 +237,12 @@ impl CodegenJobBuilder {
         &self.status
     }
     /// <p>The customized status message for the code generation job.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customized status message for the code generation job.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -297,10 +256,7 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>The <code>CodegenJobAsset</code> to use for the code generation job.</p>
-    pub fn set_asset(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobAsset>,
-    ) -> Self {
+    pub fn set_asset(mut self, input: ::std::option::Option<crate::types::CodegenJobAsset>) -> Self {
         self.asset = input;
         self
     }
@@ -313,32 +269,19 @@ impl CodegenJobBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The time that the code generation job was created.</p>
@@ -347,10 +290,7 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>The time that the code generation job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -364,10 +304,7 @@ impl CodegenJobBuilder {
         self
     }
     /// <p>The time that the code generation job was modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }

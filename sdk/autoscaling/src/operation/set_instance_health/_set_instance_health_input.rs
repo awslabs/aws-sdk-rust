@@ -31,17 +31,14 @@ impl SetInstanceHealthInput {
 }
 impl SetInstanceHealthInput {
     /// Creates a new builder-style object to manufacture [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
-    pub fn builder(
-    ) -> crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder {
+    pub fn builder() -> crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder {
         crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder::default()
     }
 }
 
 /// A builder for [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetInstanceHealthInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ impl SetInstanceHealthInputBuilder {
         &self.instance_id
     }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-    pub fn health_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_status = input;
         self
     }
@@ -102,16 +93,11 @@ impl SetInstanceHealthInputBuilder {
     /// Consumes the builder and constructs a [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_instance_health::SetInstanceHealthInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_instance_health::SetInstanceHealthInput {
-                instance_id: self.instance_id,
-                health_status: self.health_status,
-                should_respect_grace_period: self.should_respect_grace_period,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_instance_health::SetInstanceHealthInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_instance_health::SetInstanceHealthInput {
+            instance_id: self.instance_id,
+            health_status: self.health_status,
+            should_respect_grace_period: self.should_respect_grace_period,
+        })
     }
 }

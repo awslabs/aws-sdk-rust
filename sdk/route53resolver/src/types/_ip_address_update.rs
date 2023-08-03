@@ -44,9 +44,7 @@ impl IpAddressUpdate {
 
 /// A builder for [`IpAddressUpdate`](crate::types::IpAddressUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpAddressUpdateBuilder {
     pub(crate) ip_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,

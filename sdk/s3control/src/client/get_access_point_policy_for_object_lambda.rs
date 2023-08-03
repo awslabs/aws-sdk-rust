@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput::policy): <p>Object Lambda Access Point resource policy document.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointPolicyForObjectLambdaError>`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaError)
-    pub fn get_access_point_policy_for_object_lambda(&self) -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaFluentBuilder{
-        crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn get_access_point_policy_for_object_lambda(
+        &self,
+    ) -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaFluentBuilder {
+        crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

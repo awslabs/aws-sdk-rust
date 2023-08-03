@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCompatibleVersionsOutput`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput) with field(s):
     ///   - [`compatible_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput::compatible_versions): <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleVersionsError>`](crate::operation::get_compatible_versions::GetCompatibleVersionsError)
-    pub fn get_compatible_versions(
-        &self,
-    ) -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder
-    {
-        crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_compatible_versions(&self) -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder {
+        crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeReservationOutput {
 }
 impl DescribeReservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationOutputBuilder {
-        crate::operation::describe_reservation::builders::DescribeReservationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationOutputBuilder {
+        crate::operation::describe_reservation::builders::DescribeReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservationOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeReservationOutputBuilder {
         self
     }
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    pub fn set_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::Reservation>,
-    ) -> Self {
+    pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
         self.reservation = input;
         self
     }

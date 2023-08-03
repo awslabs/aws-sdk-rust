@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for AssociatePersonasToEntitiesOutput {
 }
 impl AssociatePersonasToEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
-    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder{
+    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder {
         crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePersonasToEntitiesOutputBuilder {
-    pub(crate) failed_entity_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
+    pub(crate) failed_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
     _request_id: Option<String>,
 }
 impl AssociatePersonasToEntitiesOutputBuilder {
@@ -49,17 +46,12 @@ impl AssociatePersonasToEntitiesOutputBuilder {
         self
     }
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    pub fn set_failed_entity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
-    ) -> Self {
+    pub fn set_failed_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>) -> Self {
         self.failed_entity_list = input;
         self
     }
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    pub fn get_failed_entity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>> {
+    pub fn get_failed_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>> {
         &self.failed_entity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl AssociatePersonasToEntitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
+    pub fn build(self) -> crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
         crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
             failed_entity_list: self.failed_entity_list,
             _request_id: self._request_id,

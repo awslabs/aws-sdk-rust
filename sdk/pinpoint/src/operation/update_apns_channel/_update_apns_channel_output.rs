@@ -10,9 +10,7 @@ pub struct UpdateApnsChannelOutput {
 }
 impl UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> ::std::option::Option<&crate::types::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateApnsChannelOutput {
 }
 impl UpdateApnsChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsChannelOutput`](crate::operation::update_apns_channel::UpdateApnsChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder {
+    pub fn builder() -> crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder {
         crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApnsChannelOutput`](crate::operation::update_apns_channel::UpdateApnsChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApnsChannelOutputBuilder {
     pub(crate) apns_channel_response: ::std::option::Option<crate::types::ApnsChannelResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl UpdateApnsChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn set_apns_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsChannelResponse>,
-    ) -> Self {
+    pub fn set_apns_channel_response(mut self, input: ::std::option::Option<crate::types::ApnsChannelResponse>) -> Self {
         self.apns_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn get_apns_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsChannelResponse> {
+    pub fn get_apns_channel_response(&self) -> &::std::option::Option<crate::types::ApnsChannelResponse> {
         &self.apns_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

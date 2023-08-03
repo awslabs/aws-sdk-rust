@@ -29,21 +29,17 @@ impl ::aws_http::request_id::RequestId for ListXssMatchSetsOutput {
 }
 impl ListXssMatchSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListXssMatchSetsOutput`](crate::operation::list_xss_match_sets::ListXssMatchSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsOutputBuilder {
         crate::operation::list_xss_match_sets::builders::ListXssMatchSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListXssMatchSetsOutput`](crate::operation::list_xss_match_sets::ListXssMatchSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListXssMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) xss_match_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
+    pub(crate) xss_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListXssMatchSetsOutputBuilder {
@@ -73,17 +69,12 @@ impl ListXssMatchSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
-    pub fn set_xss_match_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
-    ) -> Self {
+    pub fn set_xss_match_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>) -> Self {
         self.xss_match_sets = input;
         self
     }
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
-    pub fn get_xss_match_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>> {
+    pub fn get_xss_match_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>> {
         &self.xss_match_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

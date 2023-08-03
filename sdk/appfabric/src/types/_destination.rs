@@ -21,9 +21,7 @@ pub enum Destination {
 impl Destination {
     /// Tries to convert the enum instance into [`FirehoseStream`](crate::types::Destination::FirehoseStream), extracting the inner [`FirehoseStream`](crate::types::FirehoseStream).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_firehose_stream(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FirehoseStream, &Self> {
+    pub fn as_firehose_stream(&self) -> ::std::result::Result<&crate::types::FirehoseStream, &Self> {
         if let Destination::FirehoseStream(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

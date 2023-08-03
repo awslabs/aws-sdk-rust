@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueryLoggingConfigOutput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput) with field(s):
     ///   - [`query_logging_config(Option<QueryLoggingConfig>)`](crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput::query_logging_config): <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
     /// - On failure, responds with [`SdkError<GetQueryLoggingConfigError>`](crate::operation::get_query_logging_config::GetQueryLoggingConfigError)
-    pub fn get_query_logging_config(
-        &self,
-    ) -> crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigFluentBuilder
-    {
+    pub fn get_query_logging_config(&self) -> crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigFluentBuilder {
         crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigFluentBuilder::new(self.handle.clone())
     }
 }

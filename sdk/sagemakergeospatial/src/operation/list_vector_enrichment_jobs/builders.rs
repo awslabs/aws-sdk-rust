@@ -26,7 +26,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVectorEnrichmentJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder,
+    inner: crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder,
 }
 impl ListVectorEnrichmentJobsFluentBuilder {
     /// Creates a new `ListVectorEnrichmentJobs`.
@@ -37,7 +37,7 @@ impl ListVectorEnrichmentJobsFluentBuilder {
         }
     }
     /// Access the ListVectorEnrichmentJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListVectorEnrichmentJobsFluentBuilder {
             crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListVectorEnrichmentJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListVectorEnrichmentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListVectorEnrichmentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListVectorEnrichmentJobsFluentBuilder {
             crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_vector_enrichment_jobs::paginator::ListVectorEnrichmentJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_vector_enrichment_jobs::paginator::ListVectorEnrichmentJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_vector_enrichment_jobs::paginator::ListVectorEnrichmentJobsPaginator {
         crate::operation::list_vector_enrichment_jobs::paginator::ListVectorEnrichmentJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn status_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_equals(input.into());
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }

@@ -72,9 +72,7 @@ impl FirewallStatelessRule {
 
 /// A builder for [`FirewallStatelessRule`](crate::types::FirewallStatelessRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallStatelessRuleBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,18 +85,12 @@ pub struct FirewallStatelessRuleBuilder {
 }
 impl FirewallStatelessRuleBuilder {
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -118,10 +110,7 @@ impl FirewallStatelessRuleBuilder {
         self
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sources = input;
         self
     }
@@ -141,17 +130,12 @@ impl FirewallStatelessRuleBuilder {
         self
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destinations
     }
     /// Appends an item to `source_ports`.
@@ -166,17 +150,12 @@ impl FirewallStatelessRuleBuilder {
         self
     }
     /// <p>The source ports.</p>
-    pub fn set_source_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_source_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.source_ports = input;
         self
     }
     /// <p>The source ports.</p>
-    pub fn get_source_ports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_source_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.source_ports
     }
     /// Appends an item to `destination_ports`.
@@ -191,17 +170,12 @@ impl FirewallStatelessRuleBuilder {
         self
     }
     /// <p>The destination ports.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.destination_ports = input;
         self
     }
     /// <p>The destination ports.</p>
-    pub fn get_destination_ports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.destination_ports
     }
     /// Appends an item to `protocols`.

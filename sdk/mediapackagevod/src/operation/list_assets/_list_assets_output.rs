@@ -35,9 +35,7 @@ impl ListAssetsOutput {
 
 /// A builder for [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetsOutputBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAssetsOutputBuilder {
         self
     }
     /// A list of MediaPackage VOD Asset resources.
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>>) -> Self {
         self.assets = input;
         self
     }
     /// A list of MediaPackage VOD Asset resources.
-    pub fn get_assets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetShallow>> {
         &self.assets
     }
     /// A token that can be used to resume pagination from the end of the collection.

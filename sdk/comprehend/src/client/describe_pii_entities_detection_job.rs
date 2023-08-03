@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput) with field(s):
     ///   - [`pii_entities_detection_job_properties(Option<PiiEntitiesDetectionJobProperties>)`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput::pii_entities_detection_job_properties): <p>Provides information about a PII entities detection job.</p>
     /// - On failure, responds with [`SdkError<DescribePiiEntitiesDetectionJobError>`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobError)
-    pub fn describe_pii_entities_detection_job(&self) -> crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobFluentBuilder{
+    pub fn describe_pii_entities_detection_job(
+        &self,
+    ) -> crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobFluentBuilder {
         crate::operation::describe_pii_entities_detection_job::builders::DescribePiiEntitiesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

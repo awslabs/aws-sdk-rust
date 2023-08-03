@@ -9,8 +9,7 @@ pub struct TreeMapSortConfiguration {
     pub tree_map_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of groups that are displayed.</p>
     #[doc(hidden)]
-    pub tree_map_group_items_limit_configuration:
-        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub tree_map_group_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl TreeMapSortConfiguration {
     /// <p>The sort configuration of group by fields.</p>
@@ -18,9 +17,7 @@ impl TreeMapSortConfiguration {
         self.tree_map_sort.as_deref()
     }
     /// <p>The limit on the number of groups that are displayed.</p>
-    pub fn tree_map_group_items_limit_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn tree_map_group_items_limit_configuration(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.tree_map_group_items_limit_configuration.as_ref()
     }
 }
@@ -33,14 +30,10 @@ impl TreeMapSortConfiguration {
 
 /// A builder for [`TreeMapSortConfiguration`](crate::types::TreeMapSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TreeMapSortConfigurationBuilder {
-    pub(crate) tree_map_sort:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    pub(crate) tree_map_group_items_limit_configuration:
-        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub(crate) tree_map_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) tree_map_group_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl TreeMapSortConfigurationBuilder {
     /// Appends an item to `tree_map_sort`.
@@ -55,39 +48,26 @@ impl TreeMapSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of group by fields.</p>
-    pub fn set_tree_map_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_tree_map_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.tree_map_sort = input;
         self
     }
     /// <p>The sort configuration of group by fields.</p>
-    pub fn get_tree_map_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_tree_map_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.tree_map_sort
     }
     /// <p>The limit on the number of groups that are displayed.</p>
-    pub fn tree_map_group_items_limit_configuration(
-        mut self,
-        input: crate::types::ItemsLimitConfiguration,
-    ) -> Self {
+    pub fn tree_map_group_items_limit_configuration(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.tree_map_group_items_limit_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on the number of groups that are displayed.</p>
-    pub fn set_tree_map_group_items_limit_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_tree_map_group_items_limit_configuration(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.tree_map_group_items_limit_configuration = input;
         self
     }
     /// <p>The limit on the number of groups that are displayed.</p>
-    pub fn get_tree_map_group_items_limit_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_tree_map_group_items_limit_configuration(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.tree_map_group_items_limit_configuration
     }
     /// Consumes the builder and constructs a [`TreeMapSortConfiguration`](crate::types::TreeMapSortConfiguration).

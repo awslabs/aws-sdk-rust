@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateSnapshotScheduleOutput {
 }
 impl UpdateSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleOutput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleOutputBuilder {
         crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSnapshotScheduleOutput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

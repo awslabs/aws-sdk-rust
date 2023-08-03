@@ -37,9 +37,7 @@ impl InventoryFilter {
 
 /// A builder for [`InventoryFilter`](crate::types::InventoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
@@ -66,10 +64,7 @@ impl InventoryFilterBuilder {
         self
     }
     /// <p>Condition of the filter.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryFilterCondition>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::InventoryFilterCondition>) -> Self {
         self.condition = input;
         self
     }

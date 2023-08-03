@@ -30,9 +30,7 @@ impl ListWavesRequestFilters {
 
 /// A builder for [`ListWavesRequestFilters`](crate::types::ListWavesRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWavesRequestFiltersBuilder {
     pub(crate) wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,
@@ -50,10 +48,7 @@ impl ListWavesRequestFiltersBuilder {
         self
     }
     /// <p>Filter waves list by wave ID.</p>
-    pub fn set_wave_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wave_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wave_i_ds = input;
         self
     }

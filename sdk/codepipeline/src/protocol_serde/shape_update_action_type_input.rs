@@ -6,10 +6,7 @@ pub fn ser_update_action_type_input(
     if let Some(var_1) = &input.action_type {
         #[allow(unused_mut)]
         let mut object_2 = object.key("actionType").start_object();
-        crate::protocol_serde::shape_action_type_declaration::ser_action_type_declaration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_action_type_declaration::ser_action_type_declaration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

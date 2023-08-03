@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`members(Vec<String>)`](crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder::members) / [`set_members(Option<Vec<String>>)`](crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder::set_members): <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     /// - On success, responds with [`UpdateProtectionGroupOutput`](crate::operation::update_protection_group::UpdateProtectionGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateProtectionGroupError>`](crate::operation::update_protection_group::UpdateProtectionGroupError)
-    pub fn update_protection_group(
-        &self,
-    ) -> crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder
-    {
-        crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_protection_group(&self) -> crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder {
+        crate::operation::update_protection_group::builders::UpdateProtectionGroupFluentBuilder::new(self.handle.clone())
     }
 }

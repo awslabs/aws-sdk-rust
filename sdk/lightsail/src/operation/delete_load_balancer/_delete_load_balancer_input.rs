@@ -15,34 +15,25 @@ impl DeleteLoadBalancerInput {
 }
 impl DeleteLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
-    pub fn builder(
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder {
         crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLoadBalancerInputBuilder {
     /// <p>The name of the load balancer you want to delete.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer you want to delete.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_load_balancer::DeleteLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
+            load_balancer_name: self.load_balancer_name,
+        })
     }
 }

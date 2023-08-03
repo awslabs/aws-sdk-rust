@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     ///   - [`parameter_groups(Option<Vec<ParameterGroup>>)`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput::parameter_groups): <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
     /// - On failure, responds with [`SdkError<DescribeParameterGroupsError>`](crate::operation::describe_parameter_groups::DescribeParameterGroupsError)
-    pub fn describe_parameter_groups(
-        &self,
-    ) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder
-    {
+    pub fn describe_parameter_groups(&self) -> crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder {
         crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsFluentBuilder::new(self.handle.clone())
     }
 }

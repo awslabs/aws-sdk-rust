@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeMlModelsOutput {
 }
 impl DescribeMlModelsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
-    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder {
         crate::operation::describe_ml_models::builders::DescribeMlModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMlModelsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl DescribeMlModelsOutputBuilder {
         self
     }
     /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>) -> Self {
         self.results = input;
         self
     }

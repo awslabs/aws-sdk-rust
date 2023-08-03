@@ -10,10 +10,7 @@ impl UpdateRulesetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ruleset::UpdateRulesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ruleset::UpdateRulesetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ruleset::UpdateRulesetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_ruleset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRulesetFluentBuilder {
         }
     }
     /// Access the UpdateRuleset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ruleset::builders::UpdateRulesetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ruleset::builders::UpdateRulesetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateRulesetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -152,10 +144,7 @@ impl UpdateRulesetFluentBuilder {
         self
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }

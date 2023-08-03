@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeTopicRefreshOutput {
 }
 impl DescribeTopicRefreshOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicRefreshOutput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder {
+    pub fn builder() -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder {
         crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicRefreshOutput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshOutputBuilder {
     pub(crate) refresh_details: ::std::option::Option<crate::types::TopicRefreshDetails>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl DescribeTopicRefreshOutputBuilder {
         self
     }
     /// <p>Details of the refresh, which is performed when the topic is created or updated.</p>
-    pub fn set_refresh_details(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshDetails>,
-    ) -> Self {
+    pub fn set_refresh_details(mut self, input: ::std::option::Option<crate::types::TopicRefreshDetails>) -> Self {
         self.refresh_details = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for GenerateRecommendationsOutput {
 }
 impl GenerateRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateRecommendationsOutput`](crate::operation::generate_recommendations::GenerateRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::generate_recommendations::builders::GenerateRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_recommendations::builders::GenerateRecommendationsOutputBuilder {
         crate::operation::generate_recommendations::builders::GenerateRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateRecommendationsOutput`](crate::operation::generate_recommendations::GenerateRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl GenerateRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateRecommendationsOutput`](crate::operation::generate_recommendations::GenerateRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::generate_recommendations::GenerateRecommendationsOutput {
+    pub fn build(self) -> crate::operation::generate_recommendations::GenerateRecommendationsOutput {
         crate::operation::generate_recommendations::GenerateRecommendationsOutput {
             _request_id: self._request_id,
         }

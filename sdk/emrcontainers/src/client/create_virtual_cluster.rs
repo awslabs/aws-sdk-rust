@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput::name): <p>This output contains the name of the virtual cluster.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput::arn): <p>This output contains the ARN of virtual cluster.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualClusterError>`](crate::operation::create_virtual_cluster::CreateVirtualClusterError)
-    pub fn create_virtual_cluster(
-        &self,
-    ) -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterFluentBuilder {
-        crate::operation::create_virtual_cluster::builders::CreateVirtualClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_virtual_cluster(&self) -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterFluentBuilder {
+        crate::operation::create_virtual_cluster::builders::CreateVirtualClusterFluentBuilder::new(self.handle.clone())
     }
 }

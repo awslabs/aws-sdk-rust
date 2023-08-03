@@ -13,9 +13,7 @@ impl MediaPackageOutputSettings {
 
 /// A builder for [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaPackageOutputSettingsBuilder {}
 impl MediaPackageOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).

@@ -26,7 +26,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePullThroughCacheRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder,
+    inner: crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder,
 }
 impl CreatePullThroughCacheRuleFluentBuilder {
     /// Creates a new `CreatePullThroughCacheRule`.
@@ -37,7 +37,7 @@ impl CreatePullThroughCacheRuleFluentBuilder {
         }
     }
     /// Access the CreatePullThroughCacheRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePullThroughCacheRuleFluentBuilder {
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePullThroughCacheRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePullThroughCacheRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePullThroughCacheRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreatePullThroughCacheRuleFluentBuilder {
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
-    pub fn ecr_repository_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefix(input.into());
         self
     }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ecr_repository_prefix(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreatePullThroughCacheRuleFluentBuilder {
         self.inner.get_ecr_repository_prefix()
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
-    pub fn upstream_registry_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upstream_registry_url(input.into());
         self
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
-    pub fn set_upstream_registry_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upstream_registry_url(input);
         self
     }

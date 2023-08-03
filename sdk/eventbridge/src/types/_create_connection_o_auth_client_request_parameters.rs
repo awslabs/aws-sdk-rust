@@ -23,17 +23,14 @@ impl CreateConnectionOAuthClientRequestParameters {
 }
 impl CreateConnectionOAuthClientRequestParameters {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthClientRequestParameters`](crate::types::CreateConnectionOAuthClientRequestParameters).
-    pub fn builder() -> crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder {
         crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionOAuthClientRequestParameters`](crate::types::CreateConnectionOAuthClientRequestParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionOAuthClientRequestParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
         &self.client_id
     }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }

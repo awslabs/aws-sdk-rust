@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput) with field(s):
     ///   - [`state(Option<CampaignState>)`](crate::operation::get_campaign_state::GetCampaignStateOutput::state): State of a campaign
     /// - On failure, responds with [`SdkError<GetCampaignStateError>`](crate::operation::get_campaign_state::GetCampaignStateError)
-    pub fn get_campaign_state(
-        &self,
-    ) -> crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder {
-        crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_campaign_state(&self) -> crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder {
+        crate::operation::get_campaign_state::builders::GetCampaignStateFluentBuilder::new(self.handle.clone())
     }
 }

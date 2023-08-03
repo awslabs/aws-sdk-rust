@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetRepositoryEndpointOutput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput) with field(s):
     ///   - [`repository_endpoint(Option<String>)`](crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput::repository_endpoint): <p> A string that specifies the URL of the returned endpoint. </p>
     /// - On failure, responds with [`SdkError<GetRepositoryEndpointError>`](crate::operation::get_repository_endpoint::GetRepositoryEndpointError)
-    pub fn get_repository_endpoint(
-        &self,
-    ) -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointFluentBuilder
-    {
-        crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_repository_endpoint(&self) -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointFluentBuilder {
+        crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointFluentBuilder::new(self.handle.clone())
     }
 }

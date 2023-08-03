@@ -37,9 +37,7 @@ impl ListEulaAcceptancesFluentBuilder {
         }
     }
     /// Access the ListEulaAcceptances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListEulaAcceptancesFluentBuilder {
             crate::operation::list_eula_acceptances::ListEulaAcceptances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_eula_acceptances::ListEulaAcceptancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_eula_acceptances::ListEulaAcceptancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListEulaAcceptancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListEulaAcceptancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_eula_acceptances::ListEulaAcceptancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_eula_acceptances::ListEulaAcceptancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListEulaAcceptancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_eula_acceptances::ListEulaAcceptancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_eula_acceptances::ListEulaAcceptancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListEulaAcceptancesFluentBuilder {
             crate::operation::list_eula_acceptances::ListEulaAcceptances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_eula_acceptances::ListEulaAcceptancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_eula_acceptances::ListEulaAcceptancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator {
-        crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator {
+        crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `eulaIds`.
     ///
@@ -143,10 +125,7 @@ impl ListEulaAcceptancesFluentBuilder {
         self
     }
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_eula_ids(input);
         self
     }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDhcpOptionsOutput {
 }
 impl DescribeDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDhcpOptionsOutput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder {
-        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder {
+        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDhcpOptionsOutput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDhcpOptionsOutputBuilder {
     pub(crate) dhcp_options: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeDhcpOptionsOutputBuilder {
         self
     }
     /// <p>Information about one or more DHCP options sets.</p>
-    pub fn set_dhcp_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>,
-    ) -> Self {
+    pub fn set_dhcp_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>) -> Self {
         self.dhcp_options = input;
         self
     }
     /// <p>Information about one or more DHCP options sets.</p>
-    pub fn get_dhcp_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>> {
+    pub fn get_dhcp_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>> {
         &self.dhcp_options
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

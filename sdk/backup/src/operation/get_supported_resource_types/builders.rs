@@ -26,7 +26,7 @@ impl GetSupportedResourceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSupportedResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder,
+    inner: crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder,
 }
 impl GetSupportedResourceTypesFluentBuilder {
     /// Creates a new `GetSupportedResourceTypes`.
@@ -37,7 +37,7 @@ impl GetSupportedResourceTypesFluentBuilder {
         }
     }
     /// Access the GetSupportedResourceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSupportedResourceTypesFluentBuilder {
             crate::operation::get_supported_resource_types::GetSupportedResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_supported_resource_types::GetSupportedResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_supported_resource_types::GetSupportedResourceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSupportedResourceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSupportedResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_supported_resource_types::GetSupportedResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_supported_resource_types::GetSupportedResourceTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSupportedResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_supported_resource_types::GetSupportedResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_supported_resource_types::GetSupportedResourceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetSupportedResourceTypesFluentBuilder {
             crate::operation::get_supported_resource_types::GetSupportedResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_supported_resource_types::GetSupportedResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_supported_resource_types::GetSupportedResourceTypesError>,
     > {
         self.customize_middleware().await
     }

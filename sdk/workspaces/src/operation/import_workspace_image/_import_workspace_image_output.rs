@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportWorkspaceImageOutput {
 }
 impl ImportWorkspaceImageOutput {
     /// Creates a new builder-style object to manufacture [`ImportWorkspaceImageOutput`](crate::operation::import_workspace_image::ImportWorkspaceImageOutput).
-    pub fn builder(
-    ) -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageOutputBuilder {
+    pub fn builder() -> crate::operation::import_workspace_image::builders::ImportWorkspaceImageOutputBuilder {
         crate::operation::import_workspace_image::builders::ImportWorkspaceImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportWorkspaceImageOutput`](crate::operation::import_workspace_image::ImportWorkspaceImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportWorkspaceImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

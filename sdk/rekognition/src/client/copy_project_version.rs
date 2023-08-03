@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput) with field(s):
     ///   - [`project_version_arn(Option<String>)`](crate::operation::copy_project_version::CopyProjectVersionOutput::project_version_arn): <p>The ARN of the copied model version in the destination project. </p>
     /// - On failure, responds with [`SdkError<CopyProjectVersionError>`](crate::operation::copy_project_version::CopyProjectVersionError)
-    pub fn copy_project_version(
-        &self,
-    ) -> crate::operation::copy_project_version::builders::CopyProjectVersionFluentBuilder {
-        crate::operation::copy_project_version::builders::CopyProjectVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_project_version(&self) -> crate::operation::copy_project_version::builders::CopyProjectVersionFluentBuilder {
+        crate::operation::copy_project_version::builders::CopyProjectVersionFluentBuilder::new(self.handle.clone())
     }
 }

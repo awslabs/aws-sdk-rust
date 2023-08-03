@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_satellites::ListSatellitesOutput::next_token): <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     ///   - [`satellites(Option<Vec<SatelliteListItem>>)`](crate::operation::list_satellites::ListSatellitesOutput::satellites): <p>List of satellites.</p>
     /// - On failure, responds with [`SdkError<ListSatellitesError>`](crate::operation::list_satellites::ListSatellitesError)
-    pub fn list_satellites(
-        &self,
-    ) -> crate::operation::list_satellites::builders::ListSatellitesFluentBuilder {
-        crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_satellites(&self) -> crate::operation::list_satellites::builders::ListSatellitesFluentBuilder {
+        crate::operation::list_satellites::builders::ListSatellitesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -32,17 +32,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessPointOutput {
 }
 impl CreateAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
+    pub fn builder() -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
         crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointOutputBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -52,20 +49,14 @@ impl CreateAccessPointOutputBuilder {
     /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }

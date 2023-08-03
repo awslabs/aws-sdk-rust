@@ -26,8 +26,7 @@ impl GetSignedBluinsightsUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSignedBluinsightsUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder,
+    inner: crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder,
 }
 impl GetSignedBluinsightsUrlFluentBuilder {
     /// Creates a new `GetSignedBluinsightsUrl`.
@@ -38,10 +37,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
         }
     }
     /// Access the GetSignedBluinsightsUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
             crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetSignedBluinsightsUrlFluentBuilder {
             crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError>,
     > {
         self.customize_middleware().await
     }

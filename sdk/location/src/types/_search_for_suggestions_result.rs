@@ -52,15 +52,12 @@ impl SearchForSuggestionsResult {
 
 /// A builder for [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchForSuggestionsResultBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) place_id: ::std::option::Option<::std::string::String>,
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supplemental_categories:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchForSuggestionsResultBuilder {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
@@ -114,10 +111,7 @@ impl SearchForSuggestionsResultBuilder {
     }
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.categories = input;
         self
     }
@@ -131,27 +125,19 @@ impl SearchForSuggestionsResultBuilder {
     /// To override the contents of this collection use [`set_supplemental_categories`](Self::set_supplemental_categories).
     ///
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn supplemental_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supplemental_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supplemental_categories.unwrap_or_default();
         v.push(input.into());
         self.supplemental_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn set_supplemental_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supplemental_categories = input;
         self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn get_supplemental_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supplemental_categories
     }
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).

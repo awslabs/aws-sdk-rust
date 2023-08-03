@@ -5,8 +5,7 @@
 pub struct ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProfileObjectTypeTemplatesOutput {
 }
 impl ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListProfileObjectTypeTemplateItem]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListProfileObjectTypeTemplateItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProfileObjectTypeTemplatesOutput 
 }
 impl ListProfileObjectTypeTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
-    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder {
         crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplatesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListProfileObjectTypeTemplatesOutputBuilder {
         self
     }
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
@@ -100,10 +86,7 @@ impl ListProfileObjectTypeTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput
-    {
+    pub fn build(self) -> crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput {
         crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput {
             items: self.items,
             next_token: self.next_token,

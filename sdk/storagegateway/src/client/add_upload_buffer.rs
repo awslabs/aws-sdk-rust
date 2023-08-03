@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddUploadBufferOutput`](crate::operation::add_upload_buffer::AddUploadBufferOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::add_upload_buffer::AddUploadBufferOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<AddUploadBufferError>`](crate::operation::add_upload_buffer::AddUploadBufferError)
-    pub fn add_upload_buffer(
-        &self,
-    ) -> crate::operation::add_upload_buffer::builders::AddUploadBufferFluentBuilder {
-        crate::operation::add_upload_buffer::builders::AddUploadBufferFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_upload_buffer(&self) -> crate::operation::add_upload_buffer::builders::AddUploadBufferFluentBuilder {
+        crate::operation::add_upload_buffer::builders::AddUploadBufferFluentBuilder::new(self.handle.clone())
     }
 }

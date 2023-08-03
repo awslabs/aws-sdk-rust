@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::delete_table::DeleteTableOutput::table_description): <p>Represents the properties of a table.</p>
     /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::operation::delete_table::DeleteTableError)
-    pub fn delete_table(
-        &self,
-    ) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {
+    pub fn delete_table(&self) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {
         crate::operation::delete_table::builders::DeleteTableFluentBuilder::new(self.handle.clone())
     }
 }

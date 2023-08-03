@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartStreamingSessionOutput`](crate::operation::start_streaming_session::StartStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::operation::start_streaming_session::StartStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     /// - On failure, responds with [`SdkError<StartStreamingSessionError>`](crate::operation::start_streaming_session::StartStreamingSessionError)
-    pub fn start_streaming_session(
-        &self,
-    ) -> crate::operation::start_streaming_session::builders::StartStreamingSessionFluentBuilder
-    {
-        crate::operation::start_streaming_session::builders::StartStreamingSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_streaming_session(&self) -> crate::operation::start_streaming_session::builders::StartStreamingSessionFluentBuilder {
+        crate::operation::start_streaming_session::builders::StartStreamingSessionFluentBuilder::new(self.handle.clone())
     }
 }

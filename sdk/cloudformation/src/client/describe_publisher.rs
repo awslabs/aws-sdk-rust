@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`identity_provider(Option<IdentityProvider>)`](crate::operation::describe_publisher::DescribePublisherOutput::identity_provider): <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
     ///   - [`publisher_profile(Option<String>)`](crate::operation::describe_publisher::DescribePublisherOutput::publisher_profile): <p>The URL to the publisher's profile with the identity provider.</p>
     /// - On failure, responds with [`SdkError<DescribePublisherError>`](crate::operation::describe_publisher::DescribePublisherError)
-    pub fn describe_publisher(
-        &self,
-    ) -> crate::operation::describe_publisher::builders::DescribePublisherFluentBuilder {
-        crate::operation::describe_publisher::builders::DescribePublisherFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_publisher(&self) -> crate::operation::describe_publisher::builders::DescribePublisherFluentBuilder {
+        crate::operation::describe_publisher::builders::DescribePublisherFluentBuilder::new(self.handle.clone())
     }
 }

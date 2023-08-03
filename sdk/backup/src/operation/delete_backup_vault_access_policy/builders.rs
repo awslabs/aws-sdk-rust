@@ -26,7 +26,7 @@ impl DeleteBackupVaultAccessPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultAccessPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder,
+    inner: crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder,
 }
 impl DeleteBackupVaultAccessPolicyFluentBuilder {
     /// Creates a new `DeleteBackupVaultAccessPolicy`.
@@ -37,7 +37,7 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
         }
     }
     /// Access the DeleteBackupVaultAccessPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
             crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteBackupVaultAccessPolicyFluentBuilder {
             crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }

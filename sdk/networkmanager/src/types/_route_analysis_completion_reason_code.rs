@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RouteAnalysisCompletionReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,34 +78,20 @@ pub enum RouteAnalysisCompletionReasonCode {
 impl ::std::convert::From<&str> for RouteAnalysisCompletionReasonCode {
     fn from(s: &str) -> Self {
         match s {
-            "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND" => {
-                RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound
-            }
+            "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND" => RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound,
             "CYCLIC_PATH_DETECTED" => RouteAnalysisCompletionReasonCode::CyclicPathDetected,
-            "INACTIVE_ROUTE_FOR_DESTINATION_FOUND" => {
-                RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound
-            }
+            "INACTIVE_ROUTE_FOR_DESTINATION_FOUND" => RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound,
             "MAX_HOPS_EXCEEDED" => RouteAnalysisCompletionReasonCode::MaxHopsExceeded,
-            "NO_DESTINATION_ARN_PROVIDED" => {
-                RouteAnalysisCompletionReasonCode::NoDestinationArnProvided
-            }
+            "NO_DESTINATION_ARN_PROVIDED" => RouteAnalysisCompletionReasonCode::NoDestinationArnProvided,
             "POSSIBLE_MIDDLEBOX" => RouteAnalysisCompletionReasonCode::PossibleMiddlebox,
             "ROUTE_NOT_FOUND" => RouteAnalysisCompletionReasonCode::RouteNotFound,
-            "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH" => {
-                RouteAnalysisCompletionReasonCode::TransitGatewayAttachment
-            }
-            "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND" => {
-                RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound
-            }
-            "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY" => {
-                RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway
-            }
+            "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH" => RouteAnalysisCompletionReasonCode::TransitGatewayAttachment,
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND" => RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound,
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY" => RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway,
             "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND" => {
                 RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound
             }
-            other => RouteAnalysisCompletionReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RouteAnalysisCompletionReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -126,28 +106,16 @@ impl RouteAnalysisCompletionReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound => {
-                "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND"
-            }
+            RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound => "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND",
             RouteAnalysisCompletionReasonCode::CyclicPathDetected => "CYCLIC_PATH_DETECTED",
-            RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound => {
-                "INACTIVE_ROUTE_FOR_DESTINATION_FOUND"
-            }
+            RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound => "INACTIVE_ROUTE_FOR_DESTINATION_FOUND",
             RouteAnalysisCompletionReasonCode::MaxHopsExceeded => "MAX_HOPS_EXCEEDED",
-            RouteAnalysisCompletionReasonCode::NoDestinationArnProvided => {
-                "NO_DESTINATION_ARN_PROVIDED"
-            }
+            RouteAnalysisCompletionReasonCode::NoDestinationArnProvided => "NO_DESTINATION_ARN_PROVIDED",
             RouteAnalysisCompletionReasonCode::PossibleMiddlebox => "POSSIBLE_MIDDLEBOX",
             RouteAnalysisCompletionReasonCode::RouteNotFound => "ROUTE_NOT_FOUND",
-            RouteAnalysisCompletionReasonCode::TransitGatewayAttachment => {
-                "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH"
-            }
-            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound => {
-                "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND"
-            }
-            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway => {
-                "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY"
-            }
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachment => "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH",
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound => "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND",
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway => "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY",
             RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound => {
                 "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND"
             }

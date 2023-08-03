@@ -37,10 +37,7 @@ impl DetectMetricSetConfigFluentBuilder {
         }
     }
     /// Access the DetectMetricSetConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DetectMetricSetConfigFluentBuilder {
             crate::operation::detect_metric_set_config::DetectMetricSetConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_metric_set_config::DetectMetricSetConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_metric_set_config::DetectMetricSetConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DetectMetricSetConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DetectMetricSetConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_metric_set_config::DetectMetricSetConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_metric_set_config::DetectMetricSetConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DetectMetricSetConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_metric_set_config::DetectMetricSetConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_metric_set_config::DetectMetricSetConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DetectMetricSetConfigFluentBuilder {
             crate::operation::detect_metric_set_config::DetectMetricSetConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_metric_set_config::DetectMetricSetConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_metric_set_config::DetectMetricSetConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An anomaly detector ARN.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>An anomaly detector ARN.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
@@ -144,25 +124,17 @@ impl DetectMetricSetConfigFluentBuilder {
         self.inner.get_anomaly_detector_arn()
     }
     /// <p>A data source.</p>
-    pub fn auto_detection_metric_source(
-        mut self,
-        input: crate::types::AutoDetectionMetricSource,
-    ) -> Self {
+    pub fn auto_detection_metric_source(mut self, input: crate::types::AutoDetectionMetricSource) -> Self {
         self.inner = self.inner.auto_detection_metric_source(input);
         self
     }
     /// <p>A data source.</p>
-    pub fn set_auto_detection_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoDetectionMetricSource>,
-    ) -> Self {
+    pub fn set_auto_detection_metric_source(mut self, input: ::std::option::Option<crate::types::AutoDetectionMetricSource>) -> Self {
         self.inner = self.inner.set_auto_detection_metric_source(input);
         self
     }
     /// <p>A data source.</p>
-    pub fn get_auto_detection_metric_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoDetectionMetricSource> {
+    pub fn get_auto_detection_metric_source(&self) -> &::std::option::Option<crate::types::AutoDetectionMetricSource> {
         self.inner.get_auto_detection_metric_source()
     }
 }

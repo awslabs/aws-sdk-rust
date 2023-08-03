@@ -26,9 +26,7 @@ impl SourceCodeType {
         self.commit_diff.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn repository_head(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
+    pub fn repository_head(&self) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
@@ -53,9 +51,7 @@ impl SourceCodeType {
 
 /// A builder for [`SourceCodeType`](crate::types::SourceCodeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceCodeTypeBuilder {
     pub(crate) commit_diff: ::std::option::Option<crate::types::CommitDiffSourceCodeType>,
     pub(crate) repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
@@ -70,17 +66,12 @@ impl SourceCodeTypeBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
-    pub fn set_commit_diff(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitDiffSourceCodeType>,
-    ) -> Self {
+    pub fn set_commit_diff(mut self, input: ::std::option::Option<crate::types::CommitDiffSourceCodeType>) -> Self {
         self.commit_diff = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.</p>
-    pub fn get_commit_diff(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitDiffSourceCodeType> {
+    pub fn get_commit_diff(&self) -> &::std::option::Option<crate::types::CommitDiffSourceCodeType> {
         &self.commit_diff
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
@@ -89,17 +80,12 @@ impl SourceCodeTypeBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn set_repository_head(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
-    ) -> Self {
+    pub fn set_repository_head(mut self, input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>) -> Self {
         self.repository_head = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn get_repository_head(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
+    pub fn get_repository_head(&self) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
         &self.repository_head
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
@@ -108,17 +94,12 @@ impl SourceCodeTypeBuilder {
         self
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
-    pub fn set_branch_diff(
-        mut self,
-        input: ::std::option::Option<crate::types::BranchDiffSourceCodeType>,
-    ) -> Self {
+    pub fn set_branch_diff(mut self, input: ::std::option::Option<crate::types::BranchDiffSourceCodeType>) -> Self {
         self.branch_diff = input;
         self
     }
     /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.</p>
-    pub fn get_branch_diff(
-        &self,
-    ) -> &::std::option::Option<crate::types::BranchDiffSourceCodeType> {
+    pub fn get_branch_diff(&self) -> &::std::option::Option<crate::types::BranchDiffSourceCodeType> {
         &self.branch_diff
     }
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
@@ -127,17 +108,12 @@ impl SourceCodeTypeBuilder {
         self
     }
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
-    pub fn set_s3_bucket_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketRepository>,
-    ) -> Self {
+    pub fn set_s3_bucket_repository(mut self, input: ::std::option::Option<crate::types::S3BucketRepository>) -> Self {
         self.s3_bucket_repository = input;
         self
     }
     /// <p>Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.</p>
-    pub fn get_s3_bucket_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3BucketRepository> {
+    pub fn get_s3_bucket_repository(&self) -> &::std::option::Option<crate::types::S3BucketRepository> {
         &self.s3_bucket_repository
     }
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
@@ -146,10 +122,7 @@ impl SourceCodeTypeBuilder {
         self
     }
     /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.</p>
-    pub fn set_request_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestMetadata>,
-    ) -> Self {
+    pub fn set_request_metadata(mut self, input: ::std::option::Option<crate::types::RequestMetadata>) -> Self {
         self.request_metadata = input;
         self
     }

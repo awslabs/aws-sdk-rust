@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetJobBookmarkOutput {
 }
 impl ResetJobBookmarkOutput {
     /// Creates a new builder-style object to manufacture [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput).
-    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder {
         crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetJobBookmarkOutputBuilder {
     pub(crate) job_bookmark_entry: ::std::option::Option<crate::types::JobBookmarkEntry>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ResetJobBookmarkOutputBuilder {
         self
     }
     /// <p>The reset bookmark entry.</p>
-    pub fn set_job_bookmark_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::JobBookmarkEntry>,
-    ) -> Self {
+    pub fn set_job_bookmark_entry(mut self, input: ::std::option::Option<crate::types::JobBookmarkEntry>) -> Self {
         self.job_bookmark_entry = input;
         self
     }

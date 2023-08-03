@@ -22,18 +22,14 @@ impl CreatePartnerEventSourceInput {
 }
 impl CreatePartnerEventSourceInput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerEventSourceInput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceInputBuilder {
         crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePartnerEventSourceInput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartnerEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl CreatePartnerEventSourceInputBuilder {
         crate::operation::create_partner_event_source::CreatePartnerEventSourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_partner_event_source::CreatePartnerEventSourceInput {
-                name: self.name,
-                account: self.account,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_partner_event_source::CreatePartnerEventSourceInput {
+            name: self.name,
+            account: self.account,
+        })
     }
 }

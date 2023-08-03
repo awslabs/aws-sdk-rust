@@ -37,9 +37,7 @@ impl LifeCycleLastLaunchInitiated {
 
 /// A builder for [`LifeCycleLastLaunchInitiated`](crate::types::LifeCycleLastLaunchInitiated).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunchInitiatedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct LifeCycleLastLaunchInitiatedBuilder {
 }
 impl LifeCycleLastLaunchInitiatedBuilder {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn api_call_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_call_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn set_api_call_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_call_date_time = input;
         self
     }

@@ -27,16 +27,14 @@ impl ::aws_http::request_id::RequestId for GetBucketOwnershipControlsOutput {
 }
 impl GetBucketOwnershipControlsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketOwnershipControlsOutput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput).
-    pub fn builder() -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsOutputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsOutputBuilder {
         crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketOwnershipControlsOutput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketOwnershipControlsOutputBuilder {
     pub(crate) ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
     _extended_request_id: Option<String>,
@@ -49,17 +47,12 @@ impl GetBucketOwnershipControlsOutputBuilder {
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
-    pub fn set_ownership_controls(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipControls>,
-    ) -> Self {
+    pub fn set_ownership_controls(mut self, input: ::std::option::Option<crate::types::OwnershipControls>) -> Self {
         self.ownership_controls = input;
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
-    pub fn get_ownership_controls(
-        &self,
-    ) -> &::std::option::Option<crate::types::OwnershipControls> {
+    pub fn get_ownership_controls(&self) -> &::std::option::Option<crate::types::OwnershipControls> {
         &self.ownership_controls
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -67,10 +60,7 @@ impl GetBucketOwnershipControlsOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -84,9 +74,7 @@ impl GetBucketOwnershipControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBucketOwnershipControlsOutput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput {
+    pub fn build(self) -> crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput {
         crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput {
             ownership_controls: self.ownership_controls,
             _extended_request_id: self._extended_request_id,

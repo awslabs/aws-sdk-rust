@@ -9,65 +9,76 @@ pub fn de_revoke_db_security_group_ingress_http_error(
     crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationNotFound" => crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::AuthorizationNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AuthorizationNotFound" => {
+            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::AuthorizationNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBSecurityGroupNotFound" => crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::DbSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSecurityGroupNotFound" => {
+            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::DbSecurityGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidDBSecurityGroupState" => crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::InvalidDbSecurityGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBSecurityGroupState" => {
+            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::InvalidDbSecurityGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDbSecurityGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_security_group_state_fault::de_invalid_db_security_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_security_group_state_fault::de_invalid_db_security_group_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::generic(generic),
     })
 }
 
@@ -83,16 +94,21 @@ pub fn de_revoke_db_security_group_ingress_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder::default();
-        output = crate::protocol_serde::shape_revoke_db_security_group_ingress::de_revoke_db_security_group_ingress(_response_body, output).map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_revoke_db_security_group_ingress::de_revoke_db_security_group_ingress(_response_body, output)
+            .map_err(crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_revoke_db_security_group_ingress(inp: &[u8], mut builder: crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder) -> Result<crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_revoke_db_security_group_ingress(
+    inp: &[u8],
+    mut builder: crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder,
+) -> Result<
+    crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

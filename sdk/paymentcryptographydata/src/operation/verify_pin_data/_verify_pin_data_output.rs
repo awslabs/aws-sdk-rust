@@ -49,9 +49,7 @@ impl VerifyPinDataOutput {
 
 /// A builder for [`VerifyPinDataOutput`](crate::operation::verify_pin_data::VerifyPinDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyPinDataOutputBuilder {
     pub(crate) verification_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) verification_key_check_value: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct VerifyPinDataOutputBuilder {
 }
 impl VerifyPinDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment Cryptography uses for PIN or PIN Offset verification.</p>
-    pub fn verification_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment Cryptography uses for PIN or PIN Offset verification.</p>
-    pub fn set_verification_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_key_arn = input;
         self
     }
@@ -81,40 +73,26 @@ impl VerifyPinDataOutputBuilder {
         &self.verification_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn verification_key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_verification_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_key_check_value = input;
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn get_verification_key_check_value(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verification_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_key_check_value
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
@@ -123,18 +101,12 @@ impl VerifyPinDataOutputBuilder {
         &self.encryption_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn encryption_key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_encryption_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_check_value = input;
         self
     }

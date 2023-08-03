@@ -51,9 +51,7 @@ impl DynamodbDataSourceConfig {
 
 /// A builder for [`DynamodbDataSourceConfig`](crate::types::DynamodbDataSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamodbDataSourceConfigBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl DynamodbDataSourceConfigBuilder {
         self
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
-    pub fn set_delta_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeltaSyncConfig>,
-    ) -> Self {
+    pub fn set_delta_sync_config(mut self, input: ::std::option::Option<crate::types::DeltaSyncConfig>) -> Self {
         self.delta_sync_config = input;
         self
     }

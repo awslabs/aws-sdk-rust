@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`failure_redirection_url(impl ::std::convert::Into<String>)`](crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder::failure_redirection_url) / [`set_failure_redirection_url(Option<String>)`](crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder::set_failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On success, responds with [`CreateCustomVerificationEmailTemplateOutput`](crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<CreateCustomVerificationEmailTemplateError>`](crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateError)
-    pub fn create_custom_verification_email_template(&self) -> crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder{
-        crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder::new(self.handle.clone())
+    pub fn create_custom_verification_email_template(
+        &self,
+    ) -> crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder {
+        crate::operation::create_custom_verification_email_template::builders::CreateCustomVerificationEmailTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

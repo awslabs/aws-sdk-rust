@@ -39,10 +39,7 @@ impl StartAppBlockBuilderFluentBuilder {
         }
     }
     /// Access the StartAppBlockBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_app_block_builder::builders::StartAppBlockBuilderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_app_block_builder::builders::StartAppBlockBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl StartAppBlockBuilderFluentBuilder {
             crate::operation::start_app_block_builder::StartAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_block_builder::StartAppBlockBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl StartAppBlockBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl StartAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_app_block_builder::StartAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_block_builder::StartAppBlockBuilderError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl StartAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_app_block_builder::StartAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_block_builder::StartAppBlockBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl StartAppBlockBuilderFluentBuilder {
             crate::operation::start_app_block_builder::StartAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_block_builder::StartAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_app_block_builder::StartAppBlockBuilderError>,
     > {
         self.customize_middleware().await
     }

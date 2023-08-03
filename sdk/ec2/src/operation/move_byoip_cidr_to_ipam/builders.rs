@@ -38,9 +38,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
         }
     }
     /// Access the MoveByoipCidrToIpam as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
             crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl MoveByoipCidrToIpamFluentBuilder {
             crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +153,12 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self.inner.get_ipam_pool_id()
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-    pub fn ipam_pool_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_owner(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
-    pub fn set_ipam_pool_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_owner(input);
         self
     }

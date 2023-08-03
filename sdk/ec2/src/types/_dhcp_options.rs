@@ -6,8 +6,7 @@
 pub struct DhcpOptions {
     /// <p>The DHCP options in the set.</p>
     #[doc(hidden)]
-    pub dhcp_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
     /// <p>The ID of the set of DHCP options.</p>
     #[doc(hidden)]
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
@@ -45,12 +44,9 @@ impl DhcpOptions {
 
 /// A builder for [`DhcpOptions`](crate::types::DhcpOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DhcpOptionsBuilder {
-    pub(crate) dhcp_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub(crate) dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -68,32 +64,21 @@ impl DhcpOptionsBuilder {
         self
     }
     /// <p>The DHCP options in the set.</p>
-    pub fn set_dhcp_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
-    ) -> Self {
+    pub fn set_dhcp_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>) -> Self {
         self.dhcp_configurations = input;
         self
     }
     /// <p>The DHCP options in the set.</p>
-    pub fn get_dhcp_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>> {
+    pub fn get_dhcp_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>> {
         &self.dhcp_configurations
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn dhcp_options_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn set_dhcp_options_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dhcp_options_id = input;
         self
     }
@@ -127,10 +112,7 @@ impl DhcpOptionsBuilder {
         self
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -37,10 +37,7 @@ impl ListCommandInvocationsFluentBuilder {
         }
     }
     /// Access the ListCommandInvocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListCommandInvocationsFluentBuilder {
             crate::operation::list_command_invocations::ListCommandInvocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_command_invocations::ListCommandInvocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_command_invocations::ListCommandInvocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListCommandInvocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListCommandInvocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_command_invocations::ListCommandInvocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_command_invocations::ListCommandInvocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_command_invocations::ListCommandInvocationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListCommandInvocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_command_invocations::ListCommandInvocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_command_invocations::ListCommandInvocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_command_invocations::ListCommandInvocationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListCommandInvocationsFluentBuilder {
             crate::operation::list_command_invocations::ListCommandInvocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_command_invocations::ListCommandInvocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_command_invocations::ListCommandInvocationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator
-    {
-        crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator {
+        crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) The invocations for a specific command ID.</p>
     pub fn command_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,17 +181,12 @@ impl ListCommandInvocationsFluentBuilder {
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         self.inner.get_filters()
     }
     /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>

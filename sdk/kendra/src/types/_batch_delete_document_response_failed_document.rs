@@ -37,9 +37,7 @@ impl BatchDeleteDocumentResponseFailedDocument {
 
 /// A builder for [`BatchDeleteDocumentResponseFailedDocument`](crate::types::BatchDeleteDocumentResponseFailedDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentResponseFailedDocumentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -75,18 +73,12 @@ impl BatchDeleteDocumentResponseFailedDocumentBuilder {
         &self.error_code
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

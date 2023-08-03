@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for StartOnDemandReplicationRunOutput {
 }
 impl StartOnDemandReplicationRunOutput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
-    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunOutputBuilder {
         crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOnDemandReplicationRunOutputBuilder {
     pub(crate) replication_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartOnDemandReplicationRunOutputBuilder {
     /// <p>The ID of the replication run.</p>
-    pub fn replication_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication run.</p>
-    pub fn set_replication_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_run_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl StartOnDemandReplicationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput {
+    pub fn build(self) -> crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput {
         crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput {
             replication_run_id: self.replication_run_id,
             _request_id: self._request_id,

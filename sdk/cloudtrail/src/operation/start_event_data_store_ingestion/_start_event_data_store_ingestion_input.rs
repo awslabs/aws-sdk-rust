@@ -15,33 +15,25 @@ impl StartEventDataStoreIngestionInput {
 }
 impl StartEventDataStoreIngestionInput {
     /// Creates a new builder-style object to manufacture [`StartEventDataStoreIngestionInput`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput).
-    pub fn builder() -> crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionInputBuilder{
+    pub fn builder() -> crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionInputBuilder {
         crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartEventDataStoreIngestionInput`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEventDataStoreIngestionInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl StartEventDataStoreIngestionInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
@@ -56,10 +48,8 @@ impl StartEventDataStoreIngestionInputBuilder {
         crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput {
-                event_data_store: self.event_data_store,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionInput {
+            event_data_store: self.event_data_store,
+        })
     }
 }

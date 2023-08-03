@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchDeleteImageOutput {
 }
 impl BatchDeleteImageOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteImageOutput`](crate::operation::batch_delete_image::BatchDeleteImageOutput).
-    pub fn builder() -> crate::operation::batch_delete_image::builders::BatchDeleteImageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_image::builders::BatchDeleteImageOutputBuilder {
         crate::operation::batch_delete_image::builders::BatchDeleteImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteImageOutput`](crate::operation::batch_delete_image::BatchDeleteImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteImageOutputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
@@ -57,17 +54,12 @@ impl BatchDeleteImageOutputBuilder {
         self
     }
     /// <p>The image IDs of the deleted images.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.image_ids = input;
         self
     }
     /// <p>The image IDs of the deleted images.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         &self.image_ids
     }
     /// Appends an item to `failures`.
@@ -82,17 +74,12 @@ impl BatchDeleteImageOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

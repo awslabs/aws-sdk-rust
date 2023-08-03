@@ -35,9 +35,7 @@ impl ListTokensOutput {
 
 /// A builder for [`ListTokensOutput`](crate::operation::list_tokens::ListTokensOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTokensOutputBuilder {
     pub(crate) tokens: ::std::option::Option<::std::vec::Vec<crate::types::TokenData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListTokensOutputBuilder {
         self
     }
     /// <p>Received token details.</p>
-    pub fn set_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TokenData>>,
-    ) -> Self {
+    pub fn set_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TokenData>>) -> Self {
         self.tokens = input;
         self
     }

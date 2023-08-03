@@ -23,9 +23,7 @@ impl ArchiveS3Settings {
 
 /// A builder for [`ArchiveS3Settings`](crate::types::ArchiveS3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveS3SettingsBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }
@@ -36,10 +34,7 @@ impl ArchiveS3SettingsBuilder {
         self
     }
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-    pub fn set_canned_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::S3CannedAcl>,
-    ) -> Self {
+    pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::S3CannedAcl>) -> Self {
         self.canned_acl = input;
         self
     }
@@ -49,8 +44,6 @@ impl ArchiveS3SettingsBuilder {
     }
     /// Consumes the builder and constructs a [`ArchiveS3Settings`](crate::types::ArchiveS3Settings).
     pub fn build(self) -> crate::types::ArchiveS3Settings {
-        crate::types::ArchiveS3Settings {
-            canned_acl: self.canned_acl,
-        }
+        crate::types::ArchiveS3Settings { canned_acl: self.canned_acl }
     }
 }

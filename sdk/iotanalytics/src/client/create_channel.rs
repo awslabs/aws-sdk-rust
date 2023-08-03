@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::operation::create_channel::CreateChannelOutput::retention_period): <p>How long, in days, message data is kept for the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`rule_names(Option<Vec<String>>)`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput::rule_names): <p>The names of the rules that can invoke the given target.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     /// - On failure, responds with [`SdkError<ListRuleNamesByTargetError>`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetError)
-    pub fn list_rule_names_by_target(
-        &self,
-    ) -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetFluentBuilder
-    {
+    pub fn list_rule_names_by_target(&self) -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetFluentBuilder {
         crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl PutAccountDetailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_account_details::PutAccountDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_details::PutAccountDetailsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_account_details();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutAccountDetailsFluentBuilder {
         }
     }
     /// Access the PutAccountDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_details::builders::PutAccountDetailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_account_details::builders::PutAccountDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutAccountDetailsFluentBuilder {
             crate::operation::put_account_details::PutAccountDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_details::PutAccountDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutAccountDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutAccountDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_details::PutAccountDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_details::PutAccountDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutAccountDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_details::PutAccountDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_details::PutAccountDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutAccountDetailsFluentBuilder {
             crate::operation::put_account_details::PutAccountDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_details::PutAccountDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_details::PutAccountDetailsError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl PutAccountDetailsFluentBuilder {
         self
     }
     /// <p>The language you would prefer to be contacted with.</p>
-    pub fn set_contact_language(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactLanguage>,
-    ) -> Self {
+    pub fn set_contact_language(mut self, input: ::std::option::Option<crate::types::ContactLanguage>) -> Self {
         self.inner = self.inner.set_contact_language(input);
         self
     }
@@ -168,18 +149,12 @@ impl PutAccountDetailsFluentBuilder {
         self.inner.get_contact_language()
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn use_case_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn use_case_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.use_case_description(input.into());
         self
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn set_use_case_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_use_case_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_use_case_description(input);
         self
     }
@@ -192,25 +167,17 @@ impl PutAccountDetailsFluentBuilder {
     /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
     ///
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    pub fn additional_contact_email_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_contact_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_contact_email_addresses(input.into());
         self
     }
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    pub fn set_additional_contact_email_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_contact_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_contact_email_addresses(input);
         self
     }
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
-    pub fn get_additional_contact_email_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_contact_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_contact_email_addresses()
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>

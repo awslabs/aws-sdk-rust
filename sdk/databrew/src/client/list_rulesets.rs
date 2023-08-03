@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`rulesets(Option<Vec<RulesetItem>>)`](crate::operation::list_rulesets::ListRulesetsOutput::rulesets): <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rulesets::ListRulesetsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRulesetsError>`](crate::operation::list_rulesets::ListRulesetsError)
-    pub fn list_rulesets(
-        &self,
-    ) -> crate::operation::list_rulesets::builders::ListRulesetsFluentBuilder {
-        crate::operation::list_rulesets::builders::ListRulesetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rulesets(&self) -> crate::operation::list_rulesets::builders::ListRulesetsFluentBuilder {
+        crate::operation::list_rulesets::builders::ListRulesetsFluentBuilder::new(self.handle.clone())
     }
 }

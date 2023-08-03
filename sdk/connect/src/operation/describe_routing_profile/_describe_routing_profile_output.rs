@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeRoutingProfileOutput {
 }
 impl DescribeRoutingProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRoutingProfileOutput`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder {
         crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRoutingProfileOutput`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRoutingProfileOutputBuilder {
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeRoutingProfileOutputBuilder {
         self
     }
     /// <p>The routing profile.</p>
-    pub fn set_routing_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfile>,
-    ) -> Self {
+    pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfile>) -> Self {
         self.routing_profile = input;
         self
     }

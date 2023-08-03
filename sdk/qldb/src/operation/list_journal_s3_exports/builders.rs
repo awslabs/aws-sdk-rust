@@ -39,10 +39,7 @@ impl ListJournalS3ExportsFluentBuilder {
         }
     }
     /// Access the ListJournalS3Exports as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl ListJournalS3ExportsFluentBuilder {
             crate::operation::list_journal_s3_exports::ListJournalS3Exports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports::ListJournalS3ExportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl ListJournalS3ExportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl ListJournalS3ExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports::ListJournalS3ExportsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl ListJournalS3ExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports::ListJournalS3ExportsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +107,15 @@ impl ListJournalS3ExportsFluentBuilder {
             crate::operation::list_journal_s3_exports::ListJournalS3Exports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports::ListJournalS3ExportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_journal_s3_exports::paginator::ListJournalS3ExportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_journal_s3_exports::paginator::ListJournalS3ExportsPaginator {
-        crate::operation::list_journal_s3_exports::paginator::ListJournalS3ExportsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_journal_s3_exports::paginator::ListJournalS3ExportsPaginator {
+        crate::operation::list_journal_s3_exports::paginator::ListJournalS3ExportsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn max_results(mut self, input: i32) -> Self {

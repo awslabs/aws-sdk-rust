@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     /// - On success, responds with [`DeleteScalingPolicyOutput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteScalingPolicyError>`](crate::operation::delete_scaling_policy::DeleteScalingPolicyError)
-    pub fn delete_scaling_policy(
-        &self,
-    ) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder {
-        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_scaling_policy(&self) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder {
+        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

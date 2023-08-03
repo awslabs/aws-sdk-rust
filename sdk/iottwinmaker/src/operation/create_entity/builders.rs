@@ -10,10 +10,7 @@ impl CreateEntityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_entity::CreateEntityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_entity::CreateEntityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_entity::CreateEntityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_entity();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateEntityFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_entity::CreateEntity,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_entity::CreateEntity, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_entity::CreateEntityError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateEntityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateEntityFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_entity::CreateEntity,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_entity::CreateEntity, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_entity::CreateEntityError>,
     > {
         self.customize_middleware().await
@@ -173,45 +161,29 @@ impl CreateEntityFluentBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentRequest,
-    ) -> Self {
+    pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentRequest) -> Self {
         self.inner = self.inner.components(k.into(), v);
         self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn set_components(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
     ) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>,
-    > {
+    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
         self.inner.get_components()
     }
     /// <p>The ID of the entity's parent entity.</p>
-    pub fn parent_entity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_entity_id(input.into());
         self
     }
     /// <p>The ID of the entity's parent entity.</p>
-    pub fn set_parent_entity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_entity_id(input);
         self
     }
@@ -224,30 +196,17 @@ impl CreateEntityFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

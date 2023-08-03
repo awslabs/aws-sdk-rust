@@ -46,16 +46,16 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
 }
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
-    pub fn builder() -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder
+    {
         crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +90,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
     /// <li>source-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -138,16 +135,18 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

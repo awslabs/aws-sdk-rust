@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateGameSessionQueueOutput {
 }
 impl CreateGameSessionQueueOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameSessionQueueOutput`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput).
-    pub fn builder(
-    ) -> crate::operation::create_game_session_queue::builders::CreateGameSessionQueueOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_game_session_queue::builders::CreateGameSessionQueueOutputBuilder {
         crate::operation::create_game_session_queue::builders::CreateGameSessionQueueOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGameSessionQueueOutput`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGameSessionQueueOutputBuilder {
     pub(crate) game_session_queue: ::std::option::Option<crate::types::GameSessionQueue>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateGameSessionQueueOutputBuilder {
         self
     }
     /// <p>An object that describes the newly created game session queue.</p>
-    pub fn set_game_session_queue(
-        mut self,
-        input: ::std::option::Option<crate::types::GameSessionQueue>,
-    ) -> Self {
+    pub fn set_game_session_queue(mut self, input: ::std::option::Option<crate::types::GameSessionQueue>) -> Self {
         self.game_session_queue = input;
         self
     }
@@ -65,9 +58,7 @@ impl CreateGameSessionQueueOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGameSessionQueueOutput`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_game_session_queue::CreateGameSessionQueueOutput {
+    pub fn build(self) -> crate::operation::create_game_session_queue::CreateGameSessionQueueOutput {
         crate::operation::create_game_session_queue::CreateGameSessionQueueOutput {
             game_session_queue: self.game_session_queue,
             _request_id: self._request_id,

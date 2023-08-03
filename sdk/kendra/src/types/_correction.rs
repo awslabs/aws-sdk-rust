@@ -44,9 +44,7 @@ impl Correction {
 
 /// A builder for [`Correction`](crate::types::Correction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorrectionBuilder {
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ impl CorrectionBuilder {
         &self.term
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    pub fn corrected_term(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn corrected_term(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.corrected_term = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    pub fn set_corrected_term(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_corrected_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.corrected_term = input;
         self
     }

@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe_arn(Option<String>)`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     /// - On failure, responds with [`SdkError<PutImageRecipePolicyError>`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyError)
-    pub fn put_image_recipe_policy(
-        &self,
-    ) -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyFluentBuilder
-    {
-        crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_image_recipe_policy(&self) -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyFluentBuilder {
+        crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyFluentBuilder::new(self.handle.clone())
     }
 }

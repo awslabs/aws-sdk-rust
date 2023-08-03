@@ -6,15 +6,12 @@ pub fn ser_origin_access_control_config_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_xml_unset_payload()),
     };
-    Ok(
-        crate::protocol_serde::shape_create_origin_access_control_input::ser_origin_access_control_config_payload(payload)?
-    )
+    Ok(crate::protocol_serde::shape_create_origin_access_control_input::ser_origin_access_control_config_payload(payload)?)
 }
 
 pub fn ser_origin_access_control_config_payload(
     input: &crate::types::OriginAccessControlConfig,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -22,9 +19,7 @@ pub fn ser_origin_access_control_config_payload(
         let mut root = writer
             .start_el("OriginAccessControlConfig")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_origin_access_control_config::ser_origin_access_control_config(
-            input, root,
-        )?
+        crate::protocol_serde::shape_origin_access_control_config::ser_origin_access_control_config(input, root)?
     }
     Ok(out.into_bytes())
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourceShareOutput {
 }
 impl DeleteResourceShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceShareOutput`](crate::operation::delete_resource_share::DeleteResourceShareOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder {
-        crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder {
+        crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceShareOutput`](crate::operation::delete_resource_share::DeleteResourceShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceShareOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

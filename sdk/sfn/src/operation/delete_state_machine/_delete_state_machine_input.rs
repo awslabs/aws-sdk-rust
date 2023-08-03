@@ -15,34 +15,25 @@ impl DeleteStateMachineInput {
 }
 impl DeleteStateMachineInput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
-    pub fn builder(
-    ) -> crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
+    pub fn builder() -> crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
         crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStateMachineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_state_machine::DeleteStateMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_state_machine::DeleteStateMachineInput {
-                state_machine_arn: self.state_machine_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_state_machine::DeleteStateMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_state_machine::DeleteStateMachineInput {
+            state_machine_arn: self.state_machine_arn,
+        })
     }
 }

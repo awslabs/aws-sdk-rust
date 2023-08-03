@@ -6,10 +6,7 @@ pub fn ser_batch_update_attendee_capabilities_except_input(
     if let Some(var_1) = &input.capabilities {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Capabilities").start_object();
-        crate::protocol_serde::shape_attendee_capabilities::ser_attendee_capabilities(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_attendee_capabilities::ser_attendee_capabilities(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.excluded_attendee_ids {
@@ -18,10 +15,7 @@ pub fn ser_batch_update_attendee_capabilities_except_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attendee_id_item::ser_attendee_id_item(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_attendee_id_item::ser_attendee_id_item(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

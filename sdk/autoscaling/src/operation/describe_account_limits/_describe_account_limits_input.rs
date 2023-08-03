@@ -5,29 +5,21 @@
 pub struct DescribeAccountLimitsInput {}
 impl DescribeAccountLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsInputBuilder {}
 impl DescribeAccountLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account_limits::DescribeAccountLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_limits::DescribeAccountLimitsInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_account_limits::DescribeAccountLimitsInput {})
     }
 }

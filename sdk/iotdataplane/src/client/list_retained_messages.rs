@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`retained_topics(Option<Vec<RetainedMessageSummary>>)`](crate::operation::list_retained_messages::ListRetainedMessagesOutput::retained_topics): <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_retained_messages::ListRetainedMessagesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListRetainedMessagesError>`](crate::operation::list_retained_messages::ListRetainedMessagesError)
-    pub fn list_retained_messages(
-        &self,
-    ) -> crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder {
-        crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_retained_messages(&self) -> crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder {
+        crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::new(self.handle.clone())
     }
 }

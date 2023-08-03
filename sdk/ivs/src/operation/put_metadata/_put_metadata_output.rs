@@ -19,9 +19,7 @@ impl PutMetadataOutput {
 
 /// A builder for [`PutMetadataOutput`](crate::operation::put_metadata::PutMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetadataOutputBuilder {
     _request_id: Option<String>,
 }

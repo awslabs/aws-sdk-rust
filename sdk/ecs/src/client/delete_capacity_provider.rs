@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCapacityProviderOutput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderOutput) with field(s):
     ///   - [`capacity_provider(Option<CapacityProvider>)`](crate::operation::delete_capacity_provider::DeleteCapacityProviderOutput::capacity_provider): <p>The details of the capacity provider.</p>
     /// - On failure, responds with [`SdkError<DeleteCapacityProviderError>`](crate::operation::delete_capacity_provider::DeleteCapacityProviderError)
-    pub fn delete_capacity_provider(
-        &self,
-    ) -> crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder
-    {
+    pub fn delete_capacity_provider(&self) -> crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder {
         crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder::new(self.handle.clone())
     }
 }

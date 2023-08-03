@@ -8,8 +8,7 @@ pub struct AssociateFacesOutput {
     pub associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
     #[doc(hidden)]
-    pub unsuccessful_face_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
+    pub unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
@@ -21,9 +20,7 @@ impl AssociateFacesOutput {
         self.associated_faces.as_deref()
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn unsuccessful_face_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceAssociation]> {
+    pub fn unsuccessful_face_associations(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceAssociation]> {
         self.unsuccessful_face_associations.as_deref()
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
@@ -45,14 +42,10 @@ impl AssociateFacesOutput {
 
 /// A builder for [`AssociateFacesOutput`](crate::operation::associate_faces::AssociateFacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFacesOutputBuilder {
-    pub(crate) associated_faces:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
-    pub(crate) unsuccessful_face_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
+    pub(crate) associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
+    pub(crate) unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }
@@ -69,17 +62,12 @@ impl AssociateFacesOutputBuilder {
         self
     }
     /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
-    pub fn set_associated_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
-    ) -> Self {
+    pub fn set_associated_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>) -> Self {
         self.associated_faces = input;
         self
     }
     /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
-    pub fn get_associated_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>> {
+    pub fn get_associated_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>> {
         &self.associated_faces
     }
     /// Appends an item to `unsuccessful_face_associations`.
@@ -87,10 +75,7 @@ impl AssociateFacesOutputBuilder {
     /// To override the contents of this collection use [`set_unsuccessful_face_associations`](Self::set_unsuccessful_face_associations).
     ///
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn unsuccessful_face_associations(
-        mut self,
-        input: crate::types::UnsuccessfulFaceAssociation,
-    ) -> Self {
+    pub fn unsuccessful_face_associations(mut self, input: crate::types::UnsuccessfulFaceAssociation) -> Self {
         let mut v = self.unsuccessful_face_associations.unwrap_or_default();
         v.push(input);
         self.unsuccessful_face_associations = ::std::option::Option::Some(v);
@@ -105,9 +90,7 @@ impl AssociateFacesOutputBuilder {
         self
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn get_unsuccessful_face_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>> {
+    pub fn get_unsuccessful_face_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>> {
         &self.unsuccessful_face_associations
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
@@ -116,10 +99,7 @@ impl AssociateFacesOutputBuilder {
         self
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatus>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.user_status = input;
         self
     }

@@ -22,9 +22,7 @@ impl GetPublicKeyInput {
 
 /// A builder for [`GetPublicKeyInput`](crate::operation::get_public_key::GetPublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPublicKeyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::operation::get_public_key::GetPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_public_key::GetPublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_public_key::GetPublicKeyInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_public_key::GetPublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_public_key::GetPublicKeyInput { id: self.id })
     }
 }

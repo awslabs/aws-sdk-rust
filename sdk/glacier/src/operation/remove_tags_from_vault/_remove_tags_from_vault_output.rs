@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromVaultOutput {
 }
 impl RemoveTagsFromVaultOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultOutput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultOutputBuilder {
+    pub fn builder() -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultOutputBuilder {
         crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromVaultOutput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromVaultOutputBuilder {
     _request_id: Option<String>,
 }

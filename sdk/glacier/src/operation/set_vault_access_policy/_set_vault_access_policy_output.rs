@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetVaultAccessPolicyOutput {
 }
 impl SetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyOutput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyOutputBuilder {
         crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetVaultAccessPolicyOutput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

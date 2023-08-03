@@ -29,17 +29,14 @@ impl DeleteQueuedMessagesInput {
 }
 impl DeleteQueuedMessagesInput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
-    pub fn builder(
-    ) -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
+    pub fn builder() -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
         crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedMessagesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -80,32 +77,23 @@ impl DeleteQueuedMessagesInputBuilder {
         self
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.wireless_device_type = input;
         self
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_queued_messages::DeleteQueuedMessagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesInput {
-                id: self.id,
-                message_id: self.message_id,
-                wireless_device_type: self.wireless_device_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_queued_messages::DeleteQueuedMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_queued_messages::DeleteQueuedMessagesInput {
+            id: self.id,
+            message_id: self.message_id,
+            wireless_device_type: self.wireless_device_type,
+        })
     }
 }

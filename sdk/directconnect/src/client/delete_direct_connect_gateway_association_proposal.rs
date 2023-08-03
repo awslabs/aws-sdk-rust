@@ -7,7 +7,10 @@ impl super::Client {
     /// - On success, responds with [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalOutput) with field(s):
     ///   - [`direct_connect_gateway_association_proposal(Option<DirectConnectGatewayAssociationProposal>)`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalOutput::direct_connect_gateway_association_proposal): <p>The ID of the associated gateway.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectConnectGatewayAssociationProposalError>`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalError)
-    pub fn delete_direct_connect_gateway_association_proposal(&self) -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalFluentBuilder{
+    pub fn delete_direct_connect_gateway_association_proposal(
+        &self,
+    ) -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalFluentBuilder
+    {
         crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalFluentBuilder::new(self.handle.clone())
     }
 }

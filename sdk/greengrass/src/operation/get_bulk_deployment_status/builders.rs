@@ -26,8 +26,7 @@ impl GetBulkDeploymentStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBulkDeploymentStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder,
+    inner: crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder,
 }
 impl GetBulkDeploymentStatusFluentBuilder {
     /// Creates a new `GetBulkDeploymentStatus`.
@@ -38,10 +37,7 @@ impl GetBulkDeploymentStatusFluentBuilder {
         }
     }
     /// Access the GetBulkDeploymentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetBulkDeploymentStatusFluentBuilder {
             crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetBulkDeploymentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetBulkDeploymentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetBulkDeploymentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetBulkDeploymentStatusFluentBuilder {
             crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bulk_deployment_id(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bulk_deployment_id(input);
         self
     }

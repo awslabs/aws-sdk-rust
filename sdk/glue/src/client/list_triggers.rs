@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`trigger_names(Option<Vec<String>>)`](crate::operation::list_triggers::ListTriggersOutput::trigger_names): <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_triggers::ListTriggersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
     /// - On failure, responds with [`SdkError<ListTriggersError>`](crate::operation::list_triggers::ListTriggersError)
-    pub fn list_triggers(
-        &self,
-    ) -> crate::operation::list_triggers::builders::ListTriggersFluentBuilder {
-        crate::operation::list_triggers::builders::ListTriggersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_triggers(&self) -> crate::operation::list_triggers::builders::ListTriggersFluentBuilder {
+        crate::operation::list_triggers::builders::ListTriggersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ pub struct Project {
     pub sample: ::std::option::Option<crate::types::Sample>,
     /// <p>Metadata tags that have been applied to the project.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -91,11 +89,7 @@ impl Project {
         self.sample.as_ref()
     }
     /// <p>Metadata tags that have been applied to the project.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
@@ -120,9 +114,7 @@ impl Project {
 
 /// A builder for [`Project`](crate::types::Project).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -134,9 +126,7 @@ pub struct ProjectBuilder {
     pub(crate) recipe_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sample: ::std::option::Option<crate::types::Sample>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opened_by: ::std::option::Option<::std::string::String>,
     pub(crate) open_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -162,10 +152,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time that the project was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -207,10 +194,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The last modification date and time for the project.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -219,18 +203,12 @@ impl ProjectBuilder {
         &self.last_modified_date
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -299,32 +277,19 @@ impl ProjectBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags that have been applied to the project.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata tags that have been applied to the project.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata tags that have been applied to the project.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
@@ -361,10 +326,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time when the project was opened.</p>
-    pub fn set_open_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_open_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.open_date = input;
         self
     }

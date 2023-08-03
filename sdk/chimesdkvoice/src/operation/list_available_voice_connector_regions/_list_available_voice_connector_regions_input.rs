@@ -5,23 +5,23 @@
 pub struct ListAvailableVoiceConnectorRegionsInput {}
 impl ListAvailableVoiceConnectorRegionsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableVoiceConnectorRegionsInput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput).
-    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsInputBuilder{
+    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsInputBuilder {
         crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableVoiceConnectorRegionsInput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsInputBuilder {}
 impl ListAvailableVoiceConnectorRegionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableVoiceConnectorRegionsInput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput {})
     }
 }

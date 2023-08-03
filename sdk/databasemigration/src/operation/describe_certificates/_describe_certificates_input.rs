@@ -31,18 +31,14 @@ impl DescribeCertificatesInput {
 }
 impl DescribeCertificatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
-        crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
+        crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -61,10 +57,7 @@ impl DescribeCertificatesInputBuilder {
         self
     }
     /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -106,16 +99,12 @@ impl DescribeCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_certificates::DescribeCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_certificates::DescribeCertificatesInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_certificates::DescribeCertificatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_certificates::DescribeCertificatesInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

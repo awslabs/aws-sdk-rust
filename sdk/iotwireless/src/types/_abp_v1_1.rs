@@ -37,9 +37,7 @@ impl AbpV11 {
 
 /// A builder for [`AbpV11`](crate::types::AbpV11).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbpV11Builder {
     pub(crate) dev_addr: ::std::option::Option<::std::string::String>,
     pub(crate) session_keys: ::std::option::Option<crate::types::SessionKeysAbpV11>,
@@ -66,10 +64,7 @@ impl AbpV11Builder {
         self
     }
     /// <p>Session keys for ABP v1.1</p>
-    pub fn set_session_keys(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionKeysAbpV11>,
-    ) -> Self {
+    pub fn set_session_keys(mut self, input: ::std::option::Option<crate::types::SessionKeysAbpV11>) -> Self {
         self.session_keys = input;
         self
     }

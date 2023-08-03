@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`recording_configurations(Option<Vec<RecordingConfigurationSummary>>)`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput::recording_configurations): <p>List of the matching recording configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput::next_token): <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListRecordingConfigurationsError>`](crate::operation::list_recording_configurations::ListRecordingConfigurationsError)
-    pub fn list_recording_configurations(&self) -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsFluentBuilder{
+    pub fn list_recording_configurations(
+        &self,
+    ) -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsFluentBuilder {
         crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

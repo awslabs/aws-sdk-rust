@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_page_marker(Option<String>)`](crate::operation::view_billing::ViewBillingOutput::next_page_marker): <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     ///   - [`billing_records(Option<Vec<BillingRecord>>)`](crate::operation::view_billing::ViewBillingOutput::billing_records): <p>A summary of billing records.</p>
     /// - On failure, responds with [`SdkError<ViewBillingError>`](crate::operation::view_billing::ViewBillingError)
-    pub fn view_billing(
-        &self,
-    ) -> crate::operation::view_billing::builders::ViewBillingFluentBuilder {
+    pub fn view_billing(&self) -> crate::operation::view_billing::builders::ViewBillingFluentBuilder {
         crate::operation::view_billing::builders::ViewBillingFluentBuilder::new(self.handle.clone())
     }
 }

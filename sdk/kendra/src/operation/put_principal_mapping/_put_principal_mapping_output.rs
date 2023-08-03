@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutPrincipalMappingOutput {
 }
 impl PutPrincipalMappingOutput {
     /// Creates a new builder-style object to manufacture [`PutPrincipalMappingOutput`](crate::operation::put_principal_mapping::PutPrincipalMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingOutputBuilder {
-        crate::operation::put_principal_mapping::builders::PutPrincipalMappingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingOutputBuilder {
+        crate::operation::put_principal_mapping::builders::PutPrincipalMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPrincipalMappingOutput`](crate::operation::put_principal_mapping::PutPrincipalMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPrincipalMappingOutputBuilder {
     _request_id: Option<String>,
 }

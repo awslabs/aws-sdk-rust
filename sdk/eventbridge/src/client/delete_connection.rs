@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::delete_connection::DeleteConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
     ///   - [`last_authorized_time(Option<DateTime>)`](crate::operation::delete_connection::DeleteConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
-    pub fn delete_connection(
-        &self,
-    ) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
-        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
+        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())
     }
 }

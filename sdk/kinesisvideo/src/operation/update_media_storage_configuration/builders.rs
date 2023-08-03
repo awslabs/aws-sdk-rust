@@ -5,16 +5,16 @@ pub use crate::operation::update_media_storage_configuration::_update_media_stor
 
 impl UpdateMediaStorageConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_media_storage_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl UpdateMediaStorageConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMediaStorageConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder,
+    inner: crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder,
 }
 impl UpdateMediaStorageConfigurationFluentBuilder {
     /// Creates a new `UpdateMediaStorageConfiguration`.
@@ -41,15 +41,20 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateMediaStorageConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +63,17 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,17 +91,26 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_media_storage_configuration::UpdateMediaStorageConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
@@ -113,25 +128,17 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        mut self,
-        input: crate::types::MediaStorageConfiguration,
-    ) -> Self {
+    pub fn media_storage_configuration(mut self, input: crate::types::MediaStorageConfiguration) -> Self {
         self.inner = self.inner.media_storage_configuration(input);
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn set_media_storage_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStorageConfiguration>,
-    ) -> Self {
+    pub fn set_media_storage_configuration(mut self, input: ::std::option::Option<crate::types::MediaStorageConfiguration>) -> Self {
         self.inner = self.inner.set_media_storage_configuration(input);
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn get_media_storage_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+    pub fn get_media_storage_configuration(&self) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
         self.inner.get_media_storage_configuration()
     }
 }

@@ -51,9 +51,7 @@ impl CreateWorkspaceImageOutput {
         self.state.as_ref()
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    pub fn required_tenancy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceImageRequiredTenancy> {
+    pub fn required_tenancy(&self) -> ::std::option::Option<&crate::types::WorkspaceImageRequiredTenancy> {
         self.required_tenancy.as_ref()
     }
     /// <p>The date when the image was created.</p>
@@ -72,17 +70,14 @@ impl ::aws_http::request_id::RequestId for CreateWorkspaceImageOutput {
 }
 impl CreateWorkspaceImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageOutput`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder {
+    pub fn builder() -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder {
         crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspaceImageOutput`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspaceImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -143,10 +138,7 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>The operating system that the image is running.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -160,10 +152,7 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>The availability status of the image.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceImageState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceImageState>) -> Self {
         self.state = input;
         self
     }
@@ -177,17 +166,12 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    pub fn set_required_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceImageRequiredTenancy>,
-    ) -> Self {
+    pub fn set_required_tenancy(mut self, input: ::std::option::Option<crate::types::WorkspaceImageRequiredTenancy>) -> Self {
         self.required_tenancy = input;
         self
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    pub fn get_required_tenancy(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceImageRequiredTenancy> {
+    pub fn get_required_tenancy(&self) -> &::std::option::Option<crate::types::WorkspaceImageRequiredTenancy> {
         &self.required_tenancy
     }
     /// <p>The date when the image was created.</p>
@@ -196,10 +180,7 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>The date when the image was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -208,18 +189,12 @@ impl CreateWorkspaceImageOutputBuilder {
         &self.created
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }

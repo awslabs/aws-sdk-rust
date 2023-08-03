@@ -26,8 +26,7 @@ impl ListImagesInRecycleBinInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImagesInRecycleBinFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder,
+    inner: crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder,
 }
 impl ListImagesInRecycleBinFluentBuilder {
     /// Creates a new `ListImagesInRecycleBin`.
@@ -38,10 +37,7 @@ impl ListImagesInRecycleBinFluentBuilder {
         }
     }
     /// Access the ListImagesInRecycleBin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListImagesInRecycleBinFluentBuilder {
             crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListImagesInRecycleBinFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListImagesInRecycleBinFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListImagesInRecycleBinFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListImagesInRecycleBinFluentBuilder {
             crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_images_in_recycle_bin::paginator::ListImagesInRecycleBinPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_images_in_recycle_bin::paginator::ListImagesInRecycleBinPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_images_in_recycle_bin::paginator::ListImagesInRecycleBinPaginator {
         crate::operation::list_images_in_recycle_bin::paginator::ListImagesInRecycleBinPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ImageIds`.
@@ -143,10 +125,7 @@ impl ListImagesInRecycleBinFluentBuilder {
         self
     }
     /// <p>The IDs of the AMIs to list. Omit this parameter to list all of the AMIs that are in the Recycle Bin. You can specify up to 20 IDs in a single request.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }

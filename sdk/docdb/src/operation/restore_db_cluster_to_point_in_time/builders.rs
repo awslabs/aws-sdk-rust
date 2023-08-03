@@ -5,16 +5,16 @@ pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_clust
 
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.restore_db_cluster_to_point_in_time();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBClusterToPointInTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder,
+    inner: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder,
 }
 impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// Creates a new `RestoreDBClusterToPointInTime`.
@@ -37,15 +37,20 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         }
     }
     /// Access the RestoreDBClusterToPointInTime as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTime,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the new cluster to be created.</p>
@@ -101,10 +116,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -115,10 +127,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -169,10 +178,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn source_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_cluster_identifier(input.into());
         self
     }
@@ -181,10 +187,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn set_source_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
     }
@@ -193,9 +196,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn get_source_db_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_identifier()
     }
     /// <p>The date and time to restore the cluster to.</p>
@@ -222,10 +223,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
-    pub fn set_restore_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_restore_to_time(input);
         self
     }
@@ -285,20 +283,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
@@ -313,25 +305,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -344,10 +328,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the restored cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -398,25 +379,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
         self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn get_enable_cloudwatch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>

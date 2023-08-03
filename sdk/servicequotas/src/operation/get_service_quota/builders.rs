@@ -10,10 +10,7 @@ impl GetServiceQuotaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_service_quota::GetServiceQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_quota::GetServiceQuotaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota::GetServiceQuotaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_service_quota();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetServiceQuotaFluentBuilder {
         }
     }
     /// Access the GetServiceQuota as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_service_quota::builders::GetServiceQuotaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_service_quota::builders::GetServiceQuotaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetServiceQuotaFluentBuilder {
             crate::operation::get_service_quota::GetServiceQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_quota::GetServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota::GetServiceQuotaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetServiceQuotaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetServiceQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_quota::GetServiceQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_quota::GetServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota::GetServiceQuotaError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetServiceQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_quota::GetServiceQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_quota::GetServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota::GetServiceQuotaError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetServiceQuotaFluentBuilder {
             crate::operation::get_service_quota::GetServiceQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_quota::GetServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota::GetServiceQuotaError>,
     > {
         self.customize_middleware().await
     }

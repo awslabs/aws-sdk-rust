@@ -21,10 +21,7 @@ pub fn ser_node_properties(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_node_range_property::ser_node_range_property(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_node_range_property::ser_node_range_property(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -35,17 +32,9 @@ pub fn ser_node_properties(
 
 pub(crate) fn de_node_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NodeProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NodeProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,49 +44,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "numNodes" => {
-                                builder = builder.set_num_nodes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "numNodes" => {
+                            builder = builder.set_num_nodes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "mainNode" => {
-                                builder = builder.set_main_node(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "nodeRangeProperties" => {
-                                builder = builder.set_node_range_properties(
-                                    crate::protocol_serde::shape_node_range_properties::de_node_range_properties(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "mainNode" => {
+                            builder = builder.set_main_node(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "nodeRangeProperties" => {
+                            builder = builder
+                                .set_node_range_properties(crate::protocol_serde::shape_node_range_properties::de_node_range_properties(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

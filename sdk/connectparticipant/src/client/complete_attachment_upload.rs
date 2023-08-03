@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`connection_token(impl ::std::convert::Into<String>)`](crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadFluentBuilder::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
     /// - On success, responds with [`CompleteAttachmentUploadOutput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput)
     /// - On failure, responds with [`SdkError<CompleteAttachmentUploadError>`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadError)
-    pub fn complete_attachment_upload(
-        &self,
-    ) -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadFluentBuilder
-    {
+    pub fn complete_attachment_upload(&self) -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadFluentBuilder {
         crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadFluentBuilder::new(self.handle.clone())
     }
 }

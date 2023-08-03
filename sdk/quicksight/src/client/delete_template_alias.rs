@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput::arn): <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_template_alias::DeleteTemplateAliasOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteTemplateAliasError>`](crate::operation::delete_template_alias::DeleteTemplateAliasError)
-    pub fn delete_template_alias(
-        &self,
-    ) -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasFluentBuilder {
-        crate::operation::delete_template_alias::builders::DeleteTemplateAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_template_alias(&self) -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasFluentBuilder {
+        crate::operation::delete_template_alias::builders::DeleteTemplateAliasFluentBuilder::new(self.handle.clone())
     }
 }

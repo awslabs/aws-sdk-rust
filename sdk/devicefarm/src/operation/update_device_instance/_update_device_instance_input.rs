@@ -29,17 +29,14 @@ impl UpdateDeviceInstanceInput {
 }
 impl UpdateDeviceInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
+    pub fn builder() -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder {
         crate::operation::update_device_instance::builders::UpdateDeviceInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceInstanceInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
@@ -86,10 +83,7 @@ impl UpdateDeviceInstanceInputBuilder {
         self
     }
     /// <p>An array of strings that you want to associate with the device instance.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -100,16 +94,12 @@ impl UpdateDeviceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_instance::UpdateDeviceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_device_instance::UpdateDeviceInstanceInput {
-                arn: self.arn,
-                profile_arn: self.profile_arn,
-                labels: self.labels,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_device_instance::UpdateDeviceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_device_instance::UpdateDeviceInstanceInput {
+            arn: self.arn,
+            profile_arn: self.profile_arn,
+            labels: self.labels,
+        })
     }
 }

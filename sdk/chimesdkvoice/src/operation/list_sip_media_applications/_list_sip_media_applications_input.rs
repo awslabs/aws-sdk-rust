@@ -22,18 +22,14 @@ impl ListSipMediaApplicationsInput {
 }
 impl ListSipMediaApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListSipMediaApplicationsInput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder {
         crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSipMediaApplicationsInput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSipMediaApplicationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListSipMediaApplicationsInputBuilder {
         crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

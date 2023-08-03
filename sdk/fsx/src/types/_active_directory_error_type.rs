@@ -44,13 +44,7 @@
 /// specified directory isn't currently in the ACTIVE state.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActiveDirectoryErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ActiveDirectoryErrorType {
             "INCOMPATIBLE_DOMAIN_MODE" => ActiveDirectoryErrorType::IncompatibleDomainMode,
             "INVALID_DOMAIN_STAGE" => ActiveDirectoryErrorType::InvalidDomainStage,
             "WRONG_VPC" => ActiveDirectoryErrorType::WrongVpc,
-            other => ActiveDirectoryErrorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ActiveDirectoryErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -97,12 +89,7 @@ impl ActiveDirectoryErrorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOMAIN_NOT_FOUND",
-            "INCOMPATIBLE_DOMAIN_MODE",
-            "INVALID_DOMAIN_STAGE",
-            "WRONG_VPC",
-        ]
+        &["DOMAIN_NOT_FOUND", "INCOMPATIBLE_DOMAIN_MODE", "INVALID_DOMAIN_STAGE", "WRONG_VPC"]
     }
 }
 impl ::std::convert::AsRef<str> for ActiveDirectoryErrorType {

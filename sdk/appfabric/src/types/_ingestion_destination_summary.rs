@@ -23,9 +23,7 @@ impl IngestionDestinationSummary {
 
 /// A builder for [`IngestionDestinationSummary`](crate::types::IngestionDestinationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestionDestinationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

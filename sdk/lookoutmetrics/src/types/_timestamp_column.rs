@@ -30,9 +30,7 @@ impl TimestampColumn {
 
 /// A builder for [`TimestampColumn`](crate::types::TimestampColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestampColumnBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_format: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl TimestampColumnBuilder {
         &self.column_name
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn column_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn set_column_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_column_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_format = input;
         self
     }

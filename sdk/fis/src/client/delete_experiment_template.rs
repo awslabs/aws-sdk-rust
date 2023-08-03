@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<DeleteExperimentTemplateError>`](crate::operation::delete_experiment_template::DeleteExperimentTemplateError)
-    pub fn delete_experiment_template(
-        &self,
-    ) -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder
-    {
+    pub fn delete_experiment_template(&self) -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder {
         crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput) with field(s):
     ///   - [`quota(Option<ServiceQuota>)`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput::quota): <p>Information about the quota.</p>
     /// - On failure, responds with [`SdkError<GetAWSDefaultServiceQuotaError>`](crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError)
-    pub fn get_aws_default_service_quota(&self) -> crate::operation::get_aws_default_service_quota::builders::GetAWSDefaultServiceQuotaFluentBuilder{
+    pub fn get_aws_default_service_quota(&self) -> crate::operation::get_aws_default_service_quota::builders::GetAWSDefaultServiceQuotaFluentBuilder {
         crate::operation::get_aws_default_service_quota::builders::GetAWSDefaultServiceQuotaFluentBuilder::new(self.handle.clone())
     }
 }

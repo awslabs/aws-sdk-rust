@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVodSourceOutput {
 }
 impl DeleteVodSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput).
-    pub fn builder() -> crate::operation::delete_vod_source::builders::DeleteVodSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vod_source::builders::DeleteVodSourceOutputBuilder {
         crate::operation::delete_vod_source::builders::DeleteVodSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVodSourceOutputBuilder {
     _request_id: Option<String>,
 }

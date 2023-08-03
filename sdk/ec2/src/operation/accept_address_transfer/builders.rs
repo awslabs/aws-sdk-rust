@@ -37,10 +37,7 @@ impl AcceptAddressTransferFluentBuilder {
         }
     }
     /// Access the AcceptAddressTransfer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AcceptAddressTransferFluentBuilder {
             crate::operation::accept_address_transfer::AcceptAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_address_transfer::AcceptAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_address_transfer::AcceptAddressTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AcceptAddressTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AcceptAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_address_transfer::AcceptAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_address_transfer::AcceptAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_address_transfer::AcceptAddressTransferError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AcceptAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_address_transfer::AcceptAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_address_transfer::AcceptAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_address_transfer::AcceptAddressTransferError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AcceptAddressTransferFluentBuilder {
             crate::operation::accept_address_transfer::AcceptAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_address_transfer::AcceptAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_address_transfer::AcceptAddressTransferError>,
     > {
         self.customize_middleware().await
     }
@@ -159,10 +145,7 @@ impl AcceptAddressTransferFluentBuilder {
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -173,9 +156,7 @@ impl AcceptAddressTransferFluentBuilder {
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

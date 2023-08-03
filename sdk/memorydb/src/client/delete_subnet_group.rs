@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSubnetGroupOutput`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput) with field(s):
     ///   - [`subnet_group(Option<SubnetGroup>)`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput::subnet_group): <p>The subnet group object that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSubnetGroupError>`](crate::operation::delete_subnet_group::DeleteSubnetGroupError)
-    pub fn delete_subnet_group(
-        &self,
-    ) -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder {
-        crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_subnet_group(&self) -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder {
+        crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

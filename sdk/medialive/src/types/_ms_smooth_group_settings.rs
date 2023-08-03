@@ -9,8 +9,7 @@ pub struct MsSmoothGroupSettings {
     pub acquisition_point_id: ::std::option::Option<::std::string::String>,
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
     #[doc(hidden)]
-    pub audio_only_timecode_control:
-        ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,
+    pub audio_only_timecode_control: ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
     #[doc(hidden)]
     pub certificate_mode: ::std::option::Option<crate::types::SmoothGroupCertificateMode>,
@@ -55,8 +54,7 @@ pub struct MsSmoothGroupSettings {
     pub sparse_track_type: ::std::option::Option<crate::types::SmoothGroupSparseTrackType>,
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
     #[doc(hidden)]
-    pub stream_manifest_behavior:
-        ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>,
+    pub stream_manifest_behavior: ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>,
     /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
     #[doc(hidden)]
     pub timestamp_offset: ::std::option::Option<::std::string::String>,
@@ -70,15 +68,11 @@ impl MsSmoothGroupSettings {
         self.acquisition_point_id.as_deref()
     }
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
-    pub fn audio_only_timecode_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupAudioOnlyTimecodeControl> {
+    pub fn audio_only_timecode_control(&self) -> ::std::option::Option<&crate::types::SmoothGroupAudioOnlyTimecodeControl> {
         self.audio_only_timecode_control.as_ref()
     }
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
-    pub fn certificate_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupCertificateMode> {
+    pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::SmoothGroupCertificateMode> {
         self.certificate_mode.as_ref()
     }
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
@@ -98,9 +92,7 @@ impl MsSmoothGroupSettings {
         self.event_id_mode.as_ref()
     }
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
-    pub fn event_stop_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupEventStopBehavior> {
+    pub fn event_stop_behavior(&self) -> ::std::option::Option<&crate::types::SmoothGroupEventStopBehavior> {
         self.event_stop_behavior.as_ref()
     }
     /// Size in seconds of file cache for streaming outputs.
@@ -112,9 +104,7 @@ impl MsSmoothGroupSettings {
         self.fragment_length
     }
     /// Parameter that control output group behavior on input loss.
-    pub fn input_loss_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputLossActionForMsSmoothOut> {
+    pub fn input_loss_action(&self) -> ::std::option::Option<&crate::types::InputLossActionForMsSmoothOut> {
         self.input_loss_action.as_ref()
     }
     /// Number of retry attempts.
@@ -126,9 +116,7 @@ impl MsSmoothGroupSettings {
         self.restart_delay
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
-    pub fn segmentation_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupSegmentationMode> {
+    pub fn segmentation_mode(&self) -> ::std::option::Option<&crate::types::SmoothGroupSegmentationMode> {
         self.segmentation_mode.as_ref()
     }
     /// Number of milliseconds to delay the output from the second pipeline.
@@ -136,15 +124,11 @@ impl MsSmoothGroupSettings {
         self.send_delay_ms
     }
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
-    pub fn sparse_track_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupSparseTrackType> {
+    pub fn sparse_track_type(&self) -> ::std::option::Option<&crate::types::SmoothGroupSparseTrackType> {
         self.sparse_track_type.as_ref()
     }
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
-    pub fn stream_manifest_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupStreamManifestBehavior> {
+    pub fn stream_manifest_behavior(&self) -> ::std::option::Option<&crate::types::SmoothGroupStreamManifestBehavior> {
         self.stream_manifest_behavior.as_ref()
     }
     /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
@@ -152,9 +136,7 @@ impl MsSmoothGroupSettings {
         self.timestamp_offset.as_deref()
     }
     /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
-    pub fn timestamp_offset_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmoothGroupTimestampOffsetMode> {
+    pub fn timestamp_offset_mode(&self) -> ::std::option::Option<&crate::types::SmoothGroupTimestampOffsetMode> {
         self.timestamp_offset_mode.as_ref()
     }
 }
@@ -167,49 +149,36 @@ impl MsSmoothGroupSettings {
 
 /// A builder for [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MsSmoothGroupSettingsBuilder {
     pub(crate) acquisition_point_id: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_only_timecode_control:
-        ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,
+    pub(crate) audio_only_timecode_control: ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,
     pub(crate) certificate_mode: ::std::option::Option<crate::types::SmoothGroupCertificateMode>,
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_id_mode: ::std::option::Option<crate::types::SmoothGroupEventIdMode>,
-    pub(crate) event_stop_behavior:
-        ::std::option::Option<crate::types::SmoothGroupEventStopBehavior>,
+    pub(crate) event_stop_behavior: ::std::option::Option<crate::types::SmoothGroupEventStopBehavior>,
     pub(crate) filecache_duration: ::std::option::Option<i32>,
     pub(crate) fragment_length: ::std::option::Option<i32>,
-    pub(crate) input_loss_action:
-        ::std::option::Option<crate::types::InputLossActionForMsSmoothOut>,
+    pub(crate) input_loss_action: ::std::option::Option<crate::types::InputLossActionForMsSmoothOut>,
     pub(crate) num_retries: ::std::option::Option<i32>,
     pub(crate) restart_delay: ::std::option::Option<i32>,
     pub(crate) segmentation_mode: ::std::option::Option<crate::types::SmoothGroupSegmentationMode>,
     pub(crate) send_delay_ms: ::std::option::Option<i32>,
     pub(crate) sparse_track_type: ::std::option::Option<crate::types::SmoothGroupSparseTrackType>,
-    pub(crate) stream_manifest_behavior:
-        ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>,
+    pub(crate) stream_manifest_behavior: ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>,
     pub(crate) timestamp_offset: ::std::option::Option<::std::string::String>,
-    pub(crate) timestamp_offset_mode:
-        ::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode>,
+    pub(crate) timestamp_offset_mode: ::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode>,
 }
 impl MsSmoothGroupSettingsBuilder {
     /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
-    pub fn acquisition_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acquisition_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acquisition_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
-    pub fn set_acquisition_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acquisition_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acquisition_point_id = input;
         self
     }
@@ -218,25 +187,17 @@ impl MsSmoothGroupSettingsBuilder {
         &self.acquisition_point_id
     }
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
-    pub fn audio_only_timecode_control(
-        mut self,
-        input: crate::types::SmoothGroupAudioOnlyTimecodeControl,
-    ) -> Self {
+    pub fn audio_only_timecode_control(mut self, input: crate::types::SmoothGroupAudioOnlyTimecodeControl) -> Self {
         self.audio_only_timecode_control = ::std::option::Option::Some(input);
         self
     }
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
-    pub fn set_audio_only_timecode_control(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,
-    ) -> Self {
+    pub fn set_audio_only_timecode_control(mut self, input: ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>) -> Self {
         self.audio_only_timecode_control = input;
         self
     }
     /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
-    pub fn get_audio_only_timecode_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl> {
+    pub fn get_audio_only_timecode_control(&self) -> &::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl> {
         &self.audio_only_timecode_control
     }
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
@@ -245,17 +206,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
-    pub fn set_certificate_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupCertificateMode>,
-    ) -> Self {
+    pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::SmoothGroupCertificateMode>) -> Self {
         self.certificate_mode = input;
         self
     }
     /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.
-    pub fn get_certificate_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupCertificateMode> {
+    pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::SmoothGroupCertificateMode> {
         &self.certificate_mode
     }
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
@@ -278,10 +234,7 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationRef>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
         self.destination = input;
         self
     }
@@ -309,39 +262,26 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
-    pub fn set_event_id_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupEventIdMode>,
-    ) -> Self {
+    pub fn set_event_id_mode(mut self, input: ::std::option::Option<crate::types::SmoothGroupEventIdMode>) -> Self {
         self.event_id_mode = input;
         self
     }
     /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - "useConfigured" - use the value provided in eventId - "useTimestamp" - generate and send an event ID based on the current timestamp - "noEventId" - do not send an event ID to the IIS server.
-    pub fn get_event_id_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupEventIdMode> {
+    pub fn get_event_id_mode(&self) -> &::std::option::Option<crate::types::SmoothGroupEventIdMode> {
         &self.event_id_mode
     }
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
-    pub fn event_stop_behavior(
-        mut self,
-        input: crate::types::SmoothGroupEventStopBehavior,
-    ) -> Self {
+    pub fn event_stop_behavior(mut self, input: crate::types::SmoothGroupEventStopBehavior) -> Self {
         self.event_stop_behavior = ::std::option::Option::Some(input);
         self
     }
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
-    pub fn set_event_stop_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupEventStopBehavior>,
-    ) -> Self {
+    pub fn set_event_stop_behavior(mut self, input: ::std::option::Option<crate::types::SmoothGroupEventStopBehavior>) -> Self {
         self.event_stop_behavior = input;
         self
     }
     /// When set to sendEos, send EOS signal to IIS server when stopping the event
-    pub fn get_event_stop_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupEventStopBehavior> {
+    pub fn get_event_stop_behavior(&self) -> &::std::option::Option<crate::types::SmoothGroupEventStopBehavior> {
         &self.event_stop_behavior
     }
     /// Size in seconds of file cache for streaming outputs.
@@ -378,17 +318,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Parameter that control output group behavior on input loss.
-    pub fn set_input_loss_action(
-        mut self,
-        input: ::std::option::Option<crate::types::InputLossActionForMsSmoothOut>,
-    ) -> Self {
+    pub fn set_input_loss_action(mut self, input: ::std::option::Option<crate::types::InputLossActionForMsSmoothOut>) -> Self {
         self.input_loss_action = input;
         self
     }
     /// Parameter that control output group behavior on input loss.
-    pub fn get_input_loss_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputLossActionForMsSmoothOut> {
+    pub fn get_input_loss_action(&self) -> &::std::option::Option<crate::types::InputLossActionForMsSmoothOut> {
         &self.input_loss_action
     }
     /// Number of retry attempts.
@@ -425,17 +360,12 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
-    pub fn set_segmentation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupSegmentationMode>,
-    ) -> Self {
+    pub fn set_segmentation_mode(mut self, input: ::std::option::Option<crate::types::SmoothGroupSegmentationMode>) -> Self {
         self.segmentation_mode = input;
         self
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
-    pub fn get_segmentation_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupSegmentationMode> {
+    pub fn get_segmentation_mode(&self) -> &::std::option::Option<crate::types::SmoothGroupSegmentationMode> {
         &self.segmentation_mode
     }
     /// Number of milliseconds to delay the output from the second pipeline.
@@ -458,54 +388,35 @@ impl MsSmoothGroupSettingsBuilder {
         self
     }
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
-    pub fn set_sparse_track_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupSparseTrackType>,
-    ) -> Self {
+    pub fn set_sparse_track_type(mut self, input: ::std::option::Option<crate::types::SmoothGroupSparseTrackType>) -> Self {
         self.sparse_track_type = input;
         self
     }
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
-    pub fn get_sparse_track_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupSparseTrackType> {
+    pub fn get_sparse_track_type(&self) -> &::std::option::Option<crate::types::SmoothGroupSparseTrackType> {
         &self.sparse_track_type
     }
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
-    pub fn stream_manifest_behavior(
-        mut self,
-        input: crate::types::SmoothGroupStreamManifestBehavior,
-    ) -> Self {
+    pub fn stream_manifest_behavior(mut self, input: crate::types::SmoothGroupStreamManifestBehavior) -> Self {
         self.stream_manifest_behavior = ::std::option::Option::Some(input);
         self
     }
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
-    pub fn set_stream_manifest_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>,
-    ) -> Self {
+    pub fn set_stream_manifest_behavior(mut self, input: ::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior>) -> Self {
         self.stream_manifest_behavior = input;
         self
     }
     /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
-    pub fn get_stream_manifest_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior> {
+    pub fn get_stream_manifest_behavior(&self) -> &::std::option::Option<crate::types::SmoothGroupStreamManifestBehavior> {
         &self.stream_manifest_behavior
     }
     /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
-    pub fn timestamp_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.
-    pub fn set_timestamp_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestamp_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_offset = input;
         self
     }
@@ -514,25 +425,17 @@ impl MsSmoothGroupSettingsBuilder {
         &self.timestamp_offset
     }
     /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
-    pub fn timestamp_offset_mode(
-        mut self,
-        input: crate::types::SmoothGroupTimestampOffsetMode,
-    ) -> Self {
+    pub fn timestamp_offset_mode(mut self, input: crate::types::SmoothGroupTimestampOffsetMode) -> Self {
         self.timestamp_offset_mode = ::std::option::Option::Some(input);
         self
     }
     /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
-    pub fn set_timestamp_offset_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode>,
-    ) -> Self {
+    pub fn set_timestamp_offset_mode(mut self, input: ::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode>) -> Self {
         self.timestamp_offset_mode = input;
         self
     }
     /// Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset
-    pub fn get_timestamp_offset_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode> {
+    pub fn get_timestamp_offset_mode(&self) -> &::std::option::Option<crate::types::SmoothGroupTimestampOffsetMode> {
         &self.timestamp_offset_mode
     }
     /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).

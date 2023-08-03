@@ -26,7 +26,7 @@ impl StartTableDataImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTableDataImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_table_data_import_job::builders::StartTableDataImportJobInputBuilder,
+    inner: crate::operation::start_table_data_import_job::builders::StartTableDataImportJobInputBuilder,
 }
 impl StartTableDataImportJobFluentBuilder {
     /// Creates a new `StartTableDataImportJob`.
@@ -37,10 +37,7 @@ impl StartTableDataImportJobFluentBuilder {
         }
     }
     /// Access the StartTableDataImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_table_data_import_job::builders::StartTableDataImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_table_data_import_job::builders::StartTableDataImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartTableDataImportJobFluentBuilder {
             crate::operation::start_table_data_import_job::StartTableDataImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_table_data_import_job::StartTableDataImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartTableDataImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartTableDataImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_table_data_import_job::StartTableDataImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_table_data_import_job::StartTableDataImportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartTableDataImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_table_data_import_job::StartTableDataImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_table_data_import_job::StartTableDataImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartTableDataImportJobFluentBuilder {
             crate::operation::start_table_data_import_job::StartTableDataImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_table_data_import_job::StartTableDataImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +132,7 @@ impl StartTableDataImportJobFluentBuilder {
         self
     }
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::ImportDataSource>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
@@ -163,10 +146,7 @@ impl StartTableDataImportJobFluentBuilder {
         self
     }
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportSourceDataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::ImportSourceDataFormat>) -> Self {
         self.inner = self.inner.set_data_format(input);
         self
     }
@@ -176,19 +156,13 @@ impl StartTableDataImportJobFluentBuilder {
     }
     /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn destination_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_table_id(input.into());
         self
     }
     /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    pub fn set_destination_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_table_id(input);
         self
     }
@@ -203,10 +177,7 @@ impl StartTableDataImportJobFluentBuilder {
         self
     }
     /// <p> The options for customizing this import request. </p>
-    pub fn set_import_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportOptions>,
-    ) -> Self {
+    pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
         self.inner = self.inner.set_import_options(input);
         self
     }
@@ -216,19 +187,13 @@ impl StartTableDataImportJobFluentBuilder {
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for StopPipelineExecutionOutput {
 }
 impl StopPipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopPipelineExecutionOutput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionOutputBuilder {
         crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopPipelineExecutionOutput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopPipelineExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }

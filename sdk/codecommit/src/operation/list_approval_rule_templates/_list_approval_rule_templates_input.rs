@@ -22,16 +22,14 @@ impl ListApprovalRuleTemplatesInput {
 }
 impl ListApprovalRuleTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesInput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput).
-    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder {
         crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApprovalRuleTemplatesInput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListApprovalRuleTemplatesInputBuilder {
         crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

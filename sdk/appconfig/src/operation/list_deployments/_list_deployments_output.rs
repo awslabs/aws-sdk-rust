@@ -35,9 +35,7 @@ impl ListDeploymentsOutput {
 
 /// A builder for [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDeploymentsOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
         &self.items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

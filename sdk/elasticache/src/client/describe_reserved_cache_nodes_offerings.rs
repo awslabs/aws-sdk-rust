@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_cache_nodes_offerings(Option<Vec<ReservedCacheNodesOffering>>)`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput::reserved_cache_nodes_offerings): <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedCacheNodesOfferingsError>`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError)
-    pub fn describe_reserved_cache_nodes_offerings(&self) -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsFluentBuilder{
-        crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsFluentBuilder::new(self.handle.clone())
+    pub fn describe_reserved_cache_nodes_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsFluentBuilder {
+        crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

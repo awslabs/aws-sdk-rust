@@ -10,9 +10,7 @@ pub struct ConnectAppAuthorizationOutput {
 }
 impl ConnectAppAuthorizationOutput {
     /// <p>Contains a summary of the app authorization.</p>
-    pub fn app_authorization_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppAuthorizationSummary> {
+    pub fn app_authorization_summary(&self) -> ::std::option::Option<&crate::types::AppAuthorizationSummary> {
         self.app_authorization_summary.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for ConnectAppAuthorizationOutput {
 }
 impl ConnectAppAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`ConnectAppAuthorizationOutput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder {
         crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConnectAppAuthorizationOutput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectAppAuthorizationOutputBuilder {
-    pub(crate) app_authorization_summary:
-        ::std::option::Option<crate::types::AppAuthorizationSummary>,
+    pub(crate) app_authorization_summary: ::std::option::Option<crate::types::AppAuthorizationSummary>,
     _request_id: Option<String>,
 }
 impl ConnectAppAuthorizationOutputBuilder {
     /// <p>Contains a summary of the app authorization.</p>
-    pub fn app_authorization_summary(
-        mut self,
-        input: crate::types::AppAuthorizationSummary,
-    ) -> Self {
+    pub fn app_authorization_summary(mut self, input: crate::types::AppAuthorizationSummary) -> Self {
         self.app_authorization_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a summary of the app authorization.</p>
-    pub fn set_app_authorization_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAuthorizationSummary>,
-    ) -> Self {
+    pub fn set_app_authorization_summary(mut self, input: ::std::option::Option<crate::types::AppAuthorizationSummary>) -> Self {
         self.app_authorization_summary = input;
         self
     }
     /// <p>Contains a summary of the app authorization.</p>
-    pub fn get_app_authorization_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppAuthorizationSummary> {
+    pub fn get_app_authorization_summary(&self) -> &::std::option::Option<crate::types::AppAuthorizationSummary> {
         &self.app_authorization_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +58,7 @@ impl ConnectAppAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConnectAppAuthorizationOutput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput {
+    pub fn build(self) -> crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput {
         crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput {
             app_authorization_summary: self.app_authorization_summary,
             _request_id: self._request_id,

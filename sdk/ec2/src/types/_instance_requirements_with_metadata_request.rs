@@ -10,8 +10,7 @@ pub struct InstanceRequirementsWithMetadataRequest {
     pub architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     /// <p>The virtualization type.</p>
     #[doc(hidden)]
-    pub virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
@@ -22,15 +21,11 @@ impl InstanceRequirementsWithMetadataRequest {
         self.architecture_types.as_deref()
     }
     /// <p>The virtualization type.</p>
-    pub fn virtualization_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
+    pub fn virtualization_types(&self) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
         self.virtualization_types.as_deref()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
 }
@@ -43,16 +38,11 @@ impl InstanceRequirementsWithMetadataRequest {
 
 /// A builder for [`InstanceRequirementsWithMetadataRequest`](crate::types::InstanceRequirementsWithMetadataRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceRequirementsWithMetadataRequestBuilder {
-    pub(crate) architecture_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
-    pub(crate) virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
-    pub(crate) instance_requirements:
-        ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
+    pub(crate) virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
 }
 impl InstanceRequirementsWithMetadataRequestBuilder {
     /// Appends an item to `architecture_types`.
@@ -67,17 +57,12 @@ impl InstanceRequirementsWithMetadataRequestBuilder {
         self
     }
     /// <p>The architecture type.</p>
-    pub fn set_architecture_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
-    ) -> Self {
+    pub fn set_architecture_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
         self.architecture_types = input;
         self
     }
     /// <p>The architecture type.</p>
-    pub fn get_architecture_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+    pub fn get_architecture_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
         &self.architecture_types
     }
     /// Appends an item to `virtualization_types`.
@@ -92,39 +77,26 @@ impl InstanceRequirementsWithMetadataRequestBuilder {
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn set_virtualization_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
-    ) -> Self {
+    pub fn set_virtualization_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>) -> Self {
         self.virtualization_types = input;
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn get_virtualization_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
+    pub fn get_virtualization_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
         &self.virtualization_types
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
-    pub fn instance_requirements(
-        mut self,
-        input: crate::types::InstanceRequirementsRequest,
-    ) -> Self {
+    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
-    pub fn set_instance_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
-    ) -> Self {
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
         &self.instance_requirements
     }
     /// Consumes the builder and constructs a [`InstanceRequirementsWithMetadataRequest`](crate::types::InstanceRequirementsWithMetadataRequest).

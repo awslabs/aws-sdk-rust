@@ -12,10 +12,7 @@ pub fn ser_object_attribute_range(
     if let Some(var_3) = &input.range {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Range").start_object();
-        crate::protocol_serde::shape_typed_attribute_value_range::ser_typed_attribute_value_range(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_typed_attribute_value_range::ser_typed_attribute_value_range(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

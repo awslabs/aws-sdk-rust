@@ -36,9 +36,7 @@ impl CreateAclInput {
 
 /// A builder for [`CreateAclInput`](crate::operation::create_acl::CreateAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAclInputBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl CreateAclInputBuilder {
         self
     }
     /// <p>The list of users that belong to the Access Control List.</p>
-    pub fn set_user_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_names = input;
         self
     }
@@ -94,10 +89,7 @@ impl CreateAclInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -106,12 +98,7 @@ impl CreateAclInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAclInput`](crate::operation::create_acl::CreateAclInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_acl::CreateAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_acl::CreateAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_acl::CreateAclInput {
             acl_name: self.acl_name,
             user_names: self.user_names,

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`network_sites(Option<Vec<NetworkSite>>)`](crate::operation::list_network_sites::ListNetworkSitesOutput::network_sites): <p>Information about the network sites.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_sites::ListNetworkSitesOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListNetworkSitesError>`](crate::operation::list_network_sites::ListNetworkSitesError)
-    pub fn list_network_sites(
-        &self,
-    ) -> crate::operation::list_network_sites::builders::ListNetworkSitesFluentBuilder {
-        crate::operation::list_network_sites::builders::ListNetworkSitesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_network_sites(&self) -> crate::operation::list_network_sites::builders::ListNetworkSitesFluentBuilder {
+        crate::operation::list_network_sites::builders::ListNetworkSitesFluentBuilder::new(self.handle.clone())
     }
 }

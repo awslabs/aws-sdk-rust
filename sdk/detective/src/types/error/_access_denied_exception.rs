@@ -77,9 +77,7 @@ impl AccessDeniedException {
 
 /// A builder for [`AccessDeniedException`](crate::types::error::AccessDeniedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessDeniedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -118,18 +116,12 @@ impl AccessDeniedExceptionBuilder {
         &self.error_code
     }
     /// <p>The SDK default explanation of why access was denied.</p>
-    pub fn error_code_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_code_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SDK default explanation of why access was denied.</p>
-    pub fn set_error_code_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code_reason = input;
         self
     }
@@ -143,10 +135,7 @@ impl AccessDeniedExceptionBuilder {
         self
     }
     /// <p>The error code associated with the access denied exception.</p>
-    pub fn set_sub_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorCode>,
-    ) -> Self {
+    pub fn set_sub_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.sub_error_code = input;
         self
     }
@@ -155,18 +144,12 @@ impl AccessDeniedExceptionBuilder {
         &self.sub_error_code
     }
     /// <p> An explanation of why access was denied.</p>
-    pub fn sub_error_code_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_error_code_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An explanation of why access was denied.</p>
-    pub fn set_sub_error_code_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_error_code_reason = input;
         self
     }
@@ -181,10 +164,7 @@ impl AccessDeniedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

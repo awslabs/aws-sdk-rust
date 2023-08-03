@@ -12,8 +12,7 @@ pub struct FieldLevelEncryption {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
     #[doc(hidden)]
-    pub field_level_encryption_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
 }
 impl FieldLevelEncryption {
     /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
@@ -25,9 +24,7 @@ impl FieldLevelEncryption {
         self.last_modified_time.as_ref()
     }
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
-    pub fn field_level_encryption_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
+    pub fn field_level_encryption_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
         self.field_level_encryption_config.as_ref()
     }
 }
@@ -40,14 +37,11 @@ impl FieldLevelEncryption {
 
 /// A builder for [`FieldLevelEncryption`](crate::types::FieldLevelEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) field_level_encryption_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub(crate) field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
 }
 impl FieldLevelEncryptionBuilder {
     /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain selected data fields to be encrypted by specific public keys.</p>
@@ -70,10 +64,7 @@ impl FieldLevelEncryptionBuilder {
         self
     }
     /// <p>The last time the field-level encryption configuration was changed.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -82,25 +73,17 @@ impl FieldLevelEncryptionBuilder {
         &self.last_modified_time
     }
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
-    pub fn field_level_encryption_config(
-        mut self,
-        input: crate::types::FieldLevelEncryptionConfig,
-    ) -> Self {
+    pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
         self.field_level_encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
-    pub fn set_field_level_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
-    ) -> Self {
+    pub fn set_field_level_encryption_config(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>) -> Self {
         self.field_level_encryption_config = input;
         self
     }
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
-    pub fn get_field_level_encryption_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
+    pub fn get_field_level_encryption_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
         &self.field_level_encryption_config
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryption`](crate::types::FieldLevelEncryption).

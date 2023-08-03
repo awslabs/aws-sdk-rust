@@ -14,9 +14,7 @@ pub struct CreateKxDatabaseInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the kdb database. You can add up to 50 tags to your kdb database</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -35,11 +33,7 @@ impl CreateKxDatabaseInput {
         self.description.as_deref()
     }
     /// <p>A list of key-value pairs to label the kdb database. You can add up to 50 tags to your kdb database</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -49,40 +43,29 @@ impl CreateKxDatabaseInput {
 }
 impl CreateKxDatabaseInput {
     /// Creates a new builder-style object to manufacture [`CreateKxDatabaseInput`](crate::operation::create_kx_database::CreateKxDatabaseInput).
-    pub fn builder() -> crate::operation::create_kx_database::builders::CreateKxDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_kx_database::builders::CreateKxDatabaseInputBuilder {
         crate::operation::create_kx_database::builders::CreateKxDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKxDatabaseInput`](crate::operation::create_kx_database::CreateKxDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKxDatabaseInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxDatabaseInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -91,18 +74,12 @@ impl CreateKxDatabaseInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -129,32 +106,19 @@ impl CreateKxDatabaseInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs to label the kdb database. You can add up to 50 tags to your kdb database</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of key-value pairs to label the kdb database. You can add up to 50 tags to your kdb database</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs to label the kdb database. You can add up to 50 tags to your kdb database</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -174,18 +138,13 @@ impl CreateKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxDatabaseInput`](crate::operation::create_kx_database::CreateKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_kx_database::CreateKxDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_kx_database::CreateKxDatabaseInput {
-                environment_id: self.environment_id,
-                database_name: self.database_name,
-                description: self.description,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_kx_database::CreateKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_kx_database::CreateKxDatabaseInput {
+            environment_id: self.environment_id,
+            database_name: self.database_name,
+            description: self.description,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

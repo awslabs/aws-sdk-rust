@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`provisioned_product_detail(Option<ProvisionedProductDetail>)`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput::provisioned_product_detail): <p>Information about the provisioned product.</p>
     ///   - [`cloud_watch_dashboards(Option<Vec<CloudWatchDashboard>>)`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput::cloud_watch_dashboards): <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisionedProductError>`](crate::operation::describe_provisioned_product::DescribeProvisionedProductError)
-    pub fn describe_provisioned_product(&self) -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductFluentBuilder{
+    pub fn describe_provisioned_product(&self) -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductFluentBuilder {
         crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductFluentBuilder::new(self.handle.clone())
     }
 }

@@ -95,9 +95,7 @@ impl Placement {
 
 /// A builder for [`Placement`](crate::types::Placement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) affinity: ::std::option::Option<::std::string::String>,
@@ -113,20 +111,14 @@ impl PlacementBuilder {
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the instance.</p>
     /// <p>If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -219,18 +211,12 @@ impl PlacementBuilder {
         &self.tenancy
     }
     /// <p>Reserved for future use.</p>
-    pub fn spread_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spread_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spread_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_spread_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spread_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spread_domain = input;
         self
     }
@@ -241,20 +227,14 @@ impl PlacementBuilder {
     /// <p>The ARN of the host resource group in which to launch the instances.</p>
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the host resource group in which to launch the instances.</p>
     /// <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_resource_group_arn = input;
         self
     }

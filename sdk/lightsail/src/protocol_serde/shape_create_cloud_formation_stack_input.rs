@@ -9,10 +9,7 @@ pub fn ser_create_cloud_formation_stack_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_instance_entry::ser_instance_entry(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_instance_entry::ser_instance_entry(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

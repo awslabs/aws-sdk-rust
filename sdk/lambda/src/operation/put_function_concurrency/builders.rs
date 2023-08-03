@@ -39,10 +39,7 @@ impl PutFunctionConcurrencyFluentBuilder {
         }
     }
     /// Access the PutFunctionConcurrency as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl PutFunctionConcurrencyFluentBuilder {
             crate::operation::put_function_concurrency::PutFunctionConcurrency,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_concurrency::PutFunctionConcurrencyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl PutFunctionConcurrencyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl PutFunctionConcurrencyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_concurrency::PutFunctionConcurrencyError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl PutFunctionConcurrencyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_concurrency::PutFunctionConcurrencyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl PutFunctionConcurrencyFluentBuilder {
             crate::operation::put_function_concurrency::PutFunctionConcurrency,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_concurrency::PutFunctionConcurrencyError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl PutFunctionConcurrencyFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -148,10 +131,7 @@ impl PutFunctionConcurrencyFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

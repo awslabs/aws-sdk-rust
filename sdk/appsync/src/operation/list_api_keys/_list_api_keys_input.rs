@@ -36,9 +36,7 @@ impl ListApiKeysInput {
 
 /// A builder for [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiKeysInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl ListApiKeysInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_api_keys::ListApiKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_api_keys::ListApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_api_keys::ListApiKeysInput {
             api_id: self.api_id,
             next_token: self.next_token,

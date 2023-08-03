@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListOrganizationServiceAccessStatusOu
 }
 impl ListOrganizationServiceAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
-    pub fn builder() -> crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder{
+    pub fn builder() -> crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder {
         crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationServiceAccessStatusOutputBuilder {
     pub(crate) organization_status: ::std::option::Option<crate::types::OrganizationStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl ListOrganizationServiceAccessStatusOutputBuilder {
         self
     }
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
-    pub fn set_organization_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationStatus>,
-    ) -> Self {
+    pub fn set_organization_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
         self.organization_status = input;
         self
     }
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
-    pub fn get_organization_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationStatus> {
+    pub fn get_organization_status(&self) -> &::std::option::Option<crate::types::OrganizationStatus> {
         &self.organization_status
     }
     /// <p>The token for the next page of results.</p>
@@ -87,12 +80,10 @@ impl ListOrganizationServiceAccessStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
-    pub fn build(self) -> crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput{
+    pub fn build(self) -> crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput {
         crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput {
-            organization_status: self.organization_status
-            ,
-            next_token: self.next_token
-            ,
+            organization_status: self.organization_status,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

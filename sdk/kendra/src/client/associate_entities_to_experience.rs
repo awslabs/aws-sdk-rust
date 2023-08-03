@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateEntitiesToExperienceOutput`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput) with field(s):
     ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<AssociateEntitiesToExperienceError>`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError)
-    pub fn associate_entities_to_experience(&self) -> crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceFluentBuilder{
+    pub fn associate_entities_to_experience(
+        &self,
+    ) -> crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceFluentBuilder {
         crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceFluentBuilder::new(self.handle.clone())
     }
 }

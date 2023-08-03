@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbProxyEndpointOutput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput) with field(s):
     ///   - [`db_proxy_endpoint(Option<DbProxyEndpoint>)`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput::db_proxy_endpoint): <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
     /// - On failure, responds with [`SdkError<DeleteDBProxyEndpointError>`](crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError)
-    pub fn delete_db_proxy_endpoint(
-        &self,
-    ) -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder
-    {
+    pub fn delete_db_proxy_endpoint(&self) -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder {
         crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder::new(self.handle.clone())
     }
 }

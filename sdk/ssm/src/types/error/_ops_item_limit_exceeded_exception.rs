@@ -70,9 +70,7 @@ impl OpsItemLimitExceededException {
 
 /// A builder for [`OpsItemLimitExceededException`](crate::types::error::OpsItemLimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemLimitExceededExceptionBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -85,27 +83,19 @@ impl OpsItemLimitExceededExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
         self.resource_types = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -157,10 +147,7 @@ impl OpsItemLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

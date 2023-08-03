@@ -28,9 +28,7 @@ impl CreateIndexOutput {
 
 /// A builder for [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIndexOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

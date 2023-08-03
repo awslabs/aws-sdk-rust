@@ -27,7 +27,7 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxEnvironmentNetworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder,
+    inner: crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder,
 }
 impl UpdateKxEnvironmentNetworkFluentBuilder {
     /// Creates a new `UpdateKxEnvironmentNetwork`.
@@ -38,7 +38,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         }
     }
     /// Access the UpdateKxEnvironmentNetwork as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
             crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
             crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -142,25 +125,17 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    pub fn transit_gateway_configuration(
-        mut self,
-        input: crate::types::TransitGatewayConfiguration,
-    ) -> Self {
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfiguration) -> Self {
         self.inner = self.inner.transit_gateway_configuration(input);
         self
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    pub fn set_transit_gateway_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
-    ) -> Self {
+    pub fn set_transit_gateway_configuration(mut self, input: ::std::option::Option<crate::types::TransitGatewayConfiguration>) -> Self {
         self.inner = self.inner.set_transit_gateway_configuration(input);
         self
     }
     /// <p>Specifies the transit gateway and network configuration to connect the kdb environment to an internal network.</p>
-    pub fn get_transit_gateway_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
         self.inner.get_transit_gateway_configuration()
     }
     /// Appends an item to `customDNSConfiguration`.
@@ -173,17 +148,12 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
         self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn set_custom_dns_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
-    ) -> Self {
+    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>) -> Self {
         self.inner = self.inner.set_custom_dns_configuration(input);
         self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn get_custom_dns_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
         self.inner.get_custom_dns_configuration()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>

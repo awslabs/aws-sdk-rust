@@ -10,10 +10,7 @@ impl UpdateEventLabelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_event_label::UpdateEventLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_label::UpdateEventLabelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_label::UpdateEventLabelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_event_label();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEventLabelFluentBuilder {
         }
     }
     /// Access the UpdateEventLabel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateEventLabelFluentBuilder {
             crate::operation::update_event_label::UpdateEventLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_label::UpdateEventLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_label::UpdateEventLabelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateEventLabelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateEventLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_label::UpdateEventLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_label::UpdateEventLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_label::UpdateEventLabelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateEventLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_label::UpdateEventLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_label::UpdateEventLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_label::UpdateEventLabelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateEventLabelFluentBuilder {
             crate::operation::update_event_label::UpdateEventLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_label::UpdateEventLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_label::UpdateEventLabelError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateEventLabelFluentBuilder {
         self.inner.get_event_id()
     }
     /// <p>The event type of the event associated with the label to update.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The event type of the event associated with the label to update.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -157,18 +135,12 @@ impl UpdateEventLabelFluentBuilder {
         self.inner.get_event_type_name()
     }
     /// <p>The new label to assign to the event.</p>
-    pub fn assigned_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assigned_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assigned_label(input.into());
         self
     }
     /// <p>The new label to assign to the event.</p>
-    pub fn set_assigned_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assigned_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assigned_label(input);
         self
     }
@@ -177,18 +149,12 @@ impl UpdateEventLabelFluentBuilder {
         self.inner.get_assigned_label()
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
-    pub fn label_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_timestamp(input.into());
         self
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
-    pub fn set_label_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_timestamp(input);
         self
     }

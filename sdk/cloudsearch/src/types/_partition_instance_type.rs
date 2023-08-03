@@ -53,13 +53,7 @@
 /// <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -113,23 +107,13 @@ impl ::std::convert::From<&str> for PartitionInstanceType {
             "search.m3.medium" => PartitionInstanceType::SearchM3Medium,
             "search.m3.xlarge" => PartitionInstanceType::SearchM3Xlarge,
             "search.medium" => PartitionInstanceType::SearchMedium,
-            "search.previousgeneration.2xlarge" => {
-                PartitionInstanceType::SearchPreviousgeneration2xlarge
-            }
-            "search.previousgeneration.large" => {
-                PartitionInstanceType::SearchPreviousgenerationLarge
-            }
-            "search.previousgeneration.small" => {
-                PartitionInstanceType::SearchPreviousgenerationSmall
-            }
-            "search.previousgeneration.xlarge" => {
-                PartitionInstanceType::SearchPreviousgenerationXlarge
-            }
+            "search.previousgeneration.2xlarge" => PartitionInstanceType::SearchPreviousgeneration2xlarge,
+            "search.previousgeneration.large" => PartitionInstanceType::SearchPreviousgenerationLarge,
+            "search.previousgeneration.small" => PartitionInstanceType::SearchPreviousgenerationSmall,
+            "search.previousgeneration.xlarge" => PartitionInstanceType::SearchPreviousgenerationXlarge,
             "search.small" => PartitionInstanceType::SearchSmall,
             "search.xlarge" => PartitionInstanceType::SearchXlarge,
-            other => PartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -155,18 +139,10 @@ impl PartitionInstanceType {
             PartitionInstanceType::SearchM3Medium => "search.m3.medium",
             PartitionInstanceType::SearchM3Xlarge => "search.m3.xlarge",
             PartitionInstanceType::SearchMedium => "search.medium",
-            PartitionInstanceType::SearchPreviousgeneration2xlarge => {
-                "search.previousgeneration.2xlarge"
-            }
-            PartitionInstanceType::SearchPreviousgenerationLarge => {
-                "search.previousgeneration.large"
-            }
-            PartitionInstanceType::SearchPreviousgenerationSmall => {
-                "search.previousgeneration.small"
-            }
-            PartitionInstanceType::SearchPreviousgenerationXlarge => {
-                "search.previousgeneration.xlarge"
-            }
+            PartitionInstanceType::SearchPreviousgeneration2xlarge => "search.previousgeneration.2xlarge",
+            PartitionInstanceType::SearchPreviousgenerationLarge => "search.previousgeneration.large",
+            PartitionInstanceType::SearchPreviousgenerationSmall => "search.previousgeneration.small",
+            PartitionInstanceType::SearchPreviousgenerationXlarge => "search.previousgeneration.xlarge",
             PartitionInstanceType::SearchSmall => "search.small",
             PartitionInstanceType::SearchXlarge => "search.xlarge",
             PartitionInstanceType::Unknown(value) => value.as_str(),

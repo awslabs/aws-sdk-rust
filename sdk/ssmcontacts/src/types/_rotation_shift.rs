@@ -51,9 +51,7 @@ impl RotationShift {
 
 /// A builder for [`RotationShift`](crate::types::RotationShift).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotationShiftBuilder {
     pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,17 +72,12 @@ impl RotationShiftBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    pub fn set_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    pub fn get_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The time a shift rotation begins.</p>
@@ -93,10 +86,7 @@ impl RotationShiftBuilder {
         self
     }
     /// <p>The time a shift rotation begins.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -110,10 +100,7 @@ impl RotationShiftBuilder {
         self
     }
     /// <p>The time a shift rotation ends.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -141,10 +128,7 @@ impl RotationShiftBuilder {
         self
     }
     /// <p>Additional information about an on-call rotation shift.</p>
-    pub fn set_shift_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ShiftDetails>,
-    ) -> Self {
+    pub fn set_shift_details(mut self, input: ::std::option::Option<crate::types::ShiftDetails>) -> Self {
         self.shift_details = input;
         self
     }

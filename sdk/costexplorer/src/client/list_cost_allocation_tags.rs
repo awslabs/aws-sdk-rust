@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`cost_allocation_tags(Option<Vec<CostAllocationTag>>)`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput::cost_allocation_tags): <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput::next_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     /// - On failure, responds with [`SdkError<ListCostAllocationTagsError>`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError)
-    pub fn list_cost_allocation_tags(
-        &self,
-    ) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsFluentBuilder
-    {
+    pub fn list_cost_allocation_tags(&self) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsFluentBuilder {
         crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsFluentBuilder::new(self.handle.clone())
     }
 }

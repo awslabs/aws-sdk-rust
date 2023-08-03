@@ -19,10 +19,7 @@ pub fn ser_create_training_job_input(
     if let Some(var_6) = &input.algorithm_specification {
         #[allow(unused_mut)]
         let mut object_7 = object.key("AlgorithmSpecification").start_object();
-        crate::protocol_serde::shape_algorithm_specification::ser_algorithm_specification(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_algorithm_specification::ser_algorithm_specification(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.role_arn {
@@ -43,10 +40,7 @@ pub fn ser_create_training_job_input(
     if let Some(var_13) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.resource_config {
@@ -64,10 +58,7 @@ pub fn ser_create_training_job_input(
     if let Some(var_19) = &input.stopping_condition {
         #[allow(unused_mut)]
         let mut object_20 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.tags {
@@ -86,9 +77,7 @@ pub fn ser_create_training_job_input(
         object.key("EnableNetworkIsolation").boolean(*var_25);
     }
     if let Some(var_26) = &input.enable_inter_container_traffic_encryption {
-        object
-            .key("EnableInterContainerTrafficEncryption")
-            .boolean(*var_26);
+        object.key("EnableInterContainerTrafficEncryption").boolean(*var_26);
     }
     if let Some(var_27) = &input.enable_managed_spot_training {
         object.key("EnableManagedSpotTraining").boolean(*var_27);
@@ -96,19 +85,13 @@ pub fn ser_create_training_job_input(
     if let Some(var_28) = &input.checkpoint_config {
         #[allow(unused_mut)]
         let mut object_29 = object.key("CheckpointConfig").start_object();
-        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(
-            &mut object_29,
-            var_28,
-        )?;
+        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.debug_hook_config {
         #[allow(unused_mut)]
         let mut object_31 = object.key("DebugHookConfig").start_object();
-        crate::protocol_serde::shape_debug_hook_config::ser_debug_hook_config(
-            &mut object_31,
-            var_30,
-        )?;
+        crate::protocol_serde::shape_debug_hook_config::ser_debug_hook_config(&mut object_31, var_30)?;
         object_31.finish();
     }
     if let Some(var_32) = &input.debug_rule_configurations {
@@ -126,19 +109,13 @@ pub fn ser_create_training_job_input(
     if let Some(var_36) = &input.tensor_board_output_config {
         #[allow(unused_mut)]
         let mut object_37 = object.key("TensorBoardOutputConfig").start_object();
-        crate::protocol_serde::shape_tensor_board_output_config::ser_tensor_board_output_config(
-            &mut object_37,
-            var_36,
-        )?;
+        crate::protocol_serde::shape_tensor_board_output_config::ser_tensor_board_output_config(&mut object_37, var_36)?;
         object_37.finish();
     }
     if let Some(var_38) = &input.experiment_config {
         #[allow(unused_mut)]
         let mut object_39 = object.key("ExperimentConfig").start_object();
-        crate::protocol_serde::shape_experiment_config::ser_experiment_config(
-            &mut object_39,
-            var_38,
-        )?;
+        crate::protocol_serde::shape_experiment_config::ser_experiment_config(&mut object_39, var_38)?;
         object_39.finish();
     }
     if let Some(var_40) = &input.profiler_config {

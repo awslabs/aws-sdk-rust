@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`new_application_name(impl ::std::convert::Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new_application_name) / [`set_new_application_name(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_new_application_name): <p>The new name to give the application.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput)
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::operation::update_application::UpdateApplicationError)
-    pub fn update_application(
-        &self,
-    ) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
-        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_application(&self) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
+        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

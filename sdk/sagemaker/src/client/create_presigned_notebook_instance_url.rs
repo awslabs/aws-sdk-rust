@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreatePresignedNotebookInstanceUrlOutput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput) with field(s):
     ///   - [`authorized_url(Option<String>)`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput::authorized_url): <p>A JSON object that contains the URL string. </p>
     /// - On failure, responds with [`SdkError<CreatePresignedNotebookInstanceUrlError>`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlError)
-    pub fn create_presigned_notebook_instance_url(&self) -> crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlFluentBuilder{
+    pub fn create_presigned_notebook_instance_url(
+        &self,
+    ) -> crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlFluentBuilder {
         crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,10 +31,7 @@ pub fn ser_create_environment_input(
     if let Some(var_10) = &input.logging_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.max_workers {
@@ -52,10 +49,7 @@ pub fn ser_create_environment_input(
     if let Some(var_14) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_15 = object.key("NetworkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.plugins_s3_object_version {
@@ -65,9 +59,7 @@ pub fn ser_create_environment_input(
         object.key("PluginsS3Path").string(var_17.as_str());
     }
     if let Some(var_18) = &input.requirements_s3_object_version {
-        object
-            .key("RequirementsS3ObjectVersion")
-            .string(var_18.as_str());
+        object.key("RequirementsS3ObjectVersion").string(var_18.as_str());
     }
     if let Some(var_19) = &input.requirements_s3_path {
         object.key("RequirementsS3Path").string(var_19.as_str());
@@ -82,9 +74,7 @@ pub fn ser_create_environment_input(
         object.key("SourceBucketArn").string(var_21.as_str());
     }
     if let Some(var_22) = &input.startup_script_s3_object_version {
-        object
-            .key("StartupScriptS3ObjectVersion")
-            .string(var_22.as_str());
+        object.key("StartupScriptS3ObjectVersion").string(var_22.as_str());
     }
     if let Some(var_23) = &input.startup_script_s3_path {
         object.key("StartupScriptS3Path").string(var_23.as_str());
@@ -103,9 +93,7 @@ pub fn ser_create_environment_input(
         object.key("WebserverAccessMode").string(var_28.as_str());
     }
     if let Some(var_29) = &input.weekly_maintenance_window_start {
-        object
-            .key("WeeklyMaintenanceWindowStart")
-            .string(var_29.as_str());
+        object.key("WeeklyMaintenanceWindowStart").string(var_29.as_str());
     }
     Ok(())
 }

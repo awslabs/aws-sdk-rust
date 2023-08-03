@@ -10,10 +10,7 @@ impl SearchDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_devices::SearchDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_devices::SearchDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_devices::SearchDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_devices();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchDevicesFluentBuilder {
         }
     }
     /// Access the SearchDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_devices::builders::SearchDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_devices::builders::SearchDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl SearchDevicesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_devices::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
-        crate::operation::search_devices::paginator::SearchDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
+        crate::operation::search_devices::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,10 +151,7 @@ impl SearchDevicesFluentBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -185,10 +169,7 @@ impl SearchDevicesFluentBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

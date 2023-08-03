@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAuditFindingOutput {
 }
 impl DescribeAuditFindingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder {
+    pub fn builder() -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder {
         crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditFindingOutputBuilder {
     pub(crate) finding: ::std::option::Option<crate::types::AuditFinding>,
     _request_id: Option<String>,

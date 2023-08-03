@@ -23,9 +23,7 @@ impl Explainability {
 
 /// A builder for [`Explainability`](crate::types::Explainability).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplainabilityBuilder {
     pub(crate) report: ::std::option::Option<crate::types::MetricsSource>,
 }
@@ -46,8 +44,6 @@ impl ExplainabilityBuilder {
     }
     /// Consumes the builder and constructs a [`Explainability`](crate::types::Explainability).
     pub fn build(self) -> crate::types::Explainability {
-        crate::types::Explainability {
-            report: self.report,
-        }
+        crate::types::Explainability { report: self.report }
     }
 }

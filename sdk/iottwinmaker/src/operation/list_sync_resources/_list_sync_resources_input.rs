@@ -61,17 +61,14 @@ impl ListSyncResourcesInput {
 }
 impl ListSyncResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
         crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSyncResourcesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
@@ -138,10 +135,7 @@ impl ListSyncResourcesInputBuilder {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -152,9 +146,7 @@ impl ListSyncResourcesInputBuilder {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
@@ -191,18 +183,13 @@ impl ListSyncResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sync_resources::ListSyncResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sync_resources::ListSyncResourcesInput {
-                workspace_id: self.workspace_id,
-                sync_source: self.sync_source,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_sync_resources::ListSyncResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_sync_resources::ListSyncResourcesInput {
+            workspace_id: self.workspace_id,
+            sync_source: self.sync_source,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

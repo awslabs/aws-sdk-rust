@@ -5,15 +5,12 @@
 pub struct DisassociateMergedGraphqlApiOutput {
     /// <p>The state of the source API association.</p>
     #[doc(hidden)]
-    pub source_api_association_status:
-        ::std::option::Option<crate::types::SourceApiAssociationStatus>,
+    pub source_api_association_status: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
     _request_id: Option<String>,
 }
 impl DisassociateMergedGraphqlApiOutput {
     /// <p>The state of the source API association.</p>
-    pub fn source_api_association_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceApiAssociationStatus> {
+    pub fn source_api_association_status(&self) -> ::std::option::Option<&crate::types::SourceApiAssociationStatus> {
         self.source_api_association_status.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DisassociateMergedGraphqlApiOutput {
 }
 impl DisassociateMergedGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMergedGraphqlApiOutput`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput).
-    pub fn builder() -> crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiOutputBuilder {
         crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMergedGraphqlApiOutput`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMergedGraphqlApiOutputBuilder {
-    pub(crate) source_api_association_status:
-        ::std::option::Option<crate::types::SourceApiAssociationStatus>,
+    pub(crate) source_api_association_status: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
     _request_id: Option<String>,
 }
 impl DisassociateMergedGraphqlApiOutputBuilder {
     /// <p>The state of the source API association.</p>
-    pub fn source_api_association_status(
-        mut self,
-        input: crate::types::SourceApiAssociationStatus,
-    ) -> Self {
+    pub fn source_api_association_status(mut self, input: crate::types::SourceApiAssociationStatus) -> Self {
         self.source_api_association_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the source API association.</p>
-    pub fn set_source_api_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
-    ) -> Self {
+    pub fn set_source_api_association_status(mut self, input: ::std::option::Option<crate::types::SourceApiAssociationStatus>) -> Self {
         self.source_api_association_status = input;
         self
     }
     /// <p>The state of the source API association.</p>
-    pub fn get_source_api_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceApiAssociationStatus> {
+    pub fn get_source_api_association_status(&self) -> &::std::option::Option<crate::types::SourceApiAssociationStatus> {
         &self.source_api_association_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DisassociateMergedGraphqlApiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateMergedGraphqlApiOutput`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput {
+    pub fn build(self) -> crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput {
         crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput {
             source_api_association_status: self.source_api_association_status,
             _request_id: self._request_id,

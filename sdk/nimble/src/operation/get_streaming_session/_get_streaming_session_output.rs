@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStreamingSessionOutput {
 }
 impl GetStreamingSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionOutput`](crate::operation::get_streaming_session::GetStreamingSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_streaming_session::builders::GetStreamingSessionOutputBuilder {
-        crate::operation::get_streaming_session::builders::GetStreamingSessionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_streaming_session::builders::GetStreamingSessionOutputBuilder {
+        crate::operation::get_streaming_session::builders::GetStreamingSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingSessionOutput`](crate::operation::get_streaming_session::GetStreamingSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingSessionOutputBuilder {
     pub(crate) session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetStreamingSessionOutputBuilder {
         self
     }
     /// <p>The session.</p>
-    pub fn set_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSession>,
-    ) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<crate::types::StreamingSession>) -> Self {
         self.session = input;
         self
     }

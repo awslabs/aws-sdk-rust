@@ -22,17 +22,14 @@ impl DeleteSamplingRuleInput {
 }
 impl DeleteSamplingRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleInputBuilder {
         crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSamplingRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteSamplingRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sampling_rule::DeleteSamplingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sampling_rule::DeleteSamplingRuleInput {
-                rule_name: self.rule_name,
-                rule_arn: self.rule_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_sampling_rule::DeleteSamplingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_sampling_rule::DeleteSamplingRuleInput {
+            rule_name: self.rule_name,
+            rule_arn: self.rule_arn,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl DescribeSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_settings::DescribeSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_settings::DescribeSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_settings::DescribeSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSettingsFluentBuilder {
         }
     }
     /// Access the DescribeSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_settings::builders::DescribeSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_settings::builders::DescribeSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSettingsFluentBuilder {
             crate::operation::describe_settings::DescribeSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_settings::DescribeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_settings::DescribeSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_settings::DescribeSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_settings::DescribeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_settings::DescribeSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_settings::DescribeSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_settings::DescribeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_settings::DescribeSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeSettingsFluentBuilder {
             crate::operation::describe_settings::DescribeSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_settings::DescribeSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_settings::DescribeSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DescribeSettingsFluentBuilder {
         self
     }
     /// <p>The status of the directory settings for which to retrieve information.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DirectoryConfigurationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

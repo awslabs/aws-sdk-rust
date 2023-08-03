@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`access_points(Option<Vec<AccessPointDescription>>)`](crate::operation::describe_access_points::DescribeAccessPointsOutput::access_points): <p>An array of access point descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_access_points::DescribeAccessPointsOutput::next_token): <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeAccessPointsError>`](crate::operation::describe_access_points::DescribeAccessPointsError)
-    pub fn describe_access_points(
-        &self,
-    ) -> crate::operation::describe_access_points::builders::DescribeAccessPointsFluentBuilder {
-        crate::operation::describe_access_points::builders::DescribeAccessPointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_access_points(&self) -> crate::operation::describe_access_points::builders::DescribeAccessPointsFluentBuilder {
+        crate::operation::describe_access_points::builders::DescribeAccessPointsFluentBuilder::new(self.handle.clone())
     }
 }

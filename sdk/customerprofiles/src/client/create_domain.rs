@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::create_domain::CreateDomainOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_domain::CreateDomainOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::operation::create_domain::CreateDomainError)
-    pub fn create_domain(
-        &self,
-    ) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
-        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain(&self) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
+        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(self.handle.clone())
     }
 }

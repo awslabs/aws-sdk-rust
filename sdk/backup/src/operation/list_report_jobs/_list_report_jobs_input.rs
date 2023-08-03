@@ -59,9 +59,7 @@ impl ListReportJobsInput {
 
 /// A builder for [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportJobsInputBuilder {
     pub(crate) by_report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) by_creation_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,18 +70,12 @@ pub struct ListReportJobsInputBuilder {
 }
 impl ListReportJobsInputBuilder {
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn by_report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_report_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn set_by_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_report_plan_name = input;
         self
     }
@@ -97,10 +89,7 @@ impl ListReportJobsInputBuilder {
         self
     }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_creation_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_creation_before = input;
         self
     }
@@ -114,10 +103,7 @@ impl ListReportJobsInputBuilder {
         self
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_creation_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_creation_after = input;
         self
     }
@@ -173,10 +159,7 @@ impl ListReportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_report_jobs::ListReportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_report_jobs::ListReportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_report_jobs::ListReportJobsInput {
             by_report_plan_name: self.by_report_plan_name,
             by_creation_before: self.by_creation_before,

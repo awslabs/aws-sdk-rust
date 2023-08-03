@@ -43,18 +43,14 @@ impl RevokeClientVpnIngressInput {
 }
 impl RevokeClientVpnIngressInput {
     /// Creates a new builder-style object to manufacture [`RevokeClientVpnIngressInput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput).
-    pub fn builder(
-    ) -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder {
         crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeClientVpnIngressInput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_network_cidr: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct RevokeClientVpnIngressInputBuilder {
 }
 impl RevokeClientVpnIngressInputBuilder {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -84,18 +74,12 @@ impl RevokeClientVpnIngressInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn target_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn set_target_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_network_cidr = input;
         self
     }
@@ -104,18 +88,12 @@ impl RevokeClientVpnIngressInputBuilder {
         &self.target_network_cidr
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn set_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_group_id = input;
         self
     }
@@ -158,14 +136,12 @@ impl RevokeClientVpnIngressInputBuilder {
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                target_network_cidr: self.target_network_cidr,
-                access_group_id: self.access_group_id,
-                revoke_all_groups: self.revoke_all_groups,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            target_network_cidr: self.target_network_cidr,
+            access_group_id: self.access_group_id,
+            revoke_all_groups: self.revoke_all_groups,
+            dry_run: self.dry_run,
+        })
     }
 }

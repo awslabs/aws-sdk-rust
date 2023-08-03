@@ -36,17 +36,14 @@ impl DescribeSenderIdsInput {
 }
 impl DescribeSenderIdsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
+    pub fn builder() -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
         crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSenderIdsInputBuilder {
     pub(crate) sender_ids: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>,
@@ -66,17 +63,12 @@ impl DescribeSenderIdsInputBuilder {
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn set_sender_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>,
-    ) -> Self {
+    pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
         self.sender_ids = input;
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn get_sender_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
+    pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
         &self.sender_ids
     }
     /// Appends an item to `filters`.
@@ -91,17 +83,12 @@ impl DescribeSenderIdsInputBuilder {
         self
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -135,17 +122,12 @@ impl DescribeSenderIdsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_sender_ids::DescribeSenderIdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_sender_ids::DescribeSenderIdsInput {
-                sender_ids: self.sender_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_sender_ids::DescribeSenderIdsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_sender_ids::DescribeSenderIdsInput {
+            sender_ids: self.sender_ids,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

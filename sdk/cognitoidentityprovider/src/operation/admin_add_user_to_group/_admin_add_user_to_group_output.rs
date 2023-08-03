@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AdminAddUserToGroupOutput {
 }
 impl AdminAddUserToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AdminAddUserToGroupOutput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupOutputBuilder {
+    pub fn builder() -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupOutputBuilder {
         crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminAddUserToGroupOutput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminAddUserToGroupOutputBuilder {
     _request_id: Option<String>,
 }

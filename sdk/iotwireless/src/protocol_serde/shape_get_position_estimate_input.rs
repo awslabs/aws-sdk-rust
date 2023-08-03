@@ -32,10 +32,7 @@ pub fn ser_get_position_estimate_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

@@ -24,26 +24,18 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ConfigBuilder {
     pub(crate) bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigBuilder {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub fn bucket_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub fn set_bucket_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_access_role_arn = input;
         self
     }

@@ -15,10 +15,7 @@ pub fn ser_create_custom_action_type_input(
     if let Some(var_4) = &input.settings {
         #[allow(unused_mut)]
         let mut object_5 = object.key("settings").start_object();
-        crate::protocol_serde::shape_action_type_settings::ser_action_type_settings(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_action_type_settings::ser_action_type_settings(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.configuration_properties {
@@ -36,19 +33,13 @@ pub fn ser_create_custom_action_type_input(
     if let Some(var_10) = &input.input_artifact_details {
         #[allow(unused_mut)]
         let mut object_11 = object.key("inputArtifactDetails").start_object();
-        crate::protocol_serde::shape_artifact_details::ser_artifact_details(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_artifact_details::ser_artifact_details(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.output_artifact_details {
         #[allow(unused_mut)]
         let mut object_13 = object.key("outputArtifactDetails").start_object();
-        crate::protocol_serde::shape_artifact_details::ser_artifact_details(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_artifact_details::ser_artifact_details(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.tags {

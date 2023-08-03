@@ -36,9 +36,7 @@ impl ListWebhooksOutput {
 
 /// A builder for [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebhooksOutputBuilder {
     pub(crate) webhooks: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListWebhooksOutputBuilder {
         self
     }
     /// <p> A list of webhooks. </p>
-    pub fn set_webhooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
-    ) -> Self {
+    pub fn set_webhooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>) -> Self {
         self.webhooks = input;
         self
     }

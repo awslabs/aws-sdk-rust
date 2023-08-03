@@ -28,9 +28,7 @@ impl GetTrustStoreOutput {
 
 /// A builder for [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustStoreOutputBuilder {
     pub(crate) trust_store: ::std::option::Option<crate::types::TrustStore>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetTrustStoreOutputBuilder {
         self
     }
     /// <p>The trust store.</p>
-    pub fn set_trust_store(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustStore>,
-    ) -> Self {
+    pub fn set_trust_store(mut self, input: ::std::option::Option<crate::types::TrustStore>) -> Self {
         self.trust_store = input;
         self
     }

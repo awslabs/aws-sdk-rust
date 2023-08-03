@@ -44,16 +44,14 @@ impl ListAutoScalingConfigurationsInput {
 }
 impl ListAutoScalingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListAutoScalingConfigurationsInput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder {
         crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutoScalingConfigurationsInput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutoScalingConfigurationsInputBuilder {
     pub(crate) auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) latest_only: ::std::option::Option<bool>,
@@ -62,25 +60,17 @@ pub struct ListAutoScalingConfigurationsInputBuilder {
 }
 impl ListAutoScalingConfigurationsInputBuilder {
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn auto_scaling_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn set_auto_scaling_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_configuration_name = input;
         self
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn get_auto_scaling_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_configuration_name
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
@@ -144,17 +134,11 @@ impl ListAutoScalingConfigurationsInputBuilder {
         crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput {
-                auto_scaling_configuration_name: self.auto_scaling_configuration_name
-                ,
-                latest_only: self.latest_only
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput {
+            auto_scaling_configuration_name: self.auto_scaling_configuration_name,
+            latest_only: self.latest_only,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

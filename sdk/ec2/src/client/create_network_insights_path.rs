@@ -17,7 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkInsightsPathOutput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput) with field(s):
     ///   - [`network_insights_path(Option<NetworkInsightsPath>)`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput::network_insights_path): <p>Information about the path.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkInsightsPathError>`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathError)
-    pub fn create_network_insights_path(&self) -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathFluentBuilder{
+    pub fn create_network_insights_path(&self) -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathFluentBuilder {
         crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathFluentBuilder::new(self.handle.clone())
     }
 }

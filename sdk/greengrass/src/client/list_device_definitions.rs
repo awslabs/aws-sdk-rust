@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_definitions::ListDeviceDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListDeviceDefinitionsError>`](crate::operation::list_device_definitions::ListDeviceDefinitionsError)
-    pub fn list_device_definitions(
-        &self,
-    ) -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsFluentBuilder
-    {
-        crate::operation::list_device_definitions::builders::ListDeviceDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_definitions(&self) -> crate::operation::list_device_definitions::builders::ListDeviceDefinitionsFluentBuilder {
+        crate::operation::list_device_definitions::builders::ListDeviceDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

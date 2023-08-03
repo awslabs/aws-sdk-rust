@@ -23,9 +23,7 @@ impl TriggerProperties {
 
 /// A builder for [`TriggerProperties`](crate::types::TriggerProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TriggerPropertiesBuilder {
     pub(crate) scheduled: ::std::option::Option<crate::types::ScheduledTriggerProperties>,
 }
@@ -36,23 +34,16 @@ impl TriggerPropertiesBuilder {
         self
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
-    pub fn set_scheduled(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledTriggerProperties>,
-    ) -> Self {
+    pub fn set_scheduled(mut self, input: ::std::option::Option<crate::types::ScheduledTriggerProperties>) -> Self {
         self.scheduled = input;
         self
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
-    pub fn get_scheduled(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledTriggerProperties> {
+    pub fn get_scheduled(&self) -> &::std::option::Option<crate::types::ScheduledTriggerProperties> {
         &self.scheduled
     }
     /// Consumes the builder and constructs a [`TriggerProperties`](crate::types::TriggerProperties).
     pub fn build(self) -> crate::types::TriggerProperties {
-        crate::types::TriggerProperties {
-            scheduled: self.scheduled,
-        }
+        crate::types::TriggerProperties { scheduled: self.scheduled }
     }
 }

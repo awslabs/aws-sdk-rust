@@ -8,7 +8,10 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput) with field(s):
     ///   - [`emergency_calling_configuration(Option<EmergencyCallingConfiguration>)`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput::emergency_calling_configuration): <p>The updated configuration.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorEmergencyCallingConfigurationError>`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError)
-    pub fn put_voice_connector_emergency_calling_configuration(&self) -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder{
+    pub fn put_voice_connector_emergency_calling_configuration(
+        &self,
+    ) -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder
+    {
         crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

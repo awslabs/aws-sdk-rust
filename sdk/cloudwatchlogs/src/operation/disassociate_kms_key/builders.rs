@@ -10,10 +10,7 @@ impl DisassociateKmsKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_kms_key::DisassociateKmsKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_kms_key();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl DisassociateKmsKeyFluentBuilder {
         }
     }
     /// Access the DisassociateKmsKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl DisassociateKmsKeyFluentBuilder {
             crate::operation::disassociate_kms_key::DisassociateKmsKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_kms_key::DisassociateKmsKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl DisassociateKmsKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl DisassociateKmsKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_kms_key::DisassociateKmsKeyError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl DisassociateKmsKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_kms_key::DisassociateKmsKeyError>,
     > {
         self.send_middleware().await
     }
@@ -122,27 +108,19 @@ impl DisassociateKmsKeyFluentBuilder {
             crate::operation::disassociate_kms_key::DisassociateKmsKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_kms_key::DisassociateKmsKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
     /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
     /// <p>In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -157,10 +135,7 @@ impl DisassociateKmsKeyFluentBuilder {
     /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
     /// </ul>
     /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
@@ -170,10 +145,7 @@ impl DisassociateKmsKeyFluentBuilder {
     /// <li> <p>Specify the following ARN to stop using this key to encrypt the results of future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> operations in this account. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>
     /// </ul>
     /// <p>In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

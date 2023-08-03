@@ -30,9 +30,7 @@ impl PercentVisibleRange {
 
 /// A builder for [`PercentVisibleRange`](crate::types::PercentVisibleRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PercentVisibleRangeBuilder {
     pub(crate) from: ::std::option::Option<f64>,
     pub(crate) to: ::std::option::Option<f64>,

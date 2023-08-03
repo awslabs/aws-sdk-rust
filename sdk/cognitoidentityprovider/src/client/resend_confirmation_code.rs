@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ResendConfirmationCodeOutput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput) with field(s):
     ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
     /// - On failure, responds with [`SdkError<ResendConfirmationCodeError>`](crate::operation::resend_confirmation_code::ResendConfirmationCodeError)
-    pub fn resend_confirmation_code(
-        &self,
-    ) -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeFluentBuilder
-    {
+    pub fn resend_confirmation_code(&self) -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeFluentBuilder {
         crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeFluentBuilder::new(self.handle.clone())
     }
 }

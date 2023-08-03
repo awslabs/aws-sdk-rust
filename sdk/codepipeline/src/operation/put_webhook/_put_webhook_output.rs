@@ -28,9 +28,7 @@ impl PutWebhookOutput {
 
 /// A builder for [`PutWebhookOutput`](crate::operation::put_webhook::PutWebhookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWebhookOutputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::ListWebhookItem>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PutWebhookOutputBuilder {
         self
     }
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
-    pub fn set_webhook(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWebhookItem>,
-    ) -> Self {
+    pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::ListWebhookItem>) -> Self {
         self.webhook = input;
         self
     }

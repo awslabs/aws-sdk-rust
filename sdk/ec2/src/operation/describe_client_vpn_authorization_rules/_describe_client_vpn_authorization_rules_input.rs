@@ -53,16 +53,14 @@ impl DescribeClientVpnAuthorizationRulesInput {
 }
 impl DescribeClientVpnAuthorizationRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnAuthorizationRulesInput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput).
-    pub fn builder() -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesInputBuilder {
         crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnAuthorizationRulesInput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnAuthorizationRulesInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -72,18 +70,12 @@ pub struct DescribeClientVpnAuthorizationRulesInputBuilder {
 }
 impl DescribeClientVpnAuthorizationRulesInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -141,10 +133,7 @@ impl DescribeClientVpnAuthorizationRulesInputBuilder {
     /// <li> <p> <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p> </li>
     /// <li> <p> <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -172,20 +161,20 @@ impl DescribeClientVpnAuthorizationRulesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnAuthorizationRulesInput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                dry_run: self.dry_run
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-            }
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+                dry_run: self.dry_run,
+                next_token: self.next_token,
+                filters: self.filters,
+                max_results: self.max_results,
+            },
         )
     }
 }

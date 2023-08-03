@@ -58,9 +58,7 @@ impl CustomizedLoadMetricSpecification {
 
 /// A builder for [`CustomizedLoadMetricSpecification`](crate::types::CustomizedLoadMetricSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomizedLoadMetricSpecificationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,13 @@ impl CustomizedLoadMetricSpecificationBuilder {
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
         &self.dimensions
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
@@ -131,10 +124,7 @@ impl CustomizedLoadMetricSpecificationBuilder {
         self
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
         self.statistic = input;
         self
     }

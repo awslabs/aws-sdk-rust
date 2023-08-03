@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ExportBundleOutput`](crate::operation::export_bundle::ExportBundleOutput) with field(s):
     ///   - [`download_url(Option<String>)`](crate::operation::export_bundle::ExportBundleOutput::download_url): <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<ExportBundleError>`](crate::operation::export_bundle::ExportBundleError)
-    pub fn export_bundle(
-        &self,
-    ) -> crate::operation::export_bundle::builders::ExportBundleFluentBuilder {
-        crate::operation::export_bundle::builders::ExportBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_bundle(&self) -> crate::operation::export_bundle::builders::ExportBundleFluentBuilder {
+        crate::operation::export_bundle::builders::ExportBundleFluentBuilder::new(self.handle.clone())
     }
 }

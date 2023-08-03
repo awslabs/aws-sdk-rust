@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteChannelMessageOutput {
 }
 impl DeleteChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder {
         crate::operation::delete_channel_message::builders::DeleteChannelMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelMessageOutputBuilder {
     _request_id: Option<String>,
 }

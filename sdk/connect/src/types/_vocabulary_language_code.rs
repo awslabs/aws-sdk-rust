@@ -59,13 +59,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -143,9 +137,7 @@ impl ::std::convert::From<&str> for VocabularyLanguageCode {
             "pt-BR" => VocabularyLanguageCode::PtBr,
             "pt-PT" => VocabularyLanguageCode::PtPt,
             "zh-CN" => VocabularyLanguageCode::ZhCn,
-            other => VocabularyLanguageCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VocabularyLanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -189,9 +181,8 @@ impl VocabularyLanguageCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ",
-            "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
-            "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN",
+            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA",
+            "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN",
         ]
     }
 }

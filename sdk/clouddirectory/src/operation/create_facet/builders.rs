@@ -10,10 +10,7 @@ impl CreateFacetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_facet::CreateFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_facet::CreateFacetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_facet();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateFacetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_facet::CreateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_facet::CreateFacet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateFacetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateFacetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_facet::CreateFacet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_facet::CreateFacet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
     > {
         self.customize_middleware().await
@@ -150,17 +138,12 @@ impl CreateFacetFluentBuilder {
         self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
         self.inner.get_attributes()
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
@@ -193,10 +176,7 @@ impl CreateFacetFluentBuilder {
     /// <ul>
     /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectType>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.inner = self.inner.set_object_type(input);
         self
     }
@@ -222,10 +202,7 @@ impl CreateFacetFluentBuilder {
         self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn set_facet_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetStyle>,
-    ) -> Self {
+    pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
         self.inner = self.inner.set_facet_style(input);
         self
     }

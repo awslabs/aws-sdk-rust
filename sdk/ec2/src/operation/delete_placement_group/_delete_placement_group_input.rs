@@ -22,17 +22,14 @@ impl DeletePlacementGroupInput {
 }
 impl DeletePlacementGroupInput {
     /// Creates a new builder-style object to manufacture [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder {
         crate::operation::delete_placement_group::builders::DeletePlacementGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlacementGroupInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DeletePlacementGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_placement_group::DeletePlacementGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_placement_group::DeletePlacementGroupInput {
-                dry_run: self.dry_run,
-                group_name: self.group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_placement_group::DeletePlacementGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_placement_group::DeletePlacementGroupInput {
+            dry_run: self.dry_run,
+            group_name: self.group_name,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl UpdateStreamingImageFluentBuilder {
         }
     }
     /// Access the UpdateStreamingImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_streaming_image::builders::UpdateStreamingImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateStreamingImageFluentBuilder {
             crate::operation::update_streaming_image::UpdateStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_image::UpdateStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_image::UpdateStreamingImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateStreamingImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_streaming_image::UpdateStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_image::UpdateStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_image::UpdateStreamingImageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_streaming_image::UpdateStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_image::UpdateStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_image::UpdateStreamingImageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateStreamingImageFluentBuilder {
             crate::operation::update_streaming_image::UpdateStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_image::UpdateStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_image::UpdateStreamingImageError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +152,12 @@ impl UpdateStreamingImageFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.streaming_image_id(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_streaming_image_id(input);
         self
     }

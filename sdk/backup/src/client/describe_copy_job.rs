@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput) with field(s):
     ///   - [`copy_job(Option<CopyJob>)`](crate::operation::describe_copy_job::DescribeCopyJobOutput::copy_job): <p>Contains detailed information about a copy job.</p>
     /// - On failure, responds with [`SdkError<DescribeCopyJobError>`](crate::operation::describe_copy_job::DescribeCopyJobError)
-    pub fn describe_copy_job(
-        &self,
-    ) -> crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder {
-        crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_copy_job(&self) -> crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder {
+        crate::operation::describe_copy_job::builders::DescribeCopyJobFluentBuilder::new(self.handle.clone())
     }
 }

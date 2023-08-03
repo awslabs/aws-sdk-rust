@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`device_template_name(impl ::std::convert::Into<String>)`](crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementFluentBuilder::device_template_name) / [`set_device_template_name(Option<String>)`](crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementFluentBuilder::set_device_template_name): <p>The device template name to associate with the device ID.</p>
     /// - On success, responds with [`AssociateDeviceWithPlacementOutput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput)
     /// - On failure, responds with [`SdkError<AssociateDeviceWithPlacementError>`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError)
-    pub fn associate_device_with_placement(&self) -> crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementFluentBuilder{
+    pub fn associate_device_with_placement(
+        &self,
+    ) -> crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementFluentBuilder {
         crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementFluentBuilder::new(self.handle.clone())
     }
 }

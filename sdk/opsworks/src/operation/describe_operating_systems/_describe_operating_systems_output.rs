@@ -22,21 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeOperatingSystemsOutput {
 }
 impl DescribeOperatingSystemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder {
         crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsOutputBuilder {
-    pub(crate) operating_systems:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
+    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }
 impl DescribeOperatingSystemsOutputBuilder {
@@ -52,17 +47,12 @@ impl DescribeOperatingSystemsOutputBuilder {
         self
     }
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn set_operating_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
-    ) -> Self {
+    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>) -> Self {
         self.operating_systems = input;
         self
     }
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn get_operating_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>> {
+    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>> {
         &self.operating_systems
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,9 +65,7 @@ impl DescribeOperatingSystemsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput {
+    pub fn build(self) -> crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput {
         crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput {
             operating_systems: self.operating_systems,
             _request_id: self._request_id,

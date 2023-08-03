@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`latest_successful_sync(Option<ResourceSyncAttempt>)`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput::latest_successful_sync): <p>The detailed data of the latest successful sync with the service instance.</p>
     ///   - [`desired_state(Option<Revision>)`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput::desired_state): <p>The service instance sync desired state that's returned by Proton</p>
     /// - On failure, responds with [`SdkError<GetServiceInstanceSyncStatusError>`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError)
-    pub fn get_service_instance_sync_status(&self) -> crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusFluentBuilder{
+    pub fn get_service_instance_sync_status(
+        &self,
+    ) -> crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusFluentBuilder {
         crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusFluentBuilder::new(self.handle.clone())
     }
 }

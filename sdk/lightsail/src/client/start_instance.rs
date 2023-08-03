@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartInstanceOutput`](crate::operation::start_instance::StartInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::start_instance::StartInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<StartInstanceError>`](crate::operation::start_instance::StartInstanceError)
-    pub fn start_instance(
-        &self,
-    ) -> crate::operation::start_instance::builders::StartInstanceFluentBuilder {
-        crate::operation::start_instance::builders::StartInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_instance(&self) -> crate::operation::start_instance::builders::StartInstanceFluentBuilder {
+        crate::operation::start_instance::builders::StartInstanceFluentBuilder::new(self.handle.clone())
     }
 }

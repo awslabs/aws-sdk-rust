@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetProfileTemplateOutput`](crate::operation::get_profile_template::GetProfileTemplateOutput) with field(s):
     ///   - [`profile_template(Option<ProfileTemplate>)`](crate::operation::get_profile_template::GetProfileTemplateOutput::profile_template): <p>The profile template.</p>
     /// - On failure, responds with [`SdkError<GetProfileTemplateError>`](crate::operation::get_profile_template::GetProfileTemplateError)
-    pub fn get_profile_template(
-        &self,
-    ) -> crate::operation::get_profile_template::builders::GetProfileTemplateFluentBuilder {
-        crate::operation::get_profile_template::builders::GetProfileTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_profile_template(&self) -> crate::operation::get_profile_template::builders::GetProfileTemplateFluentBuilder {
+        crate::operation::get_profile_template::builders::GetProfileTemplateFluentBuilder::new(self.handle.clone())
     }
 }

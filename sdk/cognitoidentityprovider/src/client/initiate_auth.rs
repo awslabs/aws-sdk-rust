@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::operation::initiate_auth::InitiateAuthOutput::challenge_parameters): <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>  <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::operation::initiate_auth::InitiateAuthOutput::authentication_result): <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     /// - On failure, responds with [`SdkError<InitiateAuthError>`](crate::operation::initiate_auth::InitiateAuthError)
-    pub fn initiate_auth(
-        &self,
-    ) -> crate::operation::initiate_auth::builders::InitiateAuthFluentBuilder {
-        crate::operation::initiate_auth::builders::InitiateAuthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initiate_auth(&self) -> crate::operation::initiate_auth::builders::InitiateAuthFluentBuilder {
+        crate::operation::initiate_auth::builders::InitiateAuthFluentBuilder::new(self.handle.clone())
     }
 }

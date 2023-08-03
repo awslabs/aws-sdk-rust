@@ -10,10 +10,7 @@ impl DeclineInvitationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::decline_invitations::DeclineInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_invitations::DeclineInvitationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_invitations::DeclineInvitationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.decline_invitations();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeclineInvitationsFluentBuilder {
         }
     }
     /// Access the DeclineInvitations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeclineInvitationsFluentBuilder {
             crate::operation::decline_invitations::DeclineInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_invitations::DeclineInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_invitations::DeclineInvitationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeclineInvitationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeclineInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decline_invitations::DeclineInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_invitations::DeclineInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_invitations::DeclineInvitationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeclineInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decline_invitations::DeclineInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_invitations::DeclineInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_invitations::DeclineInvitationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeclineInvitationsFluentBuilder {
             crate::operation::decline_invitations::DeclineInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_invitations::DeclineInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_invitations::DeclineInvitationsError>,
     > {
         self.customize_middleware().await
     }
@@ -134,17 +118,12 @@ impl DeclineInvitationsFluentBuilder {
         self
     }
     /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

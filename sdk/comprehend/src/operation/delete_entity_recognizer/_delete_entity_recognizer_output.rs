@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEntityRecognizerOutput {
 }
 impl DeleteEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerOutput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerOutputBuilder {
         crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntityRecognizerOutput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntityRecognizerOutputBuilder {
     _request_id: Option<String>,
 }

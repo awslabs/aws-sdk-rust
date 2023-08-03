@@ -38,9 +38,7 @@ impl AwsWafv2RulesDetails {
         self.priority
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
         self.visibility_config.as_ref()
     }
 }
@@ -53,16 +51,13 @@ impl AwsWafv2RulesDetails {
 
 /// A builder for [`AwsWafv2RulesDetails`](crate::types::AwsWafv2RulesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2RulesDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) override_action: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) visibility_config:
-        ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+    pub(crate) visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2RulesDetailsBuilder {
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
@@ -71,10 +66,7 @@ impl AwsWafv2RulesDetailsBuilder {
         self
     }
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>) -> Self {
         self.action = input;
         self
     }
@@ -97,18 +89,12 @@ impl AwsWafv2RulesDetailsBuilder {
         &self.name
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
-    pub fn override_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn override_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.override_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
-    pub fn set_override_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_override_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.override_action = input;
         self
     }
@@ -131,25 +117,17 @@ impl AwsWafv2RulesDetailsBuilder {
         &self.priority
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        mut self,
-        input: crate::types::AwsWafv2VisibilityConfigDetails,
-    ) -> Self {
+    pub fn visibility_config(mut self, input: crate::types::AwsWafv2VisibilityConfigDetails) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>) -> Self {
         self.visibility_config = input;
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn get_visibility_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
         &self.visibility_config
     }
     /// Consumes the builder and constructs a [`AwsWafv2RulesDetails`](crate::types::AwsWafv2RulesDetails).

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for UpgradePublishedSchemaOutput {
 }
 impl UpgradePublishedSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpgradePublishedSchemaOutput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaOutputBuilder {
         crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradePublishedSchemaOutput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradePublishedSchemaOutputBuilder {
     pub(crate) upgraded_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpgradePublishedSchemaOutputBuilder {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn upgraded_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upgraded_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upgraded_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn set_upgraded_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upgraded_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upgraded_schema_arn = input;
         self
     }

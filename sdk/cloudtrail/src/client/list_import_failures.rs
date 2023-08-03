@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`failures(Option<Vec<ImportFailureListItem>>)`](crate::operation::list_import_failures::ListImportFailuresOutput::failures): <p> Contains information about the import failures. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_failures::ListImportFailuresOutput::next_token): <p> A token you can use to get the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListImportFailuresError>`](crate::operation::list_import_failures::ListImportFailuresError)
-    pub fn list_import_failures(
-        &self,
-    ) -> crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder {
-        crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_import_failures(&self) -> crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder {
+        crate::operation::list_import_failures::builders::ListImportFailuresFluentBuilder::new(self.handle.clone())
     }
 }

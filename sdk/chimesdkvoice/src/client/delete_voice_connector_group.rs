@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`voice_connector_group_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupFluentBuilder::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupFluentBuilder::set_voice_connector_group_id): <p>The Voice Connector Group ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorGroupOutput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorGroupError>`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError)
-    pub fn delete_voice_connector_group(&self) -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupFluentBuilder{
+    pub fn delete_voice_connector_group(&self) -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupFluentBuilder {
         crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupFluentBuilder::new(self.handle.clone())
     }
 }

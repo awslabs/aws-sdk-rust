@@ -20,8 +20,7 @@ pub struct CreateCustomActionTypeInput {
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
+    pub configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     #[doc(hidden)]
     pub input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
@@ -52,9 +51,7 @@ impl CreateCustomActionTypeInput {
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn configuration_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
+    pub fn configuration_properties(&self) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
         self.configuration_properties.as_deref()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -72,25 +69,20 @@ impl CreateCustomActionTypeInput {
 }
 impl CreateCustomActionTypeInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeInput`](crate::operation::create_custom_action_type::CreateCustomActionTypeInput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder {
         crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomActionTypeInput`](crate::operation::create_custom_action_type::CreateCustomActionTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::ActionTypeSettings>,
-    pub(crate) configuration_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
+    pub(crate) configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     pub(crate) input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     pub(crate) output_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -102,10 +94,7 @@ impl CreateCustomActionTypeInputBuilder {
         self
     }
     /// <p>The category of the custom action, such as a build action or a test action.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }
@@ -147,10 +136,7 @@ impl CreateCustomActionTypeInputBuilder {
         self
     }
     /// <p>URLs that provide users information about this custom action.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::ActionTypeSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -165,10 +151,7 @@ impl CreateCustomActionTypeInputBuilder {
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn configuration_properties(
-        mut self,
-        input: crate::types::ActionConfigurationProperty,
-    ) -> Self {
+    pub fn configuration_properties(mut self, input: crate::types::ActionConfigurationProperty) -> Self {
         let mut v = self.configuration_properties.unwrap_or_default();
         v.push(input);
         self.configuration_properties = ::std::option::Option::Some(v);
@@ -177,19 +160,14 @@ impl CreateCustomActionTypeInputBuilder {
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn set_configuration_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
-    ) -> Self {
+    pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>) -> Self {
         self.configuration_properties = input;
         self
     }
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn get_configuration_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
+    pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
         &self.configuration_properties
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -198,17 +176,12 @@ impl CreateCustomActionTypeInputBuilder {
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn set_input_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_input_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.input_artifact_details = input;
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn get_input_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_input_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         &self.input_artifact_details
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -217,17 +190,12 @@ impl CreateCustomActionTypeInputBuilder {
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn set_output_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_output_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.output_artifact_details = input;
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn get_output_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_output_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         &self.output_artifact_details
     }
     /// Appends an item to `tags`.
@@ -242,10 +210,7 @@ impl CreateCustomActionTypeInputBuilder {
         self
     }
     /// <p>The tags for the custom action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -260,17 +225,15 @@ impl CreateCustomActionTypeInputBuilder {
         crate::operation::create_custom_action_type::CreateCustomActionTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_action_type::CreateCustomActionTypeInput {
-                category: self.category,
-                provider: self.provider,
-                version: self.version,
-                settings: self.settings,
-                configuration_properties: self.configuration_properties,
-                input_artifact_details: self.input_artifact_details,
-                output_artifact_details: self.output_artifact_details,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_custom_action_type::CreateCustomActionTypeInput {
+            category: self.category,
+            provider: self.provider,
+            version: self.version,
+            settings: self.settings,
+            configuration_properties: self.configuration_properties,
+            input_artifact_details: self.input_artifact_details,
+            output_artifact_details: self.output_artifact_details,
+            tags: self.tags,
+        })
     }
 }

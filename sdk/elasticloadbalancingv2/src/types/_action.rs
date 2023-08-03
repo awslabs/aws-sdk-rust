@@ -16,8 +16,7 @@ pub struct Action {
     pub authenticate_oidc_config: ::std::option::Option<crate::types::AuthenticateOidcActionConfig>,
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
     #[doc(hidden)]
-    pub authenticate_cognito_config:
-        ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>,
+    pub authenticate_cognito_config: ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>,
     /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
     #[doc(hidden)]
     pub order: ::std::option::Option<i32>,
@@ -41,15 +40,11 @@ impl Action {
         self.target_group_arn.as_deref()
     }
     /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
-    pub fn authenticate_oidc_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticateOidcActionConfig> {
+    pub fn authenticate_oidc_config(&self) -> ::std::option::Option<&crate::types::AuthenticateOidcActionConfig> {
         self.authenticate_oidc_config.as_ref()
     }
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
-    pub fn authenticate_cognito_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConfig> {
+    pub fn authenticate_cognito_config(&self) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConfig> {
         self.authenticate_cognito_config.as_ref()
     }
     /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
@@ -61,9 +56,7 @@ impl Action {
         self.redirect_config.as_ref()
     }
     /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
-    pub fn fixed_response_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FixedResponseActionConfig> {
+    pub fn fixed_response_config(&self) -> ::std::option::Option<&crate::types::FixedResponseActionConfig> {
         self.fixed_response_config.as_ref()
     }
     /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
@@ -80,20 +73,15 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ActionTypeEnum>,
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) authenticate_oidc_config:
-        ::std::option::Option<crate::types::AuthenticateOidcActionConfig>,
-    pub(crate) authenticate_cognito_config:
-        ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>,
+    pub(crate) authenticate_oidc_config: ::std::option::Option<crate::types::AuthenticateOidcActionConfig>,
+    pub(crate) authenticate_cognito_config: ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>,
     pub(crate) order: ::std::option::Option<i32>,
     pub(crate) redirect_config: ::std::option::Option<crate::types::RedirectActionConfig>,
-    pub(crate) fixed_response_config:
-        ::std::option::Option<crate::types::FixedResponseActionConfig>,
+    pub(crate) fixed_response_config: ::std::option::Option<crate::types::FixedResponseActionConfig>,
     pub(crate) forward_config: ::std::option::Option<crate::types::ForwardActionConfig>,
 }
 impl ActionBuilder {
@@ -112,18 +100,12 @@ impl ActionBuilder {
         &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -132,47 +114,31 @@ impl ActionBuilder {
         &self.target_group_arn
     }
     /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
-    pub fn authenticate_oidc_config(
-        mut self,
-        input: crate::types::AuthenticateOidcActionConfig,
-    ) -> Self {
+    pub fn authenticate_oidc_config(mut self, input: crate::types::AuthenticateOidcActionConfig) -> Self {
         self.authenticate_oidc_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
-    pub fn set_authenticate_oidc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticateOidcActionConfig>,
-    ) -> Self {
+    pub fn set_authenticate_oidc_config(mut self, input: ::std::option::Option<crate::types::AuthenticateOidcActionConfig>) -> Self {
         self.authenticate_oidc_config = input;
         self
     }
     /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
-    pub fn get_authenticate_oidc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticateOidcActionConfig> {
+    pub fn get_authenticate_oidc_config(&self) -> &::std::option::Option<crate::types::AuthenticateOidcActionConfig> {
         &self.authenticate_oidc_config
     }
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
-    pub fn authenticate_cognito_config(
-        mut self,
-        input: crate::types::AuthenticateCognitoActionConfig,
-    ) -> Self {
+    pub fn authenticate_cognito_config(mut self, input: crate::types::AuthenticateCognitoActionConfig) -> Self {
         self.authenticate_cognito_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
-    pub fn set_authenticate_cognito_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>,
-    ) -> Self {
+    pub fn set_authenticate_cognito_config(mut self, input: ::std::option::Option<crate::types::AuthenticateCognitoActionConfig>) -> Self {
         self.authenticate_cognito_config = input;
         self
     }
     /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
-    pub fn get_authenticate_cognito_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConfig> {
+    pub fn get_authenticate_cognito_config(&self) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConfig> {
         &self.authenticate_cognito_config
     }
     /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
@@ -195,17 +161,12 @@ impl ActionBuilder {
         self
     }
     /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
-    pub fn set_redirect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RedirectActionConfig>,
-    ) -> Self {
+    pub fn set_redirect_config(mut self, input: ::std::option::Option<crate::types::RedirectActionConfig>) -> Self {
         self.redirect_config = input;
         self
     }
     /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
-    pub fn get_redirect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedirectActionConfig> {
+    pub fn get_redirect_config(&self) -> &::std::option::Option<crate::types::RedirectActionConfig> {
         &self.redirect_config
     }
     /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
@@ -214,17 +175,12 @@ impl ActionBuilder {
         self
     }
     /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
-    pub fn set_fixed_response_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FixedResponseActionConfig>,
-    ) -> Self {
+    pub fn set_fixed_response_config(mut self, input: ::std::option::Option<crate::types::FixedResponseActionConfig>) -> Self {
         self.fixed_response_config = input;
         self
     }
     /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
-    pub fn get_fixed_response_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FixedResponseActionConfig> {
+    pub fn get_fixed_response_config(&self) -> &::std::option::Option<crate::types::FixedResponseActionConfig> {
         &self.fixed_response_config
     }
     /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
@@ -233,10 +189,7 @@ impl ActionBuilder {
         self
     }
     /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
-    pub fn set_forward_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ForwardActionConfig>,
-    ) -> Self {
+    pub fn set_forward_config(mut self, input: ::std::option::Option<crate::types::ForwardActionConfig>) -> Self {
         self.forward_config = input;
         self
     }

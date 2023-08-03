@@ -9,8 +9,7 @@ pub struct DescribeCacheSecurityGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
     #[doc(hidden)]
-    pub cache_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
+    pub cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheSecurityGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeCacheSecurityGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CacheSecurityGroup]> {
+    pub fn cache_security_groups(&self) -> ::std::option::Option<&[crate::types::CacheSecurityGroup]> {
         self.cache_security_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeCacheSecurityGroupsOutput {
 }
 impl DescribeCacheSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsOutput`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsOutputBuilder {
         crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheSecurityGroupsOutput`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
+    pub(crate) cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheSecurityGroupsOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeCacheSecurityGroupsOutputBuilder {
         self
     }
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-    pub fn set_cache_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
-    ) -> Self {
+    pub fn set_cache_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>) -> Self {
         self.cache_security_groups = input;
         self
     }
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-    pub fn get_cache_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>> {
+    pub fn get_cache_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>> {
         &self.cache_security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeCacheSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCacheSecurityGroupsOutput`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput {
         crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput {
             marker: self.marker,
             cache_security_groups: self.cache_security_groups,

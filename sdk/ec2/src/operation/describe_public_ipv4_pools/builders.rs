@@ -26,8 +26,7 @@ impl DescribePublicIpv4PoolsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePublicIpv4PoolsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder,
+    inner: crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder,
 }
 impl DescribePublicIpv4PoolsFluentBuilder {
     /// Creates a new `DescribePublicIpv4Pools`.
@@ -38,10 +37,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         }
     }
     /// Access the DescribePublicIpv4Pools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
             crate::operation::describe_public_ipv4_pools::DescribePublicIpv4Pools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribePublicIpv4PoolsFluentBuilder {
             crate::operation::describe_public_ipv4_pools::DescribePublicIpv4Pools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator {
         crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PoolIds`.
@@ -143,10 +125,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
@@ -212,10 +191,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -23,26 +23,18 @@ impl ChatStreamingConfiguration {
 
 /// A builder for [`ChatStreamingConfiguration`](crate::types::ChatStreamingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChatStreamingConfigurationBuilder {
     pub(crate) streaming_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChatStreamingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
-    pub fn streaming_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
-    pub fn set_streaming_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_endpoint_arn = input;
         self
     }

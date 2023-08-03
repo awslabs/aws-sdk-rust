@@ -51,9 +51,7 @@ impl EntityType {
 
 /// A builder for [`EntityType`](crate::types::EntityType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityTypeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl EntityTypeBuilder {
         &self.description
     }
     /// <p>Timestamp of when the entity type was last updated.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the entity type was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }

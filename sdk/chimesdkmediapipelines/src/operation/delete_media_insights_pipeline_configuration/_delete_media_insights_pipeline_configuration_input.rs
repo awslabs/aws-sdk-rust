@@ -15,16 +15,15 @@ impl DeleteMediaInsightsPipelineConfigurationInput {
 }
 impl DeleteMediaInsightsPipelineConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
-    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder
+    {
         crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMediaInsightsPipelineConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +43,16 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput {
-                identifier: self.identifier
-                ,
-            }
+                identifier: self.identifier,
+            },
         )
     }
 }

@@ -18,16 +18,13 @@ pub struct JobOperation {
     pub s3_put_object_tagging: ::std::option::Option<crate::types::S3SetObjectTaggingOperation>,
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
     #[doc(hidden)]
-    pub s3_delete_object_tagging:
-        ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>,
+    pub s3_delete_object_tagging: ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>,
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
     #[doc(hidden)]
-    pub s3_initiate_restore_object:
-        ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>,
+    pub s3_initiate_restore_object: ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>,
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub s3_put_object_legal_hold:
-        ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
+    pub s3_put_object_legal_hold: ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub s3_put_object_retention: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
@@ -41,51 +38,35 @@ impl JobOperation {
         self.lambda_invoke.as_ref()
     }
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
-    pub fn s3_put_object_copy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3CopyObjectOperation> {
+    pub fn s3_put_object_copy(&self) -> ::std::option::Option<&crate::types::S3CopyObjectOperation> {
         self.s3_put_object_copy.as_ref()
     }
     /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
-    pub fn s3_put_object_acl(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3SetObjectAclOperation> {
+    pub fn s3_put_object_acl(&self) -> ::std::option::Option<&crate::types::S3SetObjectAclOperation> {
         self.s3_put_object_acl.as_ref()
     }
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-    pub fn s3_put_object_tagging(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3SetObjectTaggingOperation> {
+    pub fn s3_put_object_tagging(&self) -> ::std::option::Option<&crate::types::S3SetObjectTaggingOperation> {
         self.s3_put_object_tagging.as_ref()
     }
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-    pub fn s3_delete_object_tagging(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DeleteObjectTaggingOperation> {
+    pub fn s3_delete_object_tagging(&self) -> ::std::option::Option<&crate::types::S3DeleteObjectTaggingOperation> {
         self.s3_delete_object_tagging.as_ref()
     }
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-    pub fn s3_initiate_restore_object(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3InitiateRestoreObjectOperation> {
+    pub fn s3_initiate_restore_object(&self) -> ::std::option::Option<&crate::types::S3InitiateRestoreObjectOperation> {
         self.s3_initiate_restore_object.as_ref()
     }
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_legal_hold(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3SetObjectLegalHoldOperation> {
+    pub fn s3_put_object_legal_hold(&self) -> ::std::option::Option<&crate::types::S3SetObjectLegalHoldOperation> {
         self.s3_put_object_legal_hold.as_ref()
     }
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_retention(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3SetObjectRetentionOperation> {
+    pub fn s3_put_object_retention(&self) -> ::std::option::Option<&crate::types::S3SetObjectRetentionOperation> {
         self.s3_put_object_retention.as_ref()
     }
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-    pub fn s3_replicate_object(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ReplicateObjectOperation> {
+    pub fn s3_replicate_object(&self) -> ::std::option::Option<&crate::types::S3ReplicateObjectOperation> {
         self.s3_replicate_object.as_ref()
     }
 }
@@ -98,23 +79,16 @@ impl JobOperation {
 
 /// A builder for [`JobOperation`](crate::types::JobOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobOperationBuilder {
     pub(crate) lambda_invoke: ::std::option::Option<crate::types::LambdaInvokeOperation>,
     pub(crate) s3_put_object_copy: ::std::option::Option<crate::types::S3CopyObjectOperation>,
     pub(crate) s3_put_object_acl: ::std::option::Option<crate::types::S3SetObjectAclOperation>,
-    pub(crate) s3_put_object_tagging:
-        ::std::option::Option<crate::types::S3SetObjectTaggingOperation>,
-    pub(crate) s3_delete_object_tagging:
-        ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>,
-    pub(crate) s3_initiate_restore_object:
-        ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>,
-    pub(crate) s3_put_object_legal_hold:
-        ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
-    pub(crate) s3_put_object_retention:
-        ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
+    pub(crate) s3_put_object_tagging: ::std::option::Option<crate::types::S3SetObjectTaggingOperation>,
+    pub(crate) s3_delete_object_tagging: ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>,
+    pub(crate) s3_initiate_restore_object: ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>,
+    pub(crate) s3_put_object_legal_hold: ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
+    pub(crate) s3_put_object_retention: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
     pub(crate) s3_replicate_object: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
 }
 impl JobOperationBuilder {
@@ -124,10 +98,7 @@ impl JobOperationBuilder {
         self
     }
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
-    pub fn set_lambda_invoke(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaInvokeOperation>,
-    ) -> Self {
+    pub fn set_lambda_invoke(mut self, input: ::std::option::Option<crate::types::LambdaInvokeOperation>) -> Self {
         self.lambda_invoke = input;
         self
     }
@@ -141,17 +112,12 @@ impl JobOperationBuilder {
         self
     }
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
-    pub fn set_s3_put_object_copy(
-        mut self,
-        input: ::std::option::Option<crate::types::S3CopyObjectOperation>,
-    ) -> Self {
+    pub fn set_s3_put_object_copy(mut self, input: ::std::option::Option<crate::types::S3CopyObjectOperation>) -> Self {
         self.s3_put_object_copy = input;
         self
     }
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
-    pub fn get_s3_put_object_copy(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3CopyObjectOperation> {
+    pub fn get_s3_put_object_copy(&self) -> &::std::option::Option<crate::types::S3CopyObjectOperation> {
         &self.s3_put_object_copy
     }
     /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
@@ -160,127 +126,82 @@ impl JobOperationBuilder {
         self
     }
     /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
-    pub fn set_s3_put_object_acl(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SetObjectAclOperation>,
-    ) -> Self {
+    pub fn set_s3_put_object_acl(mut self, input: ::std::option::Option<crate::types::S3SetObjectAclOperation>) -> Self {
         self.s3_put_object_acl = input;
         self
     }
     /// <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.</p>
-    pub fn get_s3_put_object_acl(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3SetObjectAclOperation> {
+    pub fn get_s3_put_object_acl(&self) -> &::std::option::Option<crate::types::S3SetObjectAclOperation> {
         &self.s3_put_object_acl
     }
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-    pub fn s3_put_object_tagging(
-        mut self,
-        input: crate::types::S3SetObjectTaggingOperation,
-    ) -> Self {
+    pub fn s3_put_object_tagging(mut self, input: crate::types::S3SetObjectTaggingOperation) -> Self {
         self.s3_put_object_tagging = ::std::option::Option::Some(input);
         self
     }
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-    pub fn set_s3_put_object_tagging(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SetObjectTaggingOperation>,
-    ) -> Self {
+    pub fn set_s3_put_object_tagging(mut self, input: ::std::option::Option<crate::types::S3SetObjectTaggingOperation>) -> Self {
         self.s3_put_object_tagging = input;
         self
     }
     /// <p>Directs the specified job to run a PUT Object tagging call on every object in the manifest.</p>
-    pub fn get_s3_put_object_tagging(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3SetObjectTaggingOperation> {
+    pub fn get_s3_put_object_tagging(&self) -> &::std::option::Option<crate::types::S3SetObjectTaggingOperation> {
         &self.s3_put_object_tagging
     }
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-    pub fn s3_delete_object_tagging(
-        mut self,
-        input: crate::types::S3DeleteObjectTaggingOperation,
-    ) -> Self {
+    pub fn s3_delete_object_tagging(mut self, input: crate::types::S3DeleteObjectTaggingOperation) -> Self {
         self.s3_delete_object_tagging = ::std::option::Option::Some(input);
         self
     }
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-    pub fn set_s3_delete_object_tagging(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>,
-    ) -> Self {
+    pub fn set_s3_delete_object_tagging(mut self, input: ::std::option::Option<crate::types::S3DeleteObjectTaggingOperation>) -> Self {
         self.s3_delete_object_tagging = input;
         self
     }
     /// <p>Directs the specified job to execute a DELETE Object tagging call on every object in the manifest.</p>
-    pub fn get_s3_delete_object_tagging(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DeleteObjectTaggingOperation> {
+    pub fn get_s3_delete_object_tagging(&self) -> &::std::option::Option<crate::types::S3DeleteObjectTaggingOperation> {
         &self.s3_delete_object_tagging
     }
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-    pub fn s3_initiate_restore_object(
-        mut self,
-        input: crate::types::S3InitiateRestoreObjectOperation,
-    ) -> Self {
+    pub fn s3_initiate_restore_object(mut self, input: crate::types::S3InitiateRestoreObjectOperation) -> Self {
         self.s3_initiate_restore_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-    pub fn set_s3_initiate_restore_object(
-        mut self,
-        input: ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>,
-    ) -> Self {
+    pub fn set_s3_initiate_restore_object(mut self, input: ::std::option::Option<crate::types::S3InitiateRestoreObjectOperation>) -> Self {
         self.s3_initiate_restore_object = input;
         self
     }
     /// <p>Directs the specified job to initiate restore requests for every archived object in the manifest.</p>
-    pub fn get_s3_initiate_restore_object(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3InitiateRestoreObjectOperation> {
+    pub fn get_s3_initiate_restore_object(&self) -> &::std::option::Option<crate::types::S3InitiateRestoreObjectOperation> {
         &self.s3_initiate_restore_object
     }
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_legal_hold(
-        mut self,
-        input: crate::types::S3SetObjectLegalHoldOperation,
-    ) -> Self {
+    pub fn s3_put_object_legal_hold(mut self, input: crate::types::S3SetObjectLegalHoldOperation) -> Self {
         self.s3_put_object_legal_hold = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_s3_put_object_legal_hold(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
-    ) -> Self {
+    pub fn set_s3_put_object_legal_hold(mut self, input: ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>) -> Self {
         self.s3_put_object_legal_hold = input;
         self
     }
     /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn get_s3_put_object_legal_hold(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3SetObjectLegalHoldOperation> {
+    pub fn get_s3_put_object_legal_hold(&self) -> &::std::option::Option<crate::types::S3SetObjectLegalHoldOperation> {
         &self.s3_put_object_legal_hold
     }
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_put_object_retention(
-        mut self,
-        input: crate::types::S3SetObjectRetentionOperation,
-    ) -> Self {
+    pub fn s3_put_object_retention(mut self, input: crate::types::S3SetObjectRetentionOperation) -> Self {
         self.s3_put_object_retention = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_s3_put_object_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
-    ) -> Self {
+    pub fn set_s3_put_object_retention(mut self, input: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>) -> Self {
         self.s3_put_object_retention = input;
         self
     }
     /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn get_s3_put_object_retention(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3SetObjectRetentionOperation> {
+    pub fn get_s3_put_object_retention(&self) -> &::std::option::Option<crate::types::S3SetObjectRetentionOperation> {
         &self.s3_put_object_retention
     }
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
@@ -289,17 +210,12 @@ impl JobOperationBuilder {
         self
     }
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-    pub fn set_s3_replicate_object(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
-    ) -> Self {
+    pub fn set_s3_replicate_object(mut self, input: ::std::option::Option<crate::types::S3ReplicateObjectOperation>) -> Self {
         self.s3_replicate_object = input;
         self
     }
     /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
-    pub fn get_s3_replicate_object(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ReplicateObjectOperation> {
+    pub fn get_s3_replicate_object(&self) -> &::std::option::Option<crate::types::S3ReplicateObjectOperation> {
         &self.s3_replicate_object
     }
     /// Consumes the builder and constructs a [`JobOperation`](crate::types::JobOperation).

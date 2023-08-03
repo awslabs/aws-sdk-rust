@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput) with field(s):
     ///   - [`tag_set(Option<Vec<Tag>>)`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput::tag_set): <p>Contains the tag set.</p>
     /// - On failure, responds with [`SdkError<GetBucketTaggingError>`](crate::operation::get_bucket_tagging::GetBucketTaggingError)
-    pub fn get_bucket_tagging(
-        &self,
-    ) -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder {
-        crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_tagging(&self) -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder {
+        crate::operation::get_bucket_tagging::builders::GetBucketTaggingFluentBuilder::new(self.handle.clone())
     }
 }

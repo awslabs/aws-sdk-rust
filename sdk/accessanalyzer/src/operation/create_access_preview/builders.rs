@@ -37,9 +37,7 @@ impl CreateAccessPreviewFluentBuilder {
         }
     }
     /// Access the CreateAccessPreview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateAccessPreviewFluentBuilder {
             crate::operation::create_access_preview::CreateAccessPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateAccessPreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateAccessPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateAccessPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateAccessPreviewFluentBuilder {
             crate::operation::create_access_preview::CreateAccessPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError>,
     > {
         self.customize_middleware().await
     }
@@ -141,30 +128,20 @@ impl CreateAccessPreviewFluentBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn configurations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Configuration) -> Self {
         self.inner = self.inner.configurations(k.into(), v);
         self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     pub fn set_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     ) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    > {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
         self.inner.get_configurations()
     }
     /// <p>A client token.</p>

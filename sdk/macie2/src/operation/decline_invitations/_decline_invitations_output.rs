@@ -5,15 +5,12 @@
 pub struct DeclineInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     #[doc(hidden)]
-    pub unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl DeclineInvitationsOutput {
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-    pub fn unprocessed_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for DeclineInvitationsOutput {
 }
 impl DeclineInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput).
-    pub fn builder(
-    ) -> crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder {
+    pub fn builder() -> crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder {
         crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeclineInvitationsOutputBuilder {
-    pub(crate) unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl DeclineInvitationsOutputBuilder {
@@ -53,17 +46,12 @@ impl DeclineInvitationsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

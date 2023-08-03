@@ -10,10 +10,7 @@ impl ListDomainsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_domains::ListDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains::ListDomainsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_domains();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListDomainsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_domains::ListDomains,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_domains::ListDomains, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListDomainsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_domains::ListDomains,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_domains::ListDomains, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListDomainsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_domains::paginator::ListDomainsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_domains::paginator::ListDomainsPaginator {
-        crate::operation::list_domains::paginator::ListDomainsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_domains::paginator::ListDomainsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FilterConditions`.
     ///
@@ -131,17 +116,12 @@ impl ListDomainsFluentBuilder {
         self
     }
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn set_filter_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
-    ) -> Self {
+    pub fn set_filter_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>) -> Self {
         self.inner = self.inner.set_filter_conditions(input);
         self
     }
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn get_filter_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+    pub fn get_filter_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
         self.inner.get_filter_conditions()
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
@@ -150,10 +130,7 @@ impl ListDomainsFluentBuilder {
         self
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
-    pub fn set_sort_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCondition>,
-    ) -> Self {
+    pub fn set_sort_condition(mut self, input: ::std::option::Option<crate::types::SortCondition>) -> Self {
         self.inner = self.inner.set_sort_condition(input);
         self
     }

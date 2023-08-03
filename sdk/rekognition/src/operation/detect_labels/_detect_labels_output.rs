@@ -27,9 +27,7 @@ impl DetectLabelsOutput {
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    pub fn orientation_correction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
@@ -37,9 +35,7 @@ impl DetectLabelsOutput {
         self.label_model_version.as_deref()
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
-    pub fn image_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectLabelsImageProperties> {
+    pub fn image_properties(&self) -> ::std::option::Option<&crate::types::DetectLabelsImageProperties> {
         self.image_properties.as_ref()
     }
 }
@@ -57,9 +53,7 @@ impl DetectLabelsOutput {
 
 /// A builder for [`DetectLabelsOutput`](crate::operation::detect_labels::DetectLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectLabelsOutputBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
@@ -80,10 +74,7 @@ impl DetectLabelsOutputBuilder {
         self
     }
     /// <p>An array of labels for the real-world objects detected. </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.labels = input;
         self
     }
@@ -101,34 +92,23 @@ impl DetectLabelsOutputBuilder {
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    pub fn set_orientation_correction(
-        mut self,
-        input: ::std::option::Option<crate::types::OrientationCorrection>,
-    ) -> Self {
+    pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
         self.orientation_correction = input;
         self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
-    pub fn get_orientation_correction(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrientationCorrection> {
+    pub fn get_orientation_correction(&self) -> &::std::option::Option<crate::types::OrientationCorrection> {
         &self.orientation_correction
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    pub fn label_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    pub fn set_label_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_model_version = input;
         self
     }
@@ -142,17 +122,12 @@ impl DetectLabelsOutputBuilder {
         self
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
-    pub fn set_image_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsImageProperties>,
-    ) -> Self {
+    pub fn set_image_properties(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageProperties>) -> Self {
         self.image_properties = input;
         self
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
-    pub fn get_image_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectLabelsImageProperties> {
+    pub fn get_image_properties(&self) -> &::std::option::Option<crate::types::DetectLabelsImageProperties> {
         &self.image_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

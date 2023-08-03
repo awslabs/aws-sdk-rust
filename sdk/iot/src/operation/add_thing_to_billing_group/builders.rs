@@ -27,8 +27,7 @@ impl AddThingToBillingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddThingToBillingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder,
+    inner: crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder,
 }
 impl AddThingToBillingGroupFluentBuilder {
     /// Creates a new `AddThingToBillingGroup`.
@@ -39,10 +38,7 @@ impl AddThingToBillingGroupFluentBuilder {
         }
     }
     /// Access the AddThingToBillingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AddThingToBillingGroupFluentBuilder {
             crate::operation::add_thing_to_billing_group::AddThingToBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AddThingToBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AddThingToBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AddThingToBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -119,29 +106,21 @@ impl AddThingToBillingGroupFluentBuilder {
             crate::operation::add_thing_to_billing_group::AddThingToBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
@@ -152,18 +131,12 @@ impl AddThingToBillingGroupFluentBuilder {
         self.inner.get_billing_group_name()
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_arn(input.into());
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }

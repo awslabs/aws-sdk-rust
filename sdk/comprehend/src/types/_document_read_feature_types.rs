@@ -49,13 +49,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DocumentReadFeatureTypes {
     #[allow(missing_docs)] // documentation missing in model
@@ -70,9 +64,7 @@ impl ::std::convert::From<&str> for DocumentReadFeatureTypes {
         match s {
             "FORMS" => DocumentReadFeatureTypes::Forms,
             "TABLES" => DocumentReadFeatureTypes::Tables,
-            other => DocumentReadFeatureTypes::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DocumentReadFeatureTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

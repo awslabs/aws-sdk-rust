@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`traffic_sources(Option<Vec<TrafficSourceState>>)`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput::traffic_sources): <p>Information about the traffic sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTrafficSourcesError>`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesError)
-    pub fn describe_traffic_sources(
-        &self,
-    ) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesFluentBuilder
-    {
+    pub fn describe_traffic_sources(&self) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesFluentBuilder {
         crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesFluentBuilder::new(self.handle.clone())
     }
 }

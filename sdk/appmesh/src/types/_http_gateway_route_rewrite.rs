@@ -37,9 +37,7 @@ impl HttpGatewayRouteRewrite {
 
 /// A builder for [`HttpGatewayRouteRewrite`](crate::types::HttpGatewayRouteRewrite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteRewriteBuilder {
     pub(crate) prefix: ::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite>,
     pub(crate) path: ::std::option::Option<crate::types::HttpGatewayRoutePathRewrite>,
@@ -52,17 +50,12 @@ impl HttpGatewayRouteRewriteBuilder {
         self
     }
     /// <p>The specified beginning characters to rewrite.</p>
-    pub fn set_prefix(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite>,
-    ) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite>) -> Self {
         self.prefix = input;
         self
     }
     /// <p>The specified beginning characters to rewrite.</p>
-    pub fn get_prefix(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite> {
+    pub fn get_prefix(&self) -> &::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite> {
         &self.prefix
     }
     /// <p>The path to rewrite.</p>
@@ -71,10 +64,7 @@ impl HttpGatewayRouteRewriteBuilder {
         self
     }
     /// <p>The path to rewrite.</p>
-    pub fn set_path(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpGatewayRoutePathRewrite>,
-    ) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoutePathRewrite>) -> Self {
         self.path = input;
         self
     }
@@ -88,17 +78,12 @@ impl HttpGatewayRouteRewriteBuilder {
         self
     }
     /// <p>The host name to rewrite.</p>
-    pub fn set_hostname(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
-    ) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>The host name to rewrite.</p>
-    pub fn get_hostname(
-        &self,
-    ) -> &::std::option::Option<crate::types::GatewayRouteHostnameRewrite> {
+    pub fn get_hostname(&self) -> &::std::option::Option<crate::types::GatewayRouteHostnameRewrite> {
         &self.hostname
     }
     /// Consumes the builder and constructs a [`HttpGatewayRouteRewrite`](crate::types::HttpGatewayRouteRewrite).

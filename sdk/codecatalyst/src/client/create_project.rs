@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::create_project::CreateProjectOutput::display_name): <p>The friendly name of the project.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_project::CreateProjectOutput::description): <p>The description of the project.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

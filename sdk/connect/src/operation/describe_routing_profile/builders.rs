@@ -37,10 +37,7 @@ impl DescribeRoutingProfileFluentBuilder {
         }
     }
     /// Access the DescribeRoutingProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_routing_profile::builders::DescribeRoutingProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_routing_profile::builders::DescribeRoutingProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeRoutingProfileFluentBuilder {
             crate::operation::describe_routing_profile::DescribeRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_profile::DescribeRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_profile::DescribeRoutingProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeRoutingProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_routing_profile::DescribeRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_profile::DescribeRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_profile::DescribeRoutingProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_routing_profile::DescribeRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_profile::DescribeRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_profile::DescribeRoutingProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeRoutingProfileFluentBuilder {
             crate::operation::describe_routing_profile::DescribeRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_routing_profile::DescribeRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_routing_profile::DescribeRoutingProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribeRoutingProfileFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }

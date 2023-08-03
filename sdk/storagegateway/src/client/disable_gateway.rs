@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableGatewayOutput`](crate::operation::disable_gateway::DisableGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::disable_gateway::DisableGatewayOutput::gateway_arn): <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
     /// - On failure, responds with [`SdkError<DisableGatewayError>`](crate::operation::disable_gateway::DisableGatewayError)
-    pub fn disable_gateway(
-        &self,
-    ) -> crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder {
-        crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_gateway(&self) -> crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder {
+        crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::new(self.handle.clone())
     }
 }

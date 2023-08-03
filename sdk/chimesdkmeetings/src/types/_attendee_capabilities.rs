@@ -45,9 +45,7 @@ impl AttendeeCapabilities {
 
 /// A builder for [`AttendeeCapabilities`](crate::types::AttendeeCapabilities).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttendeeCapabilitiesBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::MediaCapabilities>,
     pub(crate) video: ::std::option::Option<crate::types::MediaCapabilities>,
@@ -60,10 +58,7 @@ impl AttendeeCapabilitiesBuilder {
         self
     }
     /// <p>The audio capability assigned to an attendee.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaCapabilities>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
         self.audio = input;
         self
     }
@@ -77,10 +72,7 @@ impl AttendeeCapabilitiesBuilder {
         self
     }
     /// <p>The video capability assigned to an attendee.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaCapabilities>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
         self.video = input;
         self
     }
@@ -94,10 +86,7 @@ impl AttendeeCapabilitiesBuilder {
         self
     }
     /// <p>The content capability assigned to an attendee.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaCapabilities>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
         self.content = input;
         self
     }

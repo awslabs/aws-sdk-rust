@@ -28,14 +28,10 @@ pub fn ser_slack_configuration(
         object.key("UseChangeLog").boolean(input.use_change_log);
     }
     if input.crawl_bot_message {
-        object
-            .key("CrawlBotMessage")
-            .boolean(input.crawl_bot_message);
+        object.key("CrawlBotMessage").boolean(input.crawl_bot_message);
     }
     if input.exclude_archived {
-        object
-            .key("ExcludeArchived")
-            .boolean(input.exclude_archived);
+        object.key("ExcludeArchived").boolean(input.exclude_archived);
     }
     if let Some(var_8) = &input.since_crawl_date {
         object.key("SinceCrawlDate").string(var_8.as_str());
@@ -99,17 +95,9 @@ pub fn ser_slack_configuration(
 
 pub(crate) fn de_slack_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SlackConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SlackConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -123,80 +111,58 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "TeamId" => {
                                 builder = builder.set_team_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "SecretArn" => {
                                 builder = builder.set_secret_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
                                 );
                             }
                             "SlackEntityList" => {
-                                builder = builder.set_slack_entity_list(
-                                    crate::protocol_serde::shape_slack_entity_list::de_slack_entity_list(tokens)?
-                                );
+                                builder =
+                                    builder.set_slack_entity_list(crate::protocol_serde::shape_slack_entity_list::de_slack_entity_list(tokens)?);
                             }
                             "UseChangeLog" => {
-                                builder = builder.set_use_change_log(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_use_change_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "CrawlBotMessage" => {
-                                builder = builder.set_crawl_bot_message(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_crawl_bot_message(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "ExcludeArchived" => {
-                                builder = builder.set_exclude_archived(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_exclude_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "SinceCrawlDate" => {
                                 builder = builder.set_since_crawl_date(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "LookBackPeriod" => {
                                 builder = builder.set_look_back_period(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "PrivateChannelFilter" => {
                                 builder = builder.set_private_channel_filter(
-                                    crate::protocol_serde::shape_private_channel_filter::de_private_channel_filter(tokens)?
+                                    crate::protocol_serde::shape_private_channel_filter::de_private_channel_filter(tokens)?,
                                 );
                             }
                             "PublicChannelFilter" => {
-                                builder = builder.set_public_channel_filter(
-                                    crate::protocol_serde::shape_public_channel_filter::de_public_channel_filter(tokens)?
-                                );
+                                builder = builder
+                                    .set_public_channel_filter(crate::protocol_serde::shape_public_channel_filter::de_public_channel_filter(tokens)?);
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
@@ -210,27 +176,26 @@ where
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

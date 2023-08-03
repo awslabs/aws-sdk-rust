@@ -10,10 +10,7 @@ impl UpdateScheduleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_schedule::UpdateScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_schedule::UpdateScheduleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schedule::UpdateScheduleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_schedule();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateScheduleFluentBuilder {
         }
     }
     /// Access the UpdateSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_schedule::builders::UpdateScheduleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_schedule::builders::UpdateScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -153,10 +145,7 @@ impl UpdateScheduleFluentBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_expression(input.into());
         self
     }
@@ -170,10 +159,7 @@ impl UpdateScheduleFluentBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_expression(input);
         self
     }
@@ -196,10 +182,7 @@ impl UpdateScheduleFluentBuilder {
         self
     }
     /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
@@ -213,10 +196,7 @@ impl UpdateScheduleFluentBuilder {
         self
     }
     /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
@@ -239,25 +219,17 @@ impl UpdateScheduleFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn schedule_expression_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_expression_timezone(input.into());
         self
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn set_schedule_expression_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_expression_timezone(input);
         self
     }
     /// <p>The timezone in which the scheduling expression is evaluated.</p>
-    pub fn get_schedule_expression_timezone(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schedule_expression_timezone()
     }
     /// <p>Specifies whether the schedule is enabled or disabled.</p>
@@ -308,17 +280,12 @@ impl UpdateScheduleFluentBuilder {
         self
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    pub fn set_flexible_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::FlexibleTimeWindow>,
-    ) -> Self {
+    pub fn set_flexible_time_window(mut self, input: ::std::option::Option<crate::types::FlexibleTimeWindow>) -> Self {
         self.inner = self.inner.set_flexible_time_window(input);
         self
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    pub fn get_flexible_time_window(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlexibleTimeWindow> {
+    pub fn get_flexible_time_window(&self) -> &::std::option::Option<crate::types::FlexibleTimeWindow> {
         self.inner.get_flexible_time_window()
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>

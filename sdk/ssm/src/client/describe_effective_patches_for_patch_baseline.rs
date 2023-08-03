@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`effective_patches(Option<Vec<EffectivePatch>>)`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput::effective_patches): <p>An array of patches and patch status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeEffectivePatchesForPatchBaselineError>`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError)
-    pub fn describe_effective_patches_for_patch_baseline(&self) -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder{
-        crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::new(self.handle.clone())
+    pub fn describe_effective_patches_for_patch_baseline(
+        &self,
+    ) -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder {
+        crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -36,12 +36,9 @@ impl ListThingTypesOutput {
 
 /// A builder for [`ListThingTypesOutput`](crate::operation::list_thing_types::ListThingTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingTypesOutputBuilder {
-    pub(crate) thing_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>>,
+    pub(crate) thing_types: ::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +55,12 @@ impl ListThingTypesOutputBuilder {
         self
     }
     /// <p>The thing types.</p>
-    pub fn set_thing_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>>,
-    ) -> Self {
+    pub fn set_thing_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>>) -> Self {
         self.thing_types = input;
         self
     }
     /// <p>The thing types.</p>
-    pub fn get_thing_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>> {
+    pub fn get_thing_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>> {
         &self.thing_types
     }
     /// <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>

@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeLunaClientOutput {
 }
 impl DescribeLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::operation::describe_luna_client::DescribeLunaClientOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_luna_client::builders::DescribeLunaClientOutputBuilder {
+    pub fn builder() -> crate::operation::describe_luna_client::builders::DescribeLunaClientOutputBuilder {
         crate::operation::describe_luna_client::builders::DescribeLunaClientOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLunaClientOutput`](crate::operation::describe_luna_client::DescribeLunaClientOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLunaClientOutputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -98,18 +95,12 @@ impl DescribeLunaClientOutputBuilder {
         &self.certificate
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn certificate_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn set_certificate_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_fingerprint = input;
         self
     }
@@ -118,18 +109,12 @@ impl DescribeLunaClientOutputBuilder {
         &self.certificate_fingerprint
     }
     /// <p>The date and time the client was last modified.</p>
-    pub fn last_modified_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the client was last modified.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_timestamp = input;
         self
     }

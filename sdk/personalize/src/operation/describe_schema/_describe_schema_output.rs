@@ -28,9 +28,7 @@ impl DescribeSchemaOutput {
 
 /// A builder for [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemaOutputBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::DatasetSchema>,
     _request_id: Option<String>,

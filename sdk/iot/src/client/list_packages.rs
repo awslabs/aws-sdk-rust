@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`package_summaries(Option<Vec<PackageSummary>>)`](crate::operation::list_packages::ListPackagesOutput::package_summaries): <p>The software package summary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
-    pub fn list_packages(
-        &self,
-    ) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
-        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
+        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
     }
 }

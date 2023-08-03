@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointAccessOutput`](crate::operation::update_endpoint_access::UpdateEndpointAccessOutput) with field(s):
     ///   - [`endpoint(Option<EndpointAccess>)`](crate::operation::update_endpoint_access::UpdateEndpointAccessOutput::endpoint): <p>The updated VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointAccessError>`](crate::operation::update_endpoint_access::UpdateEndpointAccessError)
-    pub fn update_endpoint_access(
-        &self,
-    ) -> crate::operation::update_endpoint_access::builders::UpdateEndpointAccessFluentBuilder {
-        crate::operation::update_endpoint_access::builders::UpdateEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoint_access(&self) -> crate::operation::update_endpoint_access::builders::UpdateEndpointAccessFluentBuilder {
+        crate::operation::update_endpoint_access::builders::UpdateEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

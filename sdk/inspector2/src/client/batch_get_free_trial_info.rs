@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`accounts(Option<Vec<FreeTrialAccountInfo>>)`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput::accounts): <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     ///   - [`failed_accounts(Option<Vec<FreeTrialInfoError>>)`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput::failed_accounts): <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
     /// - On failure, responds with [`SdkError<BatchGetFreeTrialInfoError>`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError)
-    pub fn batch_get_free_trial_info(
-        &self,
-    ) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder
-    {
+    pub fn batch_get_free_trial_info(&self) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder {
         crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoFluentBuilder::new(self.handle.clone())
     }
 }

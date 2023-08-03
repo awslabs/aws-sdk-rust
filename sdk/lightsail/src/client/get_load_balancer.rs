@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLoadBalancerOutput`](crate::operation::get_load_balancer::GetLoadBalancerOutput) with field(s):
     ///   - [`load_balancer(Option<LoadBalancer>)`](crate::operation::get_load_balancer::GetLoadBalancerOutput::load_balancer): <p>An object containing information about your load balancer.</p>
     /// - On failure, responds with [`SdkError<GetLoadBalancerError>`](crate::operation::get_load_balancer::GetLoadBalancerError)
-    pub fn get_load_balancer(
-        &self,
-    ) -> crate::operation::get_load_balancer::builders::GetLoadBalancerFluentBuilder {
-        crate::operation::get_load_balancer::builders::GetLoadBalancerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_load_balancer(&self) -> crate::operation::get_load_balancer::builders::GetLoadBalancerFluentBuilder {
+        crate::operation::get_load_balancer::builders::GetLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

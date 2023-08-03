@@ -26,7 +26,7 @@ impl CreateWorkerConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkerConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder,
+    inner: crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder,
 }
 impl CreateWorkerConfigurationFluentBuilder {
     /// Creates a new `CreateWorkerConfiguration`.
@@ -37,7 +37,7 @@ impl CreateWorkerConfigurationFluentBuilder {
         }
     }
     /// Access the CreateWorkerConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateWorkerConfigurationFluentBuilder {
             crate::operation::create_worker_configuration::CreateWorkerConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_configuration::CreateWorkerConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateWorkerConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateWorkerConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_configuration::CreateWorkerConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateWorkerConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_configuration::CreateWorkerConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_configuration::CreateWorkerConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateWorkerConfigurationFluentBuilder {
             crate::operation::create_worker_configuration::CreateWorkerConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_configuration::CreateWorkerConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_configuration::CreateWorkerConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl CreateWorkerConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn properties_file_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.properties_file_content(input.into());
         self
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn set_properties_file_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_properties_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_properties_file_content(input);
         self
     }

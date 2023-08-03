@@ -37,9 +37,7 @@ impl GetCustomRulePolicyFluentBuilder {
         }
     }
     /// Access the GetCustomRulePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetCustomRulePolicyFluentBuilder {
             crate::operation::get_custom_rule_policy::GetCustomRulePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetCustomRulePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetCustomRulePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetCustomRulePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetCustomRulePolicyFluentBuilder {
             crate::operation::get_custom_rule_policy::GetCustomRulePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your Config Custom Policy rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The name of your Config Custom Policy rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }

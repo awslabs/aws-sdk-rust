@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::set_name): <p>The name of the variable to delete.</p>
     /// - On success, responds with [`DeleteVariableOutput`](crate::operation::delete_variable::DeleteVariableOutput)
     /// - On failure, responds with [`SdkError<DeleteVariableError>`](crate::operation::delete_variable::DeleteVariableError)
-    pub fn delete_variable(
-        &self,
-    ) -> crate::operation::delete_variable::builders::DeleteVariableFluentBuilder {
-        crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_variable(&self) -> crate::operation::delete_variable::builders::DeleteVariableFluentBuilder {
+        crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::new(self.handle.clone())
     }
 }

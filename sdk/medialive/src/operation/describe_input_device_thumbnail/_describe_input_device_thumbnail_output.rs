@@ -49,7 +49,7 @@ impl ::aws_http::request_id::RequestId for DescribeInputDeviceThumbnailOutput {
 }
 impl DescribeInputDeviceThumbnailOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput).
-    pub fn builder() -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailOutputBuilder{
+    pub fn builder() -> crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailOutputBuilder {
         crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailOutputBuilder::default()
     }
 }
@@ -72,10 +72,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self
     }
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -89,10 +86,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self
     }
     /// Specifies the media type of the thumbnail.
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -134,10 +128,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self
     }
     /// The date and time the thumbnail was last updated at the device.
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -155,9 +146,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
+    pub fn build(self) -> crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
             body: self.body.unwrap_or_default(),
             content_type: self.content_type,

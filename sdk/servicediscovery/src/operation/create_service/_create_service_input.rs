@@ -91,9 +91,7 @@ impl CreateServiceInput {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn health_check_custom_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
+    pub fn health_check_custom_config(&self) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
         self.health_check_custom_config.as_ref()
     }
     /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
@@ -114,9 +112,7 @@ impl CreateServiceInput {
 
 /// A builder for [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
@@ -124,8 +120,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_config: ::std::option::Option<crate::types::DnsConfig>,
     pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
-    pub(crate) health_check_custom_config:
-        ::std::option::Option<crate::types::HealthCheckCustomConfig>,
+    pub(crate) health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) r#type: ::std::option::Option<crate::types::ServiceTypeOption>,
 }
@@ -192,18 +187,12 @@ impl CreateServiceInputBuilder {
         &self.namespace_id
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -251,10 +240,7 @@ impl CreateServiceInputBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
@@ -262,19 +248,14 @@ impl CreateServiceInputBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn health_check_custom_config(
-        mut self,
-        input: crate::types::HealthCheckCustomConfig,
-    ) -> Self {
+    pub fn health_check_custom_config(mut self, input: crate::types::HealthCheckCustomConfig) -> Self {
         self.health_check_custom_config = ::std::option::Option::Some(input);
         self
     }
@@ -282,10 +263,7 @@ impl CreateServiceInputBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn set_health_check_custom_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
-    ) -> Self {
+    pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
         self.health_check_custom_config = input;
         self
     }
@@ -293,9 +271,7 @@ impl CreateServiceInputBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn get_health_check_custom_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
+    pub fn get_health_check_custom_config(&self) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
         &self.health_check_custom_config
     }
     /// Appends an item to `tags`.
@@ -310,10 +286,7 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -327,10 +300,7 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTypeOption>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServiceTypeOption>) -> Self {
         self.r#type = input;
         self
     }
@@ -341,10 +311,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             namespace_id: self.namespace_id,

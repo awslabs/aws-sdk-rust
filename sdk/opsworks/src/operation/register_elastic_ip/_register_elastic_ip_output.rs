@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for RegisterElasticIpOutput {
 }
 impl RegisterElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
-    pub fn builder(
-    ) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder {
+    pub fn builder() -> crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder {
         crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterElasticIpOutputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

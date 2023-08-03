@@ -58,17 +58,14 @@ impl AuthParameter {
 
 /// A builder for [`AuthParameter`](crate::types::AuthParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) is_required: ::std::option::Option<bool>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) is_sensitive_field: ::std::option::Option<bool>,
-    pub(crate) connector_supplied_values:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthParameterBuilder {
     /// <p>The authentication key required to authenticate with the connector.</p>
@@ -146,27 +143,19 @@ impl AuthParameterBuilder {
     /// To override the contents of this collection use [`set_connector_supplied_values`](Self::set_connector_supplied_values).
     ///
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_supplied_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_supplied_values.unwrap_or_default();
         v.push(input.into());
         self.connector_supplied_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn set_connector_supplied_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_supplied_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connector_supplied_values = input;
         self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn get_connector_supplied_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_supplied_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connector_supplied_values
     }
     /// Consumes the builder and constructs a [`AuthParameter`](crate::types::AuthParameter).

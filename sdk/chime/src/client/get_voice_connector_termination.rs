@@ -7,10 +7,10 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorTerminationOutput`](crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput) with field(s):
     ///   - [`termination(Option<Termination>)`](crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput::termination): <p>The termination setting details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorTerminationError>`](crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError)
-    #[deprecated(
-        note = "Replaced by GetVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn get_voice_connector_termination(&self) -> crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationFluentBuilder{
+    #[deprecated(note = "Replaced by GetVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace")]
+    pub fn get_voice_connector_termination(
+        &self,
+    ) -> crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationFluentBuilder {
         crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationFluentBuilder::new(self.handle.clone())
     }
 }

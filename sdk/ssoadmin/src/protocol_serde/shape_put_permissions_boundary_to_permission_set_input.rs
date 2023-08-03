@@ -12,10 +12,7 @@ pub fn ser_put_permissions_boundary_to_permission_set_input(
     if let Some(var_3) = &input.permissions_boundary {
         #[allow(unused_mut)]
         let mut object_4 = object.key("PermissionsBoundary").start_object();
-        crate::protocol_serde::shape_permissions_boundary::ser_permissions_boundary(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_permissions_boundary::ser_permissions_boundary(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

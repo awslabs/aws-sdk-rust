@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::operation::start_query_planning::StartQueryPlanningOutput::query_id): <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartQueryPlanningError>`](crate::operation::start_query_planning::StartQueryPlanningError)
-    pub fn start_query_planning(
-        &self,
-    ) -> crate::operation::start_query_planning::builders::StartQueryPlanningFluentBuilder {
-        crate::operation::start_query_planning::builders::StartQueryPlanningFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_query_planning(&self) -> crate::operation::start_query_planning::builders::StartQueryPlanningFluentBuilder {
+        crate::operation::start_query_planning::builders::StartQueryPlanningFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::creation_time): <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::last_modification_time): <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     /// - On failure, responds with [`SdkError<GetDecoderManifestError>`](crate::operation::get_decoder_manifest::GetDecoderManifestError)
-    pub fn get_decoder_manifest(
-        &self,
-    ) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder {
-        crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_decoder_manifest(&self) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder {
+        crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::new(self.handle.clone())
     }
 }

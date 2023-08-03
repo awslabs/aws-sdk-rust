@@ -25,9 +25,7 @@ impl RateLimitLabelNamespace {
 
 /// A builder for [`RateLimitLabelNamespace`](crate::types::RateLimitLabelNamespace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateLimitLabelNamespaceBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
@@ -48,8 +46,6 @@ impl RateLimitLabelNamespaceBuilder {
     }
     /// Consumes the builder and constructs a [`RateLimitLabelNamespace`](crate::types::RateLimitLabelNamespace).
     pub fn build(self) -> crate::types::RateLimitLabelNamespace {
-        crate::types::RateLimitLabelNamespace {
-            namespace: self.namespace,
-        }
+        crate::types::RateLimitLabelNamespace { namespace: self.namespace }
     }
 }

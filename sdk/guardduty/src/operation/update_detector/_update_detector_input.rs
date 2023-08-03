@@ -11,8 +11,7 @@ pub struct UpdateDetectorInput {
     pub enable: ::std::option::Option<bool>,
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
     #[doc(hidden)]
-    pub finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -20,8 +19,7 @@ pub struct UpdateDetectorInput {
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurations>,
     /// <p>Provides the features that will be updated for the detector.</p>
     #[doc(hidden)]
-    pub features:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
+    pub features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
@@ -33,9 +31,7 @@ impl UpdateDetectorInput {
         self.enable
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn finding_publishing_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>Describes which data sources will be updated.</p>
@@ -58,17 +54,13 @@ impl UpdateDetectorInput {
 
 /// A builder for [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,
-    pub(crate) finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) data_sources: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl UpdateDetectorInputBuilder {
     /// <p>The unique ID of the detector to update.</p>
@@ -100,25 +92,17 @@ impl UpdateDetectorInputBuilder {
         &self.enable
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.finding_publishing_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.finding_publishing_frequency = input;
         self
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         &self.finding_publishing_frequency
     }
     /// <p>Describes which data sources will be updated.</p>
@@ -131,19 +115,14 @@ impl UpdateDetectorInputBuilder {
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         &self.data_sources
     }
     /// Appends an item to `features`.
@@ -158,26 +137,18 @@ impl UpdateDetectorInputBuilder {
         self
     }
     /// <p>Provides the features that will be updated for the detector.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>) -> Self {
         self.features = input;
         self
     }
     /// <p>Provides the features that will be updated for the detector.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_detector::UpdateDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_detector::UpdateDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_detector::UpdateDetectorInput {
             detector_id: self.detector_id,
             enable: self.enable,

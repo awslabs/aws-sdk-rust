@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_variable::builders::CreateVariableFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_variable::builders::CreateVariableFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`CreateVariableOutput`](crate::operation::create_variable::CreateVariableOutput)
     /// - On failure, responds with [`SdkError<CreateVariableError>`](crate::operation::create_variable::CreateVariableError)
-    pub fn create_variable(
-        &self,
-    ) -> crate::operation::create_variable::builders::CreateVariableFluentBuilder {
-        crate::operation::create_variable::builders::CreateVariableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_variable(&self) -> crate::operation::create_variable::builders::CreateVariableFluentBuilder {
+        crate::operation::create_variable::builders::CreateVariableFluentBuilder::new(self.handle.clone())
     }
 }

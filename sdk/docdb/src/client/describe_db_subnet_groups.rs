@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_subnet_groups(Option<Vec<DbSubnetGroup>>)`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput::db_subnet_groups): <p>Detailed information about one or more subnet groups.</p>
     /// - On failure, responds with [`SdkError<DescribeDBSubnetGroupsError>`](crate::operation::describe_db_subnet_groups::DescribeDBSubnetGroupsError)
-    pub fn describe_db_subnet_groups(
-        &self,
-    ) -> crate::operation::describe_db_subnet_groups::builders::DescribeDBSubnetGroupsFluentBuilder
-    {
+    pub fn describe_db_subnet_groups(&self) -> crate::operation::describe_db_subnet_groups::builders::DescribeDBSubnetGroupsFluentBuilder {
         crate::operation::describe_db_subnet_groups::builders::DescribeDBSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

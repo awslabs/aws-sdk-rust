@@ -111,8 +111,7 @@ pub(crate) fn reflens_list_tags_for_resource_output_next_token(
 
 pub(crate) fn lens_list_account_assignment_creation_status_output_account_assignments_creation_status(
     input: crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>
-{
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>> {
     let input = match input.account_assignments_creation_status {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
@@ -122,8 +121,7 @@ pub(crate) fn lens_list_account_assignment_creation_status_output_account_assign
 
 pub(crate) fn lens_list_account_assignment_deletion_status_output_account_assignments_deletion_status(
     input: crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>
-{
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>> {
     let input = match input.account_assignments_deletion_status {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

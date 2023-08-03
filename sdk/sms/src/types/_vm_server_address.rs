@@ -30,27 +30,19 @@ impl VmServerAddress {
 
 /// A builder for [`VmServerAddress`](crate::types::VmServerAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VmServerAddressBuilder {
     pub(crate) vm_manager_id: ::std::option::Option<::std::string::String>,
     pub(crate) vm_id: ::std::option::Option<::std::string::String>,
 }
 impl VmServerAddressBuilder {
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vm_manager_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_manager_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VM manager.</p>
-    pub fn set_vm_manager_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vm_manager_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_manager_id = input;
         self
     }

@@ -26,7 +26,7 @@ impl CreateFaceLivenessSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder,
+    inner: crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder,
 }
 impl CreateFaceLivenessSessionFluentBuilder {
     /// Creates a new `CreateFaceLivenessSession`.
@@ -37,7 +37,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
         }
     }
     /// Access the CreateFaceLivenessSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
             crate::operation::create_face_liveness_session::CreateFaceLivenessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateFaceLivenessSessionFluentBuilder {
             crate::operation::create_face_liveness_session::CreateFaceLivenessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,40 +124,26 @@ impl CreateFaceLivenessSessionFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn settings(
-        mut self,
-        input: crate::types::CreateFaceLivenessSessionRequestSettings,
-    ) -> Self {
+    pub fn settings(mut self, input: crate::types::CreateFaceLivenessSessionRequestSettings) -> Self {
         self.inner = self.inner.settings(input);
         self
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings> {
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings> {
         self.inner.get_settings()
     }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

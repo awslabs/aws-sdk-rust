@@ -50,9 +50,7 @@ impl ListWorkteamsInput {
 
 /// A builder for [`ListWorkteamsInput`](crate::operation::list_workteams::ListWorkteamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkteamsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -67,10 +65,7 @@ impl ListWorkteamsInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>) -> Self {
         self.sort_by = input;
         self
     }
@@ -93,18 +88,12 @@ impl ListWorkteamsInputBuilder {
         &self.sort_order
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -143,10 +132,7 @@ impl ListWorkteamsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkteamsInput`](crate::operation::list_workteams::ListWorkteamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workteams::ListWorkteamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workteams::ListWorkteamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workteams::ListWorkteamsInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

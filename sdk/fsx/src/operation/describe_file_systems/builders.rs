@@ -44,9 +44,7 @@ impl DescribeFileSystemsFluentBuilder {
         }
     }
     /// Access the DescribeFileSystems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl DescribeFileSystemsFluentBuilder {
             crate::operation::describe_file_systems::DescribeFileSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl DescribeFileSystemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl DescribeFileSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_systems::DescribeFileSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl DescribeFileSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_systems::DescribeFileSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         self.send_middleware().await
     }
@@ -123,47 +112,32 @@ impl DescribeFileSystemsFluentBuilder {
             crate::operation::describe_file_systems::DescribeFileSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_systems::DescribeFileSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_systems::DescribeFileSystemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator {
-        crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator {
+        crate::operation::describe_file_systems::paginator::DescribeFileSystemsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FileSystemIds`.
     ///
     /// To override the contents of this collection use [`set_file_system_ids`](Self::set_file_system_ids).
     ///
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn file_system_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_ids(input.into());
         self
     }
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn set_file_system_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_system_ids(input);
         self
     }
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn get_file_system_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_file_system_ids()
     }
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>

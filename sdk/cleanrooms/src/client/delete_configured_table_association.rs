@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`membership_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationFluentBuilder::set_membership_identifier): <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
     /// - On success, responds with [`DeleteConfiguredTableAssociationOutput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteConfiguredTableAssociationError>`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationError)
-    pub fn delete_configured_table_association(&self) -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationFluentBuilder{
+    pub fn delete_configured_table_association(
+        &self,
+    ) -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationFluentBuilder {
         crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationFluentBuilder::new(self.handle.clone())
     }
 }

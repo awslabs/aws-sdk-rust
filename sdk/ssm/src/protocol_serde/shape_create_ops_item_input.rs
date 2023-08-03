@@ -16,10 +16,7 @@ pub fn ser_create_ops_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_ops_item_data_value::ser_ops_item_data_value(
-                    &mut object_7,
-                    value_6,
-                )?;
+                crate::protocol_serde::shape_ops_item_data_value::ser_ops_item_data_value(&mut object_7, value_6)?;
                 object_7.finish();
             }
         }
@@ -31,10 +28,7 @@ pub fn ser_create_ops_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_ops_item_notification::ser_ops_item_notification(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_ops_item_notification::ser_ops_item_notification(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -52,10 +46,7 @@ pub fn ser_create_ops_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_related_ops_item::ser_related_ops_item(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_related_ops_item::ser_related_ops_item(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

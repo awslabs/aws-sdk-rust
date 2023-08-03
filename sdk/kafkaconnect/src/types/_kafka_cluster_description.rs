@@ -10,9 +10,7 @@ pub struct KafkaClusterDescription {
 }
 impl KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApacheKafkaClusterDescription> {
+    pub fn apache_kafka_cluster(&self) -> ::std::option::Option<&crate::types::ApacheKafkaClusterDescription> {
         self.apache_kafka_cluster.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl KafkaClusterDescription {
 
 /// A builder for [`KafkaClusterDescription`](crate::types::KafkaClusterDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KafkaClusterDescriptionBuilder {
-    pub(crate) apache_kafka_cluster:
-        ::std::option::Option<crate::types::ApacheKafkaClusterDescription>,
+    pub(crate) apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescriptionBuilder {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(
-        mut self,
-        input: crate::types::ApacheKafkaClusterDescription,
-    ) -> Self {
+    pub fn apache_kafka_cluster(mut self, input: crate::types::ApacheKafkaClusterDescription) -> Self {
         self.apache_kafka_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn set_apache_kafka_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::ApacheKafkaClusterDescription>,
-    ) -> Self {
+    pub fn set_apache_kafka_cluster(mut self, input: ::std::option::Option<crate::types::ApacheKafkaClusterDescription>) -> Self {
         self.apache_kafka_cluster = input;
         self
     }
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn get_apache_kafka_cluster(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApacheKafkaClusterDescription> {
+    pub fn get_apache_kafka_cluster(&self) -> &::std::option::Option<crate::types::ApacheKafkaClusterDescription> {
         &self.apache_kafka_cluster
     }
     /// Consumes the builder and constructs a [`KafkaClusterDescription`](crate::types::KafkaClusterDescription).

@@ -23,9 +23,7 @@ impl PortSet {
 
 /// A builder for [`PortSet`](crate::types::PortSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortSetBuilder {
     pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl PortSetBuilder {
         self
     }
     /// <p>The set of port ranges. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.definition = input;
         self
     }
@@ -55,8 +50,6 @@ impl PortSetBuilder {
     }
     /// Consumes the builder and constructs a [`PortSet`](crate::types::PortSet).
     pub fn build(self) -> crate::types::PortSet {
-        crate::types::PortSet {
-            definition: self.definition,
-        }
+        crate::types::PortSet { definition: self.definition }
     }
 }

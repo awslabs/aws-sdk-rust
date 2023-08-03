@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_campaign::CreateCampaignOutput::arn): The resource name of an Amazon Connect campaign.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_campaign::CreateCampaignOutput::tags): Tag map with key and value.
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::operation::create_campaign::CreateCampaignError)
-    pub fn create_campaign(
-        &self,
-    ) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
-        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_campaign(&self) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
+        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(self.handle.clone())
     }
 }

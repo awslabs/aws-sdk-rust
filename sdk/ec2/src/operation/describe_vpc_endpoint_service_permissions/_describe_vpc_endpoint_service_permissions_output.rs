@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVpcEndpointServicePermissions
 }
 impl DescribeVpcEndpointServicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicePermissionsOutput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsOutputBuilder {
         crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointServicePermissionsOutput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicePermissionsOutputBuilder {
-    pub(crate) allowed_principals:
-        ::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>>,
+    pub(crate) allowed_principals: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeVpcEndpointServicePermissionsOutputBuilder {
         self
     }
     /// <p>Information about the allowed principals.</p>
-    pub fn set_allowed_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>>,
-    ) -> Self {
+    pub fn set_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>>) -> Self {
         self.allowed_principals = input;
         self
     }
     /// <p>Information about the allowed principals.</p>
-    pub fn get_allowed_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>> {
+    pub fn get_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>> {
         &self.allowed_principals
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -94,12 +86,10 @@ impl DescribeVpcEndpointServicePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicePermissionsOutput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput{
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput {
         crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput {
-            allowed_principals: self.allowed_principals
-            ,
-            next_token: self.next_token
-            ,
+            allowed_principals: self.allowed_principals,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

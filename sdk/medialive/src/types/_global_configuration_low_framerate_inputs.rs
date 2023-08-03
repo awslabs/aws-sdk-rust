@@ -38,13 +38,7 @@
 /// Global Configuration Low Framerate Inputs
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GlobalConfigurationLowFramerateInputs {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for GlobalConfigurationLowFramerateInputs {
         match s {
             "DISABLED" => GlobalConfigurationLowFramerateInputs::Disabled,
             "ENABLED" => GlobalConfigurationLowFramerateInputs::Enabled,
-            other => GlobalConfigurationLowFramerateInputs::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => GlobalConfigurationLowFramerateInputs::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

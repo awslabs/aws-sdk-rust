@@ -161,9 +161,7 @@ impl InstancePatchState {
         self.operation.as_ref()
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    pub fn last_no_reboot_install_operation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_no_reboot_install_operation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_no_reboot_install_operation_time.as_ref()
     }
     /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
@@ -200,34 +198,19 @@ impl ::std::fmt::Debug for InstancePatchState {
         formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
         formatter.field("installed_count", &self.installed_count);
         formatter.field("installed_other_count", &self.installed_other_count);
-        formatter.field(
-            "installed_pending_reboot_count",
-            &self.installed_pending_reboot_count,
-        );
+        formatter.field("installed_pending_reboot_count", &self.installed_pending_reboot_count);
         formatter.field("installed_rejected_count", &self.installed_rejected_count);
         formatter.field("missing_count", &self.missing_count);
         formatter.field("failed_count", &self.failed_count);
-        formatter.field(
-            "unreported_not_applicable_count",
-            &self.unreported_not_applicable_count,
-        );
+        formatter.field("unreported_not_applicable_count", &self.unreported_not_applicable_count);
         formatter.field("not_applicable_count", &self.not_applicable_count);
         formatter.field("operation_start_time", &self.operation_start_time);
         formatter.field("operation_end_time", &self.operation_end_time);
         formatter.field("operation", &self.operation);
-        formatter.field(
-            "last_no_reboot_install_operation_time",
-            &self.last_no_reboot_install_operation_time,
-        );
+        formatter.field("last_no_reboot_install_operation_time", &self.last_no_reboot_install_operation_time);
         formatter.field("reboot_option", &self.reboot_option);
-        formatter.field(
-            "critical_non_compliant_count",
-            &self.critical_non_compliant_count,
-        );
-        formatter.field(
-            "security_non_compliant_count",
-            &self.security_non_compliant_count,
-        );
+        formatter.field("critical_non_compliant_count", &self.critical_non_compliant_count);
+        formatter.field("security_non_compliant_count", &self.security_non_compliant_count);
         formatter.field("other_non_compliant_count", &self.other_non_compliant_count);
         formatter.finish()
     }
@@ -260,8 +243,7 @@ pub struct InstancePatchStateBuilder {
     pub(crate) operation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) operation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) operation: ::std::option::Option<crate::types::PatchOperationType>,
-    pub(crate) last_no_reboot_install_operation_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_no_reboot_install_operation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) reboot_option: ::std::option::Option<crate::types::RebootOption>,
     pub(crate) critical_non_compliant_count: ::std::option::Option<i32>,
     pub(crate) security_non_compliant_count: ::std::option::Option<i32>,
@@ -326,19 +308,13 @@ impl InstancePatchStateBuilder {
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn install_override_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn install_override_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.install_override_list = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_install_override_list(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_install_override_list(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.install_override_list = input;
         self
     }
@@ -348,18 +324,12 @@ impl InstancePatchStateBuilder {
         &self.install_override_list
     }
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }
@@ -463,10 +433,7 @@ impl InstancePatchStateBuilder {
         self
     }
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-    pub fn set_unreported_not_applicable_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_unreported_not_applicable_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unreported_not_applicable_count = input;
         self
     }
@@ -494,10 +461,7 @@ impl InstancePatchStateBuilder {
         self
     }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
-    pub fn set_operation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_operation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.operation_start_time = input;
         self
     }
@@ -511,10 +475,7 @@ impl InstancePatchStateBuilder {
         self
     }
     /// <p>The time the most recent patching operation completed on the managed node.</p>
-    pub fn set_operation_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_operation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.operation_end_time = input;
         self
     }
@@ -536,10 +497,7 @@ impl InstancePatchStateBuilder {
     /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
     /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
     /// </ul>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchOperationType>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::PatchOperationType>) -> Self {
         self.operation = input;
         self
     }
@@ -552,25 +510,17 @@ impl InstancePatchStateBuilder {
         &self.operation
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    pub fn last_no_reboot_install_operation_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_no_reboot_install_operation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_no_reboot_install_operation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    pub fn set_last_no_reboot_install_operation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_no_reboot_install_operation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_no_reboot_install_operation_time = input;
         self
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    pub fn get_last_no_reboot_install_operation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_no_reboot_install_operation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_no_reboot_install_operation_time
     }
     /// <p>Indicates the reboot option specified in the patch baseline.</p> <note>
@@ -591,10 +541,7 @@ impl InstancePatchStateBuilder {
     /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
     /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
     /// </ul>
-    pub fn set_reboot_option(
-        mut self,
-        input: ::std::option::Option<crate::types::RebootOption>,
-    ) -> Self {
+    pub fn set_reboot_option(mut self, input: ::std::option::Option<crate::types::RebootOption>) -> Self {
         self.reboot_option = input;
         self
     }
@@ -689,34 +636,19 @@ impl ::std::fmt::Debug for InstancePatchStateBuilder {
         formatter.field("owner_information", &"*** Sensitive Data Redacted ***");
         formatter.field("installed_count", &self.installed_count);
         formatter.field("installed_other_count", &self.installed_other_count);
-        formatter.field(
-            "installed_pending_reboot_count",
-            &self.installed_pending_reboot_count,
-        );
+        formatter.field("installed_pending_reboot_count", &self.installed_pending_reboot_count);
         formatter.field("installed_rejected_count", &self.installed_rejected_count);
         formatter.field("missing_count", &self.missing_count);
         formatter.field("failed_count", &self.failed_count);
-        formatter.field(
-            "unreported_not_applicable_count",
-            &self.unreported_not_applicable_count,
-        );
+        formatter.field("unreported_not_applicable_count", &self.unreported_not_applicable_count);
         formatter.field("not_applicable_count", &self.not_applicable_count);
         formatter.field("operation_start_time", &self.operation_start_time);
         formatter.field("operation_end_time", &self.operation_end_time);
         formatter.field("operation", &self.operation);
-        formatter.field(
-            "last_no_reboot_install_operation_time",
-            &self.last_no_reboot_install_operation_time,
-        );
+        formatter.field("last_no_reboot_install_operation_time", &self.last_no_reboot_install_operation_time);
         formatter.field("reboot_option", &self.reboot_option);
-        formatter.field(
-            "critical_non_compliant_count",
-            &self.critical_non_compliant_count,
-        );
-        formatter.field(
-            "security_non_compliant_count",
-            &self.security_non_compliant_count,
-        );
+        formatter.field("critical_non_compliant_count", &self.critical_non_compliant_count);
+        formatter.field("security_non_compliant_count", &self.security_non_compliant_count);
         formatter.field("other_non_compliant_count", &self.other_non_compliant_count);
         formatter.finish()
     }

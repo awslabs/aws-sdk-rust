@@ -6,21 +6,16 @@
 pub struct AwsEc2LaunchTemplateDataDetails {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
     #[doc(hidden)]
-    pub block_device_mapping_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>,
-    >,
+    pub block_device_mapping_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
     #[doc(hidden)]
-    pub capacity_reservation_specification: ::std::option::Option<
-        crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-    >,
+    pub capacity_reservation_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails>,
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
     #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>,
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
     #[doc(hidden)]
-    pub credit_specification:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
+    pub credit_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
     #[doc(hidden)]
     pub disable_api_stop: bool,
@@ -32,28 +27,21 @@ pub struct AwsEc2LaunchTemplateDataDetails {
     pub ebs_optimized: bool,
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
     #[doc(hidden)]
-    pub elastic_gpu_specification_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>,
-    >,
+    pub elastic_gpu_specification_set:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
     #[doc(hidden)]
-    pub elastic_inference_accelerator_set: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-        >,
-    >,
+    pub elastic_inference_accelerator_set:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>>,
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
     #[doc(hidden)]
-    pub enclave_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
+    pub enclave_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
     #[doc(hidden)]
-    pub hibernation_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>,
+    pub hibernation_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>,
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
     #[doc(hidden)]
-    pub iam_instance_profile:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>,
+    pub iam_instance_profile: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>,
     /// <p> The ID of the Amazon Machine Image (AMI). </p>
     #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
@@ -62,12 +50,10 @@ pub struct AwsEc2LaunchTemplateDataDetails {
     pub instance_initiated_shutdown_behavior: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the market (purchasing) option for an instance. </p>
     #[doc(hidden)]
-    pub instance_market_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
+    pub instance_market_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
     #[doc(hidden)]
-    pub instance_requirements:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
+    pub instance_requirements: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
     /// <p> The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>. </p>
     #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -79,32 +65,25 @@ pub struct AwsEc2LaunchTemplateDataDetails {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies a license configuration for an instance. </p>
     #[doc(hidden)]
-    pub license_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>,
-    >,
+    pub license_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>>,
     /// <p> The maintenance options of your instance. </p>
     #[doc(hidden)]
-    pub maintenance_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>,
+    pub maintenance_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>,
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
     #[doc(hidden)]
-    pub metadata_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
+    pub metadata_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
     /// <p> The monitoring for the instance. </p>
     #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>,
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
     #[doc(hidden)]
-    pub network_interface_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>,
-    >,
+    pub network_interface_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
     /// <p> Specifies the placement of an instance. </p>
     #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>,
     /// <p> The options for the instance hostname. </p>
     #[doc(hidden)]
-    pub private_dns_name_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
+    pub private_dns_name_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
     /// <p> The ID of the RAM disk. </p>
     #[doc(hidden)]
     pub ram_disk_id: ::std::option::Option<::std::string::String>,
@@ -120,31 +99,21 @@ pub struct AwsEc2LaunchTemplateDataDetails {
 }
 impl AwsEc2LaunchTemplateDataDetails {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
-    pub fn block_device_mapping_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails]>
-    {
+    pub fn block_device_mapping_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails]> {
         self.block_device_mapping_set.as_deref()
     }
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
     pub fn capacity_reservation_specification(
         &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-    > {
+    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails> {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    pub fn cpu_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails> {
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails> {
         self.cpu_options.as_ref()
     }
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
-    pub fn credit_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>
-    {
+    pub fn credit_specification(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails> {
         self.credit_specification.as_ref()
     }
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
@@ -160,39 +129,25 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.ebs_optimized
     }
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
-    pub fn elastic_gpu_specification_set(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails],
-    > {
+    pub fn elastic_gpu_specification_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails]> {
         self.elastic_gpu_specification_set.as_deref()
     }
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
     pub fn elastic_inference_accelerator_set(
         &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails],
-    > {
+    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails]> {
         self.elastic_inference_accelerator_set.as_deref()
     }
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
-    pub fn enclave_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails> {
+    pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails> {
         self.enclave_options.as_ref()
     }
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
-    pub fn hibernation_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>
-    {
+    pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails> {
         self.hibernation_options.as_ref()
     }
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>
-    {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails> {
         self.iam_instance_profile.as_ref()
     }
     /// <p> The ID of the Amazon Machine Image (AMI). </p>
@@ -204,17 +159,11 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.instance_initiated_shutdown_behavior.as_deref()
     }
     /// <p> Specifies the market (purchasing) option for an instance. </p>
-    pub fn instance_market_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>
-    {
+    pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails> {
         self.instance_market_options.as_ref()
     }
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>
-    {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails> {
         self.instance_requirements.as_ref()
     }
     /// <p> The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>. </p>
@@ -230,48 +179,31 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.key_name.as_deref()
     }
     /// <p> Specifies a license configuration for an instance. </p>
-    pub fn license_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails]> {
+    pub fn license_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails]> {
         self.license_set.as_deref()
     }
     /// <p> The maintenance options of your instance. </p>
-    pub fn maintenance_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>
-    {
+    pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails> {
         self.maintenance_options.as_ref()
     }
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn metadata_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails> {
+    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails> {
         self.metadata_options.as_ref()
     }
     /// <p> The monitoring for the instance. </p>
-    pub fn monitoring(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMonitoringDetails> {
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataMonitoringDetails> {
         self.monitoring.as_ref()
     }
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
-    pub fn network_interface_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails]>
-    {
+    pub fn network_interface_set(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails]> {
         self.network_interface_set.as_deref()
     }
     /// <p> Specifies the placement of an instance. </p>
-    pub fn placement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataPlacementDetails> {
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataPlacementDetails> {
         self.placement.as_ref()
     }
     /// <p> The options for the instance hostname. </p>
-    pub fn private_dns_name_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>
-    {
+    pub fn private_dns_name_options(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails> {
         self.private_dns_name_options.as_ref()
     }
     /// <p> The ID of the RAM disk. </p>
@@ -300,62 +232,37 @@ impl AwsEc2LaunchTemplateDataDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataDetails`](crate::types::AwsEc2LaunchTemplateDataDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataDetailsBuilder {
-    pub(crate) block_device_mapping_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>,
-    >,
-    pub(crate) capacity_reservation_specification: ::std::option::Option<
-        crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-    >,
-    pub(crate) cpu_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>,
-    pub(crate) credit_specification:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
+    pub(crate) block_device_mapping_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
+    pub(crate) capacity_reservation_specification:
+        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>,
+    pub(crate) credit_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
     pub(crate) disable_api_termination: ::std::option::Option<bool>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
-    pub(crate) elastic_gpu_specification_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>,
-    >,
-    pub(crate) elastic_inference_accelerator_set: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-        >,
-    >,
-    pub(crate) enclave_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
-    pub(crate) hibernation_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>,
-    pub(crate) iam_instance_profile:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>,
+    pub(crate) elastic_gpu_specification_set:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
+    pub(crate) elastic_inference_accelerator_set:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>>,
+    pub(crate) enclave_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
+    pub(crate) hibernation_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_market_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
-    pub(crate) instance_requirements:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
+    pub(crate) instance_market_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) license_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>,
-    >,
-    pub(crate) maintenance_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>,
-    pub(crate) metadata_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
-    pub(crate) monitoring:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>,
-    pub(crate) network_interface_set: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>,
-    >,
-    pub(crate) placement:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>,
-    pub(crate) private_dns_name_options:
-        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
+    pub(crate) license_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>>,
+    pub(crate) maintenance_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>,
+    pub(crate) metadata_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>,
+    pub(crate) network_interface_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
+    pub(crate) placement: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>,
+    pub(crate) private_dns_name_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
     pub(crate) ram_disk_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -367,10 +274,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_block_device_mapping_set`](Self::set_block_device_mapping_set).
     ///
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
-    pub fn block_device_mapping_set(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails,
-    ) -> Self {
+    pub fn block_device_mapping_set(mut self, input: crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails) -> Self {
         let mut v = self.block_device_mapping_set.unwrap_or_default();
         v.push(input);
         self.block_device_mapping_set = ::std::option::Option::Some(v);
@@ -379,9 +283,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
     pub fn set_block_device_mapping_set(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
     ) -> Self {
         self.block_device_mapping_set = input;
         self
@@ -389,9 +291,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Information about a block device mapping for an Amazon EC2 launch template. </p>
     pub fn get_block_device_mapping_set(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>> {
         &self.block_device_mapping_set
     }
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
@@ -405,9 +305,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
     pub fn set_capacity_reservation_specification(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails>,
     ) -> Self {
         self.capacity_reservation_specification = input;
         self
@@ -415,56 +313,38 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Specifies an instance's Capacity Reservation targeting option. You can specify only one option at a time. </p>
     pub fn get_capacity_reservation_specification(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails> {
         &self.capacity_reservation_specification
     }
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    pub fn cpu_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails,
-    ) -> Self {
+    pub fn cpu_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails) -> Self {
         self.cpu_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    pub fn set_cpu_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>,
-    ) -> Self {
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails>) -> Self {
         self.cpu_options = input;
         self
     }
     /// <p> Specifies the CPU options for an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    pub fn get_cpu_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails> {
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails> {
         &self.cpu_options
     }
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
-    pub fn credit_specification(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails,
-    ) -> Self {
+    pub fn credit_specification(mut self, input: crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails) -> Self {
         self.credit_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
     pub fn set_credit_specification(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
     ) -> Self {
         self.credit_specification = input;
         self
     }
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
-    pub fn get_credit_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>
-    {
+    pub fn get_credit_specification(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails> {
         &self.credit_specification
     }
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
@@ -514,10 +394,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_elastic_gpu_specification_set`](Self::set_elastic_gpu_specification_set).
     ///
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
-    pub fn elastic_gpu_specification_set(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails,
-    ) -> Self {
+    pub fn elastic_gpu_specification_set(mut self, input: crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails) -> Self {
         let mut v = self.elastic_gpu_specification_set.unwrap_or_default();
         v.push(input);
         self.elastic_gpu_specification_set = ::std::option::Option::Some(v);
@@ -526,11 +403,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
     pub fn set_elastic_gpu_specification_set(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
     ) -> Self {
         self.elastic_gpu_specification_set = input;
         self
@@ -538,9 +411,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
     pub fn get_elastic_gpu_specification_set(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>> {
         &self.elastic_gpu_specification_set
     }
     /// Appends an item to `elastic_inference_accelerator_set`.
@@ -548,10 +419,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_elastic_inference_accelerator_set`](Self::set_elastic_inference_accelerator_set).
     ///
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
-    pub fn elastic_inference_accelerator_set(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-    ) -> Self {
+    pub fn elastic_inference_accelerator_set(mut self, input: crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails) -> Self {
         let mut v = self.elastic_inference_accelerator_set.unwrap_or_default();
         v.push(input);
         self.elastic_inference_accelerator_set = ::std::option::Option::Some(v);
@@ -560,11 +428,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
     pub fn set_elastic_inference_accelerator_set(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>>,
     ) -> Self {
         self.elastic_inference_accelerator_set = input;
         self
@@ -572,83 +436,49 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> The Amazon Elastic Inference accelerator for the instance. </p>
     pub fn get_elastic_inference_accelerator_set(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>> {
         &self.elastic_inference_accelerator_set
     }
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
-    pub fn enclave_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails,
-    ) -> Self {
+    pub fn enclave_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails) -> Self {
         self.enclave_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
-    pub fn set_enclave_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>,
-    ) -> Self {
+    pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails>) -> Self {
         self.enclave_options = input;
         self
     }
     /// <p> Indicates whether the Amazon EC2 instance is enabled for Amazon Web Services Nitro Enclaves. </p>
-    pub fn get_enclave_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails> {
+    pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails> {
         &self.enclave_options
     }
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
-    pub fn hibernation_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails,
-    ) -> Self {
+    pub fn hibernation_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails) -> Self {
         self.hibernation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
-    pub fn set_hibernation_options(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails,
-        >,
-    ) -> Self {
+    pub fn set_hibernation_options(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>) -> Self {
         self.hibernation_options = input;
         self
     }
     /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
-    pub fn get_hibernation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails>
-    {
+    pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails> {
         &self.hibernation_options
     }
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails,
-        >,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p> The name or Amazon Resource Name (ARN) of an IAM instance profile. </p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails>
-    {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails> {
         &self.iam_instance_profile
     }
     /// <p> The ID of the Amazon Machine Image (AMI). </p>
@@ -666,90 +496,60 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
         &self.image_id
     }
     /// <p> Provides the options for specifying the instance initiated shutdown behavior. </p>
-    pub fn instance_initiated_shutdown_behavior(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_initiated_shutdown_behavior(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_initiated_shutdown_behavior = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Provides the options for specifying the instance initiated shutdown behavior. </p>
-    pub fn set_instance_initiated_shutdown_behavior(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
     /// <p> Provides the options for specifying the instance initiated shutdown behavior. </p>
-    pub fn get_instance_initiated_shutdown_behavior(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_initiated_shutdown_behavior
     }
     /// <p> Specifies the market (purchasing) option for an instance. </p>
-    pub fn instance_market_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails,
-    ) -> Self {
+    pub fn instance_market_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails) -> Self {
         self.instance_market_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the market (purchasing) option for an instance. </p>
     pub fn set_instance_market_options(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>,
     ) -> Self {
         self.instance_market_options = input;
         self
     }
     /// <p> Specifies the market (purchasing) option for an instance. </p>
-    pub fn get_instance_market_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails>
-    {
+    pub fn get_instance_market_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails> {
         &self.instance_market_options
     }
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
-    pub fn instance_requirements(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails,
-    ) -> Self {
+    pub fn instance_requirements(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
     }
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
     pub fn set_instance_requirements(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
     ) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p> The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>. </p>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>
-    {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails> {
         &self.instance_requirements
     }
     /// <p> The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>. </p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -790,100 +590,61 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_license_set`](Self::set_license_set).
     ///
     /// <p> Specifies a license configuration for an instance. </p>
-    pub fn license_set(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails,
-    ) -> Self {
+    pub fn license_set(mut self, input: crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails) -> Self {
         let mut v = self.license_set.unwrap_or_default();
         v.push(input);
         self.license_set = ::std::option::Option::Some(v);
         self
     }
     /// <p> Specifies a license configuration for an instance. </p>
-    pub fn set_license_set(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>,
-        >,
-    ) -> Self {
+    pub fn set_license_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>>) -> Self {
         self.license_set = input;
         self
     }
     /// <p> Specifies a license configuration for an instance. </p>
-    pub fn get_license_set(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>,
-    > {
+    pub fn get_license_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>> {
         &self.license_set
     }
     /// <p> The maintenance options of your instance. </p>
-    pub fn maintenance_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails,
-    ) -> Self {
+    pub fn maintenance_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails) -> Self {
         self.maintenance_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maintenance options of your instance. </p>
-    pub fn set_maintenance_options(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails,
-        >,
-    ) -> Self {
+    pub fn set_maintenance_options(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>) -> Self {
         self.maintenance_options = input;
         self
     }
     /// <p> The maintenance options of your instance. </p>
-    pub fn get_maintenance_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails>
-    {
+    pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails> {
         &self.maintenance_options
     }
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn metadata_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails,
-    ) -> Self {
+    pub fn metadata_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails) -> Self {
         self.metadata_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn set_metadata_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>,
-    ) -> Self {
+    pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails>) -> Self {
         self.metadata_options = input;
         self
     }
     /// <p> The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn get_metadata_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails> {
+    pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails> {
         &self.metadata_options
     }
     /// <p> The monitoring for the instance. </p>
-    pub fn monitoring(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataMonitoringDetails,
-    ) -> Self {
+    pub fn monitoring(mut self, input: crate::types::AwsEc2LaunchTemplateDataMonitoringDetails) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
         self
     }
     /// <p> The monitoring for the instance. </p>
-    pub fn set_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>,
-    ) -> Self {
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails>) -> Self {
         self.monitoring = input;
         self
     }
     /// <p> The monitoring for the instance. </p>
-    pub fn get_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails> {
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataMonitoringDetails> {
         &self.monitoring
     }
     /// Appends an item to `network_interface_set`.
@@ -891,10 +652,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_network_interface_set`](Self::set_network_interface_set).
     ///
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
-    pub fn network_interface_set(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails,
-    ) -> Self {
+    pub fn network_interface_set(mut self, input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails) -> Self {
         let mut v = self.network_interface_set.unwrap_or_default();
         v.push(input);
         self.network_interface_set = ::std::option::Option::Some(v);
@@ -903,9 +661,7 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
     pub fn set_network_interface_set(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
     ) -> Self {
         self.network_interface_set = input;
         self
@@ -913,56 +669,38 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// <p> Specifies the parameters for a network interface that is attached to the instance. </p>
     pub fn get_network_interface_set(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>> {
         &self.network_interface_set
     }
     /// <p> Specifies the placement of an instance. </p>
-    pub fn placement(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataPlacementDetails,
-    ) -> Self {
+    pub fn placement(mut self, input: crate::types::AwsEc2LaunchTemplateDataPlacementDetails) -> Self {
         self.placement = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the placement of an instance. </p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails>) -> Self {
         self.placement = input;
         self
     }
     /// <p> Specifies the placement of an instance. </p>
-    pub fn get_placement(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails> {
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPlacementDetails> {
         &self.placement
     }
     /// <p> The options for the instance hostname. </p>
-    pub fn private_dns_name_options(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails,
-    ) -> Self {
+    pub fn private_dns_name_options(mut self, input: crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails) -> Self {
         self.private_dns_name_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> The options for the instance hostname. </p>
     pub fn set_private_dns_name_options(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
     ) -> Self {
         self.private_dns_name_options = input;
         self
     }
     /// <p> The options for the instance hostname. </p>
-    pub fn get_private_dns_name_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>
-    {
+    pub fn get_private_dns_name_options(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails> {
         &self.private_dns_name_options
     }
     /// <p> The ID of the RAM disk. </p>
@@ -984,27 +722,19 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_security_group_id_set`](Self::set_security_group_id_set).
     ///
     /// <p> One or more security group IDs. </p>
-    pub fn security_group_id_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_id_set.unwrap_or_default();
         v.push(input.into());
         self.security_group_id_set = ::std::option::Option::Some(v);
         self
     }
     /// <p> One or more security group IDs. </p>
-    pub fn set_security_group_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_id_set = input;
         self
     }
     /// <p> One or more security group IDs. </p>
-    pub fn get_security_group_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_id_set
     }
     /// Appends an item to `security_group_set`.
@@ -1012,27 +742,19 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
     /// To override the contents of this collection use [`set_security_group_set`](Self::set_security_group_set).
     ///
     /// <p> One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request. </p>
-    pub fn security_group_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_set.unwrap_or_default();
         v.push(input.into());
         self.security_group_set = ::std::option::Option::Some(v);
         self
     }
     /// <p> One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request. </p>
-    pub fn set_security_group_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_set = input;
         self
     }
     /// <p> One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request. </p>
-    pub fn get_security_group_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_set
     }
     /// <p> The user data to make available to the instance. </p>

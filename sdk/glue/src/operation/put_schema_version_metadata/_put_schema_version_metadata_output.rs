@@ -70,16 +70,14 @@ impl ::aws_http::request_id::RequestId for PutSchemaVersionMetadataOutput {
 }
 impl PutSchemaVersionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
-    pub fn builder() -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder {
         crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaVersionMetadataOutputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -121,18 +119,12 @@ impl PutSchemaVersionMetadataOutputBuilder {
         &self.schema_name
     }
     /// <p>The name for the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -169,18 +161,12 @@ impl PutSchemaVersionMetadataOutputBuilder {
         &self.version_number
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -203,18 +189,12 @@ impl PutSchemaVersionMetadataOutputBuilder {
         &self.metadata_key
     }
     /// <p>The value of the metadata key.</p>
-    pub fn metadata_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn set_metadata_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_value = input;
         self
     }
@@ -232,9 +212,7 @@ impl PutSchemaVersionMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
+    pub fn build(self) -> crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
         crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput {
             schema_arn: self.schema_arn,
             schema_name: self.schema_name,

@@ -37,9 +37,7 @@ impl PrefixList {
 
 /// A builder for [`PrefixList`](crate::types::PrefixList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefixListBuilder {
     pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl PrefixListBuilder {
         self
     }
     /// <p>The IP address range of the Amazon Web Service.</p>
-    pub fn set_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidrs = input;
         self
     }
@@ -70,18 +65,12 @@ impl PrefixListBuilder {
         &self.cidrs
     }
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -90,18 +79,12 @@ impl PrefixListBuilder {
         &self.prefix_list_id
     }
     /// <p>The name of the prefix.</p>
-    pub fn prefix_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prefix.</p>
-    pub fn set_prefix_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_name = input;
         self
     }

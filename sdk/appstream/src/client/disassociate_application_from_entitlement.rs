@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`application_identifier(impl ::std::convert::Into<String>)`](crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder::set_application_identifier): <p>The identifier of the application to remove from the entitlement.</p>
     /// - On success, responds with [`DisassociateApplicationFromEntitlementOutput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput)
     /// - On failure, responds with [`SdkError<DisassociateApplicationFromEntitlementError>`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementError)
-    pub fn disassociate_application_from_entitlement(&self) -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder{
-        crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_application_from_entitlement(
+        &self,
+    ) -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder {
+        crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

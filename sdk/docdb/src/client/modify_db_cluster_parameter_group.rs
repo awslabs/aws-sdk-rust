@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbClusterParameterGroupOutput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupOutput) with field(s):
     ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of a cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
     /// - On failure, responds with [`SdkError<ModifyDBClusterParameterGroupError>`](crate::operation::modify_db_cluster_parameter_group::ModifyDBClusterParameterGroupError)
-    pub fn modify_db_cluster_parameter_group(&self) -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDBClusterParameterGroupFluentBuilder{
+    pub fn modify_db_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDBClusterParameterGroupFluentBuilder {
         crate::operation::modify_db_cluster_parameter_group::builders::ModifyDBClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTagsForResourceOutput {
 }
 impl UpdateTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTagsForResourceOutput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceOutputBuilder {
         crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTagsForResourceOutput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagsForResourceOutputBuilder {
     _request_id: Option<String>,
 }

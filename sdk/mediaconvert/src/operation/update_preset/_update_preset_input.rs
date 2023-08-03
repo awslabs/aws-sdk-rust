@@ -43,9 +43,7 @@ impl UpdatePresetInput {
 
 /// A builder for [`UpdatePresetInput`](crate::operation::update_preset::UpdatePresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePresetInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl UpdatePresetInputBuilder {
         self
     }
     /// Settings for preset
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::PresetSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::PresetSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -113,12 +108,7 @@ impl UpdatePresetInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`UpdatePresetInput`](crate::operation::update_preset::UpdatePresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_preset::UpdatePresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_preset::UpdatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_preset::UpdatePresetInput {
             category: self.category,
             description: self.description,

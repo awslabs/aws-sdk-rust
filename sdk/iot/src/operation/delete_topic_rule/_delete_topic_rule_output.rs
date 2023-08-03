@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTopicRuleOutput {
 }
 impl DeleteTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTopicRuleOutput`](crate::operation::delete_topic_rule::DeleteTopicRuleOutput).
-    pub fn builder() -> crate::operation::delete_topic_rule::builders::DeleteTopicRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_topic_rule::builders::DeleteTopicRuleOutputBuilder {
         crate::operation::delete_topic_rule::builders::DeleteTopicRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTopicRuleOutput`](crate::operation::delete_topic_rule::DeleteTopicRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

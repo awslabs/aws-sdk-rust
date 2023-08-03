@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`status(Option<Status>)`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     ///   - [`provisioning_artifact_parameters(Option<Vec<ProvisioningArtifactParameter>>)`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput::provisioning_artifact_parameters): <p>Information about the parameters used to provision the product. </p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningArtifactError>`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactError)
-    pub fn describe_provisioning_artifact(&self) -> crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactFluentBuilder{
+    pub fn describe_provisioning_artifact(
+        &self,
+    ) -> crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactFluentBuilder {
         crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactFluentBuilder::new(self.handle.clone())
     }
 }

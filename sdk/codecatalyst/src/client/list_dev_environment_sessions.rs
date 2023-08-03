@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<DevEnvironmentSessionSummary>>)`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput::items): <p>Information about each session retrieved in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     /// - On failure, responds with [`SdkError<ListDevEnvironmentSessionsError>`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError)
-    pub fn list_dev_environment_sessions(&self) -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder{
+    pub fn list_dev_environment_sessions(
+        &self,
+    ) -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder {
         crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsFluentBuilder::new(self.handle.clone())
     }
 }

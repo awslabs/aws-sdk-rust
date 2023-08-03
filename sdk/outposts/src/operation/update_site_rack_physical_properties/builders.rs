@@ -5,16 +5,16 @@ pub use crate::operation::update_site_rack_physical_properties::_update_site_rac
 
 impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_site_rack_physical_properties();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder,
+    inner: crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder,
 }
 impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// Creates a new `UpdateSiteRackPhysicalProperties`.
@@ -38,15 +38,20 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         }
     }
     /// Access the UpdateSiteRackPhysicalProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalProperties, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalProperties,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalProperties, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalProperties,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
@@ -115,10 +130,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         self
     }
     /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
-    pub fn set_power_draw_kva(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerDrawKva>,
-    ) -> Self {
+    pub fn set_power_draw_kva(mut self, input: ::std::option::Option<crate::types::PowerDrawKva>) -> Self {
         self.inner = self.inner.set_power_draw_kva(input);
         self
     }
@@ -140,10 +152,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
     /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
-    pub fn set_power_phase(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerPhase>,
-    ) -> Self {
+    pub fn set_power_phase(mut self, input: ::std::option::Option<crate::types::PowerPhase>) -> Self {
         self.inner = self.inner.set_power_phase(input);
         self
     }
@@ -185,10 +194,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_power_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerConnector>,
-    ) -> Self {
+    pub fn set_power_connector(mut self, input: ::std::option::Option<crate::types::PowerConnector>) -> Self {
         self.inner = self.inner.set_power_connector(input);
         self
     }
@@ -214,10 +220,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         self
     }
     /// <p>Indicates whether the power feed comes above or below the rack. </p>
-    pub fn set_power_feed_drop(
-        mut self,
-        input: ::std::option::Option<crate::types::PowerFeedDrop>,
-    ) -> Self {
+    pub fn set_power_feed_drop(mut self, input: ::std::option::Option<crate::types::PowerFeedDrop>) -> Self {
         self.inner = self.inner.set_power_feed_drop(input);
         self
     }
@@ -231,10 +234,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         self
     }
     /// <p>The uplink speed the rack should support for the connection to the Region. </p>
-    pub fn set_uplink_gbps(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkGbps>,
-    ) -> Self {
+    pub fn set_uplink_gbps(mut self, input: ::std::option::Option<crate::types::UplinkGbps>) -> Self {
         self.inner = self.inner.set_uplink_gbps(input);
         self
     }
@@ -258,10 +258,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
     /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
-    pub fn set_uplink_count(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkCount>,
-    ) -> Self {
+    pub fn set_uplink_count(mut self, input: ::std::option::Option<crate::types::UplinkCount>) -> Self {
         self.inner = self.inner.set_uplink_count(input);
         self
     }
@@ -280,17 +277,12 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         self
     }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    pub fn set_fiber_optic_cable_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FiberOpticCableType>,
-    ) -> Self {
+    pub fn set_fiber_optic_cable_type(mut self, input: ::std::option::Option<crate::types::FiberOpticCableType>) -> Self {
         self.inner = self.inner.set_fiber_optic_cable_type(input);
         self
     }
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    pub fn get_fiber_optic_cable_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FiberOpticCableType> {
+    pub fn get_fiber_optic_cable_type(&self) -> &::std::option::Option<crate::types::FiberOpticCableType> {
         self.inner.get_fiber_optic_cable_type()
     }
     /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
@@ -329,10 +321,7 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
     /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
     /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
-    pub fn set_optical_standard(
-        mut self,
-        input: ::std::option::Option<crate::types::OpticalStandard>,
-    ) -> Self {
+    pub fn set_optical_standard(mut self, input: ::std::option::Option<crate::types::OpticalStandard>) -> Self {
         self.inner = self.inner.set_optical_standard(input);
         self
     }
@@ -356,25 +345,17 @@ impl UpdateSiteRackPhysicalPropertiesFluentBuilder {
         self.inner.get_optical_standard()
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn maximum_supported_weight_lbs(
-        mut self,
-        input: crate::types::MaximumSupportedWeightLbs,
-    ) -> Self {
+    pub fn maximum_supported_weight_lbs(mut self, input: crate::types::MaximumSupportedWeightLbs) -> Self {
         self.inner = self.inner.maximum_supported_weight_lbs(input);
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn set_maximum_supported_weight_lbs(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
-    ) -> Self {
+    pub fn set_maximum_supported_weight_lbs(mut self, input: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>) -> Self {
         self.inner = self.inner.set_maximum_supported_weight_lbs(input);
         self
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    pub fn get_maximum_supported_weight_lbs(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
+    pub fn get_maximum_supported_weight_lbs(&self) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
         self.inner.get_maximum_supported_weight_lbs()
     }
 }

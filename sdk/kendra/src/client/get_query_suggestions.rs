@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`query_suggestions_id(Option<String>)`](crate::operation::get_query_suggestions::GetQuerySuggestionsOutput::query_suggestions_id): <p>The identifier for a list of query suggestions for an index.</p>
     ///   - [`suggestions(Option<Vec<Suggestion>>)`](crate::operation::get_query_suggestions::GetQuerySuggestionsOutput::suggestions): <p>A list of query suggestions for an index.</p>
     /// - On failure, responds with [`SdkError<GetQuerySuggestionsError>`](crate::operation::get_query_suggestions::GetQuerySuggestionsError)
-    pub fn get_query_suggestions(
-        &self,
-    ) -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsFluentBuilder {
-        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_suggestions(&self) -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsFluentBuilder {
+        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DescribeCasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_cases::DescribeCasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cases::DescribeCasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cases::DescribeCasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_cases();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DescribeCasesFluentBuilder {
         }
     }
     /// Access the DescribeCases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cases::builders::DescribeCasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_cases::builders::DescribeCasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,10 +67,7 @@ impl DescribeCasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -128,13 +120,8 @@ impl DescribeCasesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cases::paginator::DescribeCasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
-        crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
+        crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `caseIdList`.
     ///
@@ -146,17 +133,12 @@ impl DescribeCasesFluentBuilder {
         self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn set_case_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_case_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_case_id_list(input);
         self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn get_case_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_case_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_case_id_list()
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>

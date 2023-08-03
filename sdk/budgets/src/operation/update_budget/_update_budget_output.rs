@@ -20,9 +20,7 @@ impl UpdateBudgetOutput {
 
 /// A builder for [`UpdateBudgetOutput`](crate::operation::update_budget::UpdateBudgetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBudgetOutputBuilder {
     _request_id: Option<String>,
 }

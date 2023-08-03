@@ -5,16 +5,16 @@ pub use crate::operation::delete_environment_template_version::_delete_environme
 
 impl DeleteEnvironmentTemplateVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_environment_template_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder,
+    inner: crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder,
 }
 impl DeleteEnvironmentTemplateVersionFluentBuilder {
     /// Creates a new `DeleteEnvironmentTemplateVersion`.
@@ -38,15 +38,20 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
         }
     }
     /// Access the DeleteEnvironmentTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -116,18 +125,12 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The environment template major version to delete.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>The environment template major version to delete.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -136,18 +139,12 @@ impl DeleteEnvironmentTemplateVersionFluentBuilder {
         self.inner.get_major_version()
     }
     /// <p>The environment template minor version to delete.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>The environment template minor version to delete.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }

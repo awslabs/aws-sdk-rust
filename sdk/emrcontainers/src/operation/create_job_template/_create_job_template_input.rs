@@ -14,9 +14,7 @@ pub struct CreateJobTemplateInput {
     pub job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
     /// <p>The tags that are associated with the job template.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
@@ -35,11 +33,7 @@ impl CreateJobTemplateInput {
         self.job_template_data.as_ref()
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
@@ -49,24 +43,19 @@ impl CreateJobTemplateInput {
 }
 impl CreateJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobTemplateInputBuilder {
@@ -104,10 +93,7 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
-    pub fn set_job_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplateData>,
-    ) -> Self {
+    pub fn set_job_template_data(mut self, input: ::std::option::Option<crate::types::JobTemplateData>) -> Self {
         self.job_template_data = input;
         self
     }
@@ -120,32 +106,19 @@ impl CreateJobTemplateInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that are associated with the job template.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
@@ -165,18 +138,13 @@ impl CreateJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_job_template::CreateJobTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_job_template::CreateJobTemplateInput {
-                name: self.name,
-                client_token: self.client_token,
-                job_template_data: self.job_template_data,
-                tags: self.tags,
-                kms_key_arn: self.kms_key_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_job_template::CreateJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_job_template::CreateJobTemplateInput {
+            name: self.name,
+            client_token: self.client_token,
+            job_template_data: self.job_template_data,
+            tags: self.tags,
+            kms_key_arn: self.kms_key_arn,
+        })
     }
 }

@@ -20,8 +20,7 @@ pub struct GetLifecyclePolicyPreviewOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The results of the lifecycle policy preview request.</p>
     #[doc(hidden)]
-    pub preview_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
+    pub preview_results: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
     /// <p>The list of images that is returned as a result of the action.</p>
     #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
@@ -49,9 +48,7 @@ impl GetLifecyclePolicyPreviewOutput {
         self.next_token.as_deref()
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn preview_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LifecyclePolicyPreviewResult]> {
+    pub fn preview_results(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicyPreviewResult]> {
         self.preview_results.as_deref()
     }
     /// <p>The list of images that is returned as a result of the action.</p>
@@ -66,24 +63,21 @@ impl ::aws_http::request_id::RequestId for GetLifecyclePolicyPreviewOutput {
 }
 impl GetLifecyclePolicyPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewOutput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput).
-    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder{
+    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder {
         crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyPreviewOutput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) preview_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
+    pub(crate) preview_results: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
     pub(crate) summary: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
     _request_id: Option<String>,
 }
@@ -103,18 +97,12 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -123,18 +111,12 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         &self.repository_name
     }
     /// <p>The JSON lifecycle policy text.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON lifecycle policy text.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }
@@ -148,10 +130,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// <p>The status of the lifecycle policy preview request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>) -> Self {
         self.status = input;
         self
     }
@@ -185,17 +164,12 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn set_preview_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
-    ) -> Self {
+    pub fn set_preview_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>) -> Self {
         self.preview_results = input;
         self
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn get_preview_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>> {
+    pub fn get_preview_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>> {
         &self.preview_results
     }
     /// <p>The list of images that is returned as a result of the action.</p>
@@ -204,17 +178,12 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// <p>The list of images that is returned as a result of the action.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>) -> Self {
         self.summary = input;
         self
     }
     /// <p>The list of images that is returned as a result of the action.</p>
-    pub fn get_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecyclePolicyPreviewSummary> {
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::LifecyclePolicyPreviewSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -227,9 +196,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyPreviewOutput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput {
+    pub fn build(self) -> crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput {
         crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

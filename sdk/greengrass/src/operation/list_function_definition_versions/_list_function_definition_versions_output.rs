@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListFunctionDefinitionVersionsOutput 
 }
 impl ListFunctionDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionDefinitionVersionsOutput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder {
         crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFunctionDefinitionVersionsOutput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -70,17 +68,12 @@ impl ListFunctionDefinitionVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,10 +86,7 @@ impl ListFunctionDefinitionVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFunctionDefinitionVersionsOutput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput {
         crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsOutput {
             next_token: self.next_token,
             versions: self.versions,

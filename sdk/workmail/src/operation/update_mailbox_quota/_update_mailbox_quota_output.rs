@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMailboxQuotaOutput {
 }
 impl UpdateMailboxQuotaOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput).
-    pub fn builder(
-    ) -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder {
+    pub fn builder() -> crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder {
         crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMailboxQuotaOutputBuilder {
     _request_id: Option<String>,
 }

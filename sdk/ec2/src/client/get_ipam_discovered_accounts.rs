@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`ipam_discovered_accounts(Option<Vec<IpamDiscoveredAccount>>)`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput::ipam_discovered_accounts): <p>Discovered accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetIpamDiscoveredAccountsError>`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError)
-    pub fn get_ipam_discovered_accounts(&self) -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder{
+    pub fn get_ipam_discovered_accounts(&self) -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder {
         crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::new(self.handle.clone())
     }
 }

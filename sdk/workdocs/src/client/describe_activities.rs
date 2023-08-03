@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`user_activities(Option<Vec<Activity>>)`](crate::operation::describe_activities::DescribeActivitiesOutput::user_activities): <p>The list of activities for the specified user and time period.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_activities::DescribeActivitiesOutput::marker): <p>The marker for the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeActivitiesError>`](crate::operation::describe_activities::DescribeActivitiesError)
-    pub fn describe_activities(
-        &self,
-    ) -> crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder {
-        crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_activities(&self) -> crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder {
+        crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::new(self.handle.clone())
     }
 }

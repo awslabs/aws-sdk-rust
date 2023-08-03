@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateTerminationProtectionOutput`](crate::operation::update_termination_protection::UpdateTerminationProtectionOutput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::operation::update_termination_protection::UpdateTerminationProtectionOutput::stack_id): <p>The unique ID of the stack.</p>
     /// - On failure, responds with [`SdkError<UpdateTerminationProtectionError>`](crate::operation::update_termination_protection::UpdateTerminationProtectionError)
-    pub fn update_termination_protection(&self) -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionFluentBuilder{
+    pub fn update_termination_protection(
+        &self,
+    ) -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionFluentBuilder {
         crate::operation::update_termination_protection::builders::UpdateTerminationProtectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,36 +22,26 @@ impl ActivateContactChannelInput {
 }
 impl ActivateContactChannelInput {
     /// Creates a new builder-style object to manufacture [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
-    pub fn builder(
-    ) -> crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder {
         crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) activation_code: ::std::option::Option<::std::string::String>,
 }
 impl ActivateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_channel_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl ActivateContactChannelInputBuilder {
         &self.contact_channel_id
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    pub fn activation_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    pub fn set_activation_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activation_code = input;
         self
     }
@@ -82,15 +66,11 @@ impl ActivateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_contact_channel::ActivateContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::activate_contact_channel::ActivateContactChannelInput {
-                contact_channel_id: self.contact_channel_id,
-                activation_code: self.activation_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::activate_contact_channel::ActivateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::activate_contact_channel::ActivateContactChannelInput {
+            contact_channel_id: self.contact_channel_id,
+            activation_code: self.activation_code,
+        })
     }
 }

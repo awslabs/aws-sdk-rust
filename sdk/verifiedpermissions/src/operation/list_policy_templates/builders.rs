@@ -37,9 +37,7 @@ impl ListPolicyTemplatesFluentBuilder {
         }
     }
     /// Access the ListPolicyTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_policy_templates::builders::ListPolicyTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListPolicyTemplatesFluentBuilder {
             crate::operation::list_policy_templates::ListPolicyTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_templates::ListPolicyTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_templates::ListPolicyTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListPolicyTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListPolicyTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_templates::ListPolicyTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_templates::ListPolicyTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_templates::ListPolicyTemplatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListPolicyTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_templates::ListPolicyTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_templates::ListPolicyTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_templates::ListPolicyTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListPolicyTemplatesFluentBuilder {
             crate::operation::list_policy_templates::ListPolicyTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_templates::ListPolicyTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_templates::ListPolicyTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policy_templates::paginator::ListPolicyTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policy_templates::paginator::ListPolicyTemplatesPaginator {
-        crate::operation::list_policy_templates::paginator::ListPolicyTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policy_templates::paginator::ListPolicyTemplatesPaginator {
+        crate::operation::list_policy_templates::paginator::ListPolicyTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the ID of the policy store that contains the policy templates you want to list.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy templates you want to list.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }

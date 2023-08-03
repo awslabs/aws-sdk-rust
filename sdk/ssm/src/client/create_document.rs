@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDocumentOutput`](crate::operation::create_document::CreateDocumentOutput) with field(s):
     ///   - [`document_description(Option<DocumentDescription>)`](crate::operation::create_document::CreateDocumentOutput::document_description): <p>Information about the SSM document.</p>
     /// - On failure, responds with [`SdkError<CreateDocumentError>`](crate::operation::create_document::CreateDocumentError)
-    pub fn create_document(
-        &self,
-    ) -> crate::operation::create_document::builders::CreateDocumentFluentBuilder {
-        crate::operation::create_document::builders::CreateDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_document(&self) -> crate::operation::create_document::builders::CreateDocumentFluentBuilder {
+        crate::operation::create_document::builders::CreateDocumentFluentBuilder::new(self.handle.clone())
     }
 }

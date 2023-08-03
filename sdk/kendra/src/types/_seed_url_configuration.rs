@@ -45,9 +45,7 @@ impl SeedUrlConfiguration {
 
 /// A builder for [`SeedUrlConfiguration`](crate::types::SeedUrlConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeedUrlConfigurationBuilder {
     pub(crate) seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) web_crawler_mode: ::std::option::Option<crate::types::WebCrawlerMode>,
@@ -67,10 +65,7 @@ impl SeedUrlConfigurationBuilder {
     }
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub fn set_seed_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_seed_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.seed_urls = input;
         self
     }
@@ -97,10 +92,7 @@ impl SeedUrlConfigurationBuilder {
     /// <li> <p> <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p> </li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
-    pub fn set_web_crawler_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::WebCrawlerMode>,
-    ) -> Self {
+    pub fn set_web_crawler_mode(mut self, input: ::std::option::Option<crate::types::WebCrawlerMode>) -> Self {
         self.web_crawler_mode = input;
         self
     }

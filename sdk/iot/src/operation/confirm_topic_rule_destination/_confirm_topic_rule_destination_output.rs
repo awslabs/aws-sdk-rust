@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ConfirmTopicRuleDestinationOutput {
 }
 impl ConfirmTopicRuleDestinationOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmTopicRuleDestinationOutput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput).
-    pub fn builder() -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationOutputBuilder {
         crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmTopicRuleDestinationOutput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmTopicRuleDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ConfirmTopicRuleDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConfirmTopicRuleDestinationOutput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput {
+    pub fn build(self) -> crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput {
         crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput {
             _request_id: self._request_id,
         }

@@ -38,11 +38,8 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     }
     /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_client_certificate_tls_auth(
-        &self,
-    ) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self
-        {
+    pub fn as_client_certificate_tls_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
             ::std::result::Result::Err(self)

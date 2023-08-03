@@ -40,9 +40,7 @@ impl CreatePolicyInput {
 
 /// A builder for [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl CreatePolicyInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -95,10 +87,7 @@ impl CreatePolicyInputBuilder {
         self
     }
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
         self.definition = input;
         self
     }
@@ -107,12 +96,7 @@ impl CreatePolicyInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_policy::CreatePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy::CreatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_policy::CreatePolicyInput {
             client_token: self.client_token,
             policy_store_id: self.policy_store_id,

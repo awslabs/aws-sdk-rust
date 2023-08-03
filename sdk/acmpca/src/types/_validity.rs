@@ -65,9 +65,7 @@ impl Validity {
 
 /// A builder for [`Validity`](crate::types::Validity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidityBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) r#type: ::std::option::Option<crate::types::ValidityPeriodType>,
@@ -127,10 +125,7 @@ impl ValidityBuilder {
     /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidityPeriodType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ValidityPeriodType>) -> Self {
         self.r#type = input;
         self
     }

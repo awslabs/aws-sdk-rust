@@ -16,16 +16,14 @@ impl UpdateAccountSendingEnabledInput {
 }
 impl UpdateAccountSendingEnabledInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
-    pub fn builder() -> crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder{
+    pub fn builder() -> crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder {
         crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -51,10 +49,8 @@ impl UpdateAccountSendingEnabledInputBuilder {
         crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput {
-                enabled: self.enabled.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput {
+            enabled: self.enabled.unwrap_or_default(),
+        })
     }
 }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeReservedNodesOutput {
 }
 impl DescribeReservedNodesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder {
         crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_nodes: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>>,
@@ -73,17 +69,12 @@ impl DescribeReservedNodesOutputBuilder {
         self
     }
     /// <p>The list of <code>ReservedNode</code> objects.</p>
-    pub fn set_reserved_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>>,
-    ) -> Self {
+    pub fn set_reserved_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>>) -> Self {
         self.reserved_nodes = input;
         self
     }
     /// <p>The list of <code>ReservedNode</code> objects.</p>
-    pub fn get_reserved_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>> {
+    pub fn get_reserved_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>> {
         &self.reserved_nodes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

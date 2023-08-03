@@ -50,9 +50,7 @@ impl PostFulfillmentStatusSpecification {
         self.success_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-    pub fn success_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn success_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.success_conditional.as_ref()
     }
     /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
@@ -60,9 +58,7 @@ impl PostFulfillmentStatusSpecification {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
@@ -70,9 +66,7 @@ impl PostFulfillmentStatusSpecification {
         self.timeout_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-    pub fn timeout_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn timeout_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
     }
 }
@@ -85,9 +79,7 @@ impl PostFulfillmentStatusSpecification {
 
 /// A builder for [`PostFulfillmentStatusSpecification`](crate::types::PostFulfillmentStatusSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostFulfillmentStatusSpecificationBuilder {
     pub(crate) success_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
@@ -106,17 +98,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_success_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_success_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.success_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_success_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_success_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.success_response
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -125,17 +112,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_failure_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_failure_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.failure_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_failure_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_failure_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.failure_response
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -144,17 +126,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_timeout_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_timeout_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.timeout_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_timeout_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_timeout_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.timeout_response
     }
     /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
@@ -163,10 +140,7 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies the next step in the conversation that Amazon Lex invokes when the fulfillment code hook completes successfully.</p>
-    pub fn set_success_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_success_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.success_next_step = input;
         self
     }
@@ -180,17 +154,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-    pub fn set_success_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_success_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.success_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook finishes successfully.</p>
-    pub fn get_success_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_success_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.success_conditional
     }
     /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
@@ -199,10 +168,7 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies the next step the bot runs after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn set_failure_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_failure_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.failure_next_step = input;
         self
     }
@@ -216,17 +182,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn set_failure_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_failure_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.failure_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the fulfillment code hook throws an exception or returns with the <code>State</code> field of the <code>Intent</code> object set to <code>Failed</code>.</p>
-    pub fn get_failure_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_failure_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.failure_conditional
     }
     /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
@@ -235,10 +196,7 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>Specifies the next step that the bot runs when the fulfillment code hook times out.</p>
-    pub fn set_timeout_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_timeout_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.timeout_next_step = input;
         self
     }
@@ -252,17 +210,12 @@ impl PostFulfillmentStatusSpecificationBuilder {
         self
     }
     /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-    pub fn set_timeout_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_timeout_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.timeout_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate if the fulfillment code hook times out.</p>
-    pub fn get_timeout_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_timeout_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.timeout_conditional
     }
     /// Consumes the builder and constructs a [`PostFulfillmentStatusSpecification`](crate::types::PostFulfillmentStatusSpecification).

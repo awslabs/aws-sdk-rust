@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`total_cost(f64)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::total_cost): <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_cost_estimation::GetCostEstimationOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<GetCostEstimationError>`](crate::operation::get_cost_estimation::GetCostEstimationError)
-    pub fn get_cost_estimation(
-        &self,
-    ) -> crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder {
-        crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cost_estimation(&self) -> crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder {
+        crate::operation::get_cost_estimation::builders::GetCostEstimationFluentBuilder::new(self.handle.clone())
     }
 }

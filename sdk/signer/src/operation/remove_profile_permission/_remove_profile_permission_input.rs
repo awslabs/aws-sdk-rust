@@ -29,18 +29,14 @@ impl RemoveProfilePermissionInput {
 }
 impl RemoveProfilePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder {
         crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveProfilePermissionInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl RemoveProfilePermissionInputBuilder {
         crate::operation::remove_profile_permission::RemoveProfilePermissionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_profile_permission::RemoveProfilePermissionInput {
-                profile_name: self.profile_name,
-                revision_id: self.revision_id,
-                statement_id: self.statement_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_profile_permission::RemoveProfilePermissionInput {
+            profile_name: self.profile_name,
+            revision_id: self.revision_id,
+            statement_id: self.statement_id,
+        })
     }
 }

@@ -38,9 +38,7 @@ impl LoginProfile {
 
 /// A builder for [`LoginProfile`](crate::types::LoginProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoginProfileBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -67,10 +65,7 @@ impl LoginProfileBuilder {
         self
     }
     /// <p>The date when the password for the user was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }

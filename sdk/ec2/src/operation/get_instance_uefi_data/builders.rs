@@ -39,9 +39,7 @@ impl GetInstanceUefiDataFluentBuilder {
         }
     }
     /// Access the GetInstanceUefiData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl GetInstanceUefiDataFluentBuilder {
             crate::operation::get_instance_uefi_data::GetInstanceUefiData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_uefi_data::GetInstanceUefiDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl GetInstanceUefiDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl GetInstanceUefiDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_uefi_data::GetInstanceUefiDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl GetInstanceUefiDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_uefi_data::GetInstanceUefiDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl GetInstanceUefiDataFluentBuilder {
             crate::operation::get_instance_uefi_data::GetInstanceUefiData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_uefi_data::GetInstanceUefiDataError>,
     > {
         self.customize_middleware().await
     }

@@ -63,9 +63,7 @@ impl GetDeviceOutput {
 
 /// A builder for [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceOutputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl GetDeviceOutputBuilder {
         &self.device_name
     }
     /// <p>The name of the partner company for the device.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partner company for the device.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -130,10 +122,7 @@ impl GetDeviceOutputBuilder {
         self
     }
     /// <p>The type of the device.</p>
-    pub fn set_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceType>,
-    ) -> Self {
+    pub fn set_device_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
         self.device_type = input;
         self
     }
@@ -147,10 +136,7 @@ impl GetDeviceOutputBuilder {
         self
     }
     /// <p>The status of the device.</p>
-    pub fn set_device_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatus>,
-    ) -> Self {
+    pub fn set_device_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
         self.device_status = input;
         self
     }
@@ -159,18 +145,12 @@ impl GetDeviceOutputBuilder {
         &self.device_status
     }
     /// <p>Details about the capabilities of the device.</p>
-    pub fn device_capabilities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_capabilities = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the capabilities of the device.</p>
-    pub fn set_device_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_capabilities = input;
         self
     }

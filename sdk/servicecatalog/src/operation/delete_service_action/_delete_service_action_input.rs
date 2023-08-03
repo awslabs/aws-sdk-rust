@@ -30,18 +30,14 @@ impl DeleteServiceActionInput {
 }
 impl DeleteServiceActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceActionInput`](crate::operation::delete_service_action::DeleteServiceActionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder {
-        crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder {
+        crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceActionInput`](crate::operation::delete_service_action::DeleteServiceActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceActionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
@@ -66,10 +62,7 @@ impl DeleteServiceActionInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +71,7 @@ impl DeleteServiceActionInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -96,15 +86,11 @@ impl DeleteServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceActionInput`](crate::operation::delete_service_action::DeleteServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_action::DeleteServiceActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_service_action::DeleteServiceActionInput {
-                id: self.id,
-                accept_language: self.accept_language,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_service_action::DeleteServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_service_action::DeleteServiceActionInput {
+            id: self.id,
+            accept_language: self.accept_language,
+        })
     }
 }

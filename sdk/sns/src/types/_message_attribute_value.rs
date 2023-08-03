@@ -38,9 +38,7 @@ impl MessageAttributeValue {
 
 /// A builder for [`MessageAttributeValue`](crate::types::MessageAttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageAttributeValueBuilder {
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
@@ -81,10 +79,7 @@ impl MessageAttributeValueBuilder {
         self
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
-    pub fn set_binary_value(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_binary_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.binary_value = input;
         self
     }

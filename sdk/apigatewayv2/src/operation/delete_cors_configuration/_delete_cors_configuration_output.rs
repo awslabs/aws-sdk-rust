@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCorsConfigurationOutput {
 }
 impl DeleteCorsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsConfigurationOutput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationOutputBuilder {
         crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCorsConfigurationOutput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCorsConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteCorsConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCorsConfigurationOutput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput {
         crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput {
             _request_id: self._request_id,
         }

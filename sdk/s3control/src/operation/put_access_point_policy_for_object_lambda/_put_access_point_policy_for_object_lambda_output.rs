@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAccessPointPolicyForObjectLambdaOu
 }
 impl PutAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaOutputBuilder {
         crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointPolicyForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutAccessPointPolicyForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaOutput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput {
         crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput {
             _request_id: self._request_id,
         }

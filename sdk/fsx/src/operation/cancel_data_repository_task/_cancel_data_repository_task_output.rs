@@ -44,16 +44,14 @@ impl ::aws_http::request_id::RequestId for CancelDataRepositoryTaskOutput {
 }
 impl CancelDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
-    pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder {
         crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskOutputBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl CancelDataRepositoryTaskOutputBuilder {
     /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
     /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -98,9 +93,7 @@ impl CancelDataRepositoryTaskOutputBuilder {
     /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
     /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
     /// </ul>
-    pub fn get_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
         &self.lifecycle
     }
     /// <p>The ID of the task being canceled.</p>
@@ -127,9 +120,7 @@ impl CancelDataRepositoryTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
+    pub fn build(self) -> crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
             lifecycle: self.lifecycle,
             task_id: self.task_id,

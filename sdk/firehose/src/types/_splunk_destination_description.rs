@@ -58,21 +58,15 @@ impl SplunkDestinationDescription {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The Amazon S3 destination.&gt;</p>
-    pub fn s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
 }
@@ -85,9 +79,7 @@ impl SplunkDestinationDescription {
 
 /// A builder for [`SplunkDestinationDescription`](crate::types::SplunkDestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplunkDestinationDescriptionBuilder {
     pub(crate) hec_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) hec_endpoint_type: ::std::option::Option<crate::types::HecEndpointType>,
@@ -95,12 +87,9 @@ pub struct SplunkDestinationDescriptionBuilder {
     pub(crate) hec_acknowledgment_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) retry_options: ::std::option::Option<crate::types::SplunkRetryOptions>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::SplunkS3BackupMode>,
-    pub(crate) s3_destination_description:
-        ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl SplunkDestinationDescriptionBuilder {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
@@ -123,10 +112,7 @@ impl SplunkDestinationDescriptionBuilder {
         self
     }
     /// <p>This type can be either "Raw" or "Event."</p>
-    pub fn set_hec_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HecEndpointType>,
-    ) -> Self {
+    pub fn set_hec_endpoint_type(mut self, input: ::std::option::Option<crate::types::HecEndpointType>) -> Self {
         self.hec_endpoint_type = input;
         self
     }
@@ -154,10 +140,7 @@ impl SplunkDestinationDescriptionBuilder {
         self
     }
     /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
-    pub fn set_hec_acknowledgment_timeout_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_hec_acknowledgment_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hec_acknowledgment_timeout_in_seconds = input;
         self
     }
@@ -171,10 +154,7 @@ impl SplunkDestinationDescriptionBuilder {
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SplunkRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SplunkRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
@@ -188,10 +168,7 @@ impl SplunkDestinationDescriptionBuilder {
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>. </p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SplunkS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SplunkS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
@@ -200,69 +177,45 @@ impl SplunkDestinationDescriptionBuilder {
         &self.s3_backup_mode
     }
     /// <p>The Amazon S3 destination.&gt;</p>
-    pub fn s3_destination_description(
-        mut self,
-        input: crate::types::S3DestinationDescription,
-    ) -> Self {
+    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 destination.&gt;</p>
-    pub fn set_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
     /// <p>The Amazon S3 destination.&gt;</p>
-    pub fn get_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`SplunkDestinationDescription`](crate::types::SplunkDestinationDescription).

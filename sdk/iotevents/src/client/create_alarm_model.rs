@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::create_alarm_model::CreateAlarmModelOutput::last_update_time): <p>The time the alarm model was last updated, in the Unix epoch format.</p>
     ///   - [`status(Option<AlarmModelVersionStatus>)`](crate::operation::create_alarm_model::CreateAlarmModelOutput::status): <p>The status of the alarm model. The status can be one of the following values:</p>  <ul>   <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>   <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>   <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>   <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateAlarmModelError>`](crate::operation::create_alarm_model::CreateAlarmModelError)
-    pub fn create_alarm_model(
-        &self,
-    ) -> crate::operation::create_alarm_model::builders::CreateAlarmModelFluentBuilder {
-        crate::operation::create_alarm_model::builders::CreateAlarmModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_alarm_model(&self) -> crate::operation::create_alarm_model::builders::CreateAlarmModelFluentBuilder {
+        crate::operation::create_alarm_model::builders::CreateAlarmModelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::send) it.
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError)
-    pub fn disable_organization_admin_account(&self) -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder{
+    pub fn disable_organization_admin_account(
+        &self,
+    ) -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

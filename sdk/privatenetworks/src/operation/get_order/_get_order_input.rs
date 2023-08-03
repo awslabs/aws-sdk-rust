@@ -22,9 +22,7 @@ impl GetOrderInput {
 
 /// A builder for [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOrderInputBuilder {
     pub(crate) order_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetOrderInputBuilder {
         &self.order_arn
     }
     /// Consumes the builder and constructs a [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_order::GetOrderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_order::GetOrderInput {
-            order_arn: self.order_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_order::GetOrderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_order::GetOrderInput { order_arn: self.order_arn })
     }
 }

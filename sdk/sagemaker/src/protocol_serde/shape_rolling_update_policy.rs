@@ -32,17 +32,9 @@ pub fn ser_rolling_update_policy(
 
 pub(crate) fn de_rolling_update_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RollingUpdatePolicy>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RollingUpdatePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,58 +44,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MaximumBatchSize" => {
-                                builder = builder.set_maximum_batch_size(
-                                    crate::protocol_serde::shape_capacity_size::de_capacity_size(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "WaitIntervalInSeconds" => {
-                                builder = builder.set_wait_interval_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "MaximumExecutionTimeoutInSeconds" => {
-                                builder = builder.set_maximum_execution_timeout_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "RollbackMaximumBatchSize" => {
-                                builder = builder.set_rollback_maximum_batch_size(
-                                    crate::protocol_serde::shape_capacity_size::de_capacity_size(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MaximumBatchSize" => {
+                            builder = builder.set_maximum_batch_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens)?);
                         }
-                    }
+                        "WaitIntervalInSeconds" => {
+                            builder = builder.set_wait_interval_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaximumExecutionTimeoutInSeconds" => {
+                            builder = builder.set_maximum_execution_timeout_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "RollbackMaximumBatchSize" => {
+                            builder = builder.set_rollback_maximum_batch_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

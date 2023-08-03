@@ -34,9 +34,7 @@ impl ClientLoginBannerOptions {
 
 /// A builder for [`ClientLoginBannerOptions`](crate::types::ClientLoginBannerOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientLoginBannerOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) banner_text: ::std::option::Option<::std::string::String>,

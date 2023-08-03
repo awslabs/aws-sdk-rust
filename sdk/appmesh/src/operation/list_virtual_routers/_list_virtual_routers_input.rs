@@ -36,17 +36,14 @@ impl ListVirtualRoutersInput {
 }
 impl ListVirtualRoutersInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder {
+    pub fn builder() -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder {
         crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl ListVirtualRoutersInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_routers::ListVirtualRoutersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_virtual_routers::ListVirtualRoutersInput {
-                mesh_name: self.mesh_name,
-                next_token: self.next_token,
-                limit: self.limit,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersInput {
+            mesh_name: self.mesh_name,
+            next_token: self.next_token,
+            limit: self.limit,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

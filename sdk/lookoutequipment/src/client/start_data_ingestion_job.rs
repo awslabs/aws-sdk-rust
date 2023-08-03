@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput::job_id): <p>Indicates the job ID of the data ingestion job. </p>
     ///   - [`status(Option<IngestionJobStatus>)`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput::status): <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     /// - On failure, responds with [`SdkError<StartDataIngestionJobError>`](crate::operation::start_data_ingestion_job::StartDataIngestionJobError)
-    pub fn start_data_ingestion_job(
-        &self,
-    ) -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobFluentBuilder
-    {
+    pub fn start_data_ingestion_job(&self) -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobFluentBuilder {
         crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobFluentBuilder::new(self.handle.clone())
     }
 }

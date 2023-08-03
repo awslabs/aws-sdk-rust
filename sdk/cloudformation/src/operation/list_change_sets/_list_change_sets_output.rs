@@ -36,9 +36,7 @@ impl ListChangeSetsOutput {
 
 /// A builder for [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListChangeSetsOutputBuilder {
         self
     }
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>> {
         &self.summaries
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>

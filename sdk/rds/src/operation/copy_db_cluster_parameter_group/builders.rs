@@ -26,7 +26,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupInputBuilder,
+    inner: crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupInputBuilder,
 }
 impl CopyDBClusterParameterGroupFluentBuilder {
     /// Creates a new `CopyDBClusterParameterGroup`.
@@ -37,7 +37,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the CopyDBClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
             crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
             crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -125,13 +114,8 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid DB cluster parameter group.</p> </li>
     /// </ul>
-    pub fn source_db_cluster_parameter_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .source_db_cluster_parameter_group_identifier(input.into());
+    pub fn source_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_db_cluster_parameter_group_identifier(input.into());
         self
     }
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -139,13 +123,8 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid DB cluster parameter group.</p> </li>
     /// </ul>
-    pub fn set_source_db_cluster_parameter_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_source_db_cluster_parameter_group_identifier(input);
+    pub fn set_source_db_cluster_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_db_cluster_parameter_group_identifier(input);
         self
     }
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -153,11 +132,8 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid DB cluster parameter group.</p> </li>
     /// </ul>
-    pub fn get_source_db_cluster_parameter_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
-        self.inner
-            .get_source_db_cluster_parameter_group_identifier()
+    pub fn get_source_db_cluster_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_cluster_parameter_group_identifier()
     }
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -168,31 +144,8 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
-    pub fn target_db_cluster_parameter_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_cluster_parameter_group_identifier(input.into());
-        self
-    }
-    /// <p>The identifier for the copied DB cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
-    /// <p>Example: <code>my-cluster-param-group1</code> </p>
-    pub fn set_target_db_cluster_parameter_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_target_db_cluster_parameter_group_identifier(input);
+    pub fn target_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_cluster_parameter_group_identifier(input.into());
         self
     }
     /// <p>The identifier for the copied DB cluster parameter group.</p>
@@ -204,38 +157,35 @@ impl CopyDBClusterParameterGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code> </p>
-    pub fn get_target_db_cluster_parameter_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
-        self.inner
-            .get_target_db_cluster_parameter_group_identifier()
+    pub fn set_target_db_cluster_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_db_cluster_parameter_group_identifier(input);
+        self
+    }
+    /// <p>The identifier for the copied DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be null, empty, or blank</p> </li>
+    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-param-group1</code> </p>
+    pub fn get_target_db_cluster_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_cluster_parameter_group_identifier()
     }
     /// <p>A description for the copied DB cluster parameter group.</p>
-    pub fn target_db_cluster_parameter_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_cluster_parameter_group_description(input.into());
+    pub fn target_db_cluster_parameter_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_cluster_parameter_group_description(input.into());
         self
     }
     /// <p>A description for the copied DB cluster parameter group.</p>
-    pub fn set_target_db_cluster_parameter_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_target_db_cluster_parameter_group_description(input);
+    pub fn set_target_db_cluster_parameter_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_db_cluster_parameter_group_description(input);
         self
     }
     /// <p>A description for the copied DB cluster parameter group.</p>
-    pub fn get_target_db_cluster_parameter_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
-        self.inner
-            .get_target_db_cluster_parameter_group_description()
+    pub fn get_target_db_cluster_parameter_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_cluster_parameter_group_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -247,10 +197,7 @@ impl CopyDBClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

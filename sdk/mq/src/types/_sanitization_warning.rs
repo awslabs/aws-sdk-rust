@@ -37,9 +37,7 @@ impl SanitizationWarning {
 
 /// A builder for [`SanitizationWarning`](crate::types::SanitizationWarning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SanitizationWarningBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) element_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SanitizationWarningBuilder {
 }
 impl SanitizationWarningBuilder {
     /// <p>The name of the configuration attribute that has been sanitized.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration attribute that has been sanitized.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -86,10 +78,7 @@ impl SanitizationWarningBuilder {
         self
     }
     /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::SanitizationWarningReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SanitizationWarningReason>) -> Self {
         self.reason = input;
         self
     }

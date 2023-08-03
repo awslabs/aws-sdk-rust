@@ -38,17 +38,14 @@ impl RegisterResourceInput {
 }
 impl RegisterResourceInput {
     /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
-    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceInputBuilder {
         crate::operation::register_resource::builders::RegisterResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) use_service_linked_role: ::std::option::Option<bool>,
@@ -118,10 +115,7 @@ impl RegisterResourceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_resource::RegisterResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_resource::RegisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_resource::RegisterResourceInput {
             resource_arn: self.resource_arn,
             use_service_linked_role: self.use_service_linked_role,

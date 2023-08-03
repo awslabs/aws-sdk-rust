@@ -37,9 +37,7 @@ impl ThirdPartyJobDetails {
 
 /// A builder for [`ThirdPartyJobDetails`](crate::types::ThirdPartyJobDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThirdPartyJobDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::ThirdPartyJobData>,
@@ -66,10 +64,7 @@ impl ThirdPartyJobDetailsBuilder {
         self
     }
     /// <p>The data to be returned by the third party job worker.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyJobData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::ThirdPartyJobData>) -> Self {
         self.data = input;
         self
     }

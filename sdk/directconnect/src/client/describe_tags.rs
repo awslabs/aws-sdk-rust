@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::operation::describe_tags::DescribeTagsOutput::resource_tags): <p>Information about the tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
-    pub fn describe_tags(
-        &self,
-    ) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
+        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
     }
 }

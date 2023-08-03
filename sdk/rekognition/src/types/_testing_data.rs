@@ -30,9 +30,7 @@ impl TestingData {
 
 /// A builder for [`TestingData`](crate::types::TestingData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestingDataBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
     pub(crate) auto_create: ::std::option::Option<bool>,
@@ -50,10 +48,7 @@ impl TestingDataBuilder {
         self
     }
     /// <p>The assets used for testing.</p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
         self.assets = input;
         self
     }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`state_machine_alias_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasFluentBuilder::state_machine_alias_arn) / [`set_state_machine_alias_arn(Option<String>)`](crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasFluentBuilder::set_state_machine_alias_arn): <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
     /// - On success, responds with [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteStateMachineAliasError>`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError)
-    pub fn delete_state_machine_alias(
-        &self,
-    ) -> crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasFluentBuilder
-    {
+    pub fn delete_state_machine_alias(&self) -> crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasFluentBuilder {
         crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasFluentBuilder::new(self.handle.clone())
     }
 }

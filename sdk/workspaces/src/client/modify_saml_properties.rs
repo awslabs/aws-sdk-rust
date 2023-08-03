@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`properties_to_delete(Vec<DeletableSamlProperty>)`](crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder::properties_to_delete) / [`set_properties_to_delete(Option<Vec<DeletableSamlProperty>>)`](crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder::set_properties_to_delete): <p>The SAML properties to delete as part of your request.</p>  <p>Specify one of the following options:</p>  <ul>   <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>   <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>  </ul>
     /// - On success, responds with [`ModifySamlPropertiesOutput`](crate::operation::modify_saml_properties::ModifySamlPropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifySamlPropertiesError>`](crate::operation::modify_saml_properties::ModifySamlPropertiesError)
-    pub fn modify_saml_properties(
-        &self,
-    ) -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder {
-        crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_saml_properties(&self) -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder {
+        crate::operation::modify_saml_properties::builders::ModifySamlPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

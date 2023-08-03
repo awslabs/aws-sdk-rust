@@ -10,10 +10,7 @@ impl ResumeClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resume_cluster::ResumeClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_cluster::ResumeClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_cluster::ResumeClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.resume_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ResumeClusterFluentBuilder {
         }
     }
     /// Access the ResumeCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resume_cluster::builders::ResumeClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::resume_cluster::builders::ResumeClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ResumeClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ResumeClusterFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

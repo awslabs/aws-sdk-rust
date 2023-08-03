@@ -37,17 +37,14 @@ impl GetMethodResponseInput {
 }
 impl GetMethodResponseInput {
     /// Creates a new builder-style object to manufacture [`GetMethodResponseInput`](crate::operation::get_method_response::GetMethodResponseInput).
-    pub fn builder(
-    ) -> crate::operation::get_method_response::builders::GetMethodResponseInputBuilder {
+    pub fn builder() -> crate::operation::get_method_response::builders::GetMethodResponseInputBuilder {
         crate::operation::get_method_response::builders::GetMethodResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMethodResponseInput`](crate::operation::get_method_response::GetMethodResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMethodResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -114,17 +111,12 @@ impl GetMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetMethodResponseInput`](crate::operation::get_method_response::GetMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_method_response::GetMethodResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_method_response::GetMethodResponseInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                status_code: self.status_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_method_response::GetMethodResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_method_response::GetMethodResponseInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+            status_code: self.status_code,
+        })
     }
 }

@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput) with field(s):
     ///   - [`resource(Option<Resource>)`](crate::operation::get_associated_resource::GetAssociatedResourceOutput::resource): <p>The resource associated with the application.</p>
     /// - On failure, responds with [`SdkError<GetAssociatedResourceError>`](crate::operation::get_associated_resource::GetAssociatedResourceError)
-    pub fn get_associated_resource(
-        &self,
-    ) -> crate::operation::get_associated_resource::builders::GetAssociatedResourceFluentBuilder
-    {
-        crate::operation::get_associated_resource::builders::GetAssociatedResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_associated_resource(&self) -> crate::operation::get_associated_resource::builders::GetAssociatedResourceFluentBuilder {
+        crate::operation::get_associated_resource::builders::GetAssociatedResourceFluentBuilder::new(self.handle.clone())
     }
 }

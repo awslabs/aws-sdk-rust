@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetParameterGroupOutput {
 }
 impl ResetParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder {
-        crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder {
+        crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetParameterGroupOutputBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ResetParameterGroupOutputBuilder {
         self
     }
     /// <p>The parameter group being reset.</p>
-    pub fn set_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterGroup>,
-    ) -> Self {
+    pub fn set_parameter_group(mut self, input: ::std::option::Option<crate::types::ParameterGroup>) -> Self {
         self.parameter_group = input;
         self
     }

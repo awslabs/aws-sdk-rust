@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput) with field(s):
     ///   - [`agreement(Option<DescribedAgreement>)`](crate::operation::describe_agreement::DescribeAgreementOutput::agreement): <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     /// - On failure, responds with [`SdkError<DescribeAgreementError>`](crate::operation::describe_agreement::DescribeAgreementError)
-    pub fn describe_agreement(
-        &self,
-    ) -> crate::operation::describe_agreement::builders::DescribeAgreementFluentBuilder {
-        crate::operation::describe_agreement::builders::DescribeAgreementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_agreement(&self) -> crate::operation::describe_agreement::builders::DescribeAgreementFluentBuilder {
+        crate::operation::describe_agreement::builders::DescribeAgreementFluentBuilder::new(self.handle.clone())
     }
 }

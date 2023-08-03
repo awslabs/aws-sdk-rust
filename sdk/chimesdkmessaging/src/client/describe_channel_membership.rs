@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelMembershipOutput`](crate::operation::describe_channel_membership::DescribeChannelMembershipOutput) with field(s):
     ///   - [`channel_membership(Option<ChannelMembership>)`](crate::operation::describe_channel_membership::DescribeChannelMembershipOutput::channel_membership): <p>The details of the membership.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelMembershipError>`](crate::operation::describe_channel_membership::DescribeChannelMembershipError)
-    pub fn describe_channel_membership(&self) -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipFluentBuilder{
+    pub fn describe_channel_membership(&self) -> crate::operation::describe_channel_membership::builders::DescribeChannelMembershipFluentBuilder {
         crate::operation::describe_channel_membership::builders::DescribeChannelMembershipFluentBuilder::new(self.handle.clone())
     }
 }

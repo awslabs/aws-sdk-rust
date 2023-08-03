@@ -30,17 +30,14 @@ impl ListImportErrorsInput {
 }
 impl ListImportErrorsInput {
     /// Creates a new builder-style object to manufacture [`ListImportErrorsInput`](crate::operation::list_import_errors::ListImportErrorsInput).
-    pub fn builder() -> crate::operation::list_import_errors::builders::ListImportErrorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_import_errors::builders::ListImportErrorsInputBuilder {
         crate::operation::list_import_errors::builders::ListImportErrorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportErrorsInput`](crate::operation::list_import_errors::ListImportErrorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportErrorsInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +89,11 @@ impl ListImportErrorsInputBuilder {
     /// Consumes the builder and constructs a [`ListImportErrorsInput`](crate::operation::list_import_errors::ListImportErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_import_errors::ListImportErrorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_import_errors::ListImportErrorsInput {
-                import_id: self.import_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_import_errors::ListImportErrorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_import_errors::ListImportErrorsInput {
+            import_id: self.import_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

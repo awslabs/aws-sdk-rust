@@ -39,9 +39,7 @@ impl GetStaticIpsOutput {
 
 /// A builder for [`GetStaticIpsOutput`](crate::operation::get_static_ips::GetStaticIpsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStaticIpsOutputBuilder {
     pub(crate) static_ips: ::std::option::Option<::std::vec::Vec<crate::types::StaticIp>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -60,36 +58,25 @@ impl GetStaticIpsOutputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
-    pub fn set_static_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StaticIp>>,
-    ) -> Self {
+    pub fn set_static_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StaticIp>>) -> Self {
         self.static_ips = input;
         self
     }
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
-    pub fn get_static_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaticIp>> {
+    pub fn get_static_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StaticIp>> {
         &self.static_ips
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

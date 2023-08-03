@@ -31,8 +31,7 @@ pub struct CreateOpenZfsVolumeConfiguration {
     pub copy_tags_to_snapshots: ::std::option::Option<bool>,
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
     #[doc(hidden)]
-    pub origin_snapshot:
-        ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
+    pub origin_snapshot: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
     #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
@@ -41,8 +40,7 @@ pub struct CreateOpenZfsVolumeConfiguration {
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     #[doc(hidden)]
-    pub user_and_group_quotas:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
 }
 impl CreateOpenZfsVolumeConfiguration {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
@@ -69,9 +67,7 @@ impl CreateOpenZfsVolumeConfiguration {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
     /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn data_compression_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
+    pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
@@ -79,9 +75,7 @@ impl CreateOpenZfsVolumeConfiguration {
         self.copy_tags_to_snapshots
     }
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    pub fn origin_snapshot(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateOpenZfsOriginSnapshotConfiguration> {
+    pub fn origin_snapshot(&self) -> ::std::option::Option<&crate::types::CreateOpenZfsOriginSnapshotConfiguration> {
         self.origin_snapshot.as_ref()
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
@@ -93,9 +87,7 @@ impl CreateOpenZfsVolumeConfiguration {
         self.nfs_exports.as_deref()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn user_and_group_quotas(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
+    pub fn user_and_group_quotas(&self) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
     }
 }
@@ -108,38 +100,27 @@ impl CreateOpenZfsVolumeConfiguration {
 
 /// A builder for [`CreateOpenZfsVolumeConfiguration`](crate::types::CreateOpenZfsVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpenZfsVolumeConfigurationBuilder {
     pub(crate) parent_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
     pub(crate) storage_capacity_quota_gi_b: ::std::option::Option<i32>,
     pub(crate) record_size_ki_b: ::std::option::Option<i32>,
-    pub(crate) data_compression_type:
-        ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
+    pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     pub(crate) copy_tags_to_snapshots: ::std::option::Option<bool>,
-    pub(crate) origin_snapshot:
-        ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
+    pub(crate) origin_snapshot: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
     pub(crate) read_only: ::std::option::Option<bool>,
     pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    pub(crate) user_and_group_quotas:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub(crate) user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
 }
 impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
-    pub fn parent_volume_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
-    pub fn set_parent_volume_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_volume_id = input;
         self
     }
@@ -153,10 +134,7 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self
     }
     /// <p>Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To <i>not</i> specify a storage capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_storage_capacity_reservation_gi_b(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_storage_capacity_reservation_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity_reservation_gi_b = input;
         self
     }
@@ -202,10 +180,7 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
     /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn data_compression_type(
-        mut self,
-        input: crate::types::OpenZfsDataCompressionType,
-    ) -> Self {
+    pub fn data_compression_type(mut self, input: crate::types::OpenZfsDataCompressionType) -> Self {
         self.data_compression_type = ::std::option::Option::Some(input);
         self
     }
@@ -216,10 +191,7 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
     /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_data_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
-    ) -> Self {
+    pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>) -> Self {
         self.data_compression_type = input;
         self
     }
@@ -230,9 +202,7 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. LZ4 compression provides a lower level of compression and higher write throughput performance than ZSTD compression.</p> </li>
     /// </ul>
     /// <p>For more information about volume compression types and the performance of your Amazon FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> File system and volume settings in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_data_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
+    pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
         &self.data_compression_type
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
@@ -250,25 +220,17 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         &self.copy_tags_to_snapshots
     }
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    pub fn origin_snapshot(
-        mut self,
-        input: crate::types::CreateOpenZfsOriginSnapshotConfiguration,
-    ) -> Self {
+    pub fn origin_snapshot(mut self, input: crate::types::CreateOpenZfsOriginSnapshotConfiguration) -> Self {
         self.origin_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    pub fn set_origin_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>,
-    ) -> Self {
+    pub fn set_origin_snapshot(mut self, input: ::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration>) -> Self {
         self.origin_snapshot = input;
         self
     }
     /// <p>The configuration object that specifies the snapshot to use as the origin of the data for the volume.</p>
-    pub fn get_origin_snapshot(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration> {
+    pub fn get_origin_snapshot(&self) -> &::std::option::Option<crate::types::CreateOpenZfsOriginSnapshotConfiguration> {
         &self.origin_snapshot
     }
     /// <p>A Boolean value indicating whether the volume is read-only.</p>
@@ -297,17 +259,12 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn set_nfs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    ) -> Self {
+    pub fn set_nfs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>) -> Self {
         self.nfs_exports = input;
         self
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn get_nfs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
+    pub fn get_nfs_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
         &self.nfs_exports
     }
     /// Appends an item to `user_and_group_quotas`.
@@ -322,17 +279,12 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
         self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn set_user_and_group_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
-    ) -> Self {
+    pub fn set_user_and_group_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>) -> Self {
         self.user_and_group_quotas = input;
         self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn get_user_and_group_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
+    pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
         &self.user_and_group_quotas
     }
     /// Consumes the builder and constructs a [`CreateOpenZfsVolumeConfiguration`](crate::types::CreateOpenZfsVolumeConfiguration).

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`hub_content_version(impl ::std::convert::Into<String>)`](crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder::hub_content_version) / [`set_hub_content_version(Option<String>)`](crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder::set_hub_content_version): <p>The version of the content that you want to delete from a hub.</p>
     /// - On success, responds with [`DeleteHubContentOutput`](crate::operation::delete_hub_content::DeleteHubContentOutput)
     /// - On failure, responds with [`SdkError<DeleteHubContentError>`](crate::operation::delete_hub_content::DeleteHubContentError)
-    pub fn delete_hub_content(
-        &self,
-    ) -> crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder {
-        crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_hub_content(&self) -> crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder {
+        crate::operation::delete_hub_content::builders::DeleteHubContentFluentBuilder::new(self.handle.clone())
     }
 }

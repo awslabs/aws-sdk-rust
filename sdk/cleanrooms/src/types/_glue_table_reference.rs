@@ -30,9 +30,7 @@ impl GlueTableReference {
 
 /// A builder for [`GlueTableReference`](crate::types::GlueTableReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueTableReferenceBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl GlueTableReferenceBuilder {
         &self.table_name
     }
     /// <p>The name of the database the Glue table belongs to.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database the Glue table belongs to.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }

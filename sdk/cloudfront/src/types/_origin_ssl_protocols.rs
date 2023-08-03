@@ -30,9 +30,7 @@ impl OriginSslProtocols {
 
 /// A builder for [`OriginSslProtocols`](crate::types::OriginSslProtocols).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginSslProtocolsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SslProtocol>>,
@@ -64,10 +62,7 @@ impl OriginSslProtocolsBuilder {
         self
     }
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SslProtocol>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SslProtocol>>) -> Self {
         self.items = input;
         self
     }

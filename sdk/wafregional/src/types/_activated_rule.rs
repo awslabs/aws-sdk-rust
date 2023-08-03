@@ -103,9 +103,7 @@ impl ActivatedRule {
 
 /// A builder for [`ActivatedRule`](crate::types::ActivatedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivatedRuleBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
@@ -188,10 +186,7 @@ impl ActivatedRuleBuilder {
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p>
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn set_override_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafOverrideAction>,
-    ) -> Self {
+    pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::WafOverrideAction>) -> Self {
         self.override_action = input;
         self
     }
@@ -249,10 +244,7 @@ impl ActivatedRuleBuilder {
     /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
     /// </ul> </li>
     /// </ol>
-    pub fn set_excluded_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
-    ) -> Self {
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
         self.excluded_rules = input;
         self
     }
@@ -268,9 +260,7 @@ impl ActivatedRuleBuilder {
     /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
     /// </ul> </li>
     /// </ol>
-    pub fn get_excluded_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
         &self.excluded_rules
     }
     /// Consumes the builder and constructs a [`ActivatedRule`](crate::types::ActivatedRule).

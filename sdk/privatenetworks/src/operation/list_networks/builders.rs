@@ -10,10 +10,7 @@ impl ListNetworksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_networks::ListNetworksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_networks::ListNetworksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_networks();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListNetworksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_networks::ListNetworks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_networks::ListNetworks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListNetworksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListNetworksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_networks::ListNetworks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_networks::ListNetworks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListNetworksFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_networks::paginator::ListNetworksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_networks::paginator::ListNetworksPaginator {
-        crate::operation::list_networks::paginator::ListNetworksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_networks::paginator::ListNetworksPaginator {
+        crate::operation::list_networks::paginator::ListNetworksPaginator::new(self.handle, self.inner)
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -132,11 +115,7 @@ impl ListNetworksFluentBuilder {
     /// <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::NetworkFilterKeys,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::NetworkFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
@@ -147,12 +126,7 @@ impl ListNetworksFluentBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::NetworkFilterKeys,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -164,12 +138,7 @@ impl ListNetworksFluentBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::NetworkFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next page of results.</p>

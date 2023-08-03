@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPromptFileOutput`](crate::operation::get_prompt_file::GetPromptFileOutput) with field(s):
     ///   - [`prompt_presigned_url(Option<String>)`](crate::operation::get_prompt_file::GetPromptFileOutput::prompt_presigned_url): <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     /// - On failure, responds with [`SdkError<GetPromptFileError>`](crate::operation::get_prompt_file::GetPromptFileError)
-    pub fn get_prompt_file(
-        &self,
-    ) -> crate::operation::get_prompt_file::builders::GetPromptFileFluentBuilder {
-        crate::operation::get_prompt_file::builders::GetPromptFileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_prompt_file(&self) -> crate::operation::get_prompt_file::builders::GetPromptFileFluentBuilder {
+        crate::operation::get_prompt_file::builders::GetPromptFileFluentBuilder::new(self.handle.clone())
     }
 }

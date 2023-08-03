@@ -37,9 +37,7 @@ impl Mp2Settings {
 
 /// A builder for [`Mp2Settings`](crate::types::Mp2Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Mp2SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<f64>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::Mp2CodingMode>,
@@ -66,10 +64,7 @@ impl Mp2SettingsBuilder {
         self
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp2CodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Mp2CodingMode>) -> Self {
         self.coding_mode = input;
         self
     }

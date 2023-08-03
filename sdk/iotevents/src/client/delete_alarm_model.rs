@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`alarm_model_name(impl ::std::convert::Into<String>)`](crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder::set_alarm_model_name): <p>The name of the alarm model.</p>
     /// - On success, responds with [`DeleteAlarmModelOutput`](crate::operation::delete_alarm_model::DeleteAlarmModelOutput)
     /// - On failure, responds with [`SdkError<DeleteAlarmModelError>`](crate::operation::delete_alarm_model::DeleteAlarmModelError)
-    pub fn delete_alarm_model(
-        &self,
-    ) -> crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder {
-        crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_alarm_model(&self) -> crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder {
+        crate::operation::delete_alarm_model::builders::DeleteAlarmModelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDocumentOutput {
 }
 impl DescribeDocumentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentOutput`](crate::operation::describe_document::DescribeDocumentOutput).
-    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentOutputBuilder {
         crate::operation::describe_document::builders::DescribeDocumentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentOutput`](crate::operation::describe_document::DescribeDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentOutputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeDocumentOutputBuilder {
         self
     }
     /// <p>Information about the SSM document.</p>
-    pub fn set_document(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentDescription>,
-    ) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::DocumentDescription>) -> Self {
         self.document = input;
         self
     }

@@ -10,10 +10,7 @@ impl DeleteVodSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_vod_source::DeleteVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vod_source::DeleteVodSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vod_source::DeleteVodSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_vod_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteVodSourceFluentBuilder {
         }
     }
     /// Access the DeleteVodSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vod_source::builders::DeleteVodSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_vod_source::builders::DeleteVodSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteVodSourceFluentBuilder {
             crate::operation::delete_vod_source::DeleteVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vod_source::DeleteVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vod_source::DeleteVodSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteVodSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vod_source::DeleteVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vod_source::DeleteVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vod_source::DeleteVodSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vod_source::DeleteVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vod_source::DeleteVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vod_source::DeleteVodSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteVodSourceFluentBuilder {
             crate::operation::delete_vod_source::DeleteVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vod_source::DeleteVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vod_source::DeleteVodSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteVodSourceFluentBuilder {
         self.inner.get_source_location_name()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vod_source_name(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
     }

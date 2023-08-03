@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for ResetUserPasswordOutput {
 }
 impl ResetUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder {
+    pub fn builder() -> crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder {
         crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder::default()
     }
 }
@@ -67,18 +66,12 @@ impl ResetUserPasswordOutputBuilder {
         &self.user_id
     }
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
-    pub fn temporary_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn temporary_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.temporary_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
-    pub fn set_temporary_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_temporary_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.temporary_password = input;
         self
     }

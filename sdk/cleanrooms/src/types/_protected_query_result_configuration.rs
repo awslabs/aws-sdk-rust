@@ -6,14 +6,11 @@
 pub struct ProtectedQueryResultConfiguration {
     /// <p>Configuration for protected query results.</p>
     #[doc(hidden)]
-    pub output_configuration:
-        ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
+    pub output_configuration: ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
 }
 impl ProtectedQueryResultConfiguration {
     /// <p>Configuration for protected query results.</p>
-    pub fn output_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectedQueryOutputConfiguration> {
+    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedQueryOutputConfiguration> {
         self.output_configuration.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl ProtectedQueryResultConfiguration {
 
 /// A builder for [`ProtectedQueryResultConfiguration`](crate::types::ProtectedQueryResultConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryResultConfigurationBuilder {
-    pub(crate) output_configuration:
-        ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
+    pub(crate) output_configuration: ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
 }
 impl ProtectedQueryResultConfigurationBuilder {
     /// <p>Configuration for protected query results.</p>
-    pub fn output_configuration(
-        mut self,
-        input: crate::types::ProtectedQueryOutputConfiguration,
-    ) -> Self {
+    pub fn output_configuration(mut self, input: crate::types::ProtectedQueryOutputConfiguration) -> Self {
         self.output_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for protected query results.</p>
-    pub fn set_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
-    ) -> Self {
+    pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>) -> Self {
         self.output_configuration = input;
         self
     }
     /// <p>Configuration for protected query results.</p>
-    pub fn get_output_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectedQueryOutputConfiguration> {
+    pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryOutputConfiguration> {
         &self.output_configuration
     }
     /// Consumes the builder and constructs a [`ProtectedQueryResultConfiguration`](crate::types::ProtectedQueryResultConfiguration).

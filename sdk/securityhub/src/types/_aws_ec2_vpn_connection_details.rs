@@ -33,16 +33,13 @@ pub struct AwsEc2VpnConnectionDetails {
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPN tunnel.</p>
     #[doc(hidden)]
-    pub vgw_telemetry: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>,
-    >,
+    pub vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>>,
     /// <p>The VPN connection options.</p>
     #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails>,
     /// <p>The static routes that are associated with the VPN connection.</p>
     #[doc(hidden)]
-    pub routes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>,
+    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>,
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
     #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -83,21 +80,15 @@ impl AwsEc2VpnConnectionDetails {
         self.category.as_deref()
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn vgw_telemetry(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionVgwTelemetryDetails]> {
+    pub fn vgw_telemetry(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionVgwTelemetryDetails]> {
         self.vgw_telemetry.as_deref()
     }
     /// <p>The VPN connection options.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2VpnConnectionOptionsDetails> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AwsEc2VpnConnectionOptionsDetails> {
         self.options.as_ref()
     }
     /// <p>The static routes that are associated with the VPN connection.</p>
-    pub fn routes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionRoutesDetails]> {
+    pub fn routes(&self) -> ::std::option::Option<&[crate::types::AwsEc2VpnConnectionRoutesDetails]> {
         self.routes.as_deref()
     }
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
@@ -114,9 +105,7 @@ impl AwsEc2VpnConnectionDetails {
 
 /// A builder for [`AwsEc2VpnConnectionDetails`](crate::types::AwsEc2VpnConnectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionDetailsBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
@@ -125,28 +114,19 @@ pub struct AwsEc2VpnConnectionDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
-    pub(crate) vgw_telemetry: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>,
-    >,
+    pub(crate) vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>>,
     pub(crate) options: ::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails>,
-    pub(crate) routes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>,
+    pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionDetailsBuilder {
     /// <p>The identifier of the VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -187,18 +167,12 @@ impl AwsEc2VpnConnectionDetailsBuilder {
         &self.state
     }
     /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_id = input;
         self
     }
@@ -207,25 +181,17 @@ impl AwsEc2VpnConnectionDetailsBuilder {
         &self.customer_gateway_id
     }
     /// <p>The configuration information for the VPN connection's customer gateway, in the native XML format.</p>
-    pub fn customer_gateway_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration information for the VPN connection's customer gateway, in the native XML format.</p>
-    pub fn set_customer_gateway_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_configuration = input;
         self
     }
     /// <p>The configuration information for the VPN connection's customer gateway, in the native XML format.</p>
-    pub fn get_customer_gateway_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_customer_gateway_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_gateway_configuration
     }
     /// <p>The type of VPN connection.</p>
@@ -243,18 +209,12 @@ impl AwsEc2VpnConnectionDetailsBuilder {
         &self.r#type
     }
     /// <p>The identifier of the virtual private gateway that is at the Amazon Web Services side of the VPN connection.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the virtual private gateway that is at the Amazon Web Services side of the VPN connection.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_gateway_id = input;
         self
     }
@@ -281,30 +241,19 @@ impl AwsEc2VpnConnectionDetailsBuilder {
     /// To override the contents of this collection use [`set_vgw_telemetry`](Self::set_vgw_telemetry).
     ///
     /// <p>Information about the VPN tunnel.</p>
-    pub fn vgw_telemetry(
-        mut self,
-        input: crate::types::AwsEc2VpnConnectionVgwTelemetryDetails,
-    ) -> Self {
+    pub fn vgw_telemetry(mut self, input: crate::types::AwsEc2VpnConnectionVgwTelemetryDetails) -> Self {
         let mut v = self.vgw_telemetry.unwrap_or_default();
         v.push(input);
         self.vgw_telemetry = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn set_vgw_telemetry(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>,
-        >,
-    ) -> Self {
+    pub fn set_vgw_telemetry(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>>) -> Self {
         self.vgw_telemetry = input;
         self
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn get_vgw_telemetry(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>>
-    {
+    pub fn get_vgw_telemetry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>> {
         &self.vgw_telemetry
     }
     /// <p>The VPN connection options.</p>
@@ -313,17 +262,12 @@ impl AwsEc2VpnConnectionDetailsBuilder {
         self
     }
     /// <p>The VPN connection options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails>) -> Self {
         self.options = input;
         self
     }
     /// <p>The VPN connection options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails> {
         &self.options
     }
     /// Appends an item to `routes`.
@@ -338,35 +282,21 @@ impl AwsEc2VpnConnectionDetailsBuilder {
         self
     }
     /// <p>The static routes that are associated with the VPN connection.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>,
-        >,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>The static routes that are associated with the VPN connection.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>
-    {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>> {
         &self.routes
     }
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }

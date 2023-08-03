@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePushTemplateOutput`](crate::operation::delete_push_template::DeletePushTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::delete_push_template::DeletePushTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeletePushTemplateError>`](crate::operation::delete_push_template::DeletePushTemplateError)
-    pub fn delete_push_template(
-        &self,
-    ) -> crate::operation::delete_push_template::builders::DeletePushTemplateFluentBuilder {
-        crate::operation::delete_push_template::builders::DeletePushTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_push_template(&self) -> crate::operation::delete_push_template::builders::DeletePushTemplateFluentBuilder {
+        crate::operation::delete_push_template::builders::DeletePushTemplateFluentBuilder::new(self.handle.clone())
     }
 }

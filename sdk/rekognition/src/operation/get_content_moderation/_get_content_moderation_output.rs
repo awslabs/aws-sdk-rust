@@ -14,8 +14,7 @@ pub struct GetContentModerationOutput {
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     #[doc(hidden)]
-    pub moderation_labels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
+    pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -33,8 +32,7 @@ pub struct GetContentModerationOutput {
     pub job_tag: ::std::option::Option<::std::string::String>,
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
     #[doc(hidden)]
-    pub get_request_metadata:
-        ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
+    pub get_request_metadata: ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetContentModerationOutput {
@@ -51,9 +49,7 @@ impl GetContentModerationOutput {
         self.video_metadata.as_ref()
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn moderation_labels(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContentModerationDetection]> {
+    pub fn moderation_labels(&self) -> ::std::option::Option<&[crate::types::ContentModerationDetection]> {
         self.moderation_labels.as_deref()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
@@ -77,9 +73,7 @@ impl GetContentModerationOutput {
         self.job_tag.as_deref()
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_request_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GetContentModerationRequestMetadata> {
+    pub fn get_request_metadata(&self) -> ::std::option::Option<&crate::types::GetContentModerationRequestMetadata> {
         self.get_request_metadata.as_ref()
     }
 }
@@ -90,30 +84,25 @@ impl ::aws_http::request_id::RequestId for GetContentModerationOutput {
 }
 impl GetContentModerationOutput {
     /// Creates a new builder-style object to manufacture [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder {
+    pub fn builder() -> crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder {
         crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContentModerationOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
-    pub(crate) moderation_labels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
+    pub(crate) moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) moderation_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) get_request_metadata:
-        ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
+    pub(crate) get_request_metadata: ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetContentModerationOutputBuilder {
@@ -123,10 +112,7 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>The current status of the content moderation analysis job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -135,18 +121,12 @@ impl GetContentModerationOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -160,10 +140,7 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -183,17 +160,12 @@ impl GetContentModerationOutputBuilder {
         self
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn set_moderation_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
-    ) -> Self {
+    pub fn set_moderation_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>) -> Self {
         self.moderation_labels = input;
         self
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn get_moderation_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>> {
+    pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>> {
         &self.moderation_labels
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
@@ -211,18 +183,12 @@ impl GetContentModerationOutputBuilder {
         &self.next_token
     }
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
-    pub fn moderation_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn moderation_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.moderation_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
-    pub fn set_moderation_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_moderation_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.moderation_model_version = input;
         self
     }
@@ -273,25 +239,17 @@ impl GetContentModerationOutputBuilder {
         &self.job_tag
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_request_metadata(
-        mut self,
-        input: crate::types::GetContentModerationRequestMetadata,
-    ) -> Self {
+    pub fn get_request_metadata(mut self, input: crate::types::GetContentModerationRequestMetadata) -> Self {
         self.get_request_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn set_get_request_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
-    ) -> Self {
+    pub fn set_get_request_metadata(mut self, input: ::std::option::Option<crate::types::GetContentModerationRequestMetadata>) -> Self {
         self.get_request_metadata = input;
         self
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_get_request_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetContentModerationRequestMetadata> {
+    pub fn get_get_request_metadata(&self) -> &::std::option::Option<crate::types::GetContentModerationRequestMetadata> {
         &self.get_request_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

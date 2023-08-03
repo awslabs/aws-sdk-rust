@@ -22,17 +22,14 @@ impl DeprovisionByoipCidrInput {
 }
 impl DeprovisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
-    pub fn builder(
-    ) -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
+    pub fn builder() -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
         crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprovisionByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -69,15 +66,11 @@ impl DeprovisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput {
-                cidr: self.cidr,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput {
+            cidr: self.cidr,
+            dry_run: self.dry_run,
+        })
     }
 }

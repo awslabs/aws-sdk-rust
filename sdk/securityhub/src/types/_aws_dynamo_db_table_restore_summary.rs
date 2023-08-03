@@ -46,9 +46,7 @@ impl AwsDynamoDbTableRestoreSummary {
 
 /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::types::AwsDynamoDbTableRestoreSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableRestoreSummaryBuilder {
     pub(crate) source_backup_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_table_arn: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct AwsDynamoDbTableRestoreSummaryBuilder {
 }
 impl AwsDynamoDbTableRestoreSummaryBuilder {
     /// <p>The ARN of the source backup from which the table was restored.</p>
-    pub fn source_backup_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source backup from which the table was restored.</p>
-    pub fn set_source_backup_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup_arn = input;
         self
     }
@@ -77,18 +69,12 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
         &self.source_backup_arn
     }
     /// <p>The ARN of the source table for the backup.</p>
-    pub fn source_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source table for the backup.</p>
-    pub fn set_source_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_table_arn = input;
         self
     }
@@ -98,19 +84,13 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn restore_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restore_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_restore_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_restore_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_date_time = input;
         self
     }

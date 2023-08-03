@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`commit_id(impl ::std::convert::Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::commit_id) / [`set_commit_id(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_commit_id): <p>The ID of the commit to point the new branch to.</p>
     /// - On success, responds with [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput)
     /// - On failure, responds with [`SdkError<CreateBranchError>`](crate::operation::create_branch::CreateBranchError)
-    pub fn create_branch(
-        &self,
-    ) -> crate::operation::create_branch::builders::CreateBranchFluentBuilder {
-        crate::operation::create_branch::builders::CreateBranchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_branch(&self) -> crate::operation::create_branch::builders::CreateBranchFluentBuilder {
+        crate::operation::create_branch::builders::CreateBranchFluentBuilder::new(self.handle.clone())
     }
 }

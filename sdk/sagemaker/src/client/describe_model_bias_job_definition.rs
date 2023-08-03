@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     ///   - [`stopping_condition(Option<MonitoringStoppingCondition>)`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionOutput::stopping_condition): <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     /// - On failure, responds with [`SdkError<DescribeModelBiasJobDefinitionError>`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionError)
-    pub fn describe_model_bias_job_definition(&self) -> crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionFluentBuilder{
+    pub fn describe_model_bias_job_definition(
+        &self,
+    ) -> crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionFluentBuilder {
         crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

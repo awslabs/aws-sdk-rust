@@ -19,9 +19,7 @@ pub fn ser_aws_open_search_service_domain_cluster_config_details(
         );
     }
     if input.dedicated_master_enabled {
-        object
-            .key("DedicatedMasterEnabled")
-            .boolean(input.dedicated_master_enabled);
+        object.key("DedicatedMasterEnabled").boolean(input.dedicated_master_enabled);
     }
     if let Some(var_1) = &input.zone_awareness_config {
         #[allow(unused_mut)]
@@ -42,9 +40,7 @@ pub fn ser_aws_open_search_service_domain_cluster_config_details(
         object.key("WarmType").string(var_4.as_str());
     }
     if input.zone_awareness_enabled {
-        object
-            .key("ZoneAwarenessEnabled")
-            .boolean(input.zone_awareness_enabled);
+        object.key("ZoneAwarenessEnabled").boolean(input.zone_awareness_enabled);
     }
     if let Some(var_5) = &input.dedicated_master_type {
         object.key("DedicatedMasterType").string(var_5.as_str());
@@ -54,17 +50,9 @@ pub fn ser_aws_open_search_service_domain_cluster_config_details(
 
 pub(crate) fn de_aws_open_search_service_domain_cluster_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsOpenSearchServiceDomainClusterConfigDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsOpenSearchServiceDomainClusterConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -74,106 +62,78 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "InstanceCount" => {
-                                builder = builder.set_instance_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "InstanceCount" => {
+                            builder = builder.set_instance_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "WarmEnabled" => {
-                                builder = builder.set_warm_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "WarmCount" => {
-                                builder = builder.set_warm_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "WarmEnabled" => {
+                            builder = builder.set_warm_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "WarmCount" => {
+                            builder = builder.set_warm_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "DedicatedMasterEnabled" => {
-                                builder = builder.set_dedicated_master_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "ZoneAwarenessConfig" => {
-                                builder = builder.set_zone_awareness_config(
+                            );
+                        }
+                        "DedicatedMasterEnabled" => {
+                            builder =
+                                builder.set_dedicated_master_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ZoneAwarenessConfig" => {
+                            builder = builder.set_zone_awareness_config(
                                     crate::protocol_serde::shape_aws_open_search_service_domain_cluster_config_zone_awareness_config_details::de_aws_open_search_service_domain_cluster_config_zone_awareness_config_details(tokens)?
                                 );
-                            }
-                            "DedicatedMasterCount" => {
-                                builder = builder.set_dedicated_master_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "DedicatedMasterCount" => {
+                            builder = builder.set_dedicated_master_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "InstanceType" => {
-                                builder = builder.set_instance_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "WarmType" => {
-                                builder = builder.set_warm_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ZoneAwarenessEnabled" => {
-                                builder = builder.set_zone_awareness_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "DedicatedMasterType" => {
-                                builder = builder.set_dedicated_master_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "InstanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "WarmType" => {
+                            builder = builder.set_warm_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ZoneAwarenessEnabled" => {
+                            builder = builder.set_zone_awareness_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "DedicatedMasterType" => {
+                            builder = builder.set_dedicated_master_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

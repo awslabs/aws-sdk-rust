@@ -5,23 +5,23 @@
 pub struct CreateContainerServiceRegistryLoginInput {}
 impl CreateContainerServiceRegistryLoginInput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceRegistryLoginInput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput).
-    pub fn builder() -> crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginInputBuilder{
+    pub fn builder() -> crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginInputBuilder {
         crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerServiceRegistryLoginInput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerServiceRegistryLoginInputBuilder {}
 impl CreateContainerServiceRegistryLoginInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerServiceRegistryLoginInput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput {})
     }
 }

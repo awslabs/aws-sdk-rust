@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDeviceMetadataOutput {
 }
 impl UpdateDeviceMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceMetadataOutput`](crate::operation::update_device_metadata::UpdateDeviceMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataOutputBuilder {
         crate::operation::update_device_metadata::builders::UpdateDeviceMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceMetadataOutput`](crate::operation::update_device_metadata::UpdateDeviceMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceMetadataOutputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     ///   - [`worker_fleets(Option<Vec<WorkerFleet>>)`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput::worker_fleets): List of worker fleets.
     /// - On failure, responds with [`SdkError<ListWorkerFleetsError>`](crate::operation::list_worker_fleets::ListWorkerFleetsError)
-    pub fn list_worker_fleets(
-        &self,
-    ) -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder {
-        crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_worker_fleets(&self) -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder {
+        crate::operation::list_worker_fleets::builders::ListWorkerFleetsFluentBuilder::new(self.handle.clone())
     }
 }

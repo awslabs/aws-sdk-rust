@@ -28,9 +28,7 @@ impl GetCommentOutput {
 
 /// A builder for [`GetCommentOutput`](crate::operation::get_comment::GetCommentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommentOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

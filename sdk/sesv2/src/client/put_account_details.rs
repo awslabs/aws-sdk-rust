@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`production_access_enabled(bool)`](crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder::production_access_enabled) / [`set_production_access_enabled(Option<bool>)`](crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder::set_production_access_enabled): <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>  <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>  <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     /// - On success, responds with [`PutAccountDetailsOutput`](crate::operation::put_account_details::PutAccountDetailsOutput)
     /// - On failure, responds with [`SdkError<PutAccountDetailsError>`](crate::operation::put_account_details::PutAccountDetailsError)
-    pub fn put_account_details(
-        &self,
-    ) -> crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder {
-        crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_account_details(&self) -> crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder {
+        crate::operation::put_account_details::builders::PutAccountDetailsFluentBuilder::new(self.handle.clone())
     }
 }

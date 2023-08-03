@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`device_type_linux(Option<DefaultClientBrandingAttributes>)`](crate::operation::import_client_branding::ImportClientBrandingOutput::device_type_linux): <p>The branding information configured for Linux devices.</p>
     ///   - [`device_type_web(Option<DefaultClientBrandingAttributes>)`](crate::operation::import_client_branding::ImportClientBrandingOutput::device_type_web): <p>The branding information configured for web access.</p>
     /// - On failure, responds with [`SdkError<ImportClientBrandingError>`](crate::operation::import_client_branding::ImportClientBrandingError)
-    pub fn import_client_branding(
-        &self,
-    ) -> crate::operation::import_client_branding::builders::ImportClientBrandingFluentBuilder {
-        crate::operation::import_client_branding::builders::ImportClientBrandingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_client_branding(&self) -> crate::operation::import_client_branding::builders::ImportClientBrandingFluentBuilder {
+        crate::operation::import_client_branding::builders::ImportClientBrandingFluentBuilder::new(self.handle.clone())
     }
 }

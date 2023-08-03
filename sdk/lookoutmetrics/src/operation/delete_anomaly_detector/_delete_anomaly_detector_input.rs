@@ -15,35 +15,25 @@ impl DeleteAnomalyDetectorInput {
 }
 impl DeleteAnomalyDetectorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder {
         crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalyDetectorInputBuilder {
     /// <p>The ARN of the detector to delete.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector to delete.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+        })
     }
 }

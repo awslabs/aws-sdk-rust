@@ -10,10 +10,7 @@ impl UpdateTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_template::UpdateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template::UpdateTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template::UpdateTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTemplateFluentBuilder {
         }
     }
     /// Access the UpdateTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_template::builders::UpdateTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -176,17 +168,12 @@ impl UpdateTemplateFluentBuilder {
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn set_layout_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutConfiguration>,
-    ) -> Self {
+    pub fn set_layout_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
         self.inner = self.inner.set_layout_configuration(input);
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn get_layout_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LayoutConfiguration> {
+    pub fn get_layout_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
         self.inner.get_layout_configuration()
     }
     /// Appends an item to `requiredFields`.
@@ -199,17 +186,12 @@ impl UpdateTemplateFluentBuilder {
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn set_required_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
-    ) -> Self {
+    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
         self.inner = self.inner.set_required_fields(input);
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn get_required_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
         self.inner.get_required_fields()
     }
     /// <p>The status of the template.</p>
@@ -218,10 +200,7 @@ impl UpdateTemplateFluentBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

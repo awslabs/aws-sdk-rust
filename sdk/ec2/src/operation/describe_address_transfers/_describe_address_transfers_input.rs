@@ -36,18 +36,14 @@ impl DescribeAddressTransfersInput {
 }
 impl DescribeAddressTransfersInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressTransfersInput`](crate::operation::describe_address_transfers::DescribeAddressTransfersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersInputBuilder {
         crate::operation::describe_address_transfers::builders::DescribeAddressTransfersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressTransfersInput`](crate::operation::describe_address_transfers::DescribeAddressTransfersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressTransfersInputBuilder {
     pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,27 +56,19 @@ impl DescribeAddressTransfersInputBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allocation_ids.unwrap_or_default();
         v.push(input.into());
         self.allocation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allocation_ids = input;
         self
     }
     /// <p>The allocation IDs of Elastic IP addresses.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allocation_ids
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -132,13 +120,11 @@ impl DescribeAddressTransfersInputBuilder {
         crate::operation::describe_address_transfers::DescribeAddressTransfersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
-                allocation_ids: self.allocation_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
+            allocation_ids: self.allocation_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

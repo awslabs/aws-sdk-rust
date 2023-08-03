@@ -10,10 +10,7 @@ impl ModifyCertificatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_certificates::ModifyCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_certificates::ModifyCertificatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificates::ModifyCertificatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_certificates();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl ModifyCertificatesFluentBuilder {
         }
     }
     /// Access the ModifyCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl ModifyCertificatesFluentBuilder {
             crate::operation::modify_certificates::ModifyCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_certificates::ModifyCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificates::ModifyCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl ModifyCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl ModifyCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_certificates::ModifyCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_certificates::ModifyCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificates::ModifyCertificatesError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl ModifyCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_certificates::ModifyCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_certificates::ModifyCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificates::ModifyCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -124,27 +110,19 @@ impl ModifyCertificatesFluentBuilder {
             crate::operation::modify_certificates::ModifyCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_certificates::ModifyCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificates::ModifyCertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_identifier(input.into());
         self
     }
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_identifier(input);
         self
     }

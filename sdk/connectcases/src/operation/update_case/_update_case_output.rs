@@ -19,9 +19,7 @@ impl UpdateCaseOutput {
 
 /// A builder for [`UpdateCaseOutput`](crate::operation::update_case::UpdateCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCaseOutputBuilder {
     _request_id: Option<String>,
 }

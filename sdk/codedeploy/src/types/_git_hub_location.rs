@@ -32,9 +32,7 @@ impl GitHubLocation {
 
 /// A builder for [`GitHubLocation`](crate::types::GitHubLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitHubLocationBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput) with field(s):
     ///   - [`s3_location(Option<S3Location>)`](crate::operation::generate_template::GenerateTemplateOutput::s3_location): <p>The location of the Amazon S3 object.</p>
     /// - On failure, responds with [`SdkError<GenerateTemplateError>`](crate::operation::generate_template::GenerateTemplateError)
-    pub fn generate_template(
-        &self,
-    ) -> crate::operation::generate_template::builders::GenerateTemplateFluentBuilder {
-        crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_template(&self) -> crate::operation::generate_template::builders::GenerateTemplateFluentBuilder {
+        crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`data_lake_sources(Option<Vec<DataLakeSource>>)`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput::data_lake_sources): <p>The list of enabled accounts and enabled sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput::next_token): <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     /// - On failure, responds with [`SdkError<GetDataLakeSourcesError>`](crate::operation::get_data_lake_sources::GetDataLakeSourcesError)
-    pub fn get_data_lake_sources(
-        &self,
-    ) -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesFluentBuilder {
-        crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_lake_sources(&self) -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesFluentBuilder {
+        crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesFluentBuilder::new(self.handle.clone())
     }
 }

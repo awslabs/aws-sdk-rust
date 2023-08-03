@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateTagOptionWithResourceOutput 
 }
 impl AssociateTagOptionWithResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTagOptionWithResourceOutput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput).
-    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceOutputBuilder{
+    pub fn builder() -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceOutputBuilder {
         crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTagOptionWithResourceOutput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTagOptionWithResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateTagOptionWithResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTagOptionWithResourceOutput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput
-    {
+    pub fn build(self) -> crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput {
         crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput {
             _request_id: self._request_id,
         }

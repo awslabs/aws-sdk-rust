@@ -10,10 +10,7 @@ impl ListPredictorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_predictors::ListPredictorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_predictors::ListPredictorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_predictors::ListPredictorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_predictors();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListPredictorsFluentBuilder {
         }
     }
     /// Access the ListPredictors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_predictors::builders::ListPredictorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_predictors::builders::ListPredictorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListPredictorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl ListPredictorsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_predictors::paginator::ListPredictorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_predictors::paginator::ListPredictorsPaginator {
-        crate::operation::list_predictors::paginator::ListPredictorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_predictors::paginator::ListPredictorsPaginator {
+        crate::operation::list_predictors::paginator::ListPredictorsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,10 +167,7 @@ impl ListPredictorsFluentBuilder {
     /// </ul>
     /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

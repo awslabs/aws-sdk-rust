@@ -17,9 +17,7 @@ impl InitialCapacityConfig {
         self.worker_count
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn worker_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkerResourceConfig> {
+    pub fn worker_configuration(&self) -> ::std::option::Option<&crate::types::WorkerResourceConfig> {
         self.worker_configuration.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl InitialCapacityConfig {
 
 /// A builder for [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitialCapacityConfigBuilder {
     pub(crate) worker_count: ::std::option::Option<i64>,
     pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,
@@ -60,17 +56,12 @@ impl InitialCapacityConfigBuilder {
         self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn set_worker_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerResourceConfig>,
-    ) -> Self {
+    pub fn set_worker_configuration(mut self, input: ::std::option::Option<crate::types::WorkerResourceConfig>) -> Self {
         self.worker_configuration = input;
         self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn get_worker_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkerResourceConfig> {
+    pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerResourceConfig> {
         &self.worker_configuration
     }
     /// Consumes the builder and constructs a [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).

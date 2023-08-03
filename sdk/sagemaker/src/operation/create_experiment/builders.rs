@@ -10,10 +10,7 @@ impl CreateExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_experiment();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateExperimentFluentBuilder {
         }
     }
     /// Access the CreateExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateExperimentFluentBuilder {
             crate::operation::create_experiment::CreateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +109,17 @@ impl CreateExperimentFluentBuilder {
             crate::operation::create_experiment::CreateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());
         self
     }
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
@@ -187,10 +165,7 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

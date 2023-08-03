@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput) with field(s):
     ///   - [`result(bool)`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput::result): <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     /// - On failure, responds with [`SdkError<AddCommunicationToCaseError>`](crate::operation::add_communication_to_case::AddCommunicationToCaseError)
-    pub fn add_communication_to_case(
-        &self,
-    ) -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseFluentBuilder
-    {
+    pub fn add_communication_to_case(&self) -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseFluentBuilder {
         crate::operation::add_communication_to_case::builders::AddCommunicationToCaseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,14 +6,11 @@
 pub struct EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
     #[doc(hidden)]
-    pub property_group_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
+    pub property_group_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
 }
 impl EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
-    pub fn property_group_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PropertyGroup]> {
+    pub fn property_group_descriptions(&self) -> ::std::option::Option<&[crate::types::PropertyGroup]> {
         self.property_group_descriptions.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl EnvironmentPropertyDescriptions {
 
 /// A builder for [`EnvironmentPropertyDescriptions`](crate::types::EnvironmentPropertyDescriptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentPropertyDescriptionsBuilder {
-    pub(crate) property_group_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
+    pub(crate) property_group_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
 }
 impl EnvironmentPropertyDescriptionsBuilder {
     /// Appends an item to `property_group_descriptions`.
@@ -46,17 +40,12 @@ impl EnvironmentPropertyDescriptionsBuilder {
         self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn set_property_group_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
-    ) -> Self {
+    pub fn set_property_group_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>) -> Self {
         self.property_group_descriptions = input;
         self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn get_property_group_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
+    pub fn get_property_group_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
         &self.property_group_descriptions
     }
     /// Consumes the builder and constructs a [`EnvironmentPropertyDescriptions`](crate::types::EnvironmentPropertyDescriptions).

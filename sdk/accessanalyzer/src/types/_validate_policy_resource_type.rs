@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,15 +63,9 @@ impl ::std::convert::From<&str> for ValidatePolicyResourceType {
             "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
             "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
             "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
-            "AWS::S3::MultiRegionAccessPoint" => {
-                ValidatePolicyResourceType::S3MultiRegionAccessPoint
-            }
-            "AWS::S3ObjectLambda::AccessPoint" => {
-                ValidatePolicyResourceType::S3ObjectLambdaAccessPoint
-            }
-            other => ValidatePolicyResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "AWS::S3::MultiRegionAccessPoint" => ValidatePolicyResourceType::S3MultiRegionAccessPoint,
+            "AWS::S3ObjectLambda::AccessPoint" => ValidatePolicyResourceType::S3ObjectLambdaAccessPoint,
+            other => ValidatePolicyResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -95,12 +83,8 @@ impl ValidatePolicyResourceType {
             ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
             ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
             ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
-            ValidatePolicyResourceType::S3MultiRegionAccessPoint => {
-                "AWS::S3::MultiRegionAccessPoint"
-            }
-            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => {
-                "AWS::S3ObjectLambda::AccessPoint"
-            }
+            ValidatePolicyResourceType::S3MultiRegionAccessPoint => "AWS::S3::MultiRegionAccessPoint",
+            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => "AWS::S3ObjectLambda::AccessPoint",
             ValidatePolicyResourceType::Unknown(value) => value.as_str(),
         }
     }

@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for SetLoadBalancerPoliciesOfListenerOutp
 }
 impl SetLoadBalancerPoliciesOfListenerOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesOfListenerOutput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput).
-    pub fn builder() -> crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerOutputBuilder{
+    pub fn builder() -> crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerOutputBuilder {
         crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoadBalancerPoliciesOfListenerOutput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl SetLoadBalancerPoliciesOfListenerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerOutput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput).
-    pub fn build(self) -> crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput{
+    pub fn build(self) -> crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput {
         crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput {
             _request_id: self._request_id,
         }

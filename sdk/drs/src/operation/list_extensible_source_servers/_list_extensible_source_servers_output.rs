@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListExtensibleSourceServersOutput {
 }
 impl ListExtensibleSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensibleSourceServersOutput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput).
-    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersOutputBuilder{
+    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersOutputBuilder {
         crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensibleSourceServersOutput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensibleSourceServersOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExtensibleSourceServersOutputBuilder {
         self
     }
     /// <p>A list of source servers on a staging Account that are extensible.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of source servers on a staging Account that are extensible.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>> {
         &self.items
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
@@ -93,9 +86,7 @@ impl ListExtensibleSourceServersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListExtensibleSourceServersOutput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput {
+    pub fn build(self) -> crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput {
         crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput {
             items: self.items,
             next_token: self.next_token,

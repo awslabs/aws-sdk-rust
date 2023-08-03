@@ -35,9 +35,7 @@ impl GetAssessmentOutput {
 
 /// A builder for [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     pub(crate) user_role: ::std::option::Option<crate::types::Role>,
@@ -50,10 +48,7 @@ impl GetAssessmentOutputBuilder {
         self
     }
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    pub fn set_assessment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assessment>,
-    ) -> Self {
+    pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }

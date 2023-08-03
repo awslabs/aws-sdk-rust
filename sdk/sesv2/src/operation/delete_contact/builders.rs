@@ -10,10 +10,7 @@ impl DeleteContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_contact::DeleteContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact::DeleteContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact::DeleteContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteContactFluentBuilder {
         }
     }
     /// Access the DeleteContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_contact::builders::DeleteContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_contact::builders::DeleteContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl DeleteContactFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_list_name(input.into());
         self
     }
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl DeleteContactFluentBuilder {
         self.inner.get_contact_list_name()
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The contact's email address.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }

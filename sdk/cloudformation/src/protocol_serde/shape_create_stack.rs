@@ -4,98 +4,83 @@ pub fn de_create_stack_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_stack::CreateStackOutput,
-    crate::operation::create_stack::CreateStackError,
-> {
+) -> std::result::Result<crate::operation::create_stack::CreateStackOutput, crate::operation::create_stack::CreateStackError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::create_stack::CreateStackError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::create_stack::CreateStackError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExistsException" => {
-            crate::operation::create_stack::CreateStackError::AlreadyExistsException({
+        "AlreadyExistsException" => crate::operation::create_stack::CreateStackError::AlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InsufficientCapabilitiesException" => {
-            crate::operation::create_stack::CreateStackError::InsufficientCapabilitiesException({
+                let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InsufficientCapabilitiesException" => crate::operation::create_stack::CreateStackError::InsufficientCapabilitiesException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InsufficientCapabilitiesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_capabilities_exception::de_insufficient_capabilities_exception_xml_err(_response_body, output).map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::create_stack::CreateStackError::LimitExceededException({
+                let mut output = crate::types::error::builders::InsufficientCapabilitiesExceptionBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_capabilities_exception::de_insufficient_capabilities_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::create_stack::CreateStackError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TokenAlreadyExistsException" => {
-            crate::operation::create_stack::CreateStackError::TokenAlreadyExistsException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TokenAlreadyExistsException" => crate::operation::create_stack::CreateStackError::TokenAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TokenAlreadyExistsExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TokenAlreadyExistsExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_stack::CreateStackError::generic(generic),
     })
 }
@@ -105,19 +90,13 @@ pub fn de_create_stack_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_stack::CreateStackOutput,
-    crate::operation::create_stack::CreateStackError,
-> {
+) -> std::result::Result<crate::operation::create_stack::CreateStackOutput, crate::operation::create_stack::CreateStackError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_stack::builders::CreateStackOutputBuilder::default();
+        let mut output = crate::operation::create_stack::builders::CreateStackOutputBuilder::default();
         output = crate::protocol_serde::shape_create_stack::de_create_stack(_response_body, output)
             .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -126,10 +105,7 @@ pub fn de_create_stack_http_response_with_props(
 pub fn de_create_stack(
     inp: &[u8],
     mut builder: crate::operation::create_stack::builders::CreateStackOutputBuilder,
-) -> Result<
-    crate::operation::create_stack::builders::CreateStackOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_stack::builders::CreateStackOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -169,9 +145,7 @@ pub fn de_create_stack(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreateStackResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateStackResult tag"));
     };
     Ok(builder)
 }

@@ -38,13 +38,7 @@
 /// Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AvcIntraUhdQualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AvcIntraUhdQualityTuningLevel {
         match s {
             "MULTI_PASS" => AvcIntraUhdQualityTuningLevel::MultiPass,
             "SINGLE_PASS" => AvcIntraUhdQualityTuningLevel::SinglePass,
-            other => AvcIntraUhdQualityTuningLevel::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AvcIntraUhdQualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

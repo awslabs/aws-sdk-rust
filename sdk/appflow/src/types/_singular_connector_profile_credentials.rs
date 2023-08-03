@@ -51,9 +51,7 @@ impl SingularConnectorProfileCredentialsBuilder {
     }
     /// Consumes the builder and constructs a [`SingularConnectorProfileCredentials`](crate::types::SingularConnectorProfileCredentials).
     pub fn build(self) -> crate::types::SingularConnectorProfileCredentials {
-        crate::types::SingularConnectorProfileCredentials {
-            api_key: self.api_key,
-        }
+        crate::types::SingularConnectorProfileCredentials { api_key: self.api_key }
     }
 }
 impl ::std::fmt::Debug for SingularConnectorProfileCredentialsBuilder {

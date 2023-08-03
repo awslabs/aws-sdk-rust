@@ -40,9 +40,7 @@ impl ::std::fmt::Debug for UpdateBrowserSettingsInput {
 }
 impl UpdateBrowserSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateBrowserSettingsInput`](crate::operation::update_browser_settings::UpdateBrowserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsInputBuilder {
         crate::operation::update_browser_settings::builders::UpdateBrowserSettingsInputBuilder::default()
     }
 }
@@ -57,18 +55,12 @@ pub struct UpdateBrowserSettingsInputBuilder {
 }
 impl UpdateBrowserSettingsInputBuilder {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.browser_settings_arn = input;
         self
     }
@@ -77,18 +69,12 @@ impl UpdateBrowserSettingsInputBuilder {
         &self.browser_settings_arn
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
-    pub fn browser_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
-    pub fn set_browser_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.browser_policy = input;
         self
     }
@@ -116,17 +102,13 @@ impl UpdateBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrowserSettingsInput`](crate::operation::update_browser_settings::UpdateBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_browser_settings::UpdateBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_browser_settings::UpdateBrowserSettingsInput {
-                browser_settings_arn: self.browser_settings_arn,
-                browser_policy: self.browser_policy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_browser_settings::UpdateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_browser_settings::UpdateBrowserSettingsInput {
+            browser_settings_arn: self.browser_settings_arn,
+            browser_policy: self.browser_policy,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateBrowserSettingsInputBuilder {

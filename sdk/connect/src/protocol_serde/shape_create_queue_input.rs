@@ -21,10 +21,7 @@ pub fn ser_create_queue_input(
     if let Some(var_5) = &input.outbound_caller_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("OutboundCallerConfig").start_object();
-        crate::protocol_serde::shape_outbound_caller_config::ser_outbound_caller_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_outbound_caller_config::ser_outbound_caller_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.quick_connect_ids {

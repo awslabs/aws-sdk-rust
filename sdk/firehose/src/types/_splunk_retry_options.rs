@@ -23,9 +23,7 @@ impl SplunkRetryOptions {
 
 /// A builder for [`SplunkRetryOptions`](crate::types::SplunkRetryOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplunkRetryOptionsBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }

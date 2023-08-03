@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`IssueCertificateOutput`](crate::operation::issue_certificate::IssueCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::operation::issue_certificate::IssueCertificateOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     /// - On failure, responds with [`SdkError<IssueCertificateError>`](crate::operation::issue_certificate::IssueCertificateError)
-    pub fn issue_certificate(
-        &self,
-    ) -> crate::operation::issue_certificate::builders::IssueCertificateFluentBuilder {
-        crate::operation::issue_certificate::builders::IssueCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn issue_certificate(&self) -> crate::operation::issue_certificate::builders::IssueCertificateFluentBuilder {
+        crate::operation::issue_certificate::builders::IssueCertificateFluentBuilder::new(self.handle.clone())
     }
 }

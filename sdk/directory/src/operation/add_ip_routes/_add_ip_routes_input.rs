@@ -88,9 +88,7 @@ impl AddIpRoutesInput {
 
 /// A builder for [`AddIpRoutesInput`](crate::operation::add_ip_routes::AddIpRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_routes: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>,
@@ -123,10 +121,7 @@ impl AddIpRoutesInputBuilder {
         self
     }
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    pub fn set_ip_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>,
-    ) -> Self {
+    pub fn set_ip_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>) -> Self {
         self.ip_routes = input;
         self
     }
@@ -192,10 +187,7 @@ impl AddIpRoutesInputBuilder {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
-    pub fn set_update_security_group_for_directory_controllers(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_update_security_group_for_directory_controllers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_security_group_for_directory_controllers = input;
         self
     }
@@ -226,23 +218,15 @@ impl AddIpRoutesInputBuilder {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
-    pub fn get_update_security_group_for_directory_controllers(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_update_security_group_for_directory_controllers(&self) -> &::std::option::Option<bool> {
         &self.update_security_group_for_directory_controllers
     }
     /// Consumes the builder and constructs a [`AddIpRoutesInput`](crate::operation::add_ip_routes::AddIpRoutesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_ip_routes::AddIpRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_ip_routes::AddIpRoutesInput {
             directory_id: self.directory_id,
             ip_routes: self.ip_routes,
-            update_security_group_for_directory_controllers: self
-                .update_security_group_for_directory_controllers,
+            update_security_group_for_directory_controllers: self.update_security_group_for_directory_controllers,
         })
     }
 }

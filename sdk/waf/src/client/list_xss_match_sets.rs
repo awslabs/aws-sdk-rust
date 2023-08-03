@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_xss_match_sets::ListXssMatchSetsOutput::next_marker): <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`xss_match_sets(Option<Vec<XssMatchSetSummary>>)`](crate::operation::list_xss_match_sets::ListXssMatchSetsOutput::xss_match_sets): <p>An array of <code>XssMatchSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListXssMatchSetsError>`](crate::operation::list_xss_match_sets::ListXssMatchSetsError)
-    pub fn list_xss_match_sets(
-        &self,
-    ) -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsFluentBuilder {
-        crate::operation::list_xss_match_sets::builders::ListXssMatchSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_xss_match_sets(&self) -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsFluentBuilder {
+        crate::operation::list_xss_match_sets::builders::ListXssMatchSetsFluentBuilder::new(self.handle.clone())
     }
 }

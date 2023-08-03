@@ -10,10 +10,7 @@ impl ListNotificationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_notifications::ListNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notifications::ListNotificationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notifications::ListNotificationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_notifications();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListNotificationsFluentBuilder {
         }
     }
     /// Access the ListNotifications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notifications::builders::ListNotificationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_notifications::builders::ListNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListNotificationsFluentBuilder {
             crate::operation::list_notifications::ListNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notifications::ListNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notifications::ListNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notifications::ListNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notifications::ListNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notifications::ListNotificationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notifications::ListNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notifications::ListNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notifications::ListNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListNotificationsFluentBuilder {
             crate::operation::list_notifications::ListNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notifications::ListNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notifications::ListNotificationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notifications::paginator::ListNotificationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_notifications::paginator::ListNotificationsPaginator {
-        crate::operation::list_notifications::paginator::ListNotificationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_notifications::paginator::ListNotificationsPaginator {
+        crate::operation::list_notifications::paginator::ListNotificationsPaginator::new(self.handle, self.inner)
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

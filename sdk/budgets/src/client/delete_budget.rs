@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`budget_name(impl ::std::convert::Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_budget_name): <p>The name of the budget that you want to delete.</p>
     /// - On success, responds with [`DeleteBudgetOutput`](crate::operation::delete_budget::DeleteBudgetOutput)
     /// - On failure, responds with [`SdkError<DeleteBudgetError>`](crate::operation::delete_budget::DeleteBudgetError)
-    pub fn delete_budget(
-        &self,
-    ) -> crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder {
-        crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_budget(&self) -> crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder {
+        crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::new(self.handle.clone())
     }
 }

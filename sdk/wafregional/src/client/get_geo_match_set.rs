@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetGeoMatchSetOutput`](crate::operation::get_geo_match_set::GetGeoMatchSetOutput) with field(s):
     ///   - [`geo_match_set(Option<GeoMatchSet>)`](crate::operation::get_geo_match_set::GetGeoMatchSetOutput::geo_match_set): <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
     /// - On failure, responds with [`SdkError<GetGeoMatchSetError>`](crate::operation::get_geo_match_set::GetGeoMatchSetError)
-    pub fn get_geo_match_set(
-        &self,
-    ) -> crate::operation::get_geo_match_set::builders::GetGeoMatchSetFluentBuilder {
-        crate::operation::get_geo_match_set::builders::GetGeoMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_geo_match_set(&self) -> crate::operation::get_geo_match_set::builders::GetGeoMatchSetFluentBuilder {
+        crate::operation::get_geo_match_set::builders::GetGeoMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

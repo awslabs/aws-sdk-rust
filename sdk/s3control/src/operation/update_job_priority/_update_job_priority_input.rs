@@ -29,17 +29,14 @@ impl UpdateJobPriorityInput {
 }
 impl UpdateJobPriorityInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobPriorityInput`](crate::operation::update_job_priority::UpdateJobPriorityInput).
-    pub fn builder(
-    ) -> crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder {
+    pub fn builder() -> crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder {
         crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobPriorityInput`](crate::operation::update_job_priority::UpdateJobPriorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobPriorityInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl UpdateJobPriorityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobPriorityInput`](crate::operation::update_job_priority::UpdateJobPriorityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_priority::UpdateJobPriorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_job_priority::UpdateJobPriorityInput {
-                account_id: self.account_id,
-                job_id: self.job_id,
-                priority: self.priority,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_job_priority::UpdateJobPriorityInput {
+            account_id: self.account_id,
+            job_id: self.job_id,
+            priority: self.priority,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl DataLakeAutoEnableNewAccountConfiguration {
 
 /// A builder for [`DataLakeAutoEnableNewAccountConfiguration`](crate::types::DataLakeAutoEnableNewAccountConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeAutoEnableNewAccountConfigurationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>,
@@ -64,17 +62,12 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
         self
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`DataLakeAutoEnableNewAccountConfiguration`](crate::types::DataLakeAutoEnableNewAccountConfiguration).

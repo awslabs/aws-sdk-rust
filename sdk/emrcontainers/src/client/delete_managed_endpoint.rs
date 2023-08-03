@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput::id): <p>The output displays the ID of the managed endpoint.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput::virtual_cluster_id): <p>The output displays the ID of the endpoint's virtual cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteManagedEndpointError>`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointError)
-    pub fn delete_managed_endpoint(
-        &self,
-    ) -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder
-    {
-        crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_managed_endpoint(&self) -> crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder {
+        crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointFluentBuilder::new(self.handle.clone())
     }
 }

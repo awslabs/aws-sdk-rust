@@ -10,10 +10,7 @@ impl DescribeSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_snapshots();
         fluent_builder.inner = self;
@@ -51,9 +48,7 @@ impl DescribeSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +60,7 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +70,7 @@ impl DescribeSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +79,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let op = self
             .inner
@@ -114,9 +102,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -130,22 +116,15 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
-        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
+        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -199,10 +178,7 @@ impl DescribeSnapshotsFluentBuilder {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -269,10 +245,7 @@ impl DescribeSnapshotsFluentBuilder {
         self
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn set_owner_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owner_ids(input);
         self
     }
@@ -285,25 +258,17 @@ impl DescribeSnapshotsFluentBuilder {
     /// To override the contents of this collection use [`set_restorable_by_user_ids`](Self::set_restorable_by_user_ids).
     ///
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn restorable_by_user_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restorable_by_user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.restorable_by_user_ids(input.into());
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn set_restorable_by_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_restorable_by_user_ids(input);
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn get_restorable_by_user_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_restorable_by_user_ids()
     }
     /// Appends an item to `SnapshotIds`.
@@ -318,18 +283,13 @@ impl DescribeSnapshotsFluentBuilder {
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn set_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_ids(input);
         self
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn get_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

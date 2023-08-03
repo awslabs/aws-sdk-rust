@@ -29,8 +29,7 @@ impl SendDiagnosticInterruptInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendDiagnosticInterruptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder,
+    inner: crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder,
 }
 impl SendDiagnosticInterruptFluentBuilder {
     /// Creates a new `SendDiagnosticInterrupt`.
@@ -41,10 +40,7 @@ impl SendDiagnosticInterruptFluentBuilder {
         }
     }
     /// Access the SendDiagnosticInterrupt as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl SendDiagnosticInterruptFluentBuilder {
             crate::operation::send_diagnostic_interrupt::SendDiagnosticInterrupt,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl SendDiagnosticInterruptFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl SendDiagnosticInterruptFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl SendDiagnosticInterruptFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl SendDiagnosticInterruptFluentBuilder {
             crate::operation::send_diagnostic_interrupt::SendDiagnosticInterrupt,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError>,
     > {
         self.customize_middleware().await
     }

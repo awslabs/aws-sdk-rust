@@ -32,18 +32,14 @@ impl ::aws_http::request_id::RequestId for DescribePermissionsOutput {
 }
 impl DescribePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_permissions::builders::DescribePermissionsOutputBuilder {
-        crate::operation::describe_permissions::builders::DescribePermissionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_permissions::builders::DescribePermissionsOutputBuilder {
+        crate::operation::describe_permissions::builders::DescribePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,
@@ -71,10 +67,7 @@ impl DescribePermissionsOutputBuilder {
     /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
@@ -84,9 +77,7 @@ impl DescribePermissionsOutputBuilder {
     /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

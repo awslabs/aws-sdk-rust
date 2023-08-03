@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput) with field(s):
     ///   - [`anomaly_id(Option<String>)`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput::anomaly_id): <p>The ID of the modified cost anomaly. </p>
     /// - On failure, responds with [`SdkError<ProvideAnomalyFeedbackError>`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError)
-    pub fn provide_anomaly_feedback(
-        &self,
-    ) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder
-    {
+    pub fn provide_anomaly_feedback(&self) -> crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder {
         crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

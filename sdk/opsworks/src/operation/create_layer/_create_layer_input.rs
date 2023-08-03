@@ -19,13 +19,10 @@ pub struct CreateLayerInput {
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+    pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
     pub custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
@@ -40,8 +37,7 @@ pub struct CreateLayerInput {
     pub packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     #[doc(hidden)]
-    pub volume_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
     #[doc(hidden)]
     pub enable_auto_healing: ::std::option::Option<bool>,
@@ -64,8 +60,7 @@ pub struct CreateLayerInput {
     pub use_ebs_optimized_instances: ::std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
     #[doc(hidden)]
-    pub lifecycle_event_configuration:
-        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
+    pub lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl CreateLayerInput {
     /// <p>The layer stack ID.</p>
@@ -87,17 +82,11 @@ impl CreateLayerInput {
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -117,9 +106,7 @@ impl CreateLayerInput {
         self.packages.as_deref()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn volume_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
+    pub fn volume_configurations(&self) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
         self.volume_configurations.as_deref()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
@@ -149,9 +136,7 @@ impl CreateLayerInput {
         self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn lifecycle_event_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleEventConfiguration> {
+    pub fn lifecycle_event_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleEventConfiguration> {
         self.lifecycle_event_configuration.as_ref()
     }
 }
@@ -164,34 +149,26 @@ impl CreateLayerInput {
 
 /// A builder for [`CreateLayerInput`](crate::operation::create_layer::CreateLayerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLayerInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LayerType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shortname: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    >,
-    pub(crate) cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
+    pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     pub(crate) custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_json: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) volume_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     pub(crate) enable_auto_healing: ::std::option::Option<bool>,
     pub(crate) auto_assign_elastic_ips: ::std::option::Option<bool>,
     pub(crate) auto_assign_public_ips: ::std::option::Option<bool>,
     pub(crate) custom_recipes: ::std::option::Option<crate::types::Recipes>,
     pub(crate) install_updates_on_boot: ::std::option::Option<bool>,
     pub(crate) use_ebs_optimized_instances: ::std::option::Option<bool>,
-    pub(crate) lifecycle_event_configuration:
-        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
+    pub(crate) lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl CreateLayerInputBuilder {
     /// <p>The layer stack ID.</p>
@@ -259,11 +236,7 @@ impl CreateLayerInputBuilder {
     ///
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::LayerAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::LayerAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -273,57 +246,37 @@ impl CreateLayerInputBuilder {
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn cloud_watch_logs_configuration(
-        mut self,
-        input: crate::types::CloudWatchLogsConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
         self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn get_cloud_watch_logs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
         &self.cloud_watch_logs_configuration
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_custom_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_instance_profile_arn = input;
         self
     }
@@ -350,27 +303,19 @@ impl CreateLayerInputBuilder {
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
     ///
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn custom_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.custom_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_security_group_ids = input;
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn get_custom_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_security_group_ids
     }
     /// Appends an item to `packages`.
@@ -385,10 +330,7 @@ impl CreateLayerInputBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn set_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.packages = input;
         self
     }
@@ -408,17 +350,12 @@ impl CreateLayerInputBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
-    ) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
         self.volume_configurations = input;
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn get_volume_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
         &self.volume_configurations
     }
     /// <p>Whether to disable auto healing for the layer.</p>
@@ -469,10 +406,7 @@ impl CreateLayerInputBuilder {
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
-    pub fn set_custom_recipes(
-        mut self,
-        input: ::std::option::Option<crate::types::Recipes>,
-    ) -> Self {
+    pub fn set_custom_recipes(mut self, input: ::std::option::Option<crate::types::Recipes>) -> Self {
         self.custom_recipes = input;
         self
     }
@@ -515,34 +449,21 @@ impl CreateLayerInputBuilder {
         &self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn lifecycle_event_configuration(
-        mut self,
-        input: crate::types::LifecycleEventConfiguration,
-    ) -> Self {
+    pub fn lifecycle_event_configuration(mut self, input: crate::types::LifecycleEventConfiguration) -> Self {
         self.lifecycle_event_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn set_lifecycle_event_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_event_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleEventConfiguration>) -> Self {
         self.lifecycle_event_configuration = input;
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn get_lifecycle_event_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
+    pub fn get_lifecycle_event_configuration(&self) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
         &self.lifecycle_event_configuration
     }
     /// Consumes the builder and constructs a [`CreateLayerInput`](crate::operation::create_layer::CreateLayerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_layer::CreateLayerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_layer::CreateLayerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layer::CreateLayerInput {
             stack_id: self.stack_id,
             r#type: self.r#type,

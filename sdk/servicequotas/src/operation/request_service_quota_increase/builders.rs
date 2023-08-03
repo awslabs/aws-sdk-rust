@@ -26,7 +26,7 @@ impl RequestServiceQuotaIncreaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder,
+    inner: crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder,
 }
 impl RequestServiceQuotaIncreaseFluentBuilder {
     /// Creates a new `RequestServiceQuotaIncrease`.
@@ -37,7 +37,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
         }
     }
     /// Access the RequestServiceQuotaIncrease as a reference.
-    pub fn as_input(&self) -> &crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
             crate::operation::request_service_quota_increase::RequestServiceQuotaIncrease,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RequestServiceQuotaIncreaseFluentBuilder {
             crate::operation::request_service_quota_increase::RequestServiceQuotaIncrease,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError>,
     > {
         self.customize_middleware().await
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateEventTrackerOutput {
 }
 impl CreateEventTrackerOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventTrackerOutput`](crate::operation::create_event_tracker::CreateEventTrackerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_event_tracker::builders::CreateEventTrackerOutputBuilder {
+    pub fn builder() -> crate::operation::create_event_tracker::builders::CreateEventTrackerOutputBuilder {
         crate::operation::create_event_tracker::builders::CreateEventTrackerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEventTrackerOutput`](crate::operation::create_event_tracker::CreateEventTrackerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventTrackerOutputBuilder {
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateEventTrackerOutputBuilder {
 }
 impl CreateEventTrackerOutputBuilder {
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_tracker_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn set_event_tracker_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_tracker_arn = input;
         self
     }

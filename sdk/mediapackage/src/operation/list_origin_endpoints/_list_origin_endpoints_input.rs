@@ -29,18 +29,14 @@ impl ListOriginEndpointsInput {
 }
 impl ListOriginEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsInputBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsInputBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginEndpointsInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListOriginEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_origin_endpoints::ListOriginEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
-                channel_id: self.channel_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_origin_endpoints::ListOriginEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
+            channel_id: self.channel_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

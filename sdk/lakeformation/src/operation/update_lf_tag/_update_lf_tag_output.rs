@@ -19,9 +19,7 @@ impl UpdateLfTagOutput {
 
 /// A builder for [`UpdateLfTagOutput`](crate::operation::update_lf_tag::UpdateLfTagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLfTagOutputBuilder {
     _request_id: Option<String>,
 }

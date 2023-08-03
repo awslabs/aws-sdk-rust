@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListCaCertificatesOutput {
 }
 impl ListCaCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCaCertificatesOutput`](crate::operation::list_ca_certificates::ListCaCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_ca_certificates::builders::ListCaCertificatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_ca_certificates::builders::ListCaCertificatesOutputBuilder {
         crate::operation::list_ca_certificates::builders::ListCaCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCaCertificatesOutput`](crate::operation::list_ca_certificates::ListCaCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCaCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::CaCertificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListCaCertificatesOutputBuilder {
         self
     }
     /// <p>The CA certificates registered in your Amazon Web Services account.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaCertificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaCertificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The CA certificates registered in your Amazon Web Services account.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaCertificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaCertificate>> {
         &self.certificates
     }
     /// <p>The current position within the list of CA certificates.</p>

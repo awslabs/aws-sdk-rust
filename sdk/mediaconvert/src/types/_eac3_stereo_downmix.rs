@@ -40,13 +40,7 @@
 /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Stereo downmix.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3StereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for Eac3StereoDownmix {
             "LO_RO" => Eac3StereoDownmix::LoRo,
             "LT_RT" => Eac3StereoDownmix::LtRt,
             "NOT_INDICATED" => Eac3StereoDownmix::NotIndicated,
-            other => {
-                Eac3StereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3StereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

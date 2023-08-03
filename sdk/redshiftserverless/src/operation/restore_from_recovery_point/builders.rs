@@ -26,7 +26,7 @@ impl RestoreFromRecoveryPointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreFromRecoveryPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointInputBuilder,
+    inner: crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointInputBuilder,
 }
 impl RestoreFromRecoveryPointFluentBuilder {
     /// Creates a new `RestoreFromRecoveryPoint`.
@@ -37,7 +37,7 @@ impl RestoreFromRecoveryPointFluentBuilder {
         }
     }
     /// Access the RestoreFromRecoveryPoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RestoreFromRecoveryPointFluentBuilder {
             crate::operation::restore_from_recovery_point::RestoreFromRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RestoreFromRecoveryPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RestoreFromRecoveryPointFluentBuilder {
             crate::operation::restore_from_recovery_point::RestoreFromRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the recovery point to restore from.</p>
-    pub fn recovery_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_id(input.into());
         self
     }
     /// <p>The unique identifier of the recovery point to restore from.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self.inner.get_recovery_point_id()
     }
     /// <p>The name of the namespace to restore data into.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The name of the namespace to restore data into.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -161,18 +138,12 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The name of the workgroup used to restore data.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the workgroup used to restore data.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

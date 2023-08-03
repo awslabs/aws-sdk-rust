@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`auto_scaling_configuration_summary_list(Option<Vec<AutoScalingConfigurationSummary>>)`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput::auto_scaling_configuration_summary_list): <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListAutoScalingConfigurationsError>`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError)
-    pub fn list_auto_scaling_configurations(&self) -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsFluentBuilder{
+    pub fn list_auto_scaling_configurations(
+        &self,
+    ) -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsFluentBuilder {
         crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

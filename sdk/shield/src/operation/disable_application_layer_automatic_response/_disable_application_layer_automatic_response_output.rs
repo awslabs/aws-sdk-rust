@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisableApplicationLayerAutomaticRespo
 }
 impl DisableApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
-    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder{
+    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder
+    {
         crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisableApplicationLayerAutomaticResponseOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
-    pub fn build(self) -> crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput{
+    pub fn build(self) -> crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput {
         crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput {
             _request_id: self._request_id,
         }

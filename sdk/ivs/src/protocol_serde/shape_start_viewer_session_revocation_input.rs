@@ -12,9 +12,7 @@ pub fn ser_start_viewer_session_revocation_input(
     if input.viewer_session_versions_less_than_or_equal_to != 0 {
         object.key("viewerSessionVersionsLessThanOrEqualTo").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt(
-                (input.viewer_session_versions_less_than_or_equal_to).into(),
-            ),
+            ::aws_smithy_types::Number::NegInt((input.viewer_session_versions_less_than_or_equal_to).into()),
         );
     }
     Ok(())

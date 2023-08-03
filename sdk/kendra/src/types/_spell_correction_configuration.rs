@@ -25,9 +25,7 @@ impl SpellCorrectionConfiguration {
 
 /// A builder for [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpellCorrectionConfigurationBuilder {
     pub(crate) include_query_spell_check_suggestions: ::std::option::Option<bool>,
 }
@@ -38,10 +36,7 @@ impl SpellCorrectionConfigurationBuilder {
         self
     }
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
-    pub fn set_include_query_spell_check_suggestions(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_query_spell_check_suggestions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_query_spell_check_suggestions = input;
         self
     }
@@ -52,9 +47,7 @@ impl SpellCorrectionConfigurationBuilder {
     /// Consumes the builder and constructs a [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
     pub fn build(self) -> crate::types::SpellCorrectionConfiguration {
         crate::types::SpellCorrectionConfiguration {
-            include_query_spell_check_suggestions: self
-                .include_query_spell_check_suggestions
-                .unwrap_or_default(),
+            include_query_spell_check_suggestions: self.include_query_spell_check_suggestions.unwrap_or_default(),
         }
     }
 }

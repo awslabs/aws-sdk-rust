@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`regions(Vec<String>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::regions) / [`set_regions(Option<Vec<String>>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::set_regions): <p>The list of Regions where Security Lake is enabled.</p>
     /// - On success, responds with [`DeleteDataLakeOutput`](crate::operation::delete_data_lake::DeleteDataLakeOutput)
     /// - On failure, responds with [`SdkError<DeleteDataLakeError>`](crate::operation::delete_data_lake::DeleteDataLakeError)
-    pub fn delete_data_lake(
-        &self,
-    ) -> crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder {
-        crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_lake(&self) -> crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder {
+        crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::new(self.handle.clone())
     }
 }

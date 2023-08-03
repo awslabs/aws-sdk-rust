@@ -21,8 +21,7 @@ pub struct ExpenseField {
     pub currency: ::std::option::Option<crate::types::ExpenseCurrency>,
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
     #[doc(hidden)]
-    pub group_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
+    pub group_properties: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
 }
 impl ExpenseField {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
@@ -59,17 +58,14 @@ impl ExpenseField {
 
 /// A builder for [`ExpenseField`](crate::types::ExpenseField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpenseFieldBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ExpenseType>,
     pub(crate) label_detection: ::std::option::Option<crate::types::ExpenseDetection>,
     pub(crate) value_detection: ::std::option::Option<crate::types::ExpenseDetection>,
     pub(crate) page_number: ::std::option::Option<i32>,
     pub(crate) currency: ::std::option::Option<crate::types::ExpenseCurrency>,
-    pub(crate) group_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
+    pub(crate) group_properties: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
 }
 impl ExpenseFieldBuilder {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
@@ -92,10 +88,7 @@ impl ExpenseFieldBuilder {
         self
     }
     /// <p>The explicitly stated label of a detected element.</p>
-    pub fn set_label_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpenseDetection>,
-    ) -> Self {
+    pub fn set_label_detection(mut self, input: ::std::option::Option<crate::types::ExpenseDetection>) -> Self {
         self.label_detection = input;
         self
     }
@@ -109,10 +102,7 @@ impl ExpenseFieldBuilder {
         self
     }
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
-    pub fn set_value_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpenseDetection>,
-    ) -> Self {
+    pub fn set_value_detection(mut self, input: ::std::option::Option<crate::types::ExpenseDetection>) -> Self {
         self.value_detection = input;
         self
     }
@@ -140,10 +130,7 @@ impl ExpenseFieldBuilder {
         self
     }
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
-    pub fn set_currency(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpenseCurrency>,
-    ) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::ExpenseCurrency>) -> Self {
         self.currency = input;
         self
     }
@@ -163,17 +150,12 @@ impl ExpenseFieldBuilder {
         self
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub fn set_group_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
-    ) -> Self {
+    pub fn set_group_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>) -> Self {
         self.group_properties = input;
         self
     }
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    pub fn get_group_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>> {
+    pub fn get_group_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>> {
         &self.group_properties
     }
     /// Consumes the builder and constructs a [`ExpenseField`](crate::types::ExpenseField).

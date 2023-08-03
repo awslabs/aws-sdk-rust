@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`window_id(Option<String>)`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput::window_id): <p>The ID of the maintenance window the target was removed from.</p>
     ///   - [`window_target_id(Option<String>)`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput::window_target_id): <p>The ID of the removed target definition.</p>
     /// - On failure, responds with [`SdkError<DeregisterTargetFromMaintenanceWindowError>`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowError)
-    pub fn deregister_target_from_maintenance_window(&self) -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowFluentBuilder{
-        crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowFluentBuilder::new(self.handle.clone())
+    pub fn deregister_target_from_maintenance_window(
+        &self,
+    ) -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowFluentBuilder {
+        crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

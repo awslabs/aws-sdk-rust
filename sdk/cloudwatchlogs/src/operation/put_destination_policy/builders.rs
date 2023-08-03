@@ -37,9 +37,7 @@ impl PutDestinationPolicyFluentBuilder {
         }
     }
     /// Access the PutDestinationPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_destination_policy::builders::PutDestinationPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_destination_policy::builders::PutDestinationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutDestinationPolicyFluentBuilder {
             crate::operation::put_destination_policy::PutDestinationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_destination_policy::PutDestinationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_destination_policy::PutDestinationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutDestinationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutDestinationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_destination_policy::PutDestinationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_destination_policy::PutDestinationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_destination_policy::PutDestinationPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutDestinationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_destination_policy::PutDestinationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_destination_policy::PutDestinationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_destination_policy::PutDestinationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl PutDestinationPolicyFluentBuilder {
             crate::operation::put_destination_policy::PutDestinationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_destination_policy::PutDestinationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_destination_policy::PutDestinationPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for an existing destination.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
     /// <p>A name for an existing destination.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
@@ -143,18 +124,12 @@ impl PutDestinationPolicyFluentBuilder {
         self.inner.get_destination_name()
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
-    pub fn access_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policy(input.into());
         self
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
-    pub fn set_access_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policy(input);
         self
     }

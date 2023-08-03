@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`kms_key_id(impl ::std::convert::Into<String>)`](crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder::set_kms_key_id): <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>  <ul>   <li> <p>KMS key ID</p> </li>   <li> <p>KMS key alias</p> </li>   <li> <p>ARN referring to the KMS key ID</p> </li>   <li> <p>ARN referring to the KMS key alias</p> </li>  </ul>  <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     /// - On success, responds with [`UpdateReplicationJobOutput`](crate::operation::update_replication_job::UpdateReplicationJobOutput)
     /// - On failure, responds with [`SdkError<UpdateReplicationJobError>`](crate::operation::update_replication_job::UpdateReplicationJobError)
-    pub fn update_replication_job(
-        &self,
-    ) -> crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder {
-        crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_replication_job(&self) -> crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder {
+        crate::operation::update_replication_job::builders::UpdateReplicationJobFluentBuilder::new(self.handle.clone())
     }
 }

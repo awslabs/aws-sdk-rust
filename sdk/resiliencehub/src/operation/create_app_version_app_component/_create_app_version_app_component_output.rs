@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateAppVersionAppComponentOutput {
 }
 impl CreateAppVersionAppComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppVersionAppComponentOutput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput).
-    pub fn builder() -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentOutputBuilder{
+    pub fn builder() -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentOutputBuilder {
         crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppVersionAppComponentOutput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppVersionAppComponentOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl CreateAppVersionAppComponentOutputBuilder {
         self
     }
     /// <p>The list of Application Components that belong to this resource.</p>
-    pub fn set_app_component(
-        mut self,
-        input: ::std::option::Option<crate::types::AppComponent>,
-    ) -> Self {
+    pub fn set_app_component(mut self, input: ::std::option::Option<crate::types::AppComponent>) -> Self {
         self.app_component = input;
         self
     }
@@ -107,10 +102,7 @@ impl CreateAppVersionAppComponentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAppVersionAppComponentOutput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput
-    {
+    pub fn build(self) -> crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput {
         crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

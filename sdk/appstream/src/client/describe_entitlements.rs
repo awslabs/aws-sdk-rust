@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::operation::describe_entitlements::DescribeEntitlementsOutput::entitlements): <p>The entitlements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_entitlements::DescribeEntitlementsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeEntitlementsError>`](crate::operation::describe_entitlements::DescribeEntitlementsError)
-    pub fn describe_entitlements(
-        &self,
-    ) -> crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder {
-        crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_entitlements(&self) -> crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder {
+        crate::operation::describe_entitlements::builders::DescribeEntitlementsFluentBuilder::new(self.handle.clone())
     }
 }

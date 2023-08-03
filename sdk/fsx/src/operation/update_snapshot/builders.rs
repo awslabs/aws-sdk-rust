@@ -10,10 +10,7 @@ impl UpdateSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_snapshot::UpdateSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_snapshot::UpdateSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_snapshot::UpdateSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_snapshot();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSnapshotFluentBuilder {
         }
     }
     /// Access the UpdateSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_snapshot::builders::UpdateSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_snapshot::builders::UpdateSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateSnapshotFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetDetectorModelAnalysisResultsOutput
 }
 impl GetDetectorModelAnalysisResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorModelAnalysisResultsOutput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput).
-    pub fn builder() -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder{
+    pub fn builder() -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder {
         crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDetectorModelAnalysisResultsOutput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResultsOutputBuilder {
-    pub(crate) analysis_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl GetDetectorModelAnalysisResultsOutputBuilder {
         self
     }
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn set_analysis_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
-    ) -> Self {
+    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>) -> Self {
         self.analysis_results = input;
         self
     }
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn get_analysis_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
+    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
         &self.analysis_results
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -94,15 +86,10 @@ impl GetDetectorModelAnalysisResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDetectorModelAnalysisResultsOutput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput
-    {
+    pub fn build(self) -> crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput {
         crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput {
-            analysis_results: self.analysis_results
-            ,
-            next_token: self.next_token
-            ,
+            analysis_results: self.analysis_results,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

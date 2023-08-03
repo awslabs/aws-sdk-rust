@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::set_user_id): <p>The user ID.</p>
     /// - On success, responds with [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput)
     /// - On failure, responds with [`SdkError<DisassociatePhoneNumberFromUserError>`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserError)
-    pub fn disassociate_phone_number_from_user(&self) -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder{
+    pub fn disassociate_phone_number_from_user(
+        &self,
+    ) -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder {
         crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl GetMonitorInput {
 
 /// A builder for [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetMonitorInputBuilder {
         &self.monitor_name
     }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_monitor::GetMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorInput {
             monitor_name: self.monitor_name,
         })

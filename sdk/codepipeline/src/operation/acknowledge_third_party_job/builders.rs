@@ -26,7 +26,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder,
+    inner: crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder,
 }
 impl AcknowledgeThirdPartyJobFluentBuilder {
     /// Creates a new `AcknowledgeThirdPartyJob`.
@@ -37,7 +37,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
         }
     }
     /// Access the AcknowledgeThirdPartyJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
             crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
             crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError>,
     > {
         self.customize_middleware().await
     }

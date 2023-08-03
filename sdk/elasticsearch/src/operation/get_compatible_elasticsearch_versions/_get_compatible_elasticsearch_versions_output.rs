@@ -6,15 +6,12 @@
 pub struct GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
     #[doc(hidden)]
-    pub compatible_elasticsearch_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
+    pub compatible_elasticsearch_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }
 impl GetCompatibleElasticsearchVersionsOutput {
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
-    pub fn compatible_elasticsearch_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
+    pub fn compatible_elasticsearch_versions(&self) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
         self.compatible_elasticsearch_versions.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for GetCompatibleElasticsearchVersionsOut
 }
 impl GetCompatibleElasticsearchVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsOutput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput).
-    pub fn builder() -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder {
         crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCompatibleElasticsearchVersionsOutput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsOutputBuilder {
-    pub(crate) compatible_elasticsearch_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
+    pub(crate) compatible_elasticsearch_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }
 impl GetCompatibleElasticsearchVersionsOutputBuilder {
@@ -46,10 +40,7 @@ impl GetCompatibleElasticsearchVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_compatible_elasticsearch_versions`](Self::set_compatible_elasticsearch_versions).
     ///
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
-    pub fn compatible_elasticsearch_versions(
-        mut self,
-        input: crate::types::CompatibleVersionsMap,
-    ) -> Self {
+    pub fn compatible_elasticsearch_versions(mut self, input: crate::types::CompatibleVersionsMap) -> Self {
         let mut v = self.compatible_elasticsearch_versions.unwrap_or_default();
         v.push(input);
         self.compatible_elasticsearch_versions = ::std::option::Option::Some(v);
@@ -64,9 +55,7 @@ impl GetCompatibleElasticsearchVersionsOutputBuilder {
         self
     }
     /// <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
-    pub fn get_compatible_elasticsearch_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
+    pub fn get_compatible_elasticsearch_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
         &self.compatible_elasticsearch_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -79,10 +68,9 @@ impl GetCompatibleElasticsearchVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCompatibleElasticsearchVersionsOutput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput).
-    pub fn build(self) -> crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput{
+    pub fn build(self) -> crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput {
         crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput {
-            compatible_elasticsearch_versions: self.compatible_elasticsearch_versions
-            ,
+            compatible_elasticsearch_versions: self.compatible_elasticsearch_versions,
             _request_id: self._request_id,
         }
     }

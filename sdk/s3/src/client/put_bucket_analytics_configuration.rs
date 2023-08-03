@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutBucketAnalyticsConfigurationError>`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationError)
-    pub fn put_bucket_analytics_configuration(&self) -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationFluentBuilder{
+    pub fn put_bucket_analytics_configuration(
+        &self,
+    ) -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationFluentBuilder {
         crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

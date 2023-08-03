@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput)
     /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::operation::delete_volume::DeleteVolumeError)
-    pub fn delete_volume(
-        &self,
-    ) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
-        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_volume(&self) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
+        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(self.handle.clone())
     }
 }

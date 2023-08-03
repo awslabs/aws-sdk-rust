@@ -36,9 +36,7 @@ impl ListContactsOutput {
 
 /// A builder for [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) contact_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>,
@@ -71,17 +69,12 @@ impl ListContactsOutputBuilder {
         self
     }
     /// <p>List of contacts.</p>
-    pub fn set_contact_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>,
-    ) -> Self {
+    pub fn set_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>) -> Self {
         self.contact_list = input;
         self
     }
     /// <p>List of contacts.</p>
-    pub fn get_contact_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactData>> {
+    pub fn get_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactData>> {
         &self.contact_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

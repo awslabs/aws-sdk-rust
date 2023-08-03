@@ -30,17 +30,14 @@ impl RemoveTagsFromStreamInput {
 }
 impl RemoveTagsFromStreamInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
+    pub fn builder() -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
         crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +70,7 @@ impl RemoveTagsFromStreamInputBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -101,16 +95,12 @@ impl RemoveTagsFromStreamInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
-                stream_name: self.stream_name,
-                tag_keys: self.tag_keys,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
+            stream_name: self.stream_name,
+            tag_keys: self.tag_keys,
+            stream_arn: self.stream_arn,
+        })
     }
 }

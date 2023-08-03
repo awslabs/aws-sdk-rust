@@ -46,39 +46,29 @@ impl CreateVpnGatewayInput {
 }
 impl CreateVpnGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
-    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder {
         crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpnGatewayInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GatewayType>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateVpnGatewayInputBuilder {
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -112,17 +102,12 @@ impl CreateVpnGatewayInputBuilder {
         self
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
@@ -159,18 +144,13 @@ impl CreateVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpn_gateway::CreateVpnGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpn_gateway::CreateVpnGatewayInput {
-                availability_zone: self.availability_zone,
-                r#type: self.r#type,
-                tag_specifications: self.tag_specifications,
-                amazon_side_asn: self.amazon_side_asn,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpn_gateway::CreateVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_vpn_gateway::CreateVpnGatewayInput {
+            availability_zone: self.availability_zone,
+            r#type: self.r#type,
+            tag_specifications: self.tag_specifications,
+            amazon_side_asn: self.amazon_side_asn,
+            dry_run: self.dry_run,
+        })
     }
 }

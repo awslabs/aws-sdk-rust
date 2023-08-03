@@ -10,10 +10,7 @@ impl ListMfaDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_mfa_devices::ListMfaDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mfa_devices::ListMFADevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mfa_devices::ListMFADevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_mfa_devices();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListMFADevicesFluentBuilder {
         }
     }
     /// Access the ListMFADevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_mfa_devices::builders::ListMfaDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_mfa_devices::builders::ListMfaDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListMFADevicesFluentBuilder {
             crate::operation::list_mfa_devices::ListMFADevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mfa_devices::ListMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mfa_devices::ListMFADevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListMFADevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListMFADevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mfa_devices::ListMfaDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mfa_devices::ListMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mfa_devices::ListMFADevicesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListMFADevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mfa_devices::ListMfaDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mfa_devices::ListMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mfa_devices::ListMFADevicesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListMFADevicesFluentBuilder {
             crate::operation::list_mfa_devices::ListMFADevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mfa_devices::ListMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mfa_devices::ListMFADevicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_mfa_devices::paginator::ListMfaDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_mfa_devices::paginator::ListMfaDevicesPaginator {
-        crate::operation::list_mfa_devices::paginator::ListMfaDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_mfa_devices::paginator::ListMfaDevicesPaginator {
+        crate::operation::list_mfa_devices::paginator::ListMfaDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the user whose MFA devices you want to list.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

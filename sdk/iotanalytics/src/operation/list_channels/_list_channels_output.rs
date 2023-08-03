@@ -35,12 +35,9 @@ impl ListChannelsOutput {
 
 /// A builder for [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsOutputBuilder {
-    pub(crate) channel_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
+    pub(crate) channel_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListChannelsOutputBuilder {
         self
     }
     /// <p>A list of <code>ChannelSummary</code> objects.</p>
-    pub fn set_channel_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
-    ) -> Self {
+    pub fn set_channel_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>) -> Self {
         self.channel_summaries = input;
         self
     }
     /// <p>A list of <code>ChannelSummary</code> objects.</p>
-    pub fn get_channel_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
+    pub fn get_channel_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
         &self.channel_summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>

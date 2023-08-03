@@ -10,10 +10,7 @@ impl SetSmsAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_sms_attributes::SetSmsAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_sms_attributes::SetSMSAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_sms_attributes();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl SetSMSAttributesFluentBuilder {
         }
     }
     /// Access the SetSMSAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_sms_attributes::builders::SetSmsAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_sms_attributes::builders::SetSmsAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl SetSMSAttributesFluentBuilder {
             crate::operation::set_sms_attributes::SetSMSAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_sms_attributes::SetSMSAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl SetSMSAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl SetSMSAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_sms_attributes::SetSmsAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_sms_attributes::SetSMSAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl SetSMSAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_sms_attributes::SetSmsAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_sms_attributes::SetSMSAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl SetSMSAttributesFluentBuilder {
             crate::operation::set_sms_attributes::SetSMSAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_sms_attributes::SetSMSAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_sms_attributes::SetSMSAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -155,11 +139,7 @@ impl SetSMSAttributesFluentBuilder {
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
@@ -189,12 +169,7 @@ impl SetSMSAttributesFluentBuilder {
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -224,11 +199,7 @@ impl SetSMSAttributesFluentBuilder {
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

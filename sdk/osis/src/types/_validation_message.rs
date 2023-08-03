@@ -23,9 +23,7 @@ impl ValidationMessage {
 
 /// A builder for [`ValidationMessage`](crate::types::ValidationMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationMessageBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ValidationMessageBuilder {
     }
     /// Consumes the builder and constructs a [`ValidationMessage`](crate::types::ValidationMessage).
     pub fn build(self) -> crate::types::ValidationMessage {
-        crate::types::ValidationMessage {
-            message: self.message,
-        }
+        crate::types::ValidationMessage { message: self.message }
     }
 }

@@ -48,16 +48,14 @@ impl DescribeHsmConfigurationsInput {
 }
 impl DescribeHsmConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHsmConfigurationsInput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder {
         crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHsmConfigurationsInput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHsmConfigurationsInputBuilder {
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -67,25 +65,17 @@ pub struct DescribeHsmConfigurationsInputBuilder {
 }
 impl DescribeHsmConfigurationsInputBuilder {
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = input;
         self
     }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_configuration_identifier
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
@@ -134,10 +124,7 @@ impl DescribeHsmConfigurationsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -157,10 +144,7 @@ impl DescribeHsmConfigurationsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -175,14 +159,12 @@ impl DescribeHsmConfigurationsInputBuilder {
         crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput {
-                hsm_configuration_identifier: self.hsm_configuration_identifier,
-                max_records: self.max_records,
-                marker: self.marker,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput {
+            hsm_configuration_identifier: self.hsm_configuration_identifier,
+            max_records: self.max_records,
+            marker: self.marker,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+        })
     }
 }

@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEndpointGroupOutput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput::endpoint_group): <p>The description of an endpoint group.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointGroupError>`](crate::operation::describe_endpoint_group::DescribeEndpointGroupError)
-    pub fn describe_endpoint_group(
-        &self,
-    ) -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder
-    {
-        crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint_group(&self) -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder {
+        crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

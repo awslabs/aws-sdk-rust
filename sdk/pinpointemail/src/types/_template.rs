@@ -29,9 +29,7 @@ impl Template {
 
 /// A builder for [`Template`](crate::types::Template).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl TemplateBuilder {
         &self.template_arn
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn set_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_data = input;
         self
     }

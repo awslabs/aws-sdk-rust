@@ -40,13 +40,7 @@
 /// This defines the type of ingestion request. This is returned as part of create ingestion response.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IngestionRequestType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for IngestionRequestType {
             "FULL_REFRESH" => IngestionRequestType::FullRefresh,
             "INCREMENTAL_REFRESH" => IngestionRequestType::IncrementalRefresh,
             "INITIAL_INGESTION" => IngestionRequestType::InitialIngestion,
-            other => IngestionRequestType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => IngestionRequestType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl IngestionRequestType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EDIT",
-            "FULL_REFRESH",
-            "INCREMENTAL_REFRESH",
-            "INITIAL_INGESTION",
-        ]
+        &["EDIT", "FULL_REFRESH", "INCREMENTAL_REFRESH", "INITIAL_INGESTION"]
     }
 }
 impl ::std::convert::AsRef<str> for IngestionRequestType {

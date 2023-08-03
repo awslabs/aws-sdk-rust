@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::next_token): <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     ///   - [`sync_definitions(Option<Vec<RepositorySyncDefinition>>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::sync_definitions): <p>An array of repository sync definitions.</p>
     /// - On failure, responds with [`SdkError<ListRepositorySyncDefinitionsError>`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError)
-    pub fn list_repository_sync_definitions(&self) -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder{
+    pub fn list_repository_sync_definitions(
+        &self,
+    ) -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder {
         crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

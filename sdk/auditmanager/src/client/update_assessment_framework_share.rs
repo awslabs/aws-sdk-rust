@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssessmentFrameworkShareOutput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput) with field(s):
     ///   - [`assessment_framework_share_request(Option<AssessmentFrameworkShareRequest>)`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput::assessment_framework_share_request): <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentFrameworkShareError>`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError)
-    pub fn update_assessment_framework_share(&self) -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareFluentBuilder{
+    pub fn update_assessment_framework_share(
+        &self,
+    ) -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareFluentBuilder {
         crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareFluentBuilder::new(self.handle.clone())
     }
 }

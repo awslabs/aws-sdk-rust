@@ -6,14 +6,11 @@
 pub struct WorkflowAttributes {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub appflow_integration:
-        ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
+    pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
 }
 impl WorkflowAttributes {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowAttributes> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowAttributes> {
         self.appflow_integration.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl WorkflowAttributes {
 
 /// A builder for [`WorkflowAttributes`](crate::types::WorkflowAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowAttributesBuilder {
-    pub(crate) appflow_integration:
-        ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
+    pub(crate) appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
 }
 impl WorkflowAttributesBuilder {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        mut self,
-        input: crate::types::AppflowIntegrationWorkflowAttributes,
-    ) -> Self {
+    pub fn appflow_integration(mut self, input: crate::types::AppflowIntegrationWorkflowAttributes) -> Self {
         self.appflow_integration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_appflow_integration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
-    ) -> Self {
+    pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>) -> Self {
         self.appflow_integration = input;
         self
     }
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn get_appflow_integration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes> {
+    pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes> {
         &self.appflow_integration
     }
     /// Consumes the builder and constructs a [`WorkflowAttributes`](crate::types::WorkflowAttributes).

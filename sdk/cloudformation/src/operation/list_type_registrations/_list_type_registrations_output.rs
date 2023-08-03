@@ -30,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListTypeRegistrationsOutput {
 }
 impl ListTypeRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTypeRegistrationsOutput`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder {
         crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypeRegistrationsOutput`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypeRegistrationsOutputBuilder {
-    pub(crate) registration_token_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) registration_token_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +50,7 @@ impl ListTypeRegistrationsOutputBuilder {
     ///
     /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
-    pub fn registration_token_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_token_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.registration_token_list.unwrap_or_default();
         v.push(input.into());
         self.registration_token_list = ::std::option::Option::Some(v);
@@ -66,18 +58,13 @@ impl ListTypeRegistrationsOutputBuilder {
     }
     /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
-    pub fn set_registration_token_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_registration_token_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.registration_token_list = input;
         self
     }
     /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
-    pub fn get_registration_token_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registration_token_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.registration_token_list
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>

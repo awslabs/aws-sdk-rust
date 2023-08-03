@@ -8,12 +8,8 @@ pub struct TransactWriteItemsOutput {
     pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     #[doc(hidden)]
-    pub item_collection_metrics: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
-        >,
-    >,
+    pub item_collection_metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>>,
     _request_id: Option<String>,
 }
 impl TransactWriteItemsOutput {
@@ -24,12 +20,7 @@ impl TransactWriteItemsOutput {
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     pub fn item_collection_metrics(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>> {
         self.item_collection_metrics.as_ref()
     }
 }
@@ -40,26 +31,18 @@ impl ::aws_http::request_id::RequestId for TransactWriteItemsOutput {
 }
 impl TransactWriteItemsOutput {
     /// Creates a new builder-style object to manufacture [`TransactWriteItemsOutput`](crate::operation::transact_write_items::TransactWriteItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::transact_write_items::builders::TransactWriteItemsOutputBuilder {
+    pub fn builder() -> crate::operation::transact_write_items::builders::TransactWriteItemsOutputBuilder {
         crate::operation::transact_write_items::builders::TransactWriteItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`TransactWriteItemsOutput`](crate::operation::transact_write_items::TransactWriteItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactWriteItemsOutputBuilder {
-    pub(crate) consumed_capacity:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
-    pub(crate) item_collection_metrics: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
-        >,
-    >,
+    pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
+    pub(crate) item_collection_metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>>,
     _request_id: Option<String>,
 }
 impl TransactWriteItemsOutputBuilder {
@@ -75,17 +58,12 @@ impl TransactWriteItemsOutputBuilder {
         self
     }
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-    pub fn set_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
-    ) -> Self {
+    pub fn set_consumed_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>) -> Self {
         self.consumed_capacity = input;
         self
     }
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
-    pub fn get_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
+    pub fn get_consumed_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>> {
         &self.consumed_capacity
     }
     /// Adds a key-value pair to `item_collection_metrics`.
@@ -106,12 +84,7 @@ impl TransactWriteItemsOutputBuilder {
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     pub fn set_item_collection_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>>,
     ) -> Self {
         self.item_collection_metrics = input;
         self
@@ -119,12 +92,7 @@ impl TransactWriteItemsOutputBuilder {
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     pub fn get_item_collection_metrics(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ItemCollectionMetrics>>> {
         &self.item_collection_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

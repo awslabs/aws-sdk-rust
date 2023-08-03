@@ -38,17 +38,14 @@ impl DescribeParametersInput {
 }
 impl DescribeParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+    pub fn builder() -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
         crate::operation::describe_parameters::builders::DescribeParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeParametersInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -57,18 +54,12 @@ pub struct DescribeParametersInputBuilder {
 }
 impl DescribeParametersInputBuilder {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -124,17 +115,12 @@ impl DescribeParametersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_parameters::DescribeParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_parameters::DescribeParametersInput {
-                parameter_group_name: self.parameter_group_name,
-                source: self.source,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_parameters::DescribeParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_parameters::DescribeParametersInput {
+            parameter_group_name: self.parameter_group_name,
+            source: self.source,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

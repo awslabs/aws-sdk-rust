@@ -6,17 +6,14 @@ pub fn ser_adm_channel_request_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
     };
-    Ok(
-        crate::protocol_serde::shape_update_adm_channel_input::ser_adm_channel_request_payload(
-            payload,
-        )?,
-    )
+    Ok(crate::protocol_serde::shape_update_adm_channel_input::ser_adm_channel_request_payload(
+        payload,
+    )?)
 }
 
 pub fn ser_adm_channel_request_payload(
     input: &crate::types::AdmChannelRequest,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_adm_channel_request::ser_adm_channel_request(&mut object, input)?;

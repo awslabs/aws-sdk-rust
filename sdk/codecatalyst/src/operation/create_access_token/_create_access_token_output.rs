@@ -53,8 +53,7 @@ impl ::aws_http::request_id::RequestId for CreateAccessTokenOutput {
 }
 impl CreateAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessTokenOutput`](crate::operation::create_access_token::CreateAccessTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder {
+    pub fn builder() -> crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder {
         crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::default()
     }
 }
@@ -104,10 +103,7 @@ impl CreateAccessTokenOutputBuilder {
         self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub fn set_expires_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_time = input;
         self
     }
@@ -116,18 +112,12 @@ impl CreateAccessTokenOutputBuilder {
         &self.expires_time
     }
     /// <p>The system-generated unique ID of the access token.</p>
-    pub fn access_token_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID of the access token.</p>
-    pub fn set_access_token_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token_id = input;
         self
     }

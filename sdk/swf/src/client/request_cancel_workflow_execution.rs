@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionFluentBuilder::set_run_id): <p>The runId of the workflow execution to cancel.</p>
     /// - On success, responds with [`RequestCancelWorkflowExecutionOutput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput)
     /// - On failure, responds with [`SdkError<RequestCancelWorkflowExecutionError>`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionError)
-    pub fn request_cancel_workflow_execution(&self) -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionFluentBuilder{
+    pub fn request_cancel_workflow_execution(
+        &self,
+    ) -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionFluentBuilder {
         crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

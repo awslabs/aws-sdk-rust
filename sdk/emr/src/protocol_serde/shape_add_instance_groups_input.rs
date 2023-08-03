@@ -9,10 +9,7 @@ pub fn ser_add_instance_groups_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_instance_group_config::ser_instance_group_config(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_instance_group_config::ser_instance_group_config(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

@@ -80,78 +80,63 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes(
 
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesBuilder::default(
-                );
+            let mut builder = crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DestinationPorts" => {
-                                builder = builder.set_destination_ports(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DestinationPorts" => {
+                            builder = builder.set_destination_ports(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destination_ports_list::de_rule_group_source_stateless_rule_match_attributes_destination_ports_list(tokens)?
                                 );
-                            }
-                            "Destinations" => {
-                                builder = builder.set_destinations(
+                        }
+                        "Destinations" => {
+                            builder = builder.set_destinations(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_destinations_list::de_rule_group_source_stateless_rule_match_attributes_destinations_list(tokens)?
                                 );
-                            }
-                            "Protocols" => {
-                                builder = builder.set_protocols(
+                        }
+                        "Protocols" => {
+                            builder = builder.set_protocols(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_protocols_list::de_rule_group_source_stateless_rule_match_attributes_protocols_list(tokens)?
                                 );
-                            }
-                            "SourcePorts" => {
-                                builder = builder.set_source_ports(
+                        }
+                        "SourcePorts" => {
+                            builder = builder.set_source_ports(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_source_ports_list::de_rule_group_source_stateless_rule_match_attributes_source_ports_list(tokens)?
                                 );
-                            }
-                            "Sources" => {
-                                builder = builder.set_sources(
+                        }
+                        "Sources" => {
+                            builder = builder.set_sources(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_sources_list::de_rule_group_source_stateless_rule_match_attributes_sources_list(tokens)?
                                 );
-                            }
-                            "TcpFlags" => {
-                                builder = builder.set_tcp_flags(
+                        }
+                        "TcpFlags" => {
+                            builder = builder.set_tcp_flags(
                                     crate::protocol_serde::shape_rule_group_source_stateless_rule_match_attributes_tcp_flags_list::de_rule_group_source_stateless_rule_match_attributes_tcp_flags_list(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

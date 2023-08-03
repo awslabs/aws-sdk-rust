@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput::message): <p>The update message.</p>
     ///   - [`operation_ids(Option<Vec<String>>)`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput::operation_ids): <p>The IDs of the operations.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationSettingsError>`](crate::operation::update_application_settings::UpdateApplicationSettingsError)
-    pub fn update_application_settings(&self) -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsFluentBuilder{
+    pub fn update_application_settings(&self) -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsFluentBuilder {
         crate::operation::update_application_settings::builders::UpdateApplicationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

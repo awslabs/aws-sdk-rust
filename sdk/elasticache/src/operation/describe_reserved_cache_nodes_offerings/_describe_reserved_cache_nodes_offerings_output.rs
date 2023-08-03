@@ -9,8 +9,7 @@ pub struct DescribeReservedCacheNodesOfferingsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
     #[doc(hidden)]
-    pub reserved_cache_nodes_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
+    pub reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOfferingsOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedCacheNodesOfferingsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn reserved_cache_nodes_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedCacheNodesOffering]> {
+    pub fn reserved_cache_nodes_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedCacheNodesOffering]> {
         self.reserved_cache_nodes_offerings.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedCacheNodesOfferingsOu
 }
 impl DescribeReservedCacheNodesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsOutputBuilder {
         crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_cache_nodes_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
+    pub(crate) reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOfferingsOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_cache_nodes_offerings`](Self::set_reserved_cache_nodes_offerings).
     ///
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn reserved_cache_nodes_offerings(
-        mut self,
-        input: crate::types::ReservedCacheNodesOffering,
-    ) -> Self {
+    pub fn reserved_cache_nodes_offerings(mut self, input: crate::types::ReservedCacheNodesOffering) -> Self {
         let mut v = self.reserved_cache_nodes_offerings.unwrap_or_default();
         v.push(input);
         self.reserved_cache_nodes_offerings = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
         self
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn get_reserved_cache_nodes_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>> {
+    pub fn get_reserved_cache_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>> {
         &self.reserved_cache_nodes_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput {
         crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput {
-            marker: self.marker
-            ,
-            reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings
-            ,
+            marker: self.marker,
+            reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings,
             _request_id: self._request_id,
         }
     }

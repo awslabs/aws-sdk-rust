@@ -10,10 +10,7 @@ impl CreateMapInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_map::CreateMapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_map::CreateMapError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_map();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateMapFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_map::CreateMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_map::CreateMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateMapFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateMapFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_map::CreateMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_map::CreateMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_map::CreateMapError>,
     > {
         self.customize_middleware().await
@@ -152,10 +140,7 @@ impl CreateMapFluentBuilder {
         self
     }
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MapConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MapConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -164,31 +149,19 @@ impl CreateMapFluentBuilder {
         self.inner.get_configuration()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
@@ -221,11 +194,7 @@ impl CreateMapFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -240,12 +209,7 @@ impl CreateMapFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -260,11 +224,7 @@ impl CreateMapFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

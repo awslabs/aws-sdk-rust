@@ -38,13 +38,7 @@
 /// <p>The type of KMS key that is used to encrypt studio data.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StudioEncryptionConfigurationKeyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for StudioEncryptionConfigurationKeyType {
         match s {
             "AWS_OWNED_KEY" => StudioEncryptionConfigurationKeyType::AwsOwnedKey,
             "CUSTOMER_MANAGED_KEY" => StudioEncryptionConfigurationKeyType::CustomerManagedKey,
-            other => StudioEncryptionConfigurationKeyType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StudioEncryptionConfigurationKeyType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

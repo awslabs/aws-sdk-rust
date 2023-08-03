@@ -8,8 +8,7 @@ pub struct PutProjectEventsOutput {
     pub failed_event_count: ::std::option::Option<i32>,
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
     #[doc(hidden)]
-    pub event_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
+    pub event_results: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutProjectEventsOutput {
@@ -18,9 +17,7 @@ impl PutProjectEventsOutput {
         self.failed_event_count
     }
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
-    pub fn event_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PutProjectEventsResultEntry]> {
+    pub fn event_results(&self) -> ::std::option::Option<&[crate::types::PutProjectEventsResultEntry]> {
         self.event_results.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for PutProjectEventsOutput {
 }
 impl PutProjectEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutProjectEventsOutput`](crate::operation::put_project_events::PutProjectEventsOutput).
-    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_project_events::builders::PutProjectEventsOutputBuilder {
         crate::operation::put_project_events::builders::PutProjectEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutProjectEventsOutput`](crate::operation::put_project_events::PutProjectEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProjectEventsOutputBuilder {
     pub(crate) failed_event_count: ::std::option::Option<i32>,
-    pub(crate) event_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
+    pub(crate) event_results: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutProjectEventsOutputBuilder {
@@ -75,17 +68,12 @@ impl PutProjectEventsOutputBuilder {
         self
     }
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
-    pub fn set_event_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
-    ) -> Self {
+    pub fn set_event_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>) -> Self {
         self.event_results = input;
         self
     }
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
-    pub fn get_event_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>> {
+    pub fn get_event_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>> {
         &self.event_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

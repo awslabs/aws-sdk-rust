@@ -23,9 +23,7 @@ impl Row {
 
 /// A builder for [`Row`](crate::types::Row).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowBuilder {
     pub(crate) row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
 }
@@ -42,23 +40,16 @@ impl RowBuilder {
         self
     }
     /// <p>The data in a row of query results.</p>
-    pub fn set_row_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
-    ) -> Self {
+    pub fn set_row_data(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>) -> Self {
         self.row_data = input;
         self
     }
     /// <p>The data in a row of query results.</p>
-    pub fn get_row_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    pub fn get_row_data(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
         &self.row_data
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
-        crate::types::Row {
-            row_data: self.row_data,
-        }
+        crate::types::Row { row_data: self.row_data }
     }
 }

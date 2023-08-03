@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchPutFieldOptionsOutput {
 }
 impl BatchPutFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder {
         crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutFieldOptionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl BatchPutFieldOptionsOutputBuilder {
         self
     }
     /// <p>A list of field errors. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of field errors. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

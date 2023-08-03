@@ -39,9 +39,7 @@ impl AwsXrayEncryptionConfigDetails {
 
 /// A builder for [`AwsXrayEncryptionConfigDetails`](crate::types::AwsXrayEncryptionConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsXrayEncryptionConfigDetailsBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

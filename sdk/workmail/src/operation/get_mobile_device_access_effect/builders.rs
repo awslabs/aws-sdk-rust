@@ -26,7 +26,7 @@ impl GetMobileDeviceAccessEffectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder,
+    inner: crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder,
 }
 impl GetMobileDeviceAccessEffectFluentBuilder {
     /// Creates a new `GetMobileDeviceAccessEffect`.
@@ -37,7 +37,7 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         }
     }
     /// Access the GetMobileDeviceAccessEffect as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
             crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
             crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization to simulate the access effect for.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization to simulate the access effect for.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -169,18 +152,12 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self.inner.get_device_model()
     }
     /// <p>Device operating system the simulated user will report.</p>
-    pub fn device_operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_operating_system(input.into());
         self
     }
     /// <p>Device operating system the simulated user will report.</p>
-    pub fn set_device_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_operating_system(input);
         self
     }
@@ -189,18 +166,12 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self.inner.get_device_operating_system()
     }
     /// <p>Device user agent the simulated user will report.</p>
-    pub fn device_user_agent(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_user_agent(input.into());
         self
     }
     /// <p>Device user agent the simulated user will report.</p>
-    pub fn set_device_user_agent(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_user_agent(input);
         self
     }

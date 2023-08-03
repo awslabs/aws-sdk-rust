@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteTimeSeriesOutput`](crate::operation::delete_time_series::DeleteTimeSeriesOutput)
     /// - On failure, responds with [`SdkError<DeleteTimeSeriesError>`](crate::operation::delete_time_series::DeleteTimeSeriesError)
-    pub fn delete_time_series(
-        &self,
-    ) -> crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder {
-        crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_time_series(&self) -> crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder {
+        crate::operation::delete_time_series::builders::DeleteTimeSeriesFluentBuilder::new(self.handle.clone())
     }
 }

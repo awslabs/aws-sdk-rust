@@ -37,9 +37,7 @@ impl DeleteEndpointAccessFluentBuilder {
         }
     }
     /// Access the DeleteEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteEndpointAccessFluentBuilder {
             crate::operation::delete_endpoint_access::DeleteEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint_access::DeleteEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint_access::DeleteEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint_access::DeleteEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteEndpointAccessFluentBuilder {
             crate::operation::delete_endpoint_access::DeleteEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint_access::DeleteEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Redshift-managed VPC endpoint to delete.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The Redshift-managed VPC endpoint to delete.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }

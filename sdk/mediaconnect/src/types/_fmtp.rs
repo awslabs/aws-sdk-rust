@@ -65,9 +65,7 @@ impl Fmtp {
 
 /// A builder for [`Fmtp`](crate::types::Fmtp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FmtpBuilder {
     pub(crate) channel_order: ::std::option::Option<::std::string::String>,
     pub(crate) colorimetry: ::std::option::Option<crate::types::Colorimetry>,
@@ -79,18 +77,12 @@ pub struct FmtpBuilder {
 }
 impl FmtpBuilder {
     /// The format of the audio channel.
-    pub fn channel_order(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_order = ::std::option::Option::Some(input.into());
         self
     }
     /// The format of the audio channel.
-    pub fn set_channel_order(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_order(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_order = input;
         self
     }
@@ -104,10 +96,7 @@ impl FmtpBuilder {
         self
     }
     /// The format that is used for the representation of color.
-    pub fn set_colorimetry(
-        mut self,
-        input: ::std::option::Option<crate::types::Colorimetry>,
-    ) -> Self {
+    pub fn set_colorimetry(mut self, input: ::std::option::Option<crate::types::Colorimetry>) -> Self {
         self.colorimetry = input;
         self
     }
@@ -116,18 +105,12 @@ impl FmtpBuilder {
         &self.colorimetry
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub fn exact_framerate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exact_framerate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exact_framerate = ::std::option::Option::Some(input.into());
         self
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub fn set_exact_framerate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exact_framerate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exact_framerate = input;
         self
     }

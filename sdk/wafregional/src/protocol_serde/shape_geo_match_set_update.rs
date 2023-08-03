@@ -9,10 +9,7 @@ pub fn ser_geo_match_set_update(
     if let Some(var_2) = &input.geo_match_constraint {
         #[allow(unused_mut)]
         let mut object_3 = object.key("GeoMatchConstraint").start_object();
-        crate::protocol_serde::shape_geo_match_constraint::ser_geo_match_constraint(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_geo_match_constraint::ser_geo_match_constraint(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

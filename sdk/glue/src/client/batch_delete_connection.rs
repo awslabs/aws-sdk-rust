@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`succeeded(Option<Vec<String>>)`](crate::operation::batch_delete_connection::BatchDeleteConnectionOutput::succeeded): <p>A list of names of the connection definitions that were successfully deleted.</p>
     ///   - [`errors(Option<HashMap<String, ErrorDetail>>)`](crate::operation::batch_delete_connection::BatchDeleteConnectionOutput::errors): <p>A map of the names of connections that were not successfully deleted to error details.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteConnectionError>`](crate::operation::batch_delete_connection::BatchDeleteConnectionError)
-    pub fn batch_delete_connection(
-        &self,
-    ) -> crate::operation::batch_delete_connection::builders::BatchDeleteConnectionFluentBuilder
-    {
-        crate::operation::batch_delete_connection::builders::BatchDeleteConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_connection(&self) -> crate::operation::batch_delete_connection::builders::BatchDeleteConnectionFluentBuilder {
+        crate::operation::batch_delete_connection::builders::BatchDeleteConnectionFluentBuilder::new(self.handle.clone())
     }
 }

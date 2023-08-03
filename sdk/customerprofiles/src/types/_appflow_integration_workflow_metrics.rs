@@ -37,9 +37,7 @@ impl AppflowIntegrationWorkflowMetrics {
 
 /// A builder for [`AppflowIntegrationWorkflowMetrics`](crate::types::AppflowIntegrationWorkflowMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowMetricsBuilder {
     pub(crate) records_processed: ::std::option::Option<i64>,
     pub(crate) steps_completed: ::std::option::Option<i64>,

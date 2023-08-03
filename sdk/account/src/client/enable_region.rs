@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`region_name(impl ::std::convert::Into<String>)`](crate::operation::enable_region::builders::EnableRegionFluentBuilder::region_name) / [`set_region_name(Option<String>)`](crate::operation::enable_region::builders::EnableRegionFluentBuilder::set_region_name): <p>Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs actions to prepare your account in that Region, such as distributing your IAM resources to the Region. This process takes a few minutes for most accounts, but it can take several hours. You cannot use the Region until this process is complete. Furthermore, you cannot disable the Region until the enabling process is fully completed.</p>
     /// - On success, responds with [`EnableRegionOutput`](crate::operation::enable_region::EnableRegionOutput)
     /// - On failure, responds with [`SdkError<EnableRegionError>`](crate::operation::enable_region::EnableRegionError)
-    pub fn enable_region(
-        &self,
-    ) -> crate::operation::enable_region::builders::EnableRegionFluentBuilder {
-        crate::operation::enable_region::builders::EnableRegionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_region(&self) -> crate::operation::enable_region::builders::EnableRegionFluentBuilder {
+        crate::operation::enable_region::builders::EnableRegionFluentBuilder::new(self.handle.clone())
     }
 }

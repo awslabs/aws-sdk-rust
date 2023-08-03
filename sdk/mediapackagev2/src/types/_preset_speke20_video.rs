@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PresetSpeke20Video {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for PresetSpeke20Video {
             "PRESET_VIDEO_8" => PresetSpeke20Video::PresetVideo8,
             "SHARED" => PresetSpeke20Video::Shared,
             "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
-            other => PresetSpeke20Video::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PresetSpeke20Video::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

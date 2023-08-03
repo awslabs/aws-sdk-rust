@@ -20,9 +20,7 @@ impl AddBridgeFlowSourceRequest {
         self.flow_arn.as_deref()
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn flow_vpc_interface_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
+    pub fn flow_vpc_interface_attachment(&self) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
         self.flow_vpc_interface_attachment.as_ref()
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.
@@ -39,13 +37,10 @@ impl AddBridgeFlowSourceRequest {
 
 /// A builder for [`AddBridgeFlowSourceRequest`](crate::types::AddBridgeFlowSourceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeFlowSourceRequestBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) flow_vpc_interface_attachment:
-        ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub(crate) flow_vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl AddBridgeFlowSourceRequestBuilder {
@@ -64,25 +59,17 @@ impl AddBridgeFlowSourceRequestBuilder {
         &self.flow_arn
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn flow_vpc_interface_attachment(
-        mut self,
-        input: crate::types::VpcInterfaceAttachment,
-    ) -> Self {
+    pub fn flow_vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
         self.flow_vpc_interface_attachment = ::std::option::Option::Some(input);
         self
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn set_flow_vpc_interface_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_flow_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
         self.flow_vpc_interface_attachment = input;
         self
     }
     /// The name of the VPC interface attachment to use for this source.
-    pub fn get_flow_vpc_interface_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+    pub fn get_flow_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         &self.flow_vpc_interface_attachment
     }
     /// The name of the flow source. This name is used to reference the source and must be unique among sources in this bridge.

@@ -37,9 +37,7 @@ impl ModifyInstanceGroupsFluentBuilder {
         }
     }
     /// Access the ModifyInstanceGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ModifyInstanceGroupsFluentBuilder {
             crate::operation::modify_instance_groups::ModifyInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ModifyInstanceGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ModifyInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ModifyInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ModifyInstanceGroupsFluentBuilder {
             crate::operation::modify_instance_groups::ModifyInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl ModifyInstanceGroupsFluentBuilder {
         self
     }
     /// <p>Instance groups to change.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>) -> Self {
         self.inner = self.inner.set_instance_groups(input);
         self
     }
     /// <p>Instance groups to change.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
         self.inner.get_instance_groups()
     }
 }

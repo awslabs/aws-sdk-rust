@@ -50,18 +50,14 @@ impl CreateAuditSuppressionInput {
 }
 impl CreateAuditSuppressionInput {
     /// Creates a new builder-style object to manufacture [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
-    pub fn builder(
-    ) -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder {
         crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAuditSuppressionInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -91,17 +87,12 @@ impl CreateAuditSuppressionInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
@@ -110,10 +101,7 @@ impl CreateAuditSuppressionInputBuilder {
         self
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
@@ -150,18 +138,12 @@ impl CreateAuditSuppressionInputBuilder {
         &self.description
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -172,19 +154,15 @@ impl CreateAuditSuppressionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_audit_suppression::CreateAuditSuppressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_audit_suppression::CreateAuditSuppressionInput {
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-                expiration_date: self.expiration_date,
-                suppress_indefinitely: self.suppress_indefinitely,
-                description: self.description,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_audit_suppression::CreateAuditSuppressionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_audit_suppression::CreateAuditSuppressionInput {
+            check_name: self.check_name,
+            resource_identifier: self.resource_identifier,
+            expiration_date: self.expiration_date,
+            suppress_indefinitely: self.suppress_indefinitely,
+            description: self.description,
+            client_request_token: self.client_request_token,
+        })
     }
 }

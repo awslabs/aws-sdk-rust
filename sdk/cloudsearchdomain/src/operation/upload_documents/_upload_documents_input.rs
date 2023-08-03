@@ -49,17 +49,12 @@ impl UploadDocumentsInputBuilder {
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.documents = input;
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn get_documents(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.documents
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
@@ -76,10 +71,7 @@ impl UploadDocumentsInputBuilder {
     /// <li>application/json</li>
     /// <li>application/xml</li>
     /// </ul>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -94,10 +86,7 @@ impl UploadDocumentsInputBuilder {
     /// Consumes the builder and constructs a [`UploadDocumentsInput`](crate::operation::upload_documents::UploadDocumentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_documents::UploadDocumentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::upload_documents::UploadDocumentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_documents::UploadDocumentsInput {
             documents: self.documents.unwrap_or_default(),
             content_type: self.content_type,

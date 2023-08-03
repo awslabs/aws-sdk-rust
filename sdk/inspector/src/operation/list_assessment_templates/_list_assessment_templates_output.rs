@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentTemplatesOutput {
 }
 impl ListAssessmentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder {
         crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentTemplatesOutputBuilder {
-    pub(crate) assessment_template_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,27 +47,19 @@ impl ListAssessmentTemplatesOutputBuilder {
     /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
     ///
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn assessment_template_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_template_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_template_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn set_assessment_template_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_template_arns = input;
         self
     }
     /// <p>A list of ARNs that specifies the assessment templates returned by the action.</p>
-    pub fn get_assessment_template_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_template_arns
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -99,9 +86,7 @@ impl ListAssessmentTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
         crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput {
             assessment_template_arns: self.assessment_template_arns,
             next_token: self.next_token,

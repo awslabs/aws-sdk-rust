@@ -40,10 +40,7 @@ impl ListPoliciesForTargetFluentBuilder {
         }
     }
     /// Access the ListPoliciesForTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ListPoliciesForTargetFluentBuilder {
             crate::operation::list_policies_for_target::ListPoliciesForTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies_for_target::ListPoliciesForTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_for_target::ListPoliciesForTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ListPoliciesForTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ListPoliciesForTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policies_for_target::ListPoliciesForTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies_for_target::ListPoliciesForTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_for_target::ListPoliciesForTargetError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ListPoliciesForTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policies_for_target::ListPoliciesForTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies_for_target::ListPoliciesForTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_for_target::ListPoliciesForTargetError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +108,15 @@ impl ListPoliciesForTargetFluentBuilder {
             crate::operation::list_policies_for_target::ListPoliciesForTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies_for_target::ListPoliciesForTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_for_target::ListPoliciesForTargetError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator {
-        crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator {
+        crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>

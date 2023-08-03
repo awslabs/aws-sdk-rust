@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`input_processing_configuration(InputProcessingConfiguration)`](crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::input_processing_configuration) / [`set_input_processing_configuration(Option<InputProcessingConfiguration>)`](crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::set_input_processing_configuration): <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
     /// - On success, responds with [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput)
     /// - On failure, responds with [`SdkError<AddApplicationInputProcessingConfigurationError>`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError)
-    pub fn add_application_input_processing_configuration(&self) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder{
-        crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn add_application_input_processing_configuration(
+        &self,
+    ) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder {
+        crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

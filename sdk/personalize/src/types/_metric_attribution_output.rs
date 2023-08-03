@@ -30,9 +30,7 @@ impl MetricAttributionOutput {
 
 /// A builder for [`MetricAttributionOutput`](crate::types::MetricAttributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricAttributionOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl MetricAttributionOutputBuilder {
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn set_s3_data_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
+    pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
         self.s3_data_destination = input;
         self
     }

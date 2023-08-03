@@ -10,10 +10,7 @@ impl ReceiveMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::receive_message::ReceiveMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::receive_message::ReceiveMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.receive_message();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl ReceiveMessageFluentBuilder {
         }
     }
     /// Access the ReceiveMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::receive_message::builders::ReceiveMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::receive_message::builders::ReceiveMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -76,10 +71,7 @@ impl ReceiveMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -188,10 +180,7 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
@@ -212,9 +201,7 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>> {
         self.inner.get_attribute_names()
     }
     /// Appends an item to `MessageAttributeNames`.
@@ -230,10 +217,7 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn message_attribute_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_attribute_names(input.into());
         self
     }
@@ -246,10 +230,7 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn set_message_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_message_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_message_attribute_names(input);
         self
     }
@@ -262,9 +243,7 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn get_message_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_message_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_message_attribute_names()
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
@@ -331,10 +310,7 @@ impl ReceiveMessageFluentBuilder {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn receive_request_attempt_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn receive_request_attempt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.receive_request_attempt_id(input.into());
         self
     }
@@ -354,10 +330,7 @@ impl ReceiveMessageFluentBuilder {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn set_receive_request_attempt_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_receive_request_attempt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_receive_request_attempt_id(input);
         self
     }

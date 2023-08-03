@@ -11,9 +11,7 @@ pub fn ser_create_project_input(
     }
     if let Some(var_3) = &input.service_catalog_provisioning_details {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("ServiceCatalogProvisioningDetails")
-            .start_object();
+        let mut object_4 = object.key("ServiceCatalogProvisioningDetails").start_object();
         crate::protocol_serde::shape_service_catalog_provisioning_details::ser_service_catalog_provisioning_details(&mut object_4, var_3)?;
         object_4.finish();
     }

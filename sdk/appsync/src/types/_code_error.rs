@@ -41,9 +41,7 @@ impl CodeError {
 
 /// A builder for [`CodeError`](crate::types::CodeError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeErrorBuilder {
     pub(crate) error_type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl CodeErrorBuilder {
         self
     }
     /// <p>The line, column, and span location of the error in the code.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeErrorLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::CodeErrorLocation>) -> Self {
         self.location = input;
         self
     }

@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_key::DescribeKeyOutput::description): <p>The optional description for the API key resource.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_key::DescribeKeyOutput::tags): <p>Tags associated with the API key resource.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyError>`](crate::operation::describe_key::DescribeKeyError)
-    pub fn describe_key(
-        &self,
-    ) -> crate::operation::describe_key::builders::DescribeKeyFluentBuilder {
+    pub fn describe_key(&self) -> crate::operation::describe_key::builders::DescribeKeyFluentBuilder {
         crate::operation::describe_key::builders::DescribeKeyFluentBuilder::new(self.handle.clone())
     }
 }

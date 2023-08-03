@@ -29,7 +29,7 @@ impl AllocateHostedConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocateHostedConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder,
+    inner: crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder,
 }
 impl AllocateHostedConnectionFluentBuilder {
     /// Creates a new `AllocateHostedConnection`.
@@ -40,10 +40,7 @@ impl AllocateHostedConnectionFluentBuilder {
         }
     }
     /// Access the AllocateHostedConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl AllocateHostedConnectionFluentBuilder {
             crate::operation::allocate_hosted_connection::AllocateHostedConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_hosted_connection::AllocateHostedConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl AllocateHostedConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl AllocateHostedConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_hosted_connection::AllocateHostedConnectionError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl AllocateHostedConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_hosted_connection::AllocateHostedConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl AllocateHostedConnectionFluentBuilder {
             crate::operation::allocate_hosted_connection::AllocateHostedConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_hosted_connection::AllocateHostedConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -147,18 +127,12 @@ impl AllocateHostedConnectionFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -181,18 +155,12 @@ impl AllocateHostedConnectionFluentBuilder {
         self.inner.get_bandwidth()
     }
     /// <p>The name of the hosted connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());
         self
     }
     /// <p>The name of the hosted connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
     }
@@ -224,10 +192,7 @@ impl AllocateHostedConnectionFluentBuilder {
         self
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

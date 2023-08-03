@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateWorkflowStepOutput {
 }
 impl CreateWorkflowStepOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowStepOutput`](crate::operation::create_workflow_step::CreateWorkflowStepOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workflow_step::builders::CreateWorkflowStepOutputBuilder {
+    pub fn builder() -> crate::operation::create_workflow_step::builders::CreateWorkflowStepOutputBuilder {
         crate::operation::create_workflow_step::builders::CreateWorkflowStepOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkflowStepOutput`](crate::operation::create_workflow_step::CreateWorkflowStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl CreateWorkflowStepOutputBuilder {
         &self.id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }

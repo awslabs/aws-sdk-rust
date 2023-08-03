@@ -51,18 +51,14 @@ impl CreateDbSubnetGroupInput {
 }
 impl CreateDbSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupInput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder {
-        crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder {
+        crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbSubnetGroupInput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbSubnetGroupInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -78,10 +74,7 @@ impl CreateDbSubnetGroupInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -93,10 +86,7 @@ impl CreateDbSubnetGroupInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -112,18 +102,12 @@ impl CreateDbSubnetGroupInputBuilder {
         &self.db_subnet_group_name
     }
     /// <p>The description for the DB subnet group.</p>
-    pub fn db_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the DB subnet group.</p>
-    pub fn set_db_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_description = input;
         self
     }
@@ -143,10 +127,7 @@ impl CreateDbSubnetGroupInputBuilder {
         self
     }
     /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -166,10 +147,7 @@ impl CreateDbSubnetGroupInputBuilder {
         self
     }
     /// <p>Tags to assign to the DB subnet group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -180,17 +158,13 @@ impl CreateDbSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbSubnetGroupInput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput {
-                db_subnet_group_name: self.db_subnet_group_name,
-                db_subnet_group_description: self.db_subnet_group_description,
-                subnet_ids: self.subnet_ids,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput {
+            db_subnet_group_name: self.db_subnet_group_name,
+            db_subnet_group_description: self.db_subnet_group_description,
+            subnet_ids: self.subnet_ids,
+            tags: self.tags,
+        })
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`databases(Vec<KxDatabaseConfiguration>)`](crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesFluentBuilder::databases) / [`set_databases(Option<Vec<KxDatabaseConfiguration>>)`](crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesFluentBuilder::set_databases): <p> The structure of databases mounted on the cluster.</p>
     /// - On success, responds with [`UpdateKxClusterDatabasesOutput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput)
     /// - On failure, responds with [`SdkError<UpdateKxClusterDatabasesError>`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError)
-    pub fn update_kx_cluster_databases(&self) -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesFluentBuilder{
+    pub fn update_kx_cluster_databases(&self) -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesFluentBuilder {
         crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

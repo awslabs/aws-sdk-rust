@@ -37,9 +37,7 @@ impl EventRiskType {
 
 /// A builder for [`EventRiskType`](crate::types::EventRiskType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventRiskTypeBuilder {
     pub(crate) risk_decision: ::std::option::Option<crate::types::RiskDecisionType>,
     pub(crate) risk_level: ::std::option::Option<crate::types::RiskLevelType>,
@@ -52,10 +50,7 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>The risk decision.</p>
-    pub fn set_risk_decision(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskDecisionType>,
-    ) -> Self {
+    pub fn set_risk_decision(mut self, input: ::std::option::Option<crate::types::RiskDecisionType>) -> Self {
         self.risk_decision = input;
         self
     }
@@ -69,10 +64,7 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>The risk level.</p>
-    pub fn set_risk_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RiskLevelType>,
-    ) -> Self {
+    pub fn set_risk_level(mut self, input: ::std::option::Option<crate::types::RiskLevelType>) -> Self {
         self.risk_level = input;
         self
     }
@@ -86,10 +78,7 @@ impl EventRiskTypeBuilder {
         self
     }
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
-    pub fn set_compromised_credentials_detected(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_compromised_credentials_detected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compromised_credentials_detected = input;
         self
     }

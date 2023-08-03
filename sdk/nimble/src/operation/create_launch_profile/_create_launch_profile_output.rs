@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLaunchProfileOutput {
 }
 impl CreateLaunchProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchProfileOutput`](crate::operation::create_launch_profile::CreateLaunchProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_launch_profile::builders::CreateLaunchProfileOutputBuilder {
-        crate::operation::create_launch_profile::builders::CreateLaunchProfileOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_launch_profile::builders::CreateLaunchProfileOutputBuilder {
+        crate::operation::create_launch_profile::builders::CreateLaunchProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchProfileOutput`](crate::operation::create_launch_profile::CreateLaunchProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchProfileOutputBuilder {
     pub(crate) launch_profile: ::std::option::Option<crate::types::LaunchProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateLaunchProfileOutputBuilder {
         self
     }
     /// <p>The launch profile.</p>
-    pub fn set_launch_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfile>,
-    ) -> Self {
+    pub fn set_launch_profile(mut self, input: ::std::option::Option<crate::types::LaunchProfile>) -> Self {
         self.launch_profile = input;
         self
     }

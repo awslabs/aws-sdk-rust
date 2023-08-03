@@ -15,8 +15,7 @@ pub struct ChangeProgressStatus {
     pub total_number_of_stages: i32,
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
     #[doc(hidden)]
-    pub change_progress_stages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatus {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
@@ -32,9 +31,7 @@ impl ChangeProgressStatus {
         self.total_number_of_stages
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn change_progress_stages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChangeProgressStage]> {
+    pub fn change_progress_stages(&self) -> ::std::option::Option<&[crate::types::ChangeProgressStage]> {
         self.change_progress_stages.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl ChangeProgressStatus {
 
 /// A builder for [`ChangeProgressStatus`](crate::types::ChangeProgressStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeProgressStatusBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeProgressStatuses>,
     pub(crate) total_number_of_stages: ::std::option::Option<i32>,
-    pub(crate) change_progress_stages:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub(crate) change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatusBuilder {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
@@ -64,10 +58,7 @@ impl ChangeProgressStatusBuilder {
         self
     }
     /// <p>The time at which the configuration change is made on the pipeline.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -81,10 +72,7 @@ impl ChangeProgressStatusBuilder {
         self
     }
     /// <p>The overall status of the pipeline configuration change.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeProgressStatuses>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeProgressStatuses>) -> Self {
         self.status = input;
         self
     }
@@ -118,17 +106,12 @@ impl ChangeProgressStatusBuilder {
         self
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn set_change_progress_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
-    ) -> Self {
+    pub fn set_change_progress_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>) -> Self {
         self.change_progress_stages = input;
         self
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn get_change_progress_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
+    pub fn get_change_progress_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
         &self.change_progress_stages
     }
     /// Consumes the builder and constructs a [`ChangeProgressStatus`](crate::types::ChangeProgressStatus).

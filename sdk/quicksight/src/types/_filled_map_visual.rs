@@ -41,15 +41,11 @@ impl FilledMapVisual {
         self.subtitle.as_ref()
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn chart_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilledMapConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::FilledMapConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
-    pub fn conditional_formatting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilledMapConditionalFormatting> {
+    pub fn conditional_formatting(&self) -> ::std::option::Option<&crate::types::FilledMapConditionalFormatting> {
         self.conditional_formatting.as_ref()
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
@@ -70,18 +66,14 @@ impl FilledMapVisual {
 
 /// A builder for [`FilledMapVisual`](crate::types::FilledMapVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::FilledMapConfiguration>,
-    pub(crate) conditional_formatting:
-        ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
-    pub(crate) column_hierarchies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub(crate) conditional_formatting: ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
+    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl FilledMapVisualBuilder {
@@ -105,10 +97,7 @@ impl FilledMapVisualBuilder {
         self
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -122,10 +111,7 @@ impl FilledMapVisualBuilder {
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn set_subtitle(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    ) -> Self {
+    pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
         self.subtitle = input;
         self
     }
@@ -139,39 +125,26 @@ impl FilledMapVisualBuilder {
         self
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn set_chart_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilledMapConfiguration>,
-    ) -> Self {
+    pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::FilledMapConfiguration>) -> Self {
         self.chart_configuration = input;
         self
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn get_chart_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilledMapConfiguration> {
+    pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::FilledMapConfiguration> {
         &self.chart_configuration
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
-    pub fn conditional_formatting(
-        mut self,
-        input: crate::types::FilledMapConditionalFormatting,
-    ) -> Self {
+    pub fn conditional_formatting(mut self, input: crate::types::FilledMapConditionalFormatting) -> Self {
         self.conditional_formatting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
-    pub fn set_conditional_formatting(
-        mut self,
-        input: ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
-    ) -> Self {
+    pub fn set_conditional_formatting(mut self, input: ::std::option::Option<crate::types::FilledMapConditionalFormatting>) -> Self {
         self.conditional_formatting = input;
         self
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
-    pub fn get_conditional_formatting(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilledMapConditionalFormatting> {
+    pub fn get_conditional_formatting(&self) -> &::std::option::Option<crate::types::FilledMapConditionalFormatting> {
         &self.conditional_formatting
     }
     /// Appends an item to `column_hierarchies`.
@@ -186,17 +159,12 @@ impl FilledMapVisualBuilder {
         self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn set_column_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
-    ) -> Self {
+    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>) -> Self {
         self.column_hierarchies = input;
         self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn get_column_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
+    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
         &self.column_hierarchies
     }
     /// Appends an item to `actions`.
@@ -211,17 +179,12 @@ impl FilledMapVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`FilledMapVisual`](crate::types::FilledMapVisual).

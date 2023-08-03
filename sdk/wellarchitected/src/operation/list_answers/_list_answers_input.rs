@@ -75,9 +75,7 @@ impl ListAnswersInput {
 
 /// A builder for [`ListAnswersInput`](crate::operation::list_answers::ListAnswersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnswersInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -193,10 +191,7 @@ impl ListAnswersInputBuilder {
         self
     }
     /// <p>The priority of the question.</p>
-    pub fn set_question_priority(
-        mut self,
-        input: ::std::option::Option<crate::types::QuestionPriority>,
-    ) -> Self {
+    pub fn set_question_priority(mut self, input: ::std::option::Option<crate::types::QuestionPriority>) -> Self {
         self.question_priority = input;
         self
     }
@@ -205,12 +200,7 @@ impl ListAnswersInputBuilder {
         &self.question_priority
     }
     /// Consumes the builder and constructs a [`ListAnswersInput`](crate::operation::list_answers::ListAnswersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_answers::ListAnswersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_answers::ListAnswersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_answers::ListAnswersInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

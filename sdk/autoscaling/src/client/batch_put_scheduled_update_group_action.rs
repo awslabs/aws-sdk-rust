@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`BatchPutScheduledUpdateGroupActionOutput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput) with field(s):
     ///   - [`failed_scheduled_update_group_actions(Option<Vec<FailedScheduledUpdateGroupActionRequest>>)`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput::failed_scheduled_update_group_actions): <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
     /// - On failure, responds with [`SdkError<BatchPutScheduledUpdateGroupActionError>`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError)
-    pub fn batch_put_scheduled_update_group_action(&self) -> crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionFluentBuilder{
+    pub fn batch_put_scheduled_update_group_action(
+        &self,
+    ) -> crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionFluentBuilder {
         crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionFluentBuilder::new(self.handle.clone())
     }
 }

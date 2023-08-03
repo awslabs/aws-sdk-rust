@@ -10,9 +10,7 @@ pub struct GetGeneratedCodeJobOutput {
 }
 impl GetGeneratedCodeJobOutput {
     /// <p>Details about the generated code job.</p>
-    pub fn generated_code_job(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeneratedCodeJobDetails> {
+    pub fn generated_code_job(&self) -> ::std::option::Option<&crate::types::GeneratedCodeJobDetails> {
         self.generated_code_job.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetGeneratedCodeJobOutput {
 }
 impl GetGeneratedCodeJobOutput {
     /// Creates a new builder-style object to manufacture [`GetGeneratedCodeJobOutput`](crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder {
+    pub fn builder() -> crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder {
         crate::operation::get_generated_code_job::builders::GetGeneratedCodeJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGeneratedCodeJobOutput`](crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeneratedCodeJobOutputBuilder {
     pub(crate) generated_code_job: ::std::option::Option<crate::types::GeneratedCodeJobDetails>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetGeneratedCodeJobOutputBuilder {
         self
     }
     /// <p>Details about the generated code job.</p>
-    pub fn set_generated_code_job(
-        mut self,
-        input: ::std::option::Option<crate::types::GeneratedCodeJobDetails>,
-    ) -> Self {
+    pub fn set_generated_code_job(mut self, input: ::std::option::Option<crate::types::GeneratedCodeJobDetails>) -> Self {
         self.generated_code_job = input;
         self
     }
     /// <p>Details about the generated code job.</p>
-    pub fn get_generated_code_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeneratedCodeJobDetails> {
+    pub fn get_generated_code_job(&self) -> &::std::option::Option<crate::types::GeneratedCodeJobDetails> {
         &self.generated_code_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

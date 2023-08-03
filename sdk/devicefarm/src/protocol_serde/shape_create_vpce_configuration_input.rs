@@ -13,9 +13,7 @@ pub fn ser_create_vpce_configuration_input(
         object.key("serviceDnsName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.vpce_configuration_description {
-        object
-            .key("vpceConfigurationDescription")
-            .string(var_4.as_str());
+        object.key("vpceConfigurationDescription").string(var_4.as_str());
     }
     Ok(())
 }

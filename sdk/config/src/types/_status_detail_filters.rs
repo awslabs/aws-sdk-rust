@@ -41,9 +41,7 @@ impl StatusDetailFilters {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn member_account_rule_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberAccountRuleStatus> {
+    pub fn member_account_rule_status(&self) -> ::std::option::Option<&crate::types::MemberAccountRuleStatus> {
         self.member_account_rule_status.as_ref()
     }
 }
@@ -56,13 +54,10 @@ impl StatusDetailFilters {
 
 /// A builder for [`StatusDetailFilters`](crate::types::StatusDetailFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatusDetailFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) member_account_rule_status:
-        ::std::option::Option<crate::types::MemberAccountRuleStatus>,
+    pub(crate) member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
 }
 impl StatusDetailFiltersBuilder {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
@@ -92,10 +87,7 @@ impl StatusDetailFiltersBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn member_account_rule_status(
-        mut self,
-        input: crate::types::MemberAccountRuleStatus,
-    ) -> Self {
+    pub fn member_account_rule_status(mut self, input: crate::types::MemberAccountRuleStatus) -> Self {
         self.member_account_rule_status = ::std::option::Option::Some(input);
         self
     }
@@ -112,10 +104,7 @@ impl StatusDetailFiltersBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn set_member_account_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
-    ) -> Self {
+    pub fn set_member_account_rule_status(mut self, input: ::std::option::Option<crate::types::MemberAccountRuleStatus>) -> Self {
         self.member_account_rule_status = input;
         self
     }
@@ -132,9 +121,7 @@ impl StatusDetailFiltersBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn get_member_account_rule_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberAccountRuleStatus> {
+    pub fn get_member_account_rule_status(&self) -> &::std::option::Option<crate::types::MemberAccountRuleStatus> {
         &self.member_account_rule_status
     }
     /// Consumes the builder and constructs a [`StatusDetailFilters`](crate::types::StatusDetailFilters).

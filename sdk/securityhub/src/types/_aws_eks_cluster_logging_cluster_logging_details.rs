@@ -44,9 +44,7 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
 
 /// A builder for [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -92,10 +90,7 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <li> <p> <code>controllerManager</code> </p> </li>
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }

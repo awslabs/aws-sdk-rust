@@ -12,9 +12,7 @@ pub struct NonCompliantResource {
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p>Other information about the noncompliant resource.</p>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NonCompliantResource {
     /// <p>The type of the noncompliant resource.</p>
@@ -26,11 +24,7 @@ impl NonCompliantResource {
         self.resource_identifier.as_ref()
     }
     /// <p>Other information about the noncompliant resource.</p>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_info.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl NonCompliantResource {
 
 /// A builder for [`NonCompliantResource`](crate::types::NonCompliantResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NonCompliantResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NonCompliantResourceBuilder {
     /// <p>The type of the noncompliant resource.</p>
@@ -60,10 +50,7 @@ impl NonCompliantResourceBuilder {
         self
     }
     /// <p>The type of the noncompliant resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -77,17 +64,12 @@ impl NonCompliantResourceBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// Adds a key-value pair to `additional_info`.
@@ -108,19 +90,13 @@ impl NonCompliantResourceBuilder {
     /// <p>Other information about the noncompliant resource.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_info = input;
         self
     }
     /// <p>Other information about the noncompliant resource.</p>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`NonCompliantResource`](crate::types::NonCompliantResource).

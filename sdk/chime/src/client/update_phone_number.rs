@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePhoneNumberOutput`](crate::operation::update_phone_number::UpdatePhoneNumberOutput) with field(s):
     ///   - [`phone_number(Option<PhoneNumber>)`](crate::operation::update_phone_number::UpdatePhoneNumberOutput::phone_number): <p>The updated phone number details.</p>
     /// - On failure, responds with [`SdkError<UpdatePhoneNumberError>`](crate::operation::update_phone_number::UpdatePhoneNumberError)
-    pub fn update_phone_number(
-        &self,
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
-        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_phone_number(&self) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
+        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

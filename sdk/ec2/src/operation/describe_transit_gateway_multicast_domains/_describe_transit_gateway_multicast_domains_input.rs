@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayMulticastDomainsInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
     #[doc(hidden)]
-    pub transit_gateway_multicast_domain_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transit_gateway_multicast_domain_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>state</code> - The state of the transit gateway multicast domain. Valid values are <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>.</p> </li>
@@ -27,9 +26,7 @@ pub struct DescribeTransitGatewayMulticastDomainsInput {
 }
 impl DescribeTransitGatewayMulticastDomainsInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn transit_gateway_multicast_domain_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.transit_gateway_multicast_domain_ids.as_deref()
     }
     /// <p>One or more filters. The possible values are:</p>
@@ -56,19 +53,16 @@ impl DescribeTransitGatewayMulticastDomainsInput {
 }
 impl DescribeTransitGatewayMulticastDomainsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayMulticastDomainsInput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsInputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsInputBuilder {
         crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayMulticastDomainsInput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayMulticastDomainsInputBuilder {
-    pub(crate) transit_gateway_multicast_domain_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_multicast_domain_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -80,29 +74,19 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_multicast_domain_ids`](Self::set_transit_gateway_multicast_domain_ids).
     ///
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_multicast_domain_ids
-            .unwrap_or_default();
+    pub fn transit_gateway_multicast_domain_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.transit_gateway_multicast_domain_ids.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_multicast_domain_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_multicast_domain_ids = input;
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_multicast_domain_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_multicast_domain_ids
     }
     /// Appends an item to `filters`.
@@ -127,10 +111,7 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
     /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
     /// <li> <p> <code>transit-gateway-multicast-domain-id</code> - The ID of the transit gateway multicast domain.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -186,20 +167,20 @@ impl DescribeTransitGatewayMulticastDomainsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayMulticastDomainsInput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput {
-                transit_gateway_multicast_domain_ids: self.transit_gateway_multicast_domain_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_multicast_domain_ids: self.transit_gateway_multicast_domain_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

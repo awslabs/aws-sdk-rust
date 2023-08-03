@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRuleMetadataOutput {
 }
 impl UpdateRuleMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder {
         crate::operation::update_rule_metadata::builders::UpdateRuleMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleMetadataOutputBuilder {
     _request_id: Option<String>,
 }

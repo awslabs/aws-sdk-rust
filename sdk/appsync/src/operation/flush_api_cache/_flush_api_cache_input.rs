@@ -23,9 +23,7 @@ impl FlushApiCacheInput {
 
 /// A builder for [`FlushApiCacheInput`](crate::operation::flush_api_cache::FlushApiCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl FlushApiCacheInputBuilder {
     /// Consumes the builder and constructs a [`FlushApiCacheInput`](crate::operation::flush_api_cache::FlushApiCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::flush_api_cache::FlushApiCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::flush_api_cache::FlushApiCacheInput {
-            api_id: self.api_id,
-        })
+    ) -> ::std::result::Result<crate::operation::flush_api_cache::FlushApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::flush_api_cache::FlushApiCacheInput { api_id: self.api_id })
     }
 }

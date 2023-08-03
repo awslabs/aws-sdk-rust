@@ -30,9 +30,7 @@ impl Scoping {
 
 /// A builder for [`Scoping`](crate::types::Scoping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScopingBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::JobScopingBlock>,
     pub(crate) includes: ::std::option::Option<crate::types::JobScopingBlock>,
@@ -44,10 +42,7 @@ impl ScopingBuilder {
         self
     }
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<crate::types::JobScopingBlock>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::JobScopingBlock>) -> Self {
         self.excludes = input;
         self
     }
@@ -61,10 +56,7 @@ impl ScopingBuilder {
         self
     }
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<crate::types::JobScopingBlock>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<crate::types::JobScopingBlock>) -> Self {
         self.includes = input;
         self
     }

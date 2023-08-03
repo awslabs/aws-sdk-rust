@@ -17,9 +17,7 @@ impl FunnelChartSortConfiguration {
         self.category_sort.as_deref()
     }
     /// <p>The limit on the number of categories displayed.</p>
-    pub fn category_items_limit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
 }
@@ -32,12 +30,9 @@ impl FunnelChartSortConfiguration {
 
 /// A builder for [`FunnelChartSortConfiguration`](crate::types::FunnelChartSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunnelChartSortConfigurationBuilder {
-    pub(crate) category_sort:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl FunnelChartSortConfigurationBuilder {
@@ -53,17 +48,12 @@ impl FunnelChartSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the category fields.</p>
-    pub fn set_category_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_category_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.category_sort = input;
         self
     }
     /// <p>The sort configuration of the category fields.</p>
-    pub fn get_category_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_category_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.category_sort
     }
     /// <p>The limit on the number of categories displayed.</p>
@@ -72,17 +62,12 @@ impl FunnelChartSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of categories displayed.</p>
-    pub fn set_category_items_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_category_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.category_items_limit = input;
         self
     }
     /// <p>The limit on the number of categories displayed.</p>
-    pub fn get_category_items_limit(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_category_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.category_items_limit
     }
     /// Consumes the builder and constructs a [`FunnelChartSortConfiguration`](crate::types::FunnelChartSortConfiguration).

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
 }
 impl CreateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::RegexPatternSetSummary>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateRegexPatternSetOutputBuilder {
         self
     }
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::RegexPatternSetSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::RegexPatternSetSummary>) -> Self {
         self.summary = input;
         self
     }

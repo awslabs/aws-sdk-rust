@@ -48,10 +48,7 @@ pub fn ser_aws_iam_user_details(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_aws_iam_user_policy::ser_aws_iam_user_policy(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_aws_iam_user_policy::ser_aws_iam_user_policy(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -62,17 +59,9 @@ pub fn ser_aws_iam_user_details(
 
 pub(crate) fn de_aws_iam_user_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsIamUserDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsIamUserDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -82,83 +71,67 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AttachedManagedPolicies" => {
                             builder = builder.set_attached_managed_policies(
-                                    crate::protocol_serde::shape_aws_iam_attached_managed_policy_list::de_aws_iam_attached_managed_policy_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_aws_iam_attached_managed_policy_list::de_aws_iam_attached_managed_policy_list(tokens)?,
+                            );
                         }
                         "CreateDate" => {
                             builder = builder.set_create_date(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "GroupList" => {
-                            builder = builder.set_group_list(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
+                            builder = builder.set_group_list(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
                         "Path" => {
                             builder = builder.set_path(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "PermissionsBoundary" => {
                             builder = builder.set_permissions_boundary(
-                                    crate::protocol_serde::shape_aws_iam_permissions_boundary::de_aws_iam_permissions_boundary(tokens)?
-                                );
+                                crate::protocol_serde::shape_aws_iam_permissions_boundary::de_aws_iam_permissions_boundary(tokens)?,
+                            );
                         }
                         "UserId" => {
                             builder = builder.set_user_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "UserName" => {
                             builder = builder.set_user_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "UserPolicyList" => {
                             builder = builder.set_user_policy_list(
-                                    crate::protocol_serde::shape_aws_iam_user_policy_list::de_aws_iam_user_policy_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_aws_iam_user_policy_list::de_aws_iam_user_policy_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

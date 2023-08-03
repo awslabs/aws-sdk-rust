@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<PublishBatchResultEntry>>)`](crate::operation::publish_batch::PublishBatchOutput::successful): <p>A list of successful <code>PublishBatch</code> responses.</p>
     ///   - [`failed(Option<Vec<BatchResultErrorEntry>>)`](crate::operation::publish_batch::PublishBatchOutput::failed): <p>A list of failed <code>PublishBatch</code> responses. </p>
     /// - On failure, responds with [`SdkError<PublishBatchError>`](crate::operation::publish_batch::PublishBatchError)
-    pub fn publish_batch(
-        &self,
-    ) -> crate::operation::publish_batch::builders::PublishBatchFluentBuilder {
-        crate::operation::publish_batch::builders::PublishBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_batch(&self) -> crate::operation::publish_batch::builders::PublishBatchFluentBuilder {
+        crate::operation::publish_batch::builders::PublishBatchFluentBuilder::new(self.handle.clone())
     }
 }

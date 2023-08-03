@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for ListAppInstancesOutput {
 }
 impl ListAppInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstancesOutput`](crate::operation::list_app_instances::ListAppInstancesOutput).
-    pub fn builder() -> crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder {
         crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder::default()
     }
 }
@@ -47,8 +46,7 @@ impl ListAppInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstancesOutputBuilder {
-    pub(crate) app_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
+    pub(crate) app_instances: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,17 +63,12 @@ impl ListAppInstancesOutputBuilder {
         self
     }
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub fn set_app_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
-    ) -> Self {
+    pub fn set_app_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>) -> Self {
         self.app_instances = input;
         self
     }
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub fn get_app_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>> {
+    pub fn get_app_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>> {
         &self.app_instances
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>

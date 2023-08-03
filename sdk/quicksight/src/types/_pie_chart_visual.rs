@@ -45,9 +45,7 @@ impl PieChartVisual {
         self.subtitle.as_ref()
     }
     /// <p>The configuration of a pie chart.</p>
-    pub fn chart_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PieChartConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::PieChartConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
@@ -68,17 +66,14 @@ impl PieChartVisual {
 
 /// A builder for [`PieChartVisual`](crate::types::PieChartVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PieChartVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::PieChartConfiguration>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    pub(crate) column_hierarchies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
 }
 impl PieChartVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -101,10 +96,7 @@ impl PieChartVisualBuilder {
         self
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -118,10 +110,7 @@ impl PieChartVisualBuilder {
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn set_subtitle(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    ) -> Self {
+    pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
         self.subtitle = input;
         self
     }
@@ -135,17 +124,12 @@ impl PieChartVisualBuilder {
         self
     }
     /// <p>The configuration of a pie chart.</p>
-    pub fn set_chart_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PieChartConfiguration>,
-    ) -> Self {
+    pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::PieChartConfiguration>) -> Self {
         self.chart_configuration = input;
         self
     }
     /// <p>The configuration of a pie chart.</p>
-    pub fn get_chart_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PieChartConfiguration> {
+    pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::PieChartConfiguration> {
         &self.chart_configuration
     }
     /// Appends an item to `actions`.
@@ -160,17 +144,12 @@ impl PieChartVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Appends an item to `column_hierarchies`.
@@ -185,17 +164,12 @@ impl PieChartVisualBuilder {
         self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn set_column_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
-    ) -> Self {
+    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>) -> Self {
         self.column_hierarchies = input;
         self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn get_column_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
+    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
         &self.column_hierarchies
     }
     /// Consumes the builder and constructs a [`PieChartVisual`](crate::types::PieChartVisual).

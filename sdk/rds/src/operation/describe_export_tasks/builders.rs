@@ -37,9 +37,7 @@ impl DescribeExportTasksFluentBuilder {
         }
     }
     /// Access the DescribeExportTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeExportTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeExportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl DescribeExportTasksFluentBuilder {
             crate::operation::describe_export_tasks::DescribeExportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
-        crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
+        crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn export_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_task_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_task_identifier(input);
         self
     }
@@ -207,10 +183,7 @@ impl DescribeExportTasksFluentBuilder {
     /// <li> <p> <code>starting</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -273,10 +246,7 @@ impl DescribeExportTasksFluentBuilder {
         self
     }
     /// <p>The type of source for the export.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }

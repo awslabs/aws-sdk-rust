@@ -22,26 +22,18 @@ impl DeletePipelineInput {
 
 /// A builder for [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePipelineInputBuilder {
     /// <p>The name of the pipeline to delete.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline to delete.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeletePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pipeline::DeletePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pipeline::DeletePipelineInput {
             pipeline_name: self.pipeline_name,
         })

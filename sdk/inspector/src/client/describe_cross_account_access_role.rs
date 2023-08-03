@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`valid(Option<bool>)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::valid): <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
     ///   - [`registered_at(Option<DateTime>)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::registered_at): <p>The date when the cross-account access role was registered.</p>
     /// - On failure, responds with [`SdkError<DescribeCrossAccountAccessRoleError>`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError)
-    pub fn describe_cross_account_access_role(&self) -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleFluentBuilder{
+    pub fn describe_cross_account_access_role(
+        &self,
+    ) -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleFluentBuilder {
         crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleFluentBuilder::new(self.handle.clone())
     }
 }

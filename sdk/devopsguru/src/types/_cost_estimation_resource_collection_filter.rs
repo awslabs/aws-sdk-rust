@@ -6,8 +6,7 @@
 pub struct CostEstimationResourceCollectionFilter {
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
     #[doc(hidden)]
-    pub cloud_formation:
-        ::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>,
+    pub cloud_formation: ::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>,
     /// <p>The Amazon Web Services tags used to filter the resource collection that is used for a cost estimate.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
@@ -19,16 +18,11 @@ pub struct CostEstimationResourceCollectionFilter {
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>,
-    >,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>>,
 }
 impl CostEstimationResourceCollectionFilter {
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
-    pub fn cloud_formation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFormationCostEstimationResourceCollectionFilter>
-    {
+    pub fn cloud_formation(&self) -> ::std::option::Option<&crate::types::CloudFormationCostEstimationResourceCollectionFilter> {
         self.cloud_formation.as_ref()
     }
     /// <p>The Amazon Web Services tags used to filter the resource collection that is used for a cost estimate.</p>
@@ -41,9 +35,7 @@ impl CostEstimationResourceCollectionFilter {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TagCostEstimationResourceCollectionFilter]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagCostEstimationResourceCollectionFilter]> {
         self.tags.as_deref()
     }
 }
@@ -56,40 +48,24 @@ impl CostEstimationResourceCollectionFilter {
 
 /// A builder for [`CostEstimationResourceCollectionFilter`](crate::types::CostEstimationResourceCollectionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostEstimationResourceCollectionFilterBuilder {
-    pub(crate) cloud_formation:
-        ::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>,
-    >,
+    pub(crate) cloud_formation: ::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>>,
 }
 impl CostEstimationResourceCollectionFilterBuilder {
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
-    pub fn cloud_formation(
-        mut self,
-        input: crate::types::CloudFormationCostEstimationResourceCollectionFilter,
-    ) -> Self {
+    pub fn cloud_formation(mut self, input: crate::types::CloudFormationCostEstimationResourceCollectionFilter) -> Self {
         self.cloud_formation = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
-    pub fn set_cloud_formation(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::CloudFormationCostEstimationResourceCollectionFilter,
-        >,
-    ) -> Self {
+    pub fn set_cloud_formation(mut self, input: ::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>) -> Self {
         self.cloud_formation = input;
         self
     }
     /// <p>An object that specifies the CloudFormation stack that defines the Amazon Web Services resources used to create a monthly estimate for DevOps Guru.</p>
-    pub fn get_cloud_formation(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>
-    {
+    pub fn get_cloud_formation(&self) -> &::std::option::Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter> {
         &self.cloud_formation
     }
     /// Appends an item to `tags`.
@@ -122,12 +98,7 @@ impl CostEstimationResourceCollectionFilterBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>>) -> Self {
         self.tags = input;
         self
     }
@@ -141,11 +112,7 @@ impl CostEstimationResourceCollectionFilterBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CostEstimationResourceCollectionFilter`](crate::types::CostEstimationResourceCollectionFilter).

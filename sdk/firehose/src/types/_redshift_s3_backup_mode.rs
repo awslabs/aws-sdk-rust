@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RedshiftS3BackupMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RedshiftS3BackupMode {
         match s {
             "Disabled" => RedshiftS3BackupMode::Disabled,
             "Enabled" => RedshiftS3BackupMode::Enabled,
-            other => RedshiftS3BackupMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RedshiftS3BackupMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

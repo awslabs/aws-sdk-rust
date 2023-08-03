@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RollbackApplicationOutput`](crate::operation::rollback_application::RollbackApplicationOutput) with field(s):
     ///   - [`application_detail(Option<ApplicationDetail>)`](crate::operation::rollback_application::RollbackApplicationOutput::application_detail): <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     /// - On failure, responds with [`SdkError<RollbackApplicationError>`](crate::operation::rollback_application::RollbackApplicationError)
-    pub fn rollback_application(
-        &self,
-    ) -> crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder {
-        crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rollback_application(&self) -> crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder {
+        crate::operation::rollback_application::builders::RollbackApplicationFluentBuilder::new(self.handle.clone())
     }
 }

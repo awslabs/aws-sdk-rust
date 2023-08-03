@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`searched_face(Option<SearchedFace>)`](crate::operation::search_users::SearchUsersOutput::searched_face): <p>Contains the ID of a face that was used to search for matches in a collection.</p>
     ///   - [`searched_user(Option<SearchedUser>)`](crate::operation::search_users::SearchUsersOutput::searched_user): <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
     /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::operation::search_users::SearchUsersError)
-    pub fn search_users(
-        &self,
-    ) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
+    pub fn search_users(&self) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
         crate::operation::search_users::builders::SearchUsersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -60,16 +60,14 @@ impl ListStackSetOperationResultsInput {
 }
 impl ListStackSetOperationResultsInput {
     /// Creates a new builder-style object to manufacture [`ListStackSetOperationResultsInput`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput).
-    pub fn builder() -> crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder{
+    pub fn builder() -> crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder {
         crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackSetOperationResultsInput`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackSetOperationResultsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +78,12 @@ pub struct ListStackSetOperationResultsInputBuilder {
 }
 impl ListStackSetOperationResultsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -182,17 +174,12 @@ impl ListStackSetOperationResultsInputBuilder {
         self
     }
     /// <p>The filter to apply to operation results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filter to apply to operation results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListStackSetOperationResultsInput`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput).
@@ -202,15 +189,13 @@ impl ListStackSetOperationResultsInputBuilder {
         crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput {
-                stack_set_name: self.stack_set_name,
-                operation_id: self.operation_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                call_as: self.call_as,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput {
+            stack_set_name: self.stack_set_name,
+            operation_id: self.operation_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            call_as: self.call_as,
+            filters: self.filters,
+        })
     }
 }

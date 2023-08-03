@@ -43,9 +43,7 @@ impl Predicate {
 
 /// A builder for [`Predicate`](crate::types::Predicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredicateBuilder {
     pub(crate) negated: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<crate::types::PredicateType>,

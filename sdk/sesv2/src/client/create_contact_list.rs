@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_contact_list::builders::CreateContactListFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_contact_list::builders::CreateContactListFluentBuilder::set_tags): <p>The tags associated with a contact list.</p>
     /// - On success, responds with [`CreateContactListOutput`](crate::operation::create_contact_list::CreateContactListOutput)
     /// - On failure, responds with [`SdkError<CreateContactListError>`](crate::operation::create_contact_list::CreateContactListError)
-    pub fn create_contact_list(
-        &self,
-    ) -> crate::operation::create_contact_list::builders::CreateContactListFluentBuilder {
-        crate::operation::create_contact_list::builders::CreateContactListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact_list(&self) -> crate::operation::create_contact_list::builders::CreateContactListFluentBuilder {
+        crate::operation::create_contact_list::builders::CreateContactListFluentBuilder::new(self.handle.clone())
     }
 }

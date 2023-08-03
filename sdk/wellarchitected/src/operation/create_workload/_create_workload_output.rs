@@ -36,9 +36,7 @@ impl CreateWorkloadOutput {
 
 /// A builder for [`CreateWorkloadOutput`](crate::operation::create_workload::CreateWorkloadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkloadOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_arn: ::std::option::Option<::std::string::String>,

@@ -7,17 +7,12 @@ pub fn ser_code_content(
         object.key("TextContent").string(var_1.as_str());
     }
     if let Some(var_2) = &input.zip_file_content {
-        object
-            .key("ZipFileContent")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("ZipFileContent").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.s3_content_location {
         #[allow(unused_mut)]
         let mut object_4 = object.key("S3ContentLocation").start_object();
-        crate::protocol_serde::shape_s3_content_location::ser_s3_content_location(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_s3_content_location::ser_s3_content_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

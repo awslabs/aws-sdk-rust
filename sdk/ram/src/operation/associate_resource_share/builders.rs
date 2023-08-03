@@ -37,10 +37,7 @@ impl AssociateResourceShareFluentBuilder {
         }
     }
     /// Access the AssociateResourceShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_resource_share::builders::AssociateResourceShareInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_resource_share::builders::AssociateResourceShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateResourceShareFluentBuilder {
             crate::operation::associate_resource_share::AssociateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource_share::AssociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource_share::AssociateResourceShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateResourceShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource_share::AssociateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource_share::AssociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource_share::AssociateResourceShareError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource_share::AssociateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource_share::AssociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource_share::AssociateResourceShareError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AssociateResourceShareFluentBuilder {
             crate::operation::associate_resource_share::AssociateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource_share::AssociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource_share::AssociateResourceShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }
@@ -148,25 +128,17 @@ impl AssociateResourceShareFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// Appends an item to `principals`.
@@ -201,10 +173,7 @@ impl AssociateResourceShareFluentBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
@@ -253,10 +222,7 @@ impl AssociateResourceShareFluentBuilder {
         self
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }

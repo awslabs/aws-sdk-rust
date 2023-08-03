@@ -30,18 +30,14 @@ impl CreateDocumentationPartInput {
 }
 impl CreateDocumentationPartInput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
-    pub fn builder(
-    ) -> crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder {
         crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,
@@ -68,10 +64,7 @@ impl CreateDocumentationPartInputBuilder {
         self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
         self.location = input;
         self
     }
@@ -100,12 +93,10 @@ impl CreateDocumentationPartInputBuilder {
         crate::operation::create_documentation_part::CreateDocumentationPartInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_documentation_part::CreateDocumentationPartInput {
-                rest_api_id: self.rest_api_id,
-                location: self.location,
-                properties: self.properties,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_documentation_part::CreateDocumentationPartInput {
+            rest_api_id: self.rest_api_id,
+            location: self.location,
+            properties: self.properties,
+        })
     }
 }

@@ -22,18 +22,14 @@ impl UpdateEventIntegrationInput {
 }
 impl UpdateEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder {
         crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl UpdateEventIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_integration::UpdateEventIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_event_integration::UpdateEventIntegrationInput {
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_event_integration::UpdateEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_event_integration::UpdateEventIntegrationInput {
+            name: self.name,
+            description: self.description,
+        })
     }
 }

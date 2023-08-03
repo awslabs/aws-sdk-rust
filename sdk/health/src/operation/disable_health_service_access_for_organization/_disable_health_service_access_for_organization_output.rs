@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisableHealthServiceAccessForOrganiza
 }
 impl DisableHealthServiceAccessForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationOutput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput).
-    pub fn builder() -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationOutputBuilder {
         crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableHealthServiceAccessForOrganizationOutput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableHealthServiceAccessForOrganizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisableHealthServiceAccessForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationOutput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput).
-    pub fn build(self) -> crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput{
+    pub fn build(self) -> crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput {
         crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput {
             _request_id: self._request_id,
         }

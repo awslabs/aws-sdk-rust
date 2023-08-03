@@ -15,16 +15,14 @@ impl PurchaseProvisionedCapacityInput {
 }
 impl PurchaseProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
-    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder{
+    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder {
         crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseProvisionedCapacityInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl PurchaseProvisionedCapacityInputBuilder {
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput {
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput { account_id: self.account_id })
     }
 }

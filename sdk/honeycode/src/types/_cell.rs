@@ -157,19 +157,13 @@ impl CellBuilder {
     }
     /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
-    pub fn formatted_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn formatted_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.formatted_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The formatted value of the cell. This is the value that you see displayed in the cell in the UI. </p>
     /// <p> Note that the formatted value of a cell is always represented as a string irrespective of the data that is stored in the cell. For example, if a cell contains a date, the formatted value of the cell is the string representation of the formatted date being shown in the cell in the UI. See details in the rawValue field below for how cells of different formats will have different raw and formatted values. </p>
-    pub fn set_formatted_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_formatted_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.formatted_value = input;
         self
     }
@@ -183,27 +177,19 @@ impl CellBuilder {
     /// To override the contents of this collection use [`set_formatted_values`](Self::set_formatted_values).
     ///
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-    pub fn formatted_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn formatted_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.formatted_values.unwrap_or_default();
         v.push(input.into());
         self.formatted_values = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-    pub fn set_formatted_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_formatted_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.formatted_values = input;
         self
     }
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-    pub fn get_formatted_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_formatted_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.formatted_values
     }
     /// Consumes the builder and constructs a [`Cell`](crate::types::Cell).

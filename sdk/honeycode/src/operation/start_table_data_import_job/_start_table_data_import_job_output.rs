@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StartTableDataImportJobOutput {
 }
 impl StartTableDataImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTableDataImportJobOutput`](crate::operation::start_table_data_import_job::StartTableDataImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_table_data_import_job::builders::StartTableDataImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_table_data_import_job::builders::StartTableDataImportJobOutputBuilder {
         crate::operation::start_table_data_import_job::builders::StartTableDataImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTableDataImportJobOutput`](crate::operation::start_table_data_import_job::StartTableDataImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTableDataImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::TableDataImportJobStatus>,
@@ -66,10 +62,7 @@ impl StartTableDataImportJobOutputBuilder {
         self
     }
     /// <p> The status of the import job immediately after submitting the request. </p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDataImportJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::TableDataImportJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -87,9 +80,7 @@ impl StartTableDataImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartTableDataImportJobOutput`](crate::operation::start_table_data_import_job::StartTableDataImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_table_data_import_job::StartTableDataImportJobOutput {
+    pub fn build(self) -> crate::operation::start_table_data_import_job::StartTableDataImportJobOutput {
         crate::operation::start_table_data_import_job::StartTableDataImportJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

@@ -20,9 +20,7 @@ pub struct CreateSavingsPlanInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
@@ -46,51 +44,36 @@ impl CreateSavingsPlanInput {
         self.client_token.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateSavingsPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
-    pub fn builder(
-    ) -> crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder {
+    pub fn builder() -> crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder {
         crate::operation::create_savings_plan::builders::CreateSavingsPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSavingsPlanInputBuilder {
     pub(crate) savings_plan_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) commitment: ::std::option::Option<::std::string::String>,
     pub(crate) upfront_payment_amount: ::std::option::Option<::std::string::String>,
     pub(crate) purchase_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSavingsPlanInputBuilder {
     /// <p>The ID of the offering.</p>
-    pub fn savings_plan_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the offering.</p>
-    pub fn set_savings_plan_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.savings_plan_offering_id = input;
         self
     }
@@ -113,18 +96,12 @@ impl CreateSavingsPlanInputBuilder {
         &self.commitment
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    pub fn upfront_payment_amount(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upfront_payment_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_payment_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-    pub fn set_upfront_payment_amount(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upfront_payment_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_payment_amount = input;
         self
     }
@@ -138,10 +115,7 @@ impl CreateSavingsPlanInputBuilder {
         self
     }
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-    pub fn set_purchase_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_purchase_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.purchase_time = input;
         self
     }
@@ -168,50 +142,32 @@ impl CreateSavingsPlanInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_savings_plan::CreateSavingsPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_savings_plan::CreateSavingsPlanInput {
-                savings_plan_offering_id: self.savings_plan_offering_id,
-                commitment: self.commitment,
-                upfront_payment_amount: self.upfront_payment_amount,
-                purchase_time: self.purchase_time,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_savings_plan::CreateSavingsPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_savings_plan::CreateSavingsPlanInput {
+            savings_plan_offering_id: self.savings_plan_offering_id,
+            commitment: self.commitment,
+            upfront_payment_amount: self.upfront_payment_amount,
+            purchase_time: self.purchase_time,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

@@ -87,9 +87,7 @@ impl ListSolFunctionPackageInfo {
 
 /// A builder for [`ListSolFunctionPackageInfo`](crate::types::ListSolFunctionPackageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackageInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -137,10 +135,7 @@ impl ListSolFunctionPackageInfoBuilder {
         self
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn set_onboarding_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OnboardingState>,
-    ) -> Self {
+    pub fn set_onboarding_state(mut self, input: ::std::option::Option<crate::types::OnboardingState>) -> Self {
         self.onboarding_state = input;
         self
     }
@@ -154,10 +149,7 @@ impl ListSolFunctionPackageInfoBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
         self.operational_state = input;
         self
     }
@@ -171,10 +163,7 @@ impl ListSolFunctionPackageInfoBuilder {
         self
     }
     /// <p>Usage state of the function package.</p>
-    pub fn set_usage_state(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageState>,
-    ) -> Self {
+    pub fn set_usage_state(mut self, input: ::std::option::Option<crate::types::UsageState>) -> Self {
         self.usage_state = input;
         self
     }
@@ -211,18 +200,12 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.vnf_provider
     }
     /// <p>The product name for the network function.</p>
-    pub fn vnf_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product name for the network function.</p>
-    pub fn set_vnf_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_product_name = input;
         self
     }
@@ -250,17 +233,12 @@ impl ListSolFunctionPackageInfoBuilder {
         self
     }
     /// <p>The metadata of the function package.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The metadata of the function package.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListSolFunctionPackageMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolFunctionPackageMetadata> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackageInfo`](crate::types::ListSolFunctionPackageInfo).

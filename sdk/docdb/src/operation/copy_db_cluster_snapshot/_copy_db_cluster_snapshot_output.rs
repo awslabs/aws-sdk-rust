@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CopyDbClusterSnapshotOutput {
 }
 impl CopyDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder {
         crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyDbClusterSnapshotOutput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyDbClusterSnapshotOutputBuilder {
     pub(crate) db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CopyDbClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn set_db_cluster_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::DbClusterSnapshot>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot(mut self, input: ::std::option::Option<crate::types::DbClusterSnapshot>) -> Self {
         self.db_cluster_snapshot = input;
         self
     }
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn get_db_cluster_snapshot(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
+    pub fn get_db_cluster_snapshot(&self) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
         &self.db_cluster_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

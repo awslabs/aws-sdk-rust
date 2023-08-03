@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput::arn): <p>The ARN of the primary secret.</p>
     ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput::replication_status): <p>The status of replication.</p>
     /// - On failure, responds with [`SdkError<ReplicateSecretToRegionsError>`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError)
-    pub fn replicate_secret_to_regions(&self) -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsFluentBuilder{
+    pub fn replicate_secret_to_regions(&self) -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsFluentBuilder {
         crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsFluentBuilder::new(self.handle.clone())
     }
 }

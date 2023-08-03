@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PredictiveScalingMaxCapacityBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,18 +54,10 @@ pub enum PredictiveScalingMaxCapacityBehavior {
 impl ::std::convert::From<&str> for PredictiveScalingMaxCapacityBehavior {
     fn from(s: &str) -> Self {
         match s {
-            "SetForecastCapacityToMaxCapacity" => {
-                PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity
-            }
-            "SetMaxCapacityAboveForecastCapacity" => {
-                PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity
-            }
-            "SetMaxCapacityToForecastCapacity" => {
-                PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity
-            }
-            other => PredictiveScalingMaxCapacityBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SetForecastCapacityToMaxCapacity" => PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity,
+            "SetMaxCapacityAboveForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity,
+            "SetMaxCapacityToForecastCapacity" => PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity,
+            other => PredictiveScalingMaxCapacityBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,15 +72,9 @@ impl PredictiveScalingMaxCapacityBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => {
-                "SetForecastCapacityToMaxCapacity"
-            }
-            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => {
-                "SetMaxCapacityAboveForecastCapacity"
-            }
-            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => {
-                "SetMaxCapacityToForecastCapacity"
-            }
+            PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => "SetForecastCapacityToMaxCapacity",
+            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => "SetMaxCapacityAboveForecastCapacity",
+            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => "SetMaxCapacityToForecastCapacity",
             PredictiveScalingMaxCapacityBehavior::Unknown(value) => value.as_str(),
         }
     }

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetCurrentUserDataOutput {
 }
 impl GetCurrentUserDataOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder {
-        crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder {
+        crate::operation::get_current_user_data::builders::GetCurrentUserDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCurrentUserDataOutput`](crate::operation::get_current_user_data::GetCurrentUserDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentUserDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) user_data_list: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>,
@@ -80,17 +76,12 @@ impl GetCurrentUserDataOutputBuilder {
         self
     }
     /// <p>A list of the user data that is returned.</p>
-    pub fn set_user_data_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>,
-    ) -> Self {
+    pub fn set_user_data_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>) -> Self {
         self.user_data_list = input;
         self
     }
     /// <p>A list of the user data that is returned.</p>
-    pub fn get_user_data_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserData>> {
+    pub fn get_user_data_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserData>> {
         &self.user_data_list
     }
     /// <p>The total count of the result, regardless of the current page size.</p>

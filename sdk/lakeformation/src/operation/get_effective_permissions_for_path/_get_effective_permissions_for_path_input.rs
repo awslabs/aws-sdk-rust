@@ -36,16 +36,14 @@ impl GetEffectivePermissionsForPathInput {
 }
 impl GetEffectivePermissionsForPathInput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathInput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput).
-    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder{
+    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder {
         crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEffectivePermissionsForPathInput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -118,15 +116,11 @@ impl GetEffectivePermissionsForPathInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput {
-                catalog_id: self.catalog_id
-                ,
-                resource_arn: self.resource_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                catalog_id: self.catalog_id,
+                resource_arn: self.resource_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

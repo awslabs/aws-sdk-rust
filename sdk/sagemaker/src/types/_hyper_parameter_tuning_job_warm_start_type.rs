@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HyperParameterTuningJobWarmStartType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum HyperParameterTuningJobWarmStartType {
 impl ::std::convert::From<&str> for HyperParameterTuningJobWarmStartType {
     fn from(s: &str) -> Self {
         match s {
-            "IdenticalDataAndAlgorithm" => {
-                HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm
-            }
+            "IdenticalDataAndAlgorithm" => HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm,
             "TransferLearning" => HyperParameterTuningJobWarmStartType::TransferLearning,
-            other => HyperParameterTuningJobWarmStartType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => HyperParameterTuningJobWarmStartType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl HyperParameterTuningJobWarmStartType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => {
-                "IdenticalDataAndAlgorithm"
-            }
+            HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => "IdenticalDataAndAlgorithm",
             HyperParameterTuningJobWarmStartType::TransferLearning => "TransferLearning",
             HyperParameterTuningJobWarmStartType::Unknown(value) => value.as_str(),
         }

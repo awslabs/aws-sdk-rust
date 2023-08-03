@@ -51,16 +51,13 @@ impl AuthResult {
 
 /// A builder for [`AuthResult`](crate::types::AuthResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthResultBuilder {
     pub(crate) auth_info: ::std::option::Option<crate::types::AuthInfo>,
     pub(crate) allowed: ::std::option::Option<crate::types::Allowed>,
     pub(crate) denied: ::std::option::Option<crate::types::Denied>,
     pub(crate) auth_decision: ::std::option::Option<crate::types::AuthDecision>,
-    pub(crate) missing_context_values:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) missing_context_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthResultBuilder {
     /// <p>Authorization information.</p>
@@ -111,10 +108,7 @@ impl AuthResultBuilder {
         self
     }
     /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
-    pub fn set_auth_decision(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthDecision>,
-    ) -> Self {
+    pub fn set_auth_decision(mut self, input: ::std::option::Option<crate::types::AuthDecision>) -> Self {
         self.auth_decision = input;
         self
     }
@@ -127,27 +121,19 @@ impl AuthResultBuilder {
     /// To override the contents of this collection use [`set_missing_context_values`](Self::set_missing_context_values).
     ///
     /// <p>Contains any missing context values found while evaluating policy.</p>
-    pub fn missing_context_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn missing_context_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.missing_context_values.unwrap_or_default();
         v.push(input.into());
         self.missing_context_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains any missing context values found while evaluating policy.</p>
-    pub fn set_missing_context_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_missing_context_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.missing_context_values = input;
         self
     }
     /// <p>Contains any missing context values found while evaluating policy.</p>
-    pub fn get_missing_context_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_missing_context_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.missing_context_values
     }
     /// Consumes the builder and constructs a [`AuthResult`](crate::types::AuthResult).

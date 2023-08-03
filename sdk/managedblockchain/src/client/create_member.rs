@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMemberOutput`](crate::operation::create_member::CreateMemberOutput) with field(s):
     ///   - [`member_id(Option<String>)`](crate::operation::create_member::CreateMemberOutput::member_id): <p>The unique identifier of the member.</p>
     /// - On failure, responds with [`SdkError<CreateMemberError>`](crate::operation::create_member::CreateMemberError)
-    pub fn create_member(
-        &self,
-    ) -> crate::operation::create_member::builders::CreateMemberFluentBuilder {
-        crate::operation::create_member::builders::CreateMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_member(&self) -> crate::operation::create_member::builders::CreateMemberFluentBuilder {
+        crate::operation::create_member::builders::CreateMemberFluentBuilder::new(self.handle.clone())
     }
 }

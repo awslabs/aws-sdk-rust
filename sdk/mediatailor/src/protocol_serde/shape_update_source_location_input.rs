@@ -6,27 +6,19 @@ pub fn ser_update_source_location_input(
     if let Some(var_1) = &input.access_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AccessConfiguration").start_object();
-        crate::protocol_serde::shape_access_configuration::ser_access_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_access_configuration::ser_access_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.default_segment_delivery_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("DefaultSegmentDeliveryConfiguration")
-            .start_object();
+        let mut object_4 = object.key("DefaultSegmentDeliveryConfiguration").start_object();
         crate::protocol_serde::shape_default_segment_delivery_configuration::ser_default_segment_delivery_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.http_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("HttpConfiguration").start_object();
-        crate::protocol_serde::shape_http_configuration::ser_http_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_http_configuration::ser_http_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.segment_delivery_configurations {

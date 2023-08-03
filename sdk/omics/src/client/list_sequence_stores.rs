@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`sequence_stores(Option<Vec<SequenceStoreDetail>>)`](crate::operation::list_sequence_stores::ListSequenceStoresOutput::sequence_stores): <p>A list of sequence stores.</p>
     /// - On failure, responds with [`SdkError<ListSequenceStoresError>`](crate::operation::list_sequence_stores::ListSequenceStoresError)
-    pub fn list_sequence_stores(
-        &self,
-    ) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder {
-        crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sequence_stores(&self) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder {
+        crate::operation::list_sequence_stores::builders::ListSequenceStoresFluentBuilder::new(self.handle.clone())
     }
 }

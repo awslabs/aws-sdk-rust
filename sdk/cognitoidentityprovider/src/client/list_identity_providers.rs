@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`providers(Option<Vec<ProviderDescription>>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::providers): <p>A list of IdP objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::next_token): <p>A pagination token.</p>
     /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::operation::list_identity_providers::ListIdentityProvidersError)
-    pub fn list_identity_providers(
-        &self,
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder
-    {
-        crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_identity_providers(&self) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder {
+        crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(self.handle.clone())
     }
 }

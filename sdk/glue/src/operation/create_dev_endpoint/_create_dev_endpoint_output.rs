@@ -65,9 +65,7 @@ pub struct CreateDevEndpointOutput {
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     #[doc(hidden)]
-    pub arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateDevEndpointOutput {
@@ -150,11 +148,7 @@ impl CreateDevEndpointOutput {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
 }
@@ -165,17 +159,14 @@ impl ::aws_http::request_id::RequestId for CreateDevEndpointOutput {
 }
 impl CreateDevEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDevEndpointOutput`](crate::operation::create_dev_endpoint::CreateDevEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointOutputBuilder {
         crate::operation::create_dev_endpoint::builders::CreateDevEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevEndpointOutput`](crate::operation::create_dev_endpoint::CreateDevEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevEndpointOutputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -195,25 +186,17 @@ pub struct CreateDevEndpointOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateDevEndpointOutputBuilder {
     /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -240,27 +223,19 @@ impl CreateDevEndpointOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
@@ -292,18 +267,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.role_arn
     }
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
-    pub fn yarn_endpoint_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn yarn_endpoint_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.yarn_endpoint_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
-    pub fn set_yarn_endpoint_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_yarn_endpoint_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.yarn_endpoint_address = input;
         self
     }
@@ -317,10 +286,7 @@ impl CreateDevEndpointOutputBuilder {
         self
     }
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
-    pub fn set_zeppelin_remote_spark_interpreter_port(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_zeppelin_remote_spark_interpreter_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.zeppelin_remote_spark_interpreter_port = input;
         self
     }
@@ -348,10 +314,7 @@ impl CreateDevEndpointOutputBuilder {
         self
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -391,18 +354,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.number_of_workers
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -425,18 +382,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.vpc_id
     }
     /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn extra_python_libs_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_python_libs_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn set_extra_python_libs_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_python_libs_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = input;
         self
     }
@@ -445,18 +396,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.extra_python_libs_s3_path
     }
     /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn extra_jars_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_jars_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_jars_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn set_extra_jars_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_jars_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_jars_s3_path = input;
         self
     }
@@ -465,18 +410,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.extra_jars_s3_path
     }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -485,18 +424,12 @@ impl CreateDevEndpointOutputBuilder {
         &self.failure_reason
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -510,10 +443,7 @@ impl CreateDevEndpointOutputBuilder {
         self
     }
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -531,11 +461,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn arguments(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.arguments = ::std::option::Option::Some(hash_map);
@@ -547,12 +473,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.arguments = input;
         self
     }
@@ -562,11 +483,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn get_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -587,9 +504,7 @@ impl CreateDevEndpointOutputBuilder {
             subnet_id: self.subnet_id,
             role_arn: self.role_arn,
             yarn_endpoint_address: self.yarn_endpoint_address,
-            zeppelin_remote_spark_interpreter_port: self
-                .zeppelin_remote_spark_interpreter_port
-                .unwrap_or_default(),
+            zeppelin_remote_spark_interpreter_port: self.zeppelin_remote_spark_interpreter_port.unwrap_or_default(),
             number_of_nodes: self.number_of_nodes.unwrap_or_default(),
             worker_type: self.worker_type,
             glue_version: self.glue_version,

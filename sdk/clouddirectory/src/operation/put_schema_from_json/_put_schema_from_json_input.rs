@@ -22,17 +22,14 @@ impl PutSchemaFromJsonInput {
 }
 impl PutSchemaFromJsonInput {
     /// Creates a new builder-style object to manufacture [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
-    pub fn builder(
-    ) -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder {
+    pub fn builder() -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder {
         crate::operation::put_schema_from_json::builders::PutSchemaFromJsonInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaFromJsonInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl PutSchemaFromJsonInputBuilder {
     /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_schema_from_json::PutSchemaFromJsonInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_schema_from_json::PutSchemaFromJsonInput {
-                schema_arn: self.schema_arn,
-                document: self.document,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_schema_from_json::PutSchemaFromJsonInput {
+            schema_arn: self.schema_arn,
+            document: self.document,
+        })
     }
 }

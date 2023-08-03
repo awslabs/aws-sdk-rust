@@ -29,16 +29,14 @@ impl ListPipelineParametersForExecutionInput {
 }
 impl ListPipelineParametersForExecutionInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
-    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder{
+    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder {
         crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineParametersForExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListPipelineParametersForExecutionInputBuilder {
 }
 impl ListPipelineParametersForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListPipelineParametersForExecutionInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPipelineParametersForExecutionInput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionInput {
-                pipeline_execution_arn: self.pipeline_execution_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                pipeline_execution_arn: self.pipeline_execution_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

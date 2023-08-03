@@ -47,13 +47,7 @@
 /// <p>The type of finding. For details about each type, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-types.html">Types of Amazon Macie findings</a> in the <i>Amazon Macie User Guide</i>. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FindingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,26 +78,14 @@ pub enum FindingType {
 impl ::std::convert::From<&str> for FindingType {
     fn from(s: &str) -> Self {
         match s {
-            "Policy:IAMUser/S3BlockPublicAccessDisabled" => {
-                FindingType::PolicyIamUserS3BlockPublicAccessDisabled
-            }
-            "Policy:IAMUser/S3BucketEncryptionDisabled" => {
-                FindingType::PolicyIamUserS3BucketEncryptionDisabled
-            }
+            "Policy:IAMUser/S3BlockPublicAccessDisabled" => FindingType::PolicyIamUserS3BlockPublicAccessDisabled,
+            "Policy:IAMUser/S3BucketEncryptionDisabled" => FindingType::PolicyIamUserS3BucketEncryptionDisabled,
             "Policy:IAMUser/S3BucketPublic" => FindingType::PolicyIamUserS3BucketPublic,
-            "Policy:IAMUser/S3BucketReplicatedExternally" => {
-                FindingType::PolicyIamUserS3BucketReplicatedExternally
-            }
-            "Policy:IAMUser/S3BucketSharedExternally" => {
-                FindingType::PolicyIamUserS3BucketSharedExternally
-            }
-            "Policy:IAMUser/S3BucketSharedWithCloudFront" => {
-                FindingType::PolicyIamUserS3BucketSharedWithCloudFront
-            }
+            "Policy:IAMUser/S3BucketReplicatedExternally" => FindingType::PolicyIamUserS3BucketReplicatedExternally,
+            "Policy:IAMUser/S3BucketSharedExternally" => FindingType::PolicyIamUserS3BucketSharedExternally,
+            "Policy:IAMUser/S3BucketSharedWithCloudFront" => FindingType::PolicyIamUserS3BucketSharedWithCloudFront,
             "SensitiveData:S3Object/Credentials" => FindingType::SensitiveDataS3ObjectCredentials,
-            "SensitiveData:S3Object/CustomIdentifier" => {
-                FindingType::SensitiveDataS3ObjectCustomIdentifier
-            }
+            "SensitiveData:S3Object/CustomIdentifier" => FindingType::SensitiveDataS3ObjectCustomIdentifier,
             "SensitiveData:S3Object/Financial" => FindingType::SensitiveDataS3ObjectFinancial,
             "SensitiveData:S3Object/Multiple" => FindingType::SensitiveDataS3ObjectMultiple,
             "SensitiveData:S3Object/Personal" => FindingType::SensitiveDataS3ObjectPersonal,
@@ -122,26 +104,14 @@ impl FindingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            FindingType::PolicyIamUserS3BlockPublicAccessDisabled => {
-                "Policy:IAMUser/S3BlockPublicAccessDisabled"
-            }
-            FindingType::PolicyIamUserS3BucketEncryptionDisabled => {
-                "Policy:IAMUser/S3BucketEncryptionDisabled"
-            }
+            FindingType::PolicyIamUserS3BlockPublicAccessDisabled => "Policy:IAMUser/S3BlockPublicAccessDisabled",
+            FindingType::PolicyIamUserS3BucketEncryptionDisabled => "Policy:IAMUser/S3BucketEncryptionDisabled",
             FindingType::PolicyIamUserS3BucketPublic => "Policy:IAMUser/S3BucketPublic",
-            FindingType::PolicyIamUserS3BucketReplicatedExternally => {
-                "Policy:IAMUser/S3BucketReplicatedExternally"
-            }
-            FindingType::PolicyIamUserS3BucketSharedExternally => {
-                "Policy:IAMUser/S3BucketSharedExternally"
-            }
-            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => {
-                "Policy:IAMUser/S3BucketSharedWithCloudFront"
-            }
+            FindingType::PolicyIamUserS3BucketReplicatedExternally => "Policy:IAMUser/S3BucketReplicatedExternally",
+            FindingType::PolicyIamUserS3BucketSharedExternally => "Policy:IAMUser/S3BucketSharedExternally",
+            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => "Policy:IAMUser/S3BucketSharedWithCloudFront",
             FindingType::SensitiveDataS3ObjectCredentials => "SensitiveData:S3Object/Credentials",
-            FindingType::SensitiveDataS3ObjectCustomIdentifier => {
-                "SensitiveData:S3Object/CustomIdentifier"
-            }
+            FindingType::SensitiveDataS3ObjectCustomIdentifier => "SensitiveData:S3Object/CustomIdentifier",
             FindingType::SensitiveDataS3ObjectFinancial => "SensitiveData:S3Object/Financial",
             FindingType::SensitiveDataS3ObjectMultiple => "SensitiveData:S3Object/Multiple",
             FindingType::SensitiveDataS3ObjectPersonal => "SensitiveData:S3Object/Personal",

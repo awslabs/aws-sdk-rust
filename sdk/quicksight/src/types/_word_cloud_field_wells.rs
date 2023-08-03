@@ -7,14 +7,11 @@
 pub struct WordCloudFieldWells {
     /// <p>The aggregated field wells of a word cloud.</p>
     #[doc(hidden)]
-    pub word_cloud_aggregated_field_wells:
-        ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
+    pub word_cloud_aggregated_field_wells: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
 }
 impl WordCloudFieldWells {
     /// <p>The aggregated field wells of a word cloud.</p>
-    pub fn word_cloud_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WordCloudAggregatedFieldWells> {
+    pub fn word_cloud_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::WordCloudAggregatedFieldWells> {
         self.word_cloud_aggregated_field_wells.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl WordCloudFieldWells {
 
 /// A builder for [`WordCloudFieldWells`](crate::types::WordCloudFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WordCloudFieldWellsBuilder {
-    pub(crate) word_cloud_aggregated_field_wells:
-        ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
+    pub(crate) word_cloud_aggregated_field_wells: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
 }
 impl WordCloudFieldWellsBuilder {
     /// <p>The aggregated field wells of a word cloud.</p>
-    pub fn word_cloud_aggregated_field_wells(
-        mut self,
-        input: crate::types::WordCloudAggregatedFieldWells,
-    ) -> Self {
+    pub fn word_cloud_aggregated_field_wells(mut self, input: crate::types::WordCloudAggregatedFieldWells) -> Self {
         self.word_cloud_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a word cloud.</p>
-    pub fn set_word_cloud_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_word_cloud_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>) -> Self {
         self.word_cloud_aggregated_field_wells = input;
         self
     }
     /// <p>The aggregated field wells of a word cloud.</p>
-    pub fn get_word_cloud_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::WordCloudAggregatedFieldWells> {
+    pub fn get_word_cloud_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::WordCloudAggregatedFieldWells> {
         &self.word_cloud_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`WordCloudFieldWells`](crate::types::WordCloudFieldWells).

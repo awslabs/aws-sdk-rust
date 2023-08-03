@@ -58,9 +58,7 @@ impl Gnss {
 
 /// A builder for [`Gnss`](crate::types::Gnss).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GnssBuilder {
     pub(crate) payload: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<f32>,
@@ -124,10 +122,7 @@ impl GnssBuilder {
         self
     }
     /// <p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>
-    pub fn set_assist_position(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f32>>,
-    ) -> Self {
+    pub fn set_assist_position(mut self, input: ::std::option::Option<::std::vec::Vec<f32>>) -> Self {
         self.assist_position = input;
         self
     }

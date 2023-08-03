@@ -12,8 +12,7 @@ pub struct DescribeReplicationTableStatisticsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
     #[doc(hidden)]
-    pub replication_table_statistics:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub replication_table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTableStatisticsOutput {
@@ -26,9 +25,7 @@ impl DescribeReplicationTableStatisticsOutput {
         self.marker.as_deref()
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn replication_table_statistics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TableStatistics]> {
+    pub fn replication_table_statistics(&self) -> ::std::option::Option<&[crate::types::TableStatistics]> {
         self.replication_table_statistics.as_deref()
     }
 }
@@ -39,37 +36,28 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationTableStatisticsOut
 }
 impl DescribeReplicationTableStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
-    pub fn builder() -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsOutputBuilder {
         crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTableStatisticsOutputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_table_statistics:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub(crate) replication_table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTableStatisticsOutputBuilder {
     /// <p>The Amazon Resource Name of the replication config.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication config.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -103,17 +91,12 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
         self
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn set_replication_table_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
-    ) -> Self {
+    pub fn set_replication_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>) -> Self {
         self.replication_table_statistics = input;
         self
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn get_replication_table_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
+    pub fn get_replication_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
         &self.replication_table_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -126,14 +109,11 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
-    pub fn build(self) -> crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput{
+    pub fn build(self) -> crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput {
         crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput {
-            replication_config_arn: self.replication_config_arn
-            ,
-            marker: self.marker
-            ,
-            replication_table_statistics: self.replication_table_statistics
-            ,
+            replication_config_arn: self.replication_config_arn,
+            marker: self.marker,
+            replication_table_statistics: self.replication_table_statistics,
             _request_id: self._request_id,
         }
     }

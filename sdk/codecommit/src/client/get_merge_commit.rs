@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`base_commit_id(Option<String>)`](crate::operation::get_merge_commit::GetMergeCommitOutput::base_commit_id): <p>The commit ID of the merge base.</p>
     ///   - [`merged_commit_id(Option<String>)`](crate::operation::get_merge_commit::GetMergeCommitOutput::merged_commit_id): <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     /// - On failure, responds with [`SdkError<GetMergeCommitError>`](crate::operation::get_merge_commit::GetMergeCommitError)
-    pub fn get_merge_commit(
-        &self,
-    ) -> crate::operation::get_merge_commit::builders::GetMergeCommitFluentBuilder {
-        crate::operation::get_merge_commit::builders::GetMergeCommitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_merge_commit(&self) -> crate::operation::get_merge_commit::builders::GetMergeCommitFluentBuilder {
+        crate::operation::get_merge_commit::builders::GetMergeCommitFluentBuilder::new(self.handle.clone())
     }
 }

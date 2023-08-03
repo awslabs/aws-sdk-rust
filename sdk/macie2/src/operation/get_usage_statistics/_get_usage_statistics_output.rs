@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetUsageStatisticsOutput {
 }
 impl GetUsageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
@@ -79,17 +76,12 @@ impl GetUsageStatisticsOutputBuilder {
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>) -> Self {
         self.records = input;
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         &self.records
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>

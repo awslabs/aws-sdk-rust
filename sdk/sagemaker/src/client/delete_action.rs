@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteActionOutput`](crate::operation::delete_action::DeleteActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::operation::delete_action::DeleteActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteActionError>`](crate::operation::delete_action::DeleteActionError)
-    pub fn delete_action(
-        &self,
-    ) -> crate::operation::delete_action::builders::DeleteActionFluentBuilder {
-        crate::operation::delete_action::builders::DeleteActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_action(&self) -> crate::operation::delete_action::builders::DeleteActionFluentBuilder {
+        crate::operation::delete_action::builders::DeleteActionFluentBuilder::new(self.handle.clone())
     }
 }

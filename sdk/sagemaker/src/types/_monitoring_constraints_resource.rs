@@ -23,9 +23,7 @@ impl MonitoringConstraintsResource {
 
 /// A builder for [`MonitoringConstraintsResource`](crate::types::MonitoringConstraintsResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringConstraintsResourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MonitoringConstraintsResourceBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringConstraintsResource`](crate::types::MonitoringConstraintsResource).
     pub fn build(self) -> crate::types::MonitoringConstraintsResource {
-        crate::types::MonitoringConstraintsResource {
-            s3_uri: self.s3_uri,
-        }
+        crate::types::MonitoringConstraintsResource { s3_uri: self.s3_uri }
     }
 }

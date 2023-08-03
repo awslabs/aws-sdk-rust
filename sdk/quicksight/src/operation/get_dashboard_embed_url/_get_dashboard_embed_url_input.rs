@@ -90,17 +90,14 @@ impl GetDashboardEmbedUrlInput {
 }
 impl GetDashboardEmbedUrlInput {
     /// Creates a new builder-style object to manufacture [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
+    pub fn builder() -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
         crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -111,23 +108,16 @@ pub struct GetDashboardEmbedUrlInputBuilder {
     pub(crate) state_persistence_enabled: ::std::option::Option<bool>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_dashboard_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_dashboard_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetDashboardEmbedUrlInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -155,10 +145,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         self
     }
     /// <p>The authentication method that the user uses to sign in.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddingIdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::EmbeddingIdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -273,49 +260,37 @@ impl GetDashboardEmbedUrlInputBuilder {
     /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
     ///
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn additional_dashboard_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_dashboard_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_dashboard_ids.unwrap_or_default();
         v.push(input.into());
         self.additional_dashboard_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn set_additional_dashboard_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_dashboard_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_dashboard_ids = input;
         self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn get_additional_dashboard_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_dashboard_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_dashboard_ids
     }
     /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                identity_type: self.identity_type,
-                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
-                undo_redo_disabled: self.undo_redo_disabled,
-                reset_disabled: self.reset_disabled,
-                state_persistence_enabled: self.state_persistence_enabled,
-                user_arn: self.user_arn,
-                namespace: self.namespace,
-                additional_dashboard_ids: self.additional_dashboard_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            identity_type: self.identity_type,
+            session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+            undo_redo_disabled: self.undo_redo_disabled,
+            reset_disabled: self.reset_disabled,
+            state_persistence_enabled: self.state_persistence_enabled,
+            user_arn: self.user_arn,
+            namespace: self.namespace,
+            additional_dashboard_ids: self.additional_dashboard_ids,
+        })
     }
 }

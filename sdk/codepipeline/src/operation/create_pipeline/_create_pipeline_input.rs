@@ -30,9 +30,7 @@ impl CreatePipelineInput {
 
 /// A builder for [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineInputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,10 +42,7 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }
@@ -67,10 +62,7 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>The tags for the pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -81,10 +73,7 @@ impl CreatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pipeline::CreatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineInput {
             pipeline: self.pipeline,
             tags: self.tags,

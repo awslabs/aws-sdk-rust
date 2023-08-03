@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`permanent(bool)`](crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder::permanent) / [`set_permanent(Option<bool>)`](crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder::set_permanent): <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     /// - On success, responds with [`AdminSetUserPasswordOutput`](crate::operation::admin_set_user_password::AdminSetUserPasswordOutput)
     /// - On failure, responds with [`SdkError<AdminSetUserPasswordError>`](crate::operation::admin_set_user_password::AdminSetUserPasswordError)
-    pub fn admin_set_user_password(
-        &self,
-    ) -> crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder
-    {
-        crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_set_user_password(&self) -> crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder {
+        crate::operation::admin_set_user_password::builders::AdminSetUserPasswordFluentBuilder::new(self.handle.clone())
     }
 }

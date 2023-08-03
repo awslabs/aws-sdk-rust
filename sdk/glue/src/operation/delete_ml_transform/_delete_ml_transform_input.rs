@@ -15,17 +15,14 @@ impl DeleteMlTransformInput {
 }
 impl DeleteMlTransformInput {
     /// Creates a new builder-style object to manufacture [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder {
+    pub fn builder() -> crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder {
         crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMlTransformInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DeleteMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ml_transform::DeleteMlTransformInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_ml_transform::DeleteMlTransformInput {
-                transform_id: self.transform_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_ml_transform::DeleteMlTransformInput {
+            transform_id: self.transform_id,
+        })
     }
 }

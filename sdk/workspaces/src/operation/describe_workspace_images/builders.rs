@@ -26,8 +26,7 @@ impl DescribeWorkspaceImagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder,
+    inner: crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder,
 }
 impl DescribeWorkspaceImagesFluentBuilder {
     /// Creates a new `DescribeWorkspaceImages`.
@@ -38,10 +37,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
         }
     }
     /// Access the DescribeWorkspaceImages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
             crate::operation::describe_workspace_images::DescribeWorkspaceImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_images::DescribeWorkspaceImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_images::DescribeWorkspaceImagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_images::DescribeWorkspaceImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_images::DescribeWorkspaceImagesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_images::DescribeWorkspaceImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_images::DescribeWorkspaceImagesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
             crate::operation::describe_workspace_images::DescribeWorkspaceImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_images::DescribeWorkspaceImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_images::DescribeWorkspaceImagesError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl DescribeWorkspaceImagesFluentBuilder {
         self
     }
     /// <p>The identifier of the image.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }

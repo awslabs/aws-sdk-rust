@@ -40,10 +40,7 @@ impl RegisterStreamConsumerFluentBuilder {
         }
     }
     /// Access the RegisterStreamConsumer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl RegisterStreamConsumerFluentBuilder {
             crate::operation::register_stream_consumer::RegisterStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_stream_consumer::RegisterStreamConsumerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl RegisterStreamConsumerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl RegisterStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_stream_consumer::RegisterStreamConsumerError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl RegisterStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_stream_consumer::RegisterStreamConsumerError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl RegisterStreamConsumerFluentBuilder {
             crate::operation::register_stream_consumer::RegisterStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_stream_consumer::RegisterStreamConsumerError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +127,12 @@ impl RegisterStreamConsumerFluentBuilder {
         self.inner.get_stream_arn()
     }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_name(input.into());
         self
     }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_name(input);
         self
     }

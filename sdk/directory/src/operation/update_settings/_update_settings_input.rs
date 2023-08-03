@@ -29,9 +29,7 @@ impl UpdateSettingsInput {
 
 /// A builder for [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
@@ -63,10 +61,7 @@ impl UpdateSettingsInputBuilder {
         self
     }
     /// <p>The list of <code>Setting</code> objects.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>) -> Self {
         self.settings = input;
         self
     }
@@ -77,10 +72,7 @@ impl UpdateSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_settings::UpdateSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_settings::UpdateSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_settings::UpdateSettingsInput {
             directory_id: self.directory_id,
             settings: self.settings,

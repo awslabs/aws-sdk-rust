@@ -85,18 +85,14 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
         crate::types::builders::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,
@@ -242,9 +238,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
         &self.volume_type
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+    pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
         crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
             delete_on_termination: self.delete_on_termination.unwrap_or_default(),
             encrypted: self.encrypted.unwrap_or_default(),

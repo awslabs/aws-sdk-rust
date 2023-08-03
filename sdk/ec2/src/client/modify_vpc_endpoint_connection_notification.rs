@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpcEndpointConnectionNotificationOutput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcEndpointConnectionNotificationError>`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError)
-    pub fn modify_vpc_endpoint_connection_notification(&self) -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationFluentBuilder{
-        crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationFluentBuilder::new(self.handle.clone())
+    pub fn modify_vpc_endpoint_connection_notification(
+        &self,
+    ) -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationFluentBuilder {
+        crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

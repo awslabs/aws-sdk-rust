@@ -23,9 +23,7 @@ impl VirtualGatewayClientPolicy {
 
 /// A builder for [`VirtualGatewayClientPolicy`](crate::types::VirtualGatewayClientPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicyBuilder {
     pub(crate) tls: ::std::option::Option<crate::types::VirtualGatewayClientPolicyTls>,
 }
@@ -36,10 +34,7 @@ impl VirtualGatewayClientPolicyBuilder {
         self
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn set_tls(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayClientPolicyTls>,
-    ) -> Self {
+    pub fn set_tls(mut self, input: ::std::option::Option<crate::types::VirtualGatewayClientPolicyTls>) -> Self {
         self.tls = input;
         self
     }

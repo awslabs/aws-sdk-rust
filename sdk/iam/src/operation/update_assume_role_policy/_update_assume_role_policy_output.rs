@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssumeRolePolicyOutput {
 }
 impl UpdateAssumeRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssumeRolePolicyOutput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyOutputBuilder {
         crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssumeRolePolicyOutput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssumeRolePolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateAssumeRolePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAssumeRolePolicyOutput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput {
+    pub fn build(self) -> crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput {
         crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput {
             _request_id: self._request_id,
         }

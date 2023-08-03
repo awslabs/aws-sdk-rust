@@ -6,14 +6,11 @@
 pub struct MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
     #[doc(hidden)]
-    pub realtime_metrics_subscription_config:
-        ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
+    pub realtime_metrics_subscription_config: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
 }
 impl MonitoringSubscription {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
-    pub fn realtime_metrics_subscription_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RealtimeMetricsSubscriptionConfig> {
+    pub fn realtime_metrics_subscription_config(&self) -> ::std::option::Option<&crate::types::RealtimeMetricsSubscriptionConfig> {
         self.realtime_metrics_subscription_config.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl MonitoringSubscription {
 
 /// A builder for [`MonitoringSubscription`](crate::types::MonitoringSubscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringSubscriptionBuilder {
-    pub(crate) realtime_metrics_subscription_config:
-        ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
+    pub(crate) realtime_metrics_subscription_config: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
 }
 impl MonitoringSubscriptionBuilder {
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
-    pub fn realtime_metrics_subscription_config(
-        mut self,
-        input: crate::types::RealtimeMetricsSubscriptionConfig,
-    ) -> Self {
+    pub fn realtime_metrics_subscription_config(mut self, input: crate::types::RealtimeMetricsSubscriptionConfig) -> Self {
         self.realtime_metrics_subscription_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
-    pub fn set_realtime_metrics_subscription_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>,
-    ) -> Self {
+    pub fn set_realtime_metrics_subscription_config(mut self, input: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig>) -> Self {
         self.realtime_metrics_subscription_config = input;
         self
     }
     /// <p>A subscription configuration for additional CloudWatch metrics.</p>
-    pub fn get_realtime_metrics_subscription_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig> {
+    pub fn get_realtime_metrics_subscription_config(&self) -> &::std::option::Option<crate::types::RealtimeMetricsSubscriptionConfig> {
         &self.realtime_metrics_subscription_config
     }
     /// Consumes the builder and constructs a [`MonitoringSubscription`](crate::types::MonitoringSubscription).

@@ -10,10 +10,7 @@ impl CreateLoadBalancerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_load_balancer();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateLoadBalancerFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of your load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -160,19 +138,13 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
@@ -183,19 +155,13 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
@@ -206,19 +172,13 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
-    pub fn certificate_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_domain_name(input.into());
         self
     }
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
-    pub fn set_certificate_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_domain_name(input);
         self
     }
@@ -232,25 +192,17 @@ impl CreateLoadBalancerFluentBuilder {
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn certificate_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_alternative_names(input.into());
         self
     }
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn set_certificate_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_alternative_names(input);
         self
     }
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn get_certificate_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_alternative_names()
     }
     /// Appends an item to `tags`.
@@ -265,10 +217,7 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -287,10 +236,7 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>The IP address type for the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -303,20 +249,14 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
     /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn tls_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tls_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tls_policy_name(input.into());
         self
     }
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
     /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn set_tls_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tls_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tls_policy_name(input);
         self
     }

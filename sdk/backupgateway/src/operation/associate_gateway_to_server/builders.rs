@@ -26,7 +26,7 @@ impl AssociateGatewayToServerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateGatewayToServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder,
+    inner: crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder,
 }
 impl AssociateGatewayToServerFluentBuilder {
     /// Creates a new `AssociateGatewayToServer`.
@@ -37,7 +37,7 @@ impl AssociateGatewayToServerFluentBuilder {
         }
     }
     /// Access the AssociateGatewayToServer as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateGatewayToServerFluentBuilder {
             crate::operation::associate_gateway_to_server::AssociateGatewayToServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_gateway_to_server::AssociateGatewayToServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_gateway_to_server::AssociateGatewayToServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateGatewayToServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateGatewayToServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_gateway_to_server::AssociateGatewayToServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_gateway_to_server::AssociateGatewayToServerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateGatewayToServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_gateway_to_server::AssociateGatewayToServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_gateway_to_server::AssociateGatewayToServerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateGatewayToServerFluentBuilder {
             crate::operation::associate_gateway_to_server::AssociateGatewayToServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_gateway_to_server::AssociateGatewayToServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_gateway_to_server::AssociateGatewayToServerError>,
     > {
         self.customize_middleware().await
     }

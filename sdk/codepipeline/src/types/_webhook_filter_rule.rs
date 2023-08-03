@@ -30,9 +30,7 @@ impl WebhookFilterRule {
 
 /// A builder for [`WebhookFilterRule`](crate::types::WebhookFilterRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebhookFilterRuleBuilder {
     pub(crate) json_path: ::std::option::Option<::std::string::String>,
     pub(crate) match_equals: ::std::option::Option<::std::string::String>,

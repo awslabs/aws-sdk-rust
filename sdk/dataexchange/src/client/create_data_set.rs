@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_data_set::CreateDataSetOutput::tags): <p>The tags for the data set.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_data_set::CreateDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<CreateDataSetError>`](crate::operation::create_data_set::CreateDataSetError)
-    pub fn create_data_set(
-        &self,
-    ) -> crate::operation::create_data_set::builders::CreateDataSetFluentBuilder {
-        crate::operation::create_data_set::builders::CreateDataSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_set(&self) -> crate::operation::create_data_set::builders::CreateDataSetFluentBuilder {
+        crate::operation::create_data_set::builders::CreateDataSetFluentBuilder::new(self.handle.clone())
     }
 }

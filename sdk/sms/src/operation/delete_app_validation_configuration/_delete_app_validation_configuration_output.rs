@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppValidationConfigurationOutpu
 }
 impl DeleteAppValidationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppValidationConfigurationOutput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationOutputBuilder {
         crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppValidationConfigurationOutput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppValidationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteAppValidationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppValidationConfigurationOutput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput {
         crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput {
             _request_id: self._request_id,
         }

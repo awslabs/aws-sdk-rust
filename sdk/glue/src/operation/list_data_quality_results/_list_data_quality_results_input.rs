@@ -29,18 +29,14 @@ impl ListDataQualityResultsInput {
 }
 impl ListDataQualityResultsInput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityResultsInput`](crate::operation::list_data_quality_results::ListDataQualityResultsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder {
         crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityResultsInput`](crate::operation::list_data_quality_results::ListDataQualityResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityResultsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DataQualityResultFilterCriteria>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ListDataQualityResultsInputBuilder {
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityResultFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityResultFilterCriteria>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityResultFilterCriteria> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityResultFilterCriteria> {
         &self.filter
     }
     /// <p>A paginated token to offset the results.</p>
@@ -101,12 +92,10 @@ impl ListDataQualityResultsInputBuilder {
         crate::operation::list_data_quality_results::ListDataQualityResultsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_quality_results::ListDataQualityResultsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_data_quality_results::ListDataQualityResultsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

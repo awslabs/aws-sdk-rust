@@ -23,9 +23,7 @@ impl ProvisionalConfiguration {
 
 /// A builder for [`ProvisionalConfiguration`](crate::types::ProvisionalConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionalConfigurationBuilder {
     pub(crate) max_time_to_live_in_minutes: ::std::option::Option<i32>,
 }

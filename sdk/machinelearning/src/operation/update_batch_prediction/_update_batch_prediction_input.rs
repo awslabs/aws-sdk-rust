@@ -22,36 +22,26 @@ impl UpdateBatchPredictionInput {
 }
 impl UpdateBatchPredictionInput {
     /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder {
         crate::operation::update_batch_prediction::builders::UpdateBatchPredictionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_prediction_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBatchPredictionInputBuilder {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl UpdateBatchPredictionInputBuilder {
         &self.batch_prediction_id
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_name = input;
         self
     }
@@ -82,15 +66,11 @@ impl UpdateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_batch_prediction::UpdateBatchPredictionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_batch_prediction::UpdateBatchPredictionInput {
-                batch_prediction_id: self.batch_prediction_id,
-                batch_prediction_name: self.batch_prediction_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_batch_prediction::UpdateBatchPredictionInput {
+            batch_prediction_id: self.batch_prediction_id,
+            batch_prediction_name: self.batch_prediction_name,
+        })
     }
 }

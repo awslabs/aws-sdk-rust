@@ -39,13 +39,7 @@
 /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Xavc4kProfileBitrateClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Xavc4kProfileBitrateClass {
             "BITRATE_CLASS_100" => Xavc4kProfileBitrateClass::BitrateClass100,
             "BITRATE_CLASS_140" => Xavc4kProfileBitrateClass::BitrateClass140,
             "BITRATE_CLASS_200" => Xavc4kProfileBitrateClass::BitrateClass200,
-            other => Xavc4kProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Xavc4kProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl Xavc4kProfileBitrateClass {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BITRATE_CLASS_100",
-            "BITRATE_CLASS_140",
-            "BITRATE_CLASS_200",
-        ]
+        &["BITRATE_CLASS_100", "BITRATE_CLASS_140", "BITRATE_CLASS_200"]
     }
 }
 impl ::std::convert::AsRef<str> for Xavc4kProfileBitrateClass {

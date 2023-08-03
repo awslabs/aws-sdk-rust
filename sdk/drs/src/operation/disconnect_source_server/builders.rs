@@ -37,10 +37,7 @@ impl DisconnectSourceServerFluentBuilder {
         }
     }
     /// Access the DisconnectSourceServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisconnectSourceServerFluentBuilder {
             crate::operation::disconnect_source_server::DisconnectSourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_source_server::DisconnectSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_source_server::DisconnectSourceServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisconnectSourceServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisconnectSourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_source_server::DisconnectSourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_source_server::DisconnectSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_source_server::DisconnectSourceServerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisconnectSourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_source_server::DisconnectSourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_source_server::DisconnectSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_source_server::DisconnectSourceServerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DisconnectSourceServerFluentBuilder {
             crate::operation::disconnect_source_server::DisconnectSourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_source_server::DisconnectSourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_source_server::DisconnectSourceServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

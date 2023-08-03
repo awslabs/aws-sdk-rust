@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`total_scheduled_minutes(Option<i32>)`](crate::operation::get_minute_usage::GetMinuteUsageOutput::total_scheduled_minutes): <p>Total scheduled minutes for an account, specific to the month being requested.</p>
     ///   - [`estimated_minutes_remaining(Option<i32>)`](crate::operation::get_minute_usage::GetMinuteUsageOutput::estimated_minutes_remaining): <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
     /// - On failure, responds with [`SdkError<GetMinuteUsageError>`](crate::operation::get_minute_usage::GetMinuteUsageError)
-    pub fn get_minute_usage(
-        &self,
-    ) -> crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder {
-        crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_minute_usage(&self) -> crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder {
+        crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::new(self.handle.clone())
     }
 }

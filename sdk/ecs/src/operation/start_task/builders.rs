@@ -10,10 +10,7 @@ impl StartTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_task::StartTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_task::StartTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_task();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl StartTaskFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_task::StartTask,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_task::StartTask, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl StartTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl StartTaskFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_task::StartTask,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_task::StartTask, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>,
     > {
         self.customize_middleware().await
@@ -134,25 +122,17 @@ impl StartTaskFluentBuilder {
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
     ///
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn container_instances(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instances(input.into());
         self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_container_instances(input);
         self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn get_container_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_container_instances()
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -203,17 +183,12 @@ impl StartTaskFluentBuilder {
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
@@ -226,10 +201,7 @@ impl StartTaskFluentBuilder {
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskOverride>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::TaskOverride>) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
     }
@@ -245,10 +217,7 @@ impl StartTaskFluentBuilder {
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn set_propagate_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::PropagateTags>,
-    ) -> Self {
+    pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.inner = self.inner.set_propagate_tags(input);
         self
     }
@@ -317,10 +286,7 @@ impl StartTaskFluentBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -339,18 +305,12 @@ impl StartTaskFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }

@@ -92,9 +92,7 @@ impl InstanceAccessDetails {
 
 /// A builder for [`InstanceAccessDetails`](crate::types::InstanceAccessDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAccessDetailsBuilder {
     pub(crate) cert_key: ::std::option::Option<::std::string::String>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -128,10 +126,7 @@ impl InstanceAccessDetailsBuilder {
         self
     }
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }
@@ -182,10 +177,7 @@ impl InstanceAccessDetailsBuilder {
         self
     }
     /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
-    pub fn set_password_data(
-        mut self,
-        input: ::std::option::Option<crate::types::PasswordData>,
-    ) -> Self {
+    pub fn set_password_data(mut self, input: ::std::option::Option<crate::types::PasswordData>) -> Self {
         self.password_data = input;
         self
     }
@@ -213,10 +205,7 @@ impl InstanceAccessDetailsBuilder {
         self
     }
     /// <p>The protocol for these Amazon Lightsail instance access details.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAccessProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::InstanceAccessProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -225,18 +214,12 @@ impl InstanceAccessDetailsBuilder {
         &self.protocol
     }
     /// <p>The name of this Amazon Lightsail instance.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this Amazon Lightsail instance.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -270,17 +253,12 @@ impl InstanceAccessDetailsBuilder {
         self
     }
     /// <p>Describes the public SSH host keys or the RDP certificate.</p>
-    pub fn set_host_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>>,
-    ) -> Self {
+    pub fn set_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>>) -> Self {
         self.host_keys = input;
         self
     }
     /// <p>Describes the public SSH host keys or the RDP certificate.</p>
-    pub fn get_host_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>> {
+    pub fn get_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>> {
         &self.host_keys
     }
     /// Consumes the builder and constructs a [`InstanceAccessDetails`](crate::types::InstanceAccessDetails).

@@ -4,17 +4,10 @@ pub fn de_add_tags_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_tags::AddTagsOutput,
-    crate::operation::add_tags::AddTagsError,
-> {
+) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -24,48 +17,46 @@ pub fn de_add_tags_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::operation::add_tags::AddTagsError::AccessPointNotFoundException({
+        "LoadBalancerNotFound" => crate::operation::add_tags::AddTagsError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DuplicateTagKeys" => {
-            crate::operation::add_tags::AddTagsError::DuplicateTagKeysException({
+                let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DuplicateTagKeys" => crate::operation::add_tags::AddTagsError::DuplicateTagKeysException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_xml_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
+                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyTags" => crate::operation::add_tags::AddTagsError::TooManyTagsException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::TooManyTagsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -83,16 +74,11 @@ pub fn de_add_tags_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_tags::AddTagsOutput,
-    crate::operation::add_tags::AddTagsError,
-> {
+) -> std::result::Result<crate::operation::add_tags::AddTagsOutput, crate::operation::add_tags::AddTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_tags::builders::AddTagsOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

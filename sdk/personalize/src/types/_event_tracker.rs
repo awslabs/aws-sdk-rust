@@ -82,9 +82,7 @@ impl EventTracker {
 
 /// A builder for [`EventTracker`](crate::types::EventTracker).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTrackerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ impl EventTrackerBuilder {
         &self.name
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_tracker_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn set_event_tracker_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_tracker_arn = input;
         self
     }
@@ -159,18 +151,12 @@ impl EventTrackerBuilder {
         &self.tracking_id
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -213,10 +199,7 @@ impl EventTrackerBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -230,17 +213,12 @@ impl EventTrackerBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`EventTracker`](crate::types::EventTracker).

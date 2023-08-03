@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`ListSamlProvidersOutput`](crate::operation::list_saml_providers::ListSamlProvidersOutput) with field(s):
     ///   - [`saml_provider_list(Option<Vec<SamlProviderListEntry>>)`](crate::operation::list_saml_providers::ListSamlProvidersOutput::saml_provider_list): <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<ListSAMLProvidersError>`](crate::operation::list_saml_providers::ListSAMLProvidersError)
-    pub fn list_saml_providers(
-        &self,
-    ) -> crate::operation::list_saml_providers::builders::ListSAMLProvidersFluentBuilder {
-        crate::operation::list_saml_providers::builders::ListSAMLProvidersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_saml_providers(&self) -> crate::operation::list_saml_providers::builders::ListSAMLProvidersFluentBuilder {
+        crate::operation::list_saml_providers::builders::ListSAMLProvidersFluentBuilder::new(self.handle.clone())
     }
 }

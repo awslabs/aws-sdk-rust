@@ -20,15 +20,11 @@ impl S3AccessPointConfiguration {
         self.access_point_policy.as_deref()
     }
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> ::std::option::Option<&crate::types::S3PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-    pub fn network_origin(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkOriginConfiguration> {
+    pub fn network_origin(&self) -> ::std::option::Option<&crate::types::NetworkOriginConfiguration> {
         self.network_origin.as_ref()
     }
 }
@@ -41,29 +37,20 @@ impl S3AccessPointConfiguration {
 
 /// A builder for [`S3AccessPointConfiguration`](crate::types::S3AccessPointConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3AccessPointConfigurationBuilder {
     pub(crate) access_point_policy: ::std::option::Option<::std::string::String>,
-    pub(crate) public_access_block:
-        ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
+    pub(crate) public_access_block: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
     pub(crate) network_origin: ::std::option::Option<crate::types::NetworkOriginConfiguration>,
 }
 impl S3AccessPointConfigurationBuilder {
     /// <p>The access point or multi-region access point policy.</p>
-    pub fn access_point_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access point or multi-region access point policy.</p>
-    pub fn set_access_point_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_policy = input;
         self
     }
@@ -72,25 +59,17 @@ impl S3AccessPointConfigurationBuilder {
         &self.access_point_policy
     }
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    pub fn public_access_block(
-        mut self,
-        input: crate::types::S3PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block(mut self, input: crate::types::S3PublicAccessBlockConfiguration) -> Self {
         self.public_access_block = ::std::option::Option::Some(input);
         self
     }
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    pub fn set_public_access_block(
-        mut self,
-        input: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block(mut self, input: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block = input;
         self
     }
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    pub fn get_public_access_block(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block(&self) -> &::std::option::Option<crate::types::S3PublicAccessBlockConfiguration> {
         &self.public_access_block
     }
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
@@ -99,17 +78,12 @@ impl S3AccessPointConfigurationBuilder {
         self
     }
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-    pub fn set_network_origin(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkOriginConfiguration>,
-    ) -> Self {
+    pub fn set_network_origin(mut self, input: ::std::option::Option<crate::types::NetworkOriginConfiguration>) -> Self {
         self.network_origin = input;
         self
     }
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-    pub fn get_network_origin(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkOriginConfiguration> {
+    pub fn get_network_origin(&self) -> &::std::option::Option<crate::types::NetworkOriginConfiguration> {
         &self.network_origin
     }
     /// Consumes the builder and constructs a [`S3AccessPointConfiguration`](crate::types::S3AccessPointConfiguration).

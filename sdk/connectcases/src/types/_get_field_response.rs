@@ -24,12 +24,7 @@ pub struct GetFieldResponse {
     pub namespace: ::std::option::Option<crate::types::FieldNamespace>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
@@ -57,14 +52,7 @@ impl GetFieldResponse {
         self.namespace.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -77,9 +65,7 @@ impl GetFieldResponse {
 
 /// A builder for [`GetFieldResponse`](crate::types::GetFieldResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFieldResponseBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -87,12 +73,7 @@ pub struct GetFieldResponseBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
     pub(crate) namespace: ::std::option::Option<crate::types::FieldNamespace>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
@@ -171,10 +152,7 @@ impl GetFieldResponseBuilder {
         self
     }
     /// <p>Namespace of the field.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldNamespace>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::FieldNamespace>) -> Self {
         self.namespace = input;
         self
     }
@@ -187,11 +165,7 @@ impl GetFieldResponseBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
@@ -200,12 +174,7 @@ impl GetFieldResponseBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
@@ -213,12 +182,7 @@ impl GetFieldResponseBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkSiteOutput {
 }
 impl DeleteNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkSiteOutput`](crate::operation::delete_network_site::DeleteNetworkSiteOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_site::builders::DeleteNetworkSiteOutputBuilder {
+    pub fn builder() -> crate::operation::delete_network_site::builders::DeleteNetworkSiteOutputBuilder {
         crate::operation::delete_network_site::builders::DeleteNetworkSiteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkSiteOutput`](crate::operation::delete_network_site::DeleteNetworkSiteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteNetworkSiteOutputBuilder {
         self
     }
     /// <p>Information about the network site.</p>
-    pub fn set_network_site(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSite>,
-    ) -> Self {
+    pub fn set_network_site(mut self, input: ::std::option::Option<crate::types::NetworkSite>) -> Self {
         self.network_site = input;
         self
     }

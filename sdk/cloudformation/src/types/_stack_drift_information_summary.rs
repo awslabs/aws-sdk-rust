@@ -42,9 +42,7 @@ impl StackDriftInformationSummary {
 
 /// A builder for [`StackDriftInformationSummary`](crate::types::StackDriftInformationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackDriftInformationSummaryBuilder {
     pub(crate) stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     pub(crate) last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,10 +66,7 @@ impl StackDriftInformationSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    pub fn set_stack_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftStatus>,
-    ) -> Self {
+    pub fn set_stack_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.stack_drift_status = input;
         self
     }
@@ -91,10 +86,7 @@ impl StackDriftInformationSummaryBuilder {
         self
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
-    pub fn set_last_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_check_timestamp = input;
         self
     }

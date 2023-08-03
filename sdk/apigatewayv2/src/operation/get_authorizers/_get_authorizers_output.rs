@@ -35,9 +35,7 @@ impl GetAuthorizersOutput {
 
 /// A builder for [`GetAuthorizersOutput`](crate::operation::get_authorizers::GetAuthorizersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizersOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetAuthorizersOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Authorizer>>) -> Self {
         self.items = input;
         self
     }

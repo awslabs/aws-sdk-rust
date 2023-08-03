@@ -39,9 +39,7 @@ impl ListProtectionsOutput {
 
 /// A builder for [`ListProtectionsOutput`](crate::operation::list_protections::ListProtectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectionsOutputBuilder {
     pub(crate) protections: ::std::option::Option<::std::vec::Vec<crate::types::Protection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +58,12 @@ impl ListProtectionsOutputBuilder {
         self
     }
     /// <p>The array of enabled <code>Protection</code> objects.</p>
-    pub fn set_protections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Protection>>,
-    ) -> Self {
+    pub fn set_protections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protection>>) -> Self {
         self.protections = input;
         self
     }
     /// <p>The array of enabled <code>Protection</code> objects.</p>
-    pub fn get_protections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Protection>> {
+    pub fn get_protections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protection>> {
         &self.protections
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>

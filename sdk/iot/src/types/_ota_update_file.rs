@@ -21,9 +21,7 @@ pub struct OtaUpdateFile {
     pub code_signing: ::std::option::Option<crate::types::CodeSigning>,
     /// <p>A list of name/attribute pairs.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateFile {
     /// <p>The name of the file.</p>
@@ -47,11 +45,7 @@ impl OtaUpdateFile {
         self.code_signing.as_ref()
     }
     /// <p>A list of name/attribute pairs.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -64,18 +58,14 @@ impl OtaUpdateFile {
 
 /// A builder for [`OtaUpdateFile`](crate::types::OtaUpdateFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtaUpdateFileBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_type: ::std::option::Option<i32>,
     pub(crate) file_version: ::std::option::Option<::std::string::String>,
     pub(crate) file_location: ::std::option::Option<crate::types::FileLocation>,
     pub(crate) code_signing: ::std::option::Option<crate::types::CodeSigning>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateFileBuilder {
     /// <p>The name of the file.</p>
@@ -126,10 +116,7 @@ impl OtaUpdateFileBuilder {
         self
     }
     /// <p>The location of the updated firmware.</p>
-    pub fn set_file_location(
-        mut self,
-        input: ::std::option::Option<crate::types::FileLocation>,
-    ) -> Self {
+    pub fn set_file_location(mut self, input: ::std::option::Option<crate::types::FileLocation>) -> Self {
         self.file_location = input;
         self
     }
@@ -143,10 +130,7 @@ impl OtaUpdateFileBuilder {
         self
     }
     /// <p>The code signing method of the file.</p>
-    pub fn set_code_signing(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeSigning>,
-    ) -> Self {
+    pub fn set_code_signing(mut self, input: ::std::option::Option<crate::types::CodeSigning>) -> Self {
         self.code_signing = input;
         self
     }
@@ -159,32 +143,19 @@ impl OtaUpdateFileBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A list of name/attribute pairs.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of name/attribute pairs.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A list of name/attribute pairs.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`OtaUpdateFile`](crate::types::OtaUpdateFile).

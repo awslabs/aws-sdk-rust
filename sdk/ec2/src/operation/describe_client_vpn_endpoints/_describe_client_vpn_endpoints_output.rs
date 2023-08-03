@@ -5,8 +5,7 @@
 pub struct DescribeClientVpnEndpointsOutput {
     /// <p>Information about the Client VPN endpoints.</p>
     #[doc(hidden)]
-    pub client_vpn_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
+    pub client_vpn_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeClientVpnEndpointsOutput {
 }
 impl DescribeClientVpnEndpointsOutput {
     /// <p>Information about the Client VPN endpoints.</p>
-    pub fn client_vpn_endpoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClientVpnEndpoint]> {
+    pub fn client_vpn_endpoints(&self) -> ::std::option::Option<&[crate::types::ClientVpnEndpoint]> {
         self.client_vpn_endpoints.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClientVpnEndpointsOutput {
 }
 impl DescribeClientVpnEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnEndpointsOutput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput).
-    pub fn builder() -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsOutputBuilder {
         crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnEndpointsOutput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnEndpointsOutputBuilder {
-    pub(crate) client_vpn_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
+    pub(crate) client_vpn_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeClientVpnEndpointsOutputBuilder {
         self
     }
     /// <p>Information about the Client VPN endpoints.</p>
-    pub fn set_client_vpn_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>) -> Self {
         self.client_vpn_endpoints = input;
         self
     }
     /// <p>Information about the Client VPN endpoints.</p>
-    pub fn get_client_vpn_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>> {
+    pub fn get_client_vpn_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>> {
         &self.client_vpn_endpoints
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeClientVpnEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnEndpointsOutput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput {
+    pub fn build(self) -> crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput {
         crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput {
             client_vpn_endpoints: self.client_vpn_endpoints,
             next_token: self.next_token,

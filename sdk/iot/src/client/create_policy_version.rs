@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`policy_version_id(Option<String>)`](crate::operation::create_policy_version::CreatePolicyVersionOutput::policy_version_id): <p>The policy version ID.</p>
     ///   - [`is_default_version(bool)`](crate::operation::create_policy_version::CreatePolicyVersionOutput::is_default_version): <p>Specifies whether the policy version is the default.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyVersionError>`](crate::operation::create_policy_version::CreatePolicyVersionError)
-    pub fn create_policy_version(
-        &self,
-    ) -> crate::operation::create_policy_version::builders::CreatePolicyVersionFluentBuilder {
-        crate::operation::create_policy_version::builders::CreatePolicyVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_policy_version(&self) -> crate::operation::create_policy_version::builders::CreatePolicyVersionFluentBuilder {
+        crate::operation::create_policy_version::builders::CreatePolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,10 +7,7 @@ pub fn ser_prefix_level(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.storage_metrics {
         let inner_writer = scope.start_el("StorageMetrics");
-        crate::protocol_serde::shape_prefix_level_storage_metrics::ser_prefix_level_storage_metrics(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_prefix_level_storage_metrics::ser_prefix_level_storage_metrics(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())

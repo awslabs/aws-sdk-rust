@@ -26,7 +26,7 @@ impl DescribeInstancePatchStatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder,
+    inner: crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder,
 }
 impl DescribeInstancePatchStatesFluentBuilder {
     /// Creates a new `DescribeInstancePatchStates`.
@@ -37,7 +37,7 @@ impl DescribeInstancePatchStatesFluentBuilder {
         }
     }
     /// Access the DescribeInstancePatchStates as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInstancePatchStatesFluentBuilder {
             crate::operation::describe_instance_patch_states::DescribeInstancePatchStates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInstancePatchStatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInstancePatchStatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInstancePatchStatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeInstancePatchStatesFluentBuilder {
             crate::operation::describe_instance_patch_states::DescribeInstancePatchStates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator {
         crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `InstanceIds`.
@@ -136,17 +125,12 @@ impl DescribeInstancePatchStatesFluentBuilder {
         self
     }
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

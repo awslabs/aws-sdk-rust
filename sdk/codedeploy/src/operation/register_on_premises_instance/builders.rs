@@ -28,7 +28,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder,
+    inner: crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder,
 }
 impl RegisterOnPremisesInstanceFluentBuilder {
     /// Creates a new `RegisterOnPremisesInstance`.
@@ -39,7 +39,7 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         }
     }
     /// Access the RegisterOnPremisesInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl RegisterOnPremisesInstanceFluentBuilder {
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl RegisterOnPremisesInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl RegisterOnPremisesInstanceFluentBuilder {
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         self.inner.get_instance_name()
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn iam_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_session_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn set_iam_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_session_arn(input);
         self
     }

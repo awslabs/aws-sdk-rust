@@ -10,10 +10,7 @@ impl ListAssetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_assets::ListAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assets::ListAssetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_assets();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl ListAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,10 +101,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         self.customize_middleware().await
@@ -156,18 +144,12 @@ impl ListAssetsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
@@ -191,10 +173,7 @@ impl ListAssetsFluentBuilder {
     /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
     /// <p>Default: <code>ALL</code> </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAssetsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetsFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

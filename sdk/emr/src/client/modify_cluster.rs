@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput) with field(s):
     ///   - [`step_concurrency_level(Option<i32>)`](crate::operation::modify_cluster::ModifyClusterOutput::step_concurrency_level): <p>The number of steps that can be executed concurrently.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::operation::modify_cluster::ModifyClusterError)
-    pub fn modify_cluster(
-        &self,
-    ) -> crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder {
-        crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_cluster(&self) -> crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder {
+        crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::new(self.handle.clone())
     }
 }

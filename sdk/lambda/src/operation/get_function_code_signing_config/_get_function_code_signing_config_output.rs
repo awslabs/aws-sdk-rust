@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetFunctionCodeSigningConfigOutput {
 }
 impl GetFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionCodeSigningConfigOutput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput).
-    pub fn builder() -> crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder{
+    pub fn builder() -> crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder {
         crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionCodeSigningConfigOutput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionCodeSigningConfigOutputBuilder {
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ pub struct GetFunctionCodeSigningConfigOutputBuilder {
 }
 impl GetFunctionCodeSigningConfigOutputBuilder {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_signing_config_arn = input;
         self
     }
@@ -86,10 +78,7 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -101,10 +90,7 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -129,10 +115,7 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFunctionCodeSigningConfigOutput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput
-    {
+    pub fn build(self) -> crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput {
         crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput {
             code_signing_config_arn: self.code_signing_config_arn,
             function_name: self.function_name,

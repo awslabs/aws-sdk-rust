@@ -6,19 +6,13 @@ pub fn ser_create_job_input(
     if let Some(var_1) = &input.algorithm_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("algorithmSpecification").start_object();
-        crate::protocol_serde::shape_algorithm_specification::ser_algorithm_specification(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_algorithm_specification::ser_algorithm_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.checkpoint_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("checkpointConfig").start_object();
-        crate::protocol_serde::shape_job_checkpoint_config::ser_job_checkpoint_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_job_checkpoint_config::ser_job_checkpoint_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.client_token {
@@ -46,10 +40,7 @@ pub fn ser_create_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_input_file_config::ser_input_file_config(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_input_file_config::ser_input_file_config(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
@@ -67,10 +58,7 @@ pub fn ser_create_job_input(
     if let Some(var_19) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("outputDataConfig").start_object();
-        crate::protocol_serde::shape_job_output_data_config::ser_job_output_data_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_job_output_data_config::ser_job_output_data_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.role_arn {
@@ -79,10 +67,7 @@ pub fn ser_create_job_input(
     if let Some(var_22) = &input.stopping_condition {
         #[allow(unused_mut)]
         let mut object_23 = object.key("stoppingCondition").start_object();
-        crate::protocol_serde::shape_job_stopping_condition::ser_job_stopping_condition(
-            &mut object_23,
-            var_22,
-        )?;
+        crate::protocol_serde::shape_job_stopping_condition::ser_job_stopping_condition(&mut object_23, var_22)?;
         object_23.finish();
     }
     if let Some(var_24) = &input.tags {

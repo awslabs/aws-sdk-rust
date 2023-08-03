@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`local_gateway_virtual_interfaces(Option<Vec<LocalGatewayVirtualInterface>>)`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput::local_gateway_virtual_interfaces): <p>Information about the virtual interfaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLocalGatewayVirtualInterfacesError>`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesError)
-    pub fn describe_local_gateway_virtual_interfaces(&self) -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesFluentBuilder{
-        crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesFluentBuilder::new(self.handle.clone())
+    pub fn describe_local_gateway_virtual_interfaces(
+        &self,
+    ) -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesFluentBuilder {
+        crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

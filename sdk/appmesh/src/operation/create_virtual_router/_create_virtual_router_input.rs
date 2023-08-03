@@ -50,18 +50,14 @@ impl CreateVirtualRouterInput {
 }
 impl CreateVirtualRouterInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
-        crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder {
+        crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualRouterInputBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct CreateVirtualRouterInputBuilder {
 }
 impl CreateVirtualRouterInputBuilder {
     /// <p>The name to use for the virtual router.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the virtual router.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -111,10 +101,7 @@ impl CreateVirtualRouterInputBuilder {
         self
     }
     /// <p>The virtual router specification to apply.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -134,10 +121,7 @@ impl CreateVirtualRouterInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -176,19 +160,15 @@ impl CreateVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_virtual_router::CreateVirtualRouterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_virtual_router::CreateVirtualRouterInput {
-                virtual_router_name: self.virtual_router_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                tags: self.tags,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_virtual_router::CreateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_virtual_router::CreateVirtualRouterInput {
+            virtual_router_name: self.virtual_router_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            tags: self.tags,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`event_actions(Option<Vec<EventActionEntry>>)`](crate::operation::list_event_actions::ListEventActionsOutput::event_actions): <p>The event action objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_actions::ListEventActionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEventActionsError>`](crate::operation::list_event_actions::ListEventActionsError)
-    pub fn list_event_actions(
-        &self,
-    ) -> crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder {
-        crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_actions(&self) -> crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder {
+        crate::operation::list_event_actions::builders::ListEventActionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTopicRuleDestinationOutput {
 }
 impl DeleteTopicRuleDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTopicRuleDestinationOutput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput).
-    pub fn builder() -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationOutputBuilder {
         crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTopicRuleDestinationOutput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTopicRuleDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteTopicRuleDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTopicRuleDestinationOutput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput {
+    pub fn build(self) -> crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput {
         crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput {
             _request_id: self._request_id,
         }

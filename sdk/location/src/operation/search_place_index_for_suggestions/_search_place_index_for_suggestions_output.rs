@@ -13,9 +13,7 @@ pub struct SearchPlaceIndexForSuggestionsOutput {
 }
 impl SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    pub fn summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SearchPlaceIndexForSuggestionsSummary> {
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::SearchPlaceIndexForSuggestionsSummary> {
         self.summary.as_ref()
     }
     /// <p>A list of place suggestions that best match the search text.</p>
@@ -30,20 +28,17 @@ impl ::aws_http::request_id::RequestId for SearchPlaceIndexForSuggestionsOutput 
 }
 impl SearchPlaceIndexForSuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsOutput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput).
-    pub fn builder() -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder{
+    pub fn builder() -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder {
         crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchPlaceIndexForSuggestionsOutput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestionsOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForSuggestionsOutputBuilder {
@@ -53,17 +48,12 @@ impl SearchPlaceIndexForSuggestionsOutputBuilder {
         self
     }
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>) -> Self {
         self.summary = input;
         self
     }
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    pub fn get_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary> {
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary> {
         &self.summary
     }
     /// Appends an item to `results`.
@@ -78,17 +68,12 @@ impl SearchPlaceIndexForSuggestionsOutputBuilder {
         self
     }
     /// <p>A list of place suggestions that best match the search text.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of place suggestions that best match the search text.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,10 +86,7 @@ impl SearchPlaceIndexForSuggestionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsOutput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput
-    {
+    pub fn build(self) -> crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput {
         crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput {
             summary: self.summary,
             results: self.results,

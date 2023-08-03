@@ -15,9 +15,7 @@ pub struct GetDataflowEndpointGroupOutput {
     pub endpoints_details: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
     /// <p>Tags assigned to a dataflow endpoint group.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
     #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
@@ -40,11 +38,7 @@ impl GetDataflowEndpointGroupOutput {
         self.endpoints_details.as_deref()
     }
     /// <p>Tags assigned to a dataflow endpoint group.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
@@ -63,42 +57,31 @@ impl ::aws_http::request_id::RequestId for GetDataflowEndpointGroupOutput {
 }
 impl GetDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetDataflowEndpointGroupOutput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput).
-    pub fn builder() -> crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupOutputBuilder{
+    pub fn builder() -> crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupOutputBuilder {
         crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataflowEndpointGroupOutput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupOutputBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_endpoint_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) endpoints_details: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     pub(crate) contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetDataflowEndpointGroupOutputBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = input;
         self
     }
@@ -107,18 +90,12 @@ impl GetDataflowEndpointGroupOutputBuilder {
         &self.dataflow_endpoint_group_id
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_arn = input;
         self
     }
@@ -138,17 +115,12 @@ impl GetDataflowEndpointGroupOutputBuilder {
         self
     }
     /// <p>Details of a dataflow endpoint.</p>
-    pub fn set_endpoints_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
-    ) -> Self {
+    pub fn set_endpoints_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>) -> Self {
         self.endpoints_details = input;
         self
     }
     /// <p>Details of a dataflow endpoint.</p>
-    pub fn get_endpoints_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
+    pub fn get_endpoints_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
         &self.endpoints_details
     }
     /// Adds a key-value pair to `tags`.
@@ -156,32 +128,19 @@ impl GetDataflowEndpointGroupOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a dataflow endpoint group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags assigned to a dataflow endpoint group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to a dataflow endpoint group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
@@ -190,10 +149,7 @@ impl GetDataflowEndpointGroupOutputBuilder {
         self
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
-    pub fn set_contact_pre_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_pre_pass_duration_seconds = input;
         self
     }
@@ -207,10 +163,7 @@ impl GetDataflowEndpointGroupOutputBuilder {
         self
     }
     /// <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
-    pub fn set_contact_post_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_post_pass_duration_seconds = input;
         self
     }
@@ -228,9 +181,7 @@ impl GetDataflowEndpointGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataflowEndpointGroupOutput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput {
+    pub fn build(self) -> crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput {
         crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput {
             dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
             dataflow_endpoint_group_arn: self.dataflow_endpoint_group_arn,

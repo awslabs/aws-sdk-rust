@@ -37,10 +37,7 @@ impl ListAnalyzedResourcesFluentBuilder {
         }
     }
     /// Access the ListAnalyzedResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAnalyzedResourcesFluentBuilder {
             crate::operation::list_analyzed_resources::ListAnalyzedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_analyzed_resources::ListAnalyzedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_analyzed_resources::ListAnalyzedResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAnalyzedResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAnalyzedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_analyzed_resources::ListAnalyzedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_analyzed_resources::ListAnalyzedResourcesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAnalyzedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_analyzed_resources::ListAnalyzedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_analyzed_resources::ListAnalyzedResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListAnalyzedResourcesFluentBuilder {
             crate::operation::list_analyzed_resources::ListAnalyzedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_analyzed_resources::ListAnalyzedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_analyzed_resources::ListAnalyzedResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator {
-        crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator {
+        crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +135,7 @@ impl ListAnalyzedResourcesFluentBuilder {
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

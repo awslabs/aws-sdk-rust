@@ -37,9 +37,7 @@ impl UpdateReplicationSetFluentBuilder {
         }
     }
     /// Access the UpdateReplicationSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateReplicationSetFluentBuilder {
             crate::operation::update_replication_set::UpdateReplicationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_set::UpdateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateReplicationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateReplicationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_set::UpdateReplicationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_set::UpdateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateReplicationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_replication_set::UpdateReplicationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_set::UpdateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateReplicationSetFluentBuilder {
             crate::operation::update_replication_set::UpdateReplicationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_set::UpdateReplicationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl UpdateReplicationSetFluentBuilder {
         self
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>> {
         self.inner.get_actions()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>

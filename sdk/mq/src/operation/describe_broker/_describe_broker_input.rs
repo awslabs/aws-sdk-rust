@@ -22,9 +22,7 @@ impl DescribeBrokerInput {
 
 /// A builder for [`DescribeBrokerInput`](crate::operation::describe_broker::DescribeBrokerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBrokerInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeBrokerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBrokerInput`](crate::operation::describe_broker::DescribeBrokerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_broker::DescribeBrokerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_broker::DescribeBrokerInput {
-            broker_id: self.broker_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_broker::DescribeBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_broker::DescribeBrokerInput { broker_id: self.broker_id })
     }
 }

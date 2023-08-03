@@ -64,9 +64,7 @@ impl ModelPackageGroup {
     /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
-    pub fn model_package_group_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
+    pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -83,33 +81,24 @@ impl ModelPackageGroup {
 
 /// A builder for [`ModelPackageGroup`](crate::types::ModelPackageGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageGroupBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
-    pub(crate) model_package_group_status:
-        ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ModelPackageGroupBuilder {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -118,18 +107,12 @@ impl ModelPackageGroupBuilder {
         &self.model_package_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn set_model_package_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_arn = input;
         self
     }
@@ -138,25 +121,17 @@ impl ModelPackageGroupBuilder {
         &self.model_package_group_arn
     }
     /// <p>The description for the model group.</p>
-    pub fn model_package_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the model group.</p>
-    pub fn set_model_package_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_description = input;
         self
     }
     /// <p>The description for the model group.</p>
-    pub fn get_model_package_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_model_package_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_description
     }
     /// <p>The time that the model group was created.</p>
@@ -165,10 +140,7 @@ impl ModelPackageGroupBuilder {
         self
     }
     /// <p>The time that the model group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -182,10 +154,7 @@ impl ModelPackageGroupBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -202,10 +171,7 @@ impl ModelPackageGroupBuilder {
     /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
-    pub fn model_package_group_status(
-        mut self,
-        input: crate::types::ModelPackageGroupStatus,
-    ) -> Self {
+    pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = ::std::option::Option::Some(input);
         self
     }
@@ -218,10 +184,7 @@ impl ModelPackageGroupBuilder {
     /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
-    pub fn set_model_package_group_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
-    ) -> Self {
+    pub fn set_model_package_group_status(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupStatus>) -> Self {
         self.model_package_group_status = input;
         self
     }
@@ -234,9 +197,7 @@ impl ModelPackageGroupBuilder {
     /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
-    pub fn get_model_package_group_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
+    pub fn get_model_package_group_status(&self) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
         &self.model_package_group_status
     }
     /// Appends an item to `tags`.
@@ -251,10 +212,7 @@ impl ModelPackageGroupBuilder {
         self
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

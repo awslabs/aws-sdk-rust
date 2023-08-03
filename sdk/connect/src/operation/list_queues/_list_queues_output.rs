@@ -35,12 +35,9 @@ impl ListQueuesOutput {
 
 /// A builder for [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesOutputBuilder {
-    pub(crate) queue_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>>,
+    pub(crate) queue_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListQueuesOutputBuilder {
         self
     }
     /// <p>Information about the queues.</p>
-    pub fn set_queue_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>>,
-    ) -> Self {
+    pub fn set_queue_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>>) -> Self {
         self.queue_summary_list = input;
         self
     }
     /// <p>Information about the queues.</p>
-    pub fn get_queue_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>> {
+    pub fn get_queue_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueSummary>> {
         &self.queue_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

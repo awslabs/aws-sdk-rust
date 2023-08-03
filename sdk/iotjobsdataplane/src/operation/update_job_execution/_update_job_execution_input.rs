@@ -14,9 +14,7 @@ pub struct UpdateJobExecutionInput {
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     #[doc(hidden)]
-    pub status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     #[doc(hidden)]
     pub step_timeout_in_minutes: ::std::option::Option<i64>,
@@ -47,11 +45,7 @@ impl UpdateJobExecutionInput {
         self.status.as_ref()
     }
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
@@ -77,24 +71,19 @@ impl UpdateJobExecutionInput {
 }
 impl UpdateJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobExecutionInput`](crate::operation::update_job_execution::UpdateJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder {
+    pub fn builder() -> crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder {
         crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobExecutionInput`](crate::operation::update_job_execution::UpdateJobExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobExecutionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
-    pub(crate) status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) step_timeout_in_minutes: ::std::option::Option<i64>,
     pub(crate) expected_version: ::std::option::Option<i64>,
     pub(crate) include_job_execution_state: ::std::option::Option<bool>,
@@ -136,10 +125,7 @@ impl UpdateJobExecutionInputBuilder {
         self
     }
     /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -165,19 +151,13 @@ impl UpdateJobExecutionInputBuilder {
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.status_details = input;
         self
     }
     /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }
     /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
@@ -253,22 +233,17 @@ impl UpdateJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobExecutionInput`](crate::operation::update_job_execution::UpdateJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_execution::UpdateJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_job_execution::UpdateJobExecutionInput {
-                job_id: self.job_id,
-                thing_name: self.thing_name,
-                status: self.status,
-                status_details: self.status_details,
-                step_timeout_in_minutes: self.step_timeout_in_minutes,
-                expected_version: self.expected_version,
-                include_job_execution_state: self.include_job_execution_state,
-                include_job_document: self.include_job_document,
-                execution_number: self.execution_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_job_execution::UpdateJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_job_execution::UpdateJobExecutionInput {
+            job_id: self.job_id,
+            thing_name: self.thing_name,
+            status: self.status,
+            status_details: self.status_details,
+            step_timeout_in_minutes: self.step_timeout_in_minutes,
+            expected_version: self.expected_version,
+            include_job_execution_state: self.include_job_execution_state,
+            include_job_document: self.include_job_document,
+            execution_number: self.execution_number,
+        })
     }
 }

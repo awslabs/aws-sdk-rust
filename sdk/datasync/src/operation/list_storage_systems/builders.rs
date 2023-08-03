@@ -10,10 +10,7 @@ impl ListStorageSystemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_storage_systems::ListStorageSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_storage_systems::ListStorageSystemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_storage_systems::ListStorageSystemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_storage_systems();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListStorageSystemsFluentBuilder {
         }
     }
     /// Access the ListStorageSystems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListStorageSystemsFluentBuilder {
             crate::operation::list_storage_systems::ListStorageSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_storage_systems::ListStorageSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_storage_systems::ListStorageSystemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListStorageSystemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListStorageSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_storage_systems::ListStorageSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_storage_systems::ListStorageSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_storage_systems::ListStorageSystemsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListStorageSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_storage_systems::ListStorageSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_storage_systems::ListStorageSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_storage_systems::ListStorageSystemsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListStorageSystemsFluentBuilder {
             crate::operation::list_storage_systems::ListStorageSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_storage_systems::ListStorageSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_storage_systems::ListStorageSystemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_storage_systems::paginator::ListStorageSystemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_storage_systems::paginator::ListStorageSystemsPaginator {
-        crate::operation::list_storage_systems::paginator::ListStorageSystemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_storage_systems::paginator::ListStorageSystemsPaginator {
+        crate::operation::list_storage_systems::paginator::ListStorageSystemsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {

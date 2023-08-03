@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`principal_type(PrincipalType)`](crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioFluentBuilder::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioFluentBuilder::set_principal_type): <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     /// - On success, responds with [`AssociatePrincipalWithPortfolioOutput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput)
     /// - On failure, responds with [`SdkError<AssociatePrincipalWithPortfolioError>`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioError)
-    pub fn associate_principal_with_portfolio(&self) -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioFluentBuilder{
+    pub fn associate_principal_with_portfolio(
+        &self,
+    ) -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioFluentBuilder {
         crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

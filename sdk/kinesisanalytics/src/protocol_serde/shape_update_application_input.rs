@@ -15,10 +15,7 @@ pub fn ser_update_application_input(
     if let Some(var_3) = &input.application_update {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ApplicationUpdate").start_object();
-        crate::protocol_serde::shape_application_update::ser_application_update(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_application_update::ser_application_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

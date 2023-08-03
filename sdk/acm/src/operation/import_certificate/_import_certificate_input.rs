@@ -56,8 +56,7 @@ impl ::std::fmt::Debug for ImportCertificateInput {
 }
 impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateInputBuilder::default()
     }
 }
@@ -74,18 +73,12 @@ pub struct ImportCertificateInputBuilder {
 }
 impl ImportCertificateInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -99,10 +92,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>The certificate to import.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.certificate = input;
         self
     }
@@ -116,10 +106,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>The private key that matches the public key in the certificate.</p>
-    pub fn set_private_key(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.private_key = input;
         self
     }
@@ -133,10 +120,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>The PEM encoded certificate chain.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.certificate_chain = input;
         self
     }
@@ -158,10 +142,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -173,19 +154,14 @@ impl ImportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_certificate::ImportCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_certificate::ImportCertificateInput {
-                certificate_arn: self.certificate_arn,
-                certificate: self.certificate,
-                private_key: self.private_key,
-                certificate_chain: self.certificate_chain,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
+            certificate_arn: self.certificate_arn,
+            certificate: self.certificate,
+            private_key: self.private_key,
+            certificate_chain: self.certificate_chain,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInputBuilder {

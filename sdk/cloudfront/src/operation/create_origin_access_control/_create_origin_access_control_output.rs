@@ -16,9 +16,7 @@ pub struct CreateOriginAccessControlOutput {
 }
 impl CreateOriginAccessControlOutput {
     /// <p>Contains an origin access control.</p>
-    pub fn origin_access_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControl> {
+    pub fn origin_access_control(&self) -> ::std::option::Option<&crate::types::OriginAccessControl> {
         self.origin_access_control.as_ref()
     }
     /// <p>The URL of the origin access control.</p>
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateOriginAccessControlOutput {
 }
 impl CreateOriginAccessControlOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
-    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder{
+    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder {
         crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOriginAccessControlOutputBuilder {
     pub(crate) origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -60,17 +56,12 @@ impl CreateOriginAccessControlOutputBuilder {
         self
     }
     /// <p>Contains an origin access control.</p>
-    pub fn set_origin_access_control(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControl>,
-    ) -> Self {
+    pub fn set_origin_access_control(mut self, input: ::std::option::Option<crate::types::OriginAccessControl>) -> Self {
         self.origin_access_control = input;
         self
     }
     /// <p>Contains an origin access control.</p>
-    pub fn get_origin_access_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControl> {
+    pub fn get_origin_access_control(&self) -> &::std::option::Option<crate::types::OriginAccessControl> {
         &self.origin_access_control
     }
     /// <p>The URL of the origin access control.</p>
@@ -111,9 +102,7 @@ impl CreateOriginAccessControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
+    pub fn build(self) -> crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
         crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
             origin_access_control: self.origin_access_control,
             location: self.location,

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`publishing_failure_start_timestamp(i64)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::publishing_failure_start_timestamp): <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     ///   - [`destination_properties(Option<DestinationProperties>)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::destination_properties): <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     /// - On failure, responds with [`SdkError<DescribePublishingDestinationError>`](crate::operation::describe_publishing_destination::DescribePublishingDestinationError)
-    pub fn describe_publishing_destination(&self) -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationFluentBuilder{
+    pub fn describe_publishing_destination(
+        &self,
+    ) -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationFluentBuilder {
         crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

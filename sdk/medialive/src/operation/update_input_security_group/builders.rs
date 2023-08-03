@@ -26,7 +26,7 @@ impl UpdateInputSecurityGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInputSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder,
+    inner: crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder,
 }
 impl UpdateInputSecurityGroupFluentBuilder {
     /// Creates a new `UpdateInputSecurityGroup`.
@@ -37,7 +37,7 @@ impl UpdateInputSecurityGroupFluentBuilder {
         }
     }
     /// Access the UpdateInputSecurityGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateInputSecurityGroupFluentBuilder {
             crate::operation::update_input_security_group::UpdateInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_security_group::UpdateInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_security_group::UpdateInputSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateInputSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_input_security_group::UpdateInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_security_group::UpdateInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_security_group::UpdateInputSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_input_security_group::UpdateInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_security_group::UpdateInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_security_group::UpdateInputSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateInputSecurityGroupFluentBuilder {
             crate::operation::update_input_security_group::UpdateInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input_security_group::UpdateInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input_security_group::UpdateInputSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
     /// The id of the Input Security Group to update.
-    pub fn input_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_security_group_id(input.into());
         self
     }
     /// The id of the Input Security Group to update.
-    pub fn set_input_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_security_group_id(input);
         self
     }
@@ -145,30 +128,17 @@ impl UpdateInputSecurityGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `WhitelistRules`.
@@ -181,17 +151,12 @@ impl UpdateInputSecurityGroupFluentBuilder {
         self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn set_whitelist_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
-    ) -> Self {
+    pub fn set_whitelist_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>) -> Self {
         self.inner = self.inner.set_whitelist_rules(input);
         self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn get_whitelist_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
+    pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
         self.inner.get_whitelist_rules()
     }
 }

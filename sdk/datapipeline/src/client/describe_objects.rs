@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_objects::DescribeObjectsOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     ///   - [`has_more_results(bool)`](crate::operation::describe_objects::DescribeObjectsOutput::has_more_results): <p>Indicates whether there are more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeObjectsError>`](crate::operation::describe_objects::DescribeObjectsError)
-    pub fn describe_objects(
-        &self,
-    ) -> crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder {
-        crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_objects(&self) -> crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder {
+        crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`ipv6_pools(Option<Vec<Ipv6Pool>>)`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput::ipv6_pools): <p>Information about the IPv6 address pools.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeIpv6PoolsError>`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError)
-    pub fn describe_ipv6_pools(
-        &self,
-    ) -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsFluentBuilder {
-        crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ipv6_pools(&self) -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsFluentBuilder {
+        crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsFluentBuilder::new(self.handle.clone())
     }
 }

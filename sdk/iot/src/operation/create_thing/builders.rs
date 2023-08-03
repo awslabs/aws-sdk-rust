@@ -10,10 +10,7 @@ impl CreateThingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_thing::CreateThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing::CreateThingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing::CreateThingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_thing();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl CreateThingFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_thing::CreateThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_thing::CreateThing, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_thing::CreateThingError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl CreateThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl CreateThingFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_thing::CreateThing,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_thing::CreateThing, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_thing::CreateThingError>,
     > {
         self.customize_middleware().await
@@ -133,18 +121,12 @@ impl CreateThingFluentBuilder {
         self.inner.get_thing_name()
     }
     /// <p>The name of the thing type associated with the new thing.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_type_name(input.into());
         self
     }
     /// <p>The name of the thing type associated with the new thing.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
@@ -160,10 +142,7 @@ impl CreateThingFluentBuilder {
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
     /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
-    pub fn set_attribute_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributePayload>,
-    ) -> Self {
+    pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.inner = self.inner.set_attribute_payload(input);
         self
     }
@@ -173,18 +152,12 @@ impl CreateThingFluentBuilder {
         self.inner.get_attribute_payload()
     }
     /// <p>The name of the billing group the thing will be added to.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name of the billing group the thing will be added to.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput) with field(s):
     ///   - [`db_proxy_endpoint(Option<DbProxyEndpoint>)`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput::db_proxy_endpoint): <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     /// - On failure, responds with [`SdkError<ModifyDBProxyEndpointError>`](crate::operation::modify_db_proxy_endpoint::ModifyDBProxyEndpointError)
-    pub fn modify_db_proxy_endpoint(
-        &self,
-    ) -> crate::operation::modify_db_proxy_endpoint::builders::ModifyDBProxyEndpointFluentBuilder
-    {
+    pub fn modify_db_proxy_endpoint(&self) -> crate::operation::modify_db_proxy_endpoint::builders::ModifyDBProxyEndpointFluentBuilder {
         crate::operation::modify_db_proxy_endpoint::builders::ModifyDBProxyEndpointFluentBuilder::new(self.handle.clone())
     }
 }

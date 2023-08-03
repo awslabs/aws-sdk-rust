@@ -10,10 +10,7 @@ impl DeleteEventActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_event_action::DeleteEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_action::DeleteEventActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_action::DeleteEventActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_event_action();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteEventActionFluentBuilder {
         }
     }
     /// Access the DeleteEventAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteEventActionFluentBuilder {
             crate::operation::delete_event_action::DeleteEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_action::DeleteEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_action::DeleteEventActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteEventActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_action::DeleteEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_action::DeleteEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_action::DeleteEventActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_action::DeleteEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_action::DeleteEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_action::DeleteEventActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteEventActionFluentBuilder {
             crate::operation::delete_event_action::DeleteEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_action::DeleteEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_action::DeleteEventActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_action_id(input.into());
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn set_event_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_action_id(input);
         self
     }

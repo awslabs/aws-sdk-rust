@@ -10,10 +10,7 @@ impl StartDiscoveryJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_discovery_job::StartDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_discovery_job::StartDiscoveryJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_discovery_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartDiscoveryJobFluentBuilder {
         }
     }
     /// Access the StartDiscoveryJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartDiscoveryJobFluentBuilder {
             crate::operation::start_discovery_job::StartDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_discovery_job::StartDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartDiscoveryJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_discovery_job::StartDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_discovery_job::StartDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_discovery_job::StartDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_discovery_job::StartDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartDiscoveryJobFluentBuilder {
             crate::operation::start_discovery_job::StartDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_discovery_job::StartDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }
@@ -186,10 +164,7 @@ impl StartDiscoveryJobFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

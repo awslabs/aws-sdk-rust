@@ -129,18 +129,14 @@ impl StartWorkflowExecutionInput {
 }
 impl StartWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionInput`](crate::operation::start_workflow_execution::StartWorkflowExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::start_workflow_execution::builders::StartWorkflowExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_workflow_execution::builders::StartWorkflowExecutionInputBuilder {
         crate::operation::start_workflow_execution::builders::StartWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartWorkflowExecutionInput`](crate::operation::start_workflow_execution::StartWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -195,10 +191,7 @@ impl StartWorkflowExecutionInputBuilder {
         self
     }
     /// <p>The type of the workflow to start.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -231,19 +224,13 @@ impl StartWorkflowExecutionInputBuilder {
     }
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_task_priority(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_priority = input;
         self
     }
@@ -270,10 +257,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
-    pub fn execution_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
@@ -281,10 +265,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
-    pub fn set_execution_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_start_to_close_timeout = input;
         self
     }
@@ -292,9 +273,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
-    pub fn get_execution_start_to_close_timeout(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_execution_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_start_to_close_timeout
     }
     /// Appends an item to `tag_list`.
@@ -309,10 +288,7 @@ impl StartWorkflowExecutionInputBuilder {
         self
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -324,10 +300,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn task_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
@@ -335,10 +308,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_task_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_start_to_close_timeout = input;
         self
     }
@@ -371,10 +341,7 @@ impl StartWorkflowExecutionInputBuilder {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.child_policy = input;
         self
     }
@@ -413,24 +380,20 @@ impl StartWorkflowExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowExecutionInput`](crate::operation::start_workflow_execution::StartWorkflowExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_workflow_execution::StartWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_workflow_execution::StartWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                workflow_type: self.workflow_type,
-                task_list: self.task_list,
-                task_priority: self.task_priority,
-                input: self.input,
-                execution_start_to_close_timeout: self.execution_start_to_close_timeout,
-                tag_list: self.tag_list,
-                task_start_to_close_timeout: self.task_start_to_close_timeout,
-                child_policy: self.child_policy,
-                lambda_role: self.lambda_role,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_workflow_execution::StartWorkflowExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_workflow_execution::StartWorkflowExecutionInput {
+            domain: self.domain,
+            workflow_id: self.workflow_id,
+            workflow_type: self.workflow_type,
+            task_list: self.task_list,
+            task_priority: self.task_priority,
+            input: self.input,
+            execution_start_to_close_timeout: self.execution_start_to_close_timeout,
+            tag_list: self.tag_list,
+            task_start_to_close_timeout: self.task_start_to_close_timeout,
+            child_policy: self.child_policy,
+            lambda_role: self.lambda_role,
+        })
     }
 }

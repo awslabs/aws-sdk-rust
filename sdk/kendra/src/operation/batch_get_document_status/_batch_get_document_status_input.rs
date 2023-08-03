@@ -22,22 +22,17 @@ impl BatchGetDocumentStatusInput {
 }
 impl BatchGetDocumentStatusInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDocumentStatusInput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder {
         crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDocumentStatusInput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDocumentStatusInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) document_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
+    pub(crate) document_info_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
 }
 impl BatchGetDocumentStatusInputBuilder {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
@@ -66,17 +61,12 @@ impl BatchGetDocumentStatusInputBuilder {
         self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn set_document_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
-    ) -> Self {
+    pub fn set_document_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>) -> Self {
         self.document_info_list = input;
         self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn get_document_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
+    pub fn get_document_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
         &self.document_info_list
     }
     /// Consumes the builder and constructs a [`BatchGetDocumentStatusInput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusInput).
@@ -86,11 +76,9 @@ impl BatchGetDocumentStatusInputBuilder {
         crate::operation::batch_get_document_status::BatchGetDocumentStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_document_status::BatchGetDocumentStatusInput {
-                index_id: self.index_id,
-                document_info_list: self.document_info_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_document_status::BatchGetDocumentStatusInput {
+            index_id: self.index_id,
+            document_info_list: self.document_info_list,
+        })
     }
 }

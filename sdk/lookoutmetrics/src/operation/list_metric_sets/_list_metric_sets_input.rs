@@ -36,9 +36,7 @@ impl ListMetricSetsInput {
 
 /// A builder for [`ListMetricSetsInput`](crate::operation::list_metric_sets::ListMetricSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricSetsInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListMetricSetsInputBuilder {
 }
 impl ListMetricSetsInputBuilder {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListMetricSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricSetsInput`](crate::operation::list_metric_sets::ListMetricSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metric_sets::ListMetricSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_metric_sets::ListMetricSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metric_sets::ListMetricSetsInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             max_results: self.max_results,

@@ -35,9 +35,7 @@ impl ListSessionsOutput {
 
 /// A builder for [`ListSessionsOutput`](crate::operation::list_sessions::ListSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
@@ -70,17 +68,12 @@ impl ListSessionsOutputBuilder {
         self
     }
     /// <p>A list of sessions.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>,
-    ) -> Self {
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>>) -> Self {
         self.sessions = input;
         self
     }
     /// <p>A list of sessions.</p>
-    pub fn get_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
         &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

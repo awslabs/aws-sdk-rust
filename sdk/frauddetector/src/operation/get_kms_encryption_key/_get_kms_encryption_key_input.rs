@@ -5,29 +5,21 @@
 pub struct GetKmsEncryptionKeyInput {}
 impl GetKmsEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
-    pub fn builder(
-    ) -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyInputBuilder {
-        crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyInputBuilder {
+        crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKmsEncryptionKeyInputBuilder {}
 impl GetKmsEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput {})
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`qualifier(impl ::std::convert::Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::qualifier) / [`set_qualifier(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_qualifier): <p>Specify a version to delete. You can't delete a version that an alias references.</p>
     /// - On success, responds with [`DeleteFunctionOutput`](crate::operation::delete_function::DeleteFunctionOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::operation::delete_function::DeleteFunctionError)
-    pub fn delete_function(
-        &self,
-    ) -> crate::operation::delete_function::builders::DeleteFunctionFluentBuilder {
-        crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_function(&self) -> crate::operation::delete_function::builders::DeleteFunctionFluentBuilder {
+        crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::new(self.handle.clone())
     }
 }

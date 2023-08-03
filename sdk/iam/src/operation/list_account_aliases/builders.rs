@@ -10,10 +10,7 @@ impl ListAccountAliasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_account_aliases::ListAccountAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_aliases::ListAccountAliasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_aliases::ListAccountAliasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_account_aliases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAccountAliasesFluentBuilder {
         }
     }
     /// Access the ListAccountAliases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAccountAliasesFluentBuilder {
             crate::operation::list_account_aliases::ListAccountAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_aliases::ListAccountAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_aliases::ListAccountAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAccountAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAccountAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_aliases::ListAccountAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_aliases::ListAccountAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_aliases::ListAccountAliasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAccountAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_aliases::ListAccountAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_aliases::ListAccountAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_aliases::ListAccountAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAccountAliasesFluentBuilder {
             crate::operation::list_account_aliases::ListAccountAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_aliases::ListAccountAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_aliases::ListAccountAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator {
-        crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator {
+        crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::new(self.handle, self.inner)
     }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

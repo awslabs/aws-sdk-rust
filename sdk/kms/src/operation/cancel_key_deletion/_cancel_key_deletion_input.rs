@@ -29,17 +29,14 @@ impl CancelKeyDeletionInput {
 }
 impl CancelKeyDeletionInput {
     /// Creates a new builder-style object to manufacture [`CancelKeyDeletionInput`](crate::operation::cancel_key_deletion::CancelKeyDeletionInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder {
+    pub fn builder() -> crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder {
         crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelKeyDeletionInput`](crate::operation::cancel_key_deletion::CancelKeyDeletionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelKeyDeletionInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
@@ -82,14 +79,7 @@ impl CancelKeyDeletionInputBuilder {
     /// Consumes the builder and constructs a [`CancelKeyDeletionInput`](crate::operation::cancel_key_deletion::CancelKeyDeletionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_key_deletion::CancelKeyDeletionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_key_deletion::CancelKeyDeletionInput {
-                key_id: self.key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_key_deletion::CancelKeyDeletionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_key_deletion::CancelKeyDeletionInput { key_id: self.key_id })
     }
 }

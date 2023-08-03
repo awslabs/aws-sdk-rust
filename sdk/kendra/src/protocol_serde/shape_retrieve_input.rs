@@ -25,9 +25,7 @@ pub fn ser_retrieve_input(
         array_6.finish();
     }
     if let Some(var_8) = &input.document_relevance_override_configurations {
-        let mut array_9 = object
-            .key("DocumentRelevanceOverrideConfigurations")
-            .start_array();
+        let mut array_9 = object.key("DocumentRelevanceOverrideConfigurations").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]

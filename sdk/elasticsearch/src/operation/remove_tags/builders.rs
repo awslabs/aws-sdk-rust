@@ -10,10 +10,7 @@ impl RemoveTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_tags::RemoveTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags::RemoveTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags::RemoveTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_tags();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl RemoveTagsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::remove_tags::RemoveTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::remove_tags::RemoveTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::remove_tags::RemoveTagsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl RemoveTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl RemoveTagsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::remove_tags::RemoveTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::remove_tags::RemoveTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::remove_tags::RemoveTagsError>,
     > {
         self.customize_middleware().await
@@ -136,10 +124,7 @@ impl RemoveTagsFluentBuilder {
         self
     }
     /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

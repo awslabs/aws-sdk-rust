@@ -22,9 +22,7 @@ impl StartJobRunInput {
 
 /// A builder for [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartJobRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StartJobRunInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_job_run::StartJobRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput { name: self.name })
     }
 }

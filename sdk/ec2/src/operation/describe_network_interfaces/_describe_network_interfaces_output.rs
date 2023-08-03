@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInterfacesOutput {
 }
 impl DescribeNetworkInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfacesOutput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput).
-    pub fn builder() -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesOutputBuilder {
         crate::operation::describe_network_interfaces::builders::DescribeNetworkInterfacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfacesOutput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacesOutputBuilder {
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeNetworkInterfacesOutputBuilder {
         self
     }
     /// <p>Information about one or more network interfaces.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>Information about one or more network interfaces.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -94,9 +86,7 @@ impl DescribeNetworkInterfacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfacesOutput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput {
+    pub fn build(self) -> crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput {
         crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput {
             network_interfaces: self.network_interfaces,
             next_token: self.next_token,

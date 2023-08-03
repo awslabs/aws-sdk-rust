@@ -13,9 +13,7 @@ impl AribDestinationSettings {
 
 /// A builder for [`AribDestinationSettings`](crate::types::AribDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AribDestinationSettingsBuilder {}
 impl AribDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`AribDestinationSettings`](crate::types::AribDestinationSettings).

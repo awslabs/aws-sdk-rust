@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_campaign::DeleteCampaignOutput::name): <p>The name of the deleted campaign.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_campaign::DeleteCampaignOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>   <p>The ARN isn’t returned if a campaign doesn’t exist.</p>  </note>
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::operation::delete_campaign::DeleteCampaignError)
-    pub fn delete_campaign(
-        &self,
-    ) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
-        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_campaign(&self) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
+        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DeleteReceiptRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_rule::DeleteReceiptRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_receipt_rule();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteReceiptRuleFluentBuilder {
         }
     }
     /// Access the DeleteReceiptRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteReceiptRuleFluentBuilder {
             crate::operation::delete_receipt_rule::DeleteReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_rule::DeleteReceiptRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteReceiptRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_rule::DeleteReceiptRuleError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_rule::DeleteReceiptRuleError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl DeleteReceiptRuleFluentBuilder {
             crate::operation::delete_receipt_rule::DeleteReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_receipt_rule::DeleteReceiptRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

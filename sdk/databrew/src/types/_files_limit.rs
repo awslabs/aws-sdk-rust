@@ -37,9 +37,7 @@ impl FilesLimit {
 
 /// A builder for [`FilesLimit`](crate::types::FilesLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilesLimitBuilder {
     pub(crate) max_files: ::std::option::Option<i32>,
     pub(crate) ordered_by: ::std::option::Option<crate::types::OrderedBy>,

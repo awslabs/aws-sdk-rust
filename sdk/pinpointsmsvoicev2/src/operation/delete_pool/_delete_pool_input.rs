@@ -22,9 +22,7 @@ impl DeletePoolInput {
 
 /// A builder for [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePoolInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeletePoolInputBuilder {
         &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pool::DeletePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput {
-            pool_id: self.pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput { pool_id: self.pool_id })
     }
 }

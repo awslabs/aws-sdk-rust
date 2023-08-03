@@ -12,8 +12,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
     pub is_boot_disk: ::std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     #[doc(hidden)]
-    pub staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    pub staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>The requested number of I/O operations per second (IOPS).</p>
     #[doc(hidden)]
     pub iops: i64,
@@ -22,8 +21,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
     pub throughput: i64,
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     #[doc(hidden)]
-    pub optimized_staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    pub optimized_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
 }
 impl ReplicationConfigurationReplicatedDisk {
     /// <p>The name of the device.</p>
@@ -35,10 +33,7 @@ impl ReplicationConfigurationReplicatedDisk {
         self.is_boot_disk
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn staging_disk_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
-    {
+    pub fn staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         self.staging_disk_type.as_ref()
     }
     /// <p>The requested number of I/O operations per second (IOPS).</p>
@@ -50,10 +45,7 @@ impl ReplicationConfigurationReplicatedDisk {
         self.throughput
     }
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
-    pub fn optimized_staging_disk_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
-    {
+    pub fn optimized_staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         self.optimized_staging_disk_type.as_ref()
     }
 }
@@ -66,18 +58,14 @@ impl ReplicationConfigurationReplicatedDisk {
 
 /// A builder for [`ReplicationConfigurationReplicatedDisk`](crate::types::ReplicationConfigurationReplicatedDisk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationReplicatedDiskBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) is_boot_disk: ::std::option::Option<bool>,
-    pub(crate) staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    pub(crate) staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     pub(crate) iops: ::std::option::Option<i64>,
     pub(crate) throughput: ::std::option::Option<i64>,
-    pub(crate) optimized_staging_disk_type:
-        ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    pub(crate) optimized_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
 }
 impl ReplicationConfigurationReplicatedDiskBuilder {
     /// <p>The name of the device.</p>
@@ -109,28 +97,20 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         &self.is_boot_disk
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn staging_disk_type(
-        mut self,
-        input: crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType,
-    ) -> Self {
+    pub fn staging_disk_type(mut self, input: crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType) -> Self {
         self.staging_disk_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     pub fn set_staging_disk_type(
         mut self,
-        input: ::std::option::Option<
-            crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType,
-        >,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     ) -> Self {
         self.staging_disk_type = input;
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn get_staging_disk_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
-    {
+    pub fn get_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         &self.staging_disk_type
     }
     /// <p>The requested number of I/O operations per second (IOPS).</p>
@@ -162,28 +142,20 @@ impl ReplicationConfigurationReplicatedDiskBuilder {
         &self.throughput
     }
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
-    pub fn optimized_staging_disk_type(
-        mut self,
-        input: crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType,
-    ) -> Self {
+    pub fn optimized_staging_disk_type(mut self, input: crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType) -> Self {
         self.optimized_staging_disk_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
     pub fn set_optimized_staging_disk_type(
         mut self,
-        input: ::std::option::Option<
-            crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType,
-        >,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     ) -> Self {
         self.optimized_staging_disk_type = input;
         self
     }
     /// <p>The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
-    pub fn get_optimized_staging_disk_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType>
-    {
+    pub fn get_optimized_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         &self.optimized_staging_disk_type
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::types::ReplicationConfigurationReplicatedDisk).

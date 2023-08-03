@@ -37,9 +37,7 @@ impl SendMessageOutput {
 
 /// A builder for [`SendMessageOutput`](crate::operation::send_message::SendMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendMessageOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_time: ::std::option::Option<::std::string::String>,
@@ -62,19 +60,13 @@ impl SendMessageOutputBuilder {
     }
     /// <p>The time when the message was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn absolute_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn absolute_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.absolute_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the message was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_absolute_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_absolute_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.absolute_time = input;
         self
     }

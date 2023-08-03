@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteChannelMembershipOutput {
 }
 impl DeleteChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipOutput`](crate::operation::delete_channel_membership::DeleteChannelMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipOutputBuilder {
         crate::operation::delete_channel_membership::builders::DeleteChannelMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelMembershipOutput`](crate::operation::delete_channel_membership::DeleteChannelMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelMembershipOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteChannelMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteChannelMembershipOutput`](crate::operation::delete_channel_membership::DeleteChannelMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_channel_membership::DeleteChannelMembershipOutput {
+    pub fn build(self) -> crate::operation::delete_channel_membership::DeleteChannelMembershipOutput {
         crate::operation::delete_channel_membership::DeleteChannelMembershipOutput {
             _request_id: self._request_id,
         }

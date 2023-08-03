@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateMatchmakingRuleSetOutput {
 }
 impl CreateMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingRuleSetOutput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput).
-    pub fn builder() -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder{
+    pub fn builder() -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder {
         crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMatchmakingRuleSetOutput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetOutputBuilder {
     pub(crate) rule_set: ::std::option::Option<crate::types::MatchmakingRuleSet>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateMatchmakingRuleSetOutputBuilder {
         self
     }
     /// <p>The newly created matchmaking rule set.</p>
-    pub fn set_rule_set(
-        mut self,
-        input: ::std::option::Option<crate::types::MatchmakingRuleSet>,
-    ) -> Self {
+    pub fn set_rule_set(mut self, input: ::std::option::Option<crate::types::MatchmakingRuleSet>) -> Self {
         self.rule_set = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateMatchmakingRuleSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateMatchmakingRuleSetOutput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput {
+    pub fn build(self) -> crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput {
         crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput {
             rule_set: self.rule_set,
             _request_id: self._request_id,

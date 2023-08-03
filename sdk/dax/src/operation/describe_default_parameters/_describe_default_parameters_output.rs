@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDefaultParametersOutput {
 }
 impl DescribeDefaultParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultParametersOutput`](crate::operation::describe_default_parameters::DescribeDefaultParametersOutput).
-    pub fn builder() -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersOutputBuilder {
         crate::operation::describe_default_parameters::builders::DescribeDefaultParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDefaultParametersOutput`](crate::operation::describe_default_parameters::DescribeDefaultParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDefaultParametersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
@@ -70,17 +68,12 @@ impl DescribeDefaultParametersOutputBuilder {
         self
     }
     /// <p>A list of parameters. Each element in the list represents one parameter.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of parameters. Each element in the list represents one parameter.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl DescribeDefaultParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDefaultParametersOutput`](crate::operation::describe_default_parameters::DescribeDefaultParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_default_parameters::DescribeDefaultParametersOutput {
+    pub fn build(self) -> crate::operation::describe_default_parameters::DescribeDefaultParametersOutput {
         crate::operation::describe_default_parameters::DescribeDefaultParametersOutput {
             next_token: self.next_token,
             parameters: self.parameters,

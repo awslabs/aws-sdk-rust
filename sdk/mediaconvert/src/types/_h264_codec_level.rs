@@ -53,13 +53,7 @@
 /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264CodecLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -119,9 +113,7 @@ impl ::std::convert::From<&str> for H264CodecLevel {
             "LEVEL_5" => H264CodecLevel::Level5,
             "LEVEL_5_1" => H264CodecLevel::Level51,
             "LEVEL_5_2" => H264CodecLevel::Level52,
-            other => {
-                H264CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

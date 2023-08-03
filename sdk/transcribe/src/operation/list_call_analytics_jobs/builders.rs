@@ -38,10 +38,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
         }
     }
     /// Access the ListCallAnalyticsJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
             crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListCallAnalyticsJobsFluentBuilder {
             crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator {
-        crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator {
+        crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all Call Analytics jobs are returned.</p>
     pub fn status(mut self, input: crate::types::CallAnalyticsJobStatus) -> Self {
@@ -141,10 +122,7 @@ impl ListCallAnalyticsJobsFluentBuilder {
         self
     }
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all Call Analytics jobs are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -153,18 +131,12 @@ impl ListCallAnalyticsJobsFluentBuilder {
         self.inner.get_status()
     }
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn job_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name_contains(input.into());
         self
     }
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_job_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name_contains(input);
         self
     }

@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAgreementOutput`](crate::operation::update_agreement::UpdateAgreementOutput) with field(s):
     ///   - [`agreement_id(Option<String>)`](crate::operation::update_agreement::UpdateAgreementOutput::agreement_id): <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     /// - On failure, responds with [`SdkError<UpdateAgreementError>`](crate::operation::update_agreement::UpdateAgreementError)
-    pub fn update_agreement(
-        &self,
-    ) -> crate::operation::update_agreement::builders::UpdateAgreementFluentBuilder {
-        crate::operation::update_agreement::builders::UpdateAgreementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_agreement(&self) -> crate::operation::update_agreement::builders::UpdateAgreementFluentBuilder {
+        crate::operation::update_agreement::builders::UpdateAgreementFluentBuilder::new(self.handle.clone())
     }
 }

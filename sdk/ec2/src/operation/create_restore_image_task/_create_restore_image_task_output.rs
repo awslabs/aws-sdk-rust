@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRestoreImageTaskOutput {
 }
 impl CreateRestoreImageTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateRestoreImageTaskOutput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder {
         crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRestoreImageTaskOutput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRestoreImageTaskOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateRestoreImageTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRestoreImageTaskOutput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput {
+    pub fn build(self) -> crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput {
         crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput {
             image_id: self.image_id,
             _request_id: self._request_id,

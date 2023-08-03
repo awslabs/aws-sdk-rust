@@ -43,17 +43,14 @@ impl ListUserAssociationsInput {
 }
 impl ListUserAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder {
         crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -82,10 +79,7 @@ impl ListUserAssociationsInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -119,10 +113,7 @@ impl ListUserAssociationsInputBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -147,18 +138,14 @@ impl ListUserAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_user_associations::ListUserAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_associations::ListUserAssociationsInput {
-                instance_id: self.instance_id,
-                identity_provider: self.identity_provider,
-                max_results: self.max_results,
-                filters: self.filters,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_user_associations::ListUserAssociationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_user_associations::ListUserAssociationsInput {
+            instance_id: self.instance_id,
+            identity_provider: self.identity_provider,
+            max_results: self.max_results,
+            filters: self.filters,
+            next_token: self.next_token,
+        })
     }
 }

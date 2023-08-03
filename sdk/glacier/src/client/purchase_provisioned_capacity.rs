@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput) with field(s):
     ///   - [`capacity_id(Option<String>)`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput::capacity_id): <p>The ID that identifies the provisioned capacity unit.</p>
     /// - On failure, responds with [`SdkError<PurchaseProvisionedCapacityError>`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError)
-    pub fn purchase_provisioned_capacity(&self) -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityFluentBuilder{
+    pub fn purchase_provisioned_capacity(
+        &self,
+    ) -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityFluentBuilder {
         crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityFluentBuilder::new(self.handle.clone())
     }
 }

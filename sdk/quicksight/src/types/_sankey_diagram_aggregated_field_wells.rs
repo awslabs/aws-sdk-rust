@@ -37,9 +37,7 @@ impl SankeyDiagramAggregatedFieldWells {
 
 /// A builder for [`SankeyDiagramAggregatedFieldWells`](crate::types::SankeyDiagramAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SankeyDiagramAggregatedFieldWellsBuilder {
     pub(crate) source: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) destination: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
@@ -58,17 +56,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The source field wells of a sankey diagram.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.source = input;
         self
     }
     /// <p>The source field wells of a sankey diagram.</p>
-    pub fn get_source(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_source(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.source
     }
     /// Appends an item to `destination`.
@@ -83,17 +76,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The destination field wells of a sankey diagram.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The destination field wells of a sankey diagram.</p>
-    pub fn get_destination(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_destination(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.destination
     }
     /// Appends an item to `weight`.
@@ -108,17 +96,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The weight field wells of a sankey diagram.</p>
-    pub fn set_weight(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_weight(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.weight = input;
         self
     }
     /// <p>The weight field wells of a sankey diagram.</p>
-    pub fn get_weight(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_weight(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.weight
     }
     /// Consumes the builder and constructs a [`SankeyDiagramAggregatedFieldWells`](crate::types::SankeyDiagramAggregatedFieldWells).

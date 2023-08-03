@@ -44,9 +44,7 @@ impl PutPermissionInput {
 
 /// A builder for [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_group: ::std::option::Option<crate::types::ActionGroup>,
@@ -55,18 +53,12 @@ pub struct PutPermissionInputBuilder {
 }
 impl PutPermissionInputBuilder {
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -80,10 +72,7 @@ impl PutPermissionInputBuilder {
         self
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn set_action_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionGroup>,
-    ) -> Self {
+    pub fn set_action_group(mut self, input: ::std::option::Option<crate::types::ActionGroup>) -> Self {
         self.action_group = input;
         self
     }
@@ -103,10 +92,7 @@ impl PutPermissionInputBuilder {
         self
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -131,10 +117,7 @@ impl PutPermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_permission::PutPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionInput {
             profiling_group_name: self.profiling_group_name,
             action_group: self.action_group,

@@ -52,16 +52,14 @@ impl ListVirtualInterfaceTestHistoryInput {
 }
 impl ListVirtualInterfaceTestHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryInput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput).
-    pub fn builder() -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryInputBuilder {
         crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualInterfaceTestHistoryInput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryInputBuilder {
     pub(crate) test_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         &self.test_id
     }
     /// <p>The ID of the virtual interface that was tested.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface that was tested.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -117,10 +109,7 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
         self
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bgp_peers = input;
         self
     }
@@ -182,19 +171,13 @@ impl ListVirtualInterfaceTestHistoryInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput {
-                test_id: self.test_id
-                ,
-                virtual_interface_id: self.virtual_interface_id
-                ,
-                bgp_peers: self.bgp_peers
-                ,
-                status: self.status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                test_id: self.test_id,
+                virtual_interface_id: self.virtual_interface_id,
+                bgp_peers: self.bgp_peers,
+                status: self.status,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

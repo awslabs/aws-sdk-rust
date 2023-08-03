@@ -27,8 +27,7 @@ impl ModifyReservedInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyReservedInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder,
+    inner: crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder,
 }
 impl ModifyReservedInstancesFluentBuilder {
     /// Creates a new `ModifyReservedInstances`.
@@ -39,10 +38,7 @@ impl ModifyReservedInstancesFluentBuilder {
         }
     }
     /// Access the ModifyReservedInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ModifyReservedInstancesFluentBuilder {
             crate::operation::modify_reserved_instances::ModifyReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ModifyReservedInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ModifyReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ModifyReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl ModifyReservedInstancesFluentBuilder {
             crate::operation::modify_reserved_instances::ModifyReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,25 +115,17 @@ impl ModifyReservedInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
     ///
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    pub fn reserved_instances_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instances_ids(input.into());
         self
     }
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    pub fn set_reserved_instances_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
     }
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    pub fn get_reserved_instances_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reserved_instances_ids()
     }
     /// <p>A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -170,25 +147,17 @@ impl ModifyReservedInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).
     ///
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn target_configurations(
-        mut self,
-        input: crate::types::ReservedInstancesConfiguration,
-    ) -> Self {
+    pub fn target_configurations(mut self, input: crate::types::ReservedInstancesConfiguration) -> Self {
         self.inner = self.inner.target_configurations(input);
         self
     }
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn set_target_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>>,
-    ) -> Self {
+    pub fn set_target_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>>) -> Self {
         self.inner = self.inner.set_target_configurations(input);
         self
     }
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn get_target_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>> {
+    pub fn get_target_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>> {
         self.inner.get_target_configurations()
     }
 }

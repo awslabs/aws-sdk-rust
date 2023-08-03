@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDefaultVpcOutput {
 }
 impl CreateDefaultVpcOutput {
     /// Creates a new builder-style object to manufacture [`CreateDefaultVpcOutput`](crate::operation::create_default_vpc::CreateDefaultVpcOutput).
-    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_default_vpc::builders::CreateDefaultVpcOutputBuilder {
         crate::operation::create_default_vpc::builders::CreateDefaultVpcOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDefaultVpcOutput`](crate::operation::create_default_vpc::CreateDefaultVpcOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDefaultVpcOutputBuilder {
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,

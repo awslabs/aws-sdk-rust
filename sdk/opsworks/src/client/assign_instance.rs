@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`layer_ids(Vec<String>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::set_layer_ids): <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     /// - On success, responds with [`AssignInstanceOutput`](crate::operation::assign_instance::AssignInstanceOutput)
     /// - On failure, responds with [`SdkError<AssignInstanceError>`](crate::operation::assign_instance::AssignInstanceError)
-    pub fn assign_instance(
-        &self,
-    ) -> crate::operation::assign_instance::builders::AssignInstanceFluentBuilder {
-        crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn assign_instance(&self) -> crate::operation::assign_instance::builders::AssignInstanceFluentBuilder {
+        crate::operation::assign_instance::builders::AssignInstanceFluentBuilder::new(self.handle.clone())
     }
 }

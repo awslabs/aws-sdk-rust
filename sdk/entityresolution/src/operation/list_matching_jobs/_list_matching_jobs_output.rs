@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMatchingJobsOutput {
 }
 impl ListMatchingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListMatchingJobsOutput`](crate::operation::list_matching_jobs::ListMatchingJobsOutput).
-    pub fn builder() -> crate::operation::list_matching_jobs::builders::ListMatchingJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_matching_jobs::builders::ListMatchingJobsOutputBuilder {
         crate::operation::list_matching_jobs::builders::ListMatchingJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMatchingJobsOutput`](crate::operation::list_matching_jobs::ListMatchingJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMatchingJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListMatchingJobsOutputBuilder {
         self
     }
     /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.jobs = input;
         self
     }

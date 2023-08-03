@@ -34,8 +34,7 @@ impl ModifyInstancePlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
+    inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
 }
 impl ModifyInstancePlacementFluentBuilder {
     /// Creates a new `ModifyInstancePlacement`.
@@ -46,10 +45,7 @@ impl ModifyInstancePlacementFluentBuilder {
         }
     }
     /// Access the ModifyInstancePlacement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +57,7 @@ impl ModifyInstancePlacementFluentBuilder {
             crate::operation::modify_instance_placement::ModifyInstancePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +67,7 @@ impl ModifyInstancePlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +76,7 @@ impl ModifyInstancePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>,
     > {
         let op = self
             .inner
@@ -110,9 +99,7 @@ impl ModifyInstancePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +113,7 @@ impl ModifyInstancePlacementFluentBuilder {
             crate::operation::modify_instance_placement::ModifyInstancePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError>,
     > {
         self.customize_middleware().await
     }
@@ -226,18 +211,12 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner.get_partition_number()
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_resource_group_arn(input.into());
         self
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_resource_group_arn(input);
         self
     }

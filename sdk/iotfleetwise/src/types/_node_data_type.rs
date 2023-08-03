@@ -63,13 +63,7 @@
 /// _Note: `NodeDataType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NodeDataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -159,9 +153,7 @@ impl ::std::convert::From<&str> for NodeDataType {
             "UNIX_TIMESTAMP" => NodeDataType::UnixTimestamp,
             "UNIX_TIMESTAMP_ARRAY" => NodeDataType::UnixTimestampArray,
             "UNKNOWN" => NodeDataType::UnknownValue,
-            other => {
-                NodeDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => NodeDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

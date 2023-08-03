@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCoreDefinitionOutput {
 }
 impl DeleteCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreDefinitionOutput`](crate::operation::delete_core_definition::DeleteCoreDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_core_definition::builders::DeleteCoreDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_core_definition::builders::DeleteCoreDefinitionOutputBuilder {
         crate::operation::delete_core_definition::builders::DeleteCoreDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCoreDefinitionOutput`](crate::operation::delete_core_definition::DeleteCoreDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoreDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

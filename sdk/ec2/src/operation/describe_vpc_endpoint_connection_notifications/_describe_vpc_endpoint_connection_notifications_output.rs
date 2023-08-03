@@ -5,8 +5,7 @@
 pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>The notifications.</p>
     #[doc(hidden)]
-    pub connection_notification_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>,
+    pub connection_notification_set: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVpcEndpointConnectionNotificationsOutput {
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>The notifications.</p>
-    pub fn connection_notification_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectionNotification]> {
+    pub fn connection_notification_set(&self) -> ::std::option::Option<&[crate::types::ConnectionNotification]> {
         self.connection_notification_set.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeVpcEndpointConnectionNotifica
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointConnectionNotificationsOutput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsOutputBuilder {
         crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointConnectionNotificationsOutput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionNotificationsOutputBuilder {
-    pub(crate) connection_notification_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>,
+    pub(crate) connection_notification_set: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +48,19 @@ impl DescribeVpcEndpointConnectionNotificationsOutputBuilder {
     /// To override the contents of this collection use [`set_connection_notification_set`](Self::set_connection_notification_set).
     ///
     /// <p>The notifications.</p>
-    pub fn connection_notification_set(
-        mut self,
-        input: crate::types::ConnectionNotification,
-    ) -> Self {
+    pub fn connection_notification_set(mut self, input: crate::types::ConnectionNotification) -> Self {
         let mut v = self.connection_notification_set.unwrap_or_default();
         v.push(input);
         self.connection_notification_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>The notifications.</p>
-    pub fn set_connection_notification_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>,
-    ) -> Self {
+    pub fn set_connection_notification_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>>) -> Self {
         self.connection_notification_set = input;
         self
     }
     /// <p>The notifications.</p>
-    pub fn get_connection_notification_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>> {
+    pub fn get_connection_notification_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionNotification>> {
         &self.connection_notification_set
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +87,10 @@ impl DescribeVpcEndpointConnectionNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionNotificationsOutput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput{
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput {
         crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput {
-            connection_notification_set: self.connection_notification_set
-            ,
-            next_token: self.next_token
-            ,
+            connection_notification_set: self.connection_notification_set,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

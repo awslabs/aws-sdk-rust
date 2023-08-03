@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPermissionPolicyOutput`](crate::operation::get_permission_policy::GetPermissionPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_permission_policy::GetPermissionPolicyOutput::policy): <p>The IAM policy attached to the specified RuleGroup.</p>
     /// - On failure, responds with [`SdkError<GetPermissionPolicyError>`](crate::operation::get_permission_policy::GetPermissionPolicyError)
-    pub fn get_permission_policy(
-        &self,
-    ) -> crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder {
-        crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_permission_policy(&self) -> crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder {
+        crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

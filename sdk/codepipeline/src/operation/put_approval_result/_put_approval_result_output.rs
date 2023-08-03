@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for PutApprovalResultOutput {
 }
 impl PutApprovalResultOutput {
     /// Creates a new builder-style object to manufacture [`PutApprovalResultOutput`](crate::operation::put_approval_result::PutApprovalResultOutput).
-    pub fn builder(
-    ) -> crate::operation::put_approval_result::builders::PutApprovalResultOutputBuilder {
+    pub fn builder() -> crate::operation::put_approval_result::builders::PutApprovalResultOutputBuilder {
         crate::operation::put_approval_result::builders::PutApprovalResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutApprovalResultOutput`](crate::operation::put_approval_result::PutApprovalResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApprovalResultOutputBuilder {
     pub(crate) approved_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl PutApprovalResultOutputBuilder {
         self
     }
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub fn set_approved_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_approved_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.approved_at = input;
         self
     }

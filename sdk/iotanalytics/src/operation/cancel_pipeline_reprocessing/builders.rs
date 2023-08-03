@@ -26,7 +26,7 @@ impl CancelPipelineReprocessingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelPipelineReprocessingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder,
+    inner: crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder,
 }
 impl CancelPipelineReprocessingFluentBuilder {
     /// Creates a new `CancelPipelineReprocessing`.
@@ -37,7 +37,7 @@ impl CancelPipelineReprocessingFluentBuilder {
         }
     }
     /// Access the CancelPipelineReprocessing as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelPipelineReprocessingFluentBuilder {
             crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelPipelineReprocessingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelPipelineReprocessingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelPipelineReprocessingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CancelPipelineReprocessingFluentBuilder {
             crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl CancelPipelineReprocessingFluentBuilder {
         self.inner.get_pipeline_name()
     }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
-    pub fn reprocessing_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reprocessing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reprocessing_id(input.into());
         self
     }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
-    pub fn set_reprocessing_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reprocessing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reprocessing_id(input);
         self
     }

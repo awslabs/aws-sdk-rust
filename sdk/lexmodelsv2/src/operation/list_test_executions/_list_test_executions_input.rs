@@ -29,17 +29,14 @@ impl ListTestExecutionsInput {
 }
 impl ListTestExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListTestExecutionsInput`](crate::operation::list_test_executions::ListTestExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_test_executions::builders::ListTestExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::list_test_executions::builders::ListTestExecutionsInputBuilder {
         crate::operation::list_test_executions::builders::ListTestExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestExecutionsInput`](crate::operation::list_test_executions::ListTestExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestExecutionsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::TestExecutionSortBy>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,10 +49,7 @@ impl ListTestExecutionsInputBuilder {
         self
     }
     /// <p>The sort order of the test set executions.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TestExecutionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -94,16 +88,11 @@ impl ListTestExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestExecutionsInput`](crate::operation::list_test_executions::ListTestExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_executions::ListTestExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_executions::ListTestExecutionsInput {
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_test_executions::ListTestExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_test_executions::ListTestExecutionsInput {
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

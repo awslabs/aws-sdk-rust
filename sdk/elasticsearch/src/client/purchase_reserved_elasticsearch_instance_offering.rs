@@ -10,7 +10,12 @@ impl super::Client {
     ///   - [`reserved_elasticsearch_instance_id(Option<String>)`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput::reserved_elasticsearch_instance_id): <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     ///   - [`reservation_name(Option<String>)`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput::reservation_name): <p>The customer-specified identifier used to track this reservation.</p>
     /// - On failure, responds with [`SdkError<PurchaseReservedElasticsearchInstanceOfferingError>`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError)
-    pub fn purchase_reserved_elasticsearch_instance_offering(&self) -> crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingFluentBuilder{
-        crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingFluentBuilder::new(self.handle.clone())
+    pub fn purchase_reserved_elasticsearch_instance_offering(
+        &self,
+    ) -> crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingFluentBuilder
+    {
+        crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetDataSetImportTaskOutput {
 }
 impl GetDataSetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder {
         crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSetImportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
@@ -74,10 +70,7 @@ impl GetDataSetImportTaskOutputBuilder {
         self
     }
     /// <p>The status of the task.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -91,10 +84,7 @@ impl GetDataSetImportTaskOutputBuilder {
         self
     }
     /// <p>A summary of the status of the task.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetImportSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::DataSetImportSummary>) -> Self {
         self.summary = input;
         self
     }

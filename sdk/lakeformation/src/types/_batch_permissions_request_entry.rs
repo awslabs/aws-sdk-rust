@@ -18,8 +18,7 @@ pub struct BatchPermissionsRequestEntry {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates if the option to pass permissions is granted.</p>
     #[doc(hidden)]
-    pub permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl BatchPermissionsRequestEntry {
     /// <p>A unique identifier for the batch permissions request entry.</p>
@@ -39,9 +38,7 @@ impl BatchPermissionsRequestEntry {
         self.permissions.as_deref()
     }
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
 }
@@ -54,16 +51,13 @@ impl BatchPermissionsRequestEntry {
 
 /// A builder for [`BatchPermissionsRequestEntry`](crate::types::BatchPermissionsRequestEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPermissionsRequestEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    pub(crate) permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl BatchPermissionsRequestEntryBuilder {
     /// <p>A unique identifier for the batch permissions request entry.</p>
@@ -86,10 +80,7 @@ impl BatchPermissionsRequestEntryBuilder {
         self
     }
     /// <p>The principal to be granted a permission.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.principal = input;
         self
     }
@@ -123,17 +114,12 @@ impl BatchPermissionsRequestEntryBuilder {
         self
     }
     /// <p>The permissions to be granted.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions to be granted.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// Appends an item to `permissions_with_grant_option`.
@@ -148,17 +134,12 @@ impl BatchPermissionsRequestEntryBuilder {
         self
     }
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions_with_grant_option = input;
         self
     }
     /// <p>Indicates if the option to pass permissions is granted.</p>
-    pub fn get_permissions_with_grant_option(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions_with_grant_option
     }
     /// Consumes the builder and constructs a [`BatchPermissionsRequestEntry`](crate::types::BatchPermissionsRequestEntry).

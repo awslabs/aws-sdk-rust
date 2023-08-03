@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGroupVersionsOutput {
 }
 impl ListGroupVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupVersionsOutput`](crate::operation::list_group_versions::ListGroupVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_versions::builders::ListGroupVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_versions::builders::ListGroupVersionsOutputBuilder {
         crate::operation::list_group_versions::builders::ListGroupVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupVersionsOutput`](crate::operation::list_group_versions::ListGroupVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -71,17 +68,12 @@ impl ListGroupVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

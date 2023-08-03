@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for DisableDirectoryOutput {
 }
 impl DisableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
-    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder {
         crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableDirectoryOutputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisableDirectoryOutputBuilder {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }

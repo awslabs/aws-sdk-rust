@@ -30,9 +30,7 @@ impl InstanceIdFilter {
 
 /// A builder for [`InstanceIdFilter`](crate::types::InstanceIdFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceIdFilterBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
@@ -58,10 +56,7 @@ impl InstanceIdFilterBuilder {
         self
     }
     /// Operators for Connect instance identifier filter
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::InstanceIdFilterOperator>) -> Self {
         self.operator = input;
         self
     }

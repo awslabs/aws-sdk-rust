@@ -10,10 +10,7 @@ impl CreateBgpPeerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_bgp_peer::CreateBgpPeerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bgp_peer::CreateBGPPeerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_bgp_peer();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl CreateBGPPeerFluentBuilder {
         }
     }
     /// Access the CreateBGPPeer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_bgp_peer::builders::CreateBgpPeerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_bgp_peer::builders::CreateBgpPeerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl CreateBGPPeerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -121,18 +113,12 @@ impl CreateBGPPeerFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
@@ -146,10 +132,7 @@ impl CreateBGPPeerFluentBuilder {
         self
     }
     /// <p>Information about the BGP peer.</p>
-    pub fn set_new_bgp_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::NewBgpPeer>,
-    ) -> Self {
+    pub fn set_new_bgp_peer(mut self, input: ::std::option::Option<crate::types::NewBgpPeer>) -> Self {
         self.inner = self.inner.set_new_bgp_peer(input);
         self
     }

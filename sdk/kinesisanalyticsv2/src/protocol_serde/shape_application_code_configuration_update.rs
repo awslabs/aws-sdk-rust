@@ -9,10 +9,7 @@ pub fn ser_application_code_configuration_update(
     if let Some(var_2) = &input.code_content_update {
         #[allow(unused_mut)]
         let mut object_3 = object.key("CodeContentUpdate").start_object();
-        crate::protocol_serde::shape_code_content_update::ser_code_content_update(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_code_content_update::ser_code_content_update(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

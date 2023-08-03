@@ -20,9 +20,7 @@ impl super::Client {
     ///   - [`source_role_arn(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_asset::CreateAssetOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<CreateAssetError>`](crate::operation::create_asset::CreateAssetError)
-    pub fn create_asset(
-        &self,
-    ) -> crate::operation::create_asset::builders::CreateAssetFluentBuilder {
+    pub fn create_asset(&self) -> crate::operation::create_asset::builders::CreateAssetFluentBuilder {
         crate::operation::create_asset::builders::CreateAssetFluentBuilder::new(self.handle.clone())
     }
 }

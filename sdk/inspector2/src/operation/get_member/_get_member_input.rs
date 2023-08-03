@@ -22,9 +22,7 @@ impl GetMemberInput {
 
 /// A builder for [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetMemberInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_member::GetMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput {
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput { account_id: self.account_id })
     }
 }

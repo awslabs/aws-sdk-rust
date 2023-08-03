@@ -38,18 +38,14 @@ impl DescribeGlobalClustersInput {
 }
 impl DescribeGlobalClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder {
         crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalClustersInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -58,18 +54,12 @@ pub struct DescribeGlobalClustersInputBuilder {
 }
 impl DescribeGlobalClustersInputBuilder {
     /// <p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
@@ -91,10 +81,7 @@ impl DescribeGlobalClustersInputBuilder {
     }
     /// <p>A filter that specifies one or more global DB clusters to describe.</p>
     /// <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -134,17 +121,13 @@ impl DescribeGlobalClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_clusters::DescribeGlobalClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_global_clusters::DescribeGlobalClustersInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_global_clusters::DescribeGlobalClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_global_clusters::DescribeGlobalClustersInput {
+            global_cluster_identifier: self.global_cluster_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

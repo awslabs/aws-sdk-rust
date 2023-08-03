@@ -51,9 +51,7 @@ impl HlsPackage {
 
 /// A builder for [`HlsPackage`](crate::types::HlsPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::HlsEncryption>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
@@ -68,10 +66,7 @@ impl HlsPackageBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::HlsEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -91,17 +86,12 @@ impl HlsPackageBuilder {
         self
     }
     /// A list of HLS manifest configurations.
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// A list of HLS manifest configurations.
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
         &self.hls_manifests
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.

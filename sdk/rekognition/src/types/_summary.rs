@@ -28,9 +28,7 @@ impl Summary {
 
 /// A builder for [`Summary`](crate::types::Summary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SummaryBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
@@ -57,8 +55,6 @@ impl SummaryBuilder {
     }
     /// Consumes the builder and constructs a [`Summary`](crate::types::Summary).
     pub fn build(self) -> crate::types::Summary {
-        crate::types::Summary {
-            s3_object: self.s3_object,
-        }
+        crate::types::Summary { s3_object: self.s3_object }
     }
 }

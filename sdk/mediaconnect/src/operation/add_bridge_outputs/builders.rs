@@ -10,10 +10,7 @@ impl AddBridgeOutputsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_outputs::AddBridgeOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_outputs::AddBridgeOutputsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_bridge_outputs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddBridgeOutputsFluentBuilder {
         }
     }
     /// Access the AddBridgeOutputs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddBridgeOutputsFluentBuilder {
             crate::operation::add_bridge_outputs::AddBridgeOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_outputs::AddBridgeOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddBridgeOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddBridgeOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_outputs::AddBridgeOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_outputs::AddBridgeOutputsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddBridgeOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_bridge_outputs::AddBridgeOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_outputs::AddBridgeOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddBridgeOutputsFluentBuilder {
             crate::operation::add_bridge_outputs::AddBridgeOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_bridge_outputs::AddBridgeOutputsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AddBridgeOutputsFluentBuilder {
         self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
         self.inner.get_outputs()
     }
 }

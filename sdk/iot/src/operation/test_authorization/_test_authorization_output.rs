@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for TestAuthorizationOutput {
 }
 impl TestAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::test_authorization::builders::TestAuthorizationOutputBuilder {
+    pub fn builder() -> crate::operation::test_authorization::builders::TestAuthorizationOutputBuilder {
         crate::operation::test_authorization::builders::TestAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestAuthorizationOutputBuilder {
     pub(crate) auth_results: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl TestAuthorizationOutputBuilder {
         self
     }
     /// <p>The authentication results.</p>
-    pub fn set_auth_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
-    ) -> Self {
+    pub fn set_auth_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>) -> Self {
         self.auth_results = input;
         self
     }
     /// <p>The authentication results.</p>
-    pub fn get_auth_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthResult>> {
+    pub fn get_auth_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthResult>> {
         &self.auth_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

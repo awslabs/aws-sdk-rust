@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for PutSchemaFromJsonOutput {
 }
 impl PutSchemaFromJsonOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput).
-    pub fn builder(
-    ) -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonOutputBuilder {
+    pub fn builder() -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonOutputBuilder {
         crate::operation::put_schema_from_json::builders::PutSchemaFromJsonOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSchemaFromJsonOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

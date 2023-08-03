@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`analysis_id(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::analysis_id): <p>The ID of the analysis that you're restoring. </p>
     ///   - [`request_id(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<RestoreAnalysisError>`](crate::operation::restore_analysis::RestoreAnalysisError)
-    pub fn restore_analysis(
-        &self,
-    ) -> crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder {
-        crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_analysis(&self) -> crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder {
+        crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,16 +30,14 @@ impl DescribeInboundConnectionsInput {
 }
 impl DescribeInboundConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundConnectionsInput`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput).
-    pub fn builder() -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder {
         crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInboundConnectionsInput`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl DescribeInboundConnectionsInputBuilder {
         self
     }
     /// <p> A list of filters used to match properties for inbound cross-cluster connections.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -104,12 +99,10 @@ impl DescribeInboundConnectionsInputBuilder {
         crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

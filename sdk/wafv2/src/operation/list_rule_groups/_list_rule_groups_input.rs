@@ -46,9 +46,7 @@ impl ListRuleGroupsInput {
 
 /// A builder for [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -115,10 +113,7 @@ impl ListRuleGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rule_groups::ListRuleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_rule_groups::ListRuleGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rule_groups::ListRuleGroupsInput {
             scope: self.scope,
             next_marker: self.next_marker,

@@ -10,7 +10,10 @@ pub fn ser_describe_buckets_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_bucket_criteria_additional_properties::ser_bucket_criteria_additional_properties(&mut object_5, value_4)?;
+                crate::protocol_serde::shape_bucket_criteria_additional_properties::ser_bucket_criteria_additional_properties(
+                    &mut object_5,
+                    value_4,
+                )?;
                 object_5.finish();
             }
         }
@@ -28,10 +31,7 @@ pub fn ser_describe_buckets_input(
     if let Some(var_8) = &input.sort_criteria {
         #[allow(unused_mut)]
         let mut object_9 = object.key("sortCriteria").start_object();
-        crate::protocol_serde::shape_bucket_sort_criteria::ser_bucket_sort_criteria(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_bucket_sort_criteria::ser_bucket_sort_criteria(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

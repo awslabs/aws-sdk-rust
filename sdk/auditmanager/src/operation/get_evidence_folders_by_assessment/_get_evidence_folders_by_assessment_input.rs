@@ -29,16 +29,14 @@ impl GetEvidenceFoldersByAssessmentInput {
 }
 impl GetEvidenceFoldersByAssessmentInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentInput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput).
-    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder {
         crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentInput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetEvidenceFoldersByAssessmentInputBuilder {
 }
 impl GetEvidenceFoldersByAssessmentInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -102,13 +94,10 @@ impl GetEvidenceFoldersByAssessmentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput {
-                assessment_id: self.assessment_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                assessment_id: self.assessment_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

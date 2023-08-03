@@ -23,9 +23,7 @@ impl DatabaseLfTagPolicy {
 
 /// A builder for [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseLfTagPolicyBuilder {
     pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
@@ -42,10 +40,7 @@ impl DatabaseLfTagPolicyBuilder {
         self
     }
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
         self.expression = input;
         self
     }
@@ -55,8 +50,6 @@ impl DatabaseLfTagPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
     pub fn build(self) -> crate::types::DatabaseLfTagPolicy {
-        crate::types::DatabaseLfTagPolicy {
-            expression: self.expression,
-        }
+        crate::types::DatabaseLfTagPolicy { expression: self.expression }
     }
 }

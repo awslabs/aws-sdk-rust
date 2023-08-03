@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteParallelDataOutput {
 }
 impl DeleteParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::operation::delete_parallel_data::DeleteParallelDataOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_parallel_data::builders::DeleteParallelDataOutputBuilder {
+    pub fn builder() -> crate::operation::delete_parallel_data::builders::DeleteParallelDataOutputBuilder {
         crate::operation::delete_parallel_data::builders::DeleteParallelDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteParallelDataOutput`](crate::operation::delete_parallel_data::DeleteParallelDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParallelDataOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ParallelDataStatus>,
@@ -65,10 +62,7 @@ impl DeleteParallelDataOutputBuilder {
         self
     }
     /// <p>The status of the parallel data deletion.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
         self.status = input;
         self
     }

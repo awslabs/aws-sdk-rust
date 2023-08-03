@@ -10,10 +10,7 @@ impl PutConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_configuration::PutConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration::PutConfigurationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration::PutConfigurationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_configuration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutConfigurationFluentBuilder {
         }
     }
     /// Access the PutConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_configuration::builders::PutConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_configuration::builders::PutConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutConfigurationFluentBuilder {
             crate::operation::put_configuration::PutConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration::PutConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration::PutConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration::PutConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration::PutConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration::PutConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration::PutConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration::PutConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration::PutConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutConfigurationFluentBuilder {
             crate::operation::put_configuration::PutConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration::PutConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration::PutConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl PutConfigurationFluentBuilder {
         self
     }
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppRegistryConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         self.inner.get_configuration()
     }
 }

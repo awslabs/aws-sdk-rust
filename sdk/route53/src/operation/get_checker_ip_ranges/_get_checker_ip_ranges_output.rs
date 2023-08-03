@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetCheckerIpRangesOutput {
 }
 impl GetCheckerIpRangesOutput {
     /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder {
-        crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder {
+        crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCheckerIpRangesOutputBuilder {
     pub(crate) checker_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -44,27 +40,19 @@ impl GetCheckerIpRangesOutputBuilder {
     /// To override the contents of this collection use [`set_checker_ip_ranges`](Self::set_checker_ip_ranges).
     ///
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn checker_ip_ranges(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checker_ip_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.checker_ip_ranges.unwrap_or_default();
         v.push(input.into());
         self.checker_ip_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn set_checker_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_checker_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.checker_ip_ranges = input;
         self
     }
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn get_checker_ip_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_checker_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.checker_ip_ranges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

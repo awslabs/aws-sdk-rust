@@ -22,16 +22,14 @@ impl AdminDisableProviderForUserInput {
 }
 impl AdminDisableProviderForUserInput {
     /// Creates a new builder-style object to manufacture [`AdminDisableProviderForUserInput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput).
-    pub fn builder() -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder{
+    pub fn builder() -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder {
         crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder::default()
     }
 }
 
 /// A builder for [`AdminDisableProviderForUserInput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminDisableProviderForUserInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
@@ -57,10 +55,7 @@ impl AdminDisableProviderForUserInputBuilder {
         self
     }
     /// <p>The user to be disabled.</p>
-    pub fn set_user(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
-    ) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.user = input;
         self
     }
@@ -75,11 +70,9 @@ impl AdminDisableProviderForUserInputBuilder {
         crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput {
-                user_pool_id: self.user_pool_id,
-                user: self.user,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput {
+            user_pool_id: self.user_pool_id,
+            user: self.user,
+        })
     }
 }

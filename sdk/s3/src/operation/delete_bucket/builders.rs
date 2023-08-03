@@ -10,10 +10,7 @@ impl DeleteBucketInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket::DeleteBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket::DeleteBucketError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_bucket();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl DeleteBucketFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_bucket::DeleteBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_bucket::DeleteBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl DeleteBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl DeleteBucketFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_bucket::DeleteBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_bucket::DeleteBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError>,
     > {
         self.customize_middleware().await
@@ -132,18 +120,12 @@ impl DeleteBucketFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

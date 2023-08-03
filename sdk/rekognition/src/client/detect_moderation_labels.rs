@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`moderation_model_version(Option<String>)`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput::moderation_model_version): <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
     ///   - [`human_loop_activation_output(Option<HumanLoopActivationOutput>)`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput::human_loop_activation_output): <p>Shows the results of the human in the loop evaluation.</p>
     /// - On failure, responds with [`SdkError<DetectModerationLabelsError>`](crate::operation::detect_moderation_labels::DetectModerationLabelsError)
-    pub fn detect_moderation_labels(
-        &self,
-    ) -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsFluentBuilder
-    {
+    pub fn detect_moderation_labels(&self) -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsFluentBuilder {
         crate::operation::detect_moderation_labels::builders::DetectModerationLabelsFluentBuilder::new(self.handle.clone())
     }
 }

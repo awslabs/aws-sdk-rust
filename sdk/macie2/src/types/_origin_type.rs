@@ -38,13 +38,7 @@
 /// <p>Specifies how Amazon Macie found the sensitive data that produced a finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OriginType {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,10 +75,7 @@ impl OriginType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTOMATED_SENSITIVE_DATA_DISCOVERY",
-            "SENSITIVE_DATA_DISCOVERY_JOB",
-        ]
+        &["AUTOMATED_SENSITIVE_DATA_DISCOVERY", "SENSITIVE_DATA_DISCOVERY_JOB"]
     }
 }
 impl ::std::convert::AsRef<str> for OriginType {

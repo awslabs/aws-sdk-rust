@@ -30,9 +30,7 @@ impl ImageScanningConfiguration {
 
 /// A builder for [`ImageScanningConfiguration`](crate::types::ImageScanningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageScanningConfigurationBuilder {
     pub(crate) image_scanning_enabled: ::std::option::Option<bool>,
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
@@ -58,10 +56,7 @@ impl ImageScanningConfigurationBuilder {
         self
     }
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
-    pub fn set_ecr_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrConfiguration>,
-    ) -> Self {
+    pub fn set_ecr_configuration(mut self, input: ::std::option::Option<crate::types::EcrConfiguration>) -> Self {
         self.ecr_configuration = input;
         self
     }

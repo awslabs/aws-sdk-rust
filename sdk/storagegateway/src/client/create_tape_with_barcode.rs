@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTapeWithBarcodeOutput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput::tape_arn): <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.</p>
     /// - On failure, responds with [`SdkError<CreateTapeWithBarcodeError>`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError)
-    pub fn create_tape_with_barcode(
-        &self,
-    ) -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeFluentBuilder
-    {
+    pub fn create_tape_with_barcode(&self) -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeFluentBuilder {
         crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeFluentBuilder::new(self.handle.clone())
     }
 }

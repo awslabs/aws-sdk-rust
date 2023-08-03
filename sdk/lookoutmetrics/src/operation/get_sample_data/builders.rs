@@ -10,10 +10,7 @@ impl GetSampleDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sample_data::GetSampleDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sample_data::GetSampleDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sample_data::GetSampleDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_sample_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSampleDataFluentBuilder {
         }
     }
     /// Access the GetSampleData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sample_data::builders::GetSampleDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_sample_data::builders::GetSampleDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetSampleDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,17 +112,12 @@ impl GetSampleDataFluentBuilder {
         self
     }
     /// <p>A datasource bucket in Amazon S3.</p>
-    pub fn set_s3_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SampleDataS3SourceConfig>,
-    ) -> Self {
+    pub fn set_s3_source_config(mut self, input: ::std::option::Option<crate::types::SampleDataS3SourceConfig>) -> Self {
         self.inner = self.inner.set_s3_source_config(input);
         self
     }
     /// <p>A datasource bucket in Amazon S3.</p>
-    pub fn get_s3_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
+    pub fn get_s3_source_config(&self) -> &::std::option::Option<crate::types::SampleDataS3SourceConfig> {
         self.inner.get_s3_source_config()
     }
 }

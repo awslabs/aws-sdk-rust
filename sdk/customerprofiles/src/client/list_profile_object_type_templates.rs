@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListProfileObjectTypeTemplateItem>>)`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput::items): <p>The list of ListProfileObjectType template instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput::next_token): <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
     /// - On failure, responds with [`SdkError<ListProfileObjectTypeTemplatesError>`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError)
-    pub fn list_profile_object_type_templates(&self) -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesFluentBuilder{
+    pub fn list_profile_object_type_templates(
+        &self,
+    ) -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesFluentBuilder {
         crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

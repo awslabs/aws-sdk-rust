@@ -3,12 +3,7 @@ pub(crate) fn de_skewed_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::SkewedInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,44 +13,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SkewedColumnNames" => {
-                                builder = builder.set_skewed_column_names(
-                                    crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens)?
-                                );
-                            }
-                            "SkewedColumnValues" => {
-                                builder = builder.set_skewed_column_values(
-                                    crate::protocol_serde::shape_column_value_string_list::de_column_value_string_list(tokens)?
-                                );
-                            }
-                            "SkewedColumnValueLocationMaps" => {
-                                builder = builder.set_skewed_column_value_location_maps(
-                                    crate::protocol_serde::shape_location_map::de_location_map(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "SkewedColumnNames" => {
+                            builder = builder.set_skewed_column_names(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens)?);
                         }
-                    }
+                        "SkewedColumnValues" => {
+                            builder = builder.set_skewed_column_values(
+                                crate::protocol_serde::shape_column_value_string_list::de_column_value_string_list(tokens)?,
+                            );
+                        }
+                        "SkewedColumnValueLocationMaps" => {
+                            builder =
+                                builder.set_skewed_column_value_location_maps(crate::protocol_serde::shape_location_map::de_location_map(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }
 

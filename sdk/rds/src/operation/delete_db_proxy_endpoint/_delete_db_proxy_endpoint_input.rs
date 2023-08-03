@@ -15,35 +15,25 @@ impl DeleteDbProxyEndpointInput {
 }
 impl DeleteDbProxyEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointInput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder {
         crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbProxyEndpointInput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbProxyEndpointInputBuilder {
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy endpoint to delete.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy endpoint to delete.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbProxyEndpointInput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput {
-                db_proxy_endpoint_name: self.db_proxy_endpoint_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointInput {
+            db_proxy_endpoint_name: self.db_proxy_endpoint_name,
+        })
     }
 }

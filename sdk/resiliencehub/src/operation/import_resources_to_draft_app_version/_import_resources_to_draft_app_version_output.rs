@@ -56,23 +56,20 @@ impl ::aws_http::request_id::RequestId for ImportResourcesToDraftAppVersionOutpu
 }
 impl ImportResourcesToDraftAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`ImportResourcesToDraftAppVersionOutput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput).
-    pub fn builder() -> crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder{
+    pub fn builder() -> crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder {
         crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportResourcesToDraftAppVersionOutput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
     pub(crate) source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceImportStatusType>,
-    pub(crate) terraform_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
+    pub(crate) terraform_sources: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
     pub(crate) eks_sources: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>,
     _request_id: Option<String>,
 }
@@ -117,17 +114,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
-    pub fn set_source_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
-    pub fn get_source_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_arns
     }
     /// <p>The status of the action.</p>
@@ -136,10 +128,7 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceImportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceImportStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -159,17 +148,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// <p> A list of terraform file s3 URLs you have imported. </p>
-    pub fn set_terraform_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
-    ) -> Self {
+    pub fn set_terraform_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>) -> Self {
         self.terraform_sources = input;
         self
     }
     /// <p> A list of terraform file s3 URLs you have imported. </p>
-    pub fn get_terraform_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
+    pub fn get_terraform_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
         &self.terraform_sources
     }
     /// Appends an item to `eks_sources`.
@@ -184,17 +168,12 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
-    pub fn set_eks_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>,
-    ) -> Self {
+    pub fn set_eks_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksSource>>) -> Self {
         self.eks_sources = input;
         self
     }
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
-    pub fn get_eks_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
+    pub fn get_eks_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
         &self.eks_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -207,20 +186,14 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionOutput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput).
-    pub fn build(self) -> crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput{
+    pub fn build(self) -> crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput {
         crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
-            source_arns: self.source_arns
-            ,
-            status: self.status
-            ,
-            terraform_sources: self.terraform_sources
-            ,
-            eks_sources: self.eks_sources
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            source_arns: self.source_arns,
+            status: self.status,
+            terraform_sources: self.terraform_sources,
+            eks_sources: self.eks_sources,
             _request_id: self._request_id,
         }
     }

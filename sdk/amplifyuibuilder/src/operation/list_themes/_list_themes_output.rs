@@ -35,9 +35,7 @@ impl ListThemesOutput {
 
 /// A builder for [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListThemesOutputBuilder {
         self
     }
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's returned if more results are available.</p>

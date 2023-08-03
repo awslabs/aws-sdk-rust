@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAddressesOutput`](crate::operation::describe_addresses::DescribeAddressesOutput) with field(s):
     ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::describe_addresses::DescribeAddressesOutput::addresses): <p>Information about the Elastic IP addresses.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressesError>`](crate::operation::describe_addresses::DescribeAddressesError)
-    pub fn describe_addresses(
-        &self,
-    ) -> crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder {
-        crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_addresses(&self) -> crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder {
+        crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,17 +22,14 @@ impl StopActivityStreamInput {
 }
 impl StopActivityStreamInput {
     /// Creates a new builder-style object to manufacture [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
-    pub fn builder(
-    ) -> crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder {
+    pub fn builder() -> crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder {
         crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopActivityStreamInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
@@ -69,15 +66,10 @@ impl StopActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_activity_stream::StopActivityStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_activity_stream::StopActivityStreamInput {
-                resource_arn: self.resource_arn,
-                apply_immediately: self.apply_immediately,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_activity_stream::StopActivityStreamInput {
+            resource_arn: self.resource_arn,
+            apply_immediately: self.apply_immediately,
+        })
     }
 }

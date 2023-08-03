@@ -10,10 +10,7 @@ impl SearchDashboardsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_dashboards::SearchDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_dashboards::SearchDashboardsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_dashboards();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SearchDashboardsFluentBuilder {
         }
     }
     /// Access the SearchDashboards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SearchDashboardsFluentBuilder {
             crate::operation::search_dashboards::SearchDashboards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_dashboards::SearchDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SearchDashboardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SearchDashboardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_dashboards::SearchDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_dashboards::SearchDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SearchDashboardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_dashboards::SearchDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_dashboards::SearchDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +104,23 @@ impl SearchDashboardsFluentBuilder {
             crate::operation::search_dashboards::SearchDashboards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_dashboards::SearchDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_dashboards::SearchDashboardsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
-        crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
+        crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -165,17 +138,12 @@ impl SearchDashboardsFluentBuilder {
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

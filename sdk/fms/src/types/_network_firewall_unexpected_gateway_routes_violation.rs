@@ -37,17 +37,14 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
-    pub fn builder(
-    ) -> crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
+    pub fn builder() -> crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallUnexpectedGatewayRoutesViolationBuilder::default()
     }
 }
 
 /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
@@ -81,32 +78,21 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn set_violating_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
+    pub fn set_violating_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>) -> Self {
         self.violating_routes = input;
         self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn get_violating_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+    pub fn get_violating_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
         &self.violating_routes
     }
     /// <p>Information about the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }

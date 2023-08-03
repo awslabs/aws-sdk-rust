@@ -27,7 +27,7 @@ impl DisassociateDeviceFromRoomInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder,
+    inner: crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder,
 }
 impl DisassociateDeviceFromRoomFluentBuilder {
     /// Creates a new `DisassociateDeviceFromRoom`.
@@ -38,7 +38,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
         }
     }
     /// Access the DisassociateDeviceFromRoom as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
             crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DisassociateDeviceFromRoomFluentBuilder {
             crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError>,
     > {
         self.customize_middleware().await
     }

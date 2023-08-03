@@ -118,9 +118,7 @@ impl UpdateResolverInput {
 
 /// A builder for [`UpdateResolverInput`](crate::operation::update_resolver::UpdateResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -180,18 +178,12 @@ impl UpdateResolverInputBuilder {
         &self.field_name
     }
     /// <p>The new data source name.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new data source name.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_name = input;
         self
     }
@@ -202,20 +194,14 @@ impl UpdateResolverInputBuilder {
     /// <p>The new request mapping template.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn request_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_mapping_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new request mapping template.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn set_request_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_mapping_template = input;
         self
     }
@@ -226,18 +212,12 @@ impl UpdateResolverInputBuilder {
         &self.request_mapping_template
     }
     /// <p>The new response mapping template.</p>
-    pub fn response_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_mapping_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new response mapping template.</p>
-    pub fn set_response_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_mapping_template = input;
         self
     }
@@ -277,10 +257,7 @@ impl UpdateResolverInputBuilder {
         self
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn set_pipeline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineConfig>,
-    ) -> Self {
+    pub fn set_pipeline_config(mut self, input: ::std::option::Option<crate::types::PipelineConfig>) -> Self {
         self.pipeline_config = input;
         self
     }
@@ -294,10 +271,7 @@ impl UpdateResolverInputBuilder {
         self
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    pub fn set_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncConfig>,
-    ) -> Self {
+    pub fn set_sync_config(mut self, input: ::std::option::Option<crate::types::SyncConfig>) -> Self {
         self.sync_config = input;
         self
     }
@@ -311,10 +285,7 @@ impl UpdateResolverInputBuilder {
         self
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn set_caching_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachingConfig>,
-    ) -> Self {
+    pub fn set_caching_config(mut self, input: ::std::option::Option<crate::types::CachingConfig>) -> Self {
         self.caching_config = input;
         self
     }
@@ -342,10 +313,7 @@ impl UpdateResolverInputBuilder {
         self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
         self.runtime = input;
         self
     }
@@ -370,10 +338,7 @@ impl UpdateResolverInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResolverInput`](crate::operation::update_resolver::UpdateResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver::UpdateResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_resolver::UpdateResolverInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resolver::UpdateResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

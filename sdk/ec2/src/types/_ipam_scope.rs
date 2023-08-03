@@ -94,9 +94,7 @@ impl IpamScope {
 
 /// A builder for [`IpamScope`](crate::types::IpamScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamScopeBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,
@@ -126,18 +124,12 @@ impl IpamScopeBuilder {
         &self.owner_id
     }
     /// <p>The ID of the scope.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -146,18 +138,12 @@ impl IpamScopeBuilder {
         &self.ipam_scope_id
     }
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
-    pub fn ipam_scope_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
-    pub fn set_ipam_scope_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_arn = input;
         self
     }
@@ -199,10 +185,7 @@ impl IpamScopeBuilder {
         self
     }
     /// <p>The type of the scope.</p>
-    pub fn set_ipam_scope_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamScopeType>,
-    ) -> Self {
+    pub fn set_ipam_scope_type(mut self, input: ::std::option::Option<crate::types::IpamScopeType>) -> Self {
         self.ipam_scope_type = input;
         self
     }
@@ -278,10 +261,7 @@ impl IpamScopeBuilder {
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -22,16 +22,14 @@ impl DescribeAccessControlConfigurationInput {
 }
 impl DescribeAccessControlConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessControlConfigurationInput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput).
-    pub fn builder() -> crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationInputBuilder {
         crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccessControlConfigurationInput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccessControlConfigurationInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeAccessControlConfigurationInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DescribeAccessControlConfigurationInput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput {
-                index_id: self.index_id
-                ,
-                id: self.id
-                ,
-            }
+                index_id: self.index_id,
+                id: self.id,
+            },
         )
     }
 }

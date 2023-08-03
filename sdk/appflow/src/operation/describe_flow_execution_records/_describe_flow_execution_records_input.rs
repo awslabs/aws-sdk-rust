@@ -29,16 +29,14 @@ impl DescribeFlowExecutionRecordsInput {
 }
 impl DescribeFlowExecutionRecordsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsInput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput).
-    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder{
+    pub fn builder() -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder {
         crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlowExecutionRecordsInput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl DescribeFlowExecutionRecordsInputBuilder {
         crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput {
-                flow_name: self.flow_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput {
+            flow_name: self.flow_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

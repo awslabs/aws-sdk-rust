@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCodeSigningConfigOutput`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput) with field(s):
     ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration</p>
     /// - On failure, responds with [`SdkError<UpdateCodeSigningConfigError>`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigError)
-    pub fn update_code_signing_config(
-        &self,
-    ) -> crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigFluentBuilder
-    {
+    pub fn update_code_signing_config(&self) -> crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigFluentBuilder {
         crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigFluentBuilder::new(self.handle.clone())
     }
 }

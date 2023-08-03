@@ -38,17 +38,14 @@ impl CreateCodeReviewInput {
 }
 impl CreateCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
-    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewInputBuilder {
         crate::operation::create_code_review::builders::CreateCodeReviewInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCodeReviewInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_association_arn: ::std::option::Option<::std::string::String>,
@@ -72,19 +69,13 @@ impl CreateCodeReviewInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
-    pub fn repository_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
-    pub fn set_repository_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_association_arn = input;
         self
     }
@@ -108,18 +99,12 @@ impl CreateCodeReviewInputBuilder {
         &self.r#type
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -130,17 +115,12 @@ impl CreateCodeReviewInputBuilder {
     /// Consumes the builder and constructs a [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_code_review::CreateCodeReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_code_review::CreateCodeReviewInput {
-                name: self.name,
-                repository_association_arn: self.repository_association_arn,
-                r#type: self.r#type,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_code_review::CreateCodeReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_code_review::CreateCodeReviewInput {
+            name: self.name,
+            repository_association_arn: self.repository_association_arn,
+            r#type: self.r#type,
+            client_request_token: self.client_request_token,
+        })
     }
 }

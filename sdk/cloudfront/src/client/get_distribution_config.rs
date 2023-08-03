@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`distribution_config(Option<DistributionConfig>)`](crate::operation::get_distribution_config::GetDistributionConfigOutput::distribution_config): <p>The distribution's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_distribution_config::GetDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetDistributionConfigError>`](crate::operation::get_distribution_config::GetDistributionConfigError)
-    pub fn get_distribution_config(
-        &self,
-    ) -> crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder
-    {
-        crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_distribution_config(&self) -> crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder {
+        crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::new(self.handle.clone())
     }
 }

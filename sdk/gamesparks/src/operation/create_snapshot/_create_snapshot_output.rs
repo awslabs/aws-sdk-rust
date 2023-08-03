@@ -28,9 +28,7 @@ impl CreateSnapshotOutput {
 
 /// A builder for [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::SnapshotDetails>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateSnapshotOutputBuilder {
         self
     }
     /// <p>Properties that provide details of the created snapshot.</p>
-    pub fn set_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotDetails>,
-    ) -> Self {
+    pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::SnapshotDetails>) -> Self {
         self.snapshot = input;
         self
     }

@@ -15,18 +15,14 @@ impl GetRasterDataCollectionInput {
 }
 impl GetRasterDataCollectionInput {
     /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder {
         crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRasterDataCollectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetRasterDataCollectionInputBuilder {
         crate::operation::get_raster_data_collection::GetRasterDataCollectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_raster_data_collection::GetRasterDataCollectionInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionInput { arn: self.arn })
     }
 }

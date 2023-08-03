@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for WithdrawByoipCidrOutput {
 }
 impl WithdrawByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder {
+    pub fn builder() -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder {
         crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WithdrawByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

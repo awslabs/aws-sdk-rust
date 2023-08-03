@@ -29,17 +29,14 @@ impl DescribeProjectsInput {
 }
 impl DescribeProjectsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
-    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsInputBuilder {
         crate::operation::describe_projects::builders::DescribeProjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -79,36 +76,25 @@ impl DescribeProjectsInputBuilder {
     /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
     ///
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn project_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.project_names.unwrap_or_default();
         v.push(input.into());
         self.project_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn set_project_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_project_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.project_names = input;
         self
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn get_project_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.project_names
     }
     /// Consumes the builder and constructs a [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_projects::DescribeProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_projects::DescribeProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_projects::DescribeProjectsInput {
             next_token: self.next_token,
             max_results: self.max_results,

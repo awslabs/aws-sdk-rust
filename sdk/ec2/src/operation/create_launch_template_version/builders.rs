@@ -29,7 +29,7 @@ impl CreateLaunchTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionInputBuilder,
+    inner: crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionInputBuilder,
 }
 impl CreateLaunchTemplateVersionFluentBuilder {
     /// Creates a new `CreateLaunchTemplateVersion`.
@@ -40,7 +40,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         }
     }
     /// Access the CreateLaunchTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
             crate::operation::create_launch_template_version::CreateLaunchTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl CreateLaunchTemplateVersionFluentBuilder {
             crate::operation::create_launch_template_version::CreateLaunchTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -156,19 +145,13 @@ impl CreateLaunchTemplateVersionFluentBuilder {
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_id(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
     }
@@ -179,19 +162,13 @@ impl CreateLaunchTemplateVersionFluentBuilder {
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
@@ -201,18 +178,12 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self.inner.get_launch_template_name()
     }
     /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -221,18 +192,12 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self.inner.get_source_version()
     }
     /// <p>A description for the version of the launch template.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>A description for the version of the launch template.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }
@@ -246,17 +211,12 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn set_launch_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
-    ) -> Self {
+    pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::RequestLaunchTemplateData>) -> Self {
         self.inner = self.inner.set_launch_template_data(input);
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn get_launch_template_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
+    pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
         self.inner.get_launch_template_data()
     }
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageID</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

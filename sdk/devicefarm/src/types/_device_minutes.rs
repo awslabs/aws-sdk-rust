@@ -37,9 +37,7 @@ impl DeviceMinutes {
 
 /// A builder for [`DeviceMinutes`](crate::types::DeviceMinutes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceMinutesBuilder {
     pub(crate) total: ::std::option::Option<f64>,
     pub(crate) metered: ::std::option::Option<f64>,

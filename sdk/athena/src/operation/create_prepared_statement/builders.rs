@@ -26,8 +26,7 @@ impl CreatePreparedStatementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePreparedStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder,
+    inner: crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder,
 }
 impl CreatePreparedStatementFluentBuilder {
     /// Creates a new `CreatePreparedStatement`.
@@ -38,10 +37,7 @@ impl CreatePreparedStatementFluentBuilder {
         }
     }
     /// Access the CreatePreparedStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreatePreparedStatementFluentBuilder {
             crate::operation::create_prepared_statement::CreatePreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prepared_statement::CreatePreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prepared_statement::CreatePreparedStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreatePreparedStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreatePreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_prepared_statement::CreatePreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prepared_statement::CreatePreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prepared_statement::CreatePreparedStatementError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreatePreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_prepared_statement::CreatePreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prepared_statement::CreatePreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prepared_statement::CreatePreparedStatementError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreatePreparedStatementFluentBuilder {
             crate::operation::create_prepared_statement::CreatePreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prepared_statement::CreatePreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prepared_statement::CreatePreparedStatementError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_name(input.into());
         self
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_name(input);
         self
     }
@@ -159,18 +138,12 @@ impl CreatePreparedStatementFluentBuilder {
         self.inner.get_work_group()
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_statement(input.into());
         self
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_statement(input);
         self
     }

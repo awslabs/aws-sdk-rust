@@ -23,9 +23,7 @@ impl AwsApiCallActionDomainDetails {
 
 /// A builder for [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiCallActionDomainDetailsBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AwsApiCallActionDomainDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
     pub fn build(self) -> crate::types::AwsApiCallActionDomainDetails {
-        crate::types::AwsApiCallActionDomainDetails {
-            domain: self.domain,
-        }
+        crate::types::AwsApiCallActionDomainDetails { domain: self.domain }
     }
 }

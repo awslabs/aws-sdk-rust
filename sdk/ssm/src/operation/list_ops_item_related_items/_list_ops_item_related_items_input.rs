@@ -36,22 +36,17 @@ impl ListOpsItemRelatedItemsInput {
 }
 impl ListOpsItemRelatedItemsInput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemRelatedItemsInput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput).
-    pub fn builder(
-    ) -> crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder {
         crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpsItemRelatedItemsInput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -82,17 +77,12 @@ impl ListOpsItemRelatedItemsInputBuilder {
         self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -130,13 +120,11 @@ impl ListOpsItemRelatedItemsInputBuilder {
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput {
-                ops_item_id: self.ops_item_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput {
+            ops_item_id: self.ops_item_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

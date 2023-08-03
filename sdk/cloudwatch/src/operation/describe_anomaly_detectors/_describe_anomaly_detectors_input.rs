@@ -21,8 +21,7 @@ pub struct DescribeAnomalyDetectorsInput {
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
     #[doc(hidden)]
-    pub anomaly_detector_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
+    pub anomaly_detector_types: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
 }
 impl DescribeAnomalyDetectorsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -47,34 +46,27 @@ impl DescribeAnomalyDetectorsInput {
         self.dimensions.as_deref()
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn anomaly_detector_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnomalyDetectorType]> {
+    pub fn anomaly_detector_types(&self) -> ::std::option::Option<&[crate::types::AnomalyDetectorType]> {
         self.anomaly_detector_types.as_deref()
     }
 }
 impl DescribeAnomalyDetectorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorsInput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder {
         crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnomalyDetectorsInput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    pub(crate) anomaly_detector_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
+    pub(crate) anomaly_detector_types: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
 }
 impl DescribeAnomalyDetectorsInputBuilder {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -148,17 +140,12 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// Appends an item to `anomaly_detector_types`.
@@ -173,17 +160,12 @@ impl DescribeAnomalyDetectorsInputBuilder {
         self
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn set_anomaly_detector_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
-    ) -> Self {
+    pub fn set_anomaly_detector_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>) -> Self {
         self.anomaly_detector_types = input;
         self
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn get_anomaly_detector_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>> {
+    pub fn get_anomaly_detector_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>> {
         &self.anomaly_detector_types
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsInput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput).
@@ -193,15 +175,13 @@ impl DescribeAnomalyDetectorsInputBuilder {
         crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                anomaly_detector_types: self.anomaly_detector_types,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            namespace: self.namespace,
+            metric_name: self.metric_name,
+            dimensions: self.dimensions,
+            anomaly_detector_types: self.anomaly_detector_types,
+        })
     }
 }

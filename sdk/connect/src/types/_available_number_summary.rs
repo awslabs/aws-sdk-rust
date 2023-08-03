@@ -20,9 +20,7 @@ impl AvailableNumberSummary {
         self.phone_number.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
+    pub fn phone_number_country_code(&self) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
         self.phone_number_country_code.as_ref()
     }
     /// <p>The type of phone number.</p>
@@ -39,13 +37,10 @@ impl AvailableNumberSummary {
 
 /// A builder for [`AvailableNumberSummary`](crate::types::AvailableNumberSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailableNumberSummaryBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_country_code:
-        ::std::option::Option<crate::types::PhoneNumberCountryCode>,
+    pub(crate) phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl AvailableNumberSummaryBuilder {
@@ -64,25 +59,17 @@ impl AvailableNumberSummaryBuilder {
         &self.phone_number
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(
-        mut self,
-        input: crate::types::PhoneNumberCountryCode,
-    ) -> Self {
+    pub fn phone_number_country_code(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         self.phone_number_country_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
-    ) -> Self {
+    pub fn set_phone_number_country_code(mut self, input: ::std::option::Option<crate::types::PhoneNumberCountryCode>) -> Self {
         self.phone_number_country_code = input;
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+    pub fn get_phone_number_country_code(&self) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
         &self.phone_number_country_code
     }
     /// <p>The type of phone number.</p>
@@ -91,10 +78,7 @@ impl AvailableNumberSummaryBuilder {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
+    pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.phone_number_type = input;
         self
     }

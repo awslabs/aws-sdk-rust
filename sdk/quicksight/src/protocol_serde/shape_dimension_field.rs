@@ -6,28 +6,19 @@ pub fn ser_dimension_field(
     if let Some(var_1) = &input.numerical_dimension_field {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NumericalDimensionField").start_object();
-        crate::protocol_serde::shape_numerical_dimension_field::ser_numerical_dimension_field(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_numerical_dimension_field::ser_numerical_dimension_field(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.categorical_dimension_field {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CategoricalDimensionField").start_object();
-        crate::protocol_serde::shape_categorical_dimension_field::ser_categorical_dimension_field(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_categorical_dimension_field::ser_categorical_dimension_field(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.date_dimension_field {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DateDimensionField").start_object();
-        crate::protocol_serde::shape_date_dimension_field::ser_date_dimension_field(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_date_dimension_field::ser_date_dimension_field(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())
@@ -35,17 +26,9 @@ pub fn ser_dimension_field(
 
 pub(crate) fn de_dimension_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DimensionField>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DimensionField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,41 +38,35 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "NumericalDimensionField" => {
-                                builder = builder.set_numerical_dimension_field(
-                                    crate::protocol_serde::shape_numerical_dimension_field::de_numerical_dimension_field(tokens)?
-                                );
-                            }
-                            "CategoricalDimensionField" => {
-                                builder = builder.set_categorical_dimension_field(
-                                    crate::protocol_serde::shape_categorical_dimension_field::de_categorical_dimension_field(tokens)?
-                                );
-                            }
-                            "DateDimensionField" => {
-                                builder = builder.set_date_dimension_field(
-                                    crate::protocol_serde::shape_date_dimension_field::de_date_dimension_field(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "NumericalDimensionField" => {
+                            builder = builder.set_numerical_dimension_field(
+                                crate::protocol_serde::shape_numerical_dimension_field::de_numerical_dimension_field(tokens)?,
+                            );
                         }
-                    }
+                        "CategoricalDimensionField" => {
+                            builder = builder.set_categorical_dimension_field(
+                                crate::protocol_serde::shape_categorical_dimension_field::de_categorical_dimension_field(tokens)?,
+                            );
+                        }
+                        "DateDimensionField" => {
+                            builder =
+                                builder.set_date_dimension_field(crate::protocol_serde::shape_date_dimension_field::de_date_dimension_field(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

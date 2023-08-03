@@ -31,28 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::decrypt_data::DecryptDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::decrypt_data::DecryptDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -62,49 +50,25 @@ where
 impl From<crate::operation::decrypt_data::DecryptDataError> for Error {
     fn from(err: crate::operation::decrypt_data::DecryptDataError) -> Self {
         match err {
-            crate::operation::decrypt_data::DecryptDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::decrypt_data::DecryptDataError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::decrypt_data::DecryptDataError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::decrypt_data::DecryptDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::decrypt_data::DecryptDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::decrypt_data::DecryptDataError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::decrypt_data::DecryptDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::decrypt_data::DecryptDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::decrypt_data::DecryptDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::decrypt_data::DecryptDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::decrypt_data::DecryptDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::decrypt_data::DecryptDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::encrypt_data::EncryptDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::encrypt_data::EncryptDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -114,97 +78,63 @@ where
 impl From<crate::operation::encrypt_data::EncryptDataError> for Error {
     fn from(err: crate::operation::encrypt_data::EncryptDataError) -> Self {
         match err {
-            crate::operation::encrypt_data::EncryptDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::encrypt_data::EncryptDataError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::encrypt_data::EncryptDataError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::encrypt_data::EncryptDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::encrypt_data::EncryptDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::encrypt_data::EncryptDataError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::encrypt_data::EncryptDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::encrypt_data::EncryptDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::encrypt_data::EncryptDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::encrypt_data::EncryptDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::encrypt_data::EncryptDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::encrypt_data::EncryptDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::generate_card_validation_data::GenerateCardValidationDataError>
-    for Error
-{
-    fn from(
-        err: crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-    ) -> Self {
+impl From<crate::operation::generate_card_validation_data::GenerateCardValidationDataError> for Error {
+    fn from(err: crate::operation::generate_card_validation_data::GenerateCardValidationDataError) -> Self {
         match err {
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::generate_card_validation_data::GenerateCardValidationDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_mac::GenerateMacError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::generate_mac::GenerateMacError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -214,53 +144,25 @@ where
 impl From<crate::operation::generate_mac::GenerateMacError> for Error {
     fn from(err: crate::operation::generate_mac::GenerateMacError) -> Self {
         match err {
-            crate::operation::generate_mac::GenerateMacError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::generate_mac::GenerateMacError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::generate_mac::GenerateMacError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::generate_mac::GenerateMacError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::generate_mac::GenerateMacError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::generate_mac::GenerateMacError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::generate_mac::GenerateMacError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::generate_mac::GenerateMacError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_mac::GenerateMacError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::generate_mac::GenerateMacError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_mac::GenerateMacError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::generate_mac::GenerateMacError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -279,32 +181,16 @@ impl From<crate::operation::generate_pin_data::GeneratePinDataError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::re_encrypt_data::ReEncryptDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::re_encrypt_data::ReEncryptDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -314,53 +200,25 @@ where
 impl From<crate::operation::re_encrypt_data::ReEncryptDataError> for Error {
     fn from(err: crate::operation::re_encrypt_data::ReEncryptDataError) -> Self {
         match err {
-            crate::operation::re_encrypt_data::ReEncryptDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::re_encrypt_data::ReEncryptDataError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::re_encrypt_data::ReEncryptDataError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::re_encrypt_data::ReEncryptDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::re_encrypt_data::ReEncryptDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::re_encrypt_data::ReEncryptDataError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::re_encrypt_data::ReEncryptDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::re_encrypt_data::ReEncryptDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::re_encrypt_data::ReEncryptDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::re_encrypt_data::ReEncryptDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::re_encrypt_data::ReEncryptDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::re_encrypt_data::ReEncryptDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -379,81 +237,57 @@ impl From<crate::operation::translate_pin_data::TranslatePinDataError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError>
-    for Error
-{
-    fn from(
-        err: crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-    ) -> Self {
+impl From<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError> for Error {
+    fn from(err: crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError) -> Self {
         match err {
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::VerificationFailedException(inner) => {
+                Error::VerificationFailedException(inner)
+            }
             crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -461,38 +295,40 @@ where
     }
 }
 impl From<crate::operation::verify_card_validation_data::VerifyCardValidationDataError> for Error {
-    fn from(
-        err: crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-    ) -> Self {
+    fn from(err: crate::operation::verify_card_validation_data::VerifyCardValidationDataError) -> Self {
         match err {
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError::VerificationFailedException(inner) => {
+                Error::VerificationFailedException(inner)
+            }
             crate::operation::verify_card_validation_data::VerifyCardValidationDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -502,56 +338,26 @@ where
 impl From<crate::operation::verify_mac::VerifyMacError> for Error {
     fn from(err: crate::operation::verify_mac::VerifyMacError) -> Self {
         match err {
-            crate::operation::verify_mac::VerifyMacError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::VerificationFailedException(inner) => {
-                Error::VerificationFailedException(inner)
-            }
-            crate::operation::verify_mac::VerifyMacError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::verify_mac::VerifyMacError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_mac::VerifyMacError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::verify_mac::VerifyMacError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_mac::VerifyMacError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::verify_mac::VerifyMacError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_mac::VerifyMacError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
+            crate::operation::verify_mac::VerifyMacError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_pin_data::VerifyPinDataError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::verify_pin_data::VerifyPinDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_pin_data::VerifyPinDataError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::verify_pin_data::VerifyPinDataError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -561,27 +367,13 @@ where
 impl From<crate::operation::verify_pin_data::VerifyPinDataError> for Error {
     fn from(err: crate::operation::verify_pin_data::VerifyPinDataError) -> Self {
         match err {
-            crate::operation::verify_pin_data::VerifyPinDataError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::verify_pin_data::VerifyPinDataError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::verify_pin_data::VerifyPinDataError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::verify_pin_data::VerifyPinDataError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::verify_pin_data::VerifyPinDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::verify_pin_data::VerifyPinDataError::VerificationFailedException(
-                inner,
-            ) => Error::VerificationFailedException(inner),
-            crate::operation::verify_pin_data::VerifyPinDataError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::verify_pin_data::VerifyPinDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::VerificationFailedException(inner) => Error::VerificationFailedException(inner),
+            crate::operation::verify_pin_data::VerifyPinDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -22,35 +22,26 @@ impl GetIdentitySourceInput {
 }
 impl GetIdentitySourceInput {
     /// Creates a new builder-style object to manufacture [`GetIdentitySourceInput`](crate::operation::get_identity_source::GetIdentitySourceInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder {
+    pub fn builder() -> crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder {
         crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentitySourceInput`](crate::operation::get_identity_source::GetIdentitySourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentitySourceInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_source_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentitySourceInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl GetIdentitySourceInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the identity source you want information about.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the identity source you want information about.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_source_id = input;
         self
     }
@@ -81,15 +66,10 @@ impl GetIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentitySourceInput`](crate::operation::get_identity_source::GetIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_source::GetIdentitySourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_source::GetIdentitySourceInput {
-                policy_store_id: self.policy_store_id,
-                identity_source_id: self.identity_source_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_identity_source::GetIdentitySourceInput {
+            policy_store_id: self.policy_store_id,
+            identity_source_id: self.identity_source_id,
+        })
     }
 }

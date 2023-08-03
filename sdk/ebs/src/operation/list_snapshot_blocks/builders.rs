@@ -10,10 +10,7 @@ impl ListSnapshotBlocksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_snapshot_blocks();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSnapshotBlocksFluentBuilder {
         }
     }
     /// Access the ListSnapshotBlocks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSnapshotBlocksFluentBuilder {
             crate::operation::list_snapshot_blocks::ListSnapshotBlocks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSnapshotBlocksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSnapshotBlocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSnapshotBlocksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSnapshotBlocksFluentBuilder {
             crate::operation::list_snapshot_blocks::ListSnapshotBlocks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshot_blocks::ListSnapshotBlocksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_snapshot_blocks::paginator::ListSnapshotBlocksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_snapshot_blocks::paginator::ListSnapshotBlocksPaginator {
-        crate::operation::list_snapshot_blocks::paginator::ListSnapshotBlocksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_snapshot_blocks::paginator::ListSnapshotBlocksPaginator {
+        crate::operation::list_snapshot_blocks::paginator::ListSnapshotBlocksPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

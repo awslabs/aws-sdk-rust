@@ -56,9 +56,7 @@ impl UpdateRotationInput {
 
 /// A builder for [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,18 +93,13 @@ impl UpdateRotationInputBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn get_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The date and time the rotation goes into effect.</p>
@@ -115,10 +108,7 @@ impl UpdateRotationInputBuilder {
         self
     }
     /// <p>The date and time the rotation goes into effect.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -152,10 +142,7 @@ impl UpdateRotationInputBuilder {
         self
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.recurrence = input;
         self
     }
@@ -166,10 +153,7 @@ impl UpdateRotationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rotation::UpdateRotationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rotation::UpdateRotationInput {
             rotation_id: self.rotation_id,
             contact_ids: self.contact_ids,

@@ -79,9 +79,7 @@ impl AwsCodeBuildProjectArtifactsDetails {
 
 /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::types::AwsCodeBuildProjectArtifactsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectArtifactsDetailsBuilder {
     pub(crate) artifact_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_disabled: ::std::option::Option<bool>,
@@ -95,18 +93,12 @@ pub struct AwsCodeBuildProjectArtifactsDetailsBuilder {
 }
 impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     /// <p>An identifier for the artifact definition.</p>
-    pub fn artifact_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the artifact definition.</p>
-    pub fn set_artifact_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_identifier = input;
         self
     }
@@ -157,18 +149,12 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
         &self.name
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn namespace_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn set_namespace_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_type = input;
         self
     }

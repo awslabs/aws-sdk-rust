@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::update_table::builders::UpdateTableFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::update_table::builders::UpdateTableFluentBuilder::set_version_id): <p>The version ID at which to update the table contents. </p>
     /// - On success, responds with [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput)
     /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::operation::update_table::UpdateTableError)
-    pub fn update_table(
-        &self,
-    ) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
+    pub fn update_table(&self) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
         crate::operation::update_table::builders::UpdateTableFluentBuilder::new(self.handle.clone())
     }
 }

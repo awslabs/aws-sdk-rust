@@ -30,9 +30,7 @@ impl VpcAttachment {
 
 /// A builder for [`VpcAttachment`](crate::types::VpcAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcAttachmentBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl VpcAttachmentBuilder {
         self
     }
     /// <p>The current state of the attachment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentStatus>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.state = input;
         self
     }

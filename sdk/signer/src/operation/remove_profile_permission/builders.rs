@@ -26,8 +26,7 @@ impl RemoveProfilePermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveProfilePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder,
+    inner: crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder,
 }
 impl RemoveProfilePermissionFluentBuilder {
     /// Creates a new `RemoveProfilePermission`.
@@ -38,10 +37,7 @@ impl RemoveProfilePermissionFluentBuilder {
         }
     }
     /// Access the RemoveProfilePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RemoveProfilePermissionFluentBuilder {
             crate::operation::remove_profile_permission::RemoveProfilePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RemoveProfilePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RemoveProfilePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_profile_permission::RemoveProfilePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RemoveProfilePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_profile_permission::RemoveProfilePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RemoveProfilePermissionFluentBuilder {
             crate::operation::remove_profile_permission::RemoveProfilePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>,
     > {
         self.customize_middleware().await
     }

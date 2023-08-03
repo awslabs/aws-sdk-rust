@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::end_time): <p>The date and time when the override ends.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::get_rotation_override::GetRotationOverrideOutput::create_time): <p>The date and time when the override was created.</p>
     /// - On failure, responds with [`SdkError<GetRotationOverrideError>`](crate::operation::get_rotation_override::GetRotationOverrideError)
-    pub fn get_rotation_override(
-        &self,
-    ) -> crate::operation::get_rotation_override::builders::GetRotationOverrideFluentBuilder {
-        crate::operation::get_rotation_override::builders::GetRotationOverrideFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_rotation_override(&self) -> crate::operation::get_rotation_override::builders::GetRotationOverrideFluentBuilder {
+        crate::operation::get_rotation_override::builders::GetRotationOverrideFluentBuilder::new(self.handle.clone())
     }
 }

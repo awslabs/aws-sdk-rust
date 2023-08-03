@@ -5,8 +5,7 @@
 pub struct ListAutoScalingConfigurationsOutput {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
-    pub auto_scaling_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
+    pub auto_scaling_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAutoScalingConfigurationsOutput {
 }
 impl ListAutoScalingConfigurationsOutput {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn auto_scaling_configuration_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoScalingConfigurationSummary]> {
+    pub fn auto_scaling_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::AutoScalingConfigurationSummary]> {
         self.auto_scaling_configuration_summary_list.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAutoScalingConfigurationsOutput {
 }
 impl ListAutoScalingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAutoScalingConfigurationsOutput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsOutputBuilder {
         crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutoScalingConfigurationsOutput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutoScalingConfigurationsOutputBuilder {
-    pub(crate) auto_scaling_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
+    pub(crate) auto_scaling_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListAutoScalingConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_configuration_summary_list`](Self::set_auto_scaling_configuration_summary_list).
     ///
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn auto_scaling_configuration_summary_list(
-        mut self,
-        input: crate::types::AutoScalingConfigurationSummary,
-    ) -> Self {
-        let mut v = self
-            .auto_scaling_configuration_summary_list
-            .unwrap_or_default();
+    pub fn auto_scaling_configuration_summary_list(mut self, input: crate::types::AutoScalingConfigurationSummary) -> Self {
+        let mut v = self.auto_scaling_configuration_summary_list.unwrap_or_default();
         v.push(input);
         self.auto_scaling_configuration_summary_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListAutoScalingConfigurationsOutputBuilder {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn set_auto_scaling_configuration_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
     ) -> Self {
         self.auto_scaling_configuration_summary_list = input;
         self
@@ -77,8 +64,7 @@ impl ListAutoScalingConfigurationsOutputBuilder {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn get_auto_scaling_configuration_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>> {
         &self.auto_scaling_configuration_summary_list
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -105,10 +91,7 @@ impl ListAutoScalingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAutoScalingConfigurationsOutput`](crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput {
         crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput {
             auto_scaling_configuration_summary_list: self.auto_scaling_configuration_summary_list,
             next_token: self.next_token,

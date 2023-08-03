@@ -5,16 +5,16 @@ pub use crate::operation::register_app_instance_user_endpoint::_register_app_ins
 
 impl RegisterAppInstanceUserEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.register_app_instance_user_endpoint();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAppInstanceUserEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder,
+    inner: crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder,
 }
 impl RegisterAppInstanceUserEndpointFluentBuilder {
     /// Creates a new `RegisterAppInstanceUserEndpoint`.
@@ -37,15 +37,20 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
         }
     }
     /// Access the RegisterAppInstanceUserEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
@@ -146,10 +155,7 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -183,32 +189,21 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn set_endpoint_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAttributes>,
-    ) -> Self {
+    pub fn set_endpoint_attributes(mut self, input: ::std::option::Option<crate::types::EndpointAttributes>) -> Self {
         self.inner = self.inner.set_endpoint_attributes(input);
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn get_endpoint_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointAttributes> {
+    pub fn get_endpoint_attributes(&self) -> &::std::option::Option<crate::types::EndpointAttributes> {
         self.inner.get_endpoint_attributes()
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -222,10 +217,7 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
         self
     }
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
-    pub fn set_allow_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowMessages>,
-    ) -> Self {
+    pub fn set_allow_messages(mut self, input: ::std::option::Option<crate::types::AllowMessages>) -> Self {
         self.inner = self.inner.set_allow_messages(input);
         self
     }

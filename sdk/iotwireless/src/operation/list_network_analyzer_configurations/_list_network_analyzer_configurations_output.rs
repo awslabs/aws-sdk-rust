@@ -8,8 +8,7 @@ pub struct ListNetworkAnalyzerConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of network analyzer configurations.</p>
     #[doc(hidden)]
-    pub network_analyzer_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,
+    pub network_analyzer_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,
     _request_id: Option<String>,
 }
 impl ListNetworkAnalyzerConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListNetworkAnalyzerConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of network analyzer configurations.</p>
-    pub fn network_analyzer_configuration_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkAnalyzerConfigurations]> {
+    pub fn network_analyzer_configuration_list(&self) -> ::std::option::Option<&[crate::types::NetworkAnalyzerConfigurations]> {
         self.network_analyzer_configuration_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListNetworkAnalyzerConfigurationsOutp
 }
 impl ListNetworkAnalyzerConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsOutputBuilder {
         crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) network_analyzer_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,
+    pub(crate) network_analyzer_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,
     _request_id: Option<String>,
 }
 impl ListNetworkAnalyzerConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListNetworkAnalyzerConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_network_analyzer_configuration_list`](Self::set_network_analyzer_configuration_list).
     ///
     /// <p>The list of network analyzer configurations.</p>
-    pub fn network_analyzer_configuration_list(
-        mut self,
-        input: crate::types::NetworkAnalyzerConfigurations,
-    ) -> Self {
+    pub fn network_analyzer_configuration_list(mut self, input: crate::types::NetworkAnalyzerConfigurations) -> Self {
         let mut v = self.network_analyzer_configuration_list.unwrap_or_default();
         v.push(input);
         self.network_analyzer_configuration_list = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl ListNetworkAnalyzerConfigurationsOutputBuilder {
         self
     }
     /// <p>The list of network analyzer configurations.</p>
-    pub fn get_network_analyzer_configuration_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>> {
+    pub fn get_network_analyzer_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>> {
         &self.network_analyzer_configuration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,12 +89,10 @@ impl ListNetworkAnalyzerConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput{
+    pub fn build(self) -> crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput {
         crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput {
-            next_token: self.next_token
-            ,
-            network_analyzer_configuration_list: self.network_analyzer_configuration_list
-            ,
+            next_token: self.next_token,
+            network_analyzer_configuration_list: self.network_analyzer_configuration_list,
             _request_id: self._request_id,
         }
     }

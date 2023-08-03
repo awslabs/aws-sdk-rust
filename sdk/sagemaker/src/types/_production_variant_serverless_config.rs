@@ -41,9 +41,7 @@ impl ProductionVariantServerlessConfig {
 
 /// A builder for [`ProductionVariantServerlessConfig`](crate::types::ProductionVariantServerlessConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessConfigBuilder {
     pub(crate) memory_size_in_mb: ::std::option::Option<i32>,
     pub(crate) max_concurrency: ::std::option::Option<i32>,

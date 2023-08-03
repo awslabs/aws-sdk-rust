@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDiscoveryJobOutput {
 }
 impl UpdateDiscoveryJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscoveryJobOutput`](crate::operation::update_discovery_job::UpdateDiscoveryJobOutput).
-    pub fn builder(
-    ) -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobOutputBuilder {
+    pub fn builder() -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobOutputBuilder {
         crate::operation::update_discovery_job::builders::UpdateDiscoveryJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDiscoveryJobOutput`](crate::operation::update_discovery_job::UpdateDiscoveryJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDiscoveryJobOutputBuilder {
     _request_id: Option<String>,
 }

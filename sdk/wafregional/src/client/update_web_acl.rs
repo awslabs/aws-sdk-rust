@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWebAclOutput`](crate::operation::update_web_acl::UpdateWebAclOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_web_acl::UpdateWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateWebACLError>`](crate::operation::update_web_acl::UpdateWebACLError)
-    pub fn update_web_acl(
-        &self,
-    ) -> crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder {
-        crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_web_acl(&self) -> crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder {
+        crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder::new(self.handle.clone())
     }
 }

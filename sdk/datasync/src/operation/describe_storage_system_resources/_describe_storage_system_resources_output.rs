@@ -30,16 +30,14 @@ impl ::aws_http::request_id::RequestId for DescribeStorageSystemResourcesOutput 
 }
 impl DescribeStorageSystemResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
-    pub fn builder() -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder {
         crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourcesOutputBuilder {
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,10 +52,7 @@ impl DescribeStorageSystemResourcesOutputBuilder {
     }
     /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
@@ -90,10 +85,7 @@ impl DescribeStorageSystemResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput {
         crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput {
             resource_details: self.resource_details,
             next_token: self.next_token,

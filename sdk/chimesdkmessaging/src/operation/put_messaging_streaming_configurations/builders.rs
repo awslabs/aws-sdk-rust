@@ -5,16 +5,16 @@ pub use crate::operation::put_messaging_streaming_configurations::_put_messaging
 
 impl PutMessagingStreamingConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_messaging_streaming_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMessagingStreamingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsInputBuilder,
+    inner: crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsInputBuilder,
 }
 impl PutMessagingStreamingConfigurationsFluentBuilder {
     /// Creates a new `PutMessagingStreamingConfigurations`.
@@ -37,15 +37,20 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
         }
     }
     /// Access the PutMessagingStreamingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the streaming configuration.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the streaming configuration.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
@@ -124,17 +133,12 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
         self
     }
     /// <p>The streaming configurations.</p>
-    pub fn set_streaming_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
-    ) -> Self {
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>) -> Self {
         self.inner = self.inner.set_streaming_configurations(input);
         self
     }
     /// <p>The streaming configurations.</p>
-    pub fn get_streaming_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
         self.inner.get_streaming_configurations()
     }
 }

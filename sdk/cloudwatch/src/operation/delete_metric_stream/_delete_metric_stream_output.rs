@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMetricStreamOutput {
 }
 impl DeleteMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricStreamOutput`](crate::operation::delete_metric_stream::DeleteMetricStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamOutputBuilder {
+    pub fn builder() -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamOutputBuilder {
         crate::operation::delete_metric_stream::builders::DeleteMetricStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMetricStreamOutput`](crate::operation::delete_metric_stream::DeleteMetricStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMetricStreamOutputBuilder {
     _request_id: Option<String>,
 }

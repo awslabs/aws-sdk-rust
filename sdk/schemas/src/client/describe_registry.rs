@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`registry_name(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::registry_name): <p>The name of the registry.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_registry::DescribeRegistryOutput::tags): <p>Tags associated with the registry.</p>
     /// - On failure, responds with [`SdkError<DescribeRegistryError>`](crate::operation::describe_registry::DescribeRegistryError)
-    pub fn describe_registry(
-        &self,
-    ) -> crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder {
-        crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_registry(&self) -> crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder {
+        crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::new(self.handle.clone())
     }
 }

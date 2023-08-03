@@ -5,9 +5,7 @@ pub fn ser_participant_timer_value(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::types::ParticipantTimerValue::ParticipantTimerAction(inner) => {
-            object_4
-                .key("ParticipantTimerAction")
-                .string(inner.as_str());
+            object_4.key("ParticipantTimerAction").string(inner.as_str());
         }
         crate::types::ParticipantTimerValue::ParticipantTimerDurationInMinutes(inner) => {
             object_4.key("ParticipantTimerDurationInMinutes").number(
@@ -16,11 +14,9 @@ pub fn ser_participant_timer_value(
             );
         }
         crate::types::ParticipantTimerValue::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ParticipantTimerValue",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ParticipantTimerValue",
+            ))
         }
     }
     Ok(())

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`python_script(Option<String>)`](crate::operation::create_script::CreateScriptOutput::python_script): <p>The Python script generated from the DAG.</p>
     ///   - [`scala_code(Option<String>)`](crate::operation::create_script::CreateScriptOutput::scala_code): <p>The Scala code generated from the DAG.</p>
     /// - On failure, responds with [`SdkError<CreateScriptError>`](crate::operation::create_script::CreateScriptError)
-    pub fn create_script(
-        &self,
-    ) -> crate::operation::create_script::builders::CreateScriptFluentBuilder {
-        crate::operation::create_script::builders::CreateScriptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_script(&self) -> crate::operation::create_script::builders::CreateScriptFluentBuilder {
+        crate::operation::create_script::builders::CreateScriptFluentBuilder::new(self.handle.clone())
     }
 }

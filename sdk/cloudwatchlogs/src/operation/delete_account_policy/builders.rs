@@ -38,9 +38,7 @@ impl DeleteAccountPolicyFluentBuilder {
         }
     }
     /// Access the DeleteAccountPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteAccountPolicyFluentBuilder {
             crate::operation::delete_account_policy::DeleteAccountPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_policy::DeleteAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_policy::DeleteAccountPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteAccountPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteAccountPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_policy::DeleteAccountPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_policy::DeleteAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_policy::DeleteAccountPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteAccountPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_policy::DeleteAccountPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_policy::DeleteAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_policy::DeleteAccountPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeleteAccountPolicyFluentBuilder {
             crate::operation::delete_account_policy::DeleteAccountPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_policy::DeleteAccountPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_policy::DeleteAccountPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl DeleteAccountPolicyFluentBuilder {
         self
     }
     /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }

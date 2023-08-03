@@ -34,9 +34,7 @@ impl RetentionConfiguration {
 
 /// A builder for [`RetentionConfiguration`](crate::types::RetentionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period_in_days: ::std::option::Option<i32>,

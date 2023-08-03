@@ -23,9 +23,7 @@ impl CancelContactInput {
 
 /// A builder for [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl CancelContactInputBuilder {
     /// Consumes the builder and constructs a [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_contact::CancelContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_contact::CancelContactInput {
-            contact_id: self.contact_id,
-        })
+    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_contact::CancelContactInput { contact_id: self.contact_id })
     }
 }

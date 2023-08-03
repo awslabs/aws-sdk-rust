@@ -43,9 +43,7 @@ impl SearchDevicesInput {
 
 /// A builder for [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,10 +91,7 @@ impl SearchDevicesInputBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -116,10 +111,7 @@ impl SearchDevicesInputBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -130,10 +122,7 @@ impl SearchDevicesInputBuilder {
     /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_devices::SearchDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_devices::SearchDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_devices::SearchDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

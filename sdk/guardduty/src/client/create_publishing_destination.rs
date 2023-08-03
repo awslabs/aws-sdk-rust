@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput) with field(s):
     ///   - [`destination_id(Option<String>)`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput::destination_id): <p>The ID of the publishing destination that is created.</p>
     /// - On failure, responds with [`SdkError<CreatePublishingDestinationError>`](crate::operation::create_publishing_destination::CreatePublishingDestinationError)
-    pub fn create_publishing_destination(&self) -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationFluentBuilder{
+    pub fn create_publishing_destination(
+        &self,
+    ) -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationFluentBuilder {
         crate::operation::create_publishing_destination::builders::CreatePublishingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

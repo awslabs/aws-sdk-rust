@@ -10,10 +10,7 @@ impl ListRunTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_run_tasks::ListRunTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_run_tasks::ListRunTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_run_tasks::ListRunTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_run_tasks();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRunTasksFluentBuilder {
         }
     }
     /// Access the ListRunTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_run_tasks::builders::ListRunTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_run_tasks::builders::ListRunTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListRunTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListRunTasksFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_run_tasks::paginator::ListRunTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_run_tasks::paginator::ListRunTasksPaginator {
-        crate::operation::list_run_tasks::paginator::ListRunTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_run_tasks::paginator::ListRunTasksPaginator {
+        crate::operation::list_run_tasks::paginator::ListRunTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>The run's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,18 +141,12 @@ impl ListRunTasksFluentBuilder {
         self.inner.get_status()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.starting_token(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_starting_token(input);
         self
     }

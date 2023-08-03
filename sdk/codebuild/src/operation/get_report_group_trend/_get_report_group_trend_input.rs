@@ -175,18 +175,14 @@ impl GetReportGroupTrendInput {
 }
 impl GetReportGroupTrendInput {
     /// Creates a new builder-style object to manufacture [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
-    pub fn builder(
-    ) -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
-        crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
+        crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReportGroupTrendInputBuilder {
     pub(crate) report_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) num_of_reports: ::std::option::Option<i32>,
@@ -194,18 +190,12 @@ pub struct GetReportGroupTrendInputBuilder {
 }
 impl GetReportGroupTrendInputBuilder {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn report_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    pub fn set_report_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_group_arn = input;
         self
     }
@@ -380,10 +370,7 @@ impl GetReportGroupTrendInputBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn set_trend_field(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupTrendFieldType>,
-    ) -> Self {
+    pub fn set_trend_field(mut self, input: ::std::option::Option<crate::types::ReportGroupTrendFieldType>) -> Self {
         self.trend_field = input;
         self
     }
@@ -460,24 +447,18 @@ impl GetReportGroupTrendInputBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn get_trend_field(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportGroupTrendFieldType> {
+    pub fn get_trend_field(&self) -> &::std::option::Option<crate::types::ReportGroupTrendFieldType> {
         &self.trend_field
     }
     /// Consumes the builder and constructs a [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_report_group_trend::GetReportGroupTrendInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_report_group_trend::GetReportGroupTrendInput {
-                report_group_arn: self.report_group_arn,
-                num_of_reports: self.num_of_reports,
-                trend_field: self.trend_field,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_report_group_trend::GetReportGroupTrendInput {
+            report_group_arn: self.report_group_arn,
+            num_of_reports: self.num_of_reports,
+            trend_field: self.trend_field,
+        })
     }
 }

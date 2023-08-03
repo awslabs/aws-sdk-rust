@@ -37,10 +37,7 @@ impl ListNotificationRulesFluentBuilder {
         }
     }
     /// Access the ListNotificationRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notification_rules::builders::ListNotificationRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_notification_rules::builders::ListNotificationRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListNotificationRulesFluentBuilder {
             crate::operation::list_notification_rules::ListNotificationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_rules::ListNotificationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_rules::ListNotificationRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListNotificationRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListNotificationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notification_rules::ListNotificationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_rules::ListNotificationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_rules::ListNotificationRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListNotificationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notification_rules::ListNotificationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_rules::ListNotificationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_rules::ListNotificationRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListNotificationRulesFluentBuilder {
             crate::operation::list_notification_rules::ListNotificationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_rules::ListNotificationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_rules::ListNotificationRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notification_rules::paginator::ListNotificationRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_notification_rules::paginator::ListNotificationRulesPaginator {
-        crate::operation::list_notification_rules::paginator::ListNotificationRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_notification_rules::paginator::ListNotificationRulesPaginator {
+        crate::operation::list_notification_rules::paginator::ListNotificationRulesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -148,19 +129,14 @@ impl ListNotificationRulesFluentBuilder {
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {
         self.inner.get_filters()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>

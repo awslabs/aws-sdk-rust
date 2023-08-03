@@ -51,9 +51,7 @@ impl AnalyticsIntentNodeSummary {
 
 /// A builder for [`AnalyticsIntentNodeSummary`](crate::types::AnalyticsIntentNodeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentNodeSummaryBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) intent_path: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl AnalyticsIntentNodeSummaryBuilder {
         self
     }
     /// <p>Specifies whether the node is the end of a path (<code>Exit</code>) or not (<code>Inner</code>).</p>
-    pub fn set_node_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsNodeType>,
-    ) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::AnalyticsNodeType>) -> Self {
         self.node_type = input;
         self
     }

@@ -32,9 +32,7 @@ impl EvaluationParameters {
 
 /// A builder for [`EvaluationParameters`](crate::types::EvaluationParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationParametersBuilder {
     pub(crate) number_of_backtest_windows: ::std::option::Option<i32>,
     pub(crate) back_test_window_offset: ::std::option::Option<i32>,

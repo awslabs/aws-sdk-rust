@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`SetTypeConfigurationOutput`](crate::operation::set_type_configuration::SetTypeConfigurationOutput) with field(s):
     ///   - [`configuration_arn(Option<String>)`](crate::operation::set_type_configuration::SetTypeConfigurationOutput::configuration_arn): <p>The Amazon Resource Name (ARN) for the configuration data, in this account and Region.</p>  <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
     /// - On failure, responds with [`SdkError<SetTypeConfigurationError>`](crate::operation::set_type_configuration::SetTypeConfigurationError)
-    pub fn set_type_configuration(
-        &self,
-    ) -> crate::operation::set_type_configuration::builders::SetTypeConfigurationFluentBuilder {
-        crate::operation::set_type_configuration::builders::SetTypeConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_type_configuration(&self) -> crate::operation::set_type_configuration::builders::SetTypeConfigurationFluentBuilder {
+        crate::operation::set_type_configuration::builders::SetTypeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

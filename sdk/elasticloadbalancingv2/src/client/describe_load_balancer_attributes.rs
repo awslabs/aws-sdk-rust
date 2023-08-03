@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerAttributesError>`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError)
-    pub fn describe_load_balancer_attributes(&self) -> crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder{
+    pub fn describe_load_balancer_attributes(
+        &self,
+    ) -> crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder {
         crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::new(self.handle.clone())
     }
 }

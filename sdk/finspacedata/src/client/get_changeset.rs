@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`updates_changeset_id(Option<String>)`](crate::operation::get_changeset::GetChangesetOutput::updates_changeset_id): <p>The unique identifier of the Changeset that is being updated.</p>
     ///   - [`updated_by_changeset_id(Option<String>)`](crate::operation::get_changeset::GetChangesetOutput::updated_by_changeset_id): <p>The unique identifier of the updated Changeset.</p>
     /// - On failure, responds with [`SdkError<GetChangesetError>`](crate::operation::get_changeset::GetChangesetError)
-    pub fn get_changeset(
-        &self,
-    ) -> crate::operation::get_changeset::builders::GetChangesetFluentBuilder {
-        crate::operation::get_changeset::builders::GetChangesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_changeset(&self) -> crate::operation::get_changeset::builders::GetChangesetFluentBuilder {
+        crate::operation::get_changeset::builders::GetChangesetFluentBuilder::new(self.handle.clone())
     }
 }

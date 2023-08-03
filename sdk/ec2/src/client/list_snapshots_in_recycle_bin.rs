@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`snapshots(Option<Vec<SnapshotRecycleBinInfo>>)`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput::snapshots): <p>Information about the snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<ListSnapshotsInRecycleBinError>`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError)
-    pub fn list_snapshots_in_recycle_bin(&self) -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder{
+    pub fn list_snapshots_in_recycle_bin(&self) -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder {
         crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::new(self.handle.clone())
     }
 }

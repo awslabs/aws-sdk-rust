@@ -10,10 +10,7 @@ impl DescribeNamespaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_namespace::DescribeNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_namespace::DescribeNamespaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_namespace();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeNamespaceFluentBuilder {
         }
     }
     /// Access the DescribeNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeNamespaceFluentBuilder {
             crate::operation::describe_namespace::DescribeNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_namespace::DescribeNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_namespace::DescribeNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_namespace::DescribeNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_namespace::DescribeNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_namespace::DescribeNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DescribeNamespaceFluentBuilder {
             crate::operation::describe_namespace::DescribeNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_namespace::DescribeNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_namespace::DescribeNamespaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }

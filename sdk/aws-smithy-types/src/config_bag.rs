@@ -19,7 +19,7 @@ use std::borrow::Cow;
 use std::fmt::{Debug, Formatter};
 use std::iter::Rev;
 use std::marker::PhantomData;
-use std::ops::{Deref, DerefMut};
+use std::ops::Deref;
 use std::slice::Iter;
 use std::sync::Arc;
 
@@ -64,6 +64,21 @@ impl<T: Default> Default for Value<T> {
 ///
 /// While [`FrozenLayer`] is also cloneable, which is a shallow clone via `Arc`, `CloneableLayer`
 /// performs a deep clone that newly allocates all the items stored in it.
+///
+/// Cloneable enforces that non clone items cannot be added
+/// ```rust,compile_fail
+/// use aws_smithy_types::config_bag::Storable;
+/// use aws_smithy_types::config_bag::StoreReplace;
+/// use aws_smithy_types::config_bag::CloneableLayer;
+/// #[derive(Debug)]
+/// struct MyNotCloneStruct;
+///
+/// impl Storable for MyNotCloneStruct {
+///     type Storer = StoreReplace<MyNotCloneStruct>;
+/// }
+/// let mut layer = CloneableLayer::new("layer");
+/// layer.store_put(MyNotCloneStruct);
+/// ```
 #[derive(Debug, Default)]
 pub struct CloneableLayer(Layer);
 
@@ -72,12 +87,6 @@ impl Deref for CloneableLayer {
 
     fn deref(&self) -> &Self::Target {
         &self.0
-    }
-}
-
-impl DerefMut for CloneableLayer {
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
     }
 }
 
@@ -110,15 +119,16 @@ impl CloneableLayer {
 
     /// Removes `T` from this bag
     pub fn unset<T: Send + Sync + Clone + Debug + 'static>(&mut self) -> &mut Self {
-        self.put_directly::<StoreReplace<T>>(Value::ExplicitlyUnset(type_name::<T>()));
+        self.0.unset::<T>();
         self
     }
 
-    fn put_directly<T: Store>(&mut self, value: T::StoredType) -> &mut Self
+    fn put_directly_cloneable<T: Store>(&mut self, value: T::StoredType) -> &mut Self
     where
         T::StoredType: Clone,
     {
-        self.props
+        self.0
+            .props
             .insert(TypeId::of::<T>(), TypeErasedBox::new_with_clone(value));
         self
     }
@@ -128,7 +138,7 @@ impl CloneableLayer {
     where
         T: Storable<Storer = StoreReplace<T>> + Clone,
     {
-        self.put_directly::<StoreReplace<T>>(Value::Set(item));
+        self.put_directly_cloneable::<StoreReplace<T>>(Value::Set(item));
         self
     }
 
@@ -142,7 +152,7 @@ impl CloneableLayer {
             Some(item) => Value::Set(item),
             None => Value::ExplicitlyUnset(type_name::<T>()),
         };
-        self.put_directly::<StoreReplace<T>>(item);
+        self.put_directly_cloneable::<StoreReplace<T>>(item);
         self
     }
 
@@ -164,14 +174,15 @@ impl CloneableLayer {
     where
         T: Storable<Storer = StoreAppend<T>> + Clone,
     {
-        self.put_directly::<StoreAppend<T>>(Value::ExplicitlyUnset(type_name::<T>()));
+        self.put_directly_cloneable::<StoreAppend<T>>(Value::ExplicitlyUnset(type_name::<T>()));
     }
 
     fn get_mut_or_default<T: Send + Sync + Store + 'static>(&mut self) -> &mut T::StoredType
     where
         T::StoredType: Default + Clone,
     {
-        self.props
+        self.0
+            .props
             .entry(TypeId::of::<T>())
             .or_insert_with(|| TypeErasedBox::new_with_clone(T::StoredType::default()))
             .downcast_mut()

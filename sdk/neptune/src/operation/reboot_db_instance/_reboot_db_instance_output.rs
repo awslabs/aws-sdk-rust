@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for RebootDbInstanceOutput {
 }
 impl RebootDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::operation::reboot_db_instance::RebootDbInstanceOutput).
-    pub fn builder() -> crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder {
         crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RebootDbInstanceOutput`](crate::operation::reboot_db_instance::RebootDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -47,10 +44,7 @@ impl RebootDbInstanceOutputBuilder {
     }
     /// <p>Contains the details of an Amazon Neptune DB instance.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }

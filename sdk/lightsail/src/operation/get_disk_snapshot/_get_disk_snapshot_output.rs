@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDiskSnapshotOutput {
 }
 impl GetDiskSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetDiskSnapshotOutput`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput).
-    pub fn builder() -> crate::operation::get_disk_snapshot::builders::GetDiskSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_disk_snapshot::builders::GetDiskSnapshotOutputBuilder {
         crate::operation::get_disk_snapshot::builders::GetDiskSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiskSnapshotOutput`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiskSnapshotOutputBuilder {
     pub(crate) disk_snapshot: ::std::option::Option<crate::types::DiskSnapshot>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetDiskSnapshotOutputBuilder {
         self
     }
     /// <p>An object containing information about the disk snapshot.</p>
-    pub fn set_disk_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskSnapshot>,
-    ) -> Self {
+    pub fn set_disk_snapshot(mut self, input: ::std::option::Option<crate::types::DiskSnapshot>) -> Self {
         self.disk_snapshot = input;
         self
     }

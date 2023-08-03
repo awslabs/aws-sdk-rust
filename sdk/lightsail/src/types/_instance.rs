@@ -159,9 +159,7 @@ impl Instance {
         self.ssh_key_name.as_deref()
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
-    pub fn metadata_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
+    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
     }
 }
@@ -174,9 +172,7 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -250,10 +246,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -267,10 +260,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The region name and Availability Zone where the instance is located.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -284,10 +274,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The type of resource (usually <code>Instance</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -307,10 +294,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -333,18 +317,12 @@ impl InstanceBuilder {
         &self.blueprint_id
     }
     /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
-    pub fn blueprint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
-    pub fn set_blueprint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_name = input;
         self
     }
@@ -378,10 +356,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    pub fn set_add_ons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
-    ) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>) -> Self {
         self.add_ons = input;
         self
     }
@@ -404,18 +379,12 @@ impl InstanceBuilder {
         &self.is_static_ip
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -424,18 +393,12 @@ impl InstanceBuilder {
         &self.private_ip_address
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn public_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn set_public_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip_address = input;
         self
     }
@@ -448,27 +411,19 @@ impl InstanceBuilder {
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn ipv6_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
         v.push(input.into());
         self.ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses of the instance.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv6_addresses
     }
     /// <p>The IP address type of the instance.</p>
@@ -479,10 +434,7 @@ impl InstanceBuilder {
     }
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -497,10 +449,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
-    pub fn set_hardware(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHardware>,
-    ) -> Self {
+    pub fn set_hardware(mut self, input: ::std::option::Option<crate::types::InstanceHardware>) -> Self {
         self.hardware = input;
         self
     }
@@ -514,10 +463,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
-    pub fn set_networking(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceNetworking>,
-    ) -> Self {
+    pub fn set_networking(mut self, input: ::std::option::Option<crate::types::InstanceNetworking>) -> Self {
         self.networking = input;
         self
     }
@@ -573,17 +519,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
-    pub fn set_metadata_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataOptions>,
-    ) -> Self {
+    pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
         self.metadata_options = input;
         self
     }
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
-    pub fn get_metadata_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
+    pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         &self.metadata_options
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).

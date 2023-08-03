@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListEnvironmentsOutputBuilder {
         self
     }
     /// <p>A list of all of your FinSpace environments.</p>
-    pub fn set_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>,
-    ) -> Self {
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>) -> Self {
         self.environments = input;
         self
     }
     /// <p>A list of all of your FinSpace environments.</p>
-    pub fn get_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Environment>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Environment>> {
         &self.environments
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_name): <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
     /// - On success, responds with [`DeleteDatabaseOutput`](crate::operation::delete_database::DeleteDatabaseOutput)
     /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::operation::delete_database::DeleteDatabaseError)
-    pub fn delete_database(
-        &self,
-    ) -> crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder {
-        crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_database(&self) -> crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder {
+        crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

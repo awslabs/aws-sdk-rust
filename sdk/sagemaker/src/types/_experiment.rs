@@ -86,9 +86,7 @@ impl Experiment {
 
 /// A builder for [`Experiment`](crate::types::Experiment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
@@ -103,18 +101,12 @@ pub struct ExperimentBuilder {
 }
 impl ExperimentBuilder {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -123,18 +115,12 @@ impl ExperimentBuilder {
         &self.experiment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn set_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_arn = input;
         self
     }
@@ -162,10 +148,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The source of the experiment.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ExperimentSource>) -> Self {
         self.source = input;
         self
     }
@@ -193,10 +176,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>When the experiment was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -210,10 +190,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>Who created the experiment.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -227,10 +204,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -244,10 +218,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -267,10 +238,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The list of tags that are associated with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

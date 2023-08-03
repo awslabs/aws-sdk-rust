@@ -149,9 +149,7 @@ impl VpcEndpoint {
 
 /// A builder for [`VpcEndpoint`](crate::types::VpcEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcEndpointBuilder {
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
@@ -161,8 +159,7 @@ pub struct VpcEndpointBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
@@ -176,18 +173,12 @@ pub struct VpcEndpointBuilder {
 }
 impl VpcEndpointBuilder {
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
@@ -201,10 +192,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The type of endpoint.</p>
-    pub fn set_vpc_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointType>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.vpc_endpoint_type = input;
         self
     }
@@ -255,18 +243,12 @@ impl VpcEndpointBuilder {
         &self.state
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -279,27 +261,19 @@ impl VpcEndpointBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn set_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.route_table_ids = input;
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn get_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -314,10 +288,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -337,17 +308,12 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
         &self.groups
     }
     /// <p>The IP address type for the endpoint.</p>
@@ -356,10 +322,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -373,10 +336,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsOptions>,
-    ) -> Self {
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
         self.dns_options = input;
         self
     }
@@ -417,27 +377,19 @@ impl VpcEndpointBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// Appends an item to `dns_entries`.
@@ -452,17 +404,12 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
-    pub fn set_dns_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
-    ) -> Self {
+    pub fn set_dns_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>) -> Self {
         self.dns_entries = input;
         self
     }
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
-    pub fn get_dns_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>> {
+    pub fn get_dns_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>> {
         &self.dns_entries
     }
     /// <p>The date and time that the endpoint was created.</p>
@@ -471,10 +418,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The date and time that the endpoint was created.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -494,10 +438,7 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The tags assigned to the endpoint.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

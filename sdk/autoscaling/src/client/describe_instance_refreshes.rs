@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`instance_refreshes(Option<Vec<InstanceRefresh>>)`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput::instance_refreshes): <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceRefreshesError>`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError)
-    pub fn describe_instance_refreshes(&self) -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder{
+    pub fn describe_instance_refreshes(&self) -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder {
         crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::new(self.handle.clone())
     }
 }

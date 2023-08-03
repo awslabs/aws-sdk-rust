@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSafetyRuleOutput {
 }
 impl DeleteSafetyRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleOutput`](crate::operation::delete_safety_rule::DeleteSafetyRuleOutput).
-    pub fn builder() -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_safety_rule::builders::DeleteSafetyRuleOutputBuilder {
         crate::operation::delete_safety_rule::builders::DeleteSafetyRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSafetyRuleOutput`](crate::operation::delete_safety_rule::DeleteSafetyRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSafetyRuleOutputBuilder {
     _request_id: Option<String>,
 }

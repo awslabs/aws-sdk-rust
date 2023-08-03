@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ActivateNetworkSiteOutput {
 }
 impl ActivateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder {
-        crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder {
+        crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ActivateNetworkSiteOutputBuilder {
         self
     }
     /// <p>Information about the network site.</p>
-    pub fn set_network_site(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSite>,
-    ) -> Self {
+    pub fn set_network_site(mut self, input: ::std::option::Option<crate::types::NetworkSite>) -> Self {
         self.network_site = input;
         self
     }

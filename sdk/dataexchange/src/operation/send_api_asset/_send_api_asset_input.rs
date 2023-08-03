@@ -8,9 +8,7 @@ pub struct SendApiAssetInput {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
     #[doc(hidden)]
-    pub query_string_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Asset ID value for the API request.</p>
     #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
@@ -19,9 +17,7 @@ pub struct SendApiAssetInput {
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     #[doc(hidden)]
-    pub request_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
     #[doc(hidden)]
     pub method: ::std::option::Option<::std::string::String>,
@@ -38,11 +34,7 @@ impl SendApiAssetInput {
         self.body.as_deref()
     }
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
-    pub fn query_string_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn query_string_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.query_string_parameters.as_ref()
     }
     /// <p>Asset ID value for the API request.</p>
@@ -54,11 +46,7 @@ impl SendApiAssetInput {
         self.data_set_id.as_deref()
     }
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
-    pub fn request_headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_headers.as_ref()
     }
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
@@ -83,19 +71,13 @@ impl SendApiAssetInput {
 
 /// A builder for [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendApiAssetInputBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
-    pub(crate) query_string_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
-    pub(crate) request_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) method: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -133,19 +115,13 @@ impl SendApiAssetInputBuilder {
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
     pub fn set_query_string_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.query_string_parameters = input;
         self
     }
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
-    pub fn get_query_string_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_query_string_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.query_string_parameters
     }
     /// <p>Asset ID value for the API request.</p>
@@ -194,19 +170,13 @@ impl SendApiAssetInputBuilder {
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     pub fn set_request_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_headers = input;
         self
     }
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
-    pub fn get_request_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_headers
     }
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
@@ -254,10 +224,7 @@ impl SendApiAssetInputBuilder {
     /// Consumes the builder and constructs a [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_api_asset::SendApiAssetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_api_asset::SendApiAssetInput {
             body: self.body,
             query_string_parameters: self.query_string_parameters,

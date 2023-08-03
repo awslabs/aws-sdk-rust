@@ -22,9 +22,7 @@ impl DeleteAppBlockInput {
 
 /// A builder for [`DeleteAppBlockInput`](crate::operation::delete_app_block::DeleteAppBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppBlockInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteAppBlockInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBlockInput`](crate::operation::delete_app_block::DeleteAppBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_block::DeleteAppBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_app_block::DeleteAppBlockInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_app_block::DeleteAppBlockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_app_block::DeleteAppBlockInput { name: self.name })
     }
 }

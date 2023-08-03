@@ -27,10 +27,7 @@ pub fn ser_s3_source_config(
     if let Some(var_8) = &input.file_format_descriptor {
         #[allow(unused_mut)]
         let mut object_9 = object.key("FileFormatDescriptor").start_object();
-        crate::protocol_serde::shape_file_format_descriptor::ser_file_format_descriptor(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_file_format_descriptor::ser_file_format_descriptor(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())
@@ -38,17 +35,9 @@ pub fn ser_s3_source_config(
 
 pub(crate) fn de_s3_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::S3SourceConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::S3SourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,50 +47,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "RoleArn" => {
-                                builder = builder.set_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "RoleArn" => {
+                            builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TemplatedPathList" => {
-                                builder = builder.set_templated_path_list(
-                                    crate::protocol_serde::shape_templated_path_list::de_templated_path_list(tokens)?
-                                );
-                            }
-                            "HistoricalDataPathList" => {
-                                builder = builder.set_historical_data_path_list(
-                                    crate::protocol_serde::shape_historical_data_path_list::de_historical_data_path_list(tokens)?
-                                );
-                            }
-                            "FileFormatDescriptor" => {
-                                builder = builder.set_file_format_descriptor(
-                                    crate::protocol_serde::shape_file_format_descriptor::de_file_format_descriptor(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "TemplatedPathList" => {
+                            builder =
+                                builder.set_templated_path_list(crate::protocol_serde::shape_templated_path_list::de_templated_path_list(tokens)?);
+                        }
+                        "HistoricalDataPathList" => {
+                            builder = builder.set_historical_data_path_list(
+                                crate::protocol_serde::shape_historical_data_path_list::de_historical_data_path_list(tokens)?,
+                            );
+                        }
+                        "FileFormatDescriptor" => {
+                            builder = builder
+                                .set_file_format_descriptor(crate::protocol_serde::shape_file_format_descriptor::de_file_format_descriptor(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

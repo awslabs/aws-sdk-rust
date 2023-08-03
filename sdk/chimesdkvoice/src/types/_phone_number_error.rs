@@ -54,18 +54,12 @@ pub struct PhoneNumberErrorBuilder {
 }
 impl PhoneNumberErrorBuilder {
     /// <p>The phone number ID for which the action failed.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID for which the action failed.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -88,18 +82,12 @@ impl PhoneNumberErrorBuilder {
         &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

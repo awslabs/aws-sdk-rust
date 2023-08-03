@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::set_name): <p>The name of the data catalog to delete.</p>
     /// - On success, responds with [`DeleteDataCatalogOutput`](crate::operation::delete_data_catalog::DeleteDataCatalogOutput)
     /// - On failure, responds with [`SdkError<DeleteDataCatalogError>`](crate::operation::delete_data_catalog::DeleteDataCatalogError)
-    pub fn delete_data_catalog(
-        &self,
-    ) -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder {
-        crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_catalog(&self) -> crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder {
+        crate::operation::delete_data_catalog::builders::DeleteDataCatalogFluentBuilder::new(self.handle.clone())
     }
 }

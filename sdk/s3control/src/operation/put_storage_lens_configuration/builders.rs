@@ -28,7 +28,7 @@ impl PutStorageLensConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder,
+    inner: crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder,
 }
 impl PutStorageLensConfigurationFluentBuilder {
     /// Creates a new `PutStorageLensConfiguration`.
@@ -39,7 +39,7 @@ impl PutStorageLensConfigurationFluentBuilder {
         }
     }
     /// Access the PutStorageLensConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutStorageLensConfigurationFluentBuilder {
             crate::operation::put_storage_lens_configuration::PutStorageLensConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutStorageLensConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutStorageLensConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutStorageLensConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutStorageLensConfigurationFluentBuilder {
             crate::operation::put_storage_lens_configuration::PutStorageLensConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -151,25 +140,17 @@ impl PutStorageLensConfigurationFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn storage_lens_configuration(
-        mut self,
-        input: crate::types::StorageLensConfiguration,
-    ) -> Self {
+    pub fn storage_lens_configuration(mut self, input: crate::types::StorageLensConfiguration) -> Self {
         self.inner = self.inner.storage_lens_configuration(input);
         self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn set_storage_lens_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensConfiguration>,
-    ) -> Self {
+    pub fn set_storage_lens_configuration(mut self, input: ::std::option::Option<crate::types::StorageLensConfiguration>) -> Self {
         self.inner = self.inner.set_storage_lens_configuration(input);
         self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn get_storage_lens_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
+    pub fn get_storage_lens_configuration(&self) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
         self.inner.get_storage_lens_configuration()
     }
     /// Appends an item to `Tags`.
@@ -186,19 +167,14 @@ impl PutStorageLensConfigurationFluentBuilder {
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
         self.inner.get_tags()
     }
 }

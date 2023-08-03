@@ -15,9 +15,7 @@ pub struct ComplianceViolator {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceViolator {
     /// <p>The resource ID.</p>
@@ -33,11 +31,7 @@ impl ComplianceViolator {
         self.resource_type.as_deref()
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -50,16 +44,12 @@ impl ComplianceViolator {
 
 /// A builder for [`ComplianceViolator`](crate::types::ComplianceViolator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceViolatorBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_reason: ::std::option::Option<crate::types::ViolationReason>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceViolatorBuilder {
     /// <p>The resource ID.</p>
@@ -82,10 +72,7 @@ impl ComplianceViolatorBuilder {
         self
     }
     /// <p>The reason that the resource is not protected by the policy.</p>
-    pub fn set_violation_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationReason>,
-    ) -> Self {
+    pub fn set_violation_reason(mut self, input: ::std::option::Option<crate::types::ViolationReason>) -> Self {
         self.violation_reason = input;
         self
     }
@@ -94,18 +81,12 @@ impl ComplianceViolatorBuilder {
         &self.violation_reason
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -118,32 +99,19 @@ impl ComplianceViolatorBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ComplianceViolator`](crate::types::ComplianceViolator).

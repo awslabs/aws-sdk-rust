@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSmsChannelOutput`](crate::operation::get_sms_channel::GetSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::operation::get_sms_channel::GetSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetSmsChannelError>`](crate::operation::get_sms_channel::GetSmsChannelError)
-    pub fn get_sms_channel(
-        &self,
-    ) -> crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder {
-        crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sms_channel(&self) -> crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder {
+        crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::new(self.handle.clone())
     }
 }

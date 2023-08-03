@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`reaction_value(impl ::std::convert::Into<String>)`](crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder::reaction_value) / [`set_reaction_value(Option<String>)`](crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder::set_reaction_value): <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     /// - On success, responds with [`PutCommentReactionOutput`](crate::operation::put_comment_reaction::PutCommentReactionOutput)
     /// - On failure, responds with [`SdkError<PutCommentReactionError>`](crate::operation::put_comment_reaction::PutCommentReactionError)
-    pub fn put_comment_reaction(
-        &self,
-    ) -> crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder {
-        crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_comment_reaction(&self) -> crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder {
+        crate::operation::put_comment_reaction::builders::PutCommentReactionFluentBuilder::new(self.handle.clone())
     }
 }

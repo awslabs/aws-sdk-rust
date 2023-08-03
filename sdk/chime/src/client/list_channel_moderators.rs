@@ -13,15 +13,8 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
     ///   - [`channel_moderators(Option<Vec<ChannelModeratorSummary>>)`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput::channel_moderators): <p>The information about and names of each moderator.</p>
     /// - On failure, responds with [`SdkError<ListChannelModeratorsError>`](crate::operation::list_channel_moderators::ListChannelModeratorsError)
-    #[deprecated(
-        note = "Replaced by ListChannelModerators in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn list_channel_moderators(
-        &self,
-    ) -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder
-    {
-        crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Replaced by ListChannelModerators in the Amazon Chime SDK Messaging Namespace")]
+    pub fn list_channel_moderators(&self) -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder {
+        crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::new(self.handle.clone())
     }
 }

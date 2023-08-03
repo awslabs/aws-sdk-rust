@@ -37,9 +37,7 @@ impl BatchAttachObject {
 
 /// A builder for [`BatchAttachObject`](crate::types::BatchAttachObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAttachObjectBuilder {
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) child_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -52,10 +50,7 @@ impl BatchAttachObjectBuilder {
         self
     }
     /// <p>The parent object reference.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.parent_reference = input;
         self
     }
@@ -69,10 +64,7 @@ impl BatchAttachObjectBuilder {
         self
     }
     /// <p>The child object reference that is to be attached to the object.</p>
-    pub fn set_child_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_child_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.child_reference = input;
         self
     }

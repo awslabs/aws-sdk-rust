@@ -10,10 +10,7 @@ impl DeleteDatasetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_group::DeleteDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_group::DeleteDatasetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_dataset_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteDatasetGroupFluentBuilder {
         }
     }
     /// Access the DeleteDatasetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dataset_group::builders::DeleteDatasetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dataset_group::builders::DeleteDatasetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteDatasetGroupFluentBuilder {
             crate::operation::delete_dataset_group::DeleteDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_group::DeleteDatasetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteDatasetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_group::DeleteDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_group::DeleteDatasetGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_group::DeleteDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_group::DeleteDatasetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteDatasetGroupFluentBuilder {
             crate::operation::delete_dataset_group::DeleteDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_group::DeleteDatasetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }

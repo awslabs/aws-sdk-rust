@@ -22,9 +22,7 @@ impl DeleteDimensionInput {
 
 /// A builder for [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDimensionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dimension::DeleteDimensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_dimension::DeleteDimensionInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_dimension::DeleteDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_dimension::DeleteDimensionInput { name: self.name })
     }
 }

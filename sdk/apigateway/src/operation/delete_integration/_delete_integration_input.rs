@@ -30,17 +30,14 @@ impl DeleteIntegrationInput {
 }
 impl DeleteIntegrationInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-    pub fn builder() -> crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder {
         crate::operation::delete_integration::builders::DeleteIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl DeleteIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_integration::DeleteIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_integration::DeleteIntegrationInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_integration::DeleteIntegrationInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+        })
     }
 }

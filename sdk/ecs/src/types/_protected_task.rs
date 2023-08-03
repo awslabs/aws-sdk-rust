@@ -37,9 +37,7 @@ impl ProtectedTask {
 
 /// A builder for [`ProtectedTask`](crate::types::ProtectedTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedTaskBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protection_enabled: ::std::option::Option<bool>,
@@ -80,10 +78,7 @@ impl ProtectedTaskBuilder {
         self
     }
     /// <p>The epoch time when protection for the task will expire.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }

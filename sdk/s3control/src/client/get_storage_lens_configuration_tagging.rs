@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput) with field(s):
     ///   - [`tags(Option<Vec<StorageLensTag>>)`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput::tags): <p>The tags of S3 Storage Lens configuration requested.</p>
     /// - On failure, responds with [`SdkError<GetStorageLensConfigurationTaggingError>`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError)
-    pub fn get_storage_lens_configuration_tagging(&self) -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingFluentBuilder{
+    pub fn get_storage_lens_configuration_tagging(
+        &self,
+    ) -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingFluentBuilder {
         crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingFluentBuilder::new(self.handle.clone())
     }
 }

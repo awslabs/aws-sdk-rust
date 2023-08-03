@@ -37,9 +37,7 @@ impl ListReadinessChecksFluentBuilder {
         }
     }
     /// Access the ListReadinessChecks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListReadinessChecksFluentBuilder {
             crate::operation::list_readiness_checks::ListReadinessChecks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_readiness_checks::ListReadinessChecksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_readiness_checks::ListReadinessChecksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListReadinessChecksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListReadinessChecksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_readiness_checks::ListReadinessChecksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_readiness_checks::ListReadinessChecksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_readiness_checks::ListReadinessChecksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListReadinessChecksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_readiness_checks::ListReadinessChecksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_readiness_checks::ListReadinessChecksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_readiness_checks::ListReadinessChecksError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListReadinessChecksFluentBuilder {
             crate::operation::list_readiness_checks::ListReadinessChecks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_readiness_checks::ListReadinessChecksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_readiness_checks::ListReadinessChecksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_readiness_checks::paginator::ListReadinessChecksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_readiness_checks::paginator::ListReadinessChecksPaginator {
-        crate::operation::list_readiness_checks::paginator::ListReadinessChecksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_readiness_checks::paginator::ListReadinessChecksPaginator {
+        crate::operation::list_readiness_checks::paginator::ListReadinessChecksPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {

@@ -13,9 +13,7 @@ pub struct StackConfigInput {
 }
 impl StackConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
-    pub fn output_resolution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputResolutionStackInput> {
+    pub fn output_resolution(&self) -> ::std::option::Option<&crate::types::OutputResolutionStackInput> {
         self.output_resolution.as_ref()
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
@@ -32,9 +30,7 @@ impl StackConfigInput {
 
 /// A builder for [`StackConfigInput`](crate::types::StackConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackConfigInputBuilder {
     pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionStackInput>,
     pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,17 +42,12 @@ impl StackConfigInputBuilder {
         self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
-    pub fn set_output_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputResolutionStackInput>,
-    ) -> Self {
+    pub fn set_output_resolution(mut self, input: ::std::option::Option<crate::types::OutputResolutionStackInput>) -> Self {
         self.output_resolution = input;
         self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
-    pub fn get_output_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputResolutionStackInput> {
+    pub fn get_output_resolution(&self) -> &::std::option::Option<crate::types::OutputResolutionStackInput> {
         &self.output_resolution
     }
     /// Appends an item to `target_bands`.
@@ -71,17 +62,12 @@ impl StackConfigInputBuilder {
         self
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_bands = input;
         self
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    pub fn get_target_bands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`StackConfigInput`](crate::types::StackConfigInput).

@@ -26,7 +26,7 @@ impl StartReadSetActivationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder,
+    inner: crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder,
 }
 impl StartReadSetActivationJobFluentBuilder {
     /// Creates a new `StartReadSetActivationJob`.
@@ -37,7 +37,7 @@ impl StartReadSetActivationJobFluentBuilder {
         }
     }
     /// Access the StartReadSetActivationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartReadSetActivationJobFluentBuilder {
             crate::operation::start_read_set_activation_job::StartReadSetActivationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_activation_job::StartReadSetActivationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_activation_job::StartReadSetActivationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartReadSetActivationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartReadSetActivationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_activation_job::StartReadSetActivationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_activation_job::StartReadSetActivationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartReadSetActivationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_activation_job::StartReadSetActivationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_activation_job::StartReadSetActivationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartReadSetActivationJobFluentBuilder {
             crate::operation::start_read_set_activation_job::StartReadSetActivationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_read_set_activation_job::StartReadSetActivationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_read_set_activation_job::StartReadSetActivationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -164,20 +147,12 @@ impl StartReadSetActivationJobFluentBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>,
-        >,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>>
-    {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetActivationJobSourceItem>> {
         self.inner.get_sources()
     }
 }

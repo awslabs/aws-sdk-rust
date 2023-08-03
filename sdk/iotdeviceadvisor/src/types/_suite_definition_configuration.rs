@@ -67,9 +67,7 @@ impl SuiteDefinitionConfiguration {
 
 /// A builder for [`SuiteDefinitionConfiguration`](crate::types::SuiteDefinitionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteDefinitionConfigurationBuilder {
     pub(crate) suite_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
@@ -81,18 +79,12 @@ pub struct SuiteDefinitionConfigurationBuilder {
 }
 impl SuiteDefinitionConfigurationBuilder {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    pub fn set_suite_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_name = input;
         self
     }
@@ -112,17 +104,12 @@ impl SuiteDefinitionConfigurationBuilder {
         self
     }
     /// <p>Gets the devices configured.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>) -> Self {
         self.devices = input;
         self
     }
     /// <p>Gets the devices configured.</p>
-    pub fn get_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
         &self.devices
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
@@ -171,18 +158,12 @@ impl SuiteDefinitionConfigurationBuilder {
         &self.root_group
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    pub fn device_permission_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_permission_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_permission_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    pub fn set_device_permission_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_permission_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_permission_role_arn = input;
         self
     }

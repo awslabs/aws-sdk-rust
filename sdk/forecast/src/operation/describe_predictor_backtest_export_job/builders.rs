@@ -5,16 +5,16 @@ pub use crate::operation::describe_predictor_backtest_export_job::_describe_pred
 
 impl DescribePredictorBacktestExportJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_predictor_backtest_export_job();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -33,7 +33,7 @@ impl DescribePredictorBacktestExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePredictorBacktestExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder,
+    inner: crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder,
 }
 impl DescribePredictorBacktestExportJobFluentBuilder {
     /// Creates a new `DescribePredictorBacktestExportJob`.
@@ -44,15 +44,20 @@ impl DescribePredictorBacktestExportJobFluentBuilder {
         }
     }
     /// Access the DescribePredictorBacktestExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -61,16 +66,17 @@ impl DescribePredictorBacktestExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>,
+    > {
         let op = self
             .inner
             .build()
@@ -88,39 +94,40 @@ impl DescribePredictorBacktestExportJobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn predictor_backtest_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_backtest_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_backtest_export_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn set_predictor_backtest_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_backtest_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_backtest_export_job_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn get_predictor_backtest_export_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_predictor_backtest_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_predictor_backtest_export_job_arn()
     }
 }

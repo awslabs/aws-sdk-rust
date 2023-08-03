@@ -26,7 +26,7 @@ impl DeleteVerifiedAccessInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder,
+    inner: crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder,
 }
 impl DeleteVerifiedAccessInstanceFluentBuilder {
     /// Creates a new `DeleteVerifiedAccessInstance`.
@@ -37,7 +37,7 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
         }
     }
     /// Access the DeleteVerifiedAccessInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
             crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteVerifiedAccessInstanceFluentBuilder {
             crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }

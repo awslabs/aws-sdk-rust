@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeIcd10CmInferenceJobOutput`](crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeICD10CMInferenceJobError>`](crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError)
-    pub fn describe_icd10_cm_inference_job(&self) -> crate::operation::describe_icd10_cm_inference_job::builders::DescribeICD10CMInferenceJobFluentBuilder{
+    pub fn describe_icd10_cm_inference_job(
+        &self,
+    ) -> crate::operation::describe_icd10_cm_inference_job::builders::DescribeICD10CMInferenceJobFluentBuilder {
         crate::operation::describe_icd10_cm_inference_job::builders::DescribeICD10CMInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

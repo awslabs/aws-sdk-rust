@@ -37,9 +37,7 @@ impl CoreNetworkEdge {
 
 /// A builder for [`CoreNetworkEdge`](crate::types::CoreNetworkEdge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkEdgeBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i64>,
@@ -47,18 +45,12 @@ pub struct CoreNetworkEdgeBuilder {
 }
 impl CoreNetworkEdgeBuilder {
     /// <p>The Region where a core network edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where a core network edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -85,27 +77,19 @@ impl CoreNetworkEdgeBuilder {
     /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
     ///
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn inside_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inside_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.inside_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn set_inside_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inside_cidr_blocks = input;
         self
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn get_inside_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inside_cidr_blocks
     }
     /// Consumes the builder and constructs a [`CoreNetworkEdge`](crate::types::CoreNetworkEdge).

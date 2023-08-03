@@ -15,16 +15,14 @@ impl GetAppLaunchConfigurationInput {
 }
 impl GetAppLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAppLaunchConfigurationInput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder {
         crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppLaunchConfigurationInput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetAppLaunchConfigurationInputBuilder {
         crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput {
-                app_id: self.app_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput { app_id: self.app_id })
     }
 }

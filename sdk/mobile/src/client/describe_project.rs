@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`details(Option<ProjectDetails>)`](crate::operation::describe_project::DescribeProjectOutput::details): <p> Detailed information about an AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
-    pub fn describe_project(
-        &self,
-    ) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
-        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
+        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())
     }
 }

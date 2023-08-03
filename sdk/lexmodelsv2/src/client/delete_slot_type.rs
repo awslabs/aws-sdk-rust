@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`skip_resource_in_use_check(bool)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::skip_resource_in_use_check) / [`set_skip_resource_in_use_check(Option<bool>)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::set_skip_resource_in_use_check): <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     /// - On success, responds with [`DeleteSlotTypeOutput`](crate::operation::delete_slot_type::DeleteSlotTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteSlotTypeError>`](crate::operation::delete_slot_type::DeleteSlotTypeError)
-    pub fn delete_slot_type(
-        &self,
-    ) -> crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder {
-        crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_slot_type(&self) -> crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder {
+        crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::new(self.handle.clone())
     }
 }

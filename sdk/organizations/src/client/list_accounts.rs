@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`accounts(Option<Vec<Account>>)`](crate::operation::list_accounts::ListAccountsOutput::accounts): <p>A list of objects in the organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts::ListAccountsOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::operation::list_accounts::ListAccountsError)
-    pub fn list_accounts(
-        &self,
-    ) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
-        crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_accounts(&self) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
+        crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSettingsBuilder {
     pub(crate) disable_remote_control: ::std::option::Option<bool>,
     pub(crate) enable_dial_out: ::std::option::Option<bool>,

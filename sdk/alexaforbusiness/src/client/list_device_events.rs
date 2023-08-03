@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_events::ListDeviceEventsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::operation::list_device_events::ListDeviceEventsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_device_events(
-        &self,
-    ) -> crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder {
-        crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_events(&self) -> crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder {
+        crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(self.handle.clone())
     }
 }

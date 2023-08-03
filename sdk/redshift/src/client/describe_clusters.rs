@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_clusters::DescribeClustersOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`clusters(Option<Vec<Cluster>>)`](crate::operation::describe_clusters::DescribeClustersOutput::clusters): <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
     /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::operation::describe_clusters::DescribeClustersError)
-    pub fn describe_clusters(
-        &self,
-    ) -> crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder {
-        crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_clusters(&self) -> crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder {
+        crate::operation::describe_clusters::builders::DescribeClustersFluentBuilder::new(self.handle.clone())
     }
 }

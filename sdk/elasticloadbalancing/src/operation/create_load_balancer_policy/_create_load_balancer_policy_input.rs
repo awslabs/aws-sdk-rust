@@ -37,39 +37,28 @@ impl CreateLoadBalancerPolicyInput {
 }
 impl CreateLoadBalancerPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder {
         crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
+    pub(crate) policy_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -92,18 +81,12 @@ impl CreateLoadBalancerPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn policy_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn set_policy_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type_name = input;
         self
     }
@@ -123,17 +106,12 @@ impl CreateLoadBalancerPolicyInputBuilder {
         self
     }
     /// <p>The policy attributes.</p>
-    pub fn set_policy_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
-    ) -> Self {
+    pub fn set_policy_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>) -> Self {
         self.policy_attributes = input;
         self
     }
     /// <p>The policy attributes.</p>
-    pub fn get_policy_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
+    pub fn get_policy_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
         &self.policy_attributes
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
@@ -143,13 +121,11 @@ impl CreateLoadBalancerPolicyInputBuilder {
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput {
-                load_balancer_name: self.load_balancer_name,
-                policy_name: self.policy_name,
-                policy_type_name: self.policy_type_name,
-                policy_attributes: self.policy_attributes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput {
+            load_balancer_name: self.load_balancer_name,
+            policy_name: self.policy_name,
+            policy_type_name: self.policy_type_name,
+            policy_attributes: self.policy_attributes,
+        })
     }
 }

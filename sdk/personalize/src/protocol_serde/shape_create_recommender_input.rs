@@ -15,10 +15,7 @@ pub fn ser_create_recommender_input(
     if let Some(var_4) = &input.recommender_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("recommenderConfig").start_object();
-        crate::protocol_serde::shape_recommender_config::ser_recommender_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_recommender_config::ser_recommender_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

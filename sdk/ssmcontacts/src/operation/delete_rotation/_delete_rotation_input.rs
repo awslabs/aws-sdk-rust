@@ -22,9 +22,7 @@ impl DeleteRotationInput {
 
 /// A builder for [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteRotationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rotation::DeleteRotationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_rotation::DeleteRotationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rotation::DeleteRotationInput {
             rotation_id: self.rotation_id,
         })

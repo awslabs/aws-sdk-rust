@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`storage_class(Option<StorageClass>)`](crate::operation::get_object_attributes::GetObjectAttributesOutput::storage_class): <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     ///   - [`object_size(i64)`](crate::operation::get_object_attributes::GetObjectAttributesOutput::object_size): <p>The size of the object in bytes.</p>
     /// - On failure, responds with [`SdkError<GetObjectAttributesError>`](crate::operation::get_object_attributes::GetObjectAttributesError)
-    pub fn get_object_attributes(
-        &self,
-    ) -> crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder {
-        crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_attributes(&self) -> crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder {
+        crate::operation::get_object_attributes::builders::GetObjectAttributesFluentBuilder::new(self.handle.clone())
     }
 }

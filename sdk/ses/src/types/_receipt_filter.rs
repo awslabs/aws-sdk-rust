@@ -41,9 +41,7 @@ impl ReceiptFilter {
 
 /// A builder for [`ReceiptFilter`](crate::types::ReceiptFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReceiptFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_filter: ::std::option::Option<crate::types::ReceiptIpFilter>,
@@ -84,10 +82,7 @@ impl ReceiptFilterBuilder {
         self
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
-    pub fn set_ip_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ReceiptIpFilter>,
-    ) -> Self {
+    pub fn set_ip_filter(mut self, input: ::std::option::Option<crate::types::ReceiptIpFilter>) -> Self {
         self.ip_filter = input;
         self
     }

@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateScheduleOutput`](crate::operation::update_schedule::UpdateScheduleOutput) with field(s):
     ///   - [`schedule_arn(Option<String>)`](crate::operation::update_schedule::UpdateScheduleOutput::schedule_arn): <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateScheduleError>`](crate::operation::update_schedule::UpdateScheduleError)
-    pub fn update_schedule(
-        &self,
-    ) -> crate::operation::update_schedule::builders::UpdateScheduleFluentBuilder {
-        crate::operation::update_schedule::builders::UpdateScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_schedule(&self) -> crate::operation::update_schedule::builders::UpdateScheduleFluentBuilder {
+        crate::operation::update_schedule::builders::UpdateScheduleFluentBuilder::new(self.handle.clone())
     }
 }

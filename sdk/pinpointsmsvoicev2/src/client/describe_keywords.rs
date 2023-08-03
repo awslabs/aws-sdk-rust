@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`keywords(Option<Vec<KeywordInformation>>)`](crate::operation::describe_keywords::DescribeKeywordsOutput::keywords): <p>An array of KeywordInformation objects that contain the results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_keywords::DescribeKeywordsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeKeywordsError>`](crate::operation::describe_keywords::DescribeKeywordsError)
-    pub fn describe_keywords(
-        &self,
-    ) -> crate::operation::describe_keywords::builders::DescribeKeywordsFluentBuilder {
-        crate::operation::describe_keywords::builders::DescribeKeywordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_keywords(&self) -> crate::operation::describe_keywords::builders::DescribeKeywordsFluentBuilder {
+        crate::operation::describe_keywords::builders::DescribeKeywordsFluentBuilder::new(self.handle.clone())
     }
 }

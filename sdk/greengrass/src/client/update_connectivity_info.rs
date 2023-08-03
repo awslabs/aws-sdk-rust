@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput::message): A message about the connectivity info update request.
     ///   - [`version(Option<String>)`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput::version): The new version of the connectivity info.
     /// - On failure, responds with [`SdkError<UpdateConnectivityInfoError>`](crate::operation::update_connectivity_info::UpdateConnectivityInfoError)
-    pub fn update_connectivity_info(
-        &self,
-    ) -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder
-    {
+    pub fn update_connectivity_info(&self) -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder {
         crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::new(self.handle.clone())
     }
 }

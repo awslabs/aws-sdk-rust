@@ -15,17 +15,14 @@ impl GetDataIntegrationInput {
 }
 impl GetDataIntegrationInput {
     /// Creates a new builder-style object to manufacture [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_integration::builders::GetDataIntegrationInputBuilder {
+    pub fn builder() -> crate::operation::get_data_integration::builders::GetDataIntegrationInputBuilder {
         crate::operation::get_data_integration::builders::GetDataIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataIntegrationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_integration::GetDataIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_integration::GetDataIntegrationInput {
-                identifier: self.identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_integration::GetDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_data_integration::GetDataIntegrationInput { identifier: self.identifier })
     }
 }

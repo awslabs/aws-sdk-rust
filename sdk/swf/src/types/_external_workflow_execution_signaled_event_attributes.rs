@@ -23,17 +23,14 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
 }
 impl ExternalWorkflowExecutionSignaledEventAttributes {
     /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::types::ExternalWorkflowExecutionSignaledEventAttributes).
-    pub fn builder(
-    ) -> crate::types::builders::ExternalWorkflowExecutionSignaledEventAttributesBuilder {
+    pub fn builder() -> crate::types::builders::ExternalWorkflowExecutionSignaledEventAttributesBuilder {
         crate::types::builders::ExternalWorkflowExecutionSignaledEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::types::ExternalWorkflowExecutionSignaledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) initiated_event_id: ::std::option::Option<i64>,
@@ -45,17 +42,12 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
         self
     }
     /// <p>The external workflow execution that the signal was delivered to.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The external workflow execution that the signal was delivered to.</p>
-    pub fn get_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.workflow_execution
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>

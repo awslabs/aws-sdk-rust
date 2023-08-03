@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`model_deploy_config(Option<ModelDeployConfig>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::model_deploy_config): <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
     ///   - [`model_deploy_result(Option<ModelDeployResult>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::model_deploy_result): <p>Provides information about endpoint for the model deployment.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoMLJobError>`](crate::operation::describe_auto_ml_job::DescribeAutoMLJobError)
-    pub fn describe_auto_ml_job(
-        &self,
-    ) -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder {
-        crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_auto_ml_job(&self) -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder {
+        crate::operation::describe_auto_ml_job::builders::DescribeAutoMLJobFluentBuilder::new(self.handle.clone())
     }
 }

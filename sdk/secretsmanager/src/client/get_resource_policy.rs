@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was retrieved for.</p>
     ///   - [`resource_policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_policy): <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)
-    pub fn get_resource_policy(
-        &self,
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {
-        crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_policy(&self) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {
+        crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

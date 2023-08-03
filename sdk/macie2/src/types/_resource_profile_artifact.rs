@@ -47,9 +47,7 @@ impl ResourceProfileArtifact {
 
 /// A builder for [`ResourceProfileArtifact`](crate::types::ResourceProfileArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceProfileArtifactBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) classification_result_status: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl ResourceProfileArtifactBuilder {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn classification_result_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification_result_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification_result_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -89,10 +84,7 @@ impl ResourceProfileArtifactBuilder {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn set_classification_result_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification_result_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification_result_status = input;
         self
     }
@@ -102,9 +94,7 @@ impl ResourceProfileArtifactBuilder {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn get_classification_result_status(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_classification_result_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.classification_result_status
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>

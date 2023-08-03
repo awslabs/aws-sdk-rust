@@ -51,9 +51,7 @@ impl LicenseServiceConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
     pub fn build(self) -> crate::types::LicenseServiceConfiguration {
-        crate::types::LicenseServiceConfiguration {
-            endpoint: self.endpoint,
-        }
+        crate::types::LicenseServiceConfiguration { endpoint: self.endpoint }
     }
 }
 impl ::std::fmt::Debug for LicenseServiceConfigurationBuilder {

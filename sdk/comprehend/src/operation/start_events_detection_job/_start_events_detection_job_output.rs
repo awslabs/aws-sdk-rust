@@ -61,18 +61,14 @@ impl ::aws_http::request_id::RequestId for StartEventsDetectionJobOutput {
 }
 impl StartEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobOutput`](crate::operation::start_events_detection_job::StartEventsDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobOutputBuilder {
         crate::operation::start_events_detection_job::builders::StartEventsDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartEventsDetectionJobOutput`](crate::operation::start_events_detection_job::StartEventsDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEventsDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -171,9 +167,7 @@ impl StartEventsDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEventsDetectionJobOutput`](crate::operation::start_events_detection_job::StartEventsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_events_detection_job::StartEventsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::start_events_detection_job::StartEventsDetectionJobOutput {
         crate::operation::start_events_detection_job::StartEventsDetectionJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

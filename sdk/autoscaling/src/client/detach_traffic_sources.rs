@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder::set_traffic_sources): <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     /// - On success, responds with [`DetachTrafficSourcesOutput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput)
     /// - On failure, responds with [`SdkError<DetachTrafficSourcesError>`](crate::operation::detach_traffic_sources::DetachTrafficSourcesError)
-    pub fn detach_traffic_sources(
-        &self,
-    ) -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder {
-        crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_traffic_sources(&self) -> crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder {
+        crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -106,17 +106,12 @@ impl UserStackAssociationBuilder {
         self
     }
     /// <p>The authentication type for the user.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The authentication type for the user.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>

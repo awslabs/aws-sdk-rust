@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableDomainTransferLockOutput`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<DisableDomainTransferLockError>`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockError)
-    pub fn disable_domain_transfer_lock(&self) -> crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockFluentBuilder{
+    pub fn disable_domain_transfer_lock(&self) -> crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockFluentBuilder {
         crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockFluentBuilder::new(self.handle.clone())
     }
 }

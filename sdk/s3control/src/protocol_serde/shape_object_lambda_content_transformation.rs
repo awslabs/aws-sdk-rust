@@ -7,17 +7,12 @@ pub fn ser_object_lambda_content_transformation(
     match input {
         crate::types::ObjectLambdaContentTransformation::AwsLambda(inner) => {
             let inner_writer = scope_writer.start_el("AwsLambda");
-            crate::protocol_serde::shape_aws_lambda_transformation::ser_aws_lambda_transformation(
-                inner,
-                inner_writer,
-            )?
+            crate::protocol_serde::shape_aws_lambda_transformation::ser_aws_lambda_transformation(inner, inner_writer)?
         }
         crate::types::ObjectLambdaContentTransformation::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ObjectLambdaContentTransformation",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ObjectLambdaContentTransformation",
+            ))
         }
     }
     Ok(())
@@ -25,8 +20,7 @@ pub fn ser_object_lambda_content_transformation(
 
 pub fn de_object_lambda_content_transformation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ObjectLambdaContentTransformation, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ObjectLambdaContentTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::ObjectLambdaContentTransformation> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -41,7 +35,5 @@ pub fn de_object_lambda_content_transformation(
             _unknown => base = Some(crate::types::ObjectLambdaContentTransformation::Unknown),
         }
     }
-    base.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing")
-    })
+    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
 }

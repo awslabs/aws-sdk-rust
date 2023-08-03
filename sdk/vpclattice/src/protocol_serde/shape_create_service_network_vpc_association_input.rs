@@ -16,9 +16,7 @@ pub fn ser_create_service_network_vpc_association_input(
         array_3.finish();
     }
     if let Some(var_5) = &input.service_network_identifier {
-        object
-            .key("serviceNetworkIdentifier")
-            .string(var_5.as_str());
+        object.key("serviceNetworkIdentifier").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]

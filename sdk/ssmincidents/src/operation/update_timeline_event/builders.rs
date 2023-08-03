@@ -37,9 +37,7 @@ impl UpdateTimelineEventFluentBuilder {
         }
     }
     /// Access the UpdateTimelineEvent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateTimelineEventFluentBuilder {
             crate::operation::update_timeline_event::UpdateTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_timeline_event::UpdateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateTimelineEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_timeline_event::UpdateTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_timeline_event::UpdateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_timeline_event::UpdateTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_timeline_event::UpdateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateTimelineEventFluentBuilder {
             crate::operation::update_timeline_event::UpdateTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_timeline_event::UpdateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateTimelineEventFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -176,10 +157,7 @@ impl UpdateTimelineEventFluentBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_event_time(input);
         self
     }
@@ -229,19 +207,14 @@ impl UpdateTimelineEventFluentBuilder {
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn set_event_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
-    ) -> Self {
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
         self.inner = self.inner.set_event_references(input);
         self
     }
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn get_event_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
         self.inner.get_event_references()
     }
 }

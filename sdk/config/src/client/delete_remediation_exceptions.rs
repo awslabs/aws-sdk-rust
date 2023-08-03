@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteRemediationExceptionsOutput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput) with field(s):
     ///   - [`failed_batches(Option<Vec<FailedDeleteRemediationExceptionsBatch>>)`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput::failed_batches): <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
     /// - On failure, responds with [`SdkError<DeleteRemediationExceptionsError>`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError)
-    pub fn delete_remediation_exceptions(&self) -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsFluentBuilder{
+    pub fn delete_remediation_exceptions(
+        &self,
+    ) -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsFluentBuilder {
         crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsFluentBuilder::new(self.handle.clone())
     }
 }

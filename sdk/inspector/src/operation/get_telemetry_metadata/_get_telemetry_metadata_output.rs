@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetTelemetryMetadataOutput {
 }
 impl GetTelemetryMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder {
         crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataOutputBuilder {
-    pub(crate) telemetry_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
+    pub(crate) telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryMetadataOutputBuilder {
@@ -50,17 +46,12 @@ impl GetTelemetryMetadataOutputBuilder {
         self
     }
     /// <p>Telemetry details.</p>
-    pub fn set_telemetry_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
-    ) -> Self {
+    pub fn set_telemetry_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>) -> Self {
         self.telemetry_metadata = input;
         self
     }
     /// <p>Telemetry details.</p>
-    pub fn get_telemetry_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>> {
+    pub fn get_telemetry_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>> {
         &self.telemetry_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

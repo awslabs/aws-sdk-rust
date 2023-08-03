@@ -29,9 +29,7 @@ impl GetLicenseInput {
 
 /// A builder for [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLicenseInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetLicenseInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_license::GetLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license::GetLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_license::GetLicenseInput {
             license_arn: self.license_arn,
             version: self.version,

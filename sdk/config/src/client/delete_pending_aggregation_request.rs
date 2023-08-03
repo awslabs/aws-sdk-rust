@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`requester_aws_region(impl ::std::convert::Into<String>)`](crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestFluentBuilder::requester_aws_region) / [`set_requester_aws_region(Option<String>)`](crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestFluentBuilder::set_requester_aws_region): <p>The region requesting to aggregate data.</p>
     /// - On success, responds with [`DeletePendingAggregationRequestOutput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput)
     /// - On failure, responds with [`SdkError<DeletePendingAggregationRequestError>`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError)
-    pub fn delete_pending_aggregation_request(&self) -> crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestFluentBuilder{
+    pub fn delete_pending_aggregation_request(
+        &self,
+    ) -> crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestFluentBuilder {
         crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestFluentBuilder::new(self.handle.clone())
     }
 }

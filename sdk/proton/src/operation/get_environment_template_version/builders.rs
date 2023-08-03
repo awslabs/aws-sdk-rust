@@ -26,7 +26,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnvironmentTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder,
+    inner: crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder,
 }
 impl GetEnvironmentTemplateVersionFluentBuilder {
     /// Creates a new `GetEnvironmentTemplateVersion`.
@@ -37,7 +37,7 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
         }
     }
     /// Access the GetEnvironmentTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
             crate::operation::get_environment_template_version::GetEnvironmentTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
             crate::operation::get_environment_template_version::GetEnvironmentTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -161,18 +138,12 @@ impl GetEnvironmentTemplateVersionFluentBuilder {
         self.inner.get_major_version()
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }

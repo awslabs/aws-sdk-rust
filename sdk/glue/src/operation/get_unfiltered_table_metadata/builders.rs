@@ -27,7 +27,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder,
+    inner: crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder,
 }
 impl GetUnfilteredTableMetadataFluentBuilder {
     /// Creates a new `GetUnfilteredTableMetadata`.
@@ -38,7 +38,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         }
     }
     /// Access the GetUnfilteredTableMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
             crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -175,10 +158,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
     }
@@ -196,17 +176,12 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
     }
 }

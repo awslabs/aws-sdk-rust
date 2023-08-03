@@ -23,12 +23,9 @@ impl RunCommandParameters {
 
 /// A builder for [`RunCommandParameters`](crate::types::RunCommandParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunCommandParametersBuilder {
-    pub(crate) run_command_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
+    pub(crate) run_command_targets: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
 }
 impl RunCommandParametersBuilder {
     /// Appends an item to `run_command_targets`.
@@ -43,17 +40,12 @@ impl RunCommandParametersBuilder {
         self
     }
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn set_run_command_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
-    ) -> Self {
+    pub fn set_run_command_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>) -> Self {
         self.run_command_targets = input;
         self
     }
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn get_run_command_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>> {
+    pub fn get_run_command_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>> {
         &self.run_command_targets
     }
     /// Consumes the builder and constructs a [`RunCommandParameters`](crate::types::RunCommandParameters).

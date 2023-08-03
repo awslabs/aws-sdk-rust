@@ -37,9 +37,7 @@ impl ListTagsForResourceFluentBuilder {
         }
     }
     /// Access the ListTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator {
-        crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator {
+        crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN that specifies the resource whose tags you want to list.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

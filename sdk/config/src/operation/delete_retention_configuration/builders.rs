@@ -26,7 +26,7 @@ impl DeleteRetentionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder,
+    inner: crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder,
 }
 impl DeleteRetentionConfigurationFluentBuilder {
     /// Creates a new `DeleteRetentionConfiguration`.
@@ -37,7 +37,7 @@ impl DeleteRetentionConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteRetentionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRetentionConfigurationFluentBuilder {
             crate::operation::delete_retention_configuration::DeleteRetentionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRetentionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRetentionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRetentionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DeleteRetentionConfigurationFluentBuilder {
             crate::operation::delete_retention_configuration::DeleteRetentionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn retention_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retention_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retention_configuration_name(input.into());
         self
     }
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn set_retention_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retention_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retention_configuration_name(input);
         self
     }
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn get_retention_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_retention_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_retention_configuration_name()
     }
 }

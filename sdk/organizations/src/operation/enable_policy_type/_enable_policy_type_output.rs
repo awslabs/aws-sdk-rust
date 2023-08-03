@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for EnablePolicyTypeOutput {
 }
 impl EnablePolicyTypeOutput {
     /// Creates a new builder-style object to manufacture [`EnablePolicyTypeOutput`](crate::operation::enable_policy_type::EnablePolicyTypeOutput).
-    pub fn builder() -> crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder {
         crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnablePolicyTypeOutput`](crate::operation::enable_policy_type::EnablePolicyTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnablePolicyTypeOutputBuilder {
     pub(crate) root: ::std::option::Option<crate::types::Root>,
     _request_id: Option<String>,

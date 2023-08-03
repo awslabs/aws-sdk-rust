@@ -30,9 +30,7 @@ impl GpuInfo {
 
 /// A builder for [`GpuInfo`](crate::types::GpuInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpuInfoBuilder {
     pub(crate) gpus: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
     pub(crate) total_gpu_memory_in_mi_b: ::std::option::Option<i32>,
@@ -50,10 +48,7 @@ impl GpuInfoBuilder {
         self
     }
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub fn set_gpus(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
-    ) -> Self {
+    pub fn set_gpus(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>) -> Self {
         self.gpus = input;
         self
     }

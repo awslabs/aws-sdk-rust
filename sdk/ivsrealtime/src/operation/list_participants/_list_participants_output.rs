@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListParticipantsOutput {
 }
 impl ListParticipantsOutput {
     /// Creates a new builder-style object to manufacture [`ListParticipantsOutput`](crate::operation::list_participants::ListParticipantsOutput).
-    pub fn builder() -> crate::operation::list_participants::builders::ListParticipantsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_participants::builders::ListParticipantsOutputBuilder {
         crate::operation::list_participants::builders::ListParticipantsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListParticipantsOutput`](crate::operation::list_participants::ListParticipantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParticipantsOutputBuilder {
-    pub(crate) participants:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>>,
+    pub(crate) participants: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListParticipantsOutputBuilder {
         self
     }
     /// <p>List of the matching participants (summary information only).</p>
-    pub fn set_participants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>>,
-    ) -> Self {
+    pub fn set_participants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>>) -> Self {
         self.participants = input;
         self
     }
     /// <p>List of the matching participants (summary information only).</p>
-    pub fn get_participants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>> {
+    pub fn get_participants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantSummary>> {
         &self.participants
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

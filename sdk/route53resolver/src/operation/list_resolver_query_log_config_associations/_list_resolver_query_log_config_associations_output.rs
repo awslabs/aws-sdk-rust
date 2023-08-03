@@ -14,8 +14,7 @@ pub struct ListResolverQueryLogConfigAssociationsOutput {
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>,
+    pub resolver_query_log_config_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
@@ -32,9 +31,7 @@ impl ListResolverQueryLogConfigAssociationsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_config_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResolverQueryLogConfigAssociation]> {
+    pub fn resolver_query_log_config_associations(&self) -> ::std::option::Option<&[crate::types::ResolverQueryLogConfigAssociation]> {
         self.resolver_query_log_config_associations.as_deref()
     }
 }
@@ -45,22 +42,19 @@ impl ::aws_http::request_id::RequestId for ListResolverQueryLogConfigAssociation
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsOutput`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput).
-    pub fn builder() -> crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsOutputBuilder {
         crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverQueryLogConfigAssociationsOutput`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigAssociationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
     pub(crate) total_filtered_count: ::std::option::Option<i32>,
-    pub(crate) resolver_query_log_config_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>,
+    pub(crate) resolver_query_log_config_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigAssociationsOutputBuilder {
@@ -111,13 +105,8 @@ impl ListResolverQueryLogConfigAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_resolver_query_log_config_associations`](Self::set_resolver_query_log_config_associations).
     ///
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_config_associations(
-        mut self,
-        input: crate::types::ResolverQueryLogConfigAssociation,
-    ) -> Self {
-        let mut v = self
-            .resolver_query_log_config_associations
-            .unwrap_or_default();
+    pub fn resolver_query_log_config_associations(mut self, input: crate::types::ResolverQueryLogConfigAssociation) -> Self {
+        let mut v = self.resolver_query_log_config_associations.unwrap_or_default();
         v.push(input);
         self.resolver_query_log_config_associations = ::std::option::Option::Some(v);
         self
@@ -125,9 +114,7 @@ impl ListResolverQueryLogConfigAssociationsOutputBuilder {
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     pub fn set_resolver_query_log_config_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>,
     ) -> Self {
         self.resolver_query_log_config_associations = input;
         self
@@ -135,8 +122,7 @@ impl ListResolverQueryLogConfigAssociationsOutputBuilder {
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     pub fn get_resolver_query_log_config_associations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverQueryLogConfigAssociation>> {
         &self.resolver_query_log_config_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -149,18 +135,12 @@ impl ListResolverQueryLogConfigAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolverQueryLogConfigAssociationsOutput`](crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput{
+    pub fn build(self) -> crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput {
         crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput {
-            next_token: self.next_token
-            ,
-            total_count: self.total_count
-                .unwrap_or_default()
-            ,
-            total_filtered_count: self.total_filtered_count
-                .unwrap_or_default()
-            ,
-            resolver_query_log_config_associations: self.resolver_query_log_config_associations
-            ,
+            next_token: self.next_token,
+            total_count: self.total_count.unwrap_or_default(),
+            total_filtered_count: self.total_filtered_count.unwrap_or_default(),
+            resolver_query_log_config_associations: self.resolver_query_log_config_associations,
             _request_id: self._request_id,
         }
     }

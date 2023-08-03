@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput) with field(s):
     ///   - [`version_id(Option<String>)`](crate::operation::create_dataset_content::CreateDatasetContentOutput::version_id): <p>The version ID of the dataset contents that are being created.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetContentError>`](crate::operation::create_dataset_content::CreateDatasetContentError)
-    pub fn create_dataset_content(
-        &self,
-    ) -> crate::operation::create_dataset_content::builders::CreateDatasetContentFluentBuilder {
-        crate::operation::create_dataset_content::builders::CreateDatasetContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dataset_content(&self) -> crate::operation::create_dataset_content::builders::CreateDatasetContentFluentBuilder {
+        crate::operation::create_dataset_content::builders::CreateDatasetContentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,24 +5,22 @@ pub(crate) fn de_continuous_deployment_policy_payload(
     ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
     crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_continuous_deployment_policy(body).map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_continuous_deployment_policy(body)
+                .map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)
+        })
+        .transpose()
 }
 
 pub(crate) fn de_e_tag_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("ETag").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_continuous_deployment_policy(
-    inp: &[u8],
-) -> Result<crate::types::ContinuousDeploymentPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_continuous_deployment_policy(inp: &[u8]) -> Result<crate::types::ContinuousDeploymentPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -33,7 +31,5 @@ pub fn de_continuous_deployment_policy(
             start_el
         )));
     }
-    crate::protocol_serde::shape_continuous_deployment_policy::de_continuous_deployment_policy(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_continuous_deployment_policy::de_continuous_deployment_policy(&mut decoder)
 }

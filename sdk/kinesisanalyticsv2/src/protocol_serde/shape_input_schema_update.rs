@@ -18,10 +18,7 @@ pub fn ser_input_schema_update(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_record_column::ser_record_column(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_record_column::ser_record_column(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

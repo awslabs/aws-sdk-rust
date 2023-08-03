@@ -32,7 +32,7 @@ impl PutBucketOwnershipControlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder,
+    inner: crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder,
 }
 impl PutBucketOwnershipControlsFluentBuilder {
     /// Creates a new `PutBucketOwnershipControls`.
@@ -43,7 +43,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
         }
     }
     /// Access the PutBucketOwnershipControls as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
             crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl PutBucketOwnershipControlsFluentBuilder {
             crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError>,
     > {
         self.customize_middleware().await
     }
@@ -158,18 +147,12 @@ impl PutBucketOwnershipControlsFluentBuilder {
         self.inner.get_content_md5()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -183,17 +166,12 @@ impl PutBucketOwnershipControlsFluentBuilder {
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
-    pub fn set_ownership_controls(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipControls>,
-    ) -> Self {
+    pub fn set_ownership_controls(mut self, input: ::std::option::Option<crate::types::OwnershipControls>) -> Self {
         self.inner = self.inner.set_ownership_controls(input);
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
-    pub fn get_ownership_controls(
-        &self,
-    ) -> &::std::option::Option<crate::types::OwnershipControls> {
+    pub fn get_ownership_controls(&self) -> &::std::option::Option<crate::types::OwnershipControls> {
         self.inner.get_ownership_controls()
     }
 }

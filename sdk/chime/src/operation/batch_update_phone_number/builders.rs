@@ -28,8 +28,7 @@ impl BatchUpdatePhoneNumberInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder,
+    inner: crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder,
 }
 impl BatchUpdatePhoneNumberFluentBuilder {
     /// Creates a new `BatchUpdatePhoneNumber`.
@@ -40,10 +39,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
         }
     }
     /// Access the BatchUpdatePhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
             crate::operation::batch_update_phone_number::BatchUpdatePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
             crate::operation::batch_update_phone_number::BatchUpdatePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +116,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
     /// To override the contents of this collection use [`set_update_phone_number_request_items`](Self::set_update_phone_number_request_items).
     ///
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub fn update_phone_number_request_items(
-        mut self,
-        input: crate::types::UpdatePhoneNumberRequestItem,
-    ) -> Self {
+    pub fn update_phone_number_request_items(mut self, input: crate::types::UpdatePhoneNumberRequestItem) -> Self {
         self.inner = self.inner.update_phone_number_request_items(input);
         self
     }
@@ -147,9 +129,7 @@ impl BatchUpdatePhoneNumberFluentBuilder {
         self
     }
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub fn get_update_phone_number_request_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>> {
+    pub fn get_update_phone_number_request_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>> {
         self.inner.get_update_phone_number_request_items()
     }
 }

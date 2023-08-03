@@ -51,9 +51,7 @@ impl NetworkCardInfo {
 
 /// A builder for [`NetworkCardInfo`](crate::types::NetworkCardInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkCardInfoBuilder {
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl NetworkCardInfoBuilder {
         &self.network_card_index
     }
     /// <p>The network performance of the network card.</p>
-    pub fn network_performance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_performance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_performance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network performance of the network card.</p>
-    pub fn set_network_performance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_performance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_performance = input;
         self
     }

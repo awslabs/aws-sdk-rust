@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`backups(Option<Vec<Backup>>)`](crate::operation::describe_backups::DescribeBackupsOutput::backups): <p>A list of backups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_backups::DescribeBackupsOutput::next_token): <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::operation::describe_backups::DescribeBackupsError)
-    pub fn describe_backups(
-        &self,
-    ) -> crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder {
-        crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_backups(&self) -> crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder {
+        crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::new(self.handle.clone())
     }
 }

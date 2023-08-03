@@ -86,9 +86,7 @@ impl IntegerParameterRange {
 
 /// A builder for [`IntegerParameterRange`](crate::types::IntegerParameterRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerParameterRangeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) min_value: ::std::option::Option<::std::string::String>,
@@ -186,10 +184,7 @@ impl IntegerParameterRangeBuilder {
     /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
     /// </dd>
     /// </dl>
-    pub fn set_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterScalingType>,
-    ) -> Self {
+    pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::HyperParameterScalingType>) -> Self {
         self.scaling_type = input;
         self
     }
@@ -215,9 +210,7 @@ impl IntegerParameterRangeBuilder {
     /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
     /// </dd>
     /// </dl>
-    pub fn get_scaling_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterScalingType> {
+    pub fn get_scaling_type(&self) -> &::std::option::Option<crate::types::HyperParameterScalingType> {
         &self.scaling_type
     }
     /// Consumes the builder and constructs a [`IntegerParameterRange`](crate::types::IntegerParameterRange).

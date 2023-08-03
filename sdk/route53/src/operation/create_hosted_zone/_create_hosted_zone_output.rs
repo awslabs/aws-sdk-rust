@@ -50,17 +50,14 @@ impl ::aws_http::request_id::RequestId for CreateHostedZoneOutput {
 }
 impl CreateHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
-    pub fn builder() -> crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder {
         crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHostedZoneOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
@@ -76,10 +73,7 @@ impl CreateHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn set_hosted_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZone>,
-    ) -> Self {
+    pub fn set_hosted_zone(mut self, input: ::std::option::Option<crate::types::HostedZone>) -> Self {
         self.hosted_zone = input;
         self
     }
@@ -93,10 +87,7 @@ impl CreateHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -110,10 +101,7 @@ impl CreateHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
-    pub fn set_delegation_set(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegationSet>,
-    ) -> Self {
+    pub fn set_delegation_set(mut self, input: ::std::option::Option<crate::types::DelegationSet>) -> Self {
         self.delegation_set = input;
         self
     }

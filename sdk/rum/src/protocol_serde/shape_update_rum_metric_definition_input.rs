@@ -12,10 +12,7 @@ pub fn ser_update_rum_metric_definition_input(
     if let Some(var_3) = &input.metric_definition {
         #[allow(unused_mut)]
         let mut object_4 = object.key("MetricDefinition").start_object();
-        crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.metric_definition_id {

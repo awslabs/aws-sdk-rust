@@ -29,16 +29,14 @@ impl DisassociateDelegateFromResourceInput {
 }
 impl DisassociateDelegateFromResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
-    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder {
         crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateDelegateFromResourceInputBuilder {
 }
 impl DisassociateDelegateFromResourceInputBuilder {
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl DisassociateDelegateFromResourceInputBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegateFromResourceInput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceInput {
-                organization_id: self.organization_id
-                ,
-                resource_id: self.resource_id
-                ,
-                entity_id: self.entity_id
-                ,
-            }
+                organization_id: self.organization_id,
+                resource_id: self.resource_id,
+                entity_id: self.entity_id,
+            },
         )
     }
 }

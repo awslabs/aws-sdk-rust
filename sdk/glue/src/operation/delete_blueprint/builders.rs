@@ -10,10 +10,7 @@ impl DeleteBlueprintInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_blueprint::DeleteBlueprintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blueprint::DeleteBlueprintError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_blueprint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBlueprintFluentBuilder {
         }
     }
     /// Access the DeleteBlueprint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_blueprint::builders::DeleteBlueprintInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_blueprint::builders::DeleteBlueprintInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteBlueprintFluentBuilder {
             crate::operation::delete_blueprint::DeleteBlueprint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blueprint::DeleteBlueprintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteBlueprintFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteBlueprintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_blueprint::DeleteBlueprintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blueprint::DeleteBlueprintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteBlueprintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_blueprint::DeleteBlueprintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blueprint::DeleteBlueprintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteBlueprintFluentBuilder {
             crate::operation::delete_blueprint::DeleteBlueprint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_blueprint::DeleteBlueprintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError>,
     > {
         self.customize_middleware().await
     }

@@ -23,9 +23,7 @@ impl StorageInfo {
 
 /// A builder for [`StorageInfo`](crate::types::StorageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageInfoBuilder {
     pub(crate) ebs_storage_info: ::std::option::Option<crate::types::EbsStorageInfo>,
 }
@@ -36,10 +34,7 @@ impl StorageInfoBuilder {
         self
     }
     /// <p>EBS volume information.</p>
-    pub fn set_ebs_storage_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsStorageInfo>,
-    ) -> Self {
+    pub fn set_ebs_storage_info(mut self, input: ::std::option::Option<crate::types::EbsStorageInfo>) -> Self {
         self.ebs_storage_info = input;
         self
     }

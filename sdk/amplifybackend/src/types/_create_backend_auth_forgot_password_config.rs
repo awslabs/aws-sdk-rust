@@ -37,9 +37,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 
 /// A builder for [`CreateBackendAuthForgotPasswordConfig`](crate::types::CreateBackendAuthForgotPasswordConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendAuthForgotPasswordConfigBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     pub(crate) email_settings: ::std::option::Option<crate::types::EmailSettings>,
@@ -52,10 +50,7 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-    pub fn set_delivery_method(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryMethod>,
-    ) -> Self {
+    pub fn set_delivery_method(mut self, input: ::std::option::Option<crate::types::DeliveryMethod>) -> Self {
         self.delivery_method = input;
         self
     }
@@ -69,10 +64,7 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    pub fn set_email_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailSettings>,
-    ) -> Self {
+    pub fn set_email_settings(mut self, input: ::std::option::Option<crate::types::EmailSettings>) -> Self {
         self.email_settings = input;
         self
     }
@@ -86,10 +78,7 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
         self
     }
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-    pub fn set_sms_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsSettings>,
-    ) -> Self {
+    pub fn set_sms_settings(mut self, input: ::std::option::Option<crate::types::SmsSettings>) -> Self {
         self.sms_settings = input;
         self
     }

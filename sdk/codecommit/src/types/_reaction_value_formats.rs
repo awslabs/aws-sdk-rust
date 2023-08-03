@@ -37,9 +37,7 @@ impl ReactionValueFormats {
 
 /// A builder for [`ReactionValueFormats`](crate::types::ReactionValueFormats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReactionValueFormatsBuilder {
     pub(crate) emoji: ::std::option::Option<::std::string::String>,
     pub(crate) short_code: ::std::option::Option<::std::string::String>,

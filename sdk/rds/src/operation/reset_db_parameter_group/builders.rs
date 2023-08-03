@@ -37,10 +37,7 @@ impl ResetDBParameterGroupFluentBuilder {
         }
     }
     /// Access the ResetDBParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ResetDBParameterGroupFluentBuilder {
             crate::operation::reset_db_parameter_group::ResetDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ResetDBParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ResetDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ResetDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ResetDBParameterGroupFluentBuilder {
             crate::operation::reset_db_parameter_group::ResetDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_db_parameter_group::ResetDBParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +114,7 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -140,10 +123,7 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
@@ -195,10 +175,7 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
     /// <p> <b>Oracle</b> </p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -211,9 +188,7 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
     /// <p> <b>Oracle</b> </p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

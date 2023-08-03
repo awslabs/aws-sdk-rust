@@ -10,10 +10,7 @@ impl ListServersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_servers::ListServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_servers::ListServersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_servers();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListServersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_servers::ListServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_servers::ListServers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListServersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_servers::ListServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_servers::ListServers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_servers::ListServersError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListServersFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_servers::paginator::ListServersPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_servers::paginator::ListServersPaginator {
-        crate::operation::list_servers::paginator::ListServersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_servers::paginator::ListServersPaginator::new(self.handle, self.inner)
     }
     /// <p> Criteria for filtering servers. </p>
     pub fn server_criteria(mut self, input: crate::types::ServerCriteria) -> Self {
@@ -127,10 +112,7 @@ impl ListServersFluentBuilder {
         self
     }
     /// <p> Criteria for filtering servers. </p>
-    pub fn set_server_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerCriteria>,
-    ) -> Self {
+    pub fn set_server_criteria(mut self, input: ::std::option::Option<crate::types::ServerCriteria>) -> Self {
         self.inner = self.inner.set_server_criteria(input);
         self
     }
@@ -176,17 +158,12 @@ impl ListServersFluentBuilder {
         self
     }
     /// <p> Specifies the group ID to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
     }
     /// <p> Specifies the group ID to filter on. </p>
-    pub fn get_group_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         self.inner.get_group_id_filter()
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>

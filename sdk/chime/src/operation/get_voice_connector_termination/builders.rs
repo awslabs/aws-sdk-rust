@@ -26,13 +26,11 @@ impl GetVoiceConnectorTerminationInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorTermination.html">GetVoiceConnectorTermination</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by GetVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by GetVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder,
+    inner: crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder,
 }
 impl GetVoiceConnectorTerminationFluentBuilder {
     /// Creates a new `GetVoiceConnectorTermination`.
@@ -43,7 +41,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         }
     }
     /// Access the GetVoiceConnectorTermination as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             crate::operation::get_voice_connector_termination::GetVoiceConnectorTermination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             crate::operation::get_voice_connector_termination::GetVoiceConnectorTermination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }

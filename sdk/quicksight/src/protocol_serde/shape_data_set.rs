@@ -3,12 +3,7 @@ pub(crate) fn de_data_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::DataSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,135 +13,109 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DataSetId" => {
-                                builder = builder.set_data_set_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "DataSetId" => {
+                            builder = builder.set_data_set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CreatedTime" => {
-                                builder = builder.set_created_time(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
-                                );
-                            }
-                            "LastUpdatedTime" => {
-                                builder = builder.set_last_updated_time(
-                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::EpochSeconds)?
-                                );
-                            }
-                            "PhysicalTableMap" => {
-                                builder = builder.set_physical_table_map(
-                                    crate::protocol_serde::shape_physical_table_map::de_physical_table_map(tokens)?
-                                );
-                            }
-                            "LogicalTableMap" => {
-                                builder = builder.set_logical_table_map(
-                                    crate::protocol_serde::shape_logical_table_map::de_logical_table_map(tokens)?
-                                );
-                            }
-                            "OutputColumns" => {
-                                builder = builder.set_output_columns(
-                                    crate::protocol_serde::shape_output_column_list::de_output_column_list(tokens)?
-                                );
-                            }
-                            "ImportMode" => {
-                                builder = builder.set_import_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::DataSetImportMode::from(u.as_ref())
-                                        })
-                                    })
+                            );
+                        }
+                        "CreatedTime" => {
+                            builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "LastUpdatedTime" => {
+                            builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "PhysicalTableMap" => {
+                            builder = builder.set_physical_table_map(crate::protocol_serde::shape_physical_table_map::de_physical_table_map(tokens)?);
+                        }
+                        "LogicalTableMap" => {
+                            builder = builder.set_logical_table_map(crate::protocol_serde::shape_logical_table_map::de_logical_table_map(tokens)?);
+                        }
+                        "OutputColumns" => {
+                            builder = builder.set_output_columns(crate::protocol_serde::shape_output_column_list::de_output_column_list(tokens)?);
+                        }
+                        "ImportMode" => {
+                            builder = builder.set_import_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataSetImportMode::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "ConsumedSpiceCapacityInBytes" => {
-                                builder = builder.set_consumed_spice_capacity_in_bytes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ConsumedSpiceCapacityInBytes" => {
+                            builder = builder.set_consumed_spice_capacity_in_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "ColumnGroups" => {
-                                builder = builder.set_column_groups(
-                                    crate::protocol_serde::shape_column_group_list::de_column_group_list(tokens)?
-                                );
-                            }
-                            "FieldFolders" => {
-                                builder = builder.set_field_folders(
-                                    crate::protocol_serde::shape_field_folder_map::de_field_folder_map(tokens)?
-                                );
-                            }
-                            "RowLevelPermissionDataSet" => {
-                                builder = builder.set_row_level_permission_data_set(
-                                    crate::protocol_serde::shape_row_level_permission_data_set::de_row_level_permission_data_set(tokens)?
-                                );
-                            }
-                            "RowLevelPermissionTagConfiguration" => {
-                                builder = builder.set_row_level_permission_tag_configuration(
-                                    crate::protocol_serde::shape_row_level_permission_tag_configuration::de_row_level_permission_tag_configuration(tokens)?
-                                );
-                            }
-                            "ColumnLevelPermissionRules" => {
-                                builder = builder.set_column_level_permission_rules(
-                                    crate::protocol_serde::shape_column_level_permission_rule_list::de_column_level_permission_rule_list(tokens)?
-                                );
-                            }
-                            "DataSetUsageConfiguration" => {
-                                builder = builder.set_data_set_usage_configuration(
-                                    crate::protocol_serde::shape_data_set_usage_configuration::de_data_set_usage_configuration(tokens)?
-                                );
-                            }
-                            "DatasetParameters" => {
-                                builder = builder.set_dataset_parameters(
-                                    crate::protocol_serde::shape_dataset_parameter_list::de_dataset_parameter_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ColumnGroups" => {
+                            builder = builder.set_column_groups(crate::protocol_serde::shape_column_group_list::de_column_group_list(tokens)?);
+                        }
+                        "FieldFolders" => {
+                            builder = builder.set_field_folders(crate::protocol_serde::shape_field_folder_map::de_field_folder_map(tokens)?);
+                        }
+                        "RowLevelPermissionDataSet" => {
+                            builder = builder.set_row_level_permission_data_set(
+                                crate::protocol_serde::shape_row_level_permission_data_set::de_row_level_permission_data_set(tokens)?,
+                            );
+                        }
+                        "RowLevelPermissionTagConfiguration" => {
+                            builder = builder.set_row_level_permission_tag_configuration(
+                                crate::protocol_serde::shape_row_level_permission_tag_configuration::de_row_level_permission_tag_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "ColumnLevelPermissionRules" => {
+                            builder = builder.set_column_level_permission_rules(
+                                crate::protocol_serde::shape_column_level_permission_rule_list::de_column_level_permission_rule_list(tokens)?,
+                            );
+                        }
+                        "DataSetUsageConfiguration" => {
+                            builder = builder.set_data_set_usage_configuration(
+                                crate::protocol_serde::shape_data_set_usage_configuration::de_data_set_usage_configuration(tokens)?,
+                            );
+                        }
+                        "DatasetParameters" => {
+                            builder = builder
+                                .set_dataset_parameters(crate::protocol_serde::shape_dataset_parameter_list::de_dataset_parameter_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

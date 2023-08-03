@@ -10,10 +10,7 @@ impl DeleteNamedQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_named_query::DeleteNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_named_query::DeleteNamedQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_named_query::DeleteNamedQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_named_query();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteNamedQueryFluentBuilder {
         }
     }
     /// Access the DeleteNamedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteNamedQueryFluentBuilder {
             crate::operation::delete_named_query::DeleteNamedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_named_query::DeleteNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_named_query::DeleteNamedQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteNamedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteNamedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_named_query::DeleteNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_named_query::DeleteNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_named_query::DeleteNamedQueryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteNamedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_named_query::DeleteNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_named_query::DeleteNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_named_query::DeleteNamedQueryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteNamedQueryFluentBuilder {
             crate::operation::delete_named_query::DeleteNamedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_named_query::DeleteNamedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_named_query::DeleteNamedQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID of the query to delete.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.named_query_id(input.into());
         self
     }
     /// <p>The unique ID of the query to delete.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_named_query_id(input);
         self
     }

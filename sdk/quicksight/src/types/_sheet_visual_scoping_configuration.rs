@@ -45,9 +45,7 @@ impl SheetVisualScopingConfiguration {
 
 /// A builder for [`SheetVisualScopingConfiguration`](crate::types::SheetVisualScopingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetVisualScopingConfigurationBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::FilterVisualScope>,
@@ -82,10 +80,7 @@ impl SheetVisualScopingConfigurationBuilder {
     /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
     /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterVisualScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::FilterVisualScope>) -> Self {
         self.scope = input;
         self
     }
@@ -109,10 +104,7 @@ impl SheetVisualScopingConfigurationBuilder {
         self
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub fn set_visual_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_visual_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.visual_ids = input;
         self
     }

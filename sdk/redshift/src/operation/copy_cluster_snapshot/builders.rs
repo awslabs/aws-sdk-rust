@@ -39,9 +39,7 @@ impl CopyClusterSnapshotFluentBuilder {
         }
     }
     /// Access the CopyClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CopyClusterSnapshotFluentBuilder {
             crate::operation::copy_cluster_snapshot::CopyClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CopyClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CopyClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CopyClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CopyClusterSnapshotFluentBuilder {
             crate::operation::copy_cluster_snapshot::CopyClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +116,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
-    pub fn source_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_snapshot_identifier(input.into());
         self
     }
@@ -141,10 +125,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
-    pub fn set_source_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_snapshot_identifier(input);
         self
     }
@@ -161,10 +142,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn source_snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_snapshot_cluster_identifier(input.into());
         self
     }
@@ -173,10 +151,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn set_source_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_snapshot_cluster_identifier(input);
         self
     }
@@ -185,9 +160,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn get_source_snapshot_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_snapshot_cluster_identifier()
     }
     /// <p>The identifier given to the new manual snapshot.</p>
@@ -199,10 +172,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
-    pub fn target_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_snapshot_identifier(input.into());
         self
     }
@@ -215,10 +185,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
-    pub fn set_target_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_snapshot_identifier(input);
         self
     }
@@ -244,10 +211,7 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }

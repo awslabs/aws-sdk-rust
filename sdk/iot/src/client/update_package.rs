@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_package::builders::UpdatePackageFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_package::builders::UpdatePackageFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdatePackageOutput`](crate::operation::update_package::UpdatePackageOutput)
     /// - On failure, responds with [`SdkError<UpdatePackageError>`](crate::operation::update_package::UpdatePackageError)
-    pub fn update_package(
-        &self,
-    ) -> crate::operation::update_package::builders::UpdatePackageFluentBuilder {
-        crate::operation::update_package::builders::UpdatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_package(&self) -> crate::operation::update_package::builders::UpdatePackageFluentBuilder {
+        crate::operation::update_package::builders::UpdatePackageFluentBuilder::new(self.handle.clone())
     }
 }

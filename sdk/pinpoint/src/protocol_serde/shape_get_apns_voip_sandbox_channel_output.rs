@@ -5,7 +5,10 @@ pub(crate) fn de_apns_voip_sandbox_channel_response_payload(
     ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_apns_voip_sandbox_channel_response::de_apns_voip_sandbox_channel_response_payload(body).map_err(crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_apns_voip_sandbox_channel_response::de_apns_voip_sandbox_channel_response_payload(body)
+                .map_err(crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError::unhandled)
+        })
+        .transpose()
 }

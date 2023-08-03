@@ -30,27 +30,19 @@ impl AttributeNameAndValue {
 
 /// A builder for [`AttributeNameAndValue`](crate::types::AttributeNameAndValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeNameAndValueBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl AttributeNameAndValueBuilder {
     /// <p>The attribute name of the typed link.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute name of the typed link.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl AttributeNameAndValueBuilder {
         self
     }
     /// <p>The value for the typed link.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
         self.value = input;
         self
     }

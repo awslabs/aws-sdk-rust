@@ -10,10 +10,7 @@ impl CreateDatasetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_group::CreateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_group::CreateDatasetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_group::CreateDatasetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset_group();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateDatasetGroupFluentBuilder {
         }
     }
     /// Access the CreateDatasetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateDatasetGroupFluentBuilder {
             crate::operation::create_dataset_group::CreateDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_group::CreateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_group::CreateDatasetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateDatasetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_group::CreateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_group::CreateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_group::CreateDatasetGroupError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_group::CreateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_group::CreateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_group::CreateDatasetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl CreateDatasetGroupFluentBuilder {
             crate::operation::create_dataset_group::CreateDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_group::CreateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_group::CreateDatasetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the dataset group.</p>
-    pub fn dataset_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_name(input.into());
         self
     }
     /// <p>A name for the dataset group.</p>
-    pub fn set_dataset_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_name(input);
         self
     }
@@ -173,17 +151,12 @@ impl CreateDatasetGroupFluentBuilder {
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
-    pub fn set_dataset_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dataset_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dataset_arns(input);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
-    pub fn get_dataset_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dataset_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dataset_arns()
     }
     /// Appends an item to `Tags`.
@@ -216,10 +189,7 @@ impl CreateDatasetGroupFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

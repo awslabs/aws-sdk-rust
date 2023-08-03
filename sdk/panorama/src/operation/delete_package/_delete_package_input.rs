@@ -29,9 +29,7 @@ impl DeletePackageInput {
 
 /// A builder for [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,
@@ -68,10 +66,7 @@ impl DeletePackageInputBuilder {
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_package::DeletePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
             package_id: self.package_id,
             force_delete: self.force_delete.unwrap_or_default(),

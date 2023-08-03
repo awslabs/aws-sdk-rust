@@ -10,10 +10,7 @@ impl DeleteCustomPluginInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_plugin::DeleteCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_plugin::DeleteCustomPluginError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_custom_plugin();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteCustomPluginFluentBuilder {
         }
     }
     /// Access the DeleteCustomPlugin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteCustomPluginFluentBuilder {
             crate::operation::delete_custom_plugin::DeleteCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_plugin::DeleteCustomPluginError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteCustomPluginFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_plugin::DeleteCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_plugin::DeleteCustomPluginError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_plugin::DeleteCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_plugin::DeleteCustomPluginError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteCustomPluginFluentBuilder {
             crate::operation::delete_custom_plugin::DeleteCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_plugin::DeleteCustomPluginError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_plugin_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_plugin_arn(input);
         self
     }

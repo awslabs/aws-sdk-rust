@@ -62,8 +62,7 @@ pub struct ProjectEnvironment {
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     #[doc(hidden)]
-    pub environment_variables:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
@@ -150,9 +149,7 @@ impl ProjectEnvironment {
         self.compute_type.as_ref()
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
+    pub fn environment_variables(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
         self.environment_variables.as_deref()
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -180,9 +177,7 @@ impl ProjectEnvironment {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
-    pub fn image_pull_credentials_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImagePullCredentialsType> {
+    pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&crate::types::ImagePullCredentialsType> {
         self.image_pull_credentials_type.as_ref()
     }
 }
@@ -195,20 +190,16 @@ impl ProjectEnvironment {
 
 /// A builder for [`ProjectEnvironment`](crate::types::ProjectEnvironment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectEnvironmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentType>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
-    pub(crate) environment_variables:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     pub(crate) privileged_mode: ::std::option::Option<bool>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
-    pub(crate) image_pull_credentials_type:
-        ::std::option::Option<crate::types::ImagePullCredentialsType>,
+    pub(crate) image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
 }
 impl ProjectEnvironmentBuilder {
     /// <p>The type of build environment to use for related builds.</p>
@@ -373,10 +364,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
@@ -409,17 +397,12 @@ impl ProjectEnvironmentBuilder {
         self
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
-    ) -> Self {
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
         &self.environment_variables
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -477,17 +460,12 @@ impl ProjectEnvironmentBuilder {
         self
     }
     /// <p> The credentials for access to a private registry.</p>
-    pub fn set_registry_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryCredential>,
-    ) -> Self {
+    pub fn set_registry_credential(mut self, input: ::std::option::Option<crate::types::RegistryCredential>) -> Self {
         self.registry_credential = input;
         self
     }
     /// <p> The credentials for access to a private registry.</p>
-    pub fn get_registry_credential(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistryCredential> {
+    pub fn get_registry_credential(&self) -> &::std::option::Option<crate::types::RegistryCredential> {
         &self.registry_credential
     }
     /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
@@ -496,10 +474,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
-    pub fn image_pull_credentials_type(
-        mut self,
-        input: crate::types::ImagePullCredentialsType,
-    ) -> Self {
+    pub fn image_pull_credentials_type(mut self, input: crate::types::ImagePullCredentialsType) -> Self {
         self.image_pull_credentials_type = ::std::option::Option::Some(input);
         self
     }
@@ -509,10 +484,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
-    pub fn set_image_pull_credentials_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImagePullCredentialsType>,
-    ) -> Self {
+    pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<crate::types::ImagePullCredentialsType>) -> Self {
         self.image_pull_credentials_type = input;
         self
     }
@@ -522,9 +494,7 @@ impl ProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
-    pub fn get_image_pull_credentials_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
+    pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
         &self.image_pull_credentials_type
     }
     /// Consumes the builder and constructs a [`ProjectEnvironment`](crate::types::ProjectEnvironment).

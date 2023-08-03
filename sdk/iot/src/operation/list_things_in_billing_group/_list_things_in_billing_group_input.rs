@@ -29,16 +29,14 @@ impl ListThingsInBillingGroupInput {
 }
 impl ListThingsInBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`ListThingsInBillingGroupInput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupInput).
-    pub fn builder() -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder {
         crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingsInBillingGroupInput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsInBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListThingsInBillingGroupInputBuilder {
 }
 impl ListThingsInBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListThingsInBillingGroupInputBuilder {
         crate::operation::list_things_in_billing_group::ListThingsInBillingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_things_in_billing_group::ListThingsInBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_things_in_billing_group::ListThingsInBillingGroupInput {
+            billing_group_name: self.billing_group_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

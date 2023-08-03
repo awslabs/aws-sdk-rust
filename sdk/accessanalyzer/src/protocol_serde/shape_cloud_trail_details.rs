@@ -24,9 +24,7 @@ pub fn ser_cloud_trail_details(
             .date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_7) = &input.end_time {
-        object
-            .key("endTime")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::DateTime)?;
+        object.key("endTime").date_time(var_7, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

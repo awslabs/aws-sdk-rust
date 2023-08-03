@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for UpdateGatewayInformationOutput {
 }
 impl UpdateGatewayInformationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
@@ -85,9 +81,7 @@ impl UpdateGatewayInformationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
+    pub fn build(self) -> crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
         crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
             gateway_arn: self.gateway_arn,
             gateway_name: self.gateway_name,

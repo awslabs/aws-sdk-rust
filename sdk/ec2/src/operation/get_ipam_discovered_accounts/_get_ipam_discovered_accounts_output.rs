@@ -5,8 +5,7 @@
 pub struct GetIpamDiscoveredAccountsOutput {
     /// <p>Discovered accounts.</p>
     #[doc(hidden)]
-    pub ipam_discovered_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
+    pub ipam_discovered_accounts: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetIpamDiscoveredAccountsOutput {
 }
 impl GetIpamDiscoveredAccountsOutput {
     /// <p>Discovered accounts.</p>
-    pub fn ipam_discovered_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpamDiscoveredAccount]> {
+    pub fn ipam_discovered_accounts(&self) -> ::std::option::Option<&[crate::types::IpamDiscoveredAccount]> {
         self.ipam_discovered_accounts.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetIpamDiscoveredAccountsOutput {
 }
 impl GetIpamDiscoveredAccountsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder {
         crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsOutputBuilder {
-    pub(crate) ipam_discovered_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
+    pub(crate) ipam_discovered_accounts: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetIpamDiscoveredAccountsOutputBuilder {
         self
     }
     /// <p>Discovered accounts.</p>
-    pub fn set_ipam_discovered_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
-    ) -> Self {
+    pub fn set_ipam_discovered_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>>) -> Self {
         self.ipam_discovered_accounts = input;
         self
     }
     /// <p>Discovered accounts.</p>
-    pub fn get_ipam_discovered_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>> {
+    pub fn get_ipam_discovered_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredAccount>> {
         &self.ipam_discovered_accounts
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -97,9 +86,7 @@ impl GetIpamDiscoveredAccountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
+    pub fn build(self) -> crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
             ipam_discovered_accounts: self.ipam_discovered_accounts,
             next_token: self.next_token,

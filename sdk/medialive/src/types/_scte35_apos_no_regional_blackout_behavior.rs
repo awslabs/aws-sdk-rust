@@ -38,13 +38,7 @@
 /// Scte35 Apos No Regional Blackout Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35AposNoRegionalBlackoutBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35AposNoRegionalBlackoutBehavior {
         match s {
             "FOLLOW" => Scte35AposNoRegionalBlackoutBehavior::Follow,
             "IGNORE" => Scte35AposNoRegionalBlackoutBehavior::Ignore,
-            other => Scte35AposNoRegionalBlackoutBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Scte35AposNoRegionalBlackoutBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

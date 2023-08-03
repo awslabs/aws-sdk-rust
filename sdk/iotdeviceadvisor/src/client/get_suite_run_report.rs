@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput) with field(s):
     ///   - [`qualification_report_download_url(Option<String>)`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput::qualification_report_download_url): <p>Download URL of the qualification report.</p>
     /// - On failure, responds with [`SdkError<GetSuiteRunReportError>`](crate::operation::get_suite_run_report::GetSuiteRunReportError)
-    pub fn get_suite_run_report(
-        &self,
-    ) -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder {
-        crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_suite_run_report(&self) -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder {
+        crate::operation::get_suite_run_report::builders::GetSuiteRunReportFluentBuilder::new(self.handle.clone())
     }
 }

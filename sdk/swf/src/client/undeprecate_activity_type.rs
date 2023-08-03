@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`activity_type(ActivityType)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::activity_type) / [`set_activity_type(Option<ActivityType>)`](crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::set_activity_type): <p>The activity type to undeprecate.</p>
     /// - On success, responds with [`UndeprecateActivityTypeOutput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput)
     /// - On failure, responds with [`SdkError<UndeprecateActivityTypeError>`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError)
-    pub fn undeprecate_activity_type(
-        &self,
-    ) -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder
-    {
+    pub fn undeprecate_activity_type(&self) -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder {
         crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeFluentBuilder::new(self.handle.clone())
     }
 }

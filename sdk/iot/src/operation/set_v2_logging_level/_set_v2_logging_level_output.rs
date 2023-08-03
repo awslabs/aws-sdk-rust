@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SetV2LoggingLevelOutput {
 }
 impl SetV2LoggingLevelOutput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput).
-    pub fn builder(
-    ) -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder {
+    pub fn builder() -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder {
         crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetV2LoggingLevelOutputBuilder {
     _request_id: Option<String>,
 }

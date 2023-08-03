@@ -39,13 +39,7 @@
 /// _Note: `ConnectionState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConnectionState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ConnectionState {
             "CONNECTED" => ConnectionState::Connected,
             "DISCONNECTED" => ConnectionState::Disconnected,
             "UNKNOWN" => ConnectionState::UnknownValue,
-            other => {
-                ConnectionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConnectionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

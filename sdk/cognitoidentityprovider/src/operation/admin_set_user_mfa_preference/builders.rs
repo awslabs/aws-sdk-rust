@@ -26,7 +26,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminSetUserMFAPreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder,
+    inner: crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder,
 }
 impl AdminSetUserMFAPreferenceFluentBuilder {
     /// Creates a new `AdminSetUserMFAPreference`.
@@ -37,7 +37,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         }
     }
     /// Access the AdminSetUserMFAPreference as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
             crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
             crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self
     }
     /// <p>The SMS text message MFA settings.</p>
-    pub fn set_sms_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaSettingsType>,
-    ) -> Self {
+    pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
         self.inner = self.inner.set_sms_mfa_settings(input);
         self
     }
@@ -138,25 +124,17 @@ impl AdminSetUserMFAPreferenceFluentBuilder {
         self.inner.get_sms_mfa_settings()
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn software_token_mfa_settings(
-        mut self,
-        input: crate::types::SoftwareTokenMfaSettingsType,
-    ) -> Self {
+    pub fn software_token_mfa_settings(mut self, input: crate::types::SoftwareTokenMfaSettingsType) -> Self {
         self.inner = self.inner.software_token_mfa_settings(input);
         self
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn set_software_token_mfa_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_settings(input);
         self
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn get_software_token_mfa_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
         self.inner.get_software_token_mfa_settings()
     }
     /// <p>The user pool username or alias.</p>

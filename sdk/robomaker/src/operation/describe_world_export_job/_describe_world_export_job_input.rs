@@ -15,18 +15,14 @@ impl DescribeWorldExportJobInput {
 }
 impl DescribeWorldExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder {
         crate::operation::describe_world_export_job::builders::DescribeWorldExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorldExportJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DescribeWorldExportJobInputBuilder {
         crate::operation::describe_world_export_job::DescribeWorldExportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_world_export_job::DescribeWorldExportJobInput {
-                job: self.job,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_world_export_job::DescribeWorldExportJobInput { job: self.job })
     }
 }

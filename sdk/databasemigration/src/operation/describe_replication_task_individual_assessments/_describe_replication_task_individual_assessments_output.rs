@@ -9,8 +9,7 @@ pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
-    pub replication_task_individual_assessments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
+    pub replication_task_individual_assessments: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
@@ -19,9 +18,7 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
         self.marker.as_deref()
     }
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-    pub fn replication_task_individual_assessments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationTaskIndividualAssessment]> {
+    pub fn replication_task_individual_assessments(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskIndividualAssessment]> {
         self.replication_task_individual_assessments.as_deref()
     }
 }
@@ -32,20 +29,18 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationTaskIndividualAsse
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput).
-    pub fn builder() -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
         crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_task_individual_assessments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
+    pub(crate) replication_task_individual_assessments: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
@@ -68,13 +63,8 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     /// To override the contents of this collection use [`set_replication_task_individual_assessments`](Self::set_replication_task_individual_assessments).
     ///
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-    pub fn replication_task_individual_assessments(
-        mut self,
-        input: crate::types::ReplicationTaskIndividualAssessment,
-    ) -> Self {
-        let mut v = self
-            .replication_task_individual_assessments
-            .unwrap_or_default();
+    pub fn replication_task_individual_assessments(mut self, input: crate::types::ReplicationTaskIndividualAssessment) -> Self {
+        let mut v = self.replication_task_individual_assessments.unwrap_or_default();
         v.push(input);
         self.replication_task_individual_assessments = ::std::option::Option::Some(v);
         self
@@ -82,9 +72,7 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub fn set_replication_task_individual_assessments(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
     ) -> Self {
         self.replication_task_individual_assessments = input;
         self
@@ -92,8 +80,7 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub fn get_replication_task_individual_assessments(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>> {
         &self.replication_task_individual_assessments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -106,12 +93,10 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput).
-    pub fn build(self) -> crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput{
+    pub fn build(self) -> crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput {
         crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput {
-            marker: self.marker
-            ,
-            replication_task_individual_assessments: self.replication_task_individual_assessments
-            ,
+            marker: self.marker,
+            replication_task_individual_assessments: self.replication_task_individual_assessments,
             _request_id: self._request_id,
         }
     }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetExecutionHistoryOutput {
 }
 impl GetExecutionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetExecutionHistoryOutput`](crate::operation::get_execution_history::GetExecutionHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_execution_history::builders::GetExecutionHistoryOutputBuilder {
-        crate::operation::get_execution_history::builders::GetExecutionHistoryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_execution_history::builders::GetExecutionHistoryOutputBuilder {
+        crate::operation::get_execution_history::builders::GetExecutionHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExecutionHistoryOutput`](crate::operation::get_execution_history::GetExecutionHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExecutionHistoryOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl GetExecutionHistoryOutputBuilder {
         self
     }
     /// <p>The list of events that occurred in the execution.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The list of events that occurred in the execution.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
         &self.events
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>

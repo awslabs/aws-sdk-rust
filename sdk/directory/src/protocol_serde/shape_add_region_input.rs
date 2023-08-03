@@ -12,10 +12,7 @@ pub fn ser_add_region_input(
     if let Some(var_3) = &input.vpc_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("VPCSettings").start_object();
-        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

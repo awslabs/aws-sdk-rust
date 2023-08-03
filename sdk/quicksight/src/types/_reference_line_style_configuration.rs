@@ -40,9 +40,7 @@ impl ReferenceLineStyleConfiguration {
 
 /// A builder for [`ReferenceLineStyleConfiguration`](crate::types::ReferenceLineStyleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceLineStyleConfigurationBuilder {
     pub(crate) pattern: ::std::option::Option<crate::types::ReferenceLinePatternType>,
     pub(crate) color: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl ReferenceLineStyleConfigurationBuilder {
     /// <li> <p> <code>DASHED</code> </p> </li>
     /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
-    pub fn set_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceLinePatternType>,
-    ) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::ReferenceLinePatternType>) -> Self {
         self.pattern = input;
         self
     }

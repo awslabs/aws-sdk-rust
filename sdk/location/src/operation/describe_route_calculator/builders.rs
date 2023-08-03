@@ -26,8 +26,7 @@ impl DescribeRouteCalculatorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRouteCalculatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder,
+    inner: crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder,
 }
 impl DescribeRouteCalculatorFluentBuilder {
     /// Creates a new `DescribeRouteCalculator`.
@@ -38,10 +37,7 @@ impl DescribeRouteCalculatorFluentBuilder {
         }
     }
     /// Access the DescribeRouteCalculator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeRouteCalculatorFluentBuilder {
             crate::operation::describe_route_calculator::DescribeRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeRouteCalculatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeRouteCalculatorFluentBuilder {
             crate::operation::describe_route_calculator::DescribeRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_calculator::DescribeRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_calculator::DescribeRouteCalculatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the route calculator resource.</p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
     /// <p>The name of the route calculator resource.</p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }

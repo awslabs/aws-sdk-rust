@@ -56,23 +56,18 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
 }
 impl DeleteConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetOutputBuilder {
     pub(crate) configuration_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) event_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
+    pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     pub(crate) default_message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) default_sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,18 +75,12 @@ pub struct DeleteConfigurationSetOutputBuilder {
 }
 impl DeleteConfigurationSetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    pub fn configuration_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    pub fn set_configuration_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_arn = input;
         self
     }
@@ -100,18 +89,12 @@ impl DeleteConfigurationSetOutputBuilder {
         &self.configuration_set_arn
     }
     /// <p>The name of the deleted configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deleted configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -131,17 +114,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn set_event_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
-    ) -> Self {
+    pub fn set_event_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>) -> Self {
         self.event_destinations = input;
         self
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn get_event_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
+    pub fn get_event_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
         &self.event_destinations
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
@@ -150,10 +128,7 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
-    pub fn set_default_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_default_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.default_message_type = input;
         self
     }
@@ -162,18 +137,12 @@ impl DeleteConfigurationSetOutputBuilder {
         &self.default_message_type
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    pub fn default_sender_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_sender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    pub fn set_default_sender_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_sender_id = input;
         self
     }
@@ -187,10 +156,7 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }

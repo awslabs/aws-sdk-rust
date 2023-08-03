@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableKeyRotationOutput {
 }
 impl DisableKeyRotationOutput {
     /// Creates a new builder-style object to manufacture [`DisableKeyRotationOutput`](crate::operation::disable_key_rotation::DisableKeyRotationOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_key_rotation::builders::DisableKeyRotationOutputBuilder {
+    pub fn builder() -> crate::operation::disable_key_rotation::builders::DisableKeyRotationOutputBuilder {
         crate::operation::disable_key_rotation::builders::DisableKeyRotationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableKeyRotationOutput`](crate::operation::disable_key_rotation::DisableKeyRotationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableKeyRotationOutputBuilder {
     _request_id: Option<String>,
 }

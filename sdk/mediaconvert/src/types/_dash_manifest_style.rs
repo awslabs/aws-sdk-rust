@@ -39,13 +39,7 @@
 /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashManifestStyle {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DashManifestStyle {
             "BASIC" => DashManifestStyle::Basic,
             "COMPACT" => DashManifestStyle::Compact,
             "DISTINCT" => DashManifestStyle::Distinct,
-            other => {
-                DashManifestStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DashManifestStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

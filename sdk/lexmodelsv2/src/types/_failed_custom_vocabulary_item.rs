@@ -37,9 +37,7 @@ impl FailedCustomVocabularyItem {
 
 /// A builder for [`FailedCustomVocabularyItem`](crate::types::FailedCustomVocabularyItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedCustomVocabularyItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl FailedCustomVocabularyItemBuilder {
         &self.item_id
     }
     /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

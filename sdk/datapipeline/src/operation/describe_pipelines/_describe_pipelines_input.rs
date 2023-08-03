@@ -16,17 +16,14 @@ impl DescribePipelinesInput {
 }
 impl DescribePipelinesInput {
     /// Creates a new builder-style object to manufacture [`DescribePipelinesInput`](crate::operation::describe_pipelines::DescribePipelinesInput).
-    pub fn builder() -> crate::operation::describe_pipelines::builders::DescribePipelinesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_pipelines::builders::DescribePipelinesInputBuilder {
         crate::operation::describe_pipelines::builders::DescribePipelinesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePipelinesInput`](crate::operation::describe_pipelines::DescribePipelinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelinesInputBuilder {
     pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,30 +40,20 @@ impl DescribePipelinesInputBuilder {
         self
     }
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub fn set_pipeline_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pipeline_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pipeline_ids = input;
         self
     }
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    pub fn get_pipeline_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pipeline_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pipeline_ids
     }
     /// Consumes the builder and constructs a [`DescribePipelinesInput`](crate::operation::describe_pipelines::DescribePipelinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pipelines::DescribePipelinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_pipelines::DescribePipelinesInput {
-                pipeline_ids: self.pipeline_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_pipelines::DescribePipelinesInput {
+            pipeline_ids: self.pipeline_ids,
+        })
     }
 }

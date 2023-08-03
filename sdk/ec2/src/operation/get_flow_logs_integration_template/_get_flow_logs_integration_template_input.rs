@@ -36,16 +36,14 @@ impl GetFlowLogsIntegrationTemplateInput {
 }
 impl GetFlowLogsIntegrationTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetFlowLogsIntegrationTemplateInput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput).
-    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateInputBuilder {
         crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFlowLogsIntegrationTemplateInput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowLogsIntegrationTemplateInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) flow_log_id: ::std::option::Option<::std::string::String>,
@@ -82,25 +80,17 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         &self.flow_log_id
     }
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
-    pub fn config_delivery_s3_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_delivery_s3_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_delivery_s3_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
-    pub fn set_config_delivery_s3_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_delivery_s3_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_delivery_s3_destination_arn = input;
         self
     }
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
-    pub fn get_config_delivery_s3_destination_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_config_delivery_s3_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_delivery_s3_destination_arn
     }
     /// <p>Information about the service integration.</p>
@@ -109,17 +99,12 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         self
     }
     /// <p>Information about the service integration.</p>
-    pub fn set_integrate_services(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrateServices>,
-    ) -> Self {
+    pub fn set_integrate_services(mut self, input: ::std::option::Option<crate::types::IntegrateServices>) -> Self {
         self.integrate_services = input;
         self
     }
     /// <p>Information about the service integration.</p>
-    pub fn get_integrate_services(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntegrateServices> {
+    pub fn get_integrate_services(&self) -> &::std::option::Option<crate::types::IntegrateServices> {
         &self.integrate_services
     }
     /// Consumes the builder and constructs a [`GetFlowLogsIntegrationTemplateInput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput).
@@ -131,15 +116,11 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput {
-                dry_run: self.dry_run
-                ,
-                flow_log_id: self.flow_log_id
-                ,
-                config_delivery_s3_destination_arn: self.config_delivery_s3_destination_arn
-                ,
-                integrate_services: self.integrate_services
-                ,
-            }
+                dry_run: self.dry_run,
+                flow_log_id: self.flow_log_id,
+                config_delivery_s3_destination_arn: self.config_delivery_s3_destination_arn,
+                integrate_services: self.integrate_services,
+            },
         )
     }
 }

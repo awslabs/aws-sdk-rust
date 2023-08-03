@@ -54,17 +54,14 @@ impl CreateNamedQueryInput {
 }
 impl CreateNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
-    pub fn builder() -> crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {
         crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNamedQueryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -133,20 +130,14 @@ impl CreateNamedQueryInputBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -173,19 +164,14 @@ impl CreateNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_named_query::CreateNamedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_named_query::CreateNamedQueryInput {
-                name: self.name,
-                description: self.description,
-                database: self.database,
-                query_string: self.query_string,
-                client_request_token: self.client_request_token,
-                work_group: self.work_group,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_named_query::CreateNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_named_query::CreateNamedQueryInput {
+            name: self.name,
+            description: self.description,
+            database: self.database,
+            query_string: self.query_string,
+            client_request_token: self.client_request_token,
+            work_group: self.work_group,
+        })
     }
 }

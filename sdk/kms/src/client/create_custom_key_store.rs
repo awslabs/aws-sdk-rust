@@ -16,12 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomKeyStoreOutput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput) with field(s):
     ///   - [`custom_key_store_id(Option<String>)`](crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput::custom_key_store_id): <p>A unique identifier for the new custom key store.</p>
     /// - On failure, responds with [`SdkError<CreateCustomKeyStoreError>`](crate::operation::create_custom_key_store::CreateCustomKeyStoreError)
-    pub fn create_custom_key_store(
-        &self,
-    ) -> crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreFluentBuilder
-    {
-        crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_custom_key_store(&self) -> crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreFluentBuilder {
+        crate::operation::create_custom_key_store::builders::CreateCustomKeyStoreFluentBuilder::new(self.handle.clone())
     }
 }

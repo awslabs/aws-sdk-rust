@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`data_start_time(Option<DateTime>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::data_start_time): <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
     ///   - [`data_end_time(Option<DateTime>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::data_end_time): <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
     /// - On failure, responds with [`SdkError<DescribeDataIngestionJobError>`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobError)
-    pub fn describe_data_ingestion_job(&self) -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder{
+    pub fn describe_data_ingestion_job(&self) -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder {
         crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::new(self.handle.clone())
     }
 }

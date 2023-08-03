@@ -53,9 +53,7 @@ impl ExportJournalToS3Input {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
-    pub fn s3_export_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
+    pub fn s3_export_configuration(&self) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -76,17 +74,14 @@ impl ExportJournalToS3Input {
 }
 impl ExportJournalToS3Input {
     /// Creates a new builder-style object to manufacture [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
-    pub fn builder(
-    ) -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3InputBuilder {
+    pub fn builder() -> crate::operation::export_journal_to_s3::builders::ExportJournalToS3InputBuilder {
         crate::operation::export_journal_to_s3::builders::ExportJournalToS3InputBuilder::default()
     }
 }
 
 /// A builder for [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportJournalToS3InputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -122,10 +117,7 @@ impl ExportJournalToS3InputBuilder {
     /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
-    pub fn set_inclusive_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inclusive_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inclusive_start_time = input;
         self
     }
@@ -146,10 +138,7 @@ impl ExportJournalToS3InputBuilder {
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
-    pub fn set_exclusive_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_exclusive_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.exclusive_end_time = input;
         self
     }
@@ -165,17 +154,12 @@ impl ExportJournalToS3InputBuilder {
         self
     }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
-    pub fn set_s3_export_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ExportConfiguration>,
-    ) -> Self {
+    pub fn set_s3_export_configuration(mut self, input: ::std::option::Option<crate::types::S3ExportConfiguration>) -> Self {
         self.s3_export_configuration = input;
         self
     }
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
-    pub fn get_s3_export_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
+    pub fn get_s3_export_configuration(&self) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
         &self.s3_export_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -217,10 +201,7 @@ impl ExportJournalToS3InputBuilder {
     /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
     /// <p>Default: <code>ION_TEXT</code> </p>
     /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -233,19 +214,14 @@ impl ExportJournalToS3InputBuilder {
     /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::export_journal_to_s3::ExportJournalToS3Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::export_journal_to_s3::ExportJournalToS3Input {
-                name: self.name,
-                inclusive_start_time: self.inclusive_start_time,
-                exclusive_end_time: self.exclusive_end_time,
-                s3_export_configuration: self.s3_export_configuration,
-                role_arn: self.role_arn,
-                output_format: self.output_format,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::export_journal_to_s3::ExportJournalToS3Input {
+            name: self.name,
+            inclusive_start_time: self.inclusive_start_time,
+            exclusive_end_time: self.exclusive_end_time,
+            s3_export_configuration: self.s3_export_configuration,
+            role_arn: self.role_arn,
+            output_format: self.output_format,
+        })
     }
 }

@@ -41,9 +41,7 @@ pub struct CreateConfigurationProfileInput {
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
@@ -94,11 +92,7 @@ impl CreateConfigurationProfileInput {
         self.validators.as_deref()
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -110,16 +104,14 @@ impl CreateConfigurationProfileInput {
 }
 impl CreateConfigurationProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationProfileInput`](crate::operation::create_configuration_profile::CreateConfigurationProfileInput).
-    pub fn builder() -> crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder{
+    pub fn builder() -> crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder {
         crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationProfileInput`](crate::operation::create_configuration_profile::CreateConfigurationProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -127,25 +119,17 @@ pub struct CreateConfigurationProfileInputBuilder {
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl CreateConfigurationProfileInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -246,20 +230,14 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    pub fn retrieval_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    pub fn set_retrieval_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_role_arn = input;
         self
     }
@@ -281,17 +259,12 @@ impl CreateConfigurationProfileInputBuilder {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    ) -> Self {
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
         self.validators = input;
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
         &self.validators
     }
     /// Adds a key-value pair to `tags`.
@@ -299,32 +272,19 @@ impl CreateConfigurationProfileInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -354,17 +314,15 @@ impl CreateConfigurationProfileInputBuilder {
         crate::operation::create_configuration_profile::CreateConfigurationProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_configuration_profile::CreateConfigurationProfileInput {
-                application_id: self.application_id,
-                name: self.name,
-                description: self.description,
-                location_uri: self.location_uri,
-                retrieval_role_arn: self.retrieval_role_arn,
-                validators: self.validators,
-                tags: self.tags,
-                r#type: self.r#type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_configuration_profile::CreateConfigurationProfileInput {
+            application_id: self.application_id,
+            name: self.name,
+            description: self.description,
+            location_uri: self.location_uri,
+            retrieval_role_arn: self.retrieval_role_arn,
+            validators: self.validators,
+            tags: self.tags,
+            r#type: self.r#type,
+        })
     }
 }

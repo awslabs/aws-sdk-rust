@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAddressBookOutput`](crate::operation::update_address_book::UpdateAddressBookOutput)
     /// - On failure, responds with [`SdkError<UpdateAddressBookError>`](crate::operation::update_address_book::UpdateAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_address_book(
-        &self,
-    ) -> crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder {
-        crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_address_book(&self) -> crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder {
+        crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::new(self.handle.clone())
     }
 }

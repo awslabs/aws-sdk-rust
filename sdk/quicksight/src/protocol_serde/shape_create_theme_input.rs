@@ -9,10 +9,7 @@ pub fn ser_create_theme_input(
     if let Some(var_2) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_theme_configuration::ser_theme_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_theme_configuration::ser_theme_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.name {
@@ -24,10 +21,7 @@ pub fn ser_create_theme_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

@@ -37,9 +37,7 @@ impl CreateStreamInput {
 
 /// A builder for [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_count: ::std::option::Option<i32>,
@@ -80,26 +78,16 @@ impl CreateStreamInputBuilder {
         self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
+    pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.stream_mode_details = input;
         self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn get_stream_mode_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+    pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_stream::CreateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream::CreateStreamInput {
             stream_name: self.stream_name,
             shard_count: self.shard_count,

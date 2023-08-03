@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`artifacts(Option<Vec<Artifact>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifacts): <p> A list of artifacts. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
-    pub fn list_artifacts(
-        &self,
-    ) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
-        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
+        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

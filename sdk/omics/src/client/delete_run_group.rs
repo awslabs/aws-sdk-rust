@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::set_id): <p>The run group's ID.</p>
     /// - On success, responds with [`DeleteRunGroupOutput`](crate::operation::delete_run_group::DeleteRunGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteRunGroupError>`](crate::operation::delete_run_group::DeleteRunGroupError)
-    pub fn delete_run_group(
-        &self,
-    ) -> crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder {
-        crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_run_group(&self) -> crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder {
+        crate::operation::delete_run_group::builders::DeleteRunGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,16 +30,13 @@ pub struct PendingProductionVariantSummary {
     pub accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     #[doc(hidden)]
-    pub variant_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
+    pub variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     /// <p>The serverless configuration for the endpoint.</p>
     #[doc(hidden)]
-    pub current_serverless_config:
-        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
     #[doc(hidden)]
-    pub desired_serverless_config:
-        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl PendingProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -67,33 +64,23 @@ impl PendingProductionVariantSummary {
         self.desired_instance_count
     }
     /// <p>The type of instances associated with the variant.</p>
-    pub fn instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProductionVariantAcceleratorType> {
+    pub fn accelerator_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantAcceleratorType> {
         self.accelerator_type.as_ref()
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    pub fn variant_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProductionVariantStatus]> {
+    pub fn variant_status(&self) -> ::std::option::Option<&[crate::types::ProductionVariantStatus]> {
         self.variant_status.as_deref()
     }
     /// <p>The serverless configuration for the endpoint.</p>
-    pub fn current_serverless_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+    pub fn current_serverless_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
         self.current_serverless_config.as_ref()
     }
     /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
-    pub fn desired_serverless_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+    pub fn desired_serverless_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
         self.desired_serverless_config.as_ref()
     }
 }
@@ -106,9 +93,7 @@ impl PendingProductionVariantSummary {
 
 /// A builder for [`PendingProductionVariantSummary`](crate::types::PendingProductionVariantSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingProductionVariantSummaryBuilder {
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed_images: ::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>>,
@@ -117,14 +102,10 @@ pub struct PendingProductionVariantSummaryBuilder {
     pub(crate) current_instance_count: ::std::option::Option<i32>,
     pub(crate) desired_instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
-    pub(crate) accelerator_type:
-        ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
-    pub(crate) variant_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
-    pub(crate) current_serverless_config:
-        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
-    pub(crate) desired_serverless_config:
-        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub(crate) accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
+    pub(crate) variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
+    pub(crate) current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub(crate) desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
 impl PendingProductionVariantSummaryBuilder {
     /// <p>The name of the variant.</p>
@@ -153,17 +134,12 @@ impl PendingProductionVariantSummaryBuilder {
         self
     }
     /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.</p>
-    pub fn set_deployed_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>>,
-    ) -> Self {
+    pub fn set_deployed_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>>) -> Self {
         self.deployed_images = input;
         self
     }
     /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.</p>
-    pub fn get_deployed_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>> {
+    pub fn get_deployed_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeployedImage>> {
         &self.deployed_images
     }
     /// <p>The weight associated with the variant.</p>
@@ -228,39 +204,26 @@ impl PendingProductionVariantSummaryBuilder {
         self
     }
     /// <p>The type of instances associated with the variant.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The type of instances associated with the variant.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
         &self.instance_type
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_type(
-        mut self,
-        input: crate::types::ProductionVariantAcceleratorType,
-    ) -> Self {
+    pub fn accelerator_type(mut self, input: crate::types::ProductionVariantAcceleratorType) -> Self {
         self.accelerator_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn set_accelerator_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
-    ) -> Self {
+    pub fn set_accelerator_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>) -> Self {
         self.accelerator_type = input;
         self
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn get_accelerator_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductionVariantAcceleratorType> {
+    pub fn get_accelerator_type(&self) -> &::std::option::Option<crate::types::ProductionVariantAcceleratorType> {
         &self.accelerator_type
     }
     /// Appends an item to `variant_status`.
@@ -275,61 +238,40 @@ impl PendingProductionVariantSummaryBuilder {
         self
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    pub fn set_variant_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
-    ) -> Self {
+    pub fn set_variant_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>) -> Self {
         self.variant_status = input;
         self
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    pub fn get_variant_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>> {
+    pub fn get_variant_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>> {
         &self.variant_status
     }
     /// <p>The serverless configuration for the endpoint.</p>
-    pub fn current_serverless_config(
-        mut self,
-        input: crate::types::ProductionVariantServerlessConfig,
-    ) -> Self {
+    pub fn current_serverless_config(mut self, input: crate::types::ProductionVariantServerlessConfig) -> Self {
         self.current_serverless_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The serverless configuration for the endpoint.</p>
-    pub fn set_current_serverless_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
-    ) -> Self {
+    pub fn set_current_serverless_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>) -> Self {
         self.current_serverless_config = input;
         self
     }
     /// <p>The serverless configuration for the endpoint.</p>
-    pub fn get_current_serverless_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+    pub fn get_current_serverless_config(&self) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
         &self.current_serverless_config
     }
     /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
-    pub fn desired_serverless_config(
-        mut self,
-        input: crate::types::ProductionVariantServerlessConfig,
-    ) -> Self {
+    pub fn desired_serverless_config(mut self, input: crate::types::ProductionVariantServerlessConfig) -> Self {
         self.desired_serverless_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
-    pub fn set_desired_serverless_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
-    ) -> Self {
+    pub fn set_desired_serverless_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>) -> Self {
         self.desired_serverless_config = input;
         self
     }
     /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
-    pub fn get_desired_serverless_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
+    pub fn get_desired_serverless_config(&self) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
         &self.desired_serverless_config
     }
     /// Consumes the builder and constructs a [`PendingProductionVariantSummary`](crate::types::PendingProductionVariantSummary).

@@ -16,17 +16,14 @@ impl AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
 }
 impl AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
     /// Creates a new builder-style object to manufacture [`AwsGuardDutyDetectorDataSourcesFlowLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails).
-    pub fn builder() -> crate::types::builders::AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
         crate::types::builders::AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsGuardDutyDetectorDataSourcesFlowLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +44,6 @@ impl AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesFlowLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
-            status: self.status,
-        }
+        crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails { status: self.status }
     }
 }

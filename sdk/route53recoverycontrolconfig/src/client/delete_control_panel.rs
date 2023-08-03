@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`control_panel_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder::set_control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
     /// - On success, responds with [`DeleteControlPanelOutput`](crate::operation::delete_control_panel::DeleteControlPanelOutput)
     /// - On failure, responds with [`SdkError<DeleteControlPanelError>`](crate::operation::delete_control_panel::DeleteControlPanelError)
-    pub fn delete_control_panel(
-        &self,
-    ) -> crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder {
-        crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_control_panel(&self) -> crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder {
+        crate::operation::delete_control_panel::builders::DeleteControlPanelFluentBuilder::new(self.handle.clone())
     }
 }

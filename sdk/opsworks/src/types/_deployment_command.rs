@@ -35,9 +35,7 @@ pub struct DeploymentCommand {
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     #[doc(hidden)]
-    pub args: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
@@ -71,11 +69,7 @@ impl DeploymentCommand {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-    pub fn args(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn args(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.args.as_ref()
     }
 }
@@ -88,14 +82,10 @@ impl DeploymentCommand {
 
 /// A builder for [`DeploymentCommand`](crate::types::DeploymentCommand).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentCommandBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DeploymentCommandName>,
-    pub(crate) args: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) args: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DeploymentCommandBuilder {
     /// <p>Specifies the operation. You can specify only one command.</p>
@@ -140,10 +130,7 @@ impl DeploymentCommandBuilder {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCommandName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DeploymentCommandName>) -> Self {
         self.name = input;
         self
     }
@@ -182,11 +169,7 @@ impl DeploymentCommandBuilder {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-    pub fn args(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn args(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.args = ::std::option::Option::Some(hash_map);
@@ -203,12 +186,7 @@ impl DeploymentCommandBuilder {
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn set_args(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.args = input;
         self
@@ -222,11 +200,7 @@ impl DeploymentCommandBuilder {
     /// </ul>
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
-    pub fn get_args(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_args(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.args
     }
     /// Consumes the builder and constructs a [`DeploymentCommand`](crate::types::DeploymentCommand).

@@ -86,9 +86,7 @@ impl Peering {
 
 /// A builder for [`Peering`](crate::types::Peering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PeeringBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
@@ -103,18 +101,12 @@ pub struct PeeringBuilder {
 }
 impl PeeringBuilder {
     /// <p>The ID of the core network for the peering request.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the core network for the peering request.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -123,18 +115,12 @@ impl PeeringBuilder {
         &self.core_network_id
     }
     /// <p>The ARN of a core network.</p>
-    pub fn core_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a core network.</p>
-    pub fn set_core_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_arn = input;
         self
     }
@@ -157,18 +143,12 @@ impl PeeringBuilder {
         &self.peering_id
     }
     /// <p>The ID of the account owner.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the account owner.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -182,10 +162,7 @@ impl PeeringBuilder {
         self
     }
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
-    pub fn set_peering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringType>,
-    ) -> Self {
+    pub fn set_peering_type(mut self, input: ::std::option::Option<crate::types::PeeringType>) -> Self {
         self.peering_type = input;
         self
     }
@@ -208,18 +185,12 @@ impl PeeringBuilder {
         &self.state
     }
     /// <p>The edge location for the peer.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge location for the peer.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -253,10 +224,7 @@ impl PeeringBuilder {
         self
     }
     /// <p>The list of key-value tags associated with the peering.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -270,10 +238,7 @@ impl PeeringBuilder {
         self
     }
     /// <p>The timestamp when the attachment peer was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

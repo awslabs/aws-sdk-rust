@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::set_name): <p>The new name.</p>
     /// - On success, responds with [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput)
     /// - On failure, responds with [`SdkError<UpdateElasticIpError>`](crate::operation::update_elastic_ip::UpdateElasticIpError)
-    pub fn update_elastic_ip(
-        &self,
-    ) -> crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder {
-        crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_elastic_ip(&self) -> crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder {
+        crate::operation::update_elastic_ip::builders::UpdateElasticIpFluentBuilder::new(self.handle.clone())
     }
 }

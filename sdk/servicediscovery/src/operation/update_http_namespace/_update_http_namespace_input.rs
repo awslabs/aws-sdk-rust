@@ -29,18 +29,14 @@ impl UpdateHttpNamespaceInput {
 }
 impl UpdateHttpNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
-    pub fn builder(
-    ) -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
-        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
+        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHttpNamespaceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) updater_request_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdateHttpNamespaceInputBuilder {
         &self.id
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updater_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updater_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_updater_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updater_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updater_request_id = input;
         self
     }
@@ -87,10 +77,7 @@ impl UpdateHttpNamespaceInputBuilder {
         self
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpNamespaceChange>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::HttpNamespaceChange>) -> Self {
         self.namespace = input;
         self
     }
@@ -101,16 +88,12 @@ impl UpdateHttpNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_http_namespace::UpdateHttpNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
-                id: self.id,
-                updater_request_id: self.updater_request_id,
-                namespace: self.namespace,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
+            id: self.id,
+            updater_request_id: self.updater_request_id,
+            namespace: self.namespace,
+        })
     }
 }

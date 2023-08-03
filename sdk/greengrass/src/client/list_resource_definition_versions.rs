@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListResourceDefinitionVersionsError>`](crate::operation::list_resource_definition_versions::ListResourceDefinitionVersionsError)
-    pub fn list_resource_definition_versions(&self) -> crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsFluentBuilder{
+    pub fn list_resource_definition_versions(
+        &self,
+    ) -> crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsFluentBuilder {
         crate::operation::list_resource_definition_versions::builders::ListResourceDefinitionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

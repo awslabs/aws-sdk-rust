@@ -28,9 +28,7 @@ impl CreateModelOutput {
 
 /// A builder for [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelOutputBuilder {
     pub(crate) model_metadata: ::std::option::Option<crate::types::ModelMetadata>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateModelOutputBuilder {
         self
     }
     /// <p>The response from a call to <code>CreateModel</code>.</p>
-    pub fn set_model_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelMetadata>,
-    ) -> Self {
+    pub fn set_model_metadata(mut self, input: ::std::option::Option<crate::types::ModelMetadata>) -> Self {
         self.model_metadata = input;
         self
     }

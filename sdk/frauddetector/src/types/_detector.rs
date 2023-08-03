@@ -58,9 +58,7 @@ impl Detector {
 
 /// A builder for [`Detector`](crate::types::Detector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl DetectorBuilder {
         &self.description
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -119,18 +111,12 @@ impl DetectorBuilder {
         &self.event_type_name
     }
     /// <p>Timestamp of when the detector was last updated.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the detector was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }

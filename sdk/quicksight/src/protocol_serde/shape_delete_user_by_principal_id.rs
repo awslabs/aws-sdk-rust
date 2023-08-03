@@ -9,140 +9,138 @@ pub fn de_delete_user_by_principal_id_http_error(
     crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled(
+        None => {
+            return Err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalFailureException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "PreconditionNotMetException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::PreconditionNotMetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PreconditionNotMetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PreconditionNotMetExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ResourceUnavailableException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ResourceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceUnavailableException" => {
+            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ResourceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::generic(generic)
+        _ => crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::generic(generic),
     })
 }
 
@@ -158,11 +156,10 @@ pub fn de_delete_user_by_principal_id_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder::default();
-        output = crate::protocol_serde::shape_delete_user_by_principal_id::de_delete_user_by_principal_id(_response_body, output).map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_user_by_principal_id::de_delete_user_by_principal_id(_response_body, output)
+            .map_err(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::unhandled)?;
         output = output.set_status(Some(_response_status as _));
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -174,44 +171,34 @@ pub(crate) fn de_delete_user_by_principal_id(
     crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "RequestId" => {
-                        builder = builder.set_request_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "RequestId" => {
+                    builder = builder.set_request_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

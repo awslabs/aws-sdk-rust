@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateClientVpnEndpointOutput {
 }
 impl CreateClientVpnEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder {
         crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClientVpnEndpointOutputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
@@ -55,18 +51,12 @@ pub struct CreateClientVpnEndpointOutputBuilder {
 }
 impl CreateClientVpnEndpointOutputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -80,10 +70,7 @@ impl CreateClientVpnEndpointOutputBuilder {
         self
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnEndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -115,9 +102,7 @@ impl CreateClientVpnEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
+    pub fn build(self) -> crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
         crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,
             status: self.status,

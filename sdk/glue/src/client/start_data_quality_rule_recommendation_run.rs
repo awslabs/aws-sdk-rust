@@ -12,7 +12,11 @@ impl super::Client {
     /// - On success, responds with [`StartDataQualityRuleRecommendationRunOutput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     /// - On failure, responds with [`SdkError<StartDataQualityRuleRecommendationRunError>`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError)
-    pub fn start_data_quality_rule_recommendation_run(&self) -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunFluentBuilder{
-        crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunFluentBuilder::new(self.handle.clone())
+    pub fn start_data_quality_rule_recommendation_run(
+        &self,
+    ) -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunFluentBuilder {
+        crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

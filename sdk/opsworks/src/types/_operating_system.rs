@@ -15,8 +15,7 @@ pub struct OperatingSystem {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
     #[doc(hidden)]
-    pub configuration_managers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
+    pub configuration_managers: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
     /// <p>A short name for the operating system manufacturer.</p>
     #[doc(hidden)]
     pub reported_name: ::std::option::Option<::std::string::String>,
@@ -41,9 +40,7 @@ impl OperatingSystem {
         self.r#type.as_deref()
     }
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    pub fn configuration_managers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OperatingSystemConfigurationManager]> {
+    pub fn configuration_managers(&self) -> ::std::option::Option<&[crate::types::OperatingSystemConfigurationManager]> {
         self.configuration_managers.as_deref()
     }
     /// <p>A short name for the operating system manufacturer.</p>
@@ -68,15 +65,12 @@ impl OperatingSystem {
 
 /// A builder for [`OperatingSystem`](crate::types::OperatingSystem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperatingSystemBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_managers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
+    pub(crate) configuration_managers: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
     pub(crate) reported_name: ::std::option::Option<::std::string::String>,
     pub(crate) reported_version: ::std::option::Option<::std::string::String>,
     pub(crate) supported: ::std::option::Option<bool>,
@@ -129,10 +123,7 @@ impl OperatingSystemBuilder {
     /// To override the contents of this collection use [`set_configuration_managers`](Self::set_configuration_managers).
     ///
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    pub fn configuration_managers(
-        mut self,
-        input: crate::types::OperatingSystemConfigurationManager,
-    ) -> Self {
+    pub fn configuration_managers(mut self, input: crate::types::OperatingSystemConfigurationManager) -> Self {
         let mut v = self.configuration_managers.unwrap_or_default();
         v.push(input);
         self.configuration_managers = ::std::option::Option::Some(v);
@@ -141,33 +132,22 @@ impl OperatingSystemBuilder {
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
     pub fn set_configuration_managers(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
     ) -> Self {
         self.configuration_managers = input;
         self
     }
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    pub fn get_configuration_managers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>
-    {
+    pub fn get_configuration_managers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>> {
         &self.configuration_managers
     }
     /// <p>A short name for the operating system manufacturer.</p>
-    pub fn reported_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reported_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reported_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short name for the operating system manufacturer.</p>
-    pub fn set_reported_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reported_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reported_name = input;
         self
     }
@@ -176,18 +156,12 @@ impl OperatingSystemBuilder {
         &self.reported_name
     }
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
-    pub fn reported_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reported_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reported_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
-    pub fn set_reported_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reported_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reported_version = input;
         self
     }

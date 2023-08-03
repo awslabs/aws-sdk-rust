@@ -22,17 +22,14 @@ impl PutRawMessageContentInput {
 }
 impl PutRawMessageContentInput {
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
-    pub fn builder(
-    ) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder {
+    pub fn builder() -> crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder {
         crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRawMessageContentInputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::RawMessageContent>,
@@ -58,10 +55,7 @@ impl PutRawMessageContentInputBuilder {
         self
     }
     /// <p>Describes the raw message content of the updated email message.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::RawMessageContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::RawMessageContent>) -> Self {
         self.content = input;
         self
     }
@@ -72,15 +66,11 @@ impl PutRawMessageContentInputBuilder {
     /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_raw_message_content::PutRawMessageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_raw_message_content::PutRawMessageContentInput {
-                message_id: self.message_id,
-                content: self.content,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_raw_message_content::PutRawMessageContentInput {
+            message_id: self.message_id,
+            content: self.content,
+        })
     }
 }

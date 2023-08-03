@@ -30,9 +30,7 @@ impl SageMakerPipelineParameter {
 
 /// A builder for [`SageMakerPipelineParameter`](crate::types::SageMakerPipelineParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SageMakerPipelineParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

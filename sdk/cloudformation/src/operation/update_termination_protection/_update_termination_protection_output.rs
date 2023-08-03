@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateTerminationProtectionOutput {
 }
 impl UpdateTerminationProtectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTerminationProtectionOutput`](crate::operation::update_termination_protection::UpdateTerminationProtectionOutput).
-    pub fn builder() -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionOutputBuilder{
+    pub fn builder() -> crate::operation::update_termination_protection::builders::UpdateTerminationProtectionOutputBuilder {
         crate::operation::update_termination_protection::builders::UpdateTerminationProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTerminationProtectionOutput`](crate::operation::update_termination_protection::UpdateTerminationProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTerminationProtectionOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateTerminationProtectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTerminationProtectionOutput`](crate::operation::update_termination_protection::UpdateTerminationProtectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_termination_protection::UpdateTerminationProtectionOutput {
+    pub fn build(self) -> crate::operation::update_termination_protection::UpdateTerminationProtectionOutput {
         crate::operation::update_termination_protection::UpdateTerminationProtectionOutput {
             stack_id: self.stack_id,
             _request_id: self._request_id,

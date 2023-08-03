@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`identity_source_id(impl ::std::convert::Into<String>)`](crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder::identity_source_id) / [`set_identity_source_id(Option<String>)`](crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder::set_identity_source_id): <p>Specifies the ID of the identity source that you want to delete.</p>
     /// - On success, responds with [`DeleteIdentitySourceOutput`](crate::operation::delete_identity_source::DeleteIdentitySourceOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentitySourceError>`](crate::operation::delete_identity_source::DeleteIdentitySourceError)
-    pub fn delete_identity_source(
-        &self,
-    ) -> crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder {
-        crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_identity_source(&self) -> crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder {
+        crate::operation::delete_identity_source::builders::DeleteIdentitySourceFluentBuilder::new(self.handle.clone())
     }
 }

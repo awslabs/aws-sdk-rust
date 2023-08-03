@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInternetGatewayOutput`](crate::operation::create_internet_gateway::CreateInternetGatewayOutput) with field(s):
     ///   - [`internet_gateway(Option<InternetGateway>)`](crate::operation::create_internet_gateway::CreateInternetGatewayOutput::internet_gateway): <p>Information about the internet gateway.</p>
     /// - On failure, responds with [`SdkError<CreateInternetGatewayError>`](crate::operation::create_internet_gateway::CreateInternetGatewayError)
-    pub fn create_internet_gateway(
-        &self,
-    ) -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayFluentBuilder
-    {
-        crate::operation::create_internet_gateway::builders::CreateInternetGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_internet_gateway(&self) -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayFluentBuilder {
+        crate::operation::create_internet_gateway::builders::CreateInternetGatewayFluentBuilder::new(self.handle.clone())
     }
 }

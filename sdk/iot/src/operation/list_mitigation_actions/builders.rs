@@ -38,10 +38,7 @@ impl ListMitigationActionsFluentBuilder {
         }
     }
     /// Access the ListMitigationActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListMitigationActionsFluentBuilder {
             crate::operation::list_mitigation_actions::ListMitigationActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mitigation_actions::ListMitigationActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mitigation_actions::ListMitigationActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListMitigationActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListMitigationActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mitigation_actions::ListMitigationActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mitigation_actions::ListMitigationActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mitigation_actions::ListMitigationActionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListMitigationActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mitigation_actions::ListMitigationActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mitigation_actions::ListMitigationActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mitigation_actions::ListMitigationActionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListMitigationActionsFluentBuilder {
             crate::operation::list_mitigation_actions::ListMitigationActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mitigation_actions::ListMitigationActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mitigation_actions::ListMitigationActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator {
-        crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator {
+        crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
     pub fn action_type(mut self, input: crate::types::MitigationActionType) -> Self {
@@ -141,10 +122,7 @@ impl ListMitigationActionsFluentBuilder {
         self
     }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::MitigationActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }

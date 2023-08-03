@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateFaceLivenessSessionOutput {
 }
 impl CreateFaceLivenessSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
-    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder{
+    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder {
         crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateFaceLivenessSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
+    pub fn build(self) -> crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
         crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
             session_id: self.session_id,
             _request_id: self._request_id,

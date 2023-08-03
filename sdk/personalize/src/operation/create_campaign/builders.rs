@@ -10,10 +10,7 @@ impl CreateCampaignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_campaign::CreateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_campaign::CreateCampaignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_campaign();
         fluent_builder.inner = self;
@@ -59,9 +56,7 @@ impl CreateCampaignFluentBuilder {
         }
     }
     /// Access the CreateCampaign as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -83,10 +78,7 @@ impl CreateCampaignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -151,18 +143,12 @@ impl CreateCampaignFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
@@ -190,10 +176,7 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignConfig>,
-    ) -> Self {
+    pub fn set_campaign_config(mut self, input: ::std::option::Option<crate::types::CampaignConfig>) -> Self {
         self.inner = self.inner.set_campaign_config(input);
         self
     }
@@ -211,10 +194,7 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

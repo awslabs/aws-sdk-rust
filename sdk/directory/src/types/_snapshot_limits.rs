@@ -37,9 +37,7 @@ impl SnapshotLimits {
 
 /// A builder for [`SnapshotLimits`](crate::types::SnapshotLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotLimitsBuilder {
     pub(crate) manual_snapshots_limit: ::std::option::Option<i32>,
     pub(crate) manual_snapshots_current_count: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl SnapshotLimitsBuilder {
         self
     }
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
-    pub fn set_manual_snapshots_limit_reached(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_manual_snapshots_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manual_snapshots_limit_reached = input;
         self
     }

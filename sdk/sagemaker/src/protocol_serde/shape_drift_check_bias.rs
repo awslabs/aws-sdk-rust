@@ -26,17 +26,9 @@ pub fn ser_drift_check_bias(
 
 pub(crate) fn de_drift_check_bias<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DriftCheckBias>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DriftCheckBias>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,46 +38,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ConfigFile" => {
-                            builder = builder.set_config_file(
-                                crate::protocol_serde::shape_file_source::de_file_source(tokens)?,
-                            );
+                            builder = builder.set_config_file(crate::protocol_serde::shape_file_source::de_file_source(tokens)?);
                         }
                         "PreTrainingConstraints" => {
-                            builder = builder.set_pre_training_constraints(
-                                crate::protocol_serde::shape_metrics_source::de_metrics_source(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_pre_training_constraints(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens)?);
                         }
                         "PostTrainingConstraints" => {
-                            builder = builder.set_post_training_constraints(
-                                crate::protocol_serde::shape_metrics_source::de_metrics_source(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_post_training_constraints(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

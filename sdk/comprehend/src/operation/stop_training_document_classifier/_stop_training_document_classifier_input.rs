@@ -15,33 +15,25 @@ impl StopTrainingDocumentClassifierInput {
 }
 impl StopTrainingDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierInput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput).
-    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder{
+    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder {
         crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder::default()
     }
 }
 
 /// A builder for [`StopTrainingDocumentClassifierInput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierInputBuilder {
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopTrainingDocumentClassifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
@@ -56,11 +48,8 @@ impl StopTrainingDocumentClassifierInputBuilder {
         crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput {
-                document_classifier_arn: self.document_classifier_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput {
+            document_classifier_arn: self.document_classifier_arn,
+        })
     }
 }

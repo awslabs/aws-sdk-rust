@@ -37,9 +37,7 @@ impl WafAction {
 
 /// A builder for [`WafAction`](crate::types::WafAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WafActionType>,
 }
@@ -75,8 +73,6 @@ impl WafActionBuilder {
     }
     /// Consumes the builder and constructs a [`WafAction`](crate::types::WafAction).
     pub fn build(self) -> crate::types::WafAction {
-        crate::types::WafAction {
-            r#type: self.r#type,
-        }
+        crate::types::WafAction { r#type: self.r#type }
     }
 }

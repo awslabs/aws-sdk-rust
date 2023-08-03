@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`connection_id(Option<String>)`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
     /// - On failure, responds with [`SdkError<DisassociateMacSecKeyError>`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError)
-    pub fn disassociate_mac_sec_key(
-        &self,
-    ) -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyFluentBuilder
-    {
+    pub fn disassociate_mac_sec_key(&self) -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyFluentBuilder {
         crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyFluentBuilder::new(self.handle.clone())
     }
 }

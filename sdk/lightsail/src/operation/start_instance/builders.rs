@@ -10,10 +10,7 @@ impl StartInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_instance::StartInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance::StartInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance::StartInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_instance();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl StartInstanceFluentBuilder {
         }
     }
     /// Access the StartInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_instance::builders::StartInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_instance::builders::StartInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl StartInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,18 +110,12 @@ impl StartInstanceFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the instance (a virtual private server) to start.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance (a virtual private server) to start.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

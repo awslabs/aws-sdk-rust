@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput::column_statistics_list): <p>List of ColumnStatistics that failed to be retrieved.</p>
     ///   - [`errors(Option<Vec<ColumnError>>)`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput::errors): <p>Error occurred during retrieving column statistics data.</p>
     /// - On failure, responds with [`SdkError<GetColumnStatisticsForPartitionError>`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionError)
-    pub fn get_column_statistics_for_partition(&self) -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionFluentBuilder{
+    pub fn get_column_statistics_for_partition(
+        &self,
+    ) -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionFluentBuilder {
         crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionFluentBuilder::new(self.handle.clone())
     }
 }

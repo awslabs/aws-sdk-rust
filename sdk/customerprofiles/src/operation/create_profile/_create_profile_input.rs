@@ -68,9 +68,7 @@ pub struct CreateProfileInput {
     pub billing_address: ::std::option::Option<crate::types::Address>,
     /// <p>A key value pair of attributes of a customer profile.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
     #[doc(hidden)]
     pub party_type_string: ::std::option::Option<::std::string::String>,
@@ -164,11 +162,7 @@ impl CreateProfileInput {
         self.billing_address.as_ref()
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
@@ -189,9 +183,7 @@ impl CreateProfileInput {
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_number: ::std::option::Option<::std::string::String>,
@@ -214,9 +206,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) mailing_address: ::std::option::Option<crate::types::Address>,
     pub(crate) billing_address: ::std::option::Option<crate::types::Address>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) party_type_string: ::std::option::Option<::std::string::String>,
     pub(crate) gender_string: ::std::option::Option<::std::string::String>,
 }
@@ -236,18 +226,12 @@ impl CreateProfileInputBuilder {
         &self.domain_name
     }
     /// <p>A unique account number that you have given to the customer.</p>
-    pub fn account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique account number that you have given to the customer.</p>
-    pub fn set_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_number = input;
         self
     }
@@ -256,18 +240,12 @@ impl CreateProfileInputBuilder {
         &self.account_number
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn additional_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn set_additional_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_information = input;
         self
     }
@@ -290,18 +268,12 @@ impl CreateProfileInputBuilder {
         &self.party_type
     }
     /// <p>The name of the customer’s business.</p>
-    pub fn business_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the customer’s business.</p>
-    pub fn set_business_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_name = input;
         self
     }
@@ -394,18 +366,12 @@ impl CreateProfileInputBuilder {
         &self.phone_number
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn mobile_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mobile_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mobile_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn set_mobile_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mobile_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mobile_phone_number = input;
         self
     }
@@ -414,18 +380,12 @@ impl CreateProfileInputBuilder {
         &self.mobile_phone_number
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn home_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn set_home_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_phone_number = input;
         self
     }
@@ -434,18 +394,12 @@ impl CreateProfileInputBuilder {
         &self.home_phone_number
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn business_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn set_business_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_phone_number = input;
         self
     }
@@ -454,18 +408,12 @@ impl CreateProfileInputBuilder {
         &self.business_phone_number
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -474,18 +422,12 @@ impl CreateProfileInputBuilder {
         &self.email_address
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn personal_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn personal_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.personal_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn set_personal_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_personal_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.personal_email_address = input;
         self
     }
@@ -494,18 +436,12 @@ impl CreateProfileInputBuilder {
         &self.personal_email_address
     }
     /// <p>The customer’s business email address.</p>
-    pub fn business_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn business_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer’s business email address.</p>
-    pub fn set_business_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_business_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_email_address = input;
         self
     }
@@ -533,10 +469,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The customer’s shipping address.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.shipping_address = input;
         self
     }
@@ -550,10 +483,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The customer’s mailing address.</p>
-    pub fn set_mailing_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_mailing_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.mailing_address = input;
         self
     }
@@ -567,10 +497,7 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The customer’s billing address.</p>
-    pub fn set_billing_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_billing_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.billing_address = input;
         self
     }
@@ -583,47 +510,28 @@ impl CreateProfileInputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn party_type_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn party_type_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.party_type_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn set_party_type_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_party_type_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.party_type_string = input;
         self
     }
@@ -632,18 +540,12 @@ impl CreateProfileInputBuilder {
         &self.party_type_string
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    pub fn gender_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gender_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gender_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    pub fn set_gender_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gender_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gender_string = input;
         self
     }
@@ -654,10 +556,7 @@ impl CreateProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_profile::CreateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             domain_name: self.domain_name,
             account_number: self.account_number,

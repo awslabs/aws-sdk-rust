@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFileCachesOutput {
 }
 impl DescribeFileCachesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::operation::describe_file_caches::DescribeFileCachesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder {
         crate::operation::describe_file_caches::builders::DescribeFileCachesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileCachesOutput`](crate::operation::describe_file_caches::DescribeFileCachesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileCachesOutputBuilder {
     pub(crate) file_caches: ::std::option::Option<::std::vec::Vec<crate::types::FileCache>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeFileCachesOutputBuilder {
         self
     }
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-    pub fn set_file_caches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileCache>>,
-    ) -> Self {
+    pub fn set_file_caches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileCache>>) -> Self {
         self.file_caches = input;
         self
     }
     /// <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
-    pub fn get_file_caches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCache>> {
+    pub fn get_file_caches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCache>> {
         &self.file_caches
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>

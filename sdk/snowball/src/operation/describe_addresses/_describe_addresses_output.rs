@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAddressesOutput {
 }
 impl DescribeAddressesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesOutput`](crate::operation::describe_addresses::DescribeAddressesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_addresses::builders::DescribeAddressesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesOutputBuilder {
         crate::operation::describe_addresses::builders::DescribeAddressesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesOutput`](crate::operation::describe_addresses::DescribeAddressesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesOutputBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeAddressesOutputBuilder {
         self
     }
     /// <p>The Snow device shipping addresses that were created for this account.</p>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
         self.addresses = input;
         self
     }

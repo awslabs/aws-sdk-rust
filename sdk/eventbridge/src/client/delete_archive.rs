@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`archive_name(impl ::std::convert::Into<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::archive_name) / [`set_archive_name(Option<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::set_archive_name): <p>The name of the archive to delete.</p>
     /// - On success, responds with [`DeleteArchiveOutput`](crate::operation::delete_archive::DeleteArchiveOutput)
     /// - On failure, responds with [`SdkError<DeleteArchiveError>`](crate::operation::delete_archive::DeleteArchiveError)
-    pub fn delete_archive(
-        &self,
-    ) -> crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder {
-        crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_archive(&self) -> crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder {
+        crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`projects(Option<Vec<ProjectMetadata>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>A list of projects in your AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
-    pub fn list_projects(
-        &self,
-    ) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
+        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
     }
 }

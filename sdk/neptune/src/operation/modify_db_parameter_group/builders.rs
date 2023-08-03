@@ -30,8 +30,7 @@ impl ModifyDbParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder,
+    inner: crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder,
 }
 impl ModifyDBParameterGroupFluentBuilder {
     /// Creates a new `ModifyDBParameterGroup`.
@@ -42,10 +41,7 @@ impl ModifyDBParameterGroupFluentBuilder {
         }
     }
     /// Access the ModifyDBParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl ModifyDBParameterGroupFluentBuilder {
             crate::operation::modify_db_parameter_group::ModifyDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl ModifyDBParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl ModifyDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl ModifyDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl ModifyDBParameterGroupFluentBuilder {
             crate::operation::modify_db_parameter_group::ModifyDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +118,7 @@ impl ModifyDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -145,10 +127,7 @@ impl ModifyDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
@@ -176,10 +155,7 @@ impl ModifyDBParameterGroupFluentBuilder {
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -187,9 +163,7 @@ impl ModifyDBParameterGroupFluentBuilder {
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

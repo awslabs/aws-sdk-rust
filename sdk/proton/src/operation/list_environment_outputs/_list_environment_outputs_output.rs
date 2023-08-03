@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentOutputsOutput {
 }
 impl ListEnvironmentOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder {
         crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
@@ -72,10 +68,7 @@ impl ListEnvironmentOutputsOutputBuilder {
         self
     }
     /// <p>An array of environment outputs with detail data.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }

@@ -26,17 +26,14 @@ impl DeleteSshPublicKeyInput {
 }
 impl DeleteSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
+    pub fn builder() -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
         crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSshPublicKeyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,
@@ -61,19 +58,13 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_id = input;
         self
     }
@@ -85,15 +76,11 @@ impl DeleteSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput {
-                user_name: self.user_name,
-                ssh_public_key_id: self.ssh_public_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput {
+            user_name: self.user_name,
+            ssh_public_key_id: self.ssh_public_key_id,
+        })
     }
 }

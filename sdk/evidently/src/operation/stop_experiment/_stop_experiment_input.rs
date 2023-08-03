@@ -26,9 +26,7 @@ impl StopExperimentInput {
         self.experiment.as_deref()
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn desired_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExperimentStopDesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::ExperimentStopDesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>A string that describes why you are stopping the experiment.</p>
@@ -45,9 +43,7 @@ impl StopExperimentInput {
 
 /// A builder for [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
@@ -89,17 +85,12 @@ impl StopExperimentInputBuilder {
         self
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::ExperimentStopDesiredState>) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn get_desired_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
         &self.desired_state
     }
     /// <p>A string that describes why you are stopping the experiment.</p>
@@ -119,10 +110,7 @@ impl StopExperimentInputBuilder {
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_experiment::StopExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput {
             project: self.project,
             experiment: self.experiment,

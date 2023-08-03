@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeregisterClusterOutput {
 }
 impl DeregisterClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterClusterOutput`](crate::operation::deregister_cluster::DeregisterClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_cluster::builders::DeregisterClusterOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_cluster::builders::DeregisterClusterOutputBuilder {
         crate::operation::deregister_cluster::builders::DeregisterClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterClusterOutput`](crate::operation::deregister_cluster::DeregisterClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterClusterOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

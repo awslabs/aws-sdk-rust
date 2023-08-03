@@ -26,7 +26,7 @@ impl CancelMulticastGroupSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMulticastGroupSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder,
+    inner: crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder,
 }
 impl CancelMulticastGroupSessionFluentBuilder {
     /// Creates a new `CancelMulticastGroupSession`.
@@ -37,7 +37,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
         }
     }
     /// Access the CancelMulticastGroupSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
             crate::operation::cancel_multicast_group_session::CancelMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelMulticastGroupSessionFluentBuilder {
             crate::operation::cancel_multicast_group_session::CancelMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError>,
     > {
         self.customize_middleware().await
     }

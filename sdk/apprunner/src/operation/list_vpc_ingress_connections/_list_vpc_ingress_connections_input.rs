@@ -33,16 +33,14 @@ impl ListVpcIngressConnectionsInput {
 }
 impl ListVpcIngressConnectionsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsInput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput).
-    pub fn builder() -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder {
         crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcIngressConnectionsInput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -55,17 +53,12 @@ impl ListVpcIngressConnectionsInputBuilder {
         self
     }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListVpcIngressConnectionsFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListVpcIngressConnectionsFilter> {
         &self.filter
     }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -109,12 +102,10 @@ impl ListVpcIngressConnectionsInputBuilder {
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput {
-                filter: self.filter,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput {
+            filter: self.filter,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

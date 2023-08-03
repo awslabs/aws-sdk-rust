@@ -37,9 +37,7 @@ impl LargeTimestampGaps {
 
 /// A builder for [`LargeTimestampGaps`](crate::types::LargeTimestampGaps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LargeTimestampGapsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     pub(crate) number_of_large_timestamp_gaps: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl LargeTimestampGapsBuilder {
         self
     }
     /// <p> Indicates whether there is a potential data issue related to large gaps in timestamps. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticalIssueStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
         self.status = input;
         self
     }

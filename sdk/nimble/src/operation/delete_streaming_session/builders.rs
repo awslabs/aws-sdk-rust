@@ -39,10 +39,7 @@ impl DeleteStreamingSessionFluentBuilder {
         }
     }
     /// Access the DeleteStreamingSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteStreamingSessionFluentBuilder {
             crate::operation::delete_streaming_session::DeleteStreamingSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_session::DeleteStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_session::DeleteStreamingSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteStreamingSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteStreamingSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_session::DeleteStreamingSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_session::DeleteStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_session::DeleteStreamingSessionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteStreamingSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_session::DeleteStreamingSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_session::DeleteStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_session::DeleteStreamingSessionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DeleteStreamingSessionFluentBuilder {
             crate::operation::delete_streaming_session::DeleteStreamingSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_session::DeleteStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_session::DeleteStreamingSessionError>,
     > {
         self.customize_middleware().await
     }

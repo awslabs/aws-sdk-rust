@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetWorkflowsOutput {
 }
 impl BatchGetWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder {
         crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetWorkflowsOutputBuilder {
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::Workflow>>,
     pub(crate) missing_workflows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,10 +54,7 @@ impl BatchGetWorkflowsOutputBuilder {
         self
     }
     /// <p>A list of workflow resource metadata.</p>
-    pub fn set_workflows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workflow>>,
-    ) -> Self {
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workflow>>) -> Self {
         self.workflows = input;
         self
     }
@@ -73,27 +67,19 @@ impl BatchGetWorkflowsOutputBuilder {
     /// To override the contents of this collection use [`set_missing_workflows`](Self::set_missing_workflows).
     ///
     /// <p>A list of names of workflows not found.</p>
-    pub fn missing_workflows(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn missing_workflows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.missing_workflows.unwrap_or_default();
         v.push(input.into());
         self.missing_workflows = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of workflows not found.</p>
-    pub fn set_missing_workflows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_missing_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.missing_workflows = input;
         self
     }
     /// <p>A list of names of workflows not found.</p>
-    pub fn get_missing_workflows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_missing_workflows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.missing_workflows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

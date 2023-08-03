@@ -26,9 +26,7 @@ pub fn ser_list_labeling_jobs_for_workteam_input(
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_6) = &input.job_reference_code_contains {
-        object
-            .key("JobReferenceCodeContains")
-            .string(var_6.as_str());
+        object.key("JobReferenceCodeContains").string(var_6.as_str());
     }
     if let Some(var_7) = &input.sort_by {
         object.key("SortBy").string(var_7.as_str());

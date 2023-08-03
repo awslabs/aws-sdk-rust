@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAnomalyDetectorOutput`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput) with field(s):
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the detector.</p>
     /// - On failure, responds with [`SdkError<CreateAnomalyDetectorError>`](crate::operation::create_anomaly_detector::CreateAnomalyDetectorError)
-    pub fn create_anomaly_detector(
-        &self,
-    ) -> crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorFluentBuilder
-    {
-        crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_anomaly_detector(&self) -> crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorFluentBuilder {
+        crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

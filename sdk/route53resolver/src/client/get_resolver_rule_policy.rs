@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetResolverRulePolicyOutput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput) with field(s):
     ///   - [`resolver_rule_policy(Option<String>)`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput::resolver_rule_policy): <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverRulePolicyError>`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError)
-    pub fn get_resolver_rule_policy(
-        &self,
-    ) -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder
-    {
+    pub fn get_resolver_rule_policy(&self) -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder {
         crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -50,9 +50,7 @@ impl ListRulesInput {
 
 /// A builder for [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
@@ -81,10 +79,7 @@ impl ListRulesInputBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.publish_status = input;
         self
     }
@@ -98,10 +93,7 @@ impl ListRulesInputBuilder {
         self
     }
     /// <p>The name of the event source.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceName>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
         self.event_source_name = input;
         self
     }
@@ -138,12 +130,7 @@ impl ListRulesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rules::ListRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
             instance_id: self.instance_id,
             publish_status: self.publish_status,

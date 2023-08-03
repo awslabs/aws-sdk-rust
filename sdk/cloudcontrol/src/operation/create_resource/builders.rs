@@ -10,10 +10,7 @@ impl CreateResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_resource::CreateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource::CreateResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource::CreateResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_resource();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateResourceFluentBuilder {
         }
     }
     /// Access the CreateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,18 +122,12 @@ impl CreateResourceFluentBuilder {
         self.inner.get_type_name()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_version_id(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_version_id(input);
         self
     }
@@ -202,10 +188,7 @@ impl CreateResourceFluentBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-    pub fn desired_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.desired_state(input.into());
         self
     }
@@ -219,10 +202,7 @@ impl CreateResourceFluentBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate">Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     /// <p>For more information about the properties of a specific resource, refer to the related topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }

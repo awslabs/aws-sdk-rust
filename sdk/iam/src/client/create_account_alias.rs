@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`account_alias(impl ::std::convert::Into<String>)`](crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder::account_alias) / [`set_account_alias(Option<String>)`](crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder::set_account_alias): <p>The account alias to create.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
     /// - On success, responds with [`CreateAccountAliasOutput`](crate::operation::create_account_alias::CreateAccountAliasOutput)
     /// - On failure, responds with [`SdkError<CreateAccountAliasError>`](crate::operation::create_account_alias::CreateAccountAliasError)
-    pub fn create_account_alias(
-        &self,
-    ) -> crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder {
-        crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_account_alias(&self) -> crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder {
+        crate::operation::create_account_alias::builders::CreateAccountAliasFluentBuilder::new(self.handle.clone())
     }
 }

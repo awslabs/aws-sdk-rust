@@ -44,9 +44,7 @@ impl BoxPlotChartConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>BoxPlotVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BoxPlotSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::BoxPlotSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The box plot chart options for a box plot visual</p>
@@ -58,21 +56,15 @@ impl BoxPlotChartConfiguration {
         self.category_axis.as_ref()
     }
     /// <p>The label options (label text, label visibility and sort Icon visibility) of a box plot category.</p>
-    pub fn category_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    pub fn primary_y_axis_display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn primary_y_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
         self.primary_y_axis_display_options.as_ref()
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) of a box plot value.</p>
-    pub fn primary_y_axis_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn primary_y_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.primary_y_axis_label_options.as_ref()
     }
     /// <p>The options for the legend setup of a visual.</p>
@@ -101,19 +93,15 @@ impl BoxPlotChartConfiguration {
 
 /// A builder for [`BoxPlotChartConfiguration`](crate::types::BoxPlotChartConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BoxPlotChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::BoxPlotFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::BoxPlotSortConfiguration>,
     pub(crate) box_plot_options: ::std::option::Option<crate::types::BoxPlotOptions>,
     pub(crate) category_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) primary_y_axis_display_options:
-        ::std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) primary_y_axis_label_options:
-        ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) primary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
@@ -126,10 +114,7 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::BoxPlotFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::BoxPlotFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -143,17 +128,12 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>BoxPlotVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BoxPlotSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::BoxPlotSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a <code>BoxPlotVisual</code>.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BoxPlotSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::BoxPlotSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The box plot chart options for a box plot visual</p>
@@ -162,10 +142,7 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The box plot chart options for a box plot visual</p>
-    pub fn set_box_plot_options(
-        mut self,
-        input: ::std::option::Option<crate::types::BoxPlotOptions>,
-    ) -> Self {
+    pub fn set_box_plot_options(mut self, input: ::std::option::Option<crate::types::BoxPlotOptions>) -> Self {
         self.box_plot_options = input;
         self
     }
@@ -179,10 +156,7 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    pub fn set_category_axis(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_category_axis(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.category_axis = input;
         self
     }
@@ -196,61 +170,40 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility and sort Icon visibility) of a box plot category.</p>
-    pub fn set_category_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_category_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.category_label_options = input;
         self
     }
     /// <p>The label options (label text, label visibility and sort Icon visibility) of a box plot category.</p>
-    pub fn get_category_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_category_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.category_label_options
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    pub fn primary_y_axis_display_options(
-        mut self,
-        input: crate::types::AxisDisplayOptions,
-    ) -> Self {
+    pub fn primary_y_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
         self.primary_y_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    pub fn set_primary_y_axis_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
+    pub fn set_primary_y_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
         self.primary_y_axis_display_options = input;
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    pub fn get_primary_y_axis_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+    pub fn get_primary_y_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
         &self.primary_y_axis_display_options
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) of a box plot value.</p>
-    pub fn primary_y_axis_label_options(
-        mut self,
-        input: crate::types::ChartAxisLabelOptions,
-    ) -> Self {
+    pub fn primary_y_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
         self.primary_y_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) of a box plot value.</p>
-    pub fn set_primary_y_axis_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
+    pub fn set_primary_y_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
         self.primary_y_axis_label_options = input;
         self
     }
     /// <p>The label options (label text, label visibility and sort icon visibility) of a box plot value.</p>
-    pub fn get_primary_y_axis_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
+    pub fn get_primary_y_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.primary_y_axis_label_options
     }
     /// <p>The options for the legend setup of a visual.</p>
@@ -273,10 +226,7 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip = input;
         self
     }
@@ -296,17 +246,12 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn set_reference_lines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
-    ) -> Self {
+    pub fn set_reference_lines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>) -> Self {
         self.reference_lines = input;
         self
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn get_reference_lines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>> {
+    pub fn get_reference_lines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>> {
         &self.reference_lines
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
@@ -315,10 +260,7 @@ impl BoxPlotChartConfigurationBuilder {
         self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
         self.visual_palette = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`retention_in_days(i32)`](crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::retention_in_days) / [`set_retention_in_days(Option<i32>)`](crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::set_retention_in_days): <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.</p>  <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     /// - On success, responds with [`PutRetentionPolicyOutput`](crate::operation::put_retention_policy::PutRetentionPolicyOutput)
     /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::operation::put_retention_policy::PutRetentionPolicyError)
-    pub fn put_retention_policy(
-        &self,
-    ) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder {
-        crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_retention_policy(&self) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder {
+        crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl CreateApplicationPresignedUrlInput {
 }
 impl CreateApplicationPresignedUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlInput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput).
-    pub fn builder() -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder {
         crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationPresignedUrlInput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationPresignedUrlInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) url_type: ::std::option::Option<crate::types::UrlType>,
@@ -46,18 +44,12 @@ pub struct CreateApplicationPresignedUrlInputBuilder {
 }
 impl CreateApplicationPresignedUrlInputBuilder {
     /// <p>The name of the application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -85,10 +77,7 @@ impl CreateApplicationPresignedUrlInputBuilder {
         self
     }
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
-    pub fn set_session_expiration_duration_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_expiration_duration_in_seconds = input;
         self
     }
@@ -103,15 +92,10 @@ impl CreateApplicationPresignedUrlInputBuilder {
         crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput {
-                application_name: self.application_name
-                ,
-                url_type: self.url_type
-                ,
-                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput {
+            application_name: self.application_name,
+            url_type: self.url_type,
+            session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
+        })
     }
 }

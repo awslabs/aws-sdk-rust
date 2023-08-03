@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`expires_in(Option<i32>)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::expires_in): <p>The date and time when the new access token expires.</p>
     ///   - [`refresh_token(Option<String>)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::refresh_token): <p>The token to use to refresh a previously issued access token that might have expired.</p>
     /// - On failure, responds with [`SdkError<ExchangeCodeForTokenError>`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenError)
-    pub fn exchange_code_for_token(
-        &self,
-    ) -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder
-    {
-        crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn exchange_code_for_token(&self) -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder {
+        crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::new(self.handle.clone())
     }
 }

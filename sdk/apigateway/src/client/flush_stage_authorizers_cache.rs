@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheFluentBuilder::set_stage_name): <p>The name of the stage to flush.</p>
     /// - On success, responds with [`FlushStageAuthorizersCacheOutput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput)
     /// - On failure, responds with [`SdkError<FlushStageAuthorizersCacheError>`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheError)
-    pub fn flush_stage_authorizers_cache(&self) -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheFluentBuilder{
+    pub fn flush_stage_authorizers_cache(
+        &self,
+    ) -> crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheFluentBuilder {
         crate::operation::flush_stage_authorizers_cache::builders::FlushStageAuthorizersCacheFluentBuilder::new(self.handle.clone())
     }
 }

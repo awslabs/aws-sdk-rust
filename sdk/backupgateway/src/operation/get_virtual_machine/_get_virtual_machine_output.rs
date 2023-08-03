@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVirtualMachineOutput {
 }
 impl GetVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput).
-    pub fn builder(
-    ) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder {
+    pub fn builder() -> crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder {
         crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVirtualMachineOutputBuilder {
     pub(crate) virtual_machine: ::std::option::Option<crate::types::VirtualMachineDetails>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetVirtualMachineOutputBuilder {
         self
     }
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    pub fn set_virtual_machine(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualMachineDetails>,
-    ) -> Self {
+    pub fn set_virtual_machine(mut self, input: ::std::option::Option<crate::types::VirtualMachineDetails>) -> Self {
         self.virtual_machine = input;
         self
     }
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    pub fn get_virtual_machine(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualMachineDetails> {
+    pub fn get_virtual_machine(&self) -> &::std::option::Option<crate::types::VirtualMachineDetails> {
         &self.virtual_machine
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

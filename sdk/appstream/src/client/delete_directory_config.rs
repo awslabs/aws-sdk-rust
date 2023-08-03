@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`directory_name(impl ::std::convert::Into<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::directory_name) / [`set_directory_name(Option<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::set_directory_name): <p>The name of the directory configuration.</p>
     /// - On success, responds with [`DeleteDirectoryConfigOutput`](crate::operation::delete_directory_config::DeleteDirectoryConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteDirectoryConfigError>`](crate::operation::delete_directory_config::DeleteDirectoryConfigError)
-    pub fn delete_directory_config(
-        &self,
-    ) -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder
-    {
-        crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_directory_config(&self) -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder {
+        crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::new(self.handle.clone())
     }
 }

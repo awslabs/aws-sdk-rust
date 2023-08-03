@@ -26,8 +26,7 @@ pub struct PutOrganizationConformancePackInput {
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
     #[doc(hidden)]
-    pub conformance_pack_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
+    pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
     #[doc(hidden)]
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,9 +59,7 @@ impl PutOrganizationConformancePackInput {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
+    pub fn conformance_pack_input_parameters(&self) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
         self.conformance_pack_input_parameters.as_deref()
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
@@ -72,66 +69,49 @@ impl PutOrganizationConformancePackInput {
 }
 impl PutOrganizationConformancePackInput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConformancePackInput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput).
-    pub fn builder() -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder{
+    pub fn builder() -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder {
         crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder::default()
     }
 }
 
 /// A builder for [`PutOrganizationConformancePackInput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutOrganizationConformancePackInputBuilder {
     pub(crate) organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) conformance_pack_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
+    pub(crate) conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutOrganizationConformancePackInputBuilder {
     /// <p>Name of the organization conformance pack you want to create.</p>
-    pub fn organization_conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the organization conformance pack you want to create.</p>
-    pub fn set_organization_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = input;
         self
     }
     /// <p>Name of the organization conformance pack you want to create.</p>
-    pub fn get_organization_conformance_pack_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_conformance_pack_name
     }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
-    pub fn template_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
-    pub fn set_template_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_s3_uri = input;
         self
     }
@@ -142,18 +122,12 @@ impl PutOrganizationConformancePackInputBuilder {
         &self.template_s3_uri
     }
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -164,20 +138,14 @@ impl PutOrganizationConformancePackInputBuilder {
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
-    pub fn delivery_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
-    pub fn set_delivery_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_bucket = input;
         self
     }
@@ -190,20 +158,14 @@ impl PutOrganizationConformancePackInputBuilder {
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    pub fn delivery_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    pub fn set_delivery_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = input;
         self
     }
@@ -218,10 +180,7 @@ impl PutOrganizationConformancePackInputBuilder {
     /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
     ///
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(
-        mut self,
-        input: crate::types::ConformancePackInputParameter,
-    ) -> Self {
+    pub fn conformance_pack_input_parameters(mut self, input: crate::types::ConformancePackInputParameter) -> Self {
         let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
         v.push(input);
         self.conformance_pack_input_parameters = ::std::option::Option::Some(v);
@@ -236,9 +195,7 @@ impl PutOrganizationConformancePackInputBuilder {
         self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn get_conformance_pack_input_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
         &self.conformance_pack_input_parameters
     }
     /// Appends an item to `excluded_accounts`.
@@ -246,27 +203,19 @@ impl PutOrganizationConformancePackInputBuilder {
     /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
     ///
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn excluded_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_accounts.unwrap_or_default();
         v.push(input.into());
         self.excluded_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn set_excluded_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.excluded_accounts = input;
         self
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn get_excluded_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_accounts
     }
     /// Consumes the builder and constructs a [`PutOrganizationConformancePackInput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput).
@@ -276,23 +225,14 @@ impl PutOrganizationConformancePackInputBuilder {
         crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput {
-                organization_conformance_pack_name: self.organization_conformance_pack_name
-                ,
-                template_s3_uri: self.template_s3_uri
-                ,
-                template_body: self.template_body
-                ,
-                delivery_s3_bucket: self.delivery_s3_bucket
-                ,
-                delivery_s3_key_prefix: self.delivery_s3_key_prefix
-                ,
-                conformance_pack_input_parameters: self.conformance_pack_input_parameters
-                ,
-                excluded_accounts: self.excluded_accounts
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput {
+            organization_conformance_pack_name: self.organization_conformance_pack_name,
+            template_s3_uri: self.template_s3_uri,
+            template_body: self.template_body,
+            delivery_s3_bucket: self.delivery_s3_bucket,
+            delivery_s3_key_prefix: self.delivery_s3_key_prefix,
+            conformance_pack_input_parameters: self.conformance_pack_input_parameters,
+            excluded_accounts: self.excluded_accounts,
+        })
     }
 }

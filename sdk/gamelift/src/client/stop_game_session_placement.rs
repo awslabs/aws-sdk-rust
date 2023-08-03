@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopGameSessionPlacementOutput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput) with field(s):
     ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput::game_session_placement): <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     /// - On failure, responds with [`SdkError<StopGameSessionPlacementError>`](crate::operation::stop_game_session_placement::StopGameSessionPlacementError)
-    pub fn stop_game_session_placement(&self) -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder{
+    pub fn stop_game_session_placement(&self) -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder {
         crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementFluentBuilder::new(self.handle.clone())
     }
 }

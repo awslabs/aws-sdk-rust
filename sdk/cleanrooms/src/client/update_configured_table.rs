@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateConfiguredTableOutput`](crate::operation::update_configured_table::UpdateConfiguredTableOutput) with field(s):
     ///   - [`configured_table(Option<ConfiguredTable>)`](crate::operation::update_configured_table::UpdateConfiguredTableOutput::configured_table): <p>The updated configured table.</p>
     /// - On failure, responds with [`SdkError<UpdateConfiguredTableError>`](crate::operation::update_configured_table::UpdateConfiguredTableError)
-    pub fn update_configured_table(
-        &self,
-    ) -> crate::operation::update_configured_table::builders::UpdateConfiguredTableFluentBuilder
-    {
-        crate::operation::update_configured_table::builders::UpdateConfiguredTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_configured_table(&self) -> crate::operation::update_configured_table::builders::UpdateConfiguredTableFluentBuilder {
+        crate::operation::update_configured_table::builders::UpdateConfiguredTableFluentBuilder::new(self.handle.clone())
     }
 }

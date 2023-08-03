@@ -36,9 +36,7 @@ impl DescribeDeviceInput {
 
 /// A builder for [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl DescribeDeviceInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -96,10 +88,7 @@ impl DescribeDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_device::DescribeDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
             next_token: self.next_token,
             device_name: self.device_name,

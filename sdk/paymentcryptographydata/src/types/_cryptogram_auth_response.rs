@@ -21,9 +21,7 @@ pub enum CryptogramAuthResponse {
 impl CryptogramAuthResponse {
     /// Tries to convert the enum instance into [`ArpcMethod1`](crate::types::CryptogramAuthResponse::ArpcMethod1), extracting the inner [`CryptogramVerificationArpcMethod1`](crate::types::CryptogramVerificationArpcMethod1).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_arpc_method1(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CryptogramVerificationArpcMethod1, &Self> {
+    pub fn as_arpc_method1(&self) -> ::std::result::Result<&crate::types::CryptogramVerificationArpcMethod1, &Self> {
         if let CryptogramAuthResponse::ArpcMethod1(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl CryptogramAuthResponse {
     }
     /// Tries to convert the enum instance into [`ArpcMethod2`](crate::types::CryptogramAuthResponse::ArpcMethod2), extracting the inner [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_arpc_method2(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CryptogramVerificationArpcMethod2, &Self> {
+    pub fn as_arpc_method2(&self) -> ::std::result::Result<&crate::types::CryptogramVerificationArpcMethod2, &Self> {
         if let CryptogramAuthResponse::ArpcMethod2(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

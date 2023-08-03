@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`stream_info_list(Option<Vec<StreamInfo>>)`](crate::operation::list_streams::ListStreamsOutput::stream_info_list): <p>An array of <code>StreamInfo</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::operation::list_streams::ListStreamsError)
-    pub fn list_streams(
-        &self,
-    ) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
+    pub fn list_streams(&self) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
         crate::operation::list_streams::builders::ListStreamsFluentBuilder::new(self.handle.clone())
     }
 }

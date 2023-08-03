@@ -23,9 +23,7 @@ impl ControlPlanePlacementRequest {
 
 /// A builder for [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlPlanePlacementRequestBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ControlPlanePlacementRequestBuilder {
     }
     /// Consumes the builder and constructs a [`ControlPlanePlacementRequest`](crate::types::ControlPlanePlacementRequest).
     pub fn build(self) -> crate::types::ControlPlanePlacementRequest {
-        crate::types::ControlPlanePlacementRequest {
-            group_name: self.group_name,
-        }
+        crate::types::ControlPlanePlacementRequest { group_name: self.group_name }
     }
 }

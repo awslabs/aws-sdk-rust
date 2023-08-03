@@ -111,9 +111,7 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -176,10 +174,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>The dataset type.</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -189,19 +184,13 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
-    pub fn data_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
-    pub fn set_data_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_frequency = input;
         self
     }
@@ -230,10 +219,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -288,10 +274,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>When the dataset was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -305,17 +288,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

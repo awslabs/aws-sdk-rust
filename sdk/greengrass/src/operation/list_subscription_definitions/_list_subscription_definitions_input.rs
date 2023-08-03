@@ -22,16 +22,14 @@ impl ListSubscriptionDefinitionsInput {
 }
 impl ListSubscriptionDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionsInput`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput).
-    pub fn builder() -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder {
         crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscriptionDefinitionsInput`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscriptionDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ListSubscriptionDefinitionsInputBuilder {
         crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

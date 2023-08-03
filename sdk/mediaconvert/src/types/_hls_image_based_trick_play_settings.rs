@@ -58,9 +58,7 @@ impl HlsImageBasedTrickPlaySettings {
 
 /// A builder for [`HlsImageBasedTrickPlaySettings`](crate::types::HlsImageBasedTrickPlaySettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsImageBasedTrickPlaySettingsBuilder {
     pub(crate) interval_cadence: ::std::option::Option<crate::types::HlsIntervalCadence>,
     pub(crate) thumbnail_height: ::std::option::Option<i32>,
@@ -76,10 +74,7 @@ impl HlsImageBasedTrickPlaySettingsBuilder {
         self
     }
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn set_interval_cadence(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsIntervalCadence>,
-    ) -> Self {
+    pub fn set_interval_cadence(mut self, input: ::std::option::Option<crate::types::HlsIntervalCadence>) -> Self {
         self.interval_cadence = input;
         self
     }

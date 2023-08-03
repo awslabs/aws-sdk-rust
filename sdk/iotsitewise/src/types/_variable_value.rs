@@ -32,9 +32,7 @@ impl VariableValue {
 
 /// A builder for [`VariableValue`](crate::types::VariableValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariableValueBuilder {
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,

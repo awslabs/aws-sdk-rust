@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresOutput::next_marker): <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     ///   - [`truncated(bool)`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresOutput::truncated): <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomKeyStoresError>`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError)
-    pub fn describe_custom_key_stores(
-        &self,
-    ) -> crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresFluentBuilder
-    {
+    pub fn describe_custom_key_stores(&self) -> crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresFluentBuilder {
         crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,16 +36,14 @@ impl ModifyVerifiedAccessInstanceInput {
 }
 impl ModifyVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder {
         crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceInput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ModifyVerifiedAccessInstanceInputBuilder {
 }
 impl ModifyVerifiedAccessInstanceInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
         crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput {
-                verified_access_instance_id: self.verified_access_instance_id,
-                description: self.description,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput {
+            verified_access_instance_id: self.verified_access_instance_id,
+            description: self.description,
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+        })
     }
 }

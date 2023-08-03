@@ -25,8 +25,7 @@ pub struct OriginRequestPolicyConfig {
     pub cookies_config: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>,
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
     #[doc(hidden)]
-    pub query_strings_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
+    pub query_strings_config: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
 }
 impl OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
@@ -38,21 +37,15 @@ impl OriginRequestPolicyConfig {
         self.name.as_deref()
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
-    pub fn headers_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeadersConfig> {
+    pub fn headers_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeadersConfig> {
         self.headers_config.as_ref()
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
-    pub fn cookies_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyCookiesConfig> {
+    pub fn cookies_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyCookiesConfig> {
         self.cookies_config.as_ref()
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    pub fn query_strings_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyQueryStringsConfig> {
+    pub fn query_strings_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyQueryStringsConfig> {
         self.query_strings_config.as_ref()
     }
 }
@@ -65,18 +58,13 @@ impl OriginRequestPolicyConfig {
 
 /// A builder for [`OriginRequestPolicyConfig`](crate::types::OriginRequestPolicyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginRequestPolicyConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) headers_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>,
-    pub(crate) cookies_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>,
-    pub(crate) query_strings_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
+    pub(crate) headers_config: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>,
+    pub(crate) cookies_config: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>,
+    pub(crate) query_strings_config: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
 }
 impl OriginRequestPolicyConfigBuilder {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
@@ -113,17 +101,12 @@ impl OriginRequestPolicyConfigBuilder {
         self
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
-    pub fn set_headers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>,
-    ) -> Self {
+    pub fn set_headers_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>) -> Self {
         self.headers_config = input;
         self
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
-    pub fn get_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig> {
+    pub fn get_headers_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig> {
         &self.headers_config
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
@@ -132,39 +115,26 @@ impl OriginRequestPolicyConfigBuilder {
         self
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
-    pub fn set_cookies_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>,
-    ) -> Self {
+    pub fn set_cookies_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>) -> Self {
         self.cookies_config = input;
         self
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
-    pub fn get_cookies_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig> {
+    pub fn get_cookies_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig> {
         &self.cookies_config
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    pub fn query_strings_config(
-        mut self,
-        input: crate::types::OriginRequestPolicyQueryStringsConfig,
-    ) -> Self {
+    pub fn query_strings_config(mut self, input: crate::types::OriginRequestPolicyQueryStringsConfig) -> Self {
         self.query_strings_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    pub fn set_query_strings_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
-    ) -> Self {
+    pub fn set_query_strings_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>) -> Self {
         self.query_strings_config = input;
         self
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    pub fn get_query_strings_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig> {
+    pub fn get_query_strings_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig> {
         &self.query_strings_config
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyConfig`](crate::types::OriginRequestPolicyConfig).

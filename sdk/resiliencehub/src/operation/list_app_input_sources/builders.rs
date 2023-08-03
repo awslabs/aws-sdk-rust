@@ -37,9 +37,7 @@ impl ListAppInputSourcesFluentBuilder {
         }
     }
     /// Access the ListAppInputSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_input_sources::builders::ListAppInputSourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_app_input_sources::builders::ListAppInputSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAppInputSourcesFluentBuilder {
             crate::operation::list_app_input_sources::ListAppInputSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_input_sources::ListAppInputSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_input_sources::ListAppInputSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAppInputSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAppInputSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_input_sources::ListAppInputSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_input_sources::ListAppInputSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_input_sources::ListAppInputSourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAppInputSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_input_sources::ListAppInputSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_input_sources::ListAppInputSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_input_sources::ListAppInputSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListAppInputSourcesFluentBuilder {
             crate::operation::list_app_input_sources::ListAppInputSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_input_sources::ListAppInputSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_input_sources::ListAppInputSourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_input_sources::paginator::ListAppInputSourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_input_sources::paginator::ListAppInputSourcesPaginator {
-        crate::operation::list_app_input_sources::paginator::ListAppInputSourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_app_input_sources::paginator::ListAppInputSourcesPaginator {
+        crate::operation::list_app_input_sources::paginator::ListAppInputSourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

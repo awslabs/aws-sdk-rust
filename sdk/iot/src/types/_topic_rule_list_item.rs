@@ -51,9 +51,7 @@ impl TopicRuleListItem {
 
 /// A builder for [`TopicRuleListItem`](crate::types::TopicRuleListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRuleListItemBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl TopicRuleListItemBuilder {
         &self.rule_name
     }
     /// <p>The pattern for the topic names that apply.</p>
-    pub fn topic_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn topic_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pattern for the topic names that apply.</p>
-    pub fn set_topic_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_topic_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_pattern = input;
         self
     }
@@ -116,10 +108,7 @@ impl TopicRuleListItemBuilder {
         self
     }
     /// <p>The date and time the rule was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

@@ -36,9 +36,7 @@ impl ListStatementsInput {
 
 /// A builder for [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStatementsInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl ListStatementsInputBuilder {
         &self.session_id
     }
     /// <p>The origin of the request to list statements.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request to list statements.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListStatementsInputBuilder {
     /// Consumes the builder and constructs a [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_statements::ListStatementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_statements::ListStatementsInput {
             session_id: self.session_id,
             request_origin: self.request_origin,

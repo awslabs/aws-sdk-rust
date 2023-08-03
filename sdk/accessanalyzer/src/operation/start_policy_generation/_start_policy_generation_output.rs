@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartPolicyGenerationOutput {
 }
 impl StartPolicyGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartPolicyGenerationOutput`](crate::operation::start_policy_generation::StartPolicyGenerationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder {
         crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartPolicyGenerationOutput`](crate::operation::start_policy_generation::StartPolicyGenerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPolicyGenerationOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

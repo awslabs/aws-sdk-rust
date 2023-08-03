@@ -22,35 +22,26 @@ impl UpdateDiscoveryJobInput {
 }
 impl UpdateDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
-    pub fn builder(
-    ) -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder {
+    pub fn builder() -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder {
         crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDiscoveryJobInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collection_duration_minutes: ::std::option::Option<i32>,
 }
 impl UpdateDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }
@@ -75,15 +66,10 @@ impl UpdateDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_discovery_job::UpdateDiscoveryJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_discovery_job::UpdateDiscoveryJobInput {
-                discovery_job_arn: self.discovery_job_arn,
-                collection_duration_minutes: self.collection_duration_minutes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_discovery_job::UpdateDiscoveryJobInput {
+            discovery_job_arn: self.discovery_job_arn,
+            collection_duration_minutes: self.collection_duration_minutes,
+        })
     }
 }

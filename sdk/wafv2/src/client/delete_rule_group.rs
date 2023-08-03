@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`lock_token(impl ::std::convert::Into<String>)`](crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::lock_token) / [`set_lock_token(Option<String>)`](crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteRuleGroupError>`](crate::operation::delete_rule_group::DeleteRuleGroupError)
-    pub fn delete_rule_group(
-        &self,
-    ) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
-        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_rule_group(&self) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
+        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

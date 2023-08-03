@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePublicKeyOutput {
 }
 impl DeletePublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePublicKeyOutput`](crate::operation::delete_public_key::DeletePublicKeyOutput).
-    pub fn builder() -> crate::operation::delete_public_key::builders::DeletePublicKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_public_key::builders::DeletePublicKeyOutputBuilder {
         crate::operation::delete_public_key::builders::DeletePublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePublicKeyOutput`](crate::operation::delete_public_key::DeletePublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePublicKeyOutputBuilder {
     _request_id: Option<String>,
 }

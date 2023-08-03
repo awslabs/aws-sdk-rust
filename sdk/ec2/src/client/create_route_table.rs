@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRouteTableOutput`](crate::operation::create_route_table::CreateRouteTableOutput) with field(s):
     ///   - [`route_table(Option<RouteTable>)`](crate::operation::create_route_table::CreateRouteTableOutput::route_table): <p>Information about the route table.</p>
     /// - On failure, responds with [`SdkError<CreateRouteTableError>`](crate::operation::create_route_table::CreateRouteTableError)
-    pub fn create_route_table(
-        &self,
-    ) -> crate::operation::create_route_table::builders::CreateRouteTableFluentBuilder {
-        crate::operation::create_route_table::builders::CreateRouteTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_route_table(&self) -> crate::operation::create_route_table::builders::CreateRouteTableFluentBuilder {
+        crate::operation::create_route_table::builders::CreateRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

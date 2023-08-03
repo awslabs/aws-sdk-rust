@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`placements(Option<Vec<PlacementSummary>>)`](crate::operation::list_placements::ListPlacementsOutput::placements): <p>An object listing the requested placements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_placements::ListPlacementsOutput::next_token): <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     /// - On failure, responds with [`SdkError<ListPlacementsError>`](crate::operation::list_placements::ListPlacementsError)
-    pub fn list_placements(
-        &self,
-    ) -> crate::operation::list_placements::builders::ListPlacementsFluentBuilder {
-        crate::operation::list_placements::builders::ListPlacementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_placements(&self) -> crate::operation::list_placements::builders::ListPlacementsFluentBuilder {
+        crate::operation::list_placements::builders::ListPlacementsFluentBuilder::new(self.handle.clone())
     }
 }

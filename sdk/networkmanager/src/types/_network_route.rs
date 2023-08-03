@@ -51,31 +51,22 @@ impl NetworkRoute {
 
 /// A builder for [`NetworkRoute`](crate::types::NetworkRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::RouteState>,
     pub(crate) r#type: ::std::option::Option<crate::types::RouteType>,
 }
 impl NetworkRouteBuilder {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -95,32 +86,21 @@ impl NetworkRouteBuilder {
         self
     }
     /// <p>The destinations.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>The destinations.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>> {
         &self.destinations
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }

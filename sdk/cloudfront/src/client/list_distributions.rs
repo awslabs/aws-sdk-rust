@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput) with field(s):
     ///   - [`distribution_list(Option<DistributionList>)`](crate::operation::list_distributions::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::operation::list_distributions::ListDistributionsError)
-    pub fn list_distributions(
-        &self,
-    ) -> crate::operation::list_distributions::builders::ListDistributionsFluentBuilder {
-        crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_distributions(&self) -> crate::operation::list_distributions::builders::ListDistributionsFluentBuilder {
+        crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::new(self.handle.clone())
     }
 }

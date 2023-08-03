@@ -10,10 +10,7 @@ impl CancelStepsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_steps::CancelStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_steps::CancelStepsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_steps();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CancelStepsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_steps::CancelSteps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::cancel_steps::CancelSteps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CancelStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CancelStepsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_steps::CancelSteps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::cancel_steps::CancelSteps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>,
     > {
         self.customize_middleware().await
@@ -136,10 +124,7 @@ impl CancelStepsFluentBuilder {
         self
     }
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_step_ids(input);
         self
     }
@@ -153,17 +138,12 @@ impl CancelStepsFluentBuilder {
         self
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    pub fn set_step_cancellation_option(
-        mut self,
-        input: ::std::option::Option<crate::types::StepCancellationOption>,
-    ) -> Self {
+    pub fn set_step_cancellation_option(mut self, input: ::std::option::Option<crate::types::StepCancellationOption>) -> Self {
         self.inner = self.inner.set_step_cancellation_option(input);
         self
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    pub fn get_step_cancellation_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepCancellationOption> {
+    pub fn get_step_cancellation_option(&self) -> &::std::option::Option<crate::types::StepCancellationOption> {
         self.inner.get_step_cancellation_option()
     }
 }

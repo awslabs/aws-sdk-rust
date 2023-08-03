@@ -44,9 +44,7 @@ impl DocumentParameter {
 
 /// A builder for [`DocumentParameter`](crate::types::DocumentParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentParameterType>,
@@ -74,10 +72,7 @@ impl DocumentParameterBuilder {
         self
     }
     /// <p>The type of parameter. The type can be either String or StringList.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentParameterType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentParameterType>) -> Self {
         self.r#type = input;
         self
     }
@@ -100,18 +95,12 @@ impl DocumentParameterBuilder {
         &self.description
     }
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, the default values for the parameters. Parameters without a default value are required. Parameters with a default value are optional.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

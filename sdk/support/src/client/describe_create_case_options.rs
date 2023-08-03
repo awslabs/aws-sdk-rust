@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`language_availability(Option<String>)`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput::language_availability): <p>Language availability can be any of the following:</p>  <ul>   <li> <p> available </p> </li>   <li> <p> best_effort </p> </li>   <li> <p> unavailable </p> </li>  </ul>
     ///   - [`communication_types(Option<Vec<CommunicationTypeOptions>>)`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput::communication_types): <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
     /// - On failure, responds with [`SdkError<DescribeCreateCaseOptionsError>`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError)
-    pub fn describe_create_case_options(&self) -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsFluentBuilder{
+    pub fn describe_create_case_options(&self) -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsFluentBuilder {
         crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsFluentBuilder::new(self.handle.clone())
     }
 }

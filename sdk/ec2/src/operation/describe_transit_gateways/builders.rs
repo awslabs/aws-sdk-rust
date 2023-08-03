@@ -26,8 +26,7 @@ impl DescribeTransitGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder,
+    inner: crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder,
 }
 impl DescribeTransitGatewaysFluentBuilder {
     /// Creates a new `DescribeTransitGateways`.
@@ -38,10 +37,7 @@ impl DescribeTransitGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeTransitGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeTransitGatewaysFluentBuilder {
             crate::operation::describe_transit_gateways::DescribeTransitGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transit_gateways::DescribeTransitGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateways::DescribeTransitGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeTransitGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeTransitGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transit_gateways::DescribeTransitGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateways::DescribeTransitGatewaysError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeTransitGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transit_gateways::DescribeTransitGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateways::DescribeTransitGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribeTransitGatewaysFluentBuilder {
             crate::operation::describe_transit_gateways::DescribeTransitGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transit_gateways::DescribeTransitGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateways::DescribeTransitGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator {
         crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TransitGatewayIds`.
@@ -138,25 +120,17 @@ impl DescribeTransitGatewaysFluentBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_ids`](Self::set_transit_gateway_ids).
     ///
     /// <p>The IDs of the transit gateways.</p>
-    pub fn transit_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_ids(input.into());
         self
     }
     /// <p>The IDs of the transit gateways.</p>
-    pub fn set_transit_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_transit_gateway_ids(input);
         self
     }
     /// <p>The IDs of the transit gateways.</p>
-    pub fn get_transit_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_transit_gateway_ids()
     }
     /// Appends an item to `Filters`.
@@ -195,10 +169,7 @@ impl DescribeTransitGatewaysFluentBuilder {
     /// <li> <p> <code>state</code> - The state of the transit gateway (<code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p> </li>
     /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

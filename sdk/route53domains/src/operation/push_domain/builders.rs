@@ -10,10 +10,7 @@ impl PushDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::push_domain::PushDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::push_domain::PushDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::push_domain::PushDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.push_domain();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl PushDomainFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::push_domain::PushDomain,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::push_domain::PushDomain, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::push_domain::PushDomainError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl PushDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl PushDomainFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::push_domain::PushDomain,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::push_domain::PushDomain, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::push_domain::PushDomainError>,
     > {
         self.customize_middleware().await

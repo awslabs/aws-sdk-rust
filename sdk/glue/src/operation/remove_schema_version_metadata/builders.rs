@@ -26,7 +26,7 @@ impl RemoveSchemaVersionMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder,
+    inner: crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder,
 }
 impl RemoveSchemaVersionMetadataFluentBuilder {
     /// Creates a new `RemoveSchemaVersionMetadata`.
@@ -37,7 +37,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
         }
     }
     /// Access the RemoveSchemaVersionMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
             crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
             crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -140,32 +129,21 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         self.inner.get_schema_version_number()
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version_id(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version_id(input);
         self
     }
@@ -179,17 +157,12 @@ impl RemoveSchemaVersionMetadataFluentBuilder {
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn set_metadata_key_value(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataKeyValuePair>,
-    ) -> Self {
+    pub fn set_metadata_key_value(mut self, input: ::std::option::Option<crate::types::MetadataKeyValuePair>) -> Self {
         self.inner = self.inner.set_metadata_key_value(input);
         self
     }
     /// <p>The value of the metadata key.</p>
-    pub fn get_metadata_key_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
+    pub fn get_metadata_key_value(&self) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
         self.inner.get_metadata_key_value()
     }
 }

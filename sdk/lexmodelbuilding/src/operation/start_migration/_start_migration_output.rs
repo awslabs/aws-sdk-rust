@@ -77,9 +77,7 @@ impl StartMigrationOutput {
 
 /// A builder for [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMigrationOutputBuilder {
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_version: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ impl StartMigrationOutputBuilder {
         &self.v1_bot_name
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
-    pub fn v1_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. </p>
-    pub fn set_v1_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v1_bot_version = input;
         self
     }
@@ -188,17 +180,12 @@ impl StartMigrationOutputBuilder {
         self
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn set_migration_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
+    pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
         self.migration_strategy = input;
         self
     }
     /// <p>The strategy used to conduct the migration.</p>
-    pub fn get_migration_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+    pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
         &self.migration_strategy
     }
     /// <p>The date and time that the migration started.</p>
@@ -207,10 +194,7 @@ impl StartMigrationOutputBuilder {
         self
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn set_migration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_migration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.migration_timestamp = input;
         self
     }

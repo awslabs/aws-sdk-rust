@@ -48,8 +48,7 @@ impl ::std::fmt::Debug for ImportCertificateInput {
 }
 impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateInputBuilder::default()
     }
 }
@@ -65,18 +64,12 @@ pub struct ImportCertificateInputBuilder {
 }
 impl ImportCertificateInputBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
@@ -85,18 +78,12 @@ impl ImportCertificateInputBuilder {
         &self.certificate_identifier
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -112,10 +99,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn set_certificate_wallet(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate_wallet(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.certificate_wallet = input;
         self
     }
@@ -136,10 +120,7 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -150,18 +131,13 @@ impl ImportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_certificate::ImportCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_certificate::ImportCertificateInput {
-                certificate_identifier: self.certificate_identifier,
-                certificate_pem: self.certificate_pem,
-                certificate_wallet: self.certificate_wallet,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
+            certificate_identifier: self.certificate_identifier,
+            certificate_pem: self.certificate_pem,
+            certificate_wallet: self.certificate_wallet,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInputBuilder {

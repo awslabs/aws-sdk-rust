@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateHsmClientCertificateOutput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput) with field(s):
     ///   - [`hsm_client_certificate(Option<HsmClientCertificate>)`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput::hsm_client_certificate): <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
     /// - On failure, responds with [`SdkError<CreateHsmClientCertificateError>`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError)
-    pub fn create_hsm_client_certificate(&self) -> crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateFluentBuilder{
+    pub fn create_hsm_client_certificate(
+        &self,
+    ) -> crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateFluentBuilder {
         crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateFluentBuilder::new(self.handle.clone())
     }
 }

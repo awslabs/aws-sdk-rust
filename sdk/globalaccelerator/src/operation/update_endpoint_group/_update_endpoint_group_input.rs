@@ -8,8 +8,7 @@ pub struct UpdateEndpointGroupInput {
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
@@ -41,9 +40,7 @@ impl UpdateEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn endpoint_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
+    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::EndpointConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
@@ -57,9 +54,7 @@ impl UpdateEndpointGroupInput {
         self.health_check_port
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn health_check_protocol(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HealthCheckProtocol> {
+    pub fn health_check_protocol(&self) -> ::std::option::Option<&crate::types::HealthCheckProtocol> {
         self.health_check_protocol.as_ref()
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
@@ -82,22 +77,17 @@ impl UpdateEndpointGroupInput {
 }
 impl UpdateEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
-        crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
+        crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointGroupInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
+    pub(crate) endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     pub(crate) traffic_dial_percentage: ::std::option::Option<f32>,
     pub(crate) health_check_port: ::std::option::Option<i32>,
     pub(crate) health_check_protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
@@ -108,18 +98,12 @@ pub struct UpdateEndpointGroupInputBuilder {
 }
 impl UpdateEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -139,17 +123,12 @@ impl UpdateEndpointGroupInputBuilder {
         self
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn set_endpoint_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
-    ) -> Self {
+    pub fn set_endpoint_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>) -> Self {
         self.endpoint_configurations = input;
         self
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn get_endpoint_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
         &self.endpoint_configurations
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
@@ -192,32 +171,21 @@ impl UpdateEndpointGroupInputBuilder {
         self
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckProtocol>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
         self.health_check_protocol = input;
         self
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn get_health_check_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
+    pub fn get_health_check_protocol(&self) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
         &self.health_check_protocol
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
@@ -267,39 +235,30 @@ impl UpdateEndpointGroupInputBuilder {
     }
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_port_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
-    ) -> Self {
+    pub fn set_port_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>) -> Self {
         self.port_overrides = input;
         self
     }
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_port_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
+    pub fn get_port_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
         &self.port_overrides
     }
     /// Consumes the builder and constructs a [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_endpoint_group::UpdateEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_endpoint_group::UpdateEndpointGroupInput {
-                endpoint_group_arn: self.endpoint_group_arn,
-                endpoint_configurations: self.endpoint_configurations,
-                traffic_dial_percentage: self.traffic_dial_percentage,
-                health_check_port: self.health_check_port,
-                health_check_protocol: self.health_check_protocol,
-                health_check_path: self.health_check_path,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                threshold_count: self.threshold_count,
-                port_overrides: self.port_overrides,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_endpoint_group::UpdateEndpointGroupInput {
+            endpoint_group_arn: self.endpoint_group_arn,
+            endpoint_configurations: self.endpoint_configurations,
+            traffic_dial_percentage: self.traffic_dial_percentage,
+            health_check_port: self.health_check_port,
+            health_check_protocol: self.health_check_protocol,
+            health_check_path: self.health_check_path,
+            health_check_interval_seconds: self.health_check_interval_seconds,
+            threshold_count: self.threshold_count,
+            port_overrides: self.port_overrides,
+        })
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`milestone_summaries(Option<Vec<MilestoneSummary>>)`](crate::operation::list_milestones::ListMilestonesOutput::milestone_summaries): <p>A list of milestone summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_milestones::ListMilestonesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListMilestonesError>`](crate::operation::list_milestones::ListMilestonesError)
-    pub fn list_milestones(
-        &self,
-    ) -> crate::operation::list_milestones::builders::ListMilestonesFluentBuilder {
-        crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_milestones(&self) -> crate::operation::list_milestones::builders::ListMilestonesFluentBuilder {
+        crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::new(self.handle.clone())
     }
 }

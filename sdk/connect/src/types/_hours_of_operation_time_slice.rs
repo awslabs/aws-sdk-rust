@@ -30,9 +30,7 @@ impl HoursOfOperationTimeSlice {
 
 /// A builder for [`HoursOfOperationTimeSlice`](crate::types::HoursOfOperationTimeSlice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HoursOfOperationTimeSliceBuilder {
     pub(crate) hours: ::std::option::Option<i32>,
     pub(crate) minutes: ::std::option::Option<i32>,

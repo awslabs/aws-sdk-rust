@@ -6,10 +6,7 @@ pub fn ser_line_series_axis_display_options(
     if let Some(var_1) = &input.axis_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AxisOptions").start_object();
-        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.missing_data_configurations {
@@ -29,57 +26,41 @@ pub fn ser_line_series_axis_display_options(
 
 pub(crate) fn de_line_series_axis_display_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::LineSeriesAxisDisplayOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::LineSeriesAxisDisplayOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::LineSeriesAxisDisplayOptionsBuilder::default();
+            let mut builder = crate::types::builders::LineSeriesAxisDisplayOptionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AxisOptions" => {
-                                builder = builder.set_axis_options(
-                                    crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?
-                                );
-                            }
-                            "MissingDataConfigurations" => {
-                                builder = builder.set_missing_data_configurations(
-                                    crate::protocol_serde::shape_missing_data_configuration_list::de_missing_data_configuration_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AxisOptions" => {
+                            builder = builder.set_axis_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
                         }
-                    }
+                        "MissingDataConfigurations" => {
+                            builder = builder.set_missing_data_configurations(
+                                crate::protocol_serde::shape_missing_data_configuration_list::de_missing_data_configuration_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

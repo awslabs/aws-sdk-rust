@@ -23,9 +23,7 @@ impl ExportWithHiddenFieldsOption {
 
 /// A builder for [`ExportWithHiddenFieldsOption`](crate::types::ExportWithHiddenFieldsOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportWithHiddenFieldsOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
@@ -36,17 +34,12 @@ impl ExportWithHiddenFieldsOptionBuilder {
         self
     }
     /// <p>The status of the export with hidden fields options.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardBehavior>,
-    ) -> Self {
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
         self.availability_status = input;
         self
     }
     /// <p>The status of the export with hidden fields options.</p>
-    pub fn get_availability_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
         &self.availability_status
     }
     /// Consumes the builder and constructs a [`ExportWithHiddenFieldsOption`](crate::types::ExportWithHiddenFieldsOption).

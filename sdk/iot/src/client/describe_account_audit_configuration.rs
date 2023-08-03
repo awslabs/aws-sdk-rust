@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`audit_notification_target_configurations(Option<HashMap<AuditNotificationType, AuditNotificationTarget>>)`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput::audit_notification_target_configurations): <p>Information about the targets to which audit notifications are sent for this account.</p>
     ///   - [`audit_check_configurations(Option<HashMap<String, AuditCheckConfiguration>>)`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput::audit_check_configurations): <p>Which audit checks are enabled and disabled for this account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAuditConfigurationError>`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError)
-    pub fn describe_account_audit_configuration(&self) -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationFluentBuilder{
+    pub fn describe_account_audit_configuration(
+        &self,
+    ) -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationFluentBuilder {
         crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

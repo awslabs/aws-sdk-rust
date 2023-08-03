@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueueAttributesOutput`](crate::operation::get_queue_attributes::GetQueueAttributesOutput) with field(s):
     ///   - [`attributes(Option<HashMap<QueueAttributeName, String>>)`](crate::operation::get_queue_attributes::GetQueueAttributesOutput::attributes): <p>A map of attributes to their respective values.</p>
     /// - On failure, responds with [`SdkError<GetQueueAttributesError>`](crate::operation::get_queue_attributes::GetQueueAttributesError)
-    pub fn get_queue_attributes(
-        &self,
-    ) -> crate::operation::get_queue_attributes::builders::GetQueueAttributesFluentBuilder {
-        crate::operation::get_queue_attributes::builders::GetQueueAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_queue_attributes(&self) -> crate::operation::get_queue_attributes::builders::GetQueueAttributesFluentBuilder {
+        crate::operation::get_queue_attributes::builders::GetQueueAttributesFluentBuilder::new(self.handle.clone())
     }
 }

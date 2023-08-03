@@ -30,27 +30,19 @@ impl FleetAdvisorLsaAnalysisResponse {
 
 /// A builder for [`FleetAdvisorLsaAnalysisResponse`](crate::types::FleetAdvisorLsaAnalysisResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetAdvisorLsaAnalysisResponseBuilder {
     pub(crate) lsa_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl FleetAdvisorLsaAnalysisResponseBuilder {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn lsa_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lsa_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lsa_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn set_lsa_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lsa_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lsa_analysis_id = input;
         self
     }

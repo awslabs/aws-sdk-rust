@@ -43,13 +43,7 @@
 /// _Note: `InterconnectState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InterconnectState {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for InterconnectState {
             "pending" => InterconnectState::Pending,
             "requested" => InterconnectState::Requested,
             "unknown" => InterconnectState::UnknownValue,
-            other => {
-                InterconnectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InterconnectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl InterconnectState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "available",
-            "deleted",
-            "deleting",
-            "down",
-            "pending",
-            "requested",
-            "unknown",
-        ]
+        &["available", "deleted", "deleting", "down", "pending", "requested", "unknown"]
     }
 }
 impl ::std::convert::AsRef<str> for InterconnectState {

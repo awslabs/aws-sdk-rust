@@ -74,9 +74,7 @@ impl WorkspaceCreationProperties {
 
 /// A builder for [`WorkspaceCreationProperties`](crate::types::WorkspaceCreationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceCreationPropertiesBuilder {
     pub(crate) enable_work_docs: ::std::option::Option<bool>,
     pub(crate) enable_internet_access: ::std::option::Option<bool>,
@@ -153,18 +151,12 @@ impl WorkspaceCreationPropertiesBuilder {
         &self.default_ou
     }
     /// <p>The identifier of your custom security group.</p>
-    pub fn custom_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of your custom security group.</p>
-    pub fn set_custom_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_security_group_id = input;
         self
     }
@@ -178,10 +170,7 @@ impl WorkspaceCreationPropertiesBuilder {
         self
     }
     /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
-    pub fn set_user_enabled_as_local_administrator(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_user_enabled_as_local_administrator(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_enabled_as_local_administrator = input;
         self
     }

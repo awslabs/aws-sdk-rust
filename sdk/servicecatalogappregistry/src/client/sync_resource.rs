@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::sync_resource::SyncResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
     ///   - [`action_taken(Option<SyncAction>)`](crate::operation::sync_resource::SyncResourceOutput::action_taken): <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
     /// - On failure, responds with [`SdkError<SyncResourceError>`](crate::operation::sync_resource::SyncResourceError)
-    pub fn sync_resource(
-        &self,
-    ) -> crate::operation::sync_resource::builders::SyncResourceFluentBuilder {
-        crate::operation::sync_resource::builders::SyncResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn sync_resource(&self) -> crate::operation::sync_resource::builders::SyncResourceFluentBuilder {
+        crate::operation::sync_resource::builders::SyncResourceFluentBuilder::new(self.handle.clone())
     }
 }

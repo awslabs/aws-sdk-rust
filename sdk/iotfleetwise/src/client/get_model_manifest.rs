@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_model_manifest::GetModelManifestOutput::creation_time): <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_model_manifest::GetModelManifestOutput::last_modification_time): <p>The last time the vehicle model was modified.</p>
     /// - On failure, responds with [`SdkError<GetModelManifestError>`](crate::operation::get_model_manifest::GetModelManifestError)
-    pub fn get_model_manifest(
-        &self,
-    ) -> crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder {
-        crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_model_manifest(&self) -> crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder {
+        crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::new(self.handle.clone())
     }
 }

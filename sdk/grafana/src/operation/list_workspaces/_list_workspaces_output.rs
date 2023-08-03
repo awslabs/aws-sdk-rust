@@ -35,9 +35,7 @@ impl ListWorkspacesOutput {
 
 /// A builder for [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutputBuilder {
     pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListWorkspacesOutputBuilder {
         self
     }
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn set_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
-    ) -> Self {
+    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>) -> Self {
         self.workspaces = input;
         self
     }
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn get_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
+    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
         &self.workspaces
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>

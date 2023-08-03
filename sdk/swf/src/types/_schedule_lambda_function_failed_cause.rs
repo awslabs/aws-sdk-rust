@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScheduleLambdaFunctionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,18 +58,10 @@ impl ::std::convert::From<&str> for ScheduleLambdaFunctionFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "ID_ALREADY_IN_USE" => ScheduleLambdaFunctionFailedCause::IdAlreadyInUse,
-            "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED" => {
-                ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded
-            }
-            "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION" => {
-                ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion
-            }
-            "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED" => {
-                ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded
-            }
-            other => ScheduleLambdaFunctionFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED" => ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded,
+            "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION" => ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion,
+            "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED" => ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded,
+            other => ScheduleLambdaFunctionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,15 +77,9 @@ impl ScheduleLambdaFunctionFailedCause {
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleLambdaFunctionFailedCause::IdAlreadyInUse => "ID_ALREADY_IN_USE",
-            ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded => {
-                "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED"
-            }
-            ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion => {
-                "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION"
-            }
-            ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => {
-                "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"
-            }
+            ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded => "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED",
+            ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion => "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION",
+            ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED",
             ScheduleLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
         }
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`model_metadata_summaries(Option<Vec<ModelMetadataSummary>>)`](crate::operation::list_model_metadata::ListModelMetadataOutput::model_metadata_summaries): <p>A structure that holds model metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_metadata::ListModelMetadataOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListModelMetadataError>`](crate::operation::list_model_metadata::ListModelMetadataError)
-    pub fn list_model_metadata(
-        &self,
-    ) -> crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder {
-        crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_model_metadata(&self) -> crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder {
+        crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::new(self.handle.clone())
     }
 }

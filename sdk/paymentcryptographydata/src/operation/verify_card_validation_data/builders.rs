@@ -35,7 +35,7 @@ impl VerifyCardValidationDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyCardValidationDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataInputBuilder,
+    inner: crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataInputBuilder,
 }
 impl VerifyCardValidationDataFluentBuilder {
     /// Creates a new `VerifyCardValidationData`.
@@ -46,7 +46,7 @@ impl VerifyCardValidationDataFluentBuilder {
         }
     }
     /// Access the VerifyCardValidationData as a reference.
-    pub fn as_input(&self) -> &crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl VerifyCardValidationDataFluentBuilder {
             crate::operation::verify_card_validation_data::VerifyCardValidationData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl VerifyCardValidationDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl VerifyCardValidationDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl VerifyCardValidationDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +114,17 @@ impl VerifyCardValidationDataFluentBuilder {
             crate::operation::verify_card_validation_data::VerifyCardValidationData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_card_validation_data::VerifyCardValidationDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -150,18 +133,12 @@ impl VerifyCardValidationDataFluentBuilder {
         self.inner.get_key_identifier()
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_account_number(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_account_number(input);
         self
     }
@@ -170,40 +147,26 @@ impl VerifyCardValidationDataFluentBuilder {
         self.inner.get_primary_account_number()
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
-    pub fn verification_attributes(
-        mut self,
-        input: crate::types::CardVerificationAttributes,
-    ) -> Self {
+    pub fn verification_attributes(mut self, input: crate::types::CardVerificationAttributes) -> Self {
         self.inner = self.inner.verification_attributes(input);
         self
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_verification_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CardVerificationAttributes>,
-    ) -> Self {
+    pub fn set_verification_attributes(mut self, input: ::std::option::Option<crate::types::CardVerificationAttributes>) -> Self {
         self.inner = self.inner.set_verification_attributes(input);
         self
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
-    pub fn get_verification_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::CardVerificationAttributes> {
+    pub fn get_verification_attributes(&self) -> &::std::option::Option<crate::types::CardVerificationAttributes> {
         self.inner.get_verification_attributes()
     }
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn validation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.validation_data(input.into());
         self
     }
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_validation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_validation_data(input);
         self
     }

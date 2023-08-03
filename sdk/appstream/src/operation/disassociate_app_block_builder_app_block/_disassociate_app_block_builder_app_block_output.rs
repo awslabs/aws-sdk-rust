@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateAppBlockBuilderAppBlockOu
 }
 impl DisassociateAppBlockBuilderAppBlockOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAppBlockBuilderAppBlockOutput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput).
-    pub fn builder() -> crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockOutputBuilder {
         crate::operation::disassociate_app_block_builder_app_block::builders::DisassociateAppBlockBuilderAppBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAppBlockBuilderAppBlockOutput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAppBlockBuilderAppBlockOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateAppBlockBuilderAppBlockOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateAppBlockBuilderAppBlockOutput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput).
-    pub fn build(self) -> crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput{
+    pub fn build(self) -> crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput {
         crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput {
             _request_id: self._request_id,
         }

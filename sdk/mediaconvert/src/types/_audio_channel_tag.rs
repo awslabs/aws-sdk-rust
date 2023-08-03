@@ -51,13 +51,7 @@
 /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioChannelTag {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for AudioChannelTag {
             "VHC" => AudioChannelTag::Vhc,
             "VHL" => AudioChannelTag::Vhl,
             "VHR" => AudioChannelTag::Vhr,
-            other => {
-                AudioChannelTag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AudioChannelTag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -149,8 +141,7 @@ impl AudioChannelTag {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "C", "CS", "L", "LC", "LFE", "LS", "LSD", "R", "RC", "RS", "RSD", "TCS", "VHC", "VHL",
-            "VHR",
+            "C", "CS", "L", "LC", "LFE", "LS", "LSD", "R", "RC", "RS", "RSD", "TCS", "VHC", "VHL", "VHR",
         ]
     }
 }

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`key_pair_spec(Option<DataKeyPairSpec>)`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput::key_pair_spec): <p>The type of data key pair that was generated.</p>
     ///   - [`ciphertext_for_recipient(Option<Blob>)`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput::ciphertext_for_recipient): <p>The plaintext private data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>  <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GenerateDataKeyPairError>`](crate::operation::generate_data_key_pair::GenerateDataKeyPairError)
-    pub fn generate_data_key_pair(
-        &self,
-    ) -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairFluentBuilder {
-        crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_data_key_pair(&self) -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairFluentBuilder {
+        crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

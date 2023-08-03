@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder::set_user_name): <p>The name of the user to remove.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`RemoveUserFromGroupOutput`](crate::operation::remove_user_from_group::RemoveUserFromGroupOutput)
     /// - On failure, responds with [`SdkError<RemoveUserFromGroupError>`](crate::operation::remove_user_from_group::RemoveUserFromGroupError)
-    pub fn remove_user_from_group(
-        &self,
-    ) -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder {
-        crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_user_from_group(&self) -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder {
+        crate::operation::remove_user_from_group::builders::RemoveUserFromGroupFluentBuilder::new(self.handle.clone())
     }
 }

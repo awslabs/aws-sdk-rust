@@ -26,8 +26,7 @@ impl DescribeGatewayInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder,
+    inner: crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder,
 }
 impl DescribeGatewayInstanceFluentBuilder {
     /// Creates a new `DescribeGatewayInstance`.
@@ -38,10 +37,7 @@ impl DescribeGatewayInstanceFluentBuilder {
         }
     }
     /// Access the DescribeGatewayInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeGatewayInstanceFluentBuilder {
             crate::operation::describe_gateway_instance::DescribeGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_instance::DescribeGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_instance::DescribeGatewayInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeGatewayInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_instance::DescribeGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_instance::DescribeGatewayInstanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_instance::DescribeGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_instance::DescribeGatewayInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeGatewayInstanceFluentBuilder {
             crate::operation::describe_gateway_instance::DescribeGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_instance::DescribeGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_instance::DescribeGatewayInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }

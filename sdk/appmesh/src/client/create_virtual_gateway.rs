@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVirtualGatewayOutput`](crate::operation::create_virtual_gateway::CreateVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::operation::create_virtual_gateway::CreateVirtualGatewayOutput::virtual_gateway): <p>The full description of your virtual gateway following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualGatewayError>`](crate::operation::create_virtual_gateway::CreateVirtualGatewayError)
-    pub fn create_virtual_gateway(
-        &self,
-    ) -> crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayFluentBuilder {
-        crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_virtual_gateway(&self) -> crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayFluentBuilder {
+        crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayFluentBuilder::new(self.handle.clone())
     }
 }

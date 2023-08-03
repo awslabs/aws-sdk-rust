@@ -22,9 +22,7 @@ impl PutFeedbackInput {
 
 /// A builder for [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFeedbackInputBuilder {
     pub(crate) insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
 }
@@ -35,10 +33,7 @@ impl PutFeedbackInputBuilder {
         self
     }
     /// <p> The feedback from customers is about the recommendations in this insight. </p>
-    pub fn set_insight_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightFeedback>,
-    ) -> Self {
+    pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
         self.insight_feedback = input;
         self
     }
@@ -47,12 +42,7 @@ impl PutFeedbackInputBuilder {
         &self.insight_feedback
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_feedback::PutFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
             insight_feedback: self.insight_feedback,
         })

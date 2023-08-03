@@ -10,10 +10,7 @@ impl ValidateTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::validate_template::ValidateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_template::ValidateTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_template::ValidateTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.validate_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ValidateTemplateFluentBuilder {
         }
     }
     /// Access the ValidateTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::validate_template::builders::ValidateTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::validate_template::builders::ValidateTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ValidateTemplateFluentBuilder {
             crate::operation::validate_template::ValidateTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_template::ValidateTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_template::ValidateTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ValidateTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ValidateTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_template::ValidateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_template::ValidateTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_template::ValidateTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ValidateTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_template::ValidateTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_template::ValidateTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_template::ValidateTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl ValidateTemplateFluentBuilder {
             crate::operation::validate_template::ValidateTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_template::ValidateTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_template::ValidateTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_body(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
     }

@@ -36,16 +36,14 @@ impl DescribeGlobalReplicationGroupsInput {
 }
 impl DescribeGlobalReplicationGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsInput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput).
-    pub fn builder() -> crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsInputBuilder {
         crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalReplicationGroupsInput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalReplicationGroupsInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct DescribeGlobalReplicationGroupsInputBuilder {
 }
 impl DescribeGlobalReplicationGroupsInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -124,15 +116,11 @@ impl DescribeGlobalReplicationGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput {
-                global_replication_group_id: self.global_replication_group_id
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-                show_member_info: self.show_member_info
-                ,
-            }
+                global_replication_group_id: self.global_replication_group_id,
+                max_records: self.max_records,
+                marker: self.marker,
+                show_member_info: self.show_member_info,
+            },
         )
     }
 }

@@ -129,9 +129,7 @@ impl ScheduleActivityTaskDecisionAttributes {
 
 /// A builder for [`ScheduleActivityTaskDecisionAttributes`](crate::types::ScheduleActivityTaskDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleActivityTaskDecisionAttributesBuilder {
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
@@ -151,10 +149,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
         self
     }
     /// <p> The type of the activity task to schedule.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }
@@ -211,10 +206,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn schedule_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
@@ -222,10 +214,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_schedule_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_to_close_timeout = input;
         self
     }
@@ -261,19 +250,13 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     }
     /// <p> If set, specifies the priority with which the activity task is to be assigned to a worker. This overrides the defaultTaskPriority specified when registering the activity type using <code>RegisterActivityType</code>. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If set, specifies the priority with which the activity task is to be assigned to a worker. This overrides the defaultTaskPriority specified when registering the activity type using <code>RegisterActivityType</code>. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_task_priority(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_priority = input;
         self
     }
@@ -286,10 +269,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-start timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-start timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn schedule_to_start_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_to_start_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_to_start_timeout = ::std::option::Option::Some(input.into());
         self
     }
@@ -297,10 +277,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A schedule-to-start timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-start timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_schedule_to_start_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_to_start_timeout = input;
         self
     }
@@ -315,10 +292,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A start-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
@@ -326,10 +300,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>A start-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_to_close_timeout = input;
         self
     }
@@ -342,19 +313,13 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     }
     /// <p>If set, specifies the maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or returns a result, it is ignored. This overrides the default heartbeat timeout specified when registering the activity type using <code>RegisterActivityType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn heartbeat_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn heartbeat_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.heartbeat_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If set, specifies the maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or returns a result, it is ignored. This overrides the default heartbeat timeout specified when registering the activity type using <code>RegisterActivityType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn set_heartbeat_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_heartbeat_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.heartbeat_timeout = input;
         self
     }

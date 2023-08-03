@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput) with field(s):
     ///   - [`job_details(Option<ThirdPartyJobDetails>)`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput::job_details): <p>The details of the job, including any protected values defined for the job.</p>
     /// - On failure, responds with [`SdkError<GetThirdPartyJobDetailsError>`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError)
-    pub fn get_third_party_job_details(
-        &self,
-    ) -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsFluentBuilder
-    {
+    pub fn get_third_party_job_details(&self) -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsFluentBuilder {
         crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsFluentBuilder::new(self.handle.clone())
     }
 }

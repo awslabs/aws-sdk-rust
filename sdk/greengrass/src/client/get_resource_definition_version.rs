@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput::id): The ID of the resource definition version.
     ///   - [`version(Option<String>)`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionOutput::version): The version of the resource definition version.
     /// - On failure, responds with [`SdkError<GetResourceDefinitionVersionError>`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionError)
-    pub fn get_resource_definition_version(&self) -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionFluentBuilder{
+    pub fn get_resource_definition_version(
+        &self,
+    ) -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionFluentBuilder {
         crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

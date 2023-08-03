@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lf_tags_on_table(Option<Vec<LfTagPair>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_table): <p>A list of LF-tags applied to a table resource.</p>
     ///   - [`lf_tags_on_columns(Option<Vec<ColumnLfTag>>)`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput::lf_tags_on_columns): <p>A list of LF-tags applied to a column resource.</p>
     /// - On failure, responds with [`SdkError<GetResourceLFTagsError>`](crate::operation::get_resource_lf_tags::GetResourceLFTagsError)
-    pub fn get_resource_lf_tags(
-        &self,
-    ) -> crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder {
-        crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_lf_tags(&self) -> crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder {
+        crate::operation::get_resource_lf_tags::builders::GetResourceLFTagsFluentBuilder::new(self.handle.clone())
     }
 }

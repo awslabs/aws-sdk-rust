@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`snapshot_id(impl ::std::convert::Into<String>)`](crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::set_snapshot_id): <p>The identifier of the snapshot to restore from.</p>
     /// - On success, responds with [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput)
     /// - On failure, responds with [`SdkError<RestoreFromSnapshotError>`](crate::operation::restore_from_snapshot::RestoreFromSnapshotError)
-    pub fn restore_from_snapshot(
-        &self,
-    ) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder {
-        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_from_snapshot(&self) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder {
+        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

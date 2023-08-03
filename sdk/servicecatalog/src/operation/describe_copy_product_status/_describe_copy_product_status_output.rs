@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeCopyProductStatusOutput {
 }
 impl DescribeCopyProductStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
-    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder {
         crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCopyProductStatusOutputBuilder {
     pub(crate) copy_product_status: ::std::option::Option<crate::types::CopyProductStatus>,
     pub(crate) target_product_id: ::std::option::Option<::std::string::String>,
@@ -58,32 +56,21 @@ impl DescribeCopyProductStatusOutputBuilder {
         self
     }
     /// <p>The status of the copy product operation.</p>
-    pub fn set_copy_product_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyProductStatus>,
-    ) -> Self {
+    pub fn set_copy_product_status(mut self, input: ::std::option::Option<crate::types::CopyProductStatus>) -> Self {
         self.copy_product_status = input;
         self
     }
     /// <p>The status of the copy product operation.</p>
-    pub fn get_copy_product_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CopyProductStatus> {
+    pub fn get_copy_product_status(&self) -> &::std::option::Option<crate::types::CopyProductStatus> {
         &self.copy_product_status
     }
     /// <p>The identifier of the copied product.</p>
-    pub fn target_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the copied product.</p>
-    pub fn set_target_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_product_id = input;
         self
     }
@@ -92,18 +79,12 @@ impl DescribeCopyProductStatusOutputBuilder {
         &self.target_product_id
     }
     /// <p>The status message.</p>
-    pub fn status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_detail = input;
         self
     }
@@ -121,9 +102,7 @@ impl DescribeCopyProductStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
+    pub fn build(self) -> crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
             copy_product_status: self.copy_product_status,
             target_product_id: self.target_product_id,

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_wireless_device::CreateWirelessDeviceOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_wireless_device::CreateWirelessDeviceOutput::id): <p>The ID of the new wireless device.</p>
     /// - On failure, responds with [`SdkError<CreateWirelessDeviceError>`](crate::operation::create_wireless_device::CreateWirelessDeviceError)
-    pub fn create_wireless_device(
-        &self,
-    ) -> crate::operation::create_wireless_device::builders::CreateWirelessDeviceFluentBuilder {
-        crate::operation::create_wireless_device::builders::CreateWirelessDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_wireless_device(&self) -> crate::operation::create_wireless_device::builders::CreateWirelessDeviceFluentBuilder {
+        crate::operation::create_wireless_device::builders::CreateWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

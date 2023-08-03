@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListFindingAggregationsOutput {
 }
 impl ListFindingAggregationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder {
         crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsOutputBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>,
@@ -60,10 +56,7 @@ impl ListFindingAggregationsOutputBuilder {
         self
     }
     /// <p>The type of aggregation to perform.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.aggregation_type = input;
         self
     }
@@ -83,17 +76,12 @@ impl ListFindingAggregationsOutputBuilder {
         self
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub fn set_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>,
-    ) -> Self {
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>) -> Self {
         self.responses = input;
         self
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub fn get_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>> {
+    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>> {
         &self.responses
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -120,9 +108,7 @@ impl ListFindingAggregationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
+    pub fn build(self) -> crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
         crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
             aggregation_type: self.aggregation_type,
             responses: self.responses,

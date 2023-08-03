@@ -10,10 +10,7 @@ impl ListRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_routes::ListRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routes::ListRoutesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_routes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListRoutesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_routes::ListRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_routes::ListRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListRoutesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_routes::ListRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_routes::ListRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl ListRoutesFluentBuilder {
         crate::operation::list_routes::paginator::ListRoutesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p>The ID of the environment. </p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
@@ -139,18 +121,12 @@ impl ListRoutesFluentBuilder {
         self.inner.get_environment_identifier()
     }
     /// <p>The ID of the application. </p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
     /// <p>The ID of the application. </p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }

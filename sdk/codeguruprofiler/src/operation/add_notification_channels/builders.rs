@@ -26,8 +26,7 @@ impl AddNotificationChannelsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder,
+    inner: crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder,
 }
 impl AddNotificationChannelsFluentBuilder {
     /// Creates a new `AddNotificationChannels`.
@@ -38,10 +37,7 @@ impl AddNotificationChannelsFluentBuilder {
         }
     }
     /// Access the AddNotificationChannels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AddNotificationChannelsFluentBuilder {
             crate::operation::add_notification_channels::AddNotificationChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channels::AddNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channels::AddNotificationChannelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AddNotificationChannelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AddNotificationChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channels::AddNotificationChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channels::AddNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channels::AddNotificationChannelsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AddNotificationChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channels::AddNotificationChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channels::AddNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channels::AddNotificationChannelsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl AddNotificationChannelsFluentBuilder {
             crate::operation::add_notification_channels::AddNotificationChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channels::AddNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channels::AddNotificationChannelsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -154,10 +133,7 @@ impl AddNotificationChannelsFluentBuilder {
         self
     }
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.inner = self.inner.set_channels(input);
         self
     }

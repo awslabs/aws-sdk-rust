@@ -43,9 +43,7 @@ impl ListFiltersInput {
 
 /// A builder for [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFiltersInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) action: ::std::option::Option<crate::types::FilterAction>,
@@ -65,10 +63,7 @@ impl ListFiltersInputBuilder {
         self
     }
     /// <p>The Amazon resource number (ARN) of the filter.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -119,12 +114,7 @@ impl ListFiltersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_filters::ListFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersInput {
             arns: self.arns,
             action: self.action,

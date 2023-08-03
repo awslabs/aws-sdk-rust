@@ -10,10 +10,7 @@ impl ExportSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_schema::ExportSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_schema::ExportSchemaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_schema::ExportSchemaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_schema();
         fluent_builder.inner = self;
@@ -44,10 +41,7 @@ impl ExportSchemaFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_schema::ExportSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_schema::ExportSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_schema::ExportSchemaError>,
     > {
         let handle = self.handle.clone();
@@ -58,10 +52,7 @@ impl ExportSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -103,27 +94,18 @@ impl ExportSchemaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_schema::ExportSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_schema::ExportSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_schema::ExportSchemaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -146,18 +128,12 @@ impl ExportSchemaFluentBuilder {
         self.inner.get_schema_name()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
     }

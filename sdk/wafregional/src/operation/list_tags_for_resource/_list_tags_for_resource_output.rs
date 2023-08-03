@@ -17,9 +17,7 @@ impl ListTagsForResourceOutput {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn tag_info_for_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TagInfoForResource> {
+    pub fn tag_info_for_resource(&self) -> ::std::option::Option<&crate::types::TagInfoForResource> {
         self.tag_info_for_resource.as_ref()
     }
 }
@@ -30,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) tag_info_for_resource: ::std::option::Option<crate::types::TagInfoForResource>,
@@ -67,17 +62,12 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tag_info_for_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::TagInfoForResource>,
-    ) -> Self {
+    pub fn set_tag_info_for_resource(mut self, input: ::std::option::Option<crate::types::TagInfoForResource>) -> Self {
         self.tag_info_for_resource = input;
         self
     }
     /// <p></p>
-    pub fn get_tag_info_for_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::TagInfoForResource> {
+    pub fn get_tag_info_for_resource(&self) -> &::std::option::Option<crate::types::TagInfoForResource> {
         &self.tag_info_for_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

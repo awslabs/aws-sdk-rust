@@ -22,17 +22,14 @@ impl AssociateElasticIpInput {
 }
 impl AssociateElasticIpInput {
     /// Creates a new builder-style object to manufacture [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
+    pub fn builder() -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
         crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl AssociateElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_elastic_ip::AssociateElasticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_elastic_ip::AssociateElasticIpInput {
-                elastic_ip: self.elastic_ip,
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_elastic_ip::AssociateElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_elastic_ip::AssociateElasticIpInput {
+            elastic_ip: self.elastic_ip,
+            instance_id: self.instance_id,
+        })
     }
 }

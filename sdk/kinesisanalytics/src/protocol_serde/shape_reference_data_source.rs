@@ -9,10 +9,7 @@ pub fn ser_reference_data_source(
     if let Some(var_2) = &input.s3_reference_data_source {
         #[allow(unused_mut)]
         let mut object_3 = object.key("S3ReferenceDataSource").start_object();
-        crate::protocol_serde::shape_s3_reference_data_source::ser_s3_reference_data_source(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_s3_reference_data_source::ser_s3_reference_data_source(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.reference_schema {

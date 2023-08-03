@@ -5,8 +5,7 @@
 pub struct ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
     #[doc(hidden)]
-    pub endpoint_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
+    pub endpoint_groups: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCustomRoutingEndpointGroupsOutput {
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-    pub fn endpoint_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointGroup]> {
+    pub fn endpoint_groups(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointGroup]> {
         self.endpoint_groups.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomRoutingEndpointGroupsOutput
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsOutputBuilder {
         crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsOutputBuilder {
-    pub(crate) endpoint_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
+    pub(crate) endpoint_groups: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListCustomRoutingEndpointGroupsOutputBuilder {
         self
     }
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-    pub fn set_endpoint_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
-    ) -> Self {
+    pub fn set_endpoint_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>) -> Self {
         self.endpoint_groups = input;
         self
     }
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-    pub fn get_endpoint_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>> {
+    pub fn get_endpoint_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>> {
         &self.endpoint_groups
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -97,15 +86,10 @@ impl ListCustomRoutingEndpointGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput {
         crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput {
-            endpoint_groups: self.endpoint_groups
-            ,
-            next_token: self.next_token
-            ,
+            endpoint_groups: self.endpoint_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -22,17 +22,14 @@ impl DeleteConnectionInput {
 }
 impl DeleteConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteConnectionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the connection to delete.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to delete.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -75,10 +66,7 @@ impl DeleteConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connection::DeleteConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_connection::DeleteConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connection::DeleteConnectionInput {
             catalog_id: self.catalog_id,
             connection_name: self.connection_name,

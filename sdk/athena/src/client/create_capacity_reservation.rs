@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::set_tags): <p>The tags for the capacity reservation.</p>
     /// - On success, responds with [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput)
     /// - On failure, responds with [`SdkError<CreateCapacityReservationError>`](crate::operation::create_capacity_reservation::CreateCapacityReservationError)
-    pub fn create_capacity_reservation(&self) -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder{
+    pub fn create_capacity_reservation(&self) -> crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder {
         crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::new(self.handle.clone())
     }
 }

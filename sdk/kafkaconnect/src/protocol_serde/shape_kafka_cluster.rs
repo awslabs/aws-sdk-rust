@@ -6,10 +6,7 @@ pub fn ser_kafka_cluster(
     if let Some(var_1) = &input.apache_kafka_cluster {
         #[allow(unused_mut)]
         let mut object_2 = object.key("apacheKafkaCluster").start_object();
-        crate::protocol_serde::shape_apache_kafka_cluster::ser_apache_kafka_cluster(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_apache_kafka_cluster::ser_apache_kafka_cluster(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

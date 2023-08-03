@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput) with field(s):
     ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput::domain_status): <p>The status of the Elasticsearch domain being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteElasticsearchDomainError>`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError)
-    pub fn delete_elasticsearch_domain(&self) -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainFluentBuilder{
+    pub fn delete_elasticsearch_domain(&self) -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainFluentBuilder {
         crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl DescribeOptOutListsInput {
 }
 impl DescribeOptOutListsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
-        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
+        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsInputBuilder {
     pub(crate) opt_out_list_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl DescribeOptOutListsInputBuilder {
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
     ///
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.opt_out_list_names.unwrap_or_default();
         v.push(input.into());
         self.opt_out_list_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.opt_out_list_names = input;
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn get_opt_out_list_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.opt_out_list_names
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -106,16 +94,12 @@ impl DescribeOptOutListsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsInput {
-                opt_out_list_names: self.opt_out_list_names,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_opt_out_lists::DescribeOptOutListsInput {
+            opt_out_list_names: self.opt_out_list_names,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

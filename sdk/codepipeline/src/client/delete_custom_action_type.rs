@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`version(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeFluentBuilder::set_version): <p>The version of the custom action to delete.</p>
     /// - On success, responds with [`DeleteCustomActionTypeOutput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomActionTypeError>`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeError)
-    pub fn delete_custom_action_type(
-        &self,
-    ) -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeFluentBuilder
-    {
+    pub fn delete_custom_action_type(&self) -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeFluentBuilder {
         crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeFluentBuilder::new(self.handle.clone())
     }
 }

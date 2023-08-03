@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProcessingJobOutput`](crate::operation::create_processing_job::CreateProcessingJobOutput) with field(s):
     ///   - [`processing_job_arn(Option<String>)`](crate::operation::create_processing_job::CreateProcessingJobOutput::processing_job_arn): <p>The Amazon Resource Name (ARN) of the processing job.</p>
     /// - On failure, responds with [`SdkError<CreateProcessingJobError>`](crate::operation::create_processing_job::CreateProcessingJobError)
-    pub fn create_processing_job(
-        &self,
-    ) -> crate::operation::create_processing_job::builders::CreateProcessingJobFluentBuilder {
-        crate::operation::create_processing_job::builders::CreateProcessingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_processing_job(&self) -> crate::operation::create_processing_job::builders::CreateProcessingJobFluentBuilder {
+        crate::operation::create_processing_job::builders::CreateProcessingJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`event_trackers(Option<Vec<EventTrackerSummary>>)`](crate::operation::list_event_trackers::ListEventTrackersOutput::event_trackers): <p>A list of event trackers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_trackers::ListEventTrackersOutput::next_token): <p>A token for getting the next set of event trackers (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListEventTrackersError>`](crate::operation::list_event_trackers::ListEventTrackersError)
-    pub fn list_event_trackers(
-        &self,
-    ) -> crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder {
-        crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_trackers(&self) -> crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder {
+        crate::operation::list_event_trackers::builders::ListEventTrackersFluentBuilder::new(self.handle.clone())
     }
 }

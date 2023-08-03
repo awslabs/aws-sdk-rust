@@ -37,18 +37,14 @@ impl ::aws_http::request_id::RequestId for UpdateVocabularyFilterOutput {
 }
 impl UpdateVocabularyFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterOutput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vocabulary_filter::builders::UpdateVocabularyFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_vocabulary_filter::builders::UpdateVocabularyFilterOutputBuilder {
         crate::operation::update_vocabulary_filter::builders::UpdateVocabularyFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVocabularyFilterOutput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVocabularyFilterOutputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -57,18 +53,12 @@ pub struct UpdateVocabularyFilterOutputBuilder {
 }
 impl UpdateVocabularyFilterOutputBuilder {
     /// <p>The name of the updated custom vocabulary filter.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the updated custom vocabulary filter.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -82,10 +72,7 @@ impl UpdateVocabularyFilterOutputBuilder {
         self
     }
     /// <p>The language code you selected for your custom vocabulary filter.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -101,10 +88,7 @@ impl UpdateVocabularyFilterOutputBuilder {
     }
     /// <p>The date and time the specified custom vocabulary filter was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

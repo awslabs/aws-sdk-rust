@@ -32,15 +32,11 @@ impl Ec2RecommendationsExportPreferences {
         self.enabled
     }
     /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
-    pub fn cpu_performance_metric_basis(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
+    pub fn cpu_performance_metric_basis(&self) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
         self.cpu_performance_metric_basis.as_ref()
     }
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
-    pub fn ram_performance_metric_basis(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
+    pub fn ram_performance_metric_basis(&self) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
         self.ram_performance_metric_basis.as_ref()
     }
     /// <p> The target tenancy to use for your recommended EC2 instances. </p>
@@ -56,9 +52,7 @@ impl Ec2RecommendationsExportPreferences {
         self.preferred_region.as_deref()
     }
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
-    pub fn reserved_instance_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservedInstanceOptions> {
+    pub fn reserved_instance_options(&self) -> ::std::option::Option<&crate::types::ReservedInstanceOptions> {
         self.reserved_instance_options.as_ref()
     }
 }
@@ -71,19 +65,15 @@ impl Ec2RecommendationsExportPreferences {
 
 /// A builder for [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2RecommendationsExportPreferencesBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cpu_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     pub(crate) ram_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
-    pub(crate) excluded_instance_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) preferred_region: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_instance_options:
-        ::std::option::Option<crate::types::ReservedInstanceOptions>,
+    pub(crate) reserved_instance_options: ::std::option::Option<crate::types::ReservedInstanceOptions>,
 }
 impl Ec2RecommendationsExportPreferencesBuilder {
     /// <p> If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>. </p>
@@ -106,17 +96,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self
     }
     /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
-    pub fn set_cpu_performance_metric_basis(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageMetricBasis>,
-    ) -> Self {
+    pub fn set_cpu_performance_metric_basis(mut self, input: ::std::option::Option<crate::types::UsageMetricBasis>) -> Self {
         self.cpu_performance_metric_basis = input;
         self
     }
     /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
-    pub fn get_cpu_performance_metric_basis(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageMetricBasis> {
+    pub fn get_cpu_performance_metric_basis(&self) -> &::std::option::Option<crate::types::UsageMetricBasis> {
         &self.cpu_performance_metric_basis
     }
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
@@ -125,17 +110,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self
     }
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
-    pub fn set_ram_performance_metric_basis(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageMetricBasis>,
-    ) -> Self {
+    pub fn set_ram_performance_metric_basis(mut self, input: ::std::option::Option<crate::types::UsageMetricBasis>) -> Self {
         self.ram_performance_metric_basis = input;
         self
     }
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
-    pub fn get_ram_performance_metric_basis(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageMetricBasis> {
+    pub fn get_ram_performance_metric_basis(&self) -> &::std::option::Option<crate::types::UsageMetricBasis> {
         &self.ram_performance_metric_basis
     }
     /// <p> The target tenancy to use for your recommended EC2 instances. </p>
@@ -157,42 +137,28 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     /// To override the contents of this collection use [`set_excluded_instance_types`](Self::set_excluded_instance_types).
     ///
     /// <p> An array of instance types to exclude from recommendations. </p>
-    pub fn excluded_instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_instance_types.unwrap_or_default();
         v.push(input.into());
         self.excluded_instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of instance types to exclude from recommendations. </p>
-    pub fn set_excluded_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.excluded_instance_types = input;
         self
     }
     /// <p> An array of instance types to exclude from recommendations. </p>
-    pub fn get_excluded_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_instance_types
     }
     /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn preferred_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn set_preferred_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_region = input;
         self
     }
@@ -201,25 +167,17 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         &self.preferred_region
     }
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
-    pub fn reserved_instance_options(
-        mut self,
-        input: crate::types::ReservedInstanceOptions,
-    ) -> Self {
+    pub fn reserved_instance_options(mut self, input: crate::types::ReservedInstanceOptions) -> Self {
         self.reserved_instance_options = ::std::option::Option::Some(input);
         self
     }
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
-    pub fn set_reserved_instance_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedInstanceOptions>,
-    ) -> Self {
+    pub fn set_reserved_instance_options(mut self, input: ::std::option::Option<crate::types::ReservedInstanceOptions>) -> Self {
         self.reserved_instance_options = input;
         self
     }
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
-    pub fn get_reserved_instance_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedInstanceOptions> {
+    pub fn get_reserved_instance_options(&self) -> &::std::option::Option<crate::types::ReservedInstanceOptions> {
         &self.reserved_instance_options
     }
     /// Consumes the builder and constructs a [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).

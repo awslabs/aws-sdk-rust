@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`tag_option_id(impl ::std::convert::Into<String>)`](crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceFluentBuilder::tag_option_id) / [`set_tag_option_id(Option<String>)`](crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceFluentBuilder::set_tag_option_id): <p>The TagOption identifier.</p>
     /// - On success, responds with [`AssociateTagOptionWithResourceOutput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateTagOptionWithResourceError>`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceError)
-    pub fn associate_tag_option_with_resource(&self) -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceFluentBuilder{
+    pub fn associate_tag_option_with_resource(
+        &self,
+    ) -> crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceFluentBuilder {
         crate::operation::associate_tag_option_with_resource::builders::AssociateTagOptionWithResourceFluentBuilder::new(self.handle.clone())
     }
 }

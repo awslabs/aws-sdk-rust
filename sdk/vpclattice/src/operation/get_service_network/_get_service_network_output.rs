@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for GetServiceNetworkOutput {
 }
 impl GetServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_network::builders::GetServiceNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_network::builders::GetServiceNetworkOutputBuilder {
         crate::operation::get_service_network::builders::GetServiceNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceNetworkOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -127,10 +124,7 @@ impl GetServiceNetworkOutputBuilder {
         self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -144,10 +138,7 @@ impl GetServiceNetworkOutputBuilder {
         self
     }
     /// <p>The date and time of the last update, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

@@ -114,9 +114,7 @@ impl ManagedPolicyDetail {
 
 /// A builder for [`ManagedPolicyDetail`](crate::types::ManagedPolicyDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedPolicyDetailBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
@@ -129,8 +127,7 @@ pub struct ManagedPolicyDetailBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) policy_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
+    pub(crate) policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
 }
 impl ManagedPolicyDetailBuilder {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
@@ -200,19 +197,13 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>. </p>
-    pub fn default_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>. </p>
-    pub fn set_default_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_id = input;
         self
     }
@@ -243,10 +234,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_permissions_boundary_usage_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_permissions_boundary_usage_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.permissions_boundary_usage_count = input;
         self
     }
@@ -289,10 +277,7 @@ impl ManagedPolicyDetailBuilder {
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -308,10 +293,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date = input;
         self
     }
@@ -332,17 +314,12 @@ impl ManagedPolicyDetailBuilder {
         self
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    pub fn set_policy_version_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
-    ) -> Self {
+    pub fn set_policy_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>) -> Self {
         self.policy_version_list = input;
         self
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    pub fn get_policy_version_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
+    pub fn get_policy_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
         &self.policy_version_list
     }
     /// Consumes the builder and constructs a [`ManagedPolicyDetail`](crate::types::ManagedPolicyDetail).

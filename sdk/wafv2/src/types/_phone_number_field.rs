@@ -34,9 +34,7 @@ impl PhoneNumberField {
 
 /// A builder for [`PhoneNumberField`](crate::types::PhoneNumberField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhoneNumberFieldBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,6 @@ impl PhoneNumberFieldBuilder {
     }
     /// Consumes the builder and constructs a [`PhoneNumberField`](crate::types::PhoneNumberField).
     pub fn build(self) -> crate::types::PhoneNumberField {
-        crate::types::PhoneNumberField {
-            identifier: self.identifier,
-        }
+        crate::types::PhoneNumberField { identifier: self.identifier }
     }
 }

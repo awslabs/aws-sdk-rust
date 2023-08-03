@@ -26,8 +26,7 @@ impl DeleteManagedPrefixListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteManagedPrefixListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder,
+    inner: crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder,
 }
 impl DeleteManagedPrefixListFluentBuilder {
     /// Creates a new `DeleteManagedPrefixList`.
@@ -38,10 +37,7 @@ impl DeleteManagedPrefixListFluentBuilder {
         }
     }
     /// Access the DeleteManagedPrefixList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteManagedPrefixListFluentBuilder {
             crate::operation::delete_managed_prefix_list::DeleteManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteManagedPrefixListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteManagedPrefixListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteManagedPrefixListFluentBuilder {
             crate::operation::delete_managed_prefix_list::DeleteManagedPrefixList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl DeleteManagedPrefixListFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }

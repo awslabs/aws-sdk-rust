@@ -25,9 +25,7 @@ impl InputOrigin {
         self.region_name.as_ref()
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn protocol_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginProtocolPolicyEnum> {
+    pub fn protocol_policy(&self) -> ::std::option::Option<&crate::types::OriginProtocolPolicyEnum> {
         self.protocol_policy.as_ref()
     }
 }
@@ -40,9 +38,7 @@ impl InputOrigin {
 
 /// A builder for [`InputOrigin`](crate::types::InputOrigin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputOriginBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<crate::types::RegionName>,
@@ -69,10 +65,7 @@ impl InputOriginBuilder {
         self
     }
     /// <p>The AWS Region name of the origin resource.</p>
-    pub fn set_region_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionName>,
-    ) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.region_name = input;
         self
     }
@@ -86,17 +79,12 @@ impl InputOriginBuilder {
         self
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn set_protocol_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
-    ) -> Self {
+    pub fn set_protocol_policy(mut self, input: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>) -> Self {
         self.protocol_policy = input;
         self
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn get_protocol_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
+    pub fn get_protocol_policy(&self) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
         &self.protocol_policy
     }
     /// Consumes the builder and constructs a [`InputOrigin`](crate::types::InputOrigin).

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPageReceiptsOutput {
 }
 impl ListPageReceiptsOutput {
     /// Creates a new builder-style object to manufacture [`ListPageReceiptsOutput`](crate::operation::list_page_receipts::ListPageReceiptsOutput).
-    pub fn builder() -> crate::operation::list_page_receipts::builders::ListPageReceiptsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_page_receipts::builders::ListPageReceiptsOutputBuilder {
         crate::operation::list_page_receipts::builders::ListPageReceiptsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPageReceiptsOutput`](crate::operation::list_page_receipts::ListPageReceiptsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageReceiptsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
@@ -71,10 +68,7 @@ impl ListPageReceiptsOutputBuilder {
         self
     }
     /// <p>A list of each acknowledgement.</p>
-    pub fn set_receipts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
-    ) -> Self {
+    pub fn set_receipts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>) -> Self {
         self.receipts = input;
         self
     }

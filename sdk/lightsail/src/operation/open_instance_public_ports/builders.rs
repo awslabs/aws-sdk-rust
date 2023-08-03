@@ -27,8 +27,7 @@ impl OpenInstancePublicPortsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct OpenInstancePublicPortsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder,
+    inner: crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder,
 }
 impl OpenInstancePublicPortsFluentBuilder {
     /// Creates a new `OpenInstancePublicPorts`.
@@ -39,10 +38,7 @@ impl OpenInstancePublicPortsFluentBuilder {
         }
     }
     /// Access the OpenInstancePublicPorts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl OpenInstancePublicPortsFluentBuilder {
             crate::operation::open_instance_public_ports::OpenInstancePublicPorts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl OpenInstancePublicPortsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl OpenInstancePublicPortsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::open_instance_public_ports::OpenInstancePublicPortsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl OpenInstancePublicPortsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::open_instance_public_ports::OpenInstancePublicPortsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl OpenInstancePublicPortsFluentBuilder {
             crate::operation::open_instance_public_ports::OpenInstancePublicPorts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl OpenInstancePublicPortsFluentBuilder {
         self.inner.get_port_info()
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

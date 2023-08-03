@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationInstanceDependenciesOu
 }
 impl ListApplicationInstanceDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
-    pub fn builder() -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder {
         crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstanceDependenciesOutputBuilder {
     pub(crate) package_objects: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListApplicationInstanceDependenciesOutputBuilder {
         self
     }
     /// <p>A list of package objects.</p>
-    pub fn set_package_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>,
-    ) -> Self {
+    pub fn set_package_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageObject>>) -> Self {
         self.package_objects = input;
         self
     }
     /// <p>A list of package objects.</p>
-    pub fn get_package_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageObject>> {
+    pub fn get_package_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageObject>> {
         &self.package_objects
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -93,12 +86,10 @@ impl ListApplicationInstanceDependenciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput).
-    pub fn build(self) -> crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput{
+    pub fn build(self) -> crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput {
         crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput {
-            package_objects: self.package_objects
-            ,
-            next_token: self.next_token
-            ,
+            package_objects: self.package_objects,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -37,9 +37,7 @@ impl ListAppImageConfigsFluentBuilder {
         }
     }
     /// Access the ListAppImageConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_app_image_configs::builders::ListAppImageConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAppImageConfigsFluentBuilder {
             crate::operation::list_app_image_configs::ListAppImageConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_image_configs::ListAppImageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_image_configs::ListAppImageConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAppImageConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAppImageConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_image_configs::ListAppImageConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_image_configs::ListAppImageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_image_configs::ListAppImageConfigsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAppImageConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_image_configs::ListAppImageConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_image_configs::ListAppImageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_image_configs::ListAppImageConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListAppImageConfigsFluentBuilder {
             crate::operation::list_app_image_configs::ListAppImageConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_image_configs::ListAppImageConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_image_configs::ListAppImageConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_image_configs::paginator::ListAppImageConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_image_configs::paginator::ListAppImageConfigsPaginator {
-        crate::operation::list_app_image_configs::paginator::ListAppImageConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_app_image_configs::paginator::ListAppImageConfigsPaginator {
+        crate::operation::list_app_image_configs::paginator::ListAppImageConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,18 +144,12 @@ impl ListAppImageConfigsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -187,10 +163,7 @@ impl ListAppImageConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -204,10 +177,7 @@ impl ListAppImageConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -221,10 +191,7 @@ impl ListAppImageConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-    pub fn set_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_modified_time_before(input);
         self
     }
@@ -238,10 +205,7 @@ impl ListAppImageConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-    pub fn set_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_modified_time_after(input);
         self
     }
@@ -255,10 +219,7 @@ impl ListAppImageConfigsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::AppImageConfigSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AppImageConfigSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

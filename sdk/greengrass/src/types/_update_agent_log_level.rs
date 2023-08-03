@@ -44,13 +44,7 @@
 /// The minimum level of log statements that should be logged by the OTA Agent during an update.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UpdateAgentLogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for UpdateAgentLogLevel {
             "TRACE" => UpdateAgentLogLevel::Trace,
             "VERBOSE" => UpdateAgentLogLevel::Verbose,
             "WARN" => UpdateAgentLogLevel::Warn,
-            other => UpdateAgentLogLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateAgentLogLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,9 +105,7 @@ impl UpdateAgentLogLevel {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN",
-        ]
+        &["DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN"]
     }
 }
 impl ::std::convert::AsRef<str> for UpdateAgentLogLevel {

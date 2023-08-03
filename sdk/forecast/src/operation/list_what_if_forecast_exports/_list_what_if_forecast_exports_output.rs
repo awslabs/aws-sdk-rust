@@ -5,8 +5,7 @@
 pub struct ListWhatIfForecastExportsOutput {
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
     #[doc(hidden)]
-    pub what_if_forecast_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>,
+    pub what_if_forecast_exports: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>,
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWhatIfForecastExportsOutput {
 }
 impl ListWhatIfForecastExportsOutput {
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
-    pub fn what_if_forecast_exports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WhatIfForecastExportSummary]> {
+    pub fn what_if_forecast_exports(&self) -> ::std::option::Option<&[crate::types::WhatIfForecastExportSummary]> {
         self.what_if_forecast_exports.as_deref()
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWhatIfForecastExportsOutput {
 }
 impl ListWhatIfForecastExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListWhatIfForecastExportsOutput`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput).
-    pub fn builder() -> crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsOutputBuilder {
         crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWhatIfForecastExportsOutput`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWhatIfForecastExportsOutputBuilder {
-    pub(crate) what_if_forecast_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>,
+    pub(crate) what_if_forecast_exports: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListWhatIfForecastExportsOutputBuilder {
     /// To override the contents of this collection use [`set_what_if_forecast_exports`](Self::set_what_if_forecast_exports).
     ///
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
-    pub fn what_if_forecast_exports(
-        mut self,
-        input: crate::types::WhatIfForecastExportSummary,
-    ) -> Self {
+    pub fn what_if_forecast_exports(mut self, input: crate::types::WhatIfForecastExportSummary) -> Self {
         let mut v = self.what_if_forecast_exports.unwrap_or_default();
         v.push(input);
         self.what_if_forecast_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
-    pub fn set_what_if_forecast_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>,
-    ) -> Self {
+    pub fn set_what_if_forecast_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>>) -> Self {
         self.what_if_forecast_exports = input;
         self
     }
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
-    pub fn get_what_if_forecast_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>> {
+    pub fn get_what_if_forecast_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfForecastExportSummary>> {
         &self.what_if_forecast_exports
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
@@ -100,9 +86,7 @@ impl ListWhatIfForecastExportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWhatIfForecastExportsOutput`](crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput {
+    pub fn build(self) -> crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput {
         crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput {
             what_if_forecast_exports: self.what_if_forecast_exports,
             next_token: self.next_token,

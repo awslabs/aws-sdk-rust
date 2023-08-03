@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`server_group_replication_configurations(Vec<ServerGroupReplicationConfiguration>)`](crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationFluentBuilder::server_group_replication_configurations) / [`set_server_group_replication_configurations(Option<Vec<ServerGroupReplicationConfiguration>>)`](crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationFluentBuilder::set_server_group_replication_configurations): <p>Information about the replication configurations for server groups in the application.</p>
     /// - On success, responds with [`PutAppReplicationConfigurationOutput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutAppReplicationConfigurationError>`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError)
-    pub fn put_app_replication_configuration(&self) -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationFluentBuilder{
+    pub fn put_app_replication_configuration(
+        &self,
+    ) -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationFluentBuilder {
         crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

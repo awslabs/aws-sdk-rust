@@ -35,9 +35,7 @@ impl CreateClusterOutput {
 
 /// A builder for [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterOutputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
@@ -70,17 +68,12 @@ impl CreateClusterOutputBuilder {
         self
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub fn set_job_list_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
-    ) -> Self {
+    pub fn set_job_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>) -> Self {
         self.job_list_entries = input;
         self
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub fn get_job_list_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
+    pub fn get_job_list_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
         &self.job_list_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

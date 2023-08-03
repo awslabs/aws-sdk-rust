@@ -33,10 +33,7 @@ pub fn ser_submit_container_state_change_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_network_binding::ser_network_binding(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_network_binding::ser_network_binding(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

@@ -22,17 +22,14 @@ impl ListWorldTemplatesInput {
 }
 impl ListWorldTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListWorldTemplatesInput`](crate::operation::list_world_templates::ListWorldTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_world_templates::builders::ListWorldTemplatesInputBuilder {
+    pub fn builder() -> crate::operation::list_world_templates::builders::ListWorldTemplatesInputBuilder {
         crate::operation::list_world_templates::builders::ListWorldTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldTemplatesInput`](crate::operation::list_world_templates::ListWorldTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListWorldTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorldTemplatesInput`](crate::operation::list_world_templates::ListWorldTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_world_templates::ListWorldTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_world_templates::ListWorldTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_world_templates::ListWorldTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_world_templates::ListWorldTemplatesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

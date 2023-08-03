@@ -29,18 +29,14 @@ impl DescribePrincipalMappingInput {
 }
 impl DescribePrincipalMappingInput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingInput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder {
         crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrincipalMappingInput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrincipalMappingInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DescribePrincipalMappingInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl DescribePrincipalMappingInputBuilder {
         crate::operation::describe_principal_mapping::DescribePrincipalMappingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_principal_mapping::DescribePrincipalMappingInput {
-                index_id: self.index_id,
-                data_source_id: self.data_source_id,
-                group_id: self.group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_principal_mapping::DescribePrincipalMappingInput {
+            index_id: self.index_id,
+            data_source_id: self.data_source_id,
+            group_id: self.group_id,
+        })
     }
 }

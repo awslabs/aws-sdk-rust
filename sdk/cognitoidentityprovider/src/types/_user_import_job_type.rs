@@ -127,9 +127,7 @@ impl UserImportJobType {
 
 /// A builder for [`UserImportJobType`](crate::types::UserImportJobType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserImportJobTypeBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -189,18 +187,12 @@ impl UserImportJobTypeBuilder {
         &self.user_pool_id
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }
@@ -214,10 +206,7 @@ impl UserImportJobTypeBuilder {
         self
     }
     /// <p>The date the user import job was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -231,10 +220,7 @@ impl UserImportJobTypeBuilder {
         self
     }
     /// <p>The date when the user import job was started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -248,10 +234,7 @@ impl UserImportJobTypeBuilder {
         self
     }
     /// <p>The date when the user import job was completed.</p>
-    pub fn set_completion_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_date = input;
         self
     }
@@ -285,10 +268,7 @@ impl UserImportJobTypeBuilder {
     /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
     /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserImportJobStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserImportJobStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -307,18 +287,12 @@ impl UserImportJobTypeBuilder {
         &self.status
     }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
-    pub fn cloud_watch_logs_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
-    pub fn set_cloud_watch_logs_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
@@ -369,18 +343,12 @@ impl UserImportJobTypeBuilder {
         &self.failed_users
     }
     /// <p>The message returned when the user import job is completed.</p>
-    pub fn completion_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message returned when the user import job is completed.</p>
-    pub fn set_completion_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_completion_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completion_message = input;
         self
     }

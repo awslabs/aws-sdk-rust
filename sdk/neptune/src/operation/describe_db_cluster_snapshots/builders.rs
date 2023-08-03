@@ -26,7 +26,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder,
+    inner: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder,
 }
 impl DescribeDBClusterSnapshotsFluentBuilder {
     /// Creates a new `DescribeDBClusterSnapshots`.
@@ -37,7 +37,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeDBClusterSnapshots as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator {
         crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
@@ -131,10 +120,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -164,10 +147,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
         self
     }
@@ -177,10 +157,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
     }
@@ -190,9 +167,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_snapshot_identifier()
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -204,10 +179,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
@@ -220,10 +192,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
@@ -249,10 +218,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

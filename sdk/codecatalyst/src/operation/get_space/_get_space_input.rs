@@ -22,9 +22,7 @@ impl GetSpaceInput {
 
 /// A builder for [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetSpaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_space::GetSpaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_space::GetSpaceInput { name: self.name })
     }
 }

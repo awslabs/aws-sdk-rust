@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`contact_id(Option<String>)`](crate::operation::monitor_contact::MonitorContactOutput::contact_id): <p>The identifier of the contact.</p>
     ///   - [`contact_arn(Option<String>)`](crate::operation::monitor_contact::MonitorContactOutput::contact_arn): <p>The ARN of the contact.</p>
     /// - On failure, responds with [`SdkError<MonitorContactError>`](crate::operation::monitor_contact::MonitorContactError)
-    pub fn monitor_contact(
-        &self,
-    ) -> crate::operation::monitor_contact::builders::MonitorContactFluentBuilder {
-        crate::operation::monitor_contact::builders::MonitorContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn monitor_contact(&self) -> crate::operation::monitor_contact::builders::MonitorContactFluentBuilder {
+        crate::operation::monitor_contact::builders::MonitorContactFluentBuilder::new(self.handle.clone())
     }
 }

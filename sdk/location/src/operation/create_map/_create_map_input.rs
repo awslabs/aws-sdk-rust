@@ -16,10 +16,7 @@ pub struct CreateMapInput {
     #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::MapConfiguration>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>An optional description for the map resource.</p>
@@ -37,9 +34,7 @@ pub struct CreateMapInput {
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMapInput {
     /// <p>The name for the map resource.</p>
@@ -57,10 +52,7 @@ impl CreateMapInput {
         self.configuration.as_ref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -79,11 +71,7 @@ impl CreateMapInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -96,17 +84,13 @@ impl CreateMapInput {
 
 /// A builder for [`CreateMapInput`](crate::operation::create_map::CreateMapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::MapConfiguration>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMapInputBuilder {
     /// <p>The name for the map resource.</p>
@@ -147,10 +131,7 @@ impl CreateMapInputBuilder {
         self
     }
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MapConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MapConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -159,31 +140,19 @@ impl CreateMapInputBuilder {
         &self.configuration
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pricing_plan
     }
@@ -216,11 +185,7 @@ impl CreateMapInputBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -237,12 +202,7 @@ impl CreateMapInputBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -257,20 +217,11 @@ impl CreateMapInputBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMapInput`](crate::operation::create_map::CreateMapInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_map::CreateMapInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_map::CreateMapInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_map::CreateMapInput {
             map_name: self.map_name,
             configuration: self.configuration,

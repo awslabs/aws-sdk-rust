@@ -36,16 +36,15 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
 }
 impl DisassociateTimeSeriesFromAssetPropertyInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput).
-    pub fn builder() -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder
+    {
         crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -110,18 +109,19 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateTimeSeriesFromAssetPropertyInput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput {
-                alias: self.alias
-                ,
-                asset_id: self.asset_id
-                ,
-                property_id: self.property_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                alias: self.alias,
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                client_token: self.client_token,
+            },
         )
     }
 }

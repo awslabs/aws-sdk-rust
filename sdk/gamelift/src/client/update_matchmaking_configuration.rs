@@ -20,7 +20,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateMatchmakingConfigurationOutput`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput) with field(s):
     ///   - [`configuration(Option<MatchmakingConfiguration>)`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput::configuration): <p>The updated matchmaking configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateMatchmakingConfigurationError>`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError)
-    pub fn update_matchmaking_configuration(&self) -> crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationFluentBuilder{
+    pub fn update_matchmaking_configuration(
+        &self,
+    ) -> crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationFluentBuilder {
         crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

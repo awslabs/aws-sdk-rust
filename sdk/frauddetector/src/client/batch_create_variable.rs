@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchCreateVariableOutput`](crate::operation::batch_create_variable::BatchCreateVariableOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchCreateVariableError>>)`](crate::operation::batch_create_variable::BatchCreateVariableOutput::errors): <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
     /// - On failure, responds with [`SdkError<BatchCreateVariableError>`](crate::operation::batch_create_variable::BatchCreateVariableError)
-    pub fn batch_create_variable(
-        &self,
-    ) -> crate::operation::batch_create_variable::builders::BatchCreateVariableFluentBuilder {
-        crate::operation::batch_create_variable::builders::BatchCreateVariableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_create_variable(&self) -> crate::operation::batch_create_variable::builders::BatchCreateVariableFluentBuilder {
+        crate::operation::batch_create_variable::builders::BatchCreateVariableFluentBuilder::new(self.handle.clone())
     }
 }

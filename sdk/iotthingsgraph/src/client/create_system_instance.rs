@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`summary(Option<SystemInstanceSummary>)`](crate::operation::create_system_instance::CreateSystemInstanceOutput::summary): <p>The summary object that describes the new system instance.</p>
     /// - On failure, responds with [`SdkError<CreateSystemInstanceError>`](crate::operation::create_system_instance::CreateSystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn create_system_instance(
-        &self,
-    ) -> crate::operation::create_system_instance::builders::CreateSystemInstanceFluentBuilder {
-        crate::operation::create_system_instance::builders::CreateSystemInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_system_instance(&self) -> crate::operation::create_system_instance::builders::CreateSystemInstanceFluentBuilder {
+        crate::operation::create_system_instance::builders::CreateSystemInstanceFluentBuilder::new(self.handle.clone())
     }
 }

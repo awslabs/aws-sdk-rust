@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`authentication_result(Option<AuthenticationResult>)`](crate::operation::evaluate_session::EvaluateSessionOutput::authentication_result): <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     ///   - [`fraud_detection_result(Option<FraudDetectionResult>)`](crate::operation::evaluate_session::EvaluateSessionOutput::fraud_detection_result): <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     /// - On failure, responds with [`SdkError<EvaluateSessionError>`](crate::operation::evaluate_session::EvaluateSessionError)
-    pub fn evaluate_session(
-        &self,
-    ) -> crate::operation::evaluate_session::builders::EvaluateSessionFluentBuilder {
-        crate::operation::evaluate_session::builders::EvaluateSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn evaluate_session(&self) -> crate::operation::evaluate_session::builders::EvaluateSessionFluentBuilder {
+        crate::operation::evaluate_session::builders::EvaluateSessionFluentBuilder::new(self.handle.clone())
     }
 }

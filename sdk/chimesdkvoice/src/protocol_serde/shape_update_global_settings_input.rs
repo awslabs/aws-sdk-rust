@@ -6,10 +6,7 @@ pub fn ser_update_global_settings_input(
     if let Some(var_1) = &input.voice_connector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("VoiceConnector").start_object();
-        crate::protocol_serde::shape_voice_connector_settings::ser_voice_connector_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_voice_connector_settings::ser_voice_connector_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

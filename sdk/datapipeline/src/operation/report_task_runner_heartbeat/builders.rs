@@ -33,7 +33,7 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder,
+    inner: crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder,
 }
 impl ReportTaskRunnerHeartbeatFluentBuilder {
     /// Creates a new `ReportTaskRunnerHeartbeat`.
@@ -44,7 +44,7 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
         }
     }
     /// Access the ReportTaskRunnerHeartbeat as a reference.
-    pub fn as_input(&self) -> &crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
             crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl ReportTaskRunnerHeartbeatFluentBuilder {
             crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    pub fn taskrunner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn taskrunner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.taskrunner_id(input.into());
         self
     }
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-    pub fn set_taskrunner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_taskrunner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_taskrunner_id(input);
         self
     }

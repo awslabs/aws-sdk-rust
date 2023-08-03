@@ -27,35 +27,27 @@ impl ::std::fmt::Display for InvalidAutomationExecutionParametersException {
     }
 }
 impl ::std::error::Error for InvalidAutomationExecutionParametersException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidAutomationExecutionParametersException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidAutomationExecutionParametersException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidAutomationExecutionParametersException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidAutomationExecutionParametersException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidAutomationExecutionParametersException {
     /// Creates a new builder-style object to manufacture [`InvalidAutomationExecutionParametersException`](crate::types::error::InvalidAutomationExecutionParametersException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder {
-        crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder::default(
-        )
+    pub fn builder() -> crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder {
+        crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidAutomationExecutionParametersException`](crate::types::error::InvalidAutomationExecutionParametersException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidAutomationExecutionParametersExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl InvalidAutomationExecutionParametersExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

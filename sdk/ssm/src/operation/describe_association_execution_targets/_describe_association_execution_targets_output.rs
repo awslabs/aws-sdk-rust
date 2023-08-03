@@ -5,8 +5,7 @@
 pub struct DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
     #[doc(hidden)]
-    pub association_execution_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>>,
+    pub association_execution_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAssociationExecutionTargetsOutput {
 }
 impl DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
-    pub fn association_execution_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationExecutionTarget]> {
+    pub fn association_execution_targets(&self) -> ::std::option::Option<&[crate::types::AssociationExecutionTarget]> {
         self.association_execution_targets.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAssociationExecutionTargetsOu
 }
 impl DescribeAssociationExecutionTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionTargetsOutput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput).
-    pub fn builder() -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsOutputBuilder {
         crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssociationExecutionTargetsOutput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargetsOutputBuilder {
-    pub(crate) association_execution_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>>,
+    pub(crate) association_execution_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeAssociationExecutionTargetsOutputBuilder {
     /// To override the contents of this collection use [`set_association_execution_targets`](Self::set_association_execution_targets).
     ///
     /// <p>Information about the execution.</p>
-    pub fn association_execution_targets(
-        mut self,
-        input: crate::types::AssociationExecutionTarget,
-    ) -> Self {
+    pub fn association_execution_targets(mut self, input: crate::types::AssociationExecutionTarget) -> Self {
         let mut v = self.association_execution_targets.unwrap_or_default();
         v.push(input);
         self.association_execution_targets = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeAssociationExecutionTargetsOutputBuilder {
         self
     }
     /// <p>Information about the execution.</p>
-    pub fn get_association_execution_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>> {
+    pub fn get_association_execution_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTarget>> {
         &self.association_execution_targets
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -100,12 +89,10 @@ impl DescribeAssociationExecutionTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAssociationExecutionTargetsOutput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput).
-    pub fn build(self) -> crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput{
+    pub fn build(self) -> crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput {
         crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput {
-            association_execution_targets: self.association_execution_targets
-            ,
-            next_token: self.next_token
-            ,
+            association_execution_targets: self.association_execution_targets,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

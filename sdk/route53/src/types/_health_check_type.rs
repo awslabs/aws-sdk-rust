@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for HealthCheckType {
             "HTTP_STR_MATCH" => HealthCheckType::HttpStrMatch,
             "RECOVERY_CONTROL" => HealthCheckType::RecoveryControl,
             "TCP" => HealthCheckType::Tcp,
-            other => {
-                HealthCheckType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HealthCheckType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -45,16 +45,14 @@ impl ListRecommendationFeedbackInput {
 }
 impl ListRecommendationFeedbackInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackInput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput).
-    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder {
         crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendationFeedbackInput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationFeedbackInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,18 +90,12 @@ impl ListRecommendationFeedbackInputBuilder {
         &self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -125,10 +117,7 @@ impl ListRecommendationFeedbackInputBuilder {
     }
     /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_ids = input;
         self
     }
@@ -142,27 +131,19 @@ impl ListRecommendationFeedbackInputBuilder {
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
         v.push(input.into());
         self.recommendation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recommendation_ids = input;
         self
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn get_recommendation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`ListRecommendationFeedbackInput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput).
@@ -172,14 +153,12 @@ impl ListRecommendationFeedbackInputBuilder {
         crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                code_review_arn: self.code_review_arn,
-                user_ids: self.user_ids,
-                recommendation_ids: self.recommendation_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            code_review_arn: self.code_review_arn,
+            user_ids: self.user_ids,
+            recommendation_ids: self.recommendation_ids,
+        })
     }
 }

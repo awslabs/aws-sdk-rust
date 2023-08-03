@@ -51,9 +51,7 @@ impl OfferingTransaction {
 
 /// A builder for [`OfferingTransaction`](crate::types::OfferingTransaction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfferingTransactionBuilder {
     pub(crate) offering_status: ::std::option::Option<crate::types::OfferingStatus>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl OfferingTransactionBuilder {
         self
     }
     /// <p>The status of an offering transaction.</p>
-    pub fn set_offering_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingStatus>,
-    ) -> Self {
+    pub fn set_offering_status(mut self, input: ::std::option::Option<crate::types::OfferingStatus>) -> Self {
         self.offering_status = input;
         self
     }
@@ -80,18 +75,12 @@ impl OfferingTransactionBuilder {
         &self.offering_status
     }
     /// <p>The transaction ID of the offering transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of the offering transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -100,18 +89,12 @@ impl OfferingTransactionBuilder {
         &self.transaction_id
     }
     /// <p>The ID that corresponds to a device offering promotion.</p>
-    pub fn offering_promotion_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_promotion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_promotion_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that corresponds to a device offering promotion.</p>
-    pub fn set_offering_promotion_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_promotion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_promotion_id = input;
         self
     }
@@ -125,10 +108,7 @@ impl OfferingTransactionBuilder {
         self
     }
     /// <p>The date on which an offering transaction was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }

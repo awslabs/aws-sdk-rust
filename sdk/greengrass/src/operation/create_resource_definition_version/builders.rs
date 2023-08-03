@@ -5,16 +5,16 @@ pub use crate::operation::create_resource_definition_version::_create_resource_d
 
 impl CreateResourceDefinitionVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_resource_definition_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourceDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder,
+    inner: crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder,
 }
 impl CreateResourceDefinitionVersionFluentBuilder {
     /// Creates a new `CreateResourceDefinitionVersion`.
@@ -37,15 +37,20 @@ impl CreateResourceDefinitionVersionFluentBuilder {
         }
     }
     /// Access the CreateResourceDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_resource_definition_version::CreateResourceDefinitionVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateResourceDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateResourceDefinitionVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_resource_definition_version::CreateResourceDefinitionVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -115,18 +124,12 @@ impl CreateResourceDefinitionVersionFluentBuilder {
         self.inner.get_amzn_client_token()
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_definition_id(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_definition_id(input);
         self
     }
@@ -144,10 +147,7 @@ impl CreateResourceDefinitionVersionFluentBuilder {
         self
     }
     /// A list of resources.
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }

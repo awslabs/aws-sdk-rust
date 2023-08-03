@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`target_group_ar_ns(Vec<String>)`](crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsFluentBuilder::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsFluentBuilder::set_target_group_ar_ns): <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     /// - On success, responds with [`AttachLoadBalancerTargetGroupsOutput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput)
     /// - On failure, responds with [`SdkError<AttachLoadBalancerTargetGroupsError>`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError)
-    pub fn attach_load_balancer_target_groups(&self) -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsFluentBuilder{
+    pub fn attach_load_balancer_target_groups(
+        &self,
+    ) -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsFluentBuilder {
         crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

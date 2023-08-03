@@ -46,9 +46,7 @@ impl PutBucketAclInput {
         self.acl.as_ref()
     }
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-    pub fn access_control_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccessControlPolicy> {
+    pub fn access_control_policy(&self) -> ::std::option::Option<&crate::types::AccessControlPolicy> {
         self.access_control_policy.as_ref()
     }
     /// <p>The bucket to which to apply the ACL.</p>
@@ -100,9 +98,7 @@ impl PutBucketAclInput {
 
 /// A builder for [`PutBucketAclInput`](crate::operation::put_bucket_acl::PutBucketAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketAclInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     pub(crate) access_control_policy: ::std::option::Option<crate::types::AccessControlPolicy>,
@@ -137,17 +133,12 @@ impl PutBucketAclInputBuilder {
         self
     }
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-    pub fn set_access_control_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlPolicy>,
-    ) -> Self {
+    pub fn set_access_control_policy(mut self, input: ::std::option::Option<crate::types::AccessControlPolicy>) -> Self {
         self.access_control_policy = input;
         self
     }
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
-    pub fn get_access_control_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessControlPolicy> {
+    pub fn get_access_control_policy(&self) -> &::std::option::Option<crate::types::AccessControlPolicy> {
         &self.access_control_policy
     }
     /// <p>The bucket to which to apply the ACL.</p>
@@ -189,33 +180,22 @@ impl PutBucketAclInputBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn grant_full_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_full_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn set_grant_full_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_full_control = input;
         self
     }
@@ -238,18 +218,12 @@ impl PutBucketAclInputBuilder {
         &self.grant_read
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn grant_read_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read_acp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn set_grant_read_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read_acp = input;
         self
     }
@@ -275,18 +249,12 @@ impl PutBucketAclInputBuilder {
         &self.grant_write
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn grant_write_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_write_acp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn set_grant_write_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write_acp = input;
         self
     }
@@ -295,18 +263,12 @@ impl PutBucketAclInputBuilder {
         &self.grant_write_acp
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -317,10 +279,7 @@ impl PutBucketAclInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketAclInput`](crate::operation::put_bucket_acl::PutBucketAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_acl::PutBucketAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_bucket_acl::PutBucketAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_acl::PutBucketAclInput {
             acl: self.acl,
             access_control_policy: self.access_control_policy,

@@ -50,9 +50,7 @@ impl EphemerisMetaData {
 
 /// A builder for [`EphemerisMetaData`](crate::types::EphemerisMetaData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EphemerisMetaDataBuilder {
     pub(crate) source: ::std::option::Option<crate::types::EphemerisSource>,
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl EphemerisMetaDataBuilder {
         self
     }
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::EphemerisSource>) -> Self {
         self.source = input;
         self
     }

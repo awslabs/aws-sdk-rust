@@ -29,9 +29,7 @@ impl ListWorkGroupsInput {
 
 /// A builder for [`ListWorkGroupsInput`](crate::operation::list_work_groups::ListWorkGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListWorkGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkGroupsInput`](crate::operation::list_work_groups::ListWorkGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_work_groups::ListWorkGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_work_groups::ListWorkGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_work_groups::ListWorkGroupsInput {
             next_token: self.next_token,
             max_results: self.max_results,

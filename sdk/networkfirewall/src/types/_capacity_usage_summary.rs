@@ -23,9 +23,7 @@ impl CapacityUsageSummary {
 
 /// A builder for [`CapacityUsageSummary`](crate::types::CapacityUsageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityUsageSummaryBuilder {
     pub(crate) cid_rs: ::std::option::Option<crate::types::CidrSummary>,
 }
@@ -46,8 +44,6 @@ impl CapacityUsageSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`CapacityUsageSummary`](crate::types::CapacityUsageSummary).
     pub fn build(self) -> crate::types::CapacityUsageSummary {
-        crate::types::CapacityUsageSummary {
-            cid_rs: self.cid_rs,
-        }
+        crate::types::CapacityUsageSummary { cid_rs: self.cid_rs }
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`workload_id(Option<String>)`](crate::operation::create_workload_share::CreateWorkloadShareOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`share_id(Option<String>)`](crate::operation::create_workload_share::CreateWorkloadShareOutput::share_id): <p>The ID associated with the share.</p>
     /// - On failure, responds with [`SdkError<CreateWorkloadShareError>`](crate::operation::create_workload_share::CreateWorkloadShareError)
-    pub fn create_workload_share(
-        &self,
-    ) -> crate::operation::create_workload_share::builders::CreateWorkloadShareFluentBuilder {
-        crate::operation::create_workload_share::builders::CreateWorkloadShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workload_share(&self) -> crate::operation::create_workload_share::builders::CreateWorkloadShareFluentBuilder {
+        crate::operation::create_workload_share::builders::CreateWorkloadShareFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl ListWorldGenerationJobsInput {
 }
 impl ListWorldGenerationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsInput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder {
         crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldGenerationJobsInput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldGenerationJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,10 +83,7 @@ impl ListWorldGenerationJobsInputBuilder {
         self
     }
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,12 +98,10 @@ impl ListWorldGenerationJobsInputBuilder {
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_world_generation_jobs::ListWorldGenerationJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

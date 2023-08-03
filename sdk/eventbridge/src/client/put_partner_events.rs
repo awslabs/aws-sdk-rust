@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`failed_entry_count(i32)`](crate::operation::put_partner_events::PutPartnerEventsOutput::failed_entry_count): <p>The number of events from this operation that could not be written to the partner event bus.</p>
     ///   - [`entries(Option<Vec<PutPartnerEventsResultEntry>>)`](crate::operation::put_partner_events::PutPartnerEventsOutput::entries): <p>The list of events from this operation that were successfully written to the partner event bus.</p>
     /// - On failure, responds with [`SdkError<PutPartnerEventsError>`](crate::operation::put_partner_events::PutPartnerEventsError)
-    pub fn put_partner_events(
-        &self,
-    ) -> crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder {
-        crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_partner_events(&self) -> crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder {
+        crate::operation::put_partner_events::builders::PutPartnerEventsFluentBuilder::new(self.handle.clone())
     }
 }

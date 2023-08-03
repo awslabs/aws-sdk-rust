@@ -23,9 +23,7 @@ impl TextInputSpecification {
 
 /// A builder for [`TextInputSpecification`](crate::types::TextInputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextInputSpecificationBuilder {
     pub(crate) start_timeout_ms: ::std::option::Option<i32>,
 }

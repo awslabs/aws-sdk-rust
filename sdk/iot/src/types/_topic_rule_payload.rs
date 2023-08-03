@@ -58,9 +58,7 @@ impl TopicRulePayload {
 
 /// A builder for [`TopicRulePayload`](crate::types::TopicRulePayload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRulePayloadBuilder {
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl TopicRulePayloadBuilder {
         self
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -136,18 +131,12 @@ impl TopicRulePayloadBuilder {
         &self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn aws_iot_sql_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_iot_sql_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_iot_sql_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn set_aws_iot_sql_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_iot_sql_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_iot_sql_version = input;
         self
     }

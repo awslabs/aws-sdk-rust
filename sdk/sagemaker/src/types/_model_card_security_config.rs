@@ -23,9 +23,7 @@ impl ModelCardSecurityConfig {
 
 /// A builder for [`ModelCardSecurityConfig`](crate::types::ModelCardSecurityConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelCardSecurityConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ModelCardSecurityConfigBuilder {
     }
     /// Consumes the builder and constructs a [`ModelCardSecurityConfig`](crate::types::ModelCardSecurityConfig).
     pub fn build(self) -> crate::types::ModelCardSecurityConfig {
-        crate::types::ModelCardSecurityConfig {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::ModelCardSecurityConfig { kms_key_id: self.kms_key_id }
     }
 }

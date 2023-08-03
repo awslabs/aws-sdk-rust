@@ -10,10 +10,7 @@ impl CreateCommitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_commit::CreateCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_commit::CreateCommitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_commit::CreateCommitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_commit();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateCommitFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_commit::CreateCommit,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_commit::CreateCommit, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_commit::CreateCommitError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateCommitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl CreateCommitFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_commit::CreateCommit,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_commit::CreateCommit, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_commit::CreateCommitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository where you create the commit.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you create the commit.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -147,18 +129,12 @@ impl CreateCommitFluentBuilder {
         self.inner.get_branch_name()
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    pub fn parent_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_commit_id(input.into());
         self
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    pub fn set_parent_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_commit_id(input);
         self
     }
@@ -195,18 +171,12 @@ impl CreateCommitFluentBuilder {
         self.inner.get_email()
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }
@@ -238,17 +208,12 @@ impl CreateCommitFluentBuilder {
         self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn set_put_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
-    ) -> Self {
+    pub fn set_put_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>) -> Self {
         self.inner = self.inner.set_put_files(input);
         self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn get_put_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
+    pub fn get_put_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
         self.inner.get_put_files()
     }
     /// Appends an item to `deleteFiles`.
@@ -261,17 +226,12 @@ impl CreateCommitFluentBuilder {
         self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn set_delete_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
-    ) -> Self {
+    pub fn set_delete_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>) -> Self {
         self.inner = self.inner.set_delete_files(input);
         self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn get_delete_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
+    pub fn get_delete_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
         self.inner.get_delete_files()
     }
     /// Appends an item to `setFileModes`.
@@ -284,17 +244,12 @@ impl CreateCommitFluentBuilder {
         self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn set_set_file_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
-    ) -> Self {
+    pub fn set_set_file_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>) -> Self {
         self.inner = self.inner.set_set_file_modes(input);
         self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn get_set_file_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
+    pub fn get_set_file_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
         self.inner.get_set_file_modes()
     }
 }

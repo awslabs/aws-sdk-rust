@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`metric_attributions(Option<Vec<MetricAttributionSummary>>)`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput::metric_attributions): <p>The list of metric attributions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMetricAttributionsError>`](crate::operation::list_metric_attributions::ListMetricAttributionsError)
-    pub fn list_metric_attributions(
-        &self,
-    ) -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder
-    {
+    pub fn list_metric_attributions(&self) -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder {
         crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::new(self.handle.clone())
     }
 }

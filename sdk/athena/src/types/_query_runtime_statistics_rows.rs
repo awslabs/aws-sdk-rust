@@ -44,9 +44,7 @@ impl QueryRuntimeStatisticsRows {
 
 /// A builder for [`QueryRuntimeStatisticsRows`](crate::types::QueryRuntimeStatisticsRows).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsRowsBuilder {
     pub(crate) input_rows: ::std::option::Option<i64>,
     pub(crate) input_bytes: ::std::option::Option<i64>,

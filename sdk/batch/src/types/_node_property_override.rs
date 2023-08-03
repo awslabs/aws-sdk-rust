@@ -30,9 +30,7 @@ impl NodePropertyOverride {
 
 /// A builder for [`NodePropertyOverride`](crate::types::NodePropertyOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodePropertyOverrideBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
@@ -58,17 +56,12 @@ impl NodePropertyOverrideBuilder {
         self
     }
     /// <p>The overrides that are sent to a node range.</p>
-    pub fn set_container_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerOverrides>,
-    ) -> Self {
+    pub fn set_container_overrides(mut self, input: ::std::option::Option<crate::types::ContainerOverrides>) -> Self {
         self.container_overrides = input;
         self
     }
     /// <p>The overrides that are sent to a node range.</p>
-    pub fn get_container_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerOverrides> {
+    pub fn get_container_overrides(&self) -> &::std::option::Option<crate::types::ContainerOverrides> {
         &self.container_overrides
     }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).

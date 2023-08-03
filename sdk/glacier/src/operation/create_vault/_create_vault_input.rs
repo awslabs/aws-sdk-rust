@@ -30,9 +30,7 @@ impl CreateVaultInput {
 
 /// A builder for [`CreateVaultInput`](crate::operation::create_vault::CreateVaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVaultInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl CreateVaultInputBuilder {
         &self.vault_name
     }
     /// Consumes the builder and constructs a [`CreateVaultInput`](crate::operation::create_vault::CreateVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vault::CreateVaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vault::CreateVaultInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vault::CreateVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

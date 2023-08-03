@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGcmChannelOutput`](crate::operation::update_gcm_channel::UpdateGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::operation::update_gcm_channel::UpdateGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<UpdateGcmChannelError>`](crate::operation::update_gcm_channel::UpdateGcmChannelError)
-    pub fn update_gcm_channel(
-        &self,
-    ) -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelFluentBuilder {
-        crate::operation::update_gcm_channel::builders::UpdateGcmChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_gcm_channel(&self) -> crate::operation::update_gcm_channel::builders::UpdateGcmChannelFluentBuilder {
+        crate::operation::update_gcm_channel::builders::UpdateGcmChannelFluentBuilder::new(self.handle.clone())
     }
 }

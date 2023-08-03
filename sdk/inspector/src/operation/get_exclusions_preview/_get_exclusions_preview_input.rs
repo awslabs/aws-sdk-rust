@@ -43,17 +43,14 @@ impl GetExclusionsPreviewInput {
 }
 impl GetExclusionsPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
-    pub fn builder(
-    ) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder {
+    pub fn builder() -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder {
         crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExclusionsPreviewInputBuilder {
     pub(crate) assessment_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) preview_token: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct GetExclusionsPreviewInputBuilder {
 }
 impl GetExclusionsPreviewInputBuilder {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_template_arn = input;
         self
     }
@@ -83,18 +74,12 @@ impl GetExclusionsPreviewInputBuilder {
         &self.assessment_template_arn
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn preview_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preview_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn set_preview_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preview_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preview_token = input;
         self
     }
@@ -147,18 +132,14 @@ impl GetExclusionsPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_exclusions_preview::GetExclusionsPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_exclusions_preview::GetExclusionsPreviewInput {
-                assessment_template_arn: self.assessment_template_arn,
-                preview_token: self.preview_token,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                locale: self.locale,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_exclusions_preview::GetExclusionsPreviewInput {
+            assessment_template_arn: self.assessment_template_arn,
+            preview_token: self.preview_token,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            locale: self.locale,
+        })
     }
 }

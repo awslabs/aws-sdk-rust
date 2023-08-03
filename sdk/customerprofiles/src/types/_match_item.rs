@@ -37,9 +37,7 @@ impl MatchItem {
 
 /// A builder for [`MatchItem`](crate::types::MatchItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchItemBuilder {
     pub(crate) match_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,17 +70,12 @@ impl MatchItemBuilder {
         self
     }
     /// <p>A list of identifiers for profiles that match.</p>
-    pub fn set_profile_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.profile_ids = input;
         self
     }
     /// <p>A list of identifiers for profiles that match.</p>
-    pub fn get_profile_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_ids
     }
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>

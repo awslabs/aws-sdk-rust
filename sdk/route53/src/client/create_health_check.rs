@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`health_check(Option<HealthCheck>)`](crate::operation::create_health_check::CreateHealthCheckOutput::health_check): <p>A complex type that contains identifying information about the health check.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_health_check::CreateHealthCheckOutput::location): <p>The unique URL representing the new health check.</p>
     /// - On failure, responds with [`SdkError<CreateHealthCheckError>`](crate::operation::create_health_check::CreateHealthCheckError)
-    pub fn create_health_check(
-        &self,
-    ) -> crate::operation::create_health_check::builders::CreateHealthCheckFluentBuilder {
-        crate::operation::create_health_check::builders::CreateHealthCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_health_check(&self) -> crate::operation::create_health_check::builders::CreateHealthCheckFluentBuilder {
+        crate::operation::create_health_check::builders::CreateHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

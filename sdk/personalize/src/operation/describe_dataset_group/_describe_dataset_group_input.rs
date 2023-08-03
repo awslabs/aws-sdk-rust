@@ -15,34 +15,25 @@ impl DescribeDatasetGroupInput {
 }
 impl DescribeDatasetGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder {
         crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetGroupInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dataset_group::DescribeDatasetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
-                dataset_group_arn: self.dataset_group_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
+            dataset_group_arn: self.dataset_group_arn,
+        })
     }
 }

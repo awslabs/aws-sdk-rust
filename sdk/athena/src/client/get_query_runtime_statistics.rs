@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueryRuntimeStatisticsOutput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput) with field(s):
     ///   - [`query_runtime_statistics(Option<QueryRuntimeStatistics>)`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput::query_runtime_statistics): <p>Runtime statistics about the query execution.</p>
     /// - On failure, responds with [`SdkError<GetQueryRuntimeStatisticsError>`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsError)
-    pub fn get_query_runtime_statistics(&self) -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder{
+    pub fn get_query_runtime_statistics(&self) -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder {
         crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

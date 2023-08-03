@@ -131,17 +131,14 @@ impl CreateImageVersionInput {
 }
 impl CreateImageVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_image_version::builders::CreateImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_image_version::builders::CreateImageVersionInputBuilder {
         crate::operation::create_image_version::builders::CreateImageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageVersionInputBuilder {
     pub(crate) base_image: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -234,10 +231,7 @@ impl CreateImageVersionInputBuilder {
         self
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aliases = input;
         self
     }
@@ -263,10 +257,7 @@ impl CreateImageVersionInputBuilder {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
+    pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.vendor_guidance = input;
         self
     }
@@ -324,18 +315,12 @@ impl CreateImageVersionInputBuilder {
         &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn programming_lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.programming_lang = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn set_programming_lang(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.programming_lang = input;
         self
     }
@@ -384,18 +369,12 @@ impl CreateImageVersionInputBuilder {
         &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn set_release_notes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
@@ -406,24 +385,19 @@ impl CreateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_image_version::CreateImageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_image_version::CreateImageVersionInput {
-                base_image: self.base_image,
-                client_token: self.client_token,
-                image_name: self.image_name,
-                aliases: self.aliases,
-                vendor_guidance: self.vendor_guidance,
-                job_type: self.job_type,
-                ml_framework: self.ml_framework,
-                programming_lang: self.programming_lang,
-                processor: self.processor,
-                horovod: self.horovod,
-                release_notes: self.release_notes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_image_version::CreateImageVersionInput {
+            base_image: self.base_image,
+            client_token: self.client_token,
+            image_name: self.image_name,
+            aliases: self.aliases,
+            vendor_guidance: self.vendor_guidance,
+            job_type: self.job_type,
+            ml_framework: self.ml_framework,
+            programming_lang: self.programming_lang,
+            processor: self.processor,
+            horovod: self.horovod,
+            release_notes: self.release_notes,
+        })
     }
 }

@@ -4,50 +4,35 @@ pub fn de_set_instance_health_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_instance_health::SetInstanceHealthOutput,
-    crate::operation::set_instance_health::SetInstanceHealthError,
-> {
+) -> std::result::Result<crate::operation::set_instance_health::SetInstanceHealthOutput, crate::operation::set_instance_health::SetInstanceHealthError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::set_instance_health::SetInstanceHealthError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::set_instance_health::SetInstanceHealthError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::set_instance_health::SetInstanceHealthError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::set_instance_health::SetInstanceHealthError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => {
-            crate::operation::set_instance_health::SetInstanceHealthError::ResourceContentionFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::ResourceContentionFaultBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output).map_err(crate::operation::set_instance_health::SetInstanceHealthError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+        "ResourceContention" => crate::operation::set_instance_health::SetInstanceHealthError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_instance_health::SetInstanceHealthError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::set_instance_health::SetInstanceHealthError::generic(generic),
     })
 }
@@ -57,16 +42,12 @@ pub fn de_set_instance_health_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_instance_health::SetInstanceHealthOutput,
-    crate::operation::set_instance_health::SetInstanceHealthError,
-> {
+) -> std::result::Result<crate::operation::set_instance_health::SetInstanceHealthOutput, crate::operation::set_instance_health::SetInstanceHealthError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_instance_health::builders::SetInstanceHealthOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

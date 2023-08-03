@@ -38,13 +38,7 @@
 /// Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement in this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalingBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ScalingBehavior {
         match s {
             "DEFAULT" => ScalingBehavior::Default,
             "STRETCH_TO_OUTPUT" => ScalingBehavior::StretchToOutput,
-            other => {
-                ScalingBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScalingBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

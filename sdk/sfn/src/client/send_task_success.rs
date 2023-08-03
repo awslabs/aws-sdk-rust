@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`output(impl ::std::convert::Into<String>)`](crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder::output) / [`set_output(Option<String>)`](crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder::set_output): <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     /// - On success, responds with [`SendTaskSuccessOutput`](crate::operation::send_task_success::SendTaskSuccessOutput)
     /// - On failure, responds with [`SdkError<SendTaskSuccessError>`](crate::operation::send_task_success::SendTaskSuccessError)
-    pub fn send_task_success(
-        &self,
-    ) -> crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder {
-        crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_task_success(&self) -> crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder {
+        crate::operation::send_task_success::builders::SendTaskSuccessFluentBuilder::new(self.handle.clone())
     }
 }

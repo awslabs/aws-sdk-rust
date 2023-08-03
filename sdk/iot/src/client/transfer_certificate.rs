@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`TransferCertificateOutput`](crate::operation::transfer_certificate::TransferCertificateOutput) with field(s):
     ///   - [`transferred_certificate_arn(Option<String>)`](crate::operation::transfer_certificate::TransferCertificateOutput::transferred_certificate_arn): <p>The ARN of the certificate.</p>
     /// - On failure, responds with [`SdkError<TransferCertificateError>`](crate::operation::transfer_certificate::TransferCertificateError)
-    pub fn transfer_certificate(
-        &self,
-    ) -> crate::operation::transfer_certificate::builders::TransferCertificateFluentBuilder {
-        crate::operation::transfer_certificate::builders::TransferCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn transfer_certificate(&self) -> crate::operation::transfer_certificate::builders::TransferCertificateFluentBuilder {
+        crate::operation::transfer_certificate::builders::TransferCertificateFluentBuilder::new(self.handle.clone())
     }
 }

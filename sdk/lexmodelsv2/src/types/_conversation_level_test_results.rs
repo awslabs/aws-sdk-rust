@@ -6,8 +6,7 @@
 pub struct ConversationLevelTestResults {
     /// <p>The item list in the test set results data at the conversation level.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
 }
 impl ConversationLevelTestResults {
     /// <p>The item list in the test set results data at the conversation level.</p>
@@ -24,12 +23,9 @@ impl ConversationLevelTestResults {
 
 /// A builder for [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResultsBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>,
 }
 impl ConversationLevelTestResultsBuilder {
     /// Appends an item to `items`.
@@ -44,20 +40,12 @@ impl ConversationLevelTestResultsBuilder {
         self
     }
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ConversationLevelTestResultItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The item list in the test set results data at the conversation level.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).

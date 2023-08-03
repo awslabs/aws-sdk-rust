@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput) with field(s):
     ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateGameConfigurationError>`](crate::operation::update_game_configuration::UpdateGameConfigurationError)
-    pub fn update_game_configuration(
-        &self,
-    ) -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder
-    {
+    pub fn update_game_configuration(&self) -> crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder {
         crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl HistogramEntry {
 
 /// A builder for [`HistogramEntry`](crate::types::HistogramEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramEntryBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) count: ::std::option::Option<i32>,

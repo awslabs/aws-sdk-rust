@@ -23,9 +23,7 @@ impl UpdateConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CognitoUserPoolConfiguration`](crate::types::UpdateConfiguration::CognitoUserPoolConfiguration), extracting the inner [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_cognito_user_pool_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UpdateCognitoUserPoolConfiguration, &Self> {
+    pub fn as_cognito_user_pool_configuration(&self) -> ::std::result::Result<&crate::types::UpdateCognitoUserPoolConfiguration, &Self> {
         if let UpdateConfiguration::CognitoUserPoolConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

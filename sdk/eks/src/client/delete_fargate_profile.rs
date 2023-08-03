@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput) with field(s):
     ///   - [`fargate_profile(Option<FargateProfile>)`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput::fargate_profile): <p>The deleted Fargate profile.</p>
     /// - On failure, responds with [`SdkError<DeleteFargateProfileError>`](crate::operation::delete_fargate_profile::DeleteFargateProfileError)
-    pub fn delete_fargate_profile(
-        &self,
-    ) -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileFluentBuilder {
-        crate::operation::delete_fargate_profile::builders::DeleteFargateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fargate_profile(&self) -> crate::operation::delete_fargate_profile::builders::DeleteFargateProfileFluentBuilder {
+        crate::operation::delete_fargate_profile::builders::DeleteFargateProfileFluentBuilder::new(self.handle.clone())
     }
 }

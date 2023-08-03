@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::update_group::UpdateGroupOutput::group): <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::operation::update_group::UpdateGroupError)
-    pub fn update_group(
-        &self,
-    ) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
+    pub fn update_group(&self) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
         crate::operation::update_group::builders::UpdateGroupFluentBuilder::new(self.handle.clone())
     }
 }

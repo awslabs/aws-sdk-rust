@@ -10,10 +10,7 @@ impl ListGraphqlApisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_graphql_apis::ListGraphqlApisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_graphql_apis::ListGraphqlApisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_graphql_apis::ListGraphqlApisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_graphql_apis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListGraphqlApisFluentBuilder {
         }
     }
     /// Access the ListGraphqlApis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_graphql_apis::builders::ListGraphqlApisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_graphql_apis::builders::ListGraphqlApisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListGraphqlApisFluentBuilder {
             crate::operation::list_graphql_apis::ListGraphqlApis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_graphql_apis::ListGraphqlApisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_graphql_apis::ListGraphqlApisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListGraphqlApisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListGraphqlApisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_graphql_apis::ListGraphqlApisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_graphql_apis::ListGraphqlApisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_graphql_apis::ListGraphqlApisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListGraphqlApisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_graphql_apis::ListGraphqlApisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_graphql_apis::ListGraphqlApisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_graphql_apis::ListGraphqlApisError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListGraphqlApisFluentBuilder {
             crate::operation::list_graphql_apis::ListGraphqlApis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_graphql_apis::ListGraphqlApisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_graphql_apis::ListGraphqlApisError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl ListGraphqlApisFluentBuilder {
         self
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
-    pub fn set_api_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GraphQlApiType>,
-    ) -> Self {
+    pub fn set_api_type(mut self, input: ::std::option::Option<crate::types::GraphQlApiType>) -> Self {
         self.inner = self.inner.set_api_type(input);
         self
     }

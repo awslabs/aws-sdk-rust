@@ -24,10 +24,7 @@ pub fn ser_event_destination_definition(
     if let Some(var_6) = &input.cloud_watch_destination {
         #[allow(unused_mut)]
         let mut object_7 = object.key("CloudWatchDestination").start_object();
-        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.sns_destination {
@@ -39,10 +36,7 @@ pub fn ser_event_destination_definition(
     if let Some(var_10) = &input.pinpoint_destination {
         #[allow(unused_mut)]
         let mut object_11 = object.key("PinpointDestination").start_object();
-        crate::protocol_serde::shape_pinpoint_destination::ser_pinpoint_destination(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_pinpoint_destination::ser_pinpoint_destination(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

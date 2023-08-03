@@ -58,9 +58,7 @@ impl DescribedProfile {
 
 /// A builder for [`DescribedProfile`](crate::types::DescribedProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl DescribedProfileBuilder {
         self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn set_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
         self.profile_type = input;
         self
     }
@@ -134,27 +129,19 @@ impl DescribedProfileBuilder {
     /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
     ///
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_ids.unwrap_or_default();
         v.push(input.into());
         self.certificate_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_ids = input;
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn get_certificate_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_ids
     }
     /// Appends an item to `tags`.
@@ -169,10 +156,7 @@ impl DescribedProfileBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::create_transit_gateway_vpc_attachment::_create_transit
 
 impl CreateTransitGatewayVpcAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_transit_gateway_vpc_attachment();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayVpcAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder,
+    inner: crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder,
 }
 impl CreateTransitGatewayVpcAttachmentFluentBuilder {
     /// Creates a new `CreateTransitGatewayVpcAttachment`.
@@ -39,15 +39,20 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
         }
     }
     /// Access the CreateTransitGatewayVpcAttachment as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachment, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachment,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -140,10 +149,7 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
         self
     }
     /// <p>The IDs of one or more subnets. You can specify only one subnet per Availability Zone. You must specify at least one subnet, but we recommend that you specify two subnets for better availability. The transit gateway uses one IP address from each specified subnet.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -152,25 +158,17 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
         self.inner.get_subnet_ids()
     }
     /// <p>The VPC attachment options.</p>
-    pub fn options(
-        mut self,
-        input: crate::types::CreateTransitGatewayVpcAttachmentRequestOptions,
-    ) -> Self {
+    pub fn options(mut self, input: crate::types::CreateTransitGatewayVpcAttachmentRequestOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
         self.inner.get_options()
     }
     /// Appends an item to `TagSpecifications`.
@@ -183,17 +181,12 @@ impl CreateTransitGatewayVpcAttachmentFluentBuilder {
         self
     }
     /// <p>The tags to apply to the VPC attachment.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the VPC attachment.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

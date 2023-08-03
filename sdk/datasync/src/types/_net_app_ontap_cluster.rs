@@ -78,9 +78,7 @@ impl NetAppOntapCluster {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
@@ -97,9 +95,7 @@ impl NetAppOntapCluster {
 
 /// A builder for [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetAppOntapClusterBuilder {
     pub(crate) cifs_share_count: ::std::option::Option<i64>,
     pub(crate) nfs_exported_volumes: ::std::option::Option<i64>,
@@ -109,8 +105,7 @@ pub struct NetAppOntapClusterBuilder {
     pub(crate) cluster_block_storage_size: ::std::option::Option<i64>,
     pub(crate) cluster_block_storage_used: ::std::option::Option<i64>,
     pub(crate) cluster_block_storage_logical_used: ::std::option::Option<i64>,
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) lun_count: ::std::option::Option<i64>,
 }
@@ -177,17 +172,12 @@ impl NetAppOntapClusterBuilder {
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
-    pub fn set_max_p95_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaxP95Performance>,
-    ) -> Self {
+    pub fn set_max_p95_performance(mut self, input: ::std::option::Option<crate::types::MaxP95Performance>) -> Self {
         self.max_p95_performance = input;
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
-    pub fn get_max_p95_performance(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaxP95Performance> {
+    pub fn get_max_p95_performance(&self) -> &::std::option::Option<crate::types::MaxP95Performance> {
         &self.max_p95_performance
     }
     /// <p>The total storage space that's available in the cluster.</p>
@@ -224,10 +214,7 @@ impl NetAppOntapClusterBuilder {
         self
     }
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
-    pub fn set_cluster_block_storage_logical_used(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_cluster_block_storage_logical_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cluster_block_storage_logical_used = input;
         self
     }
@@ -247,17 +234,12 @@ impl NetAppOntapClusterBuilder {
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
@@ -268,18 +250,13 @@ impl NetAppOntapClusterBuilder {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn set_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStatus>,
-    ) -> Self {
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.recommendation_status = input;
         self
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn get_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         &self.recommendation_status
     }
     /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>

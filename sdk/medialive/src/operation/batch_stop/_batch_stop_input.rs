@@ -30,9 +30,7 @@ impl BatchStopInput {
 
 /// A builder for [`BatchStopInput`](crate::operation::batch_stop::BatchStopInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopInputBuilder {
     pub(crate) channel_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) multiplex_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,17 +48,12 @@ impl BatchStopInputBuilder {
         self
     }
     /// List of channel IDs
-    pub fn set_channel_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_channel_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.channel_ids = input;
         self
     }
     /// List of channel IDs
-    pub fn get_channel_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channel_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channel_ids
     }
     /// Appends an item to `multiplex_ids`.
@@ -68,36 +61,23 @@ impl BatchStopInputBuilder {
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
     ///
     /// List of multiplex IDs
-    pub fn multiplex_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multiplex_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multiplex_ids.unwrap_or_default();
         v.push(input.into());
         self.multiplex_ids = ::std::option::Option::Some(v);
         self
     }
     /// List of multiplex IDs
-    pub fn set_multiplex_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multiplex_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.multiplex_ids = input;
         self
     }
     /// List of multiplex IDs
-    pub fn get_multiplex_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multiplex_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchStopInput`](crate::operation::batch_stop::BatchStopInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_stop::BatchStopInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_stop::BatchStopInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_stop::BatchStopInput {
             channel_ids: self.channel_ids,
             multiplex_ids: self.multiplex_ids,

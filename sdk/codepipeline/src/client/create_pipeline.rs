@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_pipeline::CreatePipelineOutput::tags): <p>Specifies the tags applied to the pipeline.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::operation::create_pipeline::CreatePipelineError)
-    pub fn create_pipeline(
-        &self,
-    ) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
-        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pipeline(&self) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
+        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

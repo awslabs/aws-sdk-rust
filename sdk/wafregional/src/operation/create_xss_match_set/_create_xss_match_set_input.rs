@@ -23,17 +23,14 @@ impl CreateXssMatchSetInput {
 }
 impl CreateXssMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateXssMatchSetInput`](crate::operation::create_xss_match_set::CreateXssMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetInputBuilder {
         crate::operation::create_xss_match_set::builders::CreateXssMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateXssMatchSetInput`](crate::operation::create_xss_match_set::CreateXssMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateXssMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl CreateXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateXssMatchSetInput`](crate::operation::create_xss_match_set::CreateXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_xss_match_set::CreateXssMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_xss_match_set::CreateXssMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_xss_match_set::CreateXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_xss_match_set::CreateXssMatchSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

@@ -36,8 +36,7 @@ pub struct EksContainerDetail {
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub volume_mounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
+    pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
     pub security_context: ::std::option::Option<crate::types::EksContainerSecurityContext>,
@@ -71,9 +70,7 @@ impl EksContainerDetail {
         self.env.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
+    pub fn resources(&self) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
         self.resources.as_ref()
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
@@ -89,9 +86,7 @@ impl EksContainerDetail {
         self.volume_mounts.as_deref()
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn security_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EksContainerSecurityContext> {
+    pub fn security_context(&self) -> ::std::option::Option<&crate::types::EksContainerSecurityContext> {
         self.security_context.as_ref()
     }
 }
@@ -104,22 +99,18 @@ impl EksContainerDetail {
 
 /// A builder for [`EksContainerDetail`](crate::types::EksContainerDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksContainerDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) image_pull_policy: ::std::option::Option<::std::string::String>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) env:
-        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+    pub(crate) env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     pub(crate) resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_mounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
+    pub(crate) volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
     pub(crate) security_context: ::std::option::Option<crate::types::EksContainerSecurityContext>,
 }
 impl EksContainerDetailBuilder {
@@ -152,18 +143,12 @@ impl EksContainerDetailBuilder {
         &self.image
     }
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn image_pull_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pull_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pull_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_image_pull_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pull_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pull_policy = input;
         self
     }
@@ -183,10 +168,7 @@ impl EksContainerDetailBuilder {
         self
     }
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -208,10 +190,7 @@ impl EksContainerDetailBuilder {
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }
@@ -236,22 +215,14 @@ impl EksContainerDetailBuilder {
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn set_env(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>,
-        >,
-    ) -> Self {
+    pub fn set_env(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>) -> Self {
         self.env = input;
         self
     }
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn get_env(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>
-    {
+    pub fn get_env(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>> {
         &self.env
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
@@ -260,17 +231,12 @@ impl EksContainerDetailBuilder {
         self
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::EksContainerResourceRequirements>) -> Self {
         self.resources = input;
         self
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksContainerResourceRequirements> {
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::EksContainerResourceRequirements> {
         &self.resources
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
@@ -313,17 +279,12 @@ impl EksContainerDetailBuilder {
         self
     }
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_volume_mounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
-    ) -> Self {
+    pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>) -> Self {
         self.volume_mounts = input;
         self
     }
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn get_volume_mounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>> {
+    pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>> {
         &self.volume_mounts
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
@@ -332,17 +293,12 @@ impl EksContainerDetailBuilder {
         self
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_security_context(
-        mut self,
-        input: ::std::option::Option<crate::types::EksContainerSecurityContext>,
-    ) -> Self {
+    pub fn set_security_context(mut self, input: ::std::option::Option<crate::types::EksContainerSecurityContext>) -> Self {
         self.security_context = input;
         self
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn get_security_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksContainerSecurityContext> {
+    pub fn get_security_context(&self) -> &::std::option::Option<crate::types::EksContainerSecurityContext> {
         &self.security_context
     }
     /// Consumes the builder and constructs a [`EksContainerDetail`](crate::types::EksContainerDetail).

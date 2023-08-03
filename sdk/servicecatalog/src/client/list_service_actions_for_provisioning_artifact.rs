@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`service_action_summaries(Option<Vec<ServiceActionSummary>>)`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput::service_action_summaries): <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListServiceActionsForProvisioningArtifactError>`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactError)
-    pub fn list_service_actions_for_provisioning_artifact(&self) -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactFluentBuilder{
-        crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactFluentBuilder::new(self.handle.clone())
+    pub fn list_service_actions_for_provisioning_artifact(
+        &self,
+    ) -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactFluentBuilder {
+        crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

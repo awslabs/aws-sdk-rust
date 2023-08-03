@@ -37,9 +37,7 @@ impl UpdateError {
 
 /// A builder for [`UpdateError`](crate::types::UpdateError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateErrorBuilder {
     pub(crate) code: ::std::option::Option<i32>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl UpdateErrorBuilder {
         self
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn set_caused_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateInstruction>,
-    ) -> Self {
+    pub fn set_caused_by(mut self, input: ::std::option::Option<crate::types::UpdateInstruction>) -> Self {
         self.caused_by = input;
         self
     }

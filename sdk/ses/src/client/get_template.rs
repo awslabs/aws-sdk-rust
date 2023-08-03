@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`template(Option<Template>)`](crate::operation::get_template::GetTemplateOutput::template): <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
-    pub fn get_template(
-        &self,
-    ) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
+    pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())
     }
 }

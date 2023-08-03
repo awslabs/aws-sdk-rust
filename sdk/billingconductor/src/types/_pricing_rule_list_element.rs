@@ -119,10 +119,7 @@ impl ::std::fmt::Debug for PricingRuleListElement {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
@@ -207,10 +204,7 @@ impl PricingRuleListElementBuilder {
         self
     }
     /// <p>The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingRuleScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PricingRuleScope>) -> Self {
         self.scope = input;
         self
     }
@@ -303,18 +297,12 @@ impl PricingRuleListElementBuilder {
         &self.last_modified_time
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_entity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn set_billing_entity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_entity = input;
         self
     }
@@ -400,10 +388,7 @@ impl ::std::fmt::Debug for PricingRuleListElementBuilder {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);

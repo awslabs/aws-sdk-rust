@@ -51,9 +51,7 @@ impl AgentTurnResult {
 
 /// A builder for [`AgentTurnResult`](crate::types::AgentTurnResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentTurnResultBuilder {
     pub(crate) expected_agent_prompt: ::std::option::Option<::std::string::String>,
     pub(crate) actual_agent_prompt: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct AgentTurnResultBuilder {
 }
 impl AgentTurnResultBuilder {
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    pub fn expected_agent_prompt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_agent_prompt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_agent_prompt = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expected agent prompt for the agent turn in a test set execution.</p>
-    pub fn set_expected_agent_prompt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_agent_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_agent_prompt = input;
         self
     }
@@ -83,18 +75,12 @@ impl AgentTurnResultBuilder {
         &self.expected_agent_prompt
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
-    pub fn actual_agent_prompt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn actual_agent_prompt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actual_agent_prompt = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual agent prompt for the agent turn in a test set execution.</p>
-    pub fn set_actual_agent_prompt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_actual_agent_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.actual_agent_prompt = input;
         self
     }
@@ -108,10 +94,7 @@ impl AgentTurnResultBuilder {
         self
     }
     /// <p>Details about an error in an execution of a test set.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ExecutionErrorDetails>) -> Self {
         self.error_details = input;
         self
     }
@@ -120,18 +103,12 @@ impl AgentTurnResultBuilder {
         &self.error_details
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
-    pub fn actual_elicited_slot(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn actual_elicited_slot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actual_elicited_slot = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual elicited slot for the agent turn in a test set execution.</p>
-    pub fn set_actual_elicited_slot(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_actual_elicited_slot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.actual_elicited_slot = input;
         self
     }
@@ -140,18 +117,12 @@ impl AgentTurnResultBuilder {
         &self.actual_elicited_slot
     }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
-    pub fn actual_intent(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn actual_intent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actual_intent = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual intent for the agent turn in a test set execution.</p>
-    pub fn set_actual_intent(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_actual_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.actual_intent = input;
         self
     }

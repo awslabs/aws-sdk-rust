@@ -23,9 +23,7 @@ impl KeywordFilter {
 
 /// A builder for [`KeywordFilter`](crate::types::KeywordFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeywordFilterBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

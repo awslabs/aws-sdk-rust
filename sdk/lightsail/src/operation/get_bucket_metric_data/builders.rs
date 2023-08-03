@@ -38,9 +38,7 @@ impl GetBucketMetricDataFluentBuilder {
         }
     }
     /// Access the GetBucketMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetBucketMetricDataFluentBuilder {
             crate::operation::get_bucket_metric_data::GetBucketMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetBucketMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetBucketMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetBucketMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetBucketMetricDataFluentBuilder {
             crate::operation::get_bucket_metric_data::GetBucketMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +144,7 @@ impl GetBucketMetricDataFluentBuilder {
     /// <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>
     /// <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::BucketMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -181,10 +165,7 @@ impl GetBucketMetricDataFluentBuilder {
         self
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -198,10 +179,7 @@ impl GetBucketMetricDataFluentBuilder {
         self
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -255,10 +233,7 @@ impl GetBucketMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
@@ -271,9 +246,7 @@ impl GetBucketMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         self.inner.get_statistics()
     }
     /// <p>The unit for the metric data request.</p>

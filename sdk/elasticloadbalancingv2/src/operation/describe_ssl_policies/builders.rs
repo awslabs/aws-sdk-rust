@@ -38,9 +38,7 @@ impl DescribeSSLPoliciesFluentBuilder {
         }
     }
     /// Access the DescribeSSLPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeSSLPoliciesFluentBuilder {
             crate::operation::describe_ssl_policies::DescribeSSLPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ssl_policies::DescribeSSLPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeSSLPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeSSLPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ssl_policies::DescribeSSLPoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeSSLPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ssl_policies::DescribeSSLPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeSSLPoliciesFluentBuilder {
             crate::operation::describe_ssl_policies::DescribeSSLPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ssl_policies::DescribeSSLPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +120,7 @@ impl DescribeSSLPoliciesFluentBuilder {
         self
     }
     /// <p>The names of the policies.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
@@ -178,17 +162,12 @@ impl DescribeSSLPoliciesFluentBuilder {
         self
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    pub fn set_load_balancer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
-    ) -> Self {
+    pub fn set_load_balancer_type(mut self, input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>) -> Self {
         self.inner = self.inner.set_load_balancer_type(input);
         self
     }
     /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
-    pub fn get_load_balancer_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
+    pub fn get_load_balancer_type(&self) -> &::std::option::Option<crate::types::LoadBalancerTypeEnum> {
         self.inner.get_load_balancer_type()
     }
 }

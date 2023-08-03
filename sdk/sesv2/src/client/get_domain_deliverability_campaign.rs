@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput) with field(s):
     ///   - [`domain_deliverability_campaign(Option<DomainDeliverabilityCampaign>)`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput::domain_deliverability_campaign): <p>An object that contains the deliverability data for the campaign.</p>
     /// - On failure, responds with [`SdkError<GetDomainDeliverabilityCampaignError>`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignError)
-    pub fn get_domain_deliverability_campaign(&self) -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignFluentBuilder{
+    pub fn get_domain_deliverability_campaign(
+        &self,
+    ) -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignFluentBuilder {
         crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignFluentBuilder::new(self.handle.clone())
     }
 }

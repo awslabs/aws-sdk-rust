@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`function_arn(Option<String>)`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput::function_arn): <p>The ARN of the function</p>
     ///   - [`runtime_version_arn(Option<String>)`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput::runtime_version_arn): <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     /// - On failure, responds with [`SdkError<PutRuntimeManagementConfigError>`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError)
-    pub fn put_runtime_management_config(&self) -> crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigFluentBuilder{
+    pub fn put_runtime_management_config(
+        &self,
+    ) -> crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigFluentBuilder {
         crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigFluentBuilder::new(self.handle.clone())
     }
 }

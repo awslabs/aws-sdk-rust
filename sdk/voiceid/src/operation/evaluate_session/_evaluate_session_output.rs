@@ -41,15 +41,11 @@ impl EvaluateSessionOutput {
         self.streaming_status.as_ref()
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    pub fn authentication_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationResult> {
+    pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResult> {
         self.authentication_result.as_ref()
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    pub fn fraud_detection_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudDetectionResult> {
+    pub fn fraud_detection_result(&self) -> ::std::option::Option<&crate::types::FraudDetectionResult> {
         self.fraud_detection_result.as_ref()
     }
 }
@@ -67,9 +63,7 @@ impl EvaluateSessionOutput {
 
 /// A builder for [`EvaluateSessionOutput`](crate::operation::evaluate_session::EvaluateSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateSessionOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -128,10 +122,7 @@ impl EvaluateSessionOutputBuilder {
         self
     }
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
-    pub fn set_streaming_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingStatus>,
-    ) -> Self {
+    pub fn set_streaming_status(mut self, input: ::std::option::Option<crate::types::StreamingStatus>) -> Self {
         self.streaming_status = input;
         self
     }
@@ -145,17 +136,12 @@ impl EvaluateSessionOutputBuilder {
         self
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    pub fn set_authentication_result(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationResult>,
-    ) -> Self {
+    pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResult>) -> Self {
         self.authentication_result = input;
         self
     }
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    pub fn get_authentication_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationResult> {
+    pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResult> {
         &self.authentication_result
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
@@ -164,17 +150,12 @@ impl EvaluateSessionOutputBuilder {
         self
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    pub fn set_fraud_detection_result(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudDetectionResult>,
-    ) -> Self {
+    pub fn set_fraud_detection_result(mut self, input: ::std::option::Option<crate::types::FraudDetectionResult>) -> Self {
         self.fraud_detection_result = input;
         self
     }
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    pub fn get_fraud_detection_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudDetectionResult> {
+    pub fn get_fraud_detection_result(&self) -> &::std::option::Option<crate::types::FraudDetectionResult> {
         &self.fraud_detection_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

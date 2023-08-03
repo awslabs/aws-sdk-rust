@@ -5,8 +5,7 @@
 pub struct GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
     #[doc(hidden)]
-    pub device_registration_state:
-        ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
+    pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the proximity event.</p>
     #[doc(hidden)]
     pub proximity: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
@@ -15,26 +14,19 @@ pub struct GetEventConfigurationByResourceTypesOutput {
     pub join: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the connection status event.</p>
     #[doc(hidden)]
-    pub connection_status:
-        ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
+    pub connection_status: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration object for the message delivery status event.</p>
     #[doc(hidden)]
-    pub message_delivery_status:
-        ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
+    pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
     _request_id: Option<String>,
 }
 impl GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
-    pub fn device_registration_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>
-    {
+    pub fn device_registration_state(&self) -> ::std::option::Option<&crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
         self.device_registration_state.as_ref()
     }
     /// <p>Resource type event configuration for the proximity event.</p>
-    pub fn proximity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProximityResourceTypeEventConfiguration> {
+    pub fn proximity(&self) -> ::std::option::Option<&crate::types::ProximityResourceTypeEventConfiguration> {
         self.proximity.as_ref()
     }
     /// <p>Resource type event configuration for the join event.</p>
@@ -42,16 +34,11 @@ impl GetEventConfigurationByResourceTypesOutput {
         self.join.as_ref()
     }
     /// <p>Resource type event configuration for the connection status event.</p>
-    pub fn connection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionStatusResourceTypeEventConfiguration> {
+    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatusResourceTypeEventConfiguration> {
         self.connection_status.as_ref()
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
-    pub fn message_delivery_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>
-    {
+    pub fn message_delivery_status(&self) -> ::std::option::Option<&crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
         self.message_delivery_status.as_ref()
     }
 }
@@ -62,74 +49,52 @@ impl ::aws_http::request_id::RequestId for GetEventConfigurationByResourceTypesO
 }
 impl GetEventConfigurationByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder {
         crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventConfigurationByResourceTypesOutputBuilder {
-    pub(crate) device_registration_state:
-        ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
-    pub(crate) proximity:
-        ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
+    pub(crate) device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
+    pub(crate) proximity: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
     pub(crate) join: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
-    pub(crate) connection_status:
-        ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
-    pub(crate) message_delivery_status:
-        ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
+    pub(crate) connection_status: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
+    pub(crate) message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
     _request_id: Option<String>,
 }
 impl GetEventConfigurationByResourceTypesOutputBuilder {
     /// <p>Resource type event configuration for the device registration state event.</p>
-    pub fn device_registration_state(
-        mut self,
-        input: crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn device_registration_state(mut self, input: crate::types::DeviceRegistrationStateResourceTypeEventConfiguration) -> Self {
         self.device_registration_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type event configuration for the device registration state event.</p>
     pub fn set_device_registration_state(
         mut self,
-        input: ::std::option::Option<
-            crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     ) -> Self {
         self.device_registration_state = input;
         self
     }
     /// <p>Resource type event configuration for the device registration state event.</p>
-    pub fn get_device_registration_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>
-    {
+    pub fn get_device_registration_state(&self) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
         &self.device_registration_state
     }
     /// <p>Resource type event configuration for the proximity event.</p>
-    pub fn proximity(
-        mut self,
-        input: crate::types::ProximityResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn proximity(mut self, input: crate::types::ProximityResourceTypeEventConfiguration) -> Self {
         self.proximity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type event configuration for the proximity event.</p>
-    pub fn set_proximity(
-        mut self,
-        input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_proximity(mut self, input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>) -> Self {
         self.proximity = input;
         self
     }
     /// <p>Resource type event configuration for the proximity event.</p>
-    pub fn get_proximity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
+    pub fn get_proximity(&self) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
         &self.proximity
     }
     /// <p>Resource type event configuration for the join event.</p>
@@ -138,64 +103,43 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
         self
     }
     /// <p>Resource type event configuration for the join event.</p>
-    pub fn set_join(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_join(mut self, input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>) -> Self {
         self.join = input;
         self
     }
     /// <p>Resource type event configuration for the join event.</p>
-    pub fn get_join(
-        &self,
-    ) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
         &self.join
     }
     /// <p>Resource type event configuration for the connection status event.</p>
-    pub fn connection_status(
-        mut self,
-        input: crate::types::ConnectionStatusResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn connection_status(mut self, input: crate::types::ConnectionStatusResourceTypeEventConfiguration) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type event configuration for the connection status event.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>) -> Self {
         self.connection_status = input;
         self
     }
     /// <p>Resource type event configuration for the connection status event.</p>
-    pub fn get_connection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
         &self.connection_status
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
-    pub fn message_delivery_status(
-        mut self,
-        input: crate::types::MessageDeliveryStatusResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn message_delivery_status(mut self, input: crate::types::MessageDeliveryStatusResourceTypeEventConfiguration) -> Self {
         self.message_delivery_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
     pub fn set_message_delivery_status(
         mut self,
-        input: ::std::option::Option<
-            crate::types::MessageDeliveryStatusResourceTypeEventConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
     ) -> Self {
         self.message_delivery_status = input;
         self
     }
     /// <p>Resource type event configuration object for the message delivery status event.</p>
-    pub fn get_message_delivery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>
-    {
+    pub fn get_message_delivery_status(&self) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
         &self.message_delivery_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -208,18 +152,13 @@ impl GetEventConfigurationByResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesOutput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput).
-    pub fn build(self) -> crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput{
+    pub fn build(self) -> crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput {
         crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesOutput {
-            device_registration_state: self.device_registration_state
-            ,
-            proximity: self.proximity
-            ,
-            join: self.join
-            ,
-            connection_status: self.connection_status
-            ,
-            message_delivery_status: self.message_delivery_status
-            ,
+            device_registration_state: self.device_registration_state,
+            proximity: self.proximity,
+            join: self.join,
+            connection_status: self.connection_status,
+            message_delivery_status: self.message_delivery_status,
             _request_id: self._request_id,
         }
     }

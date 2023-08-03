@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteMlTransformOutput {
 }
 impl DeleteMlTransformOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMlTransformOutput`](crate::operation::delete_ml_transform::DeleteMlTransformOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_ml_transform::builders::DeleteMlTransformOutputBuilder {
+    pub fn builder() -> crate::operation::delete_ml_transform::builders::DeleteMlTransformOutputBuilder {
         crate::operation::delete_ml_transform::builders::DeleteMlTransformOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMlTransformOutput`](crate::operation::delete_ml_transform::DeleteMlTransformOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

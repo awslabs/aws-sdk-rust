@@ -15,34 +15,25 @@ impl DeleteAcceleratorInput {
 }
 impl DeleteAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
-    pub fn builder() -> crate::operation::delete_accelerator::builders::DeleteAcceleratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_accelerator::builders::DeleteAcceleratorInputBuilder {
         crate::operation::delete_accelerator::builders::DeleteAcceleratorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_accelerator::DeleteAcceleratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_accelerator::DeleteAcceleratorInput {
-                accelerator_arn: self.accelerator_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_accelerator::DeleteAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_accelerator::DeleteAcceleratorInput {
+            accelerator_arn: self.accelerator_arn,
+        })
     }
 }

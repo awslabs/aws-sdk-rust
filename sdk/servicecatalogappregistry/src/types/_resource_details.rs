@@ -23,9 +23,7 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ResourceDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
-        crate::types::ResourceDetails {
-            tag_value: self.tag_value,
-        }
+        crate::types::ResourceDetails { tag_value: self.tag_value }
     }
 }

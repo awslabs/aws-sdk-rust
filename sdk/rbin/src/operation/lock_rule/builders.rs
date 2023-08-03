@@ -10,10 +10,7 @@ impl LockRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::lock_rule::LockRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lock_rule::LockRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lock_rule::LockRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.lock_rule();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl LockRuleFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lock_rule::LockRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lock_rule::LockRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lock_rule::LockRuleError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl LockRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl LockRuleFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lock_rule::LockRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lock_rule::LockRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lock_rule::LockRuleError>,
     > {
         self.customize_middleware().await
@@ -132,17 +120,12 @@ impl LockRuleFluentBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
+    pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
         self.inner = self.inner.set_lock_configuration(input);
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn get_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+    pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         self.inner.get_lock_configuration()
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeHandshakeOutput {
 }
 impl DescribeHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHandshakeOutput`](crate::operation::describe_handshake::DescribeHandshakeOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_handshake::builders::DescribeHandshakeOutputBuilder {
+    pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeOutputBuilder {
         crate::operation::describe_handshake::builders::DescribeHandshakeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHandshakeOutput`](crate::operation::describe_handshake::DescribeHandshakeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHandshakeOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,

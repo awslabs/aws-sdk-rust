@@ -26,8 +26,7 @@ impl CreateCustomActionTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder,
+    inner: crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder,
 }
 impl CreateCustomActionTypeFluentBuilder {
     /// Creates a new `CreateCustomActionType`.
@@ -38,10 +37,7 @@ impl CreateCustomActionTypeFluentBuilder {
         }
     }
     /// Access the CreateCustomActionType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateCustomActionTypeFluentBuilder {
             crate::operation::create_custom_action_type::CreateCustomActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_action_type::CreateCustomActionTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateCustomActionTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateCustomActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_action_type::CreateCustomActionTypeError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateCustomActionTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_action_type::CreateCustomActionTypeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateCustomActionTypeFluentBuilder {
             crate::operation::create_custom_action_type::CreateCustomActionType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_action_type::CreateCustomActionTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The category of the custom action, such as a build action or a test action.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
@@ -175,10 +157,7 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>URLs that provide users information about this custom action.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::ActionTypeSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
@@ -193,29 +172,21 @@ impl CreateCustomActionTypeFluentBuilder {
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn configuration_properties(
-        mut self,
-        input: crate::types::ActionConfigurationProperty,
-    ) -> Self {
+    pub fn configuration_properties(mut self, input: crate::types::ActionConfigurationProperty) -> Self {
         self.inner = self.inner.configuration_properties(input);
         self
     }
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn set_configuration_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
-    ) -> Self {
+    pub fn set_configuration_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>) -> Self {
         self.inner = self.inner.set_configuration_properties(input);
         self
     }
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn get_configuration_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
+    pub fn get_configuration_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>> {
         self.inner.get_configuration_properties()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -224,17 +195,12 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn set_input_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_input_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.inner = self.inner.set_input_artifact_details(input);
         self
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn get_input_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_input_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         self.inner.get_input_artifact_details()
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -243,17 +209,12 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn set_output_artifact_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactDetails>,
-    ) -> Self {
+    pub fn set_output_artifact_details(mut self, input: ::std::option::Option<crate::types::ArtifactDetails>) -> Self {
         self.inner = self.inner.set_output_artifact_details(input);
         self
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn get_output_artifact_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArtifactDetails> {
+    pub fn get_output_artifact_details(&self) -> &::std::option::Option<crate::types::ArtifactDetails> {
         self.inner.get_output_artifact_details()
     }
     /// Appends an item to `tags`.
@@ -266,10 +227,7 @@ impl CreateCustomActionTypeFluentBuilder {
         self
     }
     /// <p>The tags for the custom action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::describe_instances::DescribeInstancesOutput::instances): <p>A collection of objects containing properties for each instance returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instances::DescribeInstancesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancesError>`](crate::operation::describe_instances::DescribeInstancesError)
-    pub fn describe_instances(
-        &self,
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
-        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_instances(&self) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
+        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(self.handle.clone())
     }
 }

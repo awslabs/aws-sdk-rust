@@ -60,9 +60,7 @@ impl MetricDataQuery {
 
 /// A builder for [`MetricDataQuery`](crate::types::MetricDataQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl MetricDataQueryBuilder {
     }
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
-    pub fn set_metric_stat(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricStat>,
-    ) -> Self {
+    pub fn set_metric_stat(mut self, input: ::std::option::Option<crate::types::MetricStat>) -> Self {
         self.metric_stat = input;
         self
     }

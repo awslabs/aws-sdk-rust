@@ -30,9 +30,7 @@ impl ResizeInfo {
 
 /// A builder for [`ResizeInfo`](crate::types::ResizeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResizeInfoBuilder {
     pub(crate) resize_type: ::std::option::Option<::std::string::String>,
     pub(crate) allow_cancel_resize: ::std::option::Option<bool>,

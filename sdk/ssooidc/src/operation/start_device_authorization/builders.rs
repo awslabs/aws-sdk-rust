@@ -26,7 +26,7 @@ impl StartDeviceAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeviceAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder,
+    inner: crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder,
 }
 impl StartDeviceAuthorizationFluentBuilder {
     /// Creates a new `StartDeviceAuthorization`.
@@ -37,10 +37,7 @@ impl StartDeviceAuthorizationFluentBuilder {
         }
     }
     /// Access the StartDeviceAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartDeviceAuthorizationFluentBuilder {
             crate::operation::start_device_authorization::StartDeviceAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartDeviceAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartDeviceAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_authorization::StartDeviceAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartDeviceAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_authorization::StartDeviceAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartDeviceAuthorizationFluentBuilder {
             crate::operation::start_device_authorization::StartDeviceAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl StartDeviceAuthorizationFluentBuilder {
         self.inner.get_client_id()
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_secret(input.into());
         self
     }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_secret(input);
         self
     }

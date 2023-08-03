@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`key_check_value(Option<String>)`](crate::operation::generate_mac::GenerateMacOutput::key_check_value): <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     ///   - [`mac(Option<String>)`](crate::operation::generate_mac::GenerateMacOutput::mac): <p>The MAC cryptogram generated within Amazon Web Services Payment Cryptography.</p>
     /// - On failure, responds with [`SdkError<GenerateMacError>`](crate::operation::generate_mac::GenerateMacError)
-    pub fn generate_mac(
-        &self,
-    ) -> crate::operation::generate_mac::builders::GenerateMacFluentBuilder {
+    pub fn generate_mac(&self) -> crate::operation::generate_mac::builders::GenerateMacFluentBuilder {
         crate::operation::generate_mac::builders::GenerateMacFluentBuilder::new(self.handle.clone())
     }
 }

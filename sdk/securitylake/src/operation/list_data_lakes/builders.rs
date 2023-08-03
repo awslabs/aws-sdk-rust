@@ -10,10 +10,7 @@ impl ListDataLakesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_data_lakes::ListDataLakesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_lakes::ListDataLakesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_lakes::ListDataLakesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_data_lakes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDataLakesFluentBuilder {
         }
     }
     /// Access the ListDataLakes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_lakes::builders::ListDataLakesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_data_lakes::builders::ListDataLakesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListDataLakesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl ListDataLakesFluentBuilder {
         self
     }
     /// <p>The list of regions where Security Lake is enabled.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }

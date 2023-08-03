@@ -118,13 +118,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -310,9 +304,7 @@ impl ::std::convert::From<&str> for OperationType {
             "CreateContactMethod" => OperationType::CreateContactMethod,
             "CreateContainerService" => OperationType::CreateContainerService,
             "CreateContainerServiceDeployment" => OperationType::CreateContainerServiceDeployment,
-            "CreateContainerServiceRegistryLogin" => {
-                OperationType::CreateContainerServiceRegistryLogin
-            }
+            "CreateContainerServiceRegistryLogin" => OperationType::CreateContainerServiceRegistryLogin,
             "CreateDisk" => OperationType::CreateDisk,
             "CreateDiskFromSnapshot" => OperationType::CreateDiskFromSnapshot,
             "CreateDiskSnapshot" => OperationType::CreateDiskSnapshot,
@@ -324,9 +316,7 @@ impl ::std::convert::From<&str> for OperationType {
             "CreateLoadBalancer" => OperationType::CreateLoadBalancer,
             "CreateLoadBalancerTlsCertificate" => OperationType::CreateLoadBalancerTlsCertificate,
             "CreateRelationalDatabase" => OperationType::CreateRelationalDatabase,
-            "CreateRelationalDatabaseFromSnapshot" => {
-                OperationType::CreateRelationalDatabaseFromSnapshot
-            }
+            "CreateRelationalDatabaseFromSnapshot" => OperationType::CreateRelationalDatabaseFromSnapshot,
             "CreateRelationalDatabaseSnapshot" => OperationType::CreateRelationalDatabaseSnapshot,
             "DeleteAlarm" => OperationType::DeleteAlarm,
             "DeleteBucket" => OperationType::DeleteBucket,
@@ -382,12 +372,8 @@ impl ::std::convert::From<&str> for OperationType {
             "UpdateInstanceMetadataOptions" => OperationType::UpdateInstanceMetadataOptions,
             "UpdateLoadBalancerAttribute" => OperationType::UpdateLoadBalancerAttribute,
             "UpdateRelationalDatabase" => OperationType::UpdateRelationalDatabase,
-            "UpdateRelationalDatabaseParameters" => {
-                OperationType::UpdateRelationalDatabaseParameters
-            }
-            other => {
-                OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "UpdateRelationalDatabaseParameters" => OperationType::UpdateRelationalDatabaseParameters,
+            other => OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -415,9 +401,7 @@ impl OperationType {
             OperationType::CreateContactMethod => "CreateContactMethod",
             OperationType::CreateContainerService => "CreateContainerService",
             OperationType::CreateContainerServiceDeployment => "CreateContainerServiceDeployment",
-            OperationType::CreateContainerServiceRegistryLogin => {
-                "CreateContainerServiceRegistryLogin"
-            }
+            OperationType::CreateContainerServiceRegistryLogin => "CreateContainerServiceRegistryLogin",
             OperationType::CreateDisk => "CreateDisk",
             OperationType::CreateDiskFromSnapshot => "CreateDiskFromSnapshot",
             OperationType::CreateDiskSnapshot => "CreateDiskSnapshot",
@@ -429,9 +413,7 @@ impl OperationType {
             OperationType::CreateLoadBalancer => "CreateLoadBalancer",
             OperationType::CreateLoadBalancerTlsCertificate => "CreateLoadBalancerTlsCertificate",
             OperationType::CreateRelationalDatabase => "CreateRelationalDatabase",
-            OperationType::CreateRelationalDatabaseFromSnapshot => {
-                "CreateRelationalDatabaseFromSnapshot"
-            }
+            OperationType::CreateRelationalDatabaseFromSnapshot => "CreateRelationalDatabaseFromSnapshot",
             OperationType::CreateRelationalDatabaseSnapshot => "CreateRelationalDatabaseSnapshot",
             OperationType::DeleteAlarm => "DeleteAlarm",
             OperationType::DeleteBucket => "DeleteBucket",
@@ -487,9 +469,7 @@ impl OperationType {
             OperationType::UpdateInstanceMetadataOptions => "UpdateInstanceMetadataOptions",
             OperationType::UpdateLoadBalancerAttribute => "UpdateLoadBalancerAttribute",
             OperationType::UpdateRelationalDatabase => "UpdateRelationalDatabase",
-            OperationType::UpdateRelationalDatabaseParameters => {
-                "UpdateRelationalDatabaseParameters"
-            }
+            OperationType::UpdateRelationalDatabaseParameters => "UpdateRelationalDatabaseParameters",
             OperationType::Unknown(value) => value.as_str(),
         }
     }

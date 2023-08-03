@@ -127,9 +127,7 @@ impl ListCopyJobsInput {
 
 /// A builder for [`ListCopyJobsInput`](crate::operation::list_copy_jobs::ListCopyJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCopyJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -174,18 +172,12 @@ impl ListCopyJobsInputBuilder {
         &self.max_results
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
-    pub fn by_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
-    pub fn set_by_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_arn = input;
         self
     }
@@ -199,10 +191,7 @@ impl ListCopyJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs that are in the specified state.</p>
-    pub fn set_by_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyJobState>,
-    ) -> Self {
+    pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::CopyJobState>) -> Self {
         self.by_state = input;
         self
     }
@@ -216,10 +205,7 @@ impl ListCopyJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_before = input;
         self
     }
@@ -233,10 +219,7 @@ impl ListCopyJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_after = input;
         self
     }
@@ -259,10 +242,7 @@ impl ListCopyJobsInputBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn by_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -281,10 +261,7 @@ impl ListCopyJobsInputBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn set_by_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
         self
     }
@@ -307,18 +284,12 @@ impl ListCopyJobsInputBuilder {
         &self.by_resource_type
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    pub fn by_destination_vault_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_destination_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_destination_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    pub fn set_by_destination_vault_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_destination_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_destination_vault_arn = input;
         self
     }
@@ -327,18 +298,12 @@ impl ListCopyJobsInputBuilder {
         &self.by_destination_vault_arn
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
-    pub fn by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
-    pub fn set_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_account_id = input;
         self
     }
@@ -352,10 +317,7 @@ impl ListCopyJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_before = input;
         self
     }
@@ -369,10 +331,7 @@ impl ListCopyJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_after = input;
         self
     }
@@ -381,18 +340,12 @@ impl ListCopyJobsInputBuilder {
         &self.by_complete_after
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_parent_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn set_by_parent_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_parent_job_id = input;
         self
     }
@@ -403,10 +356,7 @@ impl ListCopyJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListCopyJobsInput`](crate::operation::list_copy_jobs::ListCopyJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_copy_jobs::ListCopyJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_copy_jobs::ListCopyJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_copy_jobs::ListCopyJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

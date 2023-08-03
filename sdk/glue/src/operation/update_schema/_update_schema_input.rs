@@ -30,9 +30,7 @@ impl UpdateSchemaInput {
         self.schema_id.as_ref()
     }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    pub fn schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.schema_version_number.as_ref()
     }
     /// <p>The new compatibility setting for the schema.</p>
@@ -53,9 +51,7 @@ impl UpdateSchemaInput {
 
 /// A builder for [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSchemaInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
@@ -95,17 +91,12 @@ impl UpdateSchemaInputBuilder {
         self
     }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.schema_version_number = input;
         self
     }
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.schema_version_number
     }
     /// <p>The new compatibility setting for the schema.</p>
@@ -114,10 +105,7 @@ impl UpdateSchemaInputBuilder {
         self
     }
     /// <p>The new compatibility setting for the schema.</p>
-    pub fn set_compatibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Compatibility>,
-    ) -> Self {
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
         self.compatibility = input;
         self
     }
@@ -140,12 +128,7 @@ impl UpdateSchemaInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_schema::UpdateSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schema::UpdateSchemaInput {
             schema_id: self.schema_id,
             schema_version_number: self.schema_version_number,

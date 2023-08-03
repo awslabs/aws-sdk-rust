@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DeactivateEvaluationFormOutput {
 }
 impl DeactivateEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateEvaluationFormOutput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput).
-    pub fn builder(
-    ) -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder {
         crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateEvaluationFormOutput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateEvaluationFormOutputBuilder {
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ pub struct DeactivateEvaluationFormOutputBuilder {
 }
 impl DeactivateEvaluationFormOutputBuilder {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -75,18 +65,12 @@ impl DeactivateEvaluationFormOutputBuilder {
         &self.evaluation_form_id
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn set_evaluation_form_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_arn = input;
         self
     }
@@ -118,9 +102,7 @@ impl DeactivateEvaluationFormOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeactivateEvaluationFormOutput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
+    pub fn build(self) -> crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
             evaluation_form_id: self.evaluation_form_id,
             evaluation_form_arn: self.evaluation_form_arn,

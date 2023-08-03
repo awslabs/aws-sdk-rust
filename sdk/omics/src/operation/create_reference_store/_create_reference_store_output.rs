@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateReferenceStoreOutput {
 }
 impl CreateReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateReferenceStoreOutput`](crate::operation::create_reference_store::CreateReferenceStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder {
+    pub fn builder() -> crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder {
         crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReferenceStoreOutput`](crate::operation::create_reference_store::CreateReferenceStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReferenceStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -153,10 +150,7 @@ impl CreateReferenceStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

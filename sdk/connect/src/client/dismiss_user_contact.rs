@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`contact_id(impl ::std::convert::Into<String>)`](crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder::set_contact_id): <p>The identifier of the contact.</p>
     /// - On success, responds with [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput)
     /// - On failure, responds with [`SdkError<DismissUserContactError>`](crate::operation::dismiss_user_contact::DismissUserContactError)
-    pub fn dismiss_user_contact(
-        &self,
-    ) -> crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder {
-        crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn dismiss_user_contact(&self) -> crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder {
+        crate::operation::dismiss_user_contact::builders::DismissUserContactFluentBuilder::new(self.handle.clone())
     }
 }

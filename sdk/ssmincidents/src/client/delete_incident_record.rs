@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the incident record you are deleting.</p>
     /// - On success, responds with [`DeleteIncidentRecordOutput`](crate::operation::delete_incident_record::DeleteIncidentRecordOutput)
     /// - On failure, responds with [`SdkError<DeleteIncidentRecordError>`](crate::operation::delete_incident_record::DeleteIncidentRecordError)
-    pub fn delete_incident_record(
-        &self,
-    ) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder {
-        crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_incident_record(&self) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder {
+        crate::operation::delete_incident_record::builders::DeleteIncidentRecordFluentBuilder::new(self.handle.clone())
     }
 }

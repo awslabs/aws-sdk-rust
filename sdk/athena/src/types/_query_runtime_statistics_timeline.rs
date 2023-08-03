@@ -51,9 +51,7 @@ impl QueryRuntimeStatisticsTimeline {
 
 /// A builder for [`QueryRuntimeStatisticsTimeline`](crate::types::QueryRuntimeStatisticsTimeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsTimelineBuilder {
     pub(crate) query_queue_time_in_millis: ::std::option::Option<i64>,
     pub(crate) query_planning_time_in_millis: ::std::option::Option<i64>,
@@ -96,10 +94,7 @@ impl QueryRuntimeStatisticsTimelineBuilder {
         self
     }
     /// <p>The number of milliseconds that the query took to execute.</p>
-    pub fn set_engine_execution_time_in_millis(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_engine_execution_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.engine_execution_time_in_millis = input;
         self
     }
@@ -113,10 +108,7 @@ impl QueryRuntimeStatisticsTimelineBuilder {
         self
     }
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
-    pub fn set_service_processing_time_in_millis(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_service_processing_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.service_processing_time_in_millis = input;
         self
     }

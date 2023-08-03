@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`response_type(GatewayResponseType)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::response_type) / [`set_response_type(Option<GatewayResponseType>)`](crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::set_response_type): <p>The response type of the associated GatewayResponse.</p>
     /// - On success, responds with [`DeleteGatewayResponseOutput`](crate::operation::delete_gateway_response::DeleteGatewayResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteGatewayResponseError>`](crate::operation::delete_gateway_response::DeleteGatewayResponseError)
-    pub fn delete_gateway_response(
-        &self,
-    ) -> crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder
-    {
-        crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_gateway_response(&self) -> crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder {
+        crate::operation::delete_gateway_response::builders::DeleteGatewayResponseFluentBuilder::new(self.handle.clone())
     }
 }

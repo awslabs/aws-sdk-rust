@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(Option<DeletionTaskStatusType>)`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput::status): <p>The status of the deletion.</p>
     ///   - [`reason(Option<DeletionTaskFailureReasonType>)`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput::reason): <p>An object that contains details about the reason the deletion failed.</p>
     /// - On failure, responds with [`SdkError<GetServiceLinkedRoleDeletionStatusError>`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError)
-    pub fn get_service_linked_role_deletion_status(&self) -> crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusFluentBuilder{
+    pub fn get_service_linked_role_deletion_status(
+        &self,
+    ) -> crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusFluentBuilder {
         crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusFluentBuilder::new(self.handle.clone())
     }
 }

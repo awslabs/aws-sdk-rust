@@ -30,9 +30,7 @@ impl ListNotificationRulesFilter {
 
 /// A builder for [`ListNotificationRulesFilter`](crate::types::ListNotificationRulesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationRulesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListNotificationRulesFilterName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl ListNotificationRulesFilterBuilder {
         self
     }
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ListNotificationRulesFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListNotificationRulesFilterName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListNotificationRulesFilterName> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ListNotificationRulesFilterName> {
         &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>

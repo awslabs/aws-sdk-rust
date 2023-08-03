@@ -23,9 +23,7 @@ impl DefaultRouteInput {
 
 /// A builder for [`DefaultRouteInput`](crate::types::DefaultRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultRouteInputBuilder {
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
@@ -36,17 +34,12 @@ impl DefaultRouteInputBuilder {
         self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn set_activation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteActivationState>,
-    ) -> Self {
+    pub fn set_activation_state(mut self, input: ::std::option::Option<crate::types::RouteActivationState>) -> Self {
         self.activation_state = input;
         self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn get_activation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+    pub fn get_activation_state(&self) -> &::std::option::Option<crate::types::RouteActivationState> {
         &self.activation_state
     }
     /// Consumes the builder and constructs a [`DefaultRouteInput`](crate::types::DefaultRouteInput).

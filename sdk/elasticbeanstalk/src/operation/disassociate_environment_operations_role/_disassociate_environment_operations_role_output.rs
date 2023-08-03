@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateEnvironmentOperationsRole
 }
 impl DisassociateEnvironmentOperationsRoleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput).
-    pub fn builder() -> crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleOutputBuilder {
         crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateEnvironmentOperationsRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput).
-    pub fn build(self) -> crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput{
+    pub fn build(self) -> crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput {
         crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput {
             _request_id: self._request_id,
         }

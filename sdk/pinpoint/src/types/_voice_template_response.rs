@@ -24,9 +24,7 @@ pub struct VoiceTemplateResponse {
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The custom description of the message template.</p>
     #[doc(hidden)]
     pub template_description: ::std::option::Option<::std::string::String>,
@@ -69,11 +67,7 @@ impl VoiceTemplateResponse {
         self.last_modified_date.as_deref()
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The custom description of the message template.</p>
@@ -106,9 +100,7 @@ impl VoiceTemplateResponse {
 
 /// A builder for [`VoiceTemplateResponse`](crate::types::VoiceTemplateResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceTemplateResponseBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -116,9 +108,7 @@ pub struct VoiceTemplateResponseBuilder {
     pub(crate) default_substitutions: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
@@ -155,18 +145,12 @@ impl VoiceTemplateResponseBuilder {
         &self.body
     }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -175,18 +159,12 @@ impl VoiceTemplateResponseBuilder {
         &self.creation_date
     }
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
-    pub fn default_substitutions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_substitutions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_substitutions = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
-    pub fn set_default_substitutions(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_substitutions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_substitutions = input;
         self
     }
@@ -195,18 +173,12 @@ impl VoiceTemplateResponseBuilder {
         &self.default_substitutions
     }
     /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -215,18 +187,12 @@ impl VoiceTemplateResponseBuilder {
         &self.language_code
     }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -239,47 +205,28 @@ impl VoiceTemplateResponseBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The custom description of the message template.</p>
-    pub fn template_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom description of the message template.</p>
-    pub fn set_template_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_description = input;
         self
     }
@@ -288,18 +235,12 @@ impl VoiceTemplateResponseBuilder {
         &self.template_description
     }
     /// <p>The name of the message template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -313,10 +254,7 @@ impl VoiceTemplateResponseBuilder {
         self
     }
     /// <p>The type of channel that the message template is designed for. For a voice template, this value is VOICE.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.template_type = input;
         self
     }

@@ -26,7 +26,7 @@ impl StartMulticastGroupSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMulticastGroupSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder,
+    inner: crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder,
 }
 impl StartMulticastGroupSessionFluentBuilder {
     /// Creates a new `StartMulticastGroupSession`.
@@ -37,7 +37,7 @@ impl StartMulticastGroupSessionFluentBuilder {
         }
     }
     /// Access the StartMulticastGroupSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartMulticastGroupSessionFluentBuilder {
             crate::operation::start_multicast_group_session::StartMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_multicast_group_session::StartMulticastGroupSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartMulticastGroupSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_multicast_group_session::StartMulticastGroupSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_multicast_group_session::StartMulticastGroupSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartMulticastGroupSessionFluentBuilder {
             crate::operation::start_multicast_group_session::StartMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_multicast_group_session::StartMulticastGroupSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl StartMulticastGroupSessionFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }

@@ -30,20 +30,17 @@ impl DescribeComplianceByConfigRuleInput {
 }
 impl DescribeComplianceByConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
-    pub fn builder() -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleInputBuilder{
+    pub fn builder() -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleInputBuilder {
         crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRuleInputBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) compliance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
+    pub(crate) compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInputBuilder {
@@ -52,27 +49,19 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
         v.push(input.into());
         self.config_rule_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.config_rule_names = input;
         self
     }
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.config_rule_names
     }
     /// Appends an item to `compliance_types`.
@@ -87,17 +76,12 @@ impl DescribeComplianceByConfigRuleInputBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn set_compliance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
-    ) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.compliance_types = input;
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn get_compliance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         &self.compliance_types
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -123,13 +107,10 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput {
-                config_rule_names: self.config_rule_names
-                ,
-                compliance_types: self.compliance_types
-                ,
-                next_token: self.next_token
-                ,
-            }
+                config_rule_names: self.config_rule_names,
+                compliance_types: self.compliance_types,
+                next_token: self.next_token,
+            },
         )
     }
 }

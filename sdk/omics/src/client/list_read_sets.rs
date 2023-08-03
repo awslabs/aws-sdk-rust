@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_sets::ListReadSetsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`read_sets(Option<Vec<ReadSetListItem>>)`](crate::operation::list_read_sets::ListReadSetsOutput::read_sets): <p>A list of read sets.</p>
     /// - On failure, responds with [`SdkError<ListReadSetsError>`](crate::operation::list_read_sets::ListReadSetsError)
-    pub fn list_read_sets(
-        &self,
-    ) -> crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder {
-        crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_read_sets(&self) -> crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder {
+        crate::operation::list_read_sets::builders::ListReadSetsFluentBuilder::new(self.handle.clone())
     }
 }

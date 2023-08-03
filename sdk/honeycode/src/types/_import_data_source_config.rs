@@ -36,18 +36,12 @@ pub struct ImportDataSourceConfigBuilder {
 }
 impl ImportDataSourceConfigBuilder {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn data_source_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    pub fn set_data_source_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_url = input;
         self
     }

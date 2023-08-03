@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`content(impl ::std::convert::Into<String>)`](crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentFluentBuilder::content) / [`set_content(Option<String>)`](crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentFluentBuilder::set_content): <p>The content of the flow module.</p>
     /// - On success, responds with [`UpdateContactFlowModuleContentOutput`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentOutput)
     /// - On failure, responds with [`SdkError<UpdateContactFlowModuleContentError>`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentError)
-    pub fn update_contact_flow_module_content(&self) -> crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentFluentBuilder{
+    pub fn update_contact_flow_module_content(
+        &self,
+    ) -> crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentFluentBuilder {
         crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentFluentBuilder::new(self.handle.clone())
     }
 }

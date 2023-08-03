@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`event_destination_name(impl ::std::convert::Into<String>)`](crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::set_event_destination_name): EventDestinationName
     /// - On success, responds with [`UpdateConfigurationSetEventDestinationOutput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationOutput)
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetEventDestinationError>`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError)
-    pub fn update_configuration_set_event_destination(&self) -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder{
-        crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::new(self.handle.clone())
+    pub fn update_configuration_set_event_destination(
+        &self,
+    ) -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder {
+        crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

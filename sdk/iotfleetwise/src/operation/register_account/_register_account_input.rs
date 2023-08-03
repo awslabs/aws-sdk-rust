@@ -15,9 +15,7 @@ pub struct RegisterAccountInput {
 impl RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn timestream_resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimestreamResources> {
+    pub fn timestream_resources(&self) -> ::std::option::Option<&crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
@@ -35,9 +33,7 @@ impl RegisterAccountInput {
 
 /// A builder for [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAccountInputBuilder {
     pub(crate) timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
     pub(crate) iam_resources: ::std::option::Option<crate::types::IamResources>,
@@ -51,18 +47,13 @@ impl RegisterAccountInputBuilder {
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn set_timestream_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamResources>,
-    ) -> Self {
+    pub fn set_timestream_resources(mut self, input: ::std::option::Option<crate::types::TimestreamResources>) -> Self {
         self.timestream_resources = input;
         self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    pub fn get_timestream_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamResources> {
+    pub fn get_timestream_resources(&self) -> &::std::option::Option<crate::types::TimestreamResources> {
         &self.timestream_resources
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
@@ -73,10 +64,7 @@ impl RegisterAccountInputBuilder {
     }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    pub fn set_iam_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::IamResources>,
-    ) -> Self {
+    pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
         self.iam_resources = input;
         self
     }
@@ -88,10 +76,7 @@ impl RegisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_account::RegisterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountInput {
             timestream_resources: self.timestream_resources,
             iam_resources: self.iam_resources,

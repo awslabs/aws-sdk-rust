@@ -15,16 +15,14 @@ impl StartDataCollectionByAgentIdsInput {
 }
 impl StartDataCollectionByAgentIdsInput {
     /// Creates a new builder-style object to manufacture [`StartDataCollectionByAgentIdsInput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput).
-    pub fn builder() -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder{
+    pub fn builder() -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder {
         crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataCollectionByAgentIdsInput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl StartDataCollectionByAgentIdsInputBuilder {
         self
     }
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_ids = input;
         self
     }
@@ -59,11 +54,8 @@ impl StartDataCollectionByAgentIdsInputBuilder {
         crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput {
-                agent_ids: self.agent_ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput {
+            agent_ids: self.agent_ids,
+        })
     }
 }

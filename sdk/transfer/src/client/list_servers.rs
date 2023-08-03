@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_servers::ListServersOutput::next_token): <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
     ///   - [`servers(Option<Vec<ListedServer>>)`](crate::operation::list_servers::ListServersOutput::servers): <p>An array of servers that were listed.</p>
     /// - On failure, responds with [`SdkError<ListServersError>`](crate::operation::list_servers::ListServersError)
-    pub fn list_servers(
-        &self,
-    ) -> crate::operation::list_servers::builders::ListServersFluentBuilder {
+    pub fn list_servers(&self) -> crate::operation::list_servers::builders::ListServersFluentBuilder {
         crate::operation::list_servers::builders::ListServersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFpgaImagesOutput {
 }
 impl DescribeFpgaImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder {
         crate::operation::describe_fpga_images::builders::DescribeFpgaImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFpgaImagesOutputBuilder {
     pub(crate) fpga_images: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeFpgaImagesOutputBuilder {
         self
     }
     /// <p>Information about the FPGA images.</p>
-    pub fn set_fpga_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>,
-    ) -> Self {
+    pub fn set_fpga_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>) -> Self {
         self.fpga_images = input;
         self
     }
     /// <p>Information about the FPGA images.</p>
-    pub fn get_fpga_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>> {
+    pub fn get_fpga_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>> {
         &self.fpga_images
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

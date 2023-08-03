@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`target_groups(Option<Vec<DbProxyTargetGroup>>)`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput::target_groups): <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDBProxyTargetGroupsError>`](crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError)
-    pub fn describe_db_proxy_target_groups(&self) -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDBProxyTargetGroupsFluentBuilder{
+    pub fn describe_db_proxy_target_groups(
+        &self,
+    ) -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDBProxyTargetGroupsFluentBuilder {
         crate::operation::describe_db_proxy_target_groups::builders::DescribeDBProxyTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

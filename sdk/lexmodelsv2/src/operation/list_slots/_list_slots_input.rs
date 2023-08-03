@@ -71,9 +71,7 @@ impl ListSlotsInput {
 
 /// A builder for [`ListSlotsInput`](crate::operation::list_slots::ListSlotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlotsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -167,10 +165,7 @@ impl ListSlotsInputBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -207,12 +202,7 @@ impl ListSlotsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSlotsInput`](crate::operation::list_slots::ListSlotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_slots::ListSlotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_slots::ListSlotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_slots::ListSlotsInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

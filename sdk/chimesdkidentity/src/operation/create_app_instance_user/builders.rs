@@ -37,10 +37,7 @@ impl CreateAppInstanceUserFluentBuilder {
         }
     }
     /// Access the CreateAppInstanceUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_app_instance_user::builders::CreateAppInstanceUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAppInstanceUserFluentBuilder {
             crate::operation::create_app_instance_user::CreateAppInstanceUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAppInstanceUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAppInstanceUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance_user::CreateAppInstanceUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAppInstanceUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance_user::CreateAppInstanceUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateAppInstanceUserFluentBuilder {
             crate::operation::create_app_instance_user::CreateAppInstanceUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner.get_app_instance_arn()
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    pub fn app_instance_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_id(input.into());
         self
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_id(input);
         self
     }
@@ -192,18 +166,12 @@ impl CreateAppInstanceUserFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -221,10 +189,7 @@ impl CreateAppInstanceUserFluentBuilder {
         self
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -238,17 +203,12 @@ impl CreateAppInstanceUserFluentBuilder {
         self
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         self.inner.get_expiration_settings()
     }
 }

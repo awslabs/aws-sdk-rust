@@ -18,10 +18,7 @@ pub fn ser_update_column_statistics_for_table_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_column_statistics::ser_column_statistics(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_column_statistics::ser_column_statistics(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

@@ -22,16 +22,14 @@ impl DeleteFirewallManagerRuleGroupsInput {
 }
 impl DeleteFirewallManagerRuleGroupsInput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallManagerRuleGroupsInput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput).
-    pub fn builder() -> crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder{
+    pub fn builder() -> crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder {
         crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFirewallManagerRuleGroupsInput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsInputBuilder {
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) web_acl_lock_token: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
         &self.web_acl_arn
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn web_acl_lock_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_acl_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_lock_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn set_web_acl_lock_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_acl_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_lock_token = input;
         self
     }
@@ -80,11 +72,9 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput {
-                web_acl_arn: self.web_acl_arn
-                ,
-                web_acl_lock_token: self.web_acl_lock_token
-                ,
-            }
+                web_acl_arn: self.web_acl_arn,
+                web_acl_lock_token: self.web_acl_lock_token,
+            },
         )
     }
 }

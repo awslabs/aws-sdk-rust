@@ -106,9 +106,7 @@ impl TestCaseRun {
 
 /// A builder for [`TestCaseRun`](crate::types::TestCaseRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestCaseRunBuilder {
     pub(crate) test_case_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_definition_id: ::std::option::Option<::std::string::String>,
@@ -119,23 +117,16 @@ pub struct TestCaseRunBuilder {
     pub(crate) log_url: ::std::option::Option<::std::string::String>,
     pub(crate) warnings: ::std::option::Option<::std::string::String>,
     pub(crate) failure: ::std::option::Option<::std::string::String>,
-    pub(crate) test_scenarios:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
+    pub(crate) test_scenarios: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
 }
 impl TestCaseRunBuilder {
     /// <p>Provides the test case run ID.</p>
-    pub fn test_case_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_case_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_case_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run ID.</p>
-    pub fn set_test_case_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_case_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_case_run_id = input;
         self
     }
@@ -144,18 +135,12 @@ impl TestCaseRunBuilder {
         &self.test_case_run_id
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn test_case_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_case_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_case_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn set_test_case_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_case_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_case_definition_id = input;
         self
     }
@@ -164,18 +149,12 @@ impl TestCaseRunBuilder {
         &self.test_case_definition_id
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn test_case_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_case_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_case_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn set_test_case_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_case_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_case_definition_name = input;
         self
     }
@@ -233,10 +212,7 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p>Provides test case run start time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -250,10 +226,7 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p>Provides test case run end time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -315,17 +288,12 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn set_test_scenarios(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
-    ) -> Self {
+    pub fn set_test_scenarios(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>) -> Self {
         self.test_scenarios = input;
         self
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn get_test_scenarios(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>> {
+    pub fn get_test_scenarios(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>> {
         &self.test_scenarios
     }
     /// Consumes the builder and constructs a [`TestCaseRun`](crate::types::TestCaseRun).

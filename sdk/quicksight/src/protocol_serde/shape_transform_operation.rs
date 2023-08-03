@@ -7,37 +7,25 @@ pub fn ser_transform_operation(
         crate::types::TransformOperation::ProjectOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_5.key("ProjectOperation").start_object();
-            crate::protocol_serde::shape_project_operation::ser_project_operation(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_project_operation::ser_project_operation(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::TransformOperation::FilterOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_5.key("FilterOperation").start_object();
-            crate::protocol_serde::shape_filter_operation::ser_filter_operation(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_filter_operation::ser_filter_operation(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::TransformOperation::CreateColumnsOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_5.key("CreateColumnsOperation").start_object();
-            crate::protocol_serde::shape_create_columns_operation::ser_create_columns_operation(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_create_columns_operation::ser_create_columns_operation(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::TransformOperation::RenameColumnOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_5.key("RenameColumnOperation").start_object();
-            crate::protocol_serde::shape_rename_column_operation::ser_rename_column_operation(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_rename_column_operation::ser_rename_column_operation(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::TransformOperation::CastColumnTypeOperation(inner) => {
@@ -49,35 +37,25 @@ pub fn ser_transform_operation(
         crate::types::TransformOperation::TagColumnOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_6 = object_5.key("TagColumnOperation").start_object();
-            crate::protocol_serde::shape_tag_column_operation::ser_tag_column_operation(
-                &mut object_6,
-                inner,
-            )?;
+            crate::protocol_serde::shape_tag_column_operation::ser_tag_column_operation(&mut object_6, inner)?;
             object_6.finish();
         }
         crate::types::TransformOperation::UntagColumnOperation(inner) => {
             #[allow(unused_mut)]
             let mut object_7 = object_5.key("UntagColumnOperation").start_object();
-            crate::protocol_serde::shape_untag_column_operation::ser_untag_column_operation(
-                &mut object_7,
-                inner,
-            )?;
+            crate::protocol_serde::shape_untag_column_operation::ser_untag_column_operation(&mut object_7, inner)?;
             object_7.finish();
         }
         crate::types::TransformOperation::OverrideDatasetParameterOperation(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_5
-                .key("OverrideDatasetParameterOperation")
-                .start_object();
+            let mut object_8 = object_5.key("OverrideDatasetParameterOperation").start_object();
             crate::protocol_serde::shape_override_dataset_parameter_operation::ser_override_dataset_parameter_operation(&mut object_8, inner)?;
             object_8.finish();
         }
         crate::types::TransformOperation::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "TransformOperation",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "TransformOperation",
+            ))
         }
     }
     Ok(())
@@ -85,17 +63,9 @@ pub fn ser_transform_operation(
 
 pub(crate) fn de_transform_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TransformOperation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TransformOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -105,83 +75,72 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "ProjectOperation" => {
-                                Some(crate::types::TransformOperation::ProjectOperation(
-                                    crate::protocol_serde::shape_project_operation::de_project_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ProjectOperation' cannot be null"))?
-                                ))
-                            }
-                            "FilterOperation" => {
-                                Some(crate::types::TransformOperation::FilterOperation(
-                                    crate::protocol_serde::shape_filter_operation::de_filter_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FilterOperation' cannot be null"))?
-                                ))
-                            }
-                            "CreateColumnsOperation" => {
-                                Some(crate::types::TransformOperation::CreateColumnsOperation(
-                                    crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CreateColumnsOperation' cannot be null"))?
-                                ))
-                            }
-                            "RenameColumnOperation" => {
-                                Some(crate::types::TransformOperation::RenameColumnOperation(
-                                    crate::protocol_serde::shape_rename_column_operation::de_rename_column_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RenameColumnOperation' cannot be null"))?
-                                ))
-                            }
-                            "CastColumnTypeOperation" => {
-                                Some(crate::types::TransformOperation::CastColumnTypeOperation(
-                                    crate::protocol_serde::shape_cast_column_type_operation::de_cast_column_type_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CastColumnTypeOperation' cannot be null"))?
-                                ))
-                            }
-                            "TagColumnOperation" => {
-                                Some(crate::types::TransformOperation::TagColumnOperation(
-                                    crate::protocol_serde::shape_tag_column_operation::de_tag_column_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TagColumnOperation' cannot be null"))?
-                                ))
-                            }
-                            "UntagColumnOperation" => {
-                                Some(crate::types::TransformOperation::UntagColumnOperation(
-                                    crate::protocol_serde::shape_untag_column_operation::de_untag_column_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'UntagColumnOperation' cannot be null"))?
-                                ))
-                            }
-                            "OverrideDatasetParameterOperation" => {
-                                Some(crate::types::TransformOperation::OverrideDatasetParameterOperation(
-                                    crate::protocol_serde::shape_override_dataset_parameter_operation::de_override_dataset_parameter_operation(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OverrideDatasetParameterOperation' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::TransformOperation::Unknown)
-                                                                    }
-                        };
+                        "ProjectOperation" => Some(crate::types::TransformOperation::ProjectOperation(
+                            crate::protocol_serde::shape_project_operation::de_project_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ProjectOperation' cannot be null")
+                            })?,
+                        )),
+                        "FilterOperation" => Some(crate::types::TransformOperation::FilterOperation(
+                            crate::protocol_serde::shape_filter_operation::de_filter_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FilterOperation' cannot be null")
+                            })?,
+                        )),
+                        "CreateColumnsOperation" => Some(crate::types::TransformOperation::CreateColumnsOperation(
+                            crate::protocol_serde::shape_create_columns_operation::de_create_columns_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CreateColumnsOperation' cannot be null")
+                            })?,
+                        )),
+                        "RenameColumnOperation" => Some(crate::types::TransformOperation::RenameColumnOperation(
+                            crate::protocol_serde::shape_rename_column_operation::de_rename_column_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RenameColumnOperation' cannot be null")
+                            })?,
+                        )),
+                        "CastColumnTypeOperation" => Some(crate::types::TransformOperation::CastColumnTypeOperation(
+                            crate::protocol_serde::shape_cast_column_type_operation::de_cast_column_type_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CastColumnTypeOperation' cannot be null")
+                            })?,
+                        )),
+                        "TagColumnOperation" => Some(crate::types::TransformOperation::TagColumnOperation(
+                            crate::protocol_serde::shape_tag_column_operation::de_tag_column_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TagColumnOperation' cannot be null")
+                            })?,
+                        )),
+                        "UntagColumnOperation" => Some(crate::types::TransformOperation::UntagColumnOperation(
+                            crate::protocol_serde::shape_untag_column_operation::de_untag_column_operation(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'UntagColumnOperation' cannot be null")
+                            })?,
+                        )),
+                        "OverrideDatasetParameterOperation" => Some(crate::types::TransformOperation::OverrideDatasetParameterOperation(
+                            crate::protocol_serde::shape_override_dataset_parameter_operation::de_override_dataset_parameter_operation(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'OverrideDatasetParameterOperation' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::TransformOperation::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

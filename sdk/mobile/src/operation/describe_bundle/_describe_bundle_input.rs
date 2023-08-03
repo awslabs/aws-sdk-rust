@@ -23,9 +23,7 @@ impl DescribeBundleInput {
 
 /// A builder for [`DescribeBundleInput`](crate::operation::describe_bundle::DescribeBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DescribeBundleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBundleInput`](crate::operation::describe_bundle::DescribeBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bundle::DescribeBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bundle::DescribeBundleInput {
-            bundle_id: self.bundle_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_bundle::DescribeBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_bundle::DescribeBundleInput { bundle_id: self.bundle_id })
     }
 }

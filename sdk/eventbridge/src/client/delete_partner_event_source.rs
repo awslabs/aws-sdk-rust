@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`account(impl ::std::convert::Into<String>)`](crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceFluentBuilder::set_account): <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     /// - On success, responds with [`DeletePartnerEventSourceOutput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput)
     /// - On failure, responds with [`SdkError<DeletePartnerEventSourceError>`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceError)
-    pub fn delete_partner_event_source(&self) -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceFluentBuilder{
+    pub fn delete_partner_event_source(&self) -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceFluentBuilder {
         crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutAlertManagerDefinitionOutput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput) with field(s):
     ///   - [`status(Option<AlertManagerDefinitionStatus>)`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput::status): The status of alert manager definition.
     /// - On failure, responds with [`SdkError<PutAlertManagerDefinitionError>`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionError)
-    pub fn put_alert_manager_definition(&self) -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionFluentBuilder{
+    pub fn put_alert_manager_definition(&self) -> crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionFluentBuilder {
         crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,9 +9,7 @@ pub struct CustomAuthCredentials {
     pub custom_authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>A map that holds custom authentication credentials.</p>
     #[doc(hidden)]
-    pub credentials_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub credentials_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
@@ -19,11 +17,7 @@ impl CustomAuthCredentials {
         self.custom_authentication_type.as_deref()
     }
     /// <p>A map that holds custom authentication credentials.</p>
-    pub fn credentials_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn credentials_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.credentials_map.as_ref()
     }
 }
@@ -36,29 +30,19 @@ impl CustomAuthCredentials {
 
 /// A builder for [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomAuthCredentialsBuilder {
     pub(crate) custom_authentication_type: ::std::option::Option<::std::string::String>,
-    pub(crate) credentials_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) credentials_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomAuthCredentialsBuilder {
     /// <p>The custom authentication type that the connector uses.</p>
-    pub fn custom_authentication_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_authentication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_authentication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom authentication type that the connector uses.</p>
-    pub fn set_custom_authentication_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_authentication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_authentication_type = input;
         self
     }
@@ -84,19 +68,13 @@ impl CustomAuthCredentialsBuilder {
     /// <p>A map that holds custom authentication credentials.</p>
     pub fn set_credentials_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.credentials_map = input;
         self
     }
     /// <p>A map that holds custom authentication credentials.</p>
-    pub fn get_credentials_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_credentials_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.credentials_map
     }
     /// Consumes the builder and constructs a [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).

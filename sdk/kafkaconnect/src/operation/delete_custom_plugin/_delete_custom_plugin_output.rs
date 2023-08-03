@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomPluginOutput {
 }
 impl DeleteCustomPluginOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomPluginOutput`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginOutputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginOutputBuilder {
         crate::operation::delete_custom_plugin::builders::DeleteCustomPluginOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomPluginOutput`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomPluginOutputBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
@@ -46,18 +43,12 @@ pub struct DeleteCustomPluginOutputBuilder {
 }
 impl DeleteCustomPluginOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_plugin_arn = input;
         self
     }
@@ -71,17 +62,12 @@ impl DeleteCustomPluginOutputBuilder {
         self
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn set_custom_plugin_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginState>,
-    ) -> Self {
+    pub fn set_custom_plugin_state(mut self, input: ::std::option::Option<crate::types::CustomPluginState>) -> Self {
         self.custom_plugin_state = input;
         self
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn get_custom_plugin_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomPluginState> {
+    pub fn get_custom_plugin_state(&self) -> &::std::option::Option<crate::types::CustomPluginState> {
         &self.custom_plugin_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

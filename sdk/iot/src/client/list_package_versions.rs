@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`package_version_summaries(Option<Vec<PackageVersionSummary>>)`](crate::operation::list_package_versions::ListPackageVersionsOutput::package_version_summaries): <p>Lists the package versions associated to the package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_package_versions::ListPackageVersionsOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPackageVersionsError>`](crate::operation::list_package_versions::ListPackageVersionsError)
-    pub fn list_package_versions(
-        &self,
-    ) -> crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_package_versions(&self) -> crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder {
+        crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::new(self.handle.clone())
     }
 }

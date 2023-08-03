@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SetSmbGuestPasswordOutput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<SetSMBGuestPasswordError>`](crate::operation::set_smb_guest_password::SetSMBGuestPasswordError)
-    pub fn set_smb_guest_password(
-        &self,
-    ) -> crate::operation::set_smb_guest_password::builders::SetSMBGuestPasswordFluentBuilder {
-        crate::operation::set_smb_guest_password::builders::SetSMBGuestPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_smb_guest_password(&self) -> crate::operation::set_smb_guest_password::builders::SetSMBGuestPasswordFluentBuilder {
+        crate::operation::set_smb_guest_password::builders::SetSMBGuestPasswordFluentBuilder::new(self.handle.clone())
     }
 }

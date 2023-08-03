@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePartnerStatusOutput {
 }
 impl UpdatePartnerStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerStatusOutput`](crate::operation::update_partner_status::UpdatePartnerStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder {
-        crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder {
+        crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePartnerStatusOutput`](crate::operation::update_partner_status::UpdatePartnerStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePartnerStatusOutputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) partner_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct UpdatePartnerStatusOutputBuilder {
 }
 impl UpdatePartnerStatusOutputBuilder {
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }

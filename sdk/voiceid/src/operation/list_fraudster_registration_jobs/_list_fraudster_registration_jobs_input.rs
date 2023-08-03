@@ -22,9 +22,7 @@ impl ListFraudsterRegistrationJobsInput {
         self.domain_id.as_deref()
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -38,16 +36,14 @@ impl ListFraudsterRegistrationJobsInput {
 }
 impl ListFraudsterRegistrationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
-    pub fn builder() -> crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder {
         crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
@@ -75,17 +71,12 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
         &self.job_status
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -123,17 +114,11 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput {
-                domain_id: self.domain_id
-                ,
-                job_status: self.job_status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput {
+            domain_id: self.domain_id,
+            job_status: self.job_status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

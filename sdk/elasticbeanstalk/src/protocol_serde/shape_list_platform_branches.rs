@@ -9,12 +9,8 @@ pub fn de_list_platform_branches_http_error(
     crate::operation::list_platform_branches::ListPlatformBranchesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_platform_branches::ListPlatformBranchesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_platform_branches::ListPlatformBranchesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_platform_branches::ListPlatformBranchesError::generic(generic))
@@ -32,14 +28,9 @@ pub fn de_list_platform_branches_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_platform_branches::de_list_platform_branches(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_platform_branches::ListPlatformBranchesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_list_platform_branches::de_list_platform_branches(_response_body, output)
+            .map_err(crate::operation::list_platform_branches::ListPlatformBranchesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +39,7 @@ pub fn de_list_platform_branches_http_response_with_props(
 pub fn de_list_platform_branches(
     inp: &[u8],
     mut builder: crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder,
-) -> Result<
-    crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

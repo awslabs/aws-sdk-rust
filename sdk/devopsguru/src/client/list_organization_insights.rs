@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`reactive_insights(Option<Vec<ReactiveOrganizationInsightSummary>>)`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput::reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationInsightsError>`](crate::operation::list_organization_insights::ListOrganizationInsightsError)
-    pub fn list_organization_insights(
-        &self,
-    ) -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsFluentBuilder
-    {
+    pub fn list_organization_insights(&self) -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsFluentBuilder {
         crate::operation::list_organization_insights::builders::ListOrganizationInsightsFluentBuilder::new(self.handle.clone())
     }
 }

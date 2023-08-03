@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::update_job_priority::UpdateJobPriorityOutput::job_id): <p>The ID for the job whose priority Amazon S3 updated.</p>
     ///   - [`priority(i32)`](crate::operation::update_job_priority::UpdateJobPriorityOutput::priority): <p>The new priority assigned to the specified job.</p>
     /// - On failure, responds with [`SdkError<UpdateJobPriorityError>`](crate::operation::update_job_priority::UpdateJobPriorityError)
-    pub fn update_job_priority(
-        &self,
-    ) -> crate::operation::update_job_priority::builders::UpdateJobPriorityFluentBuilder {
-        crate::operation::update_job_priority::builders::UpdateJobPriorityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_job_priority(&self) -> crate::operation::update_job_priority::builders::UpdateJobPriorityFluentBuilder {
+        crate::operation::update_job_priority::builders::UpdateJobPriorityFluentBuilder::new(self.handle.clone())
     }
 }

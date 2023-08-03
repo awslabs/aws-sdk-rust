@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`recurrence(RecurrenceSettings)`](crate::operation::update_rotation::builders::UpdateRotationFluentBuilder::recurrence) / [`set_recurrence(Option<RecurrenceSettings>)`](crate::operation::update_rotation::builders::UpdateRotationFluentBuilder::set_recurrence): <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     /// - On success, responds with [`UpdateRotationOutput`](crate::operation::update_rotation::UpdateRotationOutput)
     /// - On failure, responds with [`SdkError<UpdateRotationError>`](crate::operation::update_rotation::UpdateRotationError)
-    pub fn update_rotation(
-        &self,
-    ) -> crate::operation::update_rotation::builders::UpdateRotationFluentBuilder {
-        crate::operation::update_rotation::builders::UpdateRotationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rotation(&self) -> crate::operation::update_rotation::builders::UpdateRotationFluentBuilder {
+        crate::operation::update_rotation::builders::UpdateRotationFluentBuilder::new(self.handle.clone())
     }
 }

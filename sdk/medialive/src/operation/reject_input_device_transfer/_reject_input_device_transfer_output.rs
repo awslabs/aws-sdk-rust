@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for RejectInputDeviceTransferOutput {
 }
 impl RejectInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferOutput`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput).
-    pub fn builder() -> crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferOutputBuilder{
+    pub fn builder() -> crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferOutputBuilder {
         crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectInputDeviceTransferOutput`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl RejectInputDeviceTransferOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectInputDeviceTransferOutput`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput {
+    pub fn build(self) -> crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput {
         crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput {
             _request_id: self._request_id,
         }

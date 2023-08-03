@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder::set_id): Identifier representing a Campaign
     /// - On success, responds with [`PauseCampaignOutput`](crate::operation::pause_campaign::PauseCampaignOutput)
     /// - On failure, responds with [`SdkError<PauseCampaignError>`](crate::operation::pause_campaign::PauseCampaignError)
-    pub fn pause_campaign(
-        &self,
-    ) -> crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder {
-        crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn pause_campaign(&self) -> crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder {
+        crate::operation::pause_campaign::builders::PauseCampaignFluentBuilder::new(self.handle.clone())
     }
 }

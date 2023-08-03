@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`configuration_id(Option<String>)`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput::configuration_id): <p>The system-generated unique ID for the trigger.</p>
     ///   - [`triggers(Option<Vec<RepositoryTrigger>>)`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput::triggers): <p>The JSON block of configuration information for each trigger.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryTriggersError>`](crate::operation::get_repository_triggers::GetRepositoryTriggersError)
-    pub fn get_repository_triggers(
-        &self,
-    ) -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder
-    {
-        crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_repository_triggers(&self) -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder {
+        crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::new(self.handle.clone())
     }
 }

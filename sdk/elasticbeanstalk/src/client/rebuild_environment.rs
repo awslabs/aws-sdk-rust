@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder::set_environment_name): <p>The name of the environment to rebuild.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     /// - On success, responds with [`RebuildEnvironmentOutput`](crate::operation::rebuild_environment::RebuildEnvironmentOutput)
     /// - On failure, responds with [`SdkError<RebuildEnvironmentError>`](crate::operation::rebuild_environment::RebuildEnvironmentError)
-    pub fn rebuild_environment(
-        &self,
-    ) -> crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder {
-        crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rebuild_environment(&self) -> crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder {
+        crate::operation::rebuild_environment::builders::RebuildEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

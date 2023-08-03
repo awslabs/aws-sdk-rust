@@ -23,9 +23,7 @@ impl DescribeDomainsInput {
 
 /// A builder for [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainsInputBuilder {
     pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,26 +40,18 @@ impl DescribeDomainsInputBuilder {
         self
     }
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_names = input;
         self
     }
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
-    pub fn get_domain_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_names
     }
     /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domains::DescribeDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_domains::DescribeDomainsInput {
             domain_names: self.domain_names,
         })

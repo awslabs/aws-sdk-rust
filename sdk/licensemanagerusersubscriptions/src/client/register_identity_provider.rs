@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterIdentityProviderOutput`](crate::operation::register_identity_provider::RegisterIdentityProviderOutput) with field(s):
     ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::operation::register_identity_provider::RegisterIdentityProviderOutput::identity_provider_summary): <p>Metadata that describes the results of an identity provider operation.</p>
     /// - On failure, responds with [`SdkError<RegisterIdentityProviderError>`](crate::operation::register_identity_provider::RegisterIdentityProviderError)
-    pub fn register_identity_provider(
-        &self,
-    ) -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderFluentBuilder
-    {
+    pub fn register_identity_provider(&self) -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderFluentBuilder {
         crate::operation::register_identity_provider::builders::RegisterIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

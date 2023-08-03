@@ -23,9 +23,7 @@ impl BackupFailureDetails {
 
 /// A builder for [`BackupFailureDetails`](crate::types::BackupFailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupFailureDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl BackupFailureDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`BackupFailureDetails`](crate::types::BackupFailureDetails).
     pub fn build(self) -> crate::types::BackupFailureDetails {
-        crate::types::BackupFailureDetails {
-            message: self.message,
-        }
+        crate::types::BackupFailureDetails { message: self.message }
     }
 }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVoiceConnectorsOutput {
 }
 impl ListVoiceConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorsOutput`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder {
-        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder {
+        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceConnectorsOutput`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorsOutputBuilder {
-    pub(crate) voice_connectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>>,
+    pub(crate) voice_connectors: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListVoiceConnectorsOutputBuilder {
         self
     }
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
-    pub fn set_voice_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>>,
-    ) -> Self {
+    pub fn set_voice_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>>) -> Self {
         self.voice_connectors = input;
         self
     }
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
-    pub fn get_voice_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>> {
+    pub fn get_voice_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>> {
         &self.voice_connectors
     }
     /// <p>The token to use to retrieve the next page of results.</p>

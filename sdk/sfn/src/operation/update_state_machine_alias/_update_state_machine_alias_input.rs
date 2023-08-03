@@ -12,8 +12,7 @@ pub struct UpdateStateMachineAliasInput {
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
     #[doc(hidden)]
-    pub routing_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
 }
 impl UpdateStateMachineAliasInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
@@ -26,9 +25,7 @@ impl UpdateStateMachineAliasInput {
     }
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    pub fn routing_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RoutingConfigurationListItem]> {
+    pub fn routing_configuration(&self) -> ::std::option::Option<&[crate::types::RoutingConfigurationListItem]> {
         self.routing_configuration.as_deref()
     }
 }
@@ -43,9 +40,7 @@ impl ::std::fmt::Debug for UpdateStateMachineAliasInput {
 }
 impl UpdateStateMachineAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineAliasInput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput).
-    pub fn builder(
-    ) -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasInputBuilder {
         crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasInputBuilder::default()
     }
 }
@@ -56,23 +51,16 @@ impl UpdateStateMachineAliasInput {
 pub struct UpdateStateMachineAliasInputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
+    pub(crate) routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
 }
 impl UpdateStateMachineAliasInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    pub fn state_machine_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    pub fn set_state_machine_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_alias_arn = input;
         self
     }
@@ -100,10 +88,7 @@ impl UpdateStateMachineAliasInputBuilder {
     ///
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    pub fn routing_configuration(
-        mut self,
-        input: crate::types::RoutingConfigurationListItem,
-    ) -> Self {
+    pub fn routing_configuration(mut self, input: crate::types::RoutingConfigurationListItem) -> Self {
         let mut v = self.routing_configuration.unwrap_or_default();
         v.push(input);
         self.routing_configuration = ::std::option::Option::Some(v);
@@ -111,18 +96,13 @@ impl UpdateStateMachineAliasInputBuilder {
     }
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    pub fn set_routing_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
-    ) -> Self {
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>) -> Self {
         self.routing_configuration = input;
         self
     }
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    pub fn get_routing_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
         &self.routing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineAliasInput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput).
@@ -132,13 +112,11 @@ impl UpdateStateMachineAliasInputBuilder {
         crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput {
-                state_machine_alias_arn: self.state_machine_alias_arn,
-                description: self.description,
-                routing_configuration: self.routing_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput {
+            state_machine_alias_arn: self.state_machine_alias_arn,
+            description: self.description,
+            routing_configuration: self.routing_configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateStateMachineAliasInputBuilder {

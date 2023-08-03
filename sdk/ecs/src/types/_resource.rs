@@ -58,9 +58,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -145,27 +143,19 @@ impl ResourceBuilder {
     /// To override the contents of this collection use [`set_string_set_value`](Self::set_string_set_value).
     ///
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn string_set_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_set_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_set_value.unwrap_or_default();
         v.push(input.into());
         self.string_set_value = ::std::option::Option::Some(v);
         self
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn set_string_set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.string_set_value = input;
         self
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn get_string_set_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_set_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.string_set_value
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).

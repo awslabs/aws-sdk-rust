@@ -30,9 +30,7 @@ impl DeleteResourceOutput {
 
 /// A builder for [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl DeleteResourceOutputBuilder {
     }
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    pub fn set_progress_event(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressEvent>,
-    ) -> Self {
+    pub fn set_progress_event(mut self, input: ::std::option::Option<crate::types::ProgressEvent>) -> Self {
         self.progress_event = input;
         self
     }

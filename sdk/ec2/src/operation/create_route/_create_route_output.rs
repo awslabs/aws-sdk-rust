@@ -28,9 +28,7 @@ impl CreateRouteOutput {
 
 /// A builder for [`CreateRouteOutput`](crate::operation::create_route::CreateRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRouteOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

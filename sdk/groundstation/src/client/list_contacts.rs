@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_contacts::ListContactsOutput::next_token): <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     ///   - [`contact_list(Option<Vec<ContactData>>)`](crate::operation::list_contacts::ListContactsOutput::contact_list): <p>List of contacts.</p>
     /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
-    pub fn list_contacts(
-        &self,
-    ) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
-        crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_contacts(&self) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
+        crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
     }
 }

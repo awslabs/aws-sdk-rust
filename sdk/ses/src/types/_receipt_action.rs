@@ -66,9 +66,7 @@ impl ReceiptAction {
 
 /// A builder for [`ReceiptAction`](crate::types::ReceiptAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReceiptActionBuilder {
     pub(crate) s3_action: ::std::option::Option<crate::types::S3Action>,
     pub(crate) bounce_action: ::std::option::Option<crate::types::BounceAction>,
@@ -99,10 +97,7 @@ impl ReceiptActionBuilder {
         self
     }
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
-    pub fn set_bounce_action(
-        mut self,
-        input: ::std::option::Option<crate::types::BounceAction>,
-    ) -> Self {
+    pub fn set_bounce_action(mut self, input: ::std::option::Option<crate::types::BounceAction>) -> Self {
         self.bounce_action = input;
         self
     }
@@ -116,10 +111,7 @@ impl ReceiptActionBuilder {
         self
     }
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
-    pub fn set_workmail_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkmailAction>,
-    ) -> Self {
+    pub fn set_workmail_action(mut self, input: ::std::option::Option<crate::types::WorkmailAction>) -> Self {
         self.workmail_action = input;
         self
     }
@@ -133,10 +125,7 @@ impl ReceiptActionBuilder {
         self
     }
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
-    pub fn set_lambda_action(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAction>,
-    ) -> Self {
+    pub fn set_lambda_action(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
         self.lambda_action = input;
         self
     }
@@ -150,10 +139,7 @@ impl ReceiptActionBuilder {
         self
     }
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
-    pub fn set_stop_action(
-        mut self,
-        input: ::std::option::Option<crate::types::StopAction>,
-    ) -> Self {
+    pub fn set_stop_action(mut self, input: ::std::option::Option<crate::types::StopAction>) -> Self {
         self.stop_action = input;
         self
     }
@@ -167,10 +153,7 @@ impl ReceiptActionBuilder {
         self
     }
     /// <p>Adds a header to the received email.</p>
-    pub fn set_add_header_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AddHeaderAction>,
-    ) -> Self {
+    pub fn set_add_header_action(mut self, input: ::std::option::Option<crate::types::AddHeaderAction>) -> Self {
         self.add_header_action = input;
         self
     }

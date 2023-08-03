@@ -103,9 +103,7 @@ impl Handshake {
 
 /// A builder for [`Handshake`](crate::types::Handshake).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HandshakeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -163,17 +161,12 @@ impl HandshakeBuilder {
         self
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn set_parties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>,
-    ) -> Self {
+    pub fn set_parties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>) -> Self {
         self.parties = input;
         self
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn get_parties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>> {
+    pub fn get_parties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>> {
         &self.parties
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
@@ -220,10 +213,7 @@ impl HandshakeBuilder {
         self
     }
     /// <p>The date and time that the handshake request was made.</p>
-    pub fn set_requested_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_timestamp = input;
         self
     }
@@ -237,10 +227,7 @@ impl HandshakeBuilder {
         self
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
-    pub fn set_expiration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_timestamp = input;
         self
     }
@@ -289,17 +276,12 @@ impl HandshakeBuilder {
         self
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`Handshake`](crate::types::Handshake).

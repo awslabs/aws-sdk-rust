@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`responses(Option<Vec<AggregationResponse>>)`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput::responses): <p>Objects that contain the results of an aggregation operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListFindingAggregationsError>`](crate::operation::list_finding_aggregations::ListFindingAggregationsError)
-    pub fn list_finding_aggregations(
-        &self,
-    ) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder
-    {
+    pub fn list_finding_aggregations(&self) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder {
         crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::new(self.handle.clone())
     }
 }

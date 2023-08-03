@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(TemplateStatus)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::status) / [`set_status(Option<TemplateStatus>)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::set_status): <p>The status of the template.</p>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::operation::update_template::UpdateTemplateOutput)
     /// - On failure, responds with [`SdkError<UpdateTemplateError>`](crate::operation::update_template::UpdateTemplateError)
-    pub fn update_template(
-        &self,
-    ) -> crate::operation::update_template::builders::UpdateTemplateFluentBuilder {
-        crate::operation::update_template::builders::UpdateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_template(&self) -> crate::operation::update_template::builders::UpdateTemplateFluentBuilder {
+        crate::operation::update_template::builders::UpdateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

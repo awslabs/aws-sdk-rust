@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for ListAppVersionResourcesOutput {
 }
 impl ListAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesOutputBuilder {
         crate::operation::list_app_version_resources::builders::ListAppVersionResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesOutputBuilder {
-    pub(crate) physical_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
+    pub(crate) physical_resources: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
     pub(crate) resolution_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -67,32 +62,21 @@ impl ListAppVersionResourcesOutputBuilder {
         self
     }
     /// <p>The physical resources in the application version.</p>
-    pub fn set_physical_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
-    ) -> Self {
+    pub fn set_physical_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>) -> Self {
         self.physical_resources = input;
         self
     }
     /// <p>The physical resources in the application version.</p>
-    pub fn get_physical_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>> {
+    pub fn get_physical_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>> {
         &self.physical_resources
     }
     /// <p>The ID for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -124,9 +108,7 @@ impl ListAppVersionResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
+    pub fn build(self) -> crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
         crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
             physical_resources: self.physical_resources,
             resolution_id: self.resolution_id,

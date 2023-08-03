@@ -59,9 +59,7 @@ impl TypeFilters {
 
 /// A builder for [`TypeFilters`](crate::types::TypeFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypeFiltersBuilder {
     pub(crate) category: ::std::option::Option<crate::types::Category>,
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
@@ -130,18 +128,12 @@ impl TypeFiltersBuilder {
         &self.publisher_id
     }
     /// <p>A prefix to use as a filter for results.</p>
-    pub fn type_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix to use as a filter for results.</p>
-    pub fn set_type_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name_prefix = input;
         self
     }

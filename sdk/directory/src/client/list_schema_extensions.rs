@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`schema_extensions_info(Option<Vec<SchemaExtensionInfo>>)`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput::schema_extensions_info): <p>Information about the schema extensions applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListSchemaExtensionsError>`](crate::operation::list_schema_extensions::ListSchemaExtensionsError)
-    pub fn list_schema_extensions(
-        &self,
-    ) -> crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder {
-        crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schema_extensions(&self) -> crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder {
+        crate::operation::list_schema_extensions::builders::ListSchemaExtensionsFluentBuilder::new(self.handle.clone())
     }
 }

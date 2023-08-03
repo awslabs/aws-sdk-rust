@@ -20,9 +20,7 @@ pub struct CreateSolFunctionPackageOutput {
     pub usage_state: ::std::option::Option<crate::types::UsageState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolFunctionPackageOutput {
@@ -47,11 +45,7 @@ impl CreateSolFunctionPackageOutput {
         self.usage_state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -75,7 +69,7 @@ impl ::aws_http::request_id::RequestId for CreateSolFunctionPackageOutput {
 }
 impl CreateSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`CreateSolFunctionPackageOutput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput).
-    pub fn builder() -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder{
+    pub fn builder() -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder {
         crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageOutputBuilder::default()
     }
 }
@@ -89,9 +83,7 @@ pub struct CreateSolFunctionPackageOutputBuilder {
     pub(crate) onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
     pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,
     pub(crate) usage_state: ::std::option::Option<crate::types::UsageState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolFunctionPackageOutputBuilder {
@@ -129,10 +121,7 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn set_onboarding_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OnboardingState>,
-    ) -> Self {
+    pub fn set_onboarding_state(mut self, input: ::std::option::Option<crate::types::OnboardingState>) -> Self {
         self.onboarding_state = input;
         self
     }
@@ -146,10 +135,7 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
         self.operational_state = input;
         self
     }
@@ -163,10 +149,7 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Usage state of the function package.</p>
-    pub fn set_usage_state(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageState>,
-    ) -> Self {
+    pub fn set_usage_state(mut self, input: ::std::option::Option<crate::types::UsageState>) -> Self {
         self.usage_state = input;
         self
     }
@@ -179,32 +162,19 @@ impl CreateSolFunctionPackageOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -217,9 +187,7 @@ impl CreateSolFunctionPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSolFunctionPackageOutput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
+    pub fn build(self) -> crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
         crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
             id: self.id,
             arn: self.arn,

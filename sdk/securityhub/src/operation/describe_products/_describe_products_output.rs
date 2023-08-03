@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeProductsOutput {
 }
 impl DescribeProductsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput).
-    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsOutputBuilder {
         crate::operation::describe_products::builders::DescribeProductsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductsOutputBuilder {
     pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::Product>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeProductsOutputBuilder {
         self
     }
     /// <p>A list of products, including details for each product.</p>
-    pub fn set_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Product>>,
-    ) -> Self {
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Product>>) -> Self {
         self.products = input;
         self
     }

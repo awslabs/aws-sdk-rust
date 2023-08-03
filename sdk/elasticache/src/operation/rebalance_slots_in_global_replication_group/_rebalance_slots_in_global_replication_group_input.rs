@@ -22,34 +22,26 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
 }
 impl RebalanceSlotsInGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
 }
 impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -72,15 +64,17 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id
-                ,
-                apply_immediately: self.apply_immediately
-                    .unwrap_or_default()
-                ,
-            }
+                global_replication_group_id: self.global_replication_group_id,
+                apply_immediately: self.apply_immediately.unwrap_or_default(),
+            },
         )
     }
 }

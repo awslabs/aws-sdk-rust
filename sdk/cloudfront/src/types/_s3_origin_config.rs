@@ -35,9 +35,7 @@ impl S3OriginConfig {
 
 /// A builder for [`S3OriginConfig`](crate::types::S3OriginConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3OriginConfigBuilder {
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,
 }
@@ -49,10 +47,7 @@ impl S3OriginConfigBuilder {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_access_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_access_identity = ::std::option::Option::Some(input.into());
         self
     }
@@ -63,10 +58,7 @@ impl S3OriginConfigBuilder {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_access_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_access_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_access_identity = input;
         self
     }

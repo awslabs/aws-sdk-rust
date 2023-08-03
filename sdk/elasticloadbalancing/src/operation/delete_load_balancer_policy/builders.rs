@@ -26,7 +26,7 @@ impl DeleteLoadBalancerPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder,
+    inner: crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder,
 }
 impl DeleteLoadBalancerPolicyFluentBuilder {
     /// Creates a new `DeleteLoadBalancerPolicy`.
@@ -37,7 +37,7 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
         }
     }
     /// Access the DeleteLoadBalancerPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
             crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteLoadBalancerPolicyFluentBuilder {
             crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }

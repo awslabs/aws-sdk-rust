@@ -15,16 +15,14 @@ impl DescribeLocationFsxOpenZfsInput {
 }
 impl DescribeLocationFsxOpenZfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput).
-    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder {
         crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxOpenZfsInput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeLocationFsxOpenZfsInputBuilder {
         crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput {
-                location_arn: self.location_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput {
+            location_arn: self.location_arn,
+        })
     }
 }

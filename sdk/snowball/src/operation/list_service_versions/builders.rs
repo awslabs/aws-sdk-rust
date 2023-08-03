@@ -37,9 +37,7 @@ impl ListServiceVersionsFluentBuilder {
         }
     }
     /// Access the ListServiceVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListServiceVersionsFluentBuilder {
             crate::operation::list_service_versions::ListServiceVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListServiceVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListServiceVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_versions::ListServiceVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListServiceVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_versions::ListServiceVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListServiceVersionsFluentBuilder {
             crate::operation::list_service_versions::ListServiceVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl ListServiceVersionsFluentBuilder {
         self
     }
     /// <p>The name of the service for which you're requesting supported versions.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
@@ -149,17 +133,12 @@ impl ListServiceVersionsFluentBuilder {
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn set_dependent_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
-    ) -> Self {
+    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>) -> Self {
         self.inner = self.inner.set_dependent_services(input);
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn get_dependent_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
         self.inner.get_dependent_services()
     }
     /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>

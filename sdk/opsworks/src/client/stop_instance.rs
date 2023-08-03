@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force(bool)`](crate::operation::stop_instance::builders::StopInstanceFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::stop_instance::builders::StopInstanceFluentBuilder::set_force): <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
     /// - On success, responds with [`StopInstanceOutput`](crate::operation::stop_instance::StopInstanceOutput)
     /// - On failure, responds with [`SdkError<StopInstanceError>`](crate::operation::stop_instance::StopInstanceError)
-    pub fn stop_instance(
-        &self,
-    ) -> crate::operation::stop_instance::builders::StopInstanceFluentBuilder {
-        crate::operation::stop_instance::builders::StopInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_instance(&self) -> crate::operation::stop_instance::builders::StopInstanceFluentBuilder {
+        crate::operation::stop_instance::builders::StopInstanceFluentBuilder::new(self.handle.clone())
     }
 }

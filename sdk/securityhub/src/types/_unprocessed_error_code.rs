@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnprocessedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for UnprocessedErrorCode {
             "INVALID_INPUT" => UnprocessedErrorCode::InvalidInput,
             "LIMIT_EXCEEDED" => UnprocessedErrorCode::LimitExceeded,
             "NOT_FOUND" => UnprocessedErrorCode::NotFound,
-            other => UnprocessedErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UnprocessedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl UnprocessedErrorCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "INVALID_INPUT",
-            "LIMIT_EXCEEDED",
-            "NOT_FOUND",
-        ]
+        &["ACCESS_DENIED", "INVALID_INPUT", "LIMIT_EXCEEDED", "NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for UnprocessedErrorCode {

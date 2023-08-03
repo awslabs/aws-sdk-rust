@@ -16,16 +16,14 @@ impl UpdateSubscriptionsToEventBridgeInput {
 }
 impl UpdateSubscriptionsToEventBridgeInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
-    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder{
+    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder {
         crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeInputBuilder {
     pub(crate) force_move: ::std::option::Option<bool>,
 }
@@ -45,12 +43,14 @@ impl UpdateSubscriptionsToEventBridgeInputBuilder {
         &self.force_move
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput {
-                force_move: self.force_move
-                ,
-            }
+            crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput { force_move: self.force_move },
         )
     }
 }

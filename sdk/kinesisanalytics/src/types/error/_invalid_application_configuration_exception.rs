@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidApplicationConfigurationException {
     }
 }
 impl ::std::error::Error for InvalidApplicationConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidApplicationConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidApplicationConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidApplicationConfigurationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidApplicationConfigurationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidApplicationConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidApplicationConfigurationException`](crate::types::error::InvalidApplicationConfigurationException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidApplicationConfigurationExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::InvalidApplicationConfigurationExceptionBuilder {
         crate::types::error::builders::InvalidApplicationConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidApplicationConfigurationException`](crate::types::error::InvalidApplicationConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidApplicationConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidApplicationConfigurationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

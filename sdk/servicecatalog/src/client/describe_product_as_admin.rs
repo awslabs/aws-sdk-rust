@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`tag_options(Option<Vec<TagOptionDetail>>)`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput::tag_options): <p>Information about the TagOptions associated with the product.</p>
     ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput::budgets): <p>Information about the associated budgets.</p>
     /// - On failure, responds with [`SdkError<DescribeProductAsAdminError>`](crate::operation::describe_product_as_admin::DescribeProductAsAdminError)
-    pub fn describe_product_as_admin(
-        &self,
-    ) -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminFluentBuilder
-    {
+    pub fn describe_product_as_admin(&self) -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminFluentBuilder {
         crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminFluentBuilder::new(self.handle.clone())
     }
 }

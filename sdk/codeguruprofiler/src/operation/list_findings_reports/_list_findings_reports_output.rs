@@ -6,8 +6,7 @@
 pub struct ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
     #[doc(hidden)]
-    pub findings_report_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub findings_report_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListFindingsReportsOutput {
 }
 impl ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
-    pub fn findings_report_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FindingsReportSummary]> {
+    pub fn findings_report_summaries(&self) -> ::std::option::Option<&[crate::types::FindingsReportSummary]> {
         self.findings_report_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListFindingsReportsOutput {
 }
 impl ListFindingsReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsReportsOutput`](crate::operation::list_findings_reports::ListFindingsReportsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder {
-        crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder {
+        crate::operation::list_findings_reports::builders::ListFindingsReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingsReportsOutput`](crate::operation::list_findings_reports::ListFindingsReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsReportsOutputBuilder {
-    pub(crate) findings_report_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub(crate) findings_report_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListFindingsReportsOutputBuilder {
         self
     }
     /// <p>The list of analysis results summaries.</p>
-    pub fn set_findings_report_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
-    ) -> Self {
+    pub fn set_findings_report_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>) -> Self {
         self.findings_report_summaries = input;
         self
     }
     /// <p>The list of analysis results summaries.</p>
-    pub fn get_findings_report_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>> {
+    pub fn get_findings_report_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>> {
         &self.findings_report_summaries
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

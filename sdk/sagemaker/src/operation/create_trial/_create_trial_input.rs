@@ -50,9 +50,7 @@ impl CreateTrialInput {
 
 /// A builder for [`CreateTrialInput`](crate::operation::create_trial::CreateTrialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrialInputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl CreateTrialInputBuilder {
         &self.display_name
     }
     /// <p>The name of the experiment to associate the trial with.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment to associate the trial with.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -115,17 +107,12 @@ impl CreateTrialInputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     /// Appends an item to `tags`.
@@ -140,10 +127,7 @@ impl CreateTrialInputBuilder {
         self
     }
     /// <p>A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -152,12 +136,7 @@ impl CreateTrialInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTrialInput`](crate::operation::create_trial::CreateTrialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_trial::CreateTrialInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trial::CreateTrialInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trial::CreateTrialInput {
             trial_name: self.trial_name,
             display_name: self.display_name,

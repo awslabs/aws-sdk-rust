@@ -4,271 +4,264 @@ pub fn de_create_db_instance_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_db_instance::CreateDbInstanceOutput,
-    crate::operation::create_db_instance::CreateDBInstanceError,
-> {
+) -> std::result::Result<crate::operation::create_db_instance::CreateDbInstanceOutput, crate::operation::create_db_instance::CreateDBInstanceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_db_instance::CreateDBInstanceError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AuthorizationNotFound" => crate::operation::create_db_instance::CreateDBInstanceError::AuthorizationNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBClusterNotFoundFault" => crate::operation::create_db_instance::CreateDBInstanceError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBInstanceAlreadyExists" => crate::operation::create_db_instance::CreateDBInstanceError::DbInstanceAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBParameterGroupNotFound" => crate::operation::create_db_instance::CreateDBInstanceError::DbParameterGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBSecurityGroupNotFound" => crate::operation::create_db_instance::CreateDBInstanceError::DbSecurityGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::operation::create_db_instance::CreateDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::operation::create_db_instance::CreateDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
                     output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "DBSubnetGroupNotFoundFault" => crate::operation::create_db_instance::CreateDBInstanceError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InstanceQuotaExceeded" => crate::operation::create_db_instance::CreateDBInstanceError::InstanceQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InsufficientDBInstanceCapacity" => crate::operation::create_db_instance::CreateDBInstanceError::InsufficientDbInstanceCapacityFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBClusterStateFault" => crate::operation::create_db_instance::CreateDBInstanceError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSubnet" => crate::operation::create_db_instance::CreateDBInstanceError::InvalidSubnet({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidVPCNetworkStateFault" => crate::operation::create_db_instance::CreateDBInstanceError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "KMSKeyNotAccessibleFault" => crate::operation::create_db_instance::CreateDBInstanceError::KmsKeyNotAccessibleFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "StorageQuotaExceeded" => crate::operation::create_db_instance::CreateDBInstanceError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "StorageTypeNotSupported" => crate::operation::create_db_instance::CreateDBInstanceError::StorageTypeNotSupportedFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_db_instance::CreateDBInstanceError::generic(generic)
+        _ => crate::operation::create_db_instance::CreateDBInstanceError::generic(generic),
     })
 }
 
@@ -277,23 +270,13 @@ pub fn de_create_db_instance_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_db_instance::CreateDbInstanceOutput,
-    crate::operation::create_db_instance::CreateDBInstanceError,
-> {
+) -> std::result::Result<crate::operation::create_db_instance::CreateDbInstanceOutput, crate::operation::create_db_instance::CreateDBInstanceError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_create_db_instance::de_create_db_instance(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_db_instance::de_create_db_instance(_response_body, output)
+            .map_err(crate::operation::create_db_instance::CreateDBInstanceError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -302,10 +285,7 @@ pub fn de_create_db_instance_http_response_with_props(
 pub fn de_create_db_instance(
     inp: &[u8],
     mut builder: crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder,
-) -> Result<
-    crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -342,9 +322,7 @@ pub fn de_create_db_instance(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreateDBInstanceResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateDBInstanceResult tag"));
     };
     Ok(builder)
 }

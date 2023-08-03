@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for StartImagePipelineExecutionOutput {
 }
 impl StartImagePipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartImagePipelineExecutionOutput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput).
-    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionOutputBuilder {
         crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartImagePipelineExecutionOutput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImagePipelineExecutionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ impl StartImagePipelineExecutionOutputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -110,9 +102,7 @@ impl StartImagePipelineExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionOutput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput {
+    pub fn build(self) -> crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput {
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput {
             request_id: self.request_id,
             client_token: self.client_token,

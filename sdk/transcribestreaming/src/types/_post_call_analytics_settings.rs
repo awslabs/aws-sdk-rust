@@ -55,9 +55,7 @@ impl PostCallAnalyticsSettings {
     }
     /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-    pub fn content_redaction_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentRedactionOutput> {
+    pub fn content_redaction_output(&self) -> ::std::option::Option<&crate::types::ContentRedactionOutput> {
         self.content_redaction_output.as_ref()
     }
     /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
@@ -87,14 +85,11 @@ impl PostCallAnalyticsSettings {
 
 /// A builder for [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCallAnalyticsSettingsBuilder {
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) content_redaction_output:
-        ::std::option::Option<crate::types::ContentRedactionOutput>,
+    pub(crate) content_redaction_output: ::std::option::Option<crate::types::ContentRedactionOutput>,
     pub(crate) output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl PostCallAnalyticsSettingsBuilder {
@@ -104,10 +99,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
-    pub fn output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
     }
@@ -117,10 +109,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li>
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_location = input;
         self
     }
@@ -135,19 +124,13 @@ impl PostCallAnalyticsSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -164,18 +147,13 @@ impl PostCallAnalyticsSettingsBuilder {
     }
     /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-    pub fn set_content_redaction_output(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentRedactionOutput>,
-    ) -> Self {
+    pub fn set_content_redaction_output(mut self, input: ::std::option::Option<crate::types::ContentRedactionOutput>) -> Self {
         self.content_redaction_output = input;
         self
     }
     /// <p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p>
     /// <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>
-    pub fn get_content_redaction_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentRedactionOutput> {
+    pub fn get_content_redaction_output(&self) -> &::std::option::Option<crate::types::ContentRedactionOutput> {
         &self.content_redaction_output
     }
     /// <p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p>
@@ -192,10 +170,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -213,10 +188,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-    pub fn set_output_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = input;
         self
     }
@@ -234,9 +206,7 @@ impl PostCallAnalyticsSettingsBuilder {
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
     /// <p>Note that the user making the request must have permission to use the specified KMS key.</p>
-    pub fn get_output_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListGatewayGroupsOutput {
 }
 impl ListGatewayGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewayGroupsOutput`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder {
         crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGatewayGroupsOutput`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewayGroupsOutputBuilder {
-    pub(crate) gateway_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>>,
+    pub(crate) gateway_groups: ::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListGatewayGroupsOutputBuilder {
         self
     }
     /// <p>The gateway groups in the list.</p>
-    pub fn set_gateway_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>>,
-    ) -> Self {
+    pub fn set_gateway_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>>) -> Self {
         self.gateway_groups = input;
         self
     }
     /// <p>The gateway groups in the list.</p>
-    pub fn get_gateway_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>> {
+    pub fn get_gateway_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayGroupSummary>> {
         &self.gateway_groups
     }
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>

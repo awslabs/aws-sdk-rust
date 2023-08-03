@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidRepositoryTriggerRegionException {
     }
 }
 impl ::std::error::Error for InvalidRepositoryTriggerRegionException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidRepositoryTriggerRegionException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRepositoryTriggerRegionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidRepositoryTriggerRegionException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRepositoryTriggerRegionException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidRepositoryTriggerRegionException {
     /// Creates a new builder-style object to manufacture [`InvalidRepositoryTriggerRegionException`](crate::types::error::InvalidRepositoryTriggerRegionException).
-    pub fn builder() -> crate::types::error::builders::InvalidRepositoryTriggerRegionExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidRepositoryTriggerRegionExceptionBuilder {
         crate::types::error::builders::InvalidRepositoryTriggerRegionExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidRepositoryTriggerRegionException`](crate::types::error::InvalidRepositoryTriggerRegionException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerRegionExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidRepositoryTriggerRegionExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

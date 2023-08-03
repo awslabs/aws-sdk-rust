@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetNotificationSettingsOutput {
 }
 impl ResetNotificationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ResetNotificationSettingsOutput`](crate::operation::reset_notification_settings::ResetNotificationSettingsOutput).
-    pub fn builder() -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsOutputBuilder {
         crate::operation::reset_notification_settings::builders::ResetNotificationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetNotificationSettingsOutput`](crate::operation::reset_notification_settings::ResetNotificationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetNotificationSettingsOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ResetNotificationSettingsOutputBuilder {
         self
     }
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn set_trust_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorDetail>,
-    ) -> Self {
+    pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
         self.trust_anchor = input;
         self
     }
@@ -63,9 +58,7 @@ impl ResetNotificationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetNotificationSettingsOutput`](crate::operation::reset_notification_settings::ResetNotificationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_notification_settings::ResetNotificationSettingsOutput {
+    pub fn build(self) -> crate::operation::reset_notification_settings::ResetNotificationSettingsOutput {
         crate::operation::reset_notification_settings::ResetNotificationSettingsOutput {
             trust_anchor: self.trust_anchor,
             _request_id: self._request_id,

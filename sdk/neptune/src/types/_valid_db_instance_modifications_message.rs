@@ -23,9 +23,7 @@ impl ValidDbInstanceModificationsMessage {
 
 /// A builder for [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidDbInstanceModificationsMessageBuilder {
     pub(crate) storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
 }
@@ -42,23 +40,16 @@ impl ValidDbInstanceModificationsMessageBuilder {
         self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn set_storage(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
-    ) -> Self {
+    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>) -> Self {
         self.storage = input;
         self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn get_storage(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
+    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
         &self.storage
     }
     /// Consumes the builder and constructs a [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
     pub fn build(self) -> crate::types::ValidDbInstanceModificationsMessage {
-        crate::types::ValidDbInstanceModificationsMessage {
-            storage: self.storage,
-        }
+        crate::types::ValidDbInstanceModificationsMessage { storage: self.storage }
     }
 }

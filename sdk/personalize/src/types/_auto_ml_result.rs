@@ -23,26 +23,18 @@ impl AutoMlResult {
 
 /// A builder for [`AutoMlResult`](crate::types::AutoMlResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlResultBuilder {
     pub(crate) best_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlResultBuilder {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-    pub fn best_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn best_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.best_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-    pub fn set_best_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_best_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.best_recipe_arn = input;
         self
     }

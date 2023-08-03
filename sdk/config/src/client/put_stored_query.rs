@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutStoredQueryOutput`](crate::operation::put_stored_query::PutStoredQueryOutput) with field(s):
     ///   - [`query_arn(Option<String>)`](crate::operation::put_stored_query::PutStoredQueryOutput::query_arn): <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     /// - On failure, responds with [`SdkError<PutStoredQueryError>`](crate::operation::put_stored_query::PutStoredQueryError)
-    pub fn put_stored_query(
-        &self,
-    ) -> crate::operation::put_stored_query::builders::PutStoredQueryFluentBuilder {
-        crate::operation::put_stored_query::builders::PutStoredQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_stored_query(&self) -> crate::operation::put_stored_query::builders::PutStoredQueryFluentBuilder {
+        crate::operation::put_stored_query::builders::PutStoredQueryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl StopCrawlerScheduleInput {
 }
 impl StopCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
-        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
+        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl StopCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput {
-                crawler_name: self.crawler_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput {
+            crawler_name: self.crawler_name,
+        })
     }
 }

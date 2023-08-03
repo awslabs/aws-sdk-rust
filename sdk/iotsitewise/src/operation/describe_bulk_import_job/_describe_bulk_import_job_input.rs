@@ -15,18 +15,14 @@ impl DescribeBulkImportJobInput {
 }
 impl DescribeBulkImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobInputBuilder {
         crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBulkImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DescribeBulkImportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput { job_id: self.job_id })
     }
 }

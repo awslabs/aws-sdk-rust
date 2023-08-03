@@ -42,16 +42,14 @@ impl StartServiceSoftwareUpdateInput {
 }
 impl StartServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartServiceSoftwareUpdateInput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder{
+    pub fn builder() -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder {
         crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`StartServiceSoftwareUpdateInput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_at: ::std::option::Option<crate::types::ScheduleAt>,
@@ -90,10 +88,7 @@ impl StartServiceSoftwareUpdateInputBuilder {
     /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p>
-    pub fn set_schedule_at(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleAt>,
-    ) -> Self {
+    pub fn set_schedule_at(mut self, input: ::std::option::Option<crate::types::ScheduleAt>) -> Self {
         self.schedule_at = input;
         self
     }
@@ -128,12 +123,10 @@ impl StartServiceSoftwareUpdateInputBuilder {
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput {
-                domain_name: self.domain_name,
-                schedule_at: self.schedule_at,
-                desired_start_time: self.desired_start_time,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput {
+            domain_name: self.domain_name,
+            schedule_at: self.schedule_at,
+            desired_start_time: self.desired_start_time,
+        })
     }
 }

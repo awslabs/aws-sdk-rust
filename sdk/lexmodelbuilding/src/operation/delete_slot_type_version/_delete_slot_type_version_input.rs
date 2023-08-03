@@ -22,18 +22,14 @@ impl DeleteSlotTypeVersionInput {
 }
 impl DeleteSlotTypeVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DeleteSlotTypeVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput {
-                name: self.name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput {
+            name: self.name,
+            version: self.version,
+        })
     }
 }

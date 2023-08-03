@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSpeechSynthesisTaskOutput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput) with field(s):
     ///   - [`synthesis_task(Option<SynthesisTask>)`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput::synthesis_task): <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     /// - On failure, responds with [`SdkError<GetSpeechSynthesisTaskError>`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError)
-    pub fn get_speech_synthesis_task(
-        &self,
-    ) -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder
-    {
+    pub fn get_speech_synthesis_task(&self) -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder {
         crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder::new(self.handle.clone())
     }
 }

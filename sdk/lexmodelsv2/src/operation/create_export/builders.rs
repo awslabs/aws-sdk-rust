@@ -10,10 +10,7 @@ impl CreateExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_export::CreateExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export::CreateExportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_export();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateExportFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_export::CreateExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_export::CreateExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,34 +97,23 @@ impl CreateExportFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_export::CreateExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_export::CreateExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ExportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ExportResourceSpecification) -> Self {
         self.inner = self.inner.resource_specification(input);
         self
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
         self.inner = self.inner.set_resource_specification(input);
         self
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
         self.inner.get_resource_specification()
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
@@ -142,10 +122,7 @@ impl CreateExportFluentBuilder {
         self
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportExportFileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
@@ -154,18 +131,12 @@ impl CreateExportFluentBuilder {
         self.inner.get_file_format()
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn file_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_password(input.into());
         self
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn set_file_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
     }

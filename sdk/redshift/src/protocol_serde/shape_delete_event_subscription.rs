@@ -9,60 +9,57 @@ pub fn de_delete_event_subscription_http_error(
     crate::operation::delete_event_subscription::DeleteEventSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled(
+        None => {
+            return Err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidSubscriptionStateFault" => crate::operation::delete_event_subscription::DeleteEventSubscriptionError::InvalidSubscriptionStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidSubscriptionStateFault" => {
+            crate::operation::delete_event_subscription::DeleteEventSubscriptionError::InvalidSubscriptionStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidSubscriptionStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subscription_state_fault::de_invalid_subscription_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_subscription_state_fault::de_invalid_subscription_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "SubscriptionNotFound" => crate::operation::delete_event_subscription::DeleteEventSubscriptionError::SubscriptionNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SubscriptionNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_subscription_not_found_fault::de_subscription_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_subscription_not_found_fault::de_subscription_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_event_subscription::DeleteEventSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_event_subscription::DeleteEventSubscriptionError::generic(generic)
+        _ => crate::operation::delete_event_subscription::DeleteEventSubscriptionError::generic(generic),
     })
 }
 
@@ -78,9 +75,7 @@ pub fn de_delete_event_subscription_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

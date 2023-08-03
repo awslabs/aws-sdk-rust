@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`target(impl ::std::convert::Into<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_target): <p>The target from which the policy will be detached.</p>
     /// - On success, responds with [`DetachPolicyOutput`](crate::operation::detach_policy::DetachPolicyOutput)
     /// - On failure, responds with [`SdkError<DetachPolicyError>`](crate::operation::detach_policy::DetachPolicyError)
-    pub fn detach_policy(
-        &self,
-    ) -> crate::operation::detach_policy::builders::DetachPolicyFluentBuilder {
-        crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_policy(&self) -> crate::operation::detach_policy::builders::DetachPolicyFluentBuilder {
+        crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::new(self.handle.clone())
     }
 }

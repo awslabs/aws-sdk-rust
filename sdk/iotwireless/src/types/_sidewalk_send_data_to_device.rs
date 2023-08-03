@@ -37,9 +37,7 @@ impl SidewalkSendDataToDevice {
 
 /// A builder for [`SidewalkSendDataToDevice`](crate::types::SidewalkSendDataToDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SidewalkSendDataToDeviceBuilder {
     pub(crate) seq: ::std::option::Option<i32>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
@@ -66,10 +64,7 @@ impl SidewalkSendDataToDeviceBuilder {
         self
     }
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }

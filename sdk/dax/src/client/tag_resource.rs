@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::TagResourceOutput::tags): <p>The list of tags that are associated with the DAX resource.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
-    pub fn tag_resource(
-        &self,
-    ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
+    pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())
     }
 }

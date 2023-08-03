@@ -12,28 +12,20 @@ pub fn ser_create_labeling_job_input(
     if let Some(var_3) = &input.input_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("InputConfig").start_object();
-        crate::protocol_serde::shape_labeling_job_input_config::ser_labeling_job_input_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_labeling_job_input_config::ser_labeling_job_input_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.output_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_labeling_job_output_config::ser_labeling_job_output_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_labeling_job_output_config::ser_labeling_job_output_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.role_arn {
         object.key("RoleArn").string(var_7.as_str());
     }
     if let Some(var_8) = &input.label_category_config_s3_uri {
-        object
-            .key("LabelCategoryConfigS3Uri")
-            .string(var_8.as_str());
+        object.key("LabelCategoryConfigS3Uri").string(var_8.as_str());
     }
     if let Some(var_9) = &input.stopping_conditions {
         #[allow(unused_mut)]
@@ -50,10 +42,7 @@ pub fn ser_create_labeling_job_input(
     if let Some(var_13) = &input.human_task_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("HumanTaskConfig").start_object();
-        crate::protocol_serde::shape_human_task_config::ser_human_task_config(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_human_task_config::ser_human_task_config(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.tags {

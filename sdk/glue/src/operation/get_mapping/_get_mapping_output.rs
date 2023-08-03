@@ -28,9 +28,7 @@ impl GetMappingOutput {
 
 /// A builder for [`GetMappingOutput`](crate::operation::get_mapping::GetMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMappingOutputBuilder {
     pub(crate) mapping: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetMappingOutputBuilder {
         self
     }
     /// <p>A list of mappings to the specified targets.</p>
-    pub fn set_mapping(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
-    ) -> Self {
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>) -> Self {
         self.mapping = input;
         self
     }
     /// <p>A list of mappings to the specified targets.</p>
-    pub fn get_mapping(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
         &self.mapping
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

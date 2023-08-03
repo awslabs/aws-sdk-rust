@@ -30,8 +30,7 @@ impl DescribeStoreImageTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStoreImageTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder,
+    inner: crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder,
 }
 impl DescribeStoreImageTasksFluentBuilder {
     /// Creates a new `DescribeStoreImageTasks`.
@@ -42,10 +41,7 @@ impl DescribeStoreImageTasksFluentBuilder {
         }
     }
     /// Access the DescribeStoreImageTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl DescribeStoreImageTasksFluentBuilder {
             crate::operation::describe_store_image_tasks::DescribeStoreImageTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl DescribeStoreImageTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl DescribeStoreImageTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl DescribeStoreImageTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError>,
     > {
         self.send_middleware().await
     }
@@ -122,19 +109,14 @@ impl DescribeStoreImageTasksFluentBuilder {
             crate::operation::describe_store_image_tasks::DescribeStoreImageTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
         crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ImageIds`.
@@ -147,10 +129,7 @@ impl DescribeStoreImageTasksFluentBuilder {
         self
     }
     /// <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a request.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
@@ -190,10 +169,7 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

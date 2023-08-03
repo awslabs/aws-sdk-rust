@@ -36,9 +36,7 @@ impl GetTypeInput {
 
 /// A builder for [`GetTypeInput`](crate::operation::get_type::GetTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl GetTypeInputBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
         self.format = input;
         self
     }
@@ -91,12 +86,7 @@ impl GetTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`GetTypeInput`](crate::operation::get_type::GetTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_type::GetTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_type::GetTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_type::GetTypeInput {
             api_id: self.api_id,
             type_name: self.type_name,

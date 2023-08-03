@@ -63,9 +63,7 @@ impl NamespaceAlreadyExists {
 
 /// A builder for [`NamespaceAlreadyExists`](crate::types::error::NamespaceAlreadyExists).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamespaceAlreadyExistsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -88,18 +86,12 @@ impl NamespaceAlreadyExistsBuilder {
         &self.message
     }
     /// <p>The <code>CreatorRequestId</code> that was used to create the namespace.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>CreatorRequestId</code> that was used to create the namespace.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -128,10 +120,7 @@ impl NamespaceAlreadyExistsBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

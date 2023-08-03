@@ -36,9 +36,7 @@ impl GetWorkflowInput {
 
 /// A builder for [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
@@ -85,26 +83,16 @@ impl GetWorkflowInputBuilder {
         self
     }
     /// <p>The export format for the workflow.</p>
-    pub fn set_export(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>>,
-    ) -> Self {
+    pub fn set_export(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>>) -> Self {
         self.export = input;
         self
     }
     /// <p>The export format for the workflow.</p>
-    pub fn get_export(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
+    pub fn get_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
         &self.export
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow::GetWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
             id: self.id,
             r#type: self.r#type,

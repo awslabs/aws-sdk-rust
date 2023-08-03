@@ -10,10 +10,7 @@ impl ListParticipantsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_participants::ListParticipantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_participants::ListParticipantsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_participants::ListParticipantsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_participants();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListParticipantsFluentBuilder {
         }
     }
     /// Access the ListParticipants as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_participants::builders::ListParticipantsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_participants::builders::ListParticipantsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListParticipantsFluentBuilder {
             crate::operation::list_participants::ListParticipants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_participants::ListParticipantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_participants::ListParticipantsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListParticipantsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListParticipantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_participants::ListParticipantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_participants::ListParticipantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_participants::ListParticipantsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListParticipantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_participants::ListParticipantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_participants::ListParticipantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_participants::ListParticipantsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListParticipantsFluentBuilder {
             crate::operation::list_participants::ListParticipants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_participants::ListParticipantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_participants::ListParticipantsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_participants::paginator::ListParticipantsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_participants::paginator::ListParticipantsPaginator {
-        crate::operation::list_participants::paginator::ListParticipantsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_participants::paginator::ListParticipantsPaginator {
+        crate::operation::list_participants::paginator::ListParticipantsPaginator::new(self.handle, self.inner)
     }
     /// <p>Stage ARN.</p>
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListParticipantsFluentBuilder {
         self.inner.get_session_id()
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    pub fn filter_by_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_by_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_by_user_id(input.into());
         self
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    pub fn set_filter_by_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_by_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_by_user_id(input);
         self
     }
@@ -201,10 +174,7 @@ impl ListParticipantsFluentBuilder {
         self
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
-    pub fn set_filter_by_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantState>,
-    ) -> Self {
+    pub fn set_filter_by_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
         self.inner = self.inner.set_filter_by_state(input);
         self
     }

@@ -30,27 +30,19 @@ impl InsightResultValue {
 
 /// A builder for [`InsightResultValue`](crate::types::InsightResultValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightResultValueBuilder {
     pub(crate) group_by_attribute_value: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
 }
 impl InsightResultValueBuilder {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn group_by_attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn set_group_by_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_by_attribute_value = input;
         self
     }

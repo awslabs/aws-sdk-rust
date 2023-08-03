@@ -9,8 +9,7 @@ pub struct CsrExtensions {
     pub key_usage: ::std::option::Option<crate::types::KeyUsage>,
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     #[doc(hidden)]
-    pub subject_information_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
+    pub subject_information_access: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
 }
 impl CsrExtensions {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
@@ -18,9 +17,7 @@ impl CsrExtensions {
         self.key_usage.as_ref()
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn subject_information_access(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccessDescription]> {
+    pub fn subject_information_access(&self) -> ::std::option::Option<&[crate::types::AccessDescription]> {
         self.subject_information_access.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl CsrExtensions {
 
 /// A builder for [`CsrExtensions`](crate::types::CsrExtensions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsrExtensionsBuilder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsage>,
-    pub(crate) subject_information_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
+    pub(crate) subject_information_access: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
 }
 impl CsrExtensionsBuilder {
     /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
@@ -68,17 +62,12 @@ impl CsrExtensionsBuilder {
         self
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn set_subject_information_access(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>,
-    ) -> Self {
+    pub fn set_subject_information_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>>) -> Self {
         self.subject_information_access = input;
         self
     }
     /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
-    pub fn get_subject_information_access(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>> {
+    pub fn get_subject_information_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>> {
         &self.subject_information_access
     }
     /// Consumes the builder and constructs a [`CsrExtensions`](crate::types::CsrExtensions).

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRelatedItemsOutput {
 }
 impl UpdateRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder {
+    pub fn builder() -> crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder {
         crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRelatedItemsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl DescribeScalingPlansFluentBuilder {
         }
     }
     /// Access the DescribeScalingPlans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeScalingPlansFluentBuilder {
             crate::operation::describe_scaling_plans::DescribeScalingPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeScalingPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeScalingPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plans::DescribeScalingPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeScalingPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plans::DescribeScalingPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeScalingPlansFluentBuilder {
             crate::operation::describe_scaling_plans::DescribeScalingPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl DescribeScalingPlansFluentBuilder {
     /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
     ///
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn scaling_plan_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_plan_names(input.into());
         self
     }
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn set_scaling_plan_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scaling_plan_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scaling_plan_names(input);
         self
     }
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn get_scaling_plan_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scaling_plan_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scaling_plan_names()
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
@@ -178,17 +157,12 @@ impl DescribeScalingPlansFluentBuilder {
         self
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn set_application_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
-    ) -> Self {
+    pub fn set_application_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>) -> Self {
         self.inner = self.inner.set_application_sources(input);
         self
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn get_application_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
+    pub fn get_application_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
         self.inner.get_application_sources()
     }
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>

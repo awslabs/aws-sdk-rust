@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3BucketRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for S3BucketRegion {
             "ap-east-1" => S3BucketRegion::ApEast1,
             "eu-south-1" => S3BucketRegion::EuSouth1,
             "me-south-1" => S3BucketRegion::MeSouth1,
-            other => {
-                S3BucketRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3BucketRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFirewallDomainListOutput {
 }
 impl GetFirewallDomainListOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListOutputBuilder {
         crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallDomainListOutputBuilder {
     pub(crate) firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetFirewallDomainListOutputBuilder {
         self
     }
     /// <p>The domain list that you requested. </p>
-    pub fn set_firewall_domain_list(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallDomainList>,
-    ) -> Self {
+    pub fn set_firewall_domain_list(mut self, input: ::std::option::Option<crate::types::FirewallDomainList>) -> Self {
         self.firewall_domain_list = input;
         self
     }
     /// <p>The domain list that you requested. </p>
-    pub fn get_firewall_domain_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallDomainList> {
+    pub fn get_firewall_domain_list(&self) -> &::std::option::Option<crate::types::FirewallDomainList> {
         &self.firewall_domain_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

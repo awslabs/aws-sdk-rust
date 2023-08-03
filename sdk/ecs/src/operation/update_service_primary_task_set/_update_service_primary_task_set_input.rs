@@ -29,16 +29,14 @@ impl UpdateServicePrimaryTaskSetInput {
 }
 impl UpdateServicePrimaryTaskSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateServicePrimaryTaskSetInput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput).
-    pub fn builder() -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder{
+    pub fn builder() -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder {
         crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServicePrimaryTaskSetInput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
         &self.service
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    pub fn primary_task_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_task_set = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    pub fn set_primary_task_set(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_task_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_task_set = input;
         self
     }
@@ -100,12 +92,10 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
         crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput {
-                cluster: self.cluster,
-                service: self.service,
-                primary_task_set: self.primary_task_set,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput {
+            cluster: self.cluster,
+            service: self.service,
+            primary_task_set: self.primary_task_set,
+        })
     }
 }

@@ -50,15 +50,12 @@ impl ListStreamsOutput {
 
 /// A builder for [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsOutputBuilder {
     pub(crate) stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) has_more_streams: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) stream_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
+    pub(crate) stream_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }
 impl ListStreamsOutputBuilder {
@@ -74,17 +71,12 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn set_stream_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stream_names = input;
         self
     }
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn get_stream_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stream_names
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
@@ -127,17 +119,12 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_stream_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
-    ) -> Self {
+    pub fn set_stream_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>) -> Self {
         self.stream_summaries = input;
         self
     }
     /// <p></p>
-    pub fn get_stream_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>> {
+    pub fn get_stream_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>> {
         &self.stream_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

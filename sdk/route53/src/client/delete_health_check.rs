@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`health_check_id(impl ::std::convert::Into<String>)`](crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder::health_check_id) / [`set_health_check_id(Option<String>)`](crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder::set_health_check_id): <p>The ID of the health check that you want to delete.</p>
     /// - On success, responds with [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput)
     /// - On failure, responds with [`SdkError<DeleteHealthCheckError>`](crate::operation::delete_health_check::DeleteHealthCheckError)
-    pub fn delete_health_check(
-        &self,
-    ) -> crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder {
-        crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_health_check(&self) -> crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder {
+        crate::operation::delete_health_check::builders::DeleteHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

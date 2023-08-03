@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput) with field(s):
     ///   - [`resource_policy(Option<String>)`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput::resource_policy): <p>The resource policy for the model group.</p>
     /// - On failure, responds with [`SdkError<GetModelPackageGroupPolicyError>`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyError)
-    pub fn get_model_package_group_policy(&self) -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder{
+    pub fn get_model_package_group_policy(
+        &self,
+    ) -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder {
         crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

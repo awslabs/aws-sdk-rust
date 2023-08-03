@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for BatchExecuteStatementOutput {
 }
 impl BatchExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementOutputBuilder {
     pub(crate) update_results: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl BatchExecuteStatementOutputBuilder {
         self
     }
     /// <p>The execution results of each batch entry.</p>
-    pub fn set_update_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
-    ) -> Self {
+    pub fn set_update_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>) -> Self {
         self.update_results = input;
         self
     }
     /// <p>The execution results of each batch entry.</p>
-    pub fn get_update_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>> {
+    pub fn get_update_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>> {
         &self.update_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

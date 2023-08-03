@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`pipeline_summaries(Option<Vec<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipeline_summaries): <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
-    pub fn list_pipelines(
-        &self,
-    ) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
+        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

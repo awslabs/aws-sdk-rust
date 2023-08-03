@@ -5,15 +5,12 @@
 pub struct CreateLaunchConfigurationTemplateOutput {
     /// <p>Created Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub launch_configuration_template:
-        ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
+    pub launch_configuration_template: ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
     _request_id: Option<String>,
 }
 impl CreateLaunchConfigurationTemplateOutput {
     /// <p>Created Launch Configuration Template.</p>
-    pub fn launch_configuration_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchConfigurationTemplate> {
+    pub fn launch_configuration_template(&self) -> ::std::option::Option<&crate::types::LaunchConfigurationTemplate> {
         self.launch_configuration_template.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateLaunchConfigurationTemplateOutp
 }
 impl CreateLaunchConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateOutput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput).
-    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder {
         crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchConfigurationTemplateOutput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchConfigurationTemplateOutputBuilder {
-    pub(crate) launch_configuration_template:
-        ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
+    pub(crate) launch_configuration_template: ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
     _request_id: Option<String>,
 }
 impl CreateLaunchConfigurationTemplateOutputBuilder {
     /// <p>Created Launch Configuration Template.</p>
-    pub fn launch_configuration_template(
-        mut self,
-        input: crate::types::LaunchConfigurationTemplate,
-    ) -> Self {
+    pub fn launch_configuration_template(mut self, input: crate::types::LaunchConfigurationTemplate) -> Self {
         self.launch_configuration_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>Created Launch Configuration Template.</p>
-    pub fn set_launch_configuration_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchConfigurationTemplate>,
-    ) -> Self {
+    pub fn set_launch_configuration_template(mut self, input: ::std::option::Option<crate::types::LaunchConfigurationTemplate>) -> Self {
         self.launch_configuration_template = input;
         self
     }
     /// <p>Created Launch Configuration Template.</p>
-    pub fn get_launch_configuration_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchConfigurationTemplate> {
+    pub fn get_launch_configuration_template(&self) -> &::std::option::Option<crate::types::LaunchConfigurationTemplate> {
         &self.launch_configuration_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl CreateLaunchConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateOutput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput).
-    pub fn build(self) -> crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput{
+    pub fn build(self) -> crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
         crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
-            launch_configuration_template: self.launch_configuration_template
-            ,
+            launch_configuration_template: self.launch_configuration_template,
             _request_id: self._request_id,
         }
     }

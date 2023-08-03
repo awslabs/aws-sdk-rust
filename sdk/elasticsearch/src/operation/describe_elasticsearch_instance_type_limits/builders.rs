@@ -5,16 +5,16 @@ pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe
 
 impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_elasticsearch_instance_type_limits();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder,
+    inner: crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder,
 }
 impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     /// Creates a new `DescribeElasticsearchInstanceTypeLimits`.
@@ -37,15 +37,24 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
         }
     }
     /// Access the DescribeElasticsearchInstanceTypeLimits as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimits, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimits,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimits, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimits,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
@@ -114,32 +139,21 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
         self
     }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EsPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
         self.inner.get_instance_type()
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
-    pub fn elasticsearch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
     }

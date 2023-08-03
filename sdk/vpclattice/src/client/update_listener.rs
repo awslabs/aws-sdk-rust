@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`service_id(Option<String>)`](crate::operation::update_listener::UpdateListenerOutput::service_id): <p>The ID of the service.</p>
     ///   - [`default_action(Option<RuleAction>)`](crate::operation::update_listener::UpdateListenerOutput::default_action): <p>The action for the default rule.</p>
     /// - On failure, responds with [`SdkError<UpdateListenerError>`](crate::operation::update_listener::UpdateListenerError)
-    pub fn update_listener(
-        &self,
-    ) -> crate::operation::update_listener::builders::UpdateListenerFluentBuilder {
-        crate::operation::update_listener::builders::UpdateListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_listener(&self) -> crate::operation::update_listener::builders::UpdateListenerFluentBuilder {
+        crate::operation::update_listener::builders::UpdateListenerFluentBuilder::new(self.handle.clone())
     }
 }

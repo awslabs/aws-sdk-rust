@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_summary(Option<Vec<TemplateSummary>>)`](crate::operation::list_templates::ListTemplatesOutput::template_summary): <p>The summary of the template.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
-    pub fn list_templates(
-        &self,
-    ) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
+        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

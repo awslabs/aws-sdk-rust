@@ -26,8 +26,7 @@ impl RemoveFromGlobalClusterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder,
+    inner: crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder,
 }
 impl RemoveFromGlobalClusterFluentBuilder {
     /// Creates a new `RemoveFromGlobalCluster`.
@@ -38,10 +37,7 @@ impl RemoveFromGlobalClusterFluentBuilder {
         }
     }
     /// Access the RemoveFromGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RemoveFromGlobalClusterFluentBuilder {
             crate::operation::remove_from_global_cluster::RemoveFromGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RemoveFromGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RemoveFromGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RemoveFromGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl RemoveFromGlobalClusterFluentBuilder {
             crate::operation::remove_from_global_cluster::RemoveFromGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -145,18 +124,12 @@ impl RemoveFromGlobalClusterFluentBuilder {
         self.inner.get_global_cluster_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

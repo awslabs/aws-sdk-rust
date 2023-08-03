@@ -30,13 +30,10 @@ impl TagCriterionForJob {
 
 /// A builder for [`TagCriterionForJob`](crate::types::TagCriterionForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagCriterionForJobBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
-    pub(crate) tag_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
 }
 impl TagCriterionForJobBuilder {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
@@ -45,10 +42,7 @@ impl TagCriterionForJobBuilder {
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
         self.comparator = input;
         self
     }
@@ -68,17 +62,12 @@ impl TagCriterionForJobBuilder {
         self
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>) -> Self {
         self.tag_values = input;
         self
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn get_tag_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`TagCriterionForJob`](crate::types::TagCriterionForJob).

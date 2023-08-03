@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ModelPackageGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ModelPackageGroupStatus {
             "Failed" => ModelPackageGroupStatus::Failed,
             "InProgress" => ModelPackageGroupStatus::InProgress,
             "Pending" => ModelPackageGroupStatus::Pending,
-            other => ModelPackageGroupStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ModelPackageGroupStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ModelPackageGroupStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed",
-            "DeleteFailed",
-            "Deleting",
-            "Failed",
-            "InProgress",
-            "Pending",
-        ]
+        &["Completed", "DeleteFailed", "Deleting", "Failed", "InProgress", "Pending"]
     }
 }
 impl ::std::convert::AsRef<str> for ModelPackageGroupStatus {

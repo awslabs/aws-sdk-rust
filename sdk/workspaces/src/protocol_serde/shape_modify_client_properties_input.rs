@@ -9,10 +9,7 @@ pub fn ser_modify_client_properties_input(
     if let Some(var_2) = &input.client_properties {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ClientProperties").start_object();
-        crate::protocol_serde::shape_client_properties::ser_client_properties(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_client_properties::ser_client_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

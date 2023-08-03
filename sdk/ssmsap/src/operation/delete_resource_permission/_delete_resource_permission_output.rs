@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourcePermissionOutput {
 }
 impl DeleteResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder {
         crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourcePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DeleteResourcePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
+    pub fn build(self) -> crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
         crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
             policy: self.policy,
             _request_id: self._request_id,

@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput::location): <p>The fully qualified URI of the new origin access identity just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity created.</p>
     /// - On failure, responds with [`SdkError<CreateCloudFrontOriginAccessIdentityError>`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError)
-    pub fn create_cloud_front_origin_access_identity(&self) -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityFluentBuilder{
-        crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityFluentBuilder::new(self.handle.clone())
+    pub fn create_cloud_front_origin_access_identity(
+        &self,
+    ) -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityFluentBuilder {
+        crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -23,9 +23,7 @@ impl AgentOrchestrationConfig {
 
 /// A builder for [`AgentOrchestrationConfig`](crate::types::AgentOrchestrationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentOrchestrationConfigBuilder {
     pub(crate) profiling_enabled: ::std::option::Option<bool>,
 }

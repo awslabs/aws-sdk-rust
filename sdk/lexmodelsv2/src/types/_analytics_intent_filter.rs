@@ -111,9 +111,7 @@ impl AnalyticsIntentFilter {
 
 /// A builder for [`AnalyticsIntentFilter`](crate::types::AnalyticsIntentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
@@ -148,10 +146,7 @@ impl AnalyticsIntentFilterBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -212,10 +207,7 @@ impl AnalyticsIntentFilterBuilder {
     /// <li> <p> <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – <code>EQ</code>, <code>CO</code>.</p> </li>
     /// </ul>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AnalyticsFilterOperator>) -> Self {
         self.operator = input;
         self
     }
@@ -253,10 +245,7 @@ impl AnalyticsIntentFilterBuilder {
         self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

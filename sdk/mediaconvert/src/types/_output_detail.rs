@@ -30,9 +30,7 @@ impl OutputDetail {
 
 /// A builder for [`OutputDetail`](crate::types::OutputDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDetailBuilder {
     pub(crate) duration_in_ms: ::std::option::Option<i32>,
     pub(crate) video_details: ::std::option::Option<crate::types::VideoDetail>,
@@ -58,10 +56,7 @@ impl OutputDetailBuilder {
         self
     }
     /// Contains details about the output's video stream
-    pub fn set_video_details(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoDetail>,
-    ) -> Self {
+    pub fn set_video_details(mut self, input: ::std::option::Option<crate::types::VideoDetail>) -> Self {
         self.video_details = input;
         self
     }

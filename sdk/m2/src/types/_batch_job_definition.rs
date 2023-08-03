@@ -21,9 +21,7 @@ pub enum BatchJobDefinition {
 impl BatchJobDefinition {
     /// Tries to convert the enum instance into [`FileBatchJobDefinition`](crate::types::BatchJobDefinition::FileBatchJobDefinition), extracting the inner [`FileBatchJobDefinition`](crate::types::FileBatchJobDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file_batch_job_definition(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FileBatchJobDefinition, &Self> {
+    pub fn as_file_batch_job_definition(&self) -> ::std::result::Result<&crate::types::FileBatchJobDefinition, &Self> {
         if let BatchJobDefinition::FileBatchJobDefinition(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl BatchJobDefinition {
     }
     /// Tries to convert the enum instance into [`ScriptBatchJobDefinition`](crate::types::BatchJobDefinition::ScriptBatchJobDefinition), extracting the inner [`ScriptBatchJobDefinition`](crate::types::ScriptBatchJobDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_script_batch_job_definition(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ScriptBatchJobDefinition, &Self> {
+    pub fn as_script_batch_job_definition(&self) -> ::std::result::Result<&crate::types::ScriptBatchJobDefinition, &Self> {
         if let BatchJobDefinition::ScriptBatchJobDefinition(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

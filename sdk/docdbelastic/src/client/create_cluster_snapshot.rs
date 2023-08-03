@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateClusterSnapshotOutput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput::snapshot): <p>Returns information about the new Elastic DocumentDB snapshot.</p>
     /// - On failure, responds with [`SdkError<CreateClusterSnapshotError>`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotError)
-    pub fn create_cluster_snapshot(
-        &self,
-    ) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotFluentBuilder
-    {
-        crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cluster_snapshot(&self) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotFluentBuilder {
+        crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

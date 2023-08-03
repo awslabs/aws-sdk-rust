@@ -24,30 +24,24 @@ impl CreateTransitGatewayVpcAttachmentRequestOptions {
         self.ipv6_support.as_ref()
     }
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
-    pub fn appliance_mode_support(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplianceModeSupportValue> {
+    pub fn appliance_mode_support(&self) -> ::std::option::Option<&crate::types::ApplianceModeSupportValue> {
         self.appliance_mode_support.as_ref()
     }
 }
 impl CreateTransitGatewayVpcAttachmentRequestOptions {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayVpcAttachmentRequestOptions`](crate::types::CreateTransitGatewayVpcAttachmentRequestOptions).
-    pub fn builder(
-    ) -> crate::types::builders::CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
+    pub fn builder() -> crate::types::builders::CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         crate::types::builders::CreateTransitGatewayVpcAttachmentRequestOptionsBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayVpcAttachmentRequestOptions`](crate::types::CreateTransitGatewayVpcAttachmentRequestOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     pub(crate) ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
-    pub(crate) appliance_mode_support:
-        ::std::option::Option<crate::types::ApplianceModeSupportValue>,
+    pub(crate) appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
 }
 impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
     /// <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
@@ -56,10 +50,7 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         self
     }
     /// <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
-    pub fn set_dns_support(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsSupportValue>,
-    ) -> Self {
+    pub fn set_dns_support(mut self, input: ::std::option::Option<crate::types::DnsSupportValue>) -> Self {
         self.dns_support = input;
         self
     }
@@ -73,10 +64,7 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         self
     }
     /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
-    pub fn set_ipv6_support(
-        mut self,
-        input: ::std::option::Option<crate::types::Ipv6SupportValue>,
-    ) -> Self {
+    pub fn set_ipv6_support(mut self, input: ::std::option::Option<crate::types::Ipv6SupportValue>) -> Self {
         self.ipv6_support = input;
         self
     }
@@ -85,25 +73,17 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         &self.ipv6_support
     }
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
-    pub fn appliance_mode_support(
-        mut self,
-        input: crate::types::ApplianceModeSupportValue,
-    ) -> Self {
+    pub fn appliance_mode_support(mut self, input: crate::types::ApplianceModeSupportValue) -> Self {
         self.appliance_mode_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
-    pub fn set_appliance_mode_support(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
-    ) -> Self {
+    pub fn set_appliance_mode_support(mut self, input: ::std::option::Option<crate::types::ApplianceModeSupportValue>) -> Self {
         self.appliance_mode_support = input;
         self
     }
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
-    pub fn get_appliance_mode_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplianceModeSupportValue> {
+    pub fn get_appliance_mode_support(&self) -> &::std::option::Option<crate::types::ApplianceModeSupportValue> {
         &self.appliance_mode_support
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayVpcAttachmentRequestOptions`](crate::types::CreateTransitGatewayVpcAttachmentRequestOptions).

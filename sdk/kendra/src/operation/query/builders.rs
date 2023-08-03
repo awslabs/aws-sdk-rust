@@ -10,10 +10,7 @@ impl QueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::query::QueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query::QueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.query();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl QueryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::query::Query,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::query::Query, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
     > {
         let handle = self.handle.clone();
@@ -67,20 +61,14 @@ impl QueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::query::QueryOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>> {
         let op = self
             .inner
             .build()
@@ -100,10 +88,7 @@ impl QueryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::query::QueryOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>> {
         self.send_middleware().await
     }
 
@@ -112,10 +97,7 @@ impl QueryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::query::Query,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::query::Query, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
     > {
         self.customize_middleware().await
@@ -156,10 +138,7 @@ impl QueryFluentBuilder {
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    pub fn set_attribute_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeFilter>,
-    ) -> Self {
+    pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::AttributeFilter>) -> Self {
         self.inner = self.inner.set_attribute_filter(input);
         self
     }
@@ -178,10 +157,7 @@ impl QueryFluentBuilder {
         self
     }
     /// <p>An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.</p>
-    pub fn set_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
-    ) -> Self {
+    pub fn set_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>) -> Self {
         self.inner = self.inner.set_facets(input);
         self
     }
@@ -194,25 +170,17 @@ impl QueryFluentBuilder {
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
     ///
     /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
-    pub fn requested_document_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_document_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requested_document_attributes(input.into());
         self
     }
     /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
-    pub fn set_requested_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
     }
     /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
-    pub fn get_requested_document_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_requested_document_attributes()
     }
     /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
@@ -221,17 +189,12 @@ impl QueryFluentBuilder {
         self
     }
     /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
-    pub fn set_query_result_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryResultType>,
-    ) -> Self {
+    pub fn set_query_result_type_filter(mut self, input: ::std::option::Option<crate::types::QueryResultType>) -> Self {
         self.inner = self.inner.set_query_result_type_filter(input);
         self
     }
     /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
-    pub fn get_query_result_type_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryResultType> {
+    pub fn get_query_result_type_filter(&self) -> &::std::option::Option<crate::types::QueryResultType> {
         self.inner.get_query_result_type_filter()
     }
     /// Appends an item to `DocumentRelevanceOverrideConfigurations`.
@@ -241,10 +204,7 @@ impl QueryFluentBuilder {
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(
-        mut self,
-        input: crate::types::DocumentRelevanceConfiguration,
-    ) -> Self {
+    pub fn document_relevance_override_configurations(mut self, input: crate::types::DocumentRelevanceConfiguration) -> Self {
         self.inner = self.inner.document_relevance_override_configurations(input);
         self
     }
@@ -255,9 +215,7 @@ impl QueryFluentBuilder {
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_document_relevance_override_configurations(input);
+        self.inner = self.inner.set_document_relevance_override_configurations(input);
         self
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
@@ -304,18 +262,13 @@ impl QueryFluentBuilder {
     }
     /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
-    pub fn set_sorting_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SortingConfiguration>,
-    ) -> Self {
+    pub fn set_sorting_configuration(mut self, input: ::std::option::Option<crate::types::SortingConfiguration>) -> Self {
         self.inner = self.inner.set_sorting_configuration(input);
         self
     }
     /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
-    pub fn get_sorting_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SortingConfiguration> {
+    pub fn get_sorting_configuration(&self) -> &::std::option::Option<crate::types::SortingConfiguration> {
         self.inner.get_sorting_configuration()
     }
     /// <p>The user context token or user and group information.</p>
@@ -324,10 +277,7 @@ impl QueryFluentBuilder {
         self
     }
     /// <p>The user context token or user and group information.</p>
-    pub fn set_user_context(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.inner = self.inner.set_user_context(input);
         self
     }
@@ -350,25 +300,17 @@ impl QueryFluentBuilder {
         self.inner.get_visitor_id()
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn spell_correction_configuration(
-        mut self,
-        input: crate::types::SpellCorrectionConfiguration,
-    ) -> Self {
+    pub fn spell_correction_configuration(mut self, input: crate::types::SpellCorrectionConfiguration) -> Self {
         self.inner = self.inner.spell_correction_configuration(input);
         self
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn set_spell_correction_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
-    ) -> Self {
+    pub fn set_spell_correction_configuration(mut self, input: ::std::option::Option<crate::types::SpellCorrectionConfiguration>) -> Self {
         self.inner = self.inner.set_spell_correction_configuration(input);
         self
     }
     /// <p>Enables suggested spell corrections for queries.</p>
-    pub fn get_spell_correction_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpellCorrectionConfiguration> {
+    pub fn get_spell_correction_configuration(&self) -> &::std::option::Option<crate::types::SpellCorrectionConfiguration> {
         self.inner.get_spell_correction_configuration()
     }
 }

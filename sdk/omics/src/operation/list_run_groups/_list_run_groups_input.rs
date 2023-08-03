@@ -36,9 +36,7 @@ impl ListRunGroupsInput {
 
 /// A builder for [`ListRunGroupsInput`](crate::operation::list_run_groups::ListRunGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunGroupsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) starting_token: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl ListRunGroupsInputBuilder {
         &self.name
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_token = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListRunGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListRunGroupsInput`](crate::operation::list_run_groups::ListRunGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_run_groups::ListRunGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_run_groups::ListRunGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_run_groups::ListRunGroupsInput {
             name: self.name,
             starting_token: self.starting_token,

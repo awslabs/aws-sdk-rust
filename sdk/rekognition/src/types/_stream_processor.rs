@@ -30,9 +30,7 @@ impl StreamProcessor {
 
 /// A builder for [`StreamProcessor`](crate::types::StreamProcessor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamProcessorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StreamProcessorStatus>,
@@ -58,10 +56,7 @@ impl StreamProcessorBuilder {
         self
     }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StreamProcessorStatus>) -> Self {
         self.status = input;
         self
     }

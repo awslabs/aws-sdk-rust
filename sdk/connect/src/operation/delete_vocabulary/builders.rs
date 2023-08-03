@@ -10,10 +10,7 @@ impl DeleteVocabularyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_vocabulary::DeleteVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary::DeleteVocabularyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary::DeleteVocabularyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_vocabulary();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteVocabularyFluentBuilder {
         }
     }
     /// Access the DeleteVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteVocabularyFluentBuilder {
             crate::operation::delete_vocabulary::DeleteVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary::DeleteVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary::DeleteVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vocabulary::DeleteVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary::DeleteVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary::DeleteVocabularyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vocabulary::DeleteVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary::DeleteVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary::DeleteVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteVocabularyFluentBuilder {
             crate::operation::delete_vocabulary::DeleteVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary::DeleteVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary::DeleteVocabularyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteVocabularyFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_id(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_id(input);
         self
     }

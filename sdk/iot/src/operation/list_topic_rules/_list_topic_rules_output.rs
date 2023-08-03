@@ -36,9 +36,7 @@ impl ListTopicRulesOutput {
 
 /// A builder for [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListTopicRulesOutputBuilder {
         self
     }
     /// <p>The rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The rules.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>> {
         &self.rules
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>

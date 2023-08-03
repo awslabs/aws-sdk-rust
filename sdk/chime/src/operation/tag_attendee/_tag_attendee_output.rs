@@ -19,9 +19,7 @@ impl TagAttendeeOutput {
 
 /// A builder for [`TagAttendeeOutput`](crate::operation::tag_attendee::TagAttendeeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagAttendeeOutputBuilder {
     _request_id: Option<String>,
 }

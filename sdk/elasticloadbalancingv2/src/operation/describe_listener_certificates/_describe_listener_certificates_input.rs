@@ -29,16 +29,14 @@ impl DescribeListenerCertificatesInput {
 }
 impl DescribeListenerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
-    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder {
         crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl DescribeListenerCertificatesInputBuilder {
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput {
+            listener_arn: self.listener_arn,
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

@@ -17,8 +17,7 @@ pub struct ReEncryptOutput {
     pub source_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     #[doc(hidden)]
-    pub destination_encryption_algorithm:
-        ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     _request_id: Option<String>,
 }
 impl ReEncryptOutput {
@@ -35,15 +34,11 @@ impl ReEncryptOutput {
         self.key_id.as_deref()
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    pub fn source_encryption_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn source_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.source_encryption_algorithm.as_ref()
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    pub fn destination_encryption_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn destination_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.destination_encryption_algorithm.as_ref()
     }
 }
@@ -61,17 +56,13 @@ impl ReEncryptOutput {
 
 /// A builder for [`ReEncryptOutput`](crate::operation::re_encrypt::ReEncryptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReEncryptOutputBuilder {
     pub(crate) ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) source_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) source_encryption_algorithm:
-        ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    pub(crate) destination_encryption_algorithm:
-        ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) source_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     _request_id: Option<String>,
 }
 impl ReEncryptOutputBuilder {
@@ -81,10 +72,7 @@ impl ReEncryptOutputBuilder {
         self
     }
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_ciphertext_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ciphertext_blob = input;
         self
     }
@@ -93,18 +81,12 @@ impl ReEncryptOutputBuilder {
         &self.ciphertext_blob
     }
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
-    pub fn source_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
-    pub fn set_source_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_key_id = input;
         self
     }
@@ -127,47 +109,31 @@ impl ReEncryptOutputBuilder {
         &self.key_id
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    pub fn source_encryption_algorithm(
-        mut self,
-        input: crate::types::EncryptionAlgorithmSpec,
-    ) -> Self {
+    pub fn source_encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
         self.source_encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    pub fn set_source_encryption_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_source_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
         self.source_encryption_algorithm = input;
         self
     }
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    pub fn get_source_encryption_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+    pub fn get_source_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.source_encryption_algorithm
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    pub fn destination_encryption_algorithm(
-        mut self,
-        input: crate::types::EncryptionAlgorithmSpec,
-    ) -> Self {
+    pub fn destination_encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
         self.destination_encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    pub fn set_destination_encryption_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_destination_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
         self.destination_encryption_algorithm = input;
         self
     }
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    pub fn get_destination_encryption_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+    pub fn get_destination_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.destination_encryption_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

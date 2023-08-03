@@ -37,9 +37,7 @@ impl FailureDetails {
 
 /// A builder for [`FailureDetails`](crate::types::FailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FailureType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl FailureDetailsBuilder {
         &self.message
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn external_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn set_external_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_execution_id = input;
         self
     }

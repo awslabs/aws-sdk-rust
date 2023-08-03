@@ -19,9 +19,7 @@ impl DisableMacieOutput {
 
 /// A builder for [`DisableMacieOutput`](crate::operation::disable_macie::DisableMacieOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableMacieOutputBuilder {
     _request_id: Option<String>,
 }

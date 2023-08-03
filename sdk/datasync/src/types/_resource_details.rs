@@ -9,12 +9,10 @@ pub struct ResourceDetails {
     pub net_app_ontapsv_ms: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
     #[doc(hidden)]
-    pub net_app_ontap_volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
+    pub net_app_ontap_volumes: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
     #[doc(hidden)]
-    pub net_app_ontap_clusters:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
+    pub net_app_ontap_clusters: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
 }
 impl ResourceDetails {
     /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
@@ -22,15 +20,11 @@ impl ResourceDetails {
         self.net_app_ontapsv_ms.as_deref()
     }
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
-    pub fn net_app_ontap_volumes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetAppOntapVolume]> {
+    pub fn net_app_ontap_volumes(&self) -> ::std::option::Option<&[crate::types::NetAppOntapVolume]> {
         self.net_app_ontap_volumes.as_deref()
     }
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
-    pub fn net_app_ontap_clusters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetAppOntapCluster]> {
+    pub fn net_app_ontap_clusters(&self) -> ::std::option::Option<&[crate::types::NetAppOntapCluster]> {
         self.net_app_ontap_clusters.as_deref()
     }
 }
@@ -43,16 +37,11 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
-    pub(crate) net_app_ontapsv_ms:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
-    pub(crate) net_app_ontap_volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
-    pub(crate) net_app_ontap_clusters:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
+    pub(crate) net_app_ontapsv_ms: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
+    pub(crate) net_app_ontap_volumes: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
+    pub(crate) net_app_ontap_clusters: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
 }
 impl ResourceDetailsBuilder {
     /// Appends an item to `net_app_ontapsv_ms`.
@@ -67,17 +56,12 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
-    pub fn set_net_app_ontapsv_ms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
-    ) -> Self {
+    pub fn set_net_app_ontapsv_ms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>) -> Self {
         self.net_app_ontapsv_ms = input;
         self
     }
     /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
-    pub fn get_net_app_ontapsv_ms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>> {
+    pub fn get_net_app_ontapsv_ms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>> {
         &self.net_app_ontapsv_ms
     }
     /// Appends an item to `net_app_ontap_volumes`.
@@ -92,17 +76,12 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
-    pub fn set_net_app_ontap_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,
-    ) -> Self {
+    pub fn set_net_app_ontap_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>) -> Self {
         self.net_app_ontap_volumes = input;
         self
     }
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
-    pub fn get_net_app_ontap_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>> {
+    pub fn get_net_app_ontap_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>> {
         &self.net_app_ontap_volumes
     }
     /// Appends an item to `net_app_ontap_clusters`.
@@ -117,17 +96,12 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
-    pub fn set_net_app_ontap_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>,
-    ) -> Self {
+    pub fn set_net_app_ontap_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>>) -> Self {
         self.net_app_ontap_clusters = input;
         self
     }
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
-    pub fn get_net_app_ontap_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>> {
+    pub fn get_net_app_ontap_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>> {
         &self.net_app_ontap_clusters
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).

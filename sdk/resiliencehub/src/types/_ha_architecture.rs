@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HaArchitecture {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for HaArchitecture {
             "NoRecoveryPlan" => HaArchitecture::NoRecoveryPlan,
             "PilotLight" => HaArchitecture::PilotLight,
             "WarmStandby" => HaArchitecture::WarmStandby,
-            other => {
-                HaArchitecture::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HaArchitecture::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl HaArchitecture {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BackupAndRestore",
-            "MultiSite",
-            "NoRecoveryPlan",
-            "PilotLight",
-            "WarmStandby",
-        ]
+        &["BackupAndRestore", "MultiSite", "NoRecoveryPlan", "PilotLight", "WarmStandby"]
     }
 }
 impl ::std::convert::AsRef<str> for HaArchitecture {

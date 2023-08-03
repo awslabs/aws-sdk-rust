@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeprecateWorkflowTypeOutput {
 }
 impl DeprecateWorkflowTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeOutputBuilder {
         crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateWorkflowTypeOutput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateWorkflowTypeOutputBuilder {
     _request_id: Option<String>,
 }

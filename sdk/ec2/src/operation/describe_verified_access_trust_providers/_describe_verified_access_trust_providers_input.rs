@@ -5,8 +5,7 @@
 pub struct DescribeVerifiedAccessTrustProvidersInput {
     /// <p>The IDs of the Verified Access trust providers.</p>
     #[doc(hidden)]
-    pub verified_access_trust_provider_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub verified_access_trust_provider_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -22,9 +21,7 @@ pub struct DescribeVerifiedAccessTrustProvidersInput {
 }
 impl DescribeVerifiedAccessTrustProvidersInput {
     /// <p>The IDs of the Verified Access trust providers.</p>
-    pub fn verified_access_trust_provider_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn verified_access_trust_provider_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.verified_access_trust_provider_ids.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -46,19 +43,16 @@ impl DescribeVerifiedAccessTrustProvidersInput {
 }
 impl DescribeVerifiedAccessTrustProvidersInput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessTrustProvidersInput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput).
-    pub fn builder() -> crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersInputBuilder{
+    pub fn builder() -> crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersInputBuilder {
         crate::operation::describe_verified_access_trust_providers::builders::DescribeVerifiedAccessTrustProvidersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVerifiedAccessTrustProvidersInput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessTrustProvidersInputBuilder {
-    pub(crate) verified_access_trust_provider_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) verified_access_trust_provider_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -70,27 +64,19 @@ impl DescribeVerifiedAccessTrustProvidersInputBuilder {
     /// To override the contents of this collection use [`set_verified_access_trust_provider_ids`](Self::set_verified_access_trust_provider_ids).
     ///
     /// <p>The IDs of the Verified Access trust providers.</p>
-    pub fn verified_access_trust_provider_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_trust_provider_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.verified_access_trust_provider_ids.unwrap_or_default();
         v.push(input.into());
         self.verified_access_trust_provider_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Verified Access trust providers.</p>
-    pub fn set_verified_access_trust_provider_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_verified_access_trust_provider_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.verified_access_trust_provider_ids = input;
         self
     }
     /// <p>The IDs of the Verified Access trust providers.</p>
-    pub fn get_verified_access_trust_provider_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_verified_access_trust_provider_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.verified_access_trust_provider_ids
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -133,10 +119,7 @@ impl DescribeVerifiedAccessTrustProvidersInputBuilder {
         self
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -159,20 +142,20 @@ impl DescribeVerifiedAccessTrustProvidersInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessTrustProvidersInput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput {
-                verified_access_trust_provider_ids: self.verified_access_trust_provider_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                verified_access_trust_provider_ids: self.verified_access_trust_provider_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

@@ -6,17 +6,14 @@
 pub struct AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub multi_region_access_point_details:
-        ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
+    pub multi_region_access_point_details: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     /// <p>Error details for an asynchronous request.</p>
     #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::AsyncErrorDetails>,
 }
 impl AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn multi_region_access_point_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiRegionAccessPointsAsyncResponse> {
+    pub fn multi_region_access_point_details(&self) -> ::std::option::Option<&crate::types::MultiRegionAccessPointsAsyncResponse> {
         self.multi_region_access_point_details.as_ref()
     }
     /// <p>Error details for an asynchronous request.</p>
@@ -33,35 +30,24 @@ impl AsyncResponseDetails {
 
 /// A builder for [`AsyncResponseDetails`](crate::types::AsyncResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AsyncResponseDetailsBuilder {
-    pub(crate) multi_region_access_point_details:
-        ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
+    pub(crate) multi_region_access_point_details: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     pub(crate) error_details: ::std::option::Option<crate::types::AsyncErrorDetails>,
 }
 impl AsyncResponseDetailsBuilder {
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn multi_region_access_point_details(
-        mut self,
-        input: crate::types::MultiRegionAccessPointsAsyncResponse,
-    ) -> Self {
+    pub fn multi_region_access_point_details(mut self, input: crate::types::MultiRegionAccessPointsAsyncResponse) -> Self {
         self.multi_region_access_point_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn set_multi_region_access_point_details(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
-    ) -> Self {
+    pub fn set_multi_region_access_point_details(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>) -> Self {
         self.multi_region_access_point_details = input;
         self
     }
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn get_multi_region_access_point_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse> {
+    pub fn get_multi_region_access_point_details(&self) -> &::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse> {
         &self.multi_region_access_point_details
     }
     /// <p>Error details for an asynchronous request.</p>
@@ -70,10 +56,7 @@ impl AsyncResponseDetailsBuilder {
         self
     }
     /// <p>Error details for an asynchronous request.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::AsyncErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

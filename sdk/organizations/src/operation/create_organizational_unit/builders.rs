@@ -29,7 +29,7 @@ impl CreateOrganizationalUnitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOrganizationalUnitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder,
+    inner: crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder,
 }
 impl CreateOrganizationalUnitFluentBuilder {
     /// Creates a new `CreateOrganizationalUnit`.
@@ -40,10 +40,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         }
     }
     /// Access the CreateOrganizationalUnit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl CreateOrganizationalUnitFluentBuilder {
             crate::operation::create_organizational_unit::CreateOrganizationalUnit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organizational_unit::CreateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organizational_unit::CreateOrganizationalUnitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl CreateOrganizationalUnitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_organizational_unit::CreateOrganizationalUnitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organizational_unit::CreateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organizational_unit::CreateOrganizationalUnitError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_organizational_unit::CreateOrganizationalUnitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organizational_unit::CreateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organizational_unit::CreateOrganizationalUnitError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl CreateOrganizationalUnitFluentBuilder {
             crate::operation::create_organizational_unit::CreateOrganizationalUnit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organizational_unit::CreateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organizational_unit::CreateOrganizationalUnitError>,
     > {
         self.customize_middleware().await
     }
@@ -183,10 +169,7 @@ impl CreateOrganizationalUnitFluentBuilder {
     /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListVirtualNodesOutput {
 }
 impl ListVirtualNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput).
-    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder {
         crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualNodesOutput`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualNodesOutputBuilder {
     pub(crate) virtual_nodes: ::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListVirtualNodesOutputBuilder {
         self
     }
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-    pub fn set_virtual_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>>,
-    ) -> Self {
+    pub fn set_virtual_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>>) -> Self {
         self.virtual_nodes = input;
         self
     }
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-    pub fn get_virtual_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>> {
+    pub fn get_virtual_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>> {
         &self.virtual_nodes
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

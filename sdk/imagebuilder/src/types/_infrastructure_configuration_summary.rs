@@ -21,14 +21,10 @@ pub struct InfrastructureConfigurationSummary {
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the image created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tags of the infrastructure configuration.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance types of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,19 +54,11 @@ impl InfrastructureConfigurationSummary {
         self.date_updated.as_deref()
     }
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
@@ -91,21 +79,15 @@ impl InfrastructureConfigurationSummary {
 
 /// A builder for [`InfrastructureConfigurationSummary`](crate::types::InfrastructureConfigurationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InfrastructureConfigurationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) date_updated: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
 }
@@ -185,11 +167,7 @@ impl InfrastructureConfigurationSummaryBuilder {
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn resource_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.resource_tags = ::std::option::Option::Some(hash_map);
@@ -198,19 +176,13 @@ impl InfrastructureConfigurationSummaryBuilder {
     /// <p>The tags attached to the image created by Image Builder.</p>
     pub fn set_resource_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
     /// Adds a key-value pair to `tags`.
@@ -218,32 +190,19 @@ impl InfrastructureConfigurationSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `instance_types`.
@@ -251,42 +210,28 @@ impl InfrastructureConfigurationSummaryBuilder {
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input.into());
         self.instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_types
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_name = input;
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRegexMatchSetOutput {
 }
 impl GetRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetRegexMatchSetOutput`](crate::operation::get_regex_match_set::GetRegexMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_regex_match_set::builders::GetRegexMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::get_regex_match_set::builders::GetRegexMatchSetOutputBuilder {
         crate::operation::get_regex_match_set::builders::GetRegexMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegexMatchSetOutput`](crate::operation::get_regex_match_set::GetRegexMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegexMatchSetOutputBuilder {
     pub(crate) regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetRegexMatchSetOutputBuilder {
         self
     }
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn set_regex_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::RegexMatchSet>,
-    ) -> Self {
+    pub fn set_regex_match_set(mut self, input: ::std::option::Option<crate::types::RegexMatchSet>) -> Self {
         self.regex_match_set = input;
         self
     }

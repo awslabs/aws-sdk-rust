@@ -65,9 +65,7 @@ impl ResizeClusterInput {
 
 /// A builder for [`ResizeClusterInput`](crate::operation::resize_cluster::ResizeClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResizeClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ResizeClusterInputBuilder {
 }
 impl ResizeClusterInputBuilder {
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -155,18 +147,12 @@ impl ResizeClusterInputBuilder {
         &self.classic
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -175,34 +161,23 @@ impl ResizeClusterInputBuilder {
         &self.reserved_node_id
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = input;
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }
     /// Consumes the builder and constructs a [`ResizeClusterInput`](crate::operation::resize_cluster::ResizeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resize_cluster::ResizeClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::resize_cluster::ResizeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::resize_cluster::ResizeClusterInput {
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,

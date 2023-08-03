@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`vehicle_name(Option<String>)`](crate::operation::update_vehicle::UpdateVehicleOutput::vehicle_name): <p>The ID of the updated vehicle.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_vehicle::UpdateVehicleOutput::arn): <p>The ARN of the updated vehicle.</p>
     /// - On failure, responds with [`SdkError<UpdateVehicleError>`](crate::operation::update_vehicle::UpdateVehicleError)
-    pub fn update_vehicle(
-        &self,
-    ) -> crate::operation::update_vehicle::builders::UpdateVehicleFluentBuilder {
-        crate::operation::update_vehicle::builders::UpdateVehicleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vehicle(&self) -> crate::operation::update_vehicle::builders::UpdateVehicleFluentBuilder {
+        crate::operation::update_vehicle::builders::UpdateVehicleFluentBuilder::new(self.handle.clone())
     }
 }

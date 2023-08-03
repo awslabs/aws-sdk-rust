@@ -39,9 +39,7 @@ impl ListServicesOutput {
 
 /// A builder for [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +58,12 @@ impl ListServicesOutputBuilder {
         self
     }
     /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.services = input;
         self
     }
     /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
-    pub fn get_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.services
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>

@@ -8,7 +8,12 @@ impl super::Client {
     /// - On success, responds with [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput) with field(s):
     ///   - [`instance_tag_attribute(Option<InstanceTagNotificationAttribute>)`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput::instance_tag_attribute): <p>The resulting set of tag keys.</p>
     /// - On failure, responds with [`SdkError<DeregisterInstanceEventNotificationAttributesError>`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesError)
-    pub fn deregister_instance_event_notification_attributes(&self) -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesFluentBuilder{
-        crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesFluentBuilder::new(self.handle.clone())
+    pub fn deregister_instance_event_notification_attributes(
+        &self,
+    ) -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesFluentBuilder
+    {
+        crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

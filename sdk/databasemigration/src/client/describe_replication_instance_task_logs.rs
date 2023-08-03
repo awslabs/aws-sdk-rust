@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`replication_instance_task_logs(Option<Vec<ReplicationInstanceTaskLog>>)`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsOutput::replication_instance_task_logs): <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationInstanceTaskLogsError>`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsError)
-    pub fn describe_replication_instance_task_logs(&self) -> crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsFluentBuilder{
-        crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsFluentBuilder::new(self.handle.clone())
+    pub fn describe_replication_instance_task_logs(
+        &self,
+    ) -> crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsFluentBuilder {
+        crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

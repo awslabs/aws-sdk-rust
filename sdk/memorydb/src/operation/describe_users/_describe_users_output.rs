@@ -35,9 +35,7 @@ impl DescribeUsersOutput {
 
 /// A builder for [`DescribeUsersOutput`](crate::operation::describe_users::DescribeUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeUsersOutputBuilder {
         self
     }
     /// <p>A list of users.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
         self.users = input;
         self
     }

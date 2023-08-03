@@ -22,18 +22,14 @@ impl AssociateVehicleFleetInput {
 }
 impl AssociateVehicleFleetInput {
     /// Creates a new builder-style object to manufacture [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
-    pub fn builder(
-    ) -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder {
         crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl AssociateVehicleFleetInputBuilder {
     /// Consumes the builder and constructs a [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput {
-                vehicle_name: self.vehicle_name,
-                fleet_id: self.fleet_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput {
+            vehicle_name: self.vehicle_name,
+            fleet_id: self.fleet_id,
+        })
     }
 }

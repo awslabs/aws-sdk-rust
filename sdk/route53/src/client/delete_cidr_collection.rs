@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder::set_id): <p>The UUID of the collection to delete.</p>
     /// - On success, responds with [`DeleteCidrCollectionOutput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput)
     /// - On failure, responds with [`SdkError<DeleteCidrCollectionError>`](crate::operation::delete_cidr_collection::DeleteCidrCollectionError)
-    pub fn delete_cidr_collection(
-        &self,
-    ) -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder {
-        crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cidr_collection(&self) -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder {
+        crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionFluentBuilder::new(self.handle.clone())
     }
 }

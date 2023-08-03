@@ -31,7 +31,7 @@ impl DescribeGameServerInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameServerInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder,
+    inner: crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder,
 }
 impl DescribeGameServerInstancesFluentBuilder {
     /// Creates a new `DescribeGameServerInstances`.
@@ -42,7 +42,7 @@ impl DescribeGameServerInstancesFluentBuilder {
         }
     }
     /// Access the DescribeGameServerInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeGameServerInstancesFluentBuilder {
             crate::operation::describe_game_server_instances::DescribeGameServerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_instances::DescribeGameServerInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeGameServerInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeGameServerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_instances::DescribeGameServerInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeGameServerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_instances::DescribeGameServerInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,31 +110,23 @@ impl DescribeGameServerInstancesFluentBuilder {
             crate::operation::describe_game_server_instances::DescribeGameServerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server_instances::DescribeGameServerInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator {
         crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -161,17 +144,12 @@ impl DescribeGameServerInstancesFluentBuilder {
         self
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>

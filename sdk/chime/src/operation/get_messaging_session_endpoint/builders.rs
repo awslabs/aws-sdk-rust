@@ -26,13 +26,11 @@ impl GetMessagingSessionEndpointInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingSessionEndpoint.html">GetMessagingSessionEndpoint</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by GetMessagingSessionEndpoint in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by GetMessagingSessionEndpoint in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMessagingSessionEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder,
+    inner: crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder,
 }
 impl GetMessagingSessionEndpointFluentBuilder {
     /// Creates a new `GetMessagingSessionEndpoint`.
@@ -43,7 +41,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
         }
     }
     /// Access the GetMessagingSessionEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
             crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl GetMessagingSessionEndpointFluentBuilder {
             crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError>,
     > {
         self.customize_middleware().await
     }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`instance_id(Option<String>)`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput::instance_id): <p>The ID of the instance.</p>
     ///   - [`auto_recovery(Option<InstanceAutoRecoveryState>)`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput::auto_recovery): <p>Provides information on the current automatic recovery behavior of your instance.</p>
     /// - On failure, responds with [`SdkError<ModifyInstanceMaintenanceOptionsError>`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError)
-    pub fn modify_instance_maintenance_options(&self) -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsFluentBuilder{
+    pub fn modify_instance_maintenance_options(
+        &self,
+    ) -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsFluentBuilder {
         crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsFluentBuilder::new(self.handle.clone())
     }
 }

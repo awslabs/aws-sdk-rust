@@ -53,9 +53,7 @@ impl Standard {
 
 /// A builder for [`Standard`](crate::types::Standard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandardBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -65,18 +63,12 @@ pub struct StandardBuilder {
 }
 impl StandardBuilder {
     /// <p>The ARN of a standard.</p>
-    pub fn standards_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a standard.</p>
-    pub fn set_standards_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_arn = input;
         self
     }
@@ -135,17 +127,12 @@ impl StandardBuilder {
         self
     }
     /// <p>Provides details about the management of a standard. </p>
-    pub fn set_standards_managed_by(
-        mut self,
-        input: ::std::option::Option<crate::types::StandardsManagedBy>,
-    ) -> Self {
+    pub fn set_standards_managed_by(mut self, input: ::std::option::Option<crate::types::StandardsManagedBy>) -> Self {
         self.standards_managed_by = input;
         self
     }
     /// <p>Provides details about the management of a standard. </p>
-    pub fn get_standards_managed_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::StandardsManagedBy> {
+    pub fn get_standards_managed_by(&self) -> &::std::option::Option<crate::types::StandardsManagedBy> {
         &self.standards_managed_by
     }
     /// Consumes the builder and constructs a [`Standard`](crate::types::Standard).

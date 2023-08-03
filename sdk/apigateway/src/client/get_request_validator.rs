@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`validate_request_body(bool)`](crate::operation::get_request_validator::GetRequestValidatorOutput::validate_request_body): <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     ///   - [`validate_request_parameters(bool)`](crate::operation::get_request_validator::GetRequestValidatorOutput::validate_request_parameters): <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     /// - On failure, responds with [`SdkError<GetRequestValidatorError>`](crate::operation::get_request_validator::GetRequestValidatorError)
-    pub fn get_request_validator(
-        &self,
-    ) -> crate::operation::get_request_validator::builders::GetRequestValidatorFluentBuilder {
-        crate::operation::get_request_validator::builders::GetRequestValidatorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_request_validator(&self) -> crate::operation::get_request_validator::builders::GetRequestValidatorFluentBuilder {
+        crate::operation::get_request_validator::builders::GetRequestValidatorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct PivotTableConditionalFormattingOption {
 }
 impl PivotTableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a pivot table.</p>
-    pub fn cell(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PivotTableCellConditionalFormatting> {
+    pub fn cell(&self) -> ::std::option::Option<&crate::types::PivotTableCellConditionalFormatting> {
         self.cell.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl PivotTableConditionalFormattingOption {
 
 /// A builder for [`PivotTableConditionalFormattingOption`](crate::types::PivotTableConditionalFormattingOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingOptionBuilder {
     pub(crate) cell: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
 }
@@ -38,17 +34,12 @@ impl PivotTableConditionalFormattingOptionBuilder {
         self
     }
     /// <p>The cell conditional formatting option for a pivot table.</p>
-    pub fn set_cell(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
-    ) -> Self {
+    pub fn set_cell(mut self, input: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>) -> Self {
         self.cell = input;
         self
     }
     /// <p>The cell conditional formatting option for a pivot table.</p>
-    pub fn get_cell(
-        &self,
-    ) -> &::std::option::Option<crate::types::PivotTableCellConditionalFormatting> {
+    pub fn get_cell(&self) -> &::std::option::Option<crate::types::PivotTableCellConditionalFormatting> {
         &self.cell
     }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormattingOption`](crate::types::PivotTableConditionalFormattingOption).

@@ -22,16 +22,14 @@ impl DisableClientAuthenticationInput {
 }
 impl DisableClientAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationInput`](crate::operation::disable_client_authentication::DisableClientAuthenticationInput).
-    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder{
+    pub fn builder() -> crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder {
         crate::operation::disable_client_authentication::builders::DisableClientAuthenticationInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableClientAuthenticationInput`](crate::operation::disable_client_authentication::DisableClientAuthenticationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableClientAuthenticationInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
@@ -57,10 +55,7 @@ impl DisableClientAuthenticationInputBuilder {
         self
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -75,11 +70,9 @@ impl DisableClientAuthenticationInputBuilder {
         crate::operation::disable_client_authentication::DisableClientAuthenticationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_client_authentication::DisableClientAuthenticationInput {
-                directory_id: self.directory_id,
-                r#type: self.r#type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_client_authentication::DisableClientAuthenticationInput {
+            directory_id: self.directory_id,
+            r#type: self.r#type,
+        })
     }
 }

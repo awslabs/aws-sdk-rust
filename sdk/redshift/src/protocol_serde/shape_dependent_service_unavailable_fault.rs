@@ -3,10 +3,7 @@
 pub fn de_dependent_service_unavailable_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DependentServiceUnavailableFaultBuilder,
-) -> Result<
-    crate::types::error::builders::DependentServiceUnavailableFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DependentServiceUnavailableFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

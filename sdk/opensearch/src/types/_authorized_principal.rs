@@ -30,9 +30,7 @@ impl AuthorizedPrincipal {
 
 /// A builder for [`AuthorizedPrincipal`](crate::types::AuthorizedPrincipal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizedPrincipalBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AuthorizedPrincipalBuilder {
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.principal_type = input;
         self
     }

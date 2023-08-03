@@ -116,10 +116,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowInput {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("replace", &self.replace);
         formatter.finish()
@@ -127,9 +124,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowInput {
 }
 impl UpdateMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowInput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowInput).
-    pub fn builder(
-    ) -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder {
         crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder::default()
     }
 }
@@ -238,18 +233,12 @@ impl UpdateMaintenanceWindowInputBuilder {
         &self.schedule
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_timezone = input;
         self
     }
@@ -357,23 +346,21 @@ impl UpdateMaintenanceWindowInputBuilder {
         crate::operation::update_maintenance_window::UpdateMaintenanceWindowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_maintenance_window::UpdateMaintenanceWindowInput {
-                window_id: self.window_id,
-                name: self.name,
-                description: self.description,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                schedule: self.schedule,
-                schedule_timezone: self.schedule_timezone,
-                schedule_offset: self.schedule_offset,
-                duration: self.duration,
-                cutoff: self.cutoff,
-                allow_unassociated_targets: self.allow_unassociated_targets,
-                enabled: self.enabled,
-                replace: self.replace,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_maintenance_window::UpdateMaintenanceWindowInput {
+            window_id: self.window_id,
+            name: self.name,
+            description: self.description,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            schedule: self.schedule,
+            schedule_timezone: self.schedule_timezone,
+            schedule_offset: self.schedule_offset,
+            duration: self.duration,
+            cutoff: self.cutoff,
+            allow_unassociated_targets: self.allow_unassociated_targets,
+            enabled: self.enabled,
+            replace: self.replace,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateMaintenanceWindowInputBuilder {
@@ -389,10 +376,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowInputBuilder {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("replace", &self.replace);
         formatter.finish()

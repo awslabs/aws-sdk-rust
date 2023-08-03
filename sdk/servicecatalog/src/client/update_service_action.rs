@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServiceActionOutput`](crate::operation::update_service_action::UpdateServiceActionOutput) with field(s):
     ///   - [`service_action_detail(Option<ServiceActionDetail>)`](crate::operation::update_service_action::UpdateServiceActionOutput::service_action_detail): <p>Detailed information about the self-service action.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceActionError>`](crate::operation::update_service_action::UpdateServiceActionError)
-    pub fn update_service_action(
-        &self,
-    ) -> crate::operation::update_service_action::builders::UpdateServiceActionFluentBuilder {
-        crate::operation::update_service_action::builders::UpdateServiceActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_action(&self) -> crate::operation::update_service_action::builders::UpdateServiceActionFluentBuilder {
+        crate::operation::update_service_action::builders::UpdateServiceActionFluentBuilder::new(self.handle.clone())
     }
 }

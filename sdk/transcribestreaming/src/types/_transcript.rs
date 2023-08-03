@@ -24,9 +24,7 @@ impl Transcript {
 
 /// A builder for [`Transcript`](crate::types::Transcript).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
 }
@@ -43,10 +41,7 @@ impl TranscriptBuilder {
         self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>) -> Self {
         self.results = input;
         self
     }
@@ -56,8 +51,6 @@ impl TranscriptBuilder {
     }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).
     pub fn build(self) -> crate::types::Transcript {
-        crate::types::Transcript {
-            results: self.results,
-        }
+        crate::types::Transcript { results: self.results }
     }
 }

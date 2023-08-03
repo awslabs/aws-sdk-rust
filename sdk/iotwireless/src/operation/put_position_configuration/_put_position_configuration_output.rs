@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for PutPositionConfigurationOutput {
 }
 impl PutPositionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_position_configuration::builders::PutPositionConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_position_configuration::builders::PutPositionConfigurationOutputBuilder {
         crate::operation::put_position_configuration::builders::PutPositionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPositionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl PutPositionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_position_configuration::PutPositionConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_position_configuration::PutPositionConfigurationOutput {
         crate::operation::put_position_configuration::PutPositionConfigurationOutput {
             _request_id: self._request_id,
         }

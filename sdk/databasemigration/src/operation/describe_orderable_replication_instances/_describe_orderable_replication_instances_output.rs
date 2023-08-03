@@ -6,8 +6,7 @@
 pub struct DescribeOrderableReplicationInstancesOutput {
     /// <p>The order-able replication instances available.</p>
     #[doc(hidden)]
-    pub orderable_replication_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>>,
+    pub orderable_replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeOrderableReplicationInstancesOutput {
 }
 impl DescribeOrderableReplicationInstancesOutput {
     /// <p>The order-able replication instances available.</p>
-    pub fn orderable_replication_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrderableReplicationInstance]> {
+    pub fn orderable_replication_instances(&self) -> ::std::option::Option<&[crate::types::OrderableReplicationInstance]> {
         self.orderable_replication_instances.as_deref()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeOrderableReplicationInstances
 }
 impl DescribeOrderableReplicationInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableReplicationInstancesOutput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput).
-    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesOutputBuilder {
         crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrderableReplicationInstancesOutput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableReplicationInstancesOutputBuilder {
-    pub(crate) orderable_replication_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>>,
+    pub(crate) orderable_replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +48,7 @@ impl DescribeOrderableReplicationInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_orderable_replication_instances`](Self::set_orderable_replication_instances).
     ///
     /// <p>The order-able replication instances available.</p>
-    pub fn orderable_replication_instances(
-        mut self,
-        input: crate::types::OrderableReplicationInstance,
-    ) -> Self {
+    pub fn orderable_replication_instances(mut self, input: crate::types::OrderableReplicationInstance) -> Self {
         let mut v = self.orderable_replication_instances.unwrap_or_default();
         v.push(input);
         self.orderable_replication_instances = ::std::option::Option::Some(v);
@@ -72,9 +63,7 @@ impl DescribeOrderableReplicationInstancesOutputBuilder {
         self
     }
     /// <p>The order-able replication instances available.</p>
-    pub fn get_orderable_replication_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>> {
+    pub fn get_orderable_replication_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>> {
         &self.orderable_replication_instances
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -101,12 +90,10 @@ impl DescribeOrderableReplicationInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrderableReplicationInstancesOutput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput).
-    pub fn build(self) -> crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput{
+    pub fn build(self) -> crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput {
         crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput {
-            orderable_replication_instances: self.orderable_replication_instances
-            ,
-            marker: self.marker
-            ,
+            orderable_replication_instances: self.orderable_replication_instances,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`service_principal(impl ::std::convert::Into<String>)`](crate::operation::enable_aws_service_access::builders::EnableAWSServiceAccessFluentBuilder::service_principal) / [`set_service_principal(Option<String>)`](crate::operation::enable_aws_service_access::builders::EnableAWSServiceAccessFluentBuilder::set_service_principal): <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     /// - On success, responds with [`EnableAwsServiceAccessOutput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput)
     /// - On failure, responds with [`SdkError<EnableAWSServiceAccessError>`](crate::operation::enable_aws_service_access::EnableAWSServiceAccessError)
-    pub fn enable_aws_service_access(
-        &self,
-    ) -> crate::operation::enable_aws_service_access::builders::EnableAWSServiceAccessFluentBuilder
-    {
+    pub fn enable_aws_service_access(&self) -> crate::operation::enable_aws_service_access::builders::EnableAWSServiceAccessFluentBuilder {
         crate::operation::enable_aws_service_access::builders::EnableAWSServiceAccessFluentBuilder::new(self.handle.clone())
     }
 }

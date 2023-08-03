@@ -26,7 +26,7 @@ impl GetOrganizationAdminAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder,
+    inner: crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder,
 }
 impl GetOrganizationAdminAccountFluentBuilder {
     /// Creates a new `GetOrganizationAdminAccount`.
@@ -37,7 +37,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
         }
     }
     /// Access the GetOrganizationAdminAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
             crate::operation::get_organization_admin_account::GetOrganizationAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetOrganizationAdminAccountFluentBuilder {
             crate::operation::get_organization_admin_account::GetOrganizationAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError>,
     > {
         self.customize_middleware().await
     }

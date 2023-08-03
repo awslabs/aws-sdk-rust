@@ -11,8 +11,7 @@ pub struct AddApplicationReferenceDataSourceOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes reference data sources configured for the application. </p>
     #[doc(hidden)]
-    pub reference_data_source_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationReferenceDataSourceOutput {
@@ -25,9 +24,7 @@ impl AddApplicationReferenceDataSourceOutput {
         self.application_version_id
     }
     /// <p>Describes reference data sources configured for the application. </p>
-    pub fn reference_data_source_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
+    pub fn reference_data_source_descriptions(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
         self.reference_data_source_descriptions.as_deref()
     }
 }
@@ -38,37 +35,28 @@ impl ::aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutp
 }
 impl AddApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
-    pub fn builder() -> crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder{
+    pub fn builder() -> crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder {
         crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) reference_data_source_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub(crate) reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationReferenceDataSourceOutputBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -95,10 +83,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
     ///
     /// <p>Describes reference data sources configured for the application. </p>
-    pub fn reference_data_source_descriptions(
-        mut self,
-        input: crate::types::ReferenceDataSourceDescription,
-    ) -> Self {
+    pub fn reference_data_source_descriptions(mut self, input: crate::types::ReferenceDataSourceDescription) -> Self {
         let mut v = self.reference_data_source_descriptions.unwrap_or_default();
         v.push(input);
         self.reference_data_source_descriptions = ::std::option::Option::Some(v);
@@ -113,9 +98,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
         self
     }
     /// <p>Describes reference data sources configured for the application. </p>
-    pub fn get_reference_data_source_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
+    pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
         &self.reference_data_source_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -128,14 +111,11 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
-    pub fn build(self) -> crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput{
+    pub fn build(self) -> crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
         crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
-            reference_data_source_descriptions: self.reference_data_source_descriptions
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
+            reference_data_source_descriptions: self.reference_data_source_descriptions,
             _request_id: self._request_id,
         }
     }

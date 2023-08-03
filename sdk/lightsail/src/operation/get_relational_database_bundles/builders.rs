@@ -27,7 +27,7 @@ impl GetRelationalDatabaseBundlesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseBundlesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder,
+    inner: crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder,
 }
 impl GetRelationalDatabaseBundlesFluentBuilder {
     /// Creates a new `GetRelationalDatabaseBundles`.
@@ -38,7 +38,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabaseBundles as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
             crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetRelationalDatabaseBundlesFluentBuilder {
             crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError>,
     > {
         self.customize_middleware().await
     }

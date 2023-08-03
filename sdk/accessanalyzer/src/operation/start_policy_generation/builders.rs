@@ -37,10 +37,7 @@ impl StartPolicyGenerationFluentBuilder {
         }
     }
     /// Access the StartPolicyGeneration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_policy_generation::builders::StartPolicyGenerationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_policy_generation::builders::StartPolicyGenerationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartPolicyGenerationFluentBuilder {
             crate::operation::start_policy_generation::StartPolicyGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_policy_generation::StartPolicyGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_policy_generation::StartPolicyGenerationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartPolicyGenerationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartPolicyGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_policy_generation::StartPolicyGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_policy_generation::StartPolicyGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_policy_generation::StartPolicyGenerationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartPolicyGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_policy_generation::StartPolicyGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_policy_generation::StartPolicyGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_policy_generation::StartPolicyGenerationError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +105,22 @@ impl StartPolicyGenerationFluentBuilder {
             crate::operation::start_policy_generation::StartPolicyGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_policy_generation::StartPolicyGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_policy_generation::StartPolicyGenerationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn policy_generation_details(
-        mut self,
-        input: crate::types::PolicyGenerationDetails,
-    ) -> Self {
+    pub fn policy_generation_details(mut self, input: crate::types::PolicyGenerationDetails) -> Self {
         self.inner = self.inner.policy_generation_details(input);
         self
     }
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn set_policy_generation_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyGenerationDetails>,
-    ) -> Self {
+    pub fn set_policy_generation_details(mut self, input: ::std::option::Option<crate::types::PolicyGenerationDetails>) -> Self {
         self.inner = self.inner.set_policy_generation_details(input);
         self
     }
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn get_policy_generation_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::PolicyGenerationDetails> {
+    pub fn get_policy_generation_details(&self) -> &::std::option::Option<crate::types::PolicyGenerationDetails> {
         self.inner.get_policy_generation_details()
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
@@ -151,17 +129,12 @@ impl StartPolicyGenerationFluentBuilder {
         self
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
-    pub fn set_cloud_trail_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudTrailDetails>,
-    ) -> Self {
+    pub fn set_cloud_trail_details(mut self, input: ::std::option::Option<crate::types::CloudTrailDetails>) -> Self {
         self.inner = self.inner.set_cloud_trail_details(input);
         self
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
-    pub fn get_cloud_trail_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudTrailDetails> {
+    pub fn get_cloud_trail_details(&self) -> &::std::option::Option<crate::types::CloudTrailDetails> {
         self.inner.get_cloud_trail_details()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>

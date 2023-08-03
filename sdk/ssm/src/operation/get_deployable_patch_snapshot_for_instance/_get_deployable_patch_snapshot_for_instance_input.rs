@@ -29,16 +29,14 @@ impl GetDeployablePatchSnapshotForInstanceInput {
 }
 impl GetDeployablePatchSnapshotForInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetDeployablePatchSnapshotForInstanceInput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput).
-    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder{
+    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder {
         crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeployablePatchSnapshotForInstanceInput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
         self
     }
     /// <p>Defines the basic information about a patch baseline override.</p>
-    pub fn set_baseline_override(
-        mut self,
-        input: ::std::option::Option<crate::types::BaselineOverride>,
-    ) -> Self {
+    pub fn set_baseline_override(mut self, input: ::std::option::Option<crate::types::BaselineOverride>) -> Self {
         self.baseline_override = input;
         self
     }
@@ -91,16 +86,18 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
         &self.baseline_override
     }
     /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceInput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput {
-                instance_id: self.instance_id
-                ,
-                snapshot_id: self.snapshot_id
-                ,
-                baseline_override: self.baseline_override
-                ,
-            }
+                instance_id: self.instance_id,
+                snapshot_id: self.snapshot_id,
+                baseline_override: self.baseline_override,
+            },
         )
     }
 }

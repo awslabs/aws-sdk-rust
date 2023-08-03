@@ -30,9 +30,7 @@ impl AutoDeployment {
 
 /// A builder for [`AutoDeployment`](crate::types::AutoDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoDeploymentBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) retain_stacks_on_account_removal: ::std::option::Option<bool>,
@@ -58,10 +56,7 @@ impl AutoDeploymentBuilder {
         self
     }
     /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
-    pub fn set_retain_stacks_on_account_removal(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_retain_stacks_on_account_removal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_stacks_on_account_removal = input;
         self
     }

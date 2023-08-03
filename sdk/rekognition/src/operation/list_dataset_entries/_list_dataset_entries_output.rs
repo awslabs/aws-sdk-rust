@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDatasetEntriesOutput {
 }
 impl ListDatasetEntriesOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetEntriesOutput`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesOutputBuilder {
         crate::operation::list_dataset_entries::builders::ListDatasetEntriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetEntriesOutput`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetEntriesOutputBuilder {
     pub(crate) dataset_entries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListDatasetEntriesOutputBuilder {
     /// To override the contents of this collection use [`set_dataset_entries`](Self::set_dataset_entries).
     ///
     /// <p> A list of entries (images) in the dataset. </p>
-    pub fn dataset_entries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_entries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dataset_entries.unwrap_or_default();
         v.push(input.into());
         self.dataset_entries = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of entries (images) in the dataset. </p>
-    pub fn set_dataset_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dataset_entries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dataset_entries = input;
         self
     }
     /// <p> A list of entries (images) in the dataset. </p>
-    pub fn get_dataset_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dataset_entries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dataset_entries
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>

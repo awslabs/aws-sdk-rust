@@ -16,49 +16,44 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
 }
 impl AcceptInboundCrossClusterSearchConnectionInput {
     /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionInput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput).
-    pub fn builder() -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionInputBuilder {
         crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInboundCrossClusterSearchConnectionInput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionInputBuilder {
     pub(crate) cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInboundCrossClusterSearchConnectionInputBuilder {
     /// <p>The id of the inbound connection that you want to accept.</p>
-    pub fn cross_cluster_search_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_cluster_search_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the inbound connection that you want to accept.</p>
-    pub fn set_cross_cluster_search_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cross_cluster_search_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = input;
         self
     }
     /// <p>The id of the inbound connection that you want to accept.</p>
-    pub fn get_cross_cluster_search_connection_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cross_cluster_search_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cross_cluster_search_connection_id
     }
     /// Consumes the builder and constructs a [`AcceptInboundCrossClusterSearchConnectionInput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionInput {
-                cross_cluster_search_connection_id: self.cross_cluster_search_connection_id
-                ,
-            }
+                cross_cluster_search_connection_id: self.cross_cluster_search_connection_id,
+            },
         )
     }
 }

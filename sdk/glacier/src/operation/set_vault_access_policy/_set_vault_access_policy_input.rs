@@ -30,17 +30,14 @@ impl SetVaultAccessPolicyInput {
 }
 impl SetVaultAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyInput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyInputBuilder {
         crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`SetVaultAccessPolicyInput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVaultAccessPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -81,10 +78,7 @@ impl SetVaultAccessPolicyInputBuilder {
         self
     }
     /// <p>The vault access policy as a JSON string.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultAccessPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::VaultAccessPolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -95,16 +89,12 @@ impl SetVaultAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SetVaultAccessPolicyInput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            policy: self.policy,
+        })
     }
 }

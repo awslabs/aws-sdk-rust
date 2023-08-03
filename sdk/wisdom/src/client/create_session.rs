@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSessionOutput`](crate::operation::create_session::CreateSessionOutput) with field(s):
     ///   - [`session(Option<SessionData>)`](crate::operation::create_session::CreateSessionOutput::session): <p>The session.</p>
     /// - On failure, responds with [`SdkError<CreateSessionError>`](crate::operation::create_session::CreateSessionError)
-    pub fn create_session(
-        &self,
-    ) -> crate::operation::create_session::builders::CreateSessionFluentBuilder {
-        crate::operation::create_session::builders::CreateSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_session(&self) -> crate::operation::create_session::builders::CreateSessionFluentBuilder {
+        crate::operation::create_session::builders::CreateSessionFluentBuilder::new(self.handle.clone())
     }
 }

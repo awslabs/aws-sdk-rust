@@ -37,9 +37,7 @@ impl NetworkPayload {
 
 /// A builder for [`NetworkPayload`](crate::types::NetworkPayload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkPayloadBuilder {
     pub(crate) ethernet0: ::std::option::Option<crate::types::EthernetPayload>,
     pub(crate) ethernet1: ::std::option::Option<crate::types::EthernetPayload>,
@@ -52,10 +50,7 @@ impl NetworkPayloadBuilder {
         self
     }
     /// <p>Settings for Ethernet port 0.</p>
-    pub fn set_ethernet0(
-        mut self,
-        input: ::std::option::Option<crate::types::EthernetPayload>,
-    ) -> Self {
+    pub fn set_ethernet0(mut self, input: ::std::option::Option<crate::types::EthernetPayload>) -> Self {
         self.ethernet0 = input;
         self
     }
@@ -69,10 +64,7 @@ impl NetworkPayloadBuilder {
         self
     }
     /// <p>Settings for Ethernet port 1.</p>
-    pub fn set_ethernet1(
-        mut self,
-        input: ::std::option::Option<crate::types::EthernetPayload>,
-    ) -> Self {
+    pub fn set_ethernet1(mut self, input: ::std::option::Option<crate::types::EthernetPayload>) -> Self {
         self.ethernet1 = input;
         self
     }

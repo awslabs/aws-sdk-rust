@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ChecksumAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ChecksumAlgorithm {
             "CRC32C" => ChecksumAlgorithm::Crc32C,
             "SHA1" => ChecksumAlgorithm::Sha1,
             "SHA256" => ChecksumAlgorithm::Sha256,
-            other => {
-                ChecksumAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ChecksumAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

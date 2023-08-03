@@ -29,17 +29,14 @@ impl RedactRoomMessageInput {
 }
 impl RedactRoomMessageInput {
     /// Creates a new builder-style object to manufacture [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
-    pub fn builder(
-    ) -> crate::operation::redact_room_message::builders::RedactRoomMessageInputBuilder {
+    pub fn builder() -> crate::operation::redact_room_message::builders::RedactRoomMessageInputBuilder {
         crate::operation::redact_room_message::builders::RedactRoomMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactRoomMessageInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl RedactRoomMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::redact_room_message::RedactRoomMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::redact_room_message::RedactRoomMessageInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                message_id: self.message_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::redact_room_message::RedactRoomMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::redact_room_message::RedactRoomMessageInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            message_id: self.message_id,
+        })
     }
 }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
     }
 }
 impl ::std::error::Error for TooManyCloudFrontOriginAccessIdentities {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyCloudFrontOriginAccessIdentities
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyCloudFrontOriginAccessIdentities {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyCloudFrontOriginAccessIdentities
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCloudFrontOriginAccessIdentities {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyCloudFrontOriginAccessIdentities {
     /// Creates a new builder-style object to manufacture [`TooManyCloudFrontOriginAccessIdentities`](crate::types::error::TooManyCloudFrontOriginAccessIdentities).
-    pub fn builder() -> crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder {
         crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder::default()
     }
 }
 
 /// A builder for [`TooManyCloudFrontOriginAccessIdentities`](crate::types::error::TooManyCloudFrontOriginAccessIdentities).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyCloudFrontOriginAccessIdentitiesBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyCloudFrontOriginAccessIdentitiesBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

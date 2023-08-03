@@ -37,10 +37,7 @@ impl ListDataIngestionJobsFluentBuilder {
         }
     }
     /// Access the ListDataIngestionJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDataIngestionJobsFluentBuilder {
             crate::operation::list_data_ingestion_jobs::ListDataIngestionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDataIngestionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDataIngestionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDataIngestionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListDataIngestionJobsFluentBuilder {
             crate::operation::list_data_ingestion_jobs::ListDataIngestionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator {
-        crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator {
+        crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the dataset being used for the data ingestion job. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,10 +163,7 @@ impl ListDataIngestionJobsFluentBuilder {
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

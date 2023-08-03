@@ -29,9 +29,7 @@ impl DescribeLayersOutput {
 
 /// A builder for [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLayersOutputBuilder {
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl DescribeLayersOutputBuilder {
         self
     }
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
-    ) -> Self {
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>) -> Self {
         self.layers = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput) with field(s):
     ///   - [`app_bundle(Option<AppBundle>)`](crate::operation::create_app_bundle::CreateAppBundleOutput::app_bundle): <p>Contains information about an app bundle.</p>
     /// - On failure, responds with [`SdkError<CreateAppBundleError>`](crate::operation::create_app_bundle::CreateAppBundleError)
-    pub fn create_app_bundle(
-        &self,
-    ) -> crate::operation::create_app_bundle::builders::CreateAppBundleFluentBuilder {
-        crate::operation::create_app_bundle::builders::CreateAppBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_bundle(&self) -> crate::operation::create_app_bundle::builders::CreateAppBundleFluentBuilder {
+        crate::operation::create_app_bundle::builders::CreateAppBundleFluentBuilder::new(self.handle.clone())
     }
 }

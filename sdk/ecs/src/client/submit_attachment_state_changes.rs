@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`SubmitAttachmentStateChangesOutput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput) with field(s):
     ///   - [`acknowledgment(Option<String>)`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput::acknowledgment): <p>Acknowledgement of the state change.</p>
     /// - On failure, responds with [`SdkError<SubmitAttachmentStateChangesError>`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError)
-    pub fn submit_attachment_state_changes(&self) -> crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesFluentBuilder{
+    pub fn submit_attachment_state_changes(
+        &self,
+    ) -> crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesFluentBuilder {
         crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesFluentBuilder::new(self.handle.clone())
     }
 }

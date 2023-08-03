@@ -13,9 +13,7 @@ impl RtmpCaptionInfoDestinationSettings {
 
 /// A builder for [`RtmpCaptionInfoDestinationSettings`](crate::types::RtmpCaptionInfoDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RtmpCaptionInfoDestinationSettingsBuilder {}
 impl RtmpCaptionInfoDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`RtmpCaptionInfoDestinationSettings`](crate::types::RtmpCaptionInfoDestinationSettings).

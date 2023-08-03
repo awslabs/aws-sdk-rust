@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`standards(Option<Vec<Standard>>)`](crate::operation::describe_standards::DescribeStandardsOutput::standards): <p>A list of available standards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_standards::DescribeStandardsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeStandardsError>`](crate::operation::describe_standards::DescribeStandardsError)
-    pub fn describe_standards(
-        &self,
-    ) -> crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder {
-        crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_standards(&self) -> crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder {
+        crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::new(self.handle.clone())
     }
 }

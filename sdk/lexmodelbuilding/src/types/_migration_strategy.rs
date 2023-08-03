@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MigrationStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MigrationStrategy {
         match s {
             "CREATE_NEW" => MigrationStrategy::CreateNew,
             "UPDATE_EXISTING" => MigrationStrategy::UpdateExisting,
-            other => {
-                MigrationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MigrationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -35,9 +35,7 @@ impl CreatePortfolioOutput {
 
 /// A builder for [`CreatePortfolioOutput`](crate::operation::create_portfolio::CreatePortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePortfolioOutputBuilder {
     pub(crate) portfolio_detail: ::std::option::Option<crate::types::PortfolioDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -50,10 +48,7 @@ impl CreatePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the portfolio.</p>
-    pub fn set_portfolio_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioDetail>,
-    ) -> Self {
+    pub fn set_portfolio_detail(mut self, input: ::std::option::Option<crate::types::PortfolioDetail>) -> Self {
         self.portfolio_detail = input;
         self
     }
@@ -73,10 +68,7 @@ impl CreatePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

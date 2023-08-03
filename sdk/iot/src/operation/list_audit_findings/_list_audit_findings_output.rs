@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAuditFindingsOutput {
 }
 impl ListAuditFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
         crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAuditFindingsOutputBuilder {
         self
     }
     /// <p>The findings (results) of the audit.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>The findings (results) of the audit.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>> {
         &self.findings
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

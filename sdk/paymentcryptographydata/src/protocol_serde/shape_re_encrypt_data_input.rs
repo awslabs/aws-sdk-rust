@@ -9,19 +9,13 @@ pub fn ser_re_encrypt_data_input(
     if let Some(var_2) = &input.incoming_encryption_attributes {
         #[allow(unused_mut)]
         let mut object_3 = object.key("IncomingEncryptionAttributes").start_object();
-        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.outgoing_encryption_attributes {
         #[allow(unused_mut)]
         let mut object_5 = object.key("OutgoingEncryptionAttributes").start_object();
-        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_re_encryption_attributes::ser_re_encryption_attributes(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.outgoing_key_identifier {

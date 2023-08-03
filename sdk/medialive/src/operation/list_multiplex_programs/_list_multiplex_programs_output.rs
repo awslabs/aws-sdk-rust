@@ -6,8 +6,7 @@
 pub struct ListMultiplexProgramsOutput {
     /// List of multiplex programs.
     #[doc(hidden)]
-    pub multiplex_programs:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
+    pub multiplex_programs: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
     /// Token for the next ListMultiplexProgram request.
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListMultiplexProgramsOutput {
 }
 impl ListMultiplexProgramsOutput {
     /// List of multiplex programs.
-    pub fn multiplex_programs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultiplexProgramSummary]> {
+    pub fn multiplex_programs(&self) -> ::std::option::Option<&[crate::types::MultiplexProgramSummary]> {
         self.multiplex_programs.as_deref()
     }
     /// Token for the next ListMultiplexProgram request.
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListMultiplexProgramsOutput {
 }
 impl ListMultiplexProgramsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsOutput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder {
         crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultiplexProgramsOutput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiplexProgramsOutputBuilder {
-    pub(crate) multiplex_programs:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
+    pub(crate) multiplex_programs: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListMultiplexProgramsOutputBuilder {
         self
     }
     /// List of multiplex programs.
-    pub fn set_multiplex_programs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>,
-    ) -> Self {
+    pub fn set_multiplex_programs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>>) -> Self {
         self.multiplex_programs = input;
         self
     }
     /// List of multiplex programs.
-    pub fn get_multiplex_programs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>> {
+    pub fn get_multiplex_programs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexProgramSummary>> {
         &self.multiplex_programs
     }
     /// Token for the next ListMultiplexProgram request.

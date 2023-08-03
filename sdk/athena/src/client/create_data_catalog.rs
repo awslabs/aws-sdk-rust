@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder::set_tags): <p>A list of comma separated tags to add to the data catalog that is created.</p>
     /// - On success, responds with [`CreateDataCatalogOutput`](crate::operation::create_data_catalog::CreateDataCatalogOutput)
     /// - On failure, responds with [`SdkError<CreateDataCatalogError>`](crate::operation::create_data_catalog::CreateDataCatalogError)
-    pub fn create_data_catalog(
-        &self,
-    ) -> crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder {
-        crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_catalog(&self) -> crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder {
+        crate::operation::create_data_catalog::builders::CreateDataCatalogFluentBuilder::new(self.handle.clone())
     }
 }

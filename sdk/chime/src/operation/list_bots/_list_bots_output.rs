@@ -35,9 +35,7 @@ impl ListBotsOutput {
 
 /// A builder for [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsOutputBuilder {
     pub(crate) bots: ::std::option::Option<::std::vec::Vec<crate::types::Bot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListBotsOutputBuilder {
         self
     }
     /// <p>List of bots and bot details.</p>
-    pub fn set_bots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Bot>>,
-    ) -> Self {
+    pub fn set_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bot>>) -> Self {
         self.bots = input;
         self
     }

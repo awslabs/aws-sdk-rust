@@ -68,9 +68,7 @@ impl GetSnapshotsInput {
 
 /// A builder for [`GetSnapshotsInput`](crate::operation::get_snapshots::GetSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<crate::types::Interval>,
@@ -139,10 +137,7 @@ impl GetSnapshotsInputBuilder {
     }
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric_type = input;
         self
     }
@@ -180,12 +175,7 @@ impl GetSnapshotsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetSnapshotsInput`](crate::operation::get_snapshots::GetSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_snapshots::GetSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshots::GetSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshots::GetSnapshotsInput {
             index_id: self.index_id,
             interval: self.interval,

@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`visible_to_all_users(bool)`](crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder::visible_to_all_users) / [`set_visible_to_all_users(Option<bool>)`](crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder::set_visible_to_all_users): <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     /// - On success, responds with [`SetVisibleToAllUsersOutput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput)
     /// - On failure, responds with [`SdkError<SetVisibleToAllUsersError>`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError)
-    pub fn set_visible_to_all_users(
-        &self,
-    ) -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder
-    {
-        crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_visible_to_all_users(&self) -> crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder {
+        crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersFluentBuilder::new(self.handle.clone())
     }
 }

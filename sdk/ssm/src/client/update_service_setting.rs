@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`setting_value(impl ::std::convert::Into<String>)`](crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder::setting_value) / [`set_setting_value(Option<String>)`](crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder::set_setting_value): <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>  <ul>   <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>   <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateServiceSettingOutput`](crate::operation::update_service_setting::UpdateServiceSettingOutput)
     /// - On failure, responds with [`SdkError<UpdateServiceSettingError>`](crate::operation::update_service_setting::UpdateServiceSettingError)
-    pub fn update_service_setting(
-        &self,
-    ) -> crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder {
-        crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_setting(&self) -> crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder {
+        crate::operation::update_service_setting::builders::UpdateServiceSettingFluentBuilder::new(self.handle.clone())
     }
 }

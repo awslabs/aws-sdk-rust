@@ -14,9 +14,7 @@ pub struct ServiceQuotaExceededException {
 }
 impl ServiceQuotaExceededException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceQuotaExceededExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ServiceQuotaExceededExceptionReason> {
         self.reason.as_ref()
     }
 }
@@ -58,9 +56,7 @@ impl ServiceQuotaExceededException {
 
 /// A builder for [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>,
@@ -87,17 +83,12 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn get_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason> {
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ServiceQuotaExceededExceptionReason> {
         &self.reason
     }
     /// Sets error metadata
@@ -107,10 +98,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

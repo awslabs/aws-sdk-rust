@@ -29,9 +29,7 @@ impl DeleteRouteInput {
 
 /// A builder for [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeleteRouteInputBuilder {
         &self.route_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_route::DeleteRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
             api_id: self.api_id,
             route_id: self.route_id,

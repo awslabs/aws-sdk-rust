@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_type(Option<ResourceType>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_type): <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
     ///   - [`auto_snapshots(Option<Vec<AutoSnapshotDetails>>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::auto_snapshots): <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
     /// - On failure, responds with [`SdkError<GetAutoSnapshotsError>`](crate::operation::get_auto_snapshots::GetAutoSnapshotsError)
-    pub fn get_auto_snapshots(
-        &self,
-    ) -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder {
-        crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_auto_snapshots(&self) -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder {
+        crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

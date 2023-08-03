@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListIdentitySourcesOutput {
 }
 impl ListIdentitySourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentitySourcesOutput`](crate::operation::list_identity_sources::ListIdentitySourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder {
-        crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder {
+        crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentitySourcesOutput`](crate::operation::list_identity_sources::ListIdentitySourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentitySourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>>,
+    pub(crate) identity_sources: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>>,
     _request_id: Option<String>,
 }
 impl ListIdentitySourcesOutputBuilder {
@@ -73,17 +68,12 @@ impl ListIdentitySourcesOutputBuilder {
         self
     }
     /// <p>The list of identity sources stored in the specified policy store.</p>
-    pub fn set_identity_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>>,
-    ) -> Self {
+    pub fn set_identity_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>>) -> Self {
         self.identity_sources = input;
         self
     }
     /// <p>The list of identity sources stored in the specified policy store.</p>
-    pub fn get_identity_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>> {
+    pub fn get_identity_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceItem>> {
         &self.identity_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

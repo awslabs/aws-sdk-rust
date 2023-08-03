@@ -15,16 +15,14 @@ impl DeleteAppLaunchConfigurationInput {
 }
 impl DeleteAppLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder {
         crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteAppLaunchConfigurationInputBuilder {
         crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput {
-                app_id: self.app_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput { app_id: self.app_id })
     }
 }

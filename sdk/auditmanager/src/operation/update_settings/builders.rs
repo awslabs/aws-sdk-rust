@@ -10,10 +10,7 @@ impl UpdateSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_settings::UpdateSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_settings::UpdateSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_settings::UpdateSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSettingsFluentBuilder {
         }
     }
     /// Access the UpdateSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_settings::builders::UpdateSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_settings::builders::UpdateSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,25 +121,17 @@ impl UpdateSettingsFluentBuilder {
         self.inner.get_sns_topic()
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn default_assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.inner = self.inner.default_assessment_reports_destination(input);
         self
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn set_default_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_default_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.inner = self.inner.set_default_assessment_reports_destination(input);
         self
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn get_default_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_default_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         self.inner.get_default_assessment_reports_destination()
     }
     /// Appends an item to `defaultProcessOwners`.
@@ -160,17 +144,12 @@ impl UpdateSettingsFluentBuilder {
         self
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn set_default_process_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_default_process_owners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.inner = self.inner.set_default_process_owners(input);
         self
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn get_default_process_owners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+    pub fn get_default_process_owners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         self.inner.get_default_process_owners()
     }
     /// <p> The KMS key details. </p>
@@ -213,39 +192,26 @@ impl UpdateSettingsFluentBuilder {
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn set_deregistration_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    ) -> Self {
+    pub fn set_deregistration_policy(mut self, input: ::std::option::Option<crate::types::DeregistrationPolicy>) -> Self {
         self.inner = self.inner.set_deregistration_policy(input);
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn get_deregistration_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
+    pub fn get_deregistration_policy(&self) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
         self.inner.get_deregistration_policy()
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn default_export_destination(
-        mut self,
-        input: crate::types::DefaultExportDestination,
-    ) -> Self {
+    pub fn default_export_destination(mut self, input: crate::types::DefaultExportDestination) -> Self {
         self.inner = self.inner.default_export_destination(input);
         self
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn set_default_export_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultExportDestination>,
-    ) -> Self {
+    pub fn set_default_export_destination(mut self, input: ::std::option::Option<crate::types::DefaultExportDestination>) -> Self {
         self.inner = self.inner.set_default_export_destination(input);
         self
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn get_default_export_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultExportDestination> {
+    pub fn get_default_export_destination(&self) -> &::std::option::Option<crate::types::DefaultExportDestination> {
         self.inner.get_default_export_destination()
     }
 }

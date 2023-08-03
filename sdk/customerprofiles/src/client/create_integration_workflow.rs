@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput::workflow_id): <p>Unique identifier for the workflow.</p>
     ///   - [`message(Option<String>)`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput::message): <p>A message indicating create request was received.</p>
     /// - On failure, responds with [`SdkError<CreateIntegrationWorkflowError>`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowError)
-    pub fn create_integration_workflow(&self) -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowFluentBuilder{
+    pub fn create_integration_workflow(&self) -> crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowFluentBuilder {
         crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

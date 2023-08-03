@@ -30,31 +30,25 @@ impl RegisterCertificateInput {
         self.r#type.as_ref()
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientCertAuthSettings> {
+    pub fn client_cert_auth_settings(&self) -> ::std::option::Option<&crate::types::ClientCertAuthSettings> {
         self.client_cert_auth_settings.as_ref()
     }
 }
 impl RegisterCertificateInput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
+    pub fn builder() -> crate::operation::register_certificate::builders::RegisterCertificateInputBuilder {
         crate::operation::register_certificate::builders::RegisterCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCertificateInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_data: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CertificateType>,
-    pub(crate) client_cert_auth_settings:
-        ::std::option::Option<crate::types::ClientCertAuthSettings>,
+    pub(crate) client_cert_auth_settings: ::std::option::Option<crate::types::ClientCertAuthSettings>,
 }
 impl RegisterCertificateInputBuilder {
     /// <p>The identifier of the directory.</p>
@@ -72,18 +66,12 @@ impl RegisterCertificateInputBuilder {
         &self.directory_id
     }
     /// <p>The certificate PEM string that needs to be registered.</p>
-    pub fn certificate_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate PEM string that needs to be registered.</p>
-    pub fn set_certificate_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_data = input;
         self
     }
@@ -106,41 +94,29 @@ impl RegisterCertificateInputBuilder {
         &self.r#type
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn client_cert_auth_settings(
-        mut self,
-        input: crate::types::ClientCertAuthSettings,
-    ) -> Self {
+    pub fn client_cert_auth_settings(mut self, input: crate::types::ClientCertAuthSettings) -> Self {
         self.client_cert_auth_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn set_client_cert_auth_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientCertAuthSettings>,
-    ) -> Self {
+    pub fn set_client_cert_auth_settings(mut self, input: ::std::option::Option<crate::types::ClientCertAuthSettings>) -> Self {
         self.client_cert_auth_settings = input;
         self
     }
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    pub fn get_client_cert_auth_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
+    pub fn get_client_cert_auth_settings(&self) -> &::std::option::Option<crate::types::ClientCertAuthSettings> {
         &self.client_cert_auth_settings
     }
     /// Consumes the builder and constructs a [`RegisterCertificateInput`](crate::operation::register_certificate::RegisterCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_certificate::RegisterCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_certificate::RegisterCertificateInput {
-                directory_id: self.directory_id,
-                certificate_data: self.certificate_data,
-                r#type: self.r#type,
-                client_cert_auth_settings: self.client_cert_auth_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_certificate::RegisterCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_certificate::RegisterCertificateInput {
+            directory_id: self.directory_id,
+            certificate_data: self.certificate_data,
+            r#type: self.r#type,
+            client_cert_auth_settings: self.client_cert_auth_settings,
+        })
     }
 }

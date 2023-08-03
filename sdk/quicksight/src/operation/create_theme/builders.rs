@@ -10,10 +10,7 @@ impl CreateThemeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_theme::CreateThemeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_theme::CreateThemeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_theme::CreateThemeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_theme();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateThemeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_theme::CreateTheme,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_theme::CreateTheme, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_theme::CreateThemeError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateThemeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl CreateThemeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_theme::CreateTheme,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_theme::CreateTheme, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_theme::CreateThemeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -162,18 +144,12 @@ impl CreateThemeFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
-    pub fn base_theme_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_theme_id(input.into());
         self
     }
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
-    pub fn set_base_theme_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_theme_id(input);
         self
     }
@@ -182,18 +158,12 @@ impl CreateThemeFluentBuilder {
         self.inner.get_base_theme_id()
     }
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }
@@ -207,10 +177,7 @@ impl CreateThemeFluentBuilder {
         self
     }
     /// <p>The theme configuration, which contains the theme display properties.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ThemeConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ThemeConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -228,17 +195,12 @@ impl CreateThemeFluentBuilder {
         self
     }
     /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_permissions()
     }
     /// Appends an item to `Tags`.
@@ -251,10 +213,7 @@ impl CreateThemeFluentBuilder {
         self
     }
     /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

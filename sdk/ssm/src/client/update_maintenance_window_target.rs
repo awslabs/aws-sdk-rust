@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput::name): <p>The updated name.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput::description): <p>The updated description.</p>
     /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowTargetError>`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError)
-    pub fn update_maintenance_window_target(&self) -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetFluentBuilder{
+    pub fn update_maintenance_window_target(
+        &self,
+    ) -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetFluentBuilder {
         crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetFluentBuilder::new(self.handle.clone())
     }
 }

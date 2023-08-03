@@ -6,9 +6,7 @@
 pub struct SegmentDimensions {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
     #[doc(hidden)]
     pub behavior: ::std::option::Option<crate::types::SegmentBehaviors>,
@@ -20,22 +18,14 @@ pub struct SegmentDimensions {
     pub location: ::std::option::Option<crate::types::SegmentLocation>,
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
     #[doc(hidden)]
-    pub metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
-    >,
+    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
     #[doc(hidden)]
-    pub user_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    >,
+    pub user_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
 }
 impl SegmentDimensions {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         self.attributes.as_ref()
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
@@ -51,19 +41,11 @@ impl SegmentDimensions {
         self.location.as_ref()
     }
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn metrics(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
-    > {
+    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>> {
         self.metrics.as_ref()
     }
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub fn user_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    > {
+    pub fn user_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         self.user_attributes.as_ref()
     }
 }
@@ -76,22 +58,14 @@ impl SegmentDimensions {
 
 /// A builder for [`SegmentDimensions`](crate::types::SegmentDimensions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentDimensionsBuilder {
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     pub(crate) behavior: ::std::option::Option<crate::types::SegmentBehaviors>,
     pub(crate) demographic: ::std::option::Option<crate::types::SegmentDemographics>,
     pub(crate) location: ::std::option::Option<crate::types::SegmentLocation>,
-    pub(crate) metrics: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
-    >,
-    pub(crate) user_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    >,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
 }
 impl SegmentDimensionsBuilder {
     /// Adds a key-value pair to `attributes`.
@@ -99,11 +73,7 @@ impl SegmentDimensionsBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AttributeDimension,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeDimension) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -112,19 +82,13 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         &self.attributes
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
@@ -133,10 +97,7 @@ impl SegmentDimensionsBuilder {
         self
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
-    pub fn set_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentBehaviors>,
-    ) -> Self {
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::SegmentBehaviors>) -> Self {
         self.behavior = input;
         self
     }
@@ -150,10 +111,7 @@ impl SegmentDimensionsBuilder {
         self
     }
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
-    pub fn set_demographic(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentDemographics>,
-    ) -> Self {
+    pub fn set_demographic(mut self, input: ::std::option::Option<crate::types::SegmentDemographics>) -> Self {
         self.demographic = input;
         self
     }
@@ -167,10 +125,7 @@ impl SegmentDimensionsBuilder {
         self
     }
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::SegmentLocation>) -> Self {
         self.location = input;
         self
     }
@@ -183,11 +138,7 @@ impl SegmentDimensionsBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn metrics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetricDimension,
-    ) -> Self {
+    pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetricDimension) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metrics = ::std::option::Option::Some(hash_map);
@@ -196,19 +147,13 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
     pub fn set_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
     ) -> Self {
         self.metrics = input;
         self
     }
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
-    > {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>> {
         &self.metrics
     }
     /// Adds a key-value pair to `user_attributes`.
@@ -216,11 +161,7 @@ impl SegmentDimensionsBuilder {
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
     ///
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub fn user_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AttributeDimension,
-    ) -> Self {
+    pub fn user_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeDimension) -> Self {
         let mut hash_map = self.user_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.user_attributes = ::std::option::Option::Some(hash_map);
@@ -229,9 +170,7 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
     pub fn set_user_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     ) -> Self {
         self.user_attributes = input;
         self
@@ -239,9 +178,7 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
     pub fn get_user_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         &self.user_attributes
     }
     /// Consumes the builder and constructs a [`SegmentDimensions`](crate::types::SegmentDimensions).

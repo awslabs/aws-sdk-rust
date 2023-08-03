@@ -10,10 +10,7 @@ impl CreateFlowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_flow();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateFlowFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow::CreateFlow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl CreateFlowFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow::CreateFlow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         self.customize_middleware().await
     }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -142,17 +124,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
     /// Appends an item to `MediaStreams`.
@@ -165,17 +142,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn get_media_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
         self.inner.get_media_streams()
     }
     /// The name of the flow.
@@ -202,17 +174,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The outputs that you want to add to this flow.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// The outputs that you want to add to this flow.
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
         self.inner.get_outputs()
     }
     /// The settings for the source of the flow.
@@ -221,10 +188,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The settings for the source of the flow.
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::SetSourceRequest>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::SetSourceRequest>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -238,17 +202,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The settings for source failover.
-    pub fn set_source_failover_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FailoverConfig>,
-    ) -> Self {
+    pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
     /// The settings for source failover.
-    pub fn get_source_failover_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FailoverConfig> {
+    pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
         self.inner.get_source_failover_config()
     }
     /// Appends an item to `Sources`.
@@ -261,17 +220,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }
     /// Appends an item to `VpcInterfaces`.
@@ -284,17 +238,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The VPC interfaces you want on the flow.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
-    ) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
     /// The VPC interfaces you want on the flow.
-    pub fn get_vpc_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }
     /// Create maintenance setting for a flow
@@ -303,10 +252,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// Create maintenance setting for a flow
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::AddMaintenance>,
-    ) -> Self {
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::AddMaintenance>) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }

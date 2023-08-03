@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNotificationSettingsOutput {
 }
 impl UpdateNotificationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsOutput`](crate::operation::update_notification_settings::UpdateNotificationSettingsOutput).
-    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsOutputBuilder {
         crate::operation::update_notification_settings::builders::UpdateNotificationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotificationSettingsOutput`](crate::operation::update_notification_settings::UpdateNotificationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotificationSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateNotificationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateNotificationSettingsOutput`](crate::operation::update_notification_settings::UpdateNotificationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_notification_settings::UpdateNotificationSettingsOutput {
+    pub fn build(self) -> crate::operation::update_notification_settings::UpdateNotificationSettingsOutput {
         crate::operation::update_notification_settings::UpdateNotificationSettingsOutput {
             _request_id: self._request_id,
         }

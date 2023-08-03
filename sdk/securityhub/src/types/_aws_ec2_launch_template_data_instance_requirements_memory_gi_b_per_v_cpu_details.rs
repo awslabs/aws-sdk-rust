@@ -23,16 +23,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder {
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) min: ::std::option::Option<f64>,
@@ -67,9 +65,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
         &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
             max: self.max.unwrap_or_default(),
             min: self.min.unwrap_or_default(),

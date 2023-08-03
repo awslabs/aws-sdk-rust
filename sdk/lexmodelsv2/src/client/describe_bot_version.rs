@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`bot_type(Option<BotType>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_type): <p>The type of the bot in the version that was described.</p>
     ///   - [`bot_members(Option<Vec<BotMember>>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_members): <p>The members of bot network in the version that was described.</p>
     /// - On failure, responds with [`SdkError<DescribeBotVersionError>`](crate::operation::describe_bot_version::DescribeBotVersionError)
-    pub fn describe_bot_version(
-        &self,
-    ) -> crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder {
-        crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bot_version(&self) -> crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder {
+        crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::new(self.handle.clone())
     }
 }

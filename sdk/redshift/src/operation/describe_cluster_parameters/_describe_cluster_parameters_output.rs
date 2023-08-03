@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeClusterParametersOutput {
 }
 impl DescribeClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterParametersOutput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder {
         crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterParametersOutput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeClusterParametersOutputBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
@@ -94,9 +87,7 @@ impl DescribeClusterParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterParametersOutput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
         crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput {
             parameters: self.parameters,
             marker: self.marker,

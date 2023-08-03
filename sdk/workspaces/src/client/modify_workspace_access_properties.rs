@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`workspace_access_properties(WorkspaceAccessProperties)`](crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesFluentBuilder::workspace_access_properties) / [`set_workspace_access_properties(Option<WorkspaceAccessProperties>)`](crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesFluentBuilder::set_workspace_access_properties): <p>The device types and operating systems to enable or disable for access.</p>
     /// - On success, responds with [`ModifyWorkspaceAccessPropertiesOutput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspaceAccessPropertiesError>`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesError)
-    pub fn modify_workspace_access_properties(&self) -> crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesFluentBuilder{
+    pub fn modify_workspace_access_properties(
+        &self,
+    ) -> crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesFluentBuilder {
         crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

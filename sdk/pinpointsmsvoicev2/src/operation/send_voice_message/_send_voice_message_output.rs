@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SendVoiceMessageOutput {
 }
 impl SendVoiceMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput).
-    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder {
         crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendVoiceMessageOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

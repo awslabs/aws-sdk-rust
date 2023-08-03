@@ -37,9 +37,7 @@ impl TcpRoute {
 
 /// A builder for [`TcpRoute`](crate::types::TcpRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TcpRouteBuilder {
     pub(crate) action: ::std::option::Option<crate::types::TcpRouteAction>,
     pub(crate) timeout: ::std::option::Option<crate::types::TcpTimeout>,
@@ -52,10 +50,7 @@ impl TcpRouteBuilder {
         self
     }
     /// <p>The action to take if a match is determined.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::TcpRouteAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::TcpRouteAction>) -> Self {
         self.action = input;
         self
     }

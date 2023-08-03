@@ -98,18 +98,14 @@ impl ::aws_http::request_id::RequestId for GetBatchJobExecutionOutput {
 }
 impl GetBatchJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchJobExecutionOutput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder {
         crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchJobExecutionOutput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchJobExecutionOutputBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
@@ -141,18 +137,12 @@ impl GetBatchJobExecutionOutputBuilder {
         &self.execution_id
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -208,10 +198,7 @@ impl GetBatchJobExecutionOutputBuilder {
         self
     }
     /// <p>The type of job.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobType>,
-    ) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::BatchJobType>) -> Self {
         self.job_type = input;
         self
     }
@@ -225,10 +212,7 @@ impl GetBatchJobExecutionOutputBuilder {
         self
     }
     /// <p>The status of the batch job execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -242,10 +226,7 @@ impl GetBatchJobExecutionOutputBuilder {
         self
     }
     /// <p>The timestamp when the batch job execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -259,10 +240,7 @@ impl GetBatchJobExecutionOutputBuilder {
         self
     }
     /// <p>The timestamp when the batch job execution ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -271,18 +249,12 @@ impl GetBatchJobExecutionOutputBuilder {
         &self.end_time
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -310,17 +282,12 @@ impl GetBatchJobExecutionOutputBuilder {
         self
     }
     /// <p>The unique identifier of this batch job.</p>
-    pub fn set_batch_job_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobIdentifier>,
-    ) -> Self {
+    pub fn set_batch_job_identifier(mut self, input: ::std::option::Option<crate::types::BatchJobIdentifier>) -> Self {
         self.batch_job_identifier = input;
         self
     }
     /// <p>The unique identifier of this batch job.</p>
-    pub fn get_batch_job_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+    pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         &self.batch_job_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

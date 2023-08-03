@@ -19,15 +19,24 @@ pub fn ser_response_headers_policy_security_headers_config(
     }
     if let Some(var_4) = &input.content_security_policy {
         let inner_writer = scope.start_el("ContentSecurityPolicy");
-        crate::protocol_serde::shape_response_headers_policy_content_security_policy::ser_response_headers_policy_content_security_policy(var_4, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_content_security_policy::ser_response_headers_policy_content_security_policy(
+            var_4,
+            inner_writer,
+        )?
     }
     if let Some(var_5) = &input.content_type_options {
         let inner_writer = scope.start_el("ContentTypeOptions");
-        crate::protocol_serde::shape_response_headers_policy_content_type_options::ser_response_headers_policy_content_type_options(var_5, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_content_type_options::ser_response_headers_policy_content_type_options(
+            var_5,
+            inner_writer,
+        )?
     }
     if let Some(var_6) = &input.strict_transport_security {
         let inner_writer = scope.start_el("StrictTransportSecurity");
-        crate::protocol_serde::shape_response_headers_policy_strict_transport_security::ser_response_headers_policy_strict_transport_security(var_6, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_strict_transport_security::ser_response_headers_policy_strict_transport_security(
+            var_6,
+            inner_writer,
+        )?
     }
     scope.finish();
     Ok(())
@@ -35,10 +44,7 @@ pub fn ser_response_headers_policy_security_headers_config(
 
 pub fn de_response_headers_policy_security_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicySecurityHeadersConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicySecurityHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicySecurityHeadersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

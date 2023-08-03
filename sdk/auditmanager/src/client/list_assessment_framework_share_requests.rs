@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`assessment_framework_share_requests(Option<Vec<AssessmentFrameworkShareRequest>>)`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput::assessment_framework_share_requests): <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListAssessmentFrameworkShareRequestsError>`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError)
-    pub fn list_assessment_framework_share_requests(&self) -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder{
-        crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::new(self.handle.clone())
+    pub fn list_assessment_framework_share_requests(
+        &self,
+    ) -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder {
+        crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -26,7 +26,7 @@ impl DescribeDataSourcePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataSourcePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsInputBuilder,
+    inner: crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsInputBuilder,
 }
 impl DescribeDataSourcePermissionsFluentBuilder {
     /// Creates a new `DescribeDataSourcePermissions`.
@@ -37,7 +37,7 @@ impl DescribeDataSourcePermissionsFluentBuilder {
         }
     }
     /// Access the DescribeDataSourcePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDataSourcePermissionsFluentBuilder {
             crate::operation::describe_data_source_permissions::DescribeDataSourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDataSourcePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDataSourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDataSourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeDataSourcePermissionsFluentBuilder {
             crate::operation::describe_data_source_permissions::DescribeDataSourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeDataSourcePermissionsFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }

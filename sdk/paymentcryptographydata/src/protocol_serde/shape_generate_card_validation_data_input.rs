@@ -6,10 +6,7 @@ pub fn ser_generate_card_validation_data_input(
     if let Some(var_1) = &input.generation_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GenerationAttributes").start_object();
-        crate::protocol_serde::shape_card_generation_attributes::ser_card_generation_attributes(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_card_generation_attributes::ser_card_generation_attributes(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.key_identifier {

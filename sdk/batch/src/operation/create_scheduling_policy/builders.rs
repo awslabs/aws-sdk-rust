@@ -37,10 +37,7 @@ impl CreateSchedulingPolicyFluentBuilder {
         }
     }
     /// Access the CreateSchedulingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateSchedulingPolicyFluentBuilder {
             crate::operation::create_scheduling_policy::CreateSchedulingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduling_policy::CreateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduling_policy::CreateSchedulingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateSchedulingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateSchedulingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduling_policy::CreateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduling_policy::CreateSchedulingPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateSchedulingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduling_policy::CreateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduling_policy::CreateSchedulingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateSchedulingPolicyFluentBuilder {
             crate::operation::create_scheduling_policy::CreateSchedulingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduling_policy::CreateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scheduling_policy::CreateSchedulingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl CreateSchedulingPolicyFluentBuilder {
         self
     }
     /// <p>The fair share policy of the scheduling policy.</p>
-    pub fn set_fairshare_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FairsharePolicy>,
-    ) -> Self {
+    pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }
@@ -160,32 +143,19 @@ impl CreateSchedulingPolicyFluentBuilder {
     ///
     /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

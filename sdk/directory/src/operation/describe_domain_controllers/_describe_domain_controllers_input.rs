@@ -36,16 +36,14 @@ impl DescribeDomainControllersInput {
 }
 impl DescribeDomainControllersInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainControllersInput`](crate::operation::describe_domain_controllers::DescribeDomainControllersInput).
-    pub fn builder() -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder {
         crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainControllersInput`](crate::operation::describe_domain_controllers::DescribeDomainControllersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,27 +70,19 @@ impl DescribeDomainControllersInputBuilder {
     /// To override the contents of this collection use [`set_domain_controller_ids`](Self::set_domain_controller_ids).
     ///
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn domain_controller_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_controller_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_controller_ids.unwrap_or_default();
         v.push(input.into());
         self.domain_controller_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn set_domain_controller_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_controller_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_controller_ids = input;
         self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn get_domain_controller_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_controller_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_controller_ids
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
@@ -130,13 +120,11 @@ impl DescribeDomainControllersInputBuilder {
         crate::operation::describe_domain_controllers::DescribeDomainControllersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
-                directory_id: self.directory_id,
-                domain_controller_ids: self.domain_controller_ids,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
+            directory_id: self.directory_id,
+            domain_controller_ids: self.domain_controller_ids,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`imds_support(AttributeValue)`](crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder::imds_support) / [`set_imds_support(Option<AttributeValue>)`](crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder::set_imds_support): <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <important>   <p>Do not use this parameter unless your AMI software supports IMDSv2. After you set the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to create a new AMI from the underlying snapshot.</p>  </important>
     /// - On success, responds with [`ModifyImageAttributeOutput`](crate::operation::modify_image_attribute::ModifyImageAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifyImageAttributeError>`](crate::operation::modify_image_attribute::ModifyImageAttributeError)
-    pub fn modify_image_attribute(
-        &self,
-    ) -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder {
-        crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_image_attribute(&self) -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder {
+        crate::operation::modify_image_attribute::builders::ModifyImageAttributeFluentBuilder::new(self.handle.clone())
     }
 }

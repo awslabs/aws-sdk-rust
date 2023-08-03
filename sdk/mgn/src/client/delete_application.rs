@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

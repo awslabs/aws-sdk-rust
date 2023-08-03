@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for PutQueryDefinitionOutput {
 }
 impl PutQueryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutQueryDefinitionOutput`](crate::operation::put_query_definition::PutQueryDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder {
         crate::operation::put_query_definition::builders::PutQueryDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutQueryDefinitionOutput`](crate::operation::put_query_definition::PutQueryDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutQueryDefinitionOutputBuilder {
     pub(crate) query_definition_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutQueryDefinitionOutputBuilder {
     /// <p>The ID of the query definition.</p>
-    pub fn query_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the query definition.</p>
-    pub fn set_query_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_definition_id = input;
         self
     }

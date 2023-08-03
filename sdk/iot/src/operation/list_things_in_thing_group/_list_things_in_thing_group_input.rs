@@ -36,18 +36,14 @@ impl ListThingsInThingGroupInput {
 }
 impl ListThingsInThingGroupInput {
     /// Creates a new builder-style object to manufacture [`ListThingsInThingGroupInput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder {
         crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingsInThingGroupInput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsInThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,
@@ -56,18 +52,12 @@ pub struct ListThingsInThingGroupInputBuilder {
 }
 impl ListThingsInThingGroupInputBuilder {
     /// <p>The thing group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -124,13 +114,11 @@ impl ListThingsInThingGroupInputBuilder {
         crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                recursive: self.recursive,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput {
+            thing_group_name: self.thing_group_name,
+            recursive: self.recursive,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

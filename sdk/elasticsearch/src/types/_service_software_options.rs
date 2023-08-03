@@ -72,9 +72,7 @@ impl ServiceSoftwareOptions {
 
 /// A builder for [`ServiceSoftwareOptions`](crate::types::ServiceSoftwareOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSoftwareOptionsBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) new_version: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct ServiceSoftwareOptionsBuilder {
 }
 impl ServiceSoftwareOptionsBuilder {
     /// <p>The current service software version that is present on the domain.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current service software version that is present on the domain.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -154,10 +146,7 @@ impl ServiceSoftwareOptionsBuilder {
         self
     }
     /// <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.update_status = input;
         self
     }
@@ -185,17 +174,12 @@ impl ServiceSoftwareOptionsBuilder {
         self
     }
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
-    pub fn set_automated_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_automated_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.automated_update_date = input;
         self
     }
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
-    pub fn get_automated_update_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_automated_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.automated_update_date
     }
     /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>

@@ -15,17 +15,14 @@ impl DeleteWirelessDeviceInput {
 }
 impl DeleteWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceInput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceInputBuilder {
+    pub fn builder() -> crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceInputBuilder {
         crate::operation::delete_wireless_device::builders::DeleteWirelessDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWirelessDeviceInput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWirelessDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWirelessDeviceInput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_wireless_device::DeleteWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_wireless_device::DeleteWirelessDeviceInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_wireless_device::DeleteWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_wireless_device::DeleteWirelessDeviceInput { id: self.id })
     }
 }

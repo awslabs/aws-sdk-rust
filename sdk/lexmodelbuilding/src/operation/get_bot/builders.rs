@@ -10,10 +10,7 @@ impl GetBotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_bot::GetBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot::GetBotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_bot();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetBotFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bot::GetBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_bot::GetBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>,
     > {
         let handle = self.handle.clone();
@@ -60,20 +54,15 @@ impl GetBotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bot::GetBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_bot::GetBotOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>>
+    {
         let op = self
             .inner
             .build()
@@ -93,10 +82,8 @@ impl GetBotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bot::GetBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_bot::GetBotOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>>
+    {
         self.send_middleware().await
     }
 
@@ -105,10 +92,7 @@ impl GetBotFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_bot::GetBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_bot::GetBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_bot::GetBotError>,
     > {
         self.customize_middleware().await
@@ -128,18 +112,12 @@ impl GetBotFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version or alias of the bot.</p>
-    pub fn version_or_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_or_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_or_alias(input.into());
         self
     }
     /// <p>The version or alias of the bot.</p>
-    pub fn set_version_or_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_or_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_or_alias(input);
         self
     }

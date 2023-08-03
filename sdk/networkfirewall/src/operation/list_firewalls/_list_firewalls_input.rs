@@ -36,9 +36,7 @@ impl ListFirewallsInput {
 
 /// A builder for [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl ListFirewallsInputBuilder {
         self
     }
     /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -99,10 +94,7 @@ impl ListFirewallsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_firewalls::ListFirewallsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_firewalls::ListFirewallsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_firewalls::ListFirewallsInput {
             next_token: self.next_token,
             vpc_ids: self.vpc_ids,

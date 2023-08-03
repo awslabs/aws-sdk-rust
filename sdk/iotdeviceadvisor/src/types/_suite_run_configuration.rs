@@ -37,9 +37,7 @@ impl SuiteRunConfiguration {
 
 /// A builder for [`SuiteRunConfiguration`](crate::types::SuiteRunConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteRunConfigurationBuilder {
     pub(crate) primary_device: ::std::option::Option<crate::types::DeviceUnderTest>,
     pub(crate) selected_test_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl SuiteRunConfigurationBuilder {
         self
     }
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    pub fn set_primary_device(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceUnderTest>,
-    ) -> Self {
+    pub fn set_primary_device(mut self, input: ::std::option::Option<crate::types::DeviceUnderTest>) -> Self {
         self.primary_device = input;
         self
     }
@@ -68,27 +63,19 @@ impl SuiteRunConfigurationBuilder {
     /// To override the contents of this collection use [`set_selected_test_list`](Self::set_selected_test_list).
     ///
     /// <p>Sets test case list.</p>
-    pub fn selected_test_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_test_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_test_list.unwrap_or_default();
         v.push(input.into());
         self.selected_test_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Sets test case list.</p>
-    pub fn set_selected_test_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_test_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_test_list = input;
         self
     }
     /// <p>Sets test case list.</p>
-    pub fn get_selected_test_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_test_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_test_list
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>

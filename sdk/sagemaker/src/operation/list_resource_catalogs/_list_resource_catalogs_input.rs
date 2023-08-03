@@ -57,17 +57,14 @@ impl ListResourceCatalogsInput {
 }
 impl ListResourceCatalogsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsInputBuilder {
+    pub fn builder() -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsInputBuilder {
         crate::operation::list_resource_catalogs::builders::ListResourceCatalogsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceCatalogsInputBuilder {
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,18 +76,12 @@ pub struct ListResourceCatalogsInputBuilder {
 }
 impl ListResourceCatalogsInputBuilder {
     /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -104,10 +95,7 @@ impl ListResourceCatalogsInputBuilder {
         self
     }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -121,10 +109,7 @@ impl ListResourceCatalogsInputBuilder {
         self
     }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -138,10 +123,7 @@ impl ListResourceCatalogsInputBuilder {
         self
     }
     /// <p> The order in which the resource catalogs are listed. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCatalogSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -155,10 +137,7 @@ impl ListResourceCatalogsInputBuilder {
         self
     }
     /// <p> The value on which the resource catalog list is sorted. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCatalogSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -197,20 +176,16 @@ impl ListResourceCatalogsInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_catalogs::ListResourceCatalogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_catalogs::ListResourceCatalogsInput {
-                name_contains: self.name_contains,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resource_catalogs::ListResourceCatalogsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resource_catalogs::ListResourceCatalogsInput {
+            name_contains: self.name_contains,
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

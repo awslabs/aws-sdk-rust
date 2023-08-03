@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`explainabilities(Option<Vec<ExplainabilitySummary>>)`](crate::operation::list_explainabilities::ListExplainabilitiesOutput::explainabilities): <p>An array of objects that summarize the properties of each Explainability resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_explainabilities::ListExplainabilitiesOutput::next_token): <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListExplainabilitiesError>`](crate::operation::list_explainabilities::ListExplainabilitiesError)
-    pub fn list_explainabilities(
-        &self,
-    ) -> crate::operation::list_explainabilities::builders::ListExplainabilitiesFluentBuilder {
-        crate::operation::list_explainabilities::builders::ListExplainabilitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_explainabilities(&self) -> crate::operation::list_explainabilities::builders::ListExplainabilitiesFluentBuilder {
+        crate::operation::list_explainabilities::builders::ListExplainabilitiesFluentBuilder::new(self.handle.clone())
     }
 }

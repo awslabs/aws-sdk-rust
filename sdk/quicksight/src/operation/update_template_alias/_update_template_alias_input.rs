@@ -36,18 +36,14 @@ impl UpdateTemplateAliasInput {
 }
 impl UpdateTemplateAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateAliasInput`](crate::operation::update_template_alias::UpdateTemplateAliasInput).
-    pub fn builder(
-    ) -> crate::operation::update_template_alias::builders::UpdateTemplateAliasInputBuilder {
-        crate::operation::update_template_alias::builders::UpdateTemplateAliasInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_template_alias::builders::UpdateTemplateAliasInputBuilder {
+        crate::operation::update_template_alias::builders::UpdateTemplateAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTemplateAliasInput`](crate::operation::update_template_alias::UpdateTemplateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct UpdateTemplateAliasInputBuilder {
 }
 impl UpdateTemplateAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl UpdateTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTemplateAliasInput`](crate::operation::update_template_alias::UpdateTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_template_alias::UpdateTemplateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_template_alias::UpdateTemplateAliasInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                alias_name: self.alias_name,
-                template_version_number: self.template_version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_template_alias::UpdateTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_template_alias::UpdateTemplateAliasInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            alias_name: self.alias_name,
+            template_version_number: self.template_version_number,
+        })
     }
 }

@@ -21,8 +21,7 @@ pub struct DescribePrincipalMappingOutput {
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub group_ordering_id_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
+    pub group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
     _request_id: Option<String>,
 }
 impl DescribePrincipalMappingOutput {
@@ -46,9 +45,7 @@ impl DescribePrincipalMappingOutput {
     /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
-    pub fn group_ordering_id_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GroupOrderingIdSummary]> {
+    pub fn group_ordering_id_summaries(&self) -> ::std::option::Option<&[crate::types::GroupOrderingIdSummary]> {
         self.group_ordering_id_summaries.as_deref()
     }
 }
@@ -59,24 +56,19 @@ impl ::aws_http::request_id::RequestId for DescribePrincipalMappingOutput {
 }
 impl DescribePrincipalMappingOutput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingOutputBuilder {
         crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrincipalMappingOutputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) group_ordering_id_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
+    pub(crate) group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
     _request_id: Option<String>,
 }
 impl DescribePrincipalMappingOutputBuilder {
@@ -95,18 +87,12 @@ impl DescribePrincipalMappingOutputBuilder {
         &self.index_id
     }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -140,10 +126,7 @@ impl DescribePrincipalMappingOutputBuilder {
     /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
-    pub fn group_ordering_id_summaries(
-        mut self,
-        input: crate::types::GroupOrderingIdSummary,
-    ) -> Self {
+    pub fn group_ordering_id_summaries(mut self, input: crate::types::GroupOrderingIdSummary) -> Self {
         let mut v = self.group_ordering_id_summaries.unwrap_or_default();
         v.push(input);
         self.group_ordering_id_summaries = ::std::option::Option::Some(v);
@@ -157,10 +140,7 @@ impl DescribePrincipalMappingOutputBuilder {
     /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
-    pub fn set_group_ordering_id_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
-    ) -> Self {
+    pub fn set_group_ordering_id_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>) -> Self {
         self.group_ordering_id_summaries = input;
         self
     }
@@ -172,9 +152,7 @@ impl DescribePrincipalMappingOutputBuilder {
     /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
-    pub fn get_group_ordering_id_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>> {
+    pub fn get_group_ordering_id_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>> {
         &self.group_ordering_id_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -187,9 +165,7 @@ impl DescribePrincipalMappingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput {
+    pub fn build(self) -> crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput {
         crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput {
             index_id: self.index_id,
             data_source_id: self.data_source_id,

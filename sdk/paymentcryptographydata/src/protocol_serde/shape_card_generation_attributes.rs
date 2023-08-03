@@ -19,19 +19,13 @@ pub fn ser_card_generation_attributes(
         crate::types::CardGenerationAttributes::CardVerificationValue1(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("CardVerificationValue1").start_object();
-            crate::protocol_serde::shape_card_verification_value1::ser_card_verification_value1(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_card_verification_value1::ser_card_verification_value1(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::CardGenerationAttributes::CardVerificationValue2(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_2.key("CardVerificationValue2").start_object();
-            crate::protocol_serde::shape_card_verification_value2::ser_card_verification_value2(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_card_verification_value2::ser_card_verification_value2(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::CardGenerationAttributes::CardHolderVerificationValue(inner) => {
@@ -53,11 +47,9 @@ pub fn ser_card_generation_attributes(
             object_7.finish();
         }
         crate::types::CardGenerationAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "CardGenerationAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "CardGenerationAttributes",
+            ))
         }
     }
     Ok(())

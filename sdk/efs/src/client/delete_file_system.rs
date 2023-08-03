@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`file_system_id(impl ::std::convert::Into<String>)`](crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::set_file_system_id): <p>The ID of the file system you want to delete.</p>
     /// - On success, responds with [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput)
     /// - On failure, responds with [`SdkError<DeleteFileSystemError>`](crate::operation::delete_file_system::DeleteFileSystemError)
-    pub fn delete_file_system(
-        &self,
-    ) -> crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder {
-        crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_file_system(&self) -> crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder {
+        crate::operation::delete_file_system::builders::DeleteFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl UpdateAcceleratorAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAcceleratorAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder,
+    inner: crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder,
 }
 impl UpdateAcceleratorAttributesFluentBuilder {
     /// Creates a new `UpdateAcceleratorAttributes`.
@@ -37,7 +37,7 @@ impl UpdateAcceleratorAttributesFluentBuilder {
         }
     }
     /// Access the UpdateAcceleratorAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateAcceleratorAttributesFluentBuilder {
             crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateAcceleratorAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateAcceleratorAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateAcceleratorAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateAcceleratorAttributesFluentBuilder {
             crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
@@ -158,18 +141,12 @@ impl UpdateAcceleratorAttributesFluentBuilder {
         self.inner.get_flow_logs_enabled()
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
-    pub fn flow_logs_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_logs_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_logs_s3_bucket(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
-    pub fn set_flow_logs_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_logs_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_logs_s3_bucket(input);
         self
     }
@@ -180,20 +157,14 @@ impl UpdateAcceleratorAttributesFluentBuilder {
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
-    pub fn flow_logs_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_logs_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_logs_s3_prefix(input.into());
         self
     }
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
     /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
-    pub fn set_flow_logs_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_logs_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_logs_s3_prefix(input);
         self
     }

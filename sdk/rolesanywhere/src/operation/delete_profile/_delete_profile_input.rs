@@ -22,9 +22,7 @@ impl DeleteProfileInput {
 
 /// A builder for [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_profile::DeleteProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput {
-            profile_id: self.profile_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput { profile_id: self.profile_id })
     }
 }

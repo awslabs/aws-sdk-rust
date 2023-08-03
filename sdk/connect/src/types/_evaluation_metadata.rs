@@ -44,9 +44,7 @@ impl EvaluationMetadata {
 
 /// A builder for [`EvaluationMetadata`](crate::types::EvaluationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationMetadataBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl EvaluationMetadataBuilder {
         &self.contact_id
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn set_evaluator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluator_arn = input;
         self
     }
@@ -89,18 +81,12 @@ impl EvaluationMetadataBuilder {
         &self.evaluator_arn
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn contact_agent_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_agent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn set_contact_agent_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_agent_id = input;
         self
     }
@@ -114,10 +100,7 @@ impl EvaluationMetadataBuilder {
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn set_score(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationScore>,
-    ) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<crate::types::EvaluationScore>) -> Self {
         self.score = input;
         self
     }

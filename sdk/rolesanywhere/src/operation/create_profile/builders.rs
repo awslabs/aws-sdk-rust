@@ -10,10 +10,7 @@ impl CreateProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_profile::CreateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profile::CreateProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateProfileFluentBuilder {
         }
     }
     /// Access the CreateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,18 +136,12 @@ impl CreateProfileFluentBuilder {
         self.inner.get_require_instance_properties()
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn session_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_policy(input.into());
         self
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn set_session_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_policy(input);
         self
     }
@@ -173,10 +159,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_role_arns(input);
         self
     }
@@ -189,25 +172,17 @@ impl CreateProfileFluentBuilder {
     /// To override the contents of this collection use [`set_managed_policy_arns`](Self::set_managed_policy_arns).
     ///
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_policy_arns(input.into());
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn set_managed_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_managed_policy_arns(input);
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn get_managed_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_managed_policy_arns()
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
@@ -248,10 +223,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>The tags to attach to the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::describe_affected_accounts_for_organization::_describe
 
 impl DescribeAffectedAccountsForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_affected_accounts_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder,
+    inner: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder,
 }
 impl DescribeAffectedAccountsForOrganizationFluentBuilder {
     /// Creates a new `DescribeAffectedAccountsForOrganization`.
@@ -40,15 +40,24 @@ impl DescribeAffectedAccountsForOrganizationFluentBuilder {
         }
     }
     /// Access the DescribeAffectedAccountsForOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +66,19 @@ impl DescribeAffectedAccountsForOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -84,24 +96,42 @@ impl DescribeAffectedAccountsForOrganizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator{
-        crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator {
+        crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>

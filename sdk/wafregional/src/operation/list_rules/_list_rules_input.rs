@@ -29,9 +29,7 @@ impl ListRulesInput {
 
 /// A builder for [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -66,12 +64,7 @@ impl ListRulesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rules::ListRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
             next_marker: self.next_marker,
             limit: self.limit.unwrap_or_default(),

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError)
-    pub fn delete_logging_configuration(&self) -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder{
+    pub fn delete_logging_configuration(&self) -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder {
         crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

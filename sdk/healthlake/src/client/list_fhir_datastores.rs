@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`datastore_properties_list(Option<Vec<DatastoreProperties>>)`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput::datastore_properties_list): <p>All properties associated with the listed data stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput::next_token): <p>Pagination token that can be used to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListFHIRDatastoresError>`](crate::operation::list_fhir_datastores::ListFHIRDatastoresError)
-    pub fn list_fhir_datastores(
-        &self,
-    ) -> crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder {
-        crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fhir_datastores(&self) -> crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder {
+        crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::new(self.handle.clone())
     }
 }

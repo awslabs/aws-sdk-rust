@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OrientationCorrection {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for OrientationCorrection {
             "ROTATE_180" => OrientationCorrection::Rotate180,
             "ROTATE_270" => OrientationCorrection::Rotate270,
             "ROTATE_90" => OrientationCorrection::Rotate90,
-            other => OrientationCorrection::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OrientationCorrection::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

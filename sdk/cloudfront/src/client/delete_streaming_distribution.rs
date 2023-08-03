@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteStreamingDistributionOutput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamingDistributionError>`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError)
-    pub fn delete_streaming_distribution(&self) -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionFluentBuilder{
+    pub fn delete_streaming_distribution(
+        &self,
+    ) -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionFluentBuilder {
         crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionFluentBuilder::new(self.handle.clone())
     }
 }

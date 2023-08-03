@@ -30,27 +30,19 @@ impl FederatedUser {
 
 /// A builder for [`FederatedUser`](crate::types::FederatedUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FederatedUserBuilder {
     pub(crate) federated_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl FederatedUserBuilder {
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
-    pub fn federated_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn federated_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.federated_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
-    pub fn set_federated_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_federated_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.federated_user_id = input;
         self
     }

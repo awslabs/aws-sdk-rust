@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`sidewalk(Option<SidewalkAccountInfo>)`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountOutput::sidewalk): <p>The Sidewalk account credentials.</p>
     ///   - [`arn(Option<String>)`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     /// - On failure, responds with [`SdkError<AssociateAwsAccountWithPartnerAccountError>`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountError)
-    pub fn associate_aws_account_with_partner_account(&self) -> crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountFluentBuilder{
-        crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountFluentBuilder::new(self.handle.clone())
+    pub fn associate_aws_account_with_partner_account(
+        &self,
+    ) -> crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountFluentBuilder {
+        crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

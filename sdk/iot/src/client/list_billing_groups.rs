@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`billing_groups(Option<Vec<GroupNameAndArn>>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::billing_groups): <p>The list of billing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::operation::list_billing_groups::ListBillingGroupsError)
-    pub fn list_billing_groups(
-        &self,
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {
-        crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_billing_groups(&self) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {
+        crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(self.handle.clone())
     }
 }

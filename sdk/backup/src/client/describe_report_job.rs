@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeReportJobOutput`](crate::operation::describe_report_job::DescribeReportJobOutput) with field(s):
     ///   - [`report_job(Option<ReportJob>)`](crate::operation::describe_report_job::DescribeReportJobOutput::report_job): <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     /// - On failure, responds with [`SdkError<DescribeReportJobError>`](crate::operation::describe_report_job::DescribeReportJobError)
-    pub fn describe_report_job(
-        &self,
-    ) -> crate::operation::describe_report_job::builders::DescribeReportJobFluentBuilder {
-        crate::operation::describe_report_job::builders::DescribeReportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_report_job(&self) -> crate::operation::describe_report_job::builders::DescribeReportJobFluentBuilder {
+        crate::operation::describe_report_job::builders::DescribeReportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,10 @@ impl super::Client {
     ///   - [`cross_cluster_search_connections(Option<Vec<OutboundCrossClusterSearchConnection>>)`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsOutput::cross_cluster_search_connections): <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsOutput::next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     /// - On failure, responds with [`SdkError<DescribeOutboundCrossClusterSearchConnectionsError>`](crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnectionsError)
-    pub fn describe_outbound_cross_cluster_search_connections(&self) -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsFluentBuilder{
+    pub fn describe_outbound_cross_cluster_search_connections(
+        &self,
+    ) -> crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsFluentBuilder
+    {
         crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

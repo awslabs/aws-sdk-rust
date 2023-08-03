@@ -43,15 +43,12 @@ impl ImportKeyPairInput {
 
 /// A builder for [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyPairInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) public_key_material: ::std::option::Option<::aws_smithy_types::Blob>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ImportKeyPairInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -88,10 +85,7 @@ impl ImportKeyPairInputBuilder {
         self
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
-    pub fn set_public_key_material(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_public_key_material(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.public_key_material = input;
         self
     }
@@ -111,26 +105,18 @@ impl ImportKeyPairInputBuilder {
         self
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_key_pair::ImportKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_key_pair::ImportKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key_pair::ImportKeyPairInput {
             dry_run: self.dry_run,
             key_name: self.key_name,

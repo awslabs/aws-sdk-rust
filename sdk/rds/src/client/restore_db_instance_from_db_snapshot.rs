@@ -45,7 +45,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbInstanceFromDbSnapshotOutput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceFromDBSnapshotError>`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError)
-    pub fn restore_db_instance_from_db_snapshot(&self) -> crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDBInstanceFromDBSnapshotFluentBuilder{
+    pub fn restore_db_instance_from_db_snapshot(
+        &self,
+    ) -> crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDBInstanceFromDBSnapshotFluentBuilder {
         crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDBInstanceFromDBSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

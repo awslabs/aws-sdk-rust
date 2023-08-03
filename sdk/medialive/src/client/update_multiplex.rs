@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMultiplexOutput`](crate::operation::update_multiplex::UpdateMultiplexOutput) with field(s):
     ///   - [`multiplex(Option<Multiplex>)`](crate::operation::update_multiplex::UpdateMultiplexOutput::multiplex): The updated multiplex.
     /// - On failure, responds with [`SdkError<UpdateMultiplexError>`](crate::operation::update_multiplex::UpdateMultiplexError)
-    pub fn update_multiplex(
-        &self,
-    ) -> crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder {
-        crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_multiplex(&self) -> crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder {
+        crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::new(self.handle.clone())
     }
 }

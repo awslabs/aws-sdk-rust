@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::marker): <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     ///   - [`additional_data_pending(bool)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::additional_data_pending): <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     /// - On failure, responds with [`SdkError<DownloadDBLogFilePortionError>`](crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError)
-    pub fn download_db_log_file_portion(&self) -> crate::operation::download_db_log_file_portion::builders::DownloadDBLogFilePortionFluentBuilder{
+    pub fn download_db_log_file_portion(&self) -> crate::operation::download_db_log_file_portion::builders::DownloadDBLogFilePortionFluentBuilder {
         crate::operation::download_db_log_file_portion::builders::DownloadDBLogFilePortionFluentBuilder::new(self.handle.clone())
     }
 }

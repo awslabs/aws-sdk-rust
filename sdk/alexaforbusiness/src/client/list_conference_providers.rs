@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_conference_providers::ListConferenceProvidersOutput::next_token): <p>The tokens used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListConferenceProvidersError>`](crate::operation::list_conference_providers::ListConferenceProvidersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_conference_providers(
-        &self,
-    ) -> crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder
-    {
+    pub fn list_conference_providers(&self) -> crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder {
         crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::new(self.handle.clone())
     }
 }

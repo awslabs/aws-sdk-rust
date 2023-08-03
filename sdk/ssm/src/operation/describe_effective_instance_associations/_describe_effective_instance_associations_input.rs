@@ -29,16 +29,14 @@ impl DescribeEffectiveInstanceAssociationsInput {
 }
 impl DescribeEffectiveInstanceAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectiveInstanceAssociationsInput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput).
-    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsInputBuilder {
         crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEffectiveInstanceAssociationsInput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEffectiveInstanceAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl DescribeEffectiveInstanceAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEffectiveInstanceAssociationsInput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput {
-                instance_id: self.instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_id: self.instance_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

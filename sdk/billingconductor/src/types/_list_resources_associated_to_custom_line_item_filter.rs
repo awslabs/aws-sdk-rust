@@ -16,17 +16,14 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
-    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder
-    {
+    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder {
         crate::types::builders::ListResourcesAssociatedToCustomLineItemFilterBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFilterBuilder {
     pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
 }
@@ -37,17 +34,12 @@ impl ListResourcesAssociatedToCustomLineItemFilterBuilder {
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn set_relationship(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemRelationship>,
-    ) -> Self {
+    pub fn set_relationship(mut self, input: ::std::option::Option<crate::types::CustomLineItemRelationship>) -> Self {
         self.relationship = input;
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn get_relationship(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
+    pub fn get_relationship(&self) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
         &self.relationship
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).

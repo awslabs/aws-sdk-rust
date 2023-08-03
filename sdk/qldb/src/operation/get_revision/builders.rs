@@ -10,10 +10,7 @@ impl GetRevisionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_revision::GetRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_revision::GetRevisionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_revision::GetRevisionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_revision();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetRevisionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_revision::GetRevision,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_revision::GetRevision, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_revision::GetRevisionError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetRevisionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetRevisionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_revision::GetRevision,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_revision::GetRevision, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_revision::GetRevisionError>,
     > {
         self.customize_middleware().await
@@ -134,10 +122,7 @@ impl GetRevisionFluentBuilder {
     }
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn set_block_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_block_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.inner = self.inner.set_block_address(input);
         self
     }
@@ -168,10 +153,7 @@ impl GetRevisionFluentBuilder {
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn set_digest_tip_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.inner = self.inner.set_digest_tip_address(input);
         self
     }

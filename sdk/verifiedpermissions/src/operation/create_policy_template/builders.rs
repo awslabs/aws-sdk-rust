@@ -37,9 +37,7 @@ impl CreatePolicyTemplateFluentBuilder {
         }
     }
     /// Access the CreatePolicyTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_policy_template::builders::CreatePolicyTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_policy_template::builders::CreatePolicyTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreatePolicyTemplateFluentBuilder {
             crate::operation::create_policy_template::CreatePolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_template::CreatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_template::CreatePolicyTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreatePolicyTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreatePolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_template::CreatePolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_template::CreatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_template::CreatePolicyTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreatePolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_template::CreatePolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_template::CreatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_template::CreatePolicyTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreatePolicyTemplateFluentBuilder {
             crate::operation::create_policy_template::CreatePolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_template::CreatePolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_template::CreatePolicyTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +130,12 @@ impl CreatePolicyTemplateFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }

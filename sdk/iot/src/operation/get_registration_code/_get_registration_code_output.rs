@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for GetRegistrationCodeOutput {
 }
 impl GetRegistrationCodeOutput {
     /// Creates a new builder-style object to manufacture [`GetRegistrationCodeOutput`](crate::operation::get_registration_code::GetRegistrationCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_registration_code::builders::GetRegistrationCodeOutputBuilder {
-        crate::operation::get_registration_code::builders::GetRegistrationCodeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_registration_code::builders::GetRegistrationCodeOutputBuilder {
+        crate::operation::get_registration_code::builders::GetRegistrationCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegistrationCodeOutput`](crate::operation::get_registration_code::GetRegistrationCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegistrationCodeOutputBuilder {
     pub(crate) registration_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRegistrationCodeOutputBuilder {
     /// <p>The CA certificate registration code.</p>
-    pub fn registration_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate registration code.</p>
-    pub fn set_registration_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_code = input;
         self
     }

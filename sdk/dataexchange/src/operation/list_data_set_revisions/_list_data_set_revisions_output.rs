@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDataSetRevisionsOutput {
 }
 impl ListDataSetRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder {
         crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetRevisionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>>,
@@ -72,17 +68,12 @@ impl ListDataSetRevisionsOutputBuilder {
         self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn set_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>>,
-    ) -> Self {
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>>) -> Self {
         self.revisions = input;
         self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn get_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>> {
         &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

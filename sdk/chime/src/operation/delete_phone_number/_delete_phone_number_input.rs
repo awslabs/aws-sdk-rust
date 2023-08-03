@@ -15,34 +15,25 @@ impl DeletePhoneNumberInput {
 }
 impl DeletePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::delete_phone_number::builders::DeletePhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::delete_phone_number::builders::DeletePhoneNumberInputBuilder {
         crate::operation::delete_phone_number::builders::DeletePhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePhoneNumberInputBuilder {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeletePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_phone_number::DeletePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_phone_number::DeletePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_phone_number::DeletePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_phone_number::DeletePhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+        })
     }
 }

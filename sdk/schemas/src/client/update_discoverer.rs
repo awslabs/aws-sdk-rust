@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`cross_account(Option<bool>)`](crate::operation::update_discoverer::UpdateDiscovererOutput::cross_account): <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_discoverer::UpdateDiscovererOutput::tags): <p>Tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<UpdateDiscovererError>`](crate::operation::update_discoverer::UpdateDiscovererError)
-    pub fn update_discoverer(
-        &self,
-    ) -> crate::operation::update_discoverer::builders::UpdateDiscovererFluentBuilder {
-        crate::operation::update_discoverer::builders::UpdateDiscovererFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_discoverer(&self) -> crate::operation::update_discoverer::builders::UpdateDiscovererFluentBuilder {
+        crate::operation::update_discoverer::builders::UpdateDiscovererFluentBuilder::new(self.handle.clone())
     }
 }

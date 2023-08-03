@@ -30,9 +30,7 @@ impl StorageLensDataExportEncryption {
 
 /// A builder for [`StorageLensDataExportEncryption`](crate::types::StorageLensDataExportEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageLensDataExportEncryptionBuilder {
     pub(crate) sses3: ::std::option::Option<crate::types::Sses3>,
     pub(crate) ssekms: ::std::option::Option<crate::types::Ssekms>,

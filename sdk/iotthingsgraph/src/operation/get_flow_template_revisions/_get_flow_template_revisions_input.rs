@@ -33,18 +33,14 @@ impl GetFlowTemplateRevisionsInput {
 }
 impl GetFlowTemplateRevisionsInput {
     /// Creates a new builder-style object to manufacture [`GetFlowTemplateRevisionsInput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsInputBuilder {
         crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFlowTemplateRevisionsInput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowTemplateRevisionsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -106,12 +102,10 @@ impl GetFlowTemplateRevisionsInputBuilder {
         crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput {
-                id: self.id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsInput {
+            id: self.id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

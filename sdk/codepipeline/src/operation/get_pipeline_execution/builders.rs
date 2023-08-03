@@ -37,9 +37,7 @@ impl GetPipelineExecutionFluentBuilder {
         }
     }
     /// Access the GetPipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_pipeline_execution::builders::GetPipelineExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_pipeline_execution::builders::GetPipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetPipelineExecutionFluentBuilder {
             crate::operation::get_pipeline_execution::GetPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_execution::GetPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_execution::GetPipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetPipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_execution::GetPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_execution::GetPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_execution::GetPipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_execution::GetPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_execution::GetPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_execution::GetPipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetPipelineExecutionFluentBuilder {
             crate::operation::get_pipeline_execution::GetPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_execution::GetPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_execution::GetPipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline about which you want to get execution details.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline about which you want to get execution details.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -143,18 +124,12 @@ impl GetPipelineExecutionFluentBuilder {
         self.inner.get_pipeline_name()
     }
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_id(input.into());
         self
     }
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
     }

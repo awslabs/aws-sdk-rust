@@ -26,7 +26,7 @@ impl ListPermissionAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPermissionAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder,
+    inner: crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder,
 }
 impl ListPermissionAssociationsFluentBuilder {
     /// Creates a new `ListPermissionAssociations`.
@@ -37,7 +37,7 @@ impl ListPermissionAssociationsFluentBuilder {
         }
     }
     /// Access the ListPermissionAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPermissionAssociationsFluentBuilder {
             crate::operation::list_permission_associations::ListPermissionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_associations::ListPermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPermissionAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPermissionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permission_associations::ListPermissionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_associations::ListPermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPermissionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permission_associations::ListPermissionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_associations::ListPermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListPermissionAssociationsFluentBuilder {
             crate::operation::list_permission_associations::ListPermissionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_associations::ListPermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator {
         crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
@@ -161,40 +144,26 @@ impl ListPermissionAssociationsFluentBuilder {
         self.inner.get_permission_version()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(
-        mut self,
-        input: crate::types::ResourceShareAssociationStatus,
-    ) -> Self {
+    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
         self.inner = self.inner.association_status(input);
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
         self.inner = self.inner.set_association_status(input);
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
         self.inner.get_association_status()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -208,10 +177,7 @@ impl ListPermissionAssociationsFluentBuilder {
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
-    pub fn set_feature_set(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionFeatureSet>,
-    ) -> Self {
+    pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
         self.inner = self.inner.set_feature_set(input);
         self
     }

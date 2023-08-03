@@ -50,9 +50,7 @@ impl ImportVolumeInput {
 
 /// A builder for [`ImportVolumeInput`](crate::operation::import_volume::ImportVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportVolumeInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ImportVolumeInputBuilder {
 }
 impl ImportVolumeInputBuilder {
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -115,10 +107,7 @@ impl ImportVolumeInputBuilder {
         self
     }
     /// <p>The disk image.</p>
-    pub fn set_image(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageDetail>,
-    ) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::DiskImageDetail>) -> Self {
         self.image = input;
         self
     }
@@ -141,12 +130,7 @@ impl ImportVolumeInputBuilder {
         &self.volume
     }
     /// Consumes the builder and constructs a [`ImportVolumeInput`](crate::operation::import_volume::ImportVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_volume::ImportVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_volume::ImportVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_volume::ImportVolumeInput {
             availability_zone: self.availability_zone,
             description: self.description,

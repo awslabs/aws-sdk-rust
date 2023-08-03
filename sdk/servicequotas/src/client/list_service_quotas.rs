@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_quotas::ListServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::operation::list_service_quotas::ListServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
     /// - On failure, responds with [`SdkError<ListServiceQuotasError>`](crate::operation::list_service_quotas::ListServiceQuotasError)
-    pub fn list_service_quotas(
-        &self,
-    ) -> crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder {
-        crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_quotas(&self) -> crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder {
+        crate::operation::list_service_quotas::builders::ListServiceQuotasFluentBuilder::new(self.handle.clone())
     }
 }

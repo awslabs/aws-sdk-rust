@@ -23,9 +23,7 @@ impl StartTimecode {
 
 /// A builder for [`StartTimecode`](crate::types::StartTimecode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTimecodeBuilder {
     pub(crate) timecode: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl StartTimecodeBuilder {
     }
     /// Consumes the builder and constructs a [`StartTimecode`](crate::types::StartTimecode).
     pub fn build(self) -> crate::types::StartTimecode {
-        crate::types::StartTimecode {
-            timecode: self.timecode,
-        }
+        crate::types::StartTimecode { timecode: self.timecode }
     }
 }

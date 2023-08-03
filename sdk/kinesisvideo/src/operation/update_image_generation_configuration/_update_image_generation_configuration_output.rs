@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateImageGenerationConfigurationOut
 }
 impl UpdateImageGenerationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationOutput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput).
-    pub fn builder() -> crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationOutputBuilder {
         crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImageGenerationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateImageGenerationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateImageGenerationConfigurationOutput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput {
         crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput {
             _request_id: self._request_id,
         }

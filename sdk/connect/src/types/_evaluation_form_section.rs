@@ -51,9 +51,7 @@ impl EvaluationFormSection {
 
 /// A builder for [`EvaluationFormSection`](crate::types::EvaluationFormSection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormSectionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
@@ -116,17 +114,12 @@ impl EvaluationFormSectionBuilder {
         self
     }
     /// <p>The items of the section.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The items of the section.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
         &self.items
     }
     /// <p>The scoring weight of the section.</p>

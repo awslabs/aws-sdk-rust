@@ -30,9 +30,7 @@ impl RuleResult {
 
 /// A builder for [`RuleResult`](crate::types::RuleResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleResultBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl RuleResultBuilder {
         self
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.outcomes = input;
         self
     }

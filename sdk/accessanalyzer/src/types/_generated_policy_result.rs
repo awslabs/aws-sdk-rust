@@ -30,13 +30,10 @@ impl GeneratedPolicyResult {
 
 /// A builder for [`GeneratedPolicyResult`](crate::types::GeneratedPolicyResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratedPolicyResultBuilder {
     pub(crate) properties: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
-    pub(crate) generated_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
+    pub(crate) generated_policies: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResultBuilder {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
@@ -45,17 +42,12 @@ impl GeneratedPolicyResultBuilder {
         self
     }
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::GeneratedPolicyProperties>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeneratedPolicyProperties> {
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::GeneratedPolicyProperties> {
         &self.properties
     }
     /// Appends an item to `generated_policies`.
@@ -70,17 +62,12 @@ impl GeneratedPolicyResultBuilder {
         self
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn set_generated_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
-    ) -> Self {
+    pub fn set_generated_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>) -> Self {
         self.generated_policies = input;
         self
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn get_generated_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>> {
+    pub fn get_generated_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>> {
         &self.generated_policies
     }
     /// Consumes the builder and constructs a [`GeneratedPolicyResult`](crate::types::GeneratedPolicyResult).

@@ -27,8 +27,7 @@ impl ModifyIpamResourceCidrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder,
+    inner: crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder,
 }
 impl ModifyIpamResourceCidrFluentBuilder {
     /// Creates a new `ModifyIpamResourceCidr`.
@@ -39,10 +38,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
         }
     }
     /// Access the ModifyIpamResourceCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
             crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl ModifyIpamResourceCidrFluentBuilder {
             crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +139,12 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner.get_resource_id()
     }
     /// <p>The CIDR of the resource you want to modify.</p>
-    pub fn resource_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_cidr(input.into());
         self
     }
     /// <p>The CIDR of the resource you want to modify.</p>
-    pub fn set_resource_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_cidr(input);
         self
     }
@@ -174,18 +153,12 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner.get_resource_cidr()
     }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
-    pub fn resource_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_region(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_region(input);
         self
     }
@@ -194,18 +167,12 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner.get_resource_region()
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
-    pub fn current_ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_ipam_scope_id(input.into());
         self
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
-    pub fn set_current_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_ipam_scope_id(input);
         self
     }
@@ -214,18 +181,12 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner.get_current_ipam_scope_id()
     }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
-    pub fn destination_ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_ipam_scope_id(input.into());
         self
     }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
-    pub fn set_destination_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_ipam_scope_id(input);
         self
     }

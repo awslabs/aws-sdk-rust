@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutLoggingConfigurationOutput`](crate::operation::put_logging_configuration::PutLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::put_logging_configuration::PutLoggingConfigurationOutput::logging_configuration): <p></p>
     /// - On failure, responds with [`SdkError<PutLoggingConfigurationError>`](crate::operation::put_logging_configuration::PutLoggingConfigurationError)
-    pub fn put_logging_configuration(
-        &self,
-    ) -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationFluentBuilder
-    {
+    pub fn put_logging_configuration(&self) -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationFluentBuilder {
         crate::operation::put_logging_configuration::builders::PutLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

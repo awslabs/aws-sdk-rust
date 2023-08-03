@@ -38,9 +38,7 @@ impl DescribeDhcpOptionsFluentBuilder {
         }
     }
     /// Access the DescribeDhcpOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeDhcpOptionsFluentBuilder {
             crate::operation::describe_dhcp_options::DescribeDhcpOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dhcp_options::DescribeDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dhcp_options::DescribeDhcpOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeDhcpOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeDhcpOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dhcp_options::DescribeDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dhcp_options::DescribeDhcpOptionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeDhcpOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dhcp_options::DescribeDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dhcp_options::DescribeDhcpOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeDhcpOptionsFluentBuilder {
             crate::operation::describe_dhcp_options::DescribeDhcpOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dhcp_options::DescribeDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dhcp_options::DescribeDhcpOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator {
-        crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator {
+        crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `DhcpOptionsIds`.
     ///
@@ -140,27 +122,19 @@ impl DescribeDhcpOptionsFluentBuilder {
     ///
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn dhcp_options_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dhcp_options_ids(input.into());
         self
     }
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn set_dhcp_options_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dhcp_options_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dhcp_options_ids(input);
         self
     }
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn get_dhcp_options_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dhcp_options_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dhcp_options_ids()
     }
     /// Appends an item to `Filters`.
@@ -201,10 +175,7 @@ impl DescribeDhcpOptionsFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -35,12 +35,9 @@ impl SetSubnetsOutput {
 
 /// A builder for [`SetSubnetsOutput`](crate::operation::set_subnets::SetSubnetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSubnetsOutputBuilder {
-    pub(crate) availability_zones:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl SetSubnetsOutputBuilder {
         self
     }
     /// <p>Information about the subnets.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>Information about the subnets.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
@@ -76,10 +68,7 @@ impl SetSubnetsOutputBuilder {
         self
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }

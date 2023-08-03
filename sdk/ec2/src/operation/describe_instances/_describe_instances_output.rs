@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesOutputBuilder {
     pub(crate) reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeInstancesOutputBuilder {
         self
     }
     /// <p>Information about the reservations.</p>
-    pub fn set_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
-    ) -> Self {
+    pub fn set_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>) -> Self {
         self.reservations = input;
         self
     }
     /// <p>Information about the reservations.</p>
-    pub fn get_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+    pub fn get_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
         &self.reservations
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

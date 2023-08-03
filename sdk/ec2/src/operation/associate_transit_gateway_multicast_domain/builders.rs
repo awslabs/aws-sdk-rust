@@ -5,16 +5,16 @@ pub use crate::operation::associate_transit_gateway_multicast_domain::_associate
 
 impl AssociateTransitGatewayMulticastDomainInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_transit_gateway_multicast_domain();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl AssociateTransitGatewayMulticastDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayMulticastDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder,
+    inner: crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder,
 }
 impl AssociateTransitGatewayMulticastDomainFluentBuilder {
     /// Creates a new `AssociateTransitGatewayMulticastDomain`.
@@ -38,15 +38,24 @@ impl AssociateTransitGatewayMulticastDomainFluentBuilder {
         }
     }
     /// Access the AssociateTransitGatewayMulticastDomain as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_transit_gateway_multicast_domain::builders::AssociateTransitGatewayMulticastDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomain, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomain,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +64,19 @@ impl AssociateTransitGatewayMulticastDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -82,61 +94,58 @@ impl AssociateTransitGatewayMulticastDomainFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomain, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomain,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_multicast_domain_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_multicast_domain_id(input);
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_multicast_domain_id()
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_attachment_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_attachment_id(input);
         self
     }
     /// <p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_attachment_id()
     }
     /// Appends an item to `SubnetIds`.
@@ -149,10 +158,7 @@ impl AssociateTransitGatewayMulticastDomainFluentBuilder {
         self
     }
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

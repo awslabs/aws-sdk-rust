@@ -10,10 +10,7 @@ impl ListGroupResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_group_resources();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl ListGroupResourcesFluentBuilder {
         }
     }
     /// Access the ListGroupResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl ListGroupResourcesFluentBuilder {
             crate::operation::list_group_resources::ListGroupResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl ListGroupResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl ListGroupResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl ListGroupResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -124,22 +110,15 @@ impl ListGroupResourcesFluentBuilder {
             crate::operation::list_group_resources::ListGroupResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator {
-        crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator {
+        crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::new(self.handle, self.inner)
     }
     /// <important>
     /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
@@ -200,10 +179,7 @@ impl ListGroupResourcesFluentBuilder {
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
     /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -214,9 +190,7 @@ impl ListGroupResourcesFluentBuilder {
     /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
     /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
     /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or Amazon CloudFront stack-based queries).</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>

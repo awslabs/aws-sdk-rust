@@ -37,9 +37,7 @@ impl ListManagedResourcesFluentBuilder {
         }
     }
     /// Access the ListManagedResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_resources::builders::ListManagedResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_managed_resources::builders::ListManagedResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListManagedResourcesFluentBuilder {
             crate::operation::list_managed_resources::ListManagedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_resources::ListManagedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_resources::ListManagedResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListManagedResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListManagedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_resources::ListManagedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_resources::ListManagedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_resources::ListManagedResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListManagedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_resources::ListManagedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_resources::ListManagedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_resources::ListManagedResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListManagedResourcesFluentBuilder {
             crate::operation::list_managed_resources::ListManagedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_resources::ListManagedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_resources::ListManagedResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator {
-        crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator {
+        crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

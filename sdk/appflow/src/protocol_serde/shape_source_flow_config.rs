@@ -15,19 +15,13 @@ pub fn ser_source_flow_config(
     if let Some(var_4) = &input.source_connector_properties {
         #[allow(unused_mut)]
         let mut object_5 = object.key("sourceConnectorProperties").start_object();
-        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.incremental_pull_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("incrementalPullConfig").start_object();
-        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -35,17 +29,9 @@ pub fn ser_source_flow_config(
 
 pub(crate) fn de_source_flow_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SourceFlowConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SourceFlowConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,66 +41,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "connectorType" => {
-                                builder = builder.set_connector_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::ConnectorType::from(u.as_ref()))
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "connectorType" => {
+                            builder = builder.set_connector_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "apiVersion" => {
-                                builder = builder.set_api_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "connectorProfileName" => {
-                                builder = builder.set_connector_profile_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "sourceConnectorProperties" => {
-                                builder = builder.set_source_connector_properties(
-                                    crate::protocol_serde::shape_source_connector_properties::de_source_connector_properties(tokens)?
-                                );
-                            }
-                            "incrementalPullConfig" => {
-                                builder = builder.set_incremental_pull_config(
-                                    crate::protocol_serde::shape_incremental_pull_config::de_incremental_pull_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "apiVersion" => {
+                            builder = builder.set_api_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "connectorProfileName" => {
+                            builder = builder.set_connector_profile_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceConnectorProperties" => {
+                            builder = builder.set_source_connector_properties(
+                                crate::protocol_serde::shape_source_connector_properties::de_source_connector_properties(tokens)?,
+                            );
+                        }
+                        "incrementalPullConfig" => {
+                            builder = builder.set_incremental_pull_config(
+                                crate::protocol_serde::shape_incremental_pull_config::de_incremental_pull_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

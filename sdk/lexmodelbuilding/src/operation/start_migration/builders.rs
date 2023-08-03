@@ -10,10 +10,7 @@ impl StartMigrationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_migration::StartMigrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_migration::StartMigrationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_migration();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StartMigrationFluentBuilder {
         }
     }
     /// Access the StartMigration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_migration::builders::StartMigrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_migration::builders::StartMigrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl StartMigrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,18 +122,12 @@ impl StartMigrationFluentBuilder {
         self.inner.get_v1_bot_name()
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    pub fn v1_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v1_bot_version(input.into());
         self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    pub fn set_v1_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v1_bot_version(input);
         self
     }
@@ -203,10 +189,7 @@ impl StartMigrationFluentBuilder {
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn set_migration_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
+    pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
         self.inner = self.inner.set_migration_strategy(input);
         self
     }
@@ -215,9 +198,7 @@ impl StartMigrationFluentBuilder {
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn get_migration_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+    pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
         self.inner.get_migration_strategy()
     }
 }

@@ -8,8 +8,7 @@ pub struct GetAggregateConfigRuleComplianceSummaryOutput {
     pub group_by_key: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
     #[doc(hidden)]
-    pub aggregate_compliance_counts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
+    pub aggregate_compliance_counts: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl GetAggregateConfigRuleComplianceSummaryOutput {
         self.group_by_key.as_deref()
     }
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    pub fn aggregate_compliance_counts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregateComplianceCount]> {
+    pub fn aggregate_compliance_counts(&self) -> ::std::option::Option<&[crate::types::AggregateComplianceCount]> {
         self.aggregate_compliance_counts.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -38,20 +35,18 @@ impl ::aws_http::request_id::RequestId for GetAggregateConfigRuleComplianceSumma
 }
 impl GetAggregateConfigRuleComplianceSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput).
-    pub fn builder() -> crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryOutputBuilder
+    {
         crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummaryOutputBuilder {
     pub(crate) group_by_key: ::std::option::Option<::std::string::String>,
-    pub(crate) aggregate_compliance_counts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
+    pub(crate) aggregate_compliance_counts: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,27 +70,19 @@ impl GetAggregateConfigRuleComplianceSummaryOutputBuilder {
     /// To override the contents of this collection use [`set_aggregate_compliance_counts`](Self::set_aggregate_compliance_counts).
     ///
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    pub fn aggregate_compliance_counts(
-        mut self,
-        input: crate::types::AggregateComplianceCount,
-    ) -> Self {
+    pub fn aggregate_compliance_counts(mut self, input: crate::types::AggregateComplianceCount) -> Self {
         let mut v = self.aggregate_compliance_counts.unwrap_or_default();
         v.push(input);
         self.aggregate_compliance_counts = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    pub fn set_aggregate_compliance_counts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,
-    ) -> Self {
+    pub fn set_aggregate_compliance_counts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>) -> Self {
         self.aggregate_compliance_counts = input;
         self
     }
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    pub fn get_aggregate_compliance_counts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>> {
+    pub fn get_aggregate_compliance_counts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>> {
         &self.aggregate_compliance_counts
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -122,14 +109,11 @@ impl GetAggregateConfigRuleComplianceSummaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput).
-    pub fn build(self) -> crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput{
+    pub fn build(self) -> crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput {
         crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput {
-            group_by_key: self.group_by_key
-            ,
-            aggregate_compliance_counts: self.aggregate_compliance_counts
-            ,
-            next_token: self.next_token
-            ,
+            group_by_key: self.group_by_key,
+            aggregate_compliance_counts: self.aggregate_compliance_counts,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

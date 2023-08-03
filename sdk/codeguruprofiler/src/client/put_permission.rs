@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::put_permission::PutPermissionOutput::policy): <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
     ///   - [`revision_id(Option<String>)`](crate::operation::put_permission::PutPermissionOutput::revision_id): <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
     /// - On failure, responds with [`SdkError<PutPermissionError>`](crate::operation::put_permission::PutPermissionError)
-    pub fn put_permission(
-        &self,
-    ) -> crate::operation::put_permission::builders::PutPermissionFluentBuilder {
-        crate::operation::put_permission::builders::PutPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_permission(&self) -> crate::operation::put_permission::builders::PutPermissionFluentBuilder {
+        crate::operation::put_permission::builders::PutPermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -45,9 +45,7 @@ impl ExecuteQueryInput {
 
 /// A builder for [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteQueryInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl ExecuteQueryInputBuilder {
         &self.workspace_id
     }
     /// <p>The query statement.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query statement.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_statement = input;
         self
     }
@@ -121,12 +113,7 @@ impl ExecuteQueryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_query::ExecuteQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_query::ExecuteQueryInput {
             workspace_id: self.workspace_id,
             query_statement: self.query_statement,

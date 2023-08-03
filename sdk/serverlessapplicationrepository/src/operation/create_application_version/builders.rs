@@ -26,7 +26,7 @@ impl CreateApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder,
+    inner: crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder,
 }
 impl CreateApplicationVersionFluentBuilder {
     /// Creates a new `CreateApplicationVersion`.
@@ -37,10 +37,7 @@ impl CreateApplicationVersionFluentBuilder {
         }
     }
     /// Access the CreateApplicationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateApplicationVersionFluentBuilder {
             crate::operation::create_application_version::CreateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_version::CreateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application_version::CreateApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateApplicationVersionFluentBuilder {
             crate::operation::create_application_version::CreateApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application_version::CreateApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The semantic version of the new version.</p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
     /// <p>The semantic version of the new version.</p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -165,19 +139,13 @@ impl CreateApplicationVersionFluentBuilder {
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_archive_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_code_archive_url(input.into());
         self
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn set_source_code_archive_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_archive_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_code_archive_url(input);
         self
     }
@@ -187,18 +155,12 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner.get_source_code_archive_url()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_code_url(input.into());
         self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn set_source_code_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_code_url(input);
         self
     }
@@ -207,18 +169,12 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner.get_source_code_url()
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_body(input.into());
         self
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
     }

@@ -37,9 +37,7 @@ impl BridgeFlowOutput {
 
 /// A builder for [`BridgeFlowOutput`](crate::types::BridgeFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BridgeFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_source_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl BridgeFlowOutputBuilder {
         &self.flow_arn
     }
     /// The Amazon Resource Number (ARN) of the flow source.
-    pub fn flow_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Number (ARN) of the flow source.
-    pub fn set_flow_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_source_arn = input;
         self
     }

@@ -19,9 +19,7 @@ pub fn ser_create_data_source_from_rds_input(
         object.key("RoleARN").string(var_5.as_str());
     }
     if input.compute_statistics {
-        object
-            .key("ComputeStatistics")
-            .boolean(input.compute_statistics);
+        object.key("ComputeStatistics").boolean(input.compute_statistics);
     }
     Ok(())
 }

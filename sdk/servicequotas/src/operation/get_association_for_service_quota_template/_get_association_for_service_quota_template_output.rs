@@ -5,15 +5,12 @@
 pub struct GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
     #[doc(hidden)]
-    pub service_quota_template_association_status:
-        ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
+    pub service_quota_template_association_status: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
     _request_id: Option<String>,
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-    pub fn service_quota_template_association_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceQuotaTemplateAssociationStatus> {
+    pub fn service_quota_template_association_status(&self) -> ::std::option::Option<&crate::types::ServiceQuotaTemplateAssociationStatus> {
         self.service_quota_template_association_status.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for GetAssociationForServiceQuotaTemplate
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateOutputBuilder {
         crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplateOutputBuilder {
-    pub(crate) service_quota_template_association_status:
-        ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
+    pub(crate) service_quota_template_association_status: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
     _request_id: Option<String>,
 }
 impl GetAssociationForServiceQuotaTemplateOutputBuilder {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-    pub fn service_quota_template_association_status(
-        mut self,
-        input: crate::types::ServiceQuotaTemplateAssociationStatus,
-    ) -> Self {
+    pub fn service_quota_template_association_status(mut self, input: crate::types::ServiceQuotaTemplateAssociationStatus) -> Self {
         self.service_quota_template_association_status = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl GetAssociationForServiceQuotaTemplateOutputBuilder {
         self
     }
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-    pub fn get_service_quota_template_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus> {
+    pub fn get_service_quota_template_association_status(&self) -> &::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus> {
         &self.service_quota_template_association_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl GetAssociationForServiceQuotaTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput).
-    pub fn build(self) -> crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput{
+    pub fn build(self) -> crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput {
         crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput {
-            service_quota_template_association_status: self.service_quota_template_association_status
-            ,
+            service_quota_template_association_status: self.service_quota_template_association_status,
             _request_id: self._request_id,
         }
     }

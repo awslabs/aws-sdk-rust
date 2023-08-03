@@ -47,16 +47,14 @@ impl BatchGetRumMetricDefinitionsInput {
 }
 impl BatchGetRumMetricDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsInput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput).
-    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder {
         crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetRumMetricDefinitionsInput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
@@ -66,18 +64,12 @@ pub struct BatchGetRumMetricDefinitionsInputBuilder {
 }
 impl BatchGetRumMetricDefinitionsInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_monitor_name = input;
         self
     }
@@ -91,10 +83,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         self
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -104,19 +93,13 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -163,14 +146,12 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
-                app_monitor_name: self.app_monitor_name,
-                destination: self.destination,
-                destination_arn: self.destination_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
+            app_monitor_name: self.app_monitor_name,
+            destination: self.destination,
+            destination_arn: self.destination_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

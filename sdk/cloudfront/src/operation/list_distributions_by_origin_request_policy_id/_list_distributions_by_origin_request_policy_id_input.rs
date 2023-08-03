@@ -29,16 +29,15 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
 }
 impl ListDistributionsByOriginRequestPolicyIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
-    pub fn builder() -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder {
         crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByOriginRequestPolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,18 +73,12 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-    pub fn origin_request_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_request_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_request_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-    pub fn set_origin_request_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_request_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_request_policy_id = input;
         self
     }
@@ -94,16 +87,18 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
         &self.origin_request_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-                origin_request_policy_id: self.origin_request_policy_id
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+                origin_request_policy_id: self.origin_request_policy_id,
+            },
         )
     }
 }

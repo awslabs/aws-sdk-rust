@@ -26,18 +26,14 @@ impl CreateConnectionAliasInput {
 }
 impl CreateConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
-    pub fn builder(
-    ) -> crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder {
         crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionAliasInputBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -46,20 +42,14 @@ impl CreateConnectionAliasInputBuilder {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    pub fn connection_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    pub fn set_connection_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_string = input;
         self
     }
@@ -81,10 +71,7 @@ impl CreateConnectionAliasInputBuilder {
         self
     }
     /// <p>The tags to associate with the connection alias.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -95,15 +82,11 @@ impl CreateConnectionAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connection_alias::CreateConnectionAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_connection_alias::CreateConnectionAliasInput {
-                connection_string: self.connection_string,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_connection_alias::CreateConnectionAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_connection_alias::CreateConnectionAliasInput {
+            connection_string: self.connection_string,
+            tags: self.tags,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`configurations(Option<Vec<MatchmakingConfiguration>>)`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput::configurations): <p>A collection of requested matchmaking configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeMatchmakingConfigurationsError>`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError)
-    pub fn describe_matchmaking_configurations(&self) -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsFluentBuilder{
+    pub fn describe_matchmaking_configurations(
+        &self,
+    ) -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsFluentBuilder {
         crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

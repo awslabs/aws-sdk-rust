@@ -114,9 +114,7 @@ impl ClientVpnConnection {
 
 /// A builder for [`ClientVpnConnection`](crate::types::ClientVpnConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientVpnConnectionBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
@@ -131,23 +129,16 @@ pub struct ClientVpnConnectionBuilder {
     pub(crate) common_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
     pub(crate) connection_end_time: ::std::option::Option<::std::string::String>,
-    pub(crate) posture_compliance_statuses:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) posture_compliance_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClientVpnConnectionBuilder {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -170,18 +161,12 @@ impl ClientVpnConnectionBuilder {
         &self.timestamp
     }
     /// <p>The ID of the client connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -204,18 +189,12 @@ impl ClientVpnConnectionBuilder {
         &self.username
     }
     /// <p>The date and time the client connection was established.</p>
-    pub fn connection_established_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_established_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_established_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the client connection was established.</p>
-    pub fn set_connection_established_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_established_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_established_time = input;
         self
     }
@@ -224,18 +203,12 @@ impl ClientVpnConnectionBuilder {
         &self.connection_established_time
     }
     /// <p>The number of bytes sent by the client.</p>
-    pub fn ingress_bytes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingress_bytes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingress_bytes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of bytes sent by the client.</p>
-    pub fn set_ingress_bytes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingress_bytes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingress_bytes = input;
         self
     }
@@ -258,18 +231,12 @@ impl ClientVpnConnectionBuilder {
         &self.egress_bytes
     }
     /// <p>The number of packets sent by the client.</p>
-    pub fn ingress_packets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingress_packets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingress_packets = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of packets sent by the client.</p>
-    pub fn set_ingress_packets(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingress_packets(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingress_packets = input;
         self
     }
@@ -278,18 +245,12 @@ impl ClientVpnConnectionBuilder {
         &self.ingress_packets
     }
     /// <p>The number of packets received by the client.</p>
-    pub fn egress_packets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_packets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_packets = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of packets received by the client.</p>
-    pub fn set_egress_packets(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_egress_packets(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.egress_packets = input;
         self
     }
@@ -331,10 +292,7 @@ impl ClientVpnConnectionBuilder {
         self
     }
     /// <p>The current state of the client connection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnConnectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -343,18 +301,12 @@ impl ClientVpnConnectionBuilder {
         &self.status
     }
     /// <p>The date and time the client connection was terminated.</p>
-    pub fn connection_end_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the client connection was terminated.</p>
-    pub fn set_connection_end_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_end_time = input;
         self
     }
@@ -367,27 +319,19 @@ impl ClientVpnConnectionBuilder {
     /// To override the contents of this collection use [`set_posture_compliance_statuses`](Self::set_posture_compliance_statuses).
     ///
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
-    pub fn posture_compliance_statuses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn posture_compliance_statuses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.posture_compliance_statuses.unwrap_or_default();
         v.push(input.into());
         self.posture_compliance_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
-    pub fn set_posture_compliance_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_posture_compliance_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.posture_compliance_statuses = input;
         self
     }
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
-    pub fn get_posture_compliance_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_posture_compliance_statuses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.posture_compliance_statuses
     }
     /// Consumes the builder and constructs a [`ClientVpnConnection`](crate::types::ClientVpnConnection).

@@ -10,10 +10,7 @@ impl StartDeviceSyncInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_device_sync::StartDeviceSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_sync::StartDeviceSyncError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_device_sync();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl StartDeviceSyncFluentBuilder {
         }
     }
     /// Access the StartDeviceSync as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl StartDeviceSyncFluentBuilder {
             crate::operation::start_device_sync::StartDeviceSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_sync::StartDeviceSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl StartDeviceSyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl StartDeviceSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_sync::StartDeviceSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_sync::StartDeviceSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl StartDeviceSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_sync::StartDeviceSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_sync::StartDeviceSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl StartDeviceSyncFluentBuilder {
             crate::operation::start_device_sync::StartDeviceSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_device_sync::StartDeviceSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_device_sync::StartDeviceSyncError>,
     > {
         self.customize_middleware().await
     }
@@ -168,10 +152,7 @@ impl StartDeviceSyncFluentBuilder {
         self
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }

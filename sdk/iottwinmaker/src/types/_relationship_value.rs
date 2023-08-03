@@ -30,27 +30,19 @@ impl RelationshipValue {
 
 /// A builder for [`RelationshipValue`](crate::types::RelationshipValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationshipValueBuilder {
     pub(crate) target_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_component_name: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipValueBuilder {
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn target_entity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn set_target_entity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_entity_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl RelationshipValueBuilder {
         &self.target_entity_id
     }
     /// <p>The name of the target component associated with the relationship value.</p>
-    pub fn target_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target component associated with the relationship value.</p>
-    pub fn set_target_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_component_name = input;
         self
     }

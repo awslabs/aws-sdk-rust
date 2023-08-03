@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`old_action(Option<Action>)`](crate::operation::update_budget_action::UpdateBudgetActionOutput::old_action): <p> The previous action resource information. </p>
     ///   - [`new_action(Option<Action>)`](crate::operation::update_budget_action::UpdateBudgetActionOutput::new_action): <p> The updated action resource information. </p>
     /// - On failure, responds with [`SdkError<UpdateBudgetActionError>`](crate::operation::update_budget_action::UpdateBudgetActionError)
-    pub fn update_budget_action(
-        &self,
-    ) -> crate::operation::update_budget_action::builders::UpdateBudgetActionFluentBuilder {
-        crate::operation::update_budget_action::builders::UpdateBudgetActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_budget_action(&self) -> crate::operation::update_budget_action::builders::UpdateBudgetActionFluentBuilder {
+        crate::operation::update_budget_action::builders::UpdateBudgetActionFluentBuilder::new(self.handle.clone())
     }
 }

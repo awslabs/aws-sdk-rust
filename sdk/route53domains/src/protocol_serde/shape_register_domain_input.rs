@@ -40,9 +40,7 @@ pub fn ser_register_domain_input(
         object.key("PrivacyProtectAdminContact").boolean(*var_11);
     }
     if let Some(var_12) = &input.privacy_protect_registrant_contact {
-        object
-            .key("PrivacyProtectRegistrantContact")
-            .boolean(*var_12);
+        object.key("PrivacyProtectRegistrantContact").boolean(*var_12);
     }
     if let Some(var_13) = &input.privacy_protect_tech_contact {
         object.key("PrivacyProtectTechContact").boolean(*var_13);

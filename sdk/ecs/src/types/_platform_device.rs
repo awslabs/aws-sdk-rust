@@ -30,9 +30,7 @@ impl PlatformDevice {
 
 /// A builder for [`PlatformDevice`](crate::types::PlatformDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlatformDeviceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PlatformDeviceType>,
@@ -58,10 +56,7 @@ impl PlatformDeviceBuilder {
         self
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformDeviceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PlatformDeviceType>) -> Self {
         self.r#type = input;
         self
     }

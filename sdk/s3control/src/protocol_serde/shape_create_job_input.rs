@@ -23,10 +23,7 @@ pub fn ser_create_job_input_input(
     }
     if let Some(var_5) = &input.manifest_generator {
         let inner_writer = scope.start_el("ManifestGenerator");
-        crate::protocol_serde::shape_job_manifest_generator::ser_job_manifest_generator(
-            var_5,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_job_manifest_generator::ser_job_manifest_generator(var_5, inner_writer)?
     }
     if let Some(var_6) = &input.operation {
         let inner_writer = scope.start_el("Operation");

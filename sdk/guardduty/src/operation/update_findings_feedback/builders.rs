@@ -37,10 +37,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
         }
     }
     /// Access the UpdateFindingsFeedback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
             crate::operation::update_findings_feedback::UpdateFindingsFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_feedback::UpdateFindingsFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_feedback::UpdateFindingsFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_feedback::UpdateFindingsFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_feedback::UpdateFindingsFeedbackError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_feedback::UpdateFindingsFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_feedback::UpdateFindingsFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateFindingsFeedbackFluentBuilder {
             crate::operation::update_findings_feedback::UpdateFindingsFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_findings_feedback::UpdateFindingsFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_findings_feedback::UpdateFindingsFeedbackError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_ids()
     }
     /// <p>The feedback for the finding.</p>

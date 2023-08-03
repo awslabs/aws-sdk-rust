@@ -37,13 +37,7 @@
 /// Operators for Connect instance identifier filter
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceIdFilterOperator {
     /// Equals operator
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for InstanceIdFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "Eq" => InstanceIdFilterOperator::Eq,
-            other => InstanceIdFilterOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceIdFilterOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

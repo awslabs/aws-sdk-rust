@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for ListDistributionsByResponseHeadersPol
 }
 impl ListDistributionsByResponseHeadersPolicyIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdOutputBuilder{
-        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
+        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,
@@ -42,17 +42,12 @@ impl ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
         self
     }
     /// <p>A list of distribution IDs.</p>
-    pub fn set_distribution_id_list(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionIdList>,
-    ) -> Self {
+    pub fn set_distribution_id_list(mut self, input: ::std::option::Option<crate::types::DistributionIdList>) -> Self {
         self.distribution_id_list = input;
         self
     }
     /// <p>A list of distribution IDs.</p>
-    pub fn get_distribution_id_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionIdList> {
+    pub fn get_distribution_id_list(&self) -> &::std::option::Option<crate::types::DistributionIdList> {
         &self.distribution_id_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +60,9 @@ impl ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput).
-    pub fn build(self) -> crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput{
+    pub fn build(self) -> crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput {
         crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput {
-            distribution_id_list: self.distribution_id_list
-            ,
+            distribution_id_list: self.distribution_id_list,
             _request_id: self._request_id,
         }
     }

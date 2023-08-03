@@ -37,10 +37,7 @@ impl ListModelCardVersionsFluentBuilder {
         }
     }
     /// Access the ListModelCardVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListModelCardVersionsFluentBuilder {
             crate::operation::list_model_card_versions::ListModelCardVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_card_versions::ListModelCardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_card_versions::ListModelCardVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListModelCardVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListModelCardVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_card_versions::ListModelCardVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_card_versions::ListModelCardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_card_versions::ListModelCardVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListModelCardVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_card_versions::ListModelCardVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_card_versions::ListModelCardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_card_versions::ListModelCardVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListModelCardVersionsFluentBuilder {
             crate::operation::list_model_card_versions::ListModelCardVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_card_versions::ListModelCardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_card_versions::ListModelCardVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator {
-        crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator {
+        crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Only list model card versions that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,10 +121,7 @@ impl ListModelCardVersionsFluentBuilder {
         self
     }
     /// <p>Only list model card versions that were created after the time specified.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -157,10 +135,7 @@ impl ListModelCardVersionsFluentBuilder {
         self
     }
     /// <p>Only list model card versions that were created before the time specified.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -183,18 +158,12 @@ impl ListModelCardVersionsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>List model card versions for the model card with the specified name.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>List model card versions for the model card with the specified name.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
@@ -208,10 +177,7 @@ impl ListModelCardVersionsFluentBuilder {
         self
     }
     /// <p>Only list model card versions with the specified approval status.</p>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.inner = self.inner.set_model_card_status(input);
         self
     }
@@ -239,10 +205,7 @@ impl ListModelCardVersionsFluentBuilder {
         self
     }
     /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardVersionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelCardVersionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -256,10 +219,7 @@ impl ListModelCardVersionsFluentBuilder {
         self
     }
     /// <p>Sort model card versions by ascending or descending order.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ModelCardSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

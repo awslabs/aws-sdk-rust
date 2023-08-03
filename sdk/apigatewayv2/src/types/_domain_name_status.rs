@@ -40,13 +40,7 @@
 /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DomainNameStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DomainNameStatus {
             "PENDING_CERTIFICATE_REIMPORT" => DomainNameStatus::PendingCertificateReimport,
             "PENDING_OWNERSHIP_VERIFICATION" => DomainNameStatus::PendingOwnershipVerification,
             "UPDATING" => DomainNameStatus::Updating,
-            other => {
-                DomainNameStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DomainNameStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DomainNameStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "PENDING_CERTIFICATE_REIMPORT",
-            "PENDING_OWNERSHIP_VERIFICATION",
-            "UPDATING",
-        ]
+        &["AVAILABLE", "PENDING_CERTIFICATE_REIMPORT", "PENDING_OWNERSHIP_VERIFICATION", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DomainNameStatus {

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::operation::delete_cluster::DeleteClusterError)
-    pub fn delete_cluster(
-        &self,
-    ) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
-        crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cluster(&self) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
+        crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(self.handle.clone())
     }
 }

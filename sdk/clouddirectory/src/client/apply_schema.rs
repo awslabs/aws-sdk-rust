@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`applied_schema_arn(Option<String>)`](crate::operation::apply_schema::ApplySchemaOutput::applied_schema_arn): <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     ///   - [`directory_arn(Option<String>)`](crate::operation::apply_schema::ApplySchemaOutput::directory_arn): <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<ApplySchemaError>`](crate::operation::apply_schema::ApplySchemaError)
-    pub fn apply_schema(
-        &self,
-    ) -> crate::operation::apply_schema::builders::ApplySchemaFluentBuilder {
+    pub fn apply_schema(&self) -> crate::operation::apply_schema::builders::ApplySchemaFluentBuilder {
         crate::operation::apply_schema::builders::ApplySchemaFluentBuilder::new(self.handle.clone())
     }
 }

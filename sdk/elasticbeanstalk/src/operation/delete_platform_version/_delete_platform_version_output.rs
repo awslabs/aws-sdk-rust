@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeletePlatformVersionOutput {
 }
 impl DeletePlatformVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder {
         crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlatformVersionOutputBuilder {
     pub(crate) platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeletePlatformVersionOutputBuilder {
         self
     }
     /// <p>Detailed information about the version of the custom platform.</p>
-    pub fn set_platform_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformSummary>,
-    ) -> Self {
+    pub fn set_platform_summary(mut self, input: ::std::option::Option<crate::types::PlatformSummary>) -> Self {
         self.platform_summary = input;
         self
     }

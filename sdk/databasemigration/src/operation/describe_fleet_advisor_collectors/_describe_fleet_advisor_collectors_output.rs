@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetAdvisorCollectorsOutput 
 }
 impl DescribeFleetAdvisorCollectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder {
         crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsOutputBuilder {
     pub(crate) collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeFleetAdvisorCollectorsOutputBuilder {
         self
     }
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    pub fn set_collectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>,
-    ) -> Self {
+    pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>) -> Self {
         self.collectors = input;
         self
     }
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    pub fn get_collectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>> {
+    pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>> {
         &self.collectors
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -93,10 +86,7 @@ impl DescribeFleetAdvisorCollectorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput {
         crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput {
             collectors: self.collectors,
             next_token: self.next_token,

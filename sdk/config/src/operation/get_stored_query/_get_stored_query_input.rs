@@ -22,9 +22,7 @@ impl GetStoredQueryInput {
 
 /// A builder for [`GetStoredQueryInput`](crate::operation::get_stored_query::GetStoredQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStoredQueryInputBuilder {
     pub(crate) query_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetStoredQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetStoredQueryInput`](crate::operation::get_stored_query::GetStoredQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stored_query::GetStoredQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_stored_query::GetStoredQueryInput {
-            query_name: self.query_name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_stored_query::GetStoredQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_stored_query::GetStoredQueryInput { query_name: self.query_name })
     }
 }

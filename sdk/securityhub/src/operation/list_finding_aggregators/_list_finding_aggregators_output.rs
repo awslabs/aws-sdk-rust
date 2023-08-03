@@ -5,8 +5,7 @@
 pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     #[doc(hidden)]
-    pub finding_aggregators:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
+    pub finding_aggregators: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
     #[doc(hidden)]
@@ -31,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListFindingAggregatorsOutput {
 }
 impl ListFindingAggregatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregatorsOutput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder {
         crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingAggregatorsOutput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingAggregatorsOutputBuilder {
-    pub(crate) finding_aggregators:
-        ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
+    pub(crate) finding_aggregators: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +56,12 @@ impl ListFindingAggregatorsOutputBuilder {
         self
     }
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    pub fn set_finding_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
-    ) -> Self {
+    pub fn set_finding_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>) -> Self {
         self.finding_aggregators = input;
         self
     }
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    pub fn get_finding_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>> {
+    pub fn get_finding_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>> {
         &self.finding_aggregators
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>

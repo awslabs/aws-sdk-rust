@@ -129,9 +129,7 @@ impl TargetGroup {
         self.protocol_version.as_deref()
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn ip_address_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
 }
@@ -144,9 +142,7 @@ impl TargetGroup {
 
 /// A builder for [`TargetGroup`](crate::types::TargetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,
@@ -169,18 +165,12 @@ pub struct TargetGroupBuilder {
 }
 impl TargetGroupBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -189,18 +179,12 @@ impl TargetGroupBuilder {
         &self.target_group_arn
     }
     /// <p>The name of the target group.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target group.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_name = input;
         self
     }
@@ -214,10 +198,7 @@ impl TargetGroupBuilder {
         self
     }
     /// <p>The protocol to use for routing traffic to the targets.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.protocol = input;
         self
     }
@@ -259,10 +240,7 @@ impl TargetGroupBuilder {
         self
     }
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.health_check_protocol = input;
         self
     }
@@ -271,18 +249,12 @@ impl TargetGroupBuilder {
         &self.health_check_protocol
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_port = input;
         self
     }
@@ -361,18 +333,12 @@ impl TargetGroupBuilder {
         &self.unhealthy_threshold_count
     }
     /// <p>The destination for health checks on the targets.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination for health checks on the targets.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
@@ -399,27 +365,19 @@ impl TargetGroupBuilder {
     /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    pub fn load_balancer_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_arns.unwrap_or_default();
         v.push(input.into());
         self.load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    pub fn set_load_balancer_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.load_balancer_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    pub fn get_load_balancer_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.load_balancer_arns
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
@@ -428,10 +386,7 @@ impl TargetGroupBuilder {
         self
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTypeEnum>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetTypeEnum>) -> Self {
         self.target_type = input;
         self
     }
@@ -440,18 +395,12 @@ impl TargetGroupBuilder {
         &self.target_type
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    pub fn protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_version = input;
         self
     }
@@ -465,17 +414,12 @@ impl TargetGroupBuilder {
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn get_ip_address_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`TargetGroup`](crate::types::TargetGroup).

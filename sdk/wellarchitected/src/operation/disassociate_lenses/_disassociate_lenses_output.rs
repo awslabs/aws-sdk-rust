@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateLensesOutput {
 }
 impl DisassociateLensesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLensesOutput`](crate::operation::disassociate_lenses::DisassociateLensesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder {
         crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLensesOutput`](crate::operation::disassociate_lenses::DisassociateLensesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLensesOutputBuilder {
     _request_id: Option<String>,
 }

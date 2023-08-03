@@ -30,9 +30,7 @@ impl AccessControlPolicy {
 
 /// A builder for [`AccessControlPolicy`](crate::types::AccessControlPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlPolicyBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
@@ -50,10 +48,7 @@ impl AccessControlPolicyBuilder {
         self
     }
     /// <p>A list of grants.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
         self.grants = input;
         self
     }

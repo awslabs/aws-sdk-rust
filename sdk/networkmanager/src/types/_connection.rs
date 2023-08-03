@@ -93,9 +93,7 @@ impl Connection {
 
 /// A builder for [`Connection`](crate::types::Connection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct ConnectionBuilder {
 }
 impl ConnectionBuilder {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -131,18 +123,12 @@ impl ConnectionBuilder {
         &self.connection_id
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -151,18 +137,12 @@ impl ConnectionBuilder {
         &self.connection_arn
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -185,18 +165,12 @@ impl ConnectionBuilder {
         &self.device_id
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn connected_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn set_connected_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connected_device_id = input;
         self
     }
@@ -219,18 +193,12 @@ impl ConnectionBuilder {
         &self.link_id
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn connected_link_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_link_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn set_connected_link_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connected_link_id = input;
         self
     }
@@ -258,10 +226,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The date and time that the connection was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -275,10 +240,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The state of the connection.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.state = input;
         self
     }
@@ -298,10 +260,7 @@ impl ConnectionBuilder {
         self
     }
     /// <p>The tags for the connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

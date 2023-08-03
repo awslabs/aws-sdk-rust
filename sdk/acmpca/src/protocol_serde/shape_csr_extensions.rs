@@ -15,10 +15,7 @@ pub fn ser_csr_extensions(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_access_description::ser_access_description(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_access_description::ser_access_description(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -29,17 +26,9 @@ pub fn ser_csr_extensions(
 
 pub(crate) fn de_csr_extensions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CsrExtensions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CsrExtensions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,36 +38,29 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "KeyUsage" => {
-                                builder = builder.set_key_usage(
-                                    crate::protocol_serde::shape_key_usage::de_key_usage(tokens)?,
-                                );
-                            }
-                            "SubjectInformationAccess" => {
-                                builder = builder.set_subject_information_access(
-                                    crate::protocol_serde::shape_access_description_list::de_access_description_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "KeyUsage" => {
+                            builder = builder.set_key_usage(crate::protocol_serde::shape_key_usage::de_key_usage(tokens)?);
                         }
-                    }
+                        "SubjectInformationAccess" => {
+                            builder = builder.set_subject_information_access(
+                                crate::protocol_serde::shape_access_description_list::de_access_description_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

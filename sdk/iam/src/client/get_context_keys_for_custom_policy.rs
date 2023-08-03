@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetContextKeysForCustomPolicyOutput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput) with field(s):
     ///   - [`context_key_names(Option<Vec<String>>)`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput::context_key_names): <p>The list of context keys that are referenced in the input policies.</p>
     /// - On failure, responds with [`SdkError<GetContextKeysForCustomPolicyError>`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError)
-    pub fn get_context_keys_for_custom_policy(&self) -> crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyFluentBuilder{
+    pub fn get_context_keys_for_custom_policy(
+        &self,
+    ) -> crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyFluentBuilder {
         crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyFluentBuilder::new(self.handle.clone())
     }
 }

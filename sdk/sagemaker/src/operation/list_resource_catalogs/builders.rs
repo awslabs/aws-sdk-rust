@@ -37,9 +37,7 @@ impl ListResourceCatalogsFluentBuilder {
         }
     }
     /// Access the ListResourceCatalogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_catalogs::builders::ListResourceCatalogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resource_catalogs::builders::ListResourceCatalogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListResourceCatalogsFluentBuilder {
             crate::operation::list_resource_catalogs::ListResourceCatalogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_catalogs::ListResourceCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_catalogs::ListResourceCatalogsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListResourceCatalogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListResourceCatalogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_catalogs::ListResourceCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_catalogs::ListResourceCatalogsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListResourceCatalogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_catalogs::ListResourceCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_catalogs::ListResourceCatalogsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListResourceCatalogsFluentBuilder {
             crate::operation::list_resource_catalogs::ListResourceCatalogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_catalogs::ListResourceCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_catalogs::ListResourceCatalogsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator {
-        crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator {
+        crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator::new(self.handle, self.inner)
     }
     /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListResourceCatalogsFluentBuilder {
         self
     }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -176,10 +149,7 @@ impl ListResourceCatalogsFluentBuilder {
         self
     }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -193,10 +163,7 @@ impl ListResourceCatalogsFluentBuilder {
         self
     }
     /// <p> The order in which the resource catalogs are listed. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCatalogSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -210,10 +177,7 @@ impl ListResourceCatalogsFluentBuilder {
         self
     }
     /// <p> The value on which the resource catalog list is sorted. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCatalogSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

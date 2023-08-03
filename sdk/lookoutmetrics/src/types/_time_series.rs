@@ -37,29 +37,20 @@ impl TimeSeries {
 
 /// A builder for [`TimeSeries`](crate::types::TimeSeries).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesBuilder {
     pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
-    pub(crate) dimension_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,
+    pub(crate) dimension_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,
     pub(crate) metric_value_list: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl TimeSeriesBuilder {
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn set_time_series_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_series_id = input;
         self
     }
@@ -79,17 +70,12 @@ impl TimeSeriesBuilder {
         self
     }
     /// <p>The dimensions of the metric.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,
-    ) -> Self {
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>) -> Self {
         self.dimension_list = input;
         self
     }
     /// <p>The dimensions of the metric.</p>
-    pub fn get_dimension_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>> {
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>> {
         &self.dimension_list
     }
     /// Appends an item to `metric_value_list`.
@@ -104,10 +90,7 @@ impl TimeSeriesBuilder {
         self
     }
     /// <p>The values for the metric.</p>
-    pub fn set_metric_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_metric_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.metric_value_list = input;
         self
     }

@@ -23,9 +23,7 @@ impl AppBundleSummary {
 
 /// A builder for [`AppBundleSummary`](crate::types::AppBundleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppBundleSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

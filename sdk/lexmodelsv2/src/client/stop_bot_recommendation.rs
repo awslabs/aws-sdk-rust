@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`bot_recommendation_status(Option<BotRecommendationStatus>)`](crate::operation::stop_bot_recommendation::StopBotRecommendationOutput::bot_recommendation_status): <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     ///   - [`bot_recommendation_id(Option<String>)`](crate::operation::stop_bot_recommendation::StopBotRecommendationOutput::bot_recommendation_id): <p>The unique identifier of the bot recommendation that is being stopped.</p>
     /// - On failure, responds with [`SdkError<StopBotRecommendationError>`](crate::operation::stop_bot_recommendation::StopBotRecommendationError)
-    pub fn stop_bot_recommendation(
-        &self,
-    ) -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationFluentBuilder
-    {
-        crate::operation::stop_bot_recommendation::builders::StopBotRecommendationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_bot_recommendation(&self) -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationFluentBuilder {
+        crate::operation::stop_bot_recommendation::builders::StopBotRecommendationFluentBuilder::new(self.handle.clone())
     }
 }

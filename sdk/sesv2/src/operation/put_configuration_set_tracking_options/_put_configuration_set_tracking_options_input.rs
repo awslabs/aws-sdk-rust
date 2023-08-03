@@ -23,34 +23,26 @@ impl PutConfigurationSetTrackingOptionsInput {
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder {
         crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl PutConfigurationSetTrackingOptionsInputBuilder {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The domain to use to track open and click events.</p>
-    pub fn custom_redirect_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_redirect_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_redirect_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain to use to track open and click events.</p>
-    pub fn set_custom_redirect_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_redirect_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_redirect_domain = input;
         self
     }
@@ -79,14 +65,17 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         &self.custom_redirect_domain
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                custom_redirect_domain: self.custom_redirect_domain
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                custom_redirect_domain: self.custom_redirect_domain,
+            },
         )
     }
 }

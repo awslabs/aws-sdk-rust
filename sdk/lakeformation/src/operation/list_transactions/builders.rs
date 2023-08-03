@@ -10,10 +10,7 @@ impl ListTransactionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_transactions();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListTransactionsFluentBuilder {
         }
     }
     /// Access the ListTransactions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListTransactionsFluentBuilder {
             crate::operation::list_transactions::ListTransactions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListTransactionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListTransactionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListTransactionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListTransactionsFluentBuilder {
             crate::operation::list_transactions::ListTransactions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_transactions::paginator::ListTransactionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_transactions::paginator::ListTransactionsPaginator {
-        crate::operation::list_transactions::paginator::ListTransactionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_transactions::paginator::ListTransactionsPaginator {
+        crate::operation::list_transactions::paginator::ListTransactionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,17 +133,12 @@ impl ListTransactionsFluentBuilder {
         self
     }
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::TransactionStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
     /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
         self.inner.get_status_filter()
     }
     /// <p>The maximum number of transactions to return in a single call.</p>

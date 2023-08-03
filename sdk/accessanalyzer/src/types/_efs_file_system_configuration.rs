@@ -28,26 +28,18 @@ impl EfsFileSystemConfiguration {
 
 /// A builder for [`EfsFileSystemConfiguration`](crate::types::EfsFileSystemConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EfsFileSystemConfigurationBuilder {
     pub(crate) file_system_policy: ::std::option::Option<::std::string::String>,
 }
 impl EfsFileSystemConfigurationBuilder {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-    pub fn file_system_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-    pub fn set_file_system_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_policy = input;
         self
     }

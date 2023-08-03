@@ -42,9 +42,7 @@ impl ListSharedEndpointsFluentBuilder {
         }
     }
     /// Access the ListSharedEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl ListSharedEndpointsFluentBuilder {
             crate::operation::list_shared_endpoints::ListSharedEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl ListSharedEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl ListSharedEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_endpoints::ListSharedEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl ListSharedEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_endpoints::ListSharedEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +110,15 @@ impl ListSharedEndpointsFluentBuilder {
             crate::operation::list_shared_endpoints::ListSharedEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_shared_endpoints::paginator::ListSharedEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_shared_endpoints::paginator::ListSharedEndpointsPaginator {
-        crate::operation::list_shared_endpoints::paginator::ListSharedEndpointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_shared_endpoints::paginator::ListSharedEndpointsPaginator {
+        crate::operation::list_shared_endpoints::paginator::ListSharedEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

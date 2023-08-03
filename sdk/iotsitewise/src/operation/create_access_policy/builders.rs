@@ -10,10 +10,7 @@ impl CreateAccessPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAccessPolicyFluentBuilder {
         }
     }
     /// Access the CreateAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAccessPolicyFluentBuilder {
             crate::operation::create_access_policy::CreateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_policy::CreateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAccessPolicyFluentBuilder {
             crate::operation::create_access_policy::CreateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_policy::CreateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl CreateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn set_access_policy_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_access_policy_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.inner = self.inner.set_access_policy_identity(input);
         self
     }
@@ -145,10 +126,7 @@ impl CreateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn set_access_policy_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::Resource>,
-    ) -> Self {
+    pub fn set_access_policy_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_access_policy_resource(input);
         self
     }
@@ -162,10 +140,7 @@ impl CreateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn set_access_policy_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_access_policy_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.inner = self.inner.set_access_policy_permission(input);
         self
     }
@@ -192,30 +167,17 @@ impl CreateAccessPolicyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

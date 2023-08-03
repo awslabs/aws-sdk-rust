@@ -13,9 +13,7 @@ pub struct BudgetPerformanceHistory {
     pub budget_type: ::std::option::Option<crate::types::BudgetType>,
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
     #[doc(hidden)]
-    pub cost_filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The history of the cost types for a budget during the specified time period.</p>
     #[doc(hidden)]
     pub cost_types: ::std::option::Option<crate::types::CostTypes>,
@@ -24,8 +22,7 @@ pub struct BudgetPerformanceHistory {
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
     #[doc(hidden)]
-    pub budgeted_and_actual_amounts_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
+    pub budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistory {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -38,11 +35,7 @@ impl BudgetPerformanceHistory {
         self.budget_type.as_ref()
     }
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
-    pub fn cost_filters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn cost_filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.cost_filters.as_ref()
     }
     /// <p>The history of the cost types for a budget during the specified time period.</p>
@@ -54,9 +47,7 @@ impl BudgetPerformanceHistory {
         self.time_unit.as_ref()
     }
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
-    pub fn budgeted_and_actual_amounts_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BudgetedAndActualAmounts]> {
+    pub fn budgeted_and_actual_amounts_list(&self) -> ::std::option::Option<&[crate::types::BudgetedAndActualAmounts]> {
         self.budgeted_and_actual_amounts_list.as_deref()
     }
 }
@@ -69,19 +60,14 @@ impl BudgetPerformanceHistory {
 
 /// A builder for [`BudgetPerformanceHistory`](crate::types::BudgetPerformanceHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BudgetPerformanceHistoryBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) budget_type: ::std::option::Option<crate::types::BudgetType>,
-    pub(crate) cost_filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) cost_types: ::std::option::Option<crate::types::CostTypes>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
-    pub(crate) budgeted_and_actual_amounts_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
+    pub(crate) budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistoryBuilder {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -106,10 +92,7 @@ impl BudgetPerformanceHistoryBuilder {
     }
     /// <p> The type of a budget. It must be one of the following types: </p>
     /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
-    pub fn set_budget_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BudgetType>,
-    ) -> Self {
+    pub fn set_budget_type(mut self, input: ::std::option::Option<crate::types::BudgetType>) -> Self {
         self.budget_type = input;
         self
     }
@@ -123,11 +106,7 @@ impl BudgetPerformanceHistoryBuilder {
     /// To override the contents of this collection use [`set_cost_filters`](Self::set_cost_filters).
     ///
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
-    pub fn cost_filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn cost_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.cost_filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.cost_filters = ::std::option::Option::Some(hash_map);
@@ -136,12 +115,7 @@ impl BudgetPerformanceHistoryBuilder {
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
     pub fn set_cost_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.cost_filters = input;
         self
@@ -149,9 +123,7 @@ impl BudgetPerformanceHistoryBuilder {
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
     pub fn get_cost_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.cost_filters
     }
     /// <p>The history of the cost types for a budget during the specified time period.</p>
@@ -187,10 +159,7 @@ impl BudgetPerformanceHistoryBuilder {
     /// To override the contents of this collection use [`set_budgeted_and_actual_amounts_list`](Self::set_budgeted_and_actual_amounts_list).
     ///
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
-    pub fn budgeted_and_actual_amounts_list(
-        mut self,
-        input: crate::types::BudgetedAndActualAmounts,
-    ) -> Self {
+    pub fn budgeted_and_actual_amounts_list(mut self, input: crate::types::BudgetedAndActualAmounts) -> Self {
         let mut v = self.budgeted_and_actual_amounts_list.unwrap_or_default();
         v.push(input);
         self.budgeted_and_actual_amounts_list = ::std::option::Option::Some(v);
@@ -205,9 +174,7 @@ impl BudgetPerformanceHistoryBuilder {
         self
     }
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
-    pub fn get_budgeted_and_actual_amounts_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>> {
+    pub fn get_budgeted_and_actual_amounts_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>> {
         &self.budgeted_and_actual_amounts_list
     }
     /// Consumes the builder and constructs a [`BudgetPerformanceHistory`](crate::types::BudgetPerformanceHistory).

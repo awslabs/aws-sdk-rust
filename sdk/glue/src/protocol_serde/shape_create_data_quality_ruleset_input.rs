@@ -25,10 +25,7 @@ pub fn ser_create_data_quality_ruleset_input(
     if let Some(var_8) = &input.target_table {
         #[allow(unused_mut)]
         let mut object_9 = object.key("TargetTable").start_object();
-        crate::protocol_serde::shape_data_quality_target_table::ser_data_quality_target_table(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_data_quality_target_table::ser_data_quality_target_table(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.client_token {

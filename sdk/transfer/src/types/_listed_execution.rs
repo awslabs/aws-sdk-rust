@@ -44,9 +44,7 @@ impl ListedExecution {
 
 /// A builder for [`ListedExecution`](crate::types::ListedExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedExecutionBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_file_location: ::std::option::Option<crate::types::FileLocation>,
@@ -74,10 +72,7 @@ impl ListedExecutionBuilder {
         self
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    pub fn set_initial_file_location(
-        mut self,
-        input: ::std::option::Option<crate::types::FileLocation>,
-    ) -> Self {
+    pub fn set_initial_file_location(mut self, input: ::std::option::Option<crate::types::FileLocation>) -> Self {
         self.initial_file_location = input;
         self
     }
@@ -91,10 +86,7 @@ impl ListedExecutionBuilder {
         self
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    pub fn set_service_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceMetadata>,
-    ) -> Self {
+    pub fn set_service_metadata(mut self, input: ::std::option::Option<crate::types::ServiceMetadata>) -> Self {
         self.service_metadata = input;
         self
     }
@@ -108,10 +100,7 @@ impl ListedExecutionBuilder {
         self
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }

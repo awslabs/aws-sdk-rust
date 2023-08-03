@@ -26,7 +26,7 @@ impl DescribeServiceAccessPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder,
+    inner: crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder,
 }
 impl DescribeServiceAccessPoliciesFluentBuilder {
     /// Creates a new `DescribeServiceAccessPolicies`.
@@ -37,7 +37,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
         }
     }
     /// Access the DescribeServiceAccessPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
             crate::operation::describe_service_access_policies::DescribeServiceAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeServiceAccessPoliciesFluentBuilder {
             crate::operation::describe_service_access_policies::DescribeServiceAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesError>,
     > {
         self.customize_middleware().await
     }

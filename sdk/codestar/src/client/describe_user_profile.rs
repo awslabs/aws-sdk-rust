@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::created_timestamp): <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::last_modified_timestamp): <p>The date and time when the user profile was last modified, in timestamp format.</p>
     /// - On failure, responds with [`SdkError<DescribeUserProfileError>`](crate::operation::describe_user_profile::DescribeUserProfileError)
-    pub fn describe_user_profile(
-        &self,
-    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user_profile(&self) -> crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

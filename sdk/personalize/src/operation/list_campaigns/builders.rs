@@ -10,10 +10,7 @@ impl ListCampaignsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_campaigns::ListCampaignsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_campaigns::ListCampaignsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_campaigns::ListCampaignsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_campaigns();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCampaignsFluentBuilder {
         }
     }
     /// Access the ListCampaigns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_campaigns::builders::ListCampaignsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_campaigns::builders::ListCampaignsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListCampaignsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListCampaignsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_campaigns::paginator::ListCampaignsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
-        crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
+        crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteClientVpnRouteOutput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput) with field(s):
     ///   - [`status(Option<ClientVpnRouteStatus>)`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput::status): <p>The current state of the route.</p>
     /// - On failure, responds with [`SdkError<DeleteClientVpnRouteError>`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError)
-    pub fn delete_client_vpn_route(
-        &self,
-    ) -> crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteFluentBuilder
-    {
-        crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_client_vpn_route(&self) -> crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteFluentBuilder {
+        crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,16 +36,14 @@ impl ListRealtimeContactAnalysisSegmentsInput {
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
-    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder{
+    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder {
         crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -110,19 +108,19 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput {
-                instance_id: self.instance_id
-                ,
-                contact_id: self.contact_id
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }

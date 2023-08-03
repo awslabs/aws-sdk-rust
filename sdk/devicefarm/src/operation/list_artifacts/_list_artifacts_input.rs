@@ -49,9 +49,7 @@ impl ListArtifactsInput {
 
 /// A builder for [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactCategory>,
@@ -90,10 +88,7 @@ impl ListArtifactsInputBuilder {
     /// <li> <p>LOG</p> </li>
     /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactCategory>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactCategory>) -> Self {
         self.r#type = input;
         self
     }
@@ -124,10 +119,7 @@ impl ListArtifactsInputBuilder {
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_artifacts::ListArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_artifacts::ListArtifactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_artifacts::ListArtifactsInput {
             arn: self.arn,
             r#type: self.r#type,

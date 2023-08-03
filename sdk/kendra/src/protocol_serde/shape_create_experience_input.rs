@@ -15,10 +15,7 @@ pub fn ser_create_experience_input(
     if let Some(var_4) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_experience_configuration::ser_experience_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_experience_configuration::ser_experience_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.description {

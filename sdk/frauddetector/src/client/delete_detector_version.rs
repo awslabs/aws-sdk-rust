@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`detector_version_id(impl ::std::convert::Into<String>)`](crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder::detector_version_id) / [`set_detector_version_id(Option<String>)`](crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder::set_detector_version_id): <p>The ID of the detector version to delete.</p>
     /// - On success, responds with [`DeleteDetectorVersionOutput`](crate::operation::delete_detector_version::DeleteDetectorVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteDetectorVersionError>`](crate::operation::delete_detector_version::DeleteDetectorVersionError)
-    pub fn delete_detector_version(
-        &self,
-    ) -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder
-    {
-        crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_detector_version(&self) -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder {
+        crate::operation::delete_detector_version::builders::DeleteDetectorVersionFluentBuilder::new(self.handle.clone())
     }
 }

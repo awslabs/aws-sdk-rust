@@ -35,9 +35,7 @@ impl UntagOutput {
 
 /// A builder for [`UntagOutput`](crate::operation::untag::UntagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl UntagOutputBuilder {
         self
     }
     /// <p>The keys of the tags that were removed.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keys = input;
         self
     }

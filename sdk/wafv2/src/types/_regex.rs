@@ -23,9 +23,7 @@ impl Regex {
 
 /// A builder for [`Regex`](crate::types::Regex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegexBuilder {
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,
 }

@@ -59,9 +59,7 @@ impl VehicleSummary {
 
 /// A builder for [`VehicleSummary`](crate::types::VehicleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VehicleSummaryBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -100,18 +98,12 @@ impl VehicleSummaryBuilder {
         &self.arn
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_manifest_arn = input;
         self
     }
@@ -120,18 +112,12 @@ impl VehicleSummaryBuilder {
         &self.model_manifest_arn
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn decoder_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decoder_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn set_decoder_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.decoder_manifest_arn = input;
         self
     }
@@ -145,10 +131,7 @@ impl VehicleSummaryBuilder {
         self
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -162,17 +145,12 @@ impl VehicleSummaryBuilder {
         self
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`VehicleSummary`](crate::types::VehicleSummary).

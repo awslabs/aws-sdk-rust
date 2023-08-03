@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`user_access_logging_settings(Option<Vec<UserAccessLoggingSettingsSummary>>)`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput::user_access_logging_settings): <p>The user access logging settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListUserAccessLoggingSettingsError>`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError)
-    pub fn list_user_access_logging_settings(&self) -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder{
+    pub fn list_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder {
         crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

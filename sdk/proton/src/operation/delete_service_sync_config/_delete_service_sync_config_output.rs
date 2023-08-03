@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteServiceSyncConfigOutput {
 }
 impl DeleteServiceSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigOutputBuilder {
         crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteServiceSyncConfigOutputBuilder {
         self
     }
     /// <p>The detailed data for the service sync config.</p>
-    pub fn set_service_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSyncConfig>,
-    ) -> Self {
+    pub fn set_service_sync_config(mut self, input: ::std::option::Option<crate::types::ServiceSyncConfig>) -> Self {
         self.service_sync_config = input;
         self
     }
     /// <p>The detailed data for the service sync config.</p>
-    pub fn get_service_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
+    pub fn get_service_sync_config(&self) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
         &self.service_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DeleteServiceSyncConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput {
+    pub fn build(self) -> crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput {
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput {
             service_sync_config: self.service_sync_config,
             _request_id: self._request_id,

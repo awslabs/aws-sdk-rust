@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_invalidation::CreateInvalidationOutput::location): <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     ///   - [`invalidation(Option<Invalidation>)`](crate::operation::create_invalidation::CreateInvalidationOutput::invalidation): <p>The invalidation's information.</p>
     /// - On failure, responds with [`SdkError<CreateInvalidationError>`](crate::operation::create_invalidation::CreateInvalidationError)
-    pub fn create_invalidation(
-        &self,
-    ) -> crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder {
-        crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_invalidation(&self) -> crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder {
+        crate::operation::create_invalidation::builders::CreateInvalidationFluentBuilder::new(self.handle.clone())
     }
 }

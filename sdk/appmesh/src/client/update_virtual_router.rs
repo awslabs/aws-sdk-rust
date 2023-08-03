@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVirtualRouterOutput`](crate::operation::update_virtual_router::UpdateVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::operation::update_virtual_router::UpdateVirtualRouterOutput::virtual_router): <p>A full description of the virtual router that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualRouterError>`](crate::operation::update_virtual_router::UpdateVirtualRouterError)
-    pub fn update_virtual_router(
-        &self,
-    ) -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterFluentBuilder {
-        crate::operation::update_virtual_router::builders::UpdateVirtualRouterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_virtual_router(&self) -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterFluentBuilder {
+        crate::operation::update_virtual_router::builders::UpdateVirtualRouterFluentBuilder::new(self.handle.clone())
     }
 }

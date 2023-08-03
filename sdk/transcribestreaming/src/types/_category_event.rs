@@ -9,9 +9,7 @@ pub struct CategoryEvent {
     pub matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     #[doc(hidden)]
-    pub matched_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
-    >,
+    pub matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
 }
 impl CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
@@ -19,11 +17,7 @@ impl CategoryEvent {
         self.matched_categories.as_deref()
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn matched_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
-    > {
+    pub fn matched_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>> {
         self.matched_details.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl CategoryEvent {
 
 /// A builder for [`CategoryEvent`](crate::types::CategoryEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryEventBuilder {
     pub(crate) matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) matched_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
-    >,
+    pub(crate) matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
 }
 impl CategoryEventBuilder {
     /// Appends an item to `matched_categories`.
@@ -51,27 +41,19 @@ impl CategoryEventBuilder {
     /// To override the contents of this collection use [`set_matched_categories`](Self::set_matched_categories).
     ///
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn matched_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn matched_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.matched_categories.unwrap_or_default();
         v.push(input.into());
         self.matched_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn set_matched_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_matched_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.matched_categories = input;
         self
     }
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn get_matched_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_matched_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.matched_categories
     }
     /// Adds a key-value pair to `matched_details`.
@@ -79,11 +61,7 @@ impl CategoryEventBuilder {
     /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
     ///
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn matched_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PointsOfInterest,
-    ) -> Self {
+    pub fn matched_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PointsOfInterest) -> Self {
         let mut hash_map = self.matched_details.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.matched_details = ::std::option::Option::Some(hash_map);
@@ -92,19 +70,13 @@ impl CategoryEventBuilder {
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn set_matched_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
     ) -> Self {
         self.matched_details = input;
         self
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn get_matched_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
-    > {
+    pub fn get_matched_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>> {
         &self.matched_details
     }
     /// Consumes the builder and constructs a [`CategoryEvent`](crate::types::CategoryEvent).

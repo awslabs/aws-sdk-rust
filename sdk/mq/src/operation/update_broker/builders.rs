@@ -10,10 +10,7 @@ impl UpdateBrokerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_broker::UpdateBrokerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker::UpdateBrokerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker::UpdateBrokerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_broker();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateBrokerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_broker::UpdateBroker,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_broker::UpdateBroker, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_broker::UpdateBrokerError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateBrokerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateBrokerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_broker::UpdateBroker,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_broker::UpdateBroker, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_broker::UpdateBrokerError>,
     > {
         self.customize_middleware().await
@@ -118,17 +106,12 @@ impl UpdateBrokerFluentBuilder {
         self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn set_authentication_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationStrategy>,
-    ) -> Self {
+    pub fn set_authentication_strategy(mut self, input: ::std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
         self.inner = self.inner.set_authentication_strategy(input);
         self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn get_authentication_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
+    pub fn get_authentication_strategy(&self) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
         self.inner.get_authentication_strategy()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -165,10 +148,7 @@ impl UpdateBrokerFluentBuilder {
         self
     }
     /// <p>A list of information about the configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationId>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationId>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -177,18 +157,12 @@ impl UpdateBrokerFluentBuilder {
         self.inner.get_configuration()
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -197,18 +171,12 @@ impl UpdateBrokerFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn host_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_instance_type(input.into());
         self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_instance_type(input);
         self
     }
@@ -222,17 +190,12 @@ impl UpdateBrokerFluentBuilder {
         self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_ldap_server_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::LdapServerMetadataInput>,
-    ) -> Self {
+    pub fn set_ldap_server_metadata(mut self, input: ::std::option::Option<crate::types::LdapServerMetadataInput>) -> Self {
         self.inner = self.inner.set_ldap_server_metadata(input);
         self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn get_ldap_server_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::LdapServerMetadataInput> {
+    pub fn get_ldap_server_metadata(&self) -> &::std::option::Option<crate::types::LdapServerMetadataInput> {
         self.inner.get_ldap_server_metadata()
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
@@ -255,17 +218,12 @@ impl UpdateBrokerFluentBuilder {
         self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn set_maintenance_window_start_time(
-        mut self,
-        input: ::std::option::Option<crate::types::WeeklyStartTime>,
-    ) -> Self {
+    pub fn set_maintenance_window_start_time(mut self, input: ::std::option::Option<crate::types::WeeklyStartTime>) -> Self {
         self.inner = self.inner.set_maintenance_window_start_time(input);
         self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn get_maintenance_window_start_time(
-        &self,
-    ) -> &::std::option::Option<crate::types::WeeklyStartTime> {
+    pub fn get_maintenance_window_start_time(&self) -> &::std::option::Option<crate::types::WeeklyStartTime> {
         self.inner.get_maintenance_window_start_time()
     }
     /// Appends an item to `SecurityGroups`.
@@ -273,25 +231,17 @@ impl UpdateBrokerFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
@@ -300,17 +250,12 @@ impl UpdateBrokerFluentBuilder {
         self
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
-    pub fn set_data_replication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationMode>,
-    ) -> Self {
+    pub fn set_data_replication_mode(mut self, input: ::std::option::Option<crate::types::DataReplicationMode>) -> Self {
         self.inner = self.inner.set_data_replication_mode(input);
         self
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
-    pub fn get_data_replication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataReplicationMode> {
+    pub fn get_data_replication_mode(&self) -> &::std::option::Option<crate::types::DataReplicationMode> {
         self.inner.get_data_replication_mode()
     }
 }

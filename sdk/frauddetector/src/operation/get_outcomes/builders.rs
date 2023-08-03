@@ -10,10 +10,7 @@ impl GetOutcomesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_outcomes::GetOutcomesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_outcomes::GetOutcomesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_outcomes::GetOutcomesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_outcomes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetOutcomesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_outcomes::GetOutcomes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_outcomes::GetOutcomes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_outcomes::GetOutcomesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetOutcomesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetOutcomesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_outcomes::GetOutcomes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_outcomes::GetOutcomes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_outcomes::GetOutcomesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetOutcomesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_outcomes::paginator::GetOutcomesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_outcomes::paginator::GetOutcomesPaginator {
-        crate::operation::get_outcomes::paginator::GetOutcomesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_outcomes::paginator::GetOutcomesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the outcome or outcomes to get.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

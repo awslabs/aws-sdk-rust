@@ -12,10 +12,7 @@ pub fn ser_spectrum_config(
     if let Some(var_3) = &input.bandwidth {
         #[allow(unused_mut)]
         let mut object_4 = object.key("bandwidth").start_object();
-        crate::protocol_serde::shape_frequency_bandwidth::ser_frequency_bandwidth(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_frequency_bandwidth::ser_frequency_bandwidth(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.polarization {
@@ -26,17 +23,9 @@ pub fn ser_spectrum_config(
 
 pub(crate) fn de_spectrum_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SpectrumConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SpectrumConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,48 +35,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "centerFrequency" => {
-                                builder = builder.set_center_frequency(
-                                    crate::protocol_serde::shape_frequency::de_frequency(tokens)?,
-                                );
-                            }
-                            "bandwidth" => {
-                                builder = builder.set_bandwidth(
-                                    crate::protocol_serde::shape_frequency_bandwidth::de_frequency_bandwidth(tokens)?
-                                );
-                            }
-                            "polarization" => {
-                                builder = builder.set_polarization(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Polarization::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "centerFrequency" => {
+                            builder = builder.set_center_frequency(crate::protocol_serde::shape_frequency::de_frequency(tokens)?);
                         }
-                    }
+                        "bandwidth" => {
+                            builder = builder.set_bandwidth(crate::protocol_serde::shape_frequency_bandwidth::de_frequency_bandwidth(tokens)?);
+                        }
+                        "polarization" => {
+                            builder = builder.set_polarization(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Polarization::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

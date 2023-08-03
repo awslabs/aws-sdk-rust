@@ -14,8 +14,7 @@ pub struct GetAppLaunchConfigurationOutput {
     pub auto_launch: ::std::option::Option<bool>,
     /// <p>The launch configurations for server groups in this application.</p>
     #[doc(hidden)]
-    pub server_group_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub server_group_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppLaunchConfigurationOutput {
@@ -32,9 +31,7 @@ impl GetAppLaunchConfigurationOutput {
         self.auto_launch
     }
     /// <p>The launch configurations for server groups in this application.</p>
-    pub fn server_group_launch_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
+    pub fn server_group_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
         self.server_group_launch_configurations.as_deref()
     }
 }
@@ -45,22 +42,19 @@ impl ::aws_http::request_id::RequestId for GetAppLaunchConfigurationOutput {
 }
 impl GetAppLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAppLaunchConfigurationOutput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationOutputBuilder {
         crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppLaunchConfigurationOutput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppLaunchConfigurationOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_launch: ::std::option::Option<bool>,
-    pub(crate) server_group_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub(crate) server_group_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppLaunchConfigurationOutputBuilder {
@@ -111,10 +105,7 @@ impl GetAppLaunchConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_server_group_launch_configurations`](Self::set_server_group_launch_configurations).
     ///
     /// <p>The launch configurations for server groups in this application.</p>
-    pub fn server_group_launch_configurations(
-        mut self,
-        input: crate::types::ServerGroupLaunchConfiguration,
-    ) -> Self {
+    pub fn server_group_launch_configurations(mut self, input: crate::types::ServerGroupLaunchConfiguration) -> Self {
         let mut v = self.server_group_launch_configurations.unwrap_or_default();
         v.push(input);
         self.server_group_launch_configurations = ::std::option::Option::Some(v);
@@ -129,9 +120,7 @@ impl GetAppLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>The launch configurations for server groups in this application.</p>
-    pub fn get_server_group_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
+    pub fn get_server_group_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
         &self.server_group_launch_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -144,9 +133,7 @@ impl GetAppLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAppLaunchConfigurationOutput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput {
         crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput {
             app_id: self.app_id,
             role_name: self.role_name,

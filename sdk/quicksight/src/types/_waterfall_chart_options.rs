@@ -23,26 +23,18 @@ impl WaterfallChartOptions {
 
 /// A builder for [`WaterfallChartOptions`](crate::types::WaterfallChartOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaterfallChartOptionsBuilder {
     pub(crate) total_bar_label: ::std::option::Option<::std::string::String>,
 }
 impl WaterfallChartOptionsBuilder {
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    pub fn total_bar_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn total_bar_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_bar_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    pub fn set_total_bar_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_total_bar_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_bar_label = input;
         self
     }

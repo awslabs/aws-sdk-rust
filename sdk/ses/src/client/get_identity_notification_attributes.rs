@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput) with field(s):
     ///   - [`notification_attributes(Option<HashMap<String, IdentityNotificationAttributes>>)`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput::notification_attributes): <p>A map of Identity to IdentityNotificationAttributes.</p>
     /// - On failure, responds with [`SdkError<GetIdentityNotificationAttributesError>`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError)
-    pub fn get_identity_notification_attributes(&self) -> crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesFluentBuilder{
+    pub fn get_identity_notification_attributes(
+        &self,
+    ) -> crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesFluentBuilder {
         crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesFluentBuilder::new(self.handle.clone())
     }
 }

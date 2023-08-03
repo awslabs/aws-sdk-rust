@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MacAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for MacAlgorithm {
             "HMAC_SHA512" => MacAlgorithm::HmacSha512,
             "ISO9797_ALGORITHM1" => MacAlgorithm::Iso9797Algorithm1,
             "ISO9797_ALGORITHM3" => MacAlgorithm::Iso9797Algorithm3,
-            other => {
-                MacAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MacAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

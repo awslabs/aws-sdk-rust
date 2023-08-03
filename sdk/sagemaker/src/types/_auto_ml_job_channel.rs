@@ -60,9 +60,7 @@ impl AutoMlJobChannel {
 
 /// A builder for [`AutoMlJobChannel`](crate::types::AutoMlJobChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlJobChannelBuilder {
     pub(crate) channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl AutoMlJobChannelBuilder {
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p> <note>
     /// <p>The type of channel defaults to <code>training</code> for the time-series forecasting problem type.</p>
     /// </note>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::AutoMlChannelType>) -> Self {
         self.channel_type = input;
         self
     }
@@ -131,10 +126,7 @@ impl AutoMlJobChannelBuilder {
         self
     }
     /// <p>The allowed compression types depend on the input format and problem type. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs on tabular data only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
         self.compression_type = input;
         self
     }
@@ -148,10 +140,7 @@ impl AutoMlJobChannelBuilder {
         self
     }
     /// <p>The data source for an AutoML channel (Required).</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::AutoMlDataSource>) -> Self {
         self.data_source = input;
         self
     }

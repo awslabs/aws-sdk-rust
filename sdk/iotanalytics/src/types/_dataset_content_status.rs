@@ -30,9 +30,7 @@ impl DatasetContentStatus {
 
 /// A builder for [`DatasetContentStatus`](crate::types::DatasetContentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetContentStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::DatasetContentState>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DatasetContentStatusBuilder {
         self
     }
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetContentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DatasetContentState>) -> Self {
         self.state = input;
         self
     }

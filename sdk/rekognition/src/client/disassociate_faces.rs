@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`unsuccessful_face_disassociations(Option<Vec<UnsuccessfulFaceDisassociation>>)`](crate::operation::disassociate_faces::DisassociateFacesOutput::unsuccessful_face_disassociations): <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
     ///   - [`user_status(Option<UserStatus>)`](crate::operation::disassociate_faces::DisassociateFacesOutput::user_status): <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
     /// - On failure, responds with [`SdkError<DisassociateFacesError>`](crate::operation::disassociate_faces::DisassociateFacesError)
-    pub fn disassociate_faces(
-        &self,
-    ) -> crate::operation::disassociate_faces::builders::DisassociateFacesFluentBuilder {
-        crate::operation::disassociate_faces::builders::DisassociateFacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_faces(&self) -> crate::operation::disassociate_faces::builders::DisassociateFacesFluentBuilder {
+        crate::operation::disassociate_faces::builders::DisassociateFacesFluentBuilder::new(self.handle.clone())
     }
 }

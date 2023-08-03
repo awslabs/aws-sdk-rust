@@ -5,8 +5,7 @@
 pub struct ListAssessmentFrameworksOutput {
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     #[doc(hidden)]
-    pub framework_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
+    pub framework_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssessmentFrameworksOutput {
 }
 impl ListAssessmentFrameworksOutput {
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
-    pub fn framework_metadata_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentFrameworkMetadata]> {
+    pub fn framework_metadata_list(&self) -> ::std::option::Option<&[crate::types::AssessmentFrameworkMetadata]> {
         self.framework_metadata_list.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentFrameworksOutput {
 }
 impl ListAssessmentFrameworksOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworksOutput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksOutputBuilder {
         crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentFrameworksOutput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworksOutputBuilder {
-    pub(crate) framework_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
+    pub(crate) framework_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListAssessmentFrameworksOutputBuilder {
     /// To override the contents of this collection use [`set_framework_metadata_list`](Self::set_framework_metadata_list).
     ///
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
-    pub fn framework_metadata_list(
-        mut self,
-        input: crate::types::AssessmentFrameworkMetadata,
-    ) -> Self {
+    pub fn framework_metadata_list(mut self, input: crate::types::AssessmentFrameworkMetadata) -> Self {
         let mut v = self.framework_metadata_list.unwrap_or_default();
         v.push(input);
         self.framework_metadata_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
-    pub fn set_framework_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
-    ) -> Self {
+    pub fn set_framework_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>) -> Self {
         self.framework_metadata_list = input;
         self
     }
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
-    pub fn get_framework_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>> {
+    pub fn get_framework_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>> {
         &self.framework_metadata_list
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -102,9 +86,7 @@ impl ListAssessmentFrameworksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworksOutput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput {
+    pub fn build(self) -> crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput {
         crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput {
             framework_metadata_list: self.framework_metadata_list,
             next_token: self.next_token,

@@ -30,18 +30,14 @@ impl DeleteApplicationVersionInput {
 }
 impl DeleteApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder {
         crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationVersionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct DeleteApplicationVersionInputBuilder {
 }
 impl DeleteApplicationVersionInputBuilder {
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -69,18 +59,12 @@ impl DeleteApplicationVersionInputBuilder {
         &self.application_name
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the version to delete.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -109,12 +93,10 @@ impl DeleteApplicationVersionInputBuilder {
         crate::operation::delete_application_version::DeleteApplicationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_application_version::DeleteApplicationVersionInput {
-                application_name: self.application_name,
-                version_label: self.version_label,
-                delete_source_bundle: self.delete_source_bundle,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_application_version::DeleteApplicationVersionInput {
+            application_name: self.application_name,
+            version_label: self.version_label,
+            delete_source_bundle: self.delete_source_bundle,
+        })
     }
 }

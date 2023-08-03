@@ -114,9 +114,7 @@ impl ::std::fmt::Debug for UpdateServiceInstanceInput {
 }
 impl UpdateServiceInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder {
         crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder::default()
     }
 }
@@ -212,10 +210,7 @@ impl UpdateServiceInstanceInputBuilder {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentUpdateType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentUpdateType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -242,9 +237,7 @@ impl UpdateServiceInstanceInputBuilder {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn get_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
         &self.deployment_type
     }
     /// <p>The formatted specification that defines the service instance update.</p>
@@ -262,18 +255,12 @@ impl UpdateServiceInstanceInputBuilder {
         &self.spec
     }
     /// <p>The major version of the service template to update.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the service template to update.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -282,18 +269,12 @@ impl UpdateServiceInstanceInputBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the service template to update.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version of the service template to update.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }
@@ -318,21 +299,17 @@ impl UpdateServiceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_instance::UpdateServiceInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_instance::UpdateServiceInstanceInput {
-                name: self.name,
-                service_name: self.service_name,
-                deployment_type: self.deployment_type,
-                spec: self.spec,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_service_instance::UpdateServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_service_instance::UpdateServiceInstanceInput {
+            name: self.name,
+            service_name: self.service_name,
+            deployment_type: self.deployment_type,
+            spec: self.spec,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateServiceInstanceInputBuilder {

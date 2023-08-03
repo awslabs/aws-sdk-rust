@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListServiceProfilesOutput {
 }
 impl ListServiceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::operation::list_service_profiles::ListServiceProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder {
-        crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder {
+        crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceProfilesOutput`](crate::operation::list_service_profiles::ListServiceProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) service_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>>,
+    pub(crate) service_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>>,
     _request_id: Option<String>,
 }
 impl ListServiceProfilesOutputBuilder {
@@ -73,17 +68,12 @@ impl ListServiceProfilesOutputBuilder {
         self
     }
     /// <p>The list of service profiles.</p>
-    pub fn set_service_profile_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>>,
-    ) -> Self {
+    pub fn set_service_profile_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>>) -> Self {
         self.service_profile_list = input;
         self
     }
     /// <p>The list of service profiles.</p>
-    pub fn get_service_profile_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>> {
+    pub fn get_service_profile_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>> {
         &self.service_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

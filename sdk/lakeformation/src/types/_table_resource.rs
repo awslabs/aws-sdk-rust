@@ -46,9 +46,7 @@ impl TableResource {
 
 /// A builder for [`TableResource`](crate::types::TableResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableResourceBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ impl TableResourceBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -112,10 +104,7 @@ impl TableResourceBuilder {
     }
     /// <p>A wildcard object representing every table under a database.</p>
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
-    pub fn set_table_wildcard(
-        mut self,
-        input: ::std::option::Option<crate::types::TableWildcard>,
-    ) -> Self {
+    pub fn set_table_wildcard(mut self, input: ::std::option::Option<crate::types::TableWildcard>) -> Self {
         self.table_wildcard = input;
         self
     }

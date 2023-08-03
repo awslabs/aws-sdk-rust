@@ -22,16 +22,14 @@ impl ListServicePipelineProvisionedResourcesInput {
 }
 impl ListServicePipelineProvisionedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListServicePipelineProvisionedResourcesInput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput).
-    pub fn builder() -> crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesInputBuilder {
         crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServicePipelineProvisionedResourcesInput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicePipelineProvisionedResourcesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServicePipelineProvisionedResourcesInput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput {
-                service_name: self.service_name
-                ,
-                next_token: self.next_token
-                ,
-            }
+                service_name: self.service_name,
+                next_token: self.next_token,
+            },
         )
     }
 }

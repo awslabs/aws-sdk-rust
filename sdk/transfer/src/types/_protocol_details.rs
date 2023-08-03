@@ -53,9 +53,7 @@ impl ProtocolDetails {
     /// <p>Not all FTPS clients perform TLS session resumption. So, if you choose to enforce TLS session resumption, you prevent any connections from FTPS clients that don't perform the protocol negotiation. To determine whether or not you can use the <code>ENFORCED</code> value, you need to test your clients.</p>
     /// </note> </li>
     /// </ul>
-    pub fn tls_session_resumption_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TlsSessionResumptionMode> {
+    pub fn tls_session_resumption_mode(&self) -> ::std::option::Option<&crate::types::TlsSessionResumptionMode> {
         self.tls_session_resumption_mode.as_ref()
     }
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
@@ -80,13 +78,10 @@ impl ProtocolDetails {
 
 /// A builder for [`ProtocolDetails`](crate::types::ProtocolDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtocolDetailsBuilder {
     pub(crate) passive_ip: ::std::option::Option<::std::string::String>,
-    pub(crate) tls_session_resumption_mode:
-        ::std::option::Option<crate::types::TlsSessionResumptionMode>,
+    pub(crate) tls_session_resumption_mode: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
     pub(crate) set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
     pub(crate) as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
 }
@@ -131,10 +126,7 @@ impl ProtocolDetailsBuilder {
     /// <p>Not all FTPS clients perform TLS session resumption. So, if you choose to enforce TLS session resumption, you prevent any connections from FTPS clients that don't perform the protocol negotiation. To determine whether or not you can use the <code>ENFORCED</code> value, you need to test your clients.</p>
     /// </note> </li>
     /// </ul>
-    pub fn tls_session_resumption_mode(
-        mut self,
-        input: crate::types::TlsSessionResumptionMode,
-    ) -> Self {
+    pub fn tls_session_resumption_mode(mut self, input: crate::types::TlsSessionResumptionMode) -> Self {
         self.tls_session_resumption_mode = ::std::option::Option::Some(input);
         self
     }
@@ -146,10 +138,7 @@ impl ProtocolDetailsBuilder {
     /// <p>Not all FTPS clients perform TLS session resumption. So, if you choose to enforce TLS session resumption, you prevent any connections from FTPS clients that don't perform the protocol negotiation. To determine whether or not you can use the <code>ENFORCED</code> value, you need to test your clients.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_tls_session_resumption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
-    ) -> Self {
+    pub fn set_tls_session_resumption_mode(mut self, input: ::std::option::Option<crate::types::TlsSessionResumptionMode>) -> Self {
         self.tls_session_resumption_mode = input;
         self
     }
@@ -161,9 +150,7 @@ impl ProtocolDetailsBuilder {
     /// <p>Not all FTPS clients perform TLS session resumption. So, if you choose to enforce TLS session resumption, you prevent any connections from FTPS clients that don't perform the protocol negotiation. To determine whether or not you can use the <code>ENFORCED</code> value, you need to test your clients.</p>
     /// </note> </li>
     /// </ul>
-    pub fn get_tls_session_resumption_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TlsSessionResumptionMode> {
+    pub fn get_tls_session_resumption_mode(&self) -> &::std::option::Option<crate::types::TlsSessionResumptionMode> {
         &self.tls_session_resumption_mode
     }
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
@@ -180,10 +167,7 @@ impl ProtocolDetailsBuilder {
     /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.</p> <note>
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
-    pub fn set_set_stat_option(
-        mut self,
-        input: ::std::option::Option<crate::types::SetStatOption>,
-    ) -> Self {
+    pub fn set_set_stat_option(mut self, input: ::std::option::Option<crate::types::SetStatOption>) -> Self {
         self.set_stat_option = input;
         self
     }
@@ -207,17 +191,12 @@ impl ProtocolDetailsBuilder {
         self
     }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
-    pub fn set_as2_transports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
-    ) -> Self {
+    pub fn set_as2_transports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>) -> Self {
         self.as2_transports = input;
         self
     }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
-    pub fn get_as2_transports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::As2Transport>> {
+    pub fn get_as2_transports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::As2Transport>> {
         &self.as2_transports
     }
     /// Consumes the builder and constructs a [`ProtocolDetails`](crate::types::ProtocolDetails).

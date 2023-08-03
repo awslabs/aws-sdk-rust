@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResolverDnssecValidationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -73,13 +67,9 @@ impl ::std::convert::From<&str> for ResolverDnssecValidationStatus {
             "DISABLING" => ResolverDnssecValidationStatus::Disabling,
             "ENABLED" => ResolverDnssecValidationStatus::Enabled,
             "ENABLING" => ResolverDnssecValidationStatus::Enabling,
-            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => {
-                ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting
-            }
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting,
             "USE_LOCAL_RESOURCE_SETTING" => ResolverDnssecValidationStatus::UseLocalResourceSetting,
-            other => ResolverDnssecValidationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ResolverDnssecValidationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,9 +88,7 @@ impl ResolverDnssecValidationStatus {
             ResolverDnssecValidationStatus::Disabling => "DISABLING",
             ResolverDnssecValidationStatus::Enabled => "ENABLED",
             ResolverDnssecValidationStatus::Enabling => "ENABLING",
-            ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => {
-                "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"
-            }
+            ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING",
             ResolverDnssecValidationStatus::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             ResolverDnssecValidationStatus::Unknown(value) => value.as_str(),
         }

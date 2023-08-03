@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput) with field(s):
     ///   - [`backup_description(Option<BackupDescription>)`](crate::operation::delete_backup::DeleteBackupOutput::backup_description): <p>Contains the description of the backup created for the table.</p>
     /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::operation::delete_backup::DeleteBackupError)
-    pub fn delete_backup(
-        &self,
-    ) -> crate::operation::delete_backup::builders::DeleteBackupFluentBuilder {
-        crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backup(&self) -> crate::operation::delete_backup::builders::DeleteBackupFluentBuilder {
+        crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::new(self.handle.clone())
     }
 }

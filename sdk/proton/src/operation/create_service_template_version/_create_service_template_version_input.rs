@@ -21,8 +21,7 @@ pub struct CreateServiceTemplateVersionInput {
     pub source: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     #[doc(hidden)]
-    pub compatible_environment_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
@@ -30,9 +29,7 @@ pub struct CreateServiceTemplateVersionInput {
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_component_sources: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    >,
+    pub supported_component_sources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl CreateServiceTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
@@ -57,9 +54,7 @@ impl CreateServiceTemplateVersionInput {
         self.source.as_ref()
     }
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CompatibleEnvironmentTemplateInput]> {
+    pub fn compatible_environment_templates(&self) -> ::std::option::Option<&[crate::types::CompatibleEnvironmentTemplateInput]> {
         self.compatible_environment_templates.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
@@ -69,9 +64,7 @@ impl CreateServiceTemplateVersionInput {
     }
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
+    pub fn supported_component_sources(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
         self.supported_component_sources.as_deref()
     }
 }
@@ -83,21 +76,15 @@ impl ::std::fmt::Debug for CreateServiceTemplateVersionInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("major_version", &self.major_version);
         formatter.field("source", &self.source);
-        formatter.field(
-            "compatible_environment_templates",
-            &self.compatible_environment_templates,
-        );
+        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "supported_component_sources",
-            &self.supported_component_sources,
-        );
+        formatter.field("supported_component_sources", &self.supported_component_sources);
         formatter.finish()
     }
 }
 impl CreateServiceTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceTemplateVersionInput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionInput).
-    pub fn builder() -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder {
         crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder::default()
     }
 }
@@ -111,12 +98,9 @@ pub struct CreateServiceTemplateVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
-    pub(crate) compatible_environment_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    pub(crate) compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) supported_component_sources: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    >,
+    pub(crate) supported_component_sources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl CreateServiceTemplateVersionInputBuilder {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
@@ -134,18 +118,12 @@ impl CreateServiceTemplateVersionInputBuilder {
         &self.client_token
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -169,19 +147,13 @@ impl CreateServiceTemplateVersionInputBuilder {
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }
@@ -196,10 +168,7 @@ impl CreateServiceTemplateVersionInputBuilder {
         self
     }
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::TemplateVersionSourceInput>) -> Self {
         self.source = input;
         self
     }
@@ -212,10 +181,7 @@ impl CreateServiceTemplateVersionInputBuilder {
     /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
     ///
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(
-        mut self,
-        input: crate::types::CompatibleEnvironmentTemplateInput,
-    ) -> Self {
+    pub fn compatible_environment_templates(mut self, input: crate::types::CompatibleEnvironmentTemplateInput) -> Self {
         let mut v = self.compatible_environment_templates.unwrap_or_default();
         v.push(input);
         self.compatible_environment_templates = ::std::option::Option::Some(v);
@@ -224,18 +190,13 @@ impl CreateServiceTemplateVersionInputBuilder {
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub fn set_compatible_environment_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     ) -> Self {
         self.compatible_environment_templates = input;
         self
     }
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn get_compatible_environment_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>
-    {
+    pub fn get_compatible_environment_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>> {
         &self.compatible_environment_templates
     }
     /// Appends an item to `tags`.
@@ -252,10 +213,7 @@ impl CreateServiceTemplateVersionInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -270,10 +228,7 @@ impl CreateServiceTemplateVersionInputBuilder {
     ///
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        mut self,
-        input: crate::types::ServiceTemplateSupportedComponentSourceType,
-    ) -> Self {
+    pub fn supported_component_sources(mut self, input: crate::types::ServiceTemplateSupportedComponentSourceType) -> Self {
         let mut v = self.supported_component_sources.unwrap_or_default();
         v.push(input);
         self.supported_component_sources = ::std::option::Option::Some(v);
@@ -283,9 +238,7 @@ impl CreateServiceTemplateVersionInputBuilder {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_supported_component_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
     ) -> Self {
         self.supported_component_sources = input;
         self
@@ -294,9 +247,7 @@ impl CreateServiceTemplateVersionInputBuilder {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn get_supported_component_sources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>> {
         &self.supported_component_sources
     }
     /// Consumes the builder and constructs a [`CreateServiceTemplateVersionInput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionInput).
@@ -306,18 +257,16 @@ impl CreateServiceTemplateVersionInputBuilder {
         crate::operation::create_service_template_version::CreateServiceTemplateVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_template_version::CreateServiceTemplateVersionInput {
-                client_token: self.client_token,
-                template_name: self.template_name,
-                description: self.description,
-                major_version: self.major_version,
-                source: self.source,
-                compatible_environment_templates: self.compatible_environment_templates,
-                tags: self.tags,
-                supported_component_sources: self.supported_component_sources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_service_template_version::CreateServiceTemplateVersionInput {
+            client_token: self.client_token,
+            template_name: self.template_name,
+            description: self.description,
+            major_version: self.major_version,
+            source: self.source,
+            compatible_environment_templates: self.compatible_environment_templates,
+            tags: self.tags,
+            supported_component_sources: self.supported_component_sources,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateServiceTemplateVersionInputBuilder {
@@ -328,15 +277,9 @@ impl ::std::fmt::Debug for CreateServiceTemplateVersionInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("major_version", &self.major_version);
         formatter.field("source", &self.source);
-        formatter.field(
-            "compatible_environment_templates",
-            &self.compatible_environment_templates,
-        );
+        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "supported_component_sources",
-            &self.supported_component_sources,
-        );
+        formatter.field("supported_component_sources", &self.supported_component_sources);
         formatter.finish()
     }
 }

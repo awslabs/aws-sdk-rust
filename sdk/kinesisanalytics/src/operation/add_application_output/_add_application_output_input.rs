@@ -30,17 +30,14 @@ impl AddApplicationOutputInput {
 }
 impl AddApplicationOutputInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputInput`](crate::operation::add_application_output::AddApplicationOutputInput).
-    pub fn builder(
-    ) -> crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder {
+    pub fn builder() -> crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder {
         crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationOutputInput`](crate::operation::add_application_output::AddApplicationOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationOutputInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -48,18 +45,12 @@ pub struct AddApplicationOutputInputBuilder {
 }
 impl AddApplicationOutputInputBuilder {
     /// <p>Name of the application to which you want to add the output configuration.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the application to which you want to add the output configuration.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -98,16 +89,12 @@ impl AddApplicationOutputInputBuilder {
     /// Consumes the builder and constructs a [`AddApplicationOutputInput`](crate::operation::add_application_output::AddApplicationOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_output::AddApplicationOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_application_output::AddApplicationOutputInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                output: self.output,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_application_output::AddApplicationOutputInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_application_output::AddApplicationOutputInput {
+            application_name: self.application_name,
+            current_application_version_id: self.current_application_version_id,
+            output: self.output,
+        })
     }
 }

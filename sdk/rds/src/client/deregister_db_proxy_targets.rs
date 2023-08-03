@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`db_cluster_identifiers(Vec<String>)`](crate::operation::deregister_db_proxy_targets::builders::DeregisterDBProxyTargetsFluentBuilder::db_cluster_identifiers) / [`set_db_cluster_identifiers(Option<Vec<String>>)`](crate::operation::deregister_db_proxy_targets::builders::DeregisterDBProxyTargetsFluentBuilder::set_db_cluster_identifiers): <p>One or more DB cluster identifiers.</p>
     /// - On success, responds with [`DeregisterDbProxyTargetsOutput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput)
     /// - On failure, responds with [`SdkError<DeregisterDBProxyTargetsError>`](crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError)
-    pub fn deregister_db_proxy_targets(&self) -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDBProxyTargetsFluentBuilder{
+    pub fn deregister_db_proxy_targets(&self) -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDBProxyTargetsFluentBuilder {
         crate::operation::deregister_db_proxy_targets::builders::DeregisterDBProxyTargetsFluentBuilder::new(self.handle.clone())
     }
 }

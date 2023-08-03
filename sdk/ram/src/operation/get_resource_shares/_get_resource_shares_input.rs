@@ -41,9 +41,7 @@ impl GetResourceSharesInput {
         self.resource_share_arns.as_deref()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    pub fn resource_share_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceShareStatus> {
+    pub fn resource_share_status(&self) -> ::std::option::Option<&crate::types::ResourceShareStatus> {
         self.resource_share_status.as_ref()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
@@ -81,17 +79,14 @@ impl GetResourceSharesInput {
 }
 impl GetResourceSharesInput {
     /// Creates a new builder-style object to manufacture [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder {
         crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSharesInputBuilder {
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_share_status: ::std::option::Option<crate::types::ResourceShareStatus>,
@@ -109,27 +104,19 @@ impl GetResourceSharesInputBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_arns = input;
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
@@ -138,17 +125,12 @@ impl GetResourceSharesInputBuilder {
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    pub fn set_resource_share_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareStatus>,
-    ) -> Self {
+    pub fn set_resource_share_status(mut self, input: ::std::option::Option<crate::types::ResourceShareStatus>) -> Self {
         self.resource_share_status = input;
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    pub fn get_resource_share_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareStatus> {
+    pub fn get_resource_share_status(&self) -> &::std::option::Option<crate::types::ResourceShareStatus> {
         &self.resource_share_status
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
@@ -165,10 +147,7 @@ impl GetResourceSharesInputBuilder {
     /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
     /// </ul>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -206,17 +185,12 @@ impl GetResourceSharesInputBuilder {
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn set_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.tag_filters = input;
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn get_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         &self.tag_filters
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -248,18 +222,12 @@ impl GetResourceSharesInputBuilder {
         &self.max_results
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -284,22 +252,17 @@ impl GetResourceSharesInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_shares::GetResourceSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_shares::GetResourceSharesInput {
-                resource_share_arns: self.resource_share_arns,
-                resource_share_status: self.resource_share_status,
-                resource_owner: self.resource_owner,
-                name: self.name,
-                tag_filters: self.tag_filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                permission_arn: self.permission_arn,
-                permission_version: self.permission_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_shares::GetResourceSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_resource_shares::GetResourceSharesInput {
+            resource_share_arns: self.resource_share_arns,
+            resource_share_status: self.resource_share_status,
+            resource_owner: self.resource_owner,
+            name: self.name,
+            tag_filters: self.tag_filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            permission_arn: self.permission_arn,
+            permission_version: self.permission_version,
+        })
     }
 }

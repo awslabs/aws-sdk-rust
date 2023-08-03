@@ -72,9 +72,7 @@ impl JdbcConnectorSource {
 
 /// A builder for [`JdbcConnectorSource`](crate::types::JdbcConnectorSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JdbcConnectorSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl JdbcConnectorSourceBuilder {
         &self.name
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -121,18 +113,12 @@ impl JdbcConnectorSourceBuilder {
         &self.connection_name
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_name = input;
         self
     }
@@ -141,18 +127,12 @@ impl JdbcConnectorSourceBuilder {
         &self.connector_name
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
-    pub fn connection_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_type = input;
         self
     }
@@ -166,32 +146,21 @@ impl JdbcConnectorSourceBuilder {
         self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<crate::types::JdbcConnectorOptions>,
-    ) -> Self {
+    pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::JdbcConnectorOptions>) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn get_additional_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::JdbcConnectorOptions> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::JdbcConnectorOptions> {
         &self.additional_options
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn connection_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn set_connection_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_table = input;
         self
     }
@@ -225,17 +194,12 @@ impl JdbcConnectorSourceBuilder {
         self
     }
     /// <p>Specifies the data schema for the custom JDBC source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the custom JDBC source.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`JdbcConnectorSource`](crate::types::JdbcConnectorSource).

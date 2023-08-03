@@ -23,9 +23,7 @@ impl AutomatedDiscoveryInformation {
 
 /// A builder for [`AutomatedDiscoveryInformation`](crate::types::AutomatedDiscoveryInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomatedDiscoveryInformationBuilder {
     pub(crate) last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -36,10 +34,7 @@ impl AutomatedDiscoveryInformationBuilder {
         self
     }
     /// <p>Time that automated discovery last ran.</p>
-    pub fn set_last_run_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_run_time = input;
         self
     }

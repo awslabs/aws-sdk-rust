@@ -114,9 +114,7 @@ impl Address {
 
 /// A builder for [`Address`](crate::types::Address).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
@@ -163,18 +161,12 @@ impl AddressBuilder {
         &self.public_ip
     }
     /// <p>The ID representing the allocation of the address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID representing the allocation of the address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -183,18 +175,12 @@ impl AddressBuilder {
         &self.allocation_id
     }
     /// <p>The ID representing the association of the address with an instance.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID representing the association of the address with an instance.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -217,18 +203,12 @@ impl AddressBuilder {
         &self.domain
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -237,18 +217,12 @@ impl AddressBuilder {
         &self.network_interface_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
-    pub fn network_interface_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
-    pub fn set_network_interface_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_owner_id = input;
         self
     }
@@ -257,18 +231,12 @@ impl AddressBuilder {
         &self.network_interface_owner_id
     }
     /// <p>The private IP address associated with the Elastic IP address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address associated with the Elastic IP address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -288,10 +256,7 @@ impl AddressBuilder {
         self
     }
     /// <p>Any tags assigned to the Elastic IP address.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -300,18 +265,12 @@ impl AddressBuilder {
         &self.tags
     }
     /// <p>The ID of an address pool.</p>
-    pub fn public_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an address pool.</p>
-    pub fn set_public_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ipv4_pool = input;
         self
     }
@@ -320,18 +279,12 @@ impl AddressBuilder {
         &self.public_ipv4_pool
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
@@ -340,18 +293,12 @@ impl AddressBuilder {
         &self.network_border_group
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn customer_owned_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn set_customer_owned_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ip = input;
         self
     }
@@ -360,18 +307,12 @@ impl AddressBuilder {
         &self.customer_owned_ip
     }
     /// <p>The ID of the customer-owned address pool.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer-owned address pool.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }

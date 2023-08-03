@@ -25,9 +25,7 @@ pub struct VpcPeeringConnection {
 }
 impl VpcPeeringConnection {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn accepter_vpc_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn accepter_vpc_info(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
         self.accepter_vpc_info.as_ref()
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
@@ -35,9 +33,7 @@ impl VpcPeeringConnection {
         self.expiration_time.as_ref()
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn requester_vpc_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn requester_vpc_info(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionVpcInfo> {
         self.requester_vpc_info.as_ref()
     }
     /// <p>The status of the VPC peering connection.</p>
@@ -62,9 +58,7 @@ impl VpcPeeringConnection {
 
 /// A builder for [`VpcPeeringConnection`](crate::types::VpcPeeringConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcPeeringConnectionBuilder {
     pub(crate) accepter_vpc_info: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,17 +74,12 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn set_accepter_vpc_info(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
-    ) -> Self {
+    pub fn set_accepter_vpc_info(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>) -> Self {
         self.accepter_vpc_info = input;
         self
     }
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn get_accepter_vpc_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn get_accepter_vpc_info(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
         &self.accepter_vpc_info
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
@@ -99,10 +88,7 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -116,17 +102,12 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn set_requester_vpc_info(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
-    ) -> Self {
+    pub fn set_requester_vpc_info(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>) -> Self {
         self.requester_vpc_info = input;
         self
     }
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    pub fn get_requester_vpc_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
+    pub fn get_requester_vpc_info(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo> {
         &self.requester_vpc_info
     }
     /// <p>The status of the VPC peering connection.</p>
@@ -135,17 +116,12 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>The status of the VPC peering connection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the VPC peering connection.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcPeeringConnectionStateReason> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionStateReason> {
         &self.status
     }
     /// Appends an item to `tags`.
@@ -160,10 +136,7 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -172,18 +145,12 @@ impl VpcPeeringConnectionBuilder {
         &self.tags
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }

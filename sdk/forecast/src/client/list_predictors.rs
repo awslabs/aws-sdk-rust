@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`predictors(Option<Vec<PredictorSummary>>)`](crate::operation::list_predictors::ListPredictorsOutput::predictors): <p>An array of objects that summarize each predictor's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_predictors::ListPredictorsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPredictorsError>`](crate::operation::list_predictors::ListPredictorsError)
-    pub fn list_predictors(
-        &self,
-    ) -> crate::operation::list_predictors::builders::ListPredictorsFluentBuilder {
-        crate::operation::list_predictors::builders::ListPredictorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_predictors(&self) -> crate::operation::list_predictors::builders::ListPredictorsFluentBuilder {
+        crate::operation::list_predictors::builders::ListPredictorsFluentBuilder::new(self.handle.clone())
     }
 }

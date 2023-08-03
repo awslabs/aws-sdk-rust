@@ -5,8 +5,7 @@
 pub struct ListAliasesOutput {
     /// <p>A list of SageMaker image version aliases.</p>
     #[doc(hidden)]
-    pub sage_maker_image_version_aliases:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>A list of SageMaker image version aliases.</p>
-    pub fn sage_maker_image_version_aliases(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn sage_maker_image_version_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.sage_maker_image_version_aliases.as_deref()
     }
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>
@@ -38,12 +35,9 @@ impl ListAliasesOutput {
 
 /// A builder for [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAliasesOutputBuilder {
-    pub(crate) sage_maker_image_version_aliases:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListAliasesOutputBuilder {
     /// To override the contents of this collection use [`set_sage_maker_image_version_aliases`](Self::set_sage_maker_image_version_aliases).
     ///
     /// <p>A list of SageMaker image version aliases.</p>
-    pub fn sage_maker_image_version_aliases(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sage_maker_image_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sage_maker_image_version_aliases.unwrap_or_default();
         v.push(input.into());
         self.sage_maker_image_version_aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of SageMaker image version aliases.</p>
-    pub fn set_sage_maker_image_version_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sage_maker_image_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sage_maker_image_version_aliases = input;
         self
     }
     /// <p>A list of SageMaker image version aliases.</p>
-    pub fn get_sage_maker_image_version_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sage_maker_image_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sage_maker_image_version_aliases
     }
     /// <p>A token for getting the next set of aliases, if more aliases exist.</p>

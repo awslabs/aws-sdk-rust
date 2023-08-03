@@ -48,18 +48,14 @@ impl ::aws_http::request_id::RequestId for DescribeTaskDefinitionOutput {
 }
 impl DescribeTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskDefinitionOutput`](crate::operation::describe_task_definition::DescribeTaskDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionOutputBuilder {
         crate::operation::describe_task_definition::builders::DescribeTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskDefinitionOutput`](crate::operation::describe_task_definition::DescribeTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -72,10 +68,7 @@ impl DescribeTaskDefinitionOutputBuilder {
         self
     }
     /// <p>The full task definition description.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskDefinition>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<crate::types::TaskDefinition>) -> Self {
         self.task_definition = input;
         self
     }
@@ -115,10 +108,7 @@ impl DescribeTaskDefinitionOutputBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

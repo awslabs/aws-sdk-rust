@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec<MulticastGroup>>)`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput::multicast_group_list): <p>List of multicast groups.</p>
     /// - On failure, responds with [`SdkError<ListMulticastGroupsError>`](crate::operation::list_multicast_groups::ListMulticastGroupsError)
-    pub fn list_multicast_groups(
-        &self,
-    ) -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder {
-        crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_multicast_groups(&self) -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder {
+        crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::new(self.handle.clone())
     }
 }

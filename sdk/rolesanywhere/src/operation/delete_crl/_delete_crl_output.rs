@@ -28,9 +28,7 @@ impl DeleteCrlOutput {
 
 /// A builder for [`DeleteCrlOutput`](crate::operation::delete_crl::DeleteCrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrlOutputBuilder {
     pub(crate) crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,

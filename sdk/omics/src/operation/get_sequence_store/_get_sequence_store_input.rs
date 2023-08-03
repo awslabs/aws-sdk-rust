@@ -15,17 +15,14 @@ impl GetSequenceStoreInput {
 }
 impl GetSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
-    pub fn builder() -> crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder {
         crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSequenceStoreInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetSequenceStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sequence_store::GetSequenceStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sequence_store::GetSequenceStoreInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sequence_store::GetSequenceStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_sequence_store::GetSequenceStoreInput { id: self.id })
     }
 }

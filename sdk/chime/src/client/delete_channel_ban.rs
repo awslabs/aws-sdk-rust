@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelBanError>`](crate::operation::delete_channel_ban::DeleteChannelBanError)
     #[deprecated(note = "Replaced by DeleteChannelBan in the Amazon Chime SDK Messaging Namespace")]
-    pub fn delete_channel_ban(
-        &self,
-    ) -> crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder {
-        crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel_ban(&self) -> crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder {
+        crate::operation::delete_channel_ban::builders::DeleteChannelBanFluentBuilder::new(self.handle.clone())
     }
 }

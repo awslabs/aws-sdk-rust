@@ -28,18 +28,14 @@ impl PutContactInformationInput {
 }
 impl PutContactInformationInput {
     /// Creates a new builder-style object to manufacture [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
-    pub fn builder(
-    ) -> crate::operation::put_contact_information::builders::PutContactInformationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_contact_information::builders::PutContactInformationInputBuilder {
         crate::operation::put_contact_information::builders::PutContactInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContactInformationInputBuilder {
     pub(crate) contact_information: ::std::option::Option<crate::types::ContactInformation>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -51,17 +47,12 @@ impl PutContactInformationInputBuilder {
         self
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    pub fn set_contact_information(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactInformation>,
-    ) -> Self {
+    pub fn set_contact_information(mut self, input: ::std::option::Option<crate::types::ContactInformation>) -> Self {
         self.contact_information = input;
         self
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    pub fn get_contact_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactInformation> {
+    pub fn get_contact_information(&self) -> &::std::option::Option<crate::types::ContactInformation> {
         &self.contact_information
     }
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
@@ -90,15 +81,11 @@ impl PutContactInformationInputBuilder {
     /// Consumes the builder and constructs a [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_contact_information::PutContactInformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_contact_information::PutContactInformationInput {
-                contact_information: self.contact_information,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_contact_information::PutContactInformationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_contact_information::PutContactInformationInput {
+            contact_information: self.contact_information,
+            account_id: self.account_id,
+        })
     }
 }

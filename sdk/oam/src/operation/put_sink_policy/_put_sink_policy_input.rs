@@ -33,27 +33,19 @@ impl PutSinkPolicyInput {
 
 /// A builder for [`PutSinkPolicyInput`](crate::operation::put_sink_policy::PutSinkPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSinkPolicyInputBuilder {
     pub(crate) sink_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutSinkPolicyInputBuilder {
     /// <p>The ARN of the sink to attach this policy to.</p>
-    pub fn sink_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the sink to attach this policy to.</p>
-    pub fn set_sink_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sink_identifier = input;
         self
     }
@@ -84,10 +76,7 @@ impl PutSinkPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutSinkPolicyInput`](crate::operation::put_sink_policy::PutSinkPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_sink_policy::PutSinkPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_sink_policy::PutSinkPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_sink_policy::PutSinkPolicyInput {
             sink_identifier: self.sink_identifier,
             policy: self.policy,

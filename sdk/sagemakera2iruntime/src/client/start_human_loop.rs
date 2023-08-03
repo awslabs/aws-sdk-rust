@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartHumanLoopOutput`](crate::operation::start_human_loop::StartHumanLoopOutput) with field(s):
     ///   - [`human_loop_arn(Option<String>)`](crate::operation::start_human_loop::StartHumanLoopOutput::human_loop_arn): <p>The Amazon Resource Name (ARN) of the human loop.</p>
     /// - On failure, responds with [`SdkError<StartHumanLoopError>`](crate::operation::start_human_loop::StartHumanLoopError)
-    pub fn start_human_loop(
-        &self,
-    ) -> crate::operation::start_human_loop::builders::StartHumanLoopFluentBuilder {
-        crate::operation::start_human_loop::builders::StartHumanLoopFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_human_loop(&self) -> crate::operation::start_human_loop::builders::StartHumanLoopFluentBuilder {
+        crate::operation::start_human_loop::builders::StartHumanLoopFluentBuilder::new(self.handle.clone())
     }
 }

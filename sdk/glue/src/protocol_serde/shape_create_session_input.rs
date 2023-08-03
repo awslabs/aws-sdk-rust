@@ -43,10 +43,7 @@ pub fn ser_create_session_input(
     if let Some(var_12) = &input.connections {
         #[allow(unused_mut)]
         let mut object_13 = object.key("Connections").start_object();
-        crate::protocol_serde::shape_connections_list::ser_connections_list(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.max_capacity {

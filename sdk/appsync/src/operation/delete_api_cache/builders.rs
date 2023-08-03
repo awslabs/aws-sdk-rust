@@ -10,10 +10,7 @@ impl DeleteApiCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_api_cache::DeleteApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_api_cache::DeleteApiCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_api_cache();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteApiCacheFluentBuilder {
         }
     }
     /// Access the DeleteApiCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_api_cache::builders::DeleteApiCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_api_cache::builders::DeleteApiCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteApiCacheFluentBuilder {
             crate::operation::delete_api_cache::DeleteApiCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_api_cache::DeleteApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteApiCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteApiCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_api_cache::DeleteApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_api_cache::DeleteApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteApiCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_api_cache::DeleteApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_api_cache::DeleteApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteApiCacheFluentBuilder {
             crate::operation::delete_api_cache::DeleteApiCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_api_cache::DeleteApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_api_cache::DeleteApiCacheError>,
     > {
         self.customize_middleware().await
     }

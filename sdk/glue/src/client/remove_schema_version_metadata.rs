@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`metadata_key(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
     ///   - [`metadata_value(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>
     /// - On failure, responds with [`SdkError<RemoveSchemaVersionMetadataError>`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataError)
-    pub fn remove_schema_version_metadata(&self) -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataFluentBuilder{
+    pub fn remove_schema_version_metadata(
+        &self,
+    ) -> crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataFluentBuilder {
         crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

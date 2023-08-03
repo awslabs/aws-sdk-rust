@@ -43,18 +43,14 @@ impl ListQualificationTypesInput {
 }
 impl ListQualificationTypesInput {
     /// Creates a new builder-style object to manufacture [`ListQualificationTypesInput`](crate::operation::list_qualification_types::ListQualificationTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder {
         crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQualificationTypesInput`](crate::operation::list_qualification_types::ListQualificationTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQualificationTypesInputBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) must_be_requestable: ::std::option::Option<bool>,
@@ -136,18 +132,14 @@ impl ListQualificationTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListQualificationTypesInput`](crate::operation::list_qualification_types::ListQualificationTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_qualification_types::ListQualificationTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_qualification_types::ListQualificationTypesInput {
-                query: self.query,
-                must_be_requestable: self.must_be_requestable,
-                must_be_owned_by_caller: self.must_be_owned_by_caller,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_qualification_types::ListQualificationTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_qualification_types::ListQualificationTypesInput {
+            query: self.query,
+            must_be_requestable: self.must_be_requestable,
+            must_be_owned_by_caller: self.must_be_owned_by_caller,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

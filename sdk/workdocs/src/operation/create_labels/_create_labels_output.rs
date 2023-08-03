@@ -19,9 +19,7 @@ impl CreateLabelsOutput {
 
 /// A builder for [`CreateLabelsOutput`](crate::operation::create_labels::CreateLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLabelsOutputBuilder {
     _request_id: Option<String>,
 }

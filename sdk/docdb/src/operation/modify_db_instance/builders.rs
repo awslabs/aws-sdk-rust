@@ -10,10 +10,7 @@ impl ModifyDbInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_db_instance::ModifyDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_instance::ModifyDBInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_instance::ModifyDBInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_db_instance();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyDBInstanceFluentBuilder {
         }
     }
     /// Access the ModifyDBInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyDBInstanceFluentBuilder {
             crate::operation::modify_db_instance::ModifyDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_instance::ModifyDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_instance::ModifyDBInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyDBInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_instance::ModifyDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_instance::ModifyDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_instance::ModifyDBInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_instance::ModifyDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_instance::ModifyDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_instance::ModifyDBInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ModifyDBInstanceFluentBuilder {
             crate::operation::modify_db_instance::ModifyDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_instance::ModifyDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_instance::ModifyDBInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +111,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -139,10 +120,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -157,20 +135,14 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
     /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
     /// <p>Default: Uses existing setting.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
     /// <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Amazon Web Services Regions. </p>
     /// <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>
     /// <p>Default: Uses existing setting.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
@@ -205,10 +177,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -217,10 +186,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -229,9 +195,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
@@ -256,10 +220,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn new_db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_db_instance_identifier(input.into());
         self
     }
@@ -271,10 +232,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn set_new_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_db_instance_identifier(input);
         self
     }
@@ -290,18 +248,12 @@ impl ModifyDBInstanceFluentBuilder {
         self.inner.get_new_db_instance_identifier()
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate_identifier(input.into());
         self
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ca_certificate_identifier(input);
         self
     }
@@ -360,29 +312,21 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
-    pub fn performance_insights_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.performance_insights_kms_key_id(input.into());
         self
     }
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
-    pub fn set_performance_insights_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_performance_insights_kms_key_id(input);
         self
     }
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
-    pub fn get_performance_insights_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_performance_insights_kms_key_id()
     }
 }

@@ -33,10 +33,7 @@ pub fn ser_create_game_server_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_instance_definition::ser_instance_definition(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_instance_definition::ser_instance_definition(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -52,9 +49,7 @@ pub fn ser_create_game_server_group_input(
         object.key("BalancingStrategy").string(var_13.as_str());
     }
     if let Some(var_14) = &input.game_server_protection_policy {
-        object
-            .key("GameServerProtectionPolicy")
-            .string(var_14.as_str());
+        object.key("GameServerProtectionPolicy").string(var_14.as_str());
     }
     if let Some(var_15) = &input.vpc_subnets {
         let mut array_16 = object.key("VpcSubnets").start_array();

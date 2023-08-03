@@ -7,21 +7,25 @@ pub fn ser_virtual_gateway_client_tls_certificate(
         crate::types::VirtualGatewayClientTlsCertificate::File(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("file").start_object();
-            crate::protocol_serde::shape_virtual_gateway_listener_tls_file_certificate::ser_virtual_gateway_listener_tls_file_certificate(&mut object_1, inner)?;
+            crate::protocol_serde::shape_virtual_gateway_listener_tls_file_certificate::ser_virtual_gateway_listener_tls_file_certificate(
+                &mut object_1,
+                inner,
+            )?;
             object_1.finish();
         }
         crate::types::VirtualGatewayClientTlsCertificate::Sds(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_6.key("sds").start_object();
-            crate::protocol_serde::shape_virtual_gateway_listener_tls_sds_certificate::ser_virtual_gateway_listener_tls_sds_certificate(&mut object_2, inner)?;
+            crate::protocol_serde::shape_virtual_gateway_listener_tls_sds_certificate::ser_virtual_gateway_listener_tls_sds_certificate(
+                &mut object_2,
+                inner,
+            )?;
             object_2.finish();
         }
         crate::types::VirtualGatewayClientTlsCertificate::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "VirtualGatewayClientTlsCertificate",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "VirtualGatewayClientTlsCertificate",
+            ))
         }
     }
     Ok(())
@@ -29,17 +33,9 @@ pub fn ser_virtual_gateway_client_tls_certificate(
 
 pub(crate) fn de_virtual_gateway_client_tls_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualGatewayClientTlsCertificate>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualGatewayClientTlsCertificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -49,11 +45,9 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "file" => {
@@ -75,21 +69,17 @@ where
                         };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

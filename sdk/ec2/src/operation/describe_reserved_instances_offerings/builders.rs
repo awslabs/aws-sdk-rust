@@ -5,16 +5,16 @@ pub use crate::operation::describe_reserved_instances_offerings::_describe_reser
 
 impl DescribeReservedInstancesOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_reserved_instances_offerings();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder,
+    inner: crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder,
 }
 impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedInstancesOfferings`.
@@ -39,15 +39,20 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeReservedInstancesOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,38 +89,41 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator {
         crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -154,10 +163,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -196,10 +202,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -264,10 +267,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClassType>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
         self.inner = self.inner.set_offering_class(input);
         self
     }
@@ -281,17 +281,12 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<crate::types::RiProductDescription>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<crate::types::RiProductDescription>) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn get_product_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiProductDescription> {
+    pub fn get_product_description(&self) -> &::std::option::Option<crate::types::RiProductDescription> {
         self.inner.get_product_description()
     }
     /// Appends an item to `ReservedInstancesOfferingIds`.
@@ -299,25 +294,17 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_offering_ids`](Self::set_reserved_instances_offering_ids).
     ///
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_offering_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instances_offering_ids(input.into());
         self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn set_reserved_instances_offering_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reserved_instances_offering_ids(input);
         self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn get_reserved_instances_offering_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reserved_instances_offering_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -344,10 +331,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
     /// <p>Default: <code>default</code> </p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::Tenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.inner = self.inner.set_instance_tenancy(input);
         self
     }
@@ -394,10 +378,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTypeValues>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingTypeValues>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }

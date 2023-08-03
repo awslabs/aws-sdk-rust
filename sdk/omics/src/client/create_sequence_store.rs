@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`fallback_location(Option<String>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On failure, responds with [`SdkError<CreateSequenceStoreError>`](crate::operation::create_sequence_store::CreateSequenceStoreError)
-    pub fn create_sequence_store(
-        &self,
-    ) -> crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder {
-        crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sequence_store(&self) -> crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder {
+        crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::new(self.handle.clone())
     }
 }

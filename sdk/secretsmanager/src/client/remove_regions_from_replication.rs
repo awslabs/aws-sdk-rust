@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput::arn): <p>The ARN of the primary secret.</p>
     ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput::replication_status): <p>The status of replicas for this secret after you remove Regions.</p>
     /// - On failure, responds with [`SdkError<RemoveRegionsFromReplicationError>`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError)
-    pub fn remove_regions_from_replication(&self) -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationFluentBuilder{
+    pub fn remove_regions_from_replication(
+        &self,
+    ) -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationFluentBuilder {
         crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationFluentBuilder::new(self.handle.clone())
     }
 }

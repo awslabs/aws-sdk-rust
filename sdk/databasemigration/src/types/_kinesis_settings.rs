@@ -86,9 +86,7 @@ impl KinesisSettings {
 
 /// A builder for [`KinesisSettings`](crate::types::KinesisSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisSettingsBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_format: ::std::option::Option<crate::types::MessageFormatValue>,
@@ -122,10 +120,7 @@ impl KinesisSettingsBuilder {
         self
     }
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
-    pub fn set_message_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageFormatValue>,
-    ) -> Self {
+    pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatValue>) -> Self {
         self.message_format = input;
         self
     }
@@ -134,18 +129,12 @@ impl KinesisSettingsBuilder {
         &self.message_format
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
@@ -187,10 +176,7 @@ impl KinesisSettingsBuilder {
         self
     }
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.</p>
-    pub fn set_partition_include_schema_table(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_partition_include_schema_table(mut self, input: ::std::option::Option<bool>) -> Self {
         self.partition_include_schema_table = input;
         self
     }
@@ -204,10 +190,7 @@ impl KinesisSettingsBuilder {
         self
     }
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
-    pub fn set_include_table_alter_operations(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_table_alter_operations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_table_alter_operations = input;
         self
     }

@@ -37,9 +37,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl MessageBuilder {
         self
     }
     /// <p>The content type of the message string.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }

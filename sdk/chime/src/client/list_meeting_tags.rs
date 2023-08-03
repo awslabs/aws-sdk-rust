@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_meeting_tags::ListMeetingTagsOutput::tags): <p>A list of tag key-value pairs.</p>
     /// - On failure, responds with [`SdkError<ListMeetingTagsError>`](crate::operation::list_meeting_tags::ListMeetingTagsError)
     #[deprecated(note = "Use ListTagsForResource in the Amazon Chime SDK Meetings Namespace.")]
-    pub fn list_meeting_tags(
-        &self,
-    ) -> crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder {
-        crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_meeting_tags(&self) -> crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder {
+        crate::operation::list_meeting_tags::builders::ListMeetingTagsFluentBuilder::new(self.handle.clone())
     }
 }

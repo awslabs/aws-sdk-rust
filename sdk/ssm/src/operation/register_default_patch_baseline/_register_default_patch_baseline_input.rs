@@ -15,16 +15,14 @@ impl RegisterDefaultPatchBaselineInput {
 }
 impl RegisterDefaultPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
-    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder{
+    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder {
         crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl RegisterDefaultPatchBaselineInputBuilder {
         crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
-                baseline_id: self.baseline_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
+            baseline_id: self.baseline_id,
+        })
     }
 }

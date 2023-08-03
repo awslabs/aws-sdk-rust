@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::create_component_version::CreateComponentVersionOutput::creation_timestamp): <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     ///   - [`status(Option<CloudComponentStatus>)`](crate::operation::create_component_version::CreateComponentVersionOutput::status): <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     /// - On failure, responds with [`SdkError<CreateComponentVersionError>`](crate::operation::create_component_version::CreateComponentVersionError)
-    pub fn create_component_version(
-        &self,
-    ) -> crate::operation::create_component_version::builders::CreateComponentVersionFluentBuilder
-    {
+    pub fn create_component_version(&self) -> crate::operation::create_component_version::builders::CreateComponentVersionFluentBuilder {
         crate::operation::create_component_version::builders::CreateComponentVersionFluentBuilder::new(self.handle.clone())
     }
 }

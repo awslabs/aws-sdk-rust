@@ -15,18 +15,14 @@ impl GetSpeechSynthesisTaskInput {
 }
 impl GetSpeechSynthesisTaskInput {
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder {
         crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetSpeechSynthesisTaskInputBuilder {
         crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput {
-                task_id: self.task_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput { task_id: self.task_id })
     }
 }

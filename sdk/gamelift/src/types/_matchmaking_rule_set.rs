@@ -59,9 +59,7 @@ impl MatchmakingRuleSet {
 
 /// A builder for [`MatchmakingRuleSet`](crate::types::MatchmakingRuleSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchmakingRuleSetBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_set_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct MatchmakingRuleSetBuilder {
 }
 impl MatchmakingRuleSetBuilder {
     /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -116,18 +108,12 @@ impl MatchmakingRuleSetBuilder {
         &self.rule_set_arn
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn set_rule_set_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_body = input;
         self
     }
@@ -141,10 +127,7 @@ impl MatchmakingRuleSetBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

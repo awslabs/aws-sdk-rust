@@ -10,10 +10,7 @@ impl GetRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_rule_group::GetRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rule_group::GetRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rule_group::GetRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_rule_group();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetRuleGroupFluentBuilder {
         }
     }
     /// Access the GetRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_rule_group::builders::GetRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_rule_group::builders::GetRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,10 +61,7 @@ impl GetRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,18 +112,12 @@ impl GetRuleGroupFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_id(input.into());
         self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_id(input);
         self
     }

@@ -6,10 +6,7 @@ pub fn ser_update_canary_input(
     if let Some(var_1) = &input.artifact_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ArtifactConfig").start_object();
-        crate::protocol_serde::shape_artifact_config_input::ser_artifact_config_input(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_artifact_config_input::ser_artifact_config_input(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.artifact_s3_location {
@@ -18,10 +15,7 @@ pub fn ser_update_canary_input(
     if let Some(var_4) = &input.code {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Code").start_object();
-        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.execution_role_arn {
@@ -36,10 +30,7 @@ pub fn ser_update_canary_input(
     if let Some(var_8) = &input.run_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("RunConfig").start_object();
-        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.runtime_version {
@@ -48,10 +39,7 @@ pub fn ser_update_canary_input(
     if let Some(var_11) = &input.schedule {
         #[allow(unused_mut)]
         let mut object_12 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.success_retention_period_in_days {
@@ -63,19 +51,13 @@ pub fn ser_update_canary_input(
     if let Some(var_14) = &input.visual_reference {
         #[allow(unused_mut)]
         let mut object_15 = object.key("VisualReference").start_object();
-        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.vpc_config {
         #[allow(unused_mut)]
         let mut object_17 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())

@@ -27,10 +27,7 @@ pub fn ser_translate_document_input(
     if let Some(var_8) = &input.settings {
         #[allow(unused_mut)]
         let mut object_9 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_translation_settings::ser_translation_settings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_translation_settings::ser_translation_settings(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

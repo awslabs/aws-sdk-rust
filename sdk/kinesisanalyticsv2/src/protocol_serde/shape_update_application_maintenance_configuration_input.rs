@@ -8,10 +8,11 @@ pub fn ser_update_application_maintenance_configuration_input(
     }
     if let Some(var_2) = &input.application_maintenance_configuration_update {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("ApplicationMaintenanceConfigurationUpdate")
-            .start_object();
-        crate::protocol_serde::shape_application_maintenance_configuration_update::ser_application_maintenance_configuration_update(&mut object_3, var_2)?;
+        let mut object_3 = object.key("ApplicationMaintenanceConfigurationUpdate").start_object();
+        crate::protocol_serde::shape_application_maintenance_configuration_update::ser_application_maintenance_configuration_update(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

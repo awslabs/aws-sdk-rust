@@ -37,9 +37,7 @@ impl UpdateSignalCatalogFluentBuilder {
         }
     }
     /// Access the UpdateSignalCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateSignalCatalogFluentBuilder {
             crate::operation::update_signal_catalog::UpdateSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateSignalCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateSignalCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateSignalCatalogFluentBuilder {
             crate::operation::update_signal_catalog::UpdateSignalCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signal_catalog::UpdateSignalCatalogError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +147,7 @@ impl UpdateSignalCatalogFluentBuilder {
         self
     }
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    pub fn set_nodes_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_add(input);
         self
     }
@@ -181,17 +165,12 @@ impl UpdateSignalCatalogFluentBuilder {
         self
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn set_nodes_to_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes_to_update(input);
         self
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn get_nodes_to_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+    pub fn get_nodes_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         self.inner.get_nodes_to_update()
     }
     /// Appends an item to `nodesToRemove`.
@@ -199,25 +178,17 @@ impl UpdateSignalCatalogFluentBuilder {
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn nodes_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodes_to_remove(input.into());
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn set_nodes_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_nodes_to_remove(input);
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn get_nodes_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_nodes_to_remove()
     }
 }

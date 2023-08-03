@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateProvisionedProductOutput {
 }
 impl UpdateProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductOutput`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput).
-    pub fn builder(
-    ) -> crate::operation::update_provisioned_product::builders::UpdateProvisionedProductOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_provisioned_product::builders::UpdateProvisionedProductOutputBuilder {
         crate::operation::update_provisioned_product::builders::UpdateProvisionedProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisionedProductOutput`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateProvisionedProductOutputBuilder {
         self
     }
     /// <p>Information about the result of the request.</p>
-    pub fn set_record_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordDetail>,
-    ) -> Self {
+    pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
         self.record_detail = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdateProvisionedProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProvisionedProductOutput`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_provisioned_product::UpdateProvisionedProductOutput {
+    pub fn build(self) -> crate::operation::update_provisioned_product::UpdateProvisionedProductOutput {
         crate::operation::update_provisioned_product::UpdateProvisionedProductOutput {
             record_detail: self.record_detail,
             _request_id: self._request_id,

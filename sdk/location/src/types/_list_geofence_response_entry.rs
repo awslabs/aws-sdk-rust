@@ -29,9 +29,7 @@ pub struct ListGeofenceResponseEntry {
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
     #[doc(hidden)]
-    pub geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
@@ -63,11 +61,7 @@ impl ListGeofenceResponseEntry {
     }
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn geofence_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn geofence_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.geofence_properties.as_ref()
     }
 }
@@ -99,9 +93,7 @@ pub struct ListGeofenceResponseEntryBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) geofence_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListGeofenceResponseEntryBuilder {
     /// <p>The geofence identifier.</p>
@@ -124,10 +116,7 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.geometry = input;
         self
     }
@@ -176,10 +165,7 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -193,10 +179,7 @@ impl ListGeofenceResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -224,20 +207,14 @@ impl ListGeofenceResponseEntryBuilder {
     /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn set_geofence_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.geofence_properties = input;
         self
     }
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn get_geofence_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).

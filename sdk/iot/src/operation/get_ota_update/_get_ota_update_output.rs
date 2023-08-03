@@ -28,9 +28,7 @@ impl GetOtaUpdateOutput {
 
 /// A builder for [`GetOtaUpdateOutput`](crate::operation::get_ota_update::GetOtaUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOtaUpdateOutputBuilder {
     pub(crate) ota_update_info: ::std::option::Option<crate::types::OtaUpdateInfo>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetOtaUpdateOutputBuilder {
         self
     }
     /// <p>The OTA update info.</p>
-    pub fn set_ota_update_info(
-        mut self,
-        input: ::std::option::Option<crate::types::OtaUpdateInfo>,
-    ) -> Self {
+    pub fn set_ota_update_info(mut self, input: ::std::option::Option<crate::types::OtaUpdateInfo>) -> Self {
         self.ota_update_info = input;
         self
     }

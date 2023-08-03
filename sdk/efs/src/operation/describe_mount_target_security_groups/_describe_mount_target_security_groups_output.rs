@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeMountTargetSecurityGroupsOutp
 }
 impl DescribeMountTargetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder {
         crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsOutputBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -41,27 +39,19 @@ impl DescribeMountTargetSecurityGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>An array of security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>An array of security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,10 +64,9 @@ impl DescribeMountTargetSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput{
+    pub fn build(self) -> crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
         crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
-            security_groups: self.security_groups
-            ,
+            security_groups: self.security_groups,
             _request_id: self._request_id,
         }
     }

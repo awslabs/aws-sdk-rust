@@ -30,17 +30,14 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptions {
 }
 impl AwsAutoScalingLaunchConfigurationMetadataOptions {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
         crate::types::builders::AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,
@@ -48,18 +45,12 @@ pub struct AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
 }
 impl AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. By default, the metadata endpoint is enabled.</p>
-    pub fn http_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. By default, the metadata endpoint is enabled.</p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_endpoint = input;
         self
     }

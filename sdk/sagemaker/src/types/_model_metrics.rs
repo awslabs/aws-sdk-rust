@@ -44,9 +44,7 @@ impl ModelMetrics {
 
 /// A builder for [`ModelMetrics`](crate::types::ModelMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelMetricsBuilder {
     pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
     pub(crate) model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,
@@ -60,10 +58,7 @@ impl ModelMetricsBuilder {
         self
     }
     /// <p>Metrics that measure the quality of a model.</p>
-    pub fn set_model_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQuality>,
-    ) -> Self {
+    pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
         self.model_quality = input;
         self
     }
@@ -77,10 +72,7 @@ impl ModelMetricsBuilder {
         self
     }
     /// <p>Metrics that measure the quality of the input data for a model.</p>
-    pub fn set_model_data_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDataQuality>,
-    ) -> Self {
+    pub fn set_model_data_quality(mut self, input: ::std::option::Option<crate::types::ModelDataQuality>) -> Self {
         self.model_data_quality = input;
         self
     }
@@ -108,10 +100,7 @@ impl ModelMetricsBuilder {
         self
     }
     /// <p>Metrics that help explain a model.</p>
-    pub fn set_explainability(
-        mut self,
-        input: ::std::option::Option<crate::types::Explainability>,
-    ) -> Self {
+    pub fn set_explainability(mut self, input: ::std::option::Option<crate::types::Explainability>) -> Self {
         self.explainability = input;
         self
     }

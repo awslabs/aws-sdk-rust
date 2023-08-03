@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopEdgePackagingJobOutput {
 }
 impl StopEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder {
         crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEdgePackagingJobOutputBuilder {
     _request_id: Option<String>,
 }

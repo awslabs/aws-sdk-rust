@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateOpsItemRelatedItemOutput`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput) with field(s):
     ///   - [`association_id(Option<String>)`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput::association_id): <p>The association ID.</p>
     /// - On failure, responds with [`SdkError<AssociateOpsItemRelatedItemError>`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError)
-    pub fn associate_ops_item_related_item(&self) -> crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemFluentBuilder{
+    pub fn associate_ops_item_related_item(
+        &self,
+    ) -> crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemFluentBuilder {
         crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemFluentBuilder::new(self.handle.clone())
     }
 }

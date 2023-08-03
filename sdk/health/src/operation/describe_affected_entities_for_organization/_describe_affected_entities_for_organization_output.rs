@@ -8,8 +8,7 @@ pub struct DescribeAffectedEntitiesForOrganizationOutput {
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
     #[doc(hidden)]
-    pub failed_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,
+    pub failed_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
         self.entities.as_deref()
     }
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
-    pub fn failed_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationAffectedEntitiesErrorItem]> {
+    pub fn failed_set(&self) -> ::std::option::Option<&[crate::types::OrganizationAffectedEntitiesErrorItem]> {
         self.failed_set.as_deref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -38,20 +35,18 @@ impl ::aws_http::request_id::RequestId for DescribeAffectedEntitiesForOrganizati
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationOutput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationOutputBuilder
+    {
         crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesForOrganizationOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
-    pub(crate) failed_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,
+    pub(crate) failed_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -68,17 +63,12 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>> {
         &self.entities
     }
     /// Appends an item to `failed_set`.
@@ -86,30 +76,19 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
     /// To override the contents of this collection use [`set_failed_set`](Self::set_failed_set).
     ///
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
-    pub fn failed_set(
-        mut self,
-        input: crate::types::OrganizationAffectedEntitiesErrorItem,
-    ) -> Self {
+    pub fn failed_set(mut self, input: crate::types::OrganizationAffectedEntitiesErrorItem) -> Self {
         let mut v = self.failed_set.unwrap_or_default();
         v.push(input);
         self.failed_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
-    pub fn set_failed_set(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>,
-        >,
-    ) -> Self {
+    pub fn set_failed_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>) -> Self {
         self.failed_set = input;
         self
     }
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
-    pub fn get_failed_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>
-    {
+    pub fn get_failed_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>> {
         &self.failed_set
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -136,14 +115,11 @@ impl DescribeAffectedEntitiesForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationOutput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput).
-    pub fn build(self) -> crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput{
+    pub fn build(self) -> crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput {
         crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput {
-            entities: self.entities
-            ,
-            failed_set: self.failed_set
-            ,
-            next_token: self.next_token
-            ,
+            entities: self.entities,
+            failed_set: self.failed_set,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

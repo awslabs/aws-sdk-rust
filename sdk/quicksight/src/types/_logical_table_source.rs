@@ -37,9 +37,7 @@ impl LogicalTableSource {
 
 /// A builder for [`LogicalTableSource`](crate::types::LogicalTableSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogicalTableSourceBuilder {
     pub(crate) join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
     pub(crate) physical_table_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl LogicalTableSourceBuilder {
         self
     }
     /// <p>Specifies the result of a join of two logical tables.</p>
-    pub fn set_join_instruction(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinInstruction>,
-    ) -> Self {
+    pub fn set_join_instruction(mut self, input: ::std::option::Option<crate::types::JoinInstruction>) -> Self {
         self.join_instruction = input;
         self
     }
@@ -64,18 +59,12 @@ impl LogicalTableSourceBuilder {
         &self.join_instruction
     }
     /// <p>Physical table ID.</p>
-    pub fn physical_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Physical table ID.</p>
-    pub fn set_physical_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_table_id = input;
         self
     }

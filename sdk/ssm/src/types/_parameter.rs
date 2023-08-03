@@ -208,18 +208,12 @@ impl ParameterBuilder {
         &self.selector
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
-    pub fn source_result(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
-    pub fn set_source_result(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_result = input;
         self
     }
@@ -233,10 +227,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::list_thing_registration_task_reports::_list_thing_regi
 
 impl ListThingRegistrationTaskReportsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_thing_registration_task_reports();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListThingRegistrationTaskReportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder,
+    inner: crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder,
 }
 impl ListThingRegistrationTaskReportsFluentBuilder {
     /// Creates a new `ListThingRegistrationTaskReports`.
@@ -37,15 +37,20 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
         }
     }
     /// Access the ListThingRegistrationTaskReports as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReports, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReports,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReports, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReports,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_thing_registration_task_reports::paginator::ListThingRegistrationTaskReportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_thing_registration_task_reports::paginator::ListThingRegistrationTaskReportsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_thing_registration_task_reports::paginator::ListThingRegistrationTaskReportsPaginator {
         crate::operation::list_thing_registration_task_reports::paginator::ListThingRegistrationTaskReportsPaginator::new(self.handle, self.inner)
     }
     /// <p>The id of the task.</p>
@@ -120,10 +135,7 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
         self
     }
     /// <p>The type of task report.</p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.inner = self.inner.set_report_type(input);
         self
     }

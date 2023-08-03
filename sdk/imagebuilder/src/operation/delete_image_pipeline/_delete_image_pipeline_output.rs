@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteImagePipelineOutput {
 }
 impl DeleteImagePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePipelineOutput`](crate::operation::delete_image_pipeline::DeleteImagePipelineOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder {
-        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder {
+        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImagePipelineOutput`](crate::operation::delete_image_pipeline::DeleteImagePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImagePipelineOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl DeleteImagePipelineOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }

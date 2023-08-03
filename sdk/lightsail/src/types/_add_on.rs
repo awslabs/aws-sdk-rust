@@ -74,9 +74,7 @@ impl AddOn {
 
 /// A builder for [`AddOn`](crate::types::AddOn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddOnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -117,20 +115,14 @@ impl AddOnBuilder {
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn snapshot_time_of_day(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn set_snapshot_time_of_day(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_time_of_day = input;
         self
     }
@@ -143,20 +135,14 @@ impl AddOnBuilder {
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn next_snapshot_time_of_day(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_snapshot_time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn set_next_snapshot_time_of_day(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_snapshot_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_snapshot_time_of_day = input;
         self
     }

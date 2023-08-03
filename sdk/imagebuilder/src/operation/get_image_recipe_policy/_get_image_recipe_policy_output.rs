@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetImageRecipePolicyOutput {
 }
 impl GetImageRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetImageRecipePolicyOutput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder {
         crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetImageRecipePolicyOutput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImageRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

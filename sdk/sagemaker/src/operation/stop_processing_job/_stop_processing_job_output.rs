@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopProcessingJobOutput {
 }
 impl StopProcessingJobOutput {
     /// Creates a new builder-style object to manufacture [`StopProcessingJobOutput`](crate::operation::stop_processing_job::StopProcessingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_processing_job::builders::StopProcessingJobOutputBuilder {
+    pub fn builder() -> crate::operation::stop_processing_job::builders::StopProcessingJobOutputBuilder {
         crate::operation::stop_processing_job::builders::StopProcessingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopProcessingJobOutput`](crate::operation::stop_processing_job::StopProcessingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProcessingJobOutputBuilder {
     _request_id: Option<String>,
 }

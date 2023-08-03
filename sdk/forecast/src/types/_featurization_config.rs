@@ -70,9 +70,7 @@ impl FeaturizationConfig {
 
 /// A builder for [`FeaturizationConfig`](crate::types::FeaturizationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturizationConfigBuilder {
     pub(crate) forecast_frequency: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -92,10 +90,7 @@ impl FeaturizationConfigBuilder {
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
-    pub fn forecast_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_frequency = ::std::option::Option::Some(input.into());
         self
     }
@@ -112,10 +107,7 @@ impl FeaturizationConfigBuilder {
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
-    pub fn set_forecast_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_frequency = input;
         self
     }
@@ -142,10 +134,7 @@ impl FeaturizationConfigBuilder {
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub fn forecast_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_dimensions.unwrap_or_default();
         v.push(input.into());
         self.forecast_dimensions = ::std::option::Option::Some(v);
@@ -154,19 +143,14 @@ impl FeaturizationConfigBuilder {
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub fn set_forecast_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_dimensions = input;
         self
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub fn get_forecast_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_dimensions
     }
     /// Appends an item to `featurizations`.
@@ -181,17 +165,12 @@ impl FeaturizationConfigBuilder {
         self
     }
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    pub fn set_featurizations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>,
-    ) -> Self {
+    pub fn set_featurizations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>) -> Self {
         self.featurizations = input;
         self
     }
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    pub fn get_featurizations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Featurization>> {
+    pub fn get_featurizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Featurization>> {
         &self.featurizations
     }
     /// Consumes the builder and constructs a [`FeaturizationConfig`](crate::types::FeaturizationConfig).

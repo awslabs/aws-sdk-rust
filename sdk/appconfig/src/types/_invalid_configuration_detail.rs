@@ -51,9 +51,7 @@ impl InvalidConfigurationDetail {
 
 /// A builder for [`InvalidConfigurationDetail`](crate::types::InvalidConfigurationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidConfigurationDetailBuilder {
     pub(crate) constraint: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

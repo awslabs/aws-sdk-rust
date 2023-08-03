@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`column_list(Option<Vec<ColumnMetadata>>)`](crate::operation::describe_table::DescribeTableOutput::column_list): <p>A list of columns in the table. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_table::DescribeTableOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<DescribeTableError>`](crate::operation::describe_table::DescribeTableError)
-    pub fn describe_table(
-        &self,
-    ) -> crate::operation::describe_table::builders::DescribeTableFluentBuilder {
-        crate::operation::describe_table::builders::DescribeTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_table(&self) -> crate::operation::describe_table::builders::DescribeTableFluentBuilder {
+        crate::operation::describe_table::builders::DescribeTableFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`columns(Option<Vec<SelectColumn>>)`](crate::operation::prepare_query::PrepareQueryOutput::columns): <p>A list of SELECT clause columns of the submitted query string. </p>
     ///   - [`parameters(Option<Vec<ParameterMapping>>)`](crate::operation::prepare_query::PrepareQueryOutput::parameters): <p>A list of parameters used in the submitted query string. </p>
     /// - On failure, responds with [`SdkError<PrepareQueryError>`](crate::operation::prepare_query::PrepareQueryError)
-    pub fn prepare_query(
-        &self,
-    ) -> crate::operation::prepare_query::builders::PrepareQueryFluentBuilder {
-        crate::operation::prepare_query::builders::PrepareQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn prepare_query(&self) -> crate::operation::prepare_query::builders::PrepareQueryFluentBuilder {
+        crate::operation::prepare_query::builders::PrepareQueryFluentBuilder::new(self.handle.clone())
     }
 }

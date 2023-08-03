@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ConnectDirectoryOutput {
 }
 impl ConnectDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`ConnectDirectoryOutput`](crate::operation::connect_directory::ConnectDirectoryOutput).
-    pub fn builder() -> crate::operation::connect_directory::builders::ConnectDirectoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::connect_directory::builders::ConnectDirectoryOutputBuilder {
         crate::operation::connect_directory::builders::ConnectDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConnectDirectoryOutput`](crate::operation::connect_directory::ConnectDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectDirectoryOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

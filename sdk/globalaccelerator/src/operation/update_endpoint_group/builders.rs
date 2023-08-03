@@ -37,9 +37,7 @@ impl UpdateEndpointGroupFluentBuilder {
         }
     }
     /// Access the UpdateEndpointGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateEndpointGroupFluentBuilder {
             crate::operation::update_endpoint_group::UpdateEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateEndpointGroupFluentBuilder {
             crate::operation::update_endpoint_group::UpdateEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }
@@ -152,17 +133,12 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn set_endpoint_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
-    ) -> Self {
+    pub fn set_endpoint_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn get_endpoint_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
+    pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
         self.inner.get_endpoint_configurations()
     }
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
@@ -205,32 +181,21 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckProtocol>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn get_health_check_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
+    pub fn get_health_check_protocol(&self) -> &::std::option::Option<crate::types::HealthCheckProtocol> {
         self.inner.get_health_check_protocol()
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
@@ -278,18 +243,13 @@ impl UpdateEndpointGroupFluentBuilder {
     }
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_port_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
-    ) -> Self {
+    pub fn set_port_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>) -> Self {
         self.inner = self.inner.set_port_overrides(input);
         self
     }
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_port_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
+    pub fn get_port_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortOverride>> {
         self.inner.get_port_overrides()
     }
 }

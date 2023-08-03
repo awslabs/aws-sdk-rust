@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`metrics(Option<Vec<MetricCollectionType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::metrics): <p>The metrics.</p>
     ///   - [`granularities(Option<Vec<MetricGranularityType>>)`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput::granularities): <p>The granularities for the metrics.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricCollectionTypesError>`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError)
-    pub fn describe_metric_collection_types(&self) -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesFluentBuilder{
+    pub fn describe_metric_collection_types(
+        &self,
+    ) -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesFluentBuilder {
         crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesFluentBuilder::new(self.handle.clone())
     }
 }

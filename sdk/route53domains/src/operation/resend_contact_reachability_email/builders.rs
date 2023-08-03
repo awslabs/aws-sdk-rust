@@ -5,16 +5,16 @@ pub use crate::operation::resend_contact_reachability_email::_resend_contact_rea
 
 impl ResendContactReachabilityEmailInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.resend_contact_reachability_email();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ResendContactReachabilityEmailInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder,
+    inner: crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder,
 }
 impl ResendContactReachabilityEmailFluentBuilder {
     /// Creates a new `ResendContactReachabilityEmail`.
@@ -37,15 +37,20 @@ impl ResendContactReachabilityEmailFluentBuilder {
         }
     }
     /// Access the ResendContactReachabilityEmail as a reference.
-    pub fn as_input(&self) -> &crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmail, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmail,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ResendContactReachabilityEmailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput, ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ResendContactReachabilityEmailFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput, ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmail, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmail,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>

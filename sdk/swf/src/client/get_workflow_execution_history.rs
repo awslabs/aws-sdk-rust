@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`events(Option<Vec<HistoryEvent>>)`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput::events): <p>The list of history events.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowExecutionHistoryError>`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError)
-    pub fn get_workflow_execution_history(&self) -> crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryFluentBuilder{
+    pub fn get_workflow_execution_history(
+        &self,
+    ) -> crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryFluentBuilder {
         crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`service(Option<Service>)`](crate::operation::update_service::UpdateServiceOutput::service): <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::update_service::UpdateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::operation::update_service::UpdateServiceError)
-    pub fn update_service(
-        &self,
-    ) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
-        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service(&self) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
+        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(self.handle.clone())
     }
 }

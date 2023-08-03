@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`load_balancer_name(Option<String>)`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput::load_balancer_name): <p>The name of the load balancer.</p>
     ///   - [`load_balancer_attributes(Option<LoadBalancerAttributes>)`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput::load_balancer_attributes): <p>Information about the load balancer attributes.</p>
     /// - On failure, responds with [`SdkError<ModifyLoadBalancerAttributesError>`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError)
-    pub fn modify_load_balancer_attributes(&self) -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder{
+    pub fn modify_load_balancer_attributes(
+        &self,
+    ) -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder {
         crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesFluentBuilder::new(self.handle.clone())
     }
 }

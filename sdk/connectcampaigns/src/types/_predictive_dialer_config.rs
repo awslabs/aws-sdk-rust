@@ -23,9 +23,7 @@ impl PredictiveDialerConfig {
 
 /// A builder for [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveDialerConfigBuilder {
     pub(crate) bandwidth_allocation: ::std::option::Option<f64>,
 }

@@ -24,18 +24,14 @@ impl UpdateCertificateOptionsInput {
 }
 impl UpdateCertificateOptionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsInput`](crate::operation::update_certificate_options::UpdateCertificateOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder {
         crate::operation::update_certificate_options::builders::UpdateCertificateOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateOptionsInput`](crate::operation::update_certificate_options::UpdateCertificateOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateOptionsInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::CertificateOptions>,
@@ -43,19 +39,13 @@ pub struct UpdateCertificateOptionsInputBuilder {
 impl UpdateCertificateOptionsInputBuilder {
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the requested certificate to update. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -70,10 +60,7 @@ impl UpdateCertificateOptionsInputBuilder {
         self
     }
     /// <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.options = input;
         self
     }
@@ -88,11 +75,9 @@ impl UpdateCertificateOptionsInputBuilder {
         crate::operation::update_certificate_options::UpdateCertificateOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_certificate_options::UpdateCertificateOptionsInput {
-                certificate_arn: self.certificate_arn,
-                options: self.options,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_certificate_options::UpdateCertificateOptionsInput {
+            certificate_arn: self.certificate_arn,
+            options: self.options,
+        })
     }
 }

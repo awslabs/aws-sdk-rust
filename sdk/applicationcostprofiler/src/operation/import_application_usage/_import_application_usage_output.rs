@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportApplicationUsageOutput {
 }
 impl ImportApplicationUsageOutput {
     /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::operation::import_application_usage::ImportApplicationUsageOutput).
-    pub fn builder(
-    ) -> crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder {
         crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportApplicationUsageOutput`](crate::operation::import_application_usage::ImportApplicationUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApplicationUsageOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

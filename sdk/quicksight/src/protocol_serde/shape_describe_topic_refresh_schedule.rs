@@ -9,145 +9,148 @@ pub fn de_describe_topic_refresh_schedule_http_error(
     crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InternalFailureException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalFailureException" => {
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidParameterValueException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "LimitExceededException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceExistsException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ResourceExistsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceNotFoundException" => {
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::generic(generic)
+        _ => crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::generic(generic),
     })
 }
 
@@ -163,86 +166,73 @@ pub fn de_describe_topic_refresh_schedule_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_topic_refresh_schedule::de_describe_topic_refresh_schedule(_response_body, output).map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_topic_refresh_schedule::de_describe_topic_refresh_schedule(_response_body, output)
+            .map_err(crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::unhandled)?;
         output = output.set_status(Some(_response_status as _));
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_describe_topic_refresh_schedule(value: &[u8], mut builder: crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder) -> Result<crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_describe_topic_refresh_schedule(
+    value: &[u8],
+    mut builder: crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder,
+) -> Result<
+    crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "DatasetArn" => {
-                        builder = builder.set_dataset_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "DatasetArn" => {
+                    builder = builder.set_dataset_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "RefreshSchedule" => {
-                        builder = builder.set_refresh_schedule(
-                            crate::protocol_serde::shape_topic_refresh_schedule::de_topic_refresh_schedule(tokens)?
-                        );
-                    }
-                    "RequestId" => {
-                        builder = builder.set_request_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "TopicArn" => {
-                        builder = builder.set_topic_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "TopicId" => {
-                        builder = builder.set_topic_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "RefreshSchedule" => {
+                    builder = builder.set_refresh_schedule(crate::protocol_serde::shape_topic_refresh_schedule::de_topic_refresh_schedule(tokens)?);
+                }
+                "RequestId" => {
+                    builder = builder.set_request_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "TopicArn" => {
+                    builder = builder.set_topic_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "TopicId" => {
+                    builder = builder.set_topic_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

@@ -19,9 +19,7 @@ impl DeleteWorkforceOutput {
 
 /// A builder for [`DeleteWorkforceOutput`](crate::operation::delete_workforce::DeleteWorkforceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkforceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -70,18 +70,14 @@ impl ListResourceRecordSetsInput {
 }
 impl ListResourceRecordSetsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsInput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder {
         crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceRecordSetsInput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_record_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +87,12 @@ pub struct ListResourceRecordSetsInputBuilder {
 }
 impl ListResourceRecordSetsInputBuilder {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -111,18 +101,12 @@ impl ListResourceRecordSetsInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
-    pub fn start_record_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_record_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
-    pub fn set_start_record_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_record_name = input;
         self
     }
@@ -162,10 +146,7 @@ impl ListResourceRecordSetsInputBuilder {
     /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn set_start_record_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RrType>,
-    ) -> Self {
+    pub fn set_start_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.start_record_type = input;
         self
     }
@@ -187,18 +168,12 @@ impl ListResourceRecordSetsInputBuilder {
         &self.start_record_type
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
-    pub fn start_record_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_record_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_record_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
-    pub fn set_start_record_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_record_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_record_identifier = input;
         self
     }
@@ -227,14 +202,12 @@ impl ListResourceRecordSetsInputBuilder {
         crate::operation::list_resource_record_sets::ListResourceRecordSetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_record_sets::ListResourceRecordSetsInput {
-                hosted_zone_id: self.hosted_zone_id,
-                start_record_name: self.start_record_name,
-                start_record_type: self.start_record_type,
-                start_record_identifier: self.start_record_identifier,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resource_record_sets::ListResourceRecordSetsInput {
+            hosted_zone_id: self.hosted_zone_id,
+            start_record_name: self.start_record_name,
+            start_record_type: self.start_record_type,
+            start_record_identifier: self.start_record_identifier,
+            max_items: self.max_items,
+        })
     }
 }

@@ -30,28 +30,19 @@ impl RecommendationJobPayloadConfig {
 
 /// A builder for [`RecommendationJobPayloadConfig`](crate::types::RecommendationJobPayloadConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobPayloadConfigBuilder {
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_content_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecommendationJobPayloadConfigBuilder {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn sample_payload_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_payload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_payload_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn set_sample_payload_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sample_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_payload_url = input;
         self
     }
@@ -64,27 +55,19 @@ impl RecommendationJobPayloadConfigBuilder {
     /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
     ///
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
         v.push(input.into());
         self.supported_content_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn set_supported_content_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_content_types = input;
         self
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn get_supported_content_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_content_types
     }
     /// Consumes the builder and constructs a [`RecommendationJobPayloadConfig`](crate::types::RecommendationJobPayloadConfig).

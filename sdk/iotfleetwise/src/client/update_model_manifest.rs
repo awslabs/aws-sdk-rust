@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_model_manifest::UpdateModelManifestOutput::name): <p> The name of the updated vehicle model. </p>
     ///   - [`arn(Option<String>)`](crate::operation::update_model_manifest::UpdateModelManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the updated vehicle model. </p>
     /// - On failure, responds with [`SdkError<UpdateModelManifestError>`](crate::operation::update_model_manifest::UpdateModelManifestError)
-    pub fn update_model_manifest(
-        &self,
-    ) -> crate::operation::update_model_manifest::builders::UpdateModelManifestFluentBuilder {
-        crate::operation::update_model_manifest::builders::UpdateModelManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_model_manifest(&self) -> crate::operation::update_model_manifest::builders::UpdateModelManifestFluentBuilder {
+        crate::operation::update_model_manifest::builders::UpdateModelManifestFluentBuilder::new(self.handle.clone())
     }
 }

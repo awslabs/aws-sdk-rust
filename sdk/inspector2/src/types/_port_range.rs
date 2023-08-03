@@ -30,9 +30,7 @@ impl PortRange {
 
 /// A builder for [`PortRange`](crate::types::PortRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortRangeBuilder {
     pub(crate) begin: ::std::option::Option<i32>,
     pub(crate) end: ::std::option::Option<i32>,

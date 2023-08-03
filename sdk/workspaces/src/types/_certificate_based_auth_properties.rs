@@ -30,9 +30,7 @@ impl CertificateBasedAuthProperties {
 
 /// A builder for [`CertificateBasedAuthProperties`](crate::types::CertificateBasedAuthProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateBasedAuthPropertiesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl CertificateBasedAuthPropertiesBuilder {
         self
     }
     /// <p>The status of the certificate-based authentication properties.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the certificate-based authentication properties.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateBasedAuthStatusEnum> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthStatusEnum> {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }

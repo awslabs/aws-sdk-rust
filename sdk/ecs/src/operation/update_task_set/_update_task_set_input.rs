@@ -43,9 +43,7 @@ impl UpdateTaskSetInput {
 
 /// A builder for [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskSetInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl UpdateTaskSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_task_set::UpdateTaskSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_task_set::UpdateTaskSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task_set::UpdateTaskSetInput {
             cluster: self.cluster,
             service: self.service,

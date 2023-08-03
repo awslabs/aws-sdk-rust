@@ -44,9 +44,7 @@ impl DataQualityMetric {
 
 /// A builder for [`DataQualityMetric`](crate::types::DataQualityMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityMetricBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::DataQualityMetricType>,
     pub(crate) metric_description: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl DataQualityMetricBuilder {
         self
     }
     /// <p>The name of the data quality metric.</p>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityMetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::DataQualityMetricType>) -> Self {
         self.metric_type = input;
         self
     }
@@ -72,18 +67,12 @@ impl DataQualityMetricBuilder {
         &self.metric_type
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn metric_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn set_metric_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_description = input;
         self
     }
@@ -92,18 +81,12 @@ impl DataQualityMetricBuilder {
         &self.metric_description
     }
     /// <p>The column that is being monitored.</p>
-    pub fn related_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column that is being monitored.</p>
-    pub fn set_related_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_column_name = input;
         self
     }

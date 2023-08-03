@@ -28,9 +28,7 @@ impl StartExperimentOutput {
 
 /// A builder for [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExperimentOutputBuilder {
     pub(crate) started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartExperimentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the experiment started.</p>
-    pub fn set_started_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_time = input;
         self
     }

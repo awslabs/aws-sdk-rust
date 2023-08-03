@@ -29,9 +29,7 @@ impl DeleteTableOutput {
 
 /// A builder for [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTableOutputBuilder {
     pub(crate) table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DeleteTableOutputBuilder {
         self
     }
     /// <p>Represents the properties of a table.</p>
-    pub fn set_table_description(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDescription>,
-    ) -> Self {
+    pub fn set_table_description(mut self, input: ::std::option::Option<crate::types::TableDescription>) -> Self {
         self.table_description = input;
         self
     }

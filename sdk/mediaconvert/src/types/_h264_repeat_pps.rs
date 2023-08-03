@@ -38,13 +38,7 @@
 /// Places a PPS header on each encoded picture, even if repeated.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264RepeatPps {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264RepeatPps {
         match s {
             "DISABLED" => H264RepeatPps::Disabled,
             "ENABLED" => H264RepeatPps::Enabled,
-            other => {
-                H264RepeatPps::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264RepeatPps::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

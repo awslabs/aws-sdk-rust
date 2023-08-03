@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVirtualClustersOutput {
 }
 impl ListVirtualClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualClustersOutput`](crate::operation::list_virtual_clusters::ListVirtualClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder {
-        crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder {
+        crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualClustersOutput`](crate::operation::list_virtual_clusters::ListVirtualClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualClustersOutputBuilder {
-    pub(crate) virtual_clusters:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>,
+    pub(crate) virtual_clusters: ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListVirtualClustersOutputBuilder {
         self
     }
     /// <p>This output lists the specified virtual clusters.</p>
-    pub fn set_virtual_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>,
-    ) -> Self {
+    pub fn set_virtual_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>) -> Self {
         self.virtual_clusters = input;
         self
     }
     /// <p>This output lists the specified virtual clusters.</p>
-    pub fn get_virtual_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>> {
+    pub fn get_virtual_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>> {
         &self.virtual_clusters
     }
     /// <p>This output displays the token for the next set of virtual clusters.</p>

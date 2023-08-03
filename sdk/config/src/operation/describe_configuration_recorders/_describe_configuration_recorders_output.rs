@@ -6,15 +6,12 @@
 pub struct DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     #[doc(hidden)]
-    pub configuration_recorders:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
+    pub configuration_recorders: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
-    pub fn configuration_recorders(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationRecorder]> {
+    pub fn configuration_recorders(&self) -> ::std::option::Option<&[crate::types::ConfigurationRecorder]> {
         self.configuration_recorders.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationRecordersOutput 
 }
 impl DescribeConfigurationRecordersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRecordersOutput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput).
-    pub fn builder() -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersOutputBuilder {
         crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRecordersOutput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersOutputBuilder {
-    pub(crate) configuration_recorders:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
+    pub(crate) configuration_recorders: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecordersOutputBuilder {
@@ -53,17 +47,12 @@ impl DescribeConfigurationRecordersOutputBuilder {
         self
     }
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
-    pub fn set_configuration_recorders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
-    ) -> Self {
+    pub fn set_configuration_recorders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>) -> Self {
         self.configuration_recorders = input;
         self
     }
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
-    pub fn get_configuration_recorders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>> {
+    pub fn get_configuration_recorders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>> {
         &self.configuration_recorders
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,10 +65,7 @@ impl DescribeConfigurationRecordersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRecordersOutput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput
-    {
+    pub fn build(self) -> crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput {
         crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput {
             configuration_recorders: self.configuration_recorders,
             _request_id: self._request_id,

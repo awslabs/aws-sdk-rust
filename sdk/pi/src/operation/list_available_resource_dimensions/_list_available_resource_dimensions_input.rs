@@ -43,16 +43,14 @@ impl ListAvailableResourceDimensionsInput {
 }
 impl ListAvailableResourceDimensionsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
-    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder{
+    pub fn builder() -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder {
         crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableResourceDimensionsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -67,10 +65,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -104,10 +99,7 @@ impl ListAvailableResourceDimensionsInputBuilder {
         self
     }
     /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metrics = input;
         self
     }
@@ -152,17 +144,12 @@ impl ListAvailableResourceDimensionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput {
-                service_type: self.service_type
-                ,
-                identifier: self.identifier
-                ,
-                metrics: self.metrics
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                service_type: self.service_type,
+                identifier: self.identifier,
+                metrics: self.metrics,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

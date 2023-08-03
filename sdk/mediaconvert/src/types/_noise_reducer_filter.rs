@@ -44,13 +44,7 @@
 /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NoiseReducerFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for NoiseReducerFilter {
             "SHARPEN" => NoiseReducerFilter::Sharpen,
             "SPATIAL" => NoiseReducerFilter::Spatial,
             "TEMPORAL" => NoiseReducerFilter::Temporal,
-            other => NoiseReducerFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NoiseReducerFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl NoiseReducerFilter {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BILATERAL",
-            "CONSERVE",
-            "GAUSSIAN",
-            "LANCZOS",
-            "MEAN",
-            "SHARPEN",
-            "SPATIAL",
-            "TEMPORAL",
-        ]
+        &["BILATERAL", "CONSERVE", "GAUSSIAN", "LANCZOS", "MEAN", "SHARPEN", "SPATIAL", "TEMPORAL"]
     }
 }
 impl ::std::convert::AsRef<str> for NoiseReducerFilter {

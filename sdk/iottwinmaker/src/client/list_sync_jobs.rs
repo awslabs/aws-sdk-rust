@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`sync_job_summaries(Option<Vec<SyncJobSummary>>)`](crate::operation::list_sync_jobs::ListSyncJobsOutput::sync_job_summaries): <p>The listed SyncJob summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sync_jobs::ListSyncJobsOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSyncJobsError>`](crate::operation::list_sync_jobs::ListSyncJobsError)
-    pub fn list_sync_jobs(
-        &self,
-    ) -> crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder {
-        crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sync_jobs(&self) -> crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder {
+        crate::operation::list_sync_jobs::builders::ListSyncJobsFluentBuilder::new(self.handle.clone())
     }
 }

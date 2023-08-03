@@ -26,8 +26,7 @@ impl DeleteQueuedSavingsPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder,
+    inner: crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder,
 }
 impl DeleteQueuedSavingsPlanFluentBuilder {
     /// Creates a new `DeleteQueuedSavingsPlan`.
@@ -38,10 +37,7 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
         }
     }
     /// Access the DeleteQueuedSavingsPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
             crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteQueuedSavingsPlanFluentBuilder {
             crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.savings_plan_id(input.into());
         self
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn set_savings_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_savings_plan_id(input);
         self
     }

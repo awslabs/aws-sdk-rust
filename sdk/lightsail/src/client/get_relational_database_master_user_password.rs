@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`master_user_password(Option<String>)`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput::master_user_password): <p>The master user password for the <code>password version</code> specified.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput::created_at): <p>The timestamp when the specified version of the master user password was created.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseMasterUserPasswordError>`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError)
-    pub fn get_relational_database_master_user_password(&self) -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordFluentBuilder{
-        crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordFluentBuilder::new(self.handle.clone())
+    pub fn get_relational_database_master_user_password(
+        &self,
+    ) -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordFluentBuilder {
+        crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

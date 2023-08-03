@@ -26,8 +26,7 @@ impl ListAssociationVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociationVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder,
+    inner: crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder,
 }
 impl ListAssociationVersionsFluentBuilder {
     /// Creates a new `ListAssociationVersions`.
@@ -38,10 +37,7 @@ impl ListAssociationVersionsFluentBuilder {
         }
     }
     /// Access the ListAssociationVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAssociationVersionsFluentBuilder {
             crate::operation::list_association_versions::ListAssociationVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_association_versions::ListAssociationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_association_versions::ListAssociationVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAssociationVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAssociationVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_association_versions::ListAssociationVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_association_versions::ListAssociationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_association_versions::ListAssociationVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAssociationVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_association_versions::ListAssociationVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_association_versions::ListAssociationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_association_versions::ListAssociationVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListAssociationVersionsFluentBuilder {
             crate::operation::list_association_versions::ListAssociationVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_association_versions::ListAssociationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_association_versions::ListAssociationVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator {
         crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The association ID for which you want to view all versions.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID for which you want to view all versions.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::list_slack_workspace_configurations::_list_slack_works
 
 impl ListSlackWorkspaceConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_slack_workspace_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListSlackWorkspaceConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder,
+    inner: crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder,
 }
 impl ListSlackWorkspaceConfigurationsFluentBuilder {
     /// Creates a new `ListSlackWorkspaceConfigurations`.
@@ -37,15 +37,20 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
         }
     }
     /// Access the ListSlackWorkspaceConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_slack_workspace_configurations::paginator::ListSlackWorkspaceConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_slack_workspace_configurations::paginator::ListSlackWorkspaceConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_slack_workspace_configurations::paginator::ListSlackWorkspaceConfigurationsPaginator {
         crate::operation::list_slack_workspace_configurations::paginator::ListSlackWorkspaceConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>

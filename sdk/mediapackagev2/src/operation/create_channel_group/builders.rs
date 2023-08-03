@@ -10,10 +10,7 @@ impl CreateChannelGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel_group::CreateChannelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_group::CreateChannelGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_group::CreateChannelGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateChannelGroupFluentBuilder {
         }
     }
     /// Access the CreateChannelGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel_group::builders::CreateChannelGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel_group::builders::CreateChannelGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateChannelGroupFluentBuilder {
             crate::operation::create_channel_group::CreateChannelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_group::CreateChannelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_group::CreateChannelGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateChannelGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateChannelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_group::CreateChannelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_group::CreateChannelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_group::CreateChannelGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateChannelGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_group::CreateChannelGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_group::CreateChannelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_group::CreateChannelGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateChannelGroupFluentBuilder {
             crate::operation::create_channel_group::CreateChannelGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_group::CreateChannelGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_group::CreateChannelGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_group_name(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
@@ -177,34 +155,21 @@ impl CreateChannelGroupFluentBuilder {
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeModelPackagingJobOutput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput) with field(s):
     ///   - [`model_packaging_description(Option<ModelPackagingDescription>)`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput::model_packaging_description): <p>The description of the model packaging job. </p>
     /// - On failure, responds with [`SdkError<DescribeModelPackagingJobError>`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError)
-    pub fn describe_model_packaging_job(&self) -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobFluentBuilder{
+    pub fn describe_model_packaging_job(&self) -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobFluentBuilder {
         crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobFluentBuilder::new(self.handle.clone())
     }
 }

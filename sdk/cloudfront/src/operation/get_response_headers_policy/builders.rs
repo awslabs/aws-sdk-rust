@@ -27,7 +27,7 @@ impl GetResponseHeadersPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder,
+    inner: crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder,
 }
 impl GetResponseHeadersPolicyFluentBuilder {
     /// Creates a new `GetResponseHeadersPolicy`.
@@ -38,7 +38,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
         }
     }
     /// Access the GetResponseHeadersPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
             crate::operation::get_response_headers_policy::GetResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_response_headers_policy::GetResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_response_headers_policy::GetResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetResponseHeadersPolicyFluentBuilder {
             crate::operation::get_response_headers_policy::GetResponseHeadersPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError>,
     > {
         self.customize_middleware().await
     }

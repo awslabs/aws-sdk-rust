@@ -33,8 +33,7 @@ pub struct DescribeOfferingOutput {
     pub region: ::std::option::Option<::std::string::String>,
     /// Resource configuration details
     #[doc(hidden)]
-    pub resource_specification:
-        ::std::option::Option<crate::types::ReservationResourceSpecification>,
+    pub resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
@@ -78,9 +77,7 @@ impl DescribeOfferingOutput {
         self.region.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -95,17 +92,14 @@ impl ::aws_http::request_id::RequestId for DescribeOfferingOutput {
 }
 impl DescribeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
-    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder {
         crate::operation::describe_offering::builders::DescribeOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOfferingOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
@@ -116,8 +110,7 @@ pub struct DescribeOfferingOutputBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<crate::types::OfferingType>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ReservationResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     pub(crate) usage_price: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
@@ -137,18 +130,12 @@ impl DescribeOfferingOutputBuilder {
         &self.arn
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -176,17 +163,12 @@ impl DescribeOfferingOutputBuilder {
         self
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn set_duration_units(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingDurationUnits>,
-    ) -> Self {
+    pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::OfferingDurationUnits>) -> Self {
         self.duration_units = input;
         self
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn get_duration_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
+    pub fn get_duration_units(&self) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
         &self.duration_units
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -204,18 +186,12 @@ impl DescribeOfferingOutputBuilder {
         &self.fixed_price
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn set_offering_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_description = input;
         self
     }
@@ -243,10 +219,7 @@ impl DescribeOfferingOutputBuilder {
         self
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingType>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingType>) -> Self {
         self.offering_type = input;
         self
     }
@@ -269,25 +242,17 @@ impl DescribeOfferingOutputBuilder {
         &self.region
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ReservationResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ReservationResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// Resource configuration details
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ReservationResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// Resource configuration details
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
         &self.resource_specification
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'

@@ -33,9 +33,7 @@ impl CertificateConfiguration {
 
 /// A builder for [`CertificateConfiguration`](crate::types::CertificateConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateConfigurationBuilder {
     pub(crate) certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
@@ -56,10 +54,7 @@ impl CertificateConfigurationBuilder {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
-    pub fn set_certificate_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateType>,
-    ) -> Self {
+    pub fn set_certificate_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
         self.certificate_type = input;
         self
     }

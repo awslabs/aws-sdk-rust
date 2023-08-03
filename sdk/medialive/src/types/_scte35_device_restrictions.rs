@@ -40,13 +40,7 @@
 /// Corresponds to the device_restrictions parameter in a segmentation_descriptor. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35DeviceRestrictions {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for Scte35DeviceRestrictions {
             "RESTRICT_GROUP0" => Scte35DeviceRestrictions::RestrictGroup0,
             "RESTRICT_GROUP1" => Scte35DeviceRestrictions::RestrictGroup1,
             "RESTRICT_GROUP2" => Scte35DeviceRestrictions::RestrictGroup2,
-            other => Scte35DeviceRestrictions::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Scte35DeviceRestrictions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl Scte35DeviceRestrictions {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NONE",
-            "RESTRICT_GROUP0",
-            "RESTRICT_GROUP1",
-            "RESTRICT_GROUP2",
-        ]
+        &["NONE", "RESTRICT_GROUP0", "RESTRICT_GROUP1", "RESTRICT_GROUP2"]
     }
 }
 impl ::std::convert::AsRef<str> for Scte35DeviceRestrictions {

@@ -36,17 +36,14 @@ impl ListSecurityProfilesInput {
 }
 impl ListSecurityProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
         crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -83,18 +80,12 @@ impl ListSecurityProfilesInputBuilder {
         &self.max_results
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
         self
     }
@@ -119,17 +110,13 @@ impl ListSecurityProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_profiles::ListSecurityProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_profiles::ListSecurityProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dimension_name: self.dimension_name,
-                metric_name: self.metric_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_security_profiles::ListSecurityProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_security_profiles::ListSecurityProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dimension_name: self.dimension_name,
+            metric_name: self.metric_name,
+        })
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutClusterCapacityProvidersOutput {
 }
 impl PutClusterCapacityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`PutClusterCapacityProvidersOutput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput).
-    pub fn builder() -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersOutputBuilder{
+    pub fn builder() -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersOutputBuilder {
         crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutClusterCapacityProvidersOutput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutClusterCapacityProvidersOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl PutClusterCapacityProvidersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutClusterCapacityProvidersOutput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput {
+    pub fn build(self) -> crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput {
         crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput {
             cluster: self.cluster,
             _request_id: self._request_id,

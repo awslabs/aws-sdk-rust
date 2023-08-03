@@ -29,17 +29,14 @@ impl GetDevEnvironmentInput {
 }
 impl GetDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder {
         crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl GetDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dev_environment::GetDevEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dev_environment::GetDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_dev_environment::GetDevEnvironmentInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+        })
     }
 }

@@ -10,9 +10,7 @@ pub struct CreateClusterParameterGroupOutput {
 }
 impl CreateClusterParameterGroupOutput {
     /// <p>Describes a parameter group.</p>
-    pub fn cluster_parameter_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterParameterGroup> {
+    pub fn cluster_parameter_group(&self) -> ::std::option::Option<&crate::types::ClusterParameterGroup> {
         self.cluster_parameter_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateClusterParameterGroupOutput {
 }
 impl CreateClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterParameterGroupOutput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput).
-    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder {
         crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterParameterGroupOutput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterParameterGroupOutputBuilder {
     pub(crate) cluster_parameter_group: ::std::option::Option<crate::types::ClusterParameterGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateClusterParameterGroupOutputBuilder {
         self
     }
     /// <p>Describes a parameter group.</p>
-    pub fn set_cluster_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterParameterGroup>,
-    ) -> Self {
+    pub fn set_cluster_parameter_group(mut self, input: ::std::option::Option<crate::types::ClusterParameterGroup>) -> Self {
         self.cluster_parameter_group = input;
         self
     }
     /// <p>Describes a parameter group.</p>
-    pub fn get_cluster_parameter_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterParameterGroup> {
+    pub fn get_cluster_parameter_group(&self) -> &::std::option::Option<crate::types::ClusterParameterGroup> {
         &self.cluster_parameter_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateClusterParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateClusterParameterGroupOutput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput {
+    pub fn build(self) -> crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput {
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput {
             cluster_parameter_group: self.cluster_parameter_group,
             _request_id: self._request_id,

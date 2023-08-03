@@ -35,12 +35,9 @@ impl ListGeofencesOutput {
 
 /// A builder for [`ListGeofencesOutput`](crate::operation::list_geofences::ListGeofencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeofencesOutputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListGeofencesOutputBuilder {
         self
     }
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>

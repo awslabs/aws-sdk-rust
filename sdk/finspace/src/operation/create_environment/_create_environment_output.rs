@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct CreateEnvironmentOutputBuilder {
 }
 impl CreateEnvironmentOutputBuilder {
     /// <p>The unique identifier for FinSpace environment that you created.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for FinSpace environment that you created.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -74,18 +65,12 @@ impl CreateEnvironmentOutputBuilder {
         &self.environment_id
     }
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    pub fn environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the FinSpace environment that you created.</p>
-    pub fn set_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_arn = input;
         self
     }
@@ -94,18 +79,12 @@ impl CreateEnvironmentOutputBuilder {
         &self.environment_arn
     }
     /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
-    pub fn environment_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sign-in URL for the web application of the FinSpace environment you created.</p>
-    pub fn set_environment_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_url = input;
         self
     }

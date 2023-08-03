@@ -5,8 +5,7 @@
 pub struct ListDataQualityRulesetsOutput {
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
     #[doc(hidden)]
-    pub rulesets:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
+    pub rulesets: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
     /// <p>A pagination token, if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDataQualityRulesetsOutput {
 }
 impl ListDataQualityRulesetsOutput {
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
-    pub fn rulesets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataQualityRulesetListDetails]> {
+    pub fn rulesets(&self) -> ::std::option::Option<&[crate::types::DataQualityRulesetListDetails]> {
         self.rulesets.as_deref()
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataQualityRulesetsOutput {
 }
 impl ListDataQualityRulesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder {
         crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityRulesetsOutputBuilder {
-    pub(crate) rulesets:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
+    pub(crate) rulesets: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListDataQualityRulesetsOutputBuilder {
         self
     }
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
-    pub fn set_rulesets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
-    ) -> Self {
+    pub fn set_rulesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>) -> Self {
         self.rulesets = input;
         self
     }
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
-    pub fn get_rulesets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>> {
+    pub fn get_rulesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>> {
         &self.rulesets
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -99,9 +86,7 @@ impl ListDataQualityRulesetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
+    pub fn build(self) -> crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
         crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
             rulesets: self.rulesets,
             next_token: self.next_token,

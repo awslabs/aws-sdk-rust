@@ -13,9 +13,7 @@ pub fn ser_update_slack_channel_configuration_input(
         object.key("channelRoleArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.notify_on_add_correspondence_to_case {
-        object
-            .key("notifyOnAddCorrespondenceToCase")
-            .boolean(*var_4);
+        object.key("notifyOnAddCorrespondenceToCase").boolean(*var_4);
     }
     if let Some(var_5) = &input.notify_on_case_severity {
         object.key("notifyOnCaseSeverity").string(var_5.as_str());

@@ -36,9 +36,7 @@ impl UpdateUserInput {
 
 /// A builder for [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -91,26 +83,16 @@ impl UpdateUserInputBuilder {
         self
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user::UpdateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             identity_store_id: self.identity_store_id,
             user_id: self.user_id,

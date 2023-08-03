@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTlsInspectionConfigurationOutput`](crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput) with field(s):
     ///   - [`tls_inspection_configuration_response(Option<TlsInspectionConfigurationResponse>)`](crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput::tls_inspection_configuration_response): <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     /// - On failure, responds with [`SdkError<DeleteTLSInspectionConfigurationError>`](crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError)
-    pub fn delete_tls_inspection_configuration(&self) -> crate::operation::delete_tls_inspection_configuration::builders::DeleteTLSInspectionConfigurationFluentBuilder{
+    pub fn delete_tls_inspection_configuration(
+        &self,
+    ) -> crate::operation::delete_tls_inspection_configuration::builders::DeleteTLSInspectionConfigurationFluentBuilder {
         crate::operation::delete_tls_inspection_configuration::builders::DeleteTLSInspectionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

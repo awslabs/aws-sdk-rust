@@ -95,9 +95,7 @@ impl TargetHealth {
 
 /// A builder for [`TargetHealth`](crate::types::TargetHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetHealthBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TargetHealthStateEnum>,
     pub(crate) reason: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
@@ -110,10 +108,7 @@ impl TargetHealthBuilder {
         self
     }
     /// <p>The state of the target.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetHealthStateEnum>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TargetHealthStateEnum>) -> Self {
         self.state = input;
         self
     }
@@ -185,10 +180,7 @@ impl TargetHealthBuilder {
     /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::TargetHealthReasonEnum>) -> Self {
         self.reason = input;
         self
     }

@@ -13,7 +13,11 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayPeeringAttachmentOutput`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentOutput) with field(s):
     ///   - [`transit_gateway_peering_attachment(Option<TransitGatewayPeeringAttachment>)`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentOutput::transit_gateway_peering_attachment): <p>The transit gateway peering attachment.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayPeeringAttachmentError>`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentError)
-    pub fn create_transit_gateway_peering_attachment(&self) -> crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentFluentBuilder{
-        crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentFluentBuilder::new(self.handle.clone())
+    pub fn create_transit_gateway_peering_attachment(
+        &self,
+    ) -> crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentFluentBuilder {
+        crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

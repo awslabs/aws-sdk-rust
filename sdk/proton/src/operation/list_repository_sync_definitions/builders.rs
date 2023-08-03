@@ -26,7 +26,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder,
+    inner: crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder,
 }
 impl ListRepositorySyncDefinitionsFluentBuilder {
     /// Creates a new `ListRepositorySyncDefinitions`.
@@ -37,7 +37,7 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
         }
     }
     /// Access the ListRepositorySyncDefinitions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
             crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
             crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator {
         crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -152,17 +135,12 @@ impl ListRepositorySyncDefinitionsFluentBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         self.inner.get_repository_provider()
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>

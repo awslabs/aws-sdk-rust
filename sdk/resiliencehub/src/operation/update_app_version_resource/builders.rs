@@ -32,7 +32,7 @@ impl UpdateAppVersionResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAppVersionResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceInputBuilder,
+    inner: crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceInputBuilder,
 }
 impl UpdateAppVersionResourceFluentBuilder {
     /// Creates a new `UpdateAppVersionResource`.
@@ -43,7 +43,7 @@ impl UpdateAppVersionResourceFluentBuilder {
         }
     }
     /// Access the UpdateAppVersionResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl UpdateAppVersionResourceFluentBuilder {
             crate::operation::update_app_version_resource::UpdateAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_resource::UpdateAppVersionResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl UpdateAppVersionResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl UpdateAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_resource::UpdateAppVersionResourceError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl UpdateAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_resource::UpdateAppVersionResourceError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl UpdateAppVersionResourceFluentBuilder {
             crate::operation::update_app_version_resource::UpdateAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_version_resource::UpdateAppVersionResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +130,12 @@ impl UpdateAppVersionResourceFluentBuilder {
         self.inner.get_app_arn()
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -166,32 +149,21 @@ impl UpdateAppVersionResourceFluentBuilder {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalResourceId>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn get_logical_resource_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         self.inner.get_logical_resource_id()
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.physical_resource_id(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }
@@ -214,18 +186,12 @@ impl UpdateAppVersionResourceFluentBuilder {
         self.inner.get_aws_region()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -234,18 +200,12 @@ impl UpdateAppVersionResourceFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -258,25 +218,17 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
     ///
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn app_components(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_components(input.into());
         self
     }
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn set_app_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_app_components(input);
         self
     }
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn get_app_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_app_components()
     }
     /// Adds a key-value pair to `additionalInfo`.
@@ -284,23 +236,14 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.additional_info(k.into(), v);
         self
     }
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
@@ -308,9 +251,7 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_additional_info()
     }
     /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>

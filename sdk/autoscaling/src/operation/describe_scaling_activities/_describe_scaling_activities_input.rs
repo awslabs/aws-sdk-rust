@@ -45,16 +45,14 @@ impl DescribeScalingActivitiesInput {
 }
 impl DescribeScalingActivitiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
-    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder {
         crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesInputBuilder {
     pub(crate) activity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -77,33 +75,22 @@ impl DescribeScalingActivitiesInputBuilder {
     }
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn set_activity_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_activity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.activity_ids = input;
         self
     }
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn get_activity_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_activity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.activity_ids
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -160,14 +147,12 @@ impl DescribeScalingActivitiesInputBuilder {
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
-                activity_ids: self.activity_ids,
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                include_deleted_groups: self.include_deleted_groups,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
+            activity_ids: self.activity_ids,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            include_deleted_groups: self.include_deleted_groups,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

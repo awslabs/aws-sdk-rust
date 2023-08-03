@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<StartPipelineExecutionError>`](crate::operation::start_pipeline_execution::StartPipelineExecutionError)
-    pub fn start_pipeline_execution(
-        &self,
-    ) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder
-    {
+    pub fn start_pipeline_execution(&self) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder {
         crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

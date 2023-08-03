@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`cluster_versions(Option<Vec<ClusterVersion>>)`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput::cluster_versions): <p>A list of <code>Version</code> elements. </p>
     /// - On failure, responds with [`SdkError<DescribeClusterVersionsError>`](crate::operation::describe_cluster_versions::DescribeClusterVersionsError)
-    pub fn describe_cluster_versions(
-        &self,
-    ) -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsFluentBuilder
-    {
+    pub fn describe_cluster_versions(&self) -> crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsFluentBuilder {
         crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsFluentBuilder::new(self.handle.clone())
     }
 }

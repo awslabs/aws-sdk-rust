@@ -15,33 +15,25 @@ impl GetNetworkAnalyzerConfigurationInput {
 }
 impl GetNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
-    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder {
         crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl GetNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_name = input;
         self
     }
@@ -58,9 +50,8 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput {
-                configuration_name: self.configuration_name
-                ,
-            }
+                configuration_name: self.configuration_name,
+            },
         )
     }
 }

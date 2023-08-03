@@ -37,9 +37,7 @@ impl ProjectMetadata {
 
 /// A builder for [`ProjectMetadata`](crate::types::ProjectMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectMetadataBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ProjectMetadataBuilder {
         self
     }
     /// <p>The unix timestamp for the date and time that the project was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }

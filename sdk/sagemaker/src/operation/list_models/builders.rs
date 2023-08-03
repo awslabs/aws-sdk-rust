@@ -10,10 +10,7 @@ impl ListModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_models::ListModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_models::ListModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_models();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListModelsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_models::ListModels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_models::ListModels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListModelsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_models::ListModels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_models::ListModels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError>,
     > {
         self.customize_middleware().await
@@ -175,18 +163,12 @@ impl ListModelsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -200,10 +182,7 @@ impl ListModelsFluentBuilder {
         self
     }
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -217,10 +196,7 @@ impl ListModelsFluentBuilder {
         self
     }
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }

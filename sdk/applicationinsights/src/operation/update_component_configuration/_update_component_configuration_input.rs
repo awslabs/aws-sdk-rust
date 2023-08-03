@@ -50,16 +50,14 @@ impl UpdateComponentConfigurationInput {
 }
 impl UpdateComponentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentConfigurationInput`](crate::operation::update_component_configuration::UpdateComponentConfigurationInput).
-    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder {
         crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateComponentConfigurationInput`](crate::operation::update_component_configuration::UpdateComponentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentConfigurationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct UpdateComponentConfigurationInputBuilder {
 }
 impl UpdateComponentConfigurationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -90,18 +82,12 @@ impl UpdateComponentConfigurationInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -138,18 +124,12 @@ impl UpdateComponentConfigurationInputBuilder {
         &self.tier
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn component_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-    pub fn set_component_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_configuration = input;
         self
     }
@@ -178,15 +158,13 @@ impl UpdateComponentConfigurationInputBuilder {
         crate::operation::update_component_configuration::UpdateComponentConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_component_configuration::UpdateComponentConfigurationInput {
-                resource_group_name: self.resource_group_name,
-                component_name: self.component_name,
-                monitor: self.monitor,
-                tier: self.tier,
-                component_configuration: self.component_configuration,
-                auto_config_enabled: self.auto_config_enabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_component_configuration::UpdateComponentConfigurationInput {
+            resource_group_name: self.resource_group_name,
+            component_name: self.component_name,
+            monitor: self.monitor,
+            tier: self.tier,
+            component_configuration: self.component_configuration,
+            auto_config_enabled: self.auto_config_enabled,
+        })
     }
 }

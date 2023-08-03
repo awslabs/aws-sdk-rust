@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`BundleInstanceOutput`](crate::operation::bundle_instance::BundleInstanceOutput) with field(s):
     ///   - [`bundle_task(Option<BundleTask>)`](crate::operation::bundle_instance::BundleInstanceOutput::bundle_task): <p>Information about the bundle task.</p>
     /// - On failure, responds with [`SdkError<BundleInstanceError>`](crate::operation::bundle_instance::BundleInstanceError)
-    pub fn bundle_instance(
-        &self,
-    ) -> crate::operation::bundle_instance::builders::BundleInstanceFluentBuilder {
-        crate::operation::bundle_instance::builders::BundleInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn bundle_instance(&self) -> crate::operation::bundle_instance::builders::BundleInstanceFluentBuilder {
+        crate::operation::bundle_instance::builders::BundleInstanceFluentBuilder::new(self.handle.clone())
     }
 }

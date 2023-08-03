@@ -8,9 +8,7 @@ pub struct BatchCreateDelegationByAssessmentOutput {
     pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>,
-    >,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateDelegationByAssessmentOutput {
@@ -19,9 +17,7 @@ impl BatchCreateDelegationByAssessmentOutput {
         self.delegations.as_deref()
     }
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchCreateDelegationByAssessmentError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchCreateDelegationByAssessmentError]> {
         self.errors.as_deref()
     }
 }
@@ -32,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchCreateDelegationByAssessmentOutp
 }
 impl BatchCreateDelegationByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateDelegationByAssessmentOutput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput).
-    pub fn builder() -> crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentOutputBuilder{
+    pub fn builder() -> crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentOutputBuilder {
         crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateDelegationByAssessmentOutput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentOutputBuilder {
     pub(crate) delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
-    pub(crate) errors: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>,
-    >,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateDelegationByAssessmentOutputBuilder {
@@ -62,17 +54,12 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
         self
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn set_delegations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
-    ) -> Self {
+    pub fn set_delegations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>) -> Self {
         self.delegations = input;
         self
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn get_delegations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
+    pub fn get_delegations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
         &self.delegations
     }
     /// Appends an item to `errors`.
@@ -87,20 +74,12 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
         self
     }
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -113,12 +92,10 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateDelegationByAssessmentOutput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput).
-    pub fn build(self) -> crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput{
+    pub fn build(self) -> crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput {
         crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput {
-            delegations: self.delegations
-            ,
-            errors: self.errors
-            ,
+            delegations: self.delegations,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

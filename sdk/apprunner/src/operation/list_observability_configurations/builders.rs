@@ -5,16 +5,16 @@ pub use crate::operation::list_observability_configurations::_list_observability
 
 impl ListObservabilityConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_observability_configurations::ListObservabilityConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_observability_configurations::ListObservabilityConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_observability_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListObservabilityConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder,
+    inner: crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder,
 }
 impl ListObservabilityConfigurationsFluentBuilder {
     /// Creates a new `ListObservabilityConfigurations`.
@@ -38,15 +38,20 @@ impl ListObservabilityConfigurationsFluentBuilder {
         }
     }
     /// Access the ListObservabilityConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_observability_configurations::ListObservabilityConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_observability_configurations::ListObservabilityConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListObservabilityConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,45 +88,46 @@ impl ListObservabilityConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_observability_configurations::ListObservabilityConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_observability_configurations::ListObservabilityConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator {
         crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn observability_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.observability_configuration_name(input.into());
         self
     }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn set_observability_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_observability_configuration_name(input);
         self
     }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn get_observability_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_observability_configuration_name()
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>

@@ -10,10 +10,7 @@ impl EnableTopicRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_topic_rule::EnableTopicRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_topic_rule::EnableTopicRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_topic_rule();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl EnableTopicRuleFluentBuilder {
         }
     }
     /// Access the EnableTopicRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_topic_rule::builders::EnableTopicRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_topic_rule::builders::EnableTopicRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl EnableTopicRuleFluentBuilder {
             crate::operation::enable_topic_rule::EnableTopicRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_topic_rule::EnableTopicRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl EnableTopicRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl EnableTopicRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_topic_rule::EnableTopicRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_topic_rule::EnableTopicRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl EnableTopicRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_topic_rule::EnableTopicRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_topic_rule::EnableTopicRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl EnableTopicRuleFluentBuilder {
             crate::operation::enable_topic_rule::EnableTopicRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_topic_rule::EnableTopicRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_topic_rule::EnableTopicRuleError>,
     > {
         self.customize_middleware().await
     }

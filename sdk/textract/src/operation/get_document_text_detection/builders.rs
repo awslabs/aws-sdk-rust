@@ -31,7 +31,7 @@ impl GetDocumentTextDetectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDocumentTextDetectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder,
+    inner: crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder,
 }
 impl GetDocumentTextDetectionFluentBuilder {
     /// Creates a new `GetDocumentTextDetection`.
@@ -42,7 +42,7 @@ impl GetDocumentTextDetectionFluentBuilder {
         }
     }
     /// Access the GetDocumentTextDetection as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl GetDocumentTextDetectionFluentBuilder {
             crate::operation::get_document_text_detection::GetDocumentTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_text_detection::GetDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_text_detection::GetDocumentTextDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl GetDocumentTextDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl GetDocumentTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_text_detection::GetDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_text_detection::GetDocumentTextDetectionError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl GetDocumentTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_text_detection::GetDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_text_detection::GetDocumentTextDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl GetDocumentTextDetectionFluentBuilder {
             crate::operation::get_document_text_detection::GetDocumentTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_document_text_detection::GetDocumentTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_document_text_detection::GetDocumentTextDetectionError>,
     > {
         self.customize_middleware().await
     }

@@ -3,10 +3,7 @@
 pub fn de_public_zone_vpc_association_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::PublicZoneVpcAssociationBuilder,
-) -> Result<
-    crate::types::error::builders::PublicZoneVpcAssociationBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::PublicZoneVpcAssociationBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

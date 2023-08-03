@@ -29,17 +29,14 @@ impl ListDeviceProfilesInput {
 }
 impl ListDeviceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceProfilesInput`](crate::operation::list_device_profiles::ListDeviceProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_device_profiles::builders::ListDeviceProfilesInputBuilder {
         crate::operation::list_device_profiles::builders::ListDeviceProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceProfilesInput`](crate::operation::list_device_profiles::ListDeviceProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -80,32 +77,22 @@ impl ListDeviceProfilesInputBuilder {
         self
     }
     /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn set_device_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceProfileType>,
-    ) -> Self {
+    pub fn set_device_profile_type(mut self, input: ::std::option::Option<crate::types::DeviceProfileType>) -> Self {
         self.device_profile_type = input;
         self
     }
     /// <p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn get_device_profile_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceProfileType> {
+    pub fn get_device_profile_type(&self) -> &::std::option::Option<crate::types::DeviceProfileType> {
         &self.device_profile_type
     }
     /// Consumes the builder and constructs a [`ListDeviceProfilesInput`](crate::operation::list_device_profiles::ListDeviceProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_profiles::ListDeviceProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_profiles::ListDeviceProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                device_profile_type: self.device_profile_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_profiles::ListDeviceProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_device_profiles::ListDeviceProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            device_profile_type: self.device_profile_type,
+        })
     }
 }

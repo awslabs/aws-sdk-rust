@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput) with field(s):
     ///   - [`reserved_instances_modification_id(Option<String>)`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput::reserved_instances_modification_id): <p>The ID for the modification.</p>
     /// - On failure, responds with [`SdkError<ModifyReservedInstancesError>`](crate::operation::modify_reserved_instances::ModifyReservedInstancesError)
-    pub fn modify_reserved_instances(
-        &self,
-    ) -> crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesFluentBuilder
-    {
+    pub fn modify_reserved_instances(&self) -> crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesFluentBuilder {
         crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`wireless_device_list(Option<Vec<WirelessDeviceStatistics>>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::wireless_device_list): <p>The ID of the wireless device.</p>
     /// - On failure, responds with [`SdkError<ListWirelessDevicesError>`](crate::operation::list_wireless_devices::ListWirelessDevicesError)
-    pub fn list_wireless_devices(
-        &self,
-    ) -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder {
-        crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_wireless_devices(&self) -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder {
+        crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::new(self.handle.clone())
     }
 }

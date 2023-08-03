@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocationFsxOntapOutput {
 }
 impl DescribeLocationFsxOntapOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapOutput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput).
-    pub fn builder() -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapOutputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapOutputBuilder {
         crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxOntapOutput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOntapOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self
     }
     /// <p>The time that the location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -148,42 +143,28 @@ impl DescribeLocationFsxOntapOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
     /// <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-    pub fn storage_virtual_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-    pub fn set_storage_virtual_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_arn = input;
         self
     }
@@ -192,18 +173,12 @@ impl DescribeLocationFsxOntapOutputBuilder {
         &self.storage_virtual_machine_arn
     }
     /// <p>The ARN of the FSx for ONTAP file system.</p>
-    pub fn fsx_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the FSx for ONTAP file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = input;
         self
     }
@@ -221,9 +196,7 @@ impl DescribeLocationFsxOntapOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocationFsxOntapOutput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput {
+    pub fn build(self) -> crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput {
         crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput {
             creation_time: self.creation_time,
             location_arn: self.location_arn,

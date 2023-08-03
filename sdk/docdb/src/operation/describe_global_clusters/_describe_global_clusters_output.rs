@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeGlobalClustersOutput {
 }
 impl DescribeGlobalClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder {
         crate::operation::describe_global_clusters::builders::DescribeGlobalClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) global_clusters: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>,
@@ -72,17 +68,12 @@ impl DescribeGlobalClustersOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_global_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>,
-    ) -> Self {
+    pub fn set_global_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>) -> Self {
         self.global_clusters = input;
         self
     }
     /// <p></p>
-    pub fn get_global_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>> {
+    pub fn get_global_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>> {
         &self.global_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

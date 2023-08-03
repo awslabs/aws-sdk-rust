@@ -27,7 +27,7 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder,
+    inner: crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder,
 }
 impl UpdateCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `UpdateCallAnalyticsCategory`.
@@ -38,7 +38,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         }
     }
     /// Access the UpdateCallAnalyticsCategory as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category_name(input.into());
         self
     }
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category_name(input);
         self
     }
@@ -151,10 +134,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         self
     }
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }

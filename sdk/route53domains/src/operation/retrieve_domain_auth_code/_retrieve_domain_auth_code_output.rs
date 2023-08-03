@@ -30,9 +30,7 @@ impl ::aws_http::request_id::RequestId for RetrieveDomainAuthCodeOutput {
 }
 impl RetrieveDomainAuthCodeOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder {
         crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder::default()
     }
 }
@@ -69,9 +67,7 @@ impl RetrieveDomainAuthCodeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput {
+    pub fn build(self) -> crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput {
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput {
             auth_code: self.auth_code,
             _request_id: self._request_id,

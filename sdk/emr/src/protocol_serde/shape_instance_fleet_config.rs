@@ -27,10 +27,7 @@ pub fn ser_instance_fleet_config(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_instance_type_config::ser_instance_type_config(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_instance_type_config::ser_instance_type_config(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,7 +36,10 @@ pub fn ser_instance_fleet_config(
     if let Some(var_9) = &input.launch_specifications {
         #[allow(unused_mut)]
         let mut object_10 = object.key("LaunchSpecifications").start_object();
-        crate::protocol_serde::shape_instance_fleet_provisioning_specifications::ser_instance_fleet_provisioning_specifications(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_instance_fleet_provisioning_specifications::ser_instance_fleet_provisioning_specifications(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.resize_specifications {

@@ -37,9 +37,7 @@ impl Position {
 
 /// A builder for [`Position`](crate::types::Position).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PositionBuilder {
     pub(crate) line: ::std::option::Option<i32>,
     pub(crate) column: ::std::option::Option<i32>,

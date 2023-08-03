@@ -23,12 +23,9 @@ impl BatchGetObjectAttributesResponse {
 
 /// A builder for [`BatchGetObjectAttributesResponse`](crate::types::BatchGetObjectAttributesResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetObjectAttributesResponseBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetObjectAttributesResponseBuilder {
     /// Appends an item to `attributes`.
@@ -43,23 +40,16 @@ impl BatchGetObjectAttributesResponseBuilder {
         self
     }
     /// <p>The attribute values that are associated with an object.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attribute values that are associated with an object.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::types::BatchGetObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetObjectAttributesResponse {
-        crate::types::BatchGetObjectAttributesResponse {
-            attributes: self.attributes,
-        }
+        crate::types::BatchGetObjectAttributesResponse { attributes: self.attributes }
     }
 }

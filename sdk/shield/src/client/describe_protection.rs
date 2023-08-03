@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProtectionOutput`](crate::operation::describe_protection::DescribeProtectionOutput) with field(s):
     ///   - [`protection(Option<Protection>)`](crate::operation::describe_protection::DescribeProtectionOutput::protection): <p>The <code>Protection</code> that you requested. </p>
     /// - On failure, responds with [`SdkError<DescribeProtectionError>`](crate::operation::describe_protection::DescribeProtectionError)
-    pub fn describe_protection(
-        &self,
-    ) -> crate::operation::describe_protection::builders::DescribeProtectionFluentBuilder {
-        crate::operation::describe_protection::builders::DescribeProtectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_protection(&self) -> crate::operation::describe_protection::builders::DescribeProtectionFluentBuilder {
+        crate::operation::describe_protection::builders::DescribeProtectionFluentBuilder::new(self.handle.clone())
     }
 }

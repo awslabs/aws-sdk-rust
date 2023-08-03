@@ -61,25 +61,20 @@ impl UpdateFirewallPolicyInput {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 impl UpdateFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder {
         crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallPolicyInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
@@ -87,8 +82,7 @@ pub struct UpdateFirewallPolicyInputBuilder {
     pub(crate) firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
@@ -110,19 +104,13 @@ impl UpdateFirewallPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
@@ -133,19 +121,13 @@ impl UpdateFirewallPolicyInputBuilder {
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }
@@ -160,10 +142,7 @@ impl UpdateFirewallPolicyInputBuilder {
         self
     }
     /// <p>The updated firewall policy to use for the firewall. </p>
-    pub fn set_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicy>,
-    ) -> Self {
+    pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicy>) -> Self {
         self.firewall_policy = input;
         self
     }
@@ -206,44 +185,32 @@ impl UpdateFirewallPolicyInputBuilder {
         &self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_policy::UpdateFirewallPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
-                update_token: self.update_token,
-                firewall_policy_arn: self.firewall_policy_arn,
-                firewall_policy_name: self.firewall_policy_name,
-                firewall_policy: self.firewall_policy,
-                description: self.description,
-                dry_run: self.dry_run,
-                encryption_configuration: self.encryption_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
+            update_token: self.update_token,
+            firewall_policy_arn: self.firewall_policy_arn,
+            firewall_policy_name: self.firewall_policy_name,
+            firewall_policy: self.firewall_policy,
+            description: self.description,
+            dry_run: self.dry_run,
+            encryption_configuration: self.encryption_configuration,
+        })
     }
 }

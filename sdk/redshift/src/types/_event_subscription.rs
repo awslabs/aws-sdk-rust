@@ -68,9 +68,7 @@ impl EventSubscription {
         self.status.as_deref()
     }
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-    pub fn subscription_creation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn subscription_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.subscription_creation_time.as_ref()
     }
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
@@ -109,9 +107,7 @@ impl EventSubscription {
 
 /// A builder for [`EventSubscription`](crate::types::EventSubscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventSubscriptionBuilder {
     pub(crate) customer_aws_id: ::std::option::Option<::std::string::String>,
     pub(crate) cust_subscription_id: ::std::option::Option<::std::string::String>,
@@ -127,18 +123,12 @@ pub struct EventSubscriptionBuilder {
 }
 impl EventSubscriptionBuilder {
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
-    pub fn customer_aws_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_aws_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
-    pub fn set_customer_aws_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_aws_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_id = input;
         self
     }
@@ -147,18 +137,12 @@ impl EventSubscriptionBuilder {
         &self.customer_aws_id
     }
     /// <p>The name of the Amazon Redshift event notification subscription.</p>
-    pub fn cust_subscription_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cust_subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cust_subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift event notification subscription.</p>
-    pub fn set_cust_subscription_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cust_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cust_subscription_id = input;
         self
     }
@@ -167,18 +151,12 @@ impl EventSubscriptionBuilder {
         &self.cust_subscription_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -221,17 +199,12 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-    pub fn set_subscription_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_subscription_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.subscription_creation_time = input;
         self
     }
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-    pub fn get_subscription_creation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.subscription_creation_time
     }
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
@@ -253,27 +226,19 @@ impl EventSubscriptionBuilder {
     /// To override the contents of this collection use [`set_source_ids_list`](Self::set_source_ids_list).
     ///
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    pub fn source_ids_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ids_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_ids_list.unwrap_or_default();
         v.push(input.into());
         self.source_ids_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    pub fn set_source_ids_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ids_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_ids_list = input;
         self
     }
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    pub fn get_source_ids_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_ids_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_ids_list
     }
     /// Appends an item to `event_categories_list`.
@@ -282,10 +247,7 @@ impl EventSubscriptionBuilder {
     ///
     /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn event_categories_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories_list.unwrap_or_default();
         v.push(input.into());
         self.event_categories_list = ::std::option::Option::Some(v);
@@ -293,18 +255,13 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn set_event_categories_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories_list = input;
         self
     }
     /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn get_event_categories_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories_list
     }
     /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
@@ -350,10 +307,7 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The list of tags for the event subscription.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

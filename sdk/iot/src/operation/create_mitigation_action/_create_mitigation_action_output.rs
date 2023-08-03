@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateMitigationActionOutput {
 }
 impl CreateMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateMitigationActionOutput`](crate::operation::create_mitigation_action::CreateMitigationActionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_mitigation_action::builders::CreateMitigationActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_mitigation_action::builders::CreateMitigationActionOutputBuilder {
         crate::operation::create_mitigation_action::builders::CreateMitigationActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMitigationActionOutput`](crate::operation::create_mitigation_action::CreateMitigationActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMitigationActionOutputBuilder {
     pub(crate) action_arn: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,

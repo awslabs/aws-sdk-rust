@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::operation::list_installed_components::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p> <note>   <p>Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>  </note> <note>   <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>  </note>
     ///   - [`next_token(Option<String>)`](crate::operation::list_installed_components::ListInstalledComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListInstalledComponentsError>`](crate::operation::list_installed_components::ListInstalledComponentsError)
-    pub fn list_installed_components(
-        &self,
-    ) -> crate::operation::list_installed_components::builders::ListInstalledComponentsFluentBuilder
-    {
+    pub fn list_installed_components(&self) -> crate::operation::list_installed_components::builders::ListInstalledComponentsFluentBuilder {
         crate::operation::list_installed_components::builders::ListInstalledComponentsFluentBuilder::new(self.handle.clone())
     }
 }

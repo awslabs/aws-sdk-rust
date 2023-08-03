@@ -20,9 +20,7 @@ impl DeleteScheduleOutput {
 
 /// A builder for [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduleOutputBuilder {
     _request_id: Option<String>,
 }

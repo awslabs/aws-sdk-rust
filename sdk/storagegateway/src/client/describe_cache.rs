@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`cache_hit_percentage(f64)`](crate::operation::describe_cache::DescribeCacheOutput::cache_hit_percentage): <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
     ///   - [`cache_miss_percentage(f64)`](crate::operation::describe_cache::DescribeCacheOutput::cache_miss_percentage): <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheError>`](crate::operation::describe_cache::DescribeCacheError)
-    pub fn describe_cache(
-        &self,
-    ) -> crate::operation::describe_cache::builders::DescribeCacheFluentBuilder {
-        crate::operation::describe_cache::builders::DescribeCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_cache(&self) -> crate::operation::describe_cache::builders::DescribeCacheFluentBuilder {
+        crate::operation::describe_cache::builders::DescribeCacheFluentBuilder::new(self.handle.clone())
     }
 }

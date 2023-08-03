@@ -5,8 +5,7 @@
 pub struct ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
     #[doc(hidden)]
-    pub unsupported_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
+    pub unsupported_resources: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
     /// <p>The identifier for a specific resolution.</p>
     #[doc(hidden)]
     pub resolution_id: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct ListUnsupportedAppVersionResourcesOutput {
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
-    pub fn unsupported_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsupportedResource]> {
+    pub fn unsupported_resources(&self) -> ::std::option::Option<&[crate::types::UnsupportedResource]> {
         self.unsupported_resources.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
@@ -38,19 +35,16 @@ impl ::aws_http::request_id::RequestId for ListUnsupportedAppVersionResourcesOut
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput).
-    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder {
         crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesOutputBuilder {
-    pub(crate) unsupported_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
+    pub(crate) unsupported_resources: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
     pub(crate) resolution_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -68,32 +62,21 @@ impl ListUnsupportedAppVersionResourcesOutputBuilder {
         self
     }
     /// <p>The unsupported resources for the application.</p>
-    pub fn set_unsupported_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
-    ) -> Self {
+    pub fn set_unsupported_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>) -> Self {
         self.unsupported_resources = input;
         self
     }
     /// <p>The unsupported resources for the application.</p>
-    pub fn get_unsupported_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>> {
+    pub fn get_unsupported_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>> {
         &self.unsupported_resources
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -125,14 +108,11 @@ impl ListUnsupportedAppVersionResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput).
-    pub fn build(self) -> crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput{
+    pub fn build(self) -> crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
         crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
-            unsupported_resources: self.unsupported_resources
-            ,
-            resolution_id: self.resolution_id
-            ,
-            next_token: self.next_token
-            ,
+            unsupported_resources: self.unsupported_resources,
+            resolution_id: self.resolution_id,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

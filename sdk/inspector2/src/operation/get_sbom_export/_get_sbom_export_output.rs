@@ -70,9 +70,7 @@ impl GetSbomExportOutput {
 
 /// A builder for [`GetSbomExportOutput`](crate::operation::get_sbom_export::GetSbomExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSbomExportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::SbomReportFormat>,
@@ -104,10 +102,7 @@ impl GetSbomExportOutputBuilder {
         self
     }
     /// <p>The format of the software bill of materials (SBOM) report.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SbomReportFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::SbomReportFormat>) -> Self {
         self.format = input;
         self
     }
@@ -121,10 +116,7 @@ impl GetSbomExportOutputBuilder {
         self
     }
     /// <p>The status of the software bill of materials (SBOM) report.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalReportStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExternalReportStatus>) -> Self {
         self.status = input;
         self
     }
@@ -138,10 +130,7 @@ impl GetSbomExportOutputBuilder {
         self
     }
     /// <p>An error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportingErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ReportingErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -150,18 +139,12 @@ impl GetSbomExportOutputBuilder {
         &self.error_code
     }
     /// <p>An error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -175,10 +158,7 @@ impl GetSbomExportOutputBuilder {
         self
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -192,17 +172,12 @@ impl GetSbomExportOutputBuilder {
         self
     }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ResourceFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
         &self.filter_criteria
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

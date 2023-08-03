@@ -58,9 +58,7 @@ impl SummarizedCounter {
 
 /// A builder for [`SummarizedCounter`](crate::types::SummarizedCounter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SummarizedCounterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max: ::std::option::Option<f64>,

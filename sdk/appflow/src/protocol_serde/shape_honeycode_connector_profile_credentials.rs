@@ -12,10 +12,7 @@ pub fn ser_honeycode_connector_profile_credentials(
     if let Some(var_3) = &input.o_auth_request {
         #[allow(unused_mut)]
         let mut object_4 = object.key("oAuthRequest").start_object();
-        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

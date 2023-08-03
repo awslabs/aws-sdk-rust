@@ -23,9 +23,7 @@ impl DocumentMetadata {
 
 /// A builder for [`DocumentMetadata`](crate::types::DocumentMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentMetadataBuilder {
     pub(crate) pages: ::std::option::Option<i32>,
 }

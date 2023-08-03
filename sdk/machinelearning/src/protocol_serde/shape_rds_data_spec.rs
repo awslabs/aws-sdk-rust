@@ -15,10 +15,7 @@ pub fn ser_rds_data_spec(
     if let Some(var_4) = &input.database_credentials {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DatabaseCredentials").start_object();
-        crate::protocol_serde::shape_rds_database_credentials::ser_rds_database_credentials(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_rds_database_credentials::ser_rds_database_credentials(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.s3_staging_location {

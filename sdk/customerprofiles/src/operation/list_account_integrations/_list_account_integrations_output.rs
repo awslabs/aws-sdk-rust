@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccountIntegrationsOutput {
 }
 impl ListAccountIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountIntegrationsOutput`](crate::operation::list_account_integrations::ListAccountIntegrationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsOutputBuilder {
         crate::operation::list_account_integrations::builders::ListAccountIntegrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountIntegrationsOutput`](crate::operation::list_account_integrations::ListAccountIntegrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountIntegrationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListAccountIntegrationsOutputBuilder {
         self
     }
     /// <p>The list of ListAccountIntegration instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListAccountIntegration instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
@@ -95,9 +86,7 @@ impl ListAccountIntegrationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountIntegrationsOutput`](crate::operation::list_account_integrations::ListAccountIntegrationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_account_integrations::ListAccountIntegrationsOutput {
+    pub fn build(self) -> crate::operation::list_account_integrations::ListAccountIntegrationsOutput {
         crate::operation::list_account_integrations::ListAccountIntegrationsOutput {
             items: self.items,
             next_token: self.next_token,

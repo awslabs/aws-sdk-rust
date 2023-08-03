@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput::status_message): <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
     ///   - [`analyze_lending_model_version(Option<String>)`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput::analyze_lending_model_version): <p> The current model version of the Analyze Lending API.</p>
     /// - On failure, responds with [`SdkError<GetLendingAnalysisError>`](crate::operation::get_lending_analysis::GetLendingAnalysisError)
-    pub fn get_lending_analysis(
-        &self,
-    ) -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisFluentBuilder {
-        crate::operation::get_lending_analysis::builders::GetLendingAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_lending_analysis(&self) -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisFluentBuilder {
+        crate::operation::get_lending_analysis::builders::GetLendingAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListAssociationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_associations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAssociationsFluentBuilder {
         }
     }
     /// Access the ListAssociations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associations::builders::ListAssociationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associations::builders::ListAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAssociationsFluentBuilder {
             crate::operation::list_associations::ListAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAssociationsFluentBuilder {
             crate::operation::list_associations::ListAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_associations::paginator::ListAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
-        crate::operation::list_associations::paginator::ListAssociationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
+        crate::operation::list_associations::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AssociationFilterList`.
     ///
@@ -147,19 +126,14 @@ impl ListAssociationsFluentBuilder {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn set_association_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
-    ) -> Self {
+    pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>) -> Self {
         self.inner = self.inner.set_association_filter_list(input);
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn get_association_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {
+    pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {
         self.inner.get_association_filter_list()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

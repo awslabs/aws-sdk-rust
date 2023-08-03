@@ -50,18 +50,14 @@ impl CreateRateBasedRuleInput {
 }
 impl CreateRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleInput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleInput).
-    pub fn builder(
-    ) -> crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder {
-        crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder {
+        crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRateBasedRuleInput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRateBasedRuleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -153,10 +149,7 @@ impl CreateRateBasedRuleInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -167,19 +160,15 @@ impl CreateRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateRateBasedRuleInput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rate_based_rule::CreateRateBasedRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_rate_based_rule::CreateRateBasedRuleInput {
-                name: self.name,
-                metric_name: self.metric_name,
-                rate_key: self.rate_key,
-                rate_limit: self.rate_limit.unwrap_or_default(),
-                change_token: self.change_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_rate_based_rule::CreateRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_rate_based_rule::CreateRateBasedRuleInput {
+            name: self.name,
+            metric_name: self.metric_name,
+            rate_key: self.rate_key,
+            rate_limit: self.rate_limit.unwrap_or_default(),
+            change_token: self.change_token,
+            tags: self.tags,
+        })
     }
 }

@@ -16,18 +16,14 @@ impl ListOfferingTransactionsInput {
 }
 impl ListOfferingTransactionsInput {
     /// Creates a new builder-style object to manufacture [`ListOfferingTransactionsInput`](crate::operation::list_offering_transactions::ListOfferingTransactionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsInputBuilder {
         crate::operation::list_offering_transactions::builders::ListOfferingTransactionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOfferingTransactionsInput`](crate::operation::list_offering_transactions::ListOfferingTransactionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingTransactionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl ListOfferingTransactionsInputBuilder {
         crate::operation::list_offering_transactions::ListOfferingTransactionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_offering_transactions::ListOfferingTransactionsInput {
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_offering_transactions::ListOfferingTransactionsInput { next_token: self.next_token })
     }
 }

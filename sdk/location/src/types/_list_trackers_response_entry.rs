@@ -11,10 +11,7 @@ pub struct ListTrackersResponseEntry {
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -38,10 +35,7 @@ impl ListTrackersResponseEntry {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -68,9 +62,7 @@ impl ListTrackersResponseEntry {
 
 /// A builder for [`ListTrackersResponseEntry`](crate::types::ListTrackersResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrackersResponseEntryBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -109,49 +101,31 @@ impl ListTrackersResponseEntryBuilder {
         &self.description
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pricing_plan
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan_data_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn set_pricing_plan_data_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_plan_data_source = input;
         self
     }
@@ -166,10 +140,7 @@ impl ListTrackersResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -183,10 +154,7 @@ impl ListTrackersResponseEntryBuilder {
         self
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

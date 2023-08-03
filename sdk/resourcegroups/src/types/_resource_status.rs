@@ -23,9 +23,7 @@ impl ResourceStatus {
 
 /// A builder for [`ResourceStatus`](crate::types::ResourceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceStatusBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ResourceStatusValue>,
 }
@@ -36,10 +34,7 @@ impl ResourceStatusBuilder {
         self
     }
     /// <p>The current status.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatusValue>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ResourceStatusValue>) -> Self {
         self.name = input;
         self
     }

@@ -15,18 +15,14 @@ impl DescribeSmbSettingsInput {
 }
 impl DescribeSmbSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
-        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
+        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSmbSettingsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DescribeSmbSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_smb_settings::DescribeSmbSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_smb_settings::DescribeSmbSettingsInput {
-                gateway_arn: self.gateway_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_smb_settings::DescribeSmbSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_smb_settings::DescribeSmbSettingsInput {
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

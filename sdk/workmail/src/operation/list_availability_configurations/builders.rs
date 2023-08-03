@@ -26,7 +26,7 @@ impl ListAvailabilityConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAvailabilityConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder,
+    inner: crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder,
 }
 impl ListAvailabilityConfigurationsFluentBuilder {
     /// Creates a new `ListAvailabilityConfigurations`.
@@ -37,7 +37,7 @@ impl ListAvailabilityConfigurationsFluentBuilder {
         }
     }
     /// Access the ListAvailabilityConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAvailabilityConfigurationsFluentBuilder {
             crate::operation::list_availability_configurations::ListAvailabilityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAvailabilityConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAvailabilityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAvailabilityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListAvailabilityConfigurationsFluentBuilder {
             crate::operation::list_availability_configurations::ListAvailabilityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator {
         crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

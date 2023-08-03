@@ -15,35 +15,25 @@ impl GetGameSessionLogUrlInput {
 }
 impl GetGameSessionLogUrlInput {
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder {
         crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameSessionLogUrlInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGameSessionLogUrlInputBuilder {
     /// <p>A unique identifier for the game session to get logs for. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to get logs for. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetGameSessionLogUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput {
-                game_session_id: self.game_session_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput {
+            game_session_id: self.game_session_id,
+        })
     }
 }

@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ZendeskConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for ZendeskConnectorOperator {
             "VALIDATE_NON_NULL" => ZendeskConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => ZendeskConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => ZendeskConnectorOperator::ValidateNumeric,
-            other => ZendeskConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ZendeskConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

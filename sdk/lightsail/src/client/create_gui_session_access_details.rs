@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::failure_reason): <p>The reason the operation failed.</p>
     ///   - [`sessions(Option<Vec<Session>>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::sessions): <p>Returns information about the specified NICE DCV GUI session.</p>
     /// - On failure, responds with [`SdkError<CreateGUISessionAccessDetailsError>`](crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError)
-    pub fn create_gui_session_access_details(&self) -> crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder{
+    pub fn create_gui_session_access_details(
+        &self,
+    ) -> crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder {
         crate::operation::create_gui_session_access_details::builders::CreateGUISessionAccessDetailsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,33 +15,25 @@ impl GetSiteToSiteVpnAttachmentInput {
 }
 impl GetSiteToSiteVpnAttachmentInput {
     /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentInput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput).
-    pub fn builder() -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder {
         crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSiteToSiteVpnAttachmentInput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSiteToSiteVpnAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetSiteToSiteVpnAttachmentInputBuilder {
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput {
-                attachment_id: self.attachment_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput {
+            attachment_id: self.attachment_id,
+        })
     }
 }

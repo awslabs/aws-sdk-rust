@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`application_mode(ApplicationMode)`](crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesFluentBuilder::application_mode) / [`set_application_mode(Option<ApplicationMode>)`](crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesFluentBuilder::set_application_mode): <p>The classification for application component types.</p>
     /// - On success, responds with [`PutPortfolioPreferencesOutput`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput)
     /// - On failure, responds with [`SdkError<PutPortfolioPreferencesError>`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError)
-    pub fn put_portfolio_preferences(
-        &self,
-    ) -> crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesFluentBuilder
-    {
+    pub fn put_portfolio_preferences(&self) -> crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesFluentBuilder {
         crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

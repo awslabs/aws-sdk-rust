@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput) with field(s):
     ///   - [`execution_id(Option<String>)`](crate::operation::start_batch_job::StartBatchJobOutput::execution_id): <p>The unique identifier of this execution of the batch job.</p>
     /// - On failure, responds with [`SdkError<StartBatchJobError>`](crate::operation::start_batch_job::StartBatchJobError)
-    pub fn start_batch_job(
-        &self,
-    ) -> crate::operation::start_batch_job::builders::StartBatchJobFluentBuilder {
-        crate::operation::start_batch_job::builders::StartBatchJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_batch_job(&self) -> crate::operation::start_batch_job::builders::StartBatchJobFluentBuilder {
+        crate::operation::start_batch_job::builders::StartBatchJobFluentBuilder::new(self.handle.clone())
     }
 }

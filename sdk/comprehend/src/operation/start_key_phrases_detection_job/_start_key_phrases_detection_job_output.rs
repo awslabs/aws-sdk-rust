@@ -73,16 +73,14 @@ impl ::aws_http::request_id::RequestId for StartKeyPhrasesDetectionJobOutput {
 }
 impl StartKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobOutput`](crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::operation::start_key_phrases_detection_job::builders::StartKeyPhrasesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_key_phrases_detection_job::builders::StartKeyPhrasesDetectionJobOutputBuilder {
         crate::operation::start_key_phrases_detection_job::builders::StartKeyPhrasesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartKeyPhrasesDetectionJobOutput`](crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartKeyPhrasesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -199,9 +197,7 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartKeyPhrasesDetectionJobOutput`](crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput {
+    pub fn build(self) -> crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput {
         crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

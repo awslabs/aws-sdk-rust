@@ -37,9 +37,7 @@ impl IamIdentity {
 
 /// A builder for [`IamIdentity`](crate::types::IamIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamIdentityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl IamIdentityBuilder {
         &self.principal_id
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn source_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn set_source_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identity = input;
         self
     }

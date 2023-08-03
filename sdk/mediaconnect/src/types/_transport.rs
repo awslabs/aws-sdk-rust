@@ -107,9 +107,7 @@ impl Transport {
 
 /// A builder for [`Transport`](crate::types::Transport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransportBuilder {
     pub(crate) cidr_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
@@ -131,27 +129,19 @@ impl TransportBuilder {
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
     ///
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cidr_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_allow_list.unwrap_or_default();
         v.push(input.into());
         self.cidr_allow_list = ::std::option::Option::Some(v);
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_allow_list = input;
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn get_cidr_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidr_allow_list
     }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
@@ -253,18 +243,12 @@ impl TransportBuilder {
         &self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_ip_address = input;
         self
     }
@@ -287,18 +271,12 @@ impl TransportBuilder {
         &self.smoothing_latency
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_listener_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_listener_address = ::std::option::Option::Some(input.into());
         self
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn set_source_listener_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_listener_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_listener_address = input;
         self
     }

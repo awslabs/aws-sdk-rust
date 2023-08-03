@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`cluster_id(Option<String>)`](crate::operation::create_cluster::CreateClusterOutput::cluster_id): <p>The automatically generated ID for a cluster.</p>
     ///   - [`job_list_entries(Option<Vec<JobListEntry>>)`](crate::operation::create_cluster::CreateClusterOutput::job_list_entries): <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::operation::create_cluster::CreateClusterError)
-    pub fn create_cluster(
-        &self,
-    ) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
-        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cluster(&self) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
+        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(self.handle.clone())
     }
 }

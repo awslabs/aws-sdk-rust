@@ -26,8 +26,7 @@ pub struct DescribeFlowOutput {
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     #[doc(hidden)]
-    pub destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> Describes the details of the most recent flow run. </p>
     #[doc(hidden)]
     pub last_run_execution_details: ::std::option::Option<crate::types::ExecutionDetails>,
@@ -51,16 +50,13 @@ pub struct DescribeFlowOutput {
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     #[doc(hidden)]
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     #[doc(hidden)]
-    pub last_run_metadata_catalog_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub last_run_metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
     /// <li> <p>Source-to-destination field mappings</p> </li>
@@ -101,15 +97,11 @@ impl DescribeFlowOutput {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(&self) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn last_run_execution_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecutionDetails> {
+    pub fn last_run_execution_details(&self) -> ::std::option::Option<&crate::types::ExecutionDetails> {
         self.last_run_execution_details.as_ref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
@@ -137,23 +129,15 @@ impl DescribeFlowOutput {
         self.last_updated_by.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn metadata_catalog_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
+    pub fn metadata_catalog_config(&self) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
         self.metadata_catalog_config.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn last_run_metadata_catalog_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
+    pub fn last_run_metadata_catalog_details(&self) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
         self.last_run_metadata_catalog_details.as_deref()
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
@@ -180,9 +164,7 @@ impl DescribeFlowOutput {
 
 /// A builder for [`DescribeFlowOutput`](crate::operation::describe_flow::DescribeFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -191,8 +173,7 @@ pub struct DescribeFlowOutputBuilder {
     pub(crate) flow_status: ::std::option::Option<crate::types::FlowStatus>,
     pub(crate) flow_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
-    pub(crate) destination_flow_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
+    pub(crate) destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     pub(crate) last_run_execution_details: ::std::option::Option<crate::types::ExecutionDetails>,
     pub(crate) trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
@@ -200,12 +181,9 @@ pub struct DescribeFlowOutputBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    pub(crate) last_run_metadata_catalog_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
+    pub(crate) last_run_metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     pub(crate) schema_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -272,10 +250,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn set_flow_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowStatus>,
-    ) -> Self {
+    pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }
@@ -284,18 +259,12 @@ impl DescribeFlowOutputBuilder {
         &self.flow_status
     }
     /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
-    pub fn flow_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
-    pub fn set_flow_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_status_message = input;
         self
     }
@@ -309,10 +278,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn set_source_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFlowConfig>,
-    ) -> Self {
+    pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.source_flow_config = input;
         self
     }
@@ -325,27 +291,19 @@ impl DescribeFlowOutputBuilder {
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        mut self,
-        input: crate::types::DestinationFlowConfig,
-    ) -> Self {
+    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         let mut v = self.destination_flow_config_list.unwrap_or_default();
         v.push(input);
         self.destination_flow_config_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn set_destination_flow_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    ) -> Self {
+    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.destination_flow_config_list = input;
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn get_destination_flow_config_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         &self.destination_flow_config_list
     }
     /// <p> Describes the details of the most recent flow run. </p>
@@ -354,17 +312,12 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn set_last_run_execution_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionDetails>,
-    ) -> Self {
+    pub fn set_last_run_execution_details(mut self, input: ::std::option::Option<crate::types::ExecutionDetails>) -> Self {
         self.last_run_execution_details = input;
         self
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn get_last_run_execution_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionDetails> {
+    pub fn get_last_run_execution_details(&self) -> &::std::option::Option<crate::types::ExecutionDetails> {
         &self.last_run_execution_details
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
@@ -373,10 +326,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerConfig>,
-    ) -> Self {
+    pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.trigger_config = input;
         self
     }
@@ -396,10 +346,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
@@ -413,10 +360,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -430,10 +374,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -456,18 +397,12 @@ impl DescribeFlowOutputBuilder {
         &self.created_by
     }
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
-    pub fn last_updated_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
-    pub fn set_last_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_by = input;
         self
     }
@@ -480,32 +415,19 @@ impl DescribeFlowOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
@@ -514,17 +436,12 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    ) -> Self {
+    pub fn set_metadata_catalog_config(mut self, input: ::std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
         self.metadata_catalog_config = input;
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn get_metadata_catalog_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
+    pub fn get_metadata_catalog_config(&self) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
         &self.metadata_catalog_config
     }
     /// Appends an item to `last_run_metadata_catalog_details`.
@@ -532,10 +449,7 @@ impl DescribeFlowOutputBuilder {
     /// To override the contents of this collection use [`set_last_run_metadata_catalog_details`](Self::set_last_run_metadata_catalog_details).
     ///
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn last_run_metadata_catalog_details(
-        mut self,
-        input: crate::types::MetadataCatalogDetail,
-    ) -> Self {
+    pub fn last_run_metadata_catalog_details(mut self, input: crate::types::MetadataCatalogDetail) -> Self {
         let mut v = self.last_run_metadata_catalog_details.unwrap_or_default();
         v.push(input);
         self.last_run_metadata_catalog_details = ::std::option::Option::Some(v);
@@ -550,9 +464,7 @@ impl DescribeFlowOutputBuilder {
         self
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn get_last_run_metadata_catalog_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>> {
+    pub fn get_last_run_metadata_catalog_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>> {
         &self.last_run_metadata_catalog_details
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>

@@ -30,9 +30,7 @@ impl StreamProcessorOutput {
 
 /// A builder for [`StreamProcessorOutput`](crate::types::StreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamProcessorOutputBuilder {
     pub(crate) kinesis_data_stream: ::std::option::Option<crate::types::KinesisDataStream>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
@@ -44,17 +42,12 @@ impl StreamProcessorOutputBuilder {
         self
     }
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-    pub fn set_kinesis_data_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisDataStream>,
-    ) -> Self {
+    pub fn set_kinesis_data_stream(mut self, input: ::std::option::Option<crate::types::KinesisDataStream>) -> Self {
         self.kinesis_data_stream = input;
         self
     }
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-    pub fn get_kinesis_data_stream(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisDataStream> {
+    pub fn get_kinesis_data_stream(&self) -> &::std::option::Option<crate::types::KinesisDataStream> {
         &self.kinesis_data_stream
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
@@ -63,10 +56,7 @@ impl StreamProcessorOutputBuilder {
         self
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }

@@ -5,15 +5,12 @@
 pub struct StartNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The Network Access Scope analysis.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_analysis:
-        ::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis>,
+    pub network_insights_access_scope_analysis: ::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis>,
     _request_id: Option<String>,
 }
 impl StartNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInsightsAccessScopeAnalysis> {
+    pub fn network_insights_access_scope_analysis(&self) -> ::std::option::Option<&crate::types::NetworkInsightsAccessScopeAnalysis> {
         self.network_insights_access_scope_analysis.as_ref()
     }
 }
@@ -24,27 +21,22 @@ impl ::aws_http::request_id::RequestId for StartNetworkInsightsAccessScopeAnalys
 }
 impl StartNetworkInsightsAccessScopeAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput).
-    pub fn builder() -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisOutputBuilder
+    {
         crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAccessScopeAnalysisOutputBuilder {
-    pub(crate) network_insights_access_scope_analysis:
-        ::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis>,
+    pub(crate) network_insights_access_scope_analysis: ::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis>,
     _request_id: Option<String>,
 }
 impl StartNetworkInsightsAccessScopeAnalysisOutputBuilder {
     /// <p>The Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis(
-        mut self,
-        input: crate::types::NetworkInsightsAccessScopeAnalysis,
-    ) -> Self {
+    pub fn network_insights_access_scope_analysis(mut self, input: crate::types::NetworkInsightsAccessScopeAnalysis) -> Self {
         self.network_insights_access_scope_analysis = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +49,7 @@ impl StartNetworkInsightsAccessScopeAnalysisOutputBuilder {
         self
     }
     /// <p>The Network Access Scope analysis.</p>
-    pub fn get_network_insights_access_scope_analysis(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis> {
+    pub fn get_network_insights_access_scope_analysis(&self) -> &::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis> {
         &self.network_insights_access_scope_analysis
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +62,9 @@ impl StartNetworkInsightsAccessScopeAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput).
-    pub fn build(self) -> crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput{
+    pub fn build(self) -> crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput {
         crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput {
-            network_insights_access_scope_analysis: self.network_insights_access_scope_analysis
-            ,
+            network_insights_access_scope_analysis: self.network_insights_access_scope_analysis,
             _request_id: self._request_id,
         }
     }

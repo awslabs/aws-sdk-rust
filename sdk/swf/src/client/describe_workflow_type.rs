@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`type_info(Option<WorkflowTypeInfo>)`](crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput::type_info): <p>General information about the workflow type.</p>  <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>  <ul>   <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>   <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>  </ul>
     ///   - [`configuration(Option<WorkflowTypeConfiguration>)`](crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput::configuration): <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     /// - On failure, responds with [`SdkError<DescribeWorkflowTypeError>`](crate::operation::describe_workflow_type::DescribeWorkflowTypeError)
-    pub fn describe_workflow_type(
-        &self,
-    ) -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeFluentBuilder {
-        crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_workflow_type(&self) -> crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeFluentBuilder {
+        crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeFluentBuilder::new(self.handle.clone())
     }
 }

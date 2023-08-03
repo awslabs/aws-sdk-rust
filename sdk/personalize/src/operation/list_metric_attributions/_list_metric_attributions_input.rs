@@ -29,18 +29,14 @@ impl ListMetricAttributionsInput {
 }
 impl ListMetricAttributionsInput {
     /// Creates a new builder-style object to manufacture [`ListMetricAttributionsInput`](crate::operation::list_metric_attributions::ListMetricAttributionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsInputBuilder {
         crate::operation::list_metric_attributions::builders::ListMetricAttributionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricAttributionsInput`](crate::operation::list_metric_attributions::ListMetricAttributionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricAttributionsInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListMetricAttributionsInputBuilder {
 }
 impl ListMetricAttributionsInputBuilder {
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListMetricAttributionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricAttributionsInput`](crate::operation::list_metric_attributions::ListMetricAttributionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metric_attributions::ListMetricAttributionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_metric_attributions::ListMetricAttributionsInput {
-                dataset_group_arn: self.dataset_group_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_metric_attributions::ListMetricAttributionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_metric_attributions::ListMetricAttributionsInput {
+            dataset_group_arn: self.dataset_group_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

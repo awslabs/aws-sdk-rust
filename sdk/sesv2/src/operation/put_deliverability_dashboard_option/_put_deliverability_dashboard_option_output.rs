@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutDeliverabilityDashboardOptionOutpu
 }
 impl PutDeliverabilityDashboardOptionOutput {
     /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput).
-    pub fn builder() -> crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionOutputBuilder{
+    pub fn builder() -> crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionOutputBuilder {
         crate::operation::put_deliverability_dashboard_option::builders::PutDeliverabilityDashboardOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl PutDeliverabilityDashboardOptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput
-    {
+    pub fn build(self) -> crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput {
         crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput {
             _request_id: self._request_id,
         }

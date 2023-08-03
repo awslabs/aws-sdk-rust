@@ -5,16 +5,16 @@ pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balan
 
 impl AttachLoadBalancerTargetGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.attach_load_balancer_target_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -38,7 +38,7 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTargetGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder,
+    inner: crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder,
 }
 impl AttachLoadBalancerTargetGroupsFluentBuilder {
     /// Creates a new `AttachLoadBalancerTargetGroups`.
@@ -49,15 +49,20 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
         }
     }
     /// Access the AttachLoadBalancerTargetGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -66,16 +71,17 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -93,32 +99,35 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -131,25 +140,17 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn target_group_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_ar_ns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_group_ar_ns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn get_target_group_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_group_ar_ns()
     }
 }

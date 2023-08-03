@@ -34,9 +34,7 @@ impl GetNamespaceDeletionStatusOutput {
         self.status.as_ref()
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NamespaceDeletionStatusErrorCodes> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::NamespaceDeletionStatusErrorCodes> {
         self.error_code.as_ref()
     }
     /// <p>An error code returned by the namespace deletion task.</p>
@@ -51,16 +49,14 @@ impl ::aws_http::request_id::RequestId for GetNamespaceDeletionStatusOutput {
 }
 impl GetNamespaceDeletionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusOutput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput).
-    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder {
         crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNamespaceDeletionStatusOutput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNamespaceDeletionStatusOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ pub struct GetNamespaceDeletionStatusOutputBuilder {
 }
 impl GetNamespaceDeletionStatusOutputBuilder {
     /// <p>The ARN of the namespace that is being deleted.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the namespace that is being deleted.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -91,18 +81,12 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         &self.namespace_arn
     }
     /// <p>The name of the namespace that is being deleted.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace that is being deleted.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -116,10 +100,7 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self
     }
     /// <p>The status of the deletion request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceDeletionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NamespaceDeletionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -133,32 +114,21 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::NamespaceDeletionStatusErrorCodes> {
         &self.error_code
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error code returned by the namespace deletion task.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -176,9 +146,7 @@ impl GetNamespaceDeletionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNamespaceDeletionStatusOutput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
+    pub fn build(self) -> crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
         crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput {
             namespace_arn: self.namespace_arn,
             namespace_name: self.namespace_name,

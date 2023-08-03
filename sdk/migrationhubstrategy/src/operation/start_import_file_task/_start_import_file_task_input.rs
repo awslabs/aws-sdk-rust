@@ -50,18 +50,14 @@ impl StartImportFileTaskInput {
 }
 impl StartImportFileTaskInput {
     /// Creates a new builder-style object to manufacture [`StartImportFileTaskInput`](crate::operation::start_import_file_task::StartImportFileTaskInput).
-    pub fn builder(
-    ) -> crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder {
-        crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder {
+        crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartImportFileTaskInput`](crate::operation::start_import_file_task::StartImportFileTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportFileTaskInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
@@ -119,10 +115,7 @@ impl StartImportFileTaskInputBuilder {
         self
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
-    pub fn set_data_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceType>,
-    ) -> Self {
+    pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.data_source_type = input;
         self
     }
@@ -142,10 +135,7 @@ impl StartImportFileTaskInputBuilder {
         self
     }
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-    pub fn set_group_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_id = input;
         self
     }
@@ -154,18 +144,12 @@ impl StartImportFileTaskInputBuilder {
         &self.group_id
     }
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
-    pub fn s3bucket_for_report_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3bucket_for_report_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3bucket_for_report_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
-    pub fn set_s3bucket_for_report_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3bucket_for_report_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3bucket_for_report_data = input;
         self
     }
@@ -176,19 +160,15 @@ impl StartImportFileTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartImportFileTaskInput`](crate::operation::start_import_file_task::StartImportFileTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_import_file_task::StartImportFileTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_import_file_task::StartImportFileTaskInput {
-                name: self.name,
-                s3_bucket: self.s3_bucket,
-                s3key: self.s3key,
-                data_source_type: self.data_source_type,
-                group_id: self.group_id,
-                s3bucket_for_report_data: self.s3bucket_for_report_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_import_file_task::StartImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_import_file_task::StartImportFileTaskInput {
+            name: self.name,
+            s3_bucket: self.s3_bucket,
+            s3key: self.s3key,
+            data_source_type: self.data_source_type,
+            group_id: self.group_id,
+            s3bucket_for_report_data: self.s3bucket_for_report_data,
+        })
     }
 }

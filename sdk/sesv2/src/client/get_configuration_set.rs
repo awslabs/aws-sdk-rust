@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`suppression_options(Option<SuppressionOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::suppression_options): <p>An object that contains information about the suppression list preferences for your account.</p>
     ///   - [`vdm_options(Option<VdmOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::vdm_options): <p>An object that contains information about the VDM preferences for your configuration set.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationSetError>`](crate::operation::get_configuration_set::GetConfigurationSetError)
-    pub fn get_configuration_set(
-        &self,
-    ) -> crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder {
-        crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_configuration_set(&self) -> crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder {
+        crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

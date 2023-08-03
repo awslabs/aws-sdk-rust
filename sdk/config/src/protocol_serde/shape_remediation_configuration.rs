@@ -37,10 +37,7 @@ pub fn ser_remediation_configuration(
     if let Some(var_11) = &input.execution_controls {
         #[allow(unused_mut)]
         let mut object_12 = object.key("ExecutionControls").start_object();
-        crate::protocol_serde::shape_execution_controls::ser_execution_controls(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_execution_controls::ser_execution_controls(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.maximum_automatic_attempts {
@@ -66,17 +63,9 @@ pub fn ser_remediation_configuration(
 
 pub(crate) fn de_remediation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RemediationConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RemediationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -86,128 +75,93 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ConfigRuleName" => {
-                                builder = builder.set_config_rule_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ConfigRuleName" => {
+                            builder = builder.set_config_rule_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TargetType" => {
-                                builder = builder.set_target_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::RemediationTargetType::from(u.as_ref())
-                                        })
-                                    })
+                            );
+                        }
+                        "TargetType" => {
+                            builder = builder.set_target_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RemediationTargetType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "TargetId" => {
-                                builder = builder.set_target_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "TargetId" => {
+                            builder = builder.set_target_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TargetVersion" => {
-                                builder = builder.set_target_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "TargetVersion" => {
+                            builder = builder.set_target_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Parameters" => {
-                                builder = builder.set_parameters(
-                                    crate::protocol_serde::shape_remediation_parameters::de_remediation_parameters(tokens)?
-                                );
-                            }
-                            "ResourceType" => {
-                                builder = builder.set_resource_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_remediation_parameters::de_remediation_parameters(tokens)?);
+                        }
+                        "ResourceType" => {
+                            builder = builder.set_resource_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Automatic" => {
-                                builder = builder.set_automatic(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "ExecutionControls" => {
-                                builder = builder.set_execution_controls(
-                                    crate::protocol_serde::shape_execution_controls::de_execution_controls(tokens)?
-                                );
-                            }
-                            "MaximumAutomaticAttempts" => {
-                                builder = builder.set_maximum_automatic_attempts(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Automatic" => {
+                            builder = builder.set_automatic(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ExecutionControls" => {
+                            builder = builder.set_execution_controls(crate::protocol_serde::shape_execution_controls::de_execution_controls(tokens)?);
+                        }
+                        "MaximumAutomaticAttempts" => {
+                            builder = builder.set_maximum_automatic_attempts(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "RetryAttemptSeconds" => {
-                                builder = builder.set_retry_attempt_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "RetryAttemptSeconds" => {
+                            builder = builder.set_retry_attempt_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "CreatedByService" => {
-                                builder = builder.set_created_by_service(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatedByService" => {
+                            builder = builder.set_created_by_service(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

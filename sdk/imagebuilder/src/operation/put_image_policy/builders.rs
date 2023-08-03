@@ -10,10 +10,7 @@ impl PutImagePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_image_policy::PutImagePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_image_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutImagePolicyFluentBuilder {
         }
     }
     /// Access the PutImagePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_image_policy::builders::PutImagePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_image_policy::builders::PutImagePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutImagePolicyFluentBuilder {
             crate::operation::put_image_policy::PutImagePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutImagePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutImagePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_policy::PutImagePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutImagePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_policy::PutImagePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutImagePolicyFluentBuilder {
             crate::operation::put_image_policy::PutImagePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError>,
     > {
         self.customize_middleware().await
     }

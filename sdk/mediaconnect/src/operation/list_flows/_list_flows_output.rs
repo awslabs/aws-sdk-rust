@@ -35,9 +35,7 @@ impl ListFlowsOutput {
 
 /// A builder for [`ListFlowsOutput`](crate::operation::list_flows::ListFlowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowsOutputBuilder {
     pub(crate) flows: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListFlowsOutputBuilder {
         self
     }
     /// A list of flow summaries.
-    pub fn set_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>,
-    ) -> Self {
+    pub fn set_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>) -> Self {
         self.flows = input;
         self
     }

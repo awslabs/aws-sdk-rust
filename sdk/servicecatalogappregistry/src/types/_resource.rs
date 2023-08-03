@@ -44,9 +44,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The time the resource was associated with the application.</p>
-    pub fn set_association_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.association_time = input;
         self
     }
@@ -105,10 +100,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The service integration information about the resource. </p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIntegrations>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<crate::types::ResourceIntegrations>) -> Self {
         self.integrations = input;
         self
     }

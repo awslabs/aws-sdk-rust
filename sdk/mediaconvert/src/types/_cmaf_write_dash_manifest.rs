@@ -38,13 +38,7 @@
 /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmafWriteDashManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmafWriteDashManifest {
         match s {
             "DISABLED" => CmafWriteDashManifest::Disabled,
             "ENABLED" => CmafWriteDashManifest::Enabled,
-            other => CmafWriteDashManifest::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CmafWriteDashManifest::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

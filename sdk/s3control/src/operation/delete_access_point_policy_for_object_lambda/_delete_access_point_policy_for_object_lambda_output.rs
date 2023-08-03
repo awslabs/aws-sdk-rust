@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DeleteAccessPointPolicyForObjectLambd
 }
 impl DeleteAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaOutputBuilder
+    {
         crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DeleteAccessPointPolicyForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput {
         crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput {
             _request_id: self._request_id,
         }

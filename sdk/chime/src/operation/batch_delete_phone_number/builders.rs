@@ -27,8 +27,7 @@ impl BatchDeletePhoneNumberInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder,
+    inner: crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder,
 }
 impl BatchDeletePhoneNumberFluentBuilder {
     /// Creates a new `BatchDeletePhoneNumber`.
@@ -39,10 +38,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
         }
     }
     /// Access the BatchDeletePhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
             crate::operation::batch_delete_phone_number::BatchDeletePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl BatchDeletePhoneNumberFluentBuilder {
             crate::operation::batch_delete_phone_number::BatchDeletePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError>,
     > {
         self.customize_middleware().await
     }
@@ -130,25 +115,17 @@ impl BatchDeletePhoneNumberFluentBuilder {
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
     /// <p>List of phone number IDs.</p>
-    pub fn phone_number_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_ids(input.into());
         self
     }
     /// <p>List of phone number IDs.</p>
-    pub fn set_phone_number_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_phone_number_ids(input);
         self
     }
     /// <p>List of phone number IDs.</p>
-    pub fn get_phone_number_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_phone_number_ids()
     }
 }

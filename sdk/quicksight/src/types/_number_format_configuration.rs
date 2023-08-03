@@ -10,9 +10,7 @@ pub struct NumberFormatConfiguration {
 }
 impl NumberFormatConfiguration {
     /// <p>The options that determine the numeric format configuration.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl NumberFormatConfiguration {
 
 /// A builder for [`NumberFormatConfiguration`](crate::types::NumberFormatConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumberFormatConfigurationBuilder {
-    pub(crate) format_configuration:
-        ::std::option::Option<crate::types::NumericFormatConfiguration>,
+    pub(crate) format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl NumberFormatConfigurationBuilder {
     /// <p>The options that determine the numeric format configuration.</p>
@@ -39,17 +34,12 @@ impl NumberFormatConfigurationBuilder {
         self
     }
     /// <p>The options that determine the numeric format configuration.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericFormatConfiguration>,
-    ) -> Self {
+    pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::NumericFormatConfiguration>) -> Self {
         self.format_configuration = input;
         self
     }
     /// <p>The options that determine the numeric format configuration.</p>
-    pub fn get_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
+    pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
         &self.format_configuration
     }
     /// Consumes the builder and constructs a [`NumberFormatConfiguration`](crate::types::NumberFormatConfiguration).

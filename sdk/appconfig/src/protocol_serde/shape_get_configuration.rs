@@ -4,81 +4,64 @@ pub fn de_get_configuration_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_configuration::GetConfigurationOutput,
-    crate::operation::get_configuration::GetConfigurationError,
-> {
+) -> std::result::Result<crate::operation::get_configuration::GetConfigurationOutput, crate::operation::get_configuration::GetConfigurationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_configuration::GetConfigurationError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::get_configuration::GetConfigurationError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::operation::get_configuration::GetConfigurationError::BadRequestException({
+        "BadRequestException" => crate::operation::get_configuration::GetConfigurationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::operation::get_configuration::GetConfigurationError::InternalServerException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_configuration::GetConfigurationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::operation::get_configuration::GetConfigurationError::ResourceNotFoundException({
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_configuration::GetConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_configuration::GetConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_configuration::GetConfigurationError::generic(generic),
     })
 }
@@ -88,42 +71,24 @@ pub fn de_get_configuration_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_configuration::GetConfigurationOutput,
-    crate::operation::get_configuration::GetConfigurationError,
-> {
+) -> std::result::Result<crate::operation::get_configuration::GetConfigurationOutput, crate::operation::get_configuration::GetConfigurationError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default();
+        let mut output = crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default();
         output = output.set_configuration_version(
-            crate::protocol_serde::shape_get_configuration_output::de_configuration_version_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_get_configuration_output::de_configuration_version_header(_response_headers).map_err(|_| {
                 crate::operation::get_configuration::GetConfigurationError::unhandled(
                     "Failed to parse ConfigurationVersion from header `Configuration-Version",
                 )
             })?,
         );
-        output = output.set_content(
-            crate::protocol_serde::shape_get_configuration_output::de_content_payload(
-                _response_body,
-            )?,
-        );
+        output = output.set_content(crate::protocol_serde::shape_get_configuration_output::de_content_payload(_response_body)?);
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_configuration_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_configuration::GetConfigurationError::unhandled(
-                    "Failed to parse ContentType from header `Content-Type",
-                )
+            crate::protocol_serde::shape_get_configuration_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::get_configuration::GetConfigurationError::unhandled("Failed to parse ContentType from header `Content-Type")
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -23,26 +23,18 @@ impl LifeCycleLastTestReverted {
 
 /// A builder for [`LifeCycleLastTestReverted`](crate::types::LifeCycleLastTestReverted).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleLastTestRevertedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastTestRevertedBuilder {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
-    pub fn api_call_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_call_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle last Test reverted API call date and time.</p>
-    pub fn set_api_call_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_call_date_time = input;
         self
     }

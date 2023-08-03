@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`datastore(Option<Datastore>)`](crate::operation::describe_datastore::DescribeDatastoreOutput::datastore): <p>Information about the data store.</p>
     ///   - [`statistics(Option<DatastoreStatistics>)`](crate::operation::describe_datastore::DescribeDatastoreOutput::statistics): <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeDatastoreError>`](crate::operation::describe_datastore::DescribeDatastoreError)
-    pub fn describe_datastore(
-        &self,
-    ) -> crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder {
-        crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_datastore(&self) -> crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder {
+        crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

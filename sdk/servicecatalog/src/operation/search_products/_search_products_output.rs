@@ -5,16 +5,11 @@
 pub struct SearchProductsOutput {
     /// <p>Information about the product views.</p>
     #[doc(hidden)]
-    pub product_view_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
+    pub product_view_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
     /// <p>The product view aggregations.</p>
     #[doc(hidden)]
-    pub product_view_aggregations: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
-        >,
-    >,
+    pub product_view_aggregations:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -22,20 +17,13 @@ pub struct SearchProductsOutput {
 }
 impl SearchProductsOutput {
     /// <p>Information about the product views.</p>
-    pub fn product_view_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProductViewSummary]> {
+    pub fn product_view_summaries(&self) -> ::std::option::Option<&[crate::types::ProductViewSummary]> {
         self.product_view_summaries.as_deref()
     }
     /// <p>The product view aggregations.</p>
     pub fn product_view_aggregations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>> {
         self.product_view_aggregations.as_ref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -57,18 +45,11 @@ impl SearchProductsOutput {
 
 /// A builder for [`SearchProductsOutput`](crate::operation::search_products::SearchProductsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProductsOutputBuilder {
-    pub(crate) product_view_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
-    pub(crate) product_view_aggregations: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
-        >,
-    >,
+    pub(crate) product_view_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
+    pub(crate) product_view_aggregations:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -85,17 +66,12 @@ impl SearchProductsOutputBuilder {
         self
     }
     /// <p>Information about the product views.</p>
-    pub fn set_product_view_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
-    ) -> Self {
+    pub fn set_product_view_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>) -> Self {
         self.product_view_summaries = input;
         self
     }
     /// <p>Information about the product views.</p>
-    pub fn get_product_view_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>> {
+    pub fn get_product_view_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>> {
         &self.product_view_summaries
     }
     /// Adds a key-value pair to `product_view_aggregations`.
@@ -116,12 +92,7 @@ impl SearchProductsOutputBuilder {
     /// <p>The product view aggregations.</p>
     pub fn set_product_view_aggregations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>>,
     ) -> Self {
         self.product_view_aggregations = input;
         self
@@ -129,27 +100,16 @@ impl SearchProductsOutputBuilder {
     /// <p>The product view aggregations.</p>
     pub fn get_product_view_aggregations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ProductViewAggregationValue>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductViewAggregationValue>>> {
         &self.product_view_aggregations
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

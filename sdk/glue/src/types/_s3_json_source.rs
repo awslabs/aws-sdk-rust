@@ -82,9 +82,7 @@ impl S3JsonSource {
         self.max_files_in_band
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
+    pub fn additional_options(&self) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
     /// <p>A JsonPath string defining the JSON data.</p>
@@ -109,9 +107,7 @@ impl S3JsonSource {
 
 /// A builder for [`S3JsonSource`](crate::types::S3JsonSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3JsonSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -122,8 +118,7 @@ pub struct S3JsonSourceBuilder {
     pub(crate) recurse: ::std::option::Option<bool>,
     pub(crate) max_band: ::std::option::Option<i32>,
     pub(crate) max_files_in_band: ::std::option::Option<i32>,
-    pub(crate) additional_options:
-        ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub(crate) additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     pub(crate) json_path: ::std::option::Option<::std::string::String>,
     pub(crate) multiline: ::std::option::Option<bool>,
     pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
@@ -155,10 +150,7 @@ impl S3JsonSourceBuilder {
         self
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn set_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.paths = input;
         self
     }
@@ -172,10 +164,7 @@ impl S3JsonSourceBuilder {
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
         self.compression_type = input;
         self
     }
@@ -195,10 +184,7 @@ impl S3JsonSourceBuilder {
         self
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn set_exclusions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusions = input;
         self
     }
@@ -277,25 +263,17 @@ impl S3JsonSourceBuilder {
         &self.max_files_in_band
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(
-        mut self,
-        input: crate::types::S3DirectSourceAdditionalOptions,
-    ) -> Self {
+    pub fn additional_options(mut self, input: crate::types::S3DirectSourceAdditionalOptions) -> Self {
         self.additional_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
-    ) -> Self {
+    pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn get_additional_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DirectSourceAdditionalOptions> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::S3DirectSourceAdditionalOptions> {
         &self.additional_options
     }
     /// <p>A JsonPath string defining the JSON data.</p>
@@ -338,17 +316,12 @@ impl S3JsonSourceBuilder {
         self
     }
     /// <p>Specifies the data schema for the S3 JSON source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the S3 JSON source.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3JsonSource`](crate::types::S3JsonSource).

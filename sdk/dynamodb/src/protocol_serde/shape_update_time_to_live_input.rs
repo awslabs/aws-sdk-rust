@@ -9,10 +9,7 @@ pub fn ser_update_time_to_live_input(
     if let Some(var_2) = &input.time_to_live_specification {
         #[allow(unused_mut)]
         let mut object_3 = object.key("TimeToLiveSpecification").start_object();
-        crate::protocol_serde::shape_time_to_live_specification::ser_time_to_live_specification(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_time_to_live_specification::ser_time_to_live_specification(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -19,12 +19,7 @@ impl super::Client {
     ///   - [`result(Option<TaskExecutionResultDetail>)`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput::result): <p>The result of the task execution.</p>
     ///   - [`bytes_compressed(i64)`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput::bytes_compressed): <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskExecutionError>`](crate::operation::describe_task_execution::DescribeTaskExecutionError)
-    pub fn describe_task_execution(
-        &self,
-    ) -> crate::operation::describe_task_execution::builders::DescribeTaskExecutionFluentBuilder
-    {
-        crate::operation::describe_task_execution::builders::DescribeTaskExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_task_execution(&self) -> crate::operation::describe_task_execution::builders::DescribeTaskExecutionFluentBuilder {
+        crate::operation::describe_task_execution::builders::DescribeTaskExecutionFluentBuilder::new(self.handle.clone())
     }
 }

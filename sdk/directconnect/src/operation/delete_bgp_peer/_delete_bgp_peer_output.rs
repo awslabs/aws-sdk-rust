@@ -28,9 +28,7 @@ impl DeleteBgpPeerOutput {
 
 /// A builder for [`DeleteBgpPeerOutput`](crate::operation::delete_bgp_peer::DeleteBgpPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBgpPeerOutputBuilder {
     pub(crate) virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteBgpPeerOutputBuilder {
         self
     }
     /// <p>The virtual interface.</p>
-    pub fn set_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualInterface>,
-    ) -> Self {
+    pub fn set_virtual_interface(mut self, input: ::std::option::Option<crate::types::VirtualInterface>) -> Self {
         self.virtual_interface = input;
         self
     }

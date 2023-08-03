@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`exclusion_previews(Option<Vec<ExclusionPreview>>)`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput::exclusion_previews): <p>Information about the exclusions included in the preview.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput::next_token): <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<GetExclusionsPreviewError>`](crate::operation::get_exclusions_preview::GetExclusionsPreviewError)
-    pub fn get_exclusions_preview(
-        &self,
-    ) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder {
-        crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_exclusions_preview(&self) -> crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder {
+        crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewFluentBuilder::new(self.handle.clone())
     }
 }

@@ -72,9 +72,7 @@ impl ReactiveInsight {
 
 /// A builder for [`ReactiveInsight`](crate::types::ReactiveInsight).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReactiveInsightBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl ReactiveInsightBuilder {
         self
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::InsightSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -151,10 +146,7 @@ impl ReactiveInsightBuilder {
         self
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    pub fn set_insight_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightTimeRange>,
-    ) -> Self {
+    pub fn set_insight_time_range(mut self, input: ::std::option::Option<crate::types::InsightTimeRange>) -> Self {
         self.insight_time_range = input;
         self
     }
@@ -168,32 +160,21 @@ impl ReactiveInsightBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
-    pub fn ssm_ops_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssm_ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssm_ops_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
-    pub fn set_ssm_ops_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssm_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssm_ops_item_id = input;
         self
     }

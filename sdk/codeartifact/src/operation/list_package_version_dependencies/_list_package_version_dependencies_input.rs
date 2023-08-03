@@ -76,16 +76,14 @@ impl ListPackageVersionDependenciesInput {
 }
 impl ListPackageVersionDependenciesInput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionDependenciesInput`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesInput).
-    pub fn builder() -> crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder{
+    pub fn builder() -> crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder {
         crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageVersionDependenciesInput`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -200,18 +198,12 @@ impl ListPackageVersionDependenciesInputBuilder {
         &self.package
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -240,25 +232,15 @@ impl ListPackageVersionDependenciesInputBuilder {
         crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                format: self.format
-                ,
-                namespace: self.namespace
-                ,
-                package: self.package
-                ,
-                package_version: self.package_version
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            package_version: self.package_version,
+            next_token: self.next_token,
+        })
     }
 }

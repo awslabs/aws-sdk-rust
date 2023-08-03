@@ -10,10 +10,7 @@ impl StartWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_workspaces::StartWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workspaces::StartWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workspaces::StartWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_workspaces();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StartWorkspacesFluentBuilder {
         }
     }
     /// Access the StartWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StartWorkspacesFluentBuilder {
             crate::operation::start_workspaces::StartWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workspaces::StartWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workspaces::StartWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StartWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StartWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_workspaces::StartWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workspaces::StartWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workspaces::StartWorkspacesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StartWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_workspaces::StartWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workspaces::StartWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workspaces::StartWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl StartWorkspacesFluentBuilder {
             crate::operation::start_workspaces::StartWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workspaces::StartWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workspaces::StartWorkspacesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +117,12 @@ impl StartWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_start_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>,
-    ) -> Self {
+    pub fn set_start_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>) -> Self {
         self.inner = self.inner.set_start_workspace_requests(input);
         self
     }
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_start_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRequest>> {
+    pub fn get_start_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRequest>> {
         self.inner.get_start_workspace_requests()
     }
 }

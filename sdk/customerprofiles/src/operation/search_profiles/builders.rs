@@ -10,10 +10,7 @@ impl SearchProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_profiles::SearchProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_profiles::SearchProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_profiles();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchProfilesFluentBuilder {
         }
     }
     /// Access the SearchProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_profiles::builders::SearchProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_profiles::builders::SearchProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -184,10 +176,7 @@ impl SearchProfilesFluentBuilder {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }
@@ -205,17 +194,12 @@ impl SearchProfilesFluentBuilder {
         self
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn set_additional_search_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>>,
-    ) -> Self {
+    pub fn set_additional_search_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>>) -> Self {
         self.inner = self.inner.set_additional_search_keys(input);
         self
     }
     /// <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search criteria. </p>
-    pub fn get_additional_search_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>> {
+    pub fn get_additional_search_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSearchKey>> {
         self.inner.get_additional_search_keys()
     }
     /// <p>Relationship between all specified search keys that will be used to search for profiles. This includes the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code> list.</p>
@@ -236,10 +220,7 @@ impl SearchProfilesFluentBuilder {
     /// <li> <p> <code>OR</code> - The response includes profiles that match at least one of the search keys.</p> </li>
     /// </ul>
     /// <p>The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.</p>
-    pub fn set_logical_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalOperator>,
-    ) -> Self {
+    pub fn set_logical_operator(mut self, input: ::std::option::Option<crate::types::LogicalOperator>) -> Self {
         self.inner = self.inner.set_logical_operator(input);
         self
     }

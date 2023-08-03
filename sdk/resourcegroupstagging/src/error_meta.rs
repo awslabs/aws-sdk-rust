@@ -44,32 +44,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_creation::DescribeReportCreationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -79,40 +63,30 @@ where
 impl From<crate::operation::describe_report_creation::DescribeReportCreationError> for Error {
     fn from(err: crate::operation::describe_report_creation::DescribeReportCreationError) -> Self {
         match err {
-            crate::operation::describe_report_creation::DescribeReportCreationError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::operation::describe_report_creation::DescribeReportCreationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::operation::describe_report_creation::DescribeReportCreationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_report_creation::DescribeReportCreationError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::describe_report_creation::DescribeReportCreationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_report_creation::DescribeReportCreationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::describe_report_creation::DescribeReportCreationError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::describe_report_creation::DescribeReportCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_summary::GetComplianceSummaryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary::GetComplianceSummaryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_summary::GetComplianceSummaryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary::GetComplianceSummaryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -122,36 +96,30 @@ where
 impl From<crate::operation::get_compliance_summary::GetComplianceSummaryError> for Error {
     fn from(err: crate::operation::get_compliance_summary::GetComplianceSummaryError) -> Self {
         match err {
-            crate::operation::get_compliance_summary::GetComplianceSummaryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::operation::get_compliance_summary::GetComplianceSummaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::operation::get_compliance_summary::GetComplianceSummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_compliance_summary::GetComplianceSummaryError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::get_compliance_summary::GetComplianceSummaryError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_compliance_summary::GetComplianceSummaryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::get_compliance_summary::GetComplianceSummaryError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::get_compliance_summary::GetComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources::GetResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -161,46 +129,26 @@ where
 impl From<crate::operation::get_resources::GetResourcesError> for Error {
     fn from(err: crate::operation::get_resources::GetResourcesError) -> Self {
         match err {
-            crate::operation::get_resources::GetResourcesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            crate::operation::get_resources::GetResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_resources::GetResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resources::GetResourcesError::PaginationTokenExpiredException(inner) => {
+                Error::PaginationTokenExpiredException(inner)
             }
-            crate::operation::get_resources::GetResourcesError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::get_resources::GetResourcesError::PaginationTokenExpiredException(
-                inner,
-            ) => Error::PaginationTokenExpiredException(inner),
-            crate::operation::get_resources::GetResourcesError::ThrottledException(inner) => {
-                Error::ThrottledException(inner)
-            }
-            crate::operation::get_resources::GetResourcesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_resources::GetResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::get_resources::GetResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tag_keys::GetTagKeysError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -210,47 +158,24 @@ where
 impl From<crate::operation::get_tag_keys::GetTagKeysError> for Error {
     fn from(err: crate::operation::get_tag_keys::GetTagKeysError) -> Self {
         match err {
-            crate::operation::get_tag_keys::GetTagKeysError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::operation::get_tag_keys::GetTagKeysError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_tag_keys::GetTagKeysError::PaginationTokenExpiredException(
-                inner,
-            ) => Error::PaginationTokenExpiredException(inner),
-            crate::operation::get_tag_keys::GetTagKeysError::ThrottledException(inner) => {
-                Error::ThrottledException(inner)
-            }
-            crate::operation::get_tag_keys::GetTagKeysError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_tag_keys::GetTagKeysError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_tag_keys::GetTagKeysError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_tag_keys::GetTagKeysError::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
+            crate::operation::get_tag_keys::GetTagKeysError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::get_tag_keys::GetTagKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::get_tag_values::GetTagValuesError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_tag_values::GetTagValuesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tag_values::GetTagValuesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_tag_values::GetTagValuesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -262,38 +187,24 @@ impl From<crate::operation::get_tag_values::GetTagValuesError> for Error {
         match err {
             crate::operation::get_tag_values::GetTagValuesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::get_tag_values::GetTagValuesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_tag_values::GetTagValuesError::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
+            crate::operation::get_tag_values::GetTagValuesError::PaginationTokenExpiredException(inner) => {
+                Error::PaginationTokenExpiredException(inner)
+            }
             crate::operation::get_tag_values::GetTagValuesError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::get_tag_values::GetTagValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -303,37 +214,33 @@ where
 impl From<crate::operation::start_report_creation::StartReportCreationError> for Error {
     fn from(err: crate::operation::start_report_creation::StartReportCreationError) -> Self {
         match err {
-            crate::operation::start_report_creation::StartReportCreationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::operation::start_report_creation::StartReportCreationError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::operation::start_report_creation::StartReportCreationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::operation::start_report_creation::StartReportCreationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_report_creation::StartReportCreationError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::start_report_creation::StartReportCreationError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::start_report_creation::StartReportCreationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_report_creation::StartReportCreationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::start_report_creation::StartReportCreationError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::start_report_creation::StartReportCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resources::TagResourcesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resources::TagResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resources::TagResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resources::TagResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -343,47 +250,23 @@ where
 impl From<crate::operation::tag_resources::TagResourcesError> for Error {
     fn from(err: crate::operation::tag_resources::TagResourcesError) -> Self {
         match err {
-            crate::operation::tag_resources::TagResourcesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::operation::tag_resources::TagResourcesError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::tag_resources::TagResourcesError::ThrottledException(inner) => {
-                Error::ThrottledException(inner)
-            }
-            crate::operation::tag_resources::TagResourcesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resources::TagResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::tag_resources::TagResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_resources::TagResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::tag_resources::TagResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resources::UntagResourcesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resources::UntagResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resources::UntagResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resources::UntagResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -393,18 +276,10 @@ where
 impl From<crate::operation::untag_resources::UntagResourcesError> for Error {
     fn from(err: crate::operation::untag_resources::UntagResourcesError) -> Self {
         match err {
-            crate::operation::untag_resources::UntagResourcesError::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::operation::untag_resources::UntagResourcesError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::untag_resources::UntagResourcesError::ThrottledException(inner) => {
-                Error::ThrottledException(inner)
-            }
-            crate::operation::untag_resources::UntagResourcesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resources::UntagResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::untag_resources::UntagResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resources::UntagResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::untag_resources::UntagResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

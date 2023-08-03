@@ -6,14 +6,11 @@
 pub struct CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
     #[doc(hidden)]
-    pub dimension_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+    pub dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub fn dimension_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchDimensionConfiguration]> {
+    pub fn dimension_configurations(&self) -> ::std::option::Option<&[crate::types::CloudWatchDimensionConfiguration]> {
         self.dimension_configurations.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl CloudWatchDestination {
 
 /// A builder for [`CloudWatchDestination`](crate::types::CloudWatchDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchDestinationBuilder {
-    pub(crate) dimension_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+    pub(crate) dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestinationBuilder {
     /// Appends an item to `dimension_configurations`.
@@ -39,10 +33,7 @@ impl CloudWatchDestinationBuilder {
     /// To override the contents of this collection use [`set_dimension_configurations`](Self::set_dimension_configurations).
     ///
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub fn dimension_configurations(
-        mut self,
-        input: crate::types::CloudWatchDimensionConfiguration,
-    ) -> Self {
+    pub fn dimension_configurations(mut self, input: crate::types::CloudWatchDimensionConfiguration) -> Self {
         let mut v = self.dimension_configurations.unwrap_or_default();
         v.push(input);
         self.dimension_configurations = ::std::option::Option::Some(v);
@@ -51,18 +42,13 @@ impl CloudWatchDestinationBuilder {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
     pub fn set_dimension_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
     ) -> Self {
         self.dimension_configurations = input;
         self
     }
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub fn get_dimension_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>
-    {
+    pub fn get_dimension_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>> {
         &self.dimension_configurations
     }
     /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::types::CloudWatchDestination).

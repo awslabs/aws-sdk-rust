@@ -10,10 +10,7 @@ impl UpdateJobPriorityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_job_priority::UpdateJobPriorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_priority::UpdateJobPriorityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_job_priority();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl UpdateJobPriorityFluentBuilder {
         }
     }
     /// Access the UpdateJobPriority as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl UpdateJobPriorityFluentBuilder {
             crate::operation::update_job_priority::UpdateJobPriority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_priority::UpdateJobPriorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl UpdateJobPriorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl UpdateJobPriorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_priority::UpdateJobPriorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_priority::UpdateJobPriorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl UpdateJobPriorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_job_priority::UpdateJobPriorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_priority::UpdateJobPriorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl UpdateJobPriorityFluentBuilder {
             crate::operation::update_job_priority::UpdateJobPriority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job_priority::UpdateJobPriorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError>,
     > {
         self.customize_middleware().await
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`program_name(impl ::std::convert::Into<String>)`](crate::operation::delete_program::builders::DeleteProgramFluentBuilder::program_name) / [`set_program_name(Option<String>)`](crate::operation::delete_program::builders::DeleteProgramFluentBuilder::set_program_name): <p>The name of the program.</p>
     /// - On success, responds with [`DeleteProgramOutput`](crate::operation::delete_program::DeleteProgramOutput)
     /// - On failure, responds with [`SdkError<DeleteProgramError>`](crate::operation::delete_program::DeleteProgramError)
-    pub fn delete_program(
-        &self,
-    ) -> crate::operation::delete_program::builders::DeleteProgramFluentBuilder {
-        crate::operation::delete_program::builders::DeleteProgramFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_program(&self) -> crate::operation::delete_program::builders::DeleteProgramFluentBuilder {
+        crate::operation::delete_program::builders::DeleteProgramFluentBuilder::new(self.handle.clone())
     }
 }

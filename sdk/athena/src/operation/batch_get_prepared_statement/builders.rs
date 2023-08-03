@@ -26,7 +26,7 @@ impl BatchGetPreparedStatementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder,
+    inner: crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder,
 }
 impl BatchGetPreparedStatementFluentBuilder {
     /// Creates a new `BatchGetPreparedStatement`.
@@ -37,7 +37,7 @@ impl BatchGetPreparedStatementFluentBuilder {
         }
     }
     /// Access the BatchGetPreparedStatement as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetPreparedStatementFluentBuilder {
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetPreparedStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetPreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetPreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetPreparedStatementFluentBuilder {
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchGetPreparedStatementFluentBuilder {
     /// To override the contents of this collection use [`set_prepared_statement_names`](Self::set_prepared_statement_names).
     ///
     /// <p>A list of prepared statement names to return.</p>
-    pub fn prepared_statement_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prepared_statement_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prepared_statement_names(input.into());
         self
     }
     /// <p>A list of prepared statement names to return.</p>
-    pub fn set_prepared_statement_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_prepared_statement_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_prepared_statement_names(input);
         self
     }
     /// <p>A list of prepared statement names to return.</p>
-    pub fn get_prepared_statement_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prepared_statement_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_prepared_statement_names()
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>

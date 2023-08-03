@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeBundleTasksOutput {
 }
 impl DescribeBundleTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksOutputBuilder {
-        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksOutputBuilder {
+        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleTasksOutputBuilder {
     pub(crate) bundle_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeBundleTasksOutputBuilder {
         self
     }
     /// <p>Information about the bundle tasks.</p>
-    pub fn set_bundle_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
-    ) -> Self {
+    pub fn set_bundle_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>) -> Self {
         self.bundle_tasks = input;
         self
     }
     /// <p>Information about the bundle tasks.</p>
-    pub fn get_bundle_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleTask>> {
+    pub fn get_bundle_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleTask>> {
         &self.bundle_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

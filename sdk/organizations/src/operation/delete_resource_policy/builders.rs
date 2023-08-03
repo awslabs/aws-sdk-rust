@@ -38,9 +38,7 @@ impl DeleteResourcePolicyFluentBuilder {
         }
     }
     /// Access the DeleteResourcePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteResourcePolicyFluentBuilder {
             crate::operation::delete_resource_policy::DeleteResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteResourcePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_policy::DeleteResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_policy::DeleteResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeleteResourcePolicyFluentBuilder {
             crate::operation::delete_resource_policy::DeleteResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError>,
     > {
         self.customize_middleware().await
     }

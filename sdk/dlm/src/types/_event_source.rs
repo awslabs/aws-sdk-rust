@@ -30,9 +30,7 @@ impl EventSource {
 
 /// A builder for [`EventSource`](crate::types::EventSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EventSourceValues>,
     pub(crate) parameters: ::std::option::Option<crate::types::EventParameters>,
@@ -44,10 +42,7 @@ impl EventSourceBuilder {
         self
     }
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceValues>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EventSourceValues>) -> Self {
         self.r#type = input;
         self
     }
@@ -61,10 +56,7 @@ impl EventSourceBuilder {
         self
     }
     /// <p>Information about the event.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::EventParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::EventParameters>) -> Self {
         self.parameters = input;
         self
     }

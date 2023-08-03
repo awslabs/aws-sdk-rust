@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateFindingsFilterOutput {
 }
 impl UpdateFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFilterOutput`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder {
+    pub fn builder() -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder {
         crate::operation::update_findings_filter::builders::UpdateFindingsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFindingsFilterOutput`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsFilterOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

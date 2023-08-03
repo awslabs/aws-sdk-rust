@@ -10,10 +10,7 @@ impl BatchUpdateClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_update_cluster::BatchUpdateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_update_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchUpdateClusterFluentBuilder {
         }
     }
     /// Access the BatchUpdateCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchUpdateClusterFluentBuilder {
             crate::operation::batch_update_cluster::BatchUpdateCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchUpdateClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchUpdateClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_cluster::BatchUpdateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchUpdateClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_cluster::BatchUpdateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchUpdateClusterFluentBuilder {
             crate::operation::batch_update_cluster::BatchUpdateCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl BatchUpdateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
     /// <p>The cluster names to apply the updates.</p>
-    pub fn cluster_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_names(input.into());
         self
     }
     /// <p>The cluster names to apply the updates.</p>
-    pub fn set_cluster_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
     /// <p>The cluster names to apply the updates.</p>
-    pub fn get_cluster_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cluster_names()
     }
     /// <p>The unique ID of the service update</p>
@@ -154,10 +130,7 @@ impl BatchUpdateClusterFluentBuilder {
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceUpdateRequest>,
-    ) -> Self {
+    pub fn set_service_update(mut self, input: ::std::option::Option<crate::types::ServiceUpdateRequest>) -> Self {
         self.inner = self.inner.set_service_update(input);
         self
     }

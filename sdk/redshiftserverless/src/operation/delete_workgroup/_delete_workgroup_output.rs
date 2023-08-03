@@ -28,9 +28,7 @@ impl DeleteWorkgroupOutput {
 
 /// A builder for [`DeleteWorkgroupOutput`](crate::operation::delete_workgroup::DeleteWorkgroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkgroupOutputBuilder {
     pub(crate) workgroup: ::std::option::Option<crate::types::Workgroup>,
     _request_id: Option<String>,

@@ -70,9 +70,7 @@ impl AwsRedshiftClusterRestoreStatus {
 
 /// A builder for [`AwsRedshiftClusterRestoreStatus`](crate::types::AwsRedshiftClusterRestoreStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterRestoreStatusBuilder {
     pub(crate) current_restore_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     pub(crate) elapsed_time_in_seconds: ::std::option::Option<i64>,
@@ -90,10 +88,7 @@ impl AwsRedshiftClusterRestoreStatusBuilder {
     }
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn set_current_restore_rate_in_mega_bytes_per_second(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_current_restore_rate_in_mega_bytes_per_second(mut self, input: ::std::option::Option<f64>) -> Self {
         self.current_restore_rate_in_mega_bytes_per_second = input;
         self
     }
@@ -127,10 +122,7 @@ impl AwsRedshiftClusterRestoreStatusBuilder {
     }
     /// <p>The estimate of the time remaining before the restore is complete. Returns 0 for a completed restore.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn set_estimated_time_to_completion_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_to_completion_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_to_completion_in_seconds = input;
         self
     }
@@ -193,13 +185,9 @@ impl AwsRedshiftClusterRestoreStatusBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterRestoreStatus`](crate::types::AwsRedshiftClusterRestoreStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterRestoreStatus {
         crate::types::AwsRedshiftClusterRestoreStatus {
-            current_restore_rate_in_mega_bytes_per_second: self
-                .current_restore_rate_in_mega_bytes_per_second
-                .unwrap_or_default(),
+            current_restore_rate_in_mega_bytes_per_second: self.current_restore_rate_in_mega_bytes_per_second.unwrap_or_default(),
             elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-            estimated_time_to_completion_in_seconds: self
-                .estimated_time_to_completion_in_seconds
-                .unwrap_or_default(),
+            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds.unwrap_or_default(),
             progress_in_mega_bytes: self.progress_in_mega_bytes.unwrap_or_default(),
             snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes.unwrap_or_default(),
             status: self.status,

@@ -11,13 +11,8 @@ pub struct GetQueryResultsOutput {
     pub query_statistics: ::std::option::Option<crate::types::QueryStatistics>,
     /// <p>Contains the individual event results of the query.</p>
     #[doc(hidden)]
-    pub query_result_rows: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
-    >,
+    pub query_result_rows:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>>,
     /// <p>A token you can use to get the next page of query results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -38,11 +33,7 @@ impl GetQueryResultsOutput {
     /// <p>Contains the individual event results of the query.</p>
     pub fn query_result_rows(
         &self,
-    ) -> ::std::option::Option<
-        &[::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >],
-    > {
+    ) -> ::std::option::Option<&[::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>]> {
         self.query_result_rows.as_deref()
     }
     /// <p>A token you can use to get the next page of query results.</p>
@@ -61,27 +52,19 @@ impl ::aws_http::request_id::RequestId for GetQueryResultsOutput {
 }
 impl GetQueryResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
-    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder {
         crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutputBuilder {
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) query_statistics: ::std::option::Option<crate::types::QueryStatistics>,
-    pub(crate) query_result_rows: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
-    >,
+    pub(crate) query_result_rows:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -93,10 +76,7 @@ impl GetQueryResultsOutputBuilder {
         self
     }
     /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }
@@ -110,10 +90,7 @@ impl GetQueryResultsOutputBuilder {
         self
     }
     /// <p>Shows the count of query results.</p>
-    pub fn set_query_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatistics>,
-    ) -> Self {
+    pub fn set_query_statistics(mut self, input: ::std::option::Option<crate::types::QueryStatistics>) -> Self {
         self.query_statistics = input;
         self
     }
@@ -126,12 +103,7 @@ impl GetQueryResultsOutputBuilder {
     /// To override the contents of this collection use [`set_query_result_rows`](Self::set_query_result_rows).
     ///
     /// <p>Contains the individual event results of the query.</p>
-    pub fn query_result_rows(
-        mut self,
-        input: ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn query_result_rows(mut self, input: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         let mut v = self.query_result_rows.unwrap_or_default();
         v.push(input);
         self.query_result_rows = ::std::option::Option::Some(v);
@@ -140,13 +112,7 @@ impl GetQueryResultsOutputBuilder {
     /// <p>Contains the individual event results of the query.</p>
     pub fn set_query_result_rows(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::vec::Vec<
-                    ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-                >,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>>,
     ) -> Self {
         self.query_result_rows = input;
         self
@@ -154,13 +120,7 @@ impl GetQueryResultsOutputBuilder {
     /// <p>Contains the individual event results of the query.</p>
     pub fn get_query_result_rows(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>> {
         &self.query_result_rows
     }
     /// <p>A token you can use to get the next page of query results.</p>
@@ -178,18 +138,12 @@ impl GetQueryResultsOutputBuilder {
         &self.next_token
     }
     /// <p>The error message returned if a query failed.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message returned if a query failed.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

@@ -37,9 +37,7 @@ impl GetPartitionIndexesFluentBuilder {
         }
     }
     /// Access the GetPartitionIndexes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetPartitionIndexesFluentBuilder {
             crate::operation::get_partition_indexes::GetPartitionIndexes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partition_indexes::GetPartitionIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partition_indexes::GetPartitionIndexesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetPartitionIndexesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetPartitionIndexesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_partition_indexes::GetPartitionIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partition_indexes::GetPartitionIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partition_indexes::GetPartitionIndexesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetPartitionIndexesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_partition_indexes::GetPartitionIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partition_indexes::GetPartitionIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partition_indexes::GetPartitionIndexesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl GetPartitionIndexesFluentBuilder {
             crate::operation::get_partition_indexes::GetPartitionIndexes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partition_indexes::GetPartitionIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partition_indexes::GetPartitionIndexesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_partition_indexes::paginator::GetPartitionIndexesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_partition_indexes::paginator::GetPartitionIndexesPaginator {
-        crate::operation::get_partition_indexes::paginator::GetPartitionIndexesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_partition_indexes::paginator::GetPartitionIndexesPaginator {
+        crate::operation::get_partition_indexes::paginator::GetPartitionIndexesPaginator::new(self.handle, self.inner)
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +130,12 @@ impl GetPartitionIndexesFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

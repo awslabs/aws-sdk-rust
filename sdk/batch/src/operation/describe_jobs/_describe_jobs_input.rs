@@ -23,9 +23,7 @@ impl DescribeJobsInput {
 
 /// A builder for [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsInputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl DescribeJobsInputBuilder {
         self
     }
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.jobs = input;
         self
     }
@@ -54,14 +49,7 @@ impl DescribeJobsInputBuilder {
         &self.jobs
     }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_jobs::DescribeJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput {
-            jobs: self.jobs,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput { jobs: self.jobs })
     }
 }

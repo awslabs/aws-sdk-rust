@@ -30,9 +30,7 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
@@ -58,10 +56,7 @@ impl SubnetBuilder {
         self
     }
     /// <p>The Availability Zone where the subnet resides</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityZone>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<crate::types::AvailabilityZone>) -> Self {
         self.availability_zone = input;
         self
     }

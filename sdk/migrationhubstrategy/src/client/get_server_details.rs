@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`server_detail(Option<ServerDetail>)`](crate::operation::get_server_details::GetServerDetailsOutput::server_detail): <p> Detailed information about the server. </p>
     ///   - [`associated_applications(Option<Vec<AssociatedApplication>>)`](crate::operation::get_server_details::GetServerDetailsOutput::associated_applications): <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     /// - On failure, responds with [`SdkError<GetServerDetailsError>`](crate::operation::get_server_details::GetServerDetailsError)
-    pub fn get_server_details(
-        &self,
-    ) -> crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder {
-        crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_server_details(&self) -> crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder {
+        crate::operation::get_server_details::builders::GetServerDetailsFluentBuilder::new(self.handle.clone())
     }
 }

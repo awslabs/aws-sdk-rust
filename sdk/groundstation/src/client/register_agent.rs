@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterAgentOutput`](crate::operation::register_agent::RegisterAgentOutput) with field(s):
     ///   - [`agent_id(Option<String>)`](crate::operation::register_agent::RegisterAgentOutput::agent_id): <p>UUID of registered agent.</p>
     /// - On failure, responds with [`SdkError<RegisterAgentError>`](crate::operation::register_agent::RegisterAgentError)
-    pub fn register_agent(
-        &self,
-    ) -> crate::operation::register_agent::builders::RegisterAgentFluentBuilder {
-        crate::operation::register_agent::builders::RegisterAgentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_agent(&self) -> crate::operation::register_agent::builders::RegisterAgentFluentBuilder {
+        crate::operation::register_agent::builders::RegisterAgentFluentBuilder::new(self.handle.clone())
     }
 }

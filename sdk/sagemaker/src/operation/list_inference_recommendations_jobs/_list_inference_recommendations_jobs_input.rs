@@ -54,9 +54,7 @@ impl ListInferenceRecommendationsJobsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
@@ -68,9 +66,7 @@ impl ListInferenceRecommendationsJobsInput {
         self.status_equals.as_ref()
     }
     /// <p>The parameter by which to sort the results.</p>
-    pub fn sort_by(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListInferenceRecommendationsJobsSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListInferenceRecommendationsJobsSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for the results.</p>
@@ -96,16 +92,14 @@ impl ListInferenceRecommendationsJobsInput {
 }
 impl ListInferenceRecommendationsJobsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
-    pub fn builder() -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder {
         crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -127,10 +121,7 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -144,10 +135,7 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -161,17 +149,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
@@ -180,32 +163,21 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -219,17 +191,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
     /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
         &self.status_equals
     }
     /// <p>The parameter by which to sort the results.</p>
@@ -238,17 +205,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         self
     }
     /// <p>The parameter by which to sort the results.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The parameter by which to sort the results.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy> {
         &self.sort_by
     }
     /// <p>The sort order for the results.</p>
@@ -294,18 +256,12 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         &self.max_results
     }
     /// <p>A filter that returns only jobs that were created for this model.</p>
-    pub fn model_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only jobs that were created for this model.</p>
-    pub fn set_model_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name_equals = input;
         self
     }
@@ -314,56 +270,41 @@ impl ListInferenceRecommendationsJobsInputBuilder {
         &self.model_name_equals
     }
     /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
-    pub fn model_package_version_arn_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_version_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_version_arn_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
-    pub fn set_model_package_version_arn_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_version_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_version_arn_equals = input;
         self
     }
     /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
-    pub fn get_model_package_version_arn_equals(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_model_package_version_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_version_arn_equals
     }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput {
-                creation_time_after: self.creation_time_after
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                last_modified_time_after: self.last_modified_time_after
-                ,
-                last_modified_time_before: self.last_modified_time_before
-                ,
-                name_contains: self.name_contains
-                ,
-                status_equals: self.status_equals
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                model_name_equals: self.model_name_equals
-                ,
-                model_package_version_arn_equals: self.model_package_version_arn_equals
-                ,
-            }
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                name_contains: self.name_contains,
+                status_equals: self.status_equals,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                model_name_equals: self.model_name_equals,
+                model_package_version_arn_equals: self.model_package_version_arn_equals,
+            },
         )
     }
 }

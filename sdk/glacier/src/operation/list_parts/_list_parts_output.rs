@@ -71,9 +71,7 @@ impl ListPartsOutput {
 
 /// A builder for [`ListPartsOutput`](crate::operation::list_parts::ListPartsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartsOutputBuilder {
     pub(crate) multipart_upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_arn: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ pub struct ListPartsOutputBuilder {
 }
 impl ListPartsOutputBuilder {
     /// <p>The ID of the upload to which the parts are associated.</p>
-    pub fn multipart_upload_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multipart_upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multipart_upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the upload to which the parts are associated.</p>
-    pub fn set_multipart_upload_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multipart_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multipart_upload_id = input;
         self
     }
@@ -120,18 +112,12 @@ impl ListPartsOutputBuilder {
         &self.vault_arn
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_description = input;
         self
     }
@@ -154,18 +140,12 @@ impl ListPartsOutputBuilder {
         &self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -185,17 +165,12 @@ impl ListPartsOutputBuilder {
         self
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    pub fn set_parts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>,
-    ) -> Self {
+    pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>) -> Self {
         self.parts = input;
         self
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    pub fn get_parts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartListElement>> {
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartListElement>> {
         &self.parts
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>

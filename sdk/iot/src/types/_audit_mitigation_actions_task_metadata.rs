@@ -24,9 +24,7 @@ impl AuditMitigationActionsTaskMetadata {
         self.start_time.as_ref()
     }
     /// <p>The current state of the audit mitigation actions task.</p>
-    pub fn task_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl AuditMitigationActionsTaskMetadata {
 
 /// A builder for [`AuditMitigationActionsTaskMetadata`](crate::types::AuditMitigationActionsTaskMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditMitigationActionsTaskMetadataBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,10 +64,7 @@ impl AuditMitigationActionsTaskMetadataBuilder {
         self
     }
     /// <p>The time at which the audit mitigation actions task was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -85,17 +78,12 @@ impl AuditMitigationActionsTaskMetadataBuilder {
         self
     }
     /// <p>The current state of the audit mitigation actions task.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
     /// <p>The current state of the audit mitigation actions task.</p>
-    pub fn get_task_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
         &self.task_status
     }
     /// Consumes the builder and constructs a [`AuditMitigationActionsTaskMetadata`](crate::types::AuditMitigationActionsTaskMetadata).

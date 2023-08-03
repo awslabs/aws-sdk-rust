@@ -22,36 +22,26 @@ impl DeleteAccessControlRuleInput {
 }
 impl DeleteAccessControlRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessControlRuleInput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder {
         crate::operation::delete_access_control_rule::builders::DeleteAccessControlRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessControlRuleInput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessControlRuleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessControlRuleInputBuilder {
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteAccessControlRuleInputBuilder {
         crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput {
-                organization_id: self.organization_id,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput {
+            organization_id: self.organization_id,
+            name: self.name,
+        })
     }
 }

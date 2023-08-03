@@ -23,9 +23,7 @@ impl InputParallelism {
 
 /// A builder for [`InputParallelism`](crate::types::InputParallelism).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputParallelismBuilder {
     pub(crate) count: ::std::option::Option<i32>,
 }

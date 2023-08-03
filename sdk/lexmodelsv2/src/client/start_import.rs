@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`import_status(Option<ImportStatus>)`](crate::operation::start_import::StartImportOutput::import_status): <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::start_import::StartImportOutput::creation_date_time): <p>The date and time that the import request was created.</p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::operation::start_import::StartImportError)
-    pub fn start_import(
-        &self,
-    ) -> crate::operation::start_import::builders::StartImportFluentBuilder {
+    pub fn start_import(&self) -> crate::operation::start_import::builders::StartImportFluentBuilder {
         crate::operation::start_import::builders::StartImportFluentBuilder::new(self.handle.clone())
     }
 }

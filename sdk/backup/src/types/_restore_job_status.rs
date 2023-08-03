@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RestoreJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for RestoreJobStatus {
             "FAILED" => RestoreJobStatus::Failed,
             "PENDING" => RestoreJobStatus::Pending,
             "RUNNING" => RestoreJobStatus::Running,
-            other => {
-                RestoreJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RestoreJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

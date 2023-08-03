@@ -29,9 +29,7 @@ impl ListFlowsInput {
 
 /// A builder for [`ListFlowsInput`](crate::operation::list_flows::ListFlowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl ListFlowsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFlowsInput`](crate::operation::list_flows::ListFlowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_flows::ListFlowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_flows::ListFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_flows::ListFlowsInput {
             max_results: self.max_results,
             next_token: self.next_token,

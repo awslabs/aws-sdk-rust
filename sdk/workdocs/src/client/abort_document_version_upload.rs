@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadFluentBuilder::set_version_id): <p>The ID of the version.</p>
     /// - On success, responds with [`AbortDocumentVersionUploadOutput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput)
     /// - On failure, responds with [`SdkError<AbortDocumentVersionUploadError>`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError)
-    pub fn abort_document_version_upload(&self) -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadFluentBuilder{
+    pub fn abort_document_version_upload(
+        &self,
+    ) -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadFluentBuilder {
         crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateStateMachineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine::CreateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine::CreateStateMachineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine::CreateStateMachineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_state_machine();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl CreateStateMachineFluentBuilder {
         }
     }
     /// Access the CreateStateMachine as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl CreateStateMachineFluentBuilder {
             crate::operation::create_state_machine::CreateStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine::CreateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine::CreateStateMachineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl CreateStateMachineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl CreateStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine::CreateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine::CreateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine::CreateStateMachineError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl CreateStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine::CreateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine::CreateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine::CreateStateMachineError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl CreateStateMachineFluentBuilder {
             crate::operation::create_state_machine::CreateStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine::CreateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine::CreateStateMachineError>,
     > {
         self.customize_middleware().await
     }
@@ -202,10 +186,7 @@ impl CreateStateMachineFluentBuilder {
         self
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StateMachineType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StateMachineType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -223,19 +204,14 @@ impl CreateStateMachineFluentBuilder {
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
     /// Appends an item to `tags`.
@@ -252,10 +228,7 @@ impl CreateStateMachineFluentBuilder {
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -271,17 +244,12 @@ impl CreateStateMachineFluentBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfiguration>,
-    ) -> Self {
+    pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
         self.inner = self.inner.set_tracing_configuration(input);
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
         self.inner.get_tracing_configuration()
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
@@ -299,18 +267,12 @@ impl CreateStateMachineFluentBuilder {
         self.inner.get_publish()
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }

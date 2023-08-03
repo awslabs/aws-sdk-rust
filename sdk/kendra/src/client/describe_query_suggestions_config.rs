@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`total_suggestions_count(Option<i32>)`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput::total_suggestions_count): <p>The current total count of query suggestions for an index.</p>  <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>  <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
     ///   - [`attribute_suggestions_config(Option<AttributeSuggestionsDescribeConfig>)`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput::attribute_suggestions_config): <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsConfigError>`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError)
-    pub fn describe_query_suggestions_config(&self) -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigFluentBuilder{
+    pub fn describe_query_suggestions_config(
+        &self,
+    ) -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigFluentBuilder {
         crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigFluentBuilder::new(self.handle.clone())
     }
 }

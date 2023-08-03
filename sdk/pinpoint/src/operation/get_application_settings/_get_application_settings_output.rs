@@ -5,15 +5,12 @@
 pub struct GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
-    pub application_settings_resource:
-        ::std::option::Option<crate::types::ApplicationSettingsResource>,
+    pub application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,
 }
 impl GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationSettingsResource> {
+    pub fn application_settings_resource(&self) -> ::std::option::Option<&crate::types::ApplicationSettingsResource> {
         self.application_settings_resource.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for GetApplicationSettingsOutput {
 }
 impl GetApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationSettingsOutput`](crate::operation::get_application_settings::GetApplicationSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_application_settings::builders::GetApplicationSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_application_settings::builders::GetApplicationSettingsOutputBuilder {
         crate::operation::get_application_settings::builders::GetApplicationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationSettingsOutput`](crate::operation::get_application_settings::GetApplicationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationSettingsOutputBuilder {
-    pub(crate) application_settings_resource:
-        ::std::option::Option<crate::types::ApplicationSettingsResource>,
+    pub(crate) application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,
 }
 impl GetApplicationSettingsOutputBuilder {
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn application_settings_resource(
-        mut self,
-        input: crate::types::ApplicationSettingsResource,
-    ) -> Self {
+    pub fn application_settings_resource(mut self, input: crate::types::ApplicationSettingsResource) -> Self {
         self.application_settings_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn set_application_settings_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSettingsResource>,
-    ) -> Self {
+    pub fn set_application_settings_resource(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsResource>) -> Self {
         self.application_settings_resource = input;
         self
     }
     /// <p>Provides information about an application, including the default settings for an application.</p>
-    pub fn get_application_settings_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSettingsResource> {
+    pub fn get_application_settings_resource(&self) -> &::std::option::Option<crate::types::ApplicationSettingsResource> {
         &self.application_settings_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

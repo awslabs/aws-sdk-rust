@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeScriptOutput`](crate::operation::describe_script::DescribeScriptOutput) with field(s):
     ///   - [`script(Option<Script>)`](crate::operation::describe_script::DescribeScriptOutput::script): <p>A set of properties describing the requested script.</p>
     /// - On failure, responds with [`SdkError<DescribeScriptError>`](crate::operation::describe_script::DescribeScriptError)
-    pub fn describe_script(
-        &self,
-    ) -> crate::operation::describe_script::builders::DescribeScriptFluentBuilder {
-        crate::operation::describe_script::builders::DescribeScriptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_script(&self) -> crate::operation::describe_script::builders::DescribeScriptFluentBuilder {
+        crate::operation::describe_script::builders::DescribeScriptFluentBuilder::new(self.handle.clone())
     }
 }

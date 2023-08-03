@@ -23,9 +23,7 @@ impl TimingInformation {
 
 /// A builder for [`TimingInformation`](crate::types::TimingInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimingInformationBuilder {
     pub(crate) processing_time_milliseconds: ::std::option::Option<i64>,
 }

@@ -36,9 +36,7 @@ impl UpdateProjectInput {
 
 /// A builder for [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -79,26 +77,18 @@ impl UpdateProjectInputBuilder {
         self
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
-    pub fn set_placement_template(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementTemplate>,
-    ) -> Self {
+    pub fn set_placement_template(mut self, input: ::std::option::Option<crate::types::PlacementTemplate>) -> Self {
         self.placement_template = input;
         self
     }
     /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
-    pub fn get_placement_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+    pub fn get_placement_template(&self) -> &::std::option::Option<crate::types::PlacementTemplate> {
         &self.placement_template
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
             project_name: self.project_name,
             description: self.description,

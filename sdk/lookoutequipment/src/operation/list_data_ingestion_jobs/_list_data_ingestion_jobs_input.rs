@@ -36,18 +36,14 @@ impl ListDataIngestionJobsInput {
 }
 impl ListDataIngestionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder {
         crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl ListDataIngestionJobsInputBuilder {
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -117,17 +110,13 @@ impl ListDataIngestionJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput {
-                dataset_name: self.dataset_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput {
+            dataset_name: self.dataset_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+        })
     }
 }

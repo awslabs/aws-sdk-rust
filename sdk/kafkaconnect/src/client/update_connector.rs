@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`connector_arn(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_state): <p>The state of the connector.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectorError>`](crate::operation::update_connector::UpdateConnectorError)
-    pub fn update_connector(
-        &self,
-    ) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {
-        crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connector(&self) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {
+        crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::new(self.handle.clone())
     }
 }

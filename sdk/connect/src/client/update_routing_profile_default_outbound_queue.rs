@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`default_outbound_queue_id(impl ::std::convert::Into<String>)`](crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder::default_outbound_queue_id) / [`set_default_outbound_queue_id(Option<String>)`](crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder::set_default_outbound_queue_id): <p>The identifier for the default outbound queue.</p>
     /// - On success, responds with [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput)
     /// - On failure, responds with [`SdkError<UpdateRoutingProfileDefaultOutboundQueueError>`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueError)
-    pub fn update_routing_profile_default_outbound_queue(&self) -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder{
-        crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder::new(self.handle.clone())
+    pub fn update_routing_profile_default_outbound_queue(
+        &self,
+    ) -> crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder {
+        crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

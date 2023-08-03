@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListProjectAssetsOutput {
 }
 impl ListProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
         crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectAssetsOutputBuilder {
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListProjectAssetsOutputBuilder {
         self
     }
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub fn set_asset_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.asset_ids = input;
         self
     }

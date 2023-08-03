@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListThingGroupsForThingOutput {
 }
 impl ListThingGroupsForThingOutput {
     /// Creates a new builder-style object to manufacture [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput).
-    pub fn builder(
-    ) -> crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingOutputBuilder {
         crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingGroupsForThingOutputBuilder {
     pub(crate) thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListThingGroupsForThingOutputBuilder {
         self
     }
     /// <p>The thing groups.</p>
-    pub fn set_thing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
-    ) -> Self {
+    pub fn set_thing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>) -> Self {
         self.thing_groups = input;
         self
     }
     /// <p>The thing groups.</p>
-    pub fn get_thing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
+    pub fn get_thing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
         &self.thing_groups
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -95,9 +86,7 @@ impl ListThingGroupsForThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput {
+    pub fn build(self) -> crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput {
         crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput {
             thing_groups: self.thing_groups,
             next_token: self.next_token,

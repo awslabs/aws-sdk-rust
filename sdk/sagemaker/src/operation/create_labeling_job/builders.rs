@@ -10,10 +10,7 @@ impl CreateLabelingJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_labeling_job::CreateLabelingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_labeling_job::CreateLabelingJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_labeling_job();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl CreateLabelingJobFluentBuilder {
         }
     }
     /// Access the CreateLabelingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_labeling_job::builders::CreateLabelingJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_labeling_job::builders::CreateLabelingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl CreateLabelingJobFluentBuilder {
             crate::operation::create_labeling_job::CreateLabelingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_labeling_job::CreateLabelingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl CreateLabelingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl CreateLabelingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_labeling_job::CreateLabelingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_labeling_job::CreateLabelingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl CreateLabelingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_labeling_job::CreateLabelingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_labeling_job::CreateLabelingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +112,17 @@ impl CreateLabelingJobFluentBuilder {
             crate::operation::create_labeling_job::CreateLabelingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_labeling_job::CreateLabelingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_labeling_job::CreateLabelingJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    pub fn labeling_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.labeling_job_name(input.into());
         self
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    pub fn set_labeling_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_labeling_job_name(input);
         self
     }
@@ -167,10 +145,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
-    pub fn label_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_attribute_name(input.into());
         self
     }
@@ -189,10 +164,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
-    pub fn set_label_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_attribute_name(input);
         self
     }
@@ -232,10 +204,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::LabelingJobInputConfig>) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
     }
@@ -255,17 +224,12 @@ impl CreateLabelingJobFluentBuilder {
         self
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::LabelingJobOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::LabelingJobOutputConfig> {
         self.inner.get_output_config()
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
@@ -299,10 +263,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
-    pub fn label_category_config_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_category_config_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_category_config_s3_uri(input.into());
         self
     }
@@ -323,10 +284,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
-    pub fn set_label_category_config_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_category_config_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_category_config_s3_uri(input);
         self
     }
@@ -347,53 +305,35 @@ impl CreateLabelingJobFluentBuilder {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
-    pub fn get_label_category_config_s3_uri(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_label_category_config_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_category_config_s3_uri()
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    pub fn stopping_conditions(
-        mut self,
-        input: crate::types::LabelingJobStoppingConditions,
-    ) -> Self {
+    pub fn stopping_conditions(mut self, input: crate::types::LabelingJobStoppingConditions) -> Self {
         self.inner = self.inner.stopping_conditions(input);
         self
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    pub fn set_stopping_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
-    ) -> Self {
+    pub fn set_stopping_conditions(mut self, input: ::std::option::Option<crate::types::LabelingJobStoppingConditions>) -> Self {
         self.inner = self.inner.set_stopping_conditions(input);
         self
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    pub fn get_stopping_conditions(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobStoppingConditions> {
+    pub fn get_stopping_conditions(&self) -> &::std::option::Option<crate::types::LabelingJobStoppingConditions> {
         self.inner.get_stopping_conditions()
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
-    pub fn labeling_job_algorithms_config(
-        mut self,
-        input: crate::types::LabelingJobAlgorithmsConfig,
-    ) -> Self {
+    pub fn labeling_job_algorithms_config(mut self, input: crate::types::LabelingJobAlgorithmsConfig) -> Self {
         self.inner = self.inner.labeling_job_algorithms_config(input);
         self
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
-    pub fn set_labeling_job_algorithms_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
-    ) -> Self {
+    pub fn set_labeling_job_algorithms_config(mut self, input: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>) -> Self {
         self.inner = self.inner.set_labeling_job_algorithms_config(input);
         self
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
-    pub fn get_labeling_job_algorithms_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobAlgorithmsConfig> {
+    pub fn get_labeling_job_algorithms_config(&self) -> &::std::option::Option<crate::types::LabelingJobAlgorithmsConfig> {
         self.inner.get_labeling_job_algorithms_config()
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
@@ -402,10 +342,7 @@ impl CreateLabelingJobFluentBuilder {
         self
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-    pub fn set_human_task_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanTaskConfig>,
-    ) -> Self {
+    pub fn set_human_task_config(mut self, input: ::std::option::Option<crate::types::HumanTaskConfig>) -> Self {
         self.inner = self.inner.set_human_task_config(input);
         self
     }
@@ -423,10 +360,7 @@ impl CreateLabelingJobFluentBuilder {
         self
     }
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

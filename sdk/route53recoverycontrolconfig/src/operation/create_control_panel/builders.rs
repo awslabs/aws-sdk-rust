@@ -10,10 +10,7 @@ impl CreateControlPanelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_control_panel::CreateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control_panel::CreateControlPanelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control_panel::CreateControlPanelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_control_panel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateControlPanelFluentBuilder {
         }
     }
     /// Access the CreateControlPanel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_control_panel::builders::CreateControlPanelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_control_panel::builders::CreateControlPanelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateControlPanelFluentBuilder {
             crate::operation::create_control_panel::CreateControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control_panel::CreateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control_panel::CreateControlPanelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateControlPanelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_control_panel::CreateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control_panel::CreateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control_panel::CreateControlPanelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_control_panel::CreateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control_panel::CreateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control_panel::CreateControlPanelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateControlPanelFluentBuilder {
             crate::operation::create_control_panel::CreateControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_control_panel::CreateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_control_panel::CreateControlPanelError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateControlPanelFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_name(input.into());
         self
     }
     /// <p>The name of the control panel.</p>
-    pub fn set_control_panel_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_name(input);
         self
     }
@@ -175,30 +153,17 @@ impl CreateControlPanelFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the control panel.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags associated with the control panel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags associated with the control panel.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

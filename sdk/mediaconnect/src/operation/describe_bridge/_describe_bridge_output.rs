@@ -28,9 +28,7 @@ impl DescribeBridgeOutput {
 
 /// A builder for [`DescribeBridgeOutput`](crate::operation::describe_bridge::DescribeBridgeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBridgeOutputBuilder {
     pub(crate) bridge: ::std::option::Option<crate::types::Bridge>,
     _request_id: Option<String>,

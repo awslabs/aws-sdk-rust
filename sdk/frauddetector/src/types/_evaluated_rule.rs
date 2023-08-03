@@ -132,18 +132,12 @@ impl EvaluatedRuleBuilder {
         &self.expression
     }
     /// <p> The rule expression value. </p>
-    pub fn expression_with_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_with_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_with_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The rule expression value. </p>
-    pub fn set_expression_with_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expression_with_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression_with_values = input;
         self
     }
@@ -163,10 +157,7 @@ impl EvaluatedRuleBuilder {
         self
     }
     /// <p> The rule outcome. </p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.outcomes = input;
         self
     }

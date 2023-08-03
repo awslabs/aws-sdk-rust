@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStreamProcessorsOutput {
 }
 impl ListStreamProcessorsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamProcessorsOutput`](crate::operation::list_stream_processors::ListStreamProcessorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder {
         crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamProcessorsOutput`](crate::operation::list_stream_processors::ListStreamProcessorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamProcessorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) stream_processors:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>>,
+    pub(crate) stream_processors: ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>>,
     _request_id: Option<String>,
 }
 impl ListStreamProcessorsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListStreamProcessorsOutputBuilder {
         self
     }
     /// <p>List of stream processors that you have created.</p>
-    pub fn set_stream_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>>,
-    ) -> Self {
+    pub fn set_stream_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>>) -> Self {
         self.stream_processors = input;
         self
     }
     /// <p>List of stream processors that you have created.</p>
-    pub fn get_stream_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>> {
+    pub fn get_stream_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamProcessor>> {
         &self.stream_processors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

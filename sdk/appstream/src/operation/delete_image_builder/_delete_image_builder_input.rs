@@ -15,17 +15,14 @@ impl DeleteImageBuilderInput {
 }
 impl DeleteImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
         crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_image_builder::DeleteImageBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_image_builder::DeleteImageBuilderInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_image_builder::DeleteImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_image_builder::DeleteImageBuilderInput { name: self.name })
     }
 }

@@ -37,9 +37,7 @@ impl DeleteKxEnvironmentFluentBuilder {
         }
     }
     /// Access the DeleteKxEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteKxEnvironmentFluentBuilder {
             crate::operation::delete_kx_environment::DeleteKxEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteKxEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteKxEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteKxEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteKxEnvironmentFluentBuilder {
             crate::operation::delete_kx_environment::DeleteKxEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

@@ -22,9 +22,7 @@ impl DeleteExportInput {
 
 /// A builder for [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExportInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteExportInputBuilder {
         &self.export_id
     }
     /// Consumes the builder and constructs a [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_export::DeleteExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_export::DeleteExportInput {
-            export_id: self.export_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_export::DeleteExportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_export::DeleteExportInput { export_id: self.export_id })
     }
 }

@@ -10,10 +10,7 @@ impl PutAppsListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_apps_list::PutAppsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_apps_list::PutAppsListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_apps_list::PutAppsListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_apps_list();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutAppsListFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_apps_list::PutAppsList,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_apps_list::PutAppsList, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_apps_list::PutAppsListError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutAppsListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutAppsListFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_apps_list::PutAppsList,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_apps_list::PutAppsList, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_apps_list::PutAppsListError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl PutAppsListFluentBuilder {
         self
     }
     /// <p>The details of the Firewall Manager applications list to be created.</p>
-    pub fn set_apps_list(
-        mut self,
-        input: ::std::option::Option<crate::types::AppsListData>,
-    ) -> Self {
+    pub fn set_apps_list(mut self, input: ::std::option::Option<crate::types::AppsListData>) -> Self {
         self.inner = self.inner.set_apps_list(input);
         self
     }
@@ -139,10 +124,7 @@ impl PutAppsListFluentBuilder {
         self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }

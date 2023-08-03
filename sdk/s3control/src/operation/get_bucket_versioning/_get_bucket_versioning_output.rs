@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetBucketVersioningOutput {
 }
 impl GetBucketVersioningOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder {
-        crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder {
+        crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketVersioningOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketVersioningStatus>,
     pub(crate) mfa_delete: ::std::option::Option<crate::types::MfaDeleteStatus>,
@@ -52,10 +48,7 @@ impl GetBucketVersioningOutputBuilder {
         self
     }
     /// <p>The versioning state of the S3 on Outposts bucket.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketVersioningStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BucketVersioningStatus>) -> Self {
         self.status = input;
         self
     }
@@ -69,10 +62,7 @@ impl GetBucketVersioningOutputBuilder {
         self
     }
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is returned only if the bucket has been configured with MFA delete. If MFA delete has never been configured for the bucket, this element is not returned.</p>
-    pub fn set_mfa_delete(
-        mut self,
-        input: ::std::option::Option<crate::types::MfaDeleteStatus>,
-    ) -> Self {
+    pub fn set_mfa_delete(mut self, input: ::std::option::Option<crate::types::MfaDeleteStatus>) -> Self {
         self.mfa_delete = input;
         self
     }

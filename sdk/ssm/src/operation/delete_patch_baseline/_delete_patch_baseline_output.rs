@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeletePatchBaselineOutput {
 }
 impl DeletePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineOutputBuilder {
-        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineOutputBuilder {
+        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

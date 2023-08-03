@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeHandshakeOutput`](crate::operation::describe_handshake::DescribeHandshakeOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::operation::describe_handshake::DescribeHandshakeOutput::handshake): <p>A structure that contains information about the specified handshake.</p>
     /// - On failure, responds with [`SdkError<DescribeHandshakeError>`](crate::operation::describe_handshake::DescribeHandshakeError)
-    pub fn describe_handshake(
-        &self,
-    ) -> crate::operation::describe_handshake::builders::DescribeHandshakeFluentBuilder {
-        crate::operation::describe_handshake::builders::DescribeHandshakeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_handshake(&self) -> crate::operation::describe_handshake::builders::DescribeHandshakeFluentBuilder {
+        crate::operation::describe_handshake::builders::DescribeHandshakeFluentBuilder::new(self.handle.clone())
     }
 }

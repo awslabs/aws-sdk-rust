@@ -47,11 +47,7 @@ impl super::Client {
     ///   - [`environment(Option<HashMap<String, String>>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::environment): <p>The environment variables to set in the Docker container.</p>
     ///   - [`warm_pool_status(Option<WarmPoolStatus>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::warm_pool_status): <p>The status of the warm pool associated with the training job.</p>
     /// - On failure, responds with [`SdkError<DescribeTrainingJobError>`](crate::operation::describe_training_job::DescribeTrainingJobError)
-    pub fn describe_training_job(
-        &self,
-    ) -> crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder {
-        crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_training_job(&self) -> crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder {
+        crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::new(self.handle.clone())
     }
 }

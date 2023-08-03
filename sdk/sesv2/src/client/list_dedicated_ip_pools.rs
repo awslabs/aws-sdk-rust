@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`dedicated_ip_pools(Option<Vec<String>>)`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput::dedicated_ip_pools): <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput::next_token): <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<ListDedicatedIpPoolsError>`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError)
-    pub fn list_dedicated_ip_pools(
-        &self,
-    ) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder
-    {
-        crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dedicated_ip_pools(&self) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder {
+        crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsFluentBuilder::new(self.handle.clone())
     }
 }

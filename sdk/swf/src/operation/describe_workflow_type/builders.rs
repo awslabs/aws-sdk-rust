@@ -49,9 +49,7 @@ impl DescribeWorkflowTypeFluentBuilder {
         }
     }
     /// Access the DescribeWorkflowType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_workflow_type::builders::DescribeWorkflowTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +61,7 @@ impl DescribeWorkflowTypeFluentBuilder {
             crate::operation::describe_workflow_type::DescribeWorkflowType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workflow_type::DescribeWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workflow_type::DescribeWorkflowTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +71,7 @@ impl DescribeWorkflowTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +80,7 @@ impl DescribeWorkflowTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workflow_type::DescribeWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workflow_type::DescribeWorkflowTypeError>,
     > {
         let op = self
             .inner
@@ -112,9 +103,7 @@ impl DescribeWorkflowTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workflow_type::DescribeWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workflow_type::DescribeWorkflowTypeError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +117,7 @@ impl DescribeWorkflowTypeFluentBuilder {
             crate::operation::describe_workflow_type::DescribeWorkflowType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workflow_type::DescribeWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workflow_type::DescribeWorkflowTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +141,7 @@ impl DescribeWorkflowTypeFluentBuilder {
         self
     }
     /// <p>The workflow type to describe.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }

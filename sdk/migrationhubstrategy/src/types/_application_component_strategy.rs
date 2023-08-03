@@ -37,9 +37,7 @@ impl ApplicationComponentStrategy {
 
 /// A builder for [`ApplicationComponentStrategy`](crate::types::ApplicationComponentStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationComponentStrategyBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,
@@ -52,10 +50,7 @@ impl ApplicationComponentStrategyBuilder {
         self
     }
     /// <p> Strategy recommendation for the application component. </p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSet>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RecommendationSet>) -> Self {
         self.recommendation = input;
         self
     }
@@ -69,10 +64,7 @@ impl ApplicationComponentStrategyBuilder {
         self
     }
     /// <p> The recommendation status of a strategy for an application component. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StrategyRecommendation>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StrategyRecommendation>) -> Self {
         self.status = input;
         self
     }

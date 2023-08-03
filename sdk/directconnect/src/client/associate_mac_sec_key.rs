@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`connection_id(Option<String>)`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
     /// - On failure, responds with [`SdkError<AssociateMacSecKeyError>`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyError)
-    pub fn associate_mac_sec_key(
-        &self,
-    ) -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyFluentBuilder {
-        crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_mac_sec_key(&self) -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyFluentBuilder {
+        crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyFluentBuilder::new(self.handle.clone())
     }
 }

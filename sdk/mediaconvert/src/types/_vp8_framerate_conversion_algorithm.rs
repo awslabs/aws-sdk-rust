@@ -39,13 +39,7 @@
 /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Vp8FramerateConversionAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Vp8FramerateConversionAlgorithm {
             "DUPLICATE_DROP" => Vp8FramerateConversionAlgorithm::DuplicateDrop,
             "FRAMEFORMER" => Vp8FramerateConversionAlgorithm::Frameformer,
             "INTERPOLATE" => Vp8FramerateConversionAlgorithm::Interpolate,
-            other => Vp8FramerateConversionAlgorithm::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Vp8FramerateConversionAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

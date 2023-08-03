@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     /// - On success, responds with [`DeleteEndpointGroupOutput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteEndpointGroupError>`](crate::operation::delete_endpoint_group::DeleteEndpointGroupError)
-    pub fn delete_endpoint_group(
-        &self,
-    ) -> crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder {
-        crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_endpoint_group(&self) -> crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder {
+        crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateAppInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance::CreateAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app_instance();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateAppInstanceFluentBuilder {
         }
     }
     /// Access the CreateAppInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_instance::builders::CreateAppInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_app_instance::builders::CreateAppInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateAppInstanceFluentBuilder {
             crate::operation::create_app_instance::CreateAppInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateAppInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateAppInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance::CreateAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateAppInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance::CreateAppInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CreateAppInstanceFluentBuilder {
             crate::operation::create_app_instance::CreateAppInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -155,18 +139,12 @@ impl CreateAppInstanceFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -184,10 +162,7 @@ impl CreateAppInstanceFluentBuilder {
         self
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

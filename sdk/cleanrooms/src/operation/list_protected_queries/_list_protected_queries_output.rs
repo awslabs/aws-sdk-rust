@@ -8,8 +8,7 @@ pub struct ListProtectedQueriesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of protected queries.</p>
     #[doc(hidden)]
-    pub protected_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
+    pub protected_queries: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
     _request_id: Option<String>,
 }
 impl ListProtectedQueriesOutput {
@@ -18,9 +17,7 @@ impl ListProtectedQueriesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of protected queries.</p>
-    pub fn protected_queries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProtectedQuerySummary]> {
+    pub fn protected_queries(&self) -> ::std::option::Option<&[crate::types::ProtectedQuerySummary]> {
         self.protected_queries.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListProtectedQueriesOutput {
 }
 impl ListProtectedQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
         crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectedQueriesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) protected_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
+    pub(crate) protected_queries: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
     _request_id: Option<String>,
 }
 impl ListProtectedQueriesOutputBuilder {
@@ -75,17 +68,12 @@ impl ListProtectedQueriesOutputBuilder {
         self
     }
     /// <p>A list of protected queries.</p>
-    pub fn set_protected_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
-    ) -> Self {
+    pub fn set_protected_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>) -> Self {
         self.protected_queries = input;
         self
     }
     /// <p>A list of protected queries.</p>
-    pub fn get_protected_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>> {
+    pub fn get_protected_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>> {
         &self.protected_queries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

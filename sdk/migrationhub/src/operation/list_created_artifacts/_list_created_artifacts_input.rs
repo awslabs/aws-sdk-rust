@@ -36,17 +36,14 @@ impl ListCreatedArtifactsInput {
 }
 impl ListCreatedArtifactsInput {
     /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsInput`](crate::operation::list_created_artifacts::ListCreatedArtifactsInput).
-    pub fn builder(
-    ) -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsInputBuilder {
+    pub fn builder() -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsInputBuilder {
         crate::operation::list_created_artifacts::builders::ListCreatedArtifactsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCreatedArtifactsInput`](crate::operation::list_created_artifacts::ListCreatedArtifactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListCreatedArtifactsInputBuilder {
 }
 impl ListCreatedArtifactsInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -75,18 +66,12 @@ impl ListCreatedArtifactsInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -125,17 +110,13 @@ impl ListCreatedArtifactsInputBuilder {
     /// Consumes the builder and constructs a [`ListCreatedArtifactsInput`](crate::operation::list_created_artifacts::ListCreatedArtifactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_created_artifacts::ListCreatedArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_created_artifacts::ListCreatedArtifactsInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_created_artifacts::ListCreatedArtifactsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_created_artifacts::ListCreatedArtifactsInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

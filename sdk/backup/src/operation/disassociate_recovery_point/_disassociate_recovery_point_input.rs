@@ -22,34 +22,26 @@ impl DisassociateRecoveryPointInput {
 }
 impl DisassociateRecoveryPointInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRecoveryPointInput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput).
-    pub fn builder() -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder {
         crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRecoveryPointInput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRecoveryPointInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateRecoveryPointInputBuilder {
     /// <p>The unique name of an Backup vault.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of an Backup vault.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl DisassociateRecoveryPointInputBuilder {
         &self.backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
@@ -84,11 +70,9 @@ impl DisassociateRecoveryPointInputBuilder {
         crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput {
-                backup_vault_name: self.backup_vault_name,
-                recovery_point_arn: self.recovery_point_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput {
+            backup_vault_name: self.backup_vault_name,
+            recovery_point_arn: self.recovery_point_arn,
+        })
     }
 }

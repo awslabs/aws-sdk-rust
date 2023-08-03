@@ -37,10 +37,7 @@ impl ListPagesByEngagementFluentBuilder {
         }
     }
     /// Access the ListPagesByEngagement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPagesByEngagementFluentBuilder {
             crate::operation::list_pages_by_engagement::ListPagesByEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPagesByEngagementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPagesByEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPagesByEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListPagesByEngagementFluentBuilder {
             crate::operation::list_pages_by_engagement::ListPagesByEngagement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
-        crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
+        crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engagement_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn set_engagement_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engagement_id(input);
         self
     }

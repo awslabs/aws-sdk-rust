@@ -107,17 +107,14 @@ impl ::aws_http::request_id::RequestId for DescribeThesaurusOutput {
 }
 impl DescribeThesaurusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThesaurusOutput`](crate::operation::describe_thesaurus::DescribeThesaurusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_thesaurus::builders::DescribeThesaurusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_thesaurus::builders::DescribeThesaurusOutputBuilder {
         crate::operation::describe_thesaurus::builders::DescribeThesaurusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThesaurusOutput`](crate::operation::describe_thesaurus::DescribeThesaurusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThesaurusOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -199,10 +196,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ThesaurusStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ThesaurusStatus>) -> Self {
         self.status = input;
         self
     }
@@ -212,18 +206,12 @@ impl DescribeThesaurusOutputBuilder {
         &self.status
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -237,10 +225,7 @@ impl DescribeThesaurusOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -254,10 +239,7 @@ impl DescribeThesaurusOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -285,10 +267,7 @@ impl DescribeThesaurusOutputBuilder {
         self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }

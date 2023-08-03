@@ -10,10 +10,7 @@ impl DissociatePackageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::dissociate_package::DissociatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_package::DissociatePackageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_package::DissociatePackageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.dissociate_package();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DissociatePackageFluentBuilder {
         }
     }
     /// Access the DissociatePackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::dissociate_package::builders::DissociatePackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::dissociate_package::builders::DissociatePackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DissociatePackageFluentBuilder {
             crate::operation::dissociate_package::DissociatePackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_package::DissociatePackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_package::DissociatePackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DissociatePackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DissociatePackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dissociate_package::DissociatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_package::DissociatePackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_package::DissociatePackageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DissociatePackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dissociate_package::DissociatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_package::DissociatePackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_package::DissociatePackageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DissociatePackageFluentBuilder {
             crate::operation::dissociate_package::DissociatePackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_package::DissociatePackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_package::DissociatePackageError>,
     > {
         self.customize_middleware().await
     }

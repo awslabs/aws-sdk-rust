@@ -58,9 +58,7 @@ impl DefaultButtonConfiguration {
 
 /// A builder for [`DefaultButtonConfiguration`](crate::types::DefaultButtonConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultButtonConfigurationBuilder {
     pub(crate) background_color: ::std::option::Option<::std::string::String>,
     pub(crate) border_radius: ::std::option::Option<i32>,
@@ -71,18 +69,12 @@ pub struct DefaultButtonConfigurationBuilder {
 }
 impl DefaultButtonConfigurationBuilder {
     /// <p>The background color of the button.</p>
-    pub fn background_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn background_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The background color of the button.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.background_color = input;
         self
     }
@@ -110,10 +102,7 @@ impl DefaultButtonConfigurationBuilder {
         self
     }
     /// <p>Action triggered by the button.</p>
-    pub fn set_button_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ButtonAction>,
-    ) -> Self {
+    pub fn set_button_action(mut self, input: ::std::option::Option<crate::types::ButtonAction>) -> Self {
         self.button_action = input;
         self
     }

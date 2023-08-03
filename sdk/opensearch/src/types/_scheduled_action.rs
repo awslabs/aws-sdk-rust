@@ -79,9 +79,7 @@ impl ScheduledAction {
 
 /// A builder for [`ScheduledAction`](crate::types::ScheduledAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledActionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ActionType>,
@@ -128,10 +126,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The severity of the action.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ActionSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -173,10 +168,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
-    pub fn set_scheduled_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledBy>,
-    ) -> Self {
+    pub fn set_scheduled_by(mut self, input: ::std::option::Option<crate::types::ScheduledBy>) -> Self {
         self.scheduled_by = input;
         self
     }

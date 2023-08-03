@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`group_certificate_authority_id(Option<String>)`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput::group_certificate_authority_id): The ID of the certificate authority for the group.
     ///   - [`pem_encoded_certificate(Option<String>)`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput::pem_encoded_certificate): The PEM encoded certificate for the group.
     /// - On failure, responds with [`SdkError<GetGroupCertificateAuthorityError>`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError)
-    pub fn get_group_certificate_authority(&self) -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityFluentBuilder{
+    pub fn get_group_certificate_authority(
+        &self,
+    ) -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityFluentBuilder {
         crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

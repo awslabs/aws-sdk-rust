@@ -36,18 +36,14 @@ impl GetPartitionIndexesInput {
 }
 impl GetPartitionIndexesInput {
     /// Creates a new builder-style object to manufacture [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
-    pub fn builder(
-    ) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder {
+        crate::operation::get_partition_indexes::builders::GetPartitionIndexesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionIndexesInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl GetPartitionIndexesInputBuilder {
         &self.catalog_id
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -120,17 +110,13 @@ impl GetPartitionIndexesInputBuilder {
     /// Consumes the builder and constructs a [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_partition_indexes::GetPartitionIndexesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_partition_indexes::GetPartitionIndexesInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_partition_indexes::GetPartitionIndexesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_partition_indexes::GetPartitionIndexesInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            next_token: self.next_token,
+        })
     }
 }

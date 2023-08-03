@@ -10,10 +10,7 @@ impl CreateDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_document::CreateDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_document::CreateDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_document::CreateDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_document();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDocumentFluentBuilder {
         }
     }
     /// Access the CreateDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_document::builders::CreateDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_document::builders::CreateDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -156,17 +148,12 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_requires(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    ) -> Self {
+    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
         self.inner = self.inner.set_requires(input);
         self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn get_requires(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
         self.inner.get_requires()
     }
     /// Appends an item to `Attachments`.
@@ -179,17 +166,12 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
         self.inner.get_attachments()
     }
     /// <p>A name for the SSM document.</p> <important>
@@ -265,10 +247,7 @@ impl CreateDocumentFluentBuilder {
     /// <p>The type of document to create.</p> <note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentType>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.inner = self.inner.set_document_type(input);
         self
     }
@@ -284,10 +263,7 @@ impl CreateDocumentFluentBuilder {
         self
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
     }
@@ -331,10 +307,7 @@ impl CreateDocumentFluentBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

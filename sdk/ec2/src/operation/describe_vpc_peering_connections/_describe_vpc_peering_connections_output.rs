@@ -5,8 +5,7 @@
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>Information about the VPC peering connections.</p>
     #[doc(hidden)]
-    pub vpc_peering_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
+    pub vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVpcPeeringConnectionsOutput {
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// <p>Information about the VPC peering connections.</p>
-    pub fn vpc_peering_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcPeeringConnection]> {
+    pub fn vpc_peering_connections(&self) -> ::std::option::Option<&[crate::types::VpcPeeringConnection]> {
         self.vpc_peering_connections.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVpcPeeringConnectionsOutput {
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsOutputBuilder {
-    pub(crate) vpc_peering_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
+    pub(crate) vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeVpcPeeringConnectionsOutputBuilder {
         self
     }
     /// <p>Information about the VPC peering connections.</p>
-    pub fn set_vpc_peering_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
-    ) -> Self {
+    pub fn set_vpc_peering_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>) -> Self {
         self.vpc_peering_connections = input;
         self
     }
     /// <p>Information about the VPC peering connections.</p>
-    pub fn get_vpc_peering_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>> {
+    pub fn get_vpc_peering_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>> {
         &self.vpc_peering_connections
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -97,10 +86,7 @@ impl DescribeVpcPeeringConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput {
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput {
             vpc_peering_connections: self.vpc_peering_connections,
             next_token: self.next_token,

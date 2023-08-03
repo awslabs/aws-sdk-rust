@@ -43,13 +43,7 @@
 /// <p>The status code.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamingImageStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,20 +68,12 @@ impl ::std::convert::From<&str> for StreamingImageStatusCode {
         match s {
             "ACCESS_DENIED" => StreamingImageStatusCode::AccessDenied,
             "INTERNAL_ERROR" => StreamingImageStatusCode::InternalError,
-            "STREAMING_IMAGE_CREATE_IN_PROGRESS" => {
-                StreamingImageStatusCode::StreamingImageCreateInProgress
-            }
+            "STREAMING_IMAGE_CREATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageCreateInProgress,
             "STREAMING_IMAGE_DELETED" => StreamingImageStatusCode::StreamingImageDeleted,
-            "STREAMING_IMAGE_DELETE_IN_PROGRESS" => {
-                StreamingImageStatusCode::StreamingImageDeleteInProgress
-            }
+            "STREAMING_IMAGE_DELETE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageDeleteInProgress,
             "STREAMING_IMAGE_READY" => StreamingImageStatusCode::StreamingImageReady,
-            "STREAMING_IMAGE_UPDATE_IN_PROGRESS" => {
-                StreamingImageStatusCode::StreamingImageUpdateInProgress
-            }
-            other => StreamingImageStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "STREAMING_IMAGE_UPDATE_IN_PROGRESS" => StreamingImageStatusCode::StreamingImageUpdateInProgress,
+            other => StreamingImageStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -104,17 +90,11 @@ impl StreamingImageStatusCode {
         match self {
             StreamingImageStatusCode::AccessDenied => "ACCESS_DENIED",
             StreamingImageStatusCode::InternalError => "INTERNAL_ERROR",
-            StreamingImageStatusCode::StreamingImageCreateInProgress => {
-                "STREAMING_IMAGE_CREATE_IN_PROGRESS"
-            }
+            StreamingImageStatusCode::StreamingImageCreateInProgress => "STREAMING_IMAGE_CREATE_IN_PROGRESS",
             StreamingImageStatusCode::StreamingImageDeleted => "STREAMING_IMAGE_DELETED",
-            StreamingImageStatusCode::StreamingImageDeleteInProgress => {
-                "STREAMING_IMAGE_DELETE_IN_PROGRESS"
-            }
+            StreamingImageStatusCode::StreamingImageDeleteInProgress => "STREAMING_IMAGE_DELETE_IN_PROGRESS",
             StreamingImageStatusCode::StreamingImageReady => "STREAMING_IMAGE_READY",
-            StreamingImageStatusCode::StreamingImageUpdateInProgress => {
-                "STREAMING_IMAGE_UPDATE_IN_PROGRESS"
-            }
+            StreamingImageStatusCode::StreamingImageUpdateInProgress => "STREAMING_IMAGE_UPDATE_IN_PROGRESS",
             StreamingImageStatusCode::Unknown(value) => value.as_str(),
         }
     }

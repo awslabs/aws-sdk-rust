@@ -29,17 +29,14 @@ impl DeleteSecurityPolicyInput {
 }
 impl DeleteSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
         crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl DeleteSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -94,16 +88,12 @@ impl DeleteSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_security_policy::DeleteSecurityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_security_policy::DeleteSecurityPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_security_policy::DeleteSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_security_policy::DeleteSecurityPolicyInput {
+            r#type: self.r#type,
+            name: self.name,
+            client_token: self.client_token,
+        })
     }
 }

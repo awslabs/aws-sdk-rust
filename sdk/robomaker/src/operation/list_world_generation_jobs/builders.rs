@@ -26,8 +26,7 @@ impl ListWorldGenerationJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorldGenerationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder,
+    inner: crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder,
 }
 impl ListWorldGenerationJobsFluentBuilder {
     /// Creates a new `ListWorldGenerationJobs`.
@@ -38,10 +37,7 @@ impl ListWorldGenerationJobsFluentBuilder {
         }
     }
     /// Access the ListWorldGenerationJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListWorldGenerationJobsFluentBuilder {
             crate::operation::list_world_generation_jobs::ListWorldGenerationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListWorldGenerationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListWorldGenerationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListWorldGenerationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListWorldGenerationJobsFluentBuilder {
             crate::operation::list_world_generation_jobs::ListWorldGenerationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_world_generation_jobs::paginator::ListWorldGenerationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_world_generation_jobs::paginator::ListWorldGenerationJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_world_generation_jobs::paginator::ListWorldGenerationJobsPaginator {
         crate::operation::list_world_generation_jobs::paginator::ListWorldGenerationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -171,10 +153,7 @@ impl ListWorldGenerationJobsFluentBuilder {
         self
     }
     /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

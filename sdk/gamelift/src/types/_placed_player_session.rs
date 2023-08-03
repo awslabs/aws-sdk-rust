@@ -30,9 +30,7 @@ impl PlacedPlayerSession {
 
 /// A builder for [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacedPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl PlacedPlayerSessionBuilder {
         &self.player_id
     }
     /// <p>A unique identifier for a player session.</p>
-    pub fn player_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player session.</p>
-    pub fn set_player_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_id = input;
         self
     }

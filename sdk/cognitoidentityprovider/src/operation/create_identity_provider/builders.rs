@@ -37,10 +37,7 @@ impl CreateIdentityProviderFluentBuilder {
         }
     }
     /// Access the CreateIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateIdentityProviderFluentBuilder {
             crate::operation::create_identity_provider::CreateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateIdentityProviderFluentBuilder {
             crate::operation::create_identity_provider::CreateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -163,17 +143,12 @@ impl CreateIdentityProviderFluentBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
         self.inner = self.inner.set_provider_type(input);
         self
     }
     /// <p>The IdP type.</p>
-    pub fn get_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
         self.inner.get_provider_type()
     }
     /// Adds a key-value pair to `ProviderDetails`.
@@ -286,9 +261,7 @@ impl CreateIdentityProviderFluentBuilder {
     /// </ul>
     pub fn set_provider_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_provider_details(input);
         self
@@ -341,11 +314,7 @@ impl CreateIdentityProviderFluentBuilder {
     /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_provider_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_provider_details()
     }
     /// Adds a key-value pair to `AttributeMapping`.
@@ -364,19 +333,13 @@ impl CreateIdentityProviderFluentBuilder {
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn set_attribute_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_mapping(input);
         self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn get_attribute_mapping(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attribute_mapping()
     }
     /// Appends an item to `IdpIdentifiers`.
@@ -384,25 +347,17 @@ impl CreateIdentityProviderFluentBuilder {
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
     ///
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_identifiers(input.into());
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn get_idp_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_idp_identifiers()
     }
 }

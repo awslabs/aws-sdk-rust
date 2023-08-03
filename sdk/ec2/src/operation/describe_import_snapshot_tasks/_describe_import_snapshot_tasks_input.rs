@@ -43,16 +43,14 @@ impl DescribeImportSnapshotTasksInput {
 }
 impl DescribeImportSnapshotTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeImportSnapshotTasksInput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput).
-    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder{
+    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder {
         crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImportSnapshotTasksInput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportSnapshotTasksInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -87,10 +85,7 @@ impl DescribeImportSnapshotTasksInputBuilder {
         self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -103,27 +98,19 @@ impl DescribeImportSnapshotTasksInputBuilder {
     /// To override the contents of this collection use [`set_import_task_ids`](Self::set_import_task_ids).
     ///
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn import_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_task_ids.unwrap_or_default();
         v.push(input.into());
         self.import_task_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn set_import_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_task_ids = input;
         self
     }
     /// <p>A list of import snapshot task IDs.</p>
-    pub fn get_import_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_task_ids
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -161,14 +148,12 @@ impl DescribeImportSnapshotTasksInputBuilder {
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                import_task_ids: self.import_task_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            import_task_ids: self.import_task_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

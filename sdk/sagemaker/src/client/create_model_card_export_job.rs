@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelCardExportJobOutput`](crate::operation::create_model_card_export_job::CreateModelCardExportJobOutput) with field(s):
     ///   - [`model_card_export_job_arn(Option<String>)`](crate::operation::create_model_card_export_job::CreateModelCardExportJobOutput::model_card_export_job_arn): <p>The Amazon Resource Name (ARN) of the model card export job.</p>
     /// - On failure, responds with [`SdkError<CreateModelCardExportJobError>`](crate::operation::create_model_card_export_job::CreateModelCardExportJobError)
-    pub fn create_model_card_export_job(&self) -> crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobFluentBuilder{
+    pub fn create_model_card_export_job(&self) -> crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobFluentBuilder {
         crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobFluentBuilder::new(self.handle.clone())
     }
 }

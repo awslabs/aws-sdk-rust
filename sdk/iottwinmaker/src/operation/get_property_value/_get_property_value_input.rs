@@ -73,17 +73,14 @@ impl GetPropertyValueInput {
 }
 impl GetPropertyValueInput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
-    pub fn builder() -> crate::operation::get_property_value::builders::GetPropertyValueInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_property_value::builders::GetPropertyValueInputBuilder {
         crate::operation::get_property_value::builders::GetPropertyValueInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPropertyValueInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +94,12 @@ pub struct GetPropertyValueInputBuilder {
 }
 impl GetPropertyValueInputBuilder {
     /// <p>The name of the component whose property values the operation returns.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component whose property values the operation returns.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -117,18 +108,12 @@ impl GetPropertyValueInputBuilder {
         &self.component_name
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }
@@ -155,27 +140,19 @@ impl GetPropertyValueInputBuilder {
     /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
     ///
     /// <p>The properties whose values the operation returns.</p>
-    pub fn selected_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_properties.unwrap_or_default();
         v.push(input.into());
         self.selected_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn set_selected_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_properties = input;
         self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn get_selected_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_properties
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
@@ -224,18 +201,12 @@ impl GetPropertyValueInputBuilder {
         &self.next_token
     }
     /// <p>The property group name.</p>
-    pub fn property_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property group name.</p>
-    pub fn set_property_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_group_name = input;
         self
     }
@@ -249,38 +220,28 @@ impl GetPropertyValueInputBuilder {
         self
     }
     /// <p>The tabular conditions.</p>
-    pub fn set_tabular_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::TabularConditions>,
-    ) -> Self {
+    pub fn set_tabular_conditions(mut self, input: ::std::option::Option<crate::types::TabularConditions>) -> Self {
         self.tabular_conditions = input;
         self
     }
     /// <p>The tabular conditions.</p>
-    pub fn get_tabular_conditions(
-        &self,
-    ) -> &::std::option::Option<crate::types::TabularConditions> {
+    pub fn get_tabular_conditions(&self) -> &::std::option::Option<crate::types::TabularConditions> {
         &self.tabular_conditions
     }
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_property_value::GetPropertyValueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_property_value::GetPropertyValueInput {
-                component_name: self.component_name,
-                component_type_id: self.component_type_id,
-                entity_id: self.entity_id,
-                selected_properties: self.selected_properties,
-                workspace_id: self.workspace_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                property_group_name: self.property_group_name,
-                tabular_conditions: self.tabular_conditions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_property_value::GetPropertyValueInput {
+            component_name: self.component_name,
+            component_type_id: self.component_type_id,
+            entity_id: self.entity_id,
+            selected_properties: self.selected_properties,
+            workspace_id: self.workspace_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            property_group_name: self.property_group_name,
+            tabular_conditions: self.tabular_conditions,
+        })
     }
 }

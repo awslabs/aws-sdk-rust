@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`query_string(impl ::std::convert::Into<String>)`](crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder::query_string) / [`set_query_string(Option<String>)`](crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder::set_query_string): <p>The contents of the query with all query statements.</p>
     /// - On success, responds with [`UpdateNamedQueryOutput`](crate::operation::update_named_query::UpdateNamedQueryOutput)
     /// - On failure, responds with [`SdkError<UpdateNamedQueryError>`](crate::operation::update_named_query::UpdateNamedQueryError)
-    pub fn update_named_query(
-        &self,
-    ) -> crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder {
-        crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_named_query(&self) -> crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder {
+        crate::operation::update_named_query::builders::UpdateNamedQueryFluentBuilder::new(self.handle.clone())
     }
 }

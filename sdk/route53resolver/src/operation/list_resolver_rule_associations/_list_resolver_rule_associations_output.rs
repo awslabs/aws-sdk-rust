@@ -11,8 +11,7 @@ pub struct ListResolverRuleAssociationsOutput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     #[doc(hidden)]
-    pub resolver_rule_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>,
+    pub resolver_rule_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>,
     _request_id: Option<String>,
 }
 impl ListResolverRuleAssociationsOutput {
@@ -25,9 +24,7 @@ impl ListResolverRuleAssociationsOutput {
         self.max_results
     }
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_rule_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResolverRuleAssociation]> {
+    pub fn resolver_rule_associations(&self) -> ::std::option::Option<&[crate::types::ResolverRuleAssociation]> {
         self.resolver_rule_associations.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListResolverRuleAssociationsOutput {
 }
 impl ListResolverRuleAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsOutput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput).
-    pub fn builder() -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsOutputBuilder {
         crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverRuleAssociationsOutput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverRuleAssociationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) resolver_rule_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>,
+    pub(crate) resolver_rule_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>,
     _request_id: Option<String>,
 }
 impl ListResolverRuleAssociationsOutputBuilder {
@@ -89,27 +83,19 @@ impl ListResolverRuleAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_resolver_rule_associations`](Self::set_resolver_rule_associations).
     ///
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_rule_associations(
-        mut self,
-        input: crate::types::ResolverRuleAssociation,
-    ) -> Self {
+    pub fn resolver_rule_associations(mut self, input: crate::types::ResolverRuleAssociation) -> Self {
         let mut v = self.resolver_rule_associations.unwrap_or_default();
         v.push(input);
         self.resolver_rule_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn set_resolver_rule_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>,
-    ) -> Self {
+    pub fn set_resolver_rule_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>>) -> Self {
         self.resolver_rule_associations = input;
         self
     }
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn get_resolver_rule_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>> {
+    pub fn get_resolver_rule_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>> {
         &self.resolver_rule_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -122,9 +108,7 @@ impl ListResolverRuleAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolverRuleAssociationsOutput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput {
         crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -9,10 +9,7 @@ pub fn ser_create_connector_input(
     if let Some(var_2) = &input.as2_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("As2Config").start_object();
-        crate::protocol_serde::shape_as2_connector_config::ser_as2_connector_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_as2_connector_config::ser_as2_connector_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.access_role {
@@ -36,10 +33,7 @@ pub fn ser_create_connector_input(
     if let Some(var_10) = &input.sftp_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("SftpConfig").start_object();
-        crate::protocol_serde::shape_sftp_connector_config::ser_sftp_connector_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_sftp_connector_config::ser_sftp_connector_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

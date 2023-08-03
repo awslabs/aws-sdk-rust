@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateCertificateAuthorityAuditReport
 }
 impl CreateCertificateAuthorityAuditReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
-    pub fn builder() -> crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportOutputBuilder{
+    pub fn builder() -> crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportOutputBuilder {
         crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityAuditReportOutputBuilder {
     pub(crate) audit_report_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CreateCertificateAuthorityAuditReportOutputBuilder {
 }
 impl CreateCertificateAuthorityAuditReportOutputBuilder {
     /// <p>An alphanumeric string that contains a report identifier.</p>
-    pub fn audit_report_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alphanumeric string that contains a report identifier.</p>
-    pub fn set_audit_report_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_report_id = input;
         self
     }
@@ -88,12 +80,10 @@ impl CreateCertificateAuthorityAuditReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
-    pub fn build(self) -> crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput{
+    pub fn build(self) -> crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput {
         crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput {
-            audit_report_id: self.audit_report_id
-            ,
-            s3_key: self.s3_key
-            ,
+            audit_report_id: self.audit_report_id,
+            s3_key: self.s3_key,
             _request_id: self._request_id,
         }
     }

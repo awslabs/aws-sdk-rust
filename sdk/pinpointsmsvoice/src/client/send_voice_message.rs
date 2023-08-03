@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_voice_message::SendVoiceMessageOutput::message_id): A unique identifier for the voice message.
     /// - On failure, responds with [`SdkError<SendVoiceMessageError>`](crate::operation::send_voice_message::SendVoiceMessageError)
-    pub fn send_voice_message(
-        &self,
-    ) -> crate::operation::send_voice_message::builders::SendVoiceMessageFluentBuilder {
-        crate::operation::send_voice_message::builders::SendVoiceMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_voice_message(&self) -> crate::operation::send_voice_message::builders::SendVoiceMessageFluentBuilder {
+        crate::operation::send_voice_message::builders::SendVoiceMessageFluentBuilder::new(self.handle.clone())
     }
 }

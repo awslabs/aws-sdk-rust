@@ -25,18 +25,14 @@ impl ListEmailIdentitiesInput {
 }
 impl ListEmailIdentitiesInput {
     /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesInput`](crate::operation::list_email_identities::ListEmailIdentitiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder {
-        crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder {
+        crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEmailIdentitiesInput`](crate::operation::list_email_identities::ListEmailIdentitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEmailIdentitiesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -76,15 +72,11 @@ impl ListEmailIdentitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListEmailIdentitiesInput`](crate::operation::list_email_identities::ListEmailIdentitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_email_identities::ListEmailIdentitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_email_identities::ListEmailIdentitiesInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_email_identities::ListEmailIdentitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_email_identities::ListEmailIdentitiesInput {
+            next_token: self.next_token,
+            page_size: self.page_size,
+        })
     }
 }

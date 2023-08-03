@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetVerifiedAccessEndpointPolicyOutput
 }
 impl GetVerifiedAccessEndpointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessEndpointPolicyOutput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput).
-    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyOutputBuilder {
         crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVerifiedAccessEndpointPolicyOutput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVerifiedAccessEndpointPolicyOutputBuilder {
     pub(crate) policy_enabled: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl GetVerifiedAccessEndpointPolicyOutputBuilder {
         &self.policy_enabled
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -88,15 +80,10 @@ impl GetVerifiedAccessEndpointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessEndpointPolicyOutput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput {
         crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput {
-            policy_enabled: self.policy_enabled
-            ,
-            policy_document: self.policy_document
-            ,
+            policy_enabled: self.policy_enabled,
+            policy_document: self.policy_document,
             _request_id: self._request_id,
         }
     }

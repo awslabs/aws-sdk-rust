@@ -9,10 +9,7 @@ pub fn ser_input_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_audio_selector::ser_audio_selector(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_audio_selector::ser_audio_selector(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_input_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_caption_selector::ser_caption_selector(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_caption_selector::ser_caption_selector(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -51,10 +45,7 @@ pub fn ser_input_settings(
     if let Some(var_13) = &input.network_input_settings {
         #[allow(unused_mut)]
         let mut object_14 = object.key("networkInputSettings").start_object();
-        crate::protocol_serde::shape_network_input_settings::ser_network_input_settings(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_network_input_settings::ser_network_input_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.scte35_pid {
@@ -64,9 +55,7 @@ pub fn ser_input_settings(
         );
     }
     if let Some(var_16) = &input.smpte2038_data_preference {
-        object
-            .key("smpte2038DataPreference")
-            .string(var_16.as_str());
+        object.key("smpte2038DataPreference").string(var_16.as_str());
     }
     if let Some(var_17) = &input.source_end_behavior {
         object.key("sourceEndBehavior").string(var_17.as_str());
@@ -82,17 +71,9 @@ pub fn ser_input_settings(
 
 pub(crate) fn de_input_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::InputSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::InputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -102,129 +83,87 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioSelectors" => {
                             builder = builder.set_audio_selectors(
-                                    crate::protocol_serde::shape___list_of_audio_selector::de___list_of_audio_selector(tokens)?
-                                );
+                                crate::protocol_serde::shape___list_of_audio_selector::de___list_of_audio_selector(tokens)?,
+                            );
                         }
                         "captionSelectors" => {
                             builder = builder.set_caption_selectors(
-                                    crate::protocol_serde::shape___list_of_caption_selector::de___list_of_caption_selector(tokens)?
-                                );
+                                crate::protocol_serde::shape___list_of_caption_selector::de___list_of_caption_selector(tokens)?,
+                            );
                         }
                         "deblockFilter" => {
                             builder = builder.set_deblock_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::InputDeblockFilter::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputDeblockFilter::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "denoiseFilter" => {
                             builder = builder.set_denoise_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::InputDenoiseFilter::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputDenoiseFilter::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "filterStrength" => {
                             builder = builder.set_filter_strength(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "inputFilter" => {
                             builder = builder.set_input_filter(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::InputFilter::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputFilter::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "networkInputSettings" => {
-                            builder = builder.set_network_input_settings(
-                                    crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens)?
-                                );
+                            builder = builder
+                                .set_network_input_settings(crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens)?);
                         }
                         "scte35Pid" => {
                             builder = builder.set_scte35_pid(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "smpte2038DataPreference" => {
                             builder = builder.set_smpte2038_data_preference(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Smpte2038DataPreference::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Smpte2038DataPreference::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "sourceEndBehavior" => {
                             builder = builder.set_source_end_behavior(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::InputSourceEndBehavior::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputSourceEndBehavior::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "videoSelector" => {
-                            builder = builder.set_video_selector(
-                                crate::protocol_serde::shape_video_selector::de_video_selector(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

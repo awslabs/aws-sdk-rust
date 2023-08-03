@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`actions(Option<Vec<TestGridSessionAction>>)`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput::actions): <p>The action taken by the session.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<ListTestGridSessionActionsError>`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError)
-    pub fn list_test_grid_session_actions(&self) -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder{
+    pub fn list_test_grid_session_actions(
+        &self,
+    ) -> crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder {
         crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDbProxyTargetGroupsOutput {
 }
 impl DescribeDbProxyTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsOutput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput).
-    pub fn builder() -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsOutputBuilder {
         crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxyTargetGroupsOutput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxyTargetGroupsOutputBuilder {
-    pub(crate) target_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>>,
+    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeDbProxyTargetGroupsOutputBuilder {
         self
     }
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>> {
         &self.target_groups
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -94,9 +86,7 @@ impl DescribeDbProxyTargetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbProxyTargetGroupsOutput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput {
         crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput {
             target_groups: self.target_groups,
             marker: self.marker,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::created_at): <p>The timestamp associated with the pull through cache rule.</p>
     ///   - [`registry_id(Option<String>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::registry_id): <p>The registry ID associated with the request.</p>
     /// - On failure, responds with [`SdkError<DeletePullThroughCacheRuleError>`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError)
-    pub fn delete_pull_through_cache_rule(&self) -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleFluentBuilder{
+    pub fn delete_pull_through_cache_rule(
+        &self,
+    ) -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleFluentBuilder {
         crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleFluentBuilder::new(self.handle.clone())
     }
 }

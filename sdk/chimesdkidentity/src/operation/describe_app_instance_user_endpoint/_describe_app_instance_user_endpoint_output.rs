@@ -10,9 +10,7 @@ pub struct DescribeAppInstanceUserEndpointOutput {
 }
 impl DescribeAppInstanceUserEndpointOutput {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn app_instance_user_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppInstanceUserEndpoint> {
+    pub fn app_instance_user_endpoint(&self) -> ::std::option::Option<&crate::types::AppInstanceUserEndpoint> {
         self.app_instance_user_endpoint.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeAppInstanceUserEndpointOutput
 }
 impl DescribeAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointOutput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput).
-    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointOutputBuilder {
         crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceUserEndpointOutputBuilder {
-    pub(crate) app_instance_user_endpoint:
-        ::std::option::Option<crate::types::AppInstanceUserEndpoint>,
+    pub(crate) app_instance_user_endpoint: ::std::option::Option<crate::types::AppInstanceUserEndpoint>,
     _request_id: Option<String>,
 }
 impl DescribeAppInstanceUserEndpointOutputBuilder {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn app_instance_user_endpoint(
-        mut self,
-        input: crate::types::AppInstanceUserEndpoint,
-    ) -> Self {
+    pub fn app_instance_user_endpoint(mut self, input: crate::types::AppInstanceUserEndpoint) -> Self {
         self.app_instance_user_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn set_app_instance_user_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceUserEndpoint>,
-    ) -> Self {
+    pub fn set_app_instance_user_endpoint(mut self, input: ::std::option::Option<crate::types::AppInstanceUserEndpoint>) -> Self {
         self.app_instance_user_endpoint = input;
         self
     }
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn get_app_instance_user_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppInstanceUserEndpoint> {
+    pub fn get_app_instance_user_endpoint(&self) -> &::std::option::Option<crate::types::AppInstanceUserEndpoint> {
         &self.app_instance_user_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,13 +58,9 @@ impl DescribeAppInstanceUserEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointOutput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput
-    {
+    pub fn build(self) -> crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput {
         crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput {
-            app_instance_user_endpoint: self.app_instance_user_endpoint
-            ,
+            app_instance_user_endpoint: self.app_instance_user_endpoint,
             _request_id: self._request_id,
         }
     }

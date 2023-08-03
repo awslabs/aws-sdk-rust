@@ -35,9 +35,7 @@ impl ListObjectsOutput {
 
 /// A builder for [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectsOutputBuilder {
     pub(crate) object_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupObject>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListObjectsOutputBuilder {
         self
     }
     /// Object list
-    pub fn set_object_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupObject>>,
-    ) -> Self {
+    pub fn set_object_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupObject>>) -> Self {
         self.object_list = input;
         self
     }
     /// Object list
-    pub fn get_object_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupObject>> {
+    pub fn get_object_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupObject>> {
         &self.object_list
     }
     /// Pagination token

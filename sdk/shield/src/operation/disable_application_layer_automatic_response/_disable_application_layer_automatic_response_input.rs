@@ -15,16 +15,15 @@ impl DisableApplicationLayerAutomaticResponseInput {
 }
 impl DisableApplicationLayerAutomaticResponseInput {
     /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
-    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder{
+    pub fn builder() -> crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder
+    {
         crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +43,16 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput {
-                resource_arn: self.resource_arn
-                ,
-            }
+                resource_arn: self.resource_arn,
+            },
         )
     }
 }

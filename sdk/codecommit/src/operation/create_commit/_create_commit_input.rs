@@ -85,9 +85,7 @@ impl CreateCommitInput {
 
 /// A builder for [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -98,23 +96,16 @@ pub struct CreateCommitInputBuilder {
     pub(crate) keep_empty_folders: ::std::option::Option<bool>,
     pub(crate) put_files: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
     pub(crate) delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
-    pub(crate) set_file_modes:
-        ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
+    pub(crate) set_file_modes: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
 }
 impl CreateCommitInputBuilder {
     /// <p>The name of the repository where you create the commit.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you create the commit.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -137,18 +128,12 @@ impl CreateCommitInputBuilder {
         &self.branch_name
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    pub fn parent_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    pub fn set_parent_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_commit_id = input;
         self
     }
@@ -185,18 +170,12 @@ impl CreateCommitInputBuilder {
         &self.email
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_message = input;
         self
     }
@@ -230,17 +209,12 @@ impl CreateCommitInputBuilder {
         self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn set_put_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
-    ) -> Self {
+    pub fn set_put_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>) -> Self {
         self.put_files = input;
         self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn get_put_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
+    pub fn get_put_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
         &self.put_files
     }
     /// Appends an item to `delete_files`.
@@ -255,17 +229,12 @@ impl CreateCommitInputBuilder {
         self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn set_delete_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
-    ) -> Self {
+    pub fn set_delete_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>) -> Self {
         self.delete_files = input;
         self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn get_delete_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
+    pub fn get_delete_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
         &self.delete_files
     }
     /// Appends an item to `set_file_modes`.
@@ -280,26 +249,16 @@ impl CreateCommitInputBuilder {
         self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn set_set_file_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
-    ) -> Self {
+    pub fn set_set_file_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>) -> Self {
         self.set_file_modes = input;
         self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn get_set_file_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
+    pub fn get_set_file_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
         &self.set_file_modes
     }
     /// Consumes the builder and constructs a [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_commit::CreateCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_commit::CreateCommitInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

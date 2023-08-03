@@ -10,9 +10,7 @@ pub struct GetAppsOutput {
 }
 impl GetAppsOutput {
     /// <p>Provides information about all of your applications.</p>
-    pub fn applications_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationsResponse> {
+    pub fn applications_response(&self) -> ::std::option::Option<&crate::types::ApplicationsResponse> {
         self.applications_response.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl GetAppsOutput {
 
 /// A builder for [`GetAppsOutput`](crate::operation::get_apps::GetAppsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppsOutputBuilder {
     pub(crate) applications_response: ::std::option::Option<crate::types::ApplicationsResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetAppsOutputBuilder {
         self
     }
     /// <p>Provides information about all of your applications.</p>
-    pub fn set_applications_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationsResponse>,
-    ) -> Self {
+    pub fn set_applications_response(mut self, input: ::std::option::Option<crate::types::ApplicationsResponse>) -> Self {
         self.applications_response = input;
         self
     }
     /// <p>Provides information about all of your applications.</p>
-    pub fn get_applications_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationsResponse> {
+    pub fn get_applications_response(&self) -> &::std::option::Option<crate::types::ApplicationsResponse> {
         &self.applications_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

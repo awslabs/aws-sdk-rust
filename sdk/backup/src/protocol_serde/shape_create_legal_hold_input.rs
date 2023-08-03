@@ -12,10 +12,7 @@ pub fn ser_create_legal_hold_input(
     if let Some(var_3) = &input.recovery_point_selection {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RecoveryPointSelection").start_object();
-        crate::protocol_serde::shape_recovery_point_selection::ser_recovery_point_selection(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_recovery_point_selection::ser_recovery_point_selection(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

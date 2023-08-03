@@ -30,9 +30,7 @@ impl BrokerEngineType {
 
 /// A builder for [`BrokerEngineType`](crate::types::BrokerEngineType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerEngineTypeBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
@@ -44,10 +42,7 @@ impl BrokerEngineTypeBuilder {
         self
     }
     /// <p>The broker's engine type.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -67,17 +62,12 @@ impl BrokerEngineTypeBuilder {
         self
     }
     /// <p>The list of engine versions.</p>
-    pub fn set_engine_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
-    ) -> Self {
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>) -> Self {
         self.engine_versions = input;
         self
     }
     /// <p>The list of engine versions.</p>
-    pub fn get_engine_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>> {
         &self.engine_versions
     }
     /// Consumes the builder and constructs a [`BrokerEngineType`](crate::types::BrokerEngineType).

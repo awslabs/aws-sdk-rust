@@ -10,9 +10,7 @@ pub fn ser_list_template_actions_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.launch_configuration_template_id {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(var_3.as_str());
+        object.key("launchConfigurationTemplateID").string(var_3.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(

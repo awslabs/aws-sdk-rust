@@ -19,12 +19,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStudioComponentOutput`](crate::operation::update_studio_component::UpdateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::operation::update_studio_component::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::operation::update_studio_component::UpdateStudioComponentError)
-    pub fn update_studio_component(
-        &self,
-    ) -> crate::operation::update_studio_component::builders::UpdateStudioComponentFluentBuilder
-    {
-        crate::operation::update_studio_component::builders::UpdateStudioComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_studio_component(&self) -> crate::operation::update_studio_component::builders::UpdateStudioComponentFluentBuilder {
+        crate::operation::update_studio_component::builders::UpdateStudioComponentFluentBuilder::new(self.handle.clone())
     }
 }

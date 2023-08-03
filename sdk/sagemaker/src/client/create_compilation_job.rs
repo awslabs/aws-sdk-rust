@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCompilationJobOutput`](crate::operation::create_compilation_job::CreateCompilationJobOutput) with field(s):
     ///   - [`compilation_job_arn(Option<String>)`](crate::operation::create_compilation_job::CreateCompilationJobOutput::compilation_job_arn): <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>  <ul>   <li> <p> <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateCompilationJobError>`](crate::operation::create_compilation_job::CreateCompilationJobError)
-    pub fn create_compilation_job(
-        &self,
-    ) -> crate::operation::create_compilation_job::builders::CreateCompilationJobFluentBuilder {
-        crate::operation::create_compilation_job::builders::CreateCompilationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_compilation_job(&self) -> crate::operation::create_compilation_job::builders::CreateCompilationJobFluentBuilder {
+        crate::operation::create_compilation_job::builders::CreateCompilationJobFluentBuilder::new(self.handle.clone())
     }
 }

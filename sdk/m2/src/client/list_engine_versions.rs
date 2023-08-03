@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`engine_versions(Option<Vec<EngineVersionsSummary>>)`](crate::operation::list_engine_versions::ListEngineVersionsOutput::engine_versions): <p>Returns the engine versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_engine_versions::ListEngineVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListEngineVersionsError>`](crate::operation::list_engine_versions::ListEngineVersionsError)
-    pub fn list_engine_versions(
-        &self,
-    ) -> crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder {
-        crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_engine_versions(&self) -> crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder {
+        crate::operation::list_engine_versions::builders::ListEngineVersionsFluentBuilder::new(self.handle.clone())
     }
 }

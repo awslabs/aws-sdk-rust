@@ -19,9 +19,7 @@ impl DeleteFrameworkOutput {
 
 /// A builder for [`DeleteFrameworkOutput`](crate::operation::delete_framework::DeleteFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFrameworkOutputBuilder {
     _request_id: Option<String>,
 }

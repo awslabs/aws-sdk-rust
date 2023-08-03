@@ -12,10 +12,7 @@ pub fn ser_input_configuration_request(
     if let Some(var_2) = &input.interface {
         #[allow(unused_mut)]
         let mut object_3 = object.key("interface").start_object();
-        crate::protocol_serde::shape_interface_request::ser_interface_request(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_interface_request::ser_interface_request(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

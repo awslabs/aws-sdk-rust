@@ -23,9 +23,7 @@ impl ModelMetadataSearchExpression {
 
 /// A builder for [`ModelMetadataSearchExpression`](crate::types::ModelMetadataSearchExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelMetadataSearchExpressionBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
 }
@@ -42,23 +40,16 @@ impl ModelMetadataSearchExpressionBuilder {
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ModelMetadataSearchExpression`](crate::types::ModelMetadataSearchExpression).
     pub fn build(self) -> crate::types::ModelMetadataSearchExpression {
-        crate::types::ModelMetadataSearchExpression {
-            filters: self.filters,
-        }
+        crate::types::ModelMetadataSearchExpression { filters: self.filters }
     }
 }

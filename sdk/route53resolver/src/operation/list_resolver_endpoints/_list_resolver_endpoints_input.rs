@@ -35,18 +35,14 @@ impl ListResolverEndpointsInput {
 }
 impl ListResolverEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointsInput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsInputBuilder {
         crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverEndpointsInput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverEndpointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -100,10 +96,7 @@ impl ListResolverEndpointsInputBuilder {
     /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -116,16 +109,12 @@ impl ListResolverEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListResolverEndpointsInput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resolver_endpoints::ListResolverEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolver_endpoints::ListResolverEndpointsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resolver_endpoints::ListResolverEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resolver_endpoints::ListResolverEndpointsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

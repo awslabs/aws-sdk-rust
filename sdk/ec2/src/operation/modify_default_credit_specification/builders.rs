@@ -5,16 +5,16 @@ pub use crate::operation::modify_default_credit_specification::_modify_default_c
 
 impl ModifyDefaultCreditSpecificationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_default_credit_specification();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDefaultCreditSpecificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder,
+    inner: crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder,
 }
 impl ModifyDefaultCreditSpecificationFluentBuilder {
     /// Creates a new `ModifyDefaultCreditSpecification`.
@@ -39,15 +39,20 @@ impl ModifyDefaultCreditSpecificationFluentBuilder {
         }
     }
     /// Access the ModifyDefaultCreditSpecification as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecification, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecification,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl ModifyDefaultCreditSpecificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl ModifyDefaultCreditSpecificationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecification, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecification,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -111,25 +126,17 @@ impl ModifyDefaultCreditSpecificationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        mut self,
-        input: crate::types::UnlimitedSupportedInstanceFamily,
-    ) -> Self {
+    pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.inner = self.inner.instance_family(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
         self.inner = self.inner.set_instance_family(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn get_instance_family(
-        &self,
-    ) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn get_instance_family(&self) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
         self.inner.get_instance_family()
     }
     /// <p>The credit option for CPU usage of the instance family.</p>

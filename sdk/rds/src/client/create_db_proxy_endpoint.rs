@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbProxyEndpointOutput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput) with field(s):
     ///   - [`db_proxy_endpoint(Option<DbProxyEndpoint>)`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput::db_proxy_endpoint): <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
     /// - On failure, responds with [`SdkError<CreateDBProxyEndpointError>`](crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError)
-    pub fn create_db_proxy_endpoint(
-        &self,
-    ) -> crate::operation::create_db_proxy_endpoint::builders::CreateDBProxyEndpointFluentBuilder
-    {
+    pub fn create_db_proxy_endpoint(&self) -> crate::operation::create_db_proxy_endpoint::builders::CreateDBProxyEndpointFluentBuilder {
         crate::operation::create_db_proxy_endpoint::builders::CreateDBProxyEndpointFluentBuilder::new(self.handle.clone())
     }
 }

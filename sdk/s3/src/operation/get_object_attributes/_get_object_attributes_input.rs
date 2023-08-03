@@ -106,10 +106,8 @@ impl ::std::fmt::Debug for GetObjectAttributesInput {
 }
 impl GetObjectAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder {
-        crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder {
+        crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder::default()
     }
 }
 
@@ -127,8 +125,7 @@ pub struct GetObjectAttributesInputBuilder {
     pub(crate) sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
-    pub(crate) object_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>>,
+    pub(crate) object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>>,
 }
 impl GetObjectAttributesInputBuilder {
     /// <p>The name of the bucket that contains the object.</p>
@@ -194,18 +191,12 @@ impl GetObjectAttributesInputBuilder {
         &self.max_parts
     }
     /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
-    pub fn part_number_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn part_number_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.part_number_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
-    pub fn set_part_number_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_part_number_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.part_number_marker = input;
         self
     }
@@ -214,18 +205,12 @@ impl GetObjectAttributesInputBuilder {
         &self.part_number_marker
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
-    pub fn sse_customer_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
-    pub fn set_sse_customer_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_algorithm = input;
         self
     }
@@ -234,18 +219,12 @@ impl GetObjectAttributesInputBuilder {
         &self.sse_customer_algorithm
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn sse_customer_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn set_sse_customer_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key = input;
         self
     }
@@ -254,18 +233,12 @@ impl GetObjectAttributesInputBuilder {
         &self.sse_customer_key
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn sse_customer_key_md5(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_sse_customer_key_md5(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = input;
         self
     }
@@ -279,10 +252,7 @@ impl GetObjectAttributesInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.request_payer = input;
         self
     }
@@ -291,18 +261,12 @@ impl GetObjectAttributesInputBuilder {
         &self.request_payer
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -322,41 +286,32 @@ impl GetObjectAttributesInputBuilder {
         self
     }
     /// <p>Specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn set_object_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>>,
-    ) -> Self {
+    pub fn set_object_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>>) -> Self {
         self.object_attributes = input;
         self
     }
     /// <p>Specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn get_object_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>> {
+    pub fn get_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributes>> {
         &self.object_attributes
     }
     /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_object_attributes::GetObjectAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_object_attributes::GetObjectAttributesInput {
-                bucket: self.bucket,
-                key: self.key,
-                version_id: self.version_id,
-                max_parts: self.max_parts,
-                part_number_marker: self.part_number_marker,
-                sse_customer_algorithm: self.sse_customer_algorithm,
-                sse_customer_key: self.sse_customer_key,
-                sse_customer_key_md5: self.sse_customer_key_md5,
-                request_payer: self.request_payer,
-                expected_bucket_owner: self.expected_bucket_owner,
-                object_attributes: self.object_attributes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_object_attributes::GetObjectAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_object_attributes::GetObjectAttributesInput {
+            bucket: self.bucket,
+            key: self.key,
+            version_id: self.version_id,
+            max_parts: self.max_parts,
+            part_number_marker: self.part_number_marker,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            sse_customer_key: self.sse_customer_key,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            request_payer: self.request_payer,
+            expected_bucket_owner: self.expected_bucket_owner,
+            object_attributes: self.object_attributes,
+        })
     }
 }
 impl ::std::fmt::Debug for GetObjectAttributesInputBuilder {

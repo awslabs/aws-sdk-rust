@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteContactMethodOutput`](crate::operation::delete_contact_method::DeleteContactMethodOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_contact_method::DeleteContactMethodOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteContactMethodError>`](crate::operation::delete_contact_method::DeleteContactMethodError)
-    pub fn delete_contact_method(
-        &self,
-    ) -> crate::operation::delete_contact_method::builders::DeleteContactMethodFluentBuilder {
-        crate::operation::delete_contact_method::builders::DeleteContactMethodFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_contact_method(&self) -> crate::operation::delete_contact_method::builders::DeleteContactMethodFluentBuilder {
+        crate::operation::delete_contact_method::builders::DeleteContactMethodFluentBuilder::new(self.handle.clone())
     }
 }

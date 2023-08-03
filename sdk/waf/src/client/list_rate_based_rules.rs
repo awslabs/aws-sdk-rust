@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_rate_based_rules::ListRateBasedRulesOutput::next_marker): <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::operation::list_rate_based_rules::ListRateBasedRulesOutput::rules): <p>An array of <code>RuleSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListRateBasedRulesError>`](crate::operation::list_rate_based_rules::ListRateBasedRulesError)
-    pub fn list_rate_based_rules(
-        &self,
-    ) -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesFluentBuilder {
-        crate::operation::list_rate_based_rules::builders::ListRateBasedRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rate_based_rules(&self) -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesFluentBuilder {
+        crate::operation::list_rate_based_rules::builders::ListRateBasedRulesFluentBuilder::new(self.handle.clone())
     }
 }

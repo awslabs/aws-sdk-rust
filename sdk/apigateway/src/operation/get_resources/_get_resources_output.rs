@@ -36,9 +36,7 @@ impl GetResourcesOutput {
 
 /// A builder for [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl GetResourcesOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.items = input;
         self
     }

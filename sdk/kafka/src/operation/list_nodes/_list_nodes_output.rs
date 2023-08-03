@@ -35,9 +35,7 @@ impl ListNodesOutput {
 
 /// A builder for [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) node_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>,
@@ -70,17 +68,12 @@ impl ListNodesOutputBuilder {
         self
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn set_node_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>,
-    ) -> Self {
+    pub fn set_node_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>) -> Self {
         self.node_info_list = input;
         self
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn get_node_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>> {
+    pub fn get_node_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>> {
         &self.node_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

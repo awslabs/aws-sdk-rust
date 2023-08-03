@@ -46,9 +46,7 @@ impl ::std::fmt::Debug for DeleteDocumentVersionInput {
 }
 impl DeleteDocumentVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionInput`](crate::operation::delete_document_version::DeleteDocumentVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder {
         crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder::default()
     }
 }
@@ -64,18 +62,12 @@ pub struct DeleteDocumentVersionInputBuilder {
 }
 impl DeleteDocumentVersionInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -128,18 +120,14 @@ impl DeleteDocumentVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDocumentVersionInput`](crate::operation::delete_document_version::DeleteDocumentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_document_version::DeleteDocumentVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_document_version::DeleteDocumentVersionInput {
-                authentication_token: self.authentication_token,
-                document_id: self.document_id,
-                version_id: self.version_id,
-                delete_prior_versions: self.delete_prior_versions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_document_version::DeleteDocumentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_document_version::DeleteDocumentVersionInput {
+            authentication_token: self.authentication_token,
+            document_id: self.document_id,
+            version_id: self.version_id,
+            delete_prior_versions: self.delete_prior_versions,
+        })
     }
 }
 impl ::std::fmt::Debug for DeleteDocumentVersionInputBuilder {

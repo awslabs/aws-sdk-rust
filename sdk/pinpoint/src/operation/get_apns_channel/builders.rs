@@ -10,10 +10,7 @@ impl GetApnsChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_apns_channel::GetApnsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_apns_channel::GetApnsChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_apns_channel::GetApnsChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_apns_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetApnsChannelFluentBuilder {
         }
     }
     /// Access the GetApnsChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_apns_channel::builders::GetApnsChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_apns_channel::builders::GetApnsChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetApnsChannelFluentBuilder {
             crate::operation::get_apns_channel::GetApnsChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_apns_channel::GetApnsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_apns_channel::GetApnsChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetApnsChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetApnsChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_apns_channel::GetApnsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_apns_channel::GetApnsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_apns_channel::GetApnsChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetApnsChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_apns_channel::GetApnsChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_apns_channel::GetApnsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_apns_channel::GetApnsChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetApnsChannelFluentBuilder {
             crate::operation::get_apns_channel::GetApnsChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_apns_channel::GetApnsChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_apns_channel::GetApnsChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

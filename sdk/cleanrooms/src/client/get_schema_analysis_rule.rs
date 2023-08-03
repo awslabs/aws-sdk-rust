@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput) with field(s):
     ///   - [`analysis_rule(Option<AnalysisRule>)`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput::analysis_rule): <p>A specification about how data from the configured table can be used.</p>
     /// - On failure, responds with [`SdkError<GetSchemaAnalysisRuleError>`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError)
-    pub fn get_schema_analysis_rule(
-        &self,
-    ) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleFluentBuilder
-    {
+    pub fn get_schema_analysis_rule(&self) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleFluentBuilder {
         crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleFluentBuilder::new(self.handle.clone())
     }
 }

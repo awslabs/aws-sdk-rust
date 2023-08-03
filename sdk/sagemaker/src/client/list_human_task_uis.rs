@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`human_task_ui_summaries(Option<Vec<HumanTaskUiSummary>>)`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput::human_task_ui_summaries): <p>An array of objects describing the human task user interfaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput::next_token): <p>A token to resume pagination.</p>
     /// - On failure, responds with [`SdkError<ListHumanTaskUisError>`](crate::operation::list_human_task_uis::ListHumanTaskUisError)
-    pub fn list_human_task_uis(
-        &self,
-    ) -> crate::operation::list_human_task_uis::builders::ListHumanTaskUisFluentBuilder {
-        crate::operation::list_human_task_uis::builders::ListHumanTaskUisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_human_task_uis(&self) -> crate::operation::list_human_task_uis::builders::ListHumanTaskUisFluentBuilder {
+        crate::operation::list_human_task_uis::builders::ListHumanTaskUisFluentBuilder::new(self.handle.clone())
     }
 }

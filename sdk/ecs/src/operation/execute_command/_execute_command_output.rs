@@ -63,9 +63,7 @@ impl ExecuteCommandOutput {
 
 /// A builder for [`ExecuteCommandOutput`](crate::operation::execute_command::ExecuteCommandOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) container_arn: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl ExecuteCommandOutputBuilder {
         &self.cluster_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    pub fn container_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    pub fn set_container_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_arn = input;
         self
     }
@@ -111,18 +103,12 @@ impl ExecuteCommandOutputBuilder {
         &self.container_arn
     }
     /// <p>The name of the container.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }

@@ -22,9 +22,7 @@ pub fn ser_aliases(
     Ok(())
 }
 
-pub fn de_aliases(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Aliases, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_aliases(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Aliases, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Aliases::builder();
     while let Some(mut tag) = decoder.next_tag() {

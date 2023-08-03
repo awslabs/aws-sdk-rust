@@ -37,10 +37,7 @@ impl UpdateMonitoringAlertFluentBuilder {
         }
     }
     /// Access the UpdateMonitoringAlert as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateMonitoringAlertFluentBuilder {
             crate::operation::update_monitoring_alert::UpdateMonitoringAlert,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_alert::UpdateMonitoringAlertError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_alert::UpdateMonitoringAlertError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateMonitoringAlertFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateMonitoringAlertFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_alert::UpdateMonitoringAlertError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_alert::UpdateMonitoringAlertError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateMonitoringAlertFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_alert::UpdateMonitoringAlertError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_alert::UpdateMonitoringAlertError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateMonitoringAlertFluentBuilder {
             crate::operation::update_monitoring_alert::UpdateMonitoringAlert,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_alert::UpdateMonitoringAlertError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_alert::UpdateMonitoringAlertError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl UpdateMonitoringAlertFluentBuilder {
         self.inner.get_monitoring_schedule_name()
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_alert_name(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_alert_name(input);
         self
     }

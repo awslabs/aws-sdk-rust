@@ -65,9 +65,7 @@ impl JobBookmarkEntry {
 
 /// A builder for [`JobBookmarkEntry`](crate::types::JobBookmarkEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBookmarkEntryBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -135,18 +133,12 @@ impl JobBookmarkEntryBuilder {
         &self.attempt
     }
     /// <p>The unique run identifier associated with the previous job run.</p>
-    pub fn previous_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique run identifier associated with the previous job run.</p>
-    pub fn set_previous_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_run_id = input;
         self
     }

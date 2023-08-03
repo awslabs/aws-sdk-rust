@@ -14,9 +14,7 @@ pub struct CreateGroupInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) to add to the new resource.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGroupInput {
     /// A client token used to correlate requests and responses.
@@ -32,11 +30,7 @@ impl CreateGroupInput {
         self.name.as_deref()
     }
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -49,31 +43,21 @@ impl CreateGroupInput {
 
 /// A builder for [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGroupInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) initial_version: ::std::option::Option<crate::types::GroupVersion>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGroupInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -87,10 +71,7 @@ impl CreateGroupInputBuilder {
         self
     }
     /// Information about the initial version of the group.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::GroupVersion>) -> Self {
         self.initial_version = input;
         self
     }
@@ -117,41 +98,23 @@ impl CreateGroupInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_group::CreateGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             amzn_client_token: self.amzn_client_token,
             initial_version: self.initial_version,

@@ -119,10 +119,7 @@ impl ChannelAssociatedWithFlowSummaryBuilder {
         self
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }

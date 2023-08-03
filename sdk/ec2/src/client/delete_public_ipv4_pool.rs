@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePublicIpv4PoolOutput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput::return_value): <p>Information about the result of deleting the public IPv4 pool.</p>
     /// - On failure, responds with [`SdkError<DeletePublicIpv4PoolError>`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError)
-    pub fn delete_public_ipv4_pool(
-        &self,
-    ) -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolFluentBuilder
-    {
-        crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_public_ipv4_pool(&self) -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolFluentBuilder {
+        crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolFluentBuilder::new(self.handle.clone())
     }
 }

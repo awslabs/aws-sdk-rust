@@ -29,17 +29,14 @@ impl ListEnvironmentsInput {
 }
 impl ListEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct ListEnvironmentsInputBuilder {
 }
 impl ListEnvironmentsInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -97,10 +88,7 @@ impl ListEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environments::ListEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsInput {
             application_id: self.application_id,
             max_results: self.max_results,

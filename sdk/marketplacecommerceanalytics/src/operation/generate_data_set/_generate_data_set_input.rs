@@ -53,9 +53,7 @@ pub struct GenerateDataSetInput {
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
     #[doc(hidden)]
-    pub customer_defined_values: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub customer_defined_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GenerateDataSetInput {
     /// <p>The desired data set type.</p>
@@ -92,9 +90,7 @@ impl GenerateDataSetInput {
         self.data_set_type.as_ref()
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn data_set_publication_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_set_publication_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.data_set_publication_date.as_ref()
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
@@ -114,11 +110,7 @@ impl GenerateDataSetInput {
         self.sns_topic_arn.as_deref()
     }
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
-    pub fn customer_defined_values(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn customer_defined_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.customer_defined_values.as_ref()
     }
 }
@@ -131,9 +123,7 @@ impl GenerateDataSetInput {
 
 /// A builder for [`GenerateDataSetInput`](crate::operation::generate_data_set::GenerateDataSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateDataSetInputBuilder {
     pub(crate) data_set_type: ::std::option::Option<crate::types::DataSetType>,
     pub(crate) data_set_publication_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -141,9 +131,7 @@ pub struct GenerateDataSetInputBuilder {
     pub(crate) destination_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_defined_values: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) customer_defined_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GenerateDataSetInputBuilder {
     /// <p>The desired data set type.</p>
@@ -210,10 +198,7 @@ impl GenerateDataSetInputBuilder {
     /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
     /// </ul>
     /// <p></p>
-    pub fn set_data_set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetType>,
-    ) -> Self {
+    pub fn set_data_set_type(mut self, input: ::std::option::Option<crate::types::DataSetType>) -> Self {
         self.data_set_type = input;
         self
     }
@@ -256,32 +241,21 @@ impl GenerateDataSetInputBuilder {
         self
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn set_data_set_publication_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_set_publication_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_set_publication_date = input;
         self
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub fn get_data_set_publication_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_data_set_publication_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.data_set_publication_date
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn role_name_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn role_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn set_role_name_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_role_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name_arn = input;
         self
     }
@@ -290,18 +264,12 @@ impl GenerateDataSetInputBuilder {
         &self.role_name_arn
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn destination_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn set_destination_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_s3_bucket_name = input;
         self
     }
@@ -310,18 +278,12 @@ impl GenerateDataSetInputBuilder {
         &self.destination_s3_bucket_name
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn destination_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn set_destination_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_s3_prefix = input;
         self
     }
@@ -330,18 +292,12 @@ impl GenerateDataSetInputBuilder {
         &self.destination_s3_prefix
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -367,28 +323,19 @@ impl GenerateDataSetInputBuilder {
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
     pub fn set_customer_defined_values(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.customer_defined_values = input;
         self
     }
     /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
-    pub fn get_customer_defined_values(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_customer_defined_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.customer_defined_values
     }
     /// Consumes the builder and constructs a [`GenerateDataSetInput`](crate::operation::generate_data_set::GenerateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_data_set::GenerateDataSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::generate_data_set::GenerateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_data_set::GenerateDataSetInput {
             data_set_type: self.data_set_type,
             data_set_publication_date: self.data_set_publication_date,

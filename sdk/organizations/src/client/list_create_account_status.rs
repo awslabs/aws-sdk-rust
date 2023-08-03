@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`create_account_statuses(Option<Vec<CreateAccountStatus>>)`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput::create_account_statuses): <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListCreateAccountStatusError>`](crate::operation::list_create_account_status::ListCreateAccountStatusError)
-    pub fn list_create_account_status(
-        &self,
-    ) -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusFluentBuilder
-    {
+    pub fn list_create_account_status(&self) -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusFluentBuilder {
         crate::operation::list_create_account_status::builders::ListCreateAccountStatusFluentBuilder::new(self.handle.clone())
     }
 }

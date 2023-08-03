@@ -21,8 +21,7 @@ pub struct CreateMeetingWithAttendeesInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
     #[doc(hidden)]
-    pub notifications_configuration:
-        ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub notifications_configuration: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
     /// <p>The request containing the attendees to create.</p>
     #[doc(hidden)]
     pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
@@ -50,9 +49,7 @@ impl CreateMeetingWithAttendeesInput {
         self.tags.as_deref()
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn notifications_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
+    pub fn notifications_configuration(&self) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
         self.notifications_configuration.as_ref()
     }
     /// <p>The request containing the attendees to create.</p>
@@ -68,17 +65,14 @@ impl ::std::fmt::Debug for CreateMeetingWithAttendeesInput {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.field("attendees", &self.attendees);
         formatter.finish()
     }
 }
 impl CreateMeetingWithAttendeesInput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingWithAttendeesInput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput).
-    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder{
+    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder {
         crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder::default()
     }
 }
@@ -92,25 +86,17 @@ pub struct CreateMeetingWithAttendeesInputBuilder {
     pub(crate) meeting_host_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_region: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) notifications_configuration:
-        ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    pub(crate) attendees:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    pub(crate) notifications_configuration: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
 }
 impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -119,18 +105,12 @@ impl CreateMeetingWithAttendeesInputBuilder {
         &self.client_request_token
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_meeting_id = input;
         self
     }
@@ -139,18 +119,12 @@ impl CreateMeetingWithAttendeesInputBuilder {
         &self.external_meeting_id
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_host_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meeting_host_id = input;
         self
     }
@@ -187,10 +161,7 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -199,25 +170,17 @@ impl CreateMeetingWithAttendeesInputBuilder {
         &self.tags
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::MeetingNotificationConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
         self.notifications_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notifications_configuration(mut self, input: ::std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
         self.notifications_configuration = input;
         self
     }
     /// <p>The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (us-east-1).</p>
-    pub fn get_notifications_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
+    pub fn get_notifications_configuration(&self) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
         &self.notifications_configuration
     }
     /// Appends an item to `attendees`.
@@ -232,17 +195,12 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
         self.attendees = input;
         self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn get_attendees(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
         &self.attendees
     }
     /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput).
@@ -252,17 +210,15 @@ impl CreateMeetingWithAttendeesInputBuilder {
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput {
-                client_request_token: self.client_request_token,
-                external_meeting_id: self.external_meeting_id,
-                meeting_host_id: self.meeting_host_id,
-                media_region: self.media_region,
-                tags: self.tags,
-                notifications_configuration: self.notifications_configuration,
-                attendees: self.attendees,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput {
+            client_request_token: self.client_request_token,
+            external_meeting_id: self.external_meeting_id,
+            meeting_host_id: self.meeting_host_id,
+            media_region: self.media_region,
+            tags: self.tags,
+            notifications_configuration: self.notifications_configuration,
+            attendees: self.attendees,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMeetingWithAttendeesInputBuilder {
@@ -273,10 +229,7 @@ impl ::std::fmt::Debug for CreateMeetingWithAttendeesInputBuilder {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.field("attendees", &self.attendees);
         formatter.finish()
     }

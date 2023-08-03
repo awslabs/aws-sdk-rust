@@ -36,34 +36,27 @@ impl ::std::fmt::Display for FederatedResourceAlreadyExistsException {
     }
 }
 impl ::std::error::Error for FederatedResourceAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::FederatedResourceAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::FederatedResourceAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FederatedResourceAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FederatedResourceAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl FederatedResourceAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`FederatedResourceAlreadyExistsException`](crate::types::error::FederatedResourceAlreadyExistsException).
-    pub fn builder() -> crate::types::error::builders::FederatedResourceAlreadyExistsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::FederatedResourceAlreadyExistsExceptionBuilder {
         crate::types::error::builders::FederatedResourceAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`FederatedResourceAlreadyExistsException`](crate::types::error::FederatedResourceAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FederatedResourceAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) associated_glue_resource: ::std::option::Option<::std::string::String>,
@@ -85,18 +78,12 @@ impl FederatedResourceAlreadyExistsExceptionBuilder {
         &self.message
     }
     /// <p>The associated Glue resource already exists.</p>
-    pub fn associated_glue_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_glue_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_glue_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated Glue resource already exists.</p>
-    pub fn set_associated_glue_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_glue_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_glue_resource = input;
         self
     }
@@ -111,10 +98,7 @@ impl FederatedResourceAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

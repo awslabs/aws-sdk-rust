@@ -23,16 +23,14 @@ impl DescribeAvailabilityOptionsInput {
 }
 impl DescribeAvailabilityOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsInput`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsInput).
-    pub fn builder() -> crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder {
         crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailabilityOptionsInput`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed: ::std::option::Option<bool>,
@@ -73,11 +71,9 @@ impl DescribeAvailabilityOptionsInputBuilder {
         crate::operation::describe_availability_options::DescribeAvailabilityOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_availability_options::DescribeAvailabilityOptionsInput {
-                domain_name: self.domain_name,
-                deployed: self.deployed,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_availability_options::DescribeAvailabilityOptionsInput {
+            domain_name: self.domain_name,
+            deployed: self.deployed,
+        })
     }
 }

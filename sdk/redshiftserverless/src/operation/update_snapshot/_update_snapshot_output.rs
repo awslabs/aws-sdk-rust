@@ -28,9 +28,7 @@ impl UpdateSnapshotOutput {
 
 /// A builder for [`UpdateSnapshotOutput`](crate::operation::update_snapshot::UpdateSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,

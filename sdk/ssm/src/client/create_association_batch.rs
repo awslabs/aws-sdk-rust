@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<AssociationDescription>>)`](crate::operation::create_association_batch::CreateAssociationBatchOutput::successful): <p>Information about the associations that succeeded.</p>
     ///   - [`failed(Option<Vec<FailedCreateAssociation>>)`](crate::operation::create_association_batch::CreateAssociationBatchOutput::failed): <p>Information about the associations that failed.</p>
     /// - On failure, responds with [`SdkError<CreateAssociationBatchError>`](crate::operation::create_association_batch::CreateAssociationBatchError)
-    pub fn create_association_batch(
-        &self,
-    ) -> crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder
-    {
+    pub fn create_association_batch(&self) -> crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder {
         crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder::new(self.handle.clone())
     }
 }

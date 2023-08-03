@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`partitions(Option<Vec<Partition>>)`](crate::operation::get_partitions::GetPartitionsOutput::partitions): <p>A list of requested partitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_partitions::GetPartitionsOutput::next_token): <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     /// - On failure, responds with [`SdkError<GetPartitionsError>`](crate::operation::get_partitions::GetPartitionsError)
-    pub fn get_partitions(
-        &self,
-    ) -> crate::operation::get_partitions::builders::GetPartitionsFluentBuilder {
-        crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_partitions(&self) -> crate::operation::get_partitions::builders::GetPartitionsFluentBuilder {
+        crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,13 +39,7 @@
 /// Dvb Sub Destination Shadow Color
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubDestinationShadowColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DvbSubDestinationShadowColor {
             "BLACK" => DvbSubDestinationShadowColor::Black,
             "NONE" => DvbSubDestinationShadowColor::None,
             "WHITE" => DvbSubDestinationShadowColor::White,
-            other => DvbSubDestinationShadowColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubDestinationShadowColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

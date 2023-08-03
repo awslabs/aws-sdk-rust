@@ -9,49 +9,55 @@ pub fn de_delete_cluster_parameter_group_http_error(
     crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterParameterGroupNotFound" => crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ClusterParameterGroupNotFound" => {
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidClusterParameterGroupState" => crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidClusterParameterGroupState" => {
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClusterParameterGroupStateFaultBuilder::default();
                     output = crate::protocol_serde::shape_invalid_cluster_parameter_group_state_fault::de_invalid_cluster_parameter_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -67,9 +73,7 @@ pub fn de_delete_cluster_parameter_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

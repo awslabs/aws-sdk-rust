@@ -11,7 +11,11 @@ impl super::Client {
     /// - On success, responds with [`GetTransitGatewayPolicyTableEntriesOutput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput) with field(s):
     ///   - [`transit_gateway_policy_table_entries(Option<Vec<TransitGatewayPolicyTableEntry>>)`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput::transit_gateway_policy_table_entries): <p>The entries for the transit gateway policy table.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayPolicyTableEntriesError>`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesError)
-    pub fn get_transit_gateway_policy_table_entries(&self) -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesFluentBuilder{
-        crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_policy_table_entries(
+        &self,
+    ) -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesFluentBuilder {
+        crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

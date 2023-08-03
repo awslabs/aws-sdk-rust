@@ -57,9 +57,7 @@ impl CopyFpgaImageInput {
 
 /// A builder for [`CopyFpgaImageInput`](crate::operation::copy_fpga_image::CopyFpgaImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyFpgaImageInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) source_fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl CopyFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the source AFI.</p>
-    pub fn source_fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source AFI.</p>
-    pub fn set_source_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_fpga_image_id = input;
         self
     }
@@ -132,18 +124,12 @@ impl CopyFpgaImageInputBuilder {
         &self.name
     }
     /// <p>The Region that contains the source AFI.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region that contains the source AFI.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -168,10 +154,7 @@ impl CopyFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`CopyFpgaImageInput`](crate::operation::copy_fpga_image::CopyFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_fpga_image::CopyFpgaImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_fpga_image::CopyFpgaImageInput {
             dry_run: self.dry_run,
             source_fpga_image_id: self.source_fpga_image_id,

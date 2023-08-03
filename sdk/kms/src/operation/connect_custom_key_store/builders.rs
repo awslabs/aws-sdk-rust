@@ -61,10 +61,7 @@ impl ConnectCustomKeyStoreFluentBuilder {
         }
     }
     /// Access the ConnectCustomKeyStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +73,7 @@ impl ConnectCustomKeyStoreFluentBuilder {
             crate::operation::connect_custom_key_store::ConnectCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -88,10 +83,7 @@ impl ConnectCustomKeyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -100,9 +92,7 @@ impl ConnectCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_custom_key_store::ConnectCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError>,
     > {
         let op = self
             .inner
@@ -125,9 +115,7 @@ impl ConnectCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_custom_key_store::ConnectCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -141,25 +129,17 @@ impl ConnectCustomKeyStoreFluentBuilder {
             crate::operation::connect_custom_key_store::ConnectCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
         self
     }
     /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
     }

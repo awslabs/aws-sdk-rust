@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::create_subscription::builders::CreateSubscriptionFluentBuilder::send) it.
     /// - On success, responds with [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput)
     /// - On failure, responds with [`SdkError<CreateSubscriptionError>`](crate::operation::create_subscription::CreateSubscriptionError)
-    pub fn create_subscription(
-        &self,
-    ) -> crate::operation::create_subscription::builders::CreateSubscriptionFluentBuilder {
-        crate::operation::create_subscription::builders::CreateSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_subscription(&self) -> crate::operation::create_subscription::builders::CreateSubscriptionFluentBuilder {
+        crate::operation::create_subscription::builders::CreateSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

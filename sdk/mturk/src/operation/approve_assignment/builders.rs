@@ -10,10 +10,7 @@ impl ApproveAssignmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::approve_assignment::ApproveAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.approve_assignment();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl ApproveAssignmentFluentBuilder {
         }
     }
     /// Access the ApproveAssignment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl ApproveAssignmentFluentBuilder {
             crate::operation::approve_assignment::ApproveAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl ApproveAssignmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl ApproveAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::approve_assignment::ApproveAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl ApproveAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::approve_assignment::ApproveAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +109,17 @@ impl ApproveAssignmentFluentBuilder {
             crate::operation::approve_assignment::ApproveAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
@@ -150,18 +128,12 @@ impl ApproveAssignmentFluentBuilder {
         self.inner.get_assignment_id()
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn requester_feedback(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_feedback(input.into());
         self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn set_requester_feedback(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_feedback(input);
         self
     }

@@ -64,29 +64,23 @@ impl CreateVpcEndpointServiceConfigurationInput {
 }
 impl CreateVpcEndpointServiceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointServiceConfigurationInput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput).
-    pub fn builder() -> crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder {
         crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointServiceConfigurationInput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointServiceConfigurationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) acceptance_required: ::std::option::Option<bool>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) network_load_balancer_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) gateway_load_balancer_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_ip_address_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpcEndpointServiceConfigurationInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -118,18 +112,12 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
         &self.acceptance_required
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
-    pub fn private_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
-    pub fn set_private_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }
@@ -142,27 +130,19 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_network_load_balancer_arns`](Self::set_network_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn network_load_balancer_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_load_balancer_arns.unwrap_or_default();
         v.push(input.into());
         self.network_load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn set_network_load_balancer_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_load_balancer_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn get_network_load_balancer_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_load_balancer_arns
     }
     /// Appends an item to `gateway_load_balancer_arns`.
@@ -170,27 +150,19 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_gateway_load_balancer_arns`](Self::set_gateway_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn gateway_load_balancer_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.gateway_load_balancer_arns.unwrap_or_default();
         v.push(input.into());
         self.gateway_load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn set_gateway_load_balancer_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_gateway_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.gateway_load_balancer_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn get_gateway_load_balancer_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.gateway_load_balancer_arns
     }
     /// Appends an item to `supported_ip_address_types`.
@@ -198,27 +170,19 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_supported_ip_address_types`](Self::set_supported_ip_address_types).
     ///
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn supported_ip_address_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_ip_address_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_ip_address_types.unwrap_or_default();
         v.push(input.into());
         self.supported_ip_address_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn set_supported_ip_address_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_ip_address_types = input;
         self
     }
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn get_supported_ip_address_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_ip_address_types
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -247,40 +211,32 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
         self
     }
     /// <p>The tags to associate with the service.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to associate with the service.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointServiceConfigurationInput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput {
-                dry_run: self.dry_run
-                ,
-                acceptance_required: self.acceptance_required
-                ,
-                private_dns_name: self.private_dns_name
-                ,
-                network_load_balancer_arns: self.network_load_balancer_arns
-                ,
-                gateway_load_balancer_arns: self.gateway_load_balancer_arns
-                ,
-                supported_ip_address_types: self.supported_ip_address_types
-                ,
-                client_token: self.client_token
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-            }
+                dry_run: self.dry_run,
+                acceptance_required: self.acceptance_required,
+                private_dns_name: self.private_dns_name,
+                network_load_balancer_arns: self.network_load_balancer_arns,
+                gateway_load_balancer_arns: self.gateway_load_balancer_arns,
+                supported_ip_address_types: self.supported_ip_address_types,
+                client_token: self.client_token,
+                tag_specifications: self.tag_specifications,
+            },
         )
     }
 }

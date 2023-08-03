@@ -5,16 +5,16 @@ pub use crate::operation::batch_get_repository_scanning_configuration::_batch_ge
 
 impl BatchGetRepositoryScanningConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_get_repository_scanning_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchGetRepositoryScanningConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder,
+    inner: crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder,
 }
 impl BatchGetRepositoryScanningConfigurationFluentBuilder {
     /// Creates a new `BatchGetRepositoryScanningConfiguration`.
@@ -37,15 +37,24 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
         }
     }
     /// Access the BatchGetRepositoryScanningConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `repositoryNames`.
@@ -99,25 +124,17 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_repository_names()
     }
 }

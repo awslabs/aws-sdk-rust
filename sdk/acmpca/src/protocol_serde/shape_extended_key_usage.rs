@@ -7,9 +7,7 @@ pub fn ser_extended_key_usage(
         object.key("ExtendedKeyUsageType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.extended_key_usage_object_identifier {
-        object
-            .key("ExtendedKeyUsageObjectIdentifier")
-            .string(var_2.as_str());
+        object.key("ExtendedKeyUsageObjectIdentifier").string(var_2.as_str());
     }
     Ok(())
 }

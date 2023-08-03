@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`package_arn(Option<String>)`](crate::operation::create_package::CreatePackageOutput::package_arn): <p>The Amazon Resource Name (ARN) for the package.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_package::CreatePackageOutput::description): <p>The package description.</p>
     /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::operation::create_package::CreatePackageError)
-    pub fn create_package(
-        &self,
-    ) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
-        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_package(&self) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
+        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(self.handle.clone())
     }
 }

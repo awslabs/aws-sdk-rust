@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`comments(impl ::std::convert::Into<String>)`](crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackFluentBuilder::comments) / [`set_comments(Option<String>)`](crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackFluentBuilder::set_comments): <p>Additional feedback about the GuardDuty findings.</p>
     /// - On success, responds with [`UpdateFindingsFeedbackOutput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput)
     /// - On failure, responds with [`SdkError<UpdateFindingsFeedbackError>`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackError)
-    pub fn update_findings_feedback(
-        &self,
-    ) -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackFluentBuilder
-    {
+    pub fn update_findings_feedback(&self) -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackFluentBuilder {
         crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

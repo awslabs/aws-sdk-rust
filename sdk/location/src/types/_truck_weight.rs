@@ -38,9 +38,7 @@ impl TruckWeight {
 
 /// A builder for [`TruckWeight`](crate::types::TruckWeight).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TruckWeightBuilder {
     pub(crate) total: ::std::option::Option<f64>,
     pub(crate) unit: ::std::option::Option<crate::types::VehicleWeightUnit>,
@@ -77,10 +75,7 @@ impl TruckWeightBuilder {
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code> </p>
-    pub fn set_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::VehicleWeightUnit>,
-    ) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::VehicleWeightUnit>) -> Self {
         self.unit = input;
         self
     }

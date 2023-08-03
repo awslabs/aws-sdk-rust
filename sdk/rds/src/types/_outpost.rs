@@ -24,9 +24,7 @@ impl Outpost {
 
 /// A builder for [`Outpost`](crate::types::Outpost).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutpostBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateCoreNetworkOutput {
 }
 impl UpdateCoreNetworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkOutput`](crate::operation::update_core_network::UpdateCoreNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::update_core_network::builders::UpdateCoreNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::update_core_network::builders::UpdateCoreNetworkOutputBuilder {
         crate::operation::update_core_network::builders::UpdateCoreNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCoreNetworkOutput`](crate::operation::update_core_network::UpdateCoreNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateCoreNetworkOutputBuilder {
         self
     }
     /// <p>Returns information about a core network update.</p>
-    pub fn set_core_network(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetwork>,
-    ) -> Self {
+    pub fn set_core_network(mut self, input: ::std::option::Option<crate::types::CoreNetwork>) -> Self {
         self.core_network = input;
         self
     }

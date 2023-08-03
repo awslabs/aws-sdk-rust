@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder::set_description): <p>The description of the queue.</p>
     /// - On success, responds with [`UpdateQueueNameOutput`](crate::operation::update_queue_name::UpdateQueueNameOutput)
     /// - On failure, responds with [`SdkError<UpdateQueueNameError>`](crate::operation::update_queue_name::UpdateQueueNameError)
-    pub fn update_queue_name(
-        &self,
-    ) -> crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder {
-        crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_queue_name(&self) -> crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder {
+        crate::operation::update_queue_name::builders::UpdateQueueNameFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl GetLayerVersionPolicyFluentBuilder {
         }
     }
     /// Access the GetLayerVersionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetLayerVersionPolicyFluentBuilder {
             crate::operation::get_layer_version_policy::GetLayerVersionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_policy::GetLayerVersionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetLayerVersionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetLayerVersionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_policy::GetLayerVersionPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetLayerVersionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_policy::GetLayerVersionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetLayerVersionPolicyFluentBuilder {
             crate::operation::get_layer_version_policy::GetLayerVersionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_policy::GetLayerVersionPolicyError>,
     > {
         self.customize_middleware().await
     }

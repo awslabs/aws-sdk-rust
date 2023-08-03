@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`nat_gateway_id(Option<String>)`](crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressOutput::nat_gateway_id): <p>The ID of the NAT gateway.</p>
     ///   - [`nat_gateway_addresses(Option<Vec<NatGatewayAddress>>)`](crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressOutput::nat_gateway_addresses): <p>The IP addresses.</p>
     /// - On failure, responds with [`SdkError<AssociateNatGatewayAddressError>`](crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError)
-    pub fn associate_nat_gateway_address(&self) -> crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressFluentBuilder{
+    pub fn associate_nat_gateway_address(
+        &self,
+    ) -> crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressFluentBuilder {
         crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressFluentBuilder::new(self.handle.clone())
     }
 }

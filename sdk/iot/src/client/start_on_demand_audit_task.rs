@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartOnDemandAuditTaskOutput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput::task_id): <p>The ID of the on-demand audit you started.</p>
     /// - On failure, responds with [`SdkError<StartOnDemandAuditTaskError>`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError)
-    pub fn start_on_demand_audit_task(
-        &self,
-    ) -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskFluentBuilder
-    {
+    pub fn start_on_demand_audit_task(&self) -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskFluentBuilder {
         crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskFluentBuilder::new(self.handle.clone())
     }
 }

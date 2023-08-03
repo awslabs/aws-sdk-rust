@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`instance_group_id(impl ::std::convert::Into<String>)`](crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyFluentBuilder::instance_group_id) / [`set_instance_group_id(Option<String>)`](crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyFluentBuilder::set_instance_group_id): <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     /// - On success, responds with [`RemoveAutoScalingPolicyOutput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput)
     /// - On failure, responds with [`SdkError<RemoveAutoScalingPolicyError>`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError)
-    pub fn remove_auto_scaling_policy(
-        &self,
-    ) -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyFluentBuilder
-    {
+    pub fn remove_auto_scaling_policy(&self) -> crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyFluentBuilder {
         crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

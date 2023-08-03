@@ -38,10 +38,7 @@ impl DeleteClusterSnapshotFluentBuilder {
         }
     }
     /// Access the DeleteClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteClusterSnapshotFluentBuilder {
             crate::operation::delete_cluster_snapshot::DeleteClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +106,19 @@ impl DeleteClusterSnapshotFluentBuilder {
             crate::operation::delete_cluster_snapshot::DeleteClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -149,19 +129,13 @@ impl DeleteClusterSnapshotFluentBuilder {
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }

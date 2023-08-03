@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateModelManifestOutput {
 }
 impl UpdateModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelManifestOutput`](crate::operation::update_model_manifest::UpdateModelManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder {
-        crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder {
+        crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelManifestOutput`](crate::operation::update_model_manifest::UpdateModelManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

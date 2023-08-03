@@ -22,9 +22,7 @@ impl DescribePipeInput {
 
 /// A builder for [`DescribePipeInput`](crate::operation::describe_pipe::DescribePipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribePipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribePipeInput`](crate::operation::describe_pipe::DescribePipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pipe::DescribePipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_pipe::DescribePipeInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipe::DescribePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_pipe::DescribePipeInput { name: self.name })
     }
 }

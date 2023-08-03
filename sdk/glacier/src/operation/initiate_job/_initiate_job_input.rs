@@ -37,9 +37,7 @@ impl InitiateJobInput {
 
 /// A builder for [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateJobInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl InitiateJobInputBuilder {
         self
     }
     /// <p>Provides options for specifying job information.</p>
-    pub fn set_job_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::JobParameters>,
-    ) -> Self {
+    pub fn set_job_parameters(mut self, input: ::std::option::Option<crate::types::JobParameters>) -> Self {
         self.job_parameters = input;
         self
     }
@@ -92,12 +87,7 @@ impl InitiateJobInputBuilder {
         &self.job_parameters
     }
     /// Consumes the builder and constructs a [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_job::InitiateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::initiate_job::InitiateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::initiate_job::InitiateJobInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

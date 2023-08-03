@@ -29,9 +29,7 @@ impl ListAlarmModelsInput {
 
 /// A builder for [`ListAlarmModelsInput`](crate::operation::list_alarm_models::ListAlarmModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListAlarmModelsInputBuilder {
     /// Consumes the builder and constructs a [`ListAlarmModelsInput`](crate::operation::list_alarm_models::ListAlarmModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_alarm_models::ListAlarmModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_alarm_models::ListAlarmModelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_alarm_models::ListAlarmModelsInput {
             next_token: self.next_token,
             max_results: self.max_results,

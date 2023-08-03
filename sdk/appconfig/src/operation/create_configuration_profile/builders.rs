@@ -41,7 +41,7 @@ impl CreateConfigurationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder,
+    inner: crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder,
 }
 impl CreateConfigurationProfileFluentBuilder {
     /// Creates a new `CreateConfigurationProfile`.
@@ -52,7 +52,7 @@ impl CreateConfigurationProfileFluentBuilder {
         }
     }
     /// Access the CreateConfigurationProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl CreateConfigurationProfileFluentBuilder {
             crate::operation::create_configuration_profile::CreateConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl CreateConfigurationProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl CreateConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl CreateConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>,
     > {
         self.send_middleware().await
     }
@@ -129,25 +120,17 @@ impl CreateConfigurationProfileFluentBuilder {
             crate::operation::create_configuration_profile::CreateConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -248,20 +231,14 @@ impl CreateConfigurationProfileFluentBuilder {
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    pub fn retrieval_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retrieval_role_arn(input.into());
         self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
-    pub fn set_retrieval_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retrieval_role_arn(input);
         self
     }
@@ -281,17 +258,12 @@ impl CreateConfigurationProfileFluentBuilder {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    ) -> Self {
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
         self.inner = self.inner.set_validators(input);
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
         self.inner.get_validators()
     }
     /// Adds a key-value pair to `Tags`.
@@ -299,30 +271,17 @@ impl CreateConfigurationProfileFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`location_attributes(Option<Vec<LocationAttributes>>)`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput::location_attributes): <p> Location-specific information on the requested fleet's remote locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetLocationAttributesError>`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError)
-    pub fn describe_fleet_location_attributes(&self) -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesFluentBuilder{
+    pub fn describe_fleet_location_attributes(
+        &self,
+    ) -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesFluentBuilder {
         crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesFluentBuilder::new(self.handle.clone())
     }
 }

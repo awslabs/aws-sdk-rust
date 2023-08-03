@@ -29,7 +29,7 @@ impl PutAutoTerminationPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAutoTerminationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder,
+    inner: crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder,
 }
 impl PutAutoTerminationPolicyFluentBuilder {
     /// Creates a new `PutAutoTerminationPolicy`.
@@ -40,7 +40,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
         }
     }
     /// Access the PutAutoTerminationPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
             crate::operation::put_auto_termination_policy::PutAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl PutAutoTerminationPolicyFluentBuilder {
             crate::operation::put_auto_termination_policy::PutAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +132,12 @@ impl PutAutoTerminationPolicyFluentBuilder {
         self
     }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
-    pub fn set_auto_termination_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTerminationPolicy>,
-    ) -> Self {
+    pub fn set_auto_termination_policy(mut self, input: ::std::option::Option<crate::types::AutoTerminationPolicy>) -> Self {
         self.inner = self.inner.set_auto_termination_policy(input);
         self
     }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
-    pub fn get_auto_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
+    pub fn get_auto_termination_policy(&self) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
         self.inner.get_auto_termination_policy()
     }
 }

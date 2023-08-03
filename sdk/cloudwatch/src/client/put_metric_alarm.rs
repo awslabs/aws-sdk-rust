@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`threshold_metric_id(impl ::std::convert::Into<String>)`](crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder::threshold_metric_id) / [`set_threshold_metric_id(Option<String>)`](crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder::set_threshold_metric_id): <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>  <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>  <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
     /// - On success, responds with [`PutMetricAlarmOutput`](crate::operation::put_metric_alarm::PutMetricAlarmOutput)
     /// - On failure, responds with [`SdkError<PutMetricAlarmError>`](crate::operation::put_metric_alarm::PutMetricAlarmError)
-    pub fn put_metric_alarm(
-        &self,
-    ) -> crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder {
-        crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_metric_alarm(&self) -> crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder {
+        crate::operation::put_metric_alarm::builders::PutMetricAlarmFluentBuilder::new(self.handle.clone())
     }
 }

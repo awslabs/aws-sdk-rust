@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`db_cluster_parameter_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_db_cluster_parameter_group::builders::DeleteDBClusterParameterGroupFluentBuilder::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::operation::delete_db_cluster_parameter_group::builders::DeleteDBClusterParameterGroupFluentBuilder::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing cluster parameter group.</p> </li>   <li> <p>You can't delete a default cluster parameter group.</p> </li>   <li> <p>Cannot be associated with any clusters.</p> </li>  </ul>
     /// - On success, responds with [`DeleteDbClusterParameterGroupOutput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteDBClusterParameterGroupError>`](crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError)
-    pub fn delete_db_cluster_parameter_group(&self) -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDBClusterParameterGroupFluentBuilder{
+    pub fn delete_db_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDBClusterParameterGroupFluentBuilder {
         crate::operation::delete_db_cluster_parameter_group::builders::DeleteDBClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

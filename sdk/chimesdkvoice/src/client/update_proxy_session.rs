@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProxySessionOutput`](crate::operation::update_proxy_session::UpdateProxySessionOutput) with field(s):
     ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::update_proxy_session::UpdateProxySessionOutput::proxy_session): <p>The updated proxy session details.</p>
     /// - On failure, responds with [`SdkError<UpdateProxySessionError>`](crate::operation::update_proxy_session::UpdateProxySessionError)
-    pub fn update_proxy_session(
-        &self,
-    ) -> crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder {
-        crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_proxy_session(&self) -> crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder {
+        crate::operation::update_proxy_session::builders::UpdateProxySessionFluentBuilder::new(self.handle.clone())
     }
 }

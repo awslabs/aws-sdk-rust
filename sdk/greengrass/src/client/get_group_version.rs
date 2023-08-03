@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_group_version::GetGroupVersionOutput::id): The ID of the group that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::get_group_version::GetGroupVersionOutput::version): The ID of the group version.
     /// - On failure, responds with [`SdkError<GetGroupVersionError>`](crate::operation::get_group_version::GetGroupVersionError)
-    pub fn get_group_version(
-        &self,
-    ) -> crate::operation::get_group_version::builders::GetGroupVersionFluentBuilder {
-        crate::operation::get_group_version::builders::GetGroupVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_group_version(&self) -> crate::operation::get_group_version::builders::GetGroupVersionFluentBuilder {
+        crate::operation::get_group_version::builders::GetGroupVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`next_record_identifier(Option<String>)`](crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput::next_record_identifier): <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>  <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput::max_items): <p>The maximum number of records you requested.</p>
     /// - On failure, responds with [`SdkError<ListResourceRecordSetsError>`](crate::operation::list_resource_record_sets::ListResourceRecordSetsError)
-    pub fn list_resource_record_sets(
-        &self,
-    ) -> crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsFluentBuilder
-    {
+    pub fn list_resource_record_sets(&self) -> crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsFluentBuilder {
         crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsFluentBuilder::new(self.handle.clone())
     }
 }

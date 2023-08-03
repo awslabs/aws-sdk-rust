@@ -22,20 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeThumbnailsOutput {
 }
 impl DescribeThumbnailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsOutputBuilder {
         crate::operation::describe_thumbnails::builders::DescribeThumbnailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThumbnailsOutputBuilder {
-    pub(crate) thumbnail_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
+    pub(crate) thumbnail_details: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeThumbnailsOutputBuilder {
@@ -51,17 +47,12 @@ impl DescribeThumbnailsOutputBuilder {
         self
     }
     /// Placeholder documentation for __listOfThumbnailDetail
-    pub fn set_thumbnail_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
-    ) -> Self {
+    pub fn set_thumbnail_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>) -> Self {
         self.thumbnail_details = input;
         self
     }
     /// Placeholder documentation for __listOfThumbnailDetail
-    pub fn get_thumbnail_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>> {
+    pub fn get_thumbnail_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>> {
         &self.thumbnail_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_collaborations::ListCollaborationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`collaboration_list(Option<Vec<CollaborationSummary>>)`](crate::operation::list_collaborations::ListCollaborationsOutput::collaboration_list): <p>The list of collaborations.</p>
     /// - On failure, responds with [`SdkError<ListCollaborationsError>`](crate::operation::list_collaborations::ListCollaborationsError)
-    pub fn list_collaborations(
-        &self,
-    ) -> crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder {
-        crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_collaborations(&self) -> crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder {
+        crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::new(self.handle.clone())
     }
 }

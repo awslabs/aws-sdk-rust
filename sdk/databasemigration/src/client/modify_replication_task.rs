@@ -15,12 +15,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyReplicationTaskOutput`](crate::operation::modify_replication_task::ModifyReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::modify_replication_task::ModifyReplicationTaskOutput::replication_task): <p>The replication task that was modified.</p>
     /// - On failure, responds with [`SdkError<ModifyReplicationTaskError>`](crate::operation::modify_replication_task::ModifyReplicationTaskError)
-    pub fn modify_replication_task(
-        &self,
-    ) -> crate::operation::modify_replication_task::builders::ModifyReplicationTaskFluentBuilder
-    {
-        crate::operation::modify_replication_task::builders::ModifyReplicationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_replication_task(&self) -> crate::operation::modify_replication_task::builders::ModifyReplicationTaskFluentBuilder {
+        crate::operation::modify_replication_task::builders::ModifyReplicationTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AttachmentHashType {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for AttachmentHashType {
     fn from(s: &str) -> Self {
         match s {
             "Sha256" => AttachmentHashType::Sha256,
-            other => AttachmentHashType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AttachmentHashType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

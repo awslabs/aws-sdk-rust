@@ -10,10 +10,7 @@ impl RemoveIpRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_ip_routes::RemoveIpRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_ip_routes::RemoveIpRoutesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_ip_routes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RemoveIpRoutesFluentBuilder {
         }
     }
     /// Access the RemoveIpRoutes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_ip_routes::builders::RemoveIpRoutesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_ip_routes::builders::RemoveIpRoutesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RemoveIpRoutesFluentBuilder {
             crate::operation::remove_ip_routes::RemoveIpRoutes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_ip_routes::RemoveIpRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RemoveIpRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RemoveIpRoutesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_ip_routes::RemoveIpRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_ip_routes::RemoveIpRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RemoveIpRoutesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_ip_routes::RemoveIpRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_ip_routes::RemoveIpRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RemoveIpRoutesFluentBuilder {
             crate::operation::remove_ip_routes::RemoveIpRoutes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_ip_routes::RemoveIpRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +130,7 @@ impl RemoveIpRoutesFluentBuilder {
         self
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn set_cidr_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cidr_ips(input);
         self
     }

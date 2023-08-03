@@ -6,17 +6,14 @@
 pub struct EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
     #[doc(hidden)]
-    pub ebs_block_device_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
+    pub ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
 }
 impl EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn ebs_block_device_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EbsBlockDeviceConfig]> {
+    pub fn ebs_block_device_configs(&self) -> ::std::option::Option<&[crate::types::EbsBlockDeviceConfig]> {
         self.ebs_block_device_configs.as_deref()
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
@@ -33,12 +30,9 @@ impl EbsConfiguration {
 
 /// A builder for [`EbsConfiguration`](crate::types::EbsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsConfigurationBuilder {
-    pub(crate) ebs_block_device_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
+    pub(crate) ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
 }
 impl EbsConfigurationBuilder {
@@ -54,17 +48,12 @@ impl EbsConfigurationBuilder {
         self
     }
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn set_ebs_block_device_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
-    ) -> Self {
+    pub fn set_ebs_block_device_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>) -> Self {
         self.ebs_block_device_configs = input;
         self
     }
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn get_ebs_block_device_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>> {
+    pub fn get_ebs_block_device_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>> {
         &self.ebs_block_device_configs
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>

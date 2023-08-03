@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`assistant_summaries(Option<Vec<AssistantSummary>>)`](crate::operation::list_assistants::ListAssistantsOutput::assistant_summaries): <p>Information about the assistants.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assistants::ListAssistantsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssistantsError>`](crate::operation::list_assistants::ListAssistantsError)
-    pub fn list_assistants(
-        &self,
-    ) -> crate::operation::list_assistants::builders::ListAssistantsFluentBuilder {
-        crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_assistants(&self) -> crate::operation::list_assistants::builders::ListAssistantsFluentBuilder {
+        crate::operation::list_assistants::builders::ListAssistantsFluentBuilder::new(self.handle.clone())
     }
 }

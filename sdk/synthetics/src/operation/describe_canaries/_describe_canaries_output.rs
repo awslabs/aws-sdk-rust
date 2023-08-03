@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCanariesOutput {
 }
 impl DescribeCanariesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesOutput`](crate::operation::describe_canaries::DescribeCanariesOutput).
-    pub fn builder() -> crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder {
         crate::operation::describe_canaries::builders::DescribeCanariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCanariesOutput`](crate::operation::describe_canaries::DescribeCanariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCanariesOutputBuilder {
     pub(crate) canaries: ::std::option::Option<::std::vec::Vec<crate::types::Canary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeCanariesOutputBuilder {
         self
     }
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    pub fn set_canaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Canary>>,
-    ) -> Self {
+    pub fn set_canaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Canary>>) -> Self {
         self.canaries = input;
         self
     }

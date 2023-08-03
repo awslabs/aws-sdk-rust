@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SignInMethod {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SignInMethod {
             "EMAIL_AND_PHONE_NUMBER" => SignInMethod::EmailAndPhoneNumber,
             "PHONE_NUMBER" => SignInMethod::PhoneNumber,
             "USERNAME" => SignInMethod::Username,
-            other => {
-                SignInMethod::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SignInMethod::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl SignInMethod {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EMAIL",
-            "EMAIL_AND_PHONE_NUMBER",
-            "PHONE_NUMBER",
-            "USERNAME",
-        ]
+        &["EMAIL", "EMAIL_AND_PHONE_NUMBER", "PHONE_NUMBER", "USERNAME"]
     }
 }
 impl ::std::convert::AsRef<str> for SignInMethod {

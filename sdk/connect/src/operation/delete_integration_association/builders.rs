@@ -26,7 +26,7 @@ impl DeleteIntegrationAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntegrationAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder,
+    inner: crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder,
 }
 impl DeleteIntegrationAssociationFluentBuilder {
     /// Creates a new `DeleteIntegrationAssociation`.
@@ -37,7 +37,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
         }
     }
     /// Access the DeleteIntegrationAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
             crate::operation::delete_integration_association::DeleteIntegrationAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_association::DeleteIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_association::DeleteIntegrationAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_association::DeleteIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_association::DeleteIntegrationAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_association::DeleteIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_association::DeleteIntegrationAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteIntegrationAssociationFluentBuilder {
             crate::operation::delete_integration_association::DeleteIntegrationAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_association::DeleteIntegrationAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_association::DeleteIntegrationAssociationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteIntegrationAssociationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_association_id(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_association_id(input);
         self
     }

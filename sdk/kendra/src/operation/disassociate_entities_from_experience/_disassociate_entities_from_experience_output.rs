@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DisassociateEntitiesFromExperienceOut
 }
 impl DisassociateEntitiesFromExperienceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateEntitiesFromExperienceOutput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput).
-    pub fn builder() -> crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceOutputBuilder {
         crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateEntitiesFromExperienceOutput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceOutputBuilder {
-    pub(crate) failed_entity_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
+    pub(crate) failed_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
     _request_id: Option<String>,
 }
 impl DisassociateEntitiesFromExperienceOutputBuilder {
@@ -49,17 +46,12 @@ impl DisassociateEntitiesFromExperienceOutputBuilder {
         self
     }
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
-    pub fn set_failed_entity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
-    ) -> Self {
+    pub fn set_failed_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>) -> Self {
         self.failed_entity_list = input;
         self
     }
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
-    pub fn get_failed_entity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>> {
+    pub fn get_failed_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>> {
         &self.failed_entity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +64,9 @@ impl DisassociateEntitiesFromExperienceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateEntitiesFromExperienceOutput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput).
-    pub fn build(self) -> crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput{
+    pub fn build(self) -> crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput {
         crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput {
-            failed_entity_list: self.failed_entity_list
-            ,
+            failed_entity_list: self.failed_entity_list,
             _request_id: self._request_id,
         }
     }

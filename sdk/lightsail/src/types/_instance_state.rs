@@ -30,9 +30,7 @@ impl InstanceState {
 
 /// A builder for [`InstanceState`](crate::types::InstanceState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStateBuilder {
     pub(crate) code: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

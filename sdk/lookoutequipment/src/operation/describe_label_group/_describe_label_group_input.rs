@@ -15,34 +15,25 @@ impl DescribeLabelGroupInput {
 }
 impl DescribeLabelGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder {
         crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelGroupInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelGroupInputBuilder {
     /// <p> Returns the name of the label group. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Returns the name of the label group. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_label_group::DescribeLabelGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_label_group::DescribeLabelGroupInput {
-                label_group_name: self.label_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_label_group::DescribeLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_label_group::DescribeLabelGroupInput {
+            label_group_name: self.label_group_name,
+        })
     }
 }

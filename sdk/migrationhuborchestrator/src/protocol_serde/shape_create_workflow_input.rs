@@ -4,9 +4,7 @@ pub fn ser_create_workflow_input(
     input: &crate::operation::create_workflow::CreateWorkflowInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_configuration_id {
-        object
-            .key("applicationConfigurationId")
-            .string(var_1.as_str());
+        object.key("applicationConfigurationId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());

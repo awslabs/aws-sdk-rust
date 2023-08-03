@@ -29,17 +29,14 @@ impl UpdateActionTargetInput {
 }
 impl UpdateActionTargetInput {
     /// Creates a new builder-style object to manufacture [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
-    pub fn builder(
-    ) -> crate::operation::update_action_target::builders::UpdateActionTargetInputBuilder {
+    pub fn builder() -> crate::operation::update_action_target::builders::UpdateActionTargetInputBuilder {
         crate::operation::update_action_target::builders::UpdateActionTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateActionTargetInputBuilder {
     pub(crate) action_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateActionTargetInputBuilder {
 }
 impl UpdateActionTargetInputBuilder {
     /// <p>The ARN of the custom action target to update.</p>
-    pub fn action_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the custom action target to update.</p>
-    pub fn set_action_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_target_arn = input;
         self
     }
@@ -97,16 +88,11 @@ impl UpdateActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_action_target::UpdateActionTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_action_target::UpdateActionTargetInput {
-                action_target_arn: self.action_target_arn,
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_action_target::UpdateActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_action_target::UpdateActionTargetInput {
+            action_target_arn: self.action_target_arn,
+            name: self.name,
+            description: self.description,
+        })
     }
 }

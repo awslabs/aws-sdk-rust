@@ -23,9 +23,7 @@ impl SigninDelegateGroup {
 
 /// A builder for [`SigninDelegateGroup`](crate::types::SigninDelegateGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigninDelegateGroupBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SigninDelegateGroupBuilder {
     }
     /// Consumes the builder and constructs a [`SigninDelegateGroup`](crate::types::SigninDelegateGroup).
     pub fn build(self) -> crate::types::SigninDelegateGroup {
-        crate::types::SigninDelegateGroup {
-            group_name: self.group_name,
-        }
+        crate::types::SigninDelegateGroup { group_name: self.group_name }
     }
 }

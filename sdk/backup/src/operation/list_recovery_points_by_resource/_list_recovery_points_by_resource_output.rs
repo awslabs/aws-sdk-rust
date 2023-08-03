@@ -10,8 +10,7 @@ pub struct ListRecoveryPointsByResourceOutput {
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
     #[doc(hidden)]
-    pub recovery_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
+    pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByResourceOutput {
@@ -22,9 +21,7 @@ impl ListRecoveryPointsByResourceOutput {
     /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
-    pub fn recovery_points(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecoveryPointByResource]> {
+    pub fn recovery_points(&self) -> ::std::option::Option<&[crate::types::RecoveryPointByResource]> {
         self.recovery_points.as_deref()
     }
 }
@@ -35,20 +32,17 @@ impl ::aws_http::request_id::RequestId for ListRecoveryPointsByResourceOutput {
 }
 impl ListRecoveryPointsByResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByResourceOutput`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput).
-    pub fn builder() -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceOutputBuilder{
+    pub fn builder() -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceOutputBuilder {
         crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsByResourceOutput`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByResourceOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recovery_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
+    pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByResourceOutputBuilder {
@@ -82,19 +76,14 @@ impl ListRecoveryPointsByResourceOutputBuilder {
     /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
-    pub fn set_recovery_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>,
-    ) -> Self {
+    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>>) -> Self {
         self.recovery_points = input;
         self
     }
     /// <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>
     /// <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>
     /// </note>
-    pub fn get_recovery_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {
+    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByResource>> {
         &self.recovery_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -107,10 +96,7 @@ impl ListRecoveryPointsByResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecoveryPointsByResourceOutput`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput
-    {
+    pub fn build(self) -> crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput {
         crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput {
             next_token: self.next_token,
             recovery_points: self.recovery_points,

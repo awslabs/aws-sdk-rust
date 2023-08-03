@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput) with field(s):
     ///   - [`deployment(Option<Deployment>)`](crate::operation::delete_deployment::DeleteDeploymentOutput::deployment): <p>The detailed data of the deployment being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::operation::delete_deployment::DeleteDeploymentError)
-    pub fn delete_deployment(
-        &self,
-    ) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {
-        crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_deployment(&self) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {
+        crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

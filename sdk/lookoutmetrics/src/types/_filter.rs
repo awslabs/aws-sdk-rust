@@ -30,27 +30,19 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
     pub(crate) filter_operation: ::std::option::Option<crate::types::FilterOperation>,
 }
 impl FilterBuilder {
     /// <p>The value that you want to include in the filter.</p>
-    pub fn dimension_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you want to include in the filter.</p>
-    pub fn set_dimension_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_value = input;
         self
     }
@@ -64,10 +56,7 @@ impl FilterBuilder {
         self
     }
     /// <p>The condition to apply.</p>
-    pub fn set_filter_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperation>,
-    ) -> Self {
+    pub fn set_filter_operation(mut self, input: ::std::option::Option<crate::types::FilterOperation>) -> Self {
         self.filter_operation = input;
         self
     }

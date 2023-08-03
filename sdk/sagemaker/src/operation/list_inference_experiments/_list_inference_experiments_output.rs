@@ -5,8 +5,7 @@
 pub struct ListInferenceExperimentsOutput {
     /// <p>List of inference experiments.</p>
     #[doc(hidden)]
-    pub inference_experiments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
+    pub inference_experiments: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
     /// <p>The token to use when calling the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListInferenceExperimentsOutput {
 }
 impl ListInferenceExperimentsOutput {
     /// <p>List of inference experiments.</p>
-    pub fn inference_experiments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferenceExperimentSummary]> {
+    pub fn inference_experiments(&self) -> ::std::option::Option<&[crate::types::InferenceExperimentSummary]> {
         self.inference_experiments.as_deref()
     }
     /// <p>The token to use when calling the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInferenceExperimentsOutput {
 }
 impl ListInferenceExperimentsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceExperimentsOutput`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_experiments::builders::ListInferenceExperimentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_experiments::builders::ListInferenceExperimentsOutputBuilder {
         crate::operation::list_inference_experiments::builders::ListInferenceExperimentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceExperimentsOutput`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceExperimentsOutputBuilder {
-    pub(crate) inference_experiments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
+    pub(crate) inference_experiments: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListInferenceExperimentsOutputBuilder {
     /// To override the contents of this collection use [`set_inference_experiments`](Self::set_inference_experiments).
     ///
     /// <p>List of inference experiments.</p>
-    pub fn inference_experiments(
-        mut self,
-        input: crate::types::InferenceExperimentSummary,
-    ) -> Self {
+    pub fn inference_experiments(mut self, input: crate::types::InferenceExperimentSummary) -> Self {
         let mut v = self.inference_experiments.unwrap_or_default();
         v.push(input);
         self.inference_experiments = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of inference experiments.</p>
-    pub fn set_inference_experiments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
-    ) -> Self {
+    pub fn set_inference_experiments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>) -> Self {
         self.inference_experiments = input;
         self
     }
     /// <p>List of inference experiments.</p>
-    pub fn get_inference_experiments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>> {
+    pub fn get_inference_experiments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>> {
         &self.inference_experiments
     }
     /// <p>The token to use when calling the next page of results.</p>
@@ -102,9 +86,7 @@ impl ListInferenceExperimentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInferenceExperimentsOutput`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_inference_experiments::ListInferenceExperimentsOutput {
+    pub fn build(self) -> crate::operation::list_inference_experiments::ListInferenceExperimentsOutput {
         crate::operation::list_inference_experiments::ListInferenceExperimentsOutput {
             inference_experiments: self.inference_experiments,
             next_token: self.next_token,

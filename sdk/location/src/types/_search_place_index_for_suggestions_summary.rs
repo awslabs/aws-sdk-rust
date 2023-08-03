@@ -179,27 +179,19 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
     ///
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn filter_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_countries.unwrap_or_default();
         v.push(input.into());
         self.filter_countries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn set_filter_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_countries = input;
         self
     }
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn get_filter_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_countries
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
@@ -267,27 +259,19 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// To override the contents of this collection use [`set_filter_categories`](Self::set_filter_categories).
     ///
     /// <p>The optional category filter specified in the request.</p>
-    pub fn filter_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_categories.unwrap_or_default();
         v.push(input.into());
         self.filter_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The optional category filter specified in the request.</p>
-    pub fn set_filter_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_categories = input;
         self
     }
     /// <p>The optional category filter specified in the request.</p>
-    pub fn get_filter_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_categories
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsSummary`](crate::types::SearchPlaceIndexForSuggestionsSummary).

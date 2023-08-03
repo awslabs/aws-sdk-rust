@@ -22,18 +22,14 @@ impl DescribeMailboxExportJobInput {
 }
 impl DescribeMailboxExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeMailboxExportJobInput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder {
         crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMailboxExportJobInput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMailboxExportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribeMailboxExportJobInputBuilder {
         &self.job_id
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeMailboxExportJobInputBuilder {
         crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput {
-                job_id: self.job_id,
-                organization_id: self.organization_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput {
+            job_id: self.job_id,
+            organization_id: self.organization_id,
+        })
     }
 }

@@ -32,9 +32,7 @@ pub fn ser_create_launch_configuration_template_input(
         object_8.finish();
     }
     if let Some(var_11) = &input.target_instance_type_right_sizing_method {
-        object
-            .key("targetInstanceTypeRightSizingMethod")
-            .string(var_11.as_str());
+        object.key("targetInstanceTypeRightSizingMethod").string(var_11.as_str());
     }
     Ok(())
 }

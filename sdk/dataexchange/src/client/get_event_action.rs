@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_event_action::GetEventActionOutput::id): <p>The unique identifier for the event action.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_event_action::GetEventActionOutput::updated_at): <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetEventActionError>`](crate::operation::get_event_action::GetEventActionError)
-    pub fn get_event_action(
-        &self,
-    ) -> crate::operation::get_event_action::builders::GetEventActionFluentBuilder {
-        crate::operation::get_event_action::builders::GetEventActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_action(&self) -> crate::operation::get_event_action::builders::GetEventActionFluentBuilder {
+        crate::operation::get_event_action::builders::GetEventActionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl AcknowledgeOrderReceiptInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder,
+    inner: crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder,
 }
 impl AcknowledgeOrderReceiptFluentBuilder {
     /// Creates a new `AcknowledgeOrderReceipt`.
@@ -38,10 +37,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
         }
     }
     /// Access the AcknowledgeOrderReceipt as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
             crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceipt,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl AcknowledgeOrderReceiptFluentBuilder {
             crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceipt,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError>,
     > {
         self.customize_middleware().await
     }

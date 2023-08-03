@@ -44,9 +44,7 @@ impl KeyPhrase {
 
 /// A builder for [`KeyPhrase`](crate::types::KeyPhrase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyPhraseBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

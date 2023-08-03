@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AddRoleToDbInstanceOutput {
 }
 impl AddRoleToDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder {
         crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

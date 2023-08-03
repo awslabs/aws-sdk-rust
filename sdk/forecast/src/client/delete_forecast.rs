@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`forecast_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     /// - On success, responds with [`DeleteForecastOutput`](crate::operation::delete_forecast::DeleteForecastOutput)
     /// - On failure, responds with [`SdkError<DeleteForecastError>`](crate::operation::delete_forecast::DeleteForecastError)
-    pub fn delete_forecast(
-        &self,
-    ) -> crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder {
-        crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_forecast(&self) -> crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder {
+        crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::new(self.handle.clone())
     }
 }

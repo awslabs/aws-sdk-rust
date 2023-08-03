@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeParametersOutput {
 }
 impl DescribeParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersOutput`](crate::operation::describe_parameters::DescribeParametersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_parameters::builders::DescribeParametersOutputBuilder {
         crate::operation::describe_parameters::builders::DescribeParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeParametersOutput`](crate::operation::describe_parameters::DescribeParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeParametersOutputBuilder {
         self
     }
     /// <p>Parameters returned by the request.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Parameters returned by the request.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>> {
         &self.parameters
     }
     /// <p>The token to use when requesting the next set of items.</p>

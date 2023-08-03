@@ -33,9 +33,7 @@ impl ListMeshesInput {
 
 /// A builder for [`ListMeshesInput`](crate::operation::list_meshes::ListMeshesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMeshesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -76,12 +74,7 @@ impl ListMeshesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListMeshesInput`](crate::operation::list_meshes::ListMeshesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_meshes::ListMeshesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_meshes::ListMeshesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_meshes::ListMeshesInput {
             next_token: self.next_token,
             limit: self.limit,

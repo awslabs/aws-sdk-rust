@@ -30,9 +30,7 @@ impl SceneError {
 
 /// A builder for [`SceneError`](crate::types::SceneError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SceneErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::SceneErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

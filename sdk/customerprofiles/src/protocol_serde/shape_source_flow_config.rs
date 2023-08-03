@@ -12,19 +12,13 @@ pub fn ser_source_flow_config(
     if let Some(var_3) = &input.incremental_pull_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("IncrementalPullConfig").start_object();
-        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_incremental_pull_config::ser_incremental_pull_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.source_connector_properties {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SourceConnectorProperties").start_object();
-        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_source_connector_properties::ser_source_connector_properties(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

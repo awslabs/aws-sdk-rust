@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateUserFromPermissionGroupOu
 }
 impl DisassociateUserFromPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupOutput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput).
-    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupOutputBuilder {
         crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserFromPermissionGroupOutput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -60,11 +58,9 @@ impl DisassociateUserFromPermissionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateUserFromPermissionGroupOutput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput).
-    pub fn build(self) -> crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput{
+    pub fn build(self) -> crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput {
         crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput {
-            status_code: self.status_code
-                .unwrap_or_default()
-            ,
+            status_code: self.status_code.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

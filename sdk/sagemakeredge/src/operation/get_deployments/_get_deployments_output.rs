@@ -28,9 +28,7 @@ impl GetDeploymentsOutput {
 
 /// A builder for [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentsOutputBuilder {
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetDeploymentsOutputBuilder {
         self
     }
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn set_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>,
-    ) -> Self {
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>) -> Self {
         self.deployments = input;
         self
     }
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn get_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>> {
         &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

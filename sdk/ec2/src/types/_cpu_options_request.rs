@@ -37,9 +37,7 @@ impl CpuOptionsRequest {
 
 /// A builder for [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CpuOptionsRequestBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl CpuOptionsRequestBuilder {
         self
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
-    pub fn set_amd_sev_snp(
-        mut self,
-        input: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
-    ) -> Self {
+    pub fn set_amd_sev_snp(mut self, input: ::std::option::Option<crate::types::AmdSevSnpSpecification>) -> Self {
         self.amd_sev_snp = input;
         self
     }

@@ -10,10 +10,7 @@ impl GetHealthCheckInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_health_check::GetHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check::GetHealthCheckError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check::GetHealthCheckError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_health_check();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetHealthCheckFluentBuilder {
         }
     }
     /// Access the GetHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_health_check::builders::GetHealthCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_health_check::builders::GetHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetHealthCheckFluentBuilder {
             crate::operation::get_health_check::GetHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check::GetHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check::GetHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_health_check::GetHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check::GetHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check::GetHealthCheckError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_health_check::GetHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check::GetHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check::GetHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetHealthCheckFluentBuilder {
             crate::operation::get_health_check::GetHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_health_check::GetHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check::GetHealthCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_id(input.into());
         self
     }
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_id(input);
         self
     }

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::operation::list_portfolios_for_product::ListPortfoliosForProductOutput::portfolio_details): <p>Information about the portfolios.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_portfolios_for_product::ListPortfoliosForProductOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPortfoliosForProductError>`](crate::operation::list_portfolios_for_product::ListPortfoliosForProductError)
-    pub fn list_portfolios_for_product(&self) -> crate::operation::list_portfolios_for_product::builders::ListPortfoliosForProductFluentBuilder{
+    pub fn list_portfolios_for_product(&self) -> crate::operation::list_portfolios_for_product::builders::ListPortfoliosForProductFluentBuilder {
         crate::operation::list_portfolios_for_product::builders::ListPortfoliosForProductFluentBuilder::new(self.handle.clone())
     }
 }

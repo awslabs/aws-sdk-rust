@@ -6,14 +6,11 @@
 pub struct UnprocessedDataSourcesResult {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
     #[doc(hidden)]
-    pub malware_protection:
-        ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
+    pub malware_protection: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl UnprocessedDataSourcesResult {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
-    pub fn malware_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MalwareProtectionConfigurationResult> {
+    pub fn malware_protection(&self) -> ::std::option::Option<&crate::types::MalwareProtectionConfigurationResult> {
         self.malware_protection.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl UnprocessedDataSourcesResult {
 
 /// A builder for [`UnprocessedDataSourcesResult`](crate::types::UnprocessedDataSourcesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedDataSourcesResultBuilder {
-    pub(crate) malware_protection:
-        ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
+    pub(crate) malware_protection: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl UnprocessedDataSourcesResultBuilder {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
-    pub fn malware_protection(
-        mut self,
-        input: crate::types::MalwareProtectionConfigurationResult,
-    ) -> Self {
+    pub fn malware_protection(mut self, input: crate::types::MalwareProtectionConfigurationResult) -> Self {
         self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
-    pub fn set_malware_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
-    ) -> Self {
+    pub fn set_malware_protection(mut self, input: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>) -> Self {
         self.malware_protection = input;
         self
     }
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
-    pub fn get_malware_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MalwareProtectionConfigurationResult> {
+    pub fn get_malware_protection(&self) -> &::std::option::Option<crate::types::MalwareProtectionConfigurationResult> {
         &self.malware_protection
     }
     /// Consumes the builder and constructs a [`UnprocessedDataSourcesResult`](crate::types::UnprocessedDataSourcesResult).

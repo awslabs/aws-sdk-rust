@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListJobsByStatusOutput {
 }
 impl ListJobsByStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsByStatusOutput`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder {
+    pub fn builder() -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder {
         crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobsByStatusOutput`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsByStatusOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl ListJobsByStatusOutputBuilder {
         self
     }
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>) -> Self {
         self.jobs = input;
         self
     }
@@ -70,18 +64,12 @@ impl ListJobsByStatusOutputBuilder {
         &self.jobs
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

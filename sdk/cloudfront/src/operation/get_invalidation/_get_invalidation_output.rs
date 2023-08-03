@@ -29,9 +29,7 @@ impl GetInvalidationOutput {
 
 /// A builder for [`GetInvalidationOutput`](crate::operation::get_invalidation::GetInvalidationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInvalidationOutputBuilder {
     pub(crate) invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl GetInvalidationOutputBuilder {
         self
     }
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
-    pub fn set_invalidation(
-        mut self,
-        input: ::std::option::Option<crate::types::Invalidation>,
-    ) -> Self {
+    pub fn set_invalidation(mut self, input: ::std::option::Option<crate::types::Invalidation>) -> Self {
         self.invalidation = input;
         self
     }

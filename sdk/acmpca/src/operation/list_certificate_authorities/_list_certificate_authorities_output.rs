@@ -5,8 +5,7 @@
 pub struct ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
     #[doc(hidden)]
-    pub certificate_authorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
+    pub certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCertificateAuthoritiesOutput {
 }
 impl ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
-    pub fn certificate_authorities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CertificateAuthority]> {
+    pub fn certificate_authorities(&self) -> ::std::option::Option<&[crate::types::CertificateAuthority]> {
         self.certificate_authorities.as_deref()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCertificateAuthoritiesOutput {
 }
 impl ListCertificateAuthoritiesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesOutput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput).
-    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder {
         crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificateAuthoritiesOutput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesOutputBuilder {
-    pub(crate) certificate_authorities:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
+    pub(crate) certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListCertificateAuthoritiesOutputBuilder {
         self
     }
     /// <p>Summary information about each certificate authority you have created.</p>
-    pub fn set_certificate_authorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
-    ) -> Self {
+    pub fn set_certificate_authorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>) -> Self {
         self.certificate_authorities = input;
         self
     }
     /// <p>Summary information about each certificate authority you have created.</p>
-    pub fn get_certificate_authorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>> {
+    pub fn get_certificate_authorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>> {
         &self.certificate_authorities
     }
     /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
@@ -97,9 +86,7 @@ impl ListCertificateAuthoritiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCertificateAuthoritiesOutput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput {
+    pub fn build(self) -> crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput {
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput {
             certificate_authorities: self.certificate_authorities,
             next_token: self.next_token,

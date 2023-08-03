@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`exports(Option<Vec<Export>>)`](crate::operation::list_exports::ListExportsOutput::exports): <p>The output for the <code>ListExports</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exports::ListExportsOutput::next_token): <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
-    pub fn list_exports(
-        &self,
-    ) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
+    pub fn list_exports(&self) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
         crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
     }
 }

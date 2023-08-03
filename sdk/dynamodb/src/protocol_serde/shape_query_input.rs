@@ -69,10 +69,7 @@ pub fn ser_query_input(
             {
                 #[allow(unused_mut)]
                 let mut object_25 = object_22.key(key_23.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_25,
-                    value_24,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_25, value_24)?;
                 object_25.finish();
             }
         }
@@ -107,10 +104,7 @@ pub fn ser_query_input(
             {
                 #[allow(unused_mut)]
                 let mut object_38 = object_35.key(key_36.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_38,
-                    value_37,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_38, value_37)?;
                 object_38.finish();
             }
         }

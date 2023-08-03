@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`dashboard_entries(Option<Vec<DashboardEntry>>)`](crate::operation::list_dashboards::ListDashboardsOutput::dashboard_entries): <p>The list of matching dashboards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dashboards::ListDashboardsOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
     /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::operation::list_dashboards::ListDashboardsError)
-    pub fn list_dashboards(
-        &self,
-    ) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {
-        crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dashboards(&self) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {
+        crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,17 +36,14 @@ impl CreateUserProfileInput {
 }
 impl CreateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserProfileInputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_username: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl CreateUserProfileInputBuilder {
         &self.ssh_username
     }
     /// <p>The user's public SSH key.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's public SSH key.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key = input;
         self
     }
@@ -119,17 +110,12 @@ impl CreateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_profile::CreateUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_user_profile::CreateUserProfileInput {
-                iam_user_arn: self.iam_user_arn,
-                ssh_username: self.ssh_username,
-                ssh_public_key: self.ssh_public_key,
-                allow_self_management: self.allow_self_management,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
+            iam_user_arn: self.iam_user_arn,
+            ssh_username: self.ssh_username,
+            ssh_public_key: self.ssh_public_key,
+            allow_self_management: self.allow_self_management,
+        })
     }
 }

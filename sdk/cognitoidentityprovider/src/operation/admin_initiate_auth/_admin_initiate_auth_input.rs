@@ -34,9 +34,7 @@ pub struct AdminInitiateAuthInput {
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub auth_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub auth_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
@@ -63,9 +61,7 @@ pub struct AdminInitiateAuthInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
     #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
@@ -106,11 +102,7 @@ impl AdminInitiateAuthInput {
     /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
-    pub fn auth_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn auth_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.auth_parameters.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
@@ -138,17 +130,11 @@ impl AdminInitiateAuthInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    pub fn analytics_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -171,8 +157,7 @@ impl ::std::fmt::Debug for AdminInitiateAuthInput {
 }
 impl AdminInitiateAuthInput {
     /// Creates a new builder-style object to manufacture [`AdminInitiateAuthInput`](crate::operation::admin_initiate_auth::AdminInitiateAuthInput).
-    pub fn builder(
-    ) -> crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder {
+    pub fn builder() -> crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder {
         crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder::default()
     }
 }
@@ -184,12 +169,8 @@ pub struct AdminInitiateAuthInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
-    pub(crate) auth_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) auth_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     pub(crate) context_data: ::std::option::Option<crate::types::ContextDataType>,
 }
@@ -254,10 +235,7 @@ impl AdminInitiateAuthInputBuilder {
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
     /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
-    pub fn set_auth_flow(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthFlowType>,
-    ) -> Self {
+    pub fn set_auth_flow(mut self, input: ::std::option::Option<crate::types::AuthFlowType>) -> Self {
         self.auth_flow = input;
         self
     }
@@ -308,9 +286,7 @@ impl AdminInitiateAuthInputBuilder {
     /// </ul>
     pub fn set_auth_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.auth_parameters = input;
         self
@@ -322,11 +298,7 @@ impl AdminInitiateAuthInputBuilder {
     /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
-    pub fn get_auth_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_auth_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.auth_parameters
     }
     /// Adds a key-value pair to `client_metadata`.
@@ -395,9 +367,7 @@ impl AdminInitiateAuthInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -427,11 +397,7 @@ impl AdminInitiateAuthInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
@@ -440,17 +406,12 @@ impl AdminInitiateAuthInputBuilder {
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         &self.analytics_metadata
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -459,10 +420,7 @@ impl AdminInitiateAuthInputBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDataType>,
-    ) -> Self {
+    pub fn set_context_data(mut self, input: ::std::option::Option<crate::types::ContextDataType>) -> Self {
         self.context_data = input;
         self
     }
@@ -473,21 +431,16 @@ impl AdminInitiateAuthInputBuilder {
     /// Consumes the builder and constructs a [`AdminInitiateAuthInput`](crate::operation::admin_initiate_auth::AdminInitiateAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_initiate_auth::AdminInitiateAuthInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_initiate_auth::AdminInitiateAuthInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                auth_flow: self.auth_flow,
-                auth_parameters: self.auth_parameters,
-                client_metadata: self.client_metadata,
-                analytics_metadata: self.analytics_metadata,
-                context_data: self.context_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::admin_initiate_auth::AdminInitiateAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::admin_initiate_auth::AdminInitiateAuthInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+            auth_flow: self.auth_flow,
+            auth_parameters: self.auth_parameters,
+            client_metadata: self.client_metadata,
+            analytics_metadata: self.analytics_metadata,
+            context_data: self.context_data,
+        })
     }
 }
 impl ::std::fmt::Debug for AdminInitiateAuthInputBuilder {

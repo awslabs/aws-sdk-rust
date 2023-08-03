@@ -23,9 +23,7 @@ impl DeviceJobConfig {
 
 /// A builder for [`DeviceJobConfig`](crate::types::DeviceJobConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceJobConfigBuilder {
     pub(crate) ota_job_config: ::std::option::Option<crate::types::OtaJobConfig>,
 }
@@ -36,10 +34,7 @@ impl DeviceJobConfigBuilder {
         self
     }
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-    pub fn set_ota_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OtaJobConfig>,
-    ) -> Self {
+    pub fn set_ota_job_config(mut self, input: ::std::option::Option<crate::types::OtaJobConfig>) -> Self {
         self.ota_job_config = input;
         self
     }

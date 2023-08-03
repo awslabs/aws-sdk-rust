@@ -25,9 +25,7 @@ impl CreditSpecification {
 
 /// A builder for [`CreditSpecification`](crate::types::CreditSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreditSpecificationBuilder {
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,
 }

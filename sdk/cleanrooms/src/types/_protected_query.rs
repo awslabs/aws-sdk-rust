@@ -24,8 +24,7 @@ pub struct ProtectedQuery {
     pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     /// <p>Contains any details needed to write the query results.</p>
     #[doc(hidden)]
-    pub result_configuration:
-        ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
+    pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     /// <p>Statistics about protected query execution.</p>
     #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::ProtectedQueryStatistics>,
@@ -54,9 +53,7 @@ impl ProtectedQuery {
         self.create_time.as_ref()
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn sql_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
+    pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
     /// <p>The status of the query.</p>
@@ -64,9 +61,7 @@ impl ProtectedQuery {
         self.status.as_ref()
     }
     /// <p>Contains any details needed to write the query results.</p>
-    pub fn result_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectedQueryResultConfiguration> {
+    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedQueryResultConfiguration> {
         self.result_configuration.as_ref()
     }
     /// <p>Statistics about protected query execution.</p>
@@ -115,8 +110,7 @@ pub struct ProtectedQueryBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     pub(crate) status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
-    pub(crate) result_configuration:
-        ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
+    pub(crate) result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     pub(crate) statistics: ::std::option::Option<crate::types::ProtectedQueryStatistics>,
     pub(crate) result: ::std::option::Option<crate::types::ProtectedQueryResult>,
     pub(crate) error: ::std::option::Option<crate::types::ProtectedQueryError>,
@@ -137,18 +131,12 @@ impl ProtectedQueryBuilder {
         &self.id
     }
     /// <p>The identifier for the membership.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the membership.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_id = input;
         self
     }
@@ -157,18 +145,12 @@ impl ProtectedQueryBuilder {
         &self.membership_id
     }
     /// <p>The ARN of the membership.</p>
-    pub fn membership_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the membership.</p>
-    pub fn set_membership_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_arn = input;
         self
     }
@@ -182,10 +164,7 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>The time at which the protected query was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -199,17 +178,12 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn set_sql_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
-    ) -> Self {
+    pub fn set_sql_parameters(mut self, input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>) -> Self {
         self.sql_parameters = input;
         self
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn get_sql_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+    pub fn get_sql_parameters(&self) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
         &self.sql_parameters
     }
     /// <p>The status of the query.</p>
@@ -218,10 +192,7 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>The status of the query.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -230,25 +201,17 @@ impl ProtectedQueryBuilder {
         &self.status
     }
     /// <p>Contains any details needed to write the query results.</p>
-    pub fn result_configuration(
-        mut self,
-        input: crate::types::ProtectedQueryResultConfiguration,
-    ) -> Self {
+    pub fn result_configuration(mut self, input: crate::types::ProtectedQueryResultConfiguration) -> Self {
         self.result_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains any details needed to write the query results.</p>
-    pub fn set_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
-    ) -> Self {
+    pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>) -> Self {
         self.result_configuration = input;
         self
     }
     /// <p>Contains any details needed to write the query results.</p>
-    pub fn get_result_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
+    pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
         &self.result_configuration
     }
     /// <p>Statistics about protected query execution.</p>
@@ -257,10 +220,7 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>Statistics about protected query execution.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatistics>) -> Self {
         self.statistics = input;
         self
     }
@@ -274,10 +234,7 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>The result of the protected query.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ProtectedQueryResult>) -> Self {
         self.result = input;
         self
     }
@@ -291,10 +248,7 @@ impl ProtectedQueryBuilder {
         self
     }
     /// <p>An error thrown by the protected query.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ProtectedQueryError>) -> Self {
         self.error = input;
         self
     }

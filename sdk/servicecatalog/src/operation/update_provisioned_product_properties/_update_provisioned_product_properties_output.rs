@@ -8,9 +8,7 @@ pub struct UpdateProvisionedProductPropertiesOutput {
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains the properties updated.</p>
     #[doc(hidden)]
-    pub provisioned_product_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    >,
+    pub provisioned_product_properties: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     /// <p>The identifier of the record.</p>
     #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
@@ -27,9 +25,7 @@ impl UpdateProvisionedProductPropertiesOutput {
     /// <p>A map that contains the properties updated.</p>
     pub fn provisioned_product_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>> {
         self.provisioned_product_properties.as_ref()
     }
     /// <p>The identifier of the record.</p>
@@ -48,39 +44,29 @@ impl ::aws_http::request_id::RequestId for UpdateProvisionedProductPropertiesOut
 }
 impl UpdateProvisionedProductPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductPropertiesOutput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput).
-    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder {
         crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisionedProductPropertiesOutput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesOutputBuilder {
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_product_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    >,
+    pub(crate) provisioned_product_properties: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     pub(crate) record_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecordStatus>,
     _request_id: Option<String>,
 }
 impl UpdateProvisionedProductPropertiesOutputBuilder {
     /// <p>The provisioned product identifier.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provisioned product identifier.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -93,11 +79,7 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
     ///
     /// <p>A map that contains the properties updated.</p>
-    pub fn provisioned_product_properties(
-        mut self,
-        k: crate::types::PropertyKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_properties(mut self, k: crate::types::PropertyKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.provisioned_product_properties = ::std::option::Option::Some(hash_map);
@@ -106,9 +88,7 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     /// <p>A map that contains the properties updated.</p>
     pub fn set_provisioned_product_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     ) -> Self {
         self.provisioned_product_properties = input;
         self
@@ -116,9 +96,7 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     /// <p>A map that contains the properties updated.</p>
     pub fn get_provisioned_product_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>> {
         &self.provisioned_product_properties
     }
     /// <p>The identifier of the record.</p>
@@ -159,16 +137,12 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProvisionedProductPropertiesOutput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput).
-    pub fn build(self) -> crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput{
+    pub fn build(self) -> crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput {
         crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput {
-            provisioned_product_id: self.provisioned_product_id
-            ,
-            provisioned_product_properties: self.provisioned_product_properties
-            ,
-            record_id: self.record_id
-            ,
-            status: self.status
-            ,
+            provisioned_product_id: self.provisioned_product_id,
+            provisioned_product_properties: self.provisioned_product_properties,
+            record_id: self.record_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }

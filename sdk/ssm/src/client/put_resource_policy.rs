@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`policy_id(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::policy_id): <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
     ///   - [`policy_hash(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::policy_hash): <p>ID of the current policy version.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

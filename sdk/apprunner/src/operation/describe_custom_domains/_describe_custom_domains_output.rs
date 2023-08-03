@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeCustomDomainsOutput {
 }
 impl DescribeCustomDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomDomainsOutput`](crate::operation::describe_custom_domains::DescribeCustomDomainsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsOutputBuilder {
         crate::operation::describe_custom_domains::builders::DescribeCustomDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomDomainsOutput`](crate::operation::describe_custom_domains::DescribeCustomDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainsOutputBuilder {
     pub(crate) dns_target: ::std::option::Option<::std::string::String>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
@@ -110,17 +106,12 @@ impl DescribeCustomDomainsOutputBuilder {
         self
     }
     /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
-    pub fn set_custom_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>>,
-    ) -> Self {
+    pub fn set_custom_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>>) -> Self {
         self.custom_domains = input;
         self
     }
     /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
-    pub fn get_custom_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>> {
+    pub fn get_custom_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>> {
         &self.custom_domains
     }
     /// Appends an item to `vpc_dns_targets`.
@@ -135,17 +126,12 @@ impl DescribeCustomDomainsOutputBuilder {
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn set_vpc_dns_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
-    ) -> Self {
+    pub fn set_vpc_dns_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>) -> Self {
         self.vpc_dns_targets = input;
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn get_vpc_dns_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
+    pub fn get_vpc_dns_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
         &self.vpc_dns_targets
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>

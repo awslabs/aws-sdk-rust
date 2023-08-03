@@ -26,7 +26,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder,
+    inner: crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder,
 }
 impl DescribeScalingPlanResourcesFluentBuilder {
     /// Creates a new `DescribeScalingPlanResources`.
@@ -37,7 +37,7 @@ impl DescribeScalingPlanResourcesFluentBuilder {
         }
     }
     /// Access the DescribeScalingPlanResources as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeScalingPlanResourcesFluentBuilder {
             crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeScalingPlanResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeScalingPlanResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeScalingPlanResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeScalingPlanResourcesFluentBuilder {
             crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_plan_name(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }

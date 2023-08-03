@@ -42,9 +42,7 @@ impl SearchContactsOutput {
 
 /// A builder for [`SearchContactsOutput`](crate::operation::search_contacts::SearchContactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchContactsOutputBuilder {
     pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl SearchContactsOutputBuilder {
         self
     }
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_contacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>,
-    ) -> Self {
+    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactData>>) -> Self {
         self.contacts = input;
         self
     }
     /// <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
-    pub fn get_contacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactData>> {
+    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactData>> {
         &self.contacts
     }
     /// <p>The token returned to indicate that there is more data available.</p>

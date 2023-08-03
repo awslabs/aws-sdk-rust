@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SpendLimitName {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SpendLimitName {
         match s {
             "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::TextMessageMonthlySpendLimit,
             "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::VoiceMessageMonthlySpendLimit,
-            other => {
-                SpendLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SpendLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,10 +75,7 @@ impl SpendLimitName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
-            "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
-        ]
+        &["TEXT_MESSAGE_MONTHLY_SPEND_LIMIT", "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"]
     }
 }
 impl ::std::convert::AsRef<str> for SpendLimitName {

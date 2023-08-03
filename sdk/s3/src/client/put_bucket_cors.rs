@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketCorsOutput`](crate::operation::put_bucket_cors::PutBucketCorsOutput)
     /// - On failure, responds with [`SdkError<PutBucketCorsError>`](crate::operation::put_bucket_cors::PutBucketCorsError)
-    pub fn put_bucket_cors(
-        &self,
-    ) -> crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder {
-        crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_cors(&self) -> crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder {
+        crate::operation::put_bucket_cors::builders::PutBucketCorsFluentBuilder::new(self.handle.clone())
     }
 }

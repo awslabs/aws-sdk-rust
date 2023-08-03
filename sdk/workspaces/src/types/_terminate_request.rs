@@ -23,9 +23,7 @@ impl TerminateRequest {
 
 /// A builder for [`TerminateRequest`](crate::types::TerminateRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateRequestBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }

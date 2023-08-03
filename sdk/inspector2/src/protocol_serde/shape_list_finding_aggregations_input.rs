@@ -9,10 +9,7 @@ pub fn ser_list_finding_aggregations_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -21,10 +18,7 @@ pub fn ser_list_finding_aggregations_input(
     if let Some(var_5) = &input.aggregation_request {
         #[allow(unused_mut)]
         let mut object_6 = object.key("aggregationRequest").start_object();
-        crate::protocol_serde::shape_aggregation_request::ser_aggregation_request(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_aggregation_request::ser_aggregation_request(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.aggregation_type {

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRecoveryPointOutput {
 }
 impl GetRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput).
-    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder {
         crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecoveryPointOutputBuilder {
     pub(crate) recovery_point: ::std::option::Option<crate::types::RecoveryPoint>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetRecoveryPointOutputBuilder {
         self
     }
     /// <p>The returned recovery point object.</p>
-    pub fn set_recovery_point(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoveryPoint>,
-    ) -> Self {
+    pub fn set_recovery_point(mut self, input: ::std::option::Option<crate::types::RecoveryPoint>) -> Self {
         self.recovery_point = input;
         self
     }

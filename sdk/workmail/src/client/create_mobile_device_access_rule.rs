@@ -19,7 +19,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMobileDeviceAccessRuleOutput`](crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput) with field(s):
     ///   - [`mobile_device_access_rule_id(Option<String>)`](crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput::mobile_device_access_rule_id): <p>The identifier for the newly created mobile device access rule.</p>
     /// - On failure, responds with [`SdkError<CreateMobileDeviceAccessRuleError>`](crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError)
-    pub fn create_mobile_device_access_rule(&self) -> crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleFluentBuilder{
+    pub fn create_mobile_device_access_rule(
+        &self,
+    ) -> crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleFluentBuilder {
         crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,13 +38,7 @@
 /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputDeviceIpScheme {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputDeviceIpScheme {
         match s {
             "DHCP" => InputDeviceIpScheme::Dhcp,
             "STATIC" => InputDeviceIpScheme::Static,
-            other => InputDeviceIpScheme::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputDeviceIpScheme::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

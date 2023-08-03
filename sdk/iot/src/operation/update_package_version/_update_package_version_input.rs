@@ -16,9 +16,7 @@ pub struct UpdatePackageVersionInput {
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::PackageVersionAction>,
@@ -42,11 +40,7 @@ impl UpdatePackageVersionInput {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -72,8 +66,7 @@ impl ::std::fmt::Debug for UpdatePackageVersionInput {
 }
 impl UpdatePackageVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder {
         crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder::default()
     }
 }
@@ -85,9 +78,7 @@ pub struct UpdatePackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) action: ::std::option::Option<crate::types::PackageVersionAction>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -141,11 +132,7 @@ impl UpdatePackageVersionInputBuilder {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -154,23 +141,14 @@ impl UpdatePackageVersionInputBuilder {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -179,10 +157,7 @@ impl UpdatePackageVersionInputBuilder {
         self
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::PackageVersionAction>) -> Self {
         self.action = input;
         self
     }
@@ -207,20 +182,16 @@ impl UpdatePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_package_version::UpdatePackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_package_version::UpdatePackageVersionInput {
-                package_name: self.package_name,
-                version_name: self.version_name,
-                description: self.description,
-                attributes: self.attributes,
-                action: self.action,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_package_version::UpdatePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_package_version::UpdatePackageVersionInput {
+            package_name: self.package_name,
+            version_name: self.version_name,
+            description: self.description,
+            attributes: self.attributes,
+            action: self.action,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePackageVersionInputBuilder {

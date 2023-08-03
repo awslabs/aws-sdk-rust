@@ -4,9 +4,7 @@ pub fn ser_update_environment_input(
     input: &crate::operation::update_environment::UpdateEnvironmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.apply_during_maintenance_window {
-        object
-            .key("applyDuringMaintenanceWindow")
-            .boolean(input.apply_during_maintenance_window);
+        object.key("applyDuringMaintenanceWindow").boolean(input.apply_during_maintenance_window);
     }
     if let Some(var_1) = &input.desired_capacity {
         object.key("desiredCapacity").number(
@@ -21,9 +19,7 @@ pub fn ser_update_environment_input(
         object.key("instanceType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_4.as_str());
+        object.key("preferredMaintenanceWindow").string(var_4.as_str());
     }
     Ok(())
 }

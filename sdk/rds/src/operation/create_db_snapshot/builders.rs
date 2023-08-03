@@ -10,10 +10,7 @@ impl CreateDbSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_snapshot::CreateDBSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_db_snapshot();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDBSnapshotFluentBuilder {
         }
     }
     /// Access the CreateDBSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_db_snapshot::builders::CreateDbSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_db_snapshot::builders::CreateDbSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDBSnapshotFluentBuilder {
             crate::operation::create_db_snapshot::CreateDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_snapshot::CreateDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDBSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_snapshot::CreateDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_snapshot::CreateDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDBSnapshotFluentBuilder {
             crate::operation::create_db_snapshot::CreateDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_snapshot::CreateDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +115,7 @@ impl CreateDBSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
@@ -147,10 +128,7 @@ impl CreateDBSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }
@@ -171,10 +149,7 @@ impl CreateDBSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -183,10 +158,7 @@ impl CreateDBSnapshotFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -208,10 +180,7 @@ impl CreateDBSnapshotFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`resource_list(Vec<String>)`](crate::operation::create_component::builders::CreateComponentFluentBuilder::resource_list) / [`set_resource_list(Option<Vec<String>>)`](crate::operation::create_component::builders::CreateComponentFluentBuilder::set_resource_list): <p>The list of resource ARNs that belong to the component.</p>
     /// - On success, responds with [`CreateComponentOutput`](crate::operation::create_component::CreateComponentOutput)
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::operation::create_component::CreateComponentError)
-    pub fn create_component(
-        &self,
-    ) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
-        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_component(&self) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
+        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(self.handle.clone())
     }
 }

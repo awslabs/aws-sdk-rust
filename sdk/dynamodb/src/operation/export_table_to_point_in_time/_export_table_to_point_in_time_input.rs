@@ -83,16 +83,14 @@ impl ExportTableToPointInTimeInput {
 }
 impl ExportTableToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
-    pub fn builder() -> crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder{
+    pub fn builder() -> crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder {
         crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTableToPointInTimeInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -125,10 +123,7 @@ impl ExportTableToPointInTimeInputBuilder {
         self
     }
     /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
-    pub fn set_export_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_export_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.export_time = input;
         self
     }
@@ -171,18 +166,12 @@ impl ExportTableToPointInTimeInputBuilder {
         &self.s3_bucket
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
@@ -218,10 +207,7 @@ impl ExportTableToPointInTimeInputBuilder {
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
-    pub fn set_s3_sse_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SseAlgorithm>,
-    ) -> Self {
+    pub fn set_s3_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.s3_sse_algorithm = input;
         self
     }
@@ -234,18 +220,12 @@ impl ExportTableToPointInTimeInputBuilder {
         &self.s3_sse_algorithm
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
-    pub fn s3_sse_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_sse_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_sse_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
-    pub fn set_s3_sse_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_sse_kms_key_id = input;
         self
     }
@@ -259,10 +239,7 @@ impl ExportTableToPointInTimeInputBuilder {
         self
     }
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    pub fn set_export_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFormat>,
-    ) -> Self {
+    pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::ExportFormat>) -> Self {
         self.export_format = input;
         self
     }
@@ -277,18 +254,16 @@ impl ExportTableToPointInTimeInputBuilder {
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput {
-                table_arn: self.table_arn,
-                export_time: self.export_time,
-                client_token: self.client_token,
-                s3_bucket: self.s3_bucket,
-                s3_bucket_owner: self.s3_bucket_owner,
-                s3_prefix: self.s3_prefix,
-                s3_sse_algorithm: self.s3_sse_algorithm,
-                s3_sse_kms_key_id: self.s3_sse_kms_key_id,
-                export_format: self.export_format,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput {
+            table_arn: self.table_arn,
+            export_time: self.export_time,
+            client_token: self.client_token,
+            s3_bucket: self.s3_bucket,
+            s3_bucket_owner: self.s3_bucket_owner,
+            s3_prefix: self.s3_prefix,
+            s3_sse_algorithm: self.s3_sse_algorithm,
+            s3_sse_kms_key_id: self.s3_sse_kms_key_id,
+            export_format: self.export_format,
+        })
     }
 }

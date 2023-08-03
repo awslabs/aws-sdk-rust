@@ -26,7 +26,7 @@ impl UpdateFileSystemAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFileSystemAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder,
+    inner: crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder,
 }
 impl UpdateFileSystemAssociationFluentBuilder {
     /// Creates a new `UpdateFileSystemAssociation`.
@@ -37,7 +37,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
         }
     }
     /// Access the UpdateFileSystemAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
             crate::operation::update_file_system_association::UpdateFileSystemAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system_association::UpdateFileSystemAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system_association::UpdateFileSystemAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system_association::UpdateFileSystemAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system_association::UpdateFileSystemAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system_association::UpdateFileSystemAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system_association::UpdateFileSystemAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateFileSystemAssociationFluentBuilder {
             crate::operation::update_file_system_association::UpdateFileSystemAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system_association::UpdateFileSystemAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system_association::UpdateFileSystemAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
-    pub fn file_system_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_association_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
-    pub fn set_file_system_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_association_arn(input);
         self
     }
@@ -169,18 +152,12 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self.inner.get_password()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }
@@ -194,10 +171,7 @@ impl UpdateFileSystemAssociationFluentBuilder {
         self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
     }

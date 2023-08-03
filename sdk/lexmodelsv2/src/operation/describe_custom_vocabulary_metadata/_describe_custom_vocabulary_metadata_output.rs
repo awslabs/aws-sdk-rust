@@ -37,9 +37,7 @@ impl DescribeCustomVocabularyMetadataOutput {
         self.locale_id.as_deref()
     }
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-    pub fn custom_vocabulary_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomVocabularyStatus> {
+    pub fn custom_vocabulary_status(&self) -> ::std::option::Option<&crate::types::CustomVocabularyStatus> {
         self.custom_vocabulary_status.as_ref()
     }
     /// <p>The date and time that the custom vocabulary was created.</p>
@@ -58,22 +56,19 @@ impl ::aws_http::request_id::RequestId for DescribeCustomVocabularyMetadataOutpu
 }
 impl DescribeCustomVocabularyMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataOutput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput).
-    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder {
         crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomVocabularyMetadataOutput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomVocabularyMetadataOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_vocabulary_status:
-        ::std::option::Option<crate::types::CustomVocabularyStatus>,
+    pub(crate) custom_vocabulary_status: ::std::option::Option<crate::types::CustomVocabularyStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -127,17 +122,12 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self
     }
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-    pub fn set_custom_vocabulary_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomVocabularyStatus>,
-    ) -> Self {
+    pub fn set_custom_vocabulary_status(mut self, input: ::std::option::Option<crate::types::CustomVocabularyStatus>) -> Self {
         self.custom_vocabulary_status = input;
         self
     }
     /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
-    pub fn get_custom_vocabulary_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomVocabularyStatus> {
+    pub fn get_custom_vocabulary_status(&self) -> &::std::option::Option<crate::types::CustomVocabularyStatus> {
         &self.custom_vocabulary_status
     }
     /// <p>The date and time that the custom vocabulary was created.</p>
@@ -146,10 +136,7 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self
     }
     /// <p>The date and time that the custom vocabulary was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -163,17 +150,12 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self
     }
     /// <p>The date and time that the custom vocabulary was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the custom vocabulary was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -186,23 +168,14 @@ impl DescribeCustomVocabularyMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataOutput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput {
         crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
-            custom_vocabulary_status: self.custom_vocabulary_status
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            custom_vocabulary_status: self.custom_vocabulary_status,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
             _request_id: self._request_id,
         }
     }

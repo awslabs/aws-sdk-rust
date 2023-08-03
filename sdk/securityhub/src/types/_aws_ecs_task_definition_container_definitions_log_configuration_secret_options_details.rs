@@ -25,16 +25,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_from: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
         &self.value_from
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails
-    {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
             name: self.name,
             value_from: self.value_from,

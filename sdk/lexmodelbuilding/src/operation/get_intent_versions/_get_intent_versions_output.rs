@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetIntentVersionsOutput {
 }
 impl GetIntentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetIntentVersionsOutput`](crate::operation::get_intent_versions::GetIntentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_intent_versions::builders::GetIntentVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_intent_versions::builders::GetIntentVersionsOutputBuilder {
         crate::operation::get_intent_versions::builders::GetIntentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntentVersionsOutput`](crate::operation::get_intent_versions::GetIntentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntentVersionsOutputBuilder {
     pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetIntentVersionsOutputBuilder {
         self
     }
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>) -> Self {
         self.intents = input;
         self
     }
     /// <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
-    pub fn get_intents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>> {
         &self.intents
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>

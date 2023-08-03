@@ -51,13 +51,7 @@
 /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StatusUpdateInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for StatusUpdateInterval {
             "SECONDS_540" => StatusUpdateInterval::Seconds540,
             "SECONDS_60" => StatusUpdateInterval::Seconds60,
             "SECONDS_600" => StatusUpdateInterval::Seconds600,
-            other => StatusUpdateInterval::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StatusUpdateInterval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

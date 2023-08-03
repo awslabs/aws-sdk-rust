@@ -12,8 +12,7 @@ pub struct ScheduleAction {
     pub schedule_action_settings: ::std::option::Option<crate::types::ScheduleActionSettings>,
     /// The time for the action to start in the channel.
     #[doc(hidden)]
-    pub schedule_action_start_settings:
-        ::std::option::Option<crate::types::ScheduleActionStartSettings>,
+    pub schedule_action_start_settings: ::std::option::Option<crate::types::ScheduleActionStartSettings>,
 }
 impl ScheduleAction {
     /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
@@ -21,15 +20,11 @@ impl ScheduleAction {
         self.action_name.as_deref()
     }
     /// Settings for this schedule action.
-    pub fn schedule_action_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleActionSettings> {
+    pub fn schedule_action_settings(&self) -> ::std::option::Option<&crate::types::ScheduleActionSettings> {
         self.schedule_action_settings.as_ref()
     }
     /// The time for the action to start in the channel.
-    pub fn schedule_action_start_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleActionStartSettings> {
+    pub fn schedule_action_start_settings(&self) -> ::std::option::Option<&crate::types::ScheduleActionStartSettings> {
         self.schedule_action_start_settings.as_ref()
     }
 }
@@ -42,15 +37,11 @@ impl ScheduleAction {
 
 /// A builder for [`ScheduleAction`](crate::types::ScheduleAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleActionBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_action_settings:
-        ::std::option::Option<crate::types::ScheduleActionSettings>,
-    pub(crate) schedule_action_start_settings:
-        ::std::option::Option<crate::types::ScheduleActionStartSettings>,
+    pub(crate) schedule_action_settings: ::std::option::Option<crate::types::ScheduleActionSettings>,
+    pub(crate) schedule_action_start_settings: ::std::option::Option<crate::types::ScheduleActionStartSettings>,
 }
 impl ScheduleActionBuilder {
     /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
@@ -73,39 +64,26 @@ impl ScheduleActionBuilder {
         self
     }
     /// Settings for this schedule action.
-    pub fn set_schedule_action_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleActionSettings>,
-    ) -> Self {
+    pub fn set_schedule_action_settings(mut self, input: ::std::option::Option<crate::types::ScheduleActionSettings>) -> Self {
         self.schedule_action_settings = input;
         self
     }
     /// Settings for this schedule action.
-    pub fn get_schedule_action_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleActionSettings> {
+    pub fn get_schedule_action_settings(&self) -> &::std::option::Option<crate::types::ScheduleActionSettings> {
         &self.schedule_action_settings
     }
     /// The time for the action to start in the channel.
-    pub fn schedule_action_start_settings(
-        mut self,
-        input: crate::types::ScheduleActionStartSettings,
-    ) -> Self {
+    pub fn schedule_action_start_settings(mut self, input: crate::types::ScheduleActionStartSettings) -> Self {
         self.schedule_action_start_settings = ::std::option::Option::Some(input);
         self
     }
     /// The time for the action to start in the channel.
-    pub fn set_schedule_action_start_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleActionStartSettings>,
-    ) -> Self {
+    pub fn set_schedule_action_start_settings(mut self, input: ::std::option::Option<crate::types::ScheduleActionStartSettings>) -> Self {
         self.schedule_action_start_settings = input;
         self
     }
     /// The time for the action to start in the channel.
-    pub fn get_schedule_action_start_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleActionStartSettings> {
+    pub fn get_schedule_action_start_settings(&self) -> &::std::option::Option<crate::types::ScheduleActionStartSettings> {
         &self.schedule_action_start_settings
     }
     /// Consumes the builder and constructs a [`ScheduleAction`](crate::types::ScheduleAction).

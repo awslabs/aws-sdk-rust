@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentVpcsOutput {
 }
 impl ListEnvironmentVpcsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentVpcsOutput`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder {
-        crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder {
+        crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentVpcsOutput`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentVpcsOutputBuilder {
-    pub(crate) environment_vpc_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
+    pub(crate) environment_vpc_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListEnvironmentVpcsOutputBuilder {
         self
     }
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-    pub fn set_environment_vpc_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
-    ) -> Self {
+    pub fn set_environment_vpc_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>) -> Self {
         self.environment_vpc_list = input;
         self
     }
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-    pub fn get_environment_vpc_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>> {
+    pub fn get_environment_vpc_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>> {
         &self.environment_vpc_list
     }
     /// <p>The token for the next page of results.</p>

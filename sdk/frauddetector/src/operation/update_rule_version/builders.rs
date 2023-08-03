@@ -10,10 +10,7 @@ impl UpdateRuleVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rule_version::UpdateRuleVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_version::UpdateRuleVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_version::UpdateRuleVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rule_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRuleVersionFluentBuilder {
         }
     }
     /// Access the UpdateRuleVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateRuleVersionFluentBuilder {
             crate::operation::update_rule_version::UpdateRuleVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_version::UpdateRuleVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_version::UpdateRuleVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateRuleVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateRuleVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_version::UpdateRuleVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_version::UpdateRuleVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_version::UpdateRuleVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateRuleVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_version::UpdateRuleVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_version::UpdateRuleVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_version::UpdateRuleVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateRuleVersionFluentBuilder {
             crate::operation::update_rule_version::UpdateRuleVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_version::UpdateRuleVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_version::UpdateRuleVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -188,10 +172,7 @@ impl UpdateRuleVersionFluentBuilder {
         self
     }
     /// <p>The outcomes.</p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_outcomes(input);
         self
     }
@@ -209,10 +190,7 @@ impl UpdateRuleVersionFluentBuilder {
         self
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

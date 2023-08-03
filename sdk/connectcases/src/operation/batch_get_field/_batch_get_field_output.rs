@@ -35,9 +35,7 @@ impl BatchGetFieldOutput {
 
 /// A builder for [`BatchGetFieldOutput`](crate::operation::batch_get_field::BatchGetFieldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFieldOutputBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>,
@@ -56,17 +54,12 @@ impl BatchGetFieldOutputBuilder {
         self
     }
     /// <p>A list of detailed field information. </p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>A list of detailed field information. </p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>> {
         &self.fields
     }
     /// Appends an item to `errors`.
@@ -81,10 +74,7 @@ impl BatchGetFieldOutputBuilder {
         self
     }
     /// <p>A list of field errors. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>) -> Self {
         self.errors = input;
         self
     }

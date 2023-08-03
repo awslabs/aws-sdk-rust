@@ -37,9 +37,7 @@ impl GetUsagePlansInput {
 
 /// A builder for [`GetUsagePlansInput`](crate::operation::get_usage_plans::GetUsagePlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlansInputBuilder {
     pub(crate) position: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl GetUsagePlansInputBuilder {
     /// Consumes the builder and constructs a [`GetUsagePlansInput`](crate::operation::get_usage_plans::GetUsagePlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_plans::GetUsagePlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_usage_plans::GetUsagePlansInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_plans::GetUsagePlansInput {
             position: self.position,
             key_id: self.key_id,

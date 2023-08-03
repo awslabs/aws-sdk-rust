@@ -33,10 +33,7 @@ pub fn ser_create_compilation_job_input(
     if let Some(var_10) = &input.stopping_condition {
         #[allow(unused_mut)]
         let mut object_11 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {

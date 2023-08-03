@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyManagedPrefixListOutput {
 }
 impl ModifyManagedPrefixListOutput {
     /// Creates a new builder-style object to manufacture [`ModifyManagedPrefixListOutput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListOutputBuilder {
         crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyManagedPrefixListOutput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListOutputBuilder {
     pub(crate) prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyManagedPrefixListOutputBuilder {
         self
     }
     /// <p>Information about the prefix list.</p>
-    pub fn set_prefix_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedPrefixList>,
-    ) -> Self {
+    pub fn set_prefix_list(mut self, input: ::std::option::Option<crate::types::ManagedPrefixList>) -> Self {
         self.prefix_list = input;
         self
     }
@@ -65,9 +58,7 @@ impl ModifyManagedPrefixListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyManagedPrefixListOutput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput {
+    pub fn build(self) -> crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput {
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput {
             prefix_list: self.prefix_list,
             _request_id: self._request_id,

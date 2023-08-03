@@ -15,34 +15,25 @@ impl DeleteNamedQueryInput {
 }
 impl DeleteNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
-    pub fn builder() -> crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder {
         crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNamedQueryInputBuilder {
     pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNamedQueryInputBuilder {
     /// <p>The unique ID of the query to delete.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query to delete.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.named_query_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_named_query::DeleteNamedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_named_query::DeleteNamedQueryInput {
-                named_query_id: self.named_query_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_named_query::DeleteNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_named_query::DeleteNamedQueryInput {
+            named_query_id: self.named_query_id,
+        })
     }
 }

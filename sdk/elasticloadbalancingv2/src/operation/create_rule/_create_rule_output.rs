@@ -28,9 +28,7 @@ impl CreateRuleOutput {
 
 /// A builder for [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>Information about the rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }

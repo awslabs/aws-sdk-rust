@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociatePhoneNumberWithUserOutput {
 }
 impl AssociatePhoneNumberWithUserOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePhoneNumberWithUserOutput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput).
-    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder{
+    pub fn builder() -> crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder {
         crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePhoneNumberWithUserOutput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePhoneNumberWithUserOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociatePhoneNumberWithUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumberWithUserOutput`](crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput
-    {
+    pub fn build(self) -> crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput {
         crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserOutput {
             _request_id: self._request_id,
         }

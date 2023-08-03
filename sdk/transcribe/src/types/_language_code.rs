@@ -75,13 +75,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -207,9 +201,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "vi-VN" => LanguageCode::ViVn,
             "zh-CN" => LanguageCode::ZhCn,
             "zh-TW" => LanguageCode::ZhTw,
-            other => {
-                LanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => LanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -269,11 +261,9 @@ impl LanguageCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-ZA", "ar-AE", "ar-SA", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB",
-            "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fa-IR",
-            "fr-CA", "fr-FR", "he-IL", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY",
-            "nl-NL", "pt-BR", "pt-PT", "ru-RU", "sv-SE", "ta-IN", "te-IN", "th-TH", "tr-TR",
-            "vi-VN", "zh-CN", "zh-TW",
+            "af-ZA", "ar-AE", "ar-SA", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA",
+            "es-ES", "es-US", "fa-IR", "fr-CA", "fr-FR", "he-IL", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nl-NL", "pt-BR", "pt-PT",
+            "ru-RU", "sv-SE", "ta-IN", "te-IN", "th-TH", "tr-TR", "vi-VN", "zh-CN", "zh-TW",
         ]
     }
 }

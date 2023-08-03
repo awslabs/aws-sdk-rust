@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`virtual_machines(Option<Vec<VirtualMachine>>)`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput::virtual_machines): <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListVirtualMachinesError>`](crate::operation::list_virtual_machines::ListVirtualMachinesError)
-    pub fn list_virtual_machines(
-        &self,
-    ) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder {
-        crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_virtual_machines(&self) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder {
+        crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl LambdaFunctionConfiguration {
 
 /// A builder for [`LambdaFunctionConfiguration`](crate::types::LambdaFunctionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl LambdaFunctionConfigurationBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
@@ -100,10 +92,7 @@ impl LambdaFunctionConfigurationBuilder {
         self
     }
     /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
@@ -117,17 +106,12 @@ impl LambdaFunctionConfigurationBuilder {
         self
     }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfigurationFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfigurationFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::NotificationConfigurationFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`LambdaFunctionConfiguration`](crate::types::LambdaFunctionConfiguration).

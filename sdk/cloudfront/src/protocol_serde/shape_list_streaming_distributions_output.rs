@@ -5,14 +5,15 @@ pub(crate) fn de_streaming_distribution_list_payload(
     ::std::option::Option<crate::types::StreamingDistributionList>,
     crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_streaming_distributions_output::de_streaming_distribution_list(body).map_err(crate::operation::list_streaming_distributions::ListStreamingDistributionsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_list_streaming_distributions_output::de_streaming_distribution_list(body)
+                .map_err(crate::operation::list_streaming_distributions::ListStreamingDistributionsError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_streaming_distribution_list(
-    inp: &[u8],
-) -> Result<crate::types::StreamingDistributionList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_streaming_distribution_list(inp: &[u8]) -> Result<crate::types::StreamingDistributionList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_streaming_distribution_list(
             start_el
         )));
     }
-    crate::protocol_serde::shape_streaming_distribution_list::de_streaming_distribution_list(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_streaming_distribution_list::de_streaming_distribution_list(&mut decoder)
 }

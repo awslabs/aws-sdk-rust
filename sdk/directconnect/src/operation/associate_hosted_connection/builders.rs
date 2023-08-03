@@ -28,7 +28,7 @@ impl AssociateHostedConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateHostedConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder,
+    inner: crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder,
 }
 impl AssociateHostedConnectionFluentBuilder {
     /// Creates a new `AssociateHostedConnection`.
@@ -39,7 +39,7 @@ impl AssociateHostedConnectionFluentBuilder {
         }
     }
     /// Access the AssociateHostedConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AssociateHostedConnectionFluentBuilder {
             crate::operation::associate_hosted_connection::AssociateHostedConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_hosted_connection::AssociateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_hosted_connection::AssociateHostedConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AssociateHostedConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AssociateHostedConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_hosted_connection::AssociateHostedConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_hosted_connection::AssociateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_hosted_connection::AssociateHostedConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AssociateHostedConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_hosted_connection::AssociateHostedConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_hosted_connection::AssociateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_hosted_connection::AssociateHostedConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl AssociateHostedConnectionFluentBuilder {
             crate::operation::associate_hosted_connection::AssociateHostedConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_hosted_connection::AssociateHostedConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_hosted_connection::AssociateHostedConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl AssociateHostedConnectionFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The ID of the interconnect or the LAG.</p>
-    pub fn parent_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_connection_id(input.into());
         self
     }
     /// <p>The ID of the interconnect or the LAG.</p>
-    pub fn set_parent_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_connection_id(input);
         self
     }

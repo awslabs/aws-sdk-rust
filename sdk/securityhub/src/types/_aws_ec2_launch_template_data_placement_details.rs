@@ -72,9 +72,7 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::types::AwsEc2LaunchTemplateDataPlacementDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     pub(crate) affinity: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         &self.affinity
     }
     /// <p> The Availability Zone for the instance. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Availability Zone for the instance. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -149,18 +141,12 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         &self.host_id
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    pub fn host_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
-    pub fn set_host_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_resource_group_arn = input;
         self
     }
@@ -183,18 +169,12 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         &self.partition_number
     }
     /// <p> Reserved for future use. </p>
-    pub fn spread_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spread_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spread_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Reserved for future use. </p>
-    pub fn set_spread_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spread_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spread_domain = input;
         self
     }

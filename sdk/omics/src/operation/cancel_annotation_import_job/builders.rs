@@ -26,7 +26,7 @@ impl CancelAnnotationImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelAnnotationImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobInputBuilder,
+    inner: crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobInputBuilder,
 }
 impl CancelAnnotationImportJobFluentBuilder {
     /// Creates a new `CancelAnnotationImportJob`.
@@ -37,7 +37,7 @@ impl CancelAnnotationImportJobFluentBuilder {
         }
     }
     /// Access the CancelAnnotationImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelAnnotationImportJobFluentBuilder {
             crate::operation::cancel_annotation_import_job::CancelAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelAnnotationImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelAnnotationImportJobFluentBuilder {
             crate::operation::cancel_annotation_import_job::CancelAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError>,
     > {
         self.customize_middleware().await
     }

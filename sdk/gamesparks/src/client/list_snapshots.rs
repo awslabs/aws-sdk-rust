@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`snapshots(Option<Vec<SnapshotSummary>>)`](crate::operation::list_snapshots::ListSnapshotsOutput::snapshots): <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_snapshots::ListSnapshotsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::operation::list_snapshots::ListSnapshotsError)
-    pub fn list_snapshots(
-        &self,
-    ) -> crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder {
-        crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_snapshots(&self) -> crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder {
+        crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

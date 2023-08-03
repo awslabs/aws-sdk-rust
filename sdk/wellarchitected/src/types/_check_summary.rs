@@ -37,8 +37,7 @@ pub struct CheckSummary {
     pub status: ::std::option::Option<crate::types::CheckStatus>,
     /// <p>Account summary associated to the check.</p>
     #[doc(hidden)]
-    pub account_summary:
-        ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
+    pub account_summary: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
 }
 impl CheckSummary {
     /// <p>Trusted Advisor check ID.</p>
@@ -83,9 +82,7 @@ impl CheckSummary {
         self.status.as_ref()
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn account_summary(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::CheckStatus, i32>> {
+    pub fn account_summary(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::CheckStatus, i32>> {
         self.account_summary.as_ref()
     }
 }
@@ -98,9 +95,7 @@ impl CheckSummary {
 
 /// A builder for [`CheckSummary`](crate::types::CheckSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -112,8 +107,7 @@ pub struct CheckSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CheckStatus>,
-    pub(crate) account_summary:
-        ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
+    pub(crate) account_summary: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
 }
 impl CheckSummaryBuilder {
     /// <p>Trusted Advisor check ID.</p>
@@ -150,10 +144,7 @@ impl CheckSummaryBuilder {
         self
     }
     /// <p>Provider of the check related to the best practice.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::CheckProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::CheckProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -181,10 +172,7 @@ impl CheckSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -277,17 +265,12 @@ impl CheckSummaryBuilder {
         self
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn set_account_summary(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>,
-    ) -> Self {
+    pub fn set_account_summary(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>>) -> Self {
         self.account_summary = input;
         self
     }
     /// <p>Account summary associated to the check.</p>
-    pub fn get_account_summary(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>> {
+    pub fn get_account_summary(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::CheckStatus, i32>> {
         &self.account_summary
     }
     /// Consumes the builder and constructs a [`CheckSummary`](crate::types::CheckSummary).

@@ -7,9 +7,7 @@ pub fn ser_update_license_configuration_input(
         object.key("LicenseConfigurationArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.license_configuration_status {
-        object
-            .key("LicenseConfigurationStatus")
-            .string(var_2.as_str());
+        object.key("LicenseConfigurationStatus").string(var_2.as_str());
     }
     if let Some(var_3) = &input.license_rules {
         let mut array_4 = object.key("LicenseRules").start_array();
@@ -41,10 +39,7 @@ pub fn ser_update_license_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_product_information::ser_product_information(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_product_information::ser_product_information(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

@@ -37,9 +37,7 @@ impl ListWirelessGatewaysFluentBuilder {
         }
     }
     /// Access the ListWirelessGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListWirelessGatewaysFluentBuilder {
             crate::operation::list_wireless_gateways::ListWirelessGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_gateways::ListWirelessGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_gateways::ListWirelessGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListWirelessGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListWirelessGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_gateways::ListWirelessGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_gateways::ListWirelessGatewaysError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListWirelessGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_gateways::ListWirelessGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_gateways::ListWirelessGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListWirelessGatewaysFluentBuilder {
             crate::operation::list_wireless_gateways::ListWirelessGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_gateways::ListWirelessGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_gateways::ListWirelessGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator {
-        crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator {
+        crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

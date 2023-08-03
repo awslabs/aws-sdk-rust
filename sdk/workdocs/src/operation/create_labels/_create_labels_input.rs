@@ -78,10 +78,7 @@ impl CreateLabelsInputBuilder {
         self
     }
     /// <p>List of labels to add to the resource.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -90,18 +87,12 @@ impl CreateLabelsInputBuilder {
         &self.labels
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -110,12 +101,7 @@ impl CreateLabelsInputBuilder {
         &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_labels::CreateLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_labels::CreateLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_labels::CreateLabelsInput {
             resource_id: self.resource_id,
             labels: self.labels,

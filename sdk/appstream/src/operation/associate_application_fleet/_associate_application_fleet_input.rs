@@ -22,16 +22,14 @@ impl AssociateApplicationFleetInput {
 }
 impl AssociateApplicationFleetInput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationFleetInput`](crate::operation::associate_application_fleet::AssociateApplicationFleetInput).
-    pub fn builder() -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder{
+    pub fn builder() -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder {
         crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApplicationFleetInput`](crate::operation::associate_application_fleet::AssociateApplicationFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl AssociateApplicationFleetInputBuilder {
         &self.fleet_name
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl AssociateApplicationFleetInputBuilder {
         crate::operation::associate_application_fleet::AssociateApplicationFleetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
-                fleet_name: self.fleet_name,
-                application_arn: self.application_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
+            fleet_name: self.fleet_name,
+            application_arn: self.application_arn,
+        })
     }
 }

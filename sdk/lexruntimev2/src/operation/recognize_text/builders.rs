@@ -10,10 +10,7 @@ impl RecognizeTextInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::recognize_text::RecognizeTextOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::recognize_text::RecognizeTextError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.recognize_text();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl RecognizeTextFluentBuilder {
         }
     }
     /// Access the RecognizeText as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::recognize_text::builders::RecognizeTextInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::recognize_text::builders::RecognizeTextInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl RecognizeTextFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -198,10 +190,7 @@ impl RecognizeTextFluentBuilder {
         self
     }
     /// <p>The current state of the dialog between the user and the bot.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
     }
@@ -227,20 +216,14 @@ impl RecognizeTextFluentBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_attributes(input);
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_attributes()
     }
 }

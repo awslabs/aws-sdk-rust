@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`revisions(Option<Vec<RevisionEntry>>)`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput::revisions): <p>The asset objects listed by the request.</p>
     /// - On failure, responds with [`SdkError<ListDataSetRevisionsError>`](crate::operation::list_data_set_revisions::ListDataSetRevisionsError)
-    pub fn list_data_set_revisions(
-        &self,
-    ) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder
-    {
-        crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_set_revisions(&self) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder {
+        crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

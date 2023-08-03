@@ -10,10 +10,7 @@ impl SendEmailInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_email::SendEmailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_email::SendEmailError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_email();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl SendEmailFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_email::SendEmail,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_email::SendEmail, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl SendEmailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,27 +99,18 @@ impl SendEmailFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_email::SendEmail,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_email::SendEmail, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn from_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_email_address(input.into());
         self
     }
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn set_from_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
@@ -142,10 +124,7 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>An object that contains the recipients of the email message.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -158,47 +137,31 @@ impl SendEmailFluentBuilder {
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
     ///
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reply_to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reply_to_addresses(input.into());
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reply_to_addresses(input);
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn get_reply_to_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reply_to_addresses()
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn feedback_forwarding_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_forwarding_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feedback_forwarding_email_address(input.into());
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn set_feedback_forwarding_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_forwarding_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_forwarding_email_address(input);
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn get_feedback_forwarding_email_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_feedback_forwarding_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feedback_forwarding_email_address()
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
@@ -225,32 +188,21 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn set_email_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.inner = self.inner.set_email_tags(input);
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn get_email_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         self.inner.get_email_tags()
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

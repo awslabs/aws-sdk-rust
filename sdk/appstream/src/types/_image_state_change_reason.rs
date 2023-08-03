@@ -30,9 +30,7 @@ impl ImageStateChangeReason {
 
 /// A builder for [`ImageStateChangeReason`](crate::types::ImageStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ImageStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ImageStateChangeReasonBuilder {
         self
     }
     /// <p>The state change reason code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ImageStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }

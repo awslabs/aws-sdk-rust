@@ -37,21 +37,17 @@ impl ::aws_http::request_id::RequestId for ListSessionMetricsOutput {
 }
 impl ListSessionMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListSessionMetricsOutput`](crate::operation::list_session_metrics::ListSessionMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_session_metrics::builders::ListSessionMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::list_session_metrics::builders::ListSessionMetricsOutputBuilder {
         crate::operation::list_session_metrics::builders::ListSessionMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSessionMetricsOutput`](crate::operation::list_session_metrics::ListSessionMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,17 +78,12 @@ impl ListSessionMetricsOutputBuilder {
         self
     }
     /// <p>The results for the session metrics.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>The results for the session metrics.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>> {
         &self.results
     }
     /// <p>If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>

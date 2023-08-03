@@ -30,9 +30,7 @@ impl Settings {
 
 /// A builder for [`Settings`](crate::types::Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SettingsBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl SettingsBuilder {
         self
     }
     /// <p>The subnets defined for the registered identity provider.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -62,18 +57,12 @@ impl SettingsBuilder {
         &self.subnets
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_id = input;
         self
     }

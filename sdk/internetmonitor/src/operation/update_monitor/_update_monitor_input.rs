@@ -26,8 +26,7 @@ pub struct UpdateMonitorInput {
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub internet_measurements_log_delivery:
-        ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
@@ -64,9 +63,7 @@ impl UpdateMonitorInput {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
+    pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
@@ -87,9 +84,7 @@ impl UpdateMonitorInput {
 
 /// A builder for [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) resources_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -97,8 +92,7 @@ pub struct UpdateMonitorInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MonitorConfigState>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_city_networks_to_monitor: ::std::option::Option<i32>,
-    pub(crate) internet_measurements_log_delivery:
-        ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub(crate) internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     pub(crate) traffic_percentage_to_monitor: ::std::option::Option<i32>,
     pub(crate) health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
@@ -125,10 +119,7 @@ impl UpdateMonitorInputBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn resources_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources_to_add.unwrap_or_default();
         v.push(input.into());
         self.resources_to_add = ::std::option::Option::Some(v);
@@ -138,10 +129,7 @@ impl UpdateMonitorInputBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn set_resources_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources_to_add = input;
         self
     }
@@ -149,9 +137,7 @@ impl UpdateMonitorInputBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn get_resources_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources_to_add
     }
     /// Appends an item to `resources_to_remove`.
@@ -159,27 +145,19 @@ impl UpdateMonitorInputBuilder {
     /// To override the contents of this collection use [`set_resources_to_remove`](Self::set_resources_to_remove).
     ///
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources_to_remove.unwrap_or_default();
         v.push(input.into());
         self.resources_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn set_resources_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources_to_remove = input;
         self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn get_resources_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources_to_remove
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
@@ -188,10 +166,7 @@ impl UpdateMonitorInputBuilder {
         self
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MonitorConfigState>) -> Self {
         self.status = input;
         self
     }
@@ -228,25 +203,17 @@ impl UpdateMonitorInputBuilder {
         &self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        mut self,
-        input: crate::types::InternetMeasurementsLogDelivery,
-    ) -> Self {
+    pub fn internet_measurements_log_delivery(mut self, input: crate::types::InternetMeasurementsLogDelivery) -> Self {
         self.internet_measurements_log_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn set_internet_measurements_log_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    ) -> Self {
+    pub fn set_internet_measurements_log_delivery(mut self, input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
         self.internet_measurements_log_delivery = input;
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn get_internet_measurements_log_delivery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+    pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
         &self.internet_measurements_log_delivery
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
@@ -269,26 +236,18 @@ impl UpdateMonitorInputBuilder {
         self
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    pub fn set_health_events_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventsConfig>,
-    ) -> Self {
+    pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
         self.health_events_config = input;
         self
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    pub fn get_health_events_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+    pub fn get_health_events_config(&self) -> &::std::option::Option<crate::types::HealthEventsConfig> {
         &self.health_events_config
     }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_monitor::UpdateMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
             monitor_name: self.monitor_name,
             resources_to_add: self.resources_to_add,

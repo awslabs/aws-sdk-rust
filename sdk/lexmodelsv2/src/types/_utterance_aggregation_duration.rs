@@ -6,14 +6,11 @@
 pub struct UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
     #[doc(hidden)]
-    pub relative_aggregation_duration:
-        ::std::option::Option<crate::types::RelativeAggregationDuration>,
+    pub relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
-    pub fn relative_aggregation_duration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelativeAggregationDuration> {
+    pub fn relative_aggregation_duration(&self) -> ::std::option::Option<&crate::types::RelativeAggregationDuration> {
         self.relative_aggregation_duration.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl UtteranceAggregationDuration {
 
 /// A builder for [`UtteranceAggregationDuration`](crate::types::UtteranceAggregationDuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceAggregationDurationBuilder {
-    pub(crate) relative_aggregation_duration:
-        ::std::option::Option<crate::types::RelativeAggregationDuration>,
+    pub(crate) relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDurationBuilder {
     /// <p>The desired time window for aggregating utterances. </p>
-    pub fn relative_aggregation_duration(
-        mut self,
-        input: crate::types::RelativeAggregationDuration,
-    ) -> Self {
+    pub fn relative_aggregation_duration(mut self, input: crate::types::RelativeAggregationDuration) -> Self {
         self.relative_aggregation_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired time window for aggregating utterances. </p>
-    pub fn set_relative_aggregation_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeAggregationDuration>,
-    ) -> Self {
+    pub fn set_relative_aggregation_duration(mut self, input: ::std::option::Option<crate::types::RelativeAggregationDuration>) -> Self {
         self.relative_aggregation_duration = input;
         self
     }
     /// <p>The desired time window for aggregating utterances. </p>
-    pub fn get_relative_aggregation_duration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelativeAggregationDuration> {
+    pub fn get_relative_aggregation_duration(&self) -> &::std::option::Option<crate::types::RelativeAggregationDuration> {
         &self.relative_aggregation_duration
     }
     /// Consumes the builder and constructs a [`UtteranceAggregationDuration`](crate::types::UtteranceAggregationDuration).

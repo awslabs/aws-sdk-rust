@@ -28,9 +28,7 @@ impl GetSegmentsOutput {
 
 /// A builder for [`GetSegmentsOutput`](crate::operation::get_segments::GetSegmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentsOutputBuilder {
     pub(crate) segments_response: ::std::option::Option<crate::types::SegmentsResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetSegmentsOutputBuilder {
         self
     }
     /// <p>Provides information about all the segments that are associated with an application.</p>
-    pub fn set_segments_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentsResponse>,
-    ) -> Self {
+    pub fn set_segments_response(mut self, input: ::std::option::Option<crate::types::SegmentsResponse>) -> Self {
         self.segments_response = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`settings(RecommendationSettings)`](crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder::settings) / [`set_settings(Option<RecommendationSettings>)`](crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder::set_settings): <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
     /// - On success, responds with [`StartRecommendationsOutput`](crate::operation::start_recommendations::StartRecommendationsOutput)
     /// - On failure, responds with [`SdkError<StartRecommendationsError>`](crate::operation::start_recommendations::StartRecommendationsError)
-    pub fn start_recommendations(
-        &self,
-    ) -> crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder {
-        crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_recommendations(&self) -> crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder {
+        crate::operation::start_recommendations::builders::StartRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

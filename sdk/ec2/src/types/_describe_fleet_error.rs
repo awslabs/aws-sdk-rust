@@ -6,8 +6,7 @@
 pub struct DescribeFleetError {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
     #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
@@ -20,9 +19,7 @@ pub struct DescribeFleetError {
 }
 impl DescribeFleetError {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn launch_template_and_overrides(&self) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
@@ -47,37 +44,26 @@ impl DescribeFleetError {
 
 /// A builder for [`DescribeFleetError`](crate::types::DescribeFleetError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetErrorBuilder {
-    pub(crate) launch_template_and_overrides:
-        ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub(crate) launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetErrorBuilder {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(
-        mut self,
-        input: crate::types::LaunchTemplateAndOverridesResponse,
-    ) -> Self {
+    pub fn launch_template_and_overrides(mut self, input: crate::types::LaunchTemplateAndOverridesResponse) -> Self {
         self.launch_template_and_overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn set_launch_template_and_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
-    ) -> Self {
+    pub fn set_launch_template_and_overrides(mut self, input: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>) -> Self {
         self.launch_template_and_overrides = input;
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn get_launch_template_and_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn get_launch_template_and_overrides(&self) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
         &self.launch_template_and_overrides
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
@@ -86,10 +72,7 @@ impl DescribeFleetErrorBuilder {
         self
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::InstanceLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -112,18 +95,12 @@ impl DescribeFleetErrorBuilder {
         &self.error_code
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

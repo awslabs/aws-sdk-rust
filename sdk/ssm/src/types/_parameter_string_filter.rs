@@ -47,9 +47,7 @@ impl ParameterStringFilter {
 
 /// A builder for [`ParameterStringFilter`](crate::types::ParameterStringFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterStringFilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) option: ::std::option::Option<::std::string::String>,
@@ -111,10 +109,7 @@ impl ParameterStringFilterBuilder {
         self
     }
     /// <p>The value you want to search for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

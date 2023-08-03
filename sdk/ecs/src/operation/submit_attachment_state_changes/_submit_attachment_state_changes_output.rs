@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for SubmitAttachmentStateChangesOutput {
 }
 impl SubmitAttachmentStateChangesOutput {
     /// Creates a new builder-style object to manufacture [`SubmitAttachmentStateChangesOutput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput).
-    pub fn builder() -> crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesOutputBuilder{
+    pub fn builder() -> crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesOutputBuilder {
         crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SubmitAttachmentStateChangesOutput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesOutputBuilder {
     pub(crate) acknowledgment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SubmitAttachmentStateChangesOutputBuilder {
     /// <p>Acknowledgement of the state change.</p>
-    pub fn acknowledgment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acknowledgment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acknowledgment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Acknowledgement of the state change.</p>
-    pub fn set_acknowledgment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acknowledgment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acknowledgment = input;
         self
     }
@@ -66,9 +58,7 @@ impl SubmitAttachmentStateChangesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SubmitAttachmentStateChangesOutput`](crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput {
+    pub fn build(self) -> crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput {
         crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput {
             acknowledgment: self.acknowledgment,
             _request_id: self._request_id,

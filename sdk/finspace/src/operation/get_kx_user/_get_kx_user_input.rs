@@ -29,9 +29,7 @@ impl GetKxUserInput {
 
 /// A builder for [`GetKxUserInput`](crate::operation::get_kx_user::GetKxUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKxUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetKxUserInputBuilder {
         &self.user_name
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -72,12 +64,7 @@ impl GetKxUserInputBuilder {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetKxUserInput`](crate::operation::get_kx_user::GetKxUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_kx_user::GetKxUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_user::GetKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_kx_user::GetKxUserInput {
             user_name: self.user_name,
             environment_id: self.environment_id,

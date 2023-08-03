@@ -66,7 +66,7 @@ impl ::std::fmt::Debug for CreateEnvironmentTemplateVersionInput {
 }
 impl CreateEnvironmentTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentTemplateVersionInput`](crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput).
-    pub fn builder() -> crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder {
         crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder::default()
     }
 }
@@ -98,18 +98,12 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.client_token
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -133,19 +127,13 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }
@@ -160,10 +148,7 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         self
     }
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::TemplateVersionSourceInput>) -> Self {
         self.source = input;
         self
     }
@@ -185,10 +170,7 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -198,22 +180,21 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateVersionInput`](crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput {
-                client_token: self.client_token
-                ,
-                template_name: self.template_name
-                ,
-                description: self.description
-                ,
-                major_version: self.major_version
-                ,
-                source: self.source
-                ,
-                tags: self.tags
-                ,
-            }
+                client_token: self.client_token,
+                template_name: self.template_name,
+                description: self.description,
+                major_version: self.major_version,
+                source: self.source,
+                tags: self.tags,
+            },
         )
     }
 }

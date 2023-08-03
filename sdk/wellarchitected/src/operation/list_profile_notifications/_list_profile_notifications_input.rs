@@ -29,18 +29,14 @@ impl ListProfileNotificationsInput {
 }
 impl ListProfileNotificationsInput {
     /// Creates a new builder-style object to manufacture [`ListProfileNotificationsInput`](crate::operation::list_profile_notifications::ListProfileNotificationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder {
         crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileNotificationsInput`](crate::operation::list_profile_notifications::ListProfileNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileNotificationsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListProfileNotificationsInputBuilder {
         crate::operation::list_profile_notifications::ListProfileNotificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_notifications::ListProfileNotificationsInput {
-                workload_id: self.workload_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_profile_notifications::ListProfileNotificationsInput {
+            workload_id: self.workload_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

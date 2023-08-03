@@ -53,9 +53,7 @@ impl ListKxClustersInput {
 
 /// A builder for [`ListKxClustersInput`](crate::operation::list_kx_clusters::ListKxClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxClustersInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,
@@ -64,18 +62,12 @@ pub struct ListKxClustersInputBuilder {
 }
 impl ListKxClustersInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -99,10 +91,7 @@ impl ListKxClustersInputBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// </ul>
-    pub fn set_cluster_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KxClusterType>,
-    ) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
         self.cluster_type = input;
         self
     }
@@ -146,10 +135,7 @@ impl ListKxClustersInputBuilder {
     /// Consumes the builder and constructs a [`ListKxClustersInput`](crate::operation::list_kx_clusters::ListKxClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kx_clusters::ListKxClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_kx_clusters::ListKxClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_kx_clusters::ListKxClustersInput {
             environment_id: self.environment_id,
             cluster_type: self.cluster_type,

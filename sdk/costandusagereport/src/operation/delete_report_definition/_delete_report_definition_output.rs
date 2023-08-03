@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
 }
 impl DeleteReportDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionOutput`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_report_definition::builders::DeleteReportDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_report_definition::builders::DeleteReportDefinitionOutputBuilder {
         crate::operation::delete_report_definition::builders::DeleteReportDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReportDefinitionOutput`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReportDefinitionOutputBuilder {
     pub(crate) response_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteReportDefinitionOutputBuilder {
     /// <p>Whether the deletion was successful or not.</p>
-    pub fn response_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the deletion was successful or not.</p>
-    pub fn set_response_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_message = input;
         self
     }

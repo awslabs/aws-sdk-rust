@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterComputeOutput`](crate::operation::register_compute::RegisterComputeOutput) with field(s):
     ///   - [`compute(Option<Compute>)`](crate::operation::register_compute::RegisterComputeOutput::compute): <p>The details of the compute resource you registered to the specified fleet.</p>
     /// - On failure, responds with [`SdkError<RegisterComputeError>`](crate::operation::register_compute::RegisterComputeError)
-    pub fn register_compute(
-        &self,
-    ) -> crate::operation::register_compute::builders::RegisterComputeFluentBuilder {
-        crate::operation::register_compute::builders::RegisterComputeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_compute(&self) -> crate::operation::register_compute::builders::RegisterComputeFluentBuilder {
+        crate::operation::register_compute::builders::RegisterComputeFluentBuilder::new(self.handle.clone())
     }
 }

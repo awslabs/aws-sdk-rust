@@ -57,18 +57,14 @@ impl GetCampaignDateRangeKpiInput {
 }
 impl GetCampaignDateRangeKpiInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignDateRangeKpiInput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder {
         crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignDateRangeKpiInput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignDateRangeKpiInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +76,12 @@ pub struct GetCampaignDateRangeKpiInputBuilder {
 }
 impl GetCampaignDateRangeKpiInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -119,10 +109,7 @@ impl GetCampaignDateRangeKpiInputBuilder {
         self
     }
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -178,10 +165,7 @@ impl GetCampaignDateRangeKpiInputBuilder {
         self
     }
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -196,16 +180,14 @@ impl GetCampaignDateRangeKpiInputBuilder {
         crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput {
-                application_id: self.application_id,
-                campaign_id: self.campaign_id,
-                end_time: self.end_time,
-                kpi_name: self.kpi_name,
-                next_token: self.next_token,
-                page_size: self.page_size,
-                start_time: self.start_time,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput {
+            application_id: self.application_id,
+            campaign_id: self.campaign_id,
+            end_time: self.end_time,
+            kpi_name: self.kpi_name,
+            next_token: self.next_token,
+            page_size: self.page_size,
+            start_time: self.start_time,
+        })
     }
 }

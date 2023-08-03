@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataSetRefreshPropertiesOutput 
 }
 impl DeleteDataSetRefreshPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSetRefreshPropertiesOutput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput).
-    pub fn builder() -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesOutputBuilder {
         crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataSetRefreshPropertiesOutput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataSetRefreshPropertiesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -82,10 +80,7 @@ impl DeleteDataSetRefreshPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataSetRefreshPropertiesOutput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput
-    {
+    pub fn build(self) -> crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput {
         crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

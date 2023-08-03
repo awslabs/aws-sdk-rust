@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetOrganizationAdminAccountOutput {
 }
 impl GetOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationAdminAccountOutput`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountOutputBuilder {
         crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOrganizationAdminAccountOutput`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountOutputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct GetOrganizationAdminAccountOutputBuilder {
 }
 impl GetOrganizationAdminAccountOutputBuilder {
     /// <p> The identifier for the administrator account. </p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the administrator account. </p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl GetOrganizationAdminAccountOutputBuilder {
         &self.admin_account_id
     }
     /// <p> The identifier for the organization. </p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the organization. </p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -94,9 +80,7 @@ impl GetOrganizationAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOrganizationAdminAccountOutput`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput {
+    pub fn build(self) -> crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput {
         crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput {
             admin_account_id: self.admin_account_id,
             organization_id: self.organization_id,

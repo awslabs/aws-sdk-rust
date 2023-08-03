@@ -27,34 +27,27 @@ impl ::std::fmt::Display for MarketplaceCommerceAnalyticsException {
     }
 }
 impl ::std::error::Error for MarketplaceCommerceAnalyticsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MarketplaceCommerceAnalyticsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MarketplaceCommerceAnalyticsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MarketplaceCommerceAnalyticsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MarketplaceCommerceAnalyticsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MarketplaceCommerceAnalyticsException {
     /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::types::error::MarketplaceCommerceAnalyticsException).
-    pub fn builder() -> crate::types::error::builders::MarketplaceCommerceAnalyticsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MarketplaceCommerceAnalyticsExceptionBuilder {
         crate::types::error::builders::MarketplaceCommerceAnalyticsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::types::error::MarketplaceCommerceAnalyticsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarketplaceCommerceAnalyticsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl MarketplaceCommerceAnalyticsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

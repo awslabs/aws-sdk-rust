@@ -55,7 +55,7 @@ impl ValidatePipelineDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder,
+    inner: crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder,
 }
 impl ValidatePipelineDefinitionFluentBuilder {
     /// Creates a new `ValidatePipelineDefinition`.
@@ -66,7 +66,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
         }
     }
     /// Access the ValidatePipelineDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +78,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -90,10 +88,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -102,9 +97,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError>,
     > {
         let op = self
             .inner
@@ -127,9 +120,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -143,9 +134,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -173,17 +162,12 @@ impl ValidatePipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub fn set_pipeline_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    ) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
         self.inner = self.inner.set_pipeline_objects(input);
         self
     }
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    pub fn get_pipeline_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         self.inner.get_pipeline_objects()
     }
     /// Appends an item to `parameterObjects`.
@@ -196,17 +180,12 @@ impl ValidatePipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn set_parameter_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    ) -> Self {
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
         self.inner = self.inner.set_parameter_objects(input);
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn get_parameter_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
         self.inner.get_parameter_objects()
     }
     /// Appends an item to `parameterValues`.
@@ -219,17 +198,12 @@ impl ValidatePipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.inner = self.inner.set_parameter_values(input);
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn get_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         self.inner.get_parameter_values()
     }
 }

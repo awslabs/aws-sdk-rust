@@ -23,9 +23,7 @@ impl BuildSuggestersInput {
 
 /// A builder for [`BuildSuggestersInput`](crate::operation::build_suggesters::BuildSuggestersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildSuggestersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl BuildSuggestersInputBuilder {
     /// Consumes the builder and constructs a [`BuildSuggestersInput`](crate::operation::build_suggesters::BuildSuggestersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::build_suggesters::BuildSuggestersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::build_suggesters::BuildSuggestersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::build_suggesters::BuildSuggestersInput {
             domain_name: self.domain_name,
         })

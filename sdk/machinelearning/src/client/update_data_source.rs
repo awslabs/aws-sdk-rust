@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::data_source_id): <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::operation::update_data_source::UpdateDataSourceError)
-    pub fn update_data_source(
-        &self,
-    ) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
-        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_source(&self) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
+        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteMemberOutput`](crate::operation::delete_member::DeleteMemberOutput)
     /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::operation::delete_member::DeleteMemberError)
-    pub fn delete_member(
-        &self,
-    ) -> crate::operation::delete_member::builders::DeleteMemberFluentBuilder {
-        crate::operation::delete_member::builders::DeleteMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_member(&self) -> crate::operation::delete_member::builders::DeleteMemberFluentBuilder {
+        crate::operation::delete_member::builders::DeleteMemberFluentBuilder::new(self.handle.clone())
     }
 }

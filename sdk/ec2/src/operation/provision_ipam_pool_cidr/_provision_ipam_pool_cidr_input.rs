@@ -14,8 +14,7 @@ pub struct ProvisionIpamPoolCidrInput {
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
     #[doc(hidden)]
-    pub cidr_authorization_context:
-        ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    pub cidr_authorization_context: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
     #[doc(hidden)]
     pub netmask_length: ::std::option::Option<i32>,
@@ -37,9 +36,7 @@ impl ProvisionIpamPoolCidrInput {
         self.cidr.as_deref()
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn cidr_authorization_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamCidrAuthorizationContext> {
+    pub fn cidr_authorization_context(&self) -> ::std::option::Option<&crate::types::IpamCidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
@@ -53,24 +50,19 @@ impl ProvisionIpamPoolCidrInput {
 }
 impl ProvisionIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
-    pub fn builder(
-    ) -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder
-    {
+    pub fn builder() -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder {
         crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionIpamPoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_authorization_context:
-        ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
+    pub(crate) cidr_authorization_context: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
     pub(crate) netmask_length: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -118,25 +110,17 @@ impl ProvisionIpamPoolCidrInputBuilder {
         &self.cidr
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn cidr_authorization_context(
-        mut self,
-        input: crate::types::IpamCidrAuthorizationContext,
-    ) -> Self {
+    pub fn cidr_authorization_context(mut self, input: crate::types::IpamCidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn set_cidr_authorization_context(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
-    ) -> Self {
+    pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>) -> Self {
         self.cidr_authorization_context = input;
         self
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
-    pub fn get_cidr_authorization_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
+    pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
         &self.cidr_authorization_context
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
@@ -170,19 +154,15 @@ impl ProvisionIpamPoolCidrInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                cidr: self.cidr,
-                cidr_authorization_context: self.cidr_authorization_context,
-                netmask_length: self.netmask_length,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            cidr: self.cidr,
+            cidr_authorization_context: self.cidr_authorization_context,
+            netmask_length: self.netmask_length,
+            client_token: self.client_token,
+        })
     }
 }

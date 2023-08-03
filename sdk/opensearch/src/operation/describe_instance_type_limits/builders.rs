@@ -26,7 +26,7 @@ impl DescribeInstanceTypeLimitsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsInputBuilder,
+    inner: crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsInputBuilder,
 }
 impl DescribeInstanceTypeLimitsFluentBuilder {
     /// Creates a new `DescribeInstanceTypeLimits`.
@@ -37,7 +37,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
         }
     }
     /// Access the DescribeInstanceTypeLimits as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
             crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
             crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,32 +129,21 @@ impl DescribeInstanceTypeLimitsFluentBuilder {
         self
     }
     /// <p>The OpenSearch Service instance type for which you need limit information.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
     /// <p>The OpenSearch Service instance type for which you need limit information.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         self.inner.get_instance_type()
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }

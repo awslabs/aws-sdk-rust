@@ -56,9 +56,7 @@ impl UpdateAnalysisOutput {
 
 /// A builder for [`UpdateAnalysisOutput`](crate::operation::update_analysis::UpdateAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnalysisOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl UpdateAnalysisOutputBuilder {
         self
     }
     /// <p>The update status of the last update that was made to the analysis.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.update_status = input;
         self
     }

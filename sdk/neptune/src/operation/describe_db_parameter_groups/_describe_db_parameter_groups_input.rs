@@ -48,16 +48,14 @@ impl DescribeDbParameterGroupsInput {
 }
 impl DescribeDbParameterGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsInput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsInput).
-    pub fn builder() -> crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder {
         crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbParameterGroupsInput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbParameterGroupsInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -70,10 +68,7 @@ impl DescribeDbParameterGroupsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -82,10 +77,7 @@ impl DescribeDbParameterGroupsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -109,10 +101,7 @@ impl DescribeDbParameterGroupsInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -161,13 +150,11 @@ impl DescribeDbParameterGroupsInputBuilder {
         crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsInput {
-                db_parameter_group_name: self.db_parameter_group_name,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsInput {
+            db_parameter_group_name: self.db_parameter_group_name,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

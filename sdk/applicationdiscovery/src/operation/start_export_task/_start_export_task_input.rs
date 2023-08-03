@@ -50,12 +50,9 @@ impl StartExportTaskInput {
 
 /// A builder for [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportTaskInputBuilder {
-    pub(crate) export_data_format:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>,
+    pub(crate) export_data_format: ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,17 +71,12 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
-    pub fn set_export_data_format(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>,
-    ) -> Self {
+    pub fn set_export_data_format(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>) -> Self {
         self.export_data_format = input;
         self
     }
     /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
-    pub fn get_export_data_format(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>> {
+    pub fn get_export_data_format(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>> {
         &self.export_data_format
     }
     /// Appends an item to `filters`.
@@ -99,17 +91,12 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         &self.filters
     }
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
@@ -118,10 +105,7 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -135,10 +119,7 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -152,10 +133,7 @@ impl StartExportTaskInputBuilder {
         self
     }
     /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ExportPreferences>) -> Self {
         self.preferences = input;
         self
     }
@@ -166,10 +144,7 @@ impl StartExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_export_task::StartExportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export_task::StartExportTaskInput {
             export_data_format: self.export_data_format,
             filters: self.filters,

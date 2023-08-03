@@ -28,9 +28,7 @@ impl CreateFlowOutput {
 
 /// A builder for [`CreateFlowOutput`](crate::operation::create_flow::CreateFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFlowOutputBuilder {
     pub(crate) flow: ::std::option::Option<crate::types::Flow>,
     _request_id: Option<String>,

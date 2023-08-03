@@ -10,9 +10,7 @@ pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub backup_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
     /// <p>The only valid value is <code>EC2</code>.</p>
     #[doc(hidden)]
@@ -24,11 +22,7 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
     /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
     /// </ul>
-    pub fn backup_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn backup_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_options.as_ref()
     }
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
@@ -39,21 +33,16 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
 }
 impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
         crate::types::builders::AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
-    pub(crate) backup_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
@@ -83,9 +72,7 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     /// </ul>
     pub fn set_backup_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.backup_options = input;
         self
@@ -95,28 +82,18 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
     /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
     /// </ul>
-    pub fn get_backup_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_options
     }
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
     /// <p>The only valid value is <code>EC2</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
     /// <p>The only valid value is <code>EC2</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

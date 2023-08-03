@@ -51,9 +51,7 @@ impl NetworkInsightsAccessScope {
 
 /// A builder for [`NetworkInsightsAccessScope`](crate::types::NetworkInsightsAccessScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInsightsAccessScopeBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_insights_access_scope_arn: ::std::option::Option<::std::string::String>,
@@ -63,47 +61,31 @@ pub struct NetworkInsightsAccessScopeBuilder {
 }
 impl NetworkInsightsAccessScopeBuilder {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_arn
     }
     /// <p>The creation date.</p>
@@ -112,10 +94,7 @@ impl NetworkInsightsAccessScopeBuilder {
         self
     }
     /// <p>The creation date.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -129,10 +108,7 @@ impl NetworkInsightsAccessScopeBuilder {
         self
     }
     /// <p>The last updated date.</p>
-    pub fn set_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_date = input;
         self
     }
@@ -152,10 +128,7 @@ impl NetworkInsightsAccessScopeBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

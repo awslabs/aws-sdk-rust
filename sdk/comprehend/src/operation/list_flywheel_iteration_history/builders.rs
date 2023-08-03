@@ -26,7 +26,7 @@ impl ListFlywheelIterationHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder,
+    inner: crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder,
 }
 impl ListFlywheelIterationHistoryFluentBuilder {
     /// Creates a new `ListFlywheelIterationHistory`.
@@ -37,7 +37,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         }
     }
     /// Access the ListFlywheelIterationHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
             crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListFlywheelIterationHistoryFluentBuilder {
             crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator {
         crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the flywheel.</p>
@@ -146,10 +135,7 @@ impl ListFlywheelIterationHistoryFluentBuilder {
         self
     }
     /// <p>Filter the flywheel iteration history based on creation time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelIterationFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::FlywheelIterationFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

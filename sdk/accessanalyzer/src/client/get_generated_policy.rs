@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`job_details(Option<JobDetails>)`](crate::operation::get_generated_policy::GetGeneratedPolicyOutput::job_details): <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     ///   - [`generated_policy_result(Option<GeneratedPolicyResult>)`](crate::operation::get_generated_policy::GetGeneratedPolicyOutput::generated_policy_result): <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     /// - On failure, responds with [`SdkError<GetGeneratedPolicyError>`](crate::operation::get_generated_policy::GetGeneratedPolicyError)
-    pub fn get_generated_policy(
-        &self,
-    ) -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyFluentBuilder {
-        crate::operation::get_generated_policy::builders::GetGeneratedPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_generated_policy(&self) -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyFluentBuilder {
+        crate::operation::get_generated_policy::builders::GetGeneratedPolicyFluentBuilder::new(self.handle.clone())
     }
 }

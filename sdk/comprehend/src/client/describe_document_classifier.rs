@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput) with field(s):
     ///   - [`document_classifier_properties(Option<DocumentClassifierProperties>)`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput::document_classifier_properties): <p>An object that contains the properties associated with a document classifier.</p>
     /// - On failure, responds with [`SdkError<DescribeDocumentClassifierError>`](crate::operation::describe_document_classifier::DescribeDocumentClassifierError)
-    pub fn describe_document_classifier(&self) -> crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierFluentBuilder{
+    pub fn describe_document_classifier(&self) -> crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierFluentBuilder {
         crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierFluentBuilder::new(self.handle.clone())
     }
 }

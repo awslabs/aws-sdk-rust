@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`log_stream_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder::set_log_stream_name): <p>The name of the log stream.</p>
     /// - On success, responds with [`DeleteLogStreamOutput`](crate::operation::delete_log_stream::DeleteLogStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteLogStreamError>`](crate::operation::delete_log_stream::DeleteLogStreamError)
-    pub fn delete_log_stream(
-        &self,
-    ) -> crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder {
-        crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_log_stream(&self) -> crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder {
+        crate::operation::delete_log_stream::builders::DeleteLogStreamFluentBuilder::new(self.handle.clone())
     }
 }

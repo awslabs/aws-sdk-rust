@@ -3,10 +3,7 @@
 pub fn de_too_many_tags_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyTagsExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyTagsExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyTagsExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

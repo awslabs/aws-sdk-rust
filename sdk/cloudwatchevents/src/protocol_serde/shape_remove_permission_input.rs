@@ -7,9 +7,7 @@ pub fn ser_remove_permission_input(
         object.key("StatementId").string(var_1.as_str());
     }
     if input.remove_all_permissions {
-        object
-            .key("RemoveAllPermissions")
-            .boolean(input.remove_all_permissions);
+        object.key("RemoveAllPermissions").boolean(input.remove_all_permissions);
     }
     if let Some(var_2) = &input.event_bus_name {
         object.key("EventBusName").string(var_2.as_str());

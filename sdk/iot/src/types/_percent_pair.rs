@@ -30,9 +30,7 @@ impl PercentPair {
 
 /// A builder for [`PercentPair`](crate::types::PercentPair).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PercentPairBuilder {
     pub(crate) percent: ::std::option::Option<f64>,
     pub(crate) value: ::std::option::Option<f64>,

@@ -24,9 +24,7 @@ impl TimeToLive {
 
 /// A builder for [`TimeToLive`](crate::types::TimeToLive).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeToLiveBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TimeToLiveStatus>,
 }
@@ -37,10 +35,7 @@ impl TimeToLiveBuilder {
         self
     }
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeToLiveStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TimeToLiveStatus>) -> Self {
         self.status = input;
         self
     }
@@ -50,8 +45,6 @@ impl TimeToLiveBuilder {
     }
     /// Consumes the builder and constructs a [`TimeToLive`](crate::types::TimeToLive).
     pub fn build(self) -> crate::types::TimeToLive {
-        crate::types::TimeToLive {
-            status: self.status,
-        }
+        crate::types::TimeToLive { status: self.status }
     }
 }

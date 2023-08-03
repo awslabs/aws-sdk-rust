@@ -39,13 +39,7 @@
 /// Hls Output Selection
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsOutputSelection {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for HlsOutputSelection {
             "MANIFESTS_AND_SEGMENTS" => HlsOutputSelection::ManifestsAndSegments,
             "SEGMENTS_ONLY" => HlsOutputSelection::SegmentsOnly,
             "VARIANT_MANIFESTS_AND_SEGMENTS" => HlsOutputSelection::VariantManifestsAndSegments,
-            other => HlsOutputSelection::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsOutputSelection::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl HlsOutputSelection {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "MANIFESTS_AND_SEGMENTS",
-            "SEGMENTS_ONLY",
-            "VARIANT_MANIFESTS_AND_SEGMENTS",
-        ]
+        &["MANIFESTS_AND_SEGMENTS", "SEGMENTS_ONLY", "VARIANT_MANIFESTS_AND_SEGMENTS"]
     }
 }
 impl ::std::convert::AsRef<str> for HlsOutputSelection {

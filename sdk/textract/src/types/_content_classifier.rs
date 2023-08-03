@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ContentClassifier {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for ContentClassifier {
     fn from(s: &str) -> Self {
         match s {
             "FreeOfAdultContent" => ContentClassifier::FreeOfAdultContent,
-            "FreeOfPersonallyIdentifiableInformation" => {
-                ContentClassifier::FreeOfPersonallyIdentifiableInformation
-            }
-            other => {
-                ContentClassifier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "FreeOfPersonallyIdentifiableInformation" => ContentClassifier::FreeOfPersonallyIdentifiableInformation,
+            other => ContentClassifier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,18 +69,13 @@ impl ContentClassifier {
     pub fn as_str(&self) -> &str {
         match self {
             ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
-            ContentClassifier::FreeOfPersonallyIdentifiableInformation => {
-                "FreeOfPersonallyIdentifiableInformation"
-            }
+            ContentClassifier::FreeOfPersonallyIdentifiableInformation => "FreeOfPersonallyIdentifiableInformation",
             ContentClassifier::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FreeOfAdultContent",
-            "FreeOfPersonallyIdentifiableInformation",
-        ]
+        &["FreeOfAdultContent", "FreeOfPersonallyIdentifiableInformation"]
     }
 }
 impl ::std::convert::AsRef<str> for ContentClassifier {

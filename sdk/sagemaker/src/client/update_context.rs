@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateContextOutput`](crate::operation::update_context::UpdateContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::operation::update_context::UpdateContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<UpdateContextError>`](crate::operation::update_context::UpdateContextError)
-    pub fn update_context(
-        &self,
-    ) -> crate::operation::update_context::builders::UpdateContextFluentBuilder {
-        crate::operation::update_context::builders::UpdateContextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_context(&self) -> crate::operation::update_context::builders::UpdateContextFluentBuilder {
+        crate::operation::update_context::builders::UpdateContextFluentBuilder::new(self.handle.clone())
     }
 }

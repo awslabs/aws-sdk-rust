@@ -30,9 +30,7 @@ impl GroupSummary {
 
 /// A builder for [`GroupSummary`](crate::types::GroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupSummaryBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) ordering_id: ::std::option::Option<i64>,

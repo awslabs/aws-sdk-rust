@@ -10,10 +10,7 @@ impl DescribeDbProxiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxies::DescribeDbProxiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxies::DescribeDBProxiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxies::DescribeDBProxiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_db_proxies();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDBProxiesFluentBuilder {
         }
     }
     /// Access the DescribeDBProxies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_proxies::builders::DescribeDbProxiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_proxies::builders::DescribeDbProxiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDBProxiesFluentBuilder {
             crate::operation::describe_db_proxies::DescribeDBProxies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxies::DescribeDBProxiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxies::DescribeDBProxiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDBProxiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDBProxiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxies::DescribeDbProxiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxies::DescribeDBProxiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxies::DescribeDBProxiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDBProxiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxies::DescribeDbProxiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxies::DescribeDBProxiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxies::DescribeDBProxiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribeDBProxiesFluentBuilder {
             crate::operation::describe_db_proxies::DescribeDBProxies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxies::DescribeDBProxiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxies::DescribeDBProxiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxies::paginator::DescribeDbProxiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_proxies::paginator::DescribeDbProxiesPaginator {
-        crate::operation::describe_db_proxies::paginator::DescribeDbProxiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_proxies::paginator::DescribeDbProxiesPaginator {
+        crate::operation::describe_db_proxies::paginator::DescribeDbProxiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned by your Amazon Web Services account ID.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned by your Amazon Web Services account ID.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -163,10 +136,7 @@ impl DescribeDBProxiesFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

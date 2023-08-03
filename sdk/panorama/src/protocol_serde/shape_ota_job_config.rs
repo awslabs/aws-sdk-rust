@@ -7,9 +7,7 @@ pub fn ser_ota_job_config(
         object.key("ImageVersion").string(var_1.as_str());
     }
     if input.allow_major_version_update {
-        object
-            .key("AllowMajorVersionUpdate")
-            .boolean(input.allow_major_version_update);
+        object.key("AllowMajorVersionUpdate").boolean(input.allow_major_version_update);
     }
     Ok(())
 }

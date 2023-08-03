@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput::next_token): <p>The point where pagination should resume when the response returns only partial results.</p>
     ///   - [`slack_workspace_configurations(Option<Vec<SlackWorkspaceConfiguration>>)`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput::slack_workspace_configurations): <p>The configurations for a Slack workspace.</p>
     /// - On failure, responds with [`SdkError<ListSlackWorkspaceConfigurationsError>`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError)
-    pub fn list_slack_workspace_configurations(&self) -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder{
+    pub fn list_slack_workspace_configurations(
+        &self,
+    ) -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder {
         crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

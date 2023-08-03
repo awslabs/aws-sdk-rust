@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`import_id(Option<String>)`](crate::operation::delete_import::DeleteImportOutput::import_id): <p>The unique identifier of the deleted import.</p>
     ///   - [`import_status(Option<ImportStatus>)`](crate::operation::delete_import::DeleteImportOutput::import_status): <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
     /// - On failure, responds with [`SdkError<DeleteImportError>`](crate::operation::delete_import::DeleteImportError)
-    pub fn delete_import(
-        &self,
-    ) -> crate::operation::delete_import::builders::DeleteImportFluentBuilder {
-        crate::operation::delete_import::builders::DeleteImportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_import(&self) -> crate::operation::delete_import::builders::DeleteImportFluentBuilder {
+        crate::operation::delete_import::builders::DeleteImportFluentBuilder::new(self.handle.clone())
     }
 }

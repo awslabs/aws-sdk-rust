@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`r#return(Option<bool>)`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     ///   - [`security_group_rules(Option<Vec<SecurityGroupRule>>)`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput::security_group_rules): <p>Information about the outbound (egress) security group rules that were added.</p>
     /// - On failure, responds with [`SdkError<AuthorizeSecurityGroupEgressError>`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError)
-    pub fn authorize_security_group_egress(&self) -> crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressFluentBuilder{
+    pub fn authorize_security_group_egress(
+        &self,
+    ) -> crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressFluentBuilder {
         crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressFluentBuilder::new(self.handle.clone())
     }
 }

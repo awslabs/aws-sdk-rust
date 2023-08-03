@@ -86,9 +86,7 @@ impl SnomedctEntity {
 
 /// A builder for [`SnomedctEntity`](crate::types::SnomedctEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnomedctEntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -99,8 +97,7 @@ pub struct SnomedctEntityBuilder {
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>>,
     pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
-    pub(crate) snomedct_concepts:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
+    pub(crate) snomedct_concepts: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctEntityBuilder {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
@@ -137,10 +134,7 @@ impl SnomedctEntityBuilder {
         self
     }
     /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctEntityCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::SnomedctEntityCategory>) -> Self {
         self.category = input;
         self
     }
@@ -154,10 +148,7 @@ impl SnomedctEntityBuilder {
         self
     }
     /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctEntityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SnomedctEntityType>) -> Self {
         self.r#type = input;
         self
     }
@@ -219,17 +210,12 @@ impl SnomedctEntityBuilder {
         self
     }
     /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>> {
         &self.attributes
     }
     /// Appends an item to `traits`.
@@ -244,17 +230,12 @@ impl SnomedctEntityBuilder {
         self
     }
     /// <p> Contextual information for the entity. </p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>) -> Self {
         self.traits = input;
         self
     }
     /// <p> Contextual information for the entity. </p>
-    pub fn get_traits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>> {
         &self.traits
     }
     /// Appends an item to `snomedct_concepts`.
@@ -269,17 +250,12 @@ impl SnomedctEntityBuilder {
         self
     }
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
-    pub fn set_snomedct_concepts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
-    ) -> Self {
+    pub fn set_snomedct_concepts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>) -> Self {
         self.snomedct_concepts = input;
         self
     }
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
-    pub fn get_snomedct_concepts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>> {
+    pub fn get_snomedct_concepts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>> {
         &self.snomedct_concepts
     }
     /// Consumes the builder and constructs a [`SnomedctEntity`](crate::types::SnomedctEntity).

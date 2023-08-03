@@ -10,10 +10,7 @@ impl DeleteBillingGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_billing_group::DeleteBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_billing_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteBillingGroupFluentBuilder {
         }
     }
     /// Access the DeleteBillingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteBillingGroupFluentBuilder {
             crate::operation::delete_billing_group::DeleteBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_billing_group::DeleteBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_billing_group::DeleteBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteBillingGroupFluentBuilder {
             crate::operation::delete_billing_group::DeleteBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_billing_group::DeleteBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_billing_group::DeleteBillingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }

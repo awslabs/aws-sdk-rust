@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`removed_labels(Option<Vec<String>>)`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput::removed_labels): <p>A list of all labels deleted from the parameter.</p>
     ///   - [`invalid_labels(Option<Vec<String>>)`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput::invalid_labels): <p>The labels that aren't attached to the given parameter version.</p>
     /// - On failure, responds with [`SdkError<UnlabelParameterVersionError>`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionError)
-    pub fn unlabel_parameter_version(
-        &self,
-    ) -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionFluentBuilder
-    {
+    pub fn unlabel_parameter_version(&self) -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionFluentBuilder {
         crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionFluentBuilder::new(self.handle.clone())
     }
 }

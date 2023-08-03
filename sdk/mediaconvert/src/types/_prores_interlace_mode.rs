@@ -41,13 +41,7 @@
 /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProresInterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ProresInterlaceMode {
             "FOLLOW_TOP_FIELD" => ProresInterlaceMode::FollowTopField,
             "PROGRESSIVE" => ProresInterlaceMode::Progressive,
             "TOP_FIELD" => ProresInterlaceMode::TopField,
-            other => ProresInterlaceMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProresInterlaceMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ProresInterlaceMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOTTOM_FIELD",
-            "FOLLOW_BOTTOM_FIELD",
-            "FOLLOW_TOP_FIELD",
-            "PROGRESSIVE",
-            "TOP_FIELD",
-        ]
+        &["BOTTOM_FIELD", "FOLLOW_BOTTOM_FIELD", "FOLLOW_TOP_FIELD", "PROGRESSIVE", "TOP_FIELD"]
     }
 }
 impl ::std::convert::AsRef<str> for ProresInterlaceMode {

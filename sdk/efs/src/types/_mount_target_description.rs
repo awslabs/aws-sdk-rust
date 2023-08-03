@@ -86,9 +86,7 @@ impl MountTargetDescription {
 
 /// A builder for [`MountTargetDescription`](crate::types::MountTargetDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MountTargetDescriptionBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl MountTargetDescriptionBuilder {
         &self.owner_id
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_target_id = input;
         self
     }
@@ -137,18 +129,12 @@ impl MountTargetDescriptionBuilder {
         &self.mount_target_id
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -176,10 +162,7 @@ impl MountTargetDescriptionBuilder {
         self
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn set_life_cycle_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleState>,
-    ) -> Self {
+    pub fn set_life_cycle_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
         self.life_cycle_state = input;
         self
     }
@@ -202,18 +185,12 @@ impl MountTargetDescriptionBuilder {
         &self.ip_address
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -222,18 +199,12 @@ impl MountTargetDescriptionBuilder {
         &self.network_interface_id
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -242,18 +213,12 @@ impl MountTargetDescriptionBuilder {
         &self.availability_zone_id
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn availability_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn set_availability_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_name = input;
         self
     }

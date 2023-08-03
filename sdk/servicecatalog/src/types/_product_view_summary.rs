@@ -93,9 +93,7 @@ impl ProductViewSummary {
 
 /// A builder for [`ProductViewSummary`](crate::types::ProductViewSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductViewSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -167,18 +165,12 @@ impl ProductViewSummaryBuilder {
         &self.owner
     }
     /// <p>Short description of the product.</p>
-    pub fn short_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Short description of the product.</p>
-    pub fn set_short_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_description = input;
         self
     }
@@ -229,18 +221,12 @@ impl ProductViewSummaryBuilder {
         &self.has_default_path
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn support_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn set_support_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_email = input;
         self
     }
@@ -249,18 +235,12 @@ impl ProductViewSummaryBuilder {
         &self.support_email
     }
     /// <p>The description of the support for this Product.</p>
-    pub fn support_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the support for this Product.</p>
-    pub fn set_support_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_description = input;
         self
     }

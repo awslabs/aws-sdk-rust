@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`channel_name(impl ::std::convert::Into<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`StopChannelOutput`](crate::operation::stop_channel::StopChannelOutput)
     /// - On failure, responds with [`SdkError<StopChannelError>`](crate::operation::stop_channel::StopChannelError)
-    pub fn stop_channel(
-        &self,
-    ) -> crate::operation::stop_channel::builders::StopChannelFluentBuilder {
+    pub fn stop_channel(&self) -> crate::operation::stop_channel::builders::StopChannelFluentBuilder {
         crate::operation::stop_channel::builders::StopChannelFluentBuilder::new(self.handle.clone())
     }
 }

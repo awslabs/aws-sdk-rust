@@ -12,37 +12,25 @@ pub fn ser_data_label_type(
     if let Some(var_3) = &input.data_path_label_type {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DataPathLabelType").start_object();
-        crate::protocol_serde::shape_data_path_label_type::ser_data_path_label_type(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_data_path_label_type::ser_data_path_label_type(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.range_ends_label_type {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RangeEndsLabelType").start_object();
-        crate::protocol_serde::shape_range_ends_label_type::ser_range_ends_label_type(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_range_ends_label_type::ser_range_ends_label_type(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.minimum_label_type {
         #[allow(unused_mut)]
         let mut object_8 = object.key("MinimumLabelType").start_object();
-        crate::protocol_serde::shape_minimum_label_type::ser_minimum_label_type(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_minimum_label_type::ser_minimum_label_type(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.maximum_label_type {
         #[allow(unused_mut)]
         let mut object_10 = object.key("MaximumLabelType").start_object();
-        crate::protocol_serde::shape_maximum_label_type::ser_maximum_label_type(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_maximum_label_type::ser_maximum_label_type(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())
@@ -50,17 +38,9 @@ pub fn ser_data_label_type(
 
 pub(crate) fn de_data_label_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DataLabelType>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DataLabelType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,51 +50,38 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldLabelType" => {
-                                builder = builder.set_field_label_type(
-                                    crate::protocol_serde::shape_field_label_type::de_field_label_type(tokens)?
-                                );
-                            }
-                            "DataPathLabelType" => {
-                                builder = builder.set_data_path_label_type(
-                                    crate::protocol_serde::shape_data_path_label_type::de_data_path_label_type(tokens)?
-                                );
-                            }
-                            "RangeEndsLabelType" => {
-                                builder = builder.set_range_ends_label_type(
-                                    crate::protocol_serde::shape_range_ends_label_type::de_range_ends_label_type(tokens)?
-                                );
-                            }
-                            "MinimumLabelType" => {
-                                builder = builder.set_minimum_label_type(
-                                    crate::protocol_serde::shape_minimum_label_type::de_minimum_label_type(tokens)?
-                                );
-                            }
-                            "MaximumLabelType" => {
-                                builder = builder.set_maximum_label_type(
-                                    crate::protocol_serde::shape_maximum_label_type::de_maximum_label_type(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldLabelType" => {
+                            builder = builder.set_field_label_type(crate::protocol_serde::shape_field_label_type::de_field_label_type(tokens)?);
                         }
-                    }
+                        "DataPathLabelType" => {
+                            builder =
+                                builder.set_data_path_label_type(crate::protocol_serde::shape_data_path_label_type::de_data_path_label_type(tokens)?);
+                        }
+                        "RangeEndsLabelType" => {
+                            builder = builder
+                                .set_range_ends_label_type(crate::protocol_serde::shape_range_ends_label_type::de_range_ends_label_type(tokens)?);
+                        }
+                        "MinimumLabelType" => {
+                            builder = builder.set_minimum_label_type(crate::protocol_serde::shape_minimum_label_type::de_minimum_label_type(tokens)?);
+                        }
+                        "MaximumLabelType" => {
+                            builder = builder.set_maximum_label_type(crate::protocol_serde::shape_maximum_label_type::de_maximum_label_type(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

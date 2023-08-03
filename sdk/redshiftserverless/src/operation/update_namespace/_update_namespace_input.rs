@@ -89,18 +89,12 @@ pub struct UpdateNamespaceInputBuilder {
 }
 impl UpdateNamespaceInputBuilder {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -109,18 +103,12 @@ impl UpdateNamespaceInputBuilder {
         &self.namespace_name
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    pub fn admin_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    pub fn set_admin_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
@@ -129,18 +117,12 @@ impl UpdateNamespaceInputBuilder {
         &self.admin_user_password
     }
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_username = input;
         self
     }
@@ -163,18 +145,12 @@ impl UpdateNamespaceInputBuilder {
         &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
-    pub fn default_iam_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
-    pub fn set_default_iam_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_iam_role_arn = input;
         self
     }
@@ -194,10 +170,7 @@ impl UpdateNamespaceInputBuilder {
         self
     }
     /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.iam_roles = input;
         self
     }
@@ -217,26 +190,18 @@ impl UpdateNamespaceInputBuilder {
         self
     }
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>) -> Self {
         self.log_exports = input;
         self
     }
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn get_log_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
         &self.log_exports
     }
     /// Consumes the builder and constructs a [`UpdateNamespaceInput`](crate::operation::update_namespace::UpdateNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_namespace::UpdateNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_namespace::UpdateNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_namespace::UpdateNamespaceInput {
             namespace_name: self.namespace_name,
             admin_user_password: self.admin_user_password,

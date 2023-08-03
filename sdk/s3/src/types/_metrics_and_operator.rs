@@ -37,9 +37,7 @@ impl MetricsAndOperator {
 
 /// A builder for [`MetricsAndOperator`](crate::types::MetricsAndOperator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsAndOperatorBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -72,10 +70,7 @@ impl MetricsAndOperatorBuilder {
         self
     }
     /// <p>The list of tags used when evaluating an AND predicate.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -84,18 +79,12 @@ impl MetricsAndOperatorBuilder {
         &self.tags
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }

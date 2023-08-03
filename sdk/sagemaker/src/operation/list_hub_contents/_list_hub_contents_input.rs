@@ -85,9 +85,7 @@ impl ListHubContentsInput {
 
 /// A builder for [`ListHubContentsInput`](crate::operation::list_hub_contents::ListHubContentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHubContentsInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_type: ::std::option::Option<crate::types::HubContentType>,
@@ -121,10 +119,7 @@ impl ListHubContentsInputBuilder {
         self
     }
     /// <p>The type of hub content to list.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.hub_content_type = input;
         self
     }
@@ -133,18 +128,12 @@ impl ListHubContentsInputBuilder {
         &self.hub_content_type
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -153,18 +142,12 @@ impl ListHubContentsInputBuilder {
         &self.name_contains
     }
     /// <p>The upper bound of the hub content schema verion.</p>
-    pub fn max_schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upper bound of the hub content schema verion.</p>
-    pub fn set_max_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_schema_version = input;
         self
     }
@@ -178,10 +161,7 @@ impl ListHubContentsInputBuilder {
         self
     }
     /// <p>Only list hub content that was created before the time specified.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -195,10 +175,7 @@ impl ListHubContentsInputBuilder {
         self
     }
     /// <p>Only list hub content that was created after the time specified.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -212,10 +189,7 @@ impl ListHubContentsInputBuilder {
         self
     }
     /// <p>Sort hub content versions by either name or creation time.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HubContentSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -268,10 +242,7 @@ impl ListHubContentsInputBuilder {
     /// Consumes the builder and constructs a [`ListHubContentsInput`](crate::operation::list_hub_contents::ListHubContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hub_contents::ListHubContentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_hub_contents::ListHubContentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hub_contents::ListHubContentsInput {
             hub_name: self.hub_name,
             hub_content_type: self.hub_content_type,

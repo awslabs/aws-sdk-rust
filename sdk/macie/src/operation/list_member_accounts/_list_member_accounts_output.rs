@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
         crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMemberAccountsOutputBuilder {
     pub(crate) member_accounts: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListMemberAccountsOutputBuilder {
         self
     }
     /// <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
-    pub fn set_member_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>>,
-    ) -> Self {
+    pub fn set_member_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>>) -> Self {
         self.member_accounts = input;
         self
     }
     /// <p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>
-    pub fn get_member_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>> {
+    pub fn get_member_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>> {
         &self.member_accounts
     }
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>

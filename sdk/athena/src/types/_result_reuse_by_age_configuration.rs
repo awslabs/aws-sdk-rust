@@ -30,9 +30,7 @@ impl ResultReuseByAgeConfiguration {
 
 /// A builder for [`ResultReuseByAgeConfiguration`](crate::types::ResultReuseByAgeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultReuseByAgeConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) max_age_in_minutes: ::std::option::Option<i32>,

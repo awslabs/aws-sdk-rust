@@ -50,17 +50,14 @@ impl CreateStreamingUrlInput {
 }
 impl CreateStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
-    pub fn builder(
-    ) -> crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
+    pub fn builder() -> crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
         crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingUrlInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
@@ -113,18 +110,12 @@ impl CreateStreamingUrlInputBuilder {
         &self.user_id
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -147,18 +138,12 @@ impl CreateStreamingUrlInputBuilder {
         &self.validity
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn session_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_session_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_context = input;
         self
     }
@@ -169,19 +154,14 @@ impl CreateStreamingUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_streaming_url::CreateStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_streaming_url::CreateStreamingUrlInput {
-                stack_name: self.stack_name,
-                fleet_name: self.fleet_name,
-                user_id: self.user_id,
-                application_id: self.application_id,
-                validity: self.validity,
-                session_context: self.session_context,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_streaming_url::CreateStreamingUrlInput {
+            stack_name: self.stack_name,
+            fleet_name: self.fleet_name,
+            user_id: self.user_id,
+            application_id: self.application_id,
+            validity: self.validity,
+            session_context: self.session_context,
+        })
     }
 }

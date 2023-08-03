@@ -85,9 +85,7 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<crate::types::OperationType>,
@@ -128,10 +126,7 @@ impl RecordBuilder {
     /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
     /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
     /// </ul>
-    pub fn set_event_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationType>,
-    ) -> Self {
+    pub fn set_event_name(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.event_name = input;
         self
     }
@@ -146,19 +141,13 @@ impl RecordBuilder {
     }
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
-    pub fn event_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
-    pub fn set_event_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_version = input;
         self
     }
@@ -201,10 +190,7 @@ impl RecordBuilder {
         self
     }
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
-    pub fn set_dynamodb(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamRecord>,
-    ) -> Self {
+    pub fn set_dynamodb(mut self, input: ::std::option::Option<crate::types::StreamRecord>) -> Self {
         self.dynamodb = input;
         self
     }
@@ -226,10 +212,7 @@ impl RecordBuilder {
     /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
     /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
     /// </ul>
-    pub fn set_user_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.user_identity = input;
         self
     }

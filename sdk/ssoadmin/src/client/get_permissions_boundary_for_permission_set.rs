@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput) with field(s):
     ///   - [`permissions_boundary(Option<PermissionsBoundary>)`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput::permissions_boundary): <p>The permissions boundary attached to the specified permission set.</p>
     /// - On failure, responds with [`SdkError<GetPermissionsBoundaryForPermissionSetError>`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError)
-    pub fn get_permissions_boundary_for_permission_set(&self) -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetFluentBuilder{
-        crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn get_permissions_boundary_for_permission_set(
+        &self,
+    ) -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetFluentBuilder {
+        crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

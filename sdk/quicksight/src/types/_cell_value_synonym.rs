@@ -30,9 +30,7 @@ impl CellValueSynonym {
 
 /// A builder for [`CellValueSynonym`](crate::types::CellValueSynonym).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CellValueSynonymBuilder {
     pub(crate) cell_value: ::std::option::Option<::std::string::String>,
     pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl CellValueSynonymBuilder {
         self
     }
     /// <p>Other names or aliases for the cell value.</p>
-    pub fn set_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.synonyms = input;
         self
     }

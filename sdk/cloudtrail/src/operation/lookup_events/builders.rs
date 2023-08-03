@@ -10,10 +10,7 @@ impl LookupEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::lookup_events::LookupEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_events::LookupEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.lookup_events();
         fluent_builder.inner = self;
@@ -64,10 +61,7 @@ impl LookupEventsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lookup_events::LookupEvents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lookup_events::LookupEvents, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>,
     > {
         let handle = self.handle.clone();
@@ -78,10 +72,7 @@ impl LookupEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -123,10 +114,7 @@ impl LookupEventsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lookup_events::LookupEvents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lookup_events::LookupEvents, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lookup_events::LookupEventsError>,
     > {
         self.customize_middleware().await
@@ -134,13 +122,8 @@ impl LookupEventsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::lookup_events::paginator::LookupEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::lookup_events::paginator::LookupEventsPaginator {
-        crate::operation::lookup_events::paginator::LookupEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::lookup_events::paginator::LookupEventsPaginator {
+        crate::operation::lookup_events::paginator::LookupEventsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `LookupAttributes`.
     ///
@@ -152,17 +135,12 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn set_lookup_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
-    ) -> Self {
+    pub fn set_lookup_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>) -> Self {
         self.inner = self.inner.set_lookup_attributes(input);
         self
     }
     /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-    pub fn get_lookup_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
+    pub fn get_lookup_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>> {
         self.inner.get_lookup_attributes()
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
@@ -171,10 +149,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -188,10 +163,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -205,10 +177,7 @@ impl LookupEventsFluentBuilder {
         self
     }
     /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-    pub fn set_event_category(
-        mut self,
-        input: ::std::option::Option<crate::types::EventCategory>,
-    ) -> Self {
+    pub fn set_event_category(mut self, input: ::std::option::Option<crate::types::EventCategory>) -> Self {
         self.inner = self.inner.set_event_category(input);
         self
     }

@@ -30,13 +30,10 @@ impl DocumentReviews {
 
 /// A builder for [`DocumentReviews`](crate::types::DocumentReviews).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentReviewsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::DocumentReviewAction>,
-    pub(crate) comment:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
+    pub(crate) comment: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
 }
 impl DocumentReviewsBuilder {
     /// <p>The action to take on a document approval review request.</p>
@@ -45,10 +42,7 @@ impl DocumentReviewsBuilder {
         self
     }
     /// <p>The action to take on a document approval review request.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReviewAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::DocumentReviewAction>) -> Self {
         self.action = input;
         self
     }
@@ -68,17 +62,12 @@ impl DocumentReviewsBuilder {
         self
     }
     /// <p>A comment entered by a user in your organization about the document review request.</p>
-    pub fn set_comment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
-    ) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>) -> Self {
         self.comment = input;
         self
     }
     /// <p>A comment entered by a user in your organization about the document review request.</p>
-    pub fn get_comment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>> {
+    pub fn get_comment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>> {
         &self.comment
     }
     /// Consumes the builder and constructs a [`DocumentReviews`](crate::types::DocumentReviews).

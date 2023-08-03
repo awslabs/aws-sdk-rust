@@ -37,9 +37,7 @@ impl LaunchTemplateCpuOptions {
 
 /// A builder for [`LaunchTemplateCpuOptions`](crate::types::LaunchTemplateCpuOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateCpuOptionsBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl LaunchTemplateCpuOptionsBuilder {
         self
     }
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
-    pub fn set_amd_sev_snp(
-        mut self,
-        input: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
-    ) -> Self {
+    pub fn set_amd_sev_snp(mut self, input: ::std::option::Option<crate::types::AmdSevSnpSpecification>) -> Self {
         self.amd_sev_snp = input;
         self
     }

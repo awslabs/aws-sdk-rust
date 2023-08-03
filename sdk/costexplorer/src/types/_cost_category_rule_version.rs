@@ -37,13 +37,7 @@
 /// <p>The rule schema version in this particular Cost Category.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CostCategoryRuleVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for CostCategoryRuleVersion {
     fn from(s: &str) -> Self {
         match s {
             "CostCategoryExpression.v1" => CostCategoryRuleVersion::CostCategoryExpressionV1,
-            other => CostCategoryRuleVersion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CostCategoryRuleVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

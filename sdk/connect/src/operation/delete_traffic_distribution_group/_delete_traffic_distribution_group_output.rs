@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTrafficDistributionGroupOutput 
 }
 impl DeleteTrafficDistributionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficDistributionGroupOutput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput).
-    pub fn builder() -> crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupOutputBuilder {
         crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficDistributionGroupOutput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficDistributionGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteTrafficDistributionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficDistributionGroupOutput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput
-    {
+    pub fn build(self) -> crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput {
         crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput {
             _request_id: self._request_id,
         }

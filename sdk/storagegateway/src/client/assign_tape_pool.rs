@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssignTapePoolOutput`](crate::operation::assign_tape_pool::AssignTapePoolOutput) with field(s):
     ///   - [`tape_arn(Option<String>)`](crate::operation::assign_tape_pool::AssignTapePoolOutput::tape_arn): <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape pool.</p>
     /// - On failure, responds with [`SdkError<AssignTapePoolError>`](crate::operation::assign_tape_pool::AssignTapePoolError)
-    pub fn assign_tape_pool(
-        &self,
-    ) -> crate::operation::assign_tape_pool::builders::AssignTapePoolFluentBuilder {
-        crate::operation::assign_tape_pool::builders::AssignTapePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn assign_tape_pool(&self) -> crate::operation::assign_tape_pool::builders::AssignTapePoolFluentBuilder {
+        crate::operation::assign_tape_pool::builders::AssignTapePoolFluentBuilder::new(self.handle.clone())
     }
 }

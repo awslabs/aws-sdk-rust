@@ -38,13 +38,7 @@
 /// The piece of software on the Greengrass core that will be updated.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SoftwareToUpdate {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SoftwareToUpdate {
         match s {
             "core" => SoftwareToUpdate::Core,
             "ota_agent" => SoftwareToUpdate::OtaAgent,
-            other => {
-                SoftwareToUpdate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SoftwareToUpdate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

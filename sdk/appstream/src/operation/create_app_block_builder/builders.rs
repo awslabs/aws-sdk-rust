@@ -37,10 +37,7 @@ impl CreateAppBlockBuilderFluentBuilder {
         }
     }
     /// Access the CreateAppBlockBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAppBlockBuilderFluentBuilder {
             crate::operation::create_app_block_builder::CreateAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder::CreateAppBlockBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAppBlockBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder::CreateAppBlockBuilderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder::CreateAppBlockBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateAppBlockBuilderFluentBuilder {
             crate::operation::create_app_block_builder::CreateAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder::CreateAppBlockBuilderError>,
     > {
         self.customize_middleware().await
     }
@@ -174,11 +160,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -187,12 +169,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -201,11 +178,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The platform of the app block builder.</p>
@@ -216,18 +189,13 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn get_platform(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
         self.inner.get_platform()
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
@@ -238,10 +206,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
@@ -253,10 +218,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -294,10 +256,7 @@ impl CreateAppBlockBuilderFluentBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_internet_access(input);
         self
     }
@@ -332,17 +291,12 @@ impl CreateAppBlockBuilderFluentBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
 }

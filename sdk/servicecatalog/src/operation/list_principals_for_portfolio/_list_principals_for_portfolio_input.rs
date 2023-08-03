@@ -44,16 +44,14 @@ impl ListPrincipalsForPortfolioInput {
 }
 impl ListPrincipalsForPortfolioInput {
     /// Creates a new builder-style object to manufacture [`ListPrincipalsForPortfolioInput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput).
-    pub fn builder() -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder {
         crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrincipalsForPortfolioInput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalsForPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl ListPrincipalsForPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +73,7 @@ impl ListPrincipalsForPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -142,13 +134,11 @@ impl ListPrincipalsForPortfolioInputBuilder {
         crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListJobExecutionsForThingOutput {
     /// <p>A list of job execution summaries.</p>
     #[doc(hidden)]
-    pub execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
+    pub execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListJobExecutionsForThingOutput {
 }
 impl ListJobExecutionsForThingOutput {
     /// <p>A list of job execution summaries.</p>
-    pub fn execution_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::JobExecutionSummaryForThing]> {
+    pub fn execution_summaries(&self) -> ::std::option::Option<&[crate::types::JobExecutionSummaryForThing]> {
         self.execution_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListJobExecutionsForThingOutput {
 }
 impl ListJobExecutionsForThingOutput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForThingOutput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput).
-    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingOutputBuilder{
+    pub fn builder() -> crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingOutputBuilder {
         crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobExecutionsForThingOutput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForThingOutputBuilder {
-    pub(crate) execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
+    pub(crate) execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListJobExecutionsForThingOutputBuilder {
         self
     }
     /// <p>A list of job execution summaries.</p>
-    pub fn set_execution_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
-    ) -> Self {
+    pub fn set_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>>) -> Self {
         self.execution_summaries = input;
         self
     }
     /// <p>A list of job execution summaries.</p>
-    pub fn get_execution_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>> {
+    pub fn get_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForThing>> {
         &self.execution_summaries
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -97,9 +86,7 @@ impl ListJobExecutionsForThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJobExecutionsForThingOutput`](crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput {
+    pub fn build(self) -> crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput {
         crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput {
             execution_summaries: self.execution_summaries,
             next_token: self.next_token,

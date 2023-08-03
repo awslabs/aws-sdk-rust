@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPermissionPolicyOutput {
 }
 impl GetPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionPolicyOutput`](crate::operation::get_permission_policy::GetPermissionPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_permission_policy::builders::GetPermissionPolicyOutputBuilder {
-        crate::operation::get_permission_policy::builders::GetPermissionPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_permission_policy::builders::GetPermissionPolicyOutputBuilder {
+        crate::operation::get_permission_policy::builders::GetPermissionPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPermissionPolicyOutput`](crate::operation::get_permission_policy::GetPermissionPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPermissionPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

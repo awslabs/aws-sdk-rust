@@ -10,10 +10,7 @@ impl UpdateFileCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_file_cache::UpdateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_cache::UpdateFileCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_cache::UpdateFileCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_file_cache();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFileCacheFluentBuilder {
         }
     }
     /// Access the UpdateFileCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_file_cache::builders::UpdateFileCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_file_cache::builders::UpdateFileCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFileCacheFluentBuilder {
             crate::operation::update_file_cache::UpdateFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_cache::UpdateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_cache::UpdateFileCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFileCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_cache::UpdateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_cache::UpdateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_cache::UpdateFileCacheError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_cache::UpdateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_cache::UpdateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_cache::UpdateFileCacheError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateFileCacheFluentBuilder {
             crate::operation::update_file_cache::UpdateFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_cache::UpdateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_cache::UpdateFileCacheError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the cache that you are updating.</p>
-    pub fn file_cache_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_cache_id(input.into());
         self
     }
     /// <p>The ID of the cache that you are updating.</p>
-    pub fn set_file_cache_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_cache_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateFileCacheFluentBuilder {
         self.inner.get_file_cache_id()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -163,25 +135,17 @@ impl UpdateFileCacheFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The configuration updates for an Amazon File Cache resource.</p>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::UpdateFileCacheLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::UpdateFileCacheLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon File Cache resource.</p>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFileCacheLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileCacheLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon File Cache resource.</p>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateFileCacheLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileCacheLustreConfiguration> {
         self.inner.get_lustre_configuration()
     }
 }

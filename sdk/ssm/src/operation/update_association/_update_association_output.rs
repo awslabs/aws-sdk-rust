@@ -10,9 +10,7 @@ pub struct UpdateAssociationOutput {
 }
 impl UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
-    pub fn association_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssociationDescription> {
+    pub fn association_description(&self) -> ::std::option::Option<&crate::types::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssociationOutput {
 }
 impl UpdateAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationOutput`](crate::operation::update_association::UpdateAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_association::builders::UpdateAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::update_association::builders::UpdateAssociationOutputBuilder {
         crate::operation::update_association::builders::UpdateAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssociationOutput`](crate::operation::update_association::UpdateAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssociationOutputBuilder {
     pub(crate) association_description: ::std::option::Option<crate::types::AssociationDescription>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl UpdateAssociationOutputBuilder {
         self
     }
     /// <p>The description of the association that was updated.</p>
-    pub fn set_association_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationDescription>,
-    ) -> Self {
+    pub fn set_association_description(mut self, input: ::std::option::Option<crate::types::AssociationDescription>) -> Self {
         self.association_description = input;
         self
     }
     /// <p>The description of the association that was updated.</p>
-    pub fn get_association_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationDescription> {
+    pub fn get_association_description(&self) -> &::std::option::Option<crate::types::AssociationDescription> {
         &self.association_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

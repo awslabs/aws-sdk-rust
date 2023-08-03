@@ -5,8 +5,7 @@
 pub struct ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     #[doc(hidden)]
-    pub sensor_statistics_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
+    pub sensor_statistics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSensorStatisticsOutput {
 }
 impl ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SensorStatisticsSummary]> {
+    pub fn sensor_statistics_summaries(&self) -> ::std::option::Option<&[crate::types::SensorStatisticsSummary]> {
         self.sensor_statistics_summaries.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSensorStatisticsOutput {
 }
 impl ListSensorStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder {
         crate::operation::list_sensor_statistics::builders::ListSensorStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsOutputBuilder {
-    pub(crate) sensor_statistics_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
+    pub(crate) sensor_statistics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListSensorStatisticsOutputBuilder {
     /// To override the contents of this collection use [`set_sensor_statistics_summaries`](Self::set_sensor_statistics_summaries).
     ///
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn sensor_statistics_summaries(
-        mut self,
-        input: crate::types::SensorStatisticsSummary,
-    ) -> Self {
+    pub fn sensor_statistics_summaries(mut self, input: crate::types::SensorStatisticsSummary) -> Self {
         let mut v = self.sensor_statistics_summaries.unwrap_or_default();
         v.push(input);
         self.sensor_statistics_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn set_sensor_statistics_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
-    ) -> Self {
+    pub fn set_sensor_statistics_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>) -> Self {
         self.sensor_statistics_summaries = input;
         self
     }
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
-    pub fn get_sensor_statistics_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>> {
+    pub fn get_sensor_statistics_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>> {
         &self.sensor_statistics_summaries
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>

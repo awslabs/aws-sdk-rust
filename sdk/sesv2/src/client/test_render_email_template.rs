@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput) with field(s):
     ///   - [`rendered_template(Option<String>)`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput::rendered_template): <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     /// - On failure, responds with [`SdkError<TestRenderEmailTemplateError>`](crate::operation::test_render_email_template::TestRenderEmailTemplateError)
-    pub fn test_render_email_template(
-        &self,
-    ) -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateFluentBuilder
-    {
+    pub fn test_render_email_template(&self) -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateFluentBuilder {
         crate::operation::test_render_email_template::builders::TestRenderEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

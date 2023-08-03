@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput) with field(s):
     ///   - [`certificate(Option<Certificate>)`](crate::operation::import_certificate::ImportCertificateOutput::certificate): <p>The certificate to be uploaded.</p>
     /// - On failure, responds with [`SdkError<ImportCertificateError>`](crate::operation::import_certificate::ImportCertificateError)
-    pub fn import_certificate(
-        &self,
-    ) -> crate::operation::import_certificate::builders::ImportCertificateFluentBuilder {
-        crate::operation::import_certificate::builders::ImportCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_certificate(&self) -> crate::operation::import_certificate::builders::ImportCertificateFluentBuilder {
+        crate::operation::import_certificate::builders::ImportCertificateFluentBuilder::new(self.handle.clone())
     }
 }

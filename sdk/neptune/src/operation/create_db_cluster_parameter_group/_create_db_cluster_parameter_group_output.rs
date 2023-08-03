@@ -12,9 +12,7 @@ pub struct CreateDbClusterParameterGroupOutput {
 impl CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn db_cluster_parameter_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<&crate::types::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
@@ -25,45 +23,34 @@ impl ::aws_http::request_id::RequestId for CreateDbClusterParameterGroupOutput {
 }
 impl CreateDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupOutputBuilder {
         crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbClusterParameterGroupOutputBuilder {
-    pub(crate) db_cluster_parameter_group:
-        ::std::option::Option<crate::types::DbClusterParameterGroup>,
+    pub(crate) db_cluster_parameter_group: ::std::option::Option<crate::types::DbClusterParameterGroup>,
     _request_id: Option<String>,
 }
 impl CreateDbClusterParameterGroupOutputBuilder {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn db_cluster_parameter_group(
-        mut self,
-        input: crate::types::DbClusterParameterGroup,
-    ) -> Self {
+    pub fn db_cluster_parameter_group(mut self, input: crate::types::DbClusterParameterGroup) -> Self {
         self.db_cluster_parameter_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn set_db_cluster_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbClusterParameterGroup>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group(mut self, input: ::std::option::Option<crate::types::DbClusterParameterGroup>) -> Self {
         self.db_cluster_parameter_group = input;
         self
     }
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn get_db_cluster_parameter_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbClusterParameterGroup> {
+    pub fn get_db_cluster_parameter_group(&self) -> &::std::option::Option<crate::types::DbClusterParameterGroup> {
         &self.db_cluster_parameter_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,10 +63,7 @@ impl CreateDbClusterParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput
-    {
+    pub fn build(self) -> crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput {
         crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput {
             db_cluster_parameter_group: self.db_cluster_parameter_group,
             _request_id: self._request_id,

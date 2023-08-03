@@ -9,10 +9,7 @@ pub fn ser_disassociate_resolver_endpoint_ip_address_input(
     if let Some(var_2) = &input.ip_address {
         #[allow(unused_mut)]
         let mut object_3 = object.key("IpAddress").start_object();
-        crate::protocol_serde::shape_ip_address_update::ser_ip_address_update(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_ip_address_update::ser_ip_address_update(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

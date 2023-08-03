@@ -35,9 +35,7 @@ impl GetConnectionOutput {
 
 /// A builder for [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_details: ::std::option::Option<crate::types::ConnectionDetails>,
@@ -45,18 +43,12 @@ pub struct GetConnectionOutputBuilder {
 }
 impl GetConnectionOutputBuilder {
     /// <p> The ID of the connection. </p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the connection. </p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -70,17 +62,12 @@ impl GetConnectionOutputBuilder {
         self
     }
     /// <p> Information about the connection. </p>
-    pub fn set_connection_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionDetails>,
-    ) -> Self {
+    pub fn set_connection_details(mut self, input: ::std::option::Option<crate::types::ConnectionDetails>) -> Self {
         self.connection_details = input;
         self
     }
     /// <p> Information about the connection. </p>
-    pub fn get_connection_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionDetails> {
+    pub fn get_connection_details(&self) -> &::std::option::Option<crate::types::ConnectionDetails> {
         &self.connection_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

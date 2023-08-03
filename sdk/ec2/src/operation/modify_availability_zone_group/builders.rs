@@ -27,7 +27,7 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyAvailabilityZoneGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder,
+    inner: crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder,
 }
 impl ModifyAvailabilityZoneGroupFluentBuilder {
     /// Creates a new `ModifyAvailabilityZoneGroup`.
@@ -38,7 +38,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
         }
     }
     /// Access the ModifyAvailabilityZoneGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
             crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
             crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -141,17 +130,12 @@ impl ModifyAvailabilityZoneGroupFluentBuilder {
         self
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>) -> Self {
         self.inner = self.inner.set_opt_in_status(input);
         self
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
-    pub fn get_opt_in_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus> {
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus> {
         self.inner.get_opt_in_status()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

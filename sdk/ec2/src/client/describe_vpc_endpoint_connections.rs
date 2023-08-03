@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`vpc_endpoint_connections(Option<Vec<VpcEndpointConnection>>)`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput::vpc_endpoint_connections): <p>Information about the VPC endpoint connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointConnectionsError>`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsError)
-    pub fn describe_vpc_endpoint_connections(&self) -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsFluentBuilder{
+    pub fn describe_vpc_endpoint_connections(
+        &self,
+    ) -> crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsFluentBuilder {
         crate::operation::describe_vpc_endpoint_connections::builders::DescribeVpcEndpointConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -32,9 +32,7 @@ impl Shipment {
 
 /// A builder for [`Shipment`](crate::types::Shipment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShipmentBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_number: ::std::option::Option<::std::string::String>,
@@ -56,19 +54,13 @@ impl ShipmentBuilder {
     }
     /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-    pub fn tracking_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tracking_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-    pub fn set_tracking_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tracking_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracking_number = input;
         self
     }

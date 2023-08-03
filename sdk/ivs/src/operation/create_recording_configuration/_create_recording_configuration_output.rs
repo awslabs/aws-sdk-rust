@@ -10,9 +10,7 @@ pub struct CreateRecordingConfigurationOutput {
 }
 impl CreateRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn recording_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> ::std::option::Option<&crate::types::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateRecordingConfigurationOutput {
 }
 impl CreateRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecordingConfigurationOutput`](crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput).
-    pub fn builder() -> crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationOutputBuilder {
         crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRecordingConfigurationOutput`](crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRecordingConfigurationOutputBuilder {
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateRecordingConfigurationOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_recording_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingConfiguration>,
-    ) -> Self {
+    pub fn set_recording_configuration(mut self, input: ::std::option::Option<crate::types::RecordingConfiguration>) -> Self {
         self.recording_configuration = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_recording_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecordingConfiguration> {
+    pub fn get_recording_configuration(&self) -> &::std::option::Option<crate::types::RecordingConfiguration> {
         &self.recording_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateRecordingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRecordingConfigurationOutput`](crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput {
         crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput {
             recording_configuration: self.recording_configuration,
             _request_id: self._request_id,

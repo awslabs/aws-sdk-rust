@@ -24,9 +24,7 @@ impl ConversationLogsDataSourceFilterBy {
         self.end_time.as_ref()
     }
     /// <p>The selection to filter by input mode for the conversation logs. </p>
-    pub fn input_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogsInputModeFilter> {
+    pub fn input_mode(&self) -> ::std::option::Option<&crate::types::ConversationLogsInputModeFilter> {
         self.input_mode.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl ConversationLogsDataSourceFilterBy {
 
 /// A builder for [`ConversationLogsDataSourceFilterBy`](crate::types::ConversationLogsDataSourceFilterBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogsDataSourceFilterByBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -54,10 +50,7 @@ impl ConversationLogsDataSourceFilterByBuilder {
         self
     }
     /// <p>The start time for the conversation log.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -71,10 +64,7 @@ impl ConversationLogsDataSourceFilterByBuilder {
         self
     }
     /// <p>The end time for the conversation log.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -88,17 +78,12 @@ impl ConversationLogsDataSourceFilterByBuilder {
         self
     }
     /// <p>The selection to filter by input mode for the conversation logs. </p>
-    pub fn set_input_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsInputModeFilter>,
-    ) -> Self {
+    pub fn set_input_mode(mut self, input: ::std::option::Option<crate::types::ConversationLogsInputModeFilter>) -> Self {
         self.input_mode = input;
         self
     }
     /// <p>The selection to filter by input mode for the conversation logs. </p>
-    pub fn get_input_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsInputModeFilter> {
+    pub fn get_input_mode(&self) -> &::std::option::Option<crate::types::ConversationLogsInputModeFilter> {
         &self.input_mode
     }
     /// Consumes the builder and constructs a [`ConversationLogsDataSourceFilterBy`](crate::types::ConversationLogsDataSourceFilterBy).

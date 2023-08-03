@@ -9,8 +9,7 @@ pub struct ResourceDataSyncAwsOrganizationsSource {
     pub organization_source_type: ::std::option::Option<::std::string::String>,
     /// <p>The Organizations organization units included in the sync.</p>
     #[doc(hidden)]
-    pub organizational_units:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
+    pub organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
@@ -18,9 +17,7 @@ impl ResourceDataSyncAwsOrganizationsSource {
         self.organization_source_type.as_deref()
     }
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn organizational_units(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceDataSyncOrganizationalUnit]> {
+    pub fn organizational_units(&self) -> ::std::option::Option<&[crate::types::ResourceDataSyncOrganizationalUnit]> {
         self.organizational_units.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl ResourceDataSyncAwsOrganizationsSource {
 
 /// A builder for [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncAwsOrganizationsSourceBuilder {
     pub(crate) organization_source_type: ::std::option::Option<::std::string::String>,
-    pub(crate) organizational_units:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
+    pub(crate) organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub fn organization_source_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_source_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub fn set_organization_source_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_source_type = input;
         self
     }
@@ -67,10 +55,7 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
     ///
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn organizational_units(
-        mut self,
-        input: crate::types::ResourceDataSyncOrganizationalUnit,
-    ) -> Self {
+    pub fn organizational_units(mut self, input: crate::types::ResourceDataSyncOrganizationalUnit) -> Self {
         let mut v = self.organizational_units.unwrap_or_default();
         v.push(input);
         self.organizational_units = ::std::option::Option::Some(v);
@@ -79,18 +64,13 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// <p>The Organizations organization units included in the sync.</p>
     pub fn set_organizational_units(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
     ) -> Self {
         self.organizational_units = input;
         self
     }
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn get_organizational_units(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>
-    {
+    pub fn get_organizational_units(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>> {
         &self.organizational_units
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).

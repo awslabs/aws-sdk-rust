@@ -30,27 +30,19 @@ impl EmailSettings {
 
 /// A builder for [`EmailSettings`](crate::types::EmailSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailSettingsBuilder {
     pub(crate) email_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailSettingsBuilder {
     /// <p>The contents of the email message.</p>
-    pub fn email_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the email message.</p>
-    pub fn set_email_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_message = input;
         self
     }
@@ -59,18 +51,12 @@ impl EmailSettingsBuilder {
         &self.email_message
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn email_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn set_email_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_subject = input;
         self
     }

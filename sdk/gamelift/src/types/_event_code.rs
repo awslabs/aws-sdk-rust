@@ -70,13 +70,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -159,14 +153,10 @@ impl ::std::convert::From<&str> for EventCode {
             "FLEET_CREATED" => EventCode::FleetCreated,
             "FLEET_CREATION_EXTRACTING_BUILD" => EventCode::FleetCreationExtractingBuild,
             "FLEET_CREATION_RUNNING_INSTALLER" => EventCode::FleetCreationRunningInstaller,
-            "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" => {
-                EventCode::FleetCreationValidatingRuntimeConfig
-            }
+            "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" => EventCode::FleetCreationValidatingRuntimeConfig,
             "FLEET_DELETED" => EventCode::FleetDeleted,
             "FLEET_INITIALIZATION_FAILED" => EventCode::FleetInitializationFailed,
-            "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" => {
-                EventCode::FleetNewGameSessionProtectionPolicyUpdated
-            }
+            "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" => EventCode::FleetNewGameSessionProtectionPolicyUpdated,
             "FLEET_SCALING_EVENT" => EventCode::FleetScalingEvent,
             "FLEET_STATE_ACTIVATING" => EventCode::FleetStateActivating,
             "FLEET_STATE_ACTIVE" => EventCode::FleetStateActive,
@@ -174,12 +164,8 @@ impl ::std::convert::From<&str> for EventCode {
             "FLEET_STATE_DOWNLOADING" => EventCode::FleetStateDownloading,
             "FLEET_STATE_ERROR" => EventCode::FleetStateError,
             "FLEET_STATE_VALIDATING" => EventCode::FleetStateValidating,
-            "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" => {
-                EventCode::FleetValidationExecutableRuntimeFailure
-            }
-            "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" => {
-                EventCode::FleetValidationLaunchPathNotFound
-            }
+            "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" => EventCode::FleetValidationExecutableRuntimeFailure,
+            "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" => EventCode::FleetValidationLaunchPathNotFound,
             "FLEET_VALIDATION_TIMED_OUT" => EventCode::FleetValidationTimedOut,
             "FLEET_VPC_PEERING_DELETED" => EventCode::FleetVpcPeeringDeleted,
             "FLEET_VPC_PEERING_FAILED" => EventCode::FleetVpcPeeringFailed,
@@ -193,9 +179,7 @@ impl ::std::convert::From<&str> for EventCode {
             "SERVER_PROCESS_INVALID_PATH" => EventCode::ServerProcessInvalidPath,
             "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" => EventCode::ServerProcessProcessExitTimeout,
             "SERVER_PROCESS_PROCESS_READY_TIMEOUT" => EventCode::ServerProcessProcessReadyTimeout,
-            "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" => {
-                EventCode::ServerProcessSdkInitializationTimeout
-            }
+            "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" => EventCode::ServerProcessSdkInitializationTimeout,
             "SERVER_PROCESS_TERMINATED_UNHEALTHY" => EventCode::ServerProcessTerminatedUnhealthy,
             other => EventCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -218,14 +202,10 @@ impl EventCode {
             EventCode::FleetCreated => "FLEET_CREATED",
             EventCode::FleetCreationExtractingBuild => "FLEET_CREATION_EXTRACTING_BUILD",
             EventCode::FleetCreationRunningInstaller => "FLEET_CREATION_RUNNING_INSTALLER",
-            EventCode::FleetCreationValidatingRuntimeConfig => {
-                "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG"
-            }
+            EventCode::FleetCreationValidatingRuntimeConfig => "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG",
             EventCode::FleetDeleted => "FLEET_DELETED",
             EventCode::FleetInitializationFailed => "FLEET_INITIALIZATION_FAILED",
-            EventCode::FleetNewGameSessionProtectionPolicyUpdated => {
-                "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED"
-            }
+            EventCode::FleetNewGameSessionProtectionPolicyUpdated => "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED",
             EventCode::FleetScalingEvent => "FLEET_SCALING_EVENT",
             EventCode::FleetStateActivating => "FLEET_STATE_ACTIVATING",
             EventCode::FleetStateActive => "FLEET_STATE_ACTIVE",
@@ -233,12 +213,8 @@ impl EventCode {
             EventCode::FleetStateDownloading => "FLEET_STATE_DOWNLOADING",
             EventCode::FleetStateError => "FLEET_STATE_ERROR",
             EventCode::FleetStateValidating => "FLEET_STATE_VALIDATING",
-            EventCode::FleetValidationExecutableRuntimeFailure => {
-                "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE"
-            }
-            EventCode::FleetValidationLaunchPathNotFound => {
-                "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND"
-            }
+            EventCode::FleetValidationExecutableRuntimeFailure => "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE",
+            EventCode::FleetValidationLaunchPathNotFound => "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND",
             EventCode::FleetValidationTimedOut => "FLEET_VALIDATION_TIMED_OUT",
             EventCode::FleetVpcPeeringDeleted => "FLEET_VPC_PEERING_DELETED",
             EventCode::FleetVpcPeeringFailed => "FLEET_VPC_PEERING_FAILED",
@@ -252,9 +228,7 @@ impl EventCode {
             EventCode::ServerProcessInvalidPath => "SERVER_PROCESS_INVALID_PATH",
             EventCode::ServerProcessProcessExitTimeout => "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT",
             EventCode::ServerProcessProcessReadyTimeout => "SERVER_PROCESS_PROCESS_READY_TIMEOUT",
-            EventCode::ServerProcessSdkInitializationTimeout => {
-                "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT"
-            }
+            EventCode::ServerProcessSdkInitializationTimeout => "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT",
             EventCode::ServerProcessTerminatedUnhealthy => "SERVER_PROCESS_TERMINATED_UNHEALTHY",
             EventCode::Unknown(value) => value.as_str(),
         }

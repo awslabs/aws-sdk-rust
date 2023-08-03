@@ -37,9 +37,7 @@ impl CandidateArtifactLocations {
 
 /// A builder for [`CandidateArtifactLocations`](crate::types::CandidateArtifactLocations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CandidateArtifactLocationsBuilder {
     pub(crate) explainability: ::std::option::Option<::std::string::String>,
     pub(crate) model_insights: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CandidateArtifactLocationsBuilder {
 }
 impl CandidateArtifactLocationsBuilder {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn explainability(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn set_explainability(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability = input;
         self
     }
@@ -67,18 +59,12 @@ impl CandidateArtifactLocationsBuilder {
         &self.explainability
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn model_insights(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_insights(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_insights = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn set_model_insights(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_insights(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_insights = input;
         self
     }
@@ -87,18 +73,12 @@ impl CandidateArtifactLocationsBuilder {
         &self.model_insights
     }
     /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
-    pub fn backtest_results(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backtest_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backtest_results = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window. Available only for the time-series forecasting problem type.</p>
-    pub fn set_backtest_results(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backtest_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backtest_results = input;
         self
     }

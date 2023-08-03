@@ -153,9 +153,7 @@ impl GetEvaluationOutput {
 
 /// A builder for [`GetEvaluationOutput`](crate::operation::get_evaluation::GetEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvaluationOutputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
@@ -176,18 +174,12 @@ pub struct GetEvaluationOutputBuilder {
 }
 impl GetEvaluationOutputBuilder {
     /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -210,18 +202,12 @@ impl GetEvaluationOutputBuilder {
         &self.ml_model_id
     }
     /// <p>The <code>DataSource</code> used for this evaluation.</p>
-    pub fn evaluation_data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>DataSource</code> used for this evaluation.</p>
-    pub fn set_evaluation_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_data_source_id = input;
         self
     }
@@ -230,18 +216,12 @@ impl GetEvaluationOutputBuilder {
         &self.evaluation_data_source_id
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_data_location_s3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_data_location_s3 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn set_input_data_location_s3(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_data_location_s3 = input;
         self
     }
@@ -250,18 +230,12 @@ impl GetEvaluationOutputBuilder {
         &self.input_data_location_s3
     }
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_by_iam_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_iam_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn set_created_by_iam_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_by_iam_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by_iam_user = input;
         self
     }
@@ -275,10 +249,7 @@ impl GetEvaluationOutputBuilder {
         self
     }
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -292,10 +263,7 @@ impl GetEvaluationOutputBuilder {
         self
     }
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -370,10 +338,7 @@ impl GetEvaluationOutputBuilder {
     /// <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>
     /// </ul>
     /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
-    pub fn set_performance_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceMetrics>,
-    ) -> Self {
+    pub fn set_performance_metrics(mut self, input: ::std::option::Option<crate::types::PerformanceMetrics>) -> Self {
         self.performance_metrics = input;
         self
     }
@@ -384,9 +349,7 @@ impl GetEvaluationOutputBuilder {
     /// <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>
     /// </ul>
     /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
-    pub fn get_performance_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::PerformanceMetrics> {
+    pub fn get_performance_metrics(&self) -> &::std::option::Option<crate::types::PerformanceMetrics> {
         &self.performance_metrics
     }
     /// <p>A link to the file that contains logs of the <code>CreateEvaluation</code> operation.</p>
@@ -437,10 +400,7 @@ impl GetEvaluationOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn set_finished_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finished_at = input;
         self
     }
@@ -454,10 +414,7 @@ impl GetEvaluationOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }

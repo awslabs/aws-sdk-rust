@@ -22,34 +22,26 @@ impl DescribeProvisioningTemplateVersionInput {
 }
 impl DescribeProvisioningTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
-    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder {
         crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateVersionInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<i32>,
 }
 impl DescribeProvisioningTemplateVersionInputBuilder {
     /// <p>The template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -72,14 +64,17 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput {
-                template_name: self.template_name
-                ,
-                version_id: self.version_id
-                ,
-            }
+                template_name: self.template_name,
+                version_id: self.version_id,
+            },
         )
     }
 }

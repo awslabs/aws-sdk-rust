@@ -15,33 +15,25 @@ impl DescribeWhatIfForecastExportInput {
 }
 impl DescribeWhatIfForecastExportInput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastExportInput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput).
-    pub fn builder() -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder{
+    pub fn builder() -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder {
         crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWhatIfForecastExportInput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWhatIfForecastExportInputBuilder {
     pub(crate) what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWhatIfForecastExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
-    pub fn what_if_forecast_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
-    pub fn set_what_if_forecast_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeWhatIfForecastExportInputBuilder {
         crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput {
-                what_if_forecast_export_arn: self.what_if_forecast_export_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput {
+            what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+        })
     }
 }

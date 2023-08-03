@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`cidr_ips(Vec<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::cidr_ips) / [`set_cidr_ips(Option<Vec<String>>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::set_cidr_ips): <p>IP address blocks that you want to remove.</p>
     /// - On success, responds with [`RemoveIpRoutesOutput`](crate::operation::remove_ip_routes::RemoveIpRoutesOutput)
     /// - On failure, responds with [`SdkError<RemoveIpRoutesError>`](crate::operation::remove_ip_routes::RemoveIpRoutesError)
-    pub fn remove_ip_routes(
-        &self,
-    ) -> crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder {
-        crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_ip_routes(&self) -> crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder {
+        crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::new(self.handle.clone())
     }
 }

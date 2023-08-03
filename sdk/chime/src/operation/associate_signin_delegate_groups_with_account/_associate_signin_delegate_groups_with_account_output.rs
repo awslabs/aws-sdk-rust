@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AssociateSigninDelegateGroupsWithAcco
 }
 impl AssociateSigninDelegateGroupsWithAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput).
-    pub fn builder() -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountOutputBuilder {
         crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSigninDelegateGroupsWithAccountOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AssociateSigninDelegateGroupsWithAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput).
-    pub fn build(self) -> crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput{
+    pub fn build(self) -> crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput {
         crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput {
             _request_id: self._request_id,
         }

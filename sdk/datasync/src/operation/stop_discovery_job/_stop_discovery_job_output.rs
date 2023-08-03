@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopDiscoveryJobOutput {
 }
 impl StopDiscoveryJobOutput {
     /// Creates a new builder-style object to manufacture [`StopDiscoveryJobOutput`](crate::operation::stop_discovery_job::StopDiscoveryJobOutput).
-    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobOutputBuilder {
         crate::operation::stop_discovery_job::builders::StopDiscoveryJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopDiscoveryJobOutput`](crate::operation::stop_discovery_job::StopDiscoveryJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDiscoveryJobOutputBuilder {
     _request_id: Option<String>,
 }

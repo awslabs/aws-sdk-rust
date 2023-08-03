@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput) with field(s):
     ///   - [`contact_methods(Option<Vec<ContactMethod>>)`](crate::operation::get_contact_methods::GetContactMethodsOutput::contact_methods): <p>An array of objects that describe the contact methods.</p>
     /// - On failure, responds with [`SdkError<GetContactMethodsError>`](crate::operation::get_contact_methods::GetContactMethodsError)
-    pub fn get_contact_methods(
-        &self,
-    ) -> crate::operation::get_contact_methods::builders::GetContactMethodsFluentBuilder {
-        crate::operation::get_contact_methods::builders::GetContactMethodsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_methods(&self) -> crate::operation::get_contact_methods::builders::GetContactMethodsFluentBuilder {
+        crate::operation::get_contact_methods::builders::GetContactMethodsFluentBuilder::new(self.handle.clone())
     }
 }

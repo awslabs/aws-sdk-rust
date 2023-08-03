@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`product_code(Option<String>)`](crate::operation::resolve_customer::ResolveCustomerOutput::product_code): <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     ///   - [`customer_aws_account_id(Option<String>)`](crate::operation::resolve_customer::ResolveCustomerOutput::customer_aws_account_id): <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     /// - On failure, responds with [`SdkError<ResolveCustomerError>`](crate::operation::resolve_customer::ResolveCustomerError)
-    pub fn resolve_customer(
-        &self,
-    ) -> crate::operation::resolve_customer::builders::ResolveCustomerFluentBuilder {
-        crate::operation::resolve_customer::builders::ResolveCustomerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resolve_customer(&self) -> crate::operation::resolve_customer::builders::ResolveCustomerFluentBuilder {
+        crate::operation::resolve_customer::builders::ResolveCustomerFluentBuilder::new(self.handle.clone())
     }
 }

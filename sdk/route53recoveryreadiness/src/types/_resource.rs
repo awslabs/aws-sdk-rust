@@ -44,9 +44,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
@@ -74,17 +72,12 @@ impl ResourceBuilder {
         self
     }
     /// <p>The DNS target resource.</p>
-    pub fn set_dns_target_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsTargetResource>,
-    ) -> Self {
+    pub fn set_dns_target_resource(mut self, input: ::std::option::Option<crate::types::DnsTargetResource>) -> Self {
         self.dns_target_resource = input;
         self
     }
     /// <p>The DNS target resource.</p>
-    pub fn get_dns_target_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::DnsTargetResource> {
+    pub fn get_dns_target_resource(&self) -> &::std::option::Option<crate::types::DnsTargetResource> {
         &self.dns_target_resource
     }
     /// Appends an item to `readiness_scopes`.
@@ -92,27 +85,19 @@ impl ResourceBuilder {
     /// To override the contents of this collection use [`set_readiness_scopes`](Self::set_readiness_scopes).
     ///
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn readiness_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readiness_scopes.unwrap_or_default();
         v.push(input.into());
         self.readiness_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn set_readiness_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readiness_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readiness_scopes = input;
         self
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn get_readiness_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_readiness_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.readiness_scopes
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstanceTypeLimitsOutput`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput) with field(s):
     ///   - [`limits_by_role(Option<HashMap<String, Limits>>)`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput::limits_by_role): <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceTypeLimitsError>`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError)
-    pub fn describe_instance_type_limits(&self) -> crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsFluentBuilder{
+    pub fn describe_instance_type_limits(
+        &self,
+    ) -> crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsFluentBuilder {
         crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsFluentBuilder::new(self.handle.clone())
     }
 }

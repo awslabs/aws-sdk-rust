@@ -38,13 +38,7 @@
 /// H264 Spatial Aq
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264SpatialAq {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264SpatialAq {
         match s {
             "DISABLED" => H264SpatialAq::Disabled,
             "ENABLED" => H264SpatialAq::Enabled,
-            other => {
-                H264SpatialAq::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264SpatialAq::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

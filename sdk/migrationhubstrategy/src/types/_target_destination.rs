@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TargetDestination {
     #[allow(missing_docs)] // documentation missing in model
@@ -98,24 +92,16 @@ impl ::std::convert::From<&str> for TargetDestination {
             "Amazon DocumentDB" => TargetDestination::AmazonDocumentdb,
             "Amazon DynamoDB" => TargetDestination::AmazonDynamodb,
             "Amazon Elastic Cloud Compute (EC2)" => TargetDestination::AmazonElasticCloudCompute,
-            "Amazon Elastic Container Service (ECS)" => {
-                TargetDestination::AmazonElasticContainerService
-            }
-            "Amazon Elastic Kubernetes Service (EKS)" => {
-                TargetDestination::AmazonElasticKubernetesService
-            }
+            "Amazon Elastic Container Service (ECS)" => TargetDestination::AmazonElasticContainerService,
+            "Amazon Elastic Kubernetes Service (EKS)" => TargetDestination::AmazonElasticKubernetesService,
             "Amazon Relational Database Service" => TargetDestination::AmazonRds,
             "Amazon Relational Database Service on MySQL" => TargetDestination::AmazonRdsMysql,
-            "Amazon Relational Database Service on PostgreSQL" => {
-                TargetDestination::AmazonRdsPostgresql
-            }
+            "Amazon Relational Database Service on PostgreSQL" => TargetDestination::AmazonRdsPostgresql,
             "Aurora MySQL" => TargetDestination::AuroraMysql,
             "Aurora PostgreSQL" => TargetDestination::AuroraPostgresql,
             "Babelfish for Aurora PostgreSQL" => TargetDestination::BabelfishAuroraPostgresql,
             "None specified" => TargetDestination::NoneSpecified,
-            other => {
-                TargetDestination::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TargetDestination::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -135,17 +121,11 @@ impl TargetDestination {
             TargetDestination::AmazonDocumentdb => "Amazon DocumentDB",
             TargetDestination::AmazonDynamodb => "Amazon DynamoDB",
             TargetDestination::AmazonElasticCloudCompute => "Amazon Elastic Cloud Compute (EC2)",
-            TargetDestination::AmazonElasticContainerService => {
-                "Amazon Elastic Container Service (ECS)"
-            }
-            TargetDestination::AmazonElasticKubernetesService => {
-                "Amazon Elastic Kubernetes Service (EKS)"
-            }
+            TargetDestination::AmazonElasticContainerService => "Amazon Elastic Container Service (ECS)",
+            TargetDestination::AmazonElasticKubernetesService => "Amazon Elastic Kubernetes Service (EKS)",
             TargetDestination::AmazonRds => "Amazon Relational Database Service",
             TargetDestination::AmazonRdsMysql => "Amazon Relational Database Service on MySQL",
-            TargetDestination::AmazonRdsPostgresql => {
-                "Amazon Relational Database Service on PostgreSQL"
-            }
+            TargetDestination::AmazonRdsPostgresql => "Amazon Relational Database Service on PostgreSQL",
             TargetDestination::AuroraMysql => "Aurora MySQL",
             TargetDestination::AuroraPostgresql => "Aurora PostgreSQL",
             TargetDestination::BabelfishAuroraPostgresql => "Babelfish for Aurora PostgreSQL",

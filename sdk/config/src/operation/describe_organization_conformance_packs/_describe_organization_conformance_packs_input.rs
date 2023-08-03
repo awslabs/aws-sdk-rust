@@ -5,8 +5,7 @@
 pub struct DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
     #[doc(hidden)]
-    pub organization_conformance_pack_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
@@ -16,9 +15,7 @@ pub struct DescribeOrganizationConformancePacksInput {
 }
 impl DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
-    pub fn organization_conformance_pack_names(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn organization_conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.organization_conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -32,19 +29,16 @@ impl DescribeOrganizationConformancePacksInput {
 }
 impl DescribeOrganizationConformancePacksInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePacksInput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput).
-    pub fn builder() -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksInputBuilder {
         crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConformancePacksInput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePacksInputBuilder {
-    pub(crate) organization_conformance_pack_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,27 +48,19 @@ impl DescribeOrganizationConformancePacksInputBuilder {
     /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
     ///
     /// <p>The name that you assign to an organization conformance pack.</p>
-    pub fn organization_conformance_pack_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_conformance_pack_names.unwrap_or_default();
         v.push(input.into());
         self.organization_conformance_pack_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name that you assign to an organization conformance pack.</p>
-    pub fn set_organization_conformance_pack_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organization_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organization_conformance_pack_names = input;
         self
     }
     /// <p>The name that you assign to an organization conformance pack.</p>
-    pub fn get_organization_conformance_pack_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organization_conformance_pack_names
     }
     /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -106,16 +92,18 @@ impl DescribeOrganizationConformancePacksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConformancePacksInput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksInput {
-                organization_conformance_pack_names: self.organization_conformance_pack_names
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                organization_conformance_pack_names: self.organization_conformance_pack_names,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`reserved_db_instances(Option<Vec<ReservedDbInstance>>)`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput::reserved_db_instances): <p>A list of reserved DB instances.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedDBInstancesError>`](crate::operation::describe_reserved_db_instances::DescribeReservedDBInstancesError)
-    pub fn describe_reserved_db_instances(&self) -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder{
+    pub fn describe_reserved_db_instances(
+        &self,
+    ) -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder {
         crate::operation::describe_reserved_db_instances::builders::DescribeReservedDBInstancesFluentBuilder::new(self.handle.clone())
     }
 }

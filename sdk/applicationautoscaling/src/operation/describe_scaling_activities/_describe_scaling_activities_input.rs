@@ -136,16 +136,14 @@ impl DescribeScalingActivitiesInput {
 }
 impl DescribeScalingActivitiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
-    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder {
         crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -161,10 +159,7 @@ impl DescribeScalingActivitiesInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -295,10 +290,7 @@ impl DescribeScalingActivitiesInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -326,9 +318,7 @@ impl DescribeScalingActivitiesInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
@@ -383,15 +373,13 @@ impl DescribeScalingActivitiesInputBuilder {
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
-                service_namespace: self.service_namespace,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                include_not_scaled_activities: self.include_not_scaled_activities,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
+            service_namespace: self.service_namespace,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            include_not_scaled_activities: self.include_not_scaled_activities,
+        })
     }
 }

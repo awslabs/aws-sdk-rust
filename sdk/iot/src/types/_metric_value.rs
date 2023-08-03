@@ -58,9 +58,7 @@ impl MetricValue {
 
 /// A builder for [`MetricValue`](crate::types::MetricValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricValueBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -96,10 +94,7 @@ impl MetricValueBuilder {
         self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn set_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidrs = input;
         self
     }
@@ -173,10 +168,7 @@ impl MetricValueBuilder {
         self
     }
     /// <p> The string values of a metric. </p>
-    pub fn set_strings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.strings = input;
         self
     }

@@ -22,17 +22,14 @@ impl ListGeoMatchSetsInput {
 }
 impl ListGeoMatchSetsInput {
     /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsInput`](crate::operation::list_geo_match_sets::ListGeoMatchSetsInput).
-    pub fn builder() -> crate::operation::list_geo_match_sets::builders::ListGeoMatchSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_geo_match_sets::builders::ListGeoMatchSetsInputBuilder {
         crate::operation::list_geo_match_sets::builders::ListGeoMatchSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeoMatchSetsInput`](crate::operation::list_geo_match_sets::ListGeoMatchSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeoMatchSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListGeoMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListGeoMatchSetsInput`](crate::operation::list_geo_match_sets::ListGeoMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_geo_match_sets::ListGeoMatchSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_geo_match_sets::ListGeoMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_geo_match_sets::ListGeoMatchSetsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

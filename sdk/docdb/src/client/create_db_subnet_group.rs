@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbSubnetGroupOutput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput) with field(s):
     ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput::db_subnet_group): <p>Detailed information about a subnet group. </p>
     /// - On failure, responds with [`SdkError<CreateDBSubnetGroupError>`](crate::operation::create_db_subnet_group::CreateDBSubnetGroupError)
-    pub fn create_db_subnet_group(
-        &self,
-    ) -> crate::operation::create_db_subnet_group::builders::CreateDBSubnetGroupFluentBuilder {
-        crate::operation::create_db_subnet_group::builders::CreateDBSubnetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_db_subnet_group(&self) -> crate::operation::create_db_subnet_group::builders::CreateDBSubnetGroupFluentBuilder {
+        crate::operation::create_db_subnet_group::builders::CreateDBSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

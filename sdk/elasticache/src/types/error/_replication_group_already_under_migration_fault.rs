@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ReplicationGroupAlreadyUnderMigrationFault {
     }
 }
 impl ::std::error::Error for ReplicationGroupAlreadyUnderMigrationFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ReplicationGroupAlreadyUnderMigrationFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ReplicationGroupAlreadyUnderMigrationFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ReplicationGroupAlreadyUnderMigrationFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ReplicationGroupAlreadyUnderMigrationFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ReplicationGroupAlreadyUnderMigrationFault {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupAlreadyUnderMigrationFault`](crate::types::error::ReplicationGroupAlreadyUnderMigrationFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder {
+    pub fn builder() -> crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder {
         crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder::default()
     }
 }
 
 /// A builder for [`ReplicationGroupAlreadyUnderMigrationFault`](crate::types::error::ReplicationGroupAlreadyUnderMigrationFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationGroupAlreadyUnderMigrationFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ReplicationGroupAlreadyUnderMigrationFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -41,16 +41,14 @@ impl CreateReplicationSubnetGroupInput {
 }
 impl CreateReplicationSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSubnetGroupInput`](crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput).
-    pub fn builder() -> crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder {
         crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationSubnetGroupInput`](crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationSubnetGroupInputBuilder {
     pub(crate) replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -61,51 +59,35 @@ impl CreateReplicationSubnetGroupInputBuilder {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn replication_subnet_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_replication_subnet_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = input;
         self
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn get_replication_subnet_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_subnet_group_identifier
     }
     /// <p>The description for the subnet group.</p>
-    pub fn replication_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the subnet group.</p>
-    pub fn set_replication_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_subnet_group_description = input;
         self
     }
     /// <p>The description for the subnet group.</p>
-    pub fn get_replication_subnet_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_subnet_group_description
     }
     /// Appends an item to `subnet_ids`.
@@ -120,10 +102,7 @@ impl CreateReplicationSubnetGroupInputBuilder {
         self
     }
     /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -143,10 +122,7 @@ impl CreateReplicationSubnetGroupInputBuilder {
         self
     }
     /// <p>One or more tags to be assigned to the subnet group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -161,13 +137,11 @@ impl CreateReplicationSubnetGroupInputBuilder {
         crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput {
-                replication_subnet_group_identifier: self.replication_subnet_group_identifier,
-                replication_subnet_group_description: self.replication_subnet_group_description,
-                subnet_ids: self.subnet_ids,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupInput {
+            replication_subnet_group_identifier: self.replication_subnet_group_identifier,
+            replication_subnet_group_description: self.replication_subnet_group_description,
+            subnet_ids: self.subnet_ids,
+            tags: self.tags,
+        })
     }
 }

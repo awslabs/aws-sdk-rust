@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyWorkspaceStateOutput {
 }
 impl ModifyWorkspaceStateOutput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceStateOutput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateOutputBuilder {
+    pub fn builder() -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateOutputBuilder {
         crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyWorkspaceStateOutput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceStateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -43,17 +43,14 @@ impl StartFhirExportJobInput {
 }
 impl StartFhirExportJobInput {
     /// Creates a new builder-style object to manufacture [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder {
+    pub fn builder() -> crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder {
         crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFhirExportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -82,10 +79,7 @@ impl StartFhirExportJobInputBuilder {
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -108,18 +102,12 @@ impl StartFhirExportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -144,18 +132,14 @@ impl StartFhirExportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_fhir_export_job::StartFhirExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_fhir_export_job::StartFhirExportJobInput {
-                job_name: self.job_name,
-                output_data_config: self.output_data_config,
-                datastore_id: self.datastore_id,
-                data_access_role_arn: self.data_access_role_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_fhir_export_job::StartFhirExportJobInput {
+            job_name: self.job_name,
+            output_data_config: self.output_data_config,
+            datastore_id: self.datastore_id,
+            data_access_role_arn: self.data_access_role_arn,
+            client_token: self.client_token,
+        })
     }
 }

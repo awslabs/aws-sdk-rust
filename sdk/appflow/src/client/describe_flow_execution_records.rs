@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`flow_executions(Option<Vec<ExecutionRecord>>)`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput::flow_executions): <p> Returns a list of all instances when this flow was run. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput::next_token): <p> The pagination token for the next page of data. </p>
     /// - On failure, responds with [`SdkError<DescribeFlowExecutionRecordsError>`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsError)
-    pub fn describe_flow_execution_records(&self) -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsFluentBuilder{
+    pub fn describe_flow_execution_records(
+        &self,
+    ) -> crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsFluentBuilder {
         crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsFluentBuilder::new(self.handle.clone())
     }
 }

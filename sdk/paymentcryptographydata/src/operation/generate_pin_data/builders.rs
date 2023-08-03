@@ -10,10 +10,7 @@ impl GeneratePinDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_pin_data::GeneratePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.generate_pin_data();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl GeneratePinDataFluentBuilder {
         }
     }
     /// Access the GeneratePinData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_pin_data::builders::GeneratePinDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::generate_pin_data::builders::GeneratePinDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl GeneratePinDataFluentBuilder {
             crate::operation::generate_pin_data::GeneratePinData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl GeneratePinDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl GeneratePinDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_pin_data::GeneratePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl GeneratePinDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_pin_data::GeneratePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError>,
     > {
         self.send_middleware().await
     }
@@ -125,25 +111,17 @@ impl GeneratePinDataFluentBuilder {
             crate::operation::generate_pin_data::GeneratePinData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_pin_data::GeneratePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_pin_data::GeneratePinDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
-    pub fn generation_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.generation_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.</p>
-    pub fn set_generation_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_generation_key_identifier(input);
         self
     }
@@ -152,18 +130,12 @@ impl GeneratePinDataFluentBuilder {
         self.inner.get_generation_key_identifier()
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
-    pub fn encryption_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block.</p>
-    pub fn set_encryption_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key_identifier(input);
         self
     }
@@ -177,17 +149,12 @@ impl GeneratePinDataFluentBuilder {
         self
     }
     /// <p>The attributes and values to use for PIN, PVV, or PIN Offset generation.</p>
-    pub fn set_generation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::PinGenerationAttributes>,
-    ) -> Self {
+    pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::PinGenerationAttributes>) -> Self {
         self.inner = self.inner.set_generation_attributes(input);
         self
     }
     /// <p>The attributes and values to use for PIN, PVV, or PIN Offset generation.</p>
-    pub fn get_generation_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::PinGenerationAttributes> {
+    pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::PinGenerationAttributes> {
         self.inner.get_generation_attributes()
     }
     /// <p>The length of PIN under generation.</p>
@@ -205,18 +172,12 @@ impl GeneratePinDataFluentBuilder {
         self.inner.get_pin_data_length()
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_account_number(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_account_number(input);
         self
     }
@@ -234,19 +195,14 @@ impl GeneratePinDataFluentBuilder {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    pub fn set_pin_block_format(
-        mut self,
-        input: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
-    ) -> Self {
+    pub fn set_pin_block_format(mut self, input: ::std::option::Option<crate::types::PinBlockFormatForPinData>) -> Self {
         self.inner = self.inner.set_pin_block_format(input);
         self
     }
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    pub fn get_pin_block_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
+    pub fn get_pin_block_format(&self) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
         self.inner.get_pin_block_format()
     }
 }

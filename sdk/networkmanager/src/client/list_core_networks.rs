@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`core_networks(Option<Vec<CoreNetworkSummary>>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::core_networks): <p>Describes the list of core networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListCoreNetworksError>`](crate::operation::list_core_networks::ListCoreNetworksError)
-    pub fn list_core_networks(
-        &self,
-    ) -> crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder {
-        crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_core_networks(&self) -> crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder {
+        crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::new(self.handle.clone())
     }
 }

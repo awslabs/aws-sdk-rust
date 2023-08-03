@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePrincipalMappingOutput {
 }
 impl DeletePrincipalMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeletePrincipalMappingOutput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder {
         crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePrincipalMappingOutput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePrincipalMappingOutputBuilder {
     _request_id: Option<String>,
 }

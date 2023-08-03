@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput) with field(s):
     ///   - [`revision_id(Option<String>)`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput::revision_id): <p>An identifier for the current revision of the profile permissions.</p>
     /// - On failure, responds with [`SdkError<RemoveProfilePermissionError>`](crate::operation::remove_profile_permission::RemoveProfilePermissionError)
-    pub fn remove_profile_permission(
-        &self,
-    ) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionFluentBuilder
-    {
+    pub fn remove_profile_permission(&self) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionFluentBuilder {
         crate::operation::remove_profile_permission::builders::RemoveProfilePermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl ListProvisionedCapacityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProvisionedCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder,
+    inner: crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder,
 }
 impl ListProvisionedCapacityFluentBuilder {
     /// Creates a new `ListProvisionedCapacity`.
@@ -38,10 +37,7 @@ impl ListProvisionedCapacityFluentBuilder {
         }
     }
     /// Access the ListProvisionedCapacity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListProvisionedCapacityFluentBuilder {
             crate::operation::list_provisioned_capacity::ListProvisionedCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListProvisionedCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListProvisionedCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListProvisionedCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListProvisionedCapacityFluentBuilder {
             crate::operation::list_provisioned_capacity::ListProvisionedCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError>,
     > {
         self.customize_middleware().await
     }

@@ -22,9 +22,7 @@ pub fn ser_create_dataset_import_job_input(
         object.key("TimeZone").string(var_6.as_str());
     }
     if input.use_geolocation_for_time_zone {
-        object
-            .key("UseGeolocationForTimeZone")
-            .boolean(input.use_geolocation_for_time_zone);
+        object.key("UseGeolocationForTimeZone").boolean(input.use_geolocation_for_time_zone);
     }
     if let Some(var_7) = &input.geolocation_format {
         object.key("GeolocationFormat").string(var_7.as_str());

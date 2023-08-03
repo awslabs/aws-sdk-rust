@@ -26,8 +26,7 @@ impl GetBatchPredictionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBatchPredictionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder,
+    inner: crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder,
 }
 impl GetBatchPredictionJobsFluentBuilder {
     /// Creates a new `GetBatchPredictionJobs`.
@@ -38,10 +37,7 @@ impl GetBatchPredictionJobsFluentBuilder {
         }
     }
     /// Access the GetBatchPredictionJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetBatchPredictionJobsFluentBuilder {
             crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetBatchPredictionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetBatchPredictionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetBatchPredictionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl GetBatchPredictionJobsFluentBuilder {
             crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_batch_prediction_jobs::paginator::GetBatchPredictionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_batch_prediction_jobs::paginator::GetBatchPredictionJobsPaginator
-    {
-        crate::operation::get_batch_prediction_jobs::paginator::GetBatchPredictionJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_batch_prediction_jobs::paginator::GetBatchPredictionJobsPaginator {
+        crate::operation::get_batch_prediction_jobs::paginator::GetBatchPredictionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The batch prediction job for which to get the details.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

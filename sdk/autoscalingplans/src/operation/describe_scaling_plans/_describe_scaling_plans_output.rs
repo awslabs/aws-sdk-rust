@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeScalingPlansOutput {
 }
 impl DescribeScalingPlansOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder {
+    pub fn builder() -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder {
         crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPlansOutput`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPlansOutputBuilder {
     pub(crate) scaling_plans: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeScalingPlansOutputBuilder {
         self
     }
     /// <p>Information about the scaling plans.</p>
-    pub fn set_scaling_plans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>,
-    ) -> Self {
+    pub fn set_scaling_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>) -> Self {
         self.scaling_plans = input;
         self
     }
     /// <p>Information about the scaling plans.</p>
-    pub fn get_scaling_plans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>> {
+    pub fn get_scaling_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>> {
         &self.scaling_plans
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>

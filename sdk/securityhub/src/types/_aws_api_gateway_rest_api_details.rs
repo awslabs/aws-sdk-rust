@@ -35,8 +35,7 @@ pub struct AwsApiGatewayRestApiDetails {
     pub api_key_source: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of the REST API.</p>
     #[doc(hidden)]
-    pub endpoint_configuration:
-        ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
+    pub endpoint_configuration: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
 }
 impl AwsApiGatewayRestApiDetails {
     /// <p>The identifier of the REST API.</p>
@@ -77,9 +76,7 @@ impl AwsApiGatewayRestApiDetails {
         self.api_key_source.as_deref()
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn endpoint_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayEndpointConfiguration> {
+    pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayEndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
 }
@@ -92,9 +89,7 @@ impl AwsApiGatewayRestApiDetails {
 
 /// A builder for [`AwsApiGatewayRestApiDetails`](crate::types::AwsApiGatewayRestApiDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayRestApiDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,8 +99,7 @@ pub struct AwsApiGatewayRestApiDetailsBuilder {
     pub(crate) binary_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) minimum_compression_size: ::std::option::Option<i32>,
     pub(crate) api_key_source: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_configuration:
-        ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
+    pub(crate) endpoint_configuration: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
 }
 impl AwsApiGatewayRestApiDetailsBuilder {
     /// <p>The identifier of the REST API.</p>
@@ -186,27 +180,19 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
     ///
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn binary_media_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn binary_media_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.binary_media_types.unwrap_or_default();
         v.push(input.into());
         self.binary_media_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn set_binary_media_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_binary_media_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.binary_media_types = input;
         self
     }
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn get_binary_media_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_binary_media_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.binary_media_types
     }
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
@@ -232,20 +218,14 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
     /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn api_key_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
     /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn set_api_key_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_key_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_source = input;
         self
     }
@@ -256,25 +236,17 @@ impl AwsApiGatewayRestApiDetailsBuilder {
         &self.api_key_source
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn endpoint_configuration(
-        mut self,
-        input: crate::types::AwsApiGatewayEndpointConfiguration,
-    ) -> Self {
+    pub fn endpoint_configuration(mut self, input: crate::types::AwsApiGatewayEndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn set_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn get_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration> {
+    pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration> {
         &self.endpoint_configuration
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayRestApiDetails`](crate::types::AwsApiGatewayRestApiDetails).

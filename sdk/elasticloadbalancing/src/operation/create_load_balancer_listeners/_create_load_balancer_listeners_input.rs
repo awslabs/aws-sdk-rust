@@ -23,34 +23,26 @@ impl CreateLoadBalancerListenersInput {
 }
 impl CreateLoadBalancerListenersInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerListenersInput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput).
-    pub fn builder() -> crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder{
+    pub fn builder() -> crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder {
         crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerListenersInput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
 }
 impl CreateLoadBalancerListenersInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -70,10 +62,7 @@ impl CreateLoadBalancerListenersInputBuilder {
         self
     }
     /// <p>The listeners.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }
@@ -88,11 +77,9 @@ impl CreateLoadBalancerListenersInputBuilder {
         crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput {
-                load_balancer_name: self.load_balancer_name,
-                listeners: self.listeners,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput {
+            load_balancer_name: self.load_balancer_name,
+            listeners: self.listeners,
+        })
     }
 }

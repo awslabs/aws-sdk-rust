@@ -23,9 +23,7 @@ impl DeleteMultiplexInput {
 
 /// A builder for [`DeleteMultiplexInput`](crate::operation::delete_multiplex::DeleteMultiplexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl DeleteMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMultiplexInput`](crate::operation::delete_multiplex::DeleteMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_multiplex::DeleteMultiplexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_multiplex::DeleteMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_multiplex::DeleteMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

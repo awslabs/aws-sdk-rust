@@ -12,10 +12,7 @@ pub fn ser_resolver_rule_config(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_target_address::ser_target_address(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_target_address::ser_target_address(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

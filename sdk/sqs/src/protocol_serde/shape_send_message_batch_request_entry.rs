@@ -30,9 +30,7 @@ pub fn ser_send_message_batch_request_entry(
             #[allow(unused_mut)]
             let mut entry_11 = map_8.entry(key_9);
             {
-                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(
-                    entry_11, value_10,
-                )?;
+                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(entry_11, value_10)?;
             }
         }
         map_8.finish();

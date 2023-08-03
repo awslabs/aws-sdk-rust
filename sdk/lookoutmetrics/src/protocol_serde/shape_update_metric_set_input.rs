@@ -60,10 +60,7 @@ pub fn ser_update_metric_set_input(
     if let Some(var_18) = &input.timestamp_column {
         #[allow(unused_mut)]
         let mut object_19 = object.key("TimestampColumn").start_object();
-        crate::protocol_serde::shape_timestamp_column::ser_timestamp_column(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_timestamp_column::ser_timestamp_column(&mut object_19, var_18)?;
         object_19.finish();
     }
     Ok(())

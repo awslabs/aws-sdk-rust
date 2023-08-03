@@ -36,16 +36,15 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
-    pub fn builder() -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder
+    {
         crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -54,18 +53,12 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInputBuilder {
 }
 impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -88,40 +81,26 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    pub fn cloud_watch_logging_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    pub fn set_cloud_watch_logging_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = input;
         self
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    pub fn get_cloud_watch_logging_option_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cloud_watch_logging_option_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logging_option_id
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conditional_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conditional_token = input;
         self
     }
@@ -130,18 +109,19 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         &self.conditional_token
     }
     /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput {
-                application_name: self.application_name
-                ,
-                current_application_version_id: self.current_application_version_id
-                ,
-                cloud_watch_logging_option_id: self.cloud_watch_logging_option_id
-                ,
-                conditional_token: self.conditional_token
-                ,
-            }
+                application_name: self.application_name,
+                current_application_version_id: self.current_application_version_id,
+                cloud_watch_logging_option_id: self.cloud_watch_logging_option_id,
+                conditional_token: self.conditional_token,
+            },
         )
     }
 }

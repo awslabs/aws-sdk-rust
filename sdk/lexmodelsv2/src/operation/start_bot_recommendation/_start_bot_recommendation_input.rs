@@ -33,9 +33,7 @@ impl StartBotRecommendationInput {
         self.locale_id.as_deref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -45,24 +43,19 @@ impl StartBotRecommendationInput {
 }
 impl StartBotRecommendationInput {
     /// Creates a new builder-style object to manufacture [`StartBotRecommendationInput`](crate::operation::start_bot_recommendation::StartBotRecommendationInput).
-    pub fn builder(
-    ) -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder {
         crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartBotRecommendationInput`](crate::operation::start_bot_recommendation::StartBotRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) transcript_source_setting:
-        ::std::option::Option<crate::types::TranscriptSourceSetting>,
+    pub(crate) transcript_source_setting: ::std::option::Option<crate::types::TranscriptSourceSetting>,
     pub(crate) encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
 }
 impl StartBotRecommendationInputBuilder {
@@ -109,25 +102,17 @@ impl StartBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        mut self,
-        input: crate::types::TranscriptSourceSetting,
-    ) -> Self {
+    pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.transcript_source_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn set_transcript_source_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptSourceSetting>,
-    ) -> Self {
+    pub fn set_transcript_source_setting(mut self, input: ::std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
         self.transcript_source_setting = input;
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn get_transcript_source_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
+    pub fn get_transcript_source_setting(&self) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
         &self.transcript_source_setting
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -136,34 +121,25 @@ impl StartBotRecommendationInputBuilder {
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.encryption_setting = input;
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         &self.encryption_setting
     }
     /// Consumes the builder and constructs a [`StartBotRecommendationInput`](crate::operation::start_bot_recommendation::StartBotRecommendationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_bot_recommendation::StartBotRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_bot_recommendation::StartBotRecommendationInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                transcript_source_setting: self.transcript_source_setting,
-                encryption_setting: self.encryption_setting,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_bot_recommendation::StartBotRecommendationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_bot_recommendation::StartBotRecommendationInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            transcript_source_setting: self.transcript_source_setting,
+            encryption_setting: self.encryption_setting,
+        })
     }
 }

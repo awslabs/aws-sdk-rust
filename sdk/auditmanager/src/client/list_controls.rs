@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`control_metadata_list(Option<Vec<ControlMetadata>>)`](crate::operation::list_controls::ListControlsOutput::control_metadata_list): <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_controls::ListControlsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListControlsError>`](crate::operation::list_controls::ListControlsError)
-    pub fn list_controls(
-        &self,
-    ) -> crate::operation::list_controls::builders::ListControlsFluentBuilder {
-        crate::operation::list_controls::builders::ListControlsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_controls(&self) -> crate::operation::list_controls::builders::ListControlsFluentBuilder {
+        crate::operation::list_controls::builders::ListControlsFluentBuilder::new(self.handle.clone())
     }
 }

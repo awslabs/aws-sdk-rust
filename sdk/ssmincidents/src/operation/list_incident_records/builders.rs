@@ -37,9 +37,7 @@ impl ListIncidentRecordsFluentBuilder {
         }
     }
     /// Access the ListIncidentRecords as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListIncidentRecordsFluentBuilder {
             crate::operation::list_incident_records::ListIncidentRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_incident_records::ListIncidentRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListIncidentRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListIncidentRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_incident_records::ListIncidentRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_incident_records::ListIncidentRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListIncidentRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_incident_records::ListIncidentRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_incident_records::ListIncidentRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListIncidentRecordsFluentBuilder {
             crate::operation::list_incident_records::ListIncidentRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_incident_records::ListIncidentRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator {
-        crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator {
+        crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -167,10 +149,7 @@ impl ListIncidentRecordsFluentBuilder {
     /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

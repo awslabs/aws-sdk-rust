@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 }
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserInput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput).
-    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder{
+    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder {
         crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder::default()
     }
 }
@@ -62,18 +62,12 @@ pub struct ListChannelsModeratedByAppInstanceUserInputBuilder {
 }
 impl ListChannelsModeratedByAppInstanceUserInputBuilder {
     /// <p>The ARN of the user in the moderated channel.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user in the moderated channel.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -124,18 +118,19 @@ impl ListChannelsModeratedByAppInstanceUserInputBuilder {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelsModeratedByAppInstanceUserInput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }

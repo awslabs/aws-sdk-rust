@@ -30,9 +30,7 @@ impl AttributeKeyAndValue {
 
 /// A builder for [`AttributeKeyAndValue`](crate::types::AttributeKeyAndValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeKeyAndValueBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AttributeKey>,
     pub(crate) value: ::std::option::Option<crate::types::TypedAttributeValue>,
@@ -58,10 +56,7 @@ impl AttributeKeyAndValueBuilder {
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
         self.value = input;
         self
     }

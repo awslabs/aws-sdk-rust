@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExecutionResult {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ExecutionResult {
             "SKIPPED" => ExecutionResult::Skipped,
             "STOPPED" => ExecutionResult::Stopped,
             "WARNED" => ExecutionResult::Warned,
-            other => {
-                ExecutionResult::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExecutionResult::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,9 +100,7 @@ impl ExecutionResult {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED",
-        ]
+        &["ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionResult {

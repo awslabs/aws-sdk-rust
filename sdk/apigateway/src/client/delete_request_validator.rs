@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`request_validator_id(impl ::std::convert::Into<String>)`](crate::operation::delete_request_validator::builders::DeleteRequestValidatorFluentBuilder::request_validator_id) / [`set_request_validator_id(Option<String>)`](crate::operation::delete_request_validator::builders::DeleteRequestValidatorFluentBuilder::set_request_validator_id): <p>The identifier of the RequestValidator to be deleted.</p>
     /// - On success, responds with [`DeleteRequestValidatorOutput`](crate::operation::delete_request_validator::DeleteRequestValidatorOutput)
     /// - On failure, responds with [`SdkError<DeleteRequestValidatorError>`](crate::operation::delete_request_validator::DeleteRequestValidatorError)
-    pub fn delete_request_validator(
-        &self,
-    ) -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorFluentBuilder
-    {
+    pub fn delete_request_validator(&self) -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorFluentBuilder {
         crate::operation::delete_request_validator::builders::DeleteRequestValidatorFluentBuilder::new(self.handle.clone())
     }
 }

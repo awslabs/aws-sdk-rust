@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`nodes(Option<Vec<Node>>)`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput::nodes): <p> A list of information about nodes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListSignalCatalogNodesError>`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError)
-    pub fn list_signal_catalog_nodes(
-        &self,
-    ) -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesFluentBuilder
-    {
+    pub fn list_signal_catalog_nodes(&self) -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesFluentBuilder {
         crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesFluentBuilder::new(self.handle.clone())
     }
 }

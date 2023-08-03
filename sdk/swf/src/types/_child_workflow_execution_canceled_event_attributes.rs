@@ -44,17 +44,14 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
 }
 impl ChildWorkflowExecutionCanceledEventAttributes {
     /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCanceledEventAttributes`](crate::types::ChildWorkflowExecutionCanceledEventAttributes).
-    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionCanceledEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionCanceledEventAttributesBuilder {
         crate::types::builders::ChildWorkflowExecutionCanceledEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`ChildWorkflowExecutionCanceledEventAttributes`](crate::types::ChildWorkflowExecutionCanceledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionCanceledEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -69,17 +66,12 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
         self
     }
     /// <p>The child workflow execution that was canceled.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The child workflow execution that was canceled.</p>
-    pub fn get_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.workflow_execution
     }
     /// <p>The type of the child workflow execution.</p>
@@ -88,10 +80,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
         self
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }

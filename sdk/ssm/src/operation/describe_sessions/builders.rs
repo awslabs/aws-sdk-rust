@@ -10,10 +10,7 @@ impl DescribeSessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_sessions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSessionsFluentBuilder {
         }
     }
     /// Access the DescribeSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSessionsFluentBuilder {
             crate::operation::describe_sessions::DescribeSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sessions::DescribeSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeSessionsFluentBuilder {
             crate::operation::describe_sessions::DescribeSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sessions::DescribeSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_sessions::paginator::DescribeSessionsPaginator {
-        crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_sessions::paginator::DescribeSessionsPaginator {
+        crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
     pub fn state(mut self, input: crate::types::SessionState) -> Self {
@@ -185,17 +164,12 @@ impl DescribeSessionsFluentBuilder {
         self
     }
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>> {
         self.inner.get_filters()
     }
 }

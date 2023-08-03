@@ -13,9 +13,7 @@ pub struct CreateVpcEndpointConnectionNotificationOutput {
 }
 impl CreateVpcEndpointConnectionNotificationOutput {
     /// <p>Information about the notification.</p>
-    pub fn connection_notification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionNotification> {
+    pub fn connection_notification(&self) -> ::std::option::Option<&crate::types::ConnectionNotification> {
         self.connection_notification.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -30,16 +28,15 @@ impl ::aws_http::request_id::RequestId for CreateVpcEndpointConnectionNotificati
 }
 impl CreateVpcEndpointConnectionNotificationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointConnectionNotificationOutput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput).
-    pub fn builder() -> crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationOutputBuilder
+    {
         crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointConnectionNotificationOutput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointConnectionNotificationOutputBuilder {
     pub(crate) connection_notification: ::std::option::Option<crate::types::ConnectionNotification>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,12 @@ impl CreateVpcEndpointConnectionNotificationOutputBuilder {
         self
     }
     /// <p>Information about the notification.</p>
-    pub fn set_connection_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionNotification>,
-    ) -> Self {
+    pub fn set_connection_notification(mut self, input: ::std::option::Option<crate::types::ConnectionNotification>) -> Self {
         self.connection_notification = input;
         self
     }
     /// <p>Information about the notification.</p>
-    pub fn get_connection_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionNotification> {
+    pub fn get_connection_notification(&self) -> &::std::option::Option<crate::types::ConnectionNotification> {
         &self.connection_notification
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -89,12 +81,10 @@ impl CreateVpcEndpointConnectionNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointConnectionNotificationOutput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput).
-    pub fn build(self) -> crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput{
+    pub fn build(self) -> crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput {
         crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput {
-            connection_notification: self.connection_notification
-            ,
-            client_token: self.client_token
-            ,
+            connection_notification: self.connection_notification,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }

@@ -10,10 +10,7 @@ impl DescribeStacksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_stacks::DescribeStacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stacks::DescribeStacksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stacks::DescribeStacksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_stacks();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeStacksFluentBuilder {
         }
     }
     /// Access the DescribeStacks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stacks::builders::DescribeStacksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_stacks::builders::DescribeStacksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DescribeStacksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,13 +111,8 @@ impl DescribeStacksFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_stacks::paginator::DescribeStacksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_stacks::paginator::DescribeStacksPaginator {
-        crate::operation::describe_stacks::paginator::DescribeStacksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_stacks::paginator::DescribeStacksPaginator {
+        crate::operation::describe_stacks::paginator::DescribeStacksPaginator::new(self.handle, self.inner)
     }
     /// <note>
     /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>

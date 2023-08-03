@@ -10,10 +10,7 @@ impl CreateInvitationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_invitations::CreateInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invitations::CreateInvitationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invitations::CreateInvitationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_invitations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateInvitationsFluentBuilder {
         }
     }
     /// Access the CreateInvitations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_invitations::builders::CreateInvitationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_invitations::builders::CreateInvitationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateInvitationsFluentBuilder {
             crate::operation::create_invitations::CreateInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invitations::CreateInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invitations::CreateInvitationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateInvitationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_invitations::CreateInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invitations::CreateInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invitations::CreateInvitationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_invitations::CreateInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invitations::CreateInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invitations::CreateInvitationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateInvitationsFluentBuilder {
             crate::operation::create_invitations::CreateInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invitations::CreateInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invitations::CreateInvitationsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl CreateInvitationsFluentBuilder {
         self
     }
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>

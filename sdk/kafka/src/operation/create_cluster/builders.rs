@@ -10,10 +10,7 @@ impl CreateClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster::CreateClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateClusterFluentBuilder {
         }
     }
     /// Access the CreateCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,17 +112,12 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Information about the broker nodes in the cluster.</p>
-    pub fn set_broker_node_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
-    ) -> Self {
+    pub fn set_broker_node_group_info(mut self, input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>) -> Self {
         self.inner = self.inner.set_broker_node_group_info(input);
         self
     }
     /// <p>Information about the broker nodes in the cluster.</p>
-    pub fn get_broker_node_group_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+    pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         self.inner.get_broker_node_group_info()
     }
     /// <p>Includes all client authentication related information.</p>
@@ -139,17 +126,12 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn get_client_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ClientAuthentication> {
         self.inner.get_client_authentication()
     }
     /// <p>The name of the cluster.</p>
@@ -172,17 +154,12 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
+    pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
         self.inner = self.inner.set_configuration_info(input);
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn get_configuration_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+    pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
         self.inner.get_configuration_info()
     }
     /// <p>Includes all encryption-related information.</p>
@@ -191,10 +168,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: ::std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
     }
@@ -208,17 +182,12 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         self.inner.get_enhanced_monitoring()
     }
     /// <p>The settings for open monitoring.</p>
@@ -227,10 +196,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.inner = self.inner.set_open_monitoring(input);
         self
     }
@@ -239,18 +205,12 @@ impl CreateClusterFluentBuilder {
         self.inner.get_open_monitoring()
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn kafka_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kafka_version(input.into());
         self
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn set_kafka_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kafka_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kafka_version(input);
         self
     }
@@ -264,10 +224,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }
@@ -294,30 +251,17 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Create tags when creating the cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Create tags when creating the cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Create tags when creating the cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
@@ -326,10 +270,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: ::std::option::Option<crate::types::StorageMode>) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self
     }

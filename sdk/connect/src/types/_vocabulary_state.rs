@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VocabularyState {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for VocabularyState {
             "CREATION_FAILED" => VocabularyState::CreationFailed,
             "CREATION_IN_PROGRESS" => VocabularyState::CreationInProgress,
             "DELETE_IN_PROGRESS" => VocabularyState::DeleteInProgress,
-            other => {
-                VocabularyState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => VocabularyState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl VocabularyState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATION_FAILED",
-            "CREATION_IN_PROGRESS",
-            "DELETE_IN_PROGRESS",
-        ]
+        &["ACTIVE", "CREATION_FAILED", "CREATION_IN_PROGRESS", "DELETE_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for VocabularyState {

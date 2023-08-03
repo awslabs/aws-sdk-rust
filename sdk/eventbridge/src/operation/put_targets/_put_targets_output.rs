@@ -35,13 +35,10 @@ impl PutTargetsOutput {
 
 /// A builder for [`PutTargetsOutput`](crate::operation::put_targets::PutTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) failed_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
+    pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutTargetsOutputBuilder {
@@ -71,17 +68,12 @@ impl PutTargetsOutputBuilder {
         self
     }
     /// <p>The failed target entries.</p>
-    pub fn set_failed_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
-    ) -> Self {
+    pub fn set_failed_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>) -> Self {
         self.failed_entries = input;
         self
     }
     /// <p>The failed target entries.</p>
-    pub fn get_failed_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>> {
+    pub fn get_failed_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>> {
         &self.failed_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

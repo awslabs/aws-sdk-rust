@@ -15,18 +15,14 @@ impl DisableInsightRulesInput {
 }
 impl DisableInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder {
-        crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder {
+        crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableInsightRulesInputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,10 +39,7 @@ impl DisableInsightRulesInputBuilder {
         self
     }
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_names = input;
         self
     }
@@ -57,14 +50,8 @@ impl DisableInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_insight_rules::DisableInsightRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_insight_rules::DisableInsightRulesInput {
-                rule_names: self.rule_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_insight_rules::DisableInsightRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disable_insight_rules::DisableInsightRulesInput { rule_names: self.rule_names })
     }
 }

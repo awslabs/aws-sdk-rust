@@ -15,18 +15,14 @@ impl DescribePatchGroupStateInput {
 }
 impl DescribePatchGroupStateInput {
     /// Creates a new builder-style object to manufacture [`DescribePatchGroupStateInput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateInput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder {
         crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchGroupStateInput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchGroupStateInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DescribePatchGroupStateInputBuilder {
         crate::operation::describe_patch_group_state::DescribePatchGroupStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_patch_group_state::DescribePatchGroupStateInput {
-                patch_group: self.patch_group,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_patch_group_state::DescribePatchGroupStateInput {
+            patch_group: self.patch_group,
+        })
     }
 }

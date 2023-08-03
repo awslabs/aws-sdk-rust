@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
     ///   - [`phone_numbers(Option<Vec<PhoneNumberInformation>>)`](crate::operation::list_origination_numbers::ListOriginationNumbersOutput::phone_numbers): <p>A list of the calling account's verified and pending origination numbers.</p>
     /// - On failure, responds with [`SdkError<ListOriginationNumbersError>`](crate::operation::list_origination_numbers::ListOriginationNumbersError)
-    pub fn list_origination_numbers(
-        &self,
-    ) -> crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder
-    {
+    pub fn list_origination_numbers(&self) -> crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder {
         crate::operation::list_origination_numbers::builders::ListOriginationNumbersFluentBuilder::new(self.handle.clone())
     }
 }

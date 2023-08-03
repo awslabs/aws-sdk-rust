@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeCacheSecurityGroupIngressOutput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput) with field(s):
     ///   - [`cache_security_group(Option<CacheSecurityGroup>)`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput::cache_security_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>   <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>   <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<AuthorizeCacheSecurityGroupIngressError>`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError)
-    pub fn authorize_cache_security_group_ingress(&self) -> crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressFluentBuilder{
+    pub fn authorize_cache_security_group_ingress(
+        &self,
+    ) -> crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressFluentBuilder {
         crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressFluentBuilder::new(self.handle.clone())
     }
 }

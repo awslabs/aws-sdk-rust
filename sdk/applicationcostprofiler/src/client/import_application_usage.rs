@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ImportApplicationUsageOutput`](crate::operation::import_application_usage::ImportApplicationUsageOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::import_application_usage::ImportApplicationUsageOutput::import_id): <p>ID of the import request.</p>
     /// - On failure, responds with [`SdkError<ImportApplicationUsageError>`](crate::operation::import_application_usage::ImportApplicationUsageError)
-    pub fn import_application_usage(
-        &self,
-    ) -> crate::operation::import_application_usage::builders::ImportApplicationUsageFluentBuilder
-    {
+    pub fn import_application_usage(&self) -> crate::operation::import_application_usage::builders::ImportApplicationUsageFluentBuilder {
         crate::operation::import_application_usage::builders::ImportApplicationUsageFluentBuilder::new(self.handle.clone())
     }
 }

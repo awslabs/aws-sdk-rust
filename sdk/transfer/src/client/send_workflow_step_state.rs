@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`status(CustomStepStatus)`](crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateFluentBuilder::status) / [`set_status(Option<CustomStepStatus>)`](crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateFluentBuilder::set_status): <p>Indicates whether the specified step succeeded or failed.</p>
     /// - On success, responds with [`SendWorkflowStepStateOutput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput)
     /// - On failure, responds with [`SdkError<SendWorkflowStepStateError>`](crate::operation::send_workflow_step_state::SendWorkflowStepStateError)
-    pub fn send_workflow_step_state(
-        &self,
-    ) -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateFluentBuilder
-    {
+    pub fn send_workflow_step_state(&self) -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateFluentBuilder {
         crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateFluentBuilder::new(self.handle.clone())
     }
 }

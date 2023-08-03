@@ -19,19 +19,31 @@ pub fn ser_response_headers_policy_config(
     }
     if let Some(var_4) = &input.security_headers_config {
         let inner_writer = scope.start_el("SecurityHeadersConfig");
-        crate::protocol_serde::shape_response_headers_policy_security_headers_config::ser_response_headers_policy_security_headers_config(var_4, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_security_headers_config::ser_response_headers_policy_security_headers_config(
+            var_4,
+            inner_writer,
+        )?
     }
     if let Some(var_5) = &input.server_timing_headers_config {
         let inner_writer = scope.start_el("ServerTimingHeadersConfig");
-        crate::protocol_serde::shape_response_headers_policy_server_timing_headers_config::ser_response_headers_policy_server_timing_headers_config(var_5, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_server_timing_headers_config::ser_response_headers_policy_server_timing_headers_config(
+            var_5,
+            inner_writer,
+        )?
     }
     if let Some(var_6) = &input.custom_headers_config {
         let inner_writer = scope.start_el("CustomHeadersConfig");
-        crate::protocol_serde::shape_response_headers_policy_custom_headers_config::ser_response_headers_policy_custom_headers_config(var_6, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_custom_headers_config::ser_response_headers_policy_custom_headers_config(
+            var_6,
+            inner_writer,
+        )?
     }
     if let Some(var_7) = &input.remove_headers_config {
         let inner_writer = scope.start_el("RemoveHeadersConfig");
-        crate::protocol_serde::shape_response_headers_policy_remove_headers_config::ser_response_headers_policy_remove_headers_config(var_7, inner_writer)?
+        crate::protocol_serde::shape_response_headers_policy_remove_headers_config::ser_response_headers_policy_remove_headers_config(
+            var_7,
+            inner_writer,
+        )?
     }
     scope.finish();
     Ok(())

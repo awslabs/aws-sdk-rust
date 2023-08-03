@@ -35,9 +35,7 @@ impl ListUseCasesOutput {
 
 /// A builder for [`ListUseCasesOutput`](crate::operation::list_use_cases::ListUseCasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUseCasesOutputBuilder {
     pub(crate) use_case_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::UseCase>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListUseCasesOutputBuilder {
         self
     }
     /// <p>The use cases.</p>
-    pub fn set_use_case_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UseCase>>,
-    ) -> Self {
+    pub fn set_use_case_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UseCase>>) -> Self {
         self.use_case_summary_list = input;
         self
     }
     /// <p>The use cases.</p>
-    pub fn get_use_case_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UseCase>> {
+    pub fn get_use_case_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UseCase>> {
         &self.use_case_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

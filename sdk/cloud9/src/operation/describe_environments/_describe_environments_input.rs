@@ -15,18 +15,14 @@ impl DescribeEnvironmentsInput {
 }
 impl DescribeEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
-        crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+        crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsInputBuilder {
     pub(crate) environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,40 +32,28 @@ impl DescribeEnvironmentsInputBuilder {
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn environment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environment_ids.unwrap_or_default();
         v.push(input.into());
         self.environment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.environment_ids = input;
         self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn get_environment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.environment_ids
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_environments::DescribeEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_environments::DescribeEnvironmentsInput {
-                environment_ids: self.environment_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_environments::DescribeEnvironmentsInput {
+            environment_ids: self.environment_ids,
+        })
     }
 }

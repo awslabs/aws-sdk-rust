@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for StartRestoreJobOutput {
 }
 impl StartRestoreJobOutput {
     /// Creates a new builder-style object to manufacture [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput).
-    pub fn builder() -> crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder {
         crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRestoreJobOutputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartRestoreJobOutputBuilder {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn restore_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restore_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn set_restore_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_job_id = input;
         self
     }

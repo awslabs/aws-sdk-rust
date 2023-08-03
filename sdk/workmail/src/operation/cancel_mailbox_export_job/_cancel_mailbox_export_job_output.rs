@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelMailboxExportJobOutput {
 }
 impl CancelMailboxExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelMailboxExportJobOutput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobOutputBuilder {
         crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMailboxExportJobOutput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMailboxExportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CancelMailboxExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelMailboxExportJobOutput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput {
+    pub fn build(self) -> crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput {
         crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput {
             _request_id: self._request_id,
         }

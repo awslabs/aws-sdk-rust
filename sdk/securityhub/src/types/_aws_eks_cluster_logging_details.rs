@@ -6,15 +6,11 @@
 pub struct AwsEksClusterLoggingDetails {
     /// <p>Cluster logging configurations.</p>
     #[doc(hidden)]
-    pub cluster_logging: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>,
-    >,
+    pub cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }
 impl AwsEksClusterLoggingDetails {
     /// <p>Cluster logging configurations.</p>
-    pub fn cluster_logging(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEksClusterLoggingClusterLoggingDetails]> {
+    pub fn cluster_logging(&self) -> ::std::option::Option<&[crate::types::AwsEksClusterLoggingClusterLoggingDetails]> {
         self.cluster_logging.as_deref()
     }
 }
@@ -27,13 +23,9 @@ impl AwsEksClusterLoggingDetails {
 
 /// A builder for [`AwsEksClusterLoggingDetails`](crate::types::AwsEksClusterLoggingDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingDetailsBuilder {
-    pub(crate) cluster_logging: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>,
-    >,
+    pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }
 impl AwsEksClusterLoggingDetailsBuilder {
     /// Appends an item to `cluster_logging`.
@@ -41,10 +33,7 @@ impl AwsEksClusterLoggingDetailsBuilder {
     /// To override the contents of this collection use [`set_cluster_logging`](Self::set_cluster_logging).
     ///
     /// <p>Cluster logging configurations.</p>
-    pub fn cluster_logging(
-        mut self,
-        input: crate::types::AwsEksClusterLoggingClusterLoggingDetails,
-    ) -> Self {
+    pub fn cluster_logging(mut self, input: crate::types::AwsEksClusterLoggingClusterLoggingDetails) -> Self {
         let mut v = self.cluster_logging.unwrap_or_default();
         v.push(input);
         self.cluster_logging = ::std::option::Option::Some(v);
@@ -53,19 +42,13 @@ impl AwsEksClusterLoggingDetailsBuilder {
     /// <p>Cluster logging configurations.</p>
     pub fn set_cluster_logging(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
     ) -> Self {
         self.cluster_logging = input;
         self
     }
     /// <p>Cluster logging configurations.</p>
-    pub fn get_cluster_logging(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>,
-    > {
+    pub fn get_cluster_logging(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>> {
         &self.cluster_logging
     }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingDetails`](crate::types::AwsEksClusterLoggingDetails).

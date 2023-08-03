@@ -9,10 +9,7 @@ pub fn ser_update_snaplock_configuration(
     if let Some(var_2) = &input.autocommit_period {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AutocommitPeriod").start_object();
-        crate::protocol_serde::shape_autocommit_period::ser_autocommit_period(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_autocommit_period::ser_autocommit_period(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.privileged_delete {
@@ -21,10 +18,7 @@ pub fn ser_update_snaplock_configuration(
     if let Some(var_5) = &input.retention_period {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RetentionPeriod").start_object();
-        crate::protocol_serde::shape_snaplock_retention_period::ser_snaplock_retention_period(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_snaplock_retention_period::ser_snaplock_retention_period(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.volume_append_mode_enabled {

@@ -28,7 +28,7 @@ impl DescribeHsmConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHsmConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder,
+    inner: crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder,
 }
 impl DescribeHsmConfigurationsFluentBuilder {
     /// Creates a new `DescribeHsmConfigurations`.
@@ -39,7 +39,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
         }
     }
     /// Access the DescribeHsmConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
             crate::operation::describe_hsm_configurations::DescribeHsmConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,41 +107,28 @@ impl DescribeHsmConfigurationsFluentBuilder {
             crate::operation::describe_hsm_configurations::DescribeHsmConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator {
         crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_configuration_identifier(input.into());
         self
     }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_configuration_identifier(input);
         self
     }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_configuration_identifier()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
@@ -197,10 +175,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -218,10 +193,7 @@ impl DescribeHsmConfigurationsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

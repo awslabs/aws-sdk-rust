@@ -2,8 +2,7 @@
 /// Paginator for [`DescribeEndpointAccess`](crate::operation::describe_endpoint_access::DescribeEndpointAccess)
 pub struct DescribeEndpointAccessPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder,
+    builder: crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,13 +31,8 @@ impl DescribeEndpointAccessPaginator {
     ///
     /// This paginator automatically flattens results using `endpoint_access_list`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginatorItems
-    {
-        crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginatorItems(
-            self,
-        )
+    pub fn items(self) -> crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginatorItems {
+        crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginatorItems(self)
     }
 
     /// Stop paginating when the service returns the same pagination token twice in a row.
@@ -61,9 +55,7 @@ impl DescribeEndpointAccessPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -73,10 +65,7 @@ impl DescribeEndpointAccessPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -101,13 +90,9 @@ impl DescribeEndpointAccessPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_describe_endpoint_access_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_endpoint_access_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -145,9 +130,7 @@ impl DescribeEndpointAccessPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::EndpointAccess,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

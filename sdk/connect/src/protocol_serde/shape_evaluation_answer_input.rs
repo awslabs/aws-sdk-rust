@@ -6,10 +6,7 @@ pub fn ser_evaluation_answer_input(
     if let Some(var_1) = &input.value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Value").start_object();
-        crate::protocol_serde::shape_evaluation_answer_data::ser_evaluation_answer_data(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_evaluation_answer_data::ser_evaluation_answer_data(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

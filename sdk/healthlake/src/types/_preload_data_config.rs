@@ -23,9 +23,7 @@ impl PreloadDataConfig {
 
 /// A builder for [`PreloadDataConfig`](crate::types::PreloadDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PreloadDataConfigBuilder {
     pub(crate) preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
 }
@@ -36,10 +34,7 @@ impl PreloadDataConfigBuilder {
         self
     }
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub fn set_preload_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PreloadDataType>,
-    ) -> Self {
+    pub fn set_preload_data_type(mut self, input: ::std::option::Option<crate::types::PreloadDataType>) -> Self {
         self.preload_data_type = input;
         self
     }

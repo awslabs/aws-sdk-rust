@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`validation_warnings(Option<Vec<ValidationWarning>>)`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput::validation_warnings): <p>Any validation warnings that were found.</p>
     ///   - [`errored(bool)`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput::errored): <p>Indicates whether there were validation errors.</p>
     /// - On failure, responds with [`SdkError<ValidatePipelineDefinitionError>`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError)
-    pub fn validate_pipeline_definition(&self) -> crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionFluentBuilder{
+    pub fn validate_pipeline_definition(&self) -> crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionFluentBuilder {
         crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

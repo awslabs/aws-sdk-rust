@@ -21,12 +21,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_notebook_instances::ListNotebookInstancesOutput::next_token): <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
     ///   - [`notebook_instances(Option<Vec<NotebookInstanceSummary>>)`](crate::operation::list_notebook_instances::ListNotebookInstancesOutput::notebook_instances): <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
     /// - On failure, responds with [`SdkError<ListNotebookInstancesError>`](crate::operation::list_notebook_instances::ListNotebookInstancesError)
-    pub fn list_notebook_instances(
-        &self,
-    ) -> crate::operation::list_notebook_instances::builders::ListNotebookInstancesFluentBuilder
-    {
-        crate::operation::list_notebook_instances::builders::ListNotebookInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_notebook_instances(&self) -> crate::operation::list_notebook_instances::builders::ListNotebookInstancesFluentBuilder {
+        crate::operation::list_notebook_instances::builders::ListNotebookInstancesFluentBuilder::new(self.handle.clone())
     }
 }

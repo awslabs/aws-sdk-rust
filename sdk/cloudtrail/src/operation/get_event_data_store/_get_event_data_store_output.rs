@@ -14,8 +14,7 @@ pub struct GetEventDataStoreOutput {
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
     /// <p>The advanced event selectors used to select events for the data store.</p>
     #[doc(hidden)]
-    pub advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
@@ -54,9 +53,7 @@ impl GetEventDataStoreOutput {
         self.status.as_ref()
     }
     /// <p>The advanced event selectors used to select events for the data store.</p>
-    pub fn advanced_event_selectors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
+    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
@@ -96,23 +93,19 @@ impl ::aws_http::request_id::RequestId for GetEventDataStoreOutput {
 }
 impl GetEventDataStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetEventDataStoreOutput`](crate::operation::get_event_data_store::GetEventDataStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::get_event_data_store::builders::GetEventDataStoreOutputBuilder {
+    pub fn builder() -> crate::operation::get_event_data_store::builders::GetEventDataStoreOutputBuilder {
         crate::operation::get_event_data_store::builders::GetEventDataStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventDataStoreOutput`](crate::operation::get_event_data_store::GetEventDataStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventDataStoreOutputBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EventDataStoreStatus>,
-    pub(crate) advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -124,18 +117,12 @@ pub struct GetEventDataStoreOutputBuilder {
 }
 impl GetEventDataStoreOutputBuilder {
     /// <p>The event data store Amazon Resource Number (ARN).</p>
-    pub fn event_data_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event data store Amazon Resource Number (ARN).</p>
-    pub fn set_event_data_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store_arn = input;
         self
     }
@@ -163,10 +150,7 @@ impl GetEventDataStoreOutputBuilder {
         self
     }
     /// <p>The status of an event data store.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDataStoreStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventDataStoreStatus>) -> Self {
         self.status = input;
         self
     }
@@ -186,17 +170,12 @@ impl GetEventDataStoreOutputBuilder {
         self
     }
     /// <p>The advanced event selectors used to select events for the data store.</p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.advanced_event_selectors = input;
         self
     }
     /// <p>The advanced event selectors used to select events for the data store.</p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
@@ -247,10 +226,7 @@ impl GetEventDataStoreOutputBuilder {
         self
     }
     /// <p>Indicates that termination protection is enabled.</p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }
@@ -264,10 +240,7 @@ impl GetEventDataStoreOutputBuilder {
         self
     }
     /// <p>The timestamp of the event data store's creation.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -281,10 +254,7 @@ impl GetEventDataStoreOutputBuilder {
         self
     }
     /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }

@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListDevicePoolsOutput {
 }
 impl ListDevicePoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
-    pub fn builder() -> crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder {
         crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicePoolsOutputBuilder {
     pub(crate) device_pools: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListDevicePoolsOutputBuilder {
         self
     }
     /// <p>Information about the device pools.</p>
-    pub fn set_device_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
-    ) -> Self {
+    pub fn set_device_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>) -> Self {
         self.device_pools = input;
         self
     }
     /// <p>Information about the device pools.</p>
-    pub fn get_device_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePool>> {
+    pub fn get_device_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePool>> {
         &self.device_pools
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>

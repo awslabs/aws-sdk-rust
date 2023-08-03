@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeJobDefinitionsOutput {
 }
 impl DescribeJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobDefinitionsOutput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder {
         crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobDefinitionsOutput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobDefinitionsOutputBuilder {
     pub(crate) job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeJobDefinitionsOutputBuilder {
         self
     }
     /// <p>The list of job definitions.</p>
-    pub fn set_job_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>>,
-    ) -> Self {
+    pub fn set_job_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>>) -> Self {
         self.job_definitions = input;
         self
     }
     /// <p>The list of job definitions.</p>
-    pub fn get_job_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>> {
+    pub fn get_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDefinition>> {
         &self.job_definitions
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

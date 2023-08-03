@@ -39,9 +39,7 @@ impl RecoveryPointSelection {
 
 /// A builder for [`RecoveryPointSelection`](crate::types::RecoveryPointSelection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryPointSelectionBuilder {
     pub(crate) vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,17 +58,12 @@ impl RecoveryPointSelectionBuilder {
         self
     }
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn set_vault_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vault_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vault_names = input;
         self
     }
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn get_vault_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vault_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vault_names
     }
     /// Appends an item to `resource_identifiers`.
@@ -78,27 +71,19 @@ impl RecoveryPointSelectionBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn resource_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input.into());
         self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_identifiers = input;
         self
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_identifiers
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`suppress_data_identifiers(Vec<SuppressDataIdentifier>)`](crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsFluentBuilder::suppress_data_identifiers) / [`set_suppress_data_identifiers(Option<Vec<SuppressDataIdentifier>>)`](crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsFluentBuilder::set_suppress_data_identifiers): <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
     /// - On success, responds with [`UpdateResourceProfileDetectionsOutput`](crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsOutput)
     /// - On failure, responds with [`SdkError<UpdateResourceProfileDetectionsError>`](crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsError)
-    pub fn update_resource_profile_detections(&self) -> crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsFluentBuilder{
+    pub fn update_resource_profile_detections(
+        &self,
+    ) -> crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsFluentBuilder {
         crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsFluentBuilder::new(self.handle.clone())
     }
 }

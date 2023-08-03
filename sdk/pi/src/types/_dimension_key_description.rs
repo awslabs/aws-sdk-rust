@@ -6,27 +6,20 @@
 pub struct DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
     #[doc(hidden)]
-    pub dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
     #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
     /// <p>A map that contains the value for each additional metric.</p>
     #[doc(hidden)]
-    pub additional_metrics:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub additional_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
     #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
@@ -34,9 +27,7 @@ impl DimensionKeyDescription {
         self.total
     }
     /// <p>A map that contains the value for each additional metric.</p>
-    pub fn additional_metrics(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn additional_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.additional_metrics.as_ref()
     }
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
@@ -53,16 +44,11 @@ impl DimensionKeyDescription {
 
 /// A builder for [`DimensionKeyDescription`](crate::types::DimensionKeyDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionKeyDescriptionBuilder {
-    pub(crate) dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) total: ::std::option::Option<f64>,
-    pub(crate) additional_metrics:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) additional_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DimensionKeyDescriptionBuilder {
@@ -71,32 +57,19 @@ impl DimensionKeyDescriptionBuilder {
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
-    pub fn dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.dimensions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
@@ -118,28 +91,19 @@ impl DimensionKeyDescriptionBuilder {
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
     ///
     /// <p>A map that contains the value for each additional metric.</p>
-    pub fn additional_metrics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: f64,
-    ) -> Self {
+    pub fn additional_metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.additional_metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_metrics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains the value for each additional metric.</p>
-    pub fn set_additional_metrics(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
-    ) -> Self {
+    pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
         self.additional_metrics = input;
         self
     }
     /// <p>A map that contains the value for each additional metric.</p>
-    pub fn get_additional_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.additional_metrics
     }
     /// Appends an item to `partitions`.

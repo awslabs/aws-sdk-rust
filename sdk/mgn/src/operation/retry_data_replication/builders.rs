@@ -37,9 +37,7 @@ impl RetryDataReplicationFluentBuilder {
         }
     }
     /// Access the RetryDataReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::retry_data_replication::builders::RetryDataReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::retry_data_replication::builders::RetryDataReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RetryDataReplicationFluentBuilder {
             crate::operation::retry_data_replication::RetryDataReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_data_replication::RetryDataReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_data_replication::RetryDataReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RetryDataReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RetryDataReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_data_replication::RetryDataReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_data_replication::RetryDataReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_data_replication::RetryDataReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RetryDataReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_data_replication::RetryDataReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_data_replication::RetryDataReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_data_replication::RetryDataReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl RetryDataReplicationFluentBuilder {
             crate::operation::retry_data_replication::RetryDataReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_data_replication::RetryDataReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_data_replication::RetryDataReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Retry data replication for Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Retry data replication for Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

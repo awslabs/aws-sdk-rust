@@ -22,26 +22,18 @@ impl StopAssessmentInput {
 
 /// A builder for [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl StopAssessmentInputBuilder {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_assessment::StopAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_assessment::StopAssessmentInput {
             assessment_id: self.assessment_id,
         })

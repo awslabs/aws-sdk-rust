@@ -32,22 +32,17 @@ impl CancelSpotFleetRequestsInput {
 }
 impl CancelSpotFleetRequestsInput {
     /// Creates a new builder-style object to manufacture [`CancelSpotFleetRequestsInput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder {
         crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSpotFleetRequestsInput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) spot_fleet_request_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) terminate_instances: ::std::option::Option<bool>,
 }
 impl CancelSpotFleetRequestsInputBuilder {
@@ -70,27 +65,19 @@ impl CancelSpotFleetRequestsInputBuilder {
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.spot_fleet_request_ids.unwrap_or_default();
         v.push(input.into());
         self.spot_fleet_request_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn set_spot_fleet_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.spot_fleet_request_ids = input;
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn get_spot_fleet_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.spot_fleet_request_ids
     }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
@@ -117,12 +104,10 @@ impl CancelSpotFleetRequestsInputBuilder {
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput {
-                dry_run: self.dry_run,
-                spot_fleet_request_ids: self.spot_fleet_request_ids,
-                terminate_instances: self.terminate_instances,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput {
+            dry_run: self.dry_run,
+            spot_fleet_request_ids: self.spot_fleet_request_ids,
+            terminate_instances: self.terminate_instances,
+        })
     }
 }

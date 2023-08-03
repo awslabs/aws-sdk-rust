@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`DeleteLifecycleHookOutput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookOutput)
     /// - On failure, responds with [`SdkError<DeleteLifecycleHookError>`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookError)
-    pub fn delete_lifecycle_hook(
-        &self,
-    ) -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder {
-        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_lifecycle_hook(&self) -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder {
+        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::new(self.handle.clone())
     }
 }

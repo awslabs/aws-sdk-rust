@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetBuiltinSlotTypesOutput {
 }
 impl GetBuiltinSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinSlotTypesOutput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesOutputBuilder {
+    pub fn builder() -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesOutputBuilder {
         crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBuiltinSlotTypesOutput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesOutputBuilder {
-    pub(crate) slot_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>>,
+    pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl GetBuiltinSlotTypesOutputBuilder {
         self
     }
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
-    pub fn set_slot_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>>,
-    ) -> Self {
+    pub fn set_slot_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>>) -> Self {
         self.slot_types = input;
         self
     }
     /// <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
-    pub fn get_slot_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>> {
+    pub fn get_slot_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>> {
         &self.slot_types
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>

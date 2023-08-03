@@ -35,9 +35,7 @@ impl ListDevicesOutput {
 
 /// A builder for [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesOutputBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDevicesOutputBuilder {
         self
     }
     /// <p>Information about the devices.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>) -> Self {
         self.devices = input;
         self
     }
     /// <p>Information about the devices.</p>
-    pub fn get_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
         &self.devices
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

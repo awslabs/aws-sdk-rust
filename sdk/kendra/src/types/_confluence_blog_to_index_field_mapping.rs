@@ -16,9 +16,7 @@ pub struct ConfluenceBlogToIndexFieldMapping {
 }
 impl ConfluenceBlogToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
-    pub fn data_source_field_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfluenceBlogFieldName> {
+    pub fn data_source_field_name(&self) -> ::std::option::Option<&crate::types::ConfluenceBlogFieldName> {
         self.data_source_field_name.as_ref()
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
@@ -39,9 +37,7 @@ impl ConfluenceBlogToIndexFieldMapping {
 
 /// A builder for [`ConfluenceBlogToIndexFieldMapping`](crate::types::ConfluenceBlogToIndexFieldMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfluenceBlogToIndexFieldMappingBuilder {
     pub(crate) data_source_field_name: ::std::option::Option<crate::types::ConfluenceBlogFieldName>,
     pub(crate) date_field_format: ::std::option::Option<::std::string::String>,
@@ -54,32 +50,21 @@ impl ConfluenceBlogToIndexFieldMappingBuilder {
         self
     }
     /// <p>The name of the field in the data source. </p>
-    pub fn set_data_source_field_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfluenceBlogFieldName>,
-    ) -> Self {
+    pub fn set_data_source_field_name(mut self, input: ::std::option::Option<crate::types::ConfluenceBlogFieldName>) -> Self {
         self.data_source_field_name = input;
         self
     }
     /// <p>The name of the field in the data source. </p>
-    pub fn get_data_source_field_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfluenceBlogFieldName> {
+    pub fn get_data_source_field_name(&self) -> &::std::option::Option<crate::types::ConfluenceBlogFieldName> {
         &self.data_source_field_name
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
-    pub fn date_field_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn date_field_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_field_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
-    pub fn set_date_field_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_date_field_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_field_format = input;
         self
     }
@@ -88,18 +73,12 @@ impl ConfluenceBlogToIndexFieldMappingBuilder {
         &self.date_field_format
     }
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
-    pub fn index_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
-    pub fn set_index_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_index_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_field_name = input;
         self
     }

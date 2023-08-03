@@ -38,9 +38,7 @@ impl SnapshotCopyGrant {
 
 /// A builder for [`SnapshotCopyGrant`](crate::types::SnapshotCopyGrant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotCopyGrantBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct SnapshotCopyGrantBuilder {
 }
 impl SnapshotCopyGrantBuilder {
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = input;
         self
     }
@@ -93,10 +85,7 @@ impl SnapshotCopyGrantBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

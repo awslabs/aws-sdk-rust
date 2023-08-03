@@ -41,9 +41,7 @@ impl GetIdentityPoliciesFluentBuilder {
         }
     }
     /// Access the GetIdentityPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetIdentityPoliciesFluentBuilder {
             crate::operation::get_identity_policies::GetIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_policies::GetIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_policies::GetIdentityPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetIdentityPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_policies::GetIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_policies::GetIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_policies::GetIdentityPoliciesError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_policies::GetIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_policies::GetIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_policies::GetIdentityPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl GetIdentityPoliciesFluentBuilder {
             crate::operation::get_identity_policies::GetIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_policies::GetIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_policies::GetIdentityPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -153,17 +140,12 @@ impl GetIdentityPoliciesFluentBuilder {
         self
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names(input);
         self
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names()
     }
 }

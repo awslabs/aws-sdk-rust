@@ -35,12 +35,9 @@ impl GetInventoryOutput {
 
 /// A builder for [`GetInventoryOutput`](crate::operation::get_inventory::GetInventoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInventoryOutputBuilder {
-    pub(crate) entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl GetInventoryOutputBuilder {
         self
     }
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>> {
         &self.entities
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

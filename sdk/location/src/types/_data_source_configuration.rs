@@ -42,9 +42,7 @@ impl DataSourceConfiguration {
 
 /// A builder for [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceConfigurationBuilder {
     pub(crate) intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }
@@ -67,10 +65,7 @@ impl DataSourceConfigurationBuilder {
     /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
-    pub fn set_intended_use(
-        mut self,
-        input: ::std::option::Option<crate::types::IntendedUse>,
-    ) -> Self {
+    pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::IntendedUse>) -> Self {
         self.intended_use = input;
         self
     }

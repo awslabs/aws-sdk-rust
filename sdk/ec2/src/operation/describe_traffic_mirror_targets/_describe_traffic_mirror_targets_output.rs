@@ -5,8 +5,7 @@
 pub struct DescribeTrafficMirrorTargetsOutput {
     /// <p>Information about one or more Traffic Mirror targets.</p>
     #[doc(hidden)]
-    pub traffic_mirror_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
+    pub traffic_mirror_targets: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTrafficMirrorTargetsOutput {
 }
 impl DescribeTrafficMirrorTargetsOutput {
     /// <p>Information about one or more Traffic Mirror targets.</p>
-    pub fn traffic_mirror_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorTarget]> {
+    pub fn traffic_mirror_targets(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorTarget]> {
         self.traffic_mirror_targets.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTrafficMirrorTargetsOutput {
 }
 impl DescribeTrafficMirrorTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficMirrorTargetsOutput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput).
-    pub fn builder() -> crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsOutputBuilder {
         crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficMirrorTargetsOutput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorTargetsOutputBuilder {
-    pub(crate) traffic_mirror_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
+    pub(crate) traffic_mirror_targets: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeTrafficMirrorTargetsOutputBuilder {
         self
     }
     /// <p>Information about one or more Traffic Mirror targets.</p>
-    pub fn set_traffic_mirror_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>) -> Self {
         self.traffic_mirror_targets = input;
         self
     }
     /// <p>Information about one or more Traffic Mirror targets.</p>
-    pub fn get_traffic_mirror_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>> {
+    pub fn get_traffic_mirror_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>> {
         &self.traffic_mirror_targets
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeTrafficMirrorTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrafficMirrorTargetsOutput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput {
+    pub fn build(self) -> crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput {
         crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput {
             traffic_mirror_targets: self.traffic_mirror_targets,
             next_token: self.next_token,

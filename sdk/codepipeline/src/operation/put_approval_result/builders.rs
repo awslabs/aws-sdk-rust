@@ -10,10 +10,7 @@ impl PutApprovalResultInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_approval_result::PutApprovalResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_approval_result::PutApprovalResultError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_approval_result::PutApprovalResultError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_approval_result();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutApprovalResultFluentBuilder {
         }
     }
     /// Access the PutApprovalResult as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutApprovalResultFluentBuilder {
             crate::operation::put_approval_result::PutApprovalResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_approval_result::PutApprovalResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_approval_result::PutApprovalResultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutApprovalResultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutApprovalResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_approval_result::PutApprovalResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_approval_result::PutApprovalResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_approval_result::PutApprovalResultError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutApprovalResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_approval_result::PutApprovalResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_approval_result::PutApprovalResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_approval_result::PutApprovalResultError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutApprovalResultFluentBuilder {
             crate::operation::put_approval_result::PutApprovalResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_approval_result::PutApprovalResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_approval_result::PutApprovalResultError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline that contains the action. </p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline that contains the action. </p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl PutApprovalResultFluentBuilder {
         self
     }
     /// <p>Represents information about the result of the approval request.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ApprovalResult>) -> Self {
         self.inner = self.inner.set_result(input);
         self
     }

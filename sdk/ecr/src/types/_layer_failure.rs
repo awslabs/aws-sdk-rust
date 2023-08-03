@@ -37,9 +37,7 @@ impl LayerFailure {
 
 /// A builder for [`LayerFailure`](crate::types::LayerFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayerFailureBuilder {
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::LayerFailureCode>,
@@ -66,10 +64,7 @@ impl LayerFailureBuilder {
         self
     }
     /// <p>The failure code associated with the failure.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LayerFailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::LayerFailureCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -78,18 +73,12 @@ impl LayerFailureBuilder {
         &self.failure_code
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

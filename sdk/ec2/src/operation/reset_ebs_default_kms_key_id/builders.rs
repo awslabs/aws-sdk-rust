@@ -27,7 +27,7 @@ impl ResetEbsDefaultKmsKeyIdInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetEbsDefaultKmsKeyIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdInputBuilder,
+    inner: crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdInputBuilder,
 }
 impl ResetEbsDefaultKmsKeyIdFluentBuilder {
     /// Creates a new `ResetEbsDefaultKmsKeyId`.
@@ -38,7 +38,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
         }
     }
     /// Access the ResetEbsDefaultKmsKeyId as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
             crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
             crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError>,
     > {
         self.customize_middleware().await
     }

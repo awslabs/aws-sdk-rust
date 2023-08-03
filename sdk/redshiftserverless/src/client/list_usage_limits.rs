@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`usage_limits(Option<Vec<UsageLimit>>)`](crate::operation::list_usage_limits::ListUsageLimitsOutput::usage_limits): <p>An array of returned usage limit objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_usage_limits::ListUsageLimitsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListUsageLimitsError>`](crate::operation::list_usage_limits::ListUsageLimitsError)
-    pub fn list_usage_limits(
-        &self,
-    ) -> crate::operation::list_usage_limits::builders::ListUsageLimitsFluentBuilder {
-        crate::operation::list_usage_limits::builders::ListUsageLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_usage_limits(&self) -> crate::operation::list_usage_limits::builders::ListUsageLimitsFluentBuilder {
+        crate::operation::list_usage_limits::builders::ListUsageLimitsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListComponentOutputsOutput {
 }
 impl ListComponentOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder {
+    pub fn builder() -> crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder {
         crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
@@ -71,10 +68,7 @@ impl ListComponentOutputsOutputBuilder {
         self
     }
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }

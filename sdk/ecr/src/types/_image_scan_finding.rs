@@ -51,9 +51,7 @@ impl ImageScanFinding {
 
 /// A builder for [`ImageScanFinding`](crate::types::ImageScanFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageScanFindingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The finding severity.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::FindingSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -133,17 +128,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ImageScanFinding`](crate::types::ImageScanFinding).

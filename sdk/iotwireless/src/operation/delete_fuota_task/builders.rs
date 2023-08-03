@@ -10,10 +10,7 @@ impl DeleteFuotaTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_fuota_task::DeleteFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fuota_task::DeleteFuotaTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_fuota_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteFuotaTaskFluentBuilder {
         }
     }
     /// Access the DeleteFuotaTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_fuota_task::builders::DeleteFuotaTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_fuota_task::builders::DeleteFuotaTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteFuotaTaskFluentBuilder {
             crate::operation::delete_fuota_task::DeleteFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fuota_task::DeleteFuotaTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteFuotaTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fuota_task::DeleteFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fuota_task::DeleteFuotaTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fuota_task::DeleteFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fuota_task::DeleteFuotaTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteFuotaTaskFluentBuilder {
             crate::operation::delete_fuota_task::DeleteFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fuota_task::DeleteFuotaTaskError>,
     > {
         self.customize_middleware().await
     }

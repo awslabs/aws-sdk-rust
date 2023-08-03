@@ -38,13 +38,7 @@
 /// Maximum framerate in frames per second (Outputs only)
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservationMaximumFramerate {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ReservationMaximumFramerate {
         match s {
             "MAX_30_FPS" => ReservationMaximumFramerate::Max30Fps,
             "MAX_60_FPS" => ReservationMaximumFramerate::Max60Fps,
-            other => ReservationMaximumFramerate::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservationMaximumFramerate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

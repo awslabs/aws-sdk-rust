@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`volume_size_in_bytes(i64)`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput::volume_size_in_bytes): <p>The size of the volume in bytes.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
     /// - On failure, responds with [`SdkError<CreateStorediSCSIVolumeError>`](crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError)
-    pub fn create_storedi_scsi_volume(
-        &self,
-    ) -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediSCSIVolumeFluentBuilder
-    {
+    pub fn create_storedi_scsi_volume(&self) -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediSCSIVolumeFluentBuilder {
         crate::operation::create_storedi_scsi_volume::builders::CreateStorediSCSIVolumeFluentBuilder::new(self.handle.clone())
     }
 }

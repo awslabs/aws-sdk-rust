@@ -9,105 +9,114 @@ pub fn de_get_service_network_vpc_association_http_error(
     crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                            crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled(
+                                "Failed to parse retryAfterSeconds from header `Retry-After",
+                            )
+                        })?,
                     );
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::generic(generic)
+        _ => crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::generic(generic),
     })
 }
 
@@ -123,161 +132,129 @@ pub fn de_get_service_network_vpc_association_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_service_network_vpc_association::de_get_service_network_vpc_association(_response_body, output).map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_service_network_vpc_association::de_get_service_network_vpc_association(_response_body, output)
+            .map_err(crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_get_service_network_vpc_association(value: &[u8], mut builder: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder) -> Result<crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_get_service_network_vpc_association(
+    value: &[u8],
+    mut builder: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
+) -> Result<
+    crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "arn" => {
-                        builder = builder.set_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "arn" => {
+                    builder = builder.set_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "createdAt" => {
-                        builder = builder.set_created_at(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "createdBy" => {
-                        builder = builder.set_created_by(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "createdAt" => {
+                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "createdBy" => {
+                    builder = builder.set_created_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "failureCode" => {
-                        builder = builder.set_failure_code(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "failureCode" => {
+                    builder = builder.set_failure_code(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "failureMessage" => {
-                        builder = builder.set_failure_message(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "failureMessage" => {
+                    builder = builder.set_failure_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "id" => {
-                        builder = builder.set_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "id" => {
+                    builder = builder.set_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "lastUpdatedAt" => {
-                        builder = builder.set_last_updated_at(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "securityGroupIds" => {
-                        builder = builder.set_security_group_ids(
-                            crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?
-                        );
-                    }
-                    "serviceNetworkArn" => {
-                        builder = builder.set_service_network_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "lastUpdatedAt" => {
+                    builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "securityGroupIds" => {
+                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?);
+                }
+                "serviceNetworkArn" => {
+                    builder = builder.set_service_network_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "serviceNetworkId" => {
-                        builder = builder.set_service_network_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "serviceNetworkId" => {
+                    builder = builder.set_service_network_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "serviceNetworkName" => {
-                        builder = builder.set_service_network_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "serviceNetworkName" => {
+                    builder = builder.set_service_network_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "status" => {
-                        builder = builder.set_status(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| {
-                                s.to_unescaped().map(|u| {
-                                    crate::types::ServiceNetworkVpcAssociationStatus::from(
-                                        u.as_ref(),
-                                    )
-                                })
+                                s.to_unescaped()
+                                    .map(|u| crate::types::ServiceNetworkVpcAssociationStatus::from(u.as_ref()))
                             })
                             .transpose()?,
-                        );
-                    }
-                    "vpcId" => {
-                        builder = builder.set_vpc_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "vpcId" => {
+                    builder = builder.set_vpc_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

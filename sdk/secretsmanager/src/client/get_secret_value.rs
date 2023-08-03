@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`version_stages(Option<Vec<String>>)`](crate::operation::get_secret_value::GetSecretValueOutput::version_stages): <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_secret_value::GetSecretValueOutput::created_date): <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
     /// - On failure, responds with [`SdkError<GetSecretValueError>`](crate::operation::get_secret_value::GetSecretValueError)
-    pub fn get_secret_value(
-        &self,
-    ) -> crate::operation::get_secret_value::builders::GetSecretValueFluentBuilder {
-        crate::operation::get_secret_value::builders::GetSecretValueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_secret_value(&self) -> crate::operation::get_secret_value::builders::GetSecretValueFluentBuilder {
+        crate::operation::get_secret_value::builders::GetSecretValueFluentBuilder::new(self.handle.clone())
     }
 }

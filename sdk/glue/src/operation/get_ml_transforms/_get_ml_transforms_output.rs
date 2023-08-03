@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetMlTransformsOutput {
 }
 impl GetMlTransformsOutput {
     /// Creates a new builder-style object to manufacture [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput).
-    pub fn builder() -> crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder {
         crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTransformsOutputBuilder {
     pub(crate) transforms: ::std::option::Option<::std::vec::Vec<crate::types::MlTransform>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetMlTransformsOutputBuilder {
         self
     }
     /// <p>A list of machine learning transforms.</p>
-    pub fn set_transforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MlTransform>>,
-    ) -> Self {
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MlTransform>>) -> Self {
         self.transforms = input;
         self
     }
     /// <p>A list of machine learning transforms.</p>
-    pub fn get_transforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MlTransform>> {
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MlTransform>> {
         &self.transforms
     }
     /// <p>A pagination token, if more results are available.</p>

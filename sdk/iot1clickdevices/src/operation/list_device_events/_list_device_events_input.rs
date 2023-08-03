@@ -43,17 +43,14 @@ impl ListDeviceEventsInput {
 }
 impl ListDeviceEventsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
         crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceEventsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) from_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +79,7 @@ impl ListDeviceEventsInputBuilder {
         self
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    pub fn set_from_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_time_stamp = input;
         self
     }
@@ -127,10 +121,7 @@ impl ListDeviceEventsInputBuilder {
         self
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
-    pub fn set_to_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_time_stamp = input;
         self
     }
@@ -141,18 +132,13 @@ impl ListDeviceEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_events::ListDeviceEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_events::ListDeviceEventsInput {
-                device_id: self.device_id,
-                from_time_stamp: self.from_time_stamp,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                to_time_stamp: self.to_time_stamp,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_device_events::ListDeviceEventsInput {
+            device_id: self.device_id,
+            from_time_stamp: self.from_time_stamp,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            to_time_stamp: self.to_time_stamp,
+        })
     }
 }

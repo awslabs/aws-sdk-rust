@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAnalysisPermissionsError>`](crate::operation::describe_analysis_permissions::DescribeAnalysisPermissionsError)
-    pub fn describe_analysis_permissions(&self) -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsFluentBuilder{
+    pub fn describe_analysis_permissions(
+        &self,
+    ) -> crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsFluentBuilder {
         crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl GetRecordsOutput {
 
 /// A builder for [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordsOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl GetRecordsOutputBuilder {
         self
     }
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.records = input;
         self
     }
@@ -69,18 +64,12 @@ impl GetRecordsOutputBuilder {
         &self.records
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
-    pub fn next_shard_iterator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
-    pub fn set_next_shard_iterator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_shard_iterator = input;
         self
     }

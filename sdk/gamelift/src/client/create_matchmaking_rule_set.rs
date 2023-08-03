@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMatchmakingRuleSetOutput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput) with field(s):
     ///   - [`rule_set(Option<MatchmakingRuleSet>)`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput::rule_set): <p>The newly created matchmaking rule set.</p>
     /// - On failure, responds with [`SdkError<CreateMatchmakingRuleSetError>`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError)
-    pub fn create_matchmaking_rule_set(&self) -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetFluentBuilder{
+    pub fn create_matchmaking_rule_set(&self) -> crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetFluentBuilder {
         crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

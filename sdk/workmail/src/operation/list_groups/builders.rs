@@ -10,10 +10,7 @@ impl ListGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_groups::ListGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_groups::ListGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_groups();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListGroupsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_groups::ListGroups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListGroupsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_groups::ListGroups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl ListGroupsFluentBuilder {
         crate::operation::list_groups::paginator::ListGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the organization under which the groups exist.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization under which the groups exist.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

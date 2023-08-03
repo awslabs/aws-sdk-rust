@@ -26,7 +26,7 @@ impl DeleteCustomDomainAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomDomainAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder,
+    inner: crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder,
 }
 impl DeleteCustomDomainAssociationFluentBuilder {
     /// Creates a new `DeleteCustomDomainAssociation`.
@@ -37,7 +37,7 @@ impl DeleteCustomDomainAssociationFluentBuilder {
         }
     }
     /// Access the DeleteCustomDomainAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteCustomDomainAssociationFluentBuilder {
             crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteCustomDomainAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteCustomDomainAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteCustomDomainAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteCustomDomainAssociationFluentBuilder {
             crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

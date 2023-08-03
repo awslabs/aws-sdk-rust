@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RuleEvaluationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for RuleEvaluationStatus {
             "NoIssuesFound" => RuleEvaluationStatus::NoIssuesFound,
             "Stopped" => RuleEvaluationStatus::Stopped,
             "Stopping" => RuleEvaluationStatus::Stopping,
-            other => RuleEvaluationStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RuleEvaluationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl RuleEvaluationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Error",
-            "InProgress",
-            "IssuesFound",
-            "NoIssuesFound",
-            "Stopped",
-            "Stopping",
-        ]
+        &["Error", "InProgress", "IssuesFound", "NoIssuesFound", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleEvaluationStatus {

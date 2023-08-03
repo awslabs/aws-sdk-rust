@@ -40,9 +40,7 @@ pub fn ser_create_cluster_input(
         array_9.finish();
     }
     if let Some(var_11) = &input.preferred_maintenance_window {
-        object
-            .key("PreferredMaintenanceWindow")
-            .string(var_11.as_str());
+        object.key("PreferredMaintenanceWindow").string(var_11.as_str());
     }
     if let Some(var_12) = &input.notification_topic_arn {
         object.key("NotificationTopicArn").string(var_12.as_str());
@@ -68,16 +66,11 @@ pub fn ser_create_cluster_input(
     if let Some(var_19) = &input.sse_specification {
         #[allow(unused_mut)]
         let mut object_20 = object.key("SSESpecification").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.cluster_endpoint_encryption_type {
-        object
-            .key("ClusterEndpointEncryptionType")
-            .string(var_21.as_str());
+        object.key("ClusterEndpointEncryptionType").string(var_21.as_str());
     }
     Ok(())
 }

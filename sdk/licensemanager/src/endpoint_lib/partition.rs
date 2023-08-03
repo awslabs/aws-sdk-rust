@@ -72,11 +72,7 @@ static DEFAULT_OVERRIDE: &PartitionOutputOverride = &PartitionOutputOverride {
 /// Merge the base output and the override output, dealing with `Cow`s
 macro_rules! merge {
     ($base: expr, $output: expr, $field: ident) => {
-        $output
-            .$field
-            .as_ref()
-            .map(|s| s.as_ref())
-            .unwrap_or($base.outputs.$field.as_ref())
+        $output.$field.as_ref().map(|s| s.as_ref()).unwrap_or($base.outputs.$field.as_ref())
     };
 }
 
@@ -91,9 +87,7 @@ impl PartitionResolver {
         self.partitions.push(partition);
     }
 
-    pub(crate) fn new_from_json(
-        partition_dot_json: &[u8],
-    ) -> Result<PartitionResolver, DeserializeError> {
+    pub(crate) fn new_from_json(partition_dot_json: &[u8]) -> Result<PartitionResolver, DeserializeError> {
         deserialize_partitions(partition_dot_json)
     }
 
@@ -111,41 +105,26 @@ impl PartitionResolver {
     /// 4. After matching the identifier to a partition using one of the previous steps, the partition function should return a
     ///    typed data structure containing the fields in `outputs` in the matched partition. **Important:** If a specific region
     ///    was matched, the properties associated with that region **MUST** be merged with the `outputs` field.
-    pub(crate) fn resolve_partition(
-        &self,
-        region: &str,
-        e: &mut DiagnosticCollector,
-    ) -> Option<Partition> {
-        let mut explicit_match_partition = self
-            .partitions
-            .iter()
-            .flat_map(|part| part.explicit_match(region));
-        let mut regex_match_partition = self
-            .partitions
-            .iter()
-            .flat_map(|part| part.regex_match(region));
+    pub(crate) fn resolve_partition(&self, region: &str, e: &mut DiagnosticCollector) -> Option<Partition> {
+        let mut explicit_match_partition = self.partitions.iter().flat_map(|part| part.explicit_match(region));
+        let mut regex_match_partition = self.partitions.iter().flat_map(|part| part.regex_match(region));
 
-        let (base, region_override) = explicit_match_partition
-            .next()
-            .or_else(|| regex_match_partition.next())
-            .or_else(|| match self.partitions.iter().find(|p| p.id == "aws") {
+        let (base, region_override) = explicit_match_partition.next().or_else(|| regex_match_partition.next()).or_else(|| {
+            match self.partitions.iter().find(|p| p.id == "aws") {
                 Some(partition) => Some((partition, None)),
                 None => {
                     e.report_error("no AWS partition!");
                     None
                 }
-            })?;
+            }
+        })?;
         let region_override = region_override.as_ref().unwrap_or(&DEFAULT_OVERRIDE);
         Some(Partition {
             name: merge!(base, region_override, name),
             dns_suffix: merge!(base, region_override, dns_suffix),
             dual_stack_dns_suffix: merge!(base, region_override, dual_stack_dns_suffix),
-            supports_fips: region_override
-                .supports_fips
-                .unwrap_or(base.outputs.supports_fips),
-            supports_dual_stack: region_override
-                .supports_dual_stack
-                .unwrap_or(base.outputs.supports_dual_stack),
+            supports_fips: region_override.supports_fips.unwrap_or(base.outputs.supports_fips),
+            supports_dual_stack: region_override.supports_dual_stack.unwrap_or(base.outputs.supports_dual_stack),
         })
     }
 }
@@ -184,19 +163,11 @@ impl PartitionMetadataBuilder {
 }
 
 impl PartitionMetadata {
-    fn explicit_match(
-        &self,
-        region: &str,
-    ) -> Option<(&PartitionMetadata, Option<&PartitionOutputOverride>)> {
-        self.regions
-            .get(region)
-            .map(|output_override| (self, Some(output_override)))
+    fn explicit_match(&self, region: &str) -> Option<(&PartitionMetadata, Option<&PartitionOutputOverride>)> {
+        self.regions.get(region).map(|output_override| (self, Some(output_override)))
     }
 
-    fn regex_match(
-        &self,
-        region: &str,
-    ) -> Option<(&PartitionMetadata, Option<&PartitionOutputOverride>)> {
+    fn regex_match(&self, region: &str) -> Option<(&PartitionMetadata, Option<&PartitionOutputOverride>)> {
         if self.region_regex.is_match(region) {
             Some((self, None))
         } else {
@@ -224,19 +195,13 @@ pub(crate) struct PartitionOutputOverride {
 }
 
 impl PartitionOutputOverride {
-    pub(crate) fn into_partition_output(
-        self,
-    ) -> Result<PartitionOutput, Box<dyn std::error::Error>> {
+    pub(crate) fn into_partition_output(self) -> Result<PartitionOutput, Box<dyn std::error::Error>> {
         Ok(PartitionOutput {
             name: self.name.ok_or("missing name")?,
             dns_suffix: self.dns_suffix.ok_or("missing dnsSuffix")?,
-            dual_stack_dns_suffix: self
-                .dual_stack_dns_suffix
-                .ok_or("missing dual_stackDnsSuffix")?,
+            dual_stack_dns_suffix: self.dual_stack_dns_suffix.ok_or("missing dual_stackDnsSuffix")?,
             supports_fips: self.supports_fips.ok_or("missing supports fips")?,
-            supports_dual_stack: self
-                .supports_dual_stack
-                .ok_or("missing supportsDualstack")?,
+            supports_dual_stack: self.supports_dual_stack.ok_or("missing supportsDualstack")?,
         })
     }
 }
@@ -245,20 +210,14 @@ impl PartitionOutputOverride {
 ///
 /// This code was generated by smithy-rs and then hand edited for clarity
 mod deser {
-    use crate::endpoint_lib::partition::{
-        PartitionMetadata, PartitionMetadataBuilder, PartitionOutputOverride, PartitionResolver,
-    };
-    use aws_smithy_json::deserialize::token::{
-        expect_bool_or_null, expect_start_object, expect_string_or_null, skip_value,
-    };
+    use crate::endpoint_lib::partition::{PartitionMetadata, PartitionMetadataBuilder, PartitionOutputOverride, PartitionResolver};
+    use aws_smithy_json::deserialize::token::{expect_bool_or_null, expect_start_object, expect_string_or_null, skip_value};
     use aws_smithy_json::deserialize::{error::DeserializeError, json_token_iter, Token};
     use regex::Regex;
     use std::borrow::Cow;
     use std::collections::HashMap;
 
-    pub(crate) fn deserialize_partitions(
-        value: &[u8],
-    ) -> Result<PartitionResolver, DeserializeError> {
+    pub(crate) fn deserialize_partitions(value: &[u8]) -> Result<PartitionResolver, DeserializeError> {
         let mut tokens_owned = json_token_iter(value).peekable();
         let tokens = &mut tokens_owned;
         expect_start_object(tokens.next())?;
@@ -268,31 +227,20 @@ mod deser {
                 Some(Token::EndObject { .. }) => break,
                 Some(Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                     "partitions" => {
-                        resolver = Some(PartitionResolver::from_partitions(deser_partitions(
-                            tokens,
-                        )?));
+                        resolver = Some(PartitionResolver::from_partitions(deser_partitions(tokens)?));
                     }
                     _ => skip_value(tokens)?,
                 },
-                other => {
-                    return Err(DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )))
-                }
+                other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
             }
         }
         if tokens.next().is_some() {
-            return Err(DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ));
+            return Err(DeserializeError::custom("found more JSON tokens after completing parsing"));
         }
         resolver.ok_or_else(|| DeserializeError::custom("did not find partitions array"))
     }
 
-    fn deser_partitions<'a, I>(
-        tokens: &mut std::iter::Peekable<I>,
-    ) -> Result<Vec<PartitionMetadata>, DeserializeError>
+    fn deser_partitions<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Vec<PartitionMetadata>, DeserializeError>
     where
         I: Iterator<Item = Result<Token<'a>, DeserializeError>>,
     {
@@ -316,9 +264,7 @@ mod deser {
         }
     }
 
-    pub(crate) fn deser_partition<'a, I>(
-        tokens: &mut std::iter::Peekable<I>,
-    ) -> Result<PartitionMetadata, DeserializeError>
+    pub(crate) fn deser_partition<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<PartitionMetadata, DeserializeError>
     where
         I: Iterator<Item = Result<Token<'a>, DeserializeError>>,
     {
@@ -346,12 +292,7 @@ mod deser {
                             }
                             _ => skip_value(tokens)?,
                         },
-                        other => {
-                            return Err(DeserializeError::custom(format!(
-                                "expected object key or end object, found: {:?}",
-                                other
-                            )))
-                        }
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
                     }
                 }
                 Ok(builder.build())
@@ -380,12 +321,7 @@ mod deser {
                                 map.insert(key.into(), value);
                             }
                         }
-                        other => {
-                            return Err(DeserializeError::custom(format!(
-                                "expected object key or end object, found: {:?}",
-                                other
-                            )))
-                        }
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
                     }
                 }
                 Ok(map)
@@ -395,18 +331,14 @@ mod deser {
     }
 
     /// Convert a token to `Str` (a potentially static String)
-    fn token_to_str(
-        token: Option<Result<Token, DeserializeError>>,
-    ) -> Result<Option<super::Str>, DeserializeError> {
+    fn token_to_str(token: Option<Result<Token, DeserializeError>>) -> Result<Option<super::Str>, DeserializeError> {
         Ok(expect_string_or_null(token)?
             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
             .transpose()?
             .map(Cow::Owned))
     }
 
-    fn deser_outputs<'a, I>(
-        tokens: &mut std::iter::Peekable<I>,
-    ) -> Result<Option<PartitionOutputOverride>, DeserializeError>
+    fn deser_outputs<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Option<PartitionOutputOverride>, DeserializeError>
     where
         I: Iterator<Item = Result<Token<'a>, DeserializeError>>,
     {
@@ -435,12 +367,7 @@ mod deser {
                             }
                             _ => skip_value(tokens)?,
                         },
-                        other => {
-                            return Err(DeserializeError::custom(format!(
-                                "expected object key or end object, found: {:?}",
-                                other
-                            )))
-                        }
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
                     }
                 }
                 Ok(Some(builder))
@@ -453,9 +380,7 @@ mod deser {
 #[cfg(test)]
 mod test {
     use crate::endpoint_lib::diagnostic::DiagnosticCollector;
-    use crate::endpoint_lib::partition::{
-        Partition, PartitionMetadata, PartitionOutput, PartitionOutputOverride, PartitionResolver,
-    };
+    use crate::endpoint_lib::partition::{Partition, PartitionMetadata, PartitionOutput, PartitionOutputOverride, PartitionResolver};
     use regex::Regex;
     use std::collections::HashMap;
 
@@ -564,13 +489,9 @@ mod test {
     }
   ]
 }"#;
-        let resolver =
-            super::deser::deserialize_partitions(partitions.as_bytes()).expect("valid resolver");
+        let resolver = super::deser::deserialize_partitions(partitions.as_bytes()).expect("valid resolver");
         assert_eq!(resolve(&resolver, "cn-north-1").name, "aws-cn");
-        assert_eq!(
-            resolve(&resolver, "cn-north-1").dns_suffix,
-            "amazonaws.com.cn"
-        );
+        assert_eq!(resolve(&resolver, "cn-north-1").dns_suffix, "amazonaws.com.cn");
         assert_eq!(resolver.partitions.len(), 5);
     }
 
@@ -608,10 +529,7 @@ mod test {
         assert_eq!(resolve(&resolver, "us-east-1").name, "aws");
         assert_eq!(resolve(&resolver, "other-west-2").name, "other");
         // mars-east-1 hits aws through the default fallback
-        assert_eq!(
-            resolve(&resolver, "mars-east-1").dns_suffix,
-            "amazonaws.com"
-        );
+        assert_eq!(resolve(&resolver, "mars-east-1").dns_suffix, "amazonaws.com");
         // mars-east-2 hits aws through the region override
         assert_eq!(resolve(&resolver, "mars-east-2").dns_suffix, "mars.aws");
     }

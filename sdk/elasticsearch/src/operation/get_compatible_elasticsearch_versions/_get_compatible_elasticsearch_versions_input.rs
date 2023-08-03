@@ -16,16 +16,14 @@ impl GetCompatibleElasticsearchVersionsInput {
 }
 impl GetCompatibleElasticsearchVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsInput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput).
-    pub fn builder() -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsInputBuilder{
+    pub fn builder() -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsInputBuilder {
         crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCompatibleElasticsearchVersionsInput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleElasticsearchVersionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,16 @@ impl GetCompatibleElasticsearchVersionsInputBuilder {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetCompatibleElasticsearchVersionsInput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput {
-                domain_name: self.domain_name
-                ,
-            }
+                domain_name: self.domain_name,
+            },
         )
     }
 }

@@ -37,9 +37,7 @@ impl ExportAssetToSignedUrlRequestDetails {
 
 /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::types::ExportAssetToSignedUrlRequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportAssetToSignedUrlRequestDetailsBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

@@ -5,8 +5,7 @@
 pub struct ListNodeFromTemplateJobsOutput {
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
-    pub node_from_template_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
+    pub node_from_template_jobs: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListNodeFromTemplateJobsOutput {
 }
 impl ListNodeFromTemplateJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn node_from_template_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NodeFromTemplateJob]> {
+    pub fn node_from_template_jobs(&self) -> ::std::option::Option<&[crate::types::NodeFromTemplateJob]> {
         self.node_from_template_jobs.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNodeFromTemplateJobsOutput {
 }
 impl ListNodeFromTemplateJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput).
-    pub fn builder() -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder {
         crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsOutputBuilder {
-    pub(crate) node_from_template_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
+    pub(crate) node_from_template_jobs: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListNodeFromTemplateJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_node_from_template_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
-    ) -> Self {
+    pub fn set_node_from_template_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>) -> Self {
         self.node_from_template_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_node_from_template_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>> {
+    pub fn get_node_from_template_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>> {
         &self.node_from_template_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -97,9 +86,7 @@ impl ListNodeFromTemplateJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
+    pub fn build(self) -> crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
         crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput {
             node_from_template_jobs: self.node_from_template_jobs,
             next_token: self.next_token,

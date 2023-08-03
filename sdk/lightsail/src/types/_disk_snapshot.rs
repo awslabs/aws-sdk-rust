@@ -121,9 +121,7 @@ impl DiskSnapshot {
 
 /// A builder for [`DiskSnapshot`](crate::types::DiskSnapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskSnapshotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -190,10 +188,7 @@ impl DiskSnapshotBuilder {
         self
     }
     /// <p>The date when the disk snapshot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -207,10 +202,7 @@ impl DiskSnapshotBuilder {
         self
     }
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -224,10 +216,7 @@ impl DiskSnapshotBuilder {
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -247,10 +236,7 @@ impl DiskSnapshotBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -278,10 +264,7 @@ impl DiskSnapshotBuilder {
         self
     }
     /// <p>The status of the disk snapshot operation.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskSnapshotState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiskSnapshotState>) -> Self {
         self.state = input;
         self
     }
@@ -304,18 +287,12 @@ impl DiskSnapshotBuilder {
         &self.progress
     }
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_disk_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    pub fn set_from_disk_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_disk_name = input;
         self
     }
@@ -324,18 +301,12 @@ impl DiskSnapshotBuilder {
         &self.from_disk_name
     }
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_disk_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_disk_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    pub fn set_from_disk_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_disk_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_disk_arn = input;
         self
     }
@@ -344,18 +315,12 @@ impl DiskSnapshotBuilder {
         &self.from_disk_arn
     }
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn set_from_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_instance_name = input;
         self
     }
@@ -364,18 +329,12 @@ impl DiskSnapshotBuilder {
         &self.from_instance_name
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn set_from_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_instance_arn = input;
         self
     }

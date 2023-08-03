@@ -65,9 +65,7 @@ impl MetricDatapoint {
 
 /// A builder for [`MetricDatapoint`](crate::types::MetricDatapoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDatapointBuilder {
     pub(crate) average: ::std::option::Option<f64>,
     pub(crate) maximum: ::std::option::Option<f64>,
@@ -154,10 +152,7 @@ impl MetricDatapointBuilder {
         self
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

@@ -15,18 +15,14 @@ impl DeleteSolNetworkPackageInput {
 }
 impl DeleteSolNetworkPackageInput {
     /// Creates a new builder-style object to manufacture [`DeleteSolNetworkPackageInput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder {
         crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSolNetworkPackageInput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkPackageInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DeleteSolNetworkPackageInputBuilder {
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
-                nsd_info_id: self.nsd_info_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
+            nsd_info_id: self.nsd_info_id,
+        })
     }
 }

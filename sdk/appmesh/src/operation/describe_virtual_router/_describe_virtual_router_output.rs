@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVirtualRouterOutput {
 }
 impl DescribeVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::operation::describe_virtual_router::DescribeVirtualRouterOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_router::builders::DescribeVirtualRouterOutputBuilder {
         crate::operation::describe_virtual_router::builders::DescribeVirtualRouterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualRouterOutput`](crate::operation::describe_virtual_router::DescribeVirtualRouterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualRouterOutputBuilder {
     pub(crate) virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeVirtualRouterOutputBuilder {
         self
     }
     /// <p>The full description of your virtual router.</p>
-    pub fn set_virtual_router(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterData>,
-    ) -> Self {
+    pub fn set_virtual_router(mut self, input: ::std::option::Option<crate::types::VirtualRouterData>) -> Self {
         self.virtual_router = input;
         self
     }

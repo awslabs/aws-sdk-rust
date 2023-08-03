@@ -12,12 +12,10 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     pub target_value: ::std::option::Option<f64>,
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
-    pub predefined_metric_specification:
-        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
+    pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
-    pub customized_metric_specification:
-        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
     pub scale_out_cooldown: ::std::option::Option<i32>,
@@ -36,15 +34,11 @@ impl TargetTrackingScalingPolicyConfiguration {
         self.target_value
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
+    pub fn predefined_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
         self.predefined_metric_specification.as_ref()
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn customized_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
+    pub fn customized_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
@@ -69,15 +63,11 @@ impl TargetTrackingScalingPolicyConfiguration {
 
 /// A builder for [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingScalingPolicyConfigurationBuilder {
     pub(crate) target_value: ::std::option::Option<f64>,
-    pub(crate) predefined_metric_specification:
-        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
-    pub(crate) customized_metric_specification:
-        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub(crate) predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
+    pub(crate) customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     pub(crate) scale_out_cooldown: ::std::option::Option<i32>,
     pub(crate) scale_in_cooldown: ::std::option::Option<i32>,
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
@@ -104,47 +94,31 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         &self.target_value
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_metric_specification(
-        mut self,
-        input: crate::types::PredefinedMetricSpecification,
-    ) -> Self {
+    pub fn predefined_metric_specification(mut self, input: crate::types::PredefinedMetricSpecification) -> Self {
         self.predefined_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn set_predefined_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
-    ) -> Self {
+    pub fn set_predefined_metric_specification(mut self, input: ::std::option::Option<crate::types::PredefinedMetricSpecification>) -> Self {
         self.predefined_metric_specification = input;
         self
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn get_predefined_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
+    pub fn get_predefined_metric_specification(&self) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
         &self.predefined_metric_specification
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn customized_metric_specification(
-        mut self,
-        input: crate::types::CustomizedMetricSpecification,
-    ) -> Self {
+    pub fn customized_metric_specification(mut self, input: crate::types::CustomizedMetricSpecification) -> Self {
         self.customized_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn set_customized_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
-    ) -> Self {
+    pub fn set_customized_metric_specification(mut self, input: ::std::option::Option<crate::types::CustomizedMetricSpecification>) -> Self {
         self.customized_metric_specification = input;
         self
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
-    pub fn get_customized_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
+    pub fn get_customized_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
         &self.customized_metric_specification
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>

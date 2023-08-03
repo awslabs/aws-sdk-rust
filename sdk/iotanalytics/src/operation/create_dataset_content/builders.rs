@@ -37,9 +37,7 @@ impl CreateDatasetContentFluentBuilder {
         }
     }
     /// Access the CreateDatasetContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset_content::builders::CreateDatasetContentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset_content::builders::CreateDatasetContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateDatasetContentFluentBuilder {
             crate::operation::create_dataset_content::CreateDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_content::CreateDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_content::CreateDatasetContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateDatasetContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_content::CreateDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_content::CreateDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_content::CreateDatasetContentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_content::CreateDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_content::CreateDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_content::CreateDatasetContentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateDatasetContentFluentBuilder {
             crate::operation::create_dataset_content::CreateDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_content::CreateDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_content::CreateDatasetContentError>,
     > {
         self.customize_middleware().await
     }

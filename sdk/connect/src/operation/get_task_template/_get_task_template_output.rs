@@ -41,9 +41,7 @@ pub struct GetTaskTemplateOutput {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTaskTemplateOutput {
@@ -96,11 +94,7 @@ impl GetTaskTemplateOutput {
         self.created_time.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -111,17 +105,14 @@ impl ::aws_http::request_id::RequestId for GetTaskTemplateOutput {
 }
 impl GetTaskTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTaskTemplateOutput`](crate::operation::get_task_template::GetTaskTemplateOutput).
-    pub fn builder() -> crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder {
         crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTaskTemplateOutput`](crate::operation::get_task_template::GetTaskTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskTemplateOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -135,9 +126,7 @@ pub struct GetTaskTemplateOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TaskTemplateStatus>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTaskTemplateOutputBuilder {
@@ -212,18 +201,12 @@ impl GetTaskTemplateOutputBuilder {
         &self.description
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -237,10 +220,7 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateConstraints>,
-    ) -> Self {
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
         self.constraints = input;
         self
     }
@@ -254,10 +234,7 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn set_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateDefaults>,
-    ) -> Self {
+    pub fn set_defaults(mut self, input: ::std::option::Option<crate::types::TaskTemplateDefaults>) -> Self {
         self.defaults = input;
         self
     }
@@ -277,17 +254,12 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
         &self.fields
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
@@ -296,10 +268,7 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -313,10 +282,7 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>The timestamp when the task template was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -330,10 +296,7 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// <p>The timestamp when the task template was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -346,32 +309,19 @@ impl GetTaskTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

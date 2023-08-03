@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`fleet_advisor_schema_objects(Option<Vec<FleetAdvisorSchemaObjectResponse>>)`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput::fleet_advisor_schema_objects): <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemaObjectSummaryError>`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError)
-    pub fn describe_fleet_advisor_schema_object_summary(&self) -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder{
-        crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder::new(self.handle.clone())
+    pub fn describe_fleet_advisor_schema_object_summary(
+        &self,
+    ) -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
+        crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`attribute_values(Option<Vec<AttributeValue>>)`](crate::operation::get_attribute_values::GetAttributeValuesOutput::attribute_values): <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_attribute_values::GetAttributeValuesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<GetAttributeValuesError>`](crate::operation::get_attribute_values::GetAttributeValuesError)
-    pub fn get_attribute_values(
-        &self,
-    ) -> crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder {
-        crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_attribute_values(&self) -> crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder {
+        crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::new(self.handle.clone())
     }
 }

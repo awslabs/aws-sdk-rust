@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListSourceRepositoriesItem>>)`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput::items): <p>Information about the source repositories.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     /// - On failure, responds with [`SdkError<ListSourceRepositoriesError>`](crate::operation::list_source_repositories::ListSourceRepositoriesError)
-    pub fn list_source_repositories(
-        &self,
-    ) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder
-    {
+    pub fn list_source_repositories(&self) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder {
         crate::operation::list_source_repositories::builders::ListSourceRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

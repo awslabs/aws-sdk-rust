@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachTrafficSourcesOutput {
 }
 impl AttachTrafficSourcesOutput {
     /// Creates a new builder-style object to manufacture [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder {
         crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachTrafficSourcesOutputBuilder {
     _request_id: Option<String>,
 }

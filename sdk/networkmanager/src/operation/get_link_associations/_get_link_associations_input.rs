@@ -43,18 +43,14 @@ impl GetLinkAssociationsInput {
 }
 impl GetLinkAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
-        crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder {
+        crate::operation::get_link_associations::builders::GetLinkAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinkAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct GetLinkAssociationsInputBuilder {
 }
 impl GetLinkAssociationsInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -142,18 +132,14 @@ impl GetLinkAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_link_associations::GetLinkAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_link_associations::GetLinkAssociationsInput {
-                global_network_id: self.global_network_id,
-                device_id: self.device_id,
-                link_id: self.link_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_link_associations::GetLinkAssociationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_link_associations::GetLinkAssociationsInput {
+            global_network_id: self.global_network_id,
+            device_id: self.device_id,
+            link_id: self.link_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

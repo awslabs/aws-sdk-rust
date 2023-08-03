@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for StartReadSetImportJobOutput {
 }
 impl StartReadSetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetImportJobOutput`](crate::operation::start_read_set_import_job::StartReadSetImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_read_set_import_job::builders::StartReadSetImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_read_set_import_job::builders::StartReadSetImportJobOutputBuilder {
         crate::operation::start_read_set_import_job::builders::StartReadSetImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetImportJobOutput`](crate::operation::start_read_set_import_job::StartReadSetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetImportJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +81,12 @@ impl StartReadSetImportJobOutputBuilder {
         &self.id
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -124,10 +114,7 @@ impl StartReadSetImportJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetImportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetImportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -141,10 +128,7 @@ impl StartReadSetImportJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

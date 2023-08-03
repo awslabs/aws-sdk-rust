@@ -77,17 +77,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationOutput {
 }
 impl DescribeOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
         crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOutputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -102,18 +99,12 @@ pub struct DescribeOrganizationOutputBuilder {
 }
 impl DescribeOrganizationOutputBuilder {
     /// <p>The identifier of an organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -164,18 +155,12 @@ impl DescribeOrganizationOutputBuilder {
         &self.directory_id
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
-    pub fn directory_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
-    pub fn set_directory_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_type = input;
         self
     }
@@ -184,18 +169,12 @@ impl DescribeOrganizationOutputBuilder {
         &self.directory_type
     }
     /// <p>The default mail domain associated with the organization.</p>
-    pub fn default_mail_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_mail_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_mail_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default mail domain associated with the organization.</p>
-    pub fn set_default_mail_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_mail_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_mail_domain = input;
         self
     }
@@ -209,10 +188,7 @@ impl DescribeOrganizationOutputBuilder {
         self
     }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
-    pub fn set_completed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_date = input;
         self
     }
@@ -221,18 +197,12 @@ impl DescribeOrganizationOutputBuilder {
         &self.completed_date
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

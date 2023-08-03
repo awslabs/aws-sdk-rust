@@ -10,10 +10,7 @@ impl PutCommentReactionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_comment_reaction::PutCommentReactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_comment_reaction::PutCommentReactionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_comment_reaction::PutCommentReactionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_comment_reaction();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutCommentReactionFluentBuilder {
         }
     }
     /// Access the PutCommentReaction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutCommentReactionFluentBuilder {
             crate::operation::put_comment_reaction::PutCommentReaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_comment_reaction::PutCommentReactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_comment_reaction::PutCommentReactionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutCommentReactionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutCommentReactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_comment_reaction::PutCommentReactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_comment_reaction::PutCommentReactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_comment_reaction::PutCommentReactionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutCommentReactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_comment_reaction::PutCommentReactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_comment_reaction::PutCommentReactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_comment_reaction::PutCommentReactionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutCommentReactionFluentBuilder {
             crate::operation::put_comment_reaction::PutCommentReaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_comment_reaction::PutCommentReactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_comment_reaction::PutCommentReactionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutCommentReactionFluentBuilder {
         self.inner.get_comment_id()
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    pub fn reaction_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reaction_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reaction_value(input.into());
         self
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    pub fn set_reaction_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reaction_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reaction_value(input);
         self
     }

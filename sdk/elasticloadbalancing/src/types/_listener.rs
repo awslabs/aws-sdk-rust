@@ -58,9 +58,7 @@ impl Listener {
 
 /// A builder for [`Listener`](crate::types::Listener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_port: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl ListenerBuilder {
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-    pub fn instance_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_protocol = ::std::option::Option::Some(input.into());
         self
     }
@@ -112,10 +107,7 @@ impl ListenerBuilder {
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-    pub fn set_instance_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_protocol = input;
         self
     }
@@ -141,18 +133,12 @@ impl ListenerBuilder {
         &self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    pub fn ssl_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    pub fn set_ssl_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_certificate_id = input;
         self
     }

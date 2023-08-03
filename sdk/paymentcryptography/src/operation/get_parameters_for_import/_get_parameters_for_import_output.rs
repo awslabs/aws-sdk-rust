@@ -38,29 +38,18 @@ impl GetParametersForImportOutput {
         self.import_token.as_deref()
     }
     /// <p>The validity period of the import token.</p>
-    pub fn parameters_valid_until_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn parameters_valid_until_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.parameters_valid_until_timestamp.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetParametersForImportOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForImportOutput");
-        formatter.field(
-            "wrapping_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "wrapping_key_certificate_chain",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("wrapping_key_certificate_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("wrapping_key_algorithm", &self.wrapping_key_algorithm);
         formatter.field("import_token", &self.import_token);
-        formatter.field(
-            "parameters_valid_until_timestamp",
-            &self.parameters_valid_until_timestamp,
-        );
+        formatter.field("parameters_valid_until_timestamp", &self.parameters_valid_until_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -72,9 +61,7 @@ impl ::aws_http::request_id::RequestId for GetParametersForImportOutput {
 }
 impl GetParametersForImportOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::default()
     }
 }
@@ -87,24 +74,17 @@ pub struct GetParametersForImportOutputBuilder {
     pub(crate) wrapping_key_certificate_chain: ::std::option::Option<::std::string::String>,
     pub(crate) wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) import_token: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters_valid_until_timestamp:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) parameters_valid_until_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutputBuilder {
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
-    pub fn wrapping_key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
-    pub fn set_wrapping_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate = input;
         self
     }
@@ -113,25 +93,17 @@ impl GetParametersForImportOutputBuilder {
         &self.wrapping_key_certificate
     }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn wrapping_key_certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn set_wrapping_key_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate_chain = input;
         self
     }
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn get_wrapping_key_certificate_chain(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_wrapping_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate_chain
     }
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
@@ -140,10 +112,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    pub fn set_wrapping_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.wrapping_key_algorithm = input;
         self
     }
@@ -171,17 +140,12 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The validity period of the import token.</p>
-    pub fn set_parameters_valid_until_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_parameters_valid_until_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.parameters_valid_until_timestamp = input;
         self
     }
     /// <p>The validity period of the import token.</p>
-    pub fn get_parameters_valid_until_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_parameters_valid_until_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.parameters_valid_until_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -194,9 +158,7 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
+    pub fn build(self) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
         crate::operation::get_parameters_for_import::GetParametersForImportOutput {
             wrapping_key_certificate: self.wrapping_key_certificate,
             wrapping_key_certificate_chain: self.wrapping_key_certificate_chain,
@@ -210,20 +172,11 @@ impl GetParametersForImportOutputBuilder {
 impl ::std::fmt::Debug for GetParametersForImportOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForImportOutputBuilder");
-        formatter.field(
-            "wrapping_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "wrapping_key_certificate_chain",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("wrapping_key_certificate_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("wrapping_key_algorithm", &self.wrapping_key_algorithm);
         formatter.field("import_token", &self.import_token);
-        formatter.field(
-            "parameters_valid_until_timestamp",
-            &self.parameters_valid_until_timestamp,
-        );
+        formatter.field("parameters_valid_until_timestamp", &self.parameters_valid_until_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

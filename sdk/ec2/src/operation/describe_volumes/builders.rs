@@ -10,10 +10,7 @@ impl DescribeVolumesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_volumes();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeVolumesFluentBuilder {
         }
     }
     /// Access the DescribeVolumes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeVolumesFluentBuilder {
             crate::operation::describe_volumes::DescribeVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeVolumesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl DescribeVolumesFluentBuilder {
             crate::operation::describe_volumes::DescribeVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes::paginator::DescribeVolumesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_volumes::paginator::DescribeVolumesPaginator {
-        crate::operation::describe_volumes::paginator::DescribeVolumesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_volumes::paginator::DescribeVolumesPaginator {
+        crate::operation::describe_volumes::paginator::DescribeVolumesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -195,10 +174,7 @@ impl DescribeVolumesFluentBuilder {
     /// <li> <p> <code>volume-id</code> - The volume ID.</p> </li>
     /// <li> <p> <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -241,10 +217,7 @@ impl DescribeVolumesFluentBuilder {
         self
     }
     /// <p>The volume IDs.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }

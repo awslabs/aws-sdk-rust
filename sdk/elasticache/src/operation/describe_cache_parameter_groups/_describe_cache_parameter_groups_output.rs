@@ -9,8 +9,7 @@ pub struct DescribeCacheParameterGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     #[doc(hidden)]
-    pub cache_parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
+    pub cache_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParameterGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeCacheParameterGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    pub fn cache_parameter_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CacheParameterGroup]> {
+    pub fn cache_parameter_groups(&self) -> ::std::option::Option<&[crate::types::CacheParameterGroup]> {
         self.cache_parameter_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeCacheParameterGroupsOutput {
 }
 impl DescribeCacheParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsOutput`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder {
         crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheParameterGroupsOutput`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
+    pub(crate) cache_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParameterGroupsOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeCacheParameterGroupsOutputBuilder {
         self
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    pub fn set_cache_parameter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
-    ) -> Self {
+    pub fn set_cache_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>) -> Self {
         self.cache_parameter_groups = input;
         self
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
-    pub fn get_cache_parameter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>> {
+    pub fn get_cache_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>> {
         &self.cache_parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeCacheParameterGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCacheParameterGroupsOutput`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput {
         crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput {
             marker: self.marker,
             cache_parameter_groups: self.cache_parameter_groups,

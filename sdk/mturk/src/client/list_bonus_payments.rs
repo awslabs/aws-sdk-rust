@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     ///   - [`bonus_payments(Option<Vec<BonusPayment>>)`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput::bonus_payments): <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
     /// - On failure, responds with [`SdkError<ListBonusPaymentsError>`](crate::operation::list_bonus_payments::ListBonusPaymentsError)
-    pub fn list_bonus_payments(
-        &self,
-    ) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder {
-        crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bonus_payments(&self) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder {
+        crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::new(self.handle.clone())
     }
 }

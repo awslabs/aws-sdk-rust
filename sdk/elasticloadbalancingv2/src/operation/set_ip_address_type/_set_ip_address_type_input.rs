@@ -22,35 +22,26 @@ impl SetIpAddressTypeInput {
 }
 impl SetIpAddressTypeInput {
     /// Creates a new builder-style object to manufacture [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
-    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
         crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SetIpAddressTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -64,10 +55,7 @@ impl SetIpAddressTypeInputBuilder {
         self
     }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -78,15 +66,10 @@ impl SetIpAddressTypeInputBuilder {
     /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_ip_address_type::SetIpAddressTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_ip_address_type::SetIpAddressTypeInput {
-                load_balancer_arn: self.load_balancer_arn,
-                ip_address_type: self.ip_address_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_ip_address_type::SetIpAddressTypeInput {
+            load_balancer_arn: self.load_balancer_arn,
+            ip_address_type: self.ip_address_type,
+        })
     }
 }

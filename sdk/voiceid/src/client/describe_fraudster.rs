@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFraudsterOutput`](crate::operation::describe_fraudster::DescribeFraudsterOutput) with field(s):
     ///   - [`fraudster(Option<Fraudster>)`](crate::operation::describe_fraudster::DescribeFraudsterOutput::fraudster): <p>Information about the specified fraudster.</p>
     /// - On failure, responds with [`SdkError<DescribeFraudsterError>`](crate::operation::describe_fraudster::DescribeFraudsterError)
-    pub fn describe_fraudster(
-        &self,
-    ) -> crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder {
-        crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fraudster(&self) -> crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder {
+        crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::new(self.handle.clone())
     }
 }

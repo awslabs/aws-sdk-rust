@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for SetDefaultPermissionVersionOutput {
 }
 impl SetDefaultPermissionVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
-    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder {
         crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultPermissionVersionOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl SetDefaultPermissionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
+    pub fn build(self) -> crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
         crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
             return_value: self.return_value,
             client_token: self.client_token,

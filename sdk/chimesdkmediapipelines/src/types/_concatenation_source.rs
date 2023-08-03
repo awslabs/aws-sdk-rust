@@ -9,8 +9,7 @@ pub struct ConcatenationSource {
     pub r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     #[doc(hidden)]
-    pub media_capture_pipeline_source_configuration:
-        ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
+    pub media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
@@ -18,9 +17,7 @@ impl ConcatenationSource {
         self.r#type.as_ref()
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    pub fn media_capture_pipeline_source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
+    pub fn media_capture_pipeline_source_configuration(&self) -> ::std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
         self.media_capture_pipeline_source_configuration.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl ConcatenationSource {
 
 /// A builder for [`ConcatenationSource`](crate::types::ConcatenationSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConcatenationSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
-    pub(crate) media_capture_pipeline_source_configuration:
-        ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
+    pub(crate) media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSourceBuilder {
     /// <p>The type of concatenation source in a configuration object.</p>
@@ -48,10 +42,7 @@ impl ConcatenationSourceBuilder {
         self
     }
     /// <p>The type of concatenation source in a configuration object.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConcatenationSourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConcatenationSourceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -60,10 +51,7 @@ impl ConcatenationSourceBuilder {
         &self.r#type
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    pub fn media_capture_pipeline_source_configuration(
-        mut self,
-        input: crate::types::MediaCapturePipelineSourceConfiguration,
-    ) -> Self {
+    pub fn media_capture_pipeline_source_configuration(mut self, input: crate::types::MediaCapturePipelineSourceConfiguration) -> Self {
         self.media_capture_pipeline_source_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -76,17 +64,14 @@ impl ConcatenationSourceBuilder {
         self
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    pub fn get_media_capture_pipeline_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration> {
+    pub fn get_media_capture_pipeline_source_configuration(&self) -> &::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration> {
         &self.media_capture_pipeline_source_configuration
     }
     /// Consumes the builder and constructs a [`ConcatenationSource`](crate::types::ConcatenationSource).
     pub fn build(self) -> crate::types::ConcatenationSource {
         crate::types::ConcatenationSource {
             r#type: self.r#type,
-            media_capture_pipeline_source_configuration: self
-                .media_capture_pipeline_source_configuration,
+            media_capture_pipeline_source_configuration: self.media_capture_pipeline_source_configuration,
         }
     }
 }

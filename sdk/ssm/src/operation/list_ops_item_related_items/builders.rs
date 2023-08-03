@@ -26,7 +26,7 @@ impl ListOpsItemRelatedItemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder,
+    inner: crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder,
 }
 impl ListOpsItemRelatedItemsFluentBuilder {
     /// Creates a new `ListOpsItemRelatedItems`.
@@ -37,10 +37,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         }
     }
     /// Access the ListOpsItemRelatedItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListOpsItemRelatedItemsFluentBuilder {
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator {
         crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
@@ -156,17 +139,12 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

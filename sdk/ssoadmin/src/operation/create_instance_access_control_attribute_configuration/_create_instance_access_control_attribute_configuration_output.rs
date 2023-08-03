@@ -19,9 +19,7 @@ impl CreateInstanceAccessControlAttributeConfigurationOutput {
 
 /// A builder for [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceAccessControlAttributeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,9 @@ impl CreateInstanceAccessControlAttributeConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput {
         crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput {
             _request_id: self._request_id,
         }

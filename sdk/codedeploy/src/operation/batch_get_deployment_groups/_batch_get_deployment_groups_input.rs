@@ -23,37 +23,26 @@ impl BatchGetDeploymentGroupsInput {
 }
 impl BatchGetDeploymentGroupsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder {
         crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
-    pub(crate) deployment_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployment_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -66,27 +55,19 @@ impl BatchGetDeploymentGroupsInputBuilder {
     /// To override the contents of this collection use [`set_deployment_group_names`](Self::set_deployment_group_names).
     ///
     /// <p>The names of the deployment groups.</p>
-    pub fn deployment_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_group_names.unwrap_or_default();
         v.push(input.into());
         self.deployment_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the deployment groups.</p>
-    pub fn set_deployment_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_group_names = input;
         self
     }
     /// <p>The names of the deployment groups.</p>
-    pub fn get_deployment_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_group_names
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentGroupsInput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput).
@@ -96,11 +77,9 @@ impl BatchGetDeploymentGroupsInputBuilder {
         crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput {
-                application_name: self.application_name,
-                deployment_group_names: self.deployment_group_names,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsInput {
+            application_name: self.application_name,
+            deployment_group_names: self.deployment_group_names,
+        })
     }
 }

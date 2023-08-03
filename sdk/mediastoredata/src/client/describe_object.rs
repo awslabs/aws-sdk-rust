@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`cache_control(Option<String>)`](crate::operation::describe_object::DescribeObjectOutput::cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::operation::describe_object::DescribeObjectOutput::last_modified): <p>The date and time that the object was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeObjectError>`](crate::operation::describe_object::DescribeObjectError)
-    pub fn describe_object(
-        &self,
-    ) -> crate::operation::describe_object::builders::DescribeObjectFluentBuilder {
-        crate::operation::describe_object::builders::DescribeObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_object(&self) -> crate::operation::describe_object::builders::DescribeObjectFluentBuilder {
+        crate::operation::describe_object::builders::DescribeObjectFluentBuilder::new(self.handle.clone())
     }
 }

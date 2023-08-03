@@ -30,18 +30,14 @@ impl ListPipelineExecutionsInput {
 }
 impl ListPipelineExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -49,18 +45,12 @@ pub struct ListPipelineExecutionsInputBuilder {
 }
 impl ListPipelineExecutionsInputBuilder {
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -99,16 +89,12 @@ impl ListPipelineExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
-                pipeline_name: self.pipeline_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
+            pipeline_name: self.pipeline_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

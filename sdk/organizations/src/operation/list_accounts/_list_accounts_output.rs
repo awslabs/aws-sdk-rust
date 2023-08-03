@@ -35,9 +35,7 @@ impl ListAccountsOutput {
 
 /// A builder for [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListAccountsOutputBuilder {
         self
     }
     /// <p>A list of objects in the organization.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.accounts = input;
         self
     }

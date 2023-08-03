@@ -23,9 +23,7 @@ impl OriginGroupMember {
 
 /// A builder for [`OriginGroupMember`](crate::types::OriginGroupMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupMemberBuilder {
     pub(crate) origin_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OriginGroupMemberBuilder {
     }
     /// Consumes the builder and constructs a [`OriginGroupMember`](crate::types::OriginGroupMember).
     pub fn build(self) -> crate::types::OriginGroupMember {
-        crate::types::OriginGroupMember {
-            origin_id: self.origin_id,
-        }
+        crate::types::OriginGroupMember { origin_id: self.origin_id }
     }
 }

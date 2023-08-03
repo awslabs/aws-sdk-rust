@@ -58,9 +58,7 @@ impl NetworkRouteDestination {
 
 /// A builder for [`NetworkRouteDestination`](crate::types::NetworkRouteDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkRouteDestinationBuilder {
     pub(crate) core_network_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct NetworkRouteDestinationBuilder {
 }
 impl NetworkRouteDestinationBuilder {
     /// <p>The ID of a core network attachment.</p>
-    pub fn core_network_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network attachment.</p>
-    pub fn set_core_network_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_attachment_id = input;
         self
     }
@@ -91,25 +83,17 @@ impl NetworkRouteDestinationBuilder {
         &self.core_network_attachment_id
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>The name of the segment.</p>
@@ -127,18 +111,12 @@ impl NetworkRouteDestinationBuilder {
         &self.segment_name
     }
     /// <p>The edge location for the network destination.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge location for the network destination.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -147,18 +125,12 @@ impl NetworkRouteDestinationBuilder {
         &self.edge_location
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

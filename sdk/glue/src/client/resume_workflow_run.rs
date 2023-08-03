@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`run_id(Option<String>)`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput::run_id): <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
     ///   - [`node_ids(Option<Vec<String>>)`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput::node_ids): <p>A list of the node IDs for the nodes that were actually restarted.</p>
     /// - On failure, responds with [`SdkError<ResumeWorkflowRunError>`](crate::operation::resume_workflow_run::ResumeWorkflowRunError)
-    pub fn resume_workflow_run(
-        &self,
-    ) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunFluentBuilder {
-        crate::operation::resume_workflow_run::builders::ResumeWorkflowRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_workflow_run(&self) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunFluentBuilder {
+        crate::operation::resume_workflow_run::builders::ResumeWorkflowRunFluentBuilder::new(self.handle.clone())
     }
 }

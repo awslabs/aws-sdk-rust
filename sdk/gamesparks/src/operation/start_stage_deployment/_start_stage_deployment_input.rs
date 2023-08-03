@@ -36,17 +36,14 @@ impl StartStageDeploymentInput {
 }
 impl StartStageDeploymentInput {
     /// Creates a new builder-style object to manufacture [`StartStageDeploymentInput`](crate::operation::start_stage_deployment::StartStageDeploymentInput).
-    pub fn builder(
-    ) -> crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
         crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`StartStageDeploymentInput`](crate::operation::start_stage_deployment::StartStageDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStageDeploymentInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,13 @@ impl StartStageDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StartStageDeploymentInput`](crate::operation::start_stage_deployment::StartStageDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_stage_deployment::StartStageDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_stage_deployment::StartStageDeploymentInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                snapshot_id: self.snapshot_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_stage_deployment::StartStageDeploymentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_stage_deployment::StartStageDeploymentInput {
+            game_name: self.game_name,
+            stage_name: self.stage_name,
+            snapshot_id: self.snapshot_id,
+            client_token: self.client_token,
+        })
     }
 }

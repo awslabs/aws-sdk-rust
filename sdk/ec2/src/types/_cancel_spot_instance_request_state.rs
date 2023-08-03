@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CancelSpotInstanceRequestState {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for CancelSpotInstanceRequestState {
             "closed" => CancelSpotInstanceRequestState::Closed,
             "completed" => CancelSpotInstanceRequestState::Completed,
             "open" => CancelSpotInstanceRequestState::Open,
-            other => CancelSpotInstanceRequestState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CancelSpotInstanceRequestState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`fleet_id(Option<String>)`](crate::operation::resolve_alias::ResolveAliasOutput::fleet_id): <p>The fleet identifier that the alias is pointing to.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::operation::resolve_alias::ResolveAliasOutput::fleet_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
     /// - On failure, responds with [`SdkError<ResolveAliasError>`](crate::operation::resolve_alias::ResolveAliasError)
-    pub fn resolve_alias(
-        &self,
-    ) -> crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder {
-        crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resolve_alias(&self) -> crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder {
+        crate::operation::resolve_alias::builders::ResolveAliasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,10 +19,7 @@ pub fn ser_forwarded_values(
     }
     if let Some(var_4) = &input.query_string_cache_keys {
         let inner_writer = scope.start_el("QueryStringCacheKeys");
-        crate::protocol_serde::shape_query_string_cache_keys::ser_query_string_cache_keys(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_query_string_cache_keys::ser_query_string_cache_keys(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())

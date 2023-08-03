@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`database_name(Option<String>)`](crate::operation::delete_partner::DeletePartnerOutput::database_name): <p>The name of the database that receives data from the partner.</p>
     ///   - [`partner_name(Option<String>)`](crate::operation::delete_partner::DeletePartnerOutput::partner_name): <p>The name of the partner that is authorized to send data.</p>
     /// - On failure, responds with [`SdkError<DeletePartnerError>`](crate::operation::delete_partner::DeletePartnerError)
-    pub fn delete_partner(
-        &self,
-    ) -> crate::operation::delete_partner::builders::DeletePartnerFluentBuilder {
-        crate::operation::delete_partner::builders::DeletePartnerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_partner(&self) -> crate::operation::delete_partner::builders::DeletePartnerFluentBuilder {
+        crate::operation::delete_partner::builders::DeletePartnerFluentBuilder::new(self.handle.clone())
     }
 }

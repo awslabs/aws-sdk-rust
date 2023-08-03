@@ -51,9 +51,7 @@ impl EnvironmentLifecycle {
 
 /// A builder for [`EnvironmentLifecycle`](crate::types::EnvironmentLifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentLifecycleBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl EnvironmentLifecycleBuilder {
     /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>) -> Self {
         self.status = input;
         self
     }
@@ -113,18 +108,12 @@ impl EnvironmentLifecycleBuilder {
         &self.reason
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn failure_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn set_failure_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_resource = input;
         self
     }

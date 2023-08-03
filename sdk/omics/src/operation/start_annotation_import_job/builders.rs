@@ -26,7 +26,7 @@ impl StartAnnotationImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAnnotationImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder,
+    inner: crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder,
 }
 impl StartAnnotationImportJobFluentBuilder {
     /// Creates a new `StartAnnotationImportJob`.
@@ -37,7 +37,7 @@ impl StartAnnotationImportJobFluentBuilder {
         }
     }
     /// Access the StartAnnotationImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartAnnotationImportJobFluentBuilder {
             crate::operation::start_annotation_import_job::StartAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_annotation_import_job::StartAnnotationImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartAnnotationImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_annotation_import_job::StartAnnotationImportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_annotation_import_job::StartAnnotationImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartAnnotationImportJobFluentBuilder {
             crate::operation::start_annotation_import_job::StartAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_annotation_import_job::StartAnnotationImportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A destination annotation store for the job.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
     /// <p>A destination annotation store for the job.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
@@ -164,17 +147,12 @@ impl StartAnnotationImportJobFluentBuilder {
         self
     }
     /// <p>Items to import.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
     /// <p>Items to import.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>> {
         self.inner.get_items()
     }
     /// <p>Formatting options for the annotation file.</p>
@@ -183,10 +161,7 @@ impl StartAnnotationImportJobFluentBuilder {
         self
     }
     /// <p>Formatting options for the annotation file.</p>
-    pub fn set_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
+    pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::FormatOptions>) -> Self {
         self.inner = self.inner.set_format_options(input);
         self
     }
@@ -224,19 +199,13 @@ impl StartAnnotationImportJobFluentBuilder {
     /// <p> The annotation schema generated by the parsed annotation data. </p>
     pub fn set_annotation_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_annotation_fields(input);
         self
     }
     /// <p> The annotation schema generated by the parsed annotation data. </p>
-    pub fn get_annotation_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_annotation_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_annotation_fields()
     }
 }

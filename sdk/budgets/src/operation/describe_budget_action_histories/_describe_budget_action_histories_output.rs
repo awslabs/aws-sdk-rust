@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeBudgetActionHistoriesOutput {
 }
 impl DescribeBudgetActionHistoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
-    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder {
         crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutputBuilder {
-    pub(crate) action_histories:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
+    pub(crate) action_histories: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
         self
     }
     /// <p> The historical record of the budget action resource. </p>
-    pub fn set_action_histories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
-    ) -> Self {
+    pub fn set_action_histories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>) -> Self {
         self.action_histories = input;
         self
     }
     /// <p> The historical record of the budget action resource. </p>
-    pub fn get_action_histories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
+    pub fn get_action_histories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
         &self.action_histories
     }
     /// <p> A generic string.</p>
@@ -94,10 +86,7 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
         crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
             action_histories: self.action_histories,
             next_token: self.next_token,

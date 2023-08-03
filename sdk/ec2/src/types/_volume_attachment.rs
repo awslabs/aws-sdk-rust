@@ -58,9 +58,7 @@ impl VolumeAttachment {
 
 /// A builder for [`VolumeAttachment`](crate::types::VolumeAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) device: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl VolumeAttachmentBuilder {
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn set_attach_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.attach_time = input;
         self
     }
@@ -121,10 +116,7 @@ impl VolumeAttachmentBuilder {
         self
     }
     /// <p>The attachment state of the volume.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeAttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VolumeAttachmentState>) -> Self {
         self.state = input;
         self
     }

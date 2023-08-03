@@ -19,9 +19,7 @@ impl StopStreamOutput {
 
 /// A builder for [`StopStreamOutput`](crate::operation::stop_stream::StopStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamOutputBuilder {
     _request_id: Option<String>,
 }

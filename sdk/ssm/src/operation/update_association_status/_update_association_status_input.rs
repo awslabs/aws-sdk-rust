@@ -29,18 +29,14 @@ impl UpdateAssociationStatusInput {
 }
 impl UpdateAssociationStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder {
         crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssociationStatusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -81,17 +77,12 @@ impl UpdateAssociationStatusInputBuilder {
         self
     }
     /// <p>The association status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
     /// <p>The association status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
         &self.association_status
     }
     /// Consumes the builder and constructs a [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
@@ -101,12 +92,10 @@ impl UpdateAssociationStatusInputBuilder {
         crate::operation::update_association_status::UpdateAssociationStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_association_status::UpdateAssociationStatusInput {
-                name: self.name,
-                instance_id: self.instance_id,
-                association_status: self.association_status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_association_status::UpdateAssociationStatusInput {
+            name: self.name,
+            instance_id: self.instance_id,
+            association_status: self.association_status,
+        })
     }
 }

@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for UpdateTopicRefreshScheduleOutput {
 }
 impl UpdateTopicRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTopicRefreshScheduleOutput`](crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput).
-    pub fn builder() -> crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleOutputBuilder {
         crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTopicRefreshScheduleOutput`](crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTopicRefreshScheduleOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
@@ -148,9 +146,7 @@ impl UpdateTopicRefreshScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTopicRefreshScheduleOutput`](crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput {
+    pub fn build(self) -> crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput {
         crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput {
             topic_id: self.topic_id,
             topic_arn: self.topic_arn,

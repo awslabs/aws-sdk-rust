@@ -22,34 +22,26 @@ impl AcceptReservedNodeExchangeInput {
 }
 impl AcceptReservedNodeExchangeInput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
-    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder{
+    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder {
         crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptReservedNodeExchangeInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptReservedNodeExchangeInputBuilder {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -58,25 +50,17 @@ impl AcceptReservedNodeExchangeInputBuilder {
         &self.reserved_node_id
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = input;
         self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }
     /// Consumes the builder and constructs a [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
@@ -86,11 +70,9 @@ impl AcceptReservedNodeExchangeInputBuilder {
         crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput {
-                reserved_node_id: self.reserved_node_id,
-                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput {
+            reserved_node_id: self.reserved_node_id,
+            target_reserved_node_offering_id: self.target_reserved_node_offering_id,
+        })
     }
 }

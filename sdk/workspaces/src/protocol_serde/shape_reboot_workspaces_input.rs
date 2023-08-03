@@ -9,10 +9,7 @@ pub fn ser_reboot_workspaces_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_reboot_request::ser_reboot_request(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_reboot_request::ser_reboot_request(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

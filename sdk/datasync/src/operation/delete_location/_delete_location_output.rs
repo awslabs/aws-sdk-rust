@@ -19,9 +19,7 @@ impl DeleteLocationOutput {
 
 /// A builder for [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocationOutputBuilder {
     _request_id: Option<String>,
 }

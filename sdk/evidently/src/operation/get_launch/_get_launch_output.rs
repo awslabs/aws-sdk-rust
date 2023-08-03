@@ -28,9 +28,7 @@ impl GetLaunchOutput {
 
 /// A builder for [`GetLaunchOutput`](crate::operation::get_launch::GetLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchOutputBuilder {
     pub(crate) launch: ::std::option::Option<crate::types::Launch>,
     _request_id: Option<String>,

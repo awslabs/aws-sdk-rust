@@ -22,17 +22,14 @@ impl ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +66,7 @@ impl ListCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_certificates::ListCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
             max_results: self.max_results,
             next_token: self.next_token,

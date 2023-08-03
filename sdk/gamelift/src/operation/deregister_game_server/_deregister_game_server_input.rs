@@ -22,35 +22,26 @@ impl DeregisterGameServerInput {
 }
 impl DeregisterGameServerInput {
     /// Creates a new builder-style object to manufacture [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
+    pub fn builder() -> crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
         crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterGameServerInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -59,18 +50,12 @@ impl DeregisterGameServerInputBuilder {
         &self.game_server_group_name
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_id = input;
         self
     }
@@ -81,15 +66,11 @@ impl DeregisterGameServerInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_game_server::DeregisterGameServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_game_server::DeregisterGameServerInput {
-                game_server_group_name: self.game_server_group_name,
-                game_server_id: self.game_server_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deregister_game_server::DeregisterGameServerInput {
+            game_server_group_name: self.game_server_group_name,
+            game_server_id: self.game_server_id,
+        })
     }
 }

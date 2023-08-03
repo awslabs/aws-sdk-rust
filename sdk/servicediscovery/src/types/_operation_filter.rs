@@ -75,9 +75,7 @@ impl OperationFilter {
 
 /// A builder for [`OperationFilter`](crate::types::OperationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OperationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -104,10 +102,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OperationFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -148,10 +143,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -182,10 +174,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
         self
     }

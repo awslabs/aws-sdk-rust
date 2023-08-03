@@ -31,8 +31,7 @@ pub struct AssociateFileSystemInput {
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     #[doc(hidden)]
-    pub endpoint_network_configuration:
-        ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
+    pub endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
 }
 impl AssociateFileSystemInput {
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
@@ -70,9 +69,7 @@ impl AssociateFileSystemInput {
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn endpoint_network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EndpointNetworkConfiguration> {
+    pub fn endpoint_network_configuration(&self) -> ::std::option::Option<&crate::types::EndpointNetworkConfiguration> {
         self.endpoint_network_configuration.as_ref()
     }
 }
@@ -87,19 +84,14 @@ impl ::std::fmt::Debug for AssociateFileSystemInput {
         formatter.field("tags", &self.tags);
         formatter.field("audit_destination_arn", &self.audit_destination_arn);
         formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field(
-            "endpoint_network_configuration",
-            &self.endpoint_network_configuration,
-        );
+        formatter.field("endpoint_network_configuration", &self.endpoint_network_configuration);
         formatter.finish()
     }
 }
 impl AssociateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemInput`](crate::operation::associate_file_system::AssociateFileSystemInput).
-    pub fn builder(
-    ) -> crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
-        crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
+        crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder::default()
     }
 }
 
@@ -115,8 +107,7 @@ pub struct AssociateFileSystemInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) audit_destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    pub(crate) endpoint_network_configuration:
-        ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
+    pub(crate) endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
 }
 impl AssociateFileSystemInputBuilder {
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
@@ -201,10 +192,7 @@ impl AssociateFileSystemInputBuilder {
         self
     }
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -213,18 +201,12 @@ impl AssociateFileSystemInputBuilder {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_destination_arn = input;
         self
     }
@@ -238,10 +220,7 @@ impl AssociateFileSystemInputBuilder {
         self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.cache_attributes = input;
         self
     }
@@ -252,51 +231,39 @@ impl AssociateFileSystemInputBuilder {
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn endpoint_network_configuration(
-        mut self,
-        input: crate::types::EndpointNetworkConfiguration,
-    ) -> Self {
+    pub fn endpoint_network_configuration(mut self, input: crate::types::EndpointNetworkConfiguration) -> Self {
         self.endpoint_network_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn set_endpoint_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_network_configuration(mut self, input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>) -> Self {
         self.endpoint_network_configuration = input;
         self
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn get_endpoint_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
+    pub fn get_endpoint_network_configuration(&self) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
         &self.endpoint_network_configuration
     }
     /// Consumes the builder and constructs a [`AssociateFileSystemInput`](crate::operation::associate_file_system::AssociateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_file_system::AssociateFileSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_file_system::AssociateFileSystemInput {
-                user_name: self.user_name,
-                password: self.password,
-                client_token: self.client_token,
-                gateway_arn: self.gateway_arn,
-                location_arn: self.location_arn,
-                tags: self.tags,
-                audit_destination_arn: self.audit_destination_arn,
-                cache_attributes: self.cache_attributes,
-                endpoint_network_configuration: self.endpoint_network_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_file_system::AssociateFileSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_file_system::AssociateFileSystemInput {
+            user_name: self.user_name,
+            password: self.password,
+            client_token: self.client_token,
+            gateway_arn: self.gateway_arn,
+            location_arn: self.location_arn,
+            tags: self.tags,
+            audit_destination_arn: self.audit_destination_arn,
+            cache_attributes: self.cache_attributes,
+            endpoint_network_configuration: self.endpoint_network_configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for AssociateFileSystemInputBuilder {
@@ -310,10 +277,7 @@ impl ::std::fmt::Debug for AssociateFileSystemInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("audit_destination_arn", &self.audit_destination_arn);
         formatter.field("cache_attributes", &self.cache_attributes);
-        formatter.field(
-            "endpoint_network_configuration",
-            &self.endpoint_network_configuration,
-        );
+        formatter.field("endpoint_network_configuration", &self.endpoint_network_configuration);
         formatter.finish()
     }
 }

@@ -31,9 +31,7 @@ impl SecurityProfilesSearchFilter {
 
 /// A builder for [`SecurityProfilesSearchFilter`](crate::types::SecurityProfilesSearchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityProfilesSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }
@@ -52,10 +50,7 @@ impl SecurityProfilesSearchFilterBuilder {
     /// <li> <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li>
     /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
     /// </ul>
-    pub fn set_tag_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
-    ) -> Self {
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::ControlPlaneTagFilter>) -> Self {
         self.tag_filter = input;
         self
     }
@@ -69,8 +64,6 @@ impl SecurityProfilesSearchFilterBuilder {
     }
     /// Consumes the builder and constructs a [`SecurityProfilesSearchFilter`](crate::types::SecurityProfilesSearchFilter).
     pub fn build(self) -> crate::types::SecurityProfilesSearchFilter {
-        crate::types::SecurityProfilesSearchFilter {
-            tag_filter: self.tag_filter,
-        }
+        crate::types::SecurityProfilesSearchFilter { tag_filter: self.tag_filter }
     }
 }

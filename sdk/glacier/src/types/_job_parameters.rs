@@ -28,8 +28,7 @@ pub struct JobParameters {
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters used for range inventory retrieval.</p>
     #[doc(hidden)]
-    pub inventory_retrieval_parameters:
-        ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
+    pub inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
     /// <p>Contains the parameters that define a job.</p>
     #[doc(hidden)]
     pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
@@ -68,9 +67,7 @@ impl JobParameters {
         self.tier.as_deref()
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InventoryRetrievalJobInput> {
+    pub fn inventory_retrieval_parameters(&self) -> ::std::option::Option<&crate::types::InventoryRetrievalJobInput> {
         self.inventory_retrieval_parameters.as_ref()
     }
     /// <p>Contains the parameters that define a job.</p>
@@ -91,9 +88,7 @@ impl JobParameters {
 
 /// A builder for [`JobParameters`](crate::types::JobParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobParametersBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -102,8 +97,7 @@ pub struct JobParametersBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_byte_range: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
-    pub(crate) inventory_retrieval_parameters:
-        ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
+    pub(crate) inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
     pub(crate) select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
@@ -180,19 +174,13 @@ impl JobParametersBuilder {
     }
     /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
-    pub fn retrieval_byte_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_byte_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_byte_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
-    pub fn set_retrieval_byte_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_byte_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_byte_range = input;
         self
     }
@@ -216,25 +204,17 @@ impl JobParametersBuilder {
         &self.tier
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        mut self,
-        input: crate::types::InventoryRetrievalJobInput,
-    ) -> Self {
+    pub fn inventory_retrieval_parameters(mut self, input: crate::types::InventoryRetrievalJobInput) -> Self {
         self.inventory_retrieval_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
-    pub fn set_inventory_retrieval_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryRetrievalJobInput>,
-    ) -> Self {
+    pub fn set_inventory_retrieval_parameters(mut self, input: ::std::option::Option<crate::types::InventoryRetrievalJobInput>) -> Self {
         self.inventory_retrieval_parameters = input;
         self
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
-    pub fn get_inventory_retrieval_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventoryRetrievalJobInput> {
+    pub fn get_inventory_retrieval_parameters(&self) -> &::std::option::Option<crate::types::InventoryRetrievalJobInput> {
         &self.inventory_retrieval_parameters
     }
     /// <p>Contains the parameters that define a job.</p>
@@ -243,10 +223,7 @@ impl JobParametersBuilder {
         self
     }
     /// <p>Contains the parameters that define a job.</p>
-    pub fn set_select_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectParameters>,
-    ) -> Self {
+    pub fn set_select_parameters(mut self, input: ::std::option::Option<crate::types::SelectParameters>) -> Self {
         self.select_parameters = input;
         self
     }
@@ -260,10 +237,7 @@ impl JobParametersBuilder {
         self
     }
     /// <p>Contains information about the location where the select job results are stored.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
         self.output_location = input;
         self
     }

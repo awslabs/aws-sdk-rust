@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScalableTargetsOutput {
 }
 impl DescribeScalableTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder {
         crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalableTargetsOutputBuilder {
-    pub(crate) scalable_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>>,
+    pub(crate) scalable_targets: ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeScalableTargetsOutputBuilder {
         self
     }
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn set_scalable_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>>,
-    ) -> Self {
+    pub fn set_scalable_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>>) -> Self {
         self.scalable_targets = input;
         self
     }
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn get_scalable_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>> {
+    pub fn get_scalable_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>> {
         &self.scalable_targets
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeScalableTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
+    pub fn build(self) -> crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
         crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
             scalable_targets: self.scalable_targets,
             next_token: self.next_token,

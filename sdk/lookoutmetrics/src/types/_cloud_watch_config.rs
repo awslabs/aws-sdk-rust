@@ -17,9 +17,7 @@ impl CloudWatchConfig {
         self.role_arn.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn back_test_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
+    pub fn back_test_configuration(&self) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl CloudWatchConfig {
 
 /// A builder for [`CloudWatchConfig`](crate::types::CloudWatchConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchConfigBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
@@ -60,17 +56,12 @@ impl CloudWatchConfigBuilder {
         self
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn set_back_test_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BackTestConfiguration>,
-    ) -> Self {
+    pub fn set_back_test_configuration(mut self, input: ::std::option::Option<crate::types::BackTestConfiguration>) -> Self {
         self.back_test_configuration = input;
         self
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn get_back_test_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackTestConfiguration> {
+    pub fn get_back_test_configuration(&self) -> &::std::option::Option<crate::types::BackTestConfiguration> {
         &self.back_test_configuration
     }
     /// Consumes the builder and constructs a [`CloudWatchConfig`](crate::types::CloudWatchConfig).

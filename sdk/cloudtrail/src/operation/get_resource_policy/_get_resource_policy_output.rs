@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePolicyOutput {
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ impl GetResourcePolicyOutputBuilder {
         &self.resource_arn
     }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }

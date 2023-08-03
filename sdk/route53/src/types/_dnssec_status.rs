@@ -96,9 +96,7 @@ impl DnssecStatus {
 
 /// A builder for [`DnssecStatus`](crate::types::DnssecStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnssecStatusBuilder {
     pub(crate) serve_signature: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -138,10 +136,7 @@ impl DnssecStatusBuilder {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
     /// </dd>
     /// </dl>
-    pub fn serve_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serve_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serve_signature = ::std::option::Option::Some(input.into());
         self
     }
@@ -179,10 +174,7 @@ impl DnssecStatusBuilder {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
     /// </dd>
     /// </dl>
-    pub fn set_serve_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serve_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serve_signature = input;
         self
     }
@@ -224,18 +216,12 @@ impl DnssecStatusBuilder {
         &self.serve_signature
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

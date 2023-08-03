@@ -15,8 +15,7 @@ pub struct SchedulingConfig {
     pub end_behavior: ::std::option::Option<crate::types::JobEndBehavior>,
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
     #[doc(hidden)]
-    pub maintenance_windows:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl SchedulingConfig {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
@@ -45,15 +44,12 @@ impl SchedulingConfig {
 
 /// A builder for [`SchedulingConfig`](crate::types::SchedulingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchedulingConfigBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_behavior: ::std::option::Option<crate::types::JobEndBehavior>,
-    pub(crate) maintenance_windows:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub(crate) maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl SchedulingConfigBuilder {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
@@ -90,10 +86,7 @@ impl SchedulingConfigBuilder {
         self
     }
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
-    pub fn set_end_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::JobEndBehavior>,
-    ) -> Self {
+    pub fn set_end_behavior(mut self, input: ::std::option::Option<crate::types::JobEndBehavior>) -> Self {
         self.end_behavior = input;
         self
     }
@@ -113,17 +106,12 @@ impl SchedulingConfigBuilder {
         self
     }
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
-    pub fn set_maintenance_windows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
-    ) -> Self {
+    pub fn set_maintenance_windows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>) -> Self {
         self.maintenance_windows = input;
         self
     }
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
-    pub fn get_maintenance_windows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+    pub fn get_maintenance_windows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
         &self.maintenance_windows
     }
     /// Consumes the builder and constructs a [`SchedulingConfig`](crate::types::SchedulingConfig).

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for ListThemeAliasesOutput {
 }
 impl ListThemeAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemeAliasesOutput`](crate::operation::list_theme_aliases::ListThemeAliasesOutput).
-    pub fn builder() -> crate::operation::list_theme_aliases::builders::ListThemeAliasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_theme_aliases::builders::ListThemeAliasesOutputBuilder {
         crate::operation::list_theme_aliases::builders::ListThemeAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThemeAliasesOutput`](crate::operation::list_theme_aliases::ListThemeAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemeAliasesOutputBuilder {
     pub(crate) theme_alias_list: ::std::option::Option<::std::vec::Vec<crate::types::ThemeAlias>>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -73,17 +70,12 @@ impl ListThemeAliasesOutputBuilder {
         self
     }
     /// <p>A structure containing the list of the theme's aliases.</p>
-    pub fn set_theme_alias_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeAlias>>,
-    ) -> Self {
+    pub fn set_theme_alias_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeAlias>>) -> Self {
         self.theme_alias_list = input;
         self
     }
     /// <p>A structure containing the list of the theme's aliases.</p>
-    pub fn get_theme_alias_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeAlias>> {
+    pub fn get_theme_alias_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeAlias>> {
         &self.theme_alias_list
     }
     /// <p>The HTTP status of the request.</p>

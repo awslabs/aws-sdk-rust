@@ -45,9 +45,7 @@ impl PriceList {
 
 /// A builder for [`PriceList`](crate::types::PriceList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriceListBuilder {
     pub(crate) price_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct PriceListBuilder {
 }
 impl PriceListBuilder {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
-    pub fn price_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn price_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
-    pub fn set_price_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_price_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.price_list_arn = input;
         self
     }
@@ -90,18 +82,12 @@ impl PriceListBuilder {
         &self.region_code
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in. </p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The three alphabetical character ISO-4217 currency code the Price List files are denominated in. </p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -121,17 +107,12 @@ impl PriceListBuilder {
         self
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
-    pub fn set_file_formats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_formats(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.file_formats = input;
         self
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
-    pub fn get_file_formats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_formats(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.file_formats
     }
     /// Consumes the builder and constructs a [`PriceList`](crate::types::PriceList).

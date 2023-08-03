@@ -60,13 +60,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -133,19 +127,13 @@ impl ::std::convert::From<&str> for DeploymentJobErrorCode {
             "FailureThresholdBreached" => DeploymentJobErrorCode::FailureThresholdBreached,
             "FleetDeploymentTimeout" => DeploymentJobErrorCode::FleetDeploymentTimeout,
             "GreengrassDeploymentFailed" => DeploymentJobErrorCode::GreengrassDeploymentFailed,
-            "GreengrassGroupVersionDoesNotExist" => {
-                DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist
-            }
+            "GreengrassGroupVersionDoesNotExist" => DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist,
             "InternalServerError" => DeploymentJobErrorCode::InternalServerError,
             "InvalidGreengrassGroup" => DeploymentJobErrorCode::InvalidGreengrassGroup,
             "LambdaDeleted" => DeploymentJobErrorCode::LambdaDeleted,
-            "MissingRobotApplicationArchitecture" => {
-                DeploymentJobErrorCode::MissingRobotApplicationArchitecture
-            }
+            "MissingRobotApplicationArchitecture" => DeploymentJobErrorCode::MissingRobotApplicationArchitecture,
             "MissingRobotArchitecture" => DeploymentJobErrorCode::MissingRobotArchitecture,
-            "MissingRobotDeploymentResource" => {
-                DeploymentJobErrorCode::MissingRobotDeploymentResource
-            }
+            "MissingRobotDeploymentResource" => DeploymentJobErrorCode::MissingRobotDeploymentResource,
             "PostLaunchFileFailure" => DeploymentJobErrorCode::PostLaunchFileFailure,
             "PreLaunchFileFailure" => DeploymentJobErrorCode::PreLaunchFileFailure,
             "ResourceNotFound" => DeploymentJobErrorCode::ResourceNotFound,
@@ -153,9 +141,7 @@ impl ::std::convert::From<&str> for DeploymentJobErrorCode {
             "RobotApplicationDoesNotExist" => DeploymentJobErrorCode::RobotApplicationDoesNotExist,
             "RobotDeploymentAborted" => DeploymentJobErrorCode::RobotDeploymentAborted,
             "RobotDeploymentNoResponse" => DeploymentJobErrorCode::RobotDeploymentNoResponse,
-            other => DeploymentJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeploymentJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -180,19 +166,13 @@ impl DeploymentJobErrorCode {
             DeploymentJobErrorCode::FailureThresholdBreached => "FailureThresholdBreached",
             DeploymentJobErrorCode::FleetDeploymentTimeout => "FleetDeploymentTimeout",
             DeploymentJobErrorCode::GreengrassDeploymentFailed => "GreengrassDeploymentFailed",
-            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => {
-                "GreengrassGroupVersionDoesNotExist"
-            }
+            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => "GreengrassGroupVersionDoesNotExist",
             DeploymentJobErrorCode::InternalServerError => "InternalServerError",
             DeploymentJobErrorCode::InvalidGreengrassGroup => "InvalidGreengrassGroup",
             DeploymentJobErrorCode::LambdaDeleted => "LambdaDeleted",
-            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => {
-                "MissingRobotApplicationArchitecture"
-            }
+            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => "MissingRobotApplicationArchitecture",
             DeploymentJobErrorCode::MissingRobotArchitecture => "MissingRobotArchitecture",
-            DeploymentJobErrorCode::MissingRobotDeploymentResource => {
-                "MissingRobotDeploymentResource"
-            }
+            DeploymentJobErrorCode::MissingRobotDeploymentResource => "MissingRobotDeploymentResource",
             DeploymentJobErrorCode::PostLaunchFileFailure => "PostLaunchFileFailure",
             DeploymentJobErrorCode::PreLaunchFileFailure => "PreLaunchFileFailure",
             DeploymentJobErrorCode::ResourceNotFound => "ResourceNotFound",

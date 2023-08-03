@@ -36,9 +36,7 @@ impl ListTopicsOutput {
 
 /// A builder for [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicsOutputBuilder {
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListTopicsOutputBuilder {
         self
     }
     /// <p>A list of topic ARNs.</p>
-    pub fn set_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
-    ) -> Self {
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>) -> Self {
         self.topics = input;
         self
     }

@@ -6,10 +6,7 @@ pub fn ser_list_coverage_input(
     if let Some(var_1) = &input.filter_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filterCriteria").start_object();
-        crate::protocol_serde::shape_coverage_filter_criteria::ser_coverage_filter_criteria(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_coverage_filter_criteria::ser_coverage_filter_criteria(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.max_results {
@@ -24,10 +21,7 @@ pub fn ser_list_coverage_input(
     if let Some(var_5) = &input.sort_criteria {
         #[allow(unused_mut)]
         let mut object_6 = object.key("sortCriteria").start_object();
-        crate::protocol_serde::shape_coverage_sort_criteria::ser_coverage_sort_criteria(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_coverage_sort_criteria::ser_coverage_sort_criteria(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

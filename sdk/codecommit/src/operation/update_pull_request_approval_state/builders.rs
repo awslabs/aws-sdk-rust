@@ -5,16 +5,16 @@ pub use crate::operation::update_pull_request_approval_state::_update_pull_reque
 
 impl UpdatePullRequestApprovalStateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_pull_request_approval_state();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdatePullRequestApprovalStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder,
+    inner: crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder,
 }
 impl UpdatePullRequestApprovalStateFluentBuilder {
     /// Creates a new `UpdatePullRequestApprovalState`.
@@ -37,15 +37,20 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
         }
     }
     /// Access the UpdatePullRequestApprovalState as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalState, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalState,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalState, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalState,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -134,10 +143,7 @@ impl UpdatePullRequestApprovalStateFluentBuilder {
         self
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
-    pub fn set_approval_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalState>,
-    ) -> Self {
+    pub fn set_approval_state(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
         self.inner = self.inner.set_approval_state(input);
         self
     }

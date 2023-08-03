@@ -30,9 +30,7 @@ impl FieldValue {
 
 /// A builder for [`FieldValue`](crate::types::FieldValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValueBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::FieldValueUnion>,
@@ -58,10 +56,7 @@ impl FieldValueBuilder {
         self
     }
     /// <p>Union of potential field value types.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldValueUnion>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::FieldValueUnion>) -> Self {
         self.value = input;
         self
     }

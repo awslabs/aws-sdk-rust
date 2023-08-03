@@ -5,8 +5,7 @@
 pub struct ListTransformJobsOutput {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
     #[doc(hidden)]
-    pub transform_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
+    pub transform_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTransformJobsOutput {
 }
 impl ListTransformJobsOutput {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn transform_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransformJobSummary]> {
+    pub fn transform_job_summaries(&self) -> ::std::option::Option<&[crate::types::TransformJobSummary]> {
         self.transform_job_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTransformJobsOutput {
 }
 impl ListTransformJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTransformJobsOutput`](crate::operation::list_transform_jobs::ListTransformJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder {
         crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransformJobsOutput`](crate::operation::list_transform_jobs::ListTransformJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransformJobsOutputBuilder {
-    pub(crate) transform_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
+    pub(crate) transform_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListTransformJobsOutputBuilder {
         self
     }
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn set_transform_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>,
-    ) -> Self {
+    pub fn set_transform_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>>) -> Self {
         self.transform_job_summaries = input;
         self
     }
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn get_transform_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>> {
+    pub fn get_transform_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformJobSummary>> {
         &self.transform_job_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>

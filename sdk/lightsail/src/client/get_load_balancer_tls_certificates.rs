@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput) with field(s):
     ///   - [`tls_certificates(Option<Vec<LoadBalancerTlsCertificate>>)`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput::tls_certificates): <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     /// - On failure, responds with [`SdkError<GetLoadBalancerTlsCertificatesError>`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError)
-    pub fn get_load_balancer_tls_certificates(&self) -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesFluentBuilder{
+    pub fn get_load_balancer_tls_certificates(
+        &self,
+    ) -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesFluentBuilder {
         crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

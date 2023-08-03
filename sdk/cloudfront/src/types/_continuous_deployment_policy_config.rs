@@ -6,8 +6,7 @@
 pub struct ContinuousDeploymentPolicyConfig {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
     #[doc(hidden)]
-    pub staging_distribution_dns_names:
-        ::std::option::Option<crate::types::StagingDistributionDnsNames>,
+    pub staging_distribution_dns_names: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
@@ -17,9 +16,7 @@ pub struct ContinuousDeploymentPolicyConfig {
 }
 impl ContinuousDeploymentPolicyConfig {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn staging_distribution_dns_names(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StagingDistributionDnsNames> {
+    pub fn staging_distribution_dns_names(&self) -> ::std::option::Option<&crate::types::StagingDistributionDnsNames> {
         self.staging_distribution_dns_names.as_ref()
     }
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
@@ -40,36 +37,25 @@ impl ContinuousDeploymentPolicyConfig {
 
 /// A builder for [`ContinuousDeploymentPolicyConfig`](crate::types::ContinuousDeploymentPolicyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicyConfigBuilder {
-    pub(crate) staging_distribution_dns_names:
-        ::std::option::Option<crate::types::StagingDistributionDnsNames>,
+    pub(crate) staging_distribution_dns_names: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) traffic_config: ::std::option::Option<crate::types::TrafficConfig>,
 }
 impl ContinuousDeploymentPolicyConfigBuilder {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn staging_distribution_dns_names(
-        mut self,
-        input: crate::types::StagingDistributionDnsNames,
-    ) -> Self {
+    pub fn staging_distribution_dns_names(mut self, input: crate::types::StagingDistributionDnsNames) -> Self {
         self.staging_distribution_dns_names = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn set_staging_distribution_dns_names(
-        mut self,
-        input: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
-    ) -> Self {
+    pub fn set_staging_distribution_dns_names(mut self, input: ::std::option::Option<crate::types::StagingDistributionDnsNames>) -> Self {
         self.staging_distribution_dns_names = input;
         self
     }
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn get_staging_distribution_dns_names(
-        &self,
-    ) -> &::std::option::Option<crate::types::StagingDistributionDnsNames> {
+    pub fn get_staging_distribution_dns_names(&self) -> &::std::option::Option<crate::types::StagingDistributionDnsNames> {
         &self.staging_distribution_dns_names
     }
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
@@ -92,10 +78,7 @@ impl ContinuousDeploymentPolicyConfigBuilder {
         self
     }
     /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
-    pub fn set_traffic_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficConfig>,
-    ) -> Self {
+    pub fn set_traffic_config(mut self, input: ::std::option::Option<crate::types::TrafficConfig>) -> Self {
         self.traffic_config = input;
         self
     }

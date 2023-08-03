@@ -54,9 +54,7 @@ impl CreateEndpointInput {
 
 /// A builder for [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndpointInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -94,18 +92,12 @@ impl CreateEndpointInputBuilder {
         &self.subnet_id
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_id = input;
         self
     }
@@ -123,10 +115,7 @@ impl CreateEndpointInputBuilder {
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
     /// </note>
-    pub fn set_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointAccessType>,
-    ) -> Self {
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::EndpointAccessType>) -> Self {
         self.access_type = input;
         self
     }
@@ -137,18 +126,12 @@ impl CreateEndpointInputBuilder {
         &self.access_type
     }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }
@@ -159,10 +142,7 @@ impl CreateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_endpoint::CreateEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_endpoint::CreateEndpointInput {
             outpost_id: self.outpost_id,
             subnet_id: self.subnet_id,

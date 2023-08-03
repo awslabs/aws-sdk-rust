@@ -16,10 +16,7 @@ pub struct GetDeploymentOutput {
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
     #[doc(hidden)]
     pub api_summary: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     >,
     _request_id: Option<String>,
 }
@@ -40,10 +37,7 @@ impl GetDeploymentOutput {
     pub fn api_summary(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     > {
         self.api_summary.as_ref()
     }
@@ -62,18 +56,13 @@ impl GetDeploymentOutput {
 
 /// A builder for [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) api_summary: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     >,
     _request_id: Option<String>,
 }
@@ -112,10 +101,7 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The date and time that the deployment resource was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -142,10 +128,7 @@ impl GetDeploymentOutputBuilder {
     pub fn set_api_summary(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
         >,
     ) -> Self {
         self.api_summary = input;
@@ -155,10 +138,7 @@ impl GetDeploymentOutputBuilder {
     pub fn get_api_summary(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     > {
         &self.api_summary
     }

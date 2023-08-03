@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`cost_category_arn(Option<String>)`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput::cost_category_arn): <p>The unique identifier for your Cost Category. </p>
     ///   - [`effective_end(Option<String>)`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput::effective_end): <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     /// - On failure, responds with [`SdkError<DeleteCostCategoryDefinitionError>`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError)
-    pub fn delete_cost_category_definition(&self) -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder{
+    pub fn delete_cost_category_definition(
+        &self,
+    ) -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder {
         crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

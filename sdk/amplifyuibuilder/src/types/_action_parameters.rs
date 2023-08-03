@@ -27,9 +27,7 @@ pub struct ActionParameters {
     pub id: ::std::option::Option<crate::types::ComponentProperty>,
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::MutationActionSetStateParameter>,
@@ -64,11 +62,7 @@ impl ActionParameters {
         self.id.as_ref()
     }
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         self.fields.as_ref()
     }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
@@ -85,9 +79,7 @@ impl ActionParameters {
 
 /// A builder for [`ActionParameters`](crate::types::ActionParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionParametersBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ComponentProperty>,
     pub(crate) url: ::std::option::Option<crate::types::ComponentProperty>,
@@ -96,9 +88,7 @@ pub struct ActionParametersBuilder {
     pub(crate) global: ::std::option::Option<crate::types::ComponentProperty>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<crate::types::ComponentProperty>,
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     pub(crate) state: ::std::option::Option<crate::types::MutationActionSetStateParameter>,
 }
 impl ActionParametersBuilder {
@@ -108,10 +98,7 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.r#type = input;
         self
     }
@@ -125,10 +112,7 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
-    pub fn set_url(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.url = input;
         self
     }
@@ -142,10 +126,7 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
-    pub fn set_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_anchor(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.anchor = input;
         self
     }
@@ -159,10 +140,7 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>The element within the same component to modify when the action occurs.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.target = input;
         self
     }
@@ -176,10 +154,7 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
-    pub fn set_global(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentProperty>,
-    ) -> Self {
+    pub fn set_global(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.global = input;
         self
     }
@@ -220,11 +195,7 @@ impl ActionParametersBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentProperty,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentProperty) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
@@ -233,19 +204,13 @@ impl ActionParametersBuilder {
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         &self.fields
     }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
@@ -254,17 +219,12 @@ impl ActionParametersBuilder {
         self
     }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::MutationActionSetStateParameter>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::MutationActionSetStateParameter>) -> Self {
         self.state = input;
         self
     }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutationActionSetStateParameter> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::MutationActionSetStateParameter> {
         &self.state
     }
     /// Consumes the builder and constructs a [`ActionParameters`](crate::types::ActionParameters).

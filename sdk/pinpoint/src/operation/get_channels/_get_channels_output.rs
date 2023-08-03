@@ -28,9 +28,7 @@ impl GetChannelsOutput {
 
 /// A builder for [`GetChannelsOutput`](crate::operation::get_channels::GetChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelsOutputBuilder {
     pub(crate) channels_response: ::std::option::Option<crate::types::ChannelsResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetChannelsOutputBuilder {
         self
     }
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
-    pub fn set_channels_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelsResponse>,
-    ) -> Self {
+    pub fn set_channels_response(mut self, input: ::std::option::Option<crate::types::ChannelsResponse>) -> Self {
         self.channels_response = input;
         self
     }

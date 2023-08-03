@@ -10,10 +10,7 @@ impl DeleteXssMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_xss_match_set();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DeleteXssMatchSetFluentBuilder {
         }
     }
     /// Access the DeleteXssMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl DeleteXssMatchSetFluentBuilder {
             crate::operation::delete_xss_match_set::DeleteXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl DeleteXssMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl DeleteXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl DeleteXssMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl DeleteXssMatchSetFluentBuilder {
             crate::operation::delete_xss_match_set::DeleteXssMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_xss_match_set::DeleteXssMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_xss_match_set::DeleteXssMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.xss_match_set_id(input.into());
         self
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn set_xss_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_xss_match_set_id(input);
         self
     }

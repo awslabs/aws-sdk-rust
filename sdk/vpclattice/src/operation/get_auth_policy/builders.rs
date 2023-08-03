@@ -10,10 +10,7 @@ impl GetAuthPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_auth_policy::GetAuthPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auth_policy::GetAuthPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auth_policy::GetAuthPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_auth_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAuthPolicyFluentBuilder {
         }
     }
     /// Access the GetAuthPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_auth_policy::builders::GetAuthPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_auth_policy::builders::GetAuthPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetAuthPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetAuthPolicyFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

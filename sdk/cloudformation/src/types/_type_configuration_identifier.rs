@@ -53,9 +53,7 @@ impl TypeConfigurationIdentifier {
 
 /// A builder for [`TypeConfigurationIdentifier`](crate::types::TypeConfigurationIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypeConfigurationIdentifierBuilder {
     pub(crate) type_arn: ::std::option::Option<::std::string::String>,
     pub(crate) type_configuration_alias: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl TypeConfigurationIdentifierBuilder {
         &self.type_arn
     }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    pub fn type_configuration_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_configuration_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_configuration_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    pub fn set_type_configuration_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_configuration_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_configuration_alias = input;
         self
     }
@@ -102,18 +94,12 @@ impl TypeConfigurationIdentifierBuilder {
         &self.type_configuration_alias
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and Region.</p>
-    pub fn type_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and Region.</p>
-    pub fn set_type_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_configuration_arn = input;
         self
     }

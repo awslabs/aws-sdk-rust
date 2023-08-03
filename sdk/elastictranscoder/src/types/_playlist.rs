@@ -58,9 +58,7 @@ impl Playlist {
         self.output_keys.as_deref()
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    pub fn hls_content_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsContentProtection> {
+    pub fn hls_content_protection(&self) -> ::std::option::Option<&crate::types::HlsContentProtection> {
         self.hls_content_protection.as_ref()
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
@@ -85,9 +83,7 @@ impl Playlist {
 
 /// A builder for [`Playlist`](crate::types::Playlist).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlaylistBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<::std::string::String>,
@@ -158,10 +154,7 @@ impl PlaylistBuilder {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    pub fn set_output_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_output_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.output_keys = input;
         self
     }
@@ -173,9 +166,7 @@ impl PlaylistBuilder {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    pub fn get_output_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_output_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.output_keys
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
@@ -184,17 +175,12 @@ impl PlaylistBuilder {
         self
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    pub fn set_hls_content_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsContentProtection>,
-    ) -> Self {
+    pub fn set_hls_content_protection(mut self, input: ::std::option::Option<crate::types::HlsContentProtection>) -> Self {
         self.hls_content_protection = input;
         self
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    pub fn get_hls_content_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsContentProtection> {
+    pub fn get_hls_content_protection(&self) -> &::std::option::Option<crate::types::HlsContentProtection> {
         &self.hls_content_protection
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
@@ -203,10 +189,7 @@ impl PlaylistBuilder {
         self
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    pub fn set_play_ready_drm(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayReadyDrm>,
-    ) -> Self {
+    pub fn set_play_ready_drm(mut self, input: ::std::option::Option<crate::types::PlayReadyDrm>) -> Self {
         self.play_ready_drm = input;
         self
     }
@@ -229,18 +212,12 @@ impl PlaylistBuilder {
         &self.status
     }
     /// <p>Information that further explains the status.</p>
-    pub fn status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information that further explains the status.</p>
-    pub fn set_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_detail = input;
         self
     }

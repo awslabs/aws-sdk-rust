@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_server_catalog::builders::DeleteServerCatalogFluentBuilder::send) it.
     /// - On success, responds with [`DeleteServerCatalogOutput`](crate::operation::delete_server_catalog::DeleteServerCatalogOutput)
     /// - On failure, responds with [`SdkError<DeleteServerCatalogError>`](crate::operation::delete_server_catalog::DeleteServerCatalogError)
-    pub fn delete_server_catalog(
-        &self,
-    ) -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogFluentBuilder {
-        crate::operation::delete_server_catalog::builders::DeleteServerCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_server_catalog(&self) -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogFluentBuilder {
+        crate::operation::delete_server_catalog::builders::DeleteServerCatalogFluentBuilder::new(self.handle.clone())
     }
 }

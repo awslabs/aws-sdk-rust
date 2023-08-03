@@ -10,10 +10,7 @@ impl GetEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_endpoint::GetEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_endpoint::GetEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint::GetEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_endpoint();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetEndpointFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_endpoint::GetEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_endpoint::GetEndpoint, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint::GetEndpointError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetEndpointFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_endpoint::GetEndpoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_endpoint::GetEndpoint, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint::GetEndpointError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl GetEndpointFluentBuilder {
         self.inner.get_thing_arn()
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -147,18 +129,12 @@ impl GetEndpointFluentBuilder {
         self.inner.get_certificate_arn()
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    pub fn device_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_role_arn(input.into());
         self
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    pub fn set_device_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_role_arn(input);
         self
     }
@@ -172,17 +148,12 @@ impl GetEndpointFluentBuilder {
         self
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn set_authentication_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMethod>,
-    ) -> Self {
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
         self.inner = self.inner.set_authentication_method(input);
         self
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn get_authentication_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMethod> {
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
         self.inner.get_authentication_method()
     }
 }

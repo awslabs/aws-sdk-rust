@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput) with field(s):
     ///   - [`auto_enable(Option<AutoEnable>)`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput::auto_enable): <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError)
-    pub fn update_organization_configuration(&self) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder{
+    pub fn update_organization_configuration(
+        &self,
+    ) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_im
 
 impl BatchImportEvidenceToAssessmentControlInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_import_evidence_to_assessment_control();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -35,7 +35,7 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder,
+    inner: crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder,
 }
 impl BatchImportEvidenceToAssessmentControlFluentBuilder {
     /// Creates a new `BatchImportEvidenceToAssessmentControl`.
@@ -46,15 +46,24 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         }
     }
     /// Access the BatchImportEvidenceToAssessmentControl as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControl, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControl,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -63,16 +72,19 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -90,32 +102,39 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControl, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControl,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -124,18 +143,12 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
@@ -167,17 +180,12 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         self
     }
     /// <p> The list of manual evidence objects. </p>
-    pub fn set_manual_evidence(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>,
-    ) -> Self {
+    pub fn set_manual_evidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>) -> Self {
         self.inner = self.inner.set_manual_evidence(input);
         self
     }
     /// <p> The list of manual evidence objects. </p>
-    pub fn get_manual_evidence(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
+    pub fn get_manual_evidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
         self.inner.get_manual_evidence()
     }
 }

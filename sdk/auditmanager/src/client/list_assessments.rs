@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`assessment_metadata(Option<Vec<AssessmentMetadataItem>>)`](crate::operation::list_assessments::ListAssessmentsOutput::assessment_metadata): <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessments::ListAssessmentsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListAssessmentsError>`](crate::operation::list_assessments::ListAssessmentsError)
-    pub fn list_assessments(
-        &self,
-    ) -> crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder {
-        crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_assessments(&self) -> crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder {
+        crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::new(self.handle.clone())
     }
 }

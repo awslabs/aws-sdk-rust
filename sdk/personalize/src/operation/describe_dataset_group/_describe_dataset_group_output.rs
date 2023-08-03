@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatasetGroupOutput {
 }
 impl DescribeDatasetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder {
         crate::operation::describe_dataset_group::builders::DescribeDatasetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetGroupOutputBuilder {
     pub(crate) dataset_group: ::std::option::Option<crate::types::DatasetGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeDatasetGroupOutputBuilder {
         self
     }
     /// <p>A listing of the dataset group's properties.</p>
-    pub fn set_dataset_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetGroup>,
-    ) -> Self {
+    pub fn set_dataset_group(mut self, input: ::std::option::Option<crate::types::DatasetGroup>) -> Self {
         self.dataset_group = input;
         self
     }

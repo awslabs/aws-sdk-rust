@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`table_max_read_capacity_units(Option<i64>)`](crate::operation::describe_limits::DescribeLimitsOutput::table_max_read_capacity_units): <p>The maximum read capacity units that your account allows you to provision for a new table that you are creating in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).</p>
     ///   - [`table_max_write_capacity_units(Option<i64>)`](crate::operation::describe_limits::DescribeLimitsOutput::table_max_write_capacity_units): <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
     /// - On failure, responds with [`SdkError<DescribeLimitsError>`](crate::operation::describe_limits::DescribeLimitsError)
-    pub fn describe_limits(
-        &self,
-    ) -> crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder {
-        crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_limits(&self) -> crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder {
+        crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder::new(self.handle.clone())
     }
 }

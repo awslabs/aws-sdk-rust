@@ -9,8 +9,7 @@ pub struct BackendStoragePermissions {
     pub authenticated: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
     #[doc(hidden)]
-    pub un_authenticated:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
+    pub un_authenticated: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
 }
 impl BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
@@ -18,9 +17,7 @@ impl BackendStoragePermissions {
         self.authenticated.as_deref()
     }
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn un_authenticated(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnAuthenticatedElement]> {
+    pub fn un_authenticated(&self) -> ::std::option::Option<&[crate::types::UnAuthenticatedElement]> {
         self.un_authenticated.as_deref()
     }
 }
@@ -33,14 +30,10 @@ impl BackendStoragePermissions {
 
 /// A builder for [`BackendStoragePermissions`](crate::types::BackendStoragePermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendStoragePermissionsBuilder {
-    pub(crate) authenticated:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
-    pub(crate) un_authenticated:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
+    pub(crate) authenticated: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
+    pub(crate) un_authenticated: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
 }
 impl BackendStoragePermissionsBuilder {
     /// Appends an item to `authenticated`.
@@ -55,17 +48,12 @@ impl BackendStoragePermissionsBuilder {
         self
     }
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn set_authenticated(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
-    ) -> Self {
+    pub fn set_authenticated(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>) -> Self {
         self.authenticated = input;
         self
     }
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn get_authenticated(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>> {
+    pub fn get_authenticated(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>> {
         &self.authenticated
     }
     /// Appends an item to `un_authenticated`.
@@ -80,17 +68,12 @@ impl BackendStoragePermissionsBuilder {
         self
     }
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn set_un_authenticated(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,
-    ) -> Self {
+    pub fn set_un_authenticated(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>) -> Self {
         self.un_authenticated = input;
         self
     }
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn get_un_authenticated(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>> {
+    pub fn get_un_authenticated(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>> {
         &self.un_authenticated
     }
     /// Consumes the builder and constructs a [`BackendStoragePermissions`](crate::types::BackendStoragePermissions).

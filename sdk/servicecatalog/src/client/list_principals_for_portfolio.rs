@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`principals(Option<Vec<Principal>>)`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput::principals): <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalsForPortfolioError>`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError)
-    pub fn list_principals_for_portfolio(&self) -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioFluentBuilder{
+    pub fn list_principals_for_portfolio(
+        &self,
+    ) -> crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioFluentBuilder {
         crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

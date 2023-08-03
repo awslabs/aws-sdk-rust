@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowTargetInput {
 }
 impl UpdateMaintenanceWindowTargetInput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTargetInput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput).
-    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder{
+    pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder {
         crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder::default()
     }
 }
@@ -103,18 +103,12 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         &self.window_id
     }
     /// <p>The target ID to modify.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target ID to modify.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_target_id = input;
         self
     }
@@ -134,10 +128,7 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self
     }
     /// <p>The targets to add or replace.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -146,18 +137,12 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         &self.targets
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }
@@ -214,24 +199,15 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput {
-                window_id: self.window_id
-                ,
-                window_target_id: self.window_target_id
-                ,
-                targets: self.targets
-                ,
-                owner_information: self.owner_information
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                replace: self.replace
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput {
+            window_id: self.window_id,
+            window_target_id: self.window_target_id,
+            targets: self.targets,
+            owner_information: self.owner_information,
+            name: self.name,
+            description: self.description,
+            replace: self.replace,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateMaintenanceWindowTargetInputBuilder {

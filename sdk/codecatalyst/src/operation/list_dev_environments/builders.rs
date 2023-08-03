@@ -37,9 +37,7 @@ impl ListDevEnvironmentsFluentBuilder {
         }
     }
     /// Access the ListDevEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDevEnvironmentsFluentBuilder {
             crate::operation::list_dev_environments::ListDevEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environments::ListDevEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environments::ListDevEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDevEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDevEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dev_environments::ListDevEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environments::ListDevEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environments::ListDevEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDevEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dev_environments::ListDevEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environments::ListDevEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environments::ListDevEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListDevEnvironmentsFluentBuilder {
             crate::operation::list_dev_environments::ListDevEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environments::ListDevEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environments::ListDevEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dev_environments::paginator::ListDevEnvironmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dev_environments::paginator::ListDevEnvironmentsPaginator {
-        crate::operation::list_dev_environments::paginator::ListDevEnvironmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dev_environments::paginator::ListDevEnvironmentsPaginator {
+        crate::operation::list_dev_environments::paginator::ListDevEnvironmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,10 +153,7 @@ impl ListDevEnvironmentsFluentBuilder {
         self
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

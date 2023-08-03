@@ -16,9 +16,7 @@ pub struct WorkerLogDeliveryDescription {
 }
 impl WorkerLogDeliveryDescription {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsLogDeliveryDescription> {
+    pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsLogDeliveryDescription> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
@@ -39,36 +37,25 @@ impl WorkerLogDeliveryDescription {
 
 /// A builder for [`WorkerLogDeliveryDescription`](crate::types::WorkerLogDeliveryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkerLogDeliveryDescriptionBuilder {
-    pub(crate) cloud_watch_logs:
-        ::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription>,
+    pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription>,
     pub(crate) firehose: ::std::option::Option<crate::types::FirehoseLogDeliveryDescription>,
     pub(crate) s3: ::std::option::Option<crate::types::S3LogDeliveryDescription>,
 }
 impl WorkerLogDeliveryDescriptionBuilder {
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        mut self,
-        input: crate::types::CloudWatchLogsLogDeliveryDescription,
-    ) -> Self {
+    pub fn cloud_watch_logs(mut self, input: crate::types::CloudWatchLogsLogDeliveryDescription) -> Self {
         self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription> {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription> {
         &self.cloud_watch_logs
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
@@ -77,17 +64,12 @@ impl WorkerLogDeliveryDescriptionBuilder {
         self
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-    pub fn set_firehose(
-        mut self,
-        input: ::std::option::Option<crate::types::FirehoseLogDeliveryDescription>,
-    ) -> Self {
+    pub fn set_firehose(mut self, input: ::std::option::Option<crate::types::FirehoseLogDeliveryDescription>) -> Self {
         self.firehose = input;
         self
     }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
-    pub fn get_firehose(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirehoseLogDeliveryDescription> {
+    pub fn get_firehose(&self) -> &::std::option::Option<crate::types::FirehoseLogDeliveryDescription> {
         &self.firehose
     }
     /// <p>Details about delivering logs to Amazon S3.</p>
@@ -96,10 +78,7 @@ impl WorkerLogDeliveryDescriptionBuilder {
         self
     }
     /// <p>Details about delivering logs to Amazon S3.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3LogDeliveryDescription>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3LogDeliveryDescription>) -> Self {
         self.s3 = input;
         self
     }

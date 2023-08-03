@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`instance_id(Option<String>)`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput::instance_id): <p>The ID of the instance from which to retrieve the UEFI data.</p>
     ///   - [`uefi_data(Option<String>)`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput::uefi_data): <p>Base64 representation of the non-volatile UEFI variable store.</p>
     /// - On failure, responds with [`SdkError<GetInstanceUefiDataError>`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataError)
-    pub fn get_instance_uefi_data(
-        &self,
-    ) -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataFluentBuilder {
-        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_instance_uefi_data(&self) -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataFluentBuilder {
+        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataFluentBuilder::new(self.handle.clone())
     }
 }

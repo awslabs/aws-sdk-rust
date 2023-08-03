@@ -85,9 +85,7 @@ impl Blueprint {
         self.error_message.as_deref()
     }
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
-    pub fn last_active_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LastActiveDefinition> {
+    pub fn last_active_definition(&self) -> ::std::option::Option<&crate::types::LastActiveDefinition> {
         self.last_active_definition.as_ref()
     }
 }
@@ -100,9 +98,7 @@ impl Blueprint {
 
 /// A builder for [`Blueprint`](crate::types::Blueprint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueprintBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -150,10 +146,7 @@ impl BlueprintBuilder {
         self
     }
     /// <p>The date and time the blueprint was registered.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -167,10 +160,7 @@ impl BlueprintBuilder {
         self
     }
     /// <p>The date and time the blueprint was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -179,18 +169,12 @@ impl BlueprintBuilder {
         &self.last_modified_on
     }
     /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
-    pub fn parameter_spec(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
-    pub fn set_parameter_spec(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_spec = input;
         self
     }
@@ -199,18 +183,12 @@ impl BlueprintBuilder {
         &self.parameter_spec
     }
     /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
-    pub fn blueprint_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
-    pub fn set_blueprint_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_location = input;
         self
     }
@@ -219,18 +197,12 @@ impl BlueprintBuilder {
         &self.blueprint_location
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
-    pub fn blueprint_service_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_service_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_service_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
-    pub fn set_blueprint_service_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_service_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_service_location = input;
         self
     }
@@ -256,10 +228,7 @@ impl BlueprintBuilder {
     /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
     /// <li> <p>Failed — The blueprint registration failed.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueprintStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BlueprintStatus>) -> Self {
         self.status = input;
         self
     }
@@ -274,18 +243,12 @@ impl BlueprintBuilder {
         &self.status
     }
     /// <p>An error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -299,17 +262,12 @@ impl BlueprintBuilder {
         self
     }
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
-    pub fn set_last_active_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::LastActiveDefinition>,
-    ) -> Self {
+    pub fn set_last_active_definition(mut self, input: ::std::option::Option<crate::types::LastActiveDefinition>) -> Self {
         self.last_active_definition = input;
         self
     }
     /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
-    pub fn get_last_active_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LastActiveDefinition> {
+    pub fn get_last_active_definition(&self) -> &::std::option::Option<crate::types::LastActiveDefinition> {
         &self.last_active_definition
     }
     /// Consumes the builder and constructs a [`Blueprint`](crate::types::Blueprint).

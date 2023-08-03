@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`saml_provider_ar_ns(Option<Vec<String>>)`](crate::operation::create_identity_pool::CreateIdentityPoolOutput::saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     ///   - [`identity_pool_tags(Option<HashMap<String, String>>)`](crate::operation::create_identity_pool::CreateIdentityPoolOutput::identity_pool_tags): <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     /// - On failure, responds with [`SdkError<CreateIdentityPoolError>`](crate::operation::create_identity_pool::CreateIdentityPoolError)
-    pub fn create_identity_pool(
-        &self,
-    ) -> crate::operation::create_identity_pool::builders::CreateIdentityPoolFluentBuilder {
-        crate::operation::create_identity_pool::builders::CreateIdentityPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_identity_pool(&self) -> crate::operation::create_identity_pool::builders::CreateIdentityPoolFluentBuilder {
+        crate::operation::create_identity_pool::builders::CreateIdentityPoolFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,10 +38,7 @@ impl EnableDomainAutoRenewFluentBuilder {
         }
     }
     /// Access the EnableDomainAutoRenew as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl EnableDomainAutoRenewFluentBuilder {
             crate::operation::enable_domain_auto_renew::EnableDomainAutoRenew,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl EnableDomainAutoRenewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl EnableDomainAutoRenewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl EnableDomainAutoRenewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl EnableDomainAutoRenewFluentBuilder {
             crate::operation::enable_domain_auto_renew::EnableDomainAutoRenew,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError>,
     > {
         self.customize_middleware().await
     }

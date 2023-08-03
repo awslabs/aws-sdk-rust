@@ -23,9 +23,7 @@ impl AdHocFilteringOption {
 
 /// A builder for [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdHocFilteringOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
@@ -36,17 +34,12 @@ impl AdHocFilteringOptionBuilder {
         self
     }
     /// <p>Availability status.</p>
-    pub fn set_availability_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardBehavior>,
-    ) -> Self {
+    pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
         self.availability_status = input;
         self
     }
     /// <p>Availability status.</p>
-    pub fn get_availability_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+    pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
         &self.availability_status
     }
     /// Consumes the builder and constructs a [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).

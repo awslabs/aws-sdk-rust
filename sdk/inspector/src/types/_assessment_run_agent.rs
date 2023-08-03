@@ -65,9 +65,7 @@ impl AssessmentRunAgent {
 
 /// A builder for [`AssessmentRunAgent`](crate::types::AssessmentRunAgent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunAgentBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
@@ -75,8 +73,7 @@ pub struct AssessmentRunAgentBuilder {
     pub(crate) agent_health_code: ::std::option::Option<crate::types::AgentHealthCode>,
     pub(crate) agent_health_details: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group: ::std::option::Option<::std::string::String>,
-    pub(crate) telemetry_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
+    pub(crate) telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
 }
 impl AssessmentRunAgentBuilder {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
@@ -94,18 +91,12 @@ impl AssessmentRunAgentBuilder {
         &self.agent_id
     }
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_arn = input;
         self
     }
@@ -119,10 +110,7 @@ impl AssessmentRunAgentBuilder {
         self
     }
     /// <p>The current health state of the agent.</p>
-    pub fn set_agent_health(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentHealth>,
-    ) -> Self {
+    pub fn set_agent_health(mut self, input: ::std::option::Option<crate::types::AgentHealth>) -> Self {
         self.agent_health = input;
         self
     }
@@ -136,10 +124,7 @@ impl AssessmentRunAgentBuilder {
         self
     }
     /// <p>The detailed health state of the agent.</p>
-    pub fn set_agent_health_code(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentHealthCode>,
-    ) -> Self {
+    pub fn set_agent_health_code(mut self, input: ::std::option::Option<crate::types::AgentHealthCode>) -> Self {
         self.agent_health_code = input;
         self
     }
@@ -148,18 +133,12 @@ impl AssessmentRunAgentBuilder {
         &self.agent_health_code
     }
     /// <p>The description for the agent health code.</p>
-    pub fn agent_health_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_health_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_health_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the agent health code.</p>
-    pub fn set_agent_health_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_health_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_health_details = input;
         self
     }
@@ -168,18 +147,12 @@ impl AssessmentRunAgentBuilder {
         &self.agent_health_details
     }
     /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
-    pub fn auto_scaling_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
-    pub fn set_auto_scaling_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group = input;
         self
     }
@@ -199,17 +172,12 @@ impl AssessmentRunAgentBuilder {
         self
     }
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    pub fn set_telemetry_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
-    ) -> Self {
+    pub fn set_telemetry_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>) -> Self {
         self.telemetry_metadata = input;
         self
     }
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    pub fn get_telemetry_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>> {
+    pub fn get_telemetry_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>> {
         &self.telemetry_metadata
     }
     /// Consumes the builder and constructs a [`AssessmentRunAgent`](crate::types::AssessmentRunAgent).

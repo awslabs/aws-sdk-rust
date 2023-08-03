@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`asset_ids(Option<Vec<String>>)`](crate::operation::list_project_assets::ListProjectAssetsOutput::asset_ids): <p>A list that contains the IDs of each asset associated with the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_project_assets::ListProjectAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListProjectAssetsError>`](crate::operation::list_project_assets::ListProjectAssetsError)
-    pub fn list_project_assets(
-        &self,
-    ) -> crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder {
-        crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_project_assets(&self) -> crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder {
+        crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::new(self.handle.clone())
     }
 }

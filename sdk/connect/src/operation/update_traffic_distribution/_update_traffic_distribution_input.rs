@@ -22,16 +22,14 @@ impl UpdateTrafficDistributionInput {
 }
 impl UpdateTrafficDistributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
-    pub fn builder() -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder {
         crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
@@ -57,10 +55,7 @@ impl UpdateTrafficDistributionInputBuilder {
         self
     }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
-    pub fn set_telephony_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TelephonyConfig>,
-    ) -> Self {
+    pub fn set_telephony_config(mut self, input: ::std::option::Option<crate::types::TelephonyConfig>) -> Self {
         self.telephony_config = input;
         self
     }
@@ -75,11 +70,9 @@ impl UpdateTrafficDistributionInputBuilder {
         crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput {
-                id: self.id,
-                telephony_config: self.telephony_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput {
+            id: self.id,
+            telephony_config: self.telephony_config,
+        })
     }
 }

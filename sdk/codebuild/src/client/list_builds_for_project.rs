@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`ids(Option<Vec<String>>)`](crate::operation::list_builds_for_project::ListBuildsForProjectOutput::ids): <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_builds_for_project::ListBuildsForProjectOutput::next_token): <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     /// - On failure, responds with [`SdkError<ListBuildsForProjectError>`](crate::operation::list_builds_for_project::ListBuildsForProjectError)
-    pub fn list_builds_for_project(
-        &self,
-    ) -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectFluentBuilder
-    {
-        crate::operation::list_builds_for_project::builders::ListBuildsForProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_builds_for_project(&self) -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectFluentBuilder {
+        crate::operation::list_builds_for_project::builders::ListBuildsForProjectFluentBuilder::new(self.handle.clone())
     }
 }

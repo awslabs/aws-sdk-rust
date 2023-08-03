@@ -15,34 +15,25 @@ impl RejectAttachmentInput {
 }
 impl RejectAttachmentInput {
     /// Creates a new builder-style object to manufacture [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
-    pub fn builder() -> crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder {
         crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl RejectAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_attachment::RejectAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::reject_attachment::RejectAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_attachment::RejectAttachmentInput {
             attachment_id: self.attachment_id,
         })

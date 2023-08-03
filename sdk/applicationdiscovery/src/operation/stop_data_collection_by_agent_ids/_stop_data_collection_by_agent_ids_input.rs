@@ -15,16 +15,14 @@ impl StopDataCollectionByAgentIdsInput {
 }
 impl StopDataCollectionByAgentIdsInput {
     /// Creates a new builder-style object to manufacture [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
-    pub fn builder() -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder{
+    pub fn builder() -> crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder {
         crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl StopDataCollectionByAgentIdsInputBuilder {
         self
     }
     /// <p>The IDs of the agents from which to stop collecting data.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_ids = input;
         self
     }
@@ -59,11 +54,8 @@ impl StopDataCollectionByAgentIdsInputBuilder {
         crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput {
-                agent_ids: self.agent_ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput {
+            agent_ids: self.agent_ids,
+        })
     }
 }

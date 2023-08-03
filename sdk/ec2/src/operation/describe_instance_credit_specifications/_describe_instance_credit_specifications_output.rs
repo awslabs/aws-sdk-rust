@@ -5,8 +5,7 @@
 pub struct DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
     #[doc(hidden)]
-    pub instance_credit_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
+    pub instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeInstanceCreditSpecificationsOutput {
 }
 impl DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn instance_credit_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceCreditSpecification]> {
+    pub fn instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::InstanceCreditSpecification]> {
         self.instance_credit_specifications.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceCreditSpecificationsO
 }
 impl DescribeInstanceCreditSpecificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
-    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder {
         crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceCreditSpecificationsOutputBuilder {
-    pub(crate) instance_credit_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
+    pub(crate) instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeInstanceCreditSpecificationsOutputBuilder {
     /// To override the contents of this collection use [`set_instance_credit_specifications`](Self::set_instance_credit_specifications).
     ///
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn instance_credit_specifications(
-        mut self,
-        input: crate::types::InstanceCreditSpecification,
-    ) -> Self {
+    pub fn instance_credit_specifications(mut self, input: crate::types::InstanceCreditSpecification) -> Self {
         let mut v = self.instance_credit_specifications.unwrap_or_default();
         v.push(input);
         self.instance_credit_specifications = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeInstanceCreditSpecificationsOutputBuilder {
         self
     }
     /// <p>Information about the credit option for CPU usage of an instance.</p>
-    pub fn get_instance_credit_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>> {
+    pub fn get_instance_credit_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>> {
         &self.instance_credit_specifications
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -100,12 +89,10 @@ impl DescribeInstanceCreditSpecificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
-    pub fn build(self) -> crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput{
+    pub fn build(self) -> crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput {
         crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput {
-            instance_credit_specifications: self.instance_credit_specifications
-            ,
-            next_token: self.next_token
-            ,
+            instance_credit_specifications: self.instance_credit_specifications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

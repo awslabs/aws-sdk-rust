@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeExportConfigurationsOutput {
 }
 impl DescribeExportConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsOutputBuilder {
         crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportConfigurationsOutputBuilder {
     pub(crate) exports_info: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeExportConfigurationsOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_exports_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
-    ) -> Self {
+    pub fn set_exports_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>) -> Self {
         self.exports_info = input;
         self
     }
     /// <p></p>
-    pub fn get_exports_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>> {
+    pub fn get_exports_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>> {
         &self.exports_info
     }
     /// <p>The token from the previous call to describe-export-tasks.</p>
@@ -93,9 +86,7 @@ impl DescribeExportConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput {
+    pub fn build(self) -> crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput {
         crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput {
             exports_info: self.exports_info,
             next_token: self.next_token,

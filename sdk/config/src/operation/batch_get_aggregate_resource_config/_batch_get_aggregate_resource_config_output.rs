@@ -5,25 +5,19 @@
 pub struct BatchGetAggregateResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
     #[doc(hidden)]
-    pub base_configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
+    pub base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
     #[doc(hidden)]
-    pub unprocessed_resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub unprocessed_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     _request_id: Option<String>,
 }
 impl BatchGetAggregateResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn base_configuration_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
+    pub fn base_configuration_items(&self) -> ::std::option::Option<&[crate::types::BaseConfigurationItem]> {
         self.base_configuration_items.as_deref()
     }
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
-    pub fn unprocessed_resource_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
+    pub fn unprocessed_resource_identifiers(&self) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
         self.unprocessed_resource_identifiers.as_deref()
     }
 }
@@ -34,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetAggregateResourceConfigOutput
 }
 impl BatchGetAggregateResourceConfigOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAggregateResourceConfigOutput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput).
-    pub fn builder() -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigOutputBuilder {
         crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetAggregateResourceConfigOutput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigOutputBuilder {
-    pub(crate) base_configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
-    pub(crate) unprocessed_resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub(crate) base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
+    pub(crate) unprocessed_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     _request_id: Option<String>,
 }
 impl BatchGetAggregateResourceConfigOutputBuilder {
@@ -64,17 +54,12 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
         self
     }
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn set_base_configuration_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
-    ) -> Self {
+    pub fn set_base_configuration_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>) -> Self {
         self.base_configuration_items = input;
         self
     }
     /// <p>A list that contains the current configuration of one or more resources.</p>
-    pub fn get_base_configuration_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
+    pub fn get_base_configuration_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
         &self.base_configuration_items
     }
     /// Appends an item to `unprocessed_resource_identifiers`.
@@ -82,10 +67,7 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_resource_identifiers`](Self::set_unprocessed_resource_identifiers).
     ///
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
-    pub fn unprocessed_resource_identifiers(
-        mut self,
-        input: crate::types::AggregateResourceIdentifier,
-    ) -> Self {
+    pub fn unprocessed_resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         let mut v = self.unprocessed_resource_identifiers.unwrap_or_default();
         v.push(input);
         self.unprocessed_resource_identifiers = ::std::option::Option::Some(v);
@@ -100,9 +82,7 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
         self
     }
     /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
-    pub fn get_unprocessed_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+    pub fn get_unprocessed_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
         &self.unprocessed_resource_identifiers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -115,15 +95,10 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetAggregateResourceConfigOutput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput
-    {
+    pub fn build(self) -> crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput {
         crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput {
-            base_configuration_items: self.base_configuration_items
-            ,
-            unprocessed_resource_identifiers: self.unprocessed_resource_identifiers
-            ,
+            base_configuration_items: self.base_configuration_items,
+            unprocessed_resource_identifiers: self.unprocessed_resource_identifiers,
             _request_id: self._request_id,
         }
     }

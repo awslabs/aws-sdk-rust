@@ -30,9 +30,7 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
         self.workflow_type.as_ref()
     }
     /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    pub fn timeout_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowExecutionTimeoutType> {
+    pub fn timeout_type(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionTimeoutType> {
         self.timeout_type.as_ref()
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -46,17 +44,14 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
 }
 impl ChildWorkflowExecutionTimedOutEventAttributes {
     /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::types::ChildWorkflowExecutionTimedOutEventAttributes).
-    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::types::ChildWorkflowExecutionTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionTimedOutEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -71,17 +66,12 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The child workflow execution that timed out.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The child workflow execution that timed out.</p>
-    pub fn get_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.workflow_execution
     }
     /// <p>The type of the child workflow execution.</p>
@@ -90,10 +80,7 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -107,17 +94,12 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    pub fn set_timeout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
-    ) -> Self {
+    pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>) -> Self {
         self.timeout_type = input;
         self
     }
     /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
-    pub fn get_timeout_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionTimeoutType> {
+    pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::WorkflowExecutionTimeoutType> {
         &self.timeout_type
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>

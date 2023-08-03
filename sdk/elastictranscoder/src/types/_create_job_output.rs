@@ -143,9 +143,7 @@ impl CreateJobOutput {
 
 /// A builder for [`CreateJobOutput`](crate::types::CreateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobOutputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) thumbnail_pattern: ::std::option::Option<::std::string::String>,
@@ -185,10 +183,7 @@ impl CreateJobOutputBuilder {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    pub fn thumbnail_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbnail_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thumbnail_pattern = ::std::option::Option::Some(input.into());
         self
     }
@@ -203,10 +198,7 @@ impl CreateJobOutputBuilder {
     /// <li> <p> <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object. </p> </li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    pub fn set_thumbnail_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thumbnail_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thumbnail_pattern = input;
         self
     }
@@ -230,10 +222,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
-    pub fn set_thumbnail_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_thumbnail_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.thumbnail_encryption = input;
         self
     }
@@ -275,10 +264,7 @@ impl CreateJobOutputBuilder {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    pub fn segment_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segment_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_duration = ::std::option::Option::Some(input.into());
         self
     }
@@ -288,10 +274,7 @@ impl CreateJobOutputBuilder {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    pub fn set_segment_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segment_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_duration = input;
         self
     }
@@ -316,17 +299,12 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub fn set_watermarks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
-    ) -> Self {
+    pub fn set_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>) -> Self {
         self.watermarks = input;
         self
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub fn get_watermarks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>> {
+    pub fn get_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>> {
         &self.watermarks
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
@@ -335,10 +313,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
-    pub fn set_album_art(
-        mut self,
-        input: ::std::option::Option<crate::types::JobAlbumArt>,
-    ) -> Self {
+    pub fn set_album_art(mut self, input: ::std::option::Option<crate::types::JobAlbumArt>) -> Self {
         self.album_art = input;
         self
     }
@@ -360,10 +335,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    pub fn set_composition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
-    ) -> Self {
+    pub fn set_composition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>) -> Self {
         self.composition = input;
         self
     }
@@ -419,10 +391,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }

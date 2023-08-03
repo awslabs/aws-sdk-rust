@@ -34,9 +34,7 @@ impl DeleteFileSystemLustreConfiguration {
 
 /// A builder for [`DeleteFileSystemLustreConfiguration`](crate::types::DeleteFileSystemLustreConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemLustreConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -74,17 +72,12 @@ impl DeleteFileSystemLustreConfigurationBuilder {
         self
     }
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    pub fn set_final_backup_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.final_backup_tags = input;
         self
     }
     /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to apply an array of tags to the final backup. If you have set the file system property <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
-    pub fn get_final_backup_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemLustreConfiguration`](crate::types::DeleteFileSystemLustreConfiguration).

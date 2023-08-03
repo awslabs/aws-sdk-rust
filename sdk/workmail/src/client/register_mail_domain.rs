@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder::set_domain_name): <p>The name of the mail domain to create in WorkMail and SES.</p>
     /// - On success, responds with [`RegisterMailDomainOutput`](crate::operation::register_mail_domain::RegisterMailDomainOutput)
     /// - On failure, responds with [`SdkError<RegisterMailDomainError>`](crate::operation::register_mail_domain::RegisterMailDomainError)
-    pub fn register_mail_domain(
-        &self,
-    ) -> crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder {
-        crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_mail_domain(&self) -> crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder {
+        crate::operation::register_mail_domain::builders::RegisterMailDomainFluentBuilder::new(self.handle.clone())
     }
 }

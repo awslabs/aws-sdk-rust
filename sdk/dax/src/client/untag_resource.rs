@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::untag_resource::UntagResourceOutput::tags): <p>The tag keys that have been removed from the cluster.</p>
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
-    pub fn untag_resource(
-        &self,
-    ) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
-        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
+        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(self.handle.clone())
     }
 }

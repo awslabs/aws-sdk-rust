@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteProfilingGroupOutput {
 }
 impl DeleteProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfilingGroupOutput`](crate::operation::delete_profiling_group::DeleteProfilingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_profiling_group::builders::DeleteProfilingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_profiling_group::builders::DeleteProfilingGroupOutputBuilder {
         crate::operation::delete_profiling_group::builders::DeleteProfilingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProfilingGroupOutput`](crate::operation::delete_profiling_group::DeleteProfilingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfilingGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_theme::DescribeThemeOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_theme::DescribeThemeOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeThemeError>`](crate::operation::describe_theme::DescribeThemeError)
-    pub fn describe_theme(
-        &self,
-    ) -> crate::operation::describe_theme::builders::DescribeThemeFluentBuilder {
-        crate::operation::describe_theme::builders::DescribeThemeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_theme(&self) -> crate::operation::describe_theme::builders::DescribeThemeFluentBuilder {
+        crate::operation::describe_theme::builders::DescribeThemeFluentBuilder::new(self.handle.clone())
     }
 }

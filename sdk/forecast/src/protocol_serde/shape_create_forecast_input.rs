@@ -33,10 +33,7 @@ pub fn ser_create_forecast_input(
     if let Some(var_10) = &input.time_series_selector {
         #[allow(unused_mut)]
         let mut object_11 = object.key("TimeSeriesSelector").start_object();
-        crate::protocol_serde::shape_time_series_selector::ser_time_series_selector(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_time_series_selector::ser_time_series_selector(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

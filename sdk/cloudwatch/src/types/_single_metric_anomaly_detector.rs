@@ -44,9 +44,7 @@ impl SingleMetricAnomalyDetector {
 
 /// A builder for [`SingleMetricAnomalyDetector`](crate::types::SingleMetricAnomalyDetector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SingleMetricAnomalyDetectorBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -94,17 +92,12 @@ impl SingleMetricAnomalyDetectorBuilder {
         self
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>

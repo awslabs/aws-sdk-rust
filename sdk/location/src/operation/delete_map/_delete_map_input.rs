@@ -22,9 +22,7 @@ impl DeleteMapInput {
 
 /// A builder for [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_map::DeleteMapInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput {
-            map_name: self.map_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput { map_name: self.map_name })
     }
 }

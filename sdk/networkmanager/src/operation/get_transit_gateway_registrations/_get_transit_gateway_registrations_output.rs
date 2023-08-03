@@ -5,8 +5,7 @@
 pub struct GetTransitGatewayRegistrationsOutput {
     /// <p>The transit gateway registrations.</p>
     #[doc(hidden)]
-    pub transit_gateway_registrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>>,
+    pub transit_gateway_registrations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetTransitGatewayRegistrationsOutput {
 }
 impl GetTransitGatewayRegistrationsOutput {
     /// <p>The transit gateway registrations.</p>
-    pub fn transit_gateway_registrations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayRegistration]> {
+    pub fn transit_gateway_registrations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRegistration]> {
         self.transit_gateway_registrations.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayRegistrationsOutput 
 }
 impl GetTransitGatewayRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsOutputBuilder {
         crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRegistrationsOutputBuilder {
-    pub(crate) transit_gateway_registrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>>,
+    pub(crate) transit_gateway_registrations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl GetTransitGatewayRegistrationsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_registrations`](Self::set_transit_gateway_registrations).
     ///
     /// <p>The transit gateway registrations.</p>
-    pub fn transit_gateway_registrations(
-        mut self,
-        input: crate::types::TransitGatewayRegistration,
-    ) -> Self {
+    pub fn transit_gateway_registrations(mut self, input: crate::types::TransitGatewayRegistration) -> Self {
         let mut v = self.transit_gateway_registrations.unwrap_or_default();
         v.push(input);
         self.transit_gateway_registrations = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl GetTransitGatewayRegistrationsOutputBuilder {
         self
     }
     /// <p>The transit gateway registrations.</p>
-    pub fn get_transit_gateway_registrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>> {
+    pub fn get_transit_gateway_registrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>> {
         &self.transit_gateway_registrations
     }
     /// <p>The token for the next page of results.</p>
@@ -100,10 +89,7 @@ impl GetTransitGatewayRegistrationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput
-    {
+    pub fn build(self) -> crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput {
         crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput {
             transit_gateway_registrations: self.transit_gateway_registrations,
             next_token: self.next_token,

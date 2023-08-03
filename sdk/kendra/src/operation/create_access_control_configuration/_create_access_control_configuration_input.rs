@@ -17,8 +17,7 @@ pub struct CreateAccessControlConfigurationInput {
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     #[doc(hidden)]
-    pub hierarchical_access_control_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -41,9 +40,7 @@ impl CreateAccessControlConfigurationInput {
         self.access_control_list.as_deref()
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HierarchicalPrincipal]> {
+    pub fn hierarchical_access_control_list(&self) -> ::std::option::Option<&[crate::types::HierarchicalPrincipal]> {
         self.hierarchical_access_control_list.as_deref()
     }
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
@@ -53,23 +50,20 @@ impl CreateAccessControlConfigurationInput {
 }
 impl CreateAccessControlConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessControlConfigurationInput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput).
-    pub fn builder() -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder {
         crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessControlConfigurationInput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessControlConfigurationInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    pub(crate) hierarchical_access_control_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub(crate) hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessControlConfigurationInputBuilder {
@@ -127,17 +121,12 @@ impl CreateAccessControlConfigurationInputBuilder {
         self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.access_control_list = input;
         self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn get_access_control_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
@@ -145,10 +134,7 @@ impl CreateAccessControlConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
     ///
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(
-        mut self,
-        input: crate::types::HierarchicalPrincipal,
-    ) -> Self {
+    pub fn hierarchical_access_control_list(mut self, input: crate::types::HierarchicalPrincipal) -> Self {
         let mut v = self.hierarchical_access_control_list.unwrap_or_default();
         v.push(input);
         self.hierarchical_access_control_list = ::std::option::Option::Some(v);
@@ -163,9 +149,7 @@ impl CreateAccessControlConfigurationInputBuilder {
         self
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn get_hierarchical_access_control_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
         &self.hierarchical_access_control_list
     }
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
@@ -183,22 +167,21 @@ impl CreateAccessControlConfigurationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessControlConfigurationInput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_access_control_configuration::CreateAccessControlConfigurationInput {
-                index_id: self.index_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                access_control_list: self.access_control_list
-                ,
-                hierarchical_access_control_list: self.hierarchical_access_control_list
-                ,
-                client_token: self.client_token
-                ,
-            }
+                index_id: self.index_id,
+                name: self.name,
+                description: self.description,
+                access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
+                client_token: self.client_token,
+            },
         )
     }
 }

@@ -37,10 +37,7 @@ impl CreateResiliencyPolicyFluentBuilder {
         }
     }
     /// Access the CreateResiliencyPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateResiliencyPolicyFluentBuilder {
             crate::operation::create_resiliency_policy::CreateResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resiliency_policy::CreateResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resiliency_policy::CreateResiliencyPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateResiliencyPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resiliency_policy::CreateResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resiliency_policy::CreateResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resiliency_policy::CreateResiliencyPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resiliency_policy::CreateResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resiliency_policy::CreateResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resiliency_policy::CreateResiliencyPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateResiliencyPolicyFluentBuilder {
             crate::operation::create_resiliency_policy::CreateResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resiliency_policy::CreateResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resiliency_policy::CreateResiliencyPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateResiliencyPolicyFluentBuilder {
         self.inner.get_policy_name()
     }
     /// <p>The description for the policy.</p>
-    pub fn policy_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_description(input.into());
         self
     }
     /// <p>The description for the policy.</p>
-    pub fn set_policy_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_description(input);
         self
     }
@@ -163,17 +143,12 @@ impl CreateResiliencyPolicyFluentBuilder {
         self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn set_data_location_constraint(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLocationConstraint>,
-    ) -> Self {
+    pub fn set_data_location_constraint(mut self, input: ::std::option::Option<crate::types::DataLocationConstraint>) -> Self {
         self.inner = self.inner.set_data_location_constraint(input);
         self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn get_data_location_constraint(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLocationConstraint> {
+    pub fn get_data_location_constraint(&self) -> &::std::option::Option<crate::types::DataLocationConstraint> {
         self.inner.get_data_location_constraint()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
@@ -182,10 +157,7 @@ impl CreateResiliencyPolicyFluentBuilder {
         self
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn set_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
-    ) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicyTier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
     }
@@ -198,30 +170,20 @@ impl CreateResiliencyPolicyFluentBuilder {
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).
     ///
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(
-        mut self,
-        k: crate::types::DisruptionType,
-        v: crate::types::FailurePolicy,
-    ) -> Self {
+    pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
         self.inner = self.inner.policy(k, v);
         self
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     ) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn get_policy(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-    > {
+    pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         self.inner.get_policy()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -243,30 +205,17 @@ impl CreateResiliencyPolicyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

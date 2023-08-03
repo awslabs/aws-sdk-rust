@@ -43,16 +43,14 @@ impl ListPermissionSetsProvisionedToAccountInput {
 }
 impl ListPermissionSetsProvisionedToAccountInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountInput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput).
-    pub fn builder() -> crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountInputBuilder{
+    pub fn builder() -> crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountInputBuilder {
         crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionSetsProvisionedToAccountInput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccountInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -95,17 +93,12 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
         self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn set_provisioning_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningStatus>,
-    ) -> Self {
+    pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.provisioning_status = input;
         self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn get_provisioning_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningStatus> {
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         &self.provisioning_status
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -137,20 +130,20 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountInput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput {
-                instance_arn: self.instance_arn
-                ,
-                account_id: self.account_id
-                ,
-                provisioning_status: self.provisioning_status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_arn: self.instance_arn,
+                account_id: self.account_id,
+                provisioning_status: self.provisioning_status,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

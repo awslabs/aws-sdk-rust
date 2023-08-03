@@ -37,9 +37,7 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
 
 /// A builder for [`UpdatePipeSourceActiveMqBrokerParameters`](crate::types::UpdatePipeSourceActiveMqBrokerParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceActiveMqBrokerParametersBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     pub(crate) batch_size: ::std::option::Option<i32>,
@@ -52,17 +50,12 @@ impl UpdatePipeSourceActiveMqBrokerParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
         &self.credentials
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -85,10 +78,7 @@ impl UpdatePipeSourceActiveMqBrokerParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }

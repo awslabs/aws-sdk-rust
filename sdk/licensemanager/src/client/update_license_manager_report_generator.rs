@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder::set_description): <p>Description of the report generator.</p>
     /// - On success, responds with [`UpdateLicenseManagerReportGeneratorOutput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput)
     /// - On failure, responds with [`SdkError<UpdateLicenseManagerReportGeneratorError>`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError)
-    pub fn update_license_manager_report_generator(&self) -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder{
-        crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder::new(self.handle.clone())
+    pub fn update_license_manager_report_generator(
+        &self,
+    ) -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder {
+        crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

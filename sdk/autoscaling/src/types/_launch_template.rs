@@ -6,17 +6,14 @@
 pub struct LaunchTemplate {
     /// <p>The launch template.</p>
     #[doc(hidden)]
-    pub launch_template_specification:
-        ::std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub launch_template_specification: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
     #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplate {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
+    pub fn launch_template_specification(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template_specification.as_ref()
     }
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
@@ -33,36 +30,24 @@ impl LaunchTemplate {
 
 /// A builder for [`LaunchTemplate`](crate::types::LaunchTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateBuilder {
-    pub(crate) launch_template_specification:
-        ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    pub(crate) overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
+    pub(crate) launch_template_specification: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateBuilder {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(
-        mut self,
-        input: crate::types::LaunchTemplateSpecification,
-    ) -> Self {
+    pub fn launch_template_specification(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.launch_template_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch template.</p>
-    pub fn set_launch_template_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    ) -> Self {
+    pub fn set_launch_template_specification(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.launch_template_specification = input;
         self
     }
     /// <p>The launch template.</p>
-    pub fn get_launch_template_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+    pub fn get_launch_template_specification(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         &self.launch_template_specification
     }
     /// Appends an item to `overrides`.
@@ -77,17 +62,12 @@ impl LaunchTemplateBuilder {
         self
     }
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>) -> Self {
         self.overrides = input;
         self
     }
     /// <p>Any properties that you specify override the same properties in the launch template.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>> {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`LaunchTemplate`](crate::types::LaunchTemplate).

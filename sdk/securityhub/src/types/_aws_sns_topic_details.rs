@@ -93,13 +93,10 @@ impl AwsSnsTopicDetails {
 
 /// A builder for [`AwsSnsTopicDetails`](crate::types::AwsSnsTopicDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSnsTopicDetailsBuilder {
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subscription:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>>,
+    pub(crate) subscription: ::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>>,
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) sqs_success_feedback_role_arn: ::std::option::Option<::std::string::String>,
@@ -112,18 +109,12 @@ pub struct AwsSnsTopicDetailsBuilder {
 }
 impl AwsSnsTopicDetailsBuilder {
     /// <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer managed key.</p>
-    pub fn kms_master_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_master_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer managed key.</p>
-    pub fn set_kms_master_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_master_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_master_key_id = input;
         self
     }
@@ -143,17 +134,12 @@ impl AwsSnsTopicDetailsBuilder {
         self
     }
     /// <p>Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.</p>
-    pub fn set_subscription(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>>,
-    ) -> Self {
+    pub fn set_subscription(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>>) -> Self {
         self.subscription = input;
         self
     }
     /// <p>Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.</p>
-    pub fn get_subscription(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>> {
+    pub fn get_subscription(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>> {
         &self.subscription
     }
     /// <p>The name of the Amazon SNS topic.</p>
@@ -185,157 +171,101 @@ impl AwsSnsTopicDetailsBuilder {
         &self.owner
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn sqs_success_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sqs_success_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sqs_success_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn set_sqs_success_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sqs_success_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sqs_success_feedback_role_arn = input;
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn get_sqs_success_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sqs_success_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sqs_success_feedback_role_arn
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn sqs_failure_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sqs_failure_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sqs_failure_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn set_sqs_failure_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sqs_failure_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sqs_failure_feedback_role_arn = input;
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    pub fn get_sqs_failure_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sqs_failure_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sqs_failure_feedback_role_arn
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </p>
-    pub fn application_success_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_success_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_success_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </p>
-    pub fn set_application_success_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_success_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_success_feedback_role_arn = input;
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </p>
-    pub fn get_application_success_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_success_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_success_feedback_role_arn
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn firehose_success_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firehose_success_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firehose_success_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn set_firehose_success_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firehose_success_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firehose_success_feedback_role_arn = input;
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn get_firehose_success_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firehose_success_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firehose_success_feedback_role_arn
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn firehose_failure_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firehose_failure_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firehose_failure_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn set_firehose_failure_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firehose_failure_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firehose_failure_feedback_role_arn = input;
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    pub fn get_firehose_failure_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firehose_failure_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firehose_failure_feedback_role_arn
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn http_success_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_success_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_success_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn set_http_success_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_success_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_success_feedback_role_arn = input;
         self
     }
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn get_http_success_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_http_success_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_success_feedback_role_arn
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn http_failure_feedback_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_failure_feedback_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_failure_feedback_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn set_http_failure_feedback_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_failure_feedback_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_failure_feedback_role_arn = input;
         self
     }
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    pub fn get_http_failure_feedback_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_http_failure_feedback_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_failure_feedback_role_arn
     }
     /// Consumes the builder and constructs a [`AwsSnsTopicDetails`](crate::types::AwsSnsTopicDetails).

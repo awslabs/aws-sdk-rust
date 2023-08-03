@@ -35,9 +35,7 @@ impl ListContactsOutput {
 
 /// A builder for [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
@@ -70,10 +68,7 @@ impl ListContactsOutputBuilder {
         self
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub fn set_contacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
-    ) -> Self {
+    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>) -> Self {
         self.contacts = input;
         self
     }

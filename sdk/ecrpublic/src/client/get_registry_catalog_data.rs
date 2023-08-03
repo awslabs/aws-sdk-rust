@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput) with field(s):
     ///   - [`registry_catalog_data(Option<RegistryCatalogData>)`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput::registry_catalog_data): <p>The catalog metadata for the public registry.</p>
     /// - On failure, responds with [`SdkError<GetRegistryCatalogDataError>`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError)
-    pub fn get_registry_catalog_data(
-        &self,
-    ) -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataFluentBuilder
-    {
+    pub fn get_registry_catalog_data(&self) -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataFluentBuilder {
         crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataFluentBuilder::new(self.handle.clone())
     }
 }

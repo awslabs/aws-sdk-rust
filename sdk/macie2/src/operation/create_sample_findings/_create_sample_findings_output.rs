@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateSampleFindingsOutput {
 }
 impl CreateSampleFindingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateSampleFindingsOutput`](crate::operation::create_sample_findings::CreateSampleFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsOutputBuilder {
+    pub fn builder() -> crate::operation::create_sample_findings::builders::CreateSampleFindingsOutputBuilder {
         crate::operation::create_sample_findings::builders::CreateSampleFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSampleFindingsOutput`](crate::operation::create_sample_findings::CreateSampleFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsOutputBuilder {
     _request_id: Option<String>,
 }

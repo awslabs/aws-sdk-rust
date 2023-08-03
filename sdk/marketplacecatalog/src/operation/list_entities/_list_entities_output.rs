@@ -35,12 +35,9 @@ impl ListEntitiesOutput {
 
 /// A builder for [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesOutputBuilder {
-    pub(crate) entity_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
+    pub(crate) entity_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListEntitiesOutputBuilder {
         self
     }
     /// <p> Array of <code>EntitySummary</code> object.</p>
-    pub fn set_entity_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
-    ) -> Self {
+    pub fn set_entity_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>) -> Self {
         self.entity_summary_list = input;
         self
     }
     /// <p> Array of <code>EntitySummary</code> object.</p>
-    pub fn get_entity_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>> {
+    pub fn get_entity_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>> {
         &self.entity_summary_list
     }
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>

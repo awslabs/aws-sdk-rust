@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVirtualNodeOutput {
 }
 impl UpdateVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::operation::update_virtual_node::UpdateVirtualNodeOutput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeOutputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeOutputBuilder {
         crate::operation::update_virtual_node::builders::UpdateVirtualNodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualNodeOutput`](crate::operation::update_virtual_node::UpdateVirtualNodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualNodeOutputBuilder {
     pub(crate) virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateVirtualNodeOutputBuilder {
         self
     }
     /// <p>A full description of the virtual node that was updated.</p>
-    pub fn set_virtual_node(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeData>,
-    ) -> Self {
+    pub fn set_virtual_node(mut self, input: ::std::option::Option<crate::types::VirtualNodeData>) -> Self {
         self.virtual_node = input;
         self
     }

@@ -44,9 +44,7 @@ impl CurrentRevision {
 
 /// A builder for [`CurrentRevision`](crate::types::CurrentRevision).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentRevisionBuilder {
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) change_identifier: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl CurrentRevisionBuilder {
         &self.revision
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn change_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn set_change_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_identifier = input;
         self
     }
@@ -94,10 +86,7 @@ impl CurrentRevisionBuilder {
         self
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -106,18 +95,12 @@ impl CurrentRevisionBuilder {
         &self.created
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
-    pub fn revision_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
-    pub fn set_revision_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_summary = input;
         self
     }

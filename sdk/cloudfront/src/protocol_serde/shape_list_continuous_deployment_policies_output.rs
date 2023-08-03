@@ -5,15 +5,17 @@ pub(crate) fn de_continuous_deployment_policy_list_payload(
     ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
     crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_continuous_deployment_policies_output::de_continuous_deployment_policy_list(body).map_err(crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_list_continuous_deployment_policies_output::de_continuous_deployment_policy_list(body)
+                .map_err(crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::unhandled)
+        })
+        .transpose()
 }
 
 pub fn de_continuous_deployment_policy_list(
     inp: &[u8],
-) -> Result<crate::types::ContinuousDeploymentPolicyList, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ContinuousDeploymentPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

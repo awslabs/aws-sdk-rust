@@ -12,10 +12,7 @@ pub fn ser_campaign_in_app_message(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_in_app_message_content::ser_in_app_message_content(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_in_app_message_content::ser_in_app_message_content(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -39,17 +36,9 @@ pub fn ser_campaign_in_app_message(
 
 pub(crate) fn de_campaign_in_app_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CampaignInAppMessage>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CampaignInAppMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -59,59 +48,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Body" => {
-                                builder = builder.set_body(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Body" => {
+                            builder = builder.set_body(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Content" => {
-                                builder = builder.set_content(
-                                    crate::protocol_serde::shape_list_of_in_app_message_content::de_list_of_in_app_message_content(tokens)?
-                                );
-                            }
-                            "CustomConfig" => {
-                                builder = builder.set_custom_config(
-                                    crate::protocol_serde::shape_map_of__string::de_map_of__string(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Layout" => {
-                                builder = builder.set_layout(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Layout::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Content" => {
+                            builder = builder
+                                .set_content(crate::protocol_serde::shape_list_of_in_app_message_content::de_list_of_in_app_message_content(tokens)?);
+                        }
+                        "CustomConfig" => {
+                            builder = builder.set_custom_config(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                        }
+                        "Layout" => {
+                            builder = builder.set_layout(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Layout::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

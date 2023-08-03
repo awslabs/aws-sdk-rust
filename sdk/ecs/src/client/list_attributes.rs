@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`attributes(Option<Vec<Attribute>>)`](crate::operation::list_attributes::ListAttributesOutput::attributes): <p>A list of attribute objects that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attributes::ListAttributesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListAttributesError>`](crate::operation::list_attributes::ListAttributesError)
-    pub fn list_attributes(
-        &self,
-    ) -> crate::operation::list_attributes::builders::ListAttributesFluentBuilder {
-        crate::operation::list_attributes::builders::ListAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attributes(&self) -> crate::operation::list_attributes::builders::ListAttributesFluentBuilder {
+        crate::operation::list_attributes::builders::ListAttributesFluentBuilder::new(self.handle.clone())
     }
 }

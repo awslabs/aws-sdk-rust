@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`time_zone_id(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::time_zone_id): <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     ///   - [`recurrence(Option<RecurrenceSettings>)`](crate::operation::get_rotation::GetRotationOutput::recurrence): <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
     /// - On failure, responds with [`SdkError<GetRotationError>`](crate::operation::get_rotation::GetRotationError)
-    pub fn get_rotation(
-        &self,
-    ) -> crate::operation::get_rotation::builders::GetRotationFluentBuilder {
+    pub fn get_rotation(&self) -> crate::operation::get_rotation::builders::GetRotationFluentBuilder {
         crate::operation::get_rotation::builders::GetRotationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -77,9 +77,7 @@ impl GetDestinationOutput {
 
 /// A builder for [`GetDestinationOutput`](crate::operation::get_destination::GetDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDestinationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -154,10 +152,7 @@ impl GetDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was created.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -171,10 +166,7 @@ impl GetDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was last updated.
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -188,10 +180,7 @@ impl GetDestinationOutputBuilder {
         self
     }
     /// State of the destination.
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DestinationState>) -> Self {
         self.state = input;
         self
     }
@@ -200,18 +189,12 @@ impl GetDestinationOutputBuilder {
         &self.state
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_fixed_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// JSON document containing additional fixed properties regarding the destination
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_fixed_properties = input;
         self
     }

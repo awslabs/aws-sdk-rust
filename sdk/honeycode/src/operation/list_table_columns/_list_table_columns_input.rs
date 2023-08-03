@@ -35,17 +35,14 @@ impl ListTableColumnsInput {
 }
 impl ListTableColumnsInput {
     /// Creates a new builder-style object to manufacture [`ListTableColumnsInput`](crate::operation::list_table_columns::ListTableColumnsInput).
-    pub fn builder() -> crate::operation::list_table_columns::builders::ListTableColumnsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_table_columns::builders::ListTableColumnsInputBuilder {
         crate::operation::list_table_columns::builders::ListTableColumnsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableColumnsInput`](crate::operation::list_table_columns::ListTableColumnsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableColumnsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -106,16 +103,11 @@ impl ListTableColumnsInputBuilder {
     /// Consumes the builder and constructs a [`ListTableColumnsInput`](crate::operation::list_table_columns::ListTableColumnsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_table_columns::ListTableColumnsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_table_columns::ListTableColumnsInput {
-                workbook_id: self.workbook_id,
-                table_id: self.table_id,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_table_columns::ListTableColumnsInput {
+            workbook_id: self.workbook_id,
+            table_id: self.table_id,
+            next_token: self.next_token,
+        })
     }
 }

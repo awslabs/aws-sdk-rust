@@ -29,27 +29,19 @@ impl BatchGetSchemaInput {
 
 /// A builder for [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSchemaInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetSchemaInputBuilder {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_identifier = input;
         self
     }
@@ -69,10 +61,7 @@ impl BatchGetSchemaInputBuilder {
         self
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -83,10 +72,7 @@ impl BatchGetSchemaInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_schema::BatchGetSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_schema::BatchGetSchemaInput {
             collaboration_identifier: self.collaboration_identifier,
             names: self.names,

@@ -29,18 +29,14 @@ impl DescribeChannelModeratorInput {
 }
 impl DescribeChannelModeratorInput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorInput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorInputBuilder {
         crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelModeratorInput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelModeratorInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_moderator_arn: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DescribeChannelModeratorInputBuilder {
         &self.channel_arn
     }
     /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
-    pub fn channel_moderator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_moderator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_moderator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
-    pub fn set_channel_moderator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_moderator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_moderator_arn = input;
         self
     }
@@ -102,12 +92,10 @@ impl DescribeChannelModeratorInputBuilder {
         crate::operation::describe_channel_moderator::DescribeChannelModeratorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_channel_moderator::DescribeChannelModeratorInput {
-                channel_arn: self.channel_arn,
-                channel_moderator_arn: self.channel_moderator_arn,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_channel_moderator::DescribeChannelModeratorInput {
+            channel_arn: self.channel_arn,
+            channel_moderator_arn: self.channel_moderator_arn,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl DescribeSMBSettingsFluentBuilder {
         }
     }
     /// Access the DescribeSMBSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeSMBSettingsFluentBuilder {
             crate::operation::describe_smb_settings::DescribeSMBSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_settings::DescribeSMBSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_settings::DescribeSMBSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeSMBSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeSMBSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_smb_settings::DescribeSmbSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_settings::DescribeSMBSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_settings::DescribeSMBSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeSMBSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_smb_settings::DescribeSmbSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_settings::DescribeSMBSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_settings::DescribeSMBSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeSMBSettingsFluentBuilder {
             crate::operation::describe_smb_settings::DescribeSMBSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_settings::DescribeSMBSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_settings::DescribeSMBSettingsError>,
     > {
         self.customize_middleware().await
     }

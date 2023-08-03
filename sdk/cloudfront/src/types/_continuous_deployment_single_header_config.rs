@@ -30,9 +30,7 @@ impl ContinuousDeploymentSingleHeaderConfig {
 
 /// A builder for [`ContinuousDeploymentSingleHeaderConfig`](crate::types::ContinuousDeploymentSingleHeaderConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleHeaderConfigBuilder {
     pub(crate) header: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

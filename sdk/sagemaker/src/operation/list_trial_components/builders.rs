@@ -42,9 +42,7 @@ impl ListTrialComponentsFluentBuilder {
         }
     }
     /// Access the ListTrialComponents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl ListTrialComponentsFluentBuilder {
             crate::operation::list_trial_components::ListTrialComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl ListTrialComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl ListTrialComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trial_components::ListTrialComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl ListTrialComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trial_components::ListTrialComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>,
     > {
         self.send_middleware().await
     }
@@ -121,36 +110,23 @@ impl ListTrialComponentsFluentBuilder {
             crate::operation::list_trial_components::ListTrialComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
-        crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
+        crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());
         self
     }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
@@ -192,10 +168,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>A filter that returns only components created after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -209,10 +182,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>A filter that returns only components created before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -226,10 +196,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortTrialComponentsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortTrialComponentsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetPositionConfigurationOutput {
 }
 impl GetPositionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionConfigurationOutput`](crate::operation::get_position_configuration::GetPositionConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_position_configuration::builders::GetPositionConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_position_configuration::builders::GetPositionConfigurationOutputBuilder {
         crate::operation::get_position_configuration::builders::GetPositionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPositionConfigurationOutput`](crate::operation::get_position_configuration::GetPositionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationOutputBuilder {
     pub(crate) solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl GetPositionConfigurationOutputBuilder {
         self
     }
     /// <p>The wrapper for the solver configuration details object.</p>
-    pub fn set_solvers(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverDetails>,
-    ) -> Self {
+    pub fn set_solvers(mut self, input: ::std::option::Option<crate::types::PositionSolverDetails>) -> Self {
         self.solvers = input;
         self
     }
@@ -88,9 +81,7 @@ impl GetPositionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPositionConfigurationOutput`](crate::operation::get_position_configuration::GetPositionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_position_configuration::GetPositionConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_position_configuration::GetPositionConfigurationOutput {
         crate::operation::get_position_configuration::GetPositionConfigurationOutput {
             solvers: self.solvers,
             destination: self.destination,

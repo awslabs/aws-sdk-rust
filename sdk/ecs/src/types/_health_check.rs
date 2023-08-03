@@ -90,9 +90,7 @@ impl HealthCheck {
 
 /// A builder for [`HealthCheck`](crate::types::HealthCheck).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -123,10 +121,7 @@ impl HealthCheckBuilder {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }

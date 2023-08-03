@@ -5,8 +5,7 @@
 pub struct ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
     #[doc(hidden)]
-    pub accelerators:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
+    pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomRoutingAcceleratorsOutput {
 }
 impl ListCustomRoutingAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsOutputBuilder {
         crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsOutputBuilder {
-    pub(crate) accelerators:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
+    pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListCustomRoutingAcceleratorsOutputBuilder {
         self
     }
     /// <p>The list of custom routing accelerators for a customer account.</p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>) -> Self {
         self.accelerators = input;
         self
     }
     /// <p>The list of custom routing accelerators for a customer account.</p>
-    pub fn get_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>> {
+    pub fn get_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>> {
         &self.accelerators
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -95,10 +86,7 @@ impl ListCustomRoutingAcceleratorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput
-    {
+    pub fn build(self) -> crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput {
         crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput {
             accelerators: self.accelerators,
             next_token: self.next_token,

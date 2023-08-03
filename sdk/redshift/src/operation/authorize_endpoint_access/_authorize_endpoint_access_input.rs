@@ -29,18 +29,14 @@ impl AuthorizeEndpointAccessInput {
 }
 impl AuthorizeEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeEndpointAccessInput`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder {
         crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeEndpointAccessInput`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeEndpointAccessInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct AuthorizeEndpointAccessInputBuilder {
 }
 impl AuthorizeEndpointAccessInputBuilder {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -93,10 +83,7 @@ impl AuthorizeEndpointAccessInputBuilder {
         self
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -111,12 +98,10 @@ impl AuthorizeEndpointAccessInputBuilder {
         crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput {
-                cluster_identifier: self.cluster_identifier,
-                account: self.account,
-                vpc_ids: self.vpc_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput {
+            cluster_identifier: self.cluster_identifier,
+            account: self.account,
+            vpc_ids: self.vpc_ids,
+        })
     }
 }

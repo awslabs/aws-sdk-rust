@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`StartVoiceToneAnalysisTaskOutput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput) with field(s):
     ///   - [`voice_tone_analysis_task(Option<VoiceToneAnalysisTask>)`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput::voice_tone_analysis_task): <p>The details of the voice tone analysis task.</p>
     /// - On failure, responds with [`SdkError<StartVoiceToneAnalysisTaskError>`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError)
-    pub fn start_voice_tone_analysis_task(&self) -> crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskFluentBuilder{
+    pub fn start_voice_tone_analysis_task(
+        &self,
+    ) -> crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskFluentBuilder {
         crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskFluentBuilder::new(self.handle.clone())
     }
 }

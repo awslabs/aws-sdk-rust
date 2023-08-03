@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`workspace_summaries(Option<Vec<WorkspaceSummary>>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspace_summaries): <p>A list of objects that contain information about the workspaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
-    pub fn list_workspaces(
-        &self,
-    ) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
-        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
+        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

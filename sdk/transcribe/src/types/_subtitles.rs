@@ -34,9 +34,7 @@ impl Subtitles {
 
 /// A builder for [`Subtitles`](crate::types::Subtitles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubtitlesBuilder {
     pub(crate) formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     pub(crate) output_start_index: ::std::option::Option<i32>,
@@ -54,17 +52,12 @@ impl SubtitlesBuilder {
         self
     }
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
-    pub fn set_formats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
-    ) -> Self {
+    pub fn set_formats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>) -> Self {
         self.formats = input;
         self
     }
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
-    pub fn get_formats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>> {
+    pub fn get_formats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>> {
         &self.formats
     }
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>

@@ -38,9 +38,7 @@ impl DeleteClientBrandingFluentBuilder {
         }
     }
     /// Access the DeleteClientBranding as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteClientBrandingFluentBuilder {
             crate::operation::delete_client_branding::DeleteClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_branding::DeleteClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_branding::DeleteClientBrandingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteClientBrandingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_branding::DeleteClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_branding::DeleteClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_branding::DeleteClientBrandingError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_branding::DeleteClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_branding::DeleteClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_branding::DeleteClientBrandingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeleteClientBrandingFluentBuilder {
             crate::operation::delete_client_branding::DeleteClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_branding::DeleteClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_branding::DeleteClientBrandingError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +134,12 @@ impl DeleteClientBrandingFluentBuilder {
         self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>) -> Self {
         self.inner = self.inner.set_platforms(input);
         self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
         self.inner.get_platforms()
     }
 }

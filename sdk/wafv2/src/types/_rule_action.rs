@@ -51,9 +51,7 @@ impl RuleAction {
 
 /// A builder for [`RuleAction`](crate::types::RuleAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleActionBuilder {
     pub(crate) block: ::std::option::Option<crate::types::BlockAction>,
     pub(crate) allow: ::std::option::Option<crate::types::AllowAction>,
@@ -110,10 +108,7 @@ impl RuleActionBuilder {
         self
     }
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
-    pub fn set_captcha(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptchaAction>,
-    ) -> Self {
+    pub fn set_captcha(mut self, input: ::std::option::Option<crate::types::CaptchaAction>) -> Self {
         self.captcha = input;
         self
     }
@@ -127,10 +122,7 @@ impl RuleActionBuilder {
         self
     }
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
-    pub fn set_challenge(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeAction>,
-    ) -> Self {
+    pub fn set_challenge(mut self, input: ::std::option::Option<crate::types::ChallengeAction>) -> Self {
         self.challenge = input;
         self
     }

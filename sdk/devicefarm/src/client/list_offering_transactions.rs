@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`offering_transactions(Option<Vec<OfferingTransaction>>)`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput::offering_transactions): <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListOfferingTransactionsError>`](crate::operation::list_offering_transactions::ListOfferingTransactionsError)
-    pub fn list_offering_transactions(
-        &self,
-    ) -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsFluentBuilder
-    {
+    pub fn list_offering_transactions(&self) -> crate::operation::list_offering_transactions::builders::ListOfferingTransactionsFluentBuilder {
         crate::operation::list_offering_transactions::builders::ListOfferingTransactionsFluentBuilder::new(self.handle.clone())
     }
 }

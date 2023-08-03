@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_entities::SearchEntitiesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchEntitiesError>`](crate::operation::search_entities::SearchEntitiesError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn search_entities(
-        &self,
-    ) -> crate::operation::search_entities::builders::SearchEntitiesFluentBuilder {
-        crate::operation::search_entities::builders::SearchEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_entities(&self) -> crate::operation::search_entities::builders::SearchEntitiesFluentBuilder {
+        crate::operation::search_entities::builders::SearchEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

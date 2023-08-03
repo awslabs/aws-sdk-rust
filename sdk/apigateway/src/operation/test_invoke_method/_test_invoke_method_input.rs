@@ -21,22 +21,16 @@ pub struct TestInvokeMethodInput {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
     #[doc(hidden)]
-    pub headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     #[doc(hidden)]
-    pub multi_value_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
     #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     #[doc(hidden)]
-    pub stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestInvokeMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -60,19 +54,13 @@ impl TestInvokeMethodInput {
         self.body.as_deref()
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     pub fn multi_value_headers(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.multi_value_headers.as_ref()
     }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
@@ -80,43 +68,30 @@ impl TestInvokeMethodInput {
         self.client_certificate_id.as_deref()
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn stage_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
 }
 impl TestInvokeMethodInput {
     /// Creates a new builder-style object to manufacture [`TestInvokeMethodInput`](crate::operation::test_invoke_method::TestInvokeMethodInput).
-    pub fn builder() -> crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder
-    {
+    pub fn builder() -> crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder {
         crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder::default()
     }
 }
 
 /// A builder for [`TestInvokeMethodInput`](crate::operation::test_invoke_method::TestInvokeMethodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestInvokeMethodInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) path_with_query_string: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
-    pub(crate) headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) multi_value_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestInvokeMethodInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -162,18 +137,12 @@ impl TestInvokeMethodInputBuilder {
         &self.http_method
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn path_with_query_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn path_with_query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_with_query_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn set_path_with_query_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_path_with_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_with_query_string = input;
         self
     }
@@ -200,32 +169,19 @@ impl TestInvokeMethodInputBuilder {
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.headers.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.headers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.headers = input;
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn get_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
     /// Adds a key-value pair to `multi_value_headers`.
@@ -233,11 +189,7 @@ impl TestInvokeMethodInputBuilder {
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
     ///
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
-    pub fn multi_value_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn multi_value_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.multi_value_headers.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.multi_value_headers = ::std::option::Option::Some(hash_map);
@@ -246,12 +198,7 @@ impl TestInvokeMethodInputBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     pub fn set_multi_value_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.multi_value_headers = input;
         self
@@ -259,24 +206,16 @@ impl TestInvokeMethodInputBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     pub fn get_multi_value_headers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.multi_value_headers
     }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -302,40 +241,29 @@ impl TestInvokeMethodInputBuilder {
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn set_stage_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.stage_variables = input;
         self
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn get_stage_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables
     }
     /// Consumes the builder and constructs a [`TestInvokeMethodInput`](crate::operation::test_invoke_method::TestInvokeMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_invoke_method::TestInvokeMethodInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_invoke_method::TestInvokeMethodInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                path_with_query_string: self.path_with_query_string,
-                body: self.body,
-                headers: self.headers,
-                multi_value_headers: self.multi_value_headers,
-                client_certificate_id: self.client_certificate_id,
-                stage_variables: self.stage_variables,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_invoke_method::TestInvokeMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::test_invoke_method::TestInvokeMethodInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+            path_with_query_string: self.path_with_query_string,
+            body: self.body,
+            headers: self.headers,
+            multi_value_headers: self.multi_value_headers,
+            client_certificate_id: self.client_certificate_id,
+            stage_variables: self.stage_variables,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl InvokeAsyncInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::invoke_async::InvokeAsyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_async::InvokeAsyncError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_async::InvokeAsyncError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.invoke_async();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl InvokeAsyncFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invoke_async::InvokeAsync,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invoke_async::InvokeAsync, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invoke_async::InvokeAsyncError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl InvokeAsyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl InvokeAsyncFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::invoke_async::InvokeAsync,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::invoke_async::InvokeAsync, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::invoke_async::InvokeAsyncError>,
     > {
         self.customize_middleware().await
@@ -124,10 +112,7 @@ impl InvokeAsyncFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -139,10 +124,7 @@ impl InvokeAsyncFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -163,17 +145,12 @@ impl InvokeAsyncFluentBuilder {
         self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn set_invoke_args(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_invoke_args(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_invoke_args(input);
         self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    pub fn get_invoke_args(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_invoke_args(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_invoke_args()
     }
 }

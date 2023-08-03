@@ -15,33 +15,25 @@ impl ConfirmTopicRuleDestinationInput {
 }
 impl ConfirmTopicRuleDestinationInput {
     /// Creates a new builder-style object to manufacture [`ConfirmTopicRuleDestinationInput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput).
-    pub fn builder() -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder{
+    pub fn builder() -> crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder {
         crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmTopicRuleDestinationInput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmTopicRuleDestinationInputBuilder {
     pub(crate) confirmation_token: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmTopicRuleDestinationInputBuilder {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
-    pub fn confirmation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn confirmation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
-    pub fn set_confirmation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_confirmation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.confirmation_token = input;
         self
     }
@@ -56,10 +48,8 @@ impl ConfirmTopicRuleDestinationInputBuilder {
         crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput {
-                confirmation_token: self.confirmation_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput {
+            confirmation_token: self.confirmation_token,
+        })
     }
 }

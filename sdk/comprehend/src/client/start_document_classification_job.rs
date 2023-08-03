@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput::job_status): <p>The status of the job:</p>  <ul>   <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.</p> </li>   <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>   <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>  </ul>
     ///   - [`document_classifier_arn(Option<String>)`](crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput::document_classifier_arn): <p>The ARN of the custom classification model.</p>
     /// - On failure, responds with [`SdkError<StartDocumentClassificationJobError>`](crate::operation::start_document_classification_job::StartDocumentClassificationJobError)
-    pub fn start_document_classification_job(&self) -> crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobFluentBuilder{
+    pub fn start_document_classification_job(
+        &self,
+    ) -> crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobFluentBuilder {
         crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct ListWorkflowStepGroupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of step groups in a migration workflow.</p>
     #[doc(hidden)]
-    pub workflow_step_groups_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
+    pub workflow_step_groups_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepGroupsOutput {
@@ -18,9 +17,7 @@ impl ListWorkflowStepGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub fn workflow_step_groups_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorkflowStepGroupSummary]> {
+    pub fn workflow_step_groups_summary(&self) -> ::std::option::Option<&[crate::types::WorkflowStepGroupSummary]> {
         self.workflow_step_groups_summary.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListWorkflowStepGroupsOutput {
 }
 impl ListWorkflowStepGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder {
         crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) workflow_step_groups_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
+    pub(crate) workflow_step_groups_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepGroupsOutputBuilder {
@@ -69,27 +61,19 @@ impl ListWorkflowStepGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_workflow_step_groups_summary`](Self::set_workflow_step_groups_summary).
     ///
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub fn workflow_step_groups_summary(
-        mut self,
-        input: crate::types::WorkflowStepGroupSummary,
-    ) -> Self {
+    pub fn workflow_step_groups_summary(mut self, input: crate::types::WorkflowStepGroupSummary) -> Self {
         let mut v = self.workflow_step_groups_summary.unwrap_or_default();
         v.push(input);
         self.workflow_step_groups_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub fn set_workflow_step_groups_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,
-    ) -> Self {
+    pub fn set_workflow_step_groups_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>) -> Self {
         self.workflow_step_groups_summary = input;
         self
     }
     /// <p>The summary of step groups in a migration workflow.</p>
-    pub fn get_workflow_step_groups_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>> {
+    pub fn get_workflow_step_groups_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>> {
         &self.workflow_step_groups_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +86,7 @@ impl ListWorkflowStepGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
+    pub fn build(self) -> crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
             next_token: self.next_token,
             workflow_step_groups_summary: self.workflow_step_groups_summary,

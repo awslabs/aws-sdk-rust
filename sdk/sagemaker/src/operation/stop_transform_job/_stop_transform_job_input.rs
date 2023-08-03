@@ -15,34 +15,25 @@ impl StopTransformJobInput {
 }
 impl StopTransformJobInput {
     /// Creates a new builder-style object to manufacture [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
-    pub fn builder() -> crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
         crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTransformJobInputBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopTransformJobInputBuilder {
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_transform_job::StopTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_transform_job::StopTransformJobInput {
-                transform_job_name: self.transform_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_transform_job::StopTransformJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_transform_job::StopTransformJobInput {
+            transform_job_name: self.transform_job_name,
+        })
     }
 }

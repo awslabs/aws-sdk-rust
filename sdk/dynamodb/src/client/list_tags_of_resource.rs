@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_of_resource::ListTagsOfResourceOutput::tags): <p>The tags currently associated with the Amazon DynamoDB resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_of_resource::ListTagsOfResourceOutput::next_token): <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
     /// - On failure, responds with [`SdkError<ListTagsOfResourceError>`](crate::operation::list_tags_of_resource::ListTagsOfResourceError)
-    pub fn list_tags_of_resource(
-        &self,
-    ) -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceFluentBuilder {
-        crate::operation::list_tags_of_resource::builders::ListTagsOfResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_of_resource(&self) -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceFluentBuilder {
+        crate::operation::list_tags_of_resource::builders::ListTagsOfResourceFluentBuilder::new(self.handle.clone())
     }
 }

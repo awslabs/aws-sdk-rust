@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`service_updates(Option<Vec<ServiceUpdate>>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::service_updates): <p>A list of service updates</p>
     /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::operation::describe_service_updates::DescribeServiceUpdatesError)
-    pub fn describe_service_updates(
-        &self,
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder
-    {
+    pub fn describe_service_updates(&self) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

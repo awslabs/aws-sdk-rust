@@ -30,9 +30,7 @@ impl SortCriterion {
 
 /// A builder for [`SortCriterion`](crate::types::SortCriterion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SortCriterionBuilder {
     pub(crate) field: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

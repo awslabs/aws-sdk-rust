@@ -30,9 +30,7 @@ impl S3BucketOwner {
 
 /// A builder for [`S3BucketOwner`](crate::types::S3BucketOwner).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketOwnerBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

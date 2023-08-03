@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SendDiagnosticInterruptOutput {
 }
 impl SendDiagnosticInterruptOutput {
     /// Creates a new builder-style object to manufacture [`SendDiagnosticInterruptOutput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput).
-    pub fn builder(
-    ) -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptOutputBuilder {
         crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendDiagnosticInterruptOutput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDiagnosticInterruptOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SendDiagnosticInterruptOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendDiagnosticInterruptOutput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput {
+    pub fn build(self) -> crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput {
         crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput {
             _request_id: self._request_id,
         }

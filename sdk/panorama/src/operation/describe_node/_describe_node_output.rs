@@ -119,9 +119,7 @@ impl DescribeNodeOutput {
 
 /// A builder for [`DescribeNodeOutput`](crate::operation::describe_node::DescribeNodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeOutputBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -174,10 +172,7 @@ impl DescribeNodeOutputBuilder {
         self
     }
     /// <p>The node's category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::NodeCategory>) -> Self {
         self.category = input;
         self
     }
@@ -186,18 +181,12 @@ impl DescribeNodeOutputBuilder {
         &self.category
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -248,18 +237,12 @@ impl DescribeNodeOutputBuilder {
         &self.package_arn
     }
     /// <p>The node's package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -268,18 +251,12 @@ impl DescribeNodeOutputBuilder {
         &self.package_version
     }
     /// <p>The node's patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_version = input;
         self
     }
@@ -293,10 +270,7 @@ impl DescribeNodeOutputBuilder {
         self
     }
     /// <p>The node's interface.</p>
-    pub fn set_node_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeInterface>,
-    ) -> Self {
+    pub fn set_node_interface(mut self, input: ::std::option::Option<crate::types::NodeInterface>) -> Self {
         self.node_interface = input;
         self
     }
@@ -338,10 +312,7 @@ impl DescribeNodeOutputBuilder {
         self
     }
     /// <p>When the node was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -355,10 +326,7 @@ impl DescribeNodeOutputBuilder {
         self
     }
     /// <p>When the node was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

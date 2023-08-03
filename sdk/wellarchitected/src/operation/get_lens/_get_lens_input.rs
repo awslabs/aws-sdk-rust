@@ -35,9 +35,7 @@ impl GetLensInput {
 
 /// A builder for [`GetLensInput`](crate::operation::get_lens::GetLensInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,
@@ -81,12 +79,7 @@ impl GetLensInputBuilder {
         &self.lens_version
     }
     /// Consumes the builder and constructs a [`GetLensInput`](crate::operation::get_lens::GetLensInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lens::GetLensInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lens::GetLensInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lens::GetLensInput {
             lens_alias: self.lens_alias,
             lens_version: self.lens_version,

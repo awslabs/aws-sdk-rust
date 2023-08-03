@@ -38,29 +38,18 @@ impl GetParametersForExportOutput {
         self.export_token.as_deref()
     }
     /// <p>The validity period of the export token.</p>
-    pub fn parameters_valid_until_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn parameters_valid_until_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.parameters_valid_until_timestamp.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetParametersForExportOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForExportOutput");
-        formatter.field(
-            "signing_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "signing_key_certificate_chain",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("signing_key_certificate_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("signing_key_algorithm", &self.signing_key_algorithm);
         formatter.field("export_token", &self.export_token);
-        formatter.field(
-            "parameters_valid_until_timestamp",
-            &self.parameters_valid_until_timestamp,
-        );
+        formatter.field("parameters_valid_until_timestamp", &self.parameters_valid_until_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -72,9 +61,7 @@ impl ::aws_http::request_id::RequestId for GetParametersForExportOutput {
 }
 impl GetParametersForExportOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersForExportOutput`](crate::operation::get_parameters_for_export::GetParametersForExportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder {
         crate::operation::get_parameters_for_export::builders::GetParametersForExportOutputBuilder::default()
     }
 }
@@ -87,24 +74,17 @@ pub struct GetParametersForExportOutputBuilder {
     pub(crate) signing_key_certificate_chain: ::std::option::Option<::std::string::String>,
     pub(crate) signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) export_token: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters_valid_until_timestamp:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) parameters_valid_until_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetParametersForExportOutputBuilder {
     /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
-    pub fn signing_key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
-    pub fn set_signing_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate = input;
         self
     }
@@ -113,25 +93,17 @@ impl GetParametersForExportOutputBuilder {
         &self.signing_key_certificate
     }
     /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn signing_key_certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn set_signing_key_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate_chain = input;
         self
     }
     /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
-    pub fn get_signing_key_certificate_chain(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_signing_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_certificate_chain
     }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
@@ -140,10 +112,7 @@ impl GetParametersForExportOutputBuilder {
         self
     }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-    pub fn set_signing_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_signing_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.signing_key_algorithm = input;
         self
     }
@@ -171,17 +140,12 @@ impl GetParametersForExportOutputBuilder {
         self
     }
     /// <p>The validity period of the export token.</p>
-    pub fn set_parameters_valid_until_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_parameters_valid_until_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.parameters_valid_until_timestamp = input;
         self
     }
     /// <p>The validity period of the export token.</p>
-    pub fn get_parameters_valid_until_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_parameters_valid_until_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.parameters_valid_until_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -194,9 +158,7 @@ impl GetParametersForExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetParametersForExportOutput`](crate::operation::get_parameters_for_export::GetParametersForExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_parameters_for_export::GetParametersForExportOutput {
+    pub fn build(self) -> crate::operation::get_parameters_for_export::GetParametersForExportOutput {
         crate::operation::get_parameters_for_export::GetParametersForExportOutput {
             signing_key_certificate: self.signing_key_certificate,
             signing_key_certificate_chain: self.signing_key_certificate_chain,
@@ -210,20 +172,11 @@ impl GetParametersForExportOutputBuilder {
 impl ::std::fmt::Debug for GetParametersForExportOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForExportOutputBuilder");
-        formatter.field(
-            "signing_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "signing_key_certificate_chain",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("signing_key_certificate_chain", &"*** Sensitive Data Redacted ***");
         formatter.field("signing_key_algorithm", &self.signing_key_algorithm);
         formatter.field("export_token", &self.export_token);
-        formatter.field(
-            "parameters_valid_until_timestamp",
-            &self.parameters_valid_until_timestamp,
-        );
+        formatter.field("parameters_valid_until_timestamp", &self.parameters_valid_until_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

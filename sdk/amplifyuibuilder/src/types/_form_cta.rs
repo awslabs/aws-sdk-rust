@@ -44,9 +44,7 @@ impl FormCta {
 
 /// A builder for [`FormCta`](crate::types::FormCta).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormCtaBuilder {
     pub(crate) position: ::std::option::Option<crate::types::FormButtonsPosition>,
     pub(crate) clear: ::std::option::Option<crate::types::FormButton>,
@@ -60,10 +58,7 @@ impl FormCtaBuilder {
         self
     }
     /// <p>The position of the button.</p>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::FormButtonsPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::FormButtonsPosition>) -> Self {
         self.position = input;
         self
     }

@@ -27,8 +27,7 @@ impl DetectTargetedSentimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectTargetedSentimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder,
+    inner: crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder,
 }
 impl DetectTargetedSentimentFluentBuilder {
     /// Creates a new `DetectTargetedSentiment`.
@@ -39,10 +38,7 @@ impl DetectTargetedSentimentFluentBuilder {
         }
     }
     /// Access the DetectTargetedSentiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DetectTargetedSentimentFluentBuilder {
             crate::operation::detect_targeted_sentiment::DetectTargetedSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DetectTargetedSentimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DetectTargetedSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DetectTargetedSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DetectTargetedSentimentFluentBuilder {
             crate::operation::detect_targeted_sentiment::DetectTargetedSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +130,7 @@ impl DetectTargetedSentimentFluentBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEndpointOutput`](crate::operation::delete_endpoint::DeleteEndpointOutput) with field(s):
     ///   - [`endpoint(Option<Endpoint>)`](crate::operation::delete_endpoint::DeleteEndpointOutput::endpoint): <p>The endpoint that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::operation::delete_endpoint::DeleteEndpointError)
-    pub fn delete_endpoint(
-        &self,
-    ) -> crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder {
-        crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_endpoint(&self) -> crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder {
+        crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::new(self.handle.clone())
     }
 }

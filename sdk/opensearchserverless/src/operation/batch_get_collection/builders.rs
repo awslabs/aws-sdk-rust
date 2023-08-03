@@ -10,10 +10,7 @@ impl BatchGetCollectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_collection::BatchGetCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_collection::BatchGetCollectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_collection::BatchGetCollectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_collection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetCollectionFluentBuilder {
         }
     }
     /// Access the BatchGetCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetCollectionFluentBuilder {
             crate::operation::batch_get_collection::BatchGetCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_collection::BatchGetCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_collection::BatchGetCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_collection::BatchGetCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_collection::BatchGetCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_collection::BatchGetCollectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_collection::BatchGetCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_collection::BatchGetCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_collection::BatchGetCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetCollectionFluentBuilder {
             crate::operation::batch_get_collection::BatchGetCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_collection::BatchGetCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_collection::BatchGetCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetCollectionFluentBuilder {
         self
     }
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
@@ -153,10 +134,7 @@ impl BatchGetCollectionFluentBuilder {
         self
     }
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

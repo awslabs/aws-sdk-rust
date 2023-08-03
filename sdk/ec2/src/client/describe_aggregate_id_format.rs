@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`use_long_ids_aggregated(Option<bool>)`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput::use_long_ids_aggregated): <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     ///   - [`statuses(Option<Vec<IdFormat>>)`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput::statuses): <p>Information about each resource's ID format.</p>
     /// - On failure, responds with [`SdkError<DescribeAggregateIdFormatError>`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError)
-    pub fn describe_aggregate_id_format(&self) -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatFluentBuilder{
+    pub fn describe_aggregate_id_format(&self) -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatFluentBuilder {
         crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatFluentBuilder::new(self.handle.clone())
     }
 }

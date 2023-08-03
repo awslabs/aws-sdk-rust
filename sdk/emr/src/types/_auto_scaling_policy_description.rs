@@ -37,9 +37,7 @@ impl AutoScalingPolicyDescription {
 
 /// A builder for [`AutoScalingPolicyDescription`](crate::types::AutoScalingPolicyDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyDescriptionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AutoScalingPolicyStatus>,
     pub(crate) constraints: ::std::option::Option<crate::types::ScalingConstraints>,
@@ -52,10 +50,7 @@ impl AutoScalingPolicyDescriptionBuilder {
         self
     }
     /// <p>The status of an automatic scaling policy. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicyStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicyStatus>) -> Self {
         self.status = input;
         self
     }
@@ -69,10 +64,7 @@ impl AutoScalingPolicyDescriptionBuilder {
         self
     }
     /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingConstraints>,
-    ) -> Self {
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::ScalingConstraints>) -> Self {
         self.constraints = input;
         self
     }
@@ -92,10 +84,7 @@ impl AutoScalingPolicyDescriptionBuilder {
         self
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>) -> Self {
         self.rules = input;
         self
     }

@@ -58,9 +58,7 @@ impl BackendEnvironment {
 
 /// A builder for [`BackendEnvironment`](crate::types::BackendEnvironment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendEnvironmentBuilder {
     pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct BackendEnvironmentBuilder {
 }
 impl BackendEnvironmentBuilder {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn set_backend_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_arn = input;
         self
     }
@@ -91,18 +83,12 @@ impl BackendEnvironmentBuilder {
         &self.backend_environment_arn
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -125,18 +111,12 @@ impl BackendEnvironmentBuilder {
         &self.stack_name
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn deployment_artifacts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_artifacts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_artifacts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn set_deployment_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_artifacts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_artifacts = input;
         self
     }
@@ -150,10 +130,7 @@ impl BackendEnvironmentBuilder {
         self
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -167,10 +144,7 @@ impl BackendEnvironmentBuilder {
         self
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

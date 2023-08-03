@@ -9,19 +9,13 @@ pub fn ser_create_ingestion_destination_input(
     if let Some(var_2) = &input.destination_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("destinationConfiguration").start_object();
-        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.processing_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("processingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

@@ -37,9 +37,7 @@ impl RuleGroupSourceListDetails {
 
 /// A builder for [`RuleGroupSourceListDetails`](crate::types::RuleGroupSourceListDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceListDetailsBuilder {
     pub(crate) generated_rules_type: ::std::option::Option<::std::string::String>,
     pub(crate) target_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,18 +45,12 @@ pub struct RuleGroupSourceListDetailsBuilder {
 }
 impl RuleGroupSourceListDetailsBuilder {
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
-    pub fn generated_rules_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_rules_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_rules_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
-    pub fn set_generated_rules_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_rules_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_rules_type = input;
         self
     }
@@ -78,17 +70,12 @@ impl RuleGroupSourceListDetailsBuilder {
         self
     }
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    pub fn set_target_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_types = input;
         self
     }
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    pub fn get_target_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_types
     }
     /// Appends an item to `targets`.
@@ -103,10 +90,7 @@ impl RuleGroupSourceListDetailsBuilder {
         self
     }
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }

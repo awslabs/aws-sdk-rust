@@ -51,9 +51,7 @@ impl SimulationMetadata {
 
 /// A builder for [`SimulationMetadata`](crate::types::SimulationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -113,10 +108,7 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The current status of the simulation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -130,17 +122,12 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The desired status of the simulation.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationTargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationTargetStatus>) -> Self {
         self.target_status = input;
         self
     }
     /// <p>The desired status of the simulation.</p>
-    pub fn get_target_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationTargetStatus> {
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationTargetStatus> {
         &self.target_status
     }
     /// Consumes the builder and constructs a [`SimulationMetadata`](crate::types::SimulationMetadata).

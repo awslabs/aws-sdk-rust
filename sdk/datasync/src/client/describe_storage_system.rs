@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_storage_system::DescribeStorageSystemOutput::creation_time): <p>The time when you added the on-premises storage system to DataSync Discovery.</p>
     ///   - [`secrets_manager_arn(Option<String>)`](crate::operation::describe_storage_system::DescribeStorageSystemOutput::secrets_manager_arn): <p>The ARN of the secret that stores your on-premises storage system's credentials. DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets Manager</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageSystemError>`](crate::operation::describe_storage_system::DescribeStorageSystemError)
-    pub fn describe_storage_system(
-        &self,
-    ) -> crate::operation::describe_storage_system::builders::DescribeStorageSystemFluentBuilder
-    {
-        crate::operation::describe_storage_system::builders::DescribeStorageSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_storage_system(&self) -> crate::operation::describe_storage_system::builders::DescribeStorageSystemFluentBuilder {
+        crate::operation::describe_storage_system::builders::DescribeStorageSystemFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetApiMappingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_api_mapping::GetApiMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_api_mapping::GetApiMappingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_api_mapping::GetApiMappingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_api_mapping();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetApiMappingFluentBuilder {
         }
     }
     /// Access the GetApiMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_api_mapping::builders::GetApiMappingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_api_mapping::builders::GetApiMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetApiMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetApiMappingFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_mapping_id(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_mapping_id(input);
         self
     }

@@ -8,8 +8,7 @@ pub struct GetRecommendationReportDetailsOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Detailed information about the recommendation report. </p>
     #[doc(hidden)]
-    pub recommendation_report_details:
-        ::std::option::Option<crate::types::RecommendationReportDetails>,
+    pub recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,
     _request_id: Option<String>,
 }
 impl GetRecommendationReportDetailsOutput {
@@ -18,9 +17,7 @@ impl GetRecommendationReportDetailsOutput {
         self.id.as_deref()
     }
     /// <p> Detailed information about the recommendation report. </p>
-    pub fn recommendation_report_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationReportDetails> {
+    pub fn recommendation_report_details(&self) -> ::std::option::Option<&crate::types::RecommendationReportDetails> {
         self.recommendation_report_details.as_ref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetRecommendationReportDetailsOutput 
 }
 impl GetRecommendationReportDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
-    pub fn builder() -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder {
         crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_report_details:
-        ::std::option::Option<crate::types::RecommendationReportDetails>,
+    pub(crate) recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,
     _request_id: Option<String>,
 }
 impl GetRecommendationReportDetailsOutputBuilder {
@@ -63,25 +57,17 @@ impl GetRecommendationReportDetailsOutputBuilder {
         &self.id
     }
     /// <p> Detailed information about the recommendation report. </p>
-    pub fn recommendation_report_details(
-        mut self,
-        input: crate::types::RecommendationReportDetails,
-    ) -> Self {
+    pub fn recommendation_report_details(mut self, input: crate::types::RecommendationReportDetails) -> Self {
         self.recommendation_report_details = ::std::option::Option::Some(input);
         self
     }
     /// <p> Detailed information about the recommendation report. </p>
-    pub fn set_recommendation_report_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationReportDetails>,
-    ) -> Self {
+    pub fn set_recommendation_report_details(mut self, input: ::std::option::Option<crate::types::RecommendationReportDetails>) -> Self {
         self.recommendation_report_details = input;
         self
     }
     /// <p> Detailed information about the recommendation report. </p>
-    pub fn get_recommendation_report_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationReportDetails> {
+    pub fn get_recommendation_report_details(&self) -> &::std::option::Option<crate::types::RecommendationReportDetails> {
         &self.recommendation_report_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,10 +80,7 @@ impl GetRecommendationReportDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput
-    {
+    pub fn build(self) -> crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput {
         crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput {
             id: self.id,
             recommendation_report_details: self.recommendation_report_details,

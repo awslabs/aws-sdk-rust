@@ -39,9 +39,7 @@ impl CreateDevEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateDevEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateDevEnvironmentFluentBuilder {
             crate::operation::create_dev_environment::CreateDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dev_environment::CreateDevEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateDevEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dev_environment::CreateDevEnvironmentError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dev_environment::CreateDevEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateDevEnvironmentFluentBuilder {
             crate::operation::create_dev_environment::CreateDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dev_environment::CreateDevEnvironmentError>,
     > {
         self.customize_middleware().await
     }
@@ -162,17 +149,12 @@ impl CreateDevEnvironmentFluentBuilder {
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
         self.inner = self.inner.set_repositories(input);
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
         self.inner.get_repositories()
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -217,19 +199,14 @@ impl CreateDevEnvironmentFluentBuilder {
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.inner = self.inner.set_ides(input);
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    pub fn get_ides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         self.inner.get_ides()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
@@ -238,10 +215,7 @@ impl CreateDevEnvironmentFluentBuilder {
         self
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -266,29 +240,21 @@ impl CreateDevEnvironmentFluentBuilder {
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn persistent_storage(
-        mut self,
-        input: crate::types::PersistentStorageConfiguration,
-    ) -> Self {
+    pub fn persistent_storage(mut self, input: crate::types::PersistentStorageConfiguration) -> Self {
         self.inner = self.inner.persistent_storage(input);
         self
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn set_persistent_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
-    ) -> Self {
+    pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorageConfiguration>) -> Self {
         self.inner = self.inner.set_persistent_storage(input);
         self
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn get_persistent_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
+    pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
         self.inner.get_persistent_storage()
     }
 }

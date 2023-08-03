@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for RebootInputDeviceOutput {
 }
 impl RebootInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`RebootInputDeviceOutput`](crate::operation::reboot_input_device::RebootInputDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::reboot_input_device::builders::RebootInputDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::reboot_input_device::builders::RebootInputDeviceOutputBuilder {
         crate::operation::reboot_input_device::builders::RebootInputDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RebootInputDeviceOutput`](crate::operation::reboot_input_device::RebootInputDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootInputDeviceOutputBuilder {
     _request_id: Option<String>,
 }

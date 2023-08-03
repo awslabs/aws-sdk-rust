@@ -30,9 +30,7 @@ impl FeatureValue {
 
 /// A builder for [`FeatureValue`](crate::types::FeatureValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureValueBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) value_as_string: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl FeatureValueBuilder {
         &self.feature_name
     }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
-    pub fn value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_as_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
-    pub fn set_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_as_string = input;
         self
     }

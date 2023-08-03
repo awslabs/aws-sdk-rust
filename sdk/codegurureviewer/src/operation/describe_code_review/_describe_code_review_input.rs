@@ -15,34 +15,25 @@ impl DescribeCodeReviewInput {
 }
 impl DescribeCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
+    pub fn builder() -> crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder {
         crate::operation::describe_code_review::builders::DescribeCodeReviewInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeReviewInputBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCodeReviewInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeCodeReviewInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_code_review::DescribeCodeReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_code_review::DescribeCodeReviewInput {
-                code_review_arn: self.code_review_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_code_review::DescribeCodeReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_code_review::DescribeCodeReviewInput {
+            code_review_arn: self.code_review_arn,
+        })
     }
 }

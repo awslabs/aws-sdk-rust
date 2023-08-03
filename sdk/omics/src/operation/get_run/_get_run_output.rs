@@ -53,9 +53,7 @@ pub struct GetRunOutput {
     pub log_level: ::std::option::Option<crate::types::RunLogLevel>,
     /// <p>The run's resource digests.</p>
     #[doc(hidden)]
-    pub resource_digests: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub resource_digests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Who started the run.</p>
     #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
@@ -73,9 +71,7 @@ pub struct GetRunOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The run's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator used to run the workflow. </p>
     #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
@@ -147,11 +143,7 @@ impl GetRunOutput {
         self.log_level.as_ref()
     }
     /// <p>The run's resource digests.</p>
-    pub fn resource_digests(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn resource_digests(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_digests.as_ref()
     }
     /// <p>Who started the run.</p>
@@ -175,11 +167,7 @@ impl GetRunOutput {
         self.status_message.as_deref()
     }
     /// <p>The run's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The computational accelerator used to run the workflow. </p>
@@ -201,9 +189,7 @@ impl GetRunOutput {
 
 /// A builder for [`GetRunOutput`](crate::operation::get_run::GetRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -221,17 +207,13 @@ pub struct GetRunOutputBuilder {
     pub(crate) storage_capacity: ::std::option::Option<i32>,
     pub(crate) output_uri: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::RunLogLevel>,
-    pub(crate) resource_digests: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) resource_digests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
@@ -298,10 +280,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's workflow type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -413,10 +392,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.parameters = input;
         self
     }
@@ -458,10 +434,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's log level.</p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RunLogLevel>,
-    ) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::RunLogLevel>) -> Self {
         self.log_level = input;
         self
     }
@@ -487,19 +460,13 @@ impl GetRunOutputBuilder {
     /// <p>The run's resource digests.</p>
     pub fn set_resource_digests(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.resource_digests = input;
         self
     }
     /// <p>The run's resource digests.</p>
-    pub fn get_resource_digests(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_resource_digests(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.resource_digests
     }
     /// <p>Who started the run.</p>
@@ -522,10 +489,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>When the run was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -539,10 +503,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>When the run started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -556,10 +517,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p>The run's stop time.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_time = input;
         self
     }
@@ -568,18 +526,12 @@ impl GetRunOutputBuilder {
         &self.stop_time
     }
     /// <p>The run's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The run's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -592,32 +544,19 @@ impl GetRunOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The run's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The run's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The run's tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p> The computational accelerator used to run the workflow. </p>
@@ -626,10 +565,7 @@ impl GetRunOutputBuilder {
         self
     }
     /// <p> The computational accelerator used to run the workflow. </p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerators>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }

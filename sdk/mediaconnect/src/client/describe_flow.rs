@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`flow(Option<Flow>)`](crate::operation::describe_flow::DescribeFlowOutput::flow): The settings for a flow, including its source, outputs, and entitlements.
     ///   - [`messages(Option<Messages>)`](crate::operation::describe_flow::DescribeFlowOutput::messages): Messages that provide the state of the flow.
     /// - On failure, responds with [`SdkError<DescribeFlowError>`](crate::operation::describe_flow::DescribeFlowError)
-    pub fn describe_flow(
-        &self,
-    ) -> crate::operation::describe_flow::builders::DescribeFlowFluentBuilder {
-        crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_flow(&self) -> crate::operation::describe_flow::builders::DescribeFlowFluentBuilder {
+        crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::new(self.handle.clone())
     }
 }

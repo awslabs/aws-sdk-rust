@@ -29,16 +29,14 @@ impl ListTrafficDistributionGroupsInput {
 }
 impl ListTrafficDistributionGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListTrafficDistributionGroupsInput`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput).
-    pub fn builder() -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsInputBuilder {
         crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficDistributionGroupsInput`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficDistributionGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,15 +92,10 @@ impl ListTrafficDistributionGroupsInputBuilder {
         crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                instance_id: self.instance_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            instance_id: self.instance_id,
+        })
     }
 }

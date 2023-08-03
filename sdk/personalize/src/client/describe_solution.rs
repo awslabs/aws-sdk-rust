@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSolutionOutput`](crate::operation::describe_solution::DescribeSolutionOutput) with field(s):
     ///   - [`solution(Option<Solution>)`](crate::operation::describe_solution::DescribeSolutionOutput::solution): <p>An object that describes the solution.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionError>`](crate::operation::describe_solution::DescribeSolutionError)
-    pub fn describe_solution(
-        &self,
-    ) -> crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder {
-        crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_solution(&self) -> crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder {
+        crate::operation::describe_solution::builders::DescribeSolutionFluentBuilder::new(self.handle.clone())
     }
 }

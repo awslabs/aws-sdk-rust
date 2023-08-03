@@ -53,31 +53,19 @@ pub fn ser_aws_api_gateway_v2_stage_details(
         object.key("AutoDeploy").boolean(input.auto_deploy);
     }
     if let Some(var_17) = &input.last_deployment_status_message {
-        object
-            .key("LastDeploymentStatusMessage")
-            .string(var_17.as_str());
+        object.key("LastDeploymentStatusMessage").string(var_17.as_str());
     }
     if input.api_gateway_managed {
-        object
-            .key("ApiGatewayManaged")
-            .boolean(input.api_gateway_managed);
+        object.key("ApiGatewayManaged").boolean(input.api_gateway_managed);
     }
     Ok(())
 }
 
 pub(crate) fn de_aws_api_gateway_v2_stage_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsApiGatewayV2StageDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsApiGatewayV2StageDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -87,123 +75,94 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ClientCertificateId" => {
-                                builder = builder.set_client_certificate_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ClientCertificateId" => {
+                            builder = builder.set_client_certificate_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CreatedDate" => {
-                                builder = builder.set_created_date(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Description" => {
-                                builder = builder.set_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "DefaultRouteSettings" => {
-                                builder = builder.set_default_route_settings(
-                                    crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?
-                                );
-                            }
-                            "DeploymentId" => {
-                                builder = builder.set_deployment_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "LastUpdatedDate" => {
-                                builder = builder.set_last_updated_date(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "RouteSettings" => {
-                                builder = builder.set_route_settings(
-                                    crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?
-                                );
-                            }
-                            "StageName" => {
-                                builder = builder.set_stage_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "StageVariables" => {
-                                builder = builder.set_stage_variables(
-                                    crate::protocol_serde::shape_field_map::de_field_map(tokens)?,
-                                );
-                            }
-                            "AccessLogSettings" => {
-                                builder = builder.set_access_log_settings(
-                                    crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(tokens)?
-                                );
-                            }
-                            "AutoDeploy" => {
-                                builder = builder.set_auto_deploy(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "LastDeploymentStatusMessage" => {
-                                builder = builder.set_last_deployment_status_message(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ApiGatewayManaged" => {
-                                builder = builder.set_api_gateway_managed(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "CreatedDate" => {
+                            builder = builder.set_created_date(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DefaultRouteSettings" => {
+                            builder = builder.set_default_route_settings(
+                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?,
+                            );
+                        }
+                        "DeploymentId" => {
+                            builder = builder.set_deployment_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastUpdatedDate" => {
+                            builder = builder.set_last_updated_date(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RouteSettings" => {
+                            builder = builder.set_route_settings(
+                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?,
+                            );
+                        }
+                        "StageName" => {
+                            builder = builder.set_stage_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "StageVariables" => {
+                            builder = builder.set_stage_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                        }
+                        "AccessLogSettings" => {
+                            builder = builder.set_access_log_settings(
+                                crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(tokens)?,
+                            );
+                        }
+                        "AutoDeploy" => {
+                            builder = builder.set_auto_deploy(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "LastDeploymentStatusMessage" => {
+                            builder = builder.set_last_deployment_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ApiGatewayManaged" => {
+                            builder = builder.set_api_gateway_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -10,10 +10,7 @@ impl CreateCustomMetricInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_custom_metric::CreateCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_metric::CreateCustomMetricError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_metric::CreateCustomMetricError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_custom_metric();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateCustomMetricFluentBuilder {
         }
     }
     /// Access the CreateCustomMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateCustomMetricFluentBuilder {
             crate::operation::create_custom_metric::CreateCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_metric::CreateCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_metric::CreateCustomMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateCustomMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_metric::CreateCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_metric::CreateCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_metric::CreateCustomMetricError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_metric::CreateCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_metric::CreateCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_metric::CreateCustomMetricError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateCustomMetricFluentBuilder {
             crate::operation::create_custom_metric::CreateCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_metric::CreateCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_metric::CreateCustomMetricError>,
     > {
         self.customize_middleware().await
     }
@@ -161,10 +145,7 @@ impl CreateCustomMetricFluentBuilder {
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomMetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.inner = self.inner.set_metric_type(input);
         self
     }
@@ -184,10 +165,7 @@ impl CreateCustomMetricFluentBuilder {
         self
     }
     /// <p> Metadata that can be used to manage the custom metric. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -196,18 +174,12 @@ impl CreateCustomMetricFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

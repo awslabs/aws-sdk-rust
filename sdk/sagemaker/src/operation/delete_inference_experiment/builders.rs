@@ -28,7 +28,7 @@ impl DeleteInferenceExperimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInferenceExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder,
+    inner: crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder,
 }
 impl DeleteInferenceExperimentFluentBuilder {
     /// Creates a new `DeleteInferenceExperiment`.
@@ -39,7 +39,7 @@ impl DeleteInferenceExperimentFluentBuilder {
         }
     }
     /// Access the DeleteInferenceExperiment as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteInferenceExperimentFluentBuilder {
             crate::operation::delete_inference_experiment::DeleteInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_experiment::DeleteInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_experiment::DeleteInferenceExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteInferenceExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_experiment::DeleteInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_experiment::DeleteInferenceExperimentError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_experiment::DeleteInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_experiment::DeleteInferenceExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteInferenceExperimentFluentBuilder {
             crate::operation::delete_inference_experiment::DeleteInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inference_experiment::DeleteInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inference_experiment::DeleteInferenceExperimentError>,
     > {
         self.customize_middleware().await
     }

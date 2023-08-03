@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSuppressedDestinationOutput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput) with field(s):
     ///   - [`suppressed_destination(Option<SuppressedDestination>)`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput::suppressed_destination): <p>An object containing information about the suppressed email address.</p>
     /// - On failure, responds with [`SdkError<GetSuppressedDestinationError>`](crate::operation::get_suppressed_destination::GetSuppressedDestinationError)
-    pub fn get_suppressed_destination(
-        &self,
-    ) -> crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder
-    {
+    pub fn get_suppressed_destination(&self) -> crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder {
         crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder::new(self.handle.clone())
     }
 }

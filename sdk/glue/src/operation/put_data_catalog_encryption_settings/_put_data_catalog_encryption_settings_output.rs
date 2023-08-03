@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutDataCatalogEncryptionSettingsOutpu
 }
 impl PutDataCatalogEncryptionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
-    pub fn builder() -> crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsOutputBuilder {
         crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDataCatalogEncryptionSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutDataCatalogEncryptionSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
-    pub fn build(self) -> crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput{
+    pub fn build(self) -> crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput {
         crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput {
             _request_id: self._request_id,
         }

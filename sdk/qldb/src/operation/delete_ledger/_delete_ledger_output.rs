@@ -19,9 +19,7 @@ impl DeleteLedgerOutput {
 
 /// A builder for [`DeleteLedgerOutput`](crate::operation::delete_ledger::DeleteLedgerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLedgerOutputBuilder {
     _request_id: Option<String>,
 }

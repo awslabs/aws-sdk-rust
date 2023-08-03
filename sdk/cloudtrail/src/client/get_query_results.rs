@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::next_token): <p>A token you can use to get the next page of query results.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::error_message): <p>The error message returned if a query failed.</p>
     /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::operation::get_query_results::GetQueryResultsError)
-    pub fn get_query_results(
-        &self,
-    ) -> crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder {
-        crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_results(&self) -> crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder {
+        crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,8 +28,7 @@ impl DescribeRdsDbInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder,
+    inner: crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder,
 }
 impl DescribeRdsDbInstancesFluentBuilder {
     /// Creates a new `DescribeRdsDbInstances`.
@@ -40,10 +39,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
         }
     }
     /// Access the DescribeRdsDbInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
             crate::operation::describe_rds_db_instances::DescribeRdsDbInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DescribeRdsDbInstancesFluentBuilder {
             crate::operation::describe_rds_db_instances::DescribeRdsDbInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -145,25 +130,17 @@ impl DescribeRdsDbInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
     ///
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn rds_db_instance_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rds_db_instance_arns(input.into());
         self
     }
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn set_rds_db_instance_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rds_db_instance_arns(input);
         self
     }
     /// <p>An array containing the ARNs of the instances to be described.</p>
-    pub fn get_rds_db_instance_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rds_db_instance_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_rds_db_instance_arns()
     }
 }

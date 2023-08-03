@@ -44,16 +44,14 @@ impl AuthorizeDbSecurityGroupIngressInput {
 }
 impl AuthorizeDbSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressInput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder {
         crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeDbSecurityGroupIngressInput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeDbSecurityGroupIngressInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct AuthorizeDbSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeDbSecurityGroupIngressInputBuilder {
     /// <p>The name of the DB security group to add authorization to.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB security group to add authorization to.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -97,18 +89,12 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
         &self.cidrip
     }
     /// <p>Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -117,18 +103,12 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_name
     }
     /// <p>Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_id = input;
         self
     }
@@ -137,18 +117,12 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_id
     }
     /// <p>Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -165,17 +139,12 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressInput {
-                db_security_group_name: self.db_security_group_name
-                ,
-                cidrip: self.cidrip
-                ,
-                ec2_security_group_name: self.ec2_security_group_name
-                ,
-                ec2_security_group_id: self.ec2_security_group_id
-                ,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id
-                ,
-            }
+                db_security_group_name: self.db_security_group_name,
+                cidrip: self.cidrip,
+                ec2_security_group_name: self.ec2_security_group_name,
+                ec2_security_group_id: self.ec2_security_group_id,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+            },
         )
     }
 }

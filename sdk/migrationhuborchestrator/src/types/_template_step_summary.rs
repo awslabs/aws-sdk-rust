@@ -79,9 +79,7 @@ impl TemplateStepSummary {
 
 /// A builder for [`TemplateStepSummary`](crate::types::TemplateStepSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateStepSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl TemplateStepSummaryBuilder {
         &self.id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -162,10 +154,7 @@ impl TemplateStepSummaryBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.step_action_type = input;
         self
     }
@@ -179,10 +168,7 @@ impl TemplateStepSummaryBuilder {
         self
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.target_type = input;
         self
     }
@@ -216,10 +202,7 @@ impl TemplateStepSummaryBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -239,10 +222,7 @@ impl TemplateStepSummaryBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }

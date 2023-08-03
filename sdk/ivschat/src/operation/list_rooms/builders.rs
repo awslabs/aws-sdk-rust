@@ -10,10 +10,7 @@ impl ListRoomsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_rooms::ListRoomsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rooms::ListRoomsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_rooms();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListRoomsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_rooms::ListRooms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_rooms::ListRooms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListRoomsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListRoomsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_rooms::ListRooms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_rooms::ListRooms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_rooms::ListRoomsError>,
     > {
         self.customize_middleware().await
@@ -161,18 +149,12 @@ impl ListRoomsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    pub fn message_review_handler_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_review_handler_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_review_handler_uri(input.into());
         self
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    pub fn set_message_review_handler_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_review_handler_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_review_handler_uri(input);
         self
     }
@@ -181,25 +163,17 @@ impl ListRoomsFluentBuilder {
         self.inner.get_message_review_handler_uri()
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn logging_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_configuration_identifier(input.into());
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn set_logging_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_configuration_identifier(input);
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn get_logging_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_logging_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logging_configuration_identifier()
     }
 }

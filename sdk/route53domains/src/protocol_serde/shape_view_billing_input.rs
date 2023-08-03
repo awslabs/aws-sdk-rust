@@ -9,9 +9,7 @@ pub fn ser_view_billing_input(
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_2) = &input.end {
-        object
-            .key("End")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("End").date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_3) = &input.marker {
         object.key("Marker").string(var_3.as_str());

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput::marker): <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     ///   - [`replication_task_assessment_runs(Option<Vec<ReplicationTaskAssessmentRun>>)`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput::replication_task_assessment_runs): <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationTaskAssessmentRunsError>`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsError)
-    pub fn describe_replication_task_assessment_runs(&self) -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsFluentBuilder{
-        crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsFluentBuilder::new(self.handle.clone())
+    pub fn describe_replication_task_assessment_runs(
+        &self,
+    ) -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsFluentBuilder {
+        crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

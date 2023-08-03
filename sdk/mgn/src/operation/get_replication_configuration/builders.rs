@@ -26,7 +26,7 @@ impl GetReplicationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder,
+    inner: crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder,
 }
 impl GetReplicationConfigurationFluentBuilder {
     /// Creates a new `GetReplicationConfiguration`.
@@ -37,7 +37,7 @@ impl GetReplicationConfigurationFluentBuilder {
         }
     }
     /// Access the GetReplicationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_replication_configuration::builders::GetReplicationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetReplicationConfigurationFluentBuilder {
             crate::operation::get_replication_configuration::GetReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_configuration::GetReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetReplicationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_replication_configuration::GetReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_configuration::GetReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_replication_configuration::GetReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_configuration::GetReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetReplicationConfigurationFluentBuilder {
             crate::operation::get_replication_configuration::GetReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_configuration::GetReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Request to get Replication Configuration by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

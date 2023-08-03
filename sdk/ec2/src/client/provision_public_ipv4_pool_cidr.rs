@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`pool_id(Option<String>)`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput::pool_id): <p>The ID of the pool that you want to provision the CIDR to.</p>
     ///   - [`pool_address_range(Option<PublicIpv4PoolRange>)`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput::pool_address_range): <p>Information about the address range of the public IPv4 pool.</p>
     /// - On failure, responds with [`SdkError<ProvisionPublicIpv4PoolCidrError>`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError)
-    pub fn provision_public_ipv4_pool_cidr(&self) -> crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrFluentBuilder{
+    pub fn provision_public_ipv4_pool_cidr(
+        &self,
+    ) -> crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrFluentBuilder {
         crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,9 +21,7 @@ pub struct QuickConnect {
     pub quick_connect_config: ::std::option::Option<crate::types::QuickConnectConfig>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QuickConnect {
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
@@ -47,11 +45,7 @@ impl QuickConnect {
         self.quick_connect_config.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -64,33 +58,23 @@ impl QuickConnect {
 
 /// A builder for [`QuickConnect`](crate::types::QuickConnect).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickConnectBuilder {
     pub(crate) quick_connect_arn: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_config: ::std::option::Option<crate::types::QuickConnectConfig>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QuickConnectBuilder {
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
-    pub fn quick_connect_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
-    pub fn set_quick_connect_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_arn = input;
         self
     }
@@ -99,18 +83,12 @@ impl QuickConnectBuilder {
         &self.quick_connect_arn
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quick_connect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quick_connect_id = input;
         self
     }
@@ -152,17 +130,12 @@ impl QuickConnectBuilder {
         self
     }
     /// <p>Contains information about the quick connect.</p>
-    pub fn set_quick_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectConfig>,
-    ) -> Self {
+    pub fn set_quick_connect_config(mut self, input: ::std::option::Option<crate::types::QuickConnectConfig>) -> Self {
         self.quick_connect_config = input;
         self
     }
     /// <p>Contains information about the quick connect.</p>
-    pub fn get_quick_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+    pub fn get_quick_connect_config(&self) -> &::std::option::Option<crate::types::QuickConnectConfig> {
         &self.quick_connect_config
     }
     /// Adds a key-value pair to `tags`.
@@ -170,32 +143,19 @@ impl QuickConnectBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`QuickConnect`](crate::types::QuickConnect).

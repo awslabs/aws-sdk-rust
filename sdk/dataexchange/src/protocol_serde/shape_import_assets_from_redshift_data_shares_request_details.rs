@@ -9,7 +9,10 @@ pub fn ser_import_assets_from_redshift_data_shares_request_details(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_redshift_data_share_asset_source_entry::ser_redshift_data_share_asset_source_entry(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_redshift_data_share_asset_source_entry::ser_redshift_data_share_asset_source_entry(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

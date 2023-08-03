@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpcAttributeOutput {
 }
 impl ModifyVpcAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcAttributeOutput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeOutputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeOutputBuilder {
         crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcAttributeOutput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcAttributeOutputBuilder {
     _request_id: Option<String>,
 }

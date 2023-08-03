@@ -3,10 +3,7 @@
 pub fn de_replication_group_not_under_migration_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder,
-) -> Result<
-    crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

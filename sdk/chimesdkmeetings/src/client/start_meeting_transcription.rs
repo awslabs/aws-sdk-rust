@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`transcription_configuration(TranscriptionConfiguration)`](crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionFluentBuilder::transcription_configuration) / [`set_transcription_configuration(Option<TranscriptionConfiguration>)`](crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionFluentBuilder::set_transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput)
     /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionError)
-    pub fn start_meeting_transcription(&self) -> crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionFluentBuilder{
+    pub fn start_meeting_transcription(&self) -> crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionFluentBuilder {
         crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionFluentBuilder::new(self.handle.clone())
     }
 }

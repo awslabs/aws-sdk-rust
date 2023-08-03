@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::resource_arn): <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

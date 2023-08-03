@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePricingPlanOutput`](crate::operation::create_pricing_plan::CreatePricingPlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_pricing_plan::CreatePricingPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
     /// - On failure, responds with [`SdkError<CreatePricingPlanError>`](crate::operation::create_pricing_plan::CreatePricingPlanError)
-    pub fn create_pricing_plan(
-        &self,
-    ) -> crate::operation::create_pricing_plan::builders::CreatePricingPlanFluentBuilder {
-        crate::operation::create_pricing_plan::builders::CreatePricingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pricing_plan(&self) -> crate::operation::create_pricing_plan::builders::CreatePricingPlanFluentBuilder {
+        crate::operation::create_pricing_plan::builders::CreatePricingPlanFluentBuilder::new(self.handle.clone())
     }
 }

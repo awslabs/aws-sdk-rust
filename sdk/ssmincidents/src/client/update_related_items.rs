@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`related_items_update(RelatedItemsUpdate)`](crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder::related_items_update) / [`set_related_items_update(Option<RelatedItemsUpdate>)`](crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder::set_related_items_update): <p>Details about the item that you are add to, or delete from, an incident.</p>
     /// - On success, responds with [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput)
     /// - On failure, responds with [`SdkError<UpdateRelatedItemsError>`](crate::operation::update_related_items::UpdateRelatedItemsError)
-    pub fn update_related_items(
-        &self,
-    ) -> crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder {
-        crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_related_items(&self) -> crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder {
+        crate::operation::update_related_items::builders::UpdateRelatedItemsFluentBuilder::new(self.handle.clone())
     }
 }

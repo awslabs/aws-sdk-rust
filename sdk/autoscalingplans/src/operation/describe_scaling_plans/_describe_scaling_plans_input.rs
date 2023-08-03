@@ -13,8 +13,7 @@ pub struct DescribeScalingPlansInput {
     pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
     #[doc(hidden)]
-    pub application_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
+    pub application_sources: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -48,22 +47,18 @@ impl DescribeScalingPlansInput {
 }
 impl DescribeScalingPlansInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
+    pub fn builder() -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
         crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPlansInputBuilder {
     pub(crate) scaling_plan_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
-    pub(crate) application_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
+    pub(crate) application_sources: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -73,27 +68,19 @@ impl DescribeScalingPlansInputBuilder {
     /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
     ///
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn scaling_plan_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scaling_plan_names.unwrap_or_default();
         v.push(input.into());
         self.scaling_plan_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn set_scaling_plan_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scaling_plan_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scaling_plan_names = input;
         self
     }
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn get_scaling_plan_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scaling_plan_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scaling_plan_names
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
@@ -128,17 +115,12 @@ impl DescribeScalingPlansInputBuilder {
         self
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn set_application_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>,
-    ) -> Self {
+    pub fn set_application_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>>) -> Self {
         self.application_sources = input;
         self
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn get_application_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
+    pub fn get_application_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
         &self.application_sources
     }
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
@@ -172,18 +154,14 @@ impl DescribeScalingPlansInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_plans::DescribeScalingPlansInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_plans::DescribeScalingPlansInput {
-                scaling_plan_names: self.scaling_plan_names,
-                scaling_plan_version: self.scaling_plan_version,
-                application_sources: self.application_sources,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_scaling_plans::DescribeScalingPlansInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_scaling_plans::DescribeScalingPlansInput {
+            scaling_plan_names: self.scaling_plan_names,
+            scaling_plan_version: self.scaling_plan_version,
+            application_sources: self.application_sources,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

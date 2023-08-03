@@ -38,9 +38,7 @@ impl CreatePackageVersionFluentBuilder {
         }
     }
     /// Access the CreatePackageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_package_version::builders::CreatePackageVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_package_version::builders::CreatePackageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreatePackageVersionFluentBuilder {
             crate::operation::create_package_version::CreatePackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_version::CreatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_version::CreatePackageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreatePackageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreatePackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_package_version::CreatePackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_version::CreatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_version::CreatePackageVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreatePackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_package_version::CreatePackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_version::CreatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_version::CreatePackageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl CreatePackageVersionFluentBuilder {
             crate::operation::create_package_version::CreatePackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_package_version::CreatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_package_version::CreatePackageVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -171,32 +158,19 @@ impl CreatePackageVersionFluentBuilder {
     ///
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// Adds a key-value pair to `tags`.
@@ -204,30 +178,17 @@ impl CreatePackageVersionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata that can be used to manage the package version.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata that can be used to manage the package version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata that can be used to manage the package version.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>

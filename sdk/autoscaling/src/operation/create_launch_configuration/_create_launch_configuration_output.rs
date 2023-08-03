@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateLaunchConfigurationOutput {
 }
 impl CreateLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationOutput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationOutputBuilder {
         crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchConfigurationOutput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationOutput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput {
         crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput {
             _request_id: self._request_id,
         }

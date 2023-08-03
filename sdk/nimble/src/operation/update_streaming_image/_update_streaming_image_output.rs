@@ -27,17 +27,14 @@ impl ::aws_http::request_id::RequestId for UpdateStreamingImageOutput {
 }
 impl UpdateStreamingImageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamingImageOutput`](crate::operation::update_streaming_image::UpdateStreamingImageOutput).
-    pub fn builder(
-    ) -> crate::operation::update_streaming_image::builders::UpdateStreamingImageOutputBuilder {
+    pub fn builder() -> crate::operation::update_streaming_image::builders::UpdateStreamingImageOutputBuilder {
         crate::operation::update_streaming_image::builders::UpdateStreamingImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStreamingImageOutput`](crate::operation::update_streaming_image::UpdateStreamingImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamingImageOutputBuilder {
     pub(crate) streaming_image: ::std::option::Option<crate::types::StreamingImage>,
     _request_id: Option<String>,
@@ -55,10 +52,7 @@ impl UpdateStreamingImageOutputBuilder {
     /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
     /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
     /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
-    pub fn set_streaming_image(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingImage>,
-    ) -> Self {
+    pub fn set_streaming_image(mut self, input: ::std::option::Option<crate::types::StreamingImage>) -> Self {
         self.streaming_image = input;
         self
     }

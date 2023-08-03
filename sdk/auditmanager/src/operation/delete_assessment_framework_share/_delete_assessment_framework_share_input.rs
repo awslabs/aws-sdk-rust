@@ -22,16 +22,14 @@ impl DeleteAssessmentFrameworkShareInput {
 }
 impl DeleteAssessmentFrameworkShareInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkShareInput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput).
-    pub fn builder() -> crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareInputBuilder{
+    pub fn builder() -> crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareInputBuilder {
         crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentFrameworkShareInput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkShareInputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_type: ::std::option::Option<crate::types::ShareRequestType>,
@@ -57,10 +55,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
         self.request_type = input;
         self
     }
@@ -75,13 +70,9 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
-                request_id: self.request_id
-                ,
-                request_type: self.request_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
+            request_id: self.request_id,
+            request_type: self.request_type,
+        })
     }
 }

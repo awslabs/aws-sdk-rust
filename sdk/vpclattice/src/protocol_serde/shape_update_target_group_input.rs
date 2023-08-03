@@ -6,10 +6,7 @@ pub fn ser_update_target_group_input(
     if let Some(var_1) = &input.health_check {
         #[allow(unused_mut)]
         let mut object_2 = object.key("healthCheck").start_object();
-        crate::protocol_serde::shape_health_check_config::ser_health_check_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_health_check_config::ser_health_check_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

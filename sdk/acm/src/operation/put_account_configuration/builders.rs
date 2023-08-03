@@ -27,8 +27,7 @@ impl PutAccountConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_account_configuration::builders::PutAccountConfigurationInputBuilder,
+    inner: crate::operation::put_account_configuration::builders::PutAccountConfigurationInputBuilder,
 }
 impl PutAccountConfigurationFluentBuilder {
     /// Creates a new `PutAccountConfiguration`.
@@ -39,10 +38,7 @@ impl PutAccountConfigurationFluentBuilder {
         }
     }
     /// Access the PutAccountConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_configuration::builders::PutAccountConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_account_configuration::builders::PutAccountConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl PutAccountConfigurationFluentBuilder {
             crate::operation::put_account_configuration::PutAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_configuration::PutAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_configuration::PutAccountConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl PutAccountConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl PutAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_configuration::PutAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_configuration::PutAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_configuration::PutAccountConfigurationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl PutAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_configuration::PutAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_configuration::PutAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_configuration::PutAccountConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl PutAccountConfigurationFluentBuilder {
             crate::operation::put_account_configuration::PutAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_configuration::PutAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_configuration::PutAccountConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -131,32 +116,21 @@ impl PutAccountConfigurationFluentBuilder {
         self
     }
     /// <p>Specifies expiration events associated with an account.</p>
-    pub fn set_expiry_events(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpiryEventsConfiguration>,
-    ) -> Self {
+    pub fn set_expiry_events(mut self, input: ::std::option::Option<crate::types::ExpiryEventsConfiguration>) -> Self {
         self.inner = self.inner.set_expiry_events(input);
         self
     }
     /// <p>Specifies expiration events associated with an account.</p>
-    pub fn get_expiry_events(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
+    pub fn get_expiry_events(&self) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
         self.inner.get_expiry_events()
     }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

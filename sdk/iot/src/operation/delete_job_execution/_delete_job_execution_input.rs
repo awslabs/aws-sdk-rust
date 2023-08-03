@@ -57,17 +57,14 @@ impl DeleteJobExecutionInput {
 }
 impl DeleteJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_job_execution::builders::DeleteJobExecutionInputBuilder {
+    pub fn builder() -> crate::operation::delete_job_execution::builders::DeleteJobExecutionInputBuilder {
         crate::operation::delete_job_execution::builders::DeleteJobExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobExecutionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
@@ -170,18 +167,13 @@ impl DeleteJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_job_execution::DeleteJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_job_execution::DeleteJobExecutionInput {
-                job_id: self.job_id,
-                thing_name: self.thing_name,
-                execution_number: self.execution_number,
-                force: self.force,
-                namespace_id: self.namespace_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_job_execution::DeleteJobExecutionInput {
+            job_id: self.job_id,
+            thing_name: self.thing_name,
+            execution_number: self.execution_number,
+            force: self.force,
+            namespace_id: self.namespace_id,
+        })
     }
 }

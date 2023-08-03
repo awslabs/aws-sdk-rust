@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::send) it.
     /// - On success, responds with [`DeletePolicyOutput`](crate::operation::delete_policy::DeletePolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::operation::delete_policy::DeletePolicyError)
-    pub fn delete_policy(
-        &self,
-    ) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
-        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_policy(&self) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
+        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(self.handle.clone())
     }
 }

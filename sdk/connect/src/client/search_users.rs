@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_users::SearchUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_users::SearchUsersOutput::approximate_total_count): <p>The total number of users who matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::operation::search_users::SearchUsersError)
-    pub fn search_users(
-        &self,
-    ) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
+    pub fn search_users(&self) -> crate::operation::search_users::builders::SearchUsersFluentBuilder {
         crate::operation::search_users::builders::SearchUsersFluentBuilder::new(self.handle.clone())
     }
 }

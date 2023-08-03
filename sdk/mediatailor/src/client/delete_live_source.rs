@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`source_location_name(impl ::std::convert::Into<String>)`](crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder::set_source_location_name): <p>The name of the source location associated with this Live Source.</p>
     /// - On success, responds with [`DeleteLiveSourceOutput`](crate::operation::delete_live_source::DeleteLiveSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteLiveSourceError>`](crate::operation::delete_live_source::DeleteLiveSourceError)
-    pub fn delete_live_source(
-        &self,
-    ) -> crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder {
-        crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_live_source(&self) -> crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder {
+        crate::operation::delete_live_source::builders::DeleteLiveSourceFluentBuilder::new(self.handle.clone())
     }
 }

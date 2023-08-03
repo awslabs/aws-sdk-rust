@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::update_resource_set::UpdateResourceSetOutput::resources): <p>A list of resource objects.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_resource_set::UpdateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<UpdateResourceSetError>`](crate::operation::update_resource_set::UpdateResourceSetError)
-    pub fn update_resource_set(
-        &self,
-    ) -> crate::operation::update_resource_set::builders::UpdateResourceSetFluentBuilder {
-        crate::operation::update_resource_set::builders::UpdateResourceSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource_set(&self) -> crate::operation::update_resource_set::builders::UpdateResourceSetFluentBuilder {
+        crate::operation::update_resource_set::builders::UpdateResourceSetFluentBuilder::new(self.handle.clone())
     }
 }

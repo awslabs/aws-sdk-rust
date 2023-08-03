@@ -9,8 +9,7 @@ pub struct Input {
     pub s3_input_definition: ::std::option::Option<crate::types::S3Location>,
     /// <p>The Glue Data Catalog parameters for the data.</p>
     #[doc(hidden)]
-    pub data_catalog_input_definition:
-        ::std::option::Option<crate::types::DataCatalogInputDefinition>,
+    pub data_catalog_input_definition: ::std::option::Option<crate::types::DataCatalogInputDefinition>,
     /// <p>Connection information for dataset input files stored in a database.</p>
     #[doc(hidden)]
     pub database_input_definition: ::std::option::Option<crate::types::DatabaseInputDefinition>,
@@ -24,15 +23,11 @@ impl Input {
         self.s3_input_definition.as_ref()
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    pub fn data_catalog_input_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataCatalogInputDefinition> {
+    pub fn data_catalog_input_definition(&self) -> ::std::option::Option<&crate::types::DataCatalogInputDefinition> {
         self.data_catalog_input_definition.as_ref()
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
-    pub fn database_input_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatabaseInputDefinition> {
+    pub fn database_input_definition(&self) -> ::std::option::Option<&crate::types::DatabaseInputDefinition> {
         self.database_input_definition.as_ref()
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>
@@ -49,15 +44,11 @@ impl Input {
 
 /// A builder for [`Input`](crate::types::Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputBuilder {
     pub(crate) s3_input_definition: ::std::option::Option<crate::types::S3Location>,
-    pub(crate) data_catalog_input_definition:
-        ::std::option::Option<crate::types::DataCatalogInputDefinition>,
-    pub(crate) database_input_definition:
-        ::std::option::Option<crate::types::DatabaseInputDefinition>,
+    pub(crate) data_catalog_input_definition: ::std::option::Option<crate::types::DataCatalogInputDefinition>,
+    pub(crate) database_input_definition: ::std::option::Option<crate::types::DatabaseInputDefinition>,
     pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl InputBuilder {
@@ -67,10 +58,7 @@ impl InputBuilder {
         self
     }
     /// <p>The Amazon S3 location where the data is stored.</p>
-    pub fn set_s3_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_input_definition(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_input_definition = input;
         self
     }
@@ -79,47 +67,31 @@ impl InputBuilder {
         &self.s3_input_definition
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    pub fn data_catalog_input_definition(
-        mut self,
-        input: crate::types::DataCatalogInputDefinition,
-    ) -> Self {
+    pub fn data_catalog_input_definition(mut self, input: crate::types::DataCatalogInputDefinition) -> Self {
         self.data_catalog_input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    pub fn set_data_catalog_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCatalogInputDefinition>,
-    ) -> Self {
+    pub fn set_data_catalog_input_definition(mut self, input: ::std::option::Option<crate::types::DataCatalogInputDefinition>) -> Self {
         self.data_catalog_input_definition = input;
         self
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    pub fn get_data_catalog_input_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataCatalogInputDefinition> {
+    pub fn get_data_catalog_input_definition(&self) -> &::std::option::Option<crate::types::DataCatalogInputDefinition> {
         &self.data_catalog_input_definition
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
-    pub fn database_input_definition(
-        mut self,
-        input: crate::types::DatabaseInputDefinition,
-    ) -> Self {
+    pub fn database_input_definition(mut self, input: crate::types::DatabaseInputDefinition) -> Self {
         self.database_input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
-    pub fn set_database_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseInputDefinition>,
-    ) -> Self {
+    pub fn set_database_input_definition(mut self, input: ::std::option::Option<crate::types::DatabaseInputDefinition>) -> Self {
         self.database_input_definition = input;
         self
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
-    pub fn get_database_input_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatabaseInputDefinition> {
+    pub fn get_database_input_definition(&self) -> &::std::option::Option<crate::types::DatabaseInputDefinition> {
         &self.database_input_definition
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>

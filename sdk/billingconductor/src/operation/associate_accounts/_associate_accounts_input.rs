@@ -22,17 +22,14 @@ impl AssociateAccountsInput {
 }
 impl AssociateAccountsInput {
     /// Creates a new builder-style object to manufacture [`AssociateAccountsInput`](crate::operation::associate_accounts::AssociateAccountsInput).
-    pub fn builder() -> crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder {
         crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAccountsInput`](crate::operation::associate_accounts::AssociateAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAccountsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,31 +61,21 @@ impl AssociateAccountsInputBuilder {
         self
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`AssociateAccountsInput`](crate::operation::associate_accounts::AssociateAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_accounts::AssociateAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_accounts::AssociateAccountsInput {
-                arn: self.arn,
-                account_ids: self.account_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_accounts::AssociateAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_accounts::AssociateAccountsInput {
+            arn: self.arn,
+            account_ids: self.account_ids,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVirtualNodeOutput`](crate::operation::update_virtual_node::UpdateVirtualNodeOutput) with field(s):
     ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::operation::update_virtual_node::UpdateVirtualNodeOutput::virtual_node): <p>A full description of the virtual node that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualNodeError>`](crate::operation::update_virtual_node::UpdateVirtualNodeError)
-    pub fn update_virtual_node(
-        &self,
-    ) -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeFluentBuilder {
-        crate::operation::update_virtual_node::builders::UpdateVirtualNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_virtual_node(&self) -> crate::operation::update_virtual_node::builders::UpdateVirtualNodeFluentBuilder {
+        crate::operation::update_virtual_node::builders::UpdateVirtualNodeFluentBuilder::new(self.handle.clone())
     }
 }

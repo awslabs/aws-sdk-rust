@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`comment(impl ::std::convert::Into<String>)`](crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::comment) / [`set_comment(Option<String>)`](crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::set_comment): <p>Optional feedback about this anomaly.</p>
     /// - On success, responds with [`SubmitFeedbackOutput`](crate::operation::submit_feedback::SubmitFeedbackOutput)
     /// - On failure, responds with [`SdkError<SubmitFeedbackError>`](crate::operation::submit_feedback::SubmitFeedbackError)
-    pub fn submit_feedback(
-        &self,
-    ) -> crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder {
-        crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn submit_feedback(&self) -> crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder {
+        crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

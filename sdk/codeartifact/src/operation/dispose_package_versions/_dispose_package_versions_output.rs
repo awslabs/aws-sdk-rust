@@ -5,12 +5,7 @@
 pub struct DisposePackageVersionsOutput {
     /// <p> A list of the package versions that were successfully disposed. </p>
     #[doc(hidden)]
-    pub successful_versions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::SuccessfulPackageVersionInfo,
-        >,
-    >,
+    pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
     /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
     /// <ul>
     /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
@@ -21,21 +16,14 @@ pub struct DisposePackageVersionsOutput {
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub failed_versions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
-    >,
+    pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }
 impl DisposePackageVersionsOutput {
     /// <p> A list of the package versions that were successfully disposed. </p>
     pub fn successful_versions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::SuccessfulPackageVersionInfo,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
         self.successful_versions.as_ref()
     }
     /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
@@ -47,11 +35,7 @@ impl DisposePackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    pub fn failed_versions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
-    > {
+    pub fn failed_versions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>> {
         self.failed_versions.as_ref()
     }
 }
@@ -62,28 +46,18 @@ impl ::aws_http::request_id::RequestId for DisposePackageVersionsOutput {
 }
 impl DisposePackageVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DisposePackageVersionsOutput`](crate::operation::dispose_package_versions::DisposePackageVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder {
         crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisposePackageVersionsOutput`](crate::operation::dispose_package_versions::DisposePackageVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisposePackageVersionsOutputBuilder {
-    pub(crate) successful_versions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::SuccessfulPackageVersionInfo,
-        >,
-    >,
-    pub(crate) failed_versions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
-    >,
+    pub(crate) successful_versions:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
+    pub(crate) failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }
 impl DisposePackageVersionsOutputBuilder {
@@ -92,11 +66,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
     ///
     /// <p> A list of the package versions that were successfully disposed. </p>
-    pub fn successful_versions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SuccessfulPackageVersionInfo,
-    ) -> Self {
+    pub fn successful_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SuccessfulPackageVersionInfo) -> Self {
         let mut hash_map = self.successful_versions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.successful_versions = ::std::option::Option::Some(hash_map);
@@ -105,12 +75,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// <p> A list of the package versions that were successfully disposed. </p>
     pub fn set_successful_versions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::SuccessfulPackageVersionInfo,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
     ) -> Self {
         self.successful_versions = input;
         self
@@ -118,12 +83,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// <p> A list of the package versions that were successfully disposed. </p>
     pub fn get_successful_versions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::SuccessfulPackageVersionInfo,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
         &self.successful_versions
     }
     /// Adds a key-value pair to `failed_versions`.
@@ -139,11 +99,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    pub fn failed_versions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PackageVersionError,
-    ) -> Self {
+    pub fn failed_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PackageVersionError) -> Self {
         let mut hash_map = self.failed_versions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_versions = ::std::option::Option::Some(hash_map);
@@ -160,9 +116,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// </ul>
     pub fn set_failed_versions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     ) -> Self {
         self.failed_versions = input;
         self
@@ -178,9 +132,7 @@ impl DisposePackageVersionsOutputBuilder {
     /// </ul>
     pub fn get_failed_versions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>> {
         &self.failed_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

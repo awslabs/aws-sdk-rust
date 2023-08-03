@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`face_details(Option<Vec<FaceDetail>>)`](crate::operation::detect_faces::DetectFacesOutput::face_details): <p>Details of each face found in the image. </p>
     ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::operation::detect_faces::DetectFacesOutput::orientation_correction): <p>The value of <code>OrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     /// - On failure, responds with [`SdkError<DetectFacesError>`](crate::operation::detect_faces::DetectFacesError)
-    pub fn detect_faces(
-        &self,
-    ) -> crate::operation::detect_faces::builders::DetectFacesFluentBuilder {
+    pub fn detect_faces(&self) -> crate::operation::detect_faces::builders::DetectFacesFluentBuilder {
         crate::operation::detect_faces::builders::DetectFacesFluentBuilder::new(self.handle.clone())
     }
 }

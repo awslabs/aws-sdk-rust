@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterDbRevisionOutput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterDbRevisionError>`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError)
-    pub fn modify_cluster_db_revision(
-        &self,
-    ) -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionFluentBuilder
-    {
+    pub fn modify_cluster_db_revision(&self) -> crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionFluentBuilder {
         crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionFluentBuilder::new(self.handle.clone())
     }
 }

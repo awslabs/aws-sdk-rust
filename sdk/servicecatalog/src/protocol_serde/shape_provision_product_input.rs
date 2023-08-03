@@ -16,9 +16,7 @@ pub fn ser_provision_product_input(
         object.key("ProvisioningArtifactId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.provisioning_artifact_name {
-        object
-            .key("ProvisioningArtifactName")
-            .string(var_5.as_str());
+        object.key("ProvisioningArtifactName").string(var_5.as_str());
     }
     if let Some(var_6) = &input.path_id {
         object.key("PathId").string(var_6.as_str());
@@ -35,10 +33,7 @@ pub fn ser_provision_product_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_provisioning_parameter::ser_provisioning_parameter(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_provisioning_parameter::ser_provisioning_parameter(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -47,10 +42,7 @@ pub fn ser_provision_product_input(
     if let Some(var_13) = &input.provisioning_preferences {
         #[allow(unused_mut)]
         let mut object_14 = object.key("ProvisioningPreferences").start_object();
-        crate::protocol_serde::shape_provisioning_preferences::ser_provisioning_preferences(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_provisioning_preferences::ser_provisioning_preferences(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.tags {

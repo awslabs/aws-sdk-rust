@@ -32,9 +32,7 @@ impl GetQueueUrlInput {
 
 /// A builder for [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueueUrlInputBuilder {
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) queue_owner_aws_account_id: ::std::option::Option<::std::string::String>,
@@ -58,18 +56,12 @@ impl GetQueueUrlInputBuilder {
         &self.queue_name
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
-    pub fn queue_owner_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn queue_owner_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_owner_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
-    pub fn set_queue_owner_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_queue_owner_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_owner_aws_account_id = input;
         self
     }
@@ -78,12 +70,7 @@ impl GetQueueUrlInputBuilder {
         &self.queue_owner_aws_account_id
     }
     /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_queue_url::GetQueueUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_queue_url::GetQueueUrlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_queue_url::GetQueueUrlInput {
             queue_name: self.queue_name,
             queue_owner_aws_account_id: self.queue_owner_aws_account_id,

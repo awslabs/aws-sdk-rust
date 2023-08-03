@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CopyWorkspaceImageOutput`](crate::operation::copy_workspace_image::CopyWorkspaceImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::copy_workspace_image::CopyWorkspaceImageOutput::image_id): <p>The identifier of the image.</p>
     /// - On failure, responds with [`SdkError<CopyWorkspaceImageError>`](crate::operation::copy_workspace_image::CopyWorkspaceImageError)
-    pub fn copy_workspace_image(
-        &self,
-    ) -> crate::operation::copy_workspace_image::builders::CopyWorkspaceImageFluentBuilder {
-        crate::operation::copy_workspace_image::builders::CopyWorkspaceImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_workspace_image(&self) -> crate::operation::copy_workspace_image::builders::CopyWorkspaceImageFluentBuilder {
+        crate::operation::copy_workspace_image::builders::CopyWorkspaceImageFluentBuilder::new(self.handle.clone())
     }
 }

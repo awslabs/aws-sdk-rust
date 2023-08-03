@@ -10,10 +10,7 @@ impl DescribePackagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_packages::DescribePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packages::DescribePackagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packages::DescribePackagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_packages();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribePackagesFluentBuilder {
         }
     }
     /// Access the DescribePackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_packages::builders::DescribePackagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_packages::builders::DescribePackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribePackagesFluentBuilder {
             crate::operation::describe_packages::DescribePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packages::DescribePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packages::DescribePackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribePackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packages::DescribePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packages::DescribePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packages::DescribePackagesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packages::DescribePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packages::DescribePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packages::DescribePackagesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribePackagesFluentBuilder {
             crate::operation::describe_packages::DescribePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packages::DescribePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packages::DescribePackagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_packages::paginator::DescribePackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_packages::paginator::DescribePackagesPaginator {
-        crate::operation::describe_packages::paginator::DescribePackagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_packages::paginator::DescribePackagesPaginator {
+        crate::operation::describe_packages::paginator::DescribePackagesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -143,17 +122,12 @@ impl DescribePackagesFluentBuilder {
         self
     }
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>> {
         self.inner.get_filters()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>

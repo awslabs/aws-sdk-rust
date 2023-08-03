@@ -36,17 +36,14 @@ impl GetSegmentImportJobsInput {
 }
 impl GetSegmentImportJobsInput {
     /// Creates a new builder-style object to manufacture [`GetSegmentImportJobsInput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder {
         crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSegmentImportJobsInput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentImportJobsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct GetSegmentImportJobsInputBuilder {
 }
 impl GetSegmentImportJobsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl GetSegmentImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentImportJobsInput`](crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput {
-                application_id: self.application_id,
-                page_size: self.page_size,
-                segment_id: self.segment_id,
-                token: self.token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_segment_import_jobs::GetSegmentImportJobsInput {
+            application_id: self.application_id,
+            page_size: self.page_size,
+            segment_id: self.segment_id,
+            token: self.token,
+        })
     }
 }

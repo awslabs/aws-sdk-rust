@@ -55,9 +55,7 @@ impl AutomaticTapeCreationRule {
 
 /// A builder for [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomaticTapeCreationRuleBuilder {
     pub(crate) tape_barcode_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -69,20 +67,14 @@ impl AutomaticTapeCreationRuleBuilder {
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn tape_barcode_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tape_barcode_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn set_tape_barcode_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tape_barcode_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_barcode_prefix = input;
         self
     }

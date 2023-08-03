@@ -31,9 +31,7 @@ impl DeletionTaskFailureReasonType {
 
 /// A builder for [`DeletionTaskFailureReasonType`](crate::types::DeletionTaskFailureReasonType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletionTaskFailureReasonTypeBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) role_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,
@@ -65,17 +63,12 @@ impl DeletionTaskFailureReasonTypeBuilder {
         self
     }
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    pub fn set_role_usage_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,
-    ) -> Self {
+    pub fn set_role_usage_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>) -> Self {
         self.role_usage_list = input;
         self
     }
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    pub fn get_role_usage_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>> {
+    pub fn get_role_usage_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>> {
         &self.role_usage_list
     }
     /// Consumes the builder and constructs a [`DeletionTaskFailureReasonType`](crate::types::DeletionTaskFailureReasonType).

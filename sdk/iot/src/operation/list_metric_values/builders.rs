@@ -10,10 +10,7 @@ impl ListMetricValuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_metric_values::ListMetricValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_metric_values();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListMetricValuesFluentBuilder {
         }
     }
     /// Access the ListMetricValues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListMetricValuesFluentBuilder {
             crate::operation::list_metric_values::ListMetricValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListMetricValuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListMetricValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_metric_values::ListMetricValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListMetricValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_metric_values::ListMetricValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListMetricValuesFluentBuilder {
             crate::operation::list_metric_values::ListMetricValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
-        crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
+        crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the thing for which security profile metric values are returned.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListMetricValuesFluentBuilder {
         self.inner.get_metric_name()
     }
     /// <p>The dimension name.</p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_name(input.into());
         self
     }
     /// <p>The dimension name.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dimension_name(input);
         self
     }
@@ -187,17 +160,12 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The dimension value operator.</p>
-    pub fn set_dimension_value_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValueOperator>,
-    ) -> Self {
+    pub fn set_dimension_value_operator(mut self, input: ::std::option::Option<crate::types::DimensionValueOperator>) -> Self {
         self.inner = self.inner.set_dimension_value_operator(input);
         self
     }
     /// <p>The dimension value operator.</p>
-    pub fn get_dimension_value_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::DimensionValueOperator> {
+    pub fn get_dimension_value_operator(&self) -> &::std::option::Option<crate::types::DimensionValueOperator> {
         self.inner.get_dimension_value_operator()
     }
     /// <p>The start of the time period for which metric values are returned.</p>
@@ -206,10 +174,7 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The start of the time period for which metric values are returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -223,10 +188,7 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The end of the time period for which metric values are returned.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

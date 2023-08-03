@@ -13,9 +13,7 @@ impl HtmlMotionGraphicsSettings {
 
 /// A builder for [`HtmlMotionGraphicsSettings`](crate::types::HtmlMotionGraphicsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HtmlMotionGraphicsSettingsBuilder {}
 impl HtmlMotionGraphicsSettingsBuilder {
     /// Consumes the builder and constructs a [`HtmlMotionGraphicsSettings`](crate::types::HtmlMotionGraphicsSettings).

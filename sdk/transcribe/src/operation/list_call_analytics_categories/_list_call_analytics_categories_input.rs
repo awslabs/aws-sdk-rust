@@ -22,16 +22,14 @@ impl ListCallAnalyticsCategoriesInput {
 }
 impl ListCallAnalyticsCategoriesInput {
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesInput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput).
-    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder{
+    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder {
         crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCallAnalyticsCategoriesInput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListCallAnalyticsCategoriesInputBuilder {
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

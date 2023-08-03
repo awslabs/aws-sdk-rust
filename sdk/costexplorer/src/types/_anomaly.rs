@@ -79,9 +79,7 @@ impl Anomaly {
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_start_date: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl AnomalyBuilder {
         &self.anomaly_id
     }
     /// <p>The first day the anomaly is detected. </p>
-    pub fn anomaly_start_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first day the anomaly is detected. </p>
-    pub fn set_anomaly_start_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_start_date = input;
         self
     }
@@ -129,18 +121,12 @@ impl AnomalyBuilder {
         &self.anomaly_start_date
     }
     /// <p>The last day the anomaly is detected. </p>
-    pub fn anomaly_end_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last day the anomaly is detected. </p>
-    pub fn set_anomaly_end_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_end_date = input;
         self
     }
@@ -149,18 +135,12 @@ impl AnomalyBuilder {
         &self.anomaly_end_date
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
-    pub fn dimension_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dimension for the anomaly (for example, an Amazon Web Service in a service monitor). </p>
-    pub fn set_dimension_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_value = input;
         self
     }
@@ -180,17 +160,12 @@ impl AnomalyBuilder {
         self
     }
     /// <p>The list of identified root causes for the anomaly. </p>
-    pub fn set_root_causes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>,
-    ) -> Self {
+    pub fn set_root_causes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootCause>>) -> Self {
         self.root_causes = input;
         self
     }
     /// <p>The list of identified root causes for the anomaly. </p>
-    pub fn get_root_causes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCause>> {
+    pub fn get_root_causes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCause>> {
         &self.root_causes
     }
     /// <p>The latest and maximum score for the anomaly. </p>
@@ -199,10 +174,7 @@ impl AnomalyBuilder {
         self
     }
     /// <p>The latest and maximum score for the anomaly. </p>
-    pub fn set_anomaly_score(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyScore>,
-    ) -> Self {
+    pub fn set_anomaly_score(mut self, input: ::std::option::Option<crate::types::AnomalyScore>) -> Self {
         self.anomaly_score = input;
         self
     }
@@ -244,10 +216,7 @@ impl AnomalyBuilder {
         self
     }
     /// <p>The feedback value. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.feedback = input;
         self
     }

@@ -30,7 +30,7 @@ impl ListSqlInjectionMatchSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder,
+    inner: crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder,
 }
 impl ListSqlInjectionMatchSetsFluentBuilder {
     /// Creates a new `ListSqlInjectionMatchSets`.
@@ -41,7 +41,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
         }
     }
     /// Access the ListSqlInjectionMatchSets as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
             crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl ListSqlInjectionMatchSetsFluentBuilder {
             crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsError>,
     > {
         self.customize_middleware().await
     }

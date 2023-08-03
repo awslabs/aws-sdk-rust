@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`address_type(Option<AddressType>)`](crate::operation::update_site_address::UpdateSiteAddressOutput::address_type): <p> The type of the address. </p>
     ///   - [`address(Option<Address>)`](crate::operation::update_site_address::UpdateSiteAddressOutput::address): <p> Information about an address. </p>
     /// - On failure, responds with [`SdkError<UpdateSiteAddressError>`](crate::operation::update_site_address::UpdateSiteAddressError)
-    pub fn update_site_address(
-        &self,
-    ) -> crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder {
-        crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_site_address(&self) -> crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder {
+        crate::operation::update_site_address::builders::UpdateSiteAddressFluentBuilder::new(self.handle.clone())
     }
 }

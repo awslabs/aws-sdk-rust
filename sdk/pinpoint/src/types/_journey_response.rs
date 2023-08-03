@@ -6,9 +6,7 @@
 pub struct JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
     #[doc(hidden)]
-    pub activities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    >,
+    pub activities: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     /// <p>The unique identifier for the application that the journey applies to.</p>
     #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
@@ -63,9 +61,7 @@ pub struct JourneyResponse {
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>This object is not used or supported.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
     #[doc(hidden)]
     pub wait_for_quiet_time: ::std::option::Option<bool>,
@@ -92,16 +88,11 @@ pub struct JourneyResponse {
     /// </note></li>
     /// </ul>
     #[doc(hidden)]
-    pub timezone_estimation_methods:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
+    pub timezone_estimation_methods: ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
 }
 impl JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn activities(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    > {
+    pub fn activities(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Activity>> {
         self.activities.as_ref()
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
@@ -170,11 +161,7 @@ impl JourneyResponse {
         self.state.as_ref()
     }
     /// <p>This object is not used or supported.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
@@ -186,9 +173,7 @@ impl JourneyResponse {
         self.refresh_on_segment_update
     }
     /// <p>The channel-specific configurations for the journey.</p>
-    pub fn journey_channel_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyChannelSettings> {
+    pub fn journey_channel_settings(&self) -> ::std::option::Option<&crate::types::JourneyChannelSettings> {
         self.journey_channel_settings.as_ref()
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
@@ -210,9 +195,7 @@ impl JourneyResponse {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    pub fn timezone_estimation_methods(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TimezoneEstimationMethodsElement]> {
+    pub fn timezone_estimation_methods(&self) -> ::std::option::Option<&[crate::types::TimezoneEstimationMethodsElement]> {
         self.timezone_estimation_methods.as_deref()
     }
 }
@@ -225,13 +208,9 @@ impl JourneyResponse {
 
 /// A builder for [`JourneyResponse`](crate::types::JourneyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyResponseBuilder {
-    pub(crate) activities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    >,
+    pub(crate) activities: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -245,18 +224,14 @@ pub struct JourneyResponseBuilder {
     pub(crate) start_activity: ::std::option::Option<::std::string::String>,
     pub(crate) start_condition: ::std::option::Option<crate::types::StartCondition>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) wait_for_quiet_time: ::std::option::Option<bool>,
     pub(crate) refresh_on_segment_update: ::std::option::Option<bool>,
-    pub(crate) journey_channel_settings:
-        ::std::option::Option<crate::types::JourneyChannelSettings>,
+    pub(crate) journey_channel_settings: ::std::option::Option<crate::types::JourneyChannelSettings>,
     pub(crate) sending_schedule: ::std::option::Option<bool>,
     pub(crate) open_hours: ::std::option::Option<crate::types::OpenHours>,
     pub(crate) closed_days: ::std::option::Option<crate::types::ClosedDays>,
-    pub(crate) timezone_estimation_methods:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
+    pub(crate) timezone_estimation_methods: ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
 }
 impl JourneyResponseBuilder {
     /// Adds a key-value pair to `activities`.
@@ -264,11 +239,7 @@ impl JourneyResponseBuilder {
     /// To override the contents of this collection use [`set_activities`](Self::set_activities).
     ///
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn activities(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Activity,
-    ) -> Self {
+    pub fn activities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Activity) -> Self {
         let mut hash_map = self.activities.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.activities = ::std::option::Option::Some(hash_map);
@@ -277,34 +248,22 @@ impl JourneyResponseBuilder {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
     pub fn set_activities(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>>,
     ) -> Self {
         self.activities = input;
         self
     }
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
-    pub fn get_activities(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Activity>,
-    > {
+    pub fn get_activities(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Activity>> {
         &self.activities
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -313,18 +272,12 @@ impl JourneyResponseBuilder {
         &self.application_id
     }
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the journey was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -347,18 +300,12 @@ impl JourneyResponseBuilder {
         &self.id
     }
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -441,18 +388,12 @@ impl JourneyResponseBuilder {
         &self.quiet_time
     }
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    pub fn refresh_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
-    pub fn set_refresh_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_refresh_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_frequency = input;
         self
     }
@@ -466,10 +407,7 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The schedule settings for the journey.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneySchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::JourneySchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -478,18 +416,12 @@ impl JourneyResponseBuilder {
         &self.schedule
     }
     /// <p>The unique identifier for the first activity in the journey.</p>
-    pub fn start_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the first activity in the journey.</p>
-    pub fn set_start_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_activity = input;
         self
     }
@@ -503,10 +435,7 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The segment that defines which users are participants in the journey.</p>
-    pub fn set_start_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StartCondition>,
-    ) -> Self {
+    pub fn set_start_condition(mut self, input: ::std::option::Option<crate::types::StartCondition>) -> Self {
         self.start_condition = input;
         self
     }
@@ -554,32 +483,19 @@ impl JourneyResponseBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>This object is not used or supported.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>This object is not used or supported.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>This object is not used or supported.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
@@ -616,17 +532,12 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The channel-specific configurations for the journey.</p>
-    pub fn set_journey_channel_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyChannelSettings>,
-    ) -> Self {
+    pub fn set_journey_channel_settings(mut self, input: ::std::option::Option<crate::types::JourneyChannelSettings>) -> Self {
         self.journey_channel_settings = input;
         self
     }
     /// <p>The channel-specific configurations for the journey.</p>
-    pub fn get_journey_channel_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::JourneyChannelSettings> {
+    pub fn get_journey_channel_settings(&self) -> &::std::option::Option<crate::types::JourneyChannelSettings> {
         &self.journey_channel_settings
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
@@ -663,10 +574,7 @@ impl JourneyResponseBuilder {
         self
     }
     /// <p>The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
-    pub fn set_closed_days(
-        mut self,
-        input: ::std::option::Option<crate::types::ClosedDays>,
-    ) -> Self {
+    pub fn set_closed_days(mut self, input: ::std::option::Option<crate::types::ClosedDays>) -> Self {
         self.closed_days = input;
         self
     }
@@ -685,10 +593,7 @@ impl JourneyResponseBuilder {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    pub fn timezone_estimation_methods(
-        mut self,
-        input: crate::types::TimezoneEstimationMethodsElement,
-    ) -> Self {
+    pub fn timezone_estimation_methods(mut self, input: crate::types::TimezoneEstimationMethodsElement) -> Self {
         let mut v = self.timezone_estimation_methods.unwrap_or_default();
         v.push(input);
         self.timezone_estimation_methods = ::std::option::Option::Some(v);
@@ -703,9 +608,7 @@ impl JourneyResponseBuilder {
     /// </ul>
     pub fn set_timezone_estimation_methods(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>,
     ) -> Self {
         self.timezone_estimation_methods = input;
         self
@@ -717,10 +620,7 @@ impl JourneyResponseBuilder {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    pub fn get_timezone_estimation_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>>
-    {
+    pub fn get_timezone_estimation_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimezoneEstimationMethodsElement>> {
         &self.timezone_estimation_methods
     }
     /// Consumes the builder and constructs a [`JourneyResponse`](crate::types::JourneyResponse).

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateConfigurationOutput {
 }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
-        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
+        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

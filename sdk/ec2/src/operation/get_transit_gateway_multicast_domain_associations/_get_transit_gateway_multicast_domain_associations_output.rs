@@ -5,9 +5,7 @@
 pub struct GetTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
     #[doc(hidden)]
-    pub multicast_domain_associations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>,
-    >,
+    pub multicast_domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct GetTransitGatewayMulticastDomainAssociationsOutput {
 }
 impl GetTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
-    pub fn multicast_domain_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastDomainAssociation]> {
+    pub fn multicast_domain_associations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastDomainAssociation]> {
         self.multicast_domain_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -32,20 +28,18 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayMulticastDomainAssoc
 }
 impl GetTransitGatewayMulticastDomainAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsOutputBuilder
+    {
         crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
-    pub(crate) multicast_domain_associations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>,
-    >,
+    pub(crate) multicast_domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +49,7 @@ impl GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_multicast_domain_associations`](Self::set_multicast_domain_associations).
     ///
     /// <p>Information about the multicast domain associations.</p>
-    pub fn multicast_domain_associations(
-        mut self,
-        input: crate::types::TransitGatewayMulticastDomainAssociation,
-    ) -> Self {
+    pub fn multicast_domain_associations(mut self, input: crate::types::TransitGatewayMulticastDomainAssociation) -> Self {
         let mut v = self.multicast_domain_associations.unwrap_or_default();
         v.push(input);
         self.multicast_domain_associations = ::std::option::Option::Some(v);
@@ -67,9 +58,7 @@ impl GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
     /// <p>Information about the multicast domain associations.</p>
     pub fn set_multicast_domain_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>>,
     ) -> Self {
         self.multicast_domain_associations = input;
         self
@@ -77,9 +66,7 @@ impl GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
     /// <p>Information about the multicast domain associations.</p>
     pub fn get_multicast_domain_associations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>> {
         &self.multicast_domain_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -106,12 +93,10 @@ impl GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput {
         crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput {
-            multicast_domain_associations: self.multicast_domain_associations
-            ,
-            next_token: self.next_token
-            ,
+            multicast_domain_associations: self.multicast_domain_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

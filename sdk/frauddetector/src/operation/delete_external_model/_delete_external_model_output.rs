@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteExternalModelOutput {
 }
 impl DeleteExternalModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExternalModelOutput`](crate::operation::delete_external_model::DeleteExternalModelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_external_model::builders::DeleteExternalModelOutputBuilder {
-        crate::operation::delete_external_model::builders::DeleteExternalModelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_external_model::builders::DeleteExternalModelOutputBuilder {
+        crate::operation::delete_external_model::builders::DeleteExternalModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExternalModelOutput`](crate::operation::delete_external_model::DeleteExternalModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExternalModelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,10 +12,7 @@ pub fn ser_rule_based_matching_request(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_matching_rule::ser_matching_rule(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_matching_rule::ser_matching_rule(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -36,28 +33,19 @@ pub fn ser_rule_based_matching_request(
     if let Some(var_8) = &input.attribute_types_selector {
         #[allow(unused_mut)]
         let mut object_9 = object.key("AttributeTypesSelector").start_object();
-        crate::protocol_serde::shape_attribute_types_selector::ser_attribute_types_selector(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_attribute_types_selector::ser_attribute_types_selector(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.conflict_resolution {
         #[allow(unused_mut)]
         let mut object_11 = object.key("ConflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.exporting_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("ExportingConfig").start_object();
-        crate::protocol_serde::shape_exporting_config::ser_exporting_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_exporting_config::ser_exporting_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())

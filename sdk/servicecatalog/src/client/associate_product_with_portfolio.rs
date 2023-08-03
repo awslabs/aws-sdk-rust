@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`source_portfolio_id(impl ::std::convert::Into<String>)`](crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioFluentBuilder::source_portfolio_id) / [`set_source_portfolio_id(Option<String>)`](crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioFluentBuilder::set_source_portfolio_id): <p>The identifier of the source portfolio.</p>
     /// - On success, responds with [`AssociateProductWithPortfolioOutput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput)
     /// - On failure, responds with [`SdkError<AssociateProductWithPortfolioError>`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError)
-    pub fn associate_product_with_portfolio(&self) -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioFluentBuilder{
+    pub fn associate_product_with_portfolio(
+        &self,
+    ) -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioFluentBuilder {
         crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateUserAccessLoggingSettingsOut
 }
 impl AssociateUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsOutput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder {
         crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserAccessLoggingSettingsOutput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserAccessLoggingSettingsOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
@@ -59,25 +57,17 @@ impl AssociateUserAccessLoggingSettingsOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = input;
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn get_user_access_logging_settings_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_access_logging_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,12 +80,10 @@ impl AssociateUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsOutput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput).
-    pub fn build(self) -> crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput{
+    pub fn build(self) -> crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
         crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
-            portal_arn: self.portal_arn
-            ,
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn
-            ,
+            portal_arn: self.portal_arn,
+            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             _request_id: self._request_id,
         }
     }

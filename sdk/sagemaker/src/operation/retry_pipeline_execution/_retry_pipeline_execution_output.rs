@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for RetryPipelineExecutionOutput {
 }
 impl RetryPipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`RetryPipelineExecutionOutput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionOutputBuilder {
         crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RetryPipelineExecutionOutput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetryPipelineExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }

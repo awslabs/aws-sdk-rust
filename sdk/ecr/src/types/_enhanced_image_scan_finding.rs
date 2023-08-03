@@ -21,8 +21,7 @@ pub struct EnhancedImageScanFinding {
     pub last_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
     #[doc(hidden)]
-    pub package_vulnerability_details:
-        ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
+    pub package_vulnerability_details: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
     #[doc(hidden)]
     pub remediation: ::std::option::Option<crate::types::Remediation>,
@@ -73,9 +72,7 @@ impl EnhancedImageScanFinding {
         self.last_observed_at.as_ref()
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn package_vulnerability_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PackageVulnerabilityDetails> {
+    pub fn package_vulnerability_details(&self) -> ::std::option::Option<&crate::types::PackageVulnerabilityDetails> {
         self.package_vulnerability_details.as_ref()
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
@@ -124,17 +121,14 @@ impl EnhancedImageScanFinding {
 
 /// A builder for [`EnhancedImageScanFinding`](crate::types::EnhancedImageScanFinding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnhancedImageScanFindingBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) finding_arn: ::std::option::Option<::std::string::String>,
     pub(crate) first_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) package_vulnerability_details:
-        ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
+    pub(crate) package_vulnerability_details: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
     pub(crate) remediation: ::std::option::Option<crate::types::Remediation>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) score: ::std::option::Option<f64>,
@@ -147,18 +141,12 @@ pub struct EnhancedImageScanFindingBuilder {
 }
 impl EnhancedImageScanFindingBuilder {
     /// <p>The Amazon Web Services account ID associated with the image.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with the image.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -200,10 +188,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>The date and time that the finding was first observed.</p>
-    pub fn set_first_observed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_observed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_observed_at = input;
         self
     }
@@ -217,10 +202,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>The date and time that the finding was last observed.</p>
-    pub fn set_last_observed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_observed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_observed_at = input;
         self
     }
@@ -229,25 +211,17 @@ impl EnhancedImageScanFindingBuilder {
         &self.last_observed_at
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn package_vulnerability_details(
-        mut self,
-        input: crate::types::PackageVulnerabilityDetails,
-    ) -> Self {
+    pub fn package_vulnerability_details(mut self, input: crate::types::PackageVulnerabilityDetails) -> Self {
         self.package_vulnerability_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn set_package_vulnerability_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
-    ) -> Self {
+    pub fn set_package_vulnerability_details(mut self, input: ::std::option::Option<crate::types::PackageVulnerabilityDetails>) -> Self {
         self.package_vulnerability_details = input;
         self
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn get_package_vulnerability_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageVulnerabilityDetails> {
+    pub fn get_package_vulnerability_details(&self) -> &::std::option::Option<crate::types::PackageVulnerabilityDetails> {
         &self.package_vulnerability_details
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
@@ -256,10 +230,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
-    pub fn set_remediation(
-        mut self,
-        input: ::std::option::Option<crate::types::Remediation>,
-    ) -> Self {
+    pub fn set_remediation(mut self, input: ::std::option::Option<crate::types::Remediation>) -> Self {
         self.remediation = input;
         self
     }
@@ -279,10 +250,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>Contains information on the resources involved in a finding.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -310,10 +278,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    pub fn set_score_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ScoreDetails>,
-    ) -> Self {
+    pub fn set_score_details(mut self, input: ::std::option::Option<crate::types::ScoreDetails>) -> Self {
         self.score_details = input;
         self
     }
@@ -383,10 +348,7 @@ impl EnhancedImageScanFindingBuilder {
         self
     }
     /// <p>The date and time the finding was last updated at.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

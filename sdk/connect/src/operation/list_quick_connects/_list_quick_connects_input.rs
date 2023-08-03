@@ -36,23 +36,19 @@ impl ListQuickConnectsInput {
 }
 impl ListQuickConnectsInput {
     /// Creates a new builder-style object to manufacture [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
-    pub fn builder(
-    ) -> crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
+    pub fn builder() -> crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder {
         crate::operation::list_quick_connects::builders::ListQuickConnectsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) quick_connect_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
+    pub(crate) quick_connect_types: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
 }
 impl ListQuickConnectsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -109,33 +105,23 @@ impl ListQuickConnectsInputBuilder {
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn set_quick_connect_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>,
-    ) -> Self {
+    pub fn set_quick_connect_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>) -> Self {
         self.quick_connect_types = input;
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn get_quick_connect_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
+    pub fn get_quick_connect_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
         &self.quick_connect_types
     }
     /// Consumes the builder and constructs a [`ListQuickConnectsInput`](crate::operation::list_quick_connects::ListQuickConnectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_quick_connects::ListQuickConnectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_quick_connects::ListQuickConnectsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                quick_connect_types: self.quick_connect_types,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_quick_connects::ListQuickConnectsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_quick_connects::ListQuickConnectsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            quick_connect_types: self.quick_connect_types,
+        })
     }
 }

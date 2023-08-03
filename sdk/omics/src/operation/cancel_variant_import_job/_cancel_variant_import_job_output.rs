@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelVariantImportJobOutput {
 }
 impl CancelVariantImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelVariantImportJobOutput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobOutputBuilder {
         crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelVariantImportJobOutput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelVariantImportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CancelVariantImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelVariantImportJobOutput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput {
+    pub fn build(self) -> crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput {
         crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput {
             _request_id: self._request_id,
         }

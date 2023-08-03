@@ -27,7 +27,7 @@ impl ForgetSmartHomeAppliancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ForgetSmartHomeAppliancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder,
+    inner: crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder,
 }
 impl ForgetSmartHomeAppliancesFluentBuilder {
     /// Creates a new `ForgetSmartHomeAppliances`.
@@ -38,7 +38,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
         }
     }
     /// Access the ForgetSmartHomeAppliances as a reference.
-    pub fn as_input(&self) -> &crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
             crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ForgetSmartHomeAppliancesFluentBuilder {
             crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError>,
     > {
         self.customize_middleware().await
     }

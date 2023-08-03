@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput) with field(s):
     ///   - [`ice_server_list(Option<Vec<IceServer>>)`](crate::operation::get_ice_server_config::GetIceServerConfigOutput::ice_server_list): <p>The list of ICE server information objects.</p>
     /// - On failure, responds with [`SdkError<GetIceServerConfigError>`](crate::operation::get_ice_server_config::GetIceServerConfigError)
-    pub fn get_ice_server_config(
-        &self,
-    ) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder {
-        crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ice_server_config(&self) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder {
+        crate::operation::get_ice_server_config::builders::GetIceServerConfigFluentBuilder::new(self.handle.clone())
     }
 }

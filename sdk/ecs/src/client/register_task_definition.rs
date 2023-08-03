@@ -24,10 +24,7 @@ impl super::Client {
     ///   - [`task_definition(Option<TaskDefinition>)`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput::task_definition): <p>The full description of the registered task definition.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput::tags): <p>The list of tags associated with the task definition.</p>
     /// - On failure, responds with [`SdkError<RegisterTaskDefinitionError>`](crate::operation::register_task_definition::RegisterTaskDefinitionError)
-    pub fn register_task_definition(
-        &self,
-    ) -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionFluentBuilder
-    {
+    pub fn register_task_definition(&self) -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionFluentBuilder {
         crate::operation::register_task_definition::builders::RegisterTaskDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

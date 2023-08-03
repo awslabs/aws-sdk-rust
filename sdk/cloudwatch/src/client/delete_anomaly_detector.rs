@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`metric_math_anomaly_detector(MetricMathAnomalyDetector)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::metric_math_anomaly_detector) / [`set_metric_math_anomaly_detector(Option<MetricMathAnomalyDetector>)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::set_metric_math_anomaly_detector): <p>The metric math anomaly detector to be deleted.</p>  <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code>,</p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
     /// - On success, responds with [`DeleteAnomalyDetectorOutput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<DeleteAnomalyDetectorError>`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError)
-    pub fn delete_anomaly_detector(
-        &self,
-    ) -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder
-    {
-        crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_anomaly_detector(&self) -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder {
+        crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

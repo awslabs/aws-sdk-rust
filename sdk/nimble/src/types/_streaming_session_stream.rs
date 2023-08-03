@@ -51,9 +51,7 @@ impl StreamingSessionStream {
         self.state.as_ref()
     }
     /// <p>The streaming session stream status code.</p>
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingSessionStreamStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::StreamingSessionStreamStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The stream ID.</p>
@@ -106,10 +104,7 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -137,10 +132,7 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }
@@ -168,10 +160,7 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The current state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSessionStreamState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::StreamingSessionStreamState>) -> Self {
         self.state = input;
         self
     }
@@ -185,17 +174,12 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The streaming session stream status code.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSessionStreamStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StreamingSessionStreamStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The streaming session stream status code.</p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingSessionStreamStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StreamingSessionStreamStatusCode> {
         &self.status_code
     }
     /// <p>The stream ID.</p>

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AgentUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for AgentUpdateStatus {
             "STAGING" => AgentUpdateStatus::Staging,
             "UPDATED" => AgentUpdateStatus::Updated,
             "UPDATING" => AgentUpdateStatus::Updating,
-            other => {
-                AgentUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AgentUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl AgentUpdateStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING",
-        ]
+        &["FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for AgentUpdateStatus {

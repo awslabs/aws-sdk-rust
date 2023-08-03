@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteSubnetOutput`](crate::operation::delete_subnet::DeleteSubnetOutput)
     /// - On failure, responds with [`SdkError<DeleteSubnetError>`](crate::operation::delete_subnet::DeleteSubnetError)
-    pub fn delete_subnet(
-        &self,
-    ) -> crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder {
-        crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_subnet(&self) -> crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder {
+        crate::operation::delete_subnet::builders::DeleteSubnetFluentBuilder::new(self.handle.clone())
     }
 }

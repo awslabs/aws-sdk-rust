@@ -37,9 +37,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::import_image::ImportImageOutput::tags): <p>Any tags assigned to the import image task.</p>
     ///   - [`usage_operation(Option<String>)`](crate::operation::import_image::ImportImageOutput::usage_operation): <p>The usage operation value.</p>
     /// - On failure, responds with [`SdkError<ImportImageError>`](crate::operation::import_image::ImportImageError)
-    pub fn import_image(
-        &self,
-    ) -> crate::operation::import_image::builders::ImportImageFluentBuilder {
+    pub fn import_image(&self) -> crate::operation::import_image::builders::ImportImageFluentBuilder {
         crate::operation::import_image::builders::ImportImageFluentBuilder::new(self.handle.clone())
     }
 }

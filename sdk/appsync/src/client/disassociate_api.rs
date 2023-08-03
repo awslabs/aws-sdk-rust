@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DisassociateApiOutput`](crate::operation::disassociate_api::DisassociateApiOutput)
     /// - On failure, responds with [`SdkError<DisassociateApiError>`](crate::operation::disassociate_api::DisassociateApiError)
-    pub fn disassociate_api(
-        &self,
-    ) -> crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder {
-        crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_api(&self) -> crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder {
+        crate::operation::disassociate_api::builders::DisassociateApiFluentBuilder::new(self.handle.clone())
     }
 }

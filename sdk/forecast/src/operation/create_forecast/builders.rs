@@ -10,10 +10,7 @@ impl CreateForecastInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_forecast::CreateForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_forecast::CreateForecastError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_forecast();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl CreateForecastFluentBuilder {
         }
     }
     /// Access the CreateForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_forecast::builders::CreateForecastInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_forecast::builders::CreateForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl CreateForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -123,18 +115,12 @@ impl CreateForecastFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>A name for the forecast.</p>
-    pub fn forecast_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_name(input.into());
         self
     }
     /// <p>A name for the forecast.</p>
-    pub fn set_forecast_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_name(input);
         self
     }
@@ -143,18 +129,12 @@ impl CreateForecastFluentBuilder {
         self.inner.get_forecast_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }
@@ -168,27 +148,19 @@ impl CreateForecastFluentBuilder {
     ///
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    pub fn forecast_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_types(input.into());
         self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    pub fn set_forecast_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_forecast_types(input);
         self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    pub fn get_forecast_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
     }
     /// Appends an item to `Tags`.
@@ -221,10 +193,7 @@ impl CreateForecastFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -260,10 +229,7 @@ impl CreateForecastFluentBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn set_time_series_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
-    ) -> Self {
+    pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.inner = self.inner.set_time_series_selector(input);
         self
     }
@@ -274,9 +240,7 @@ impl CreateForecastFluentBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn get_time_series_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+    pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         self.inner.get_time_series_selector()
     }
 }

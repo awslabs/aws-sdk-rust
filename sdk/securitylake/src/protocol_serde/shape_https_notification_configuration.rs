@@ -10,9 +10,7 @@ pub fn ser_https_notification_configuration(
         object.key("authorizationApiKeyName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.authorization_api_key_value {
-        object
-            .key("authorizationApiKeyValue")
-            .string(var_3.as_str());
+        object.key("authorizationApiKeyValue").string(var_3.as_str());
     }
     if let Some(var_4) = &input.http_method {
         object.key("httpMethod").string(var_4.as_str());

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`ecs_clusters(Option<Vec<EcsCluster>>)`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput::ecs_clusters): <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput::next_token): <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeEcsClustersError>`](crate::operation::describe_ecs_clusters::DescribeEcsClustersError)
-    pub fn describe_ecs_clusters(
-        &self,
-    ) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder {
-        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ecs_clusters(&self) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder {
+        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::new(self.handle.clone())
     }
 }

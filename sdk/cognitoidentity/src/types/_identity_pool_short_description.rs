@@ -30,27 +30,19 @@ impl IdentityPoolShortDescription {
 
 /// A builder for [`IdentityPoolShortDescription`](crate::types::IdentityPoolShortDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityPoolShortDescriptionBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl IdentityPoolShortDescriptionBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl IdentityPoolShortDescriptionBuilder {
         &self.identity_pool_id
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that you provide.</p>
-    pub fn set_identity_pool_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_name = input;
         self
     }

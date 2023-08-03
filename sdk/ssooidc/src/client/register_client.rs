@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`authorization_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::authorization_endpoint): <p>The endpoint where the client can request authorization.</p>
     ///   - [`token_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::token_endpoint): <p>The endpoint where the client can get an access token.</p>
     /// - On failure, responds with [`SdkError<RegisterClientError>`](crate::operation::register_client::RegisterClientError)
-    pub fn register_client(
-        &self,
-    ) -> crate::operation::register_client::builders::RegisterClientFluentBuilder {
-        crate::operation::register_client::builders::RegisterClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_client(&self) -> crate::operation::register_client::builders::RegisterClientFluentBuilder {
+        crate::operation::register_client::builders::RegisterClientFluentBuilder::new(self.handle.clone())
     }
 }

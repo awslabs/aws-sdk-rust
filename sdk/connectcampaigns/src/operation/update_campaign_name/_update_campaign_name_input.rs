@@ -23,17 +23,14 @@ impl UpdateCampaignNameInput {
 }
 impl UpdateCampaignNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
-    pub fn builder(
-    ) -> crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder {
+    pub fn builder() -> crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder {
         crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignNameInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl UpdateCampaignNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign_name::UpdateCampaignNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_campaign_name::UpdateCampaignNameInput {
-                id: self.id,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_campaign_name::UpdateCampaignNameInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_campaign_name::UpdateCampaignNameInput {
+            id: self.id,
+            name: self.name,
+        })
     }
 }

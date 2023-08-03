@@ -47,10 +47,7 @@ impl ModifySubnetAttributeFluentBuilder {
         }
     }
     /// Access the ModifySubnetAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_subnet_attribute::builders::ModifySubnetAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +59,7 @@ impl ModifySubnetAttributeFluentBuilder {
             crate::operation::modify_subnet_attribute::ModifySubnetAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_subnet_attribute::ModifySubnetAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +69,7 @@ impl ModifySubnetAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +78,7 @@ impl ModifySubnetAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_subnet_attribute::ModifySubnetAttributeError>,
     > {
         let op = self
             .inner
@@ -111,9 +101,7 @@ impl ModifySubnetAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_subnet_attribute::ModifySubnetAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -127,35 +115,25 @@ impl ModifySubnetAttributeFluentBuilder {
             crate::operation::modify_subnet_attribute::ModifySubnetAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_subnet_attribute::ModifySubnetAttributeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
-    pub fn assign_ipv6_address_on_creation(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn assign_ipv6_address_on_creation(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.inner = self.inner.assign_ipv6_address_on_creation(input);
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
-    pub fn set_assign_ipv6_address_on_creation(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_assign_ipv6_address_on_creation(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_assign_ipv6_address_on_creation(input);
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>
-    pub fn get_assign_ipv6_address_on_creation(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_assign_ipv6_address_on_creation(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_assign_ipv6_address_on_creation()
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>
@@ -164,17 +142,12 @@ impl ModifySubnetAttributeFluentBuilder {
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>
-    pub fn set_map_public_ip_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_map_public_ip_on_launch(input);
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a public IPv4 address.</p>
-    pub fn get_map_public_ip_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_map_public_ip_on_launch()
     }
     /// <p>The ID of the subnet.</p>
@@ -193,44 +166,30 @@ impl ModifySubnetAttributeFluentBuilder {
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a customer-owned IPv4 address.</p>
     /// <p>When this value is <code>true</code>, you must specify the customer-owned IP pool using <code>CustomerOwnedIpv4Pool</code>.</p>
-    pub fn map_customer_owned_ip_on_launch(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn map_customer_owned_ip_on_launch(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.inner = self.inner.map_customer_owned_ip_on_launch(input);
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a customer-owned IPv4 address.</p>
     /// <p>When this value is <code>true</code>, you must specify the customer-owned IP pool using <code>CustomerOwnedIpv4Pool</code>.</p>
-    pub fn set_map_customer_owned_ip_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_map_customer_owned_ip_on_launch(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_map_customer_owned_ip_on_launch(input);
         self
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified subnet should be assigned a customer-owned IPv4 address.</p>
     /// <p>When this value is <code>true</code>, you must specify the customer-owned IP pool using <code>CustomerOwnedIpv4Pool</code>.</p>
-    pub fn get_map_customer_owned_ip_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_map_customer_owned_ip_on_launch(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_map_customer_owned_ip_on_launch()
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     /// <p>You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_owned_ipv4_pool(input.into());
         self
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     /// <p>You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_owned_ipv4_pool(input);
         self
     }
@@ -245,10 +204,7 @@ impl ModifySubnetAttributeFluentBuilder {
         self
     }
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
-    pub fn set_enable_dns64(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns64(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_enable_dns64(input);
         self
     }
@@ -257,79 +213,46 @@ impl ModifySubnetAttributeFluentBuilder {
         self.inner.get_enable_dns64()
     }
     /// <p>The type of hostname to assign to instances in the subnet at launch. For IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6 only subnets, an instance DNS name must be based on the instance ID (resource-name).</p>
-    pub fn private_dns_hostname_type_on_launch(
-        mut self,
-        input: crate::types::HostnameType,
-    ) -> Self {
+    pub fn private_dns_hostname_type_on_launch(mut self, input: crate::types::HostnameType) -> Self {
         self.inner = self.inner.private_dns_hostname_type_on_launch(input);
         self
     }
     /// <p>The type of hostname to assign to instances in the subnet at launch. For IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6 only subnets, an instance DNS name must be based on the instance ID (resource-name).</p>
-    pub fn set_private_dns_hostname_type_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::HostnameType>,
-    ) -> Self {
+    pub fn set_private_dns_hostname_type_on_launch(mut self, input: ::std::option::Option<crate::types::HostnameType>) -> Self {
         self.inner = self.inner.set_private_dns_hostname_type_on_launch(input);
         self
     }
     /// <p>The type of hostname to assign to instances in the subnet at launch. For IPv4-only and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6 only subnets, an instance DNS name must be based on the instance ID (resource-name).</p>
-    pub fn get_private_dns_hostname_type_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::HostnameType> {
+    pub fn get_private_dns_hostname_type_on_launch(&self) -> &::std::option::Option<crate::types::HostnameType> {
         self.inner.get_private_dns_hostname_type_on_launch()
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn enable_resource_name_dns_a_record_on_launch(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .enable_resource_name_dns_a_record_on_launch(input);
+    pub fn enable_resource_name_dns_a_record_on_launch(mut self, input: crate::types::AttributeBooleanValue) -> Self {
+        self.inner = self.inner.enable_resource_name_dns_a_record_on_launch(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_enable_resource_name_dns_a_record_on_launch(input);
+    pub fn set_enable_resource_name_dns_a_record_on_launch(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+        self.inner = self.inner.set_enable_resource_name_dns_a_record_on_launch(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn get_enable_resource_name_dns_a_record_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_resource_name_dns_a_record_on_launch(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_enable_resource_name_dns_a_record_on_launch()
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn enable_resource_name_dns_aaaa_record_on_launch(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .enable_resource_name_dns_aaaa_record_on_launch(input);
+    pub fn enable_resource_name_dns_aaaa_record_on_launch(mut self, input: crate::types::AttributeBooleanValue) -> Self {
+        self.inner = self.inner.enable_resource_name_dns_aaaa_record_on_launch(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_enable_resource_name_dns_aaaa_record_on_launch(input);
+    pub fn set_enable_resource_name_dns_aaaa_record_on_launch(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
+        self.inner = self.inner.set_enable_resource_name_dns_aaaa_record_on_launch(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn get_enable_resource_name_dns_aaaa_record_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
-        self.inner
-            .get_enable_resource_name_dns_aaaa_record_on_launch()
+    pub fn get_enable_resource_name_dns_aaaa_record_on_launch(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        self.inner.get_enable_resource_name_dns_aaaa_record_on_launch()
     }
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0). </p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
@@ -346,25 +269,17 @@ impl ModifySubnetAttributeFluentBuilder {
         self.inner.get_enable_lni_at_device_index()
     }
     /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
-    pub fn disable_lni_at_device_index(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn disable_lni_at_device_index(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.inner = self.inner.disable_lni_at_device_index(input);
         self
     }
     /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
-    pub fn set_disable_lni_at_device_index(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_disable_lni_at_device_index(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_disable_lni_at_device_index(input);
         self
     }
     /// <p> Specify <code>true</code> to indicate that local network interfaces at the current position should be disabled. </p>
-    pub fn get_disable_lni_at_device_index(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_disable_lni_at_device_index(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_disable_lni_at_device_index()
     }
 }

@@ -35,12 +35,9 @@ impl ListExperiencesOutput {
 
 /// A builder for [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperiencesOutputBuilder {
-    pub(crate) summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListExperiencesOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>

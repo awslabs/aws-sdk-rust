@@ -19,8 +19,7 @@ pub fn ser_iam_instance_profile_specification(
 
 pub fn de_iam_instance_profile_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::IamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::IamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IamInstanceProfileSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

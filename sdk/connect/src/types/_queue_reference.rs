@@ -30,9 +30,7 @@ impl QueueReference {
 
 /// A builder for [`QueueReference`](crate::types::QueueReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueueReferenceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl QueueReferenceBuilder {
     }
     /// Consumes the builder and constructs a [`QueueReference`](crate::types::QueueReference).
     pub fn build(self) -> crate::types::QueueReference {
-        crate::types::QueueReference {
-            id: self.id,
-            arn: self.arn,
-        }
+        crate::types::QueueReference { id: self.id, arn: self.arn }
     }
 }

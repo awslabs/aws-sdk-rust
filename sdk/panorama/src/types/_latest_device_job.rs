@@ -37,9 +37,7 @@ impl LatestDeviceJob {
 
 /// A builder for [`LatestDeviceJob`](crate::types::LatestDeviceJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LatestDeviceJobBuilder {
     pub(crate) image_version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::UpdateProgress>,
@@ -47,18 +45,12 @@ pub struct LatestDeviceJobBuilder {
 }
 impl LatestDeviceJobBuilder {
     /// <p>The target version of the device software.</p>
-    pub fn image_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target version of the device software.</p>
-    pub fn set_image_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_version = input;
         self
     }
@@ -72,10 +64,7 @@ impl LatestDeviceJobBuilder {
         self
     }
     /// <p>Status of the latest device job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateProgress>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateProgress>) -> Self {
         self.status = input;
         self
     }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInsightsByAssessmentOutput {
 }
 impl GetInsightsByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder {
         crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightsByAssessmentOutputBuilder {
     pub(crate) insights: ::std::option::Option<crate::types::InsightsByAssessment>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetInsightsByAssessmentOutputBuilder {
         self
     }
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
-    pub fn set_insights(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightsByAssessment>,
-    ) -> Self {
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::InsightsByAssessment>) -> Self {
         self.insights = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetInsightsByAssessmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
+    pub fn build(self) -> crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
         crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
             insights: self.insights,
             _request_id: self._request_id,

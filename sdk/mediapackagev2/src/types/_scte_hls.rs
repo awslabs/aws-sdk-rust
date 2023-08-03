@@ -31,9 +31,7 @@ impl ScteHls {
 
 /// A builder for [`ScteHls`](crate::types::ScteHls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScteHlsBuilder {
     pub(crate) ad_marker_hls: ::std::option::Option<crate::types::AdMarkerHls>,
 }
@@ -52,10 +50,7 @@ impl ScteHlsBuilder {
     /// <ul>
     /// <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and program transition events in TS and CMAF manifests. If you use DATERANGE, you must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more about DATERANGE, see <a href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35 Ad Marker EXT-X-DATERANGE</a>.</p> </li>
     /// </ul>
-    pub fn set_ad_marker_hls(
-        mut self,
-        input: ::std::option::Option<crate::types::AdMarkerHls>,
-    ) -> Self {
+    pub fn set_ad_marker_hls(mut self, input: ::std::option::Option<crate::types::AdMarkerHls>) -> Self {
         self.ad_marker_hls = input;
         self
     }

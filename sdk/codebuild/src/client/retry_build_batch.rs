@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RetryBuildBatchOutput`](crate::operation::retry_build_batch::RetryBuildBatchOutput) with field(s):
     ///   - [`build_batch(Option<BuildBatch>)`](crate::operation::retry_build_batch::RetryBuildBatchOutput::build_batch): <p>Contains information about a batch build.</p>
     /// - On failure, responds with [`SdkError<RetryBuildBatchError>`](crate::operation::retry_build_batch::RetryBuildBatchError)
-    pub fn retry_build_batch(
-        &self,
-    ) -> crate::operation::retry_build_batch::builders::RetryBuildBatchFluentBuilder {
-        crate::operation::retry_build_batch::builders::RetryBuildBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retry_build_batch(&self) -> crate::operation::retry_build_batch::builders::RetryBuildBatchFluentBuilder {
+        crate::operation::retry_build_batch::builders::RetryBuildBatchFluentBuilder::new(self.handle.clone())
     }
 }

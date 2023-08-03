@@ -33,7 +33,10 @@ pub fn ser_create_open_zfs_volume_configuration(
     if let Some(var_7) = &input.origin_snapshot {
         #[allow(unused_mut)]
         let mut object_8 = object.key("OriginSnapshot").start_object();
-        crate::protocol_serde::shape_create_open_zfs_origin_snapshot_configuration::ser_create_open_zfs_origin_snapshot_configuration(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_create_open_zfs_origin_snapshot_configuration::ser_create_open_zfs_origin_snapshot_configuration(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.read_only {
@@ -45,10 +48,7 @@ pub fn ser_create_open_zfs_volume_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_open_zfs_nfs_export::ser_open_zfs_nfs_export(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_open_zfs_nfs_export::ser_open_zfs_nfs_export(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

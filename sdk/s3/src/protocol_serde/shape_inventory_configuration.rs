@@ -102,10 +102,7 @@ pub fn ser_inventory_configuration(
     let mut scope = writer.finish();
     if let Some(var_8) = &input.destination {
         let inner_writer = scope.start_el("Destination");
-        crate::protocol_serde::shape_inventory_destination::ser_inventory_destination(
-            var_8,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_inventory_destination::ser_inventory_destination(var_8, inner_writer)?
     }
     {
         let mut inner_writer = scope.start_el("IsEnabled").finish();
@@ -134,10 +131,7 @@ pub fn ser_inventory_configuration(
     }
     if let Some(var_14) = &input.schedule {
         let inner_writer = scope.start_el("Schedule");
-        crate::protocol_serde::shape_inventory_schedule::ser_inventory_schedule(
-            var_14,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_inventory_schedule::ser_inventory_schedule(var_14, inner_writer)?
     }
     scope.finish();
     Ok(())

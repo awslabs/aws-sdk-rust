@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_data_set::UpdateDataSetOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_data_set::UpdateDataSetOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSetError>`](crate::operation::update_data_set::UpdateDataSetError)
-    pub fn update_data_set(
-        &self,
-    ) -> crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder {
-        crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_set(&self) -> crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder {
+        crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::new(self.handle.clone())
     }
 }

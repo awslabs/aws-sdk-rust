@@ -10,9 +10,7 @@ pub struct TargetConfiguration {
 }
 impl TargetConfiguration {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    pub fn timestream_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimestreamConfiguration> {
+    pub fn timestream_configuration(&self) -> ::std::option::Option<&crate::types::TimestreamConfiguration> {
         self.timestream_configuration.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl TargetConfiguration {
 
 /// A builder for [`TargetConfiguration`](crate::types::TargetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetConfigurationBuilder {
-    pub(crate) timestream_configuration:
-        ::std::option::Option<crate::types::TimestreamConfiguration>,
+    pub(crate) timestream_configuration: ::std::option::Option<crate::types::TimestreamConfiguration>,
 }
 impl TargetConfigurationBuilder {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    pub fn timestream_configuration(
-        mut self,
-        input: crate::types::TimestreamConfiguration,
-    ) -> Self {
+    pub fn timestream_configuration(mut self, input: crate::types::TimestreamConfiguration) -> Self {
         self.timestream_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    pub fn set_timestream_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamConfiguration>,
-    ) -> Self {
+    pub fn set_timestream_configuration(mut self, input: ::std::option::Option<crate::types::TimestreamConfiguration>) -> Self {
         self.timestream_configuration = input;
         self
     }
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    pub fn get_timestream_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamConfiguration> {
+    pub fn get_timestream_configuration(&self) -> &::std::option::Option<crate::types::TimestreamConfiguration> {
         &self.timestream_configuration
     }
     /// Consumes the builder and constructs a [`TargetConfiguration`](crate::types::TargetConfiguration).

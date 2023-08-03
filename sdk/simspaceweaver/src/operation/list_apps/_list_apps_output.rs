@@ -35,9 +35,7 @@ impl ListAppsOutput {
 
 /// A builder for [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
     pub(crate) apps: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAppsOutputBuilder {
         self
     }
     /// <p>The list of apps for the given simulation and domain.</p>
-    pub fn set_apps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppMetadata>>,
-    ) -> Self {
+    pub fn set_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppMetadata>>) -> Self {
         self.apps = input;
         self
     }
     /// <p>The list of apps for the given simulation and domain.</p>
-    pub fn get_apps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationAppMetadata>> {
+    pub fn get_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationAppMetadata>> {
         &self.apps
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>

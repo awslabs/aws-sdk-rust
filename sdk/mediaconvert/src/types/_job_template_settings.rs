@@ -30,8 +30,7 @@ pub struct JobTemplateSettings {
     pub nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     #[doc(hidden)]
-    pub nielsen_non_linear_watermark:
-        ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
+    pub nielsen_non_linear_watermark: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
     /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
     #[doc(hidden)]
     pub output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
@@ -56,9 +55,7 @@ impl JobTemplateSettings {
         self.esam.as_ref()
     }
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
-    pub fn extended_data_services(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExtendedDataServices> {
+    pub fn extended_data_services(&self) -> ::std::option::Option<&crate::types::ExtendedDataServices> {
         self.extended_data_services.as_ref()
     }
     /// Use Inputs to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
@@ -66,27 +63,19 @@ impl JobTemplateSettings {
         self.inputs.as_deref()
     }
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
-    pub fn kantar_watermark(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KantarWatermarkSettings> {
+    pub fn kantar_watermark(&self) -> ::std::option::Option<&crate::types::KantarWatermarkSettings> {
         self.kantar_watermark.as_ref()
     }
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
-    pub fn motion_image_inserter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MotionImageInserter> {
+    pub fn motion_image_inserter(&self) -> ::std::option::Option<&crate::types::MotionImageInserter> {
         self.motion_image_inserter.as_ref()
     }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
-    pub fn nielsen_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenConfiguration> {
+    pub fn nielsen_configuration(&self) -> ::std::option::Option<&crate::types::NielsenConfiguration> {
         self.nielsen_configuration.as_ref()
     }
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
-    pub fn nielsen_non_linear_watermark(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenNonLinearWatermarkSettings> {
+    pub fn nielsen_non_linear_watermark(&self) -> ::std::option::Option<&crate::types::NielsenNonLinearWatermarkSettings> {
         self.nielsen_non_linear_watermark.as_ref()
     }
     /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
@@ -98,9 +87,7 @@ impl JobTemplateSettings {
         self.timecode_config.as_ref()
     }
     /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
-    pub fn timed_metadata_insertion(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimedMetadataInsertion> {
+    pub fn timed_metadata_insertion(&self) -> ::std::option::Option<&crate::types::TimedMetadataInsertion> {
         self.timed_metadata_insertion.as_ref()
     }
 }
@@ -113,9 +100,7 @@ impl JobTemplateSettings {
 
 /// A builder for [`JobTemplateSettings`](crate::types::JobTemplateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobTemplateSettingsBuilder {
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
@@ -125,12 +110,10 @@ pub struct JobTemplateSettingsBuilder {
     pub(crate) kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     pub(crate) motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
     pub(crate) nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
-    pub(crate) nielsen_non_linear_watermark:
-        ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
+    pub(crate) nielsen_non_linear_watermark: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
     pub(crate) output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
     pub(crate) timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
-    pub(crate) timed_metadata_insertion:
-        ::std::option::Option<crate::types::TimedMetadataInsertion>,
+    pub(crate) timed_metadata_insertion: ::std::option::Option<crate::types::TimedMetadataInsertion>,
 }
 impl JobTemplateSettingsBuilder {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
@@ -153,10 +136,7 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
-    pub fn set_avail_blanking(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailBlanking>,
-    ) -> Self {
+    pub fn set_avail_blanking(mut self, input: ::std::option::Option<crate::types::AvailBlanking>) -> Self {
         self.avail_blanking = input;
         self
     }
@@ -184,17 +164,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
-    pub fn set_extended_data_services(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtendedDataServices>,
-    ) -> Self {
+    pub fn set_extended_data_services(mut self, input: ::std::option::Option<crate::types::ExtendedDataServices>) -> Self {
         self.extended_data_services = input;
         self
     }
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
-    pub fn get_extended_data_services(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExtendedDataServices> {
+    pub fn get_extended_data_services(&self) -> &::std::option::Option<crate::types::ExtendedDataServices> {
         &self.extended_data_services
     }
     /// Appends an item to `inputs`.
@@ -209,17 +184,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Use Inputs to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>>) -> Self {
         self.inputs = input;
         self
     }
     /// Use Inputs to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
-    pub fn get_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>> {
         &self.inputs
     }
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
@@ -228,17 +198,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
-    pub fn set_kantar_watermark(
-        mut self,
-        input: ::std::option::Option<crate::types::KantarWatermarkSettings>,
-    ) -> Self {
+    pub fn set_kantar_watermark(mut self, input: ::std::option::Option<crate::types::KantarWatermarkSettings>) -> Self {
         self.kantar_watermark = input;
         self
     }
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
-    pub fn get_kantar_watermark(
-        &self,
-    ) -> &::std::option::Option<crate::types::KantarWatermarkSettings> {
+    pub fn get_kantar_watermark(&self) -> &::std::option::Option<crate::types::KantarWatermarkSettings> {
         &self.kantar_watermark
     }
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
@@ -247,17 +212,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
-    pub fn set_motion_image_inserter(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionImageInserter>,
-    ) -> Self {
+    pub fn set_motion_image_inserter(mut self, input: ::std::option::Option<crate::types::MotionImageInserter>) -> Self {
         self.motion_image_inserter = input;
         self
     }
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
-    pub fn get_motion_image_inserter(
-        &self,
-    ) -> &::std::option::Option<crate::types::MotionImageInserter> {
+    pub fn get_motion_image_inserter(&self) -> &::std::option::Option<crate::types::MotionImageInserter> {
         &self.motion_image_inserter
     }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
@@ -266,39 +226,26 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
-    pub fn set_nielsen_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenConfiguration>,
-    ) -> Self {
+    pub fn set_nielsen_configuration(mut self, input: ::std::option::Option<crate::types::NielsenConfiguration>) -> Self {
         self.nielsen_configuration = input;
         self
     }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
-    pub fn get_nielsen_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NielsenConfiguration> {
+    pub fn get_nielsen_configuration(&self) -> &::std::option::Option<crate::types::NielsenConfiguration> {
         &self.nielsen_configuration
     }
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
-    pub fn nielsen_non_linear_watermark(
-        mut self,
-        input: crate::types::NielsenNonLinearWatermarkSettings,
-    ) -> Self {
+    pub fn nielsen_non_linear_watermark(mut self, input: crate::types::NielsenNonLinearWatermarkSettings) -> Self {
         self.nielsen_non_linear_watermark = ::std::option::Option::Some(input);
         self
     }
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
-    pub fn set_nielsen_non_linear_watermark(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
-    ) -> Self {
+    pub fn set_nielsen_non_linear_watermark(mut self, input: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>) -> Self {
         self.nielsen_non_linear_watermark = input;
         self
     }
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
-    pub fn get_nielsen_non_linear_watermark(
-        &self,
-    ) -> &::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings> {
+    pub fn get_nielsen_non_linear_watermark(&self) -> &::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings> {
         &self.nielsen_non_linear_watermark
     }
     /// Appends an item to `output_groups`.
@@ -313,17 +260,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-    pub fn set_output_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
-    ) -> Self {
+    pub fn set_output_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>) -> Self {
         self.output_groups = input;
         self
     }
     /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-    pub fn get_output_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>> {
+    pub fn get_output_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>> {
         &self.output_groups
     }
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
@@ -332,10 +274,7 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
-    pub fn set_timecode_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeConfig>,
-    ) -> Self {
+    pub fn set_timecode_config(mut self, input: ::std::option::Option<crate::types::TimecodeConfig>) -> Self {
         self.timecode_config = input;
         self
     }
@@ -349,17 +288,12 @@ impl JobTemplateSettingsBuilder {
         self
     }
     /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
-    pub fn set_timed_metadata_insertion(
-        mut self,
-        input: ::std::option::Option<crate::types::TimedMetadataInsertion>,
-    ) -> Self {
+    pub fn set_timed_metadata_insertion(mut self, input: ::std::option::Option<crate::types::TimedMetadataInsertion>) -> Self {
         self.timed_metadata_insertion = input;
         self
     }
     /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
-    pub fn get_timed_metadata_insertion(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimedMetadataInsertion> {
+    pub fn get_timed_metadata_insertion(&self) -> &::std::option::Option<crate::types::TimedMetadataInsertion> {
         &self.timed_metadata_insertion
     }
     /// Consumes the builder and constructs a [`JobTemplateSettings`](crate::types::JobTemplateSettings).

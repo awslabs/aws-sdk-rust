@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ResetCacheParameterGroupOutput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput) with field(s):
     ///   - [`cache_parameter_group_name(Option<String>)`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput::cache_parameter_group_name): <p>The name of the cache parameter group.</p>
     /// - On failure, responds with [`SdkError<ResetCacheParameterGroupError>`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError)
-    pub fn reset_cache_parameter_group(&self) -> crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupFluentBuilder{
+    pub fn reset_cache_parameter_group(&self) -> crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupFluentBuilder {
         crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

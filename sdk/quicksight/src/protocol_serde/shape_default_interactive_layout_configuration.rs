@@ -20,57 +20,45 @@ pub fn ser_default_interactive_layout_configuration(
 
 pub(crate) fn de_default_interactive_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DefaultInteractiveLayoutConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DefaultInteractiveLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::DefaultInteractiveLayoutConfigurationBuilder::default();
+            let mut builder = crate::types::builders::DefaultInteractiveLayoutConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Grid" => {
-                                builder = builder.set_grid(
-                                    crate::protocol_serde::shape_default_grid_layout_configuration::de_default_grid_layout_configuration(tokens)?
-                                );
-                            }
-                            "FreeForm" => {
-                                builder = builder.set_free_form(
-                                    crate::protocol_serde::shape_default_free_form_layout_configuration::de_default_free_form_layout_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Grid" => {
+                            builder = builder.set_grid(
+                                crate::protocol_serde::shape_default_grid_layout_configuration::de_default_grid_layout_configuration(tokens)?,
+                            );
                         }
-                    }
+                        "FreeForm" => {
+                            builder = builder.set_free_form(
+                                crate::protocol_serde::shape_default_free_form_layout_configuration::de_default_free_form_layout_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

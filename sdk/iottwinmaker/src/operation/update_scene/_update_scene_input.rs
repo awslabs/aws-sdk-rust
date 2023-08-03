@@ -20,9 +20,7 @@ pub struct UpdateSceneInput {
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The scene metadata.</p>
     #[doc(hidden)]
-    pub scene_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -46,11 +44,7 @@ impl UpdateSceneInput {
         self.capabilities.as_deref()
     }
     /// <p>The scene metadata.</p>
-    pub fn scene_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.scene_metadata.as_ref()
     }
 }
@@ -63,18 +57,14 @@ impl UpdateSceneInput {
 
 /// A builder for [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSceneInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_location: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) scene_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -106,18 +96,12 @@ impl UpdateSceneInputBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn set_content_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_location = input;
         self
     }
@@ -151,17 +135,12 @@ impl UpdateSceneInputBuilder {
         self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
     /// Adds a key-value pair to `scene_metadata`.
@@ -182,28 +161,17 @@ impl UpdateSceneInputBuilder {
     /// <p>The scene metadata.</p>
     pub fn set_scene_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.scene_metadata = input;
         self
     }
     /// <p>The scene metadata.</p>
-    pub fn get_scene_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_scene::UpdateSceneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

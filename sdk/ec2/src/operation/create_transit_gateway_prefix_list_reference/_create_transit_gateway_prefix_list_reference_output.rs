@@ -5,15 +5,12 @@
 pub struct CreateTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the prefix list reference.</p>
     #[doc(hidden)]
-    pub transit_gateway_prefix_list_reference:
-        ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
+    pub transit_gateway_prefix_list_reference: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the prefix list reference.</p>
-    pub fn transit_gateway_prefix_list_reference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPrefixListReference> {
+    pub fn transit_gateway_prefix_list_reference(&self) -> ::std::option::Option<&crate::types::TransitGatewayPrefixListReference> {
         self.transit_gateway_prefix_list_reference.as_ref()
     }
 }
@@ -24,27 +21,22 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayPrefixListReferen
 }
 impl CreateTransitGatewayPrefixListReferenceOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPrefixListReferenceOutput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceOutputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceOutputBuilder
+    {
         crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayPrefixListReferenceOutput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPrefixListReferenceOutputBuilder {
-    pub(crate) transit_gateway_prefix_list_reference:
-        ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
+    pub(crate) transit_gateway_prefix_list_reference: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayPrefixListReferenceOutputBuilder {
     /// <p>Information about the prefix list reference.</p>
-    pub fn transit_gateway_prefix_list_reference(
-        mut self,
-        input: crate::types::TransitGatewayPrefixListReference,
-    ) -> Self {
+    pub fn transit_gateway_prefix_list_reference(mut self, input: crate::types::TransitGatewayPrefixListReference) -> Self {
         self.transit_gateway_prefix_list_reference = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +49,7 @@ impl CreateTransitGatewayPrefixListReferenceOutputBuilder {
         self
     }
     /// <p>Information about the prefix list reference.</p>
-    pub fn get_transit_gateway_prefix_list_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReference> {
+    pub fn get_transit_gateway_prefix_list_reference(&self) -> &::std::option::Option<crate::types::TransitGatewayPrefixListReference> {
         &self.transit_gateway_prefix_list_reference
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +62,9 @@ impl CreateTransitGatewayPrefixListReferenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPrefixListReferenceOutput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput).
-    pub fn build(self) -> crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput{
+    pub fn build(self) -> crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput {
         crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput {
-            transit_gateway_prefix_list_reference: self.transit_gateway_prefix_list_reference
-            ,
+            transit_gateway_prefix_list_reference: self.transit_gateway_prefix_list_reference,
             _request_id: self._request_id,
         }
     }

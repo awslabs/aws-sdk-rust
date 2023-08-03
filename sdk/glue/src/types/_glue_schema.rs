@@ -23,12 +23,9 @@ impl GlueSchema {
 
 /// A builder for [`GlueSchema`](crate::types::GlueSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueSchemaBuilder {
-    pub(crate) columns:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
 }
 impl GlueSchemaBuilder {
     /// Appends an item to `columns`.
@@ -43,23 +40,16 @@ impl GlueSchemaBuilder {
         self
     }
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`GlueSchema`](crate::types::GlueSchema).
     pub fn build(self) -> crate::types::GlueSchema {
-        crate::types::GlueSchema {
-            columns: self.columns,
-        }
+        crate::types::GlueSchema { columns: self.columns }
     }
 }

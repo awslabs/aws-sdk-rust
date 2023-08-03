@@ -29,17 +29,14 @@ impl DescribeVpcAttributeInput {
 }
 impl DescribeVpcAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder {
         crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::VpcAttributeName>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl DescribeVpcAttributeInputBuilder {
         self
     }
     /// <p>The VPC attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::VpcAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -94,16 +88,12 @@ impl DescribeVpcAttributeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
-                attribute: self.attribute,
-                vpc_id: self.vpc_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
+            attribute: self.attribute,
+            vpc_id: self.vpc_id,
+            dry_run: self.dry_run,
+        })
     }
 }

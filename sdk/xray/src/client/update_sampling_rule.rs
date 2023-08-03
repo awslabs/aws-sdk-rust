@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSamplingRuleOutput`](crate::operation::update_sampling_rule::UpdateSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::operation::update_sampling_rule::UpdateSamplingRuleOutput::sampling_rule_record): <p>The updated rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<UpdateSamplingRuleError>`](crate::operation::update_sampling_rule::UpdateSamplingRuleError)
-    pub fn update_sampling_rule(
-        &self,
-    ) -> crate::operation::update_sampling_rule::builders::UpdateSamplingRuleFluentBuilder {
-        crate::operation::update_sampling_rule::builders::UpdateSamplingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_sampling_rule(&self) -> crate::operation::update_sampling_rule::builders::UpdateSamplingRuleFluentBuilder {
+        crate::operation::update_sampling_rule::builders::UpdateSamplingRuleFluentBuilder::new(self.handle.clone())
     }
 }

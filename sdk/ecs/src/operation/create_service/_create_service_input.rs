@@ -48,8 +48,7 @@ pub struct CreateServiceInput {
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     #[doc(hidden)]
-    pub capacity_provider_strategy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
@@ -64,8 +63,7 @@ pub struct CreateServiceInput {
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
     #[doc(hidden)]
-    pub placement_constraints:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
+    pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
     #[doc(hidden)]
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
@@ -117,8 +115,7 @@ pub struct CreateServiceInput {
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub service_connect_configuration:
-        ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    pub service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
 }
 impl CreateServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -173,9 +170,7 @@ impl CreateServiceInput {
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn capacity_provider_strategy(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
+    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -190,15 +185,11 @@ impl CreateServiceInput {
         self.role.as_deref()
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
-    pub fn deployment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn placement_constraints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
+    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
@@ -206,9 +197,7 @@ impl CreateServiceInput {
         self.placement_strategy.as_deref()
     }
     /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
@@ -229,9 +218,7 @@ impl CreateServiceInput {
         self.scheduling_strategy.as_ref()
     }
     /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
-    pub fn deployment_controller(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentController> {
+    pub fn deployment_controller(&self) -> ::std::option::Option<&crate::types::DeploymentController> {
         self.deployment_controller.as_ref()
     }
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.</p>
@@ -264,9 +251,7 @@ impl CreateServiceInput {
     }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceConnectConfiguration> {
+    pub fn service_connect_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConnectConfiguration> {
         self.service_connect_configuration.as_ref()
     }
 }
@@ -279,29 +264,22 @@ impl CreateServiceInput {
 
 /// A builder for [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    pub(crate) service_registries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub(crate) service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     pub(crate) desired_count: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
-    pub(crate) capacity_provider_strategy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
-    pub(crate) deployment_configuration:
-        ::std::option::Option<crate::types::DeploymentConfiguration>,
-    pub(crate) placement_constraints:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
-    pub(crate) placement_strategy:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
+    pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
+    pub(crate) placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) health_check_grace_period_seconds: ::std::option::Option<i32>,
     pub(crate) scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
@@ -310,8 +288,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
-    pub(crate) service_connect_configuration:
-        ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
 }
 impl CreateServiceInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -345,20 +322,14 @@ impl CreateServiceInputBuilder {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
     /// <p>For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a>.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
     /// <p>For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a>.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition = input;
         self
     }
@@ -392,10 +363,7 @@ impl CreateServiceInputBuilder {
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
     /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
-    pub fn set_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    ) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
         self.load_balancers = input;
         self
     }
@@ -406,9 +374,7 @@ impl CreateServiceInputBuilder {
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
     /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
-    pub fn get_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// Appends an item to `service_registries`.
@@ -427,19 +393,14 @@ impl CreateServiceInputBuilder {
     /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p> <note>
     /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
     /// </note>
-    pub fn set_service_registries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
-    ) -> Self {
+    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>) -> Self {
         self.service_registries = input;
         self
     }
     /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p> <note>
     /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
     /// </note>
-    pub fn get_service_registries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
+    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
         &self.service_registries
     }
     /// <p>The number of instantiations of the specified task definition to place and keep running in your service.</p>
@@ -491,10 +452,7 @@ impl CreateServiceInputBuilder {
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
@@ -515,10 +473,7 @@ impl CreateServiceInputBuilder {
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn capacity_provider_strategy(
-        mut self,
-        input: crate::types::CapacityProviderStrategyItem,
-    ) -> Self {
+    pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
         self.capacity_provider_strategy = ::std::option::Option::Some(v);
@@ -537,24 +492,16 @@ impl CreateServiceInputBuilder {
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn get_capacity_provider_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -586,25 +533,17 @@ impl CreateServiceInputBuilder {
         &self.role
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
-    pub fn deployment_configuration(
-        mut self,
-        input: crate::types::DeploymentConfiguration,
-    ) -> Self {
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
-    pub fn set_deployment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfiguration>,
-    ) -> Self {
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
-    pub fn get_deployment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_configuration
     }
     /// Appends an item to `placement_constraints`.
@@ -619,17 +558,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn set_placement_constraints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
-    ) -> Self {
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>) -> Self {
         self.placement_constraints = input;
         self
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn get_placement_constraints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
         &self.placement_constraints
     }
     /// Appends an item to `placement_strategy`.
@@ -644,17 +578,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
-    pub fn set_placement_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
-    ) -> Self {
+    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>) -> Self {
         self.placement_strategy = input;
         self
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
-    pub fn get_placement_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
         &self.placement_strategy
     }
     /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -663,17 +592,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
@@ -686,10 +610,7 @@ impl CreateServiceInputBuilder {
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
     /// <p>If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.</p>
     /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
-    pub fn set_health_check_grace_period_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_health_check_grace_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_grace_period_seconds = input;
         self
     }
@@ -719,10 +640,7 @@ impl CreateServiceInputBuilder {
     /// <p>Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_scheduling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SchedulingStrategy>,
-    ) -> Self {
+    pub fn set_scheduling_strategy(mut self, input: ::std::option::Option<crate::types::SchedulingStrategy>) -> Self {
         self.scheduling_strategy = input;
         self
     }
@@ -734,9 +652,7 @@ impl CreateServiceInputBuilder {
     /// <p>Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
-    pub fn get_scheduling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchedulingStrategy> {
+    pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         &self.scheduling_strategy
     }
     /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
@@ -745,17 +661,12 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
-    pub fn set_deployment_controller(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentController>,
-    ) -> Self {
+    pub fn set_deployment_controller(mut self, input: ::std::option::Option<crate::types::DeploymentController>) -> Self {
         self.deployment_controller = input;
         self
     }
     /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
-    pub fn get_deployment_controller(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentController> {
+    pub fn get_deployment_controller(&self) -> &::std::option::Option<crate::types::DeploymentController> {
         &self.deployment_controller
     }
     /// Appends an item to `tags`.
@@ -790,10 +701,7 @@ impl CreateServiceInputBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -836,10 +744,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
     /// <p>The default is <code>NONE</code>.</p>
-    pub fn set_propagate_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::PropagateTags>,
-    ) -> Self {
+    pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.propagate_tags = input;
         self
     }
@@ -864,36 +769,25 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_configuration(
-        mut self,
-        input: crate::types::ServiceConnectConfiguration,
-    ) -> Self {
+    pub fn service_connect_configuration(mut self, input: crate::types::ServiceConnectConfiguration) -> Self {
         self.service_connect_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_service_connect_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
-    ) -> Self {
+    pub fn set_service_connect_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConnectConfiguration>) -> Self {
         self.service_connect_configuration = input;
         self
     }
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_service_connect_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
+    pub fn get_service_connect_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
         &self.service_connect_configuration
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             cluster: self.cluster,
             service_name: self.service_name,

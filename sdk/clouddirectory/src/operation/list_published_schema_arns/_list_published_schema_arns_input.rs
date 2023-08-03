@@ -29,18 +29,14 @@ impl ListPublishedSchemaArnsInput {
 }
 impl ListPublishedSchemaArnsInput {
     /// Creates a new builder-style object to manufacture [`ListPublishedSchemaArnsInput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput).
-    pub fn builder(
-    ) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder {
         crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPublishedSchemaArnsInput`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublishedSchemaArnsInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListPublishedSchemaArnsInputBuilder {
         crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput {
-                schema_arn: self.schema_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput {
+            schema_arn: self.schema_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

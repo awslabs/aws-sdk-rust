@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateImagePermissionsOutput {
 }
 impl UpdateImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImagePermissionsOutput`](crate::operation::update_image_permissions::UpdateImagePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsOutputBuilder {
         crate::operation::update_image_permissions::builders::UpdateImagePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImagePermissionsOutput`](crate::operation::update_image_permissions::UpdateImagePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImagePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterSnapshotOutput {
 }
 impl ModifyClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotOutput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder {
         crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterSnapshotOutput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,

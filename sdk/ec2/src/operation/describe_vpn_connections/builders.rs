@@ -38,10 +38,7 @@ impl DescribeVpnConnectionsFluentBuilder {
         }
     }
     /// Access the DescribeVpnConnections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeVpnConnectionsFluentBuilder {
             crate::operation::describe_vpn_connections::DescribeVpnConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpn_connections::DescribeVpnConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeVpnConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeVpnConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpn_connections::DescribeVpnConnectionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeVpnConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpn_connections::DescribeVpnConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeVpnConnectionsFluentBuilder {
             crate::operation::describe_vpn_connections::DescribeVpnConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpn_connections::DescribeVpnConnectionsError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +160,7 @@ impl DescribeVpnConnectionsFluentBuilder {
     /// <li> <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated with the VPN connection.</p> </li>
     /// <li> <p> <code>transit-gateway-id</code> - The ID of a transit gateway associated with the VPN connection.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -211,27 +194,19 @@ impl DescribeVpnConnectionsFluentBuilder {
     ///
     /// <p>One or more VPN connection IDs.</p>
     /// <p>Default: Describes your VPN connections.</p>
-    pub fn vpn_connection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_ids(input.into());
         self
     }
     /// <p>One or more VPN connection IDs.</p>
     /// <p>Default: Describes your VPN connections.</p>
-    pub fn set_vpn_connection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpn_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpn_connection_ids(input);
         self
     }
     /// <p>One or more VPN connection IDs.</p>
     /// <p>Default: Describes your VPN connections.</p>
-    pub fn get_vpn_connection_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpn_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpn_connection_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

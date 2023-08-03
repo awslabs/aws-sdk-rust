@@ -37,10 +37,7 @@ impl CreateIdentityProviderFluentBuilder {
         }
     }
     /// Access the CreateIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateIdentityProviderFluentBuilder {
             crate::operation::create_identity_provider::CreateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_provider::CreateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateIdentityProviderFluentBuilder {
             crate::operation::create_identity_provider::CreateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_provider::CreateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_provider::CreateIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateIdentityProviderFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The identity provider name.</p>
-    pub fn identity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_provider_name(input.into());
         self
     }
     /// <p>The identity provider name.</p>
-    pub fn set_identity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_provider_name(input);
         self
     }
@@ -163,17 +143,12 @@ impl CreateIdentityProviderFluentBuilder {
         self
     }
     /// <p>The identity provider type.</p>
-    pub fn set_identity_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.inner = self.inner.set_identity_provider_type(input);
         self
     }
     /// <p>The identity provider type.</p>
-    pub fn get_identity_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         self.inner.get_identity_provider_type()
     }
     /// Adds a key-value pair to `identityProviderDetails`.
@@ -272,9 +247,7 @@ impl CreateIdentityProviderFluentBuilder {
     /// </ul>
     pub fn set_identity_provider_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_identity_provider_details(input);
         self
@@ -320,11 +293,7 @@ impl CreateIdentityProviderFluentBuilder {
     /// <li> <p> <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_identity_provider_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_identity_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_identity_provider_details()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>

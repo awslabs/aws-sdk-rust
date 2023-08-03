@@ -30,27 +30,19 @@ impl ContainerLogRotationConfiguration {
 
 /// A builder for [`ContainerLogRotationConfiguration`](crate::types::ContainerLogRotationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerLogRotationConfigurationBuilder {
     pub(crate) rotation_size: ::std::option::Option<::std::string::String>,
     pub(crate) max_files_to_keep: ::std::option::Option<i32>,
 }
 impl ContainerLogRotationConfigurationBuilder {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    pub fn rotation_size(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    pub fn set_rotation_size(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_size = input;
         self
     }

@@ -225,18 +225,12 @@ impl PutSessionOutputBuilder {
         &self.slots
     }
     /// <p>Map of key/value pairs representing session-specific context information.</p>
-    pub fn session_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Map of key/value pairs representing session-specific context information.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_attributes = input;
         self
     }
@@ -272,19 +266,13 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn encoded_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn set_encoded_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encoded_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_message = input;
         self
     }
@@ -311,10 +299,7 @@ impl PutSessionOutputBuilder {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
-    pub fn set_message_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageFormatType>,
-    ) -> Self {
+    pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
         self
     }
@@ -350,10 +335,7 @@ impl PutSessionOutputBuilder {
     /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
     /// </ul>
-    pub fn set_dialog_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_dialog_state(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.dialog_state = input;
         self
     }
@@ -370,18 +352,12 @@ impl PutSessionOutputBuilder {
         &self.dialog_state
     }
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
-    pub fn slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
-    pub fn set_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -395,17 +371,12 @@ impl PutSessionOutputBuilder {
         self
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>The audio version of the message to convey to the user.</p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p>A unique identifier for the session.</p>
@@ -423,18 +394,12 @@ impl PutSessionOutputBuilder {
         &self.session_id
     }
     /// <p>A list of active contexts for the session.</p>
-    pub fn active_contexts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_contexts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_contexts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of active contexts for the session.</p>
-    pub fn set_active_contexts(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_contexts = input;
         self
     }

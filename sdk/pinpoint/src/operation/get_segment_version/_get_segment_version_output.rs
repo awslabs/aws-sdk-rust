@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSegmentVersionOutput {
 }
 impl GetSegmentVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentVersionOutput`](crate::operation::get_segment_version::GetSegmentVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_segment_version::builders::GetSegmentVersionOutputBuilder {
+    pub fn builder() -> crate::operation::get_segment_version::builders::GetSegmentVersionOutputBuilder {
         crate::operation::get_segment_version::builders::GetSegmentVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSegmentVersionOutput`](crate::operation::get_segment_version::GetSegmentVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentVersionOutputBuilder {
     pub(crate) segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetSegmentVersionOutputBuilder {
         self
     }
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn set_segment_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentResponse>,
-    ) -> Self {
+    pub fn set_segment_response(mut self, input: ::std::option::Option<crate::types::SegmentResponse>) -> Self {
         self.segment_response = input;
         self
     }

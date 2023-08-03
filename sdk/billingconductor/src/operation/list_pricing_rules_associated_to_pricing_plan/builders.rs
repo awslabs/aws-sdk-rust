@@ -5,16 +5,16 @@ pub use crate::operation::list_pricing_rules_associated_to_pricing_plan::_list_p
 
 impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_pricing_rules_associated_to_pricing_plan();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder,
+    inner: crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder,
 }
 impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
     /// Creates a new `ListPricingRulesAssociatedToPricingPlan`.
@@ -37,15 +37,24 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
         }
     }
     /// Access the ListPricingRulesAssociatedToPricingPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlan,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +93,50 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlan, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlan,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator{
-        crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator {
+        crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -121,18 +145,12 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
         self.inner.get_billing_period()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub fn pricing_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_plan_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub fn set_pricing_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pricing_plan_arn(input);
         self
     }

@@ -49,16 +49,14 @@ impl GetEbsVolumeRecommendationsInput {
 }
 impl GetEbsVolumeRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsInput`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput).
-    pub fn builder() -> crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder {
         crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEbsVolumeRecommendationsInput`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEbsVolumeRecommendationsInputBuilder {
     pub(crate) volume_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -79,17 +77,12 @@ impl GetEbsVolumeRecommendationsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
-    pub fn set_volume_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_arns = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
-    pub fn get_volume_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_volume_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.volume_arns
     }
     /// <p>The token to advance to the next page of volume recommendations.</p>
@@ -135,10 +128,7 @@ impl GetEbsVolumeRecommendationsInputBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of volume recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -162,19 +152,14 @@ impl GetEbsVolumeRecommendationsInputBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetEbsVolumeRecommendationsInput`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput).
@@ -184,14 +169,12 @@ impl GetEbsVolumeRecommendationsInputBuilder {
         crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput {
-                volume_arns: self.volume_arns,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                account_ids: self.account_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput {
+            volume_arns: self.volume_arns,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            account_ids: self.account_ids,
+        })
     }
 }

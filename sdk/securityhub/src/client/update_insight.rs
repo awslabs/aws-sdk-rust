@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`group_by_attribute(impl ::std::convert::Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::group_by_attribute) / [`set_group_by_attribute(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_group_by_attribute): <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     /// - On success, responds with [`UpdateInsightOutput`](crate::operation::update_insight::UpdateInsightOutput)
     /// - On failure, responds with [`SdkError<UpdateInsightError>`](crate::operation::update_insight::UpdateInsightError)
-    pub fn update_insight(
-        &self,
-    ) -> crate::operation::update_insight::builders::UpdateInsightFluentBuilder {
-        crate::operation::update_insight::builders::UpdateInsightFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_insight(&self) -> crate::operation::update_insight::builders::UpdateInsightFluentBuilder {
+        crate::operation::update_insight::builders::UpdateInsightFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,16 +26,14 @@ impl PutUserPermissionsBoundaryInput {
 }
 impl PutUserPermissionsBoundaryInput {
     /// Creates a new builder-style object to manufacture [`PutUserPermissionsBoundaryInput`](crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput).
-    pub fn builder() -> crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder{
+    pub fn builder() -> crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder {
         crate::operation::put_user_permissions_boundary::builders::PutUserPermissionsBoundaryInputBuilder::default()
     }
 }
 
 /// A builder for [`PutUserPermissionsBoundaryInput`](crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutUserPermissionsBoundaryInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_boundary: ::std::option::Option<::std::string::String>,
@@ -58,20 +56,14 @@ impl PutUserPermissionsBoundaryInputBuilder {
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permissions_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permissions_boundary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the user.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permissions_boundary = input;
         self
     }
@@ -88,11 +80,9 @@ impl PutUserPermissionsBoundaryInputBuilder {
         crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput {
-                user_name: self.user_name,
-                permissions_boundary: self.permissions_boundary,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput {
+            user_name: self.user_name,
+            permissions_boundary: self.permissions_boundary,
+        })
     }
 }

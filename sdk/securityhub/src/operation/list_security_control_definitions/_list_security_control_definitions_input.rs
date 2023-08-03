@@ -29,16 +29,14 @@ impl ListSecurityControlDefinitionsInput {
 }
 impl ListSecurityControlDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
-    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder {
         crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsInputBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListSecurityControlDefinitionsInputBuilder {
 }
 impl ListSecurityControlDefinitionsInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
-    pub fn standards_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
-    pub fn set_standards_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_arn = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListSecurityControlDefinitionsInputBuilder {
         crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput {
-                standards_arn: self.standards_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput {
+            standards_arn: self.standards_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

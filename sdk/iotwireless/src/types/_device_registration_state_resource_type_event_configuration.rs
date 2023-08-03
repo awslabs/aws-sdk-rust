@@ -10,28 +10,22 @@ pub struct DeviceRegistrationStateResourceTypeEventConfiguration {
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::types::DeviceRegistrationStateResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
         crate::types::builders::DeviceRegistrationStateResourceTypeEventConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::types::DeviceRegistrationStateResourceTypeEventConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
-    pub(crate) sidewalk:
-        ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
@@ -40,23 +34,16 @@ impl DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
         self
     }
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn get_sidewalk(
-        &self,
-    ) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
         &self.sidewalk
     }
     /// Consumes the builder and constructs a [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::types::DeviceRegistrationStateResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::DeviceRegistrationStateResourceTypeEventConfiguration {
-        crate::types::DeviceRegistrationStateResourceTypeEventConfiguration {
-            sidewalk: self.sidewalk,
-        }
+        crate::types::DeviceRegistrationStateResourceTypeEventConfiguration { sidewalk: self.sidewalk }
     }
 }

@@ -43,9 +43,7 @@ impl ListTemplatesInput {
 
 /// A builder for [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl ListTemplatesInputBuilder {
         &self.prefix
     }
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
-    pub fn template_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_type = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_templates::ListTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
             next_token: self.next_token,
             page_size: self.page_size,

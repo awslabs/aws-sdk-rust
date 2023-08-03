@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTimeToLiveOutput`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput) with field(s):
     ///   - [`time_to_live_description(Option<TimeToLiveDescription>)`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput::time_to_live_description): <p></p>
     /// - On failure, responds with [`SdkError<DescribeTimeToLiveError>`](crate::operation::describe_time_to_live::DescribeTimeToLiveError)
-    pub fn describe_time_to_live(
-        &self,
-    ) -> crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder {
-        crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_time_to_live(&self) -> crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder {
+        crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`config_rules_evaluation_status(Option<Vec<ConfigRuleEvaluationStatus>>)`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput::config_rules_evaluation_status): <p>Status information about your Config managed rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigRuleEvaluationStatusError>`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError)
-    pub fn describe_config_rule_evaluation_status(&self) -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusFluentBuilder{
+    pub fn describe_config_rule_evaluation_status(
+        &self,
+    ) -> crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusFluentBuilder {
         crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusFluentBuilder::new(self.handle.clone())
     }
 }

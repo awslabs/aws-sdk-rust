@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAppValidationConfigurationOutput {
 }
 impl PutAppValidationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutAppValidationConfigurationOutput`](crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput).
-    pub fn builder() -> crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationOutputBuilder {
         crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppValidationConfigurationOutput`](crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppValidationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutAppValidationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAppValidationConfigurationOutput`](crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput {
         crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput {
             _request_id: self._request_id,
         }

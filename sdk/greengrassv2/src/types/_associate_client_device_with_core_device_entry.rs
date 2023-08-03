@@ -23,9 +23,7 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
 
 /// A builder for [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateClientDeviceWithCoreDeviceEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
     }
     /// Consumes the builder and constructs a [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
     pub fn build(self) -> crate::types::AssociateClientDeviceWithCoreDeviceEntry {
-        crate::types::AssociateClientDeviceWithCoreDeviceEntry {
-            thing_name: self.thing_name,
-        }
+        crate::types::AssociateClientDeviceWithCoreDeviceEntry { thing_name: self.thing_name }
     }
 }

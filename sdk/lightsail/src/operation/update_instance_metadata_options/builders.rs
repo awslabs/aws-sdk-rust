@@ -26,7 +26,7 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceMetadataOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder,
+    inner: crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder,
 }
 impl UpdateInstanceMetadataOptionsFluentBuilder {
     /// Creates a new `UpdateInstanceMetadataOptions`.
@@ -37,7 +37,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
         }
     }
     /// Access the UpdateInstanceMetadataOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
             crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
             crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance for which to update metadata parameters.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance for which to update metadata parameters.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
@@ -150,10 +133,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
-    pub fn set_http_tokens(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpTokens>,
-    ) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokens>) -> Self {
         self.inner = self.inner.set_http_tokens(input);
         self
     }
@@ -171,10 +151,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
     }
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
     /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpEndpoint>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::HttpEndpoint>) -> Self {
         self.inner = self.inner.set_http_endpoint(input);
         self
     }
@@ -207,10 +184,7 @@ impl UpdateInstanceMetadataOptionsFluentBuilder {
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
-    pub fn set_http_protocol_ipv6(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpProtocolIpv6>,
-    ) -> Self {
+    pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::HttpProtocolIpv6>) -> Self {
         self.inner = self.inner.set_http_protocol_ipv6(input);
         self
     }

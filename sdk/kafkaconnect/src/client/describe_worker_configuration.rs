@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::name): <p>The name of the worker configuration.</p>
     ///   - [`worker_configuration_arn(Option<String>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::worker_configuration_arn): <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkerConfigurationError>`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError)
-    pub fn describe_worker_configuration(&self) -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationFluentBuilder{
+    pub fn describe_worker_configuration(
+        &self,
+    ) -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationFluentBuilder {
         crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

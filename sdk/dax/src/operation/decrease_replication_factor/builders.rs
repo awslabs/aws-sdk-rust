@@ -28,7 +28,7 @@ impl DecreaseReplicationFactorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DecreaseReplicationFactorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder,
+    inner: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder,
 }
 impl DecreaseReplicationFactorFluentBuilder {
     /// Creates a new `DecreaseReplicationFactor`.
@@ -39,7 +39,7 @@ impl DecreaseReplicationFactorFluentBuilder {
         }
     }
     /// Access the DecreaseReplicationFactor as a reference.
-    pub fn as_input(&self) -> &crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DecreaseReplicationFactorFluentBuilder {
             crate::operation::decrease_replication_factor::DecreaseReplicationFactor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DecreaseReplicationFactorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DecreaseReplicationFactorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DecreaseReplicationFactorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DecreaseReplicationFactorFluentBuilder {
             crate::operation::decrease_replication_factor::DecreaseReplicationFactor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>,
     > {
         self.customize_middleware().await
     }
@@ -155,25 +144,17 @@ impl DecreaseReplicationFactorFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// Appends an item to `NodeIdsToRemove`.
@@ -181,25 +162,17 @@ impl DecreaseReplicationFactorFluentBuilder {
     /// To override the contents of this collection use [`set_node_ids_to_remove`](Self::set_node_ids_to_remove).
     ///
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn node_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_ids_to_remove(input.into());
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_ids_to_remove(input);
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn get_node_ids_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_ids_to_remove()
     }
 }

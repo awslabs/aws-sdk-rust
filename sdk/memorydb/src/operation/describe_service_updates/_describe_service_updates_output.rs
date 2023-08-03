@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeServiceUpdatesOutput {
 }
 impl DescribeServiceUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceUpdatesOutput`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_updates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>,
@@ -72,17 +68,12 @@ impl DescribeServiceUpdatesOutputBuilder {
         self
     }
     /// <p>A list of service updates</p>
-    pub fn set_service_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>,
-    ) -> Self {
+    pub fn set_service_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>) -> Self {
         self.service_updates = input;
         self
     }
     /// <p>A list of service updates</p>
-    pub fn get_service_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>> {
+    pub fn get_service_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>> {
         &self.service_updates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

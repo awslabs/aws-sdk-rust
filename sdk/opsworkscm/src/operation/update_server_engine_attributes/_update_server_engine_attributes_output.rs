@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateServerEngineAttributesOutput {
 }
 impl UpdateServerEngineAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerEngineAttributesOutput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput).
-    pub fn builder() -> crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesOutputBuilder {
         crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServerEngineAttributesOutput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateServerEngineAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServerEngineAttributesOutput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput {
+    pub fn build(self) -> crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput {
         crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput {
             server: self.server,
             _request_id: self._request_id,

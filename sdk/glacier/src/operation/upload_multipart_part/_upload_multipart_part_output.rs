@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UploadMultipartPartOutput {
 }
 impl UploadMultipartPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder {
-        crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder {
+        crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadMultipartPartOutputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

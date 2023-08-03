@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApiDestinationsOutput {
 }
 impl ListApiDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApiDestinationsOutput`](crate::operation::list_api_destinations::ListApiDestinationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder {
-        crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder {
+        crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApiDestinationsOutput`](crate::operation::list_api_destinations::ListApiDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiDestinationsOutputBuilder {
-    pub(crate) api_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>,
+    pub(crate) api_destinations: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListApiDestinationsOutputBuilder {
         self
     }
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn set_api_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>,
-    ) -> Self {
+    pub fn set_api_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>) -> Self {
         self.api_destinations = input;
         self
     }
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn get_api_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>> {
+    pub fn get_api_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>> {
         &self.api_destinations
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>

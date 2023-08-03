@@ -36,9 +36,7 @@ impl ListTestSetsInput {
 
 /// A builder for [`ListTestSetsInput`](crate::operation::list_test_sets::ListTestSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestSetsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::TestSetSortBy>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,10 +49,7 @@ impl ListTestSetsInputBuilder {
         self
     }
     /// <p>The sort order for the list of test sets.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TestSetSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListTestSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestSetsInput`](crate::operation::list_test_sets::ListTestSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_sets::ListTestSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_test_sets::ListTestSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_test_sets::ListTestSetsInput {
             sort_by: self.sort_by,
             max_results: self.max_results,

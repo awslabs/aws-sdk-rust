@@ -30,9 +30,7 @@ impl AgentAlreadyRunningAssessment {
 
 /// A builder for [`AgentAlreadyRunningAssessment`](crate::types::AgentAlreadyRunningAssessment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentAlreadyRunningAssessmentBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AgentAlreadyRunningAssessmentBuilder {
         &self.agent_id
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_arn = input;
         self
     }

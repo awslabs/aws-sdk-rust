@@ -27,13 +27,10 @@ pub struct JobQueueDetail {
     pub priority: ::std::option::Option<i32>,
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
     #[doc(hidden)]
-    pub compute_environment_order:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+    pub compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobQueueDetail {
     /// <p>The job queue name.</p>
@@ -65,17 +62,11 @@ impl JobQueueDetail {
         self.priority
     }
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    pub fn compute_environment_order(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
+    pub fn compute_environment_order(&self) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
         self.compute_environment_order.as_deref()
     }
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -88,9 +79,7 @@ impl JobQueueDetail {
 
 /// A builder for [`JobQueueDetail`](crate::types::JobQueueDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobQueueDetailBuilder {
     pub(crate) job_queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_queue_arn: ::std::option::Option<::std::string::String>,
@@ -99,26 +88,17 @@ pub struct JobQueueDetailBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JqStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) compute_environment_order:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobQueueDetailBuilder {
     /// <p>The job queue name.</p>
-    pub fn job_queue_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job queue name.</p>
-    pub fn set_job_queue_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_queue_name = input;
         self
     }
@@ -127,18 +107,12 @@ impl JobQueueDetailBuilder {
         &self.job_queue_name
     }
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn job_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn set_job_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_queue_arn = input;
         self
     }
@@ -161,18 +135,12 @@ impl JobQueueDetailBuilder {
         &self.state
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn scheduling_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduling_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduling_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn set_scheduling_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduling_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduling_policy_arn = input;
         self
     }
@@ -195,18 +163,12 @@ impl JobQueueDetailBuilder {
         &self.status
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -233,27 +195,19 @@ impl JobQueueDetailBuilder {
     /// To override the contents of this collection use [`set_compute_environment_order`](Self::set_compute_environment_order).
     ///
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    pub fn compute_environment_order(
-        mut self,
-        input: crate::types::ComputeEnvironmentOrder,
-    ) -> Self {
+    pub fn compute_environment_order(mut self, input: crate::types::ComputeEnvironmentOrder) -> Self {
         let mut v = self.compute_environment_order.unwrap_or_default();
         v.push(input);
         self.compute_environment_order = ::std::option::Option::Some(v);
         self
     }
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    pub fn set_compute_environment_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
-    ) -> Self {
+    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>) -> Self {
         self.compute_environment_order = input;
         self
     }
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    pub fn get_compute_environment_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
+    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
         &self.compute_environment_order
     }
     /// Adds a key-value pair to `tags`.
@@ -261,32 +215,19 @@ impl JobQueueDetailBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`JobQueueDetail`](crate::types::JobQueueDetail).

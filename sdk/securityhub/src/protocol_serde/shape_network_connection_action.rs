@@ -9,28 +9,19 @@ pub fn ser_network_connection_action(
     if let Some(var_2) = &input.remote_ip_details {
         #[allow(unused_mut)]
         let mut object_3 = object.key("RemoteIpDetails").start_object();
-        crate::protocol_serde::shape_action_remote_ip_details::ser_action_remote_ip_details(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_action_remote_ip_details::ser_action_remote_ip_details(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.remote_port_details {
         #[allow(unused_mut)]
         let mut object_5 = object.key("RemotePortDetails").start_object();
-        crate::protocol_serde::shape_action_remote_port_details::ser_action_remote_port_details(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_action_remote_port_details::ser_action_remote_port_details(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.local_port_details {
         #[allow(unused_mut)]
         let mut object_7 = object.key("LocalPortDetails").start_object();
-        crate::protocol_serde::shape_action_local_port_details::ser_action_local_port_details(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_action_local_port_details::ser_action_local_port_details(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.protocol {
@@ -44,17 +35,9 @@ pub fn ser_network_connection_action(
 
 pub(crate) fn de_network_connection_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NetworkConnectionAction>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NetworkConnectionAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,66 +47,53 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ConnectionDirection" => {
-                                builder = builder.set_connection_direction(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ConnectionDirection" => {
+                            builder = builder.set_connection_direction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RemoteIpDetails" => {
-                                builder = builder.set_remote_ip_details(
-                                    crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens)?
-                                );
-                            }
-                            "RemotePortDetails" => {
-                                builder = builder.set_remote_port_details(
-                                    crate::protocol_serde::shape_action_remote_port_details::de_action_remote_port_details(tokens)?
-                                );
-                            }
-                            "LocalPortDetails" => {
-                                builder = builder.set_local_port_details(
-                                    crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens)?
-                                );
-                            }
-                            "Protocol" => {
-                                builder = builder.set_protocol(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Blocked" => {
-                                builder = builder.set_blocked(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RemoteIpDetails" => {
+                            builder = builder.set_remote_ip_details(
+                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens)?,
+                            );
+                        }
+                        "RemotePortDetails" => {
+                            builder = builder.set_remote_port_details(
+                                crate::protocol_serde::shape_action_remote_port_details::de_action_remote_port_details(tokens)?,
+                            );
+                        }
+                        "LocalPortDetails" => {
+                            builder = builder.set_local_port_details(
+                                crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens)?,
+                            );
+                        }
+                        "Protocol" => {
+                            builder = builder.set_protocol(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Blocked" => {
+                            builder = builder.set_blocked(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

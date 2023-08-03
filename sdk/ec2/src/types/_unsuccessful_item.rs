@@ -30,9 +30,7 @@ impl UnsuccessfulItem {
 
 /// A builder for [`UnsuccessfulItem`](crate::types::UnsuccessfulItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsuccessfulItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl UnsuccessfulItemBuilder {
         self
     }
     /// <p>Information about the error.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::UnsuccessfulItemError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::UnsuccessfulItemError>) -> Self {
         self.error = input;
         self
     }

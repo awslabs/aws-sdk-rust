@@ -43,17 +43,14 @@ impl UpdateAccessPolicyInput {
 }
 impl UpdateAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyInputBuilder {
     pub(crate) access_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_policy_identity: ::std::option::Option<crate::types::Identity>,
@@ -63,18 +60,12 @@ pub struct UpdateAccessPolicyInputBuilder {
 }
 impl UpdateAccessPolicyInputBuilder {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access policy.</p>
-    pub fn set_access_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy_id = input;
         self
     }
@@ -88,10 +79,7 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn set_access_policy_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_access_policy_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.access_policy_identity = input;
         self
     }
@@ -105,10 +93,7 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn set_access_policy_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::Resource>,
-    ) -> Self {
+    pub fn set_access_policy_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.access_policy_resource = input;
         self
     }
@@ -122,10 +107,7 @@ impl UpdateAccessPolicyInputBuilder {
         self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn set_access_policy_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_access_policy_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.access_policy_permission = input;
         self
     }
@@ -150,18 +132,13 @@ impl UpdateAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_policy::UpdateAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_access_policy::UpdateAccessPolicyInput {
-                access_policy_id: self.access_policy_id,
-                access_policy_identity: self.access_policy_identity,
-                access_policy_resource: self.access_policy_resource,
-                access_policy_permission: self.access_policy_permission,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_access_policy::UpdateAccessPolicyInput {
+            access_policy_id: self.access_policy_id,
+            access_policy_identity: self.access_policy_identity,
+            access_policy_resource: self.access_policy_resource,
+            access_policy_permission: self.access_policy_permission,
+            client_token: self.client_token,
+        })
     }
 }

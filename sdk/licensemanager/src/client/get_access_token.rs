@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessTokenOutput`](crate::operation::get_access_token::GetAccessTokenOutput) with field(s):
     ///   - [`access_token(Option<String>)`](crate::operation::get_access_token::GetAccessTokenOutput::access_token): <p>Temporary access token.</p>
     /// - On failure, responds with [`SdkError<GetAccessTokenError>`](crate::operation::get_access_token::GetAccessTokenError)
-    pub fn get_access_token(
-        &self,
-    ) -> crate::operation::get_access_token::builders::GetAccessTokenFluentBuilder {
-        crate::operation::get_access_token::builders::GetAccessTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_token(&self) -> crate::operation::get_access_token::builders::GetAccessTokenFluentBuilder {
+        crate::operation::get_access_token::builders::GetAccessTokenFluentBuilder::new(self.handle.clone())
     }
 }

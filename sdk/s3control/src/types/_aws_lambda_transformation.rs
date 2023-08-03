@@ -30,9 +30,7 @@ impl AwsLambdaTransformation {
 
 /// A builder for [`AwsLambdaTransformation`](crate::types::AwsLambdaTransformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaTransformationBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_payload: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AwsLambdaTransformationBuilder {
         &self.function_arn
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-    pub fn function_payload(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_payload = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-    pub fn set_function_payload(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_payload = input;
         self
     }

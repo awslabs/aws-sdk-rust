@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::next_token): <p>The value of the next token, if it exists. Null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListReportDefinitionsError>`](crate::operation::list_report_definitions::ListReportDefinitionsError)
-    pub fn list_report_definitions(
-        &self,
-    ) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder
-    {
-        crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_report_definitions(&self) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder {
+        crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

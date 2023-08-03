@@ -23,9 +23,7 @@ impl DescribeConfigRulesFilters {
 
 /// A builder for [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigRulesFiltersBuilder {
     pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
@@ -36,10 +34,7 @@ impl DescribeConfigRulesFiltersBuilder {
         self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn set_evaluation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMode>,
-    ) -> Self {
+    pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
         self.evaluation_mode = input;
         self
     }

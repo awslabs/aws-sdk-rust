@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeregisterIdentityProviderOutput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderOutput) with field(s):
     ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderOutput::identity_provider_summary): <p>Metadata that describes the results of an identity provider operation.</p>
     /// - On failure, responds with [`SdkError<DeregisterIdentityProviderError>`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderError)
-    pub fn deregister_identity_provider(&self) -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderFluentBuilder{
+    pub fn deregister_identity_provider(&self) -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderFluentBuilder {
         crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

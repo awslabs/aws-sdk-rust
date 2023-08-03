@@ -52,9 +52,7 @@ impl GetAnswerInput {
 
 /// A builder for [`GetAnswerInput`](crate::operation::get_answer::GetAnswerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnswerInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -131,12 +129,7 @@ impl GetAnswerInputBuilder {
         &self.milestone_number
     }
     /// Consumes the builder and constructs a [`GetAnswerInput`](crate::operation::get_answer::GetAnswerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_answer::GetAnswerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_answer::GetAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_answer::GetAnswerInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

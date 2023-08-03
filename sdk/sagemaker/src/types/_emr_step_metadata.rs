@@ -44,9 +44,7 @@ impl EmrStepMetadata {
 
 /// A builder for [`EmrStepMetadata`](crate::types::EmrStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmrStepMetadataBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl EmrStepMetadataBuilder {
         &self.step_name
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn log_file_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn set_log_file_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_file_path = input;
         self
     }

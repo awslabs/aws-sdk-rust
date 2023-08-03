@@ -45,10 +45,7 @@ impl RegisterScalableTargetFluentBuilder {
         }
     }
     /// Access the RegisterScalableTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_scalable_target::builders::RegisterScalableTargetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_scalable_target::builders::RegisterScalableTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +57,7 @@ impl RegisterScalableTargetFluentBuilder {
             crate::operation::register_scalable_target::RegisterScalableTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_scalable_target::RegisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +67,7 @@ impl RegisterScalableTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +76,7 @@ impl RegisterScalableTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_scalable_target::RegisterScalableTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_scalable_target::RegisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError>,
     > {
         let op = self
             .inner
@@ -109,9 +99,7 @@ impl RegisterScalableTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_scalable_target::RegisterScalableTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_scalable_target::RegisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +113,7 @@ impl RegisterScalableTargetFluentBuilder {
             crate::operation::register_scalable_target::RegisterScalableTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_scalable_target::RegisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +123,7 @@ impl RegisterScalableTargetFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -271,10 +254,7 @@ impl RegisterScalableTargetFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -302,9 +282,7 @@ impl RegisterScalableTargetFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand. This property is required when registering a new scalable target.</p>
@@ -417,10 +395,7 @@ impl RegisterScalableTargetFluentBuilder {
     /// <li> <p>For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended. </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn set_suspended_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SuspendedState>,
-    ) -> Self {
+    pub fn set_suspended_state(mut self, input: ::std::option::Option<crate::types::SuspendedState>) -> Self {
         self.inner = self.inner.set_suspended_state(input);
         self
     }
@@ -442,34 +417,21 @@ impl RegisterScalableTargetFluentBuilder {
     /// <p>Assigns one or more tags to the scalable target. Use this parameter to tag the scalable target when it is created. To tag an existing scalable target, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required. You cannot have more than one tag on a scalable target with the same tag key.</p>
     /// <p>Use tags to control access to a scalable target. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Assigns one or more tags to the scalable target. Use this parameter to tag the scalable target when it is created. To tag an existing scalable target, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required. You cannot have more than one tag on a scalable target with the same tag key.</p>
     /// <p>Use tags to control access to a scalable target. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Assigns one or more tags to the scalable target. Use this parameter to tag the scalable target when it is created. To tag an existing scalable target, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required. You cannot have more than one tag on a scalable target with the same tag key.</p>
     /// <p>Use tags to control access to a scalable target. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

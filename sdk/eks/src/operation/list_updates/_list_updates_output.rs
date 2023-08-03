@@ -35,9 +35,7 @@ impl ListUpdatesOutput {
 
 /// A builder for [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUpdatesOutputBuilder {
     pub(crate) update_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListUpdatesOutputBuilder {
         self
     }
     /// <p>A list of all the updates for the specified cluster and Region.</p>
-    pub fn set_update_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_update_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.update_ids = input;
         self
     }

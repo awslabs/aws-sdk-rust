@@ -45,9 +45,7 @@ impl Classifier {
 
 /// A builder for [`Classifier`](crate::types::Classifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassifierBuilder {
     pub(crate) grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
     pub(crate) xml_classifier: ::std::option::Option<crate::types::XmlClassifier>,
@@ -61,10 +59,7 @@ impl ClassifierBuilder {
         self
     }
     /// <p>A classifier that uses <code>grok</code>.</p>
-    pub fn set_grok_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::GrokClassifier>,
-    ) -> Self {
+    pub fn set_grok_classifier(mut self, input: ::std::option::Option<crate::types::GrokClassifier>) -> Self {
         self.grok_classifier = input;
         self
     }
@@ -78,10 +73,7 @@ impl ClassifierBuilder {
         self
     }
     /// <p>A classifier for XML content.</p>
-    pub fn set_xml_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::XmlClassifier>,
-    ) -> Self {
+    pub fn set_xml_classifier(mut self, input: ::std::option::Option<crate::types::XmlClassifier>) -> Self {
         self.xml_classifier = input;
         self
     }
@@ -95,10 +87,7 @@ impl ClassifierBuilder {
         self
     }
     /// <p>A classifier for JSON content.</p>
-    pub fn set_json_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::JsonClassifier>,
-    ) -> Self {
+    pub fn set_json_classifier(mut self, input: ::std::option::Option<crate::types::JsonClassifier>) -> Self {
         self.json_classifier = input;
         self
     }
@@ -112,10 +101,7 @@ impl ClassifierBuilder {
         self
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
-    pub fn set_csv_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvClassifier>,
-    ) -> Self {
+    pub fn set_csv_classifier(mut self, input: ::std::option::Option<crate::types::CsvClassifier>) -> Self {
         self.csv_classifier = input;
         self
     }

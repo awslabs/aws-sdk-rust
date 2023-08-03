@@ -15,17 +15,14 @@ impl DescribeActivityInput {
 }
 impl DescribeActivityInput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityInput`](crate::operation::describe_activity::DescribeActivityInput).
-    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityInputBuilder {
         crate::operation::describe_activity::builders::DescribeActivityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivityInput`](crate::operation::describe_activity::DescribeActivityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivityInputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeActivityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivityInput`](crate::operation::describe_activity::DescribeActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_activity::DescribeActivityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_activity::DescribeActivityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_activity::DescribeActivityInput {
             activity_arn: self.activity_arn,
         })

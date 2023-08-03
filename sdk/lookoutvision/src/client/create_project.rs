@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput) with field(s):
     ///   - [`project_metadata(Option<ProjectMetadata>)`](crate::operation::create_project::CreateProjectOutput::project_metadata): <p>Information about the project.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

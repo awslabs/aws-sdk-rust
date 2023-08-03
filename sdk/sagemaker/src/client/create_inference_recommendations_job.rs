@@ -14,7 +14,9 @@ impl super::Client {
     /// - On success, responds with [`CreateInferenceRecommendationsJobOutput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
     /// - On failure, responds with [`SdkError<CreateInferenceRecommendationsJobError>`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError)
-    pub fn create_inference_recommendations_job(&self) -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobFluentBuilder{
+    pub fn create_inference_recommendations_job(
+        &self,
+    ) -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobFluentBuilder {
         crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobFluentBuilder::new(self.handle.clone())
     }
 }

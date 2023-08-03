@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ExportConfigurationsOutput {
 }
 impl ExportConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportConfigurationsOutput`](crate::operation::export_configurations::ExportConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::export_configurations::builders::ExportConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::export_configurations::builders::ExportConfigurationsOutputBuilder {
         crate::operation::export_configurations::builders::ExportConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportConfigurationsOutput`](crate::operation::export_configurations::ExportConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportConfigurationsOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

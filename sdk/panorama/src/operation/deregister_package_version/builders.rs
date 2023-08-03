@@ -26,7 +26,7 @@ impl DeregisterPackageVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterPackageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder,
+    inner: crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder,
 }
 impl DeregisterPackageVersionFluentBuilder {
     /// Creates a new `DeregisterPackageVersion`.
@@ -37,10 +37,7 @@ impl DeregisterPackageVersionFluentBuilder {
         }
     }
     /// Access the DeregisterPackageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeregisterPackageVersionFluentBuilder {
             crate::operation::deregister_package_version::DeregisterPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeregisterPackageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeregisterPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_package_version::DeregisterPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeregisterPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_package_version::DeregisterPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeregisterPackageVersionFluentBuilder {
             crate::operation::deregister_package_version::DeregisterPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_package_version::DeregisterPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_package_version::DeregisterPackageVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An owner account.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>An owner account.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -158,18 +138,12 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner.get_package_id()
     }
     /// <p>A package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p>A package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
@@ -178,18 +152,12 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner.get_package_version()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.patch_version(input.into());
         self
     }
     /// <p>A patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_patch_version(input);
         self
     }
@@ -198,25 +166,17 @@ impl DeregisterPackageVersionFluentBuilder {
         self.inner.get_patch_version()
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn updated_latest_patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updated_latest_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.updated_latest_patch_version(input.into());
         self
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn set_updated_latest_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updated_latest_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_updated_latest_patch_version(input);
         self
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
-    pub fn get_updated_latest_patch_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_updated_latest_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_updated_latest_patch_version()
     }
 }

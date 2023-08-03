@@ -73,9 +73,7 @@ impl Icd10CmAttribute {
         self.category.as_ref()
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
-    pub fn relationship_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Icd10CmRelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::Icd10CmRelationshipType> {
         self.relationship_type.as_ref()
     }
 }
@@ -88,9 +86,7 @@ impl Icd10CmAttribute {
 
 /// A builder for [`Icd10CmAttribute`](crate::types::Icd10CmAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Icd10CmAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Icd10CmAttributeType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -110,10 +106,7 @@ impl Icd10CmAttributeBuilder {
         self
     }
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Icd10CmAttributeType>) -> Self {
         self.r#type = input;
         self
     }
@@ -217,17 +210,12 @@ impl Icd10CmAttributeBuilder {
         self
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>) -> Self {
         self.traits = input;
         self
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub fn get_traits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>> {
         &self.traits
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
@@ -236,10 +224,7 @@ impl Icd10CmAttributeBuilder {
         self
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmEntityType>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::Icd10CmEntityType>) -> Self {
         self.category = input;
         self
     }
@@ -253,17 +238,12 @@ impl Icd10CmAttributeBuilder {
         self
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmRelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::Icd10CmRelationshipType>) -> Self {
         self.relationship_type = input;
         self
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
-    pub fn get_relationship_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::Icd10CmRelationshipType> {
+    pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::Icd10CmRelationshipType> {
         &self.relationship_type
     }
     /// Consumes the builder and constructs a [`Icd10CmAttribute`](crate::types::Icd10CmAttribute).

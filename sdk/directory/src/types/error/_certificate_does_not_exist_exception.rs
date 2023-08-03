@@ -42,9 +42,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::CertificateDoesN
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CertificateDoesNotExistException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CertificateDoesNotExistException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -58,9 +56,7 @@ impl CertificateDoesNotExistException {
 
 /// A builder for [`CertificateDoesNotExistException`](crate::types::error::CertificateDoesNotExistException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateDoesNotExistExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +98,7 @@ impl CertificateDoesNotExistExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

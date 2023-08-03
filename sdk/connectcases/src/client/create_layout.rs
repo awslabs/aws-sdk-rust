@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`layout_id(Option<String>)`](crate::operation::create_layout::CreateLayoutOutput::layout_id): <p>The unique identifier of the layout.</p>
     ///   - [`layout_arn(Option<String>)`](crate::operation::create_layout::CreateLayoutOutput::layout_arn): <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     /// - On failure, responds with [`SdkError<CreateLayoutError>`](crate::operation::create_layout::CreateLayoutError)
-    pub fn create_layout(
-        &self,
-    ) -> crate::operation::create_layout::builders::CreateLayoutFluentBuilder {
-        crate::operation::create_layout::builders::CreateLayoutFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_layout(&self) -> crate::operation::create_layout::builders::CreateLayoutFluentBuilder {
+        crate::operation::create_layout::builders::CreateLayoutFluentBuilder::new(self.handle.clone())
     }
 }

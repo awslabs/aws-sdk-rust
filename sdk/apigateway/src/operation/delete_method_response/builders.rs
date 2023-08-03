@@ -37,9 +37,7 @@ impl DeleteMethodResponseFluentBuilder {
         }
     }
     /// Access the DeleteMethodResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteMethodResponseFluentBuilder {
             crate::operation::delete_method_response::DeleteMethodResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_method_response::DeleteMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_method_response::DeleteMethodResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteMethodResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteMethodResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_method_response::DeleteMethodResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_method_response::DeleteMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_method_response::DeleteMethodResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteMethodResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_method_response::DeleteMethodResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_method_response::DeleteMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_method_response::DeleteMethodResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteMethodResponseFluentBuilder {
             crate::operation::delete_method_response::DeleteMethodResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_method_response::DeleteMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_method_response::DeleteMethodResponseError>,
     > {
         self.customize_middleware().await
     }

@@ -86,9 +86,7 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EntitySubType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -150,10 +148,7 @@ impl AttributeBuilder {
         self
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
         self.relationship_type = input;
         self
     }
@@ -243,10 +238,7 @@ impl AttributeBuilder {
         self
     }
     /// <p> Contextual information for this attribute. </p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>) -> Self {
         self.traits = input;
         self
     }

@@ -19,9 +19,7 @@ impl DeleteListenerOutput {
 
 /// A builder for [`DeleteListenerOutput`](crate::operation::delete_listener::DeleteListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteListenerOutputBuilder {
     _request_id: Option<String>,
 }

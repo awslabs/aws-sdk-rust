@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppInstanceOutput`](crate::operation::describe_app_instance::DescribeAppInstanceOutput) with field(s):
     ///   - [`app_instance(Option<AppInstance>)`](crate::operation::describe_app_instance::DescribeAppInstanceOutput::app_instance): <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceError>`](crate::operation::describe_app_instance::DescribeAppInstanceError)
-    pub fn describe_app_instance(
-        &self,
-    ) -> crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder {
-        crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_app_instance(&self) -> crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder {
+        crate::operation::describe_app_instance::builders::DescribeAppInstanceFluentBuilder::new(self.handle.clone())
     }
 }

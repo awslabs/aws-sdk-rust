@@ -55,17 +55,14 @@ impl SetTypeConfigurationInput {
 }
 impl SetTypeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder {
         crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTypeConfigurationInputBuilder {
     pub(crate) type_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
@@ -96,19 +93,13 @@ impl SetTypeConfigurationInputBuilder {
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration data for the extension, in this account and Region.</p>
     /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -119,19 +110,13 @@ impl SetTypeConfigurationInputBuilder {
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
-    pub fn configuration_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alias by which to refer to this extension configuration data.</p>
     /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
-    pub fn set_configuration_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_alias = input;
         self
     }
@@ -177,18 +162,14 @@ impl SetTypeConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_type_configuration::SetTypeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_type_configuration::SetTypeConfigurationInput {
-                type_arn: self.type_arn,
-                configuration: self.configuration,
-                configuration_alias: self.configuration_alias,
-                type_name: self.type_name,
-                r#type: self.r#type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_type_configuration::SetTypeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_type_configuration::SetTypeConfigurationInput {
+            type_arn: self.type_arn,
+            configuration: self.configuration,
+            configuration_alias: self.configuration_alias,
+            type_name: self.type_name,
+            r#type: self.r#type,
+        })
     }
 }

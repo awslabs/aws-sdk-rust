@@ -98,9 +98,7 @@ impl CreateRoleInput {
 
 /// A builder for [`CreateRoleInput`](crate::operation::create_role::CreateRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoleInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
@@ -160,10 +158,7 @@ impl CreateRoleInputBuilder {
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
     /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
-    pub fn assume_role_policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assume_role_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assume_role_policy_document = ::std::option::Option::Some(input.into());
         self
     }
@@ -176,10 +171,7 @@ impl CreateRoleInputBuilder {
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
     /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
-    pub fn set_assume_role_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assume_role_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assume_role_policy_document = input;
         self
     }
@@ -229,20 +221,14 @@ impl CreateRoleInputBuilder {
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permissions_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permissions_boundary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permissions_boundary = input;
         self
     }
@@ -268,10 +254,7 @@ impl CreateRoleInputBuilder {
     /// <p>A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -282,12 +265,7 @@ impl CreateRoleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoleInput`](crate::operation::create_role::CreateRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_role::CreateRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_role::CreateRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_role::CreateRoleInput {
             path: self.path,
             role_name: self.role_name,

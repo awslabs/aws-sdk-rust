@@ -37,9 +37,7 @@ impl IngestedFilesSummary {
 
 /// A builder for [`IngestedFilesSummary`](crate::types::IngestedFilesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestedFilesSummaryBuilder {
     pub(crate) total_number_of_files: ::std::option::Option<i32>,
     pub(crate) ingested_number_of_files: ::std::option::Option<i32>,
@@ -86,17 +84,12 @@ impl IngestedFilesSummaryBuilder {
         self
     }
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-    pub fn set_discarded_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Object>>,
-    ) -> Self {
+    pub fn set_discarded_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Object>>) -> Self {
         self.discarded_files = input;
         self
     }
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-    pub fn get_discarded_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Object>> {
+    pub fn get_discarded_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Object>> {
         &self.discarded_files
     }
     /// Consumes the builder and constructs a [`IngestedFilesSummary`](crate::types::IngestedFilesSummary).

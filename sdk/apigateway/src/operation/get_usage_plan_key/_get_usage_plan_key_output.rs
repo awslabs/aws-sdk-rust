@@ -43,17 +43,14 @@ impl ::aws_http::request_id::RequestId for GetUsagePlanKeyOutput {
 }
 impl GetUsagePlanKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetUsagePlanKeyOutput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyOutput).
-    pub fn builder() -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyOutputBuilder {
         crate::operation::get_usage_plan_key::builders::GetUsagePlanKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsagePlanKeyOutput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlanKeyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

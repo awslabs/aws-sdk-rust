@@ -35,18 +35,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     pub(crate) condition: ::std::option::Option<::std::string::String>,
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +81,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
         &self.condition
     }
     /// <p>The name of the dependent container.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dependent container.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }

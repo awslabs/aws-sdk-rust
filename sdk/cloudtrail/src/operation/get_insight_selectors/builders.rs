@@ -38,9 +38,7 @@ impl GetInsightSelectorsFluentBuilder {
         }
     }
     /// Access the GetInsightSelectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetInsightSelectorsFluentBuilder {
             crate::operation::get_insight_selectors::GetInsightSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_selectors::GetInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_selectors::GetInsightSelectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetInsightSelectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetInsightSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_selectors::GetInsightSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_selectors::GetInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_selectors::GetInsightSelectorsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetInsightSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_selectors::GetInsightSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_selectors::GetInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_selectors::GetInsightSelectorsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetInsightSelectorsFluentBuilder {
             crate::operation::get_insight_selectors::GetInsightSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_selectors::GetInsightSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_selectors::GetInsightSelectorsError>,
     > {
         self.customize_middleware().await
     }

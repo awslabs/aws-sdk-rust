@@ -30,9 +30,7 @@ impl Mustache {
 
 /// A builder for [`Mustache`](crate::types::Mustache).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MustacheBuilder {
     pub(crate) value: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,

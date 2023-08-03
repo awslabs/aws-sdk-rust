@@ -10,8 +10,7 @@ pub struct AwsCodeBuildProjectDetails {
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
     #[doc(hidden)]
-    pub artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
+    pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
     /// <p>Information about the build environment for this build project.</p>
     #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment>,
@@ -32,8 +31,7 @@ pub struct AwsCodeBuildProjectDetails {
     pub vpc_config: ::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig>,
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
     #[doc(hidden)]
-    pub secondary_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
+    pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
 }
 impl AwsCodeBuildProjectDetails {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
@@ -42,15 +40,11 @@ impl AwsCodeBuildProjectDetails {
         self.encryption_key.as_deref()
     }
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
-    pub fn artifacts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
+    pub fn artifacts(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
         self.artifacts.as_deref()
     }
     /// <p>Information about the build environment for this build project.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironment> {
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The name of the build project.</p>
@@ -66,9 +60,7 @@ impl AwsCodeBuildProjectDetails {
         self.service_role.as_deref()
     }
     /// <p>Information about logs for the build project.</p>
-    pub fn logs_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigDetails> {
+    pub fn logs_config(&self) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectLogsConfigDetails> {
         self.logs_config.as_ref()
     }
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
@@ -76,9 +68,7 @@ impl AwsCodeBuildProjectDetails {
         self.vpc_config.as_ref()
     }
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
-    pub fn secondary_artifacts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
+    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectArtifactsDetails]> {
         self.secondary_artifacts.as_deref()
     }
 }
@@ -91,39 +81,28 @@ impl AwsCodeBuildProjectDetails {
 
 /// A builder for [`AwsCodeBuildProjectDetails`](crate::types::AwsCodeBuildProjectDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectDetailsBuilder {
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
-    pub(crate) artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
+    pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
     pub(crate) environment: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::AwsCodeBuildProjectSource>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
-    pub(crate) logs_config:
-        ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>,
+    pub(crate) logs_config: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig>,
-    pub(crate) secondary_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
+    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
 }
 impl AwsCodeBuildProjectDetailsBuilder {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
     /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
     /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -144,20 +123,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self
     }
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>,
-        >,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>) -> Self {
         self.artifacts = input;
         self
     }
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
-    pub fn get_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>
-    {
+    pub fn get_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>> {
         &self.artifacts
     }
     /// <p>Information about the build environment for this build project.</p>
@@ -166,17 +137,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self
     }
     /// <p>Information about the build environment for this build project.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment>) -> Self {
         self.environment = input;
         self
     }
     /// <p>Information about the build environment for this build project.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment> {
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectEnvironment> {
         &self.environment
     }
     /// <p>The name of the build project.</p>
@@ -199,10 +165,7 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self
     }
     /// <p>Information about the build input source code for this build project.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCodeBuildProjectSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectSource>) -> Self {
         self.source = input;
         self
     }
@@ -225,25 +188,17 @@ impl AwsCodeBuildProjectDetailsBuilder {
         &self.service_role
     }
     /// <p>Information about logs for the build project.</p>
-    pub fn logs_config(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectLogsConfigDetails,
-    ) -> Self {
+    pub fn logs_config(mut self, input: crate::types::AwsCodeBuildProjectLogsConfigDetails) -> Self {
         self.logs_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about logs for the build project.</p>
-    pub fn set_logs_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>,
-    ) -> Self {
+    pub fn set_logs_config(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>) -> Self {
         self.logs_config = input;
         self
     }
     /// <p>Information about logs for the build project.</p>
-    pub fn get_logs_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails> {
+    pub fn get_logs_config(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigDetails> {
         &self.logs_config
     }
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
@@ -252,17 +207,12 @@ impl AwsCodeBuildProjectDetailsBuilder {
         self
     }
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
-    pub fn get_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig> {
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::AwsCodeBuildProjectVpcConfig> {
         &self.vpc_config
     }
     /// Appends an item to `secondary_artifacts`.
@@ -270,10 +220,7 @@ impl AwsCodeBuildProjectDetailsBuilder {
     /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
     ///
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
-    pub fn secondary_artifacts(
-        mut self,
-        input: crate::types::AwsCodeBuildProjectArtifactsDetails,
-    ) -> Self {
+    pub fn secondary_artifacts(mut self, input: crate::types::AwsCodeBuildProjectArtifactsDetails) -> Self {
         let mut v = self.secondary_artifacts.unwrap_or_default();
         v.push(input);
         self.secondary_artifacts = ::std::option::Option::Some(v);
@@ -282,18 +229,13 @@ impl AwsCodeBuildProjectDetailsBuilder {
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
     pub fn set_secondary_artifacts(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
     ) -> Self {
         self.secondary_artifacts = input;
         self
     }
     /// <p>Information about the secondary artifacts for the CodeBuild project.</p>
-    pub fn get_secondary_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>
-    {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>> {
         &self.secondary_artifacts
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectDetails`](crate::types::AwsCodeBuildProjectDetails).

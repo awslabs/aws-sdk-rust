@@ -12,10 +12,7 @@ pub fn ser_describe_automation_step_executions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_step_execution_filter::ser_step_execution_filter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_step_execution_filter::ser_step_execution_filter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

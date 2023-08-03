@@ -29,16 +29,14 @@ impl StartEdgeConfigurationUpdateInput {
 }
 impl StartEdgeConfigurationUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartEdgeConfigurationUpdateInput`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput).
-    pub fn builder() -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder{
+    pub fn builder() -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder {
         crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`StartEdgeConfigurationUpdateInput`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdateInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl StartEdgeConfigurationUpdateInputBuilder {
         self
     }
     /// <p>The edge configuration details required to invoke the update process.</p>
-    pub fn set_edge_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeConfig>,
-    ) -> Self {
+    pub fn set_edge_config(mut self, input: ::std::option::Option<crate::types::EdgeConfig>) -> Self {
         self.edge_config = input;
         self
     }
@@ -97,12 +92,10 @@ impl StartEdgeConfigurationUpdateInputBuilder {
         crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                edge_config: self.edge_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            edge_config: self.edge_config,
+        })
     }
 }

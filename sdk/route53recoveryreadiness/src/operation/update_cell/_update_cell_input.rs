@@ -29,9 +29,7 @@ impl UpdateCellInput {
 
 /// A builder for [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCellInputBuilder {
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
     pub(crate) cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl UpdateCellInputBuilder {
         self
     }
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cells = input;
         self
     }
@@ -75,12 +70,7 @@ impl UpdateCellInputBuilder {
         &self.cells
     }
     /// Consumes the builder and constructs a [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cell::UpdateCellInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cell::UpdateCellInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cell::UpdateCellInput {
             cell_name: self.cell_name,
             cells: self.cells,

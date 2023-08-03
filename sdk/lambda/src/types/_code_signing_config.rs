@@ -41,9 +41,7 @@ impl CodeSigningConfig {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn code_signing_policies(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
@@ -60,9 +58,7 @@ impl CodeSigningConfig {
 
 /// A builder for [`CodeSigningConfig`](crate::types::CodeSigningConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeSigningConfigBuilder {
     pub(crate) code_signing_config_id: ::std::option::Option<::std::string::String>,
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
@@ -73,18 +69,12 @@ pub struct CodeSigningConfigBuilder {
 }
 impl CodeSigningConfigBuilder {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn code_signing_config_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn set_code_signing_config_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_signing_config_id = input;
         self
     }
@@ -93,18 +83,12 @@ impl CodeSigningConfigBuilder {
         &self.code_signing_config_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_signing_config_arn = input;
         self
     }
@@ -132,17 +116,12 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>List of allowed publishers.</p>
-    pub fn set_allowed_publishers(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowedPublishers>,
-    ) -> Self {
+    pub fn set_allowed_publishers(mut self, input: ::std::option::Option<crate::types::AllowedPublishers>) -> Self {
         self.allowed_publishers = input;
         self
     }
     /// <p>List of allowed publishers.</p>
-    pub fn get_allowed_publishers(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+    pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
         &self.allowed_publishers
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
@@ -151,32 +130,21 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn set_code_signing_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeSigningPolicies>,
-    ) -> Self {
+    pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
         self.code_signing_policies = input;
         self
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn get_code_signing_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+    pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         &self.code_signing_policies
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    pub fn last_modified(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified = input;
         self
     }

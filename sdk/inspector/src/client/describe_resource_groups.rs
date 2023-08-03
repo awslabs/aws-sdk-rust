@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`resource_groups(Option<Vec<ResourceGroup>>)`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput::resource_groups): <p>Information about a resource group.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput::failed_items): <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceGroupsError>`](crate::operation::describe_resource_groups::DescribeResourceGroupsError)
-    pub fn describe_resource_groups(
-        &self,
-    ) -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsFluentBuilder
-    {
+    pub fn describe_resource_groups(&self) -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsFluentBuilder {
         crate::operation::describe_resource_groups::builders::DescribeResourceGroupsFluentBuilder::new(self.handle.clone())
     }
 }

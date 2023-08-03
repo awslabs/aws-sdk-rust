@@ -15,35 +15,25 @@ impl GetCustomRulePolicyInput {
 }
 impl GetCustomRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder {
-        crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder {
+        crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomRulePolicyInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCustomRulePolicyInputBuilder {
     /// <p>The name of your Config Custom Policy rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your Config Custom Policy rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetCustomRulePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput {
-                config_rule_name: self.config_rule_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput {
+            config_rule_name: self.config_rule_name,
+        })
     }
 }

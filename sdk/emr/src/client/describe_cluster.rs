@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::describe_cluster::DescribeClusterOutput::cluster): <p>This output contains the details for the requested cluster.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::operation::describe_cluster::DescribeClusterError)
-    pub fn describe_cluster(
-        &self,
-    ) -> crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder {
-        crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_cluster(&self) -> crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder {
+        crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::new(self.handle.clone())
     }
 }

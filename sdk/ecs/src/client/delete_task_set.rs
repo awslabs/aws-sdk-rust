@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTaskSetOutput`](crate::operation::delete_task_set::DeleteTaskSetOutput) with field(s):
     ///   - [`task_set(Option<TaskSet>)`](crate::operation::delete_task_set::DeleteTaskSetOutput::task_set): <p>Details about the task set.</p>
     /// - On failure, responds with [`SdkError<DeleteTaskSetError>`](crate::operation::delete_task_set::DeleteTaskSetError)
-    pub fn delete_task_set(
-        &self,
-    ) -> crate::operation::delete_task_set::builders::DeleteTaskSetFluentBuilder {
-        crate::operation::delete_task_set::builders::DeleteTaskSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_task_set(&self) -> crate::operation::delete_task_set::builders::DeleteTaskSetFluentBuilder {
+        crate::operation::delete_task_set::builders::DeleteTaskSetFluentBuilder::new(self.handle.clone())
     }
 }

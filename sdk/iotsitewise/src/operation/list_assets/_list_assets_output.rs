@@ -35,9 +35,7 @@ impl ListAssetsOutput {
 
 /// A builder for [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetsOutputBuilder {
     pub(crate) asset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAssetsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each asset.</p>
-    pub fn set_asset_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>,
-    ) -> Self {
+    pub fn set_asset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>) -> Self {
         self.asset_summaries = input;
         self
     }
     /// <p>A list that summarizes each asset.</p>
-    pub fn get_asset_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
+    pub fn get_asset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
         &self.asset_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

@@ -27,7 +27,7 @@ impl GetEbsVolumeRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEBSVolumeRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder,
+    inner: crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder,
 }
 impl GetEBSVolumeRecommendationsFluentBuilder {
     /// Creates a new `GetEBSVolumeRecommendations`.
@@ -38,7 +38,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
         }
     }
     /// Access the GetEBSVolumeRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
             crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
             crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>,
     > {
         self.customize_middleware().await
     }
@@ -131,17 +120,12 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
-    pub fn set_volume_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
-    pub fn get_volume_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_volume_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_volume_arns()
     }
     /// <p>The token to advance to the next page of volume recommendations.</p>
@@ -185,10 +169,7 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of volume recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -210,19 +191,14 @@ impl GetEBSVolumeRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

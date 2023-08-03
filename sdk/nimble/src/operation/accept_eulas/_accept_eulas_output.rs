@@ -28,12 +28,9 @@ impl AcceptEulasOutput {
 
 /// A builder for [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptEulasOutputBuilder {
-    pub(crate) eula_acceptances:
-        ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
+    pub(crate) eula_acceptances: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
     _request_id: Option<String>,
 }
 impl AcceptEulasOutputBuilder {
@@ -49,17 +46,12 @@ impl AcceptEulasOutputBuilder {
         self
     }
     /// <p>A collection of EULA acceptances.</p>
-    pub fn set_eula_acceptances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
-    ) -> Self {
+    pub fn set_eula_acceptances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>) -> Self {
         self.eula_acceptances = input;
         self
     }
     /// <p>A collection of EULA acceptances.</p>
-    pub fn get_eula_acceptances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>> {
+    pub fn get_eula_acceptances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>> {
         &self.eula_acceptances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

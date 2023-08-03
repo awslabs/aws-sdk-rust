@@ -4,9 +4,7 @@ pub fn ser_put_organization_conformance_pack_input(
     input: &crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.organization_conformance_pack_name {
-        object
-            .key("OrganizationConformancePackName")
-            .string(var_1.as_str());
+        object.key("OrganizationConformancePackName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.template_s3_uri {
         object.key("TemplateS3Uri").string(var_2.as_str());

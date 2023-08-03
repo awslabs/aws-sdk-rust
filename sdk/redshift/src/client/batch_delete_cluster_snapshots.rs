@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`resources(Option<Vec<String>>)`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput::resources): <p>A list of the snapshot identifiers that were deleted. </p>
     ///   - [`errors(Option<Vec<SnapshotErrorMessage>>)`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput::errors): <p>A list of any errors returned.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteClusterSnapshotsError>`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError)
-    pub fn batch_delete_cluster_snapshots(&self) -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder{
+    pub fn batch_delete_cluster_snapshots(
+        &self,
+    ) -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder {
         crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

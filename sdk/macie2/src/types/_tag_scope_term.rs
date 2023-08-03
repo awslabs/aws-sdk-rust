@@ -44,9 +44,7 @@ impl TagScopeTerm {
 
 /// A builder for [`TagScopeTerm`](crate::types::TagScopeTerm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagScopeTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl TagScopeTermBuilder {
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
         self.comparator = input;
         self
     }
@@ -97,17 +92,12 @@ impl TagScopeTermBuilder {
         self
     }
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>>) -> Self {
         self.tag_values = input;
         self
     }
     /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
-    pub fn get_tag_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValuePair>> {
         &self.tag_values
     }
     /// <p>The type of object to apply the condition to.</p>

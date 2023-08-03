@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`security_profile_target_mappings(Option<Vec<SecurityProfileTargetMapping>>)`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput::security_profile_target_mappings): <p>A list of security profiles and their associated targets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfilesForTargetError>`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetError)
-    pub fn list_security_profiles_for_target(&self) -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder{
+    pub fn list_security_profiles_for_target(
+        &self,
+    ) -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder {
         crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::new(self.handle.clone())
     }
 }

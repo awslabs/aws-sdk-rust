@@ -10,9 +10,7 @@ pub struct DescribeCreateAccountStatusOutput {
 }
 impl DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn create_account_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> ::std::option::Option<&crate::types::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCreateAccountStatusOutput {
 }
 impl DescribeCreateAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput).
-    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder {
         crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateAccountStatusOutputBuilder {
     pub(crate) create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeCreateAccountStatusOutputBuilder {
         self
     }
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn set_create_account_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateAccountStatus>,
-    ) -> Self {
+    pub fn set_create_account_status(mut self, input: ::std::option::Option<crate::types::CreateAccountStatus>) -> Self {
         self.create_account_status = input;
         self
     }
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn get_create_account_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateAccountStatus> {
+    pub fn get_create_account_status(&self) -> &::std::option::Option<crate::types::CreateAccountStatus> {
         &self.create_account_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DescribeCreateAccountStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
+    pub fn build(self) -> crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput {
             create_account_status: self.create_account_status,
             _request_id: self._request_id,

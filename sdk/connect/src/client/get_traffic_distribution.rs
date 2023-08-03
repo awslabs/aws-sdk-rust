@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::id): <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::arn): <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<GetTrafficDistributionError>`](crate::operation::get_traffic_distribution::GetTrafficDistributionError)
-    pub fn get_traffic_distribution(
-        &self,
-    ) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder
-    {
+    pub fn get_traffic_distribution(&self) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder {
         crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::new(self.handle.clone())
     }
 }

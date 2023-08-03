@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`api_mapping_key(Option<String>)`](crate::operation::get_api_mapping::GetApiMappingOutput::api_mapping_key): <p>The API mapping key.</p>
     ///   - [`stage(Option<String>)`](crate::operation::get_api_mapping::GetApiMappingOutput::stage): <p>The API stage.</p>
     /// - On failure, responds with [`SdkError<GetApiMappingError>`](crate::operation::get_api_mapping::GetApiMappingError)
-    pub fn get_api_mapping(
-        &self,
-    ) -> crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder {
-        crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_api_mapping(&self) -> crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder {
+        crate::operation::get_api_mapping::builders::GetApiMappingFluentBuilder::new(self.handle.clone())
     }
 }

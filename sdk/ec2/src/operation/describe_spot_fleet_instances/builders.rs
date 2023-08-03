@@ -26,7 +26,7 @@ impl DescribeSpotFleetInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder,
+    inner: crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder,
 }
 impl DescribeSpotFleetInstancesFluentBuilder {
     /// Creates a new `DescribeSpotFleetInstances`.
@@ -37,7 +37,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
         }
     }
     /// Access the DescribeSpotFleetInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_instances::builders::DescribeSpotFleetInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
             crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSpotFleetInstancesFluentBuilder {
             crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl DescribeSpotFleetInstancesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_id(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_id(input);
         self
     }

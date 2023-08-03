@@ -42,21 +42,17 @@ impl ::aws_http::request_id::RequestId for ListFolderMembersOutput {
 }
 impl ListFolderMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder {
+    pub fn builder() -> crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder {
         crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFolderMembersOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
-    pub(crate) folder_member_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>>,
+    pub(crate) folder_member_list: ::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -88,17 +84,12 @@ impl ListFolderMembersOutputBuilder {
         self
     }
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-    pub fn set_folder_member_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>>,
-    ) -> Self {
+    pub fn set_folder_member_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>>) -> Self {
         self.folder_member_list = input;
         self
     }
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-    pub fn get_folder_member_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>> {
+    pub fn get_folder_member_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>> {
         &self.folder_member_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

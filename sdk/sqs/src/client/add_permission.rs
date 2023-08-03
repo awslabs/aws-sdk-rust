@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`actions(Vec<String>)`](crate::operation::add_permission::builders::AddPermissionFluentBuilder::actions) / [`set_actions(Option<Vec<String>>)`](crate::operation::add_permission::builders::AddPermissionFluentBuilder::set_actions): <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>  <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     /// - On success, responds with [`AddPermissionOutput`](crate::operation::add_permission::AddPermissionOutput)
     /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::operation::add_permission::AddPermissionError)
-    pub fn add_permission(
-        &self,
-    ) -> crate::operation::add_permission::builders::AddPermissionFluentBuilder {
-        crate::operation::add_permission::builders::AddPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_permission(&self) -> crate::operation::add_permission::builders::AddPermissionFluentBuilder {
+        crate::operation::add_permission::builders::AddPermissionFluentBuilder::new(self.handle.clone())
     }
 }

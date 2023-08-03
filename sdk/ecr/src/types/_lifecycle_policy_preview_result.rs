@@ -51,9 +51,7 @@ impl LifecyclePolicyPreviewResult {
 
 /// A builder for [`LifecyclePolicyPreviewResult`](crate::types::LifecyclePolicyPreviewResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecyclePolicyPreviewResultBuilder {
     pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl LifecyclePolicyPreviewResultBuilder {
         self
     }
     /// <p>The list of tags associated with this image.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
@@ -105,10 +100,7 @@ impl LifecyclePolicyPreviewResultBuilder {
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
-    pub fn set_image_pushed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
@@ -122,10 +114,7 @@ impl LifecyclePolicyPreviewResultBuilder {
         self
     }
     /// <p>The type of action to be taken.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecyclePolicyRuleAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyRuleAction>) -> Self {
         self.action = input;
         self
     }

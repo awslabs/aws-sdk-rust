@@ -23,9 +23,7 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 
 /// A builder for [`VirtualGatewayListenerTlsSdsCertificate`](crate::types::VirtualGatewayListenerTlsSdsCertificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsSdsCertificateBuilder {
     pub(crate) secret_name: ::std::option::Option<::std::string::String>,
 }

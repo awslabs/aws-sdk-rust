@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchAssociateAssessmentReportEvidenc
 }
 impl BatchAssociateAssessmentReportEvidenceOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateAssessmentReportEvidenceOutput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput).
-    pub fn builder() -> crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceOutputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceOutputBuilder {
         crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateAssessmentReportEvidenceOutput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateAssessmentReportEvidenceOutputBuilder {
     pub(crate) evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
@@ -57,17 +54,12 @@ impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
         self
     }
     /// <p> The list of evidence identifiers. </p>
-    pub fn set_evidence_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.evidence_ids = input;
         self
     }
     /// <p> The list of evidence identifiers. </p>
-    pub fn get_evidence_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evidence_ids
     }
     /// Appends an item to `errors`.
@@ -82,17 +74,12 @@ impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
         self
     }
     /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,12 +92,10 @@ impl BatchAssociateAssessmentReportEvidenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateAssessmentReportEvidenceOutput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput).
-    pub fn build(self) -> crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput{
+    pub fn build(self) -> crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput {
         crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput {
-            evidence_ids: self.evidence_ids
-            ,
-            errors: self.errors
-            ,
+            evidence_ids: self.evidence_ids,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

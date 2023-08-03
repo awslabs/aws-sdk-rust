@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     /// - On success, responds with [`DeleteKxDatabaseOutput`](crate::operation::delete_kx_database::DeleteKxDatabaseOutput)
     /// - On failure, responds with [`SdkError<DeleteKxDatabaseError>`](crate::operation::delete_kx_database::DeleteKxDatabaseError)
-    pub fn delete_kx_database(
-        &self,
-    ) -> crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder {
-        crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_kx_database(&self) -> crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder {
+        crate::operation::delete_kx_database::builders::DeleteKxDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

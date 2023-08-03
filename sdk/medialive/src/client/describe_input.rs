@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_input::DescribeInputOutput::tags): A collection of key-value pairs.
     ///   - [`r#type(Option<InputType>)`](crate::operation::describe_input::DescribeInputOutput::type): The different types of inputs that AWS Elemental MediaLive supports.
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::operation::describe_input::DescribeInputError)
-    pub fn describe_input(
-        &self,
-    ) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
-        crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_input(&self) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
+        crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(self.handle.clone())
     }
 }

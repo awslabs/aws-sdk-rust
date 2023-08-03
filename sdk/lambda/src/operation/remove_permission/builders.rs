@@ -10,10 +10,7 @@ impl RemovePermissionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_permission();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RemovePermissionFluentBuilder {
         }
     }
     /// Access the RemovePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RemovePermissionFluentBuilder {
             crate::operation::remove_permission::RemovePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RemovePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RemovePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RemovePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RemovePermissionFluentBuilder {
             crate::operation::remove_permission::RemovePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_permission::RemovePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl RemovePermissionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -145,10 +126,7 @@ impl RemovePermissionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

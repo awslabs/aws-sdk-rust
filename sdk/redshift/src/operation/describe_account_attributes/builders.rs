@@ -26,7 +26,7 @@ impl DescribeAccountAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder,
+    inner: crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder,
 }
 impl DescribeAccountAttributesFluentBuilder {
     /// Creates a new `DescribeAccountAttributes`.
@@ -37,7 +37,7 @@ impl DescribeAccountAttributesFluentBuilder {
         }
     }
     /// Access the DescribeAccountAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAccountAttributesFluentBuilder {
             crate::operation::describe_account_attributes::DescribeAccountAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_attributes::DescribeAccountAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAccountAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAccountAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_attributes::DescribeAccountAttributesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAccountAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_attributes::DescribeAccountAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAccountAttributesFluentBuilder {
             crate::operation::describe_account_attributes::DescribeAccountAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_attributes::DescribeAccountAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl DescribeAccountAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
     /// <p>A list of attribute names.</p>
-    pub fn attribute_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_names(input.into());
         self
     }
     /// <p>A list of attribute names.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
     /// <p>A list of attribute names.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attribute_names()
     }
 }

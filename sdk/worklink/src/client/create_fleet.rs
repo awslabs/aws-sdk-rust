@@ -10,12 +10,8 @@ impl super::Client {
     /// - On success, responds with [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput) with field(s):
     ///   - [`fleet_arn(Option<String>)`](crate::operation::create_fleet::CreateFleetOutput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::operation::create_fleet::CreateFleetError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn create_fleet(
-        &self,
-    ) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())
     }
 }

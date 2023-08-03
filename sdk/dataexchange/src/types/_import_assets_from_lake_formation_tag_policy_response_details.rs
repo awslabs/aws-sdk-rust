@@ -29,9 +29,7 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
         self.catalog_id.as_deref()
     }
     /// <p>A structure for the database object.</p>
-    pub fn database(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatabaseLfTagPolicyAndPermissions> {
+    pub fn database(&self) -> ::std::option::Option<&crate::types::DatabaseLfTagPolicyAndPermissions> {
         self.database.as_ref()
     }
     /// <p>A structure for the table object.</p>
@@ -53,17 +51,14 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
 }
 impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
     /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
-    pub fn builder(
-    ) -> crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
+    pub fn builder() -> crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::default()
     }
 }
 
 /// A builder for [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>,
@@ -93,17 +88,12 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         self
     }
     /// <p>A structure for the database object.</p>
-    pub fn set_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>,
-    ) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>) -> Self {
         self.database = input;
         self
     }
     /// <p>A structure for the database object.</p>
-    pub fn get_database(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions> {
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions> {
         &self.database
     }
     /// <p>A structure for the table object.</p>
@@ -112,17 +102,12 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
         self
     }
     /// <p>A structure for the table object.</p>
-    pub fn set_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TableLfTagPolicyAndPermissions>,
-    ) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableLfTagPolicyAndPermissions>) -> Self {
         self.table = input;
         self
     }
     /// <p>A structure for the table object.</p>
-    pub fn get_table(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableLfTagPolicyAndPermissions> {
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::TableLfTagPolicyAndPermissions> {
         &self.table
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>

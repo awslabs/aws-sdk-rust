@@ -33,7 +33,10 @@ pub fn ser_pivot_table_field_options(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_pivot_table_field_collapse_state_option::ser_pivot_table_field_collapse_state_option(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_pivot_table_field_collapse_state_option::ser_pivot_table_field_collapse_state_option(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }
@@ -44,17 +47,9 @@ pub fn ser_pivot_table_field_options(
 
 pub(crate) fn de_pivot_table_field_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PivotTableFieldOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PivotTableFieldOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,41 +59,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SelectedFieldOptions" => {
-                                builder = builder.set_selected_field_options(
-                                    crate::protocol_serde::shape_pivot_table_field_option_list::de_pivot_table_field_option_list(tokens)?
-                                );
-                            }
-                            "DataPathOptions" => {
-                                builder = builder.set_data_path_options(
-                                    crate::protocol_serde::shape_pivot_table_data_path_option_list::de_pivot_table_data_path_option_list(tokens)?
-                                );
-                            }
-                            "CollapseStateOptions" => {
-                                builder = builder.set_collapse_state_options(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "SelectedFieldOptions" => {
+                            builder = builder.set_selected_field_options(
+                                crate::protocol_serde::shape_pivot_table_field_option_list::de_pivot_table_field_option_list(tokens)?,
+                            );
+                        }
+                        "DataPathOptions" => {
+                            builder = builder.set_data_path_options(
+                                crate::protocol_serde::shape_pivot_table_data_path_option_list::de_pivot_table_data_path_option_list(tokens)?,
+                            );
+                        }
+                        "CollapseStateOptions" => {
+                            builder = builder.set_collapse_state_options(
                                     crate::protocol_serde::shape_pivot_table_field_collapse_state_option_list::de_pivot_table_field_collapse_state_option_list(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

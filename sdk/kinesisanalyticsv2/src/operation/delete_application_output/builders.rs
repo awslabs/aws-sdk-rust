@@ -26,8 +26,7 @@ impl DeleteApplicationOutputInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_application_output::builders::DeleteApplicationOutputInputBuilder,
+    inner: crate::operation::delete_application_output::builders::DeleteApplicationOutputInputBuilder,
 }
 impl DeleteApplicationOutputFluentBuilder {
     /// Creates a new `DeleteApplicationOutput`.
@@ -38,10 +37,7 @@ impl DeleteApplicationOutputFluentBuilder {
         }
     }
     /// Access the DeleteApplicationOutput as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_application_output::builders::DeleteApplicationOutputInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_application_output::builders::DeleteApplicationOutputInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteApplicationOutputFluentBuilder {
             crate::operation::delete_application_output::DeleteApplicationOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_output::DeleteApplicationOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_output::DeleteApplicationOutputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteApplicationOutputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteApplicationOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_output::DeleteApplicationOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_output::DeleteApplicationOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_output::DeleteApplicationOutputError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteApplicationOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_output::DeleteApplicationOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_output::DeleteApplicationOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_output::DeleteApplicationOutputError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteApplicationOutputFluentBuilder {
             crate::operation::delete_application_output::DeleteApplicationOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_output::DeleteApplicationOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_output::DeleteApplicationOutputError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }

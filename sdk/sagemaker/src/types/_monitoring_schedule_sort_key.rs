@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MonitoringScheduleSortKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for MonitoringScheduleSortKey {
             "CreationTime" => MonitoringScheduleSortKey::CreationTime,
             "Name" => MonitoringScheduleSortKey::Name,
             "Status" => MonitoringScheduleSortKey::Status,
-            other => MonitoringScheduleSortKey::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MonitoringScheduleSortKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

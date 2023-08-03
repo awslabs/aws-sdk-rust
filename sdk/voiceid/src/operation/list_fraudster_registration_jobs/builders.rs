@@ -26,7 +26,7 @@ impl ListFraudsterRegistrationJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder,
+    inner: crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder,
 }
 impl ListFraudsterRegistrationJobsFluentBuilder {
     /// Creates a new `ListFraudsterRegistrationJobs`.
@@ -37,7 +37,7 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         }
     }
     /// Access the ListFraudsterRegistrationJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
             crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
             crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator {
         crate::operation::list_fraudster_registration_jobs::paginator::ListFraudsterRegistrationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
@@ -146,17 +135,12 @@ impl ListFraudsterRegistrationJobsFluentBuilder {
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
     /// <p>Provides the status of your fraudster registration job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
         self.inner.get_job_status()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>

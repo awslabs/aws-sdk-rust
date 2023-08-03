@@ -37,10 +37,7 @@ impl DeleteAppInputSourceFluentBuilder {
         }
     }
     /// Access the DeleteAppInputSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteAppInputSourceFluentBuilder {
             crate::operation::delete_app_input_source::DeleteAppInputSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_input_source::DeleteAppInputSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteAppInputSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteAppInputSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_input_source::DeleteAppInputSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_input_source::DeleteAppInputSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteAppInputSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_input_source::DeleteAppInputSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_input_source::DeleteAppInputSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteAppInputSourceFluentBuilder {
             crate::operation::delete_app_input_source::DeleteAppInputSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_input_source::DeleteAppInputSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_input_source::DeleteAppInputSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl DeleteAppInputSourceFluentBuilder {
         self
     }
     /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
-    pub fn set_terraform_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TerraformSource>,
-    ) -> Self {
+    pub fn set_terraform_source(mut self, input: ::std::option::Option<crate::types::TerraformSource>) -> Self {
         self.inner = self.inner.set_terraform_source(input);
         self
     }
@@ -183,25 +166,17 @@ impl DeleteAppInputSourceFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn eks_source_cluster_namespace(
-        mut self,
-        input: crate::types::EksSourceClusterNamespace,
-    ) -> Self {
+    pub fn eks_source_cluster_namespace(mut self, input: crate::types::EksSourceClusterNamespace) -> Self {
         self.inner = self.inner.eks_source_cluster_namespace(input);
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn set_eks_source_cluster_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
-    ) -> Self {
+    pub fn set_eks_source_cluster_namespace(mut self, input: ::std::option::Option<crate::types::EksSourceClusterNamespace>) -> Self {
         self.inner = self.inner.set_eks_source_cluster_namespace(input);
         self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
-    pub fn get_eks_source_cluster_namespace(
-        &self,
-    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+    pub fn get_eks_source_cluster_namespace(&self) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
         self.inner.get_eks_source_cluster_namespace()
     }
 }

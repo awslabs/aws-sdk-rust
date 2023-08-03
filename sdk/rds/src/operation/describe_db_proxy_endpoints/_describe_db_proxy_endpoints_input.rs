@@ -47,18 +47,14 @@ impl DescribeDbProxyEndpointsInput {
 }
 impl DescribeDbProxyEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsInput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder {
         crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxyEndpointsInput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxyEndpointsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +64,12 @@ pub struct DescribeDbProxyEndpointsInputBuilder {
 }
 impl DescribeDbProxyEndpointsInputBuilder {
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -88,18 +78,12 @@ impl DescribeDbProxyEndpointsInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = input;
         self
     }
@@ -119,10 +103,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -171,14 +152,12 @@ impl DescribeDbProxyEndpointsInputBuilder {
         crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput {
-                db_proxy_name: self.db_proxy_name,
-                db_proxy_endpoint_name: self.db_proxy_endpoint_name,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput {
+            db_proxy_name: self.db_proxy_name,
+            db_proxy_endpoint_name: self.db_proxy_endpoint_name,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

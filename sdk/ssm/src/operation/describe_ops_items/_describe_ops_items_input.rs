@@ -65,20 +65,16 @@ impl DescribeOpsItemsInput {
 }
 impl DescribeOpsItemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
-    pub fn builder() -> crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder {
         crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOpsItemsInputBuilder {
-    pub(crate) ops_item_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
+    pub(crate) ops_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -131,10 +127,7 @@ impl DescribeOpsItemsInputBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn set_ops_item_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
-    ) -> Self {
+    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>) -> Self {
         self.ops_item_filters = input;
         self
     }
@@ -157,9 +150,7 @@ impl DescribeOpsItemsInputBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn get_ops_item_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
+    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
         &self.ops_item_filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -193,16 +184,11 @@ impl DescribeOpsItemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ops_items::DescribeOpsItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ops_items::DescribeOpsItemsInput {
-                ops_item_filters: self.ops_item_filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ops_items::DescribeOpsItemsInput {
+            ops_item_filters: self.ops_item_filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

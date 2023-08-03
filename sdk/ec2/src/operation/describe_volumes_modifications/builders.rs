@@ -28,7 +28,7 @@ impl DescribeVolumesModificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVolumesModificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder,
+    inner: crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder,
 }
 impl DescribeVolumesModificationsFluentBuilder {
     /// Creates a new `DescribeVolumesModifications`.
@@ -39,7 +39,7 @@ impl DescribeVolumesModificationsFluentBuilder {
         }
     }
     /// Access the DescribeVolumesModifications as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeVolumesModificationsFluentBuilder {
             crate::operation::describe_volumes_modifications::DescribeVolumesModifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeVolumesModificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeVolumesModificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeVolumesModificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl DescribeVolumesModificationsFluentBuilder {
             crate::operation::describe_volumes_modifications::DescribeVolumesModifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator {
         crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -152,10 +141,7 @@ impl DescribeVolumesModificationsFluentBuilder {
         self
     }
     /// <p>The IDs of the volumes.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }
@@ -199,10 +185,7 @@ impl DescribeVolumesModificationsFluentBuilder {
     /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
     /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

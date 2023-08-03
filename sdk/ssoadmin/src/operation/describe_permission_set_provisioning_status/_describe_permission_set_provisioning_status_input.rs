@@ -22,16 +22,14 @@ impl DescribePermissionSetProvisioningStatusInput {
 }
 impl DescribePermissionSetProvisioningStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusInput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput).
-    pub fn builder() -> crate::operation::describe_permission_set_provisioning_status::builders::DescribePermissionSetProvisioningStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_permission_set_provisioning_status::builders::DescribePermissionSetProvisioningStatusInputBuilder {
         crate::operation::describe_permission_set_provisioning_status::builders::DescribePermissionSetProvisioningStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePermissionSetProvisioningStatusInput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePermissionSetProvisioningStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provision_permission_set_request_id: ::std::option::Option<::std::string::String>,
@@ -52,36 +50,31 @@ impl DescribePermissionSetProvisioningStatusInputBuilder {
         &self.instance_arn
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-    pub fn provision_permission_set_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_permission_set_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provision_permission_set_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-    pub fn set_provision_permission_set_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_permission_set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provision_permission_set_request_id = input;
         self
     }
     /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
-    pub fn get_provision_permission_set_request_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_provision_permission_set_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provision_permission_set_request_id
     }
     /// Consumes the builder and constructs a [`DescribePermissionSetProvisioningStatusInput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput {
-                instance_arn: self.instance_arn
-                ,
-                provision_permission_set_request_id: self.provision_permission_set_request_id
-                ,
-            }
+                instance_arn: self.instance_arn,
+                provision_permission_set_request_id: self.provision_permission_set_request_id,
+            },
         )
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for SetPlatformApplicationAttributesOutpu
 }
 impl SetPlatformApplicationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SetPlatformApplicationAttributesOutput`](crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput).
-    pub fn builder() -> crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesOutputBuilder {
         crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetPlatformApplicationAttributesOutput`](crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl SetPlatformApplicationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetPlatformApplicationAttributesOutput`](crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput {
         crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput {
             _request_id: self._request_id,
         }

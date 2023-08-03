@@ -36,17 +36,14 @@ impl ListKxChangesetsInput {
 }
 impl ListKxChangesetsInput {
     /// Creates a new builder-style object to manufacture [`ListKxChangesetsInput`](crate::operation::list_kx_changesets::ListKxChangesetsInput).
-    pub fn builder() -> crate::operation::list_kx_changesets::builders::ListKxChangesetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_kx_changesets::builders::ListKxChangesetsInputBuilder {
         crate::operation::list_kx_changesets::builders::ListKxChangesetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxChangesetsInput`](crate::operation::list_kx_changesets::ListKxChangesetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxChangesetsInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListKxChangesetsInputBuilder {
 }
 impl ListKxChangesetsInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -75,18 +66,12 @@ impl ListKxChangesetsInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -125,17 +110,12 @@ impl ListKxChangesetsInputBuilder {
     /// Consumes the builder and constructs a [`ListKxChangesetsInput`](crate::operation::list_kx_changesets::ListKxChangesetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kx_changesets::ListKxChangesetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_kx_changesets::ListKxChangesetsInput {
-                environment_id: self.environment_id,
-                database_name: self.database_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_kx_changesets::ListKxChangesetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_kx_changesets::ListKxChangesetsInput {
+            environment_id: self.environment_id,
+            database_name: self.database_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

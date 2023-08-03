@@ -10,10 +10,7 @@ impl SearchTablesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_tables::SearchTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_tables::SearchTablesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_tables::SearchTablesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_tables();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl SearchTablesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_tables::SearchTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_tables::SearchTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_tables::SearchTablesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl SearchTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl SearchTablesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_tables::SearchTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_tables::SearchTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_tables::SearchTablesError>,
     > {
         self.customize_middleware().await
@@ -116,13 +104,8 @@ impl SearchTablesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_tables::paginator::SearchTablesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_tables::paginator::SearchTablesPaginator {
-        crate::operation::search_tables::paginator::SearchTablesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_tables::paginator::SearchTablesPaginator {
+        crate::operation::search_tables::paginator::SearchTablesPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,18 +147,13 @@ impl SearchTablesFluentBuilder {
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>> {
         self.inner.get_filters()
     }
     /// <p>A string used for a text search.</p>
@@ -205,17 +183,12 @@ impl SearchTablesFluentBuilder {
         self
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
         self.inner.get_sort_criteria()
     }
     /// <p>The maximum number of tables to return in a single response.</p>
@@ -246,10 +219,7 @@ impl SearchTablesFluentBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.inner = self.inner.set_resource_share_type(input);
         self
     }
@@ -258,9 +228,7 @@ impl SearchTablesFluentBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()
     }
 }

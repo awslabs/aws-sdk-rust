@@ -22,9 +22,7 @@ impl GetGameInput {
 
 /// A builder for [`GetGameInput`](crate::operation::get_game::GetGameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetGameInputBuilder {
         &self.game_name
     }
     /// Consumes the builder and constructs a [`GetGameInput`](crate::operation::get_game::GetGameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_game::GetGameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_game::GetGameInput {
-            game_name: self.game_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_game::GetGameInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_game::GetGameInput { game_name: self.game_name })
     }
 }

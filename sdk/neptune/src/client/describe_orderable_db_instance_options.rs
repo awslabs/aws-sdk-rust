@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`orderable_db_instance_options(Option<Vec<OrderableDbInstanceOption>>)`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput::orderable_db_instance_options): <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput::marker): <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     /// - On failure, responds with [`SdkError<DescribeOrderableDBInstanceOptionsError>`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError)
-    pub fn describe_orderable_db_instance_options(&self) -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDBInstanceOptionsFluentBuilder{
+    pub fn describe_orderable_db_instance_options(
+        &self,
+    ) -> crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDBInstanceOptionsFluentBuilder {
         crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDBInstanceOptionsFluentBuilder::new(self.handle.clone())
     }
 }

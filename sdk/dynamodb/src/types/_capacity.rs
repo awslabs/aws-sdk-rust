@@ -37,9 +37,7 @@ impl Capacity {
 
 /// A builder for [`Capacity`](crate::types::Capacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<f64>,
     pub(crate) write_capacity_units: ::std::option::Option<f64>,

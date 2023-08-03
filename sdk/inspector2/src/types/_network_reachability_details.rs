@@ -37,9 +37,7 @@ impl NetworkReachabilityDetails {
 
 /// A builder for [`NetworkReachabilityDetails`](crate::types::NetworkReachabilityDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkReachabilityDetailsBuilder {
     pub(crate) open_port_range: ::std::option::Option<crate::types::PortRange>,
     pub(crate) protocol: ::std::option::Option<crate::types::NetworkProtocol>,
@@ -52,10 +50,7 @@ impl NetworkReachabilityDetailsBuilder {
         self
     }
     /// <p>An object that contains details about the open port range associated with a finding.</p>
-    pub fn set_open_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PortRange>,
-    ) -> Self {
+    pub fn set_open_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
         self.open_port_range = input;
         self
     }
@@ -69,10 +64,7 @@ impl NetworkReachabilityDetailsBuilder {
         self
     }
     /// <p>The protocol associated with a finding.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::NetworkProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -86,10 +78,7 @@ impl NetworkReachabilityDetailsBuilder {
         self
     }
     /// <p>An object that contains details about a network path associated with a finding.</p>
-    pub fn set_network_path(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkPath>,
-    ) -> Self {
+    pub fn set_network_path(mut self, input: ::std::option::Option<crate::types::NetworkPath>) -> Self {
         self.network_path = input;
         self
     }

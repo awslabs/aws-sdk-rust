@@ -5,9 +5,7 @@ pub fn ser_human_loop_activation_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.human_loop_activation_conditions_config {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("HumanLoopActivationConditionsConfig")
-            .start_object();
+        let mut object_2 = object.key("HumanLoopActivationConditionsConfig").start_object();
         crate::protocol_serde::shape_human_loop_activation_conditions_config::ser_human_loop_activation_conditions_config(&mut object_2, var_1)?;
         object_2.finish();
     }
@@ -16,17 +14,9 @@ pub fn ser_human_loop_activation_config(
 
 pub(crate) fn de_human_loop_activation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HumanLoopActivationConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HumanLoopActivationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -36,31 +26,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "HumanLoopActivationConditionsConfig" => {
-                                builder = builder.set_human_loop_activation_conditions_config(
-                                    crate::protocol_serde::shape_human_loop_activation_conditions_config::de_human_loop_activation_conditions_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "HumanLoopActivationConditionsConfig" => {
+                            builder = builder.set_human_loop_activation_conditions_config(
+                                crate::protocol_serde::shape_human_loop_activation_conditions_config::de_human_loop_activation_conditions_config(
+                                    tokens,
+                                )?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

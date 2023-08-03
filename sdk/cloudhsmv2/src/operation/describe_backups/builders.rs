@@ -10,10 +10,7 @@ impl DescribeBackupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_backups();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeBackupsFluentBuilder {
         }
     }
     /// Access the DescribeBackups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_backups::builders::DescribeBackupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeBackupsFluentBuilder {
             crate::operation::describe_backups::DescribeBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backups::DescribeBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeBackupsFluentBuilder {
             crate::operation::describe_backups::DescribeBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backups::DescribeBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backups::DescribeBackupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_backups::paginator::DescribeBackupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
-        crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
+        crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,11 +151,7 @@ impl DescribeBackupsFluentBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k.into(), v);
         self
     }
@@ -188,12 +163,7 @@ impl DescribeBackupsFluentBuilder {
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -204,11 +174,7 @@ impl DescribeBackupsFluentBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>

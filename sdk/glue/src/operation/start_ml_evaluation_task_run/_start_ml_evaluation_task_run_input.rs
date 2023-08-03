@@ -15,16 +15,14 @@ impl StartMlEvaluationTaskRunInput {
 }
 impl StartMlEvaluationTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
-    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder {
         crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlEvaluationTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl StartMlEvaluationTaskRunInputBuilder {
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
-                transform_id: self.transform_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
+            transform_id: self.transform_id,
+        })
     }
 }

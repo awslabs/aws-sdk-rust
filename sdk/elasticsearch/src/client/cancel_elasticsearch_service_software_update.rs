@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput) with field(s):
     ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the Elasticsearch service software update.</p>
     /// - On failure, responds with [`SdkError<CancelElasticsearchServiceSoftwareUpdateError>`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError)
-    pub fn cancel_elasticsearch_service_software_update(&self) -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateFluentBuilder{
-        crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateFluentBuilder::new(self.handle.clone())
+    pub fn cancel_elasticsearch_service_software_update(
+        &self,
+    ) -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateFluentBuilder {
+        crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

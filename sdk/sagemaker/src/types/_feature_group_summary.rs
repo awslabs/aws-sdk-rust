@@ -51,9 +51,7 @@ impl FeatureGroupSummary {
 
 /// A builder for [`FeatureGroupSummary`](crate::types::FeatureGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureGroupSummaryBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct FeatureGroupSummaryBuilder {
 }
 impl FeatureGroupSummaryBuilder {
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -83,18 +75,12 @@ impl FeatureGroupSummaryBuilder {
         &self.feature_group_name
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
@@ -108,10 +94,7 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -125,17 +108,12 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    pub fn set_feature_group_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroupStatus>,
-    ) -> Self {
+    pub fn set_feature_group_status(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.feature_group_status = input;
         self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    pub fn get_feature_group_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
+    pub fn get_feature_group_status(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         &self.feature_group_status
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
@@ -144,17 +122,12 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    pub fn set_offline_store_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OfflineStoreStatus>,
-    ) -> Self {
+    pub fn set_offline_store_status(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatus>) -> Self {
         self.offline_store_status = input;
         self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    pub fn get_offline_store_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
+    pub fn get_offline_store_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
         &self.offline_store_status
     }
     /// Consumes the builder and constructs a [`FeatureGroupSummary`](crate::types::FeatureGroupSummary).

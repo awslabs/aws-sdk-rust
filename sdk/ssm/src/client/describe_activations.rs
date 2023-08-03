@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`activation_list(Option<Vec<Activation>>)`](crate::operation::describe_activations::DescribeActivationsOutput::activation_list): <p>A list of activations for your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_activations::DescribeActivationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
     /// - On failure, responds with [`SdkError<DescribeActivationsError>`](crate::operation::describe_activations::DescribeActivationsError)
-    pub fn describe_activations(
-        &self,
-    ) -> crate::operation::describe_activations::builders::DescribeActivationsFluentBuilder {
-        crate::operation::describe_activations::builders::DescribeActivationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_activations(&self) -> crate::operation::describe_activations::builders::DescribeActivationsFluentBuilder {
+        crate::operation::describe_activations::builders::DescribeActivationsFluentBuilder::new(self.handle.clone())
     }
 }

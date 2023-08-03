@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput::next_token): <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput::tags): <p>A map of tag keys and values associated with the specified stream.</p>
     /// - On failure, responds with [`SdkError<ListTagsForStreamError>`](crate::operation::list_tags_for_stream::ListTagsForStreamError)
-    pub fn list_tags_for_stream(
-        &self,
-    ) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder {
-        crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_stream(&self) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder {
+        crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl ImageGenerationDestinationConfig {
 
 /// A builder for [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageGenerationDestinationConfigBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ImageGenerationDestinationConfigBuilder {
         &self.uri
     }
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_region = input;
         self
     }

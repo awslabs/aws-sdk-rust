@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`mount_options(SmbMountOptions)`](crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder::mount_options) / [`set_mount_options(Option<SmbMountOptions>)`](crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder::set_mount_options): <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     /// - On success, responds with [`UpdateLocationSmbOutput`](crate::operation::update_location_smb::UpdateLocationSmbOutput)
     /// - On failure, responds with [`SdkError<UpdateLocationSmbError>`](crate::operation::update_location_smb::UpdateLocationSmbError)
-    pub fn update_location_smb(
-        &self,
-    ) -> crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder {
-        crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_location_smb(&self) -> crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder {
+        crate::operation::update_location_smb::builders::UpdateLocationSmbFluentBuilder::new(self.handle.clone())
     }
 }

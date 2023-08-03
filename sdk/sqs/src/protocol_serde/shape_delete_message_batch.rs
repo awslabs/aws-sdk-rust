@@ -9,90 +9,86 @@ pub fn de_delete_message_batch_http_error(
     crate::operation::delete_message_batch::DeleteMessageBatchError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AWS.SimpleQueueService.BatchEntryIdsNotDistinct" => crate::operation::delete_message_batch::DeleteMessageBatchError::BatchEntryIdsNotDistinct({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AWS.SimpleQueueService.BatchEntryIdsNotDistinct" => {
+            crate::operation::delete_message_batch::DeleteMessageBatchError::BatchEntryIdsNotDistinct({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BatchEntryIdsNotDistinctBuilder::default();
-                    output = crate::protocol_serde::shape_batch_entry_ids_not_distinct::de_batch_entry_ids_not_distinct_xml_err(_response_body, output).map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_batch_entry_ids_not_distinct::de_batch_entry_ids_not_distinct_xml_err(_response_body, output)
+                            .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "AWS.SimpleQueueService.EmptyBatchRequest" => crate::operation::delete_message_batch::DeleteMessageBatchError::EmptyBatchRequest({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::EmptyBatchRequestBuilder::default();
-                    output = crate::protocol_serde::shape_empty_batch_request::de_empty_batch_request_xml_err(_response_body, output).map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EmptyBatchRequestBuilder::default();
+                output = crate::protocol_serde::shape_empty_batch_request::de_empty_batch_request_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "AWS.SimpleQueueService.InvalidBatchEntryId" => crate::operation::delete_message_batch::DeleteMessageBatchError::InvalidBatchEntryId({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidBatchEntryIdBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_batch_entry_id::de_invalid_batch_entry_id_xml_err(_response_body, output).map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidBatchEntryIdBuilder::default();
+                output = crate::protocol_serde::shape_invalid_batch_entry_id::de_invalid_batch_entry_id_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "AWS.SimpleQueueService.TooManyEntriesInBatchRequest" => crate::operation::delete_message_batch::DeleteMessageBatchError::TooManyEntriesInBatchRequest({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AWS.SimpleQueueService.TooManyEntriesInBatchRequest" => {
+            crate::operation::delete_message_batch::DeleteMessageBatchError::TooManyEntriesInBatchRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyEntriesInBatchRequestBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request::de_too_many_entries_in_batch_request_xml_err(_response_body, output).map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request::de_too_many_entries_in_batch_request_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_message_batch::DeleteMessageBatchError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_message_batch::DeleteMessageBatchError::generic(generic),
     })
 }
 
@@ -108,14 +104,9 @@ pub fn de_delete_message_batch_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder::default();
-        output = crate::protocol_serde::shape_delete_message_batch::de_delete_message_batch(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_delete_message_batch::de_delete_message_batch(_response_body, output)
+            .map_err(crate::operation::delete_message_batch::DeleteMessageBatchError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -124,10 +115,7 @@ pub fn de_delete_message_batch_http_response_with_props(
 pub fn de_delete_message_batch(
     inp: &[u8],
     mut builder: crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder,
-) -> Result<
-    crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -188,9 +176,7 @@ pub fn de_delete_message_batch(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DeleteMessageBatchResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DeleteMessageBatchResult tag"));
     };
     Ok(builder)
 }

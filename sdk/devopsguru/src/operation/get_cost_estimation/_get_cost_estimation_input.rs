@@ -15,17 +15,14 @@ impl GetCostEstimationInput {
 }
 impl GetCostEstimationInput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder {
+    pub fn builder() -> crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder {
         crate::operation::get_cost_estimation::builders::GetCostEstimationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostEstimationInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetCostEstimationInputBuilder {
     /// Consumes the builder and constructs a [`GetCostEstimationInput`](crate::operation::get_cost_estimation::GetCostEstimationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_estimation::GetCostEstimationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cost_estimation::GetCostEstimationInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_cost_estimation::GetCostEstimationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_cost_estimation::GetCostEstimationInput { next_token: self.next_token })
     }
 }

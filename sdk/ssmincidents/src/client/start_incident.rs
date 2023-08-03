@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartIncidentOutput`](crate::operation::start_incident::StartIncidentOutput) with field(s):
     ///   - [`incident_record_arn(Option<String>)`](crate::operation::start_incident::StartIncidentOutput::incident_record_arn): <p>The ARN of the newly created incident record.</p>
     /// - On failure, responds with [`SdkError<StartIncidentError>`](crate::operation::start_incident::StartIncidentError)
-    pub fn start_incident(
-        &self,
-    ) -> crate::operation::start_incident::builders::StartIncidentFluentBuilder {
-        crate::operation::start_incident::builders::StartIncidentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_incident(&self) -> crate::operation::start_incident::builders::StartIncidentFluentBuilder {
+        crate::operation::start_incident::builders::StartIncidentFluentBuilder::new(self.handle.clone())
     }
 }

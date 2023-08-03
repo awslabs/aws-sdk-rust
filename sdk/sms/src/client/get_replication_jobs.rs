@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`replication_job_list(Option<Vec<ReplicationJob>>)`](crate::operation::get_replication_jobs::GetReplicationJobsOutput::replication_job_list): <p>Information about the replication jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_replication_jobs::GetReplicationJobsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetReplicationJobsError>`](crate::operation::get_replication_jobs::GetReplicationJobsError)
-    pub fn get_replication_jobs(
-        &self,
-    ) -> crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder {
-        crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_replication_jobs(&self) -> crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder {
+        crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::new(self.handle.clone())
     }
 }

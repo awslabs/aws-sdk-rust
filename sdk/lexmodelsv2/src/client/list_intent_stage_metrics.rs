@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<AnalyticsIntentStageResult>>)`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput::results): <p>The results for the intent stage metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput::next_token): <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>  <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
     /// - On failure, responds with [`SdkError<ListIntentStageMetricsError>`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError)
-    pub fn list_intent_stage_metrics(
-        &self,
-    ) -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder
-    {
+    pub fn list_intent_stage_metrics(&self) -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder {
         crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::new(self.handle.clone())
     }
 }

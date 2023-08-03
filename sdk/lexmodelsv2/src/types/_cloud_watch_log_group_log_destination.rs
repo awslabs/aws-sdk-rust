@@ -30,27 +30,19 @@ impl CloudWatchLogGroupLogDestination {
 
 /// A builder for [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogGroupLogDestinationBuilder {
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogGroupLogDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }

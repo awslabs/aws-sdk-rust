@@ -5,8 +5,7 @@
 pub struct UpdateContinuousDeploymentPolicyInput {
     /// <p>The continuous deployment policy configuration.</p>
     #[doc(hidden)]
-    pub continuous_deployment_policy_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct UpdateContinuousDeploymentPolicyInput {
 }
 impl UpdateContinuousDeploymentPolicyInput {
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn continuous_deployment_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
         self.continuous_deployment_policy_config.as_ref()
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
@@ -32,43 +29,32 @@ impl UpdateContinuousDeploymentPolicyInput {
 }
 impl UpdateContinuousDeploymentPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateContinuousDeploymentPolicyInput`](crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput).
-    pub fn builder() -> crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder{
+    pub fn builder() -> crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder {
         crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContinuousDeploymentPolicyInput`](crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContinuousDeploymentPolicyInputBuilder {
-    pub(crate) continuous_deployment_policy_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub(crate) continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContinuousDeploymentPolicyInputBuilder {
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn continuous_deployment_policy_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicyConfig,
-    ) -> Self {
+    pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.continuous_deployment_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn set_continuous_deployment_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
         self.continuous_deployment_policy_config = input;
         self
     }
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn get_continuous_deployment_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn get_continuous_deployment_policy_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
         &self.continuous_deployment_policy_config
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
@@ -100,16 +86,18 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateContinuousDeploymentPolicyInput`](crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput {
-                continuous_deployment_policy_config: self.continuous_deployment_policy_config
-                ,
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }

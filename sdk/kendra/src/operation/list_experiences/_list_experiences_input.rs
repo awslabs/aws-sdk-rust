@@ -36,9 +36,7 @@ impl ListExperiencesInput {
 
 /// A builder for [`ListExperiencesInput`](crate::operation::list_experiences::ListExperiencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperiencesInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListExperiencesInputBuilder {
     /// Consumes the builder and constructs a [`ListExperiencesInput`](crate::operation::list_experiences::ListExperiencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_experiences::ListExperiencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_experiences::ListExperiencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiences::ListExperiencesInput {
             index_id: self.index_id,
             next_token: self.next_token,

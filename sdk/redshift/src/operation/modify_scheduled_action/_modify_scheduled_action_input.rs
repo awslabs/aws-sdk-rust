@@ -64,18 +64,14 @@ impl ModifyScheduledActionInput {
 }
 impl ModifyScheduledActionInput {
     /// Creates a new builder-style object to manufacture [`ModifyScheduledActionInput`](crate::operation::modify_scheduled_action::ModifyScheduledActionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_scheduled_action::builders::ModifyScheduledActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_scheduled_action::builders::ModifyScheduledActionInputBuilder {
         crate::operation::modify_scheduled_action::builders::ModifyScheduledActionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyScheduledActionInput`](crate::operation::modify_scheduled_action::ModifyScheduledActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyScheduledActionInputBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_action: ::std::option::Option<crate::types::ScheduledActionType>,
@@ -88,18 +84,12 @@ pub struct ModifyScheduledActionInputBuilder {
 }
 impl ModifyScheduledActionInputBuilder {
     /// <p>The name of the scheduled action to modify. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action to modify. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -113,10 +103,7 @@ impl ModifyScheduledActionInputBuilder {
         self
     }
     /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionType>,
-    ) -> Self {
+    pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.target_action = input;
         self
     }
@@ -153,25 +140,17 @@ impl ModifyScheduledActionInputBuilder {
         &self.iam_role
     }
     /// <p>A modified description of the scheduled action. </p>
-    pub fn scheduled_action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A modified description of the scheduled action. </p>
-    pub fn set_scheduled_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_description = input;
         self
     }
     /// <p>A modified description of the scheduled action. </p>
-    pub fn get_scheduled_action_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_description
     }
     /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
@@ -180,10 +159,7 @@ impl ModifyScheduledActionInputBuilder {
         self
     }
     /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -197,10 +173,7 @@ impl ModifyScheduledActionInputBuilder {
         self
     }
     /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -225,21 +198,17 @@ impl ModifyScheduledActionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyScheduledActionInput`](crate::operation::modify_scheduled_action::ModifyScheduledActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_scheduled_action::ModifyScheduledActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_scheduled_action::ModifyScheduledActionInput {
-                scheduled_action_name: self.scheduled_action_name,
-                target_action: self.target_action,
-                schedule: self.schedule,
-                iam_role: self.iam_role,
-                scheduled_action_description: self.scheduled_action_description,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                enable: self.enable,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_scheduled_action::ModifyScheduledActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_scheduled_action::ModifyScheduledActionInput {
+            scheduled_action_name: self.scheduled_action_name,
+            target_action: self.target_action,
+            schedule: self.schedule,
+            iam_role: self.iam_role,
+            scheduled_action_description: self.scheduled_action_description,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            enable: self.enable,
+        })
     }
 }

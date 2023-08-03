@@ -10,29 +10,22 @@ pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
-        crate::types::builders::MessageDeliveryStatusResourceTypeEventConfigurationBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
+        crate::types::builders::MessageDeliveryStatusResourceTypeEventConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
-    pub(crate) sidewalk:
-        ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
@@ -41,23 +34,16 @@ impl MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
         self
     }
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    pub fn get_sidewalk(
-        &self,
-    ) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
         &self.sidewalk
     }
     /// Consumes the builder and constructs a [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::MessageDeliveryStatusResourceTypeEventConfiguration {
-        crate::types::MessageDeliveryStatusResourceTypeEventConfiguration {
-            sidewalk: self.sidewalk,
-        }
+        crate::types::MessageDeliveryStatusResourceTypeEventConfiguration { sidewalk: self.sidewalk }
     }
 }

@@ -36,9 +36,7 @@ impl RevokeSignatureInput {
 
 /// A builder for [`RevokeSignatureInput`](crate::operation::revoke_signature::RevokeSignatureInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSignatureInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_owner: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl RevokeSignatureInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSignatureInput`](crate::operation::revoke_signature::RevokeSignatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_signature::RevokeSignatureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::revoke_signature::RevokeSignatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_signature::RevokeSignatureInput {
             job_id: self.job_id,
             job_owner: self.job_owner,

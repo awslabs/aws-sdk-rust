@@ -6,14 +6,11 @@
 pub struct SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     #[doc(hidden)]
-    pub kinesis_stream_source_description:
-        ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
+    pub kinesis_stream_source_description: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
 }
 impl SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    pub fn kinesis_stream_source_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamSourceDescription> {
+    pub fn kinesis_stream_source_description(&self) -> ::std::option::Option<&crate::types::KinesisStreamSourceDescription> {
         self.kinesis_stream_source_description.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl SourceDescription {
 
 /// A builder for [`SourceDescription`](crate::types::SourceDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceDescriptionBuilder {
-    pub(crate) kinesis_stream_source_description:
-        ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
+    pub(crate) kinesis_stream_source_description: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
 }
 impl SourceDescriptionBuilder {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    pub fn kinesis_stream_source_description(
-        mut self,
-        input: crate::types::KinesisStreamSourceDescription,
-    ) -> Self {
+    pub fn kinesis_stream_source_description(mut self, input: crate::types::KinesisStreamSourceDescription) -> Self {
         self.kinesis_stream_source_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    pub fn set_kinesis_stream_source_description(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
-    ) -> Self {
+    pub fn set_kinesis_stream_source_description(mut self, input: ::std::option::Option<crate::types::KinesisStreamSourceDescription>) -> Self {
         self.kinesis_stream_source_description = input;
         self
     }
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    pub fn get_kinesis_stream_source_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamSourceDescription> {
+    pub fn get_kinesis_stream_source_description(&self) -> &::std::option::Option<crate::types::KinesisStreamSourceDescription> {
         &self.kinesis_stream_source_description
     }
     /// Consumes the builder and constructs a [`SourceDescription`](crate::types::SourceDescription).

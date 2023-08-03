@@ -58,9 +58,7 @@ impl AxisDisplayOptions {
 
 /// A builder for [`AxisDisplayOptions`](crate::types::AxisDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisDisplayOptionsBuilder {
     pub(crate) tick_label_options: ::std::option::Option<crate::types::AxisTickLabelOptions>,
     pub(crate) axis_line_visibility: ::std::option::Option<crate::types::Visibility>,
@@ -76,17 +74,12 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The tick label options of an axis.</p>
-    pub fn set_tick_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisTickLabelOptions>,
-    ) -> Self {
+    pub fn set_tick_label_options(mut self, input: ::std::option::Option<crate::types::AxisTickLabelOptions>) -> Self {
         self.tick_label_options = input;
         self
     }
     /// <p>The tick label options of an axis.</p>
-    pub fn get_tick_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AxisTickLabelOptions> {
+    pub fn get_tick_label_options(&self) -> &::std::option::Option<crate::types::AxisTickLabelOptions> {
         &self.tick_label_options
     }
     /// <p>Determines whether or not the axis line is visible.</p>
@@ -95,10 +88,7 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the axis line is visible.</p>
-    pub fn set_axis_line_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_axis_line_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.axis_line_visibility = input;
         self
     }
@@ -112,10 +102,7 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the grid line is visible.</p>
-    pub fn set_grid_line_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_grid_line_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.grid_line_visibility = input;
         self
     }
@@ -129,10 +116,7 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The data options for an axis.</p>
-    pub fn set_data_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisDataOptions>,
-    ) -> Self {
+    pub fn set_data_options(mut self, input: ::std::option::Option<crate::types::AxisDataOptions>) -> Self {
         self.data_options = input;
         self
     }
@@ -146,10 +130,7 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The scroll bar options for an axis.</p>
-    pub fn set_scrollbar_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ScrollBarOptions>,
-    ) -> Self {
+    pub fn set_scrollbar_options(mut self, input: ::std::option::Option<crate::types::ScrollBarOptions>) -> Self {
         self.scrollbar_options = input;
         self
     }

@@ -28,9 +28,7 @@ impl CreateMeshOutput {
 
 /// A builder for [`CreateMeshOutput`](crate::operation::create_mesh::CreateMeshOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMeshOutputBuilder {
     pub(crate) mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,

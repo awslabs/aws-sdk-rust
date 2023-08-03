@@ -15,34 +15,25 @@ impl CancelExportTaskInput {
 }
 impl CancelExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
         crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelExportTaskInputBuilder {
     pub(crate) export_task_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CancelExportTaskInputBuilder {
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
-    pub fn export_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_identifier = input;
         self
     }
@@ -53,14 +44,9 @@ impl CancelExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_export_task::CancelExportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_export_task::CancelExportTaskInput {
-                export_task_identifier: self.export_task_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_export_task::CancelExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_export_task::CancelExportTaskInput {
+            export_task_identifier: self.export_task_identifier,
+        })
     }
 }

@@ -29,17 +29,14 @@ impl CancelImportTaskInput {
 }
 impl CancelImportTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
-    pub fn builder() -> crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder {
         crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelImportTaskInputBuilder {
     pub(crate) cancel_reason: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -47,18 +44,12 @@ pub struct CancelImportTaskInputBuilder {
 }
 impl CancelImportTaskInputBuilder {
     /// <p>The reason for canceling the task.</p>
-    pub fn cancel_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cancel_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancel_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for canceling the task.</p>
-    pub fn set_cancel_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cancel_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancel_reason = input;
         self
     }
@@ -81,18 +72,12 @@ impl CancelImportTaskInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the import image or import snapshot task to be canceled.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_task_id = input;
         self
     }
@@ -103,16 +88,11 @@ impl CancelImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_import_task::CancelImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_import_task::CancelImportTaskInput {
-                cancel_reason: self.cancel_reason,
-                dry_run: self.dry_run,
-                import_task_id: self.import_task_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_import_task::CancelImportTaskInput {
+            cancel_reason: self.cancel_reason,
+            dry_run: self.dry_run,
+            import_task_id: self.import_task_id,
+        })
     }
 }

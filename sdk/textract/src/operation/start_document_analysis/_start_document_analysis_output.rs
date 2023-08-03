@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDocumentAnalysisOutput {
 }
 impl StartDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisOutputBuilder {
         crate::operation::start_document_analysis::builders::StartDocumentAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDocumentAnalysisOutput`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentAnalysisOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

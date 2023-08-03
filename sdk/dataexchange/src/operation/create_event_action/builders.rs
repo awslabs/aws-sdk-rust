@@ -10,10 +10,7 @@ impl CreateEventActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_event_action::CreateEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_action::CreateEventActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_action::CreateEventActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_event_action();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEventActionFluentBuilder {
         }
     }
     /// Access the CreateEventAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_action::builders::CreateEventActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_event_action::builders::CreateEventActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateEventActionFluentBuilder {
             crate::operation::create_event_action::CreateEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_action::CreateEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_action::CreateEventActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateEventActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_action::CreateEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_action::CreateEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_action::CreateEventActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateEventActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_action::CreateEventActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_action::CreateEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_action::CreateEventActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateEventActionFluentBuilder {
             crate::operation::create_event_action::CreateEventAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_action::CreateEventActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_action::CreateEventActionError>,
     > {
         self.customize_middleware().await
     }

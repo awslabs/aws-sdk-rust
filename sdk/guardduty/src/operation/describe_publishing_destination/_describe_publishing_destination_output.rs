@@ -38,9 +38,7 @@ impl DescribePublishingDestinationOutput {
         self.publishing_failure_start_timestamp
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn destination_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
 }
@@ -51,16 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribePublishingDestinationOutput {
 }
 impl DescribePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublishingDestinationOutput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput).
-    pub fn builder() -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationOutputBuilder {
         crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublishingDestinationOutput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublishingDestinationOutputBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
@@ -71,18 +67,12 @@ pub struct DescribePublishingDestinationOutputBuilder {
 }
 impl DescribePublishingDestinationOutputBuilder {
     /// <p>The ID of the publishing destination.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the publishing destination.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -96,10 +86,7 @@ impl DescribePublishingDestinationOutputBuilder {
         self
     }
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.destination_type = input;
         self
     }
@@ -113,10 +100,7 @@ impl DescribePublishingDestinationOutputBuilder {
         self
     }
     /// <p>The status of the publishing destination.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PublishingStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PublishingStatus>) -> Self {
         self.status = input;
         self
     }
@@ -130,10 +114,7 @@ impl DescribePublishingDestinationOutputBuilder {
         self
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
-    pub fn set_publishing_failure_start_timestamp(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_publishing_failure_start_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.publishing_failure_start_timestamp = input;
         self
     }
@@ -147,17 +128,12 @@ impl DescribePublishingDestinationOutputBuilder {
         self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn set_destination_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationProperties>,
-    ) -> Self {
+    pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
         self.destination_properties = input;
         self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn get_destination_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+    pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -170,17 +146,12 @@ impl DescribePublishingDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePublishingDestinationOutput`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput {
         crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput {
             destination_id: self.destination_id,
             destination_type: self.destination_type,
             status: self.status,
-            publishing_failure_start_timestamp: self
-                .publishing_failure_start_timestamp
-                .unwrap_or_default(),
+            publishing_failure_start_timestamp: self.publishing_failure_start_timestamp.unwrap_or_default(),
             destination_properties: self.destination_properties,
             _request_id: self._request_id,
         }

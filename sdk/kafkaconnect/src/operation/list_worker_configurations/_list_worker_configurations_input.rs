@@ -22,18 +22,14 @@ impl ListWorkerConfigurationsInput {
 }
 impl ListWorkerConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsInput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder {
         crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerConfigurationsInput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListWorkerConfigurationsInputBuilder {
         crate::operation::list_worker_configurations::ListWorkerConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_worker_configurations::ListWorkerConfigurationsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_worker_configurations::ListWorkerConfigurationsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

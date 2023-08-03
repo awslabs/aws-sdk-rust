@@ -70,13 +70,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -187,9 +181,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
             "us-west-1" => CloudWatchRegion::UsWest1,
             "us-west-2" => CloudWatchRegion::UsWest2,
-            other => {
-                CloudWatchRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CloudWatchRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

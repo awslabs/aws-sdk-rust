@@ -43,13 +43,7 @@
 /// Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubtitleOutlineColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for DvbSubtitleOutlineColor {
             "RED" => DvbSubtitleOutlineColor::Red,
             "WHITE" => DvbSubtitleOutlineColor::White,
             "YELLOW" => DvbSubtitleOutlineColor::Yellow,
-            other => DvbSubtitleOutlineColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubtitleOutlineColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

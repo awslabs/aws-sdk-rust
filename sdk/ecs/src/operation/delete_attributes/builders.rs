@@ -10,10 +10,7 @@ impl DeleteAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_attributes::DeleteAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attributes::DeleteAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attributes::DeleteAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_attributes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAttributesFluentBuilder {
         }
     }
     /// Access the DeleteAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAttributesFluentBuilder {
             crate::operation::delete_attributes::DeleteAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attributes::DeleteAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attributes::DeleteAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_attributes::DeleteAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attributes::DeleteAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attributes::DeleteAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_attributes::DeleteAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attributes::DeleteAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attributes::DeleteAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteAttributesFluentBuilder {
             crate::operation::delete_attributes::DeleteAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_attributes::DeleteAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_attributes::DeleteAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl DeleteAttributesFluentBuilder {
         self
     }
     /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_attributes()
     }
 }

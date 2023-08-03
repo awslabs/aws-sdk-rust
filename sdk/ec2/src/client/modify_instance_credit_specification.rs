@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`successful_instance_credit_specifications(Option<Vec<SuccessfulInstanceCreditSpecificationItem>>)`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationOutput::successful_instance_credit_specifications): <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
     ///   - [`unsuccessful_instance_credit_specifications(Option<Vec<UnsuccessfulInstanceCreditSpecificationItem>>)`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationOutput::unsuccessful_instance_credit_specifications): <p>Information about the instances whose credit option for CPU usage was not modified.</p>
     /// - On failure, responds with [`SdkError<ModifyInstanceCreditSpecificationError>`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationError)
-    pub fn modify_instance_credit_specification(&self) -> crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationFluentBuilder{
+    pub fn modify_instance_credit_specification(
+        &self,
+    ) -> crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationFluentBuilder {
         crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationFluentBuilder::new(self.handle.clone())
     }
 }

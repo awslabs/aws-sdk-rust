@@ -37,9 +37,7 @@ impl ListSchemaExtensionsFluentBuilder {
         }
     }
     /// Access the ListSchemaExtensions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_schema_extensions::builders::ListSchemaExtensionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_schema_extensions::builders::ListSchemaExtensionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSchemaExtensionsFluentBuilder {
             crate::operation::list_schema_extensions::ListSchemaExtensions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_extensions::ListSchemaExtensionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_extensions::ListSchemaExtensionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSchemaExtensionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSchemaExtensionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_schema_extensions::ListSchemaExtensionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_extensions::ListSchemaExtensionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_extensions::ListSchemaExtensionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSchemaExtensionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_schema_extensions::ListSchemaExtensionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_extensions::ListSchemaExtensionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_extensions::ListSchemaExtensionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSchemaExtensionsFluentBuilder {
             crate::operation::list_schema_extensions::ListSchemaExtensions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_extensions::ListSchemaExtensionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_extensions::ListSchemaExtensionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator {
-        crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator {
+        crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

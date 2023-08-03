@@ -33,9 +33,7 @@ pub struct CreateStackInput {
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
@@ -44,8 +42,7 @@ pub struct CreateStackInput {
     pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     #[doc(hidden)]
-    pub streaming_experience_settings:
-        ::std::option::Option<crate::types::StreamingExperienceSettings>,
+    pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl CreateStackInput {
     /// <p>The name of the stack.</p>
@@ -77,9 +74,7 @@ impl CreateStackInput {
         self.user_settings.as_deref()
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn application_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationSettings> {
+    pub fn application_settings(&self) -> ::std::option::Option<&crate::types::ApplicationSettings> {
         self.application_settings.as_ref()
     }
     /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -87,11 +82,7 @@ impl CreateStackInput {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
@@ -103,9 +94,7 @@ impl CreateStackInput {
         self.embed_host_domains.as_deref()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn streaming_experience_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
+    pub fn streaming_experience_settings(&self) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
     }
 }
@@ -118,27 +107,20 @@ impl CreateStackInput {
 
 /// A builder for [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStackInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_connectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    pub(crate) storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
     pub(crate) redirect_url: ::std::option::Option<::std::string::String>,
     pub(crate) feedback_url: ::std::option::Option<::std::string::String>,
     pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     pub(crate) application_settings: ::std::option::Option<crate::types::ApplicationSettings>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) streaming_experience_settings:
-        ::std::option::Option<crate::types::StreamingExperienceSettings>,
+    pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl CreateStackInputBuilder {
     /// <p>The name of the stack.</p>
@@ -195,17 +177,12 @@ impl CreateStackInputBuilder {
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn set_storage_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
-    ) -> Self {
+    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>) -> Self {
         self.storage_connectors = input;
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn get_storage_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
         &self.storage_connectors
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -248,17 +225,12 @@ impl CreateStackInputBuilder {
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>) -> Self {
         self.user_settings = input;
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-    pub fn get_user_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
         &self.user_settings
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -267,17 +239,12 @@ impl CreateStackInputBuilder {
         self
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn set_application_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSettings>,
-    ) -> Self {
+    pub fn set_application_settings(mut self, input: ::std::option::Option<crate::types::ApplicationSettings>) -> Self {
         self.application_settings = input;
         self
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn get_application_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSettings> {
+    pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettings> {
         &self.application_settings
     }
     /// Adds a key-value pair to `tags`.
@@ -289,11 +256,7 @@ impl CreateStackInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -304,12 +267,7 @@ impl CreateStackInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -318,11 +276,7 @@ impl CreateStackInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `access_endpoints`.
@@ -337,17 +291,12 @@ impl CreateStackInputBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.access_endpoints = input;
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Appends an item to `embed_host_domains`.
@@ -355,58 +304,37 @@ impl CreateStackInputBuilder {
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn embed_host_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn embed_host_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.embed_host_domains.unwrap_or_default();
         v.push(input.into());
         self.embed_host_domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn set_embed_host_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.embed_host_domains = input;
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn get_embed_host_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.embed_host_domains
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn streaming_experience_settings(
-        mut self,
-        input: crate::types::StreamingExperienceSettings,
-    ) -> Self {
+    pub fn streaming_experience_settings(mut self, input: crate::types::StreamingExperienceSettings) -> Self {
         self.streaming_experience_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn set_streaming_experience_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingExperienceSettings>,
-    ) -> Self {
+    pub fn set_streaming_experience_settings(mut self, input: ::std::option::Option<crate::types::StreamingExperienceSettings>) -> Self {
         self.streaming_experience_settings = input;
         self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn get_streaming_experience_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
+    pub fn get_streaming_experience_settings(&self) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
         &self.streaming_experience_settings
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_stack::CreateStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
             name: self.name,
             description: self.description,

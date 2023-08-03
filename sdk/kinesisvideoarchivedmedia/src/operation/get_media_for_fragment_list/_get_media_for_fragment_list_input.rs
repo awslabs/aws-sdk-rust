@@ -29,18 +29,14 @@ impl GetMediaForFragmentListInput {
 }
 impl GetMediaForFragmentListInput {
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
-    pub fn builder(
-    ) -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder {
         crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaForFragmentListInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -87,10 +83,7 @@ impl GetMediaForFragmentListInputBuilder {
         self
     }
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    pub fn set_fragments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fragments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fragments = input;
         self
     }
@@ -105,12 +98,10 @@ impl GetMediaForFragmentListInputBuilder {
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                fragments: self.fragments,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            fragments: self.fragments,
+        })
     }
 }

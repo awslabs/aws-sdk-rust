@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAlertManagerDefinitionOutput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput) with field(s):
     ///   - [`alert_manager_definition(Option<AlertManagerDefinitionDescription>)`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput::alert_manager_definition): The properties of the selected workspace's alert manager definition.
     /// - On failure, responds with [`SdkError<DescribeAlertManagerDefinitionError>`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionError)
-    pub fn describe_alert_manager_definition(&self) -> crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder{
+    pub fn describe_alert_manager_definition(
+        &self,
+    ) -> crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder {
         crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

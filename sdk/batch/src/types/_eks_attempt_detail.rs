@@ -58,12 +58,9 @@ impl EksAttemptDetail {
 
 /// A builder for [`EksAttemptDetail`](crate::types::EksAttemptDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksAttemptDetailBuilder {
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     pub(crate) pod_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -83,17 +80,12 @@ impl EksAttemptDetailBuilder {
         self
     }
     /// <p>The details for the final status of the containers for this job attempt.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The details for the final status of the containers for this job attempt.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
         &self.containers
     }
     /// <p>The name of the pod for this job attempt.</p>
@@ -153,18 +145,12 @@ impl EksAttemptDetailBuilder {
         &self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

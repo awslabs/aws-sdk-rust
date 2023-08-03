@@ -35,9 +35,7 @@ impl DescribeStorageOutput {
 
 /// A builder for [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageOutputBuilder {
     pub(crate) total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     pub(crate) total_provisioned_storage_in_mega_bytes: ::std::option::Option<f64>,
@@ -50,10 +48,7 @@ impl DescribeStorageOutputBuilder {
         self
     }
     /// <p>The total amount of storage currently used for snapshots.</p>
-    pub fn set_total_backup_size_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_total_backup_size_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_backup_size_in_mega_bytes = input;
         self
     }
@@ -67,10 +62,7 @@ impl DescribeStorageOutputBuilder {
         self
     }
     /// <p>The total amount of storage currently provisioned.</p>
-    pub fn set_total_provisioned_storage_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_total_provisioned_storage_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_provisioned_storage_in_mega_bytes = input;
         self
     }
@@ -90,12 +82,8 @@ impl DescribeStorageOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
     pub fn build(self) -> crate::operation::describe_storage::DescribeStorageOutput {
         crate::operation::describe_storage::DescribeStorageOutput {
-            total_backup_size_in_mega_bytes: self
-                .total_backup_size_in_mega_bytes
-                .unwrap_or_default(),
-            total_provisioned_storage_in_mega_bytes: self
-                .total_provisioned_storage_in_mega_bytes
-                .unwrap_or_default(),
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes.unwrap_or_default(),
+            total_provisioned_storage_in_mega_bytes: self.total_provisioned_storage_in_mega_bytes.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

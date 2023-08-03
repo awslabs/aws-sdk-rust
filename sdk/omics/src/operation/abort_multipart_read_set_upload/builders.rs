@@ -26,7 +26,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder,
+    inner: crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder,
 }
 impl AbortMultipartReadSetUploadFluentBuilder {
     /// Creates a new `AbortMultipartReadSetUpload`.
@@ -37,7 +37,7 @@ impl AbortMultipartReadSetUploadFluentBuilder {
         }
     }
     /// Access the AbortMultipartReadSetUpload as a reference.
-    pub fn as_input(&self) -> &crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AbortMultipartReadSetUploadFluentBuilder {
             crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AbortMultipartReadSetUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AbortMultipartReadSetUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AbortMultipartReadSetUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AbortMultipartReadSetUploadFluentBuilder {
             crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }

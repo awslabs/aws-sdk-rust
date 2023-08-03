@@ -86,9 +86,7 @@ impl BatchJobExecutionSummary {
 
 /// A builder for [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchJobExecutionSummaryBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl BatchJobExecutionSummaryBuilder {
         &self.execution_id
     }
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application that hosts this batch job.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -170,10 +162,7 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The type of a particular batch job execution.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobType>,
-    ) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::BatchJobType>) -> Self {
         self.job_type = input;
         self
     }
@@ -187,10 +176,7 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The status of a particular batch job execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -204,10 +190,7 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when a particular batch job execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -221,10 +204,7 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The timestamp when this batch job execution ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -252,17 +232,12 @@ impl BatchJobExecutionSummaryBuilder {
         self
     }
     /// <p>The unique identifier of this batch job.</p>
-    pub fn set_batch_job_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobIdentifier>,
-    ) -> Self {
+    pub fn set_batch_job_identifier(mut self, input: ::std::option::Option<crate::types::BatchJobIdentifier>) -> Self {
         self.batch_job_identifier = input;
         self
     }
     /// <p>The unique identifier of this batch job.</p>
-    pub fn get_batch_job_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+    pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         &self.batch_job_identifier
     }
     /// Consumes the builder and constructs a [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).

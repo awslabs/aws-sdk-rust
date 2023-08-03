@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CancelImageLaunchPermissionOutput`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<CancelImageLaunchPermissionError>`](crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError)
-    pub fn cancel_image_launch_permission(&self) -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionFluentBuilder{
+    pub fn cancel_image_launch_permission(
+        &self,
+    ) -> crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionFluentBuilder {
         crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionFluentBuilder::new(self.handle.clone())
     }
 }

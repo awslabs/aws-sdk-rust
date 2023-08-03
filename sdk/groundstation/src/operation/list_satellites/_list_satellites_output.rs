@@ -36,9 +36,7 @@ impl ListSatellitesOutput {
 
 /// A builder for [`ListSatellitesOutput`](crate::operation::list_satellites::ListSatellitesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSatellitesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) satellites: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>,
@@ -71,17 +69,12 @@ impl ListSatellitesOutputBuilder {
         self
     }
     /// <p>List of satellites.</p>
-    pub fn set_satellites(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>,
-    ) -> Self {
+    pub fn set_satellites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>) -> Self {
         self.satellites = input;
         self
     }
     /// <p>List of satellites.</p>
-    pub fn get_satellites(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>> {
+    pub fn get_satellites(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>> {
         &self.satellites
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

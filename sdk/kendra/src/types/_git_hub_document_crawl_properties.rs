@@ -65,9 +65,7 @@ impl GitHubDocumentCrawlProperties {
 
 /// A builder for [`GitHubDocumentCrawlProperties`](crate::types::GitHubDocumentCrawlProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitHubDocumentCrawlPropertiesBuilder {
     pub(crate) crawl_repository_documents: ::std::option::Option<bool>,
     pub(crate) crawl_issue: ::std::option::Option<bool>,
@@ -126,10 +124,7 @@ impl GitHubDocumentCrawlPropertiesBuilder {
         self
     }
     /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
-    pub fn set_crawl_issue_comment_attachment(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_crawl_issue_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_issue_comment_attachment = input;
         self
     }
@@ -171,10 +166,7 @@ impl GitHubDocumentCrawlPropertiesBuilder {
         self
     }
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
-    pub fn set_crawl_pull_request_comment_attachment(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_crawl_pull_request_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_pull_request_comment_attachment = input;
         self
     }
@@ -191,9 +183,7 @@ impl GitHubDocumentCrawlPropertiesBuilder {
             crawl_issue_comment_attachment: self.crawl_issue_comment_attachment.unwrap_or_default(),
             crawl_pull_request: self.crawl_pull_request.unwrap_or_default(),
             crawl_pull_request_comment: self.crawl_pull_request_comment.unwrap_or_default(),
-            crawl_pull_request_comment_attachment: self
-                .crawl_pull_request_comment_attachment
-                .unwrap_or_default(),
+            crawl_pull_request_comment_attachment: self.crawl_pull_request_comment_attachment.unwrap_or_default(),
         }
     }
 }

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OperationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for OperationStatus {
             "ROLLBACK_IN_PROGRESS" => OperationStatus::RollbackInProgress,
             "ROLLBACK_SUCCEEDED" => OperationStatus::RollbackSucceeded,
             "SUCCEEDED" => OperationStatus::Succeeded,
-            other => {
-                OperationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OperationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

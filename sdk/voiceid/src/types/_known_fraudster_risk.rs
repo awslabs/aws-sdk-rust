@@ -30,9 +30,7 @@ impl KnownFraudsterRisk {
 
 /// A builder for [`KnownFraudsterRisk`](crate::types::KnownFraudsterRisk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnownFraudsterRiskBuilder {
     pub(crate) risk_score: ::std::option::Option<i32>,
     pub(crate) generated_fraudster_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl KnownFraudsterRiskBuilder {
         &self.risk_score
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    pub fn generated_fraudster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_fraudster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    pub fn set_generated_fraudster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_fraudster_id = input;
         self
     }

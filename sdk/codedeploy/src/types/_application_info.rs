@@ -58,9 +58,7 @@ impl ApplicationInfo {
 
 /// A builder for [`ApplicationInfo`](crate::types::ApplicationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationInfoBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct ApplicationInfoBuilder {
 }
 impl ApplicationInfoBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -91,18 +83,12 @@ impl ApplicationInfoBuilder {
         &self.application_id
     }
     /// <p>The application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -116,10 +102,7 @@ impl ApplicationInfoBuilder {
         self
     }
     /// <p>The time at which the application was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -142,18 +125,12 @@ impl ApplicationInfoBuilder {
         &self.linked_to_git_hub
     }
     /// <p>The name for a connection to a GitHub account.</p>
-    pub fn git_hub_account_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn git_hub_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.git_hub_account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for a connection to a GitHub account.</p>
-    pub fn set_git_hub_account_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_git_hub_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.git_hub_account_name = input;
         self
     }
@@ -167,10 +144,7 @@ impl ApplicationInfoBuilder {
         self
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.compute_platform = input;
         self
     }

@@ -19,9 +19,7 @@ pub fn ser_add_ip_routes_input(
         array_3.finish();
     }
     if let Some(var_6) = &input.update_security_group_for_directory_controllers {
-        object
-            .key("UpdateSecurityGroupForDirectoryControllers")
-            .boolean(*var_6);
+        object.key("UpdateSecurityGroupForDirectoryControllers").boolean(*var_6);
     }
     Ok(())
 }

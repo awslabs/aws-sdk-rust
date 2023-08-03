@@ -44,9 +44,7 @@ impl PeeringTgwInfo {
 
 /// A builder for [`PeeringTgwInfo`](crate::types::PeeringTgwInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PeeringTgwInfoBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct PeeringTgwInfoBuilder {
 }
 impl PeeringTgwInfoBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl PeeringTgwInfoBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }

@@ -10,10 +10,7 @@ impl UpdateImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_image::UpdateImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_image::UpdateImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_image::UpdateImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_image();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateImageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_image::UpdateImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_image::UpdateImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_image::UpdateImageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateImageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_image::UpdateImage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_image::UpdateImage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_image::UpdateImageError>,
     > {
         self.customize_middleware().await
@@ -117,25 +105,17 @@ impl UpdateImageFluentBuilder {
     /// To override the contents of this collection use [`set_delete_properties`](Self::set_delete_properties).
     ///
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn delete_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delete_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delete_properties(input.into());
         self
     }
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn set_delete_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delete_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_delete_properties(input);
         self
     }
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn get_delete_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delete_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_delete_properties()
     }
     /// <p>The new description for the image.</p>

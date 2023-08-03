@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput::next_token): <p>The token to use to advance to the next page of recommendation preferences.</p>  <p>This value is null when there are no more pages of recommendation preferences to return.</p>
     ///   - [`recommendation_preferences_details(Option<Vec<RecommendationPreferencesDetail>>)`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput::recommendation_preferences_details): <p>An array of objects that describe recommendation preferences.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationPreferencesError>`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError)
-    pub fn get_recommendation_preferences(&self) -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder{
+    pub fn get_recommendation_preferences(
+        &self,
+    ) -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder {
         crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

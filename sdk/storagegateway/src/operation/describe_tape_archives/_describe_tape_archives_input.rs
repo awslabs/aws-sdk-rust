@@ -30,17 +30,14 @@ impl DescribeTapeArchivesInput {
 }
 impl DescribeTapeArchivesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
+    pub fn builder() -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
         crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesInputBuilder {
     pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl DescribeTapeArchivesInputBuilder {
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tape_ar_ns = input;
         self
     }
@@ -101,16 +95,12 @@ impl DescribeTapeArchivesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tape_archives::DescribeTapeArchivesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_tape_archives::DescribeTapeArchivesInput {
-                tape_ar_ns: self.tape_ar_ns,
-                marker: self.marker,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_tape_archives::DescribeTapeArchivesInput {
+            tape_ar_ns: self.tape_ar_ns,
+            marker: self.marker,
+            limit: self.limit,
+        })
     }
 }

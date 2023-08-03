@@ -29,27 +29,19 @@ impl DeleteInstanceInput {
 
 /// A builder for [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete_add_ons: ::std::option::Option<bool>,
 }
 impl DeleteInstanceInputBuilder {
     /// <p>The name of the instance to delete.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance to delete.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_instance::DeleteInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
             instance_name: self.instance_name,
             force_delete_add_ons: self.force_delete_add_ons,

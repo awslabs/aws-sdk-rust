@@ -31,21 +31,16 @@ impl GetEnabledStandardsInput {
 }
 impl GetEnabledStandardsInput {
     /// Creates a new builder-style object to manufacture [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
-    pub fn builder(
-    ) -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder {
-        crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder {
+        crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnabledStandardsInputBuilder {
-    pub(crate) standards_subscription_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -55,27 +50,19 @@ impl GetEnabledStandardsInputBuilder {
     /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
     ///
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn standards_subscription_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_subscription_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.standards_subscription_arns.unwrap_or_default();
         v.push(input.into());
         self.standards_subscription_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn set_standards_subscription_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_standards_subscription_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.standards_subscription_arns = input;
         self
     }
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn get_standards_subscription_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_standards_subscription_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.standards_subscription_arns
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -112,16 +99,12 @@ impl GetEnabledStandardsInputBuilder {
     /// Consumes the builder and constructs a [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_enabled_standards::GetEnabledStandardsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_enabled_standards::GetEnabledStandardsInput {
-                standards_subscription_arns: self.standards_subscription_arns,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_enabled_standards::GetEnabledStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_enabled_standards::GetEnabledStandardsInput {
+            standards_subscription_arns: self.standards_subscription_arns,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

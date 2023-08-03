@@ -37,10 +37,7 @@ impl ModifySnapshotScheduleFluentBuilder {
         }
     }
     /// Access the ModifySnapshotSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifySnapshotScheduleFluentBuilder {
             crate::operation::modify_snapshot_schedule::ModifySnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifySnapshotScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifySnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifySnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ModifySnapshotScheduleFluentBuilder {
             crate::operation::modify_snapshot_schedule::ModifySnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_identifier(input.into());
         self
     }
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
@@ -148,25 +128,17 @@ impl ModifySnapshotScheduleFluentBuilder {
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
     ///
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn schedule_definitions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_definitions(input.into());
         self
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn set_schedule_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn get_schedule_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_schedule_definitions()
     }
 }

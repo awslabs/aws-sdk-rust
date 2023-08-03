@@ -29,18 +29,14 @@ impl ListResourceSetResourcesInput {
 }
 impl ListResourceSetResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetResourcesInput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesInputBuilder {
         crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceSetResourcesInput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceSetResourcesInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl ListResourceSetResourcesInputBuilder {
         crate::operation::list_resource_set_resources::ListResourceSetResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_set_resources::ListResourceSetResourcesInput {
-                identifier: self.identifier,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resource_set_resources::ListResourceSetResourcesInput {
+            identifier: self.identifier,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

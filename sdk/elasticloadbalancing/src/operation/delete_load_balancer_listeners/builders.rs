@@ -26,7 +26,7 @@ impl DeleteLoadBalancerListenersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder,
+    inner: crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder,
 }
 impl DeleteLoadBalancerListenersFluentBuilder {
     /// Creates a new `DeleteLoadBalancerListeners`.
@@ -37,7 +37,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         }
     }
     /// Access the DeleteLoadBalancerListeners as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
             crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteLoadBalancerListenersFluentBuilder {
             crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -150,10 +133,7 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         self
     }
     /// <p>The client port numbers of the listeners.</p>
-    pub fn set_load_balancer_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_load_balancer_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.inner = self.inner.set_load_balancer_ports(input);
         self
     }

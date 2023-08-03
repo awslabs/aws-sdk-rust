@@ -44,9 +44,7 @@ impl SystemInfo {
 
 /// A builder for [`SystemInfo`](crate::types::SystemInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemInfoBuilder {
     pub(crate) os_info: ::std::option::Option<crate::types::OsInfo>,
     pub(crate) file_system_type: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SystemInfoBuilder {
         &self.os_info
     }
     /// <p> File system type for the server. </p>
-    pub fn file_system_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> File system type for the server. </p>
-    pub fn set_file_system_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type = input;
         self
     }
@@ -100,32 +92,21 @@ impl SystemInfoBuilder {
         self
     }
     /// <p> Networking information related to a server. </p>
-    pub fn set_network_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>,
-    ) -> Self {
+    pub fn set_network_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>>) -> Self {
         self.network_info_list = input;
         self
     }
     /// <p> Networking information related to a server. </p>
-    pub fn get_network_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>> {
+    pub fn get_network_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInfo>> {
         &self.network_info_list
     }
     /// <p> CPU architecture type for the server. </p>
-    pub fn cpu_architecture(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cpu_architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_architecture = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> CPU architecture type for the server. </p>
-    pub fn set_cpu_architecture(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cpu_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu_architecture = input;
         self
     }

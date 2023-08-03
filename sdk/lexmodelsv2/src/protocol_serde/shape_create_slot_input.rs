@@ -9,19 +9,13 @@ pub fn ser_create_slot_input(
     if let Some(var_2) = &input.multiple_values_setting {
         #[allow(unused_mut)]
         let mut object_3 = object.key("multipleValuesSetting").start_object();
-        crate::protocol_serde::shape_multiple_values_setting::ser_multiple_values_setting(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_multiple_values_setting::ser_multiple_values_setting(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.obfuscation_setting {
         #[allow(unused_mut)]
         let mut object_5 = object.key("obfuscationSetting").start_object();
-        crate::protocol_serde::shape_obfuscation_setting::ser_obfuscation_setting(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_obfuscation_setting::ser_obfuscation_setting(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.slot_name {

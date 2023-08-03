@@ -62,9 +62,7 @@ impl ErrorInformation {
 
 /// A builder for [`ErrorInformation`](crate::types::ErrorInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInformationBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

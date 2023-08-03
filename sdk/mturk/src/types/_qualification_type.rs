@@ -66,9 +66,7 @@ impl QualificationType {
         self.keywords.as_deref()
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn qualification_type_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
+    pub fn qualification_type_status(&self) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>
@@ -109,17 +107,14 @@ impl QualificationType {
 
 /// A builder for [`QualificationType`](crate::types::QualificationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QualificationTypeBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_type_status:
-        ::std::option::Option<crate::types::QualificationTypeStatus>,
+    pub(crate) qualification_type_status: ::std::option::Option<crate::types::QualificationTypeStatus>,
     pub(crate) test: ::std::option::Option<::std::string::String>,
     pub(crate) test_duration_in_seconds: ::std::option::Option<i64>,
     pub(crate) answer_key: ::std::option::Option<::std::string::String>,
@@ -130,18 +125,12 @@ pub struct QualificationTypeBuilder {
 }
 impl QualificationTypeBuilder {
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -155,10 +144,7 @@ impl QualificationTypeBuilder {
         self
     }
     /// <p> The date and time the Qualification type was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -209,25 +195,17 @@ impl QualificationTypeBuilder {
         &self.keywords
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.qualification_type_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
+    pub fn set_qualification_type_status(mut self, input: ::std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
         self.qualification_type_status = input;
         self
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn get_qualification_type_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
+    pub fn get_qualification_type_status(&self) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
         &self.qualification_type_status
     }
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>

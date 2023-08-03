@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetNetworkProfileOutput`](crate::operation::get_network_profile::GetNetworkProfileOutput) with field(s):
     ///   - [`network_profile(Option<NetworkProfile>)`](crate::operation::get_network_profile::GetNetworkProfileOutput::network_profile): <p>The network profile.</p>
     /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::operation::get_network_profile::GetNetworkProfileError)
-    pub fn get_network_profile(
-        &self,
-    ) -> crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder {
-        crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_profile(&self) -> crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder {
+        crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

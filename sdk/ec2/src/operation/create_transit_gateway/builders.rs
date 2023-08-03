@@ -41,9 +41,7 @@ impl CreateTransitGatewayFluentBuilder {
         }
     }
     /// Access the CreateTransitGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_transit_gateway::builders::CreateTransitGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway::builders::CreateTransitGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl CreateTransitGatewayFluentBuilder {
             crate::operation::create_transit_gateway::CreateTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway::CreateTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway::CreateTransitGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl CreateTransitGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl CreateTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway::CreateTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway::CreateTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway::CreateTransitGatewayError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl CreateTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway::CreateTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway::CreateTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway::CreateTransitGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl CreateTransitGatewayFluentBuilder {
             crate::operation::create_transit_gateway::CreateTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway::CreateTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway::CreateTransitGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl CreateTransitGatewayFluentBuilder {
         self
     }
     /// <p>The transit gateway options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRequestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayRequestOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>The transit gateway options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRequestOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayRequestOptions> {
         self.inner.get_options()
     }
     /// Appends an item to `TagSpecifications`.
@@ -169,17 +151,12 @@ impl CreateTransitGatewayFluentBuilder {
         self
     }
     /// <p>The tags to apply to the transit gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the transit gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

@@ -23,9 +23,7 @@ impl SingularSourceProperties {
 
 /// A builder for [`SingularSourceProperties`](crate::types::SingularSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SingularSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SingularSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`SingularSourceProperties`](crate::types::SingularSourceProperties).
     pub fn build(self) -> crate::types::SingularSourceProperties {
-        crate::types::SingularSourceProperties {
-            object: self.object,
-        }
+        crate::types::SingularSourceProperties { object: self.object }
     }
 }

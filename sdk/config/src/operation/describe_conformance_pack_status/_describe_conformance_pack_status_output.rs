@@ -5,8 +5,7 @@
 pub struct DescribeConformancePackStatusOutput {
     /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
     #[doc(hidden)]
-    pub conformance_pack_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>>,
+    pub conformance_pack_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeConformancePackStatusOutput {
 }
 impl DescribeConformancePackStatusOutput {
     /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
-    pub fn conformance_pack_status_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConformancePackStatusDetail]> {
+    pub fn conformance_pack_status_details(&self) -> ::std::option::Option<&[crate::types::ConformancePackStatusDetail]> {
         self.conformance_pack_status_details.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeConformancePackStatusOutput {
 }
 impl DescribeConformancePackStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput).
-    pub fn builder() -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusOutputBuilder {
         crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConformancePackStatusOutputBuilder {
-    pub(crate) conformance_pack_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>>,
+    pub(crate) conformance_pack_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeConformancePackStatusOutputBuilder {
     /// To override the contents of this collection use [`set_conformance_pack_status_details`](Self::set_conformance_pack_status_details).
     ///
     /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
-    pub fn conformance_pack_status_details(
-        mut self,
-        input: crate::types::ConformancePackStatusDetail,
-    ) -> Self {
+    pub fn conformance_pack_status_details(mut self, input: crate::types::ConformancePackStatusDetail) -> Self {
         let mut v = self.conformance_pack_status_details.unwrap_or_default();
         v.push(input);
         self.conformance_pack_status_details = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeConformancePackStatusOutputBuilder {
         self
     }
     /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
-    pub fn get_conformance_pack_status_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>> {
+    pub fn get_conformance_pack_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>> {
         &self.conformance_pack_status_details
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -100,10 +89,7 @@ impl DescribeConformancePackStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput
-    {
+    pub fn build(self) -> crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput {
         crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput {
             conformance_pack_status_details: self.conformance_pack_status_details,
             next_token: self.next_token,

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_parameter_groups(Option<Vec<DbParameterGroup>>)`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput::db_parameter_groups): <p>A list of <code>DBParameterGroup</code> instances.</p>
     /// - On failure, responds with [`SdkError<DescribeDBParameterGroupsError>`](crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError)
-    pub fn describe_db_parameter_groups(&self) -> crate::operation::describe_db_parameter_groups::builders::DescribeDBParameterGroupsFluentBuilder{
+    pub fn describe_db_parameter_groups(&self) -> crate::operation::describe_db_parameter_groups::builders::DescribeDBParameterGroupsFluentBuilder {
         crate::operation::describe_db_parameter_groups::builders::DescribeDBParameterGroupsFluentBuilder::new(self.handle.clone())
     }
 }

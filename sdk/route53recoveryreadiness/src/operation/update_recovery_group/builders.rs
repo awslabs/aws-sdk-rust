@@ -37,9 +37,7 @@ impl UpdateRecoveryGroupFluentBuilder {
         }
     }
     /// Access the UpdateRecoveryGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateRecoveryGroupFluentBuilder {
             crate::operation::update_recovery_group::UpdateRecoveryGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recovery_group::UpdateRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recovery_group::UpdateRecoveryGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateRecoveryGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateRecoveryGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recovery_group::UpdateRecoveryGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recovery_group::UpdateRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recovery_group::UpdateRecoveryGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateRecoveryGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recovery_group::UpdateRecoveryGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recovery_group::UpdateRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recovery_group::UpdateRecoveryGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateRecoveryGroupFluentBuilder {
             crate::operation::update_recovery_group::UpdateRecoveryGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recovery_group::UpdateRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recovery_group::UpdateRecoveryGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl UpdateRecoveryGroupFluentBuilder {
         self
     }
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cells(input);
         self
     }
@@ -144,18 +128,12 @@ impl UpdateRecoveryGroupFluentBuilder {
         self.inner.get_cells()
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_group_name(input.into());
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_group_name(input);
         self
     }

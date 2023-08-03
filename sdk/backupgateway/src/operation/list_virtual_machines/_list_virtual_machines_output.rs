@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVirtualMachinesOutput {
 }
 impl ListVirtualMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder {
-        crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder {
+        crate::operation::list_virtual_machines::builders::ListVirtualMachinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualMachinesOutputBuilder {
-    pub(crate) virtual_machines:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>,
+    pub(crate) virtual_machines: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListVirtualMachinesOutputBuilder {
         self
     }
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn set_virtual_machines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>,
-    ) -> Self {
+    pub fn set_virtual_machines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>) -> Self {
         self.virtual_machines = input;
         self
     }
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn get_virtual_machines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>> {
+    pub fn get_virtual_machines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>> {
         &self.virtual_machines
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

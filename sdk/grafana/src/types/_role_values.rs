@@ -30,9 +30,7 @@ impl RoleValues {
 
 /// A builder for [`RoleValues`](crate::types::RoleValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoleValuesBuilder {
     pub(crate) editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl RoleValuesBuilder {
         self
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    pub fn set_editor(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_editor(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.editor = input;
         self
     }
@@ -73,10 +68,7 @@ impl RoleValuesBuilder {
         self
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    pub fn set_admin(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_admin(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.admin = input;
         self
     }

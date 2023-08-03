@@ -21,10 +21,7 @@ pub fn ser_register_task_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_container_definition::ser_container_definition(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_container_definition::ser_container_definition(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -90,10 +87,7 @@ pub fn ser_register_task_definition_input(
     if let Some(var_28) = &input.proxy_configuration {
         #[allow(unused_mut)]
         let mut object_29 = object.key("proxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(
-            &mut object_29,
-            var_28,
-        )?;
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.inference_accelerators {
@@ -102,10 +96,7 @@ pub fn ser_register_task_definition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_33 = array_31.value().start_object();
-                crate::protocol_serde::shape_inference_accelerator::ser_inference_accelerator(
-                    &mut object_33,
-                    item_32,
-                )?;
+                crate::protocol_serde::shape_inference_accelerator::ser_inference_accelerator(&mut object_33, item_32)?;
                 object_33.finish();
             }
         }
@@ -114,19 +105,13 @@ pub fn ser_register_task_definition_input(
     if let Some(var_34) = &input.ephemeral_storage {
         #[allow(unused_mut)]
         let mut object_35 = object.key("ephemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(
-            &mut object_35,
-            var_34,
-        )?;
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_35, var_34)?;
         object_35.finish();
     }
     if let Some(var_36) = &input.runtime_platform {
         #[allow(unused_mut)]
         let mut object_37 = object.key("runtimePlatform").start_object();
-        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(
-            &mut object_37,
-            var_36,
-        )?;
+        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_37, var_36)?;
         object_37.finish();
     }
     Ok(())

@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`export_error_details(Option<VectorEnrichmentJobExportErrorDetails>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::export_error_details): <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<GetVectorEnrichmentJobError>`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError)
-    pub fn get_vector_enrichment_job(
-        &self,
-    ) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder
-    {
+    pub fn get_vector_enrichment_job(&self) -> crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder {
         crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::new(self.handle.clone())
     }
 }

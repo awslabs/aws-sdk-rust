@@ -26,7 +26,7 @@ impl CreateTrafficPolicyVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder,
+    inner: crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder,
 }
 impl CreateTrafficPolicyVersionFluentBuilder {
     /// Creates a new `CreateTrafficPolicyVersion`.
@@ -37,7 +37,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
         }
     }
     /// Access the CreateTrafficPolicyVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
             crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateTrafficPolicyVersionFluentBuilder {
             crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError>,
     > {
         self.customize_middleware().await
     }

@@ -25,10 +25,7 @@ pub fn ser_create_domain_input(
     if let Some(var_8) = &input.auto_tune_options {
         #[allow(unused_mut)]
         let mut object_9 = object.key("AutoTuneOptions").start_object();
-        crate::protocol_serde::shape_auto_tune_options_input::ser_auto_tune_options_input(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_auto_tune_options_input::ser_auto_tune_options_input(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.cluster_config {
@@ -46,10 +43,7 @@ pub fn ser_create_domain_input(
     if let Some(var_14) = &input.domain_endpoint_options {
         #[allow(unused_mut)]
         let mut object_15 = object.key("DomainEndpointOptions").start_object();
-        crate::protocol_serde::shape_domain_endpoint_options::ser_domain_endpoint_options(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_domain_endpoint_options::ser_domain_endpoint_options(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.domain_name {
@@ -64,10 +58,7 @@ pub fn ser_create_domain_input(
     if let Some(var_19) = &input.encryption_at_rest_options {
         #[allow(unused_mut)]
         let mut object_20 = object.key("EncryptionAtRestOptions").start_object();
-        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.engine_version {
@@ -80,10 +71,7 @@ pub fn ser_create_domain_input(
             {
                 #[allow(unused_mut)]
                 let mut object_26 = object_23.key(key_24.as_str()).start_object();
-                crate::protocol_serde::shape_log_publishing_option::ser_log_publishing_option(
-                    &mut object_26,
-                    value_25,
-                )?;
+                crate::protocol_serde::shape_log_publishing_option::ser_log_publishing_option(&mut object_26, value_25)?;
                 object_26.finish();
             }
         }
@@ -98,28 +86,19 @@ pub fn ser_create_domain_input(
     if let Some(var_29) = &input.off_peak_window_options {
         #[allow(unused_mut)]
         let mut object_30 = object.key("OffPeakWindowOptions").start_object();
-        crate::protocol_serde::shape_off_peak_window_options::ser_off_peak_window_options(
-            &mut object_30,
-            var_29,
-        )?;
+        crate::protocol_serde::shape_off_peak_window_options::ser_off_peak_window_options(&mut object_30, var_29)?;
         object_30.finish();
     }
     if let Some(var_31) = &input.snapshot_options {
         #[allow(unused_mut)]
         let mut object_32 = object.key("SnapshotOptions").start_object();
-        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(
-            &mut object_32,
-            var_31,
-        )?;
+        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(&mut object_32, var_31)?;
         object_32.finish();
     }
     if let Some(var_33) = &input.software_update_options {
         #[allow(unused_mut)]
         let mut object_34 = object.key("SoftwareUpdateOptions").start_object();
-        crate::protocol_serde::shape_software_update_options::ser_software_update_options(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_software_update_options::ser_software_update_options(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.tag_list {

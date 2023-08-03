@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::operation::list_tunnels::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tunnels::ListTunnelsOutput::next_token): <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::operation::list_tunnels::ListTunnelsError)
-    pub fn list_tunnels(
-        &self,
-    ) -> crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder {
+    pub fn list_tunnels(&self) -> crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder {
         crate::operation::list_tunnels::builders::ListTunnelsFluentBuilder::new(self.handle.clone())
     }
 }

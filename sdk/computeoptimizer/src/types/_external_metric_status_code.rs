@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExternalMetricStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -85,19 +79,13 @@ impl ::std::convert::From<&str> for ExternalMetricStatusCode {
             "DYNATRACE_INTEGRATION_ERROR" => ExternalMetricStatusCode::DynatraceIntegrationError,
             "INSTANA_INTEGRATION_ERROR" => ExternalMetricStatusCode::InstanaIntegrationError,
             "INSUFFICIENT_DATADOG_METRICS" => ExternalMetricStatusCode::InsufficientDatadogMetrics,
-            "INSUFFICIENT_DYNATRACE_METRICS" => {
-                ExternalMetricStatusCode::InsufficientDynatraceMetrics
-            }
+            "INSUFFICIENT_DYNATRACE_METRICS" => ExternalMetricStatusCode::InsufficientDynatraceMetrics,
             "INSUFFICIENT_INSTANA_METRICS" => ExternalMetricStatusCode::InsufficientInstanaMetrics,
-            "INSUFFICIENT_NEWRELIC_METRICS" => {
-                ExternalMetricStatusCode::InsufficientNewrelicMetrics
-            }
+            "INSUFFICIENT_NEWRELIC_METRICS" => ExternalMetricStatusCode::InsufficientNewrelicMetrics,
             "INTEGRATION_SUCCESS" => ExternalMetricStatusCode::IntegrationSuccess,
             "NEWRELIC_INTEGRATION_ERROR" => ExternalMetricStatusCode::NewrelicIntegrationError,
             "NO_EXTERNAL_METRIC_SET" => ExternalMetricStatusCode::NoExternalMetricSet,
-            other => ExternalMetricStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExternalMetricStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -116,13 +104,9 @@ impl ExternalMetricStatusCode {
             ExternalMetricStatusCode::DynatraceIntegrationError => "DYNATRACE_INTEGRATION_ERROR",
             ExternalMetricStatusCode::InstanaIntegrationError => "INSTANA_INTEGRATION_ERROR",
             ExternalMetricStatusCode::InsufficientDatadogMetrics => "INSUFFICIENT_DATADOG_METRICS",
-            ExternalMetricStatusCode::InsufficientDynatraceMetrics => {
-                "INSUFFICIENT_DYNATRACE_METRICS"
-            }
+            ExternalMetricStatusCode::InsufficientDynatraceMetrics => "INSUFFICIENT_DYNATRACE_METRICS",
             ExternalMetricStatusCode::InsufficientInstanaMetrics => "INSUFFICIENT_INSTANA_METRICS",
-            ExternalMetricStatusCode::InsufficientNewrelicMetrics => {
-                "INSUFFICIENT_NEWRELIC_METRICS"
-            }
+            ExternalMetricStatusCode::InsufficientNewrelicMetrics => "INSUFFICIENT_NEWRELIC_METRICS",
             ExternalMetricStatusCode::IntegrationSuccess => "INTEGRATION_SUCCESS",
             ExternalMetricStatusCode::NewrelicIntegrationError => "NEWRELIC_INTEGRATION_ERROR",
             ExternalMetricStatusCode::NoExternalMetricSet => "NO_EXTERNAL_METRIC_SET",

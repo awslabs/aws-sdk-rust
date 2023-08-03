@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainEndpointOptionsOutput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput) with field(s):
     ///   - [`domain_endpoint_options(Option<DomainEndpointOptionsStatus>)`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsOutput::domain_endpoint_options): <p>The newly-configured domain endpoint options.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainEndpointOptionsError>`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsError)
-    pub fn update_domain_endpoint_options(&self) -> crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsFluentBuilder{
+    pub fn update_domain_endpoint_options(
+        &self,
+    ) -> crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsFluentBuilder {
         crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsFluentBuilder::new(self.handle.clone())
     }
 }

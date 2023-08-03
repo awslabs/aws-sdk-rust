@@ -93,9 +93,7 @@ impl Backup {
 
 /// A builder for [`Backup`](crate::types::Backup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_state: ::std::option::Option<crate::types::BackupState>,
@@ -130,10 +128,7 @@ impl BackupBuilder {
         self
     }
     /// <p>The state of the backup.</p>
-    pub fn set_backup_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupState>,
-    ) -> Self {
+    pub fn set_backup_state(mut self, input: ::std::option::Option<crate::types::BackupState>) -> Self {
         self.backup_state = input;
         self
     }
@@ -161,10 +156,7 @@ impl BackupBuilder {
         self
     }
     /// <p>The date and time when the backup was created.</p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
@@ -178,10 +170,7 @@ impl BackupBuilder {
         self
     }
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    pub fn set_copy_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_copy_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.copy_timestamp = input;
         self
     }
@@ -204,18 +193,12 @@ impl BackupBuilder {
         &self.never_expires
     }
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -224,18 +207,12 @@ impl BackupBuilder {
         &self.source_region
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn source_backup(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_backup(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn set_source_backup(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_backup(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup = input;
         self
     }
@@ -244,18 +221,12 @@ impl BackupBuilder {
         &self.source_backup
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn source_cluster(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_cluster = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn set_source_cluster(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_cluster = input;
         self
     }
@@ -269,10 +240,7 @@ impl BackupBuilder {
         self
     }
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    pub fn set_delete_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_timestamp = input;
         self
     }
@@ -292,10 +260,7 @@ impl BackupBuilder {
         self
     }
     /// <p>The list of tags for the backup.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }

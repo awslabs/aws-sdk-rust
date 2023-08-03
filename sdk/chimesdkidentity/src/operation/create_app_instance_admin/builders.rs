@@ -31,8 +31,7 @@ impl CreateAppInstanceAdminInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAppInstanceAdminFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder,
+    inner: crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder,
 }
 impl CreateAppInstanceAdminFluentBuilder {
     /// Creates a new `CreateAppInstanceAdmin`.
@@ -43,10 +42,7 @@ impl CreateAppInstanceAdminFluentBuilder {
         }
     }
     /// Access the CreateAppInstanceAdmin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl CreateAppInstanceAdminFluentBuilder {
             crate::operation::create_app_instance_admin::CreateAppInstanceAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl CreateAppInstanceAdminFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl CreateAppInstanceAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl CreateAppInstanceAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +110,17 @@ impl CreateAppInstanceAdminFluentBuilder {
             crate::operation::create_app_instance_admin::CreateAppInstanceAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    pub fn app_instance_admin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_admin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_admin_arn(input.into());
         self
     }
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    pub fn set_app_instance_admin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_admin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_admin_arn(input);
         self
     }
@@ -150,18 +129,12 @@ impl CreateAppInstanceAdminFluentBuilder {
         self.inner.get_app_instance_admin_arn()
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

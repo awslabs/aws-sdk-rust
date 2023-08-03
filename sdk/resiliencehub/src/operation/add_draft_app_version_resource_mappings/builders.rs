@@ -5,16 +5,16 @@ pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_ap
 
 impl AddDraftAppVersionResourceMappingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.add_draft_app_version_resource_mappings();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl AddDraftAppVersionResourceMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder,
+    inner: crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder,
 }
 impl AddDraftAppVersionResourceMappingsFluentBuilder {
     /// Creates a new `AddDraftAppVersionResourceMappings`.
@@ -37,15 +37,20 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
         }
     }
     /// Access the AddDraftAppVersionResourceMappings as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -118,17 +133,12 @@ impl AddDraftAppVersionResourceMappingsFluentBuilder {
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn set_resource_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
-    ) -> Self {
+    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>) -> Self {
         self.inner = self.inner.set_resource_mappings(input);
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn get_resource_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
         self.inner.get_resource_mappings()
     }
 }

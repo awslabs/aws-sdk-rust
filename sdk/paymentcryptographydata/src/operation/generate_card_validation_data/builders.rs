@@ -34,7 +34,7 @@ impl GenerateCardValidationDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateCardValidationDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataInputBuilder,
+    inner: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataInputBuilder,
 }
 impl GenerateCardValidationDataFluentBuilder {
     /// Creates a new `GenerateCardValidationData`.
@@ -45,7 +45,7 @@ impl GenerateCardValidationDataFluentBuilder {
         }
     }
     /// Access the GenerateCardValidationData as a reference.
-    pub fn as_input(&self) -> &crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl GenerateCardValidationDataFluentBuilder {
             crate::operation::generate_card_validation_data::GenerateCardValidationData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl GenerateCardValidationDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl GenerateCardValidationDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl GenerateCardValidationDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +113,17 @@ impl GenerateCardValidationDataFluentBuilder {
             crate::operation::generate_card_validation_data::GenerateCardValidationData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_card_validation_data::GenerateCardValidationDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -149,18 +132,12 @@ impl GenerateCardValidationDataFluentBuilder {
         self.inner.get_key_identifier()
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_account_number(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_account_number(input);
         self
     }
@@ -174,17 +151,12 @@ impl GenerateCardValidationDataFluentBuilder {
         self
     }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_generation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CardGenerationAttributes>,
-    ) -> Self {
+    pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::CardGenerationAttributes>) -> Self {
         self.inner = self.inner.set_generation_attributes(input);
         self
     }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
-    pub fn get_generation_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::CardGenerationAttributes> {
+    pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::CardGenerationAttributes> {
         self.inner.get_generation_attributes()
     }
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>

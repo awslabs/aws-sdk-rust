@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVerifiedAccessGroupOutput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput) with field(s):
     ///   - [`verified_access_group(Option<VerifiedAccessGroup>)`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput::verified_access_group): <p>The ID of the Verified Access group.</p>
     /// - On failure, responds with [`SdkError<DeleteVerifiedAccessGroupError>`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError)
-    pub fn delete_verified_access_group(&self) -> crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupFluentBuilder{
+    pub fn delete_verified_access_group(&self) -> crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupFluentBuilder {
         crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupFluentBuilder::new(self.handle.clone())
     }
 }

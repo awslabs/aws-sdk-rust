@@ -23,9 +23,7 @@ impl ControlPlanePlacementResponse {
 
 /// A builder for [`ControlPlanePlacementResponse`](crate::types::ControlPlanePlacementResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlPlanePlacementResponseBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ControlPlanePlacementResponseBuilder {
     }
     /// Consumes the builder and constructs a [`ControlPlanePlacementResponse`](crate::types::ControlPlanePlacementResponse).
     pub fn build(self) -> crate::types::ControlPlanePlacementResponse {
-        crate::types::ControlPlanePlacementResponse {
-            group_name: self.group_name,
-        }
+        crate::types::ControlPlanePlacementResponse { group_name: self.group_name }
     }
 }

@@ -30,9 +30,7 @@ impl SuccessfulRequest {
 
 /// A builder for [`SuccessfulRequest`](crate::types::SuccessfulRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuccessfulRequestBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -21,34 +21,27 @@ impl ::aws_http::request_id::RequestId for DescribeComponentConfigurationRecomme
 }
 impl DescribeComponentConfigurationRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationRecommendationOutput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput).
-    pub fn builder() -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationOutputBuilder {
         crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComponentConfigurationRecommendationOutput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationRecommendationOutputBuilder {
     pub(crate) component_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeComponentConfigurationRecommendationOutputBuilder {
     /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    pub fn component_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    pub fn set_component_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_configuration = input;
         self
     }
@@ -66,10 +59,9 @@ impl DescribeComponentConfigurationRecommendationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationRecommendationOutput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput).
-    pub fn build(self) -> crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput{
+    pub fn build(self) -> crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput {
         crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput {
-            component_configuration: self.component_configuration
-            ,
+            component_configuration: self.component_configuration,
             _request_id: self._request_id,
         }
     }

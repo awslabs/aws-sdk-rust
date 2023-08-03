@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::set_domain_name): <p>The domain to deregister in WorkMail and SES.</p>
     /// - On success, responds with [`DeregisterMailDomainOutput`](crate::operation::deregister_mail_domain::DeregisterMailDomainOutput)
     /// - On failure, responds with [`SdkError<DeregisterMailDomainError>`](crate::operation::deregister_mail_domain::DeregisterMailDomainError)
-    pub fn deregister_mail_domain(
-        &self,
-    ) -> crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder {
-        crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_mail_domain(&self) -> crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder {
+        crate::operation::deregister_mail_domain::builders::DeregisterMailDomainFluentBuilder::new(self.handle.clone())
     }
 }

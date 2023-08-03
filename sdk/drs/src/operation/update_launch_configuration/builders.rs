@@ -26,7 +26,7 @@ impl UpdateLaunchConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder,
+    inner: crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder,
 }
 impl UpdateLaunchConfigurationFluentBuilder {
     /// Creates a new `UpdateLaunchConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateLaunchConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateLaunchConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateLaunchConfigurationFluentBuilder {
             crate::operation::update_launch_configuration::UpdateLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateLaunchConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateLaunchConfigurationFluentBuilder {
             crate::operation::update_launch_configuration::UpdateLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -160,24 +143,16 @@ impl UpdateLaunchConfigurationFluentBuilder {
         self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn set_launch_disposition(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDisposition>,
-    ) -> Self {
+    pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn get_launch_disposition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+    pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
         self.inner.get_launch_disposition()
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn target_instance_type_right_sizing_method(
-        mut self,
-        input: crate::types::TargetInstanceTypeRightSizingMethod,
-    ) -> Self {
+    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
         self.inner = self.inner.target_instance_type_right_sizing_method(input);
         self
     }
@@ -186,15 +161,11 @@ impl UpdateLaunchConfigurationFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_target_instance_type_right_sizing_method(input);
+        self.inner = self.inner.set_target_instance_type_right_sizing_method(input);
         self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn get_target_instance_type_right_sizing_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
         self.inner.get_target_instance_type_right_sizing_method()
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>

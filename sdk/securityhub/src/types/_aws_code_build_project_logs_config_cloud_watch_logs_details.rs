@@ -30,17 +30,14 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
         crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

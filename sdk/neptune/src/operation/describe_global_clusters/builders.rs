@@ -37,10 +37,7 @@ impl DescribeGlobalClustersFluentBuilder {
         }
     }
     /// Access the DescribeGlobalClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeGlobalClustersFluentBuilder {
             crate::operation::describe_global_clusters::DescribeGlobalClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeGlobalClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeGlobalClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeGlobalClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>,
     > {
         self.send_middleware().await
     }
@@ -117,39 +105,25 @@ impl DescribeGlobalClustersFluentBuilder {
             crate::operation::describe_global_clusters::DescribeGlobalClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator
-    {
-        crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator {
+        crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }

@@ -30,9 +30,7 @@ impl WorkflowExecutionCompletedEventAttributes {
 
 /// A builder for [`WorkflowExecutionCompletedEventAttributes`](crate::types::WorkflowExecutionCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionCompletedEventAttributesBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
@@ -58,10 +56,7 @@ impl WorkflowExecutionCompletedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -73,9 +68,7 @@ impl WorkflowExecutionCompletedEventAttributesBuilder {
     pub fn build(self) -> crate::types::WorkflowExecutionCompletedEventAttributes {
         crate::types::WorkflowExecutionCompletedEventAttributes {
             result: self.result,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

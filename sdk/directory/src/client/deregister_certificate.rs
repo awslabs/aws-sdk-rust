@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::set_certificate_id): <p>The identifier of the certificate.</p>
     /// - On success, responds with [`DeregisterCertificateOutput`](crate::operation::deregister_certificate::DeregisterCertificateOutput)
     /// - On failure, responds with [`SdkError<DeregisterCertificateError>`](crate::operation::deregister_certificate::DeregisterCertificateError)
-    pub fn deregister_certificate(
-        &self,
-    ) -> crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder
-    {
-        crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_certificate(&self) -> crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder {
+        crate::operation::deregister_certificate::builders::DeregisterCertificateFluentBuilder::new(self.handle.clone())
     }
 }

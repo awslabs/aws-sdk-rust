@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder::set_configuration): <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>  <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
     /// - On success, responds with [`PutGroupConfigurationOutput`](crate::operation::put_group_configuration::PutGroupConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutGroupConfigurationError>`](crate::operation::put_group_configuration::PutGroupConfigurationError)
-    pub fn put_group_configuration(
-        &self,
-    ) -> crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder
-    {
-        crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_group_configuration(&self) -> crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder {
+        crate::operation::put_group_configuration::builders::PutGroupConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

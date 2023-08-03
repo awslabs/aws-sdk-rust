@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`assistant_association_summaries(Option<Vec<AssistantAssociationSummary>>)`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput::assistant_association_summaries): <p>Summary information about assistant associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssistantAssociationsError>`](crate::operation::list_assistant_associations::ListAssistantAssociationsError)
-    pub fn list_assistant_associations(&self) -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder{
+    pub fn list_assistant_associations(&self) -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder {
         crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

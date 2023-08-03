@@ -40,13 +40,7 @@
 /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DeploymentType {
             "NewDeployment" => DeploymentType::NewDeployment,
             "Redeployment" => DeploymentType::Redeployment,
             "ResetDeployment" => DeploymentType::ResetDeployment,
-            other => {
-                DeploymentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DeploymentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ForceResetDeployment",
-            "NewDeployment",
-            "Redeployment",
-            "ResetDeployment",
-        ]
+        &["ForceResetDeployment", "NewDeployment", "Redeployment", "ResetDeployment"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentType {

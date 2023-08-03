@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`instance_user_summaries(Option<Vec<InstanceUserSummary>>)`](crate::operation::list_user_associations::ListUserAssociationsOutput::instance_user_summaries): <p>Metadata that describes the list user association operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_associations::ListUserAssociationsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListUserAssociationsError>`](crate::operation::list_user_associations::ListUserAssociationsError)
-    pub fn list_user_associations(
-        &self,
-    ) -> crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder {
-        crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_associations(&self) -> crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder {
+        crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

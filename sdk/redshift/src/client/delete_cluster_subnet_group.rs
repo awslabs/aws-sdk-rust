@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`cluster_subnet_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::cluster_subnet_group_name) / [`set_cluster_subnet_group_name(Option<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::set_cluster_subnet_group_name): <p>The name of the cluster subnet group name to be deleted.</p>
     /// - On success, responds with [`DeleteClusterSubnetGroupOutput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteClusterSubnetGroupError>`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError)
-    pub fn delete_cluster_subnet_group(&self) -> crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder{
+    pub fn delete_cluster_subnet_group(&self) -> crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder {
         crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

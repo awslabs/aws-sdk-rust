@@ -23,9 +23,7 @@ impl SingleMasterConfiguration {
 
 /// A builder for [`SingleMasterConfiguration`](crate::types::SingleMasterConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SingleMasterConfigurationBuilder {
     pub(crate) message_ttl_seconds: ::std::option::Option<i32>,
 }

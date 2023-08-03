@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`referenced_by(Option<Vec<RefResource>>)`](crate::operation::list_segment_references::ListSegmentReferencesOutput::referenced_by): <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_segment_references::ListSegmentReferencesOutput::next_token): <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSegmentReferencesError>`](crate::operation::list_segment_references::ListSegmentReferencesError)
-    pub fn list_segment_references(
-        &self,
-    ) -> crate::operation::list_segment_references::builders::ListSegmentReferencesFluentBuilder
-    {
-        crate::operation::list_segment_references::builders::ListSegmentReferencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_segment_references(&self) -> crate::operation::list_segment_references::builders::ListSegmentReferencesFluentBuilder {
+        crate::operation::list_segment_references::builders::ListSegmentReferencesFluentBuilder::new(self.handle.clone())
     }
 }

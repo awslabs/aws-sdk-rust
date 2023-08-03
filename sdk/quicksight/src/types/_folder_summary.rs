@@ -58,9 +58,7 @@ impl FolderSummary {
 
 /// A builder for [`FolderSummary`](crate::types::FolderSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl FolderSummaryBuilder {
         self
     }
     /// <p>The type of folder.</p>
-    pub fn set_folder_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderType>,
-    ) -> Self {
+    pub fn set_folder_type(mut self, input: ::std::option::Option<crate::types::FolderType>) -> Self {
         self.folder_type = input;
         self
     }
@@ -135,10 +130,7 @@ impl FolderSummaryBuilder {
         self
     }
     /// <p>The time that the folder was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -152,10 +144,7 @@ impl FolderSummaryBuilder {
         self
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

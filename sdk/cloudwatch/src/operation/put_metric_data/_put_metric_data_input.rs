@@ -31,9 +31,7 @@ impl PutMetricDataInput {
 
 /// A builder for [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricDataInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
@@ -68,26 +66,18 @@ impl PutMetricDataInputBuilder {
         self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.metric_data = input;
         self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         &self.metric_data
     }
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metric_data::PutMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_metric_data::PutMetricDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_data::PutMetricDataInput {
             namespace: self.namespace,
             metric_data: self.metric_data,

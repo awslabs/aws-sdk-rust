@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`proactive_insights(i32)`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput::proactive_insights): <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     ///   - [`mean_time_to_recover_in_milliseconds(Option<i64>)`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput::mean_time_to_recover_in_milliseconds): <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
     /// - On failure, responds with [`SdkError<DescribeAccountOverviewError>`](crate::operation::describe_account_overview::DescribeAccountOverviewError)
-    pub fn describe_account_overview(
-        &self,
-    ) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewFluentBuilder
-    {
+    pub fn describe_account_overview(&self) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewFluentBuilder {
         crate::operation::describe_account_overview::builders::DescribeAccountOverviewFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateWebhookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_webhook::CreateWebhookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_webhook::CreateWebhookError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_webhook();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWebhookFluentBuilder {
         }
     }
     /// Access the CreateWebhook as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_webhook::builders::CreateWebhookInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_webhook::builders::CreateWebhookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateWebhookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

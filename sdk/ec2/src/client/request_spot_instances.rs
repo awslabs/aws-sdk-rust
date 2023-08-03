@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`RequestSpotInstancesOutput`](crate::operation::request_spot_instances::RequestSpotInstancesOutput) with field(s):
     ///   - [`spot_instance_requests(Option<Vec<SpotInstanceRequest>>)`](crate::operation::request_spot_instances::RequestSpotInstancesOutput::spot_instance_requests): <p>The Spot Instance requests.</p>
     /// - On failure, responds with [`SdkError<RequestSpotInstancesError>`](crate::operation::request_spot_instances::RequestSpotInstancesError)
-    pub fn request_spot_instances(
-        &self,
-    ) -> crate::operation::request_spot_instances::builders::RequestSpotInstancesFluentBuilder {
-        crate::operation::request_spot_instances::builders::RequestSpotInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn request_spot_instances(&self) -> crate::operation::request_spot_instances::builders::RequestSpotInstancesFluentBuilder {
+        crate::operation::request_spot_instances::builders::RequestSpotInstancesFluentBuilder::new(self.handle.clone())
     }
 }

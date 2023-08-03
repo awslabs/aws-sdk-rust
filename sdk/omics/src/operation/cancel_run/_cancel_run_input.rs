@@ -22,9 +22,7 @@ impl CancelRunInput {
 
 /// A builder for [`CancelRunInput`](crate::operation::cancel_run::CancelRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelRunInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl CancelRunInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`CancelRunInput`](crate::operation::cancel_run::CancelRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_run::CancelRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_run::CancelRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_run::CancelRunInput { id: self.id })
     }
 }

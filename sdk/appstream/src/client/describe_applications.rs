@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`applications(Option<Vec<Application>>)`](crate::operation::describe_applications::DescribeApplicationsOutput::applications): <p>The applications in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_applications::DescribeApplicationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::operation::describe_applications::DescribeApplicationsError)
-    pub fn describe_applications(
-        &self,
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_applications(&self) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {
+        crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

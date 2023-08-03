@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_snapshots(Option<Vec<DbSnapshot>>)`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput::db_snapshots): <p>A list of <code>DBSnapshot</code> instances.</p>
     /// - On failure, responds with [`SdkError<DescribeDBSnapshotsError>`](crate::operation::describe_db_snapshots::DescribeDBSnapshotsError)
-    pub fn describe_db_snapshots(
-        &self,
-    ) -> crate::operation::describe_db_snapshots::builders::DescribeDBSnapshotsFluentBuilder {
-        crate::operation::describe_db_snapshots::builders::DescribeDBSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_snapshots(&self) -> crate::operation::describe_db_snapshots::builders::DescribeDBSnapshotsFluentBuilder {
+        crate::operation::describe_db_snapshots::builders::DescribeDBSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

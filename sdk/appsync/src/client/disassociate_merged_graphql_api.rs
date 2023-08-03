@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateMergedGraphqlApiOutput`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput) with field(s):
     ///   - [`source_api_association_status(Option<SourceApiAssociationStatus>)`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiOutput::source_api_association_status): <p>The state of the source API association.</p>
     /// - On failure, responds with [`SdkError<DisassociateMergedGraphqlApiError>`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiError)
-    pub fn disassociate_merged_graphql_api(&self) -> crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiFluentBuilder{
+    pub fn disassociate_merged_graphql_api(
+        &self,
+    ) -> crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiFluentBuilder {
         crate::operation::disassociate_merged_graphql_api::builders::DisassociateMergedGraphqlApiFluentBuilder::new(self.handle.clone())
     }
 }

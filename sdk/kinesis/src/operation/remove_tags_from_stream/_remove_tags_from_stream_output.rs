@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromStreamOutput {
 }
 impl RemoveTagsFromStreamOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamOutput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamOutputBuilder {
         crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromStreamOutput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromStreamOutputBuilder {
     _request_id: Option<String>,
 }

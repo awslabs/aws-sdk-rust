@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for DeleteDataSourceOutput {
 }
 impl DeleteDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
-    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder {
         crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataSourceOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteDataSourceOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }

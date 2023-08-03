@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`vpc_peering_connection_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder::vpc_peering_connection_id) / [`set_vpc_peering_connection_id(Option<String>)`](crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder::set_vpc_peering_connection_id): <p>A unique identifier for a VPC peering connection.</p>
     /// - On success, responds with [`DeleteVpcPeeringConnectionOutput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput)
     /// - On failure, responds with [`SdkError<DeleteVpcPeeringConnectionError>`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError)
-    pub fn delete_vpc_peering_connection(&self) -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder{
+    pub fn delete_vpc_peering_connection(
+        &self,
+    ) -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder {
         crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder::new(self.handle.clone())
     }
 }

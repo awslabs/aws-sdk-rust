@@ -43,9 +43,7 @@ impl DescribeUsageLimitsFluentBuilder {
         }
     }
     /// Access the DescribeUsageLimits as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl DescribeUsageLimitsFluentBuilder {
             crate::operation::describe_usage_limits::DescribeUsageLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_usage_limits::DescribeUsageLimitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl DescribeUsageLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl DescribeUsageLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_usage_limits::DescribeUsageLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_usage_limits::DescribeUsageLimitsError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl DescribeUsageLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_usage_limits::DescribeUsageLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_usage_limits::DescribeUsageLimitsError>,
     > {
         self.send_middleware().await
     }
@@ -122,36 +111,23 @@ impl DescribeUsageLimitsFluentBuilder {
             crate::operation::describe_usage_limits::DescribeUsageLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_usage_limits::DescribeUsageLimitsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator {
-        crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator {
+        crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the usage limit to describe.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_limit_id(input.into());
         self
     }
     /// <p>The identifier of the usage limit to describe.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }
@@ -160,18 +136,12 @@ impl DescribeUsageLimitsFluentBuilder {
         self.inner.get_usage_limit_id()
     }
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -185,10 +155,7 @@ impl DescribeUsageLimitsFluentBuilder {
         self
     }
     /// <p>The feature type for which you want to describe usage limits.</p>
-    pub fn set_feature_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitFeatureType>,
-    ) -> Self {
+    pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::UsageLimitFeatureType>) -> Self {
         self.inner = self.inner.set_feature_type(input);
         self
     }
@@ -240,10 +207,7 @@ impl DescribeUsageLimitsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -261,10 +225,7 @@ impl DescribeUsageLimitsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

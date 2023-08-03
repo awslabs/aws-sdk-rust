@@ -11,10 +11,7 @@ pub fn ser_create_health_check_input_input(
     }
     if let Some(var_2) = &input.health_check_config {
         let inner_writer = scope.start_el("HealthCheckConfig");
-        crate::protocol_serde::shape_health_check_config::ser_health_check_config(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_health_check_config::ser_health_check_config(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

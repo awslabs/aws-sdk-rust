@@ -27,9 +27,7 @@ impl GetBackendApiInput {
         self.backend_environment_name.as_deref()
     }
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    pub fn resource_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackendApiResourceConfig> {
+    pub fn resource_config(&self) -> ::std::option::Option<&crate::types::BackendApiResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of this resource.</p>
@@ -46,9 +44,7 @@ impl GetBackendApiInput {
 
 /// A builder for [`GetBackendApiInput`](crate::operation::get_backend_api::GetBackendApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackendApiInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ impl GetBackendApiInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -96,32 +86,21 @@ impl GetBackendApiInputBuilder {
         self
     }
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendApiResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::BackendApiResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
     /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendApiResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::BackendApiResourceConfig> {
         &self.resource_config
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -132,10 +111,7 @@ impl GetBackendApiInputBuilder {
     /// Consumes the builder and constructs a [`GetBackendApiInput`](crate::operation::get_backend_api::GetBackendApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_backend_api::GetBackendApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_backend_api::GetBackendApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backend_api::GetBackendApiInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

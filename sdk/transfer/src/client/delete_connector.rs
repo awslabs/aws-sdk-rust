@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::set_connector_id): <p>The unique identifier for the connector.</p>
     /// - On success, responds with [`DeleteConnectorOutput`](crate::operation::delete_connector::DeleteConnectorOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectorError>`](crate::operation::delete_connector::DeleteConnectorError)
-    pub fn delete_connector(
-        &self,
-    ) -> crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder {
-        crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connector(&self) -> crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder {
+        crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::new(self.handle.clone())
     }
 }

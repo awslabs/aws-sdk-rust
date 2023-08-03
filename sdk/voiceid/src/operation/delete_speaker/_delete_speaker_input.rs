@@ -74,10 +74,7 @@ impl DeleteSpeakerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSpeakerInput`](crate::operation::delete_speaker::DeleteSpeakerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_speaker::DeleteSpeakerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_speaker::DeleteSpeakerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_speaker::DeleteSpeakerInput {
             domain_id: self.domain_id,
             speaker_id: self.speaker_id,

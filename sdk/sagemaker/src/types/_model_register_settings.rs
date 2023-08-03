@@ -30,9 +30,7 @@ impl ModelRegisterSettings {
 
 /// A builder for [`ModelRegisterSettings`](crate::types::ModelRegisterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelRegisterSettingsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) cross_account_model_register_role_arn: ::std::option::Option<::std::string::String>,
@@ -53,25 +51,17 @@ impl ModelRegisterSettingsBuilder {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only to register model versions created by a different SageMaker Canvas Amazon Web Services account than the Amazon Web Services account in which SageMaker model registry is set up.</p>
-    pub fn cross_account_model_register_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cross_account_model_register_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_account_model_register_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only to register model versions created by a different SageMaker Canvas Amazon Web Services account than the Amazon Web Services account in which SageMaker model registry is set up.</p>
-    pub fn set_cross_account_model_register_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cross_account_model_register_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cross_account_model_register_role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only to register model versions created by a different SageMaker Canvas Amazon Web Services account than the Amazon Web Services account in which SageMaker model registry is set up.</p>
-    pub fn get_cross_account_model_register_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cross_account_model_register_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cross_account_model_register_role_arn
     }
     /// Consumes the builder and constructs a [`ModelRegisterSettings`](crate::types::ModelRegisterSettings).

@@ -42,13 +42,7 @@
 /// <p>The fleet attribute.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,12 +68,8 @@ impl ::std::convert::From<&str> for FleetAttribute {
             "SESSION_SCRIPT_S3_LOCATION" => FleetAttribute::SessionScriptS3Location,
             "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
-            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => {
-                FleetAttribute::VpcConfigurationSecurityGroupIds
-            }
-            other => {
-                FleetAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => FleetAttribute::VpcConfigurationSecurityGroupIds,
+            other => FleetAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -99,9 +89,7 @@ impl FleetAttribute {
             FleetAttribute::SessionScriptS3Location => "SESSION_SCRIPT_S3_LOCATION",
             FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
-            FleetAttribute::VpcConfigurationSecurityGroupIds => {
-                "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
-            }
+            FleetAttribute::VpcConfigurationSecurityGroupIds => "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
             FleetAttribute::Unknown(value) => value.as_str(),
         }
     }

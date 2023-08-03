@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdatePhoneNumberOutput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput) with field(s):
     ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput::phone_number_errors): <p>A list of failed phone numbers and their error messages.</p>
     /// - On failure, responds with [`SdkError<BatchUpdatePhoneNumberError>`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError)
-    pub fn batch_update_phone_number(
-        &self,
-    ) -> crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberFluentBuilder
-    {
+    pub fn batch_update_phone_number(&self) -> crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberFluentBuilder {
         crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

@@ -34,11 +34,7 @@ impl super::Client {
     ///   - [`url(Option<String>)`](crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput::url): The URL of the packaged OriginEndpoint for consumption.
     ///   - [`whitelist(Option<Vec<String>>)`](crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     /// - On failure, responds with [`SdkError<UpdateOriginEndpointError>`](crate::operation::update_origin_endpoint::UpdateOriginEndpointError)
-    pub fn update_origin_endpoint(
-        &self,
-    ) -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointFluentBuilder {
-        crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_origin_endpoint(&self) -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointFluentBuilder {
+        crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointFluentBuilder::new(self.handle.clone())
     }
 }

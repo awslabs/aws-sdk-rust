@@ -30,9 +30,7 @@ impl ArtifactLocation {
 
 /// A builder for [`ArtifactLocation`](crate::types::ArtifactLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3ArtifactLocation>,
@@ -44,10 +42,7 @@ impl ArtifactLocationBuilder {
         self
     }
     /// <p>The type of artifact in the location.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactLocationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactLocationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -61,10 +56,7 @@ impl ArtifactLocationBuilder {
         self
     }
     /// <p>The S3 bucket that contains the artifact.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ArtifactLocation>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3ArtifactLocation>) -> Self {
         self.s3_location = input;
         self
     }

@@ -23,9 +23,7 @@ impl ProvisionedThroughputOverride {
 
 /// A builder for [`ProvisionedThroughputOverride`](crate::types::ProvisionedThroughputOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputOverrideBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<i64>,
 }

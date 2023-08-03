@@ -30,9 +30,7 @@ impl ReplayDestination {
 
 /// A builder for [`ReplayDestination`](crate::types::ReplayDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplayDestinationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl ReplayDestinationBuilder {
         self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn set_filter_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_arns = input;
         self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn get_filter_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_arns
     }
     /// Consumes the builder and constructs a [`ReplayDestination`](crate::types::ReplayDestination).

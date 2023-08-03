@@ -9,12 +9,8 @@ pub fn de_list_stack_resources_http_error(
     crate::operation::list_stack_resources::ListStackResourcesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_stack_resources::ListStackResourcesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_stack_resources::ListStackResourcesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_stack_resources::ListStackResourcesError::generic(generic))
@@ -32,14 +28,9 @@ pub fn de_list_stack_resources_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_stack_resources::de_list_stack_resources(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_stack_resources::ListStackResourcesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_list_stack_resources::de_list_stack_resources(_response_body, output)
+            .map_err(crate::operation::list_stack_resources::ListStackResourcesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +39,7 @@ pub fn de_list_stack_resources_http_response_with_props(
 pub fn de_list_stack_resources(
     inp: &[u8],
     mut builder: crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder,
-) -> Result<
-    crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -101,9 +89,7 @@ pub fn de_list_stack_resources(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ListStackResourcesResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ListStackResourcesResult tag"));
     };
     Ok(builder)
 }

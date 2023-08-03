@@ -42,13 +42,7 @@
 /// _Note: `SimulationAppStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SimulationAppStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SimulationAppStatus {
             "STOPPED" => SimulationAppStatus::Stopped,
             "STOPPING" => SimulationAppStatus::Stopping,
             "UNKNOWN" => SimulationAppStatus::UnknownValue,
-            other => SimulationAppStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationAppStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl SimulationAppStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERROR", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN",
-        ]
+        &["ERROR", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for SimulationAppStatus {

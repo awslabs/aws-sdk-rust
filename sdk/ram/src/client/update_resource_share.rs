@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_share(Option<ResourceShare>)`](crate::operation::update_resource_share::UpdateResourceShareOutput::resource_share): <p>Information about the resource share.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::update_resource_share::UpdateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<UpdateResourceShareError>`](crate::operation::update_resource_share::UpdateResourceShareError)
-    pub fn update_resource_share(
-        &self,
-    ) -> crate::operation::update_resource_share::builders::UpdateResourceShareFluentBuilder {
-        crate::operation::update_resource_share::builders::UpdateResourceShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource_share(&self) -> crate::operation::update_resource_share::builders::UpdateResourceShareFluentBuilder {
+        crate::operation::update_resource_share::builders::UpdateResourceShareFluentBuilder::new(self.handle.clone())
     }
 }

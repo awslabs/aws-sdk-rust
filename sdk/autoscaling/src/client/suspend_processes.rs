@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`scaling_processes(Vec<String>)`](crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder::scaling_processes) / [`set_scaling_processes(Option<Vec<String>>)`](crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder::set_scaling_processes): <p>One or more of the following processes:</p>  <ul>   <li> <p> <code>Launch</code> </p> </li>   <li> <p> <code>Terminate</code> </p> </li>   <li> <p> <code>AddToLoadBalancer</code> </p> </li>   <li> <p> <code>AlarmNotification</code> </p> </li>   <li> <p> <code>AZRebalance</code> </p> </li>   <li> <p> <code>HealthCheck</code> </p> </li>   <li> <p> <code>InstanceRefresh</code> </p> </li>   <li> <p> <code>ReplaceUnhealthy</code> </p> </li>   <li> <p> <code>ScheduledActions</code> </p> </li>  </ul>  <p>If you omit this property, all processes are specified.</p>
     /// - On success, responds with [`SuspendProcessesOutput`](crate::operation::suspend_processes::SuspendProcessesOutput)
     /// - On failure, responds with [`SdkError<SuspendProcessesError>`](crate::operation::suspend_processes::SuspendProcessesError)
-    pub fn suspend_processes(
-        &self,
-    ) -> crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder {
-        crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn suspend_processes(&self) -> crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder {
+        crate::operation::suspend_processes::builders::SuspendProcessesFluentBuilder::new(self.handle.clone())
     }
 }

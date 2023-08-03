@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DeleteBackupPlanOutput {
 }
 impl DeleteBackupPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupPlanOutput`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput).
-    pub fn builder() -> crate::operation::delete_backup_plan::builders::DeleteBackupPlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backup_plan::builders::DeleteBackupPlanOutputBuilder {
         crate::operation::delete_backup_plan::builders::DeleteBackupPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupPlanOutput`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupPlanOutputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct DeleteBackupPlanOutputBuilder {
 }
 impl DeleteBackupPlanOutputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -82,18 +73,12 @@ impl DeleteBackupPlanOutputBuilder {
         &self.backup_plan_id
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn backup_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn set_backup_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_arn = input;
         self
     }
@@ -107,10 +92,7 @@ impl DeleteBackupPlanOutputBuilder {
         self
     }
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_deletion_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_date = input;
         self
     }

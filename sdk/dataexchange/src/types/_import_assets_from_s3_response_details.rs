@@ -37,12 +37,9 @@ impl ImportAssetsFromS3ResponseDetails {
 
 /// A builder for [`ImportAssetsFromS3ResponseDetails`](crate::types::ImportAssetsFromS3ResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetsFromS3ResponseDetailsBuilder {
-    pub(crate) asset_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
+    pub(crate) asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +56,12 @@ impl ImportAssetsFromS3ResponseDetailsBuilder {
         self
     }
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-    pub fn set_asset_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
-    ) -> Self {
+    pub fn set_asset_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>) -> Self {
         self.asset_sources = input;
         self
     }
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-    pub fn get_asset_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>> {
+    pub fn get_asset_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>> {
         &self.asset_sources
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListMedicalVocabulariesOutput {
 }
 impl ListMedicalVocabulariesOutput {
     /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesOutput`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesOutputBuilder {
         crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMedicalVocabulariesOutput`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMedicalVocabulariesOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VocabularyState>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl ListMedicalVocabulariesOutputBuilder {
         self
     }
     /// <p>Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are ordered by creation date, with the newest vocabulary first.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.status = input;
         self
     }
@@ -97,17 +90,12 @@ impl ListMedicalVocabulariesOutputBuilder {
         self
     }
     /// <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
-    pub fn set_vocabularies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>>,
-    ) -> Self {
+    pub fn set_vocabularies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>>) -> Self {
         self.vocabularies = input;
         self
     }
     /// <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
-    pub fn get_vocabularies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>> {
+    pub fn get_vocabularies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>> {
         &self.vocabularies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -120,9 +108,7 @@ impl ListMedicalVocabulariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMedicalVocabulariesOutput`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput {
+    pub fn build(self) -> crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput {
         crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput {
             status: self.status,
             next_token: self.next_token,

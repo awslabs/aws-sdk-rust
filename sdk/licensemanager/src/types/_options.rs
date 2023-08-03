@@ -25,8 +25,7 @@ pub struct Options {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub activation_override_behavior:
-        ::std::option::Option<crate::types::ActivationOverrideBehavior>,
+    pub activation_override_behavior: ::std::option::Option<crate::types::ActivationOverrideBehavior>,
 }
 impl Options {
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
@@ -49,9 +48,7 @@ impl Options {
     /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
     /// </dd>
     /// </dl>
-    pub fn activation_override_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActivationOverrideBehavior> {
+    pub fn activation_override_behavior(&self) -> ::std::option::Option<&crate::types::ActivationOverrideBehavior> {
         self.activation_override_behavior.as_ref()
     }
 }
@@ -64,12 +61,9 @@ impl Options {
 
 /// A builder for [`Options`](crate::types::Options).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionsBuilder {
-    pub(crate) activation_override_behavior:
-        ::std::option::Option<crate::types::ActivationOverrideBehavior>,
+    pub(crate) activation_override_behavior: ::std::option::Option<crate::types::ActivationOverrideBehavior>,
 }
 impl OptionsBuilder {
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
@@ -92,10 +86,7 @@ impl OptionsBuilder {
     /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
     /// </dd>
     /// </dl>
-    pub fn activation_override_behavior(
-        mut self,
-        input: crate::types::ActivationOverrideBehavior,
-    ) -> Self {
+    pub fn activation_override_behavior(mut self, input: crate::types::ActivationOverrideBehavior) -> Self {
         self.activation_override_behavior = ::std::option::Option::Some(input);
         self
     }
@@ -119,10 +110,7 @@ impl OptionsBuilder {
     /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
     /// </dd>
     /// </dl>
-    pub fn set_activation_override_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivationOverrideBehavior>,
-    ) -> Self {
+    pub fn set_activation_override_behavior(mut self, input: ::std::option::Option<crate::types::ActivationOverrideBehavior>) -> Self {
         self.activation_override_behavior = input;
         self
     }
@@ -146,9 +134,7 @@ impl OptionsBuilder {
     /// <p>Use this value to activate a grant and disable other active grants in any member accounts for the same product. This action will also replace their previously activated grants with this activated grant.</p>
     /// </dd>
     /// </dl>
-    pub fn get_activation_override_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActivationOverrideBehavior> {
+    pub fn get_activation_override_behavior(&self) -> &::std::option::Option<crate::types::ActivationOverrideBehavior> {
         &self.activation_override_behavior
     }
     /// Consumes the builder and constructs a [`Options`](crate::types::Options).

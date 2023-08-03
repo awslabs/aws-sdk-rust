@@ -11,8 +11,7 @@ pub struct UpdateApplicationInput {
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>Describes application configuration updates.</p>
     #[doc(hidden)]
-    pub application_configuration_update:
-        ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
+    pub application_configuration_update: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
     /// <p>Describes updates to the service execution role.</p>
     #[doc(hidden)]
     pub service_execution_role_update: ::std::option::Option<::std::string::String>,
@@ -21,8 +20,7 @@ pub struct UpdateApplicationInput {
     pub run_configuration_update: ::std::option::Option<crate::types::RunConfigurationUpdate>,
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     #[doc(hidden)]
     pub conditional_token: ::std::option::Option<::std::string::String>,
@@ -37,9 +35,7 @@ impl UpdateApplicationInput {
         self.current_application_version_id
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn application_configuration_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationConfigurationUpdate> {
+    pub fn application_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationConfigurationUpdate> {
         self.application_configuration_update.as_ref()
     }
     /// <p>Describes updates to the service execution role.</p>
@@ -47,15 +43,11 @@ impl UpdateApplicationInput {
         self.service_execution_role_update.as_deref()
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn run_configuration_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RunConfigurationUpdate> {
+    pub fn run_configuration_update(&self) -> ::std::option::Option<&crate::types::RunConfigurationUpdate> {
         self.run_configuration_update.as_ref()
     }
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn cloud_watch_logging_option_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
+    pub fn cloud_watch_logging_option_updates(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionUpdate]> {
         self.cloud_watch_logging_option_updates.as_deref()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
@@ -65,43 +57,31 @@ impl UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
-    pub(crate) application_configuration_update:
-        ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
+    pub(crate) application_configuration_update: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
     pub(crate) service_execution_role_update: ::std::option::Option<::std::string::String>,
-    pub(crate) run_configuration_update:
-        ::std::option::Option<crate::types::RunConfigurationUpdate>,
-    pub(crate) cloud_watch_logging_option_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
+    pub(crate) run_configuration_update: ::std::option::Option<crate::types::RunConfigurationUpdate>,
+    pub(crate) cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
     pub(crate) conditional_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application to update.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to update.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -124,47 +104,31 @@ impl UpdateApplicationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn application_configuration_update(
-        mut self,
-        input: crate::types::ApplicationConfigurationUpdate,
-    ) -> Self {
+    pub fn application_configuration_update(mut self, input: crate::types::ApplicationConfigurationUpdate) -> Self {
         self.application_configuration_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn set_application_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_application_configuration_update(mut self, input: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>) -> Self {
         self.application_configuration_update = input;
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn get_application_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationConfigurationUpdate> {
+    pub fn get_application_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationConfigurationUpdate> {
         &self.application_configuration_update
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn service_execution_role_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_execution_role_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn set_service_execution_role_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_execution_role_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_execution_role_update = input;
         self
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn get_service_execution_role_update(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_execution_role_update(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_execution_role_update
     }
     /// <p>Describes updates to the application's starting parameters.</p>
@@ -173,17 +137,12 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn set_run_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::RunConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_run_configuration_update(mut self, input: ::std::option::Option<crate::types::RunConfigurationUpdate>) -> Self {
         self.run_configuration_update = input;
         self
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn get_run_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
+    pub fn get_run_configuration_update(&self) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
         &self.run_configuration_update
     }
     /// Appends an item to `cloud_watch_logging_option_updates`.
@@ -191,10 +150,7 @@ impl UpdateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
     ///
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn cloud_watch_logging_option_updates(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionUpdate,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_updates(mut self, input: crate::types::CloudWatchLoggingOptionUpdate) -> Self {
         let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_option_updates = ::std::option::Option::Some(v);
@@ -209,24 +165,16 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn get_cloud_watch_logging_option_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
+    pub fn get_cloud_watch_logging_option_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
         &self.cloud_watch_logging_option_updates
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conditional_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conditional_token = input;
         self
     }
@@ -237,20 +185,15 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_application::UpdateApplicationInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                application_configuration_update: self.application_configuration_update,
-                service_execution_role_update: self.service_execution_role_update,
-                run_configuration_update: self.run_configuration_update,
-                cloud_watch_logging_option_updates: self.cloud_watch_logging_option_updates,
-                conditional_token: self.conditional_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
+            application_name: self.application_name,
+            current_application_version_id: self.current_application_version_id,
+            application_configuration_update: self.application_configuration_update,
+            service_execution_role_update: self.service_execution_role_update,
+            run_configuration_update: self.run_configuration_update,
+            cloud_watch_logging_option_updates: self.cloud_watch_logging_option_updates,
+            conditional_token: self.conditional_token,
+        })
     }
 }

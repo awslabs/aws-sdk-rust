@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`core_network_arn(impl ::std::convert::Into<String>)`](crate::operation::replace_route::builders::ReplaceRouteFluentBuilder::core_network_arn) / [`set_core_network_arn(Option<String>)`](crate::operation::replace_route::builders::ReplaceRouteFluentBuilder::set_core_network_arn): <p>The Amazon Resource Name (ARN) of the core network.</p>
     /// - On success, responds with [`ReplaceRouteOutput`](crate::operation::replace_route::ReplaceRouteOutput)
     /// - On failure, responds with [`SdkError<ReplaceRouteError>`](crate::operation::replace_route::ReplaceRouteError)
-    pub fn replace_route(
-        &self,
-    ) -> crate::operation::replace_route::builders::ReplaceRouteFluentBuilder {
-        crate::operation::replace_route::builders::ReplaceRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn replace_route(&self) -> crate::operation::replace_route::builders::ReplaceRouteFluentBuilder {
+        crate::operation::replace_route::builders::ReplaceRouteFluentBuilder::new(self.handle.clone())
     }
 }

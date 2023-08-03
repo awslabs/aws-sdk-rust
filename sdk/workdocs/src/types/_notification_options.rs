@@ -59,18 +59,12 @@ impl NotificationOptionsBuilder {
         &self.send_email
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn email_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn set_email_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_message = input;
         self
     }

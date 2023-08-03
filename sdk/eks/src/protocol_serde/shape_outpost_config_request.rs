@@ -13,9 +13,7 @@ pub fn ser_outpost_config_request(
         array_2.finish();
     }
     if let Some(var_4) = &input.control_plane_instance_type {
-        object
-            .key("controlPlaneInstanceType")
-            .string(var_4.as_str());
+        object.key("controlPlaneInstanceType").string(var_4.as_str());
     }
     if let Some(var_5) = &input.control_plane_placement {
         #[allow(unused_mut)]

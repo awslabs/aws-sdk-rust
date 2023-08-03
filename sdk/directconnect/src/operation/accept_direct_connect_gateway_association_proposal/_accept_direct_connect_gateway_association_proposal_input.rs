@@ -15,8 +15,7 @@ pub struct AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
     #[doc(hidden)]
-    pub override_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub override_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
@@ -33,46 +32,36 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     }
     /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
-    pub fn override_allowed_prefixes_to_direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.override_allowed_prefixes_to_direct_connect_gateway
-            .as_deref()
+    pub fn override_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
+        self.override_allowed_prefixes_to_direct_connect_gateway.as_deref()
     }
 }
 impl AcceptDirectConnectGatewayAssociationProposalInput {
     /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput).
-    pub fn builder() -> crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder
+    {
         crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_gateway_owner_account: ::std::option::Option<::std::string::String>,
-    pub(crate) override_allowed_prefixes_to_direct_connect_gateway:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) override_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -95,25 +84,17 @@ impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
         &self.proposal_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
-    pub fn associated_gateway_owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_gateway_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_gateway_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
-    pub fn set_associated_gateway_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_gateway_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_gateway_owner_account = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
-    pub fn get_associated_gateway_owner_account(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_associated_gateway_owner_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_gateway_owner_account
     }
     /// Appends an item to `override_allowed_prefixes_to_direct_connect_gateway`.
@@ -122,13 +103,8 @@ impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
     ///
     /// <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
     /// <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
-    pub fn override_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: crate::types::RouteFilterPrefix,
-    ) -> Self {
-        let mut v = self
-            .override_allowed_prefixes_to_direct_connect_gateway
-            .unwrap_or_default();
+    pub fn override_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
+        let mut v = self.override_allowed_prefixes_to_direct_connect_gateway.unwrap_or_default();
         v.push(input);
         self.override_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
         self
@@ -150,18 +126,19 @@ impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
         &self.override_allowed_prefixes_to_direct_connect_gateway
     }
     /// Consumes the builder and constructs a [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id
-                ,
-                proposal_id: self.proposal_id
-                ,
-                associated_gateway_owner_account: self.associated_gateway_owner_account
-                ,
-                override_allowed_prefixes_to_direct_connect_gateway: self.override_allowed_prefixes_to_direct_connect_gateway
-                ,
-            }
+                direct_connect_gateway_id: self.direct_connect_gateway_id,
+                proposal_id: self.proposal_id,
+                associated_gateway_owner_account: self.associated_gateway_owner_account,
+                override_allowed_prefixes_to_direct_connect_gateway: self.override_allowed_prefixes_to_direct_connect_gateway,
+            },
         )
     }
 }

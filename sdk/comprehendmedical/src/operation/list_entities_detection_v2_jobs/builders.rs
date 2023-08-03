@@ -26,7 +26,7 @@ impl ListEntitiesDetectionV2JobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEntitiesDetectionV2JobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsInputBuilder,
+    inner: crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsInputBuilder,
 }
 impl ListEntitiesDetectionV2JobsFluentBuilder {
     /// Creates a new `ListEntitiesDetectionV2Jobs`.
@@ -37,7 +37,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
         }
     }
     /// Access the ListEntitiesDetectionV2Jobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
             crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2Jobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
             crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2Jobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl ListEntitiesDetectionV2JobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         self.inner.get_filter()
     }
     /// <p>Identifies the next page of results to return.</p>

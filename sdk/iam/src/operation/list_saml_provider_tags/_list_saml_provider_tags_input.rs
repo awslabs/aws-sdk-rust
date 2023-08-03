@@ -33,17 +33,14 @@ impl ListSamlProviderTagsInput {
 }
 impl ListSamlProviderTagsInput {
     /// Creates a new builder-style object to manufacture [`ListSamlProviderTagsInput`](crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput).
-    pub fn builder(
-    ) -> crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsInputBuilder {
+    pub fn builder() -> crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsInputBuilder {
         crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSamlProviderTagsInput`](crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSamlProviderTagsInputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -52,19 +49,13 @@ pub struct ListSamlProviderTagsInputBuilder {
 impl ListSamlProviderTagsInputBuilder {
     /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_provider_arn = input;
         self
     }
@@ -107,16 +98,12 @@ impl ListSamlProviderTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListSamlProviderTagsInput`](crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput {
-                saml_provider_arn: self.saml_provider_arn,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_saml_provider_tags::ListSamlProviderTagsInput {
+            saml_provider_arn: self.saml_provider_arn,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

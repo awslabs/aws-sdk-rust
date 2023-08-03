@@ -11,16 +11,13 @@ pub struct ListSitesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the results by country code.</p>
     #[doc(hidden)]
-    pub operating_address_country_code_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub operating_address_country_code_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by state or region.</p>
     #[doc(hidden)]
-    pub operating_address_state_or_region_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub operating_address_state_or_region_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by city.</p>
     #[doc(hidden)]
-    pub operating_address_city_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub operating_address_city_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListSitesInput {
     /// <p>The pagination token.</p>
@@ -32,15 +29,11 @@ impl ListSitesInput {
         self.max_results
     }
     /// <p>Filters the results by country code.</p>
-    pub fn operating_address_country_code_filter(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn operating_address_country_code_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.operating_address_country_code_filter.as_deref()
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn operating_address_state_or_region_filter(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn operating_address_state_or_region_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.operating_address_state_or_region_filter.as_deref()
     }
     /// <p>Filters the results by city.</p>
@@ -57,18 +50,13 @@ impl ListSitesInput {
 
 /// A builder for [`ListSitesInput`](crate::operation::list_sites::ListSitesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSitesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) operating_address_country_code_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) operating_address_state_or_region_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) operating_address_city_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operating_address_country_code_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operating_address_state_or_region_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operating_address_city_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListSitesInputBuilder {
     /// <p>The pagination token.</p>
@@ -104,29 +92,19 @@ impl ListSitesInputBuilder {
     /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
     ///
     /// <p>Filters the results by country code.</p>
-    pub fn operating_address_country_code_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .operating_address_country_code_filter
-            .unwrap_or_default();
+    pub fn operating_address_country_code_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.operating_address_country_code_filter.unwrap_or_default();
         v.push(input.into());
         self.operating_address_country_code_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by country code.</p>
-    pub fn set_operating_address_country_code_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_address_country_code_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operating_address_country_code_filter = input;
         self
     }
     /// <p>Filters the results by country code.</p>
-    pub fn get_operating_address_country_code_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_country_code_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operating_address_country_code_filter
     }
     /// Appends an item to `operating_address_state_or_region_filter`.
@@ -134,29 +112,19 @@ impl ListSitesInputBuilder {
     /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
     ///
     /// <p>Filters the results by state or region.</p>
-    pub fn operating_address_state_or_region_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .operating_address_state_or_region_filter
-            .unwrap_or_default();
+    pub fn operating_address_state_or_region_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.operating_address_state_or_region_filter.unwrap_or_default();
         v.push(input.into());
         self.operating_address_state_or_region_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn set_operating_address_state_or_region_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_address_state_or_region_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operating_address_state_or_region_filter = input;
         self
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn get_operating_address_state_or_region_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_state_or_region_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operating_address_state_or_region_filter
     }
     /// Appends an item to `operating_address_city_filter`.
@@ -164,36 +132,23 @@ impl ListSitesInputBuilder {
     /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
     ///
     /// <p>Filters the results by city.</p>
-    pub fn operating_address_city_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_address_city_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operating_address_city_filter.unwrap_or_default();
         v.push(input.into());
         self.operating_address_city_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by city.</p>
-    pub fn set_operating_address_city_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_address_city_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operating_address_city_filter = input;
         self
     }
     /// <p>Filters the results by city.</p>
-    pub fn get_operating_address_city_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_city_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operating_address_city_filter
     }
     /// Consumes the builder and constructs a [`ListSitesInput`](crate::operation::list_sites::ListSitesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sites::ListSitesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sites::ListSitesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sites::ListSitesInput {
             next_token: self.next_token,
             max_results: self.max_results,

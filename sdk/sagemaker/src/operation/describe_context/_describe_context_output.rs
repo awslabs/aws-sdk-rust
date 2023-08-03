@@ -20,9 +20,7 @@ pub struct DescribeContextOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of the context's properties.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When the context was created.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -62,11 +60,7 @@ impl DescribeContextOutput {
         self.description.as_deref()
     }
     /// <p>A list of the context's properties.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>When the context was created.</p>
@@ -104,18 +98,14 @@ impl DescribeContextOutput {
 
 /// A builder for [`DescribeContextOutput`](crate::operation::describe_context::DescribeContextOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContextOutputBuilder {
     pub(crate) context_name: ::std::option::Option<::std::string::String>,
     pub(crate) context_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ContextSource>,
     pub(crate) context_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -199,32 +189,19 @@ impl DescribeContextOutputBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of the context's properties.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of the context's properties.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of the context's properties.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// <p>When the context was created.</p>
@@ -233,10 +210,7 @@ impl DescribeContextOutputBuilder {
         self
     }
     /// <p>When the context was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -250,10 +224,7 @@ impl DescribeContextOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -267,10 +238,7 @@ impl DescribeContextOutputBuilder {
         self
     }
     /// <p>When the context was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -284,10 +252,7 @@ impl DescribeContextOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -296,18 +261,12 @@ impl DescribeContextOutputBuilder {
         &self.last_modified_by
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_arn = input;
         self
     }

@@ -49,9 +49,7 @@ impl RecordingStrategy {
 
 /// A builder for [`RecordingStrategy`](crate::types::RecordingStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordingStrategyBuilder {
     pub(crate) use_only: ::std::option::Option<crate::types::RecordingStrategyType>,
 }
@@ -88,10 +86,7 @@ impl RecordingStrategyBuilder {
     /// <p>For example, even if you set <code>includeGlobalResourceTypes</code> to false, global resource types will still be automatically recorded in this option unless those resource types are specifically listed as exemptions in the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// <p>By default, if you choose the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, when Config adds support for a new resource type in the Region where you set up the configuration recorder, including global resource types, Config starts recording resources of that type automatically.</p>
     /// </note>
-    pub fn set_use_only(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingStrategyType>,
-    ) -> Self {
+    pub fn set_use_only(mut self, input: ::std::option::Option<crate::types::RecordingStrategyType>) -> Self {
         self.use_only = input;
         self
     }
@@ -114,8 +109,6 @@ impl RecordingStrategyBuilder {
     }
     /// Consumes the builder and constructs a [`RecordingStrategy`](crate::types::RecordingStrategy).
     pub fn build(self) -> crate::types::RecordingStrategy {
-        crate::types::RecordingStrategy {
-            use_only: self.use_only,
-        }
+        crate::types::RecordingStrategy { use_only: self.use_only }
     }
 }

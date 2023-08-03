@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNamedQueryOutput {
 }
 impl UpdateNamedQueryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNamedQueryOutput`](crate::operation::update_named_query::UpdateNamedQueryOutput).
-    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryOutputBuilder {
         crate::operation::update_named_query::builders::UpdateNamedQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNamedQueryOutput`](crate::operation::update_named_query::UpdateNamedQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNamedQueryOutputBuilder {
     _request_id: Option<String>,
 }

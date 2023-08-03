@@ -9,8 +9,7 @@ pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instance offerings</p>
     #[doc(hidden)]
-    pub reserved_elasticsearch_instance_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+    pub reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    pub fn reserved_elasticsearch_instance_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstanceOffering]> {
+    pub fn reserved_elasticsearch_instance_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstanceOffering]> {
         self.reserved_elasticsearch_instance_offerings.as_deref()
     }
 }
@@ -32,20 +29,19 @@ impl ::aws_http::request_id::RequestId for DescribeReservedElasticsearchInstance
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder
+    {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_elasticsearch_instance_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+    pub(crate) reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
@@ -68,13 +64,8 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_elasticsearch_instance_offerings`](Self::set_reserved_elasticsearch_instance_offerings).
     ///
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    pub fn reserved_elasticsearch_instance_offerings(
-        mut self,
-        input: crate::types::ReservedElasticsearchInstanceOffering,
-    ) -> Self {
-        let mut v = self
-            .reserved_elasticsearch_instance_offerings
-            .unwrap_or_default();
+    pub fn reserved_elasticsearch_instance_offerings(mut self, input: crate::types::ReservedElasticsearchInstanceOffering) -> Self {
+        let mut v = self.reserved_elasticsearch_instance_offerings.unwrap_or_default();
         v.push(input);
         self.reserved_elasticsearch_instance_offerings = ::std::option::Option::Some(v);
         self
@@ -82,9 +73,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub fn set_reserved_elasticsearch_instance_offerings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     ) -> Self {
         self.reserved_elasticsearch_instance_offerings = input;
         self
@@ -92,8 +81,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub fn get_reserved_elasticsearch_instance_offerings(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>> {
         &self.reserved_elasticsearch_instance_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -106,12 +94,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput {
-            next_token: self.next_token
-            ,
-            reserved_elasticsearch_instance_offerings: self.reserved_elasticsearch_instance_offerings
-            ,
+            next_token: self.next_token,
+            reserved_elasticsearch_instance_offerings: self.reserved_elasticsearch_instance_offerings,
             _request_id: self._request_id,
         }
     }

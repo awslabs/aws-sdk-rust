@@ -10,10 +10,7 @@ impl SendHeartbeatInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_heartbeat::SendHeartbeatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_heartbeat::SendHeartbeatError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_heartbeat();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendHeartbeatFluentBuilder {
         }
     }
     /// Access the SendHeartbeat as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_heartbeat::builders::SendHeartbeatInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_heartbeat::builders::SendHeartbeatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SendHeartbeatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,17 +116,12 @@ impl SendHeartbeatFluentBuilder {
         self
     }
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn set_agent_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
-    ) -> Self {
+    pub fn set_agent_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>) -> Self {
         self.inner = self.inner.set_agent_metrics(input);
         self
     }
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn get_agent_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
+    pub fn get_agent_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
         self.inner.get_agent_metrics()
     }
     /// Appends an item to `Models`.
@@ -147,10 +134,7 @@ impl SendHeartbeatFluentBuilder {
         self
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>) -> Self {
         self.inner = self.inner.set_models(input);
         self
     }
@@ -159,18 +143,12 @@ impl SendHeartbeatFluentBuilder {
         self.inner.get_models()
     }
     /// <p>Returns the version of the agent.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
     /// <p>Returns the version of the agent.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
@@ -193,18 +171,12 @@ impl SendHeartbeatFluentBuilder {
         self.inner.get_device_name()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -218,10 +190,7 @@ impl SendHeartbeatFluentBuilder {
         self
     }
     /// <p>Returns the result of a deployment on the device.</p>
-    pub fn set_deployment_result(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentResult>,
-    ) -> Self {
+    pub fn set_deployment_result(mut self, input: ::std::option::Option<crate::types::DeploymentResult>) -> Self {
         self.inner = self.inner.set_deployment_result(input);
         self
     }

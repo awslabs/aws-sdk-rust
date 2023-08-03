@@ -32,67 +32,53 @@ pub fn ser_on_device_service_configuration(
 
 pub(crate) fn de_on_device_service_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::OnDeviceServiceConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::OnDeviceServiceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::OnDeviceServiceConfigurationBuilder::default();
+            let mut builder = crate::types::builders::OnDeviceServiceConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "NFSOnDeviceService" => {
-                                builder = builder.set_nfs_on_device_service(
-                                    crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(tokens)?
-                                );
-                            }
-                            "TGWOnDeviceService" => {
-                                builder = builder.set_tgw_on_device_service(
-                                    crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(tokens)?
-                                );
-                            }
-                            "EKSOnDeviceService" => {
-                                builder = builder.set_eks_on_device_service(
-                                    crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(tokens)?
-                                );
-                            }
-                            "S3OnDeviceService" => {
-                                builder = builder.set_s3_on_device_service(
-                                    crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "NFSOnDeviceService" => {
+                            builder = builder.set_nfs_on_device_service(
+                                crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(tokens)?,
+                            );
                         }
-                    }
+                        "TGWOnDeviceService" => {
+                            builder = builder.set_tgw_on_device_service(
+                                crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(tokens)?,
+                            );
+                        }
+                        "EKSOnDeviceService" => {
+                            builder = builder.set_eks_on_device_service(
+                                crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(tokens)?,
+                            );
+                        }
+                        "S3OnDeviceService" => {
+                            builder = builder.set_s3_on_device_service(
+                                crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

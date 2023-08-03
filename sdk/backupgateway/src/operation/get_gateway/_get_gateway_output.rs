@@ -28,9 +28,7 @@ impl GetGatewayOutput {
 
 /// A builder for [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayOutputBuilder {
     pub(crate) gateway: ::std::option::Option<crate::types::GatewayDetails>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetGatewayOutputBuilder {
         self
     }
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
-    pub fn set_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayDetails>,
-    ) -> Self {
+    pub fn set_gateway(mut self, input: ::std::option::Option<crate::types::GatewayDetails>) -> Self {
         self.gateway = input;
         self
     }

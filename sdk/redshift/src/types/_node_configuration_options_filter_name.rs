@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NodeConfigurationOptionsFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,15 +57,11 @@ pub enum NodeConfigurationOptionsFilterName {
 impl ::std::convert::From<&str> for NodeConfigurationOptionsFilterName {
     fn from(s: &str) -> Self {
         match s {
-            "EstimatedDiskUtilizationPercent" => {
-                NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent
-            }
+            "EstimatedDiskUtilizationPercent" => NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent,
             "Mode" => NodeConfigurationOptionsFilterName::Mode,
             "NodeType" => NodeConfigurationOptionsFilterName::NodeType,
             "NumberOfNodes" => NodeConfigurationOptionsFilterName::NumNodes,
-            other => NodeConfigurationOptionsFilterName::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NodeConfigurationOptionsFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,9 +76,7 @@ impl NodeConfigurationOptionsFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent => {
-                "EstimatedDiskUtilizationPercent"
-            }
+            NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent => "EstimatedDiskUtilizationPercent",
             NodeConfigurationOptionsFilterName::Mode => "Mode",
             NodeConfigurationOptionsFilterName::NodeType => "NodeType",
             NodeConfigurationOptionsFilterName::NumNodes => "NumberOfNodes",
@@ -97,12 +85,7 @@ impl NodeConfigurationOptionsFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EstimatedDiskUtilizationPercent",
-            "Mode",
-            "NodeType",
-            "NumberOfNodes",
-        ]
+        &["EstimatedDiskUtilizationPercent", "Mode", "NodeType", "NumberOfNodes"]
     }
 }
 impl ::std::convert::AsRef<str> for NodeConfigurationOptionsFilterName {

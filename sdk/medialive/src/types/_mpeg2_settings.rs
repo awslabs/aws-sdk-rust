@@ -58,9 +58,7 @@ pub struct Mpeg2Settings {
 }
 impl Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
-    pub fn adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Mpeg2AdaptiveQuantization> {
+    pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::Mpeg2AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
     /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
@@ -120,15 +118,11 @@ impl Mpeg2Settings {
         self.subgop_length.as_ref()
     }
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
-    pub fn timecode_insertion(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Mpeg2TimecodeInsertionBehavior> {
+    pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::Mpeg2TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
     /// Timecode burn-in settings
-    pub fn timecode_burnin_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
+    pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
 }
@@ -141,12 +135,9 @@ impl Mpeg2Settings {
 
 /// A builder for [`Mpeg2Settings`](crate::types::Mpeg2Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Mpeg2SettingsBuilder {
-    pub(crate) adaptive_quantization:
-        ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
+    pub(crate) adaptive_quantization: ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     pub(crate) color_metadata: ::std::option::Option<crate::types::Mpeg2ColorMetadata>,
     pub(crate) color_space: ::std::option::Option<crate::types::Mpeg2ColorSpace>,
@@ -161,10 +152,8 @@ pub struct Mpeg2SettingsBuilder {
     pub(crate) gop_size_units: ::std::option::Option<crate::types::Mpeg2GopSizeUnits>,
     pub(crate) scan_type: ::std::option::Option<crate::types::Mpeg2ScanType>,
     pub(crate) subgop_length: ::std::option::Option<crate::types::Mpeg2SubGopLength>,
-    pub(crate) timecode_insertion:
-        ::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior>,
-    pub(crate) timecode_burnin_settings:
-        ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) timecode_insertion: ::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior>,
+    pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl Mpeg2SettingsBuilder {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
@@ -173,17 +162,12 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
-    pub fn set_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>) -> Self {
         self.adaptive_quantization = input;
         self
     }
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
-    pub fn get_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::Mpeg2AdaptiveQuantization> {
+    pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::Mpeg2AdaptiveQuantization> {
         &self.adaptive_quantization
     }
     /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
@@ -192,10 +176,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
-    pub fn set_afd_signaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AfdSignaling>,
-    ) -> Self {
+    pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::AfdSignaling>) -> Self {
         self.afd_signaling = input;
         self
     }
@@ -209,10 +190,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
-    pub fn set_color_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2ColorMetadata>,
-    ) -> Self {
+    pub fn set_color_metadata(mut self, input: ::std::option::Option<crate::types::Mpeg2ColorMetadata>) -> Self {
         self.color_metadata = input;
         self
     }
@@ -226,10 +204,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
-    pub fn set_color_space(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2ColorSpace>,
-    ) -> Self {
+    pub fn set_color_space(mut self, input: ::std::option::Option<crate::types::Mpeg2ColorSpace>) -> Self {
         self.color_space = input;
         self
     }
@@ -243,17 +218,12 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Sets the pixel aspect ratio for the encode.
-    pub fn set_display_aspect_ratio(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2DisplayRatio>,
-    ) -> Self {
+    pub fn set_display_aspect_ratio(mut self, input: ::std::option::Option<crate::types::Mpeg2DisplayRatio>) -> Self {
         self.display_aspect_ratio = input;
         self
     }
     /// Sets the pixel aspect ratio for the encode.
-    pub fn get_display_aspect_ratio(
-        &self,
-    ) -> &::std::option::Option<crate::types::Mpeg2DisplayRatio> {
+    pub fn get_display_aspect_ratio(&self) -> &::std::option::Option<crate::types::Mpeg2DisplayRatio> {
         &self.display_aspect_ratio
     }
     /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
@@ -262,10 +232,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
-    pub fn set_filter_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2FilterSettings>,
-    ) -> Self {
+    pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::Mpeg2FilterSettings>) -> Self {
         self.filter_settings = input;
         self
     }
@@ -363,10 +330,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
-    pub fn set_gop_size_units(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2GopSizeUnits>,
-    ) -> Self {
+    pub fn set_gop_size_units(mut self, input: ::std::option::Option<crate::types::Mpeg2GopSizeUnits>) -> Self {
         self.gop_size_units = input;
         self
     }
@@ -380,10 +344,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
-    pub fn set_scan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2ScanType>,
-    ) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::Mpeg2ScanType>) -> Self {
         self.scan_type = input;
         self
     }
@@ -397,10 +358,7 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
-    pub fn set_subgop_length(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2SubGopLength>,
-    ) -> Self {
+    pub fn set_subgop_length(mut self, input: ::std::option::Option<crate::types::Mpeg2SubGopLength>) -> Self {
         self.subgop_length = input;
         self
     }
@@ -409,25 +367,17 @@ impl Mpeg2SettingsBuilder {
         &self.subgop_length
     }
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
-    pub fn timecode_insertion(
-        mut self,
-        input: crate::types::Mpeg2TimecodeInsertionBehavior,
-    ) -> Self {
+    pub fn timecode_insertion(mut self, input: crate::types::Mpeg2TimecodeInsertionBehavior) -> Self {
         self.timecode_insertion = ::std::option::Option::Some(input);
         self
     }
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
-    pub fn set_timecode_insertion(
-        mut self,
-        input: ::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior>,
-    ) -> Self {
+    pub fn set_timecode_insertion(mut self, input: ::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior>) -> Self {
         self.timecode_insertion = input;
         self
     }
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
-    pub fn get_timecode_insertion(
-        &self,
-    ) -> &::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior> {
+    pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior> {
         &self.timecode_insertion
     }
     /// Timecode burn-in settings
@@ -436,17 +386,12 @@ impl Mpeg2SettingsBuilder {
         self
     }
     /// Timecode burn-in settings
-    pub fn set_timecode_burnin_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninSettings>,
-    ) -> Self {
+    pub fn set_timecode_burnin_settings(mut self, input: ::std::option::Option<crate::types::TimecodeBurninSettings>) -> Self {
         self.timecode_burnin_settings = input;
         self
     }
     /// Timecode burn-in settings
-    pub fn get_timecode_burnin_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
+    pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
     /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::types::Mpeg2Settings).

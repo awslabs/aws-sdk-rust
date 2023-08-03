@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`human_loop_activation_output(Option<HumanLoopActivationOutput>)`](crate::operation::analyze_document::AnalyzeDocumentOutput::human_loop_activation_output): <p>Shows the results of the human in the loop evaluation.</p>
     ///   - [`analyze_document_model_version(Option<String>)`](crate::operation::analyze_document::AnalyzeDocumentOutput::analyze_document_model_version): <p>The version of the model used to analyze the document.</p>
     /// - On failure, responds with [`SdkError<AnalyzeDocumentError>`](crate::operation::analyze_document::AnalyzeDocumentError)
-    pub fn analyze_document(
-        &self,
-    ) -> crate::operation::analyze_document::builders::AnalyzeDocumentFluentBuilder {
-        crate::operation::analyze_document::builders::AnalyzeDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn analyze_document(&self) -> crate::operation::analyze_document::builders::AnalyzeDocumentFluentBuilder {
+        crate::operation::analyze_document::builders::AnalyzeDocumentFluentBuilder::new(self.handle.clone())
     }
 }

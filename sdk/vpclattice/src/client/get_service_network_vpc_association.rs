@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::failure_code): <p>The failure code.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::last_updated_at): <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkVpcAssociationError>`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError)
-    pub fn get_service_network_vpc_association(&self) -> crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationFluentBuilder{
+    pub fn get_service_network_vpc_association(
+        &self,
+    ) -> crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationFluentBuilder {
         crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationFluentBuilder::new(self.handle.clone())
     }
 }

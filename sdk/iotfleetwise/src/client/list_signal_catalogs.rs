@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<SignalCatalogSummary>>)`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput::summaries): <p> A list of information about each signal catalog. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListSignalCatalogsError>`](crate::operation::list_signal_catalogs::ListSignalCatalogsError)
-    pub fn list_signal_catalogs(
-        &self,
-    ) -> crate::operation::list_signal_catalogs::builders::ListSignalCatalogsFluentBuilder {
-        crate::operation::list_signal_catalogs::builders::ListSignalCatalogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_signal_catalogs(&self) -> crate::operation::list_signal_catalogs::builders::ListSignalCatalogsFluentBuilder {
+        crate::operation::list_signal_catalogs::builders::ListSignalCatalogsFluentBuilder::new(self.handle.clone())
     }
 }

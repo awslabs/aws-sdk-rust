@@ -38,16 +38,14 @@ impl ListSimulationApplicationsInput {
 }
 impl ListSimulationApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsInput`](crate::operation::list_simulation_applications::ListSimulationApplicationsInput).
-    pub fn builder() -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsInputBuilder{
+    pub fn builder() -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsInputBuilder {
         crate::operation::list_simulation_applications::builders::ListSimulationApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSimulationApplicationsInput`](crate::operation::list_simulation_applications::ListSimulationApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSimulationApplicationsInputBuilder {
     pub(crate) version_qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct ListSimulationApplicationsInputBuilder {
 }
 impl ListSimulationApplicationsInputBuilder {
     /// <p>The version qualifier of the simulation application.</p>
-    pub fn version_qualifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_qualifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version qualifier of the simulation application.</p>
-    pub fn set_version_qualifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_qualifier = input;
         self
     }
@@ -117,10 +109,7 @@ impl ListSimulationApplicationsInputBuilder {
     }
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -136,13 +125,11 @@ impl ListSimulationApplicationsInputBuilder {
         crate::operation::list_simulation_applications::ListSimulationApplicationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_simulation_applications::ListSimulationApplicationsInput {
-                version_qualifier: self.version_qualifier,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_simulation_applications::ListSimulationApplicationsInput {
+            version_qualifier: self.version_qualifier,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

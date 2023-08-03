@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterWebhookWithThirdPartyOutput
 }
 impl DeregisterWebhookWithThirdPartyOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterWebhookWithThirdPartyOutput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput).
-    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyOutputBuilder {
         crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterWebhookWithThirdPartyOutput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeregisterWebhookWithThirdPartyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterWebhookWithThirdPartyOutput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput
-    {
+    pub fn build(self) -> crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput {
         crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput {
             _request_id: self._request_id,
         }

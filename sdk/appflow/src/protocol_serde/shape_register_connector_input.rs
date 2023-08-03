@@ -16,9 +16,7 @@ pub fn ser_register_connector_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.connector_provisioning_type {
-        object
-            .key("connectorProvisioningType")
-            .string(var_5.as_str());
+        object.key("connectorProvisioningType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());

@@ -15,34 +15,25 @@ impl DeletePolicyStoreInput {
 }
 impl DeletePolicyStoreInput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder {
         crate::operation::delete_policy_store::builders::DeletePolicyStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeletePolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_policy_store::DeletePolicyStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_policy_store::DeletePolicyStoreInput {
-                policy_store_id: self.policy_store_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_policy_store::DeletePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_policy_store::DeletePolicyStoreInput {
+            policy_store_id: self.policy_store_id,
+        })
     }
 }

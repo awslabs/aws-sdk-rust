@@ -13,9 +13,7 @@ pub struct DescribeAccountPreferencesOutput {
 }
 impl DescribeAccountPreferencesOutput {
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-    pub fn resource_id_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceIdPreference> {
+    pub fn resource_id_preference(&self) -> ::std::option::Option<&crate::types::ResourceIdPreference> {
         self.resource_id_preference.as_ref()
     }
     /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountPreferencesOutput {
 }
 impl DescribeAccountPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountPreferencesOutput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput).
-    pub fn builder() -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesOutputBuilder {
         crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountPreferencesOutput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountPreferencesOutputBuilder {
     pub(crate) resource_id_preference: ::std::option::Option<crate::types::ResourceIdPreference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl DescribeAccountPreferencesOutputBuilder {
         self
     }
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-    pub fn set_resource_id_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdPreference>,
-    ) -> Self {
+    pub fn set_resource_id_preference(mut self, input: ::std::option::Option<crate::types::ResourceIdPreference>) -> Self {
         self.resource_id_preference = input;
         self
     }
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-    pub fn get_resource_id_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdPreference> {
+    pub fn get_resource_id_preference(&self) -> &::std::option::Option<crate::types::ResourceIdPreference> {
         &self.resource_id_preference
     }
     /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
@@ -89,9 +80,7 @@ impl DescribeAccountPreferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountPreferencesOutput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput {
+    pub fn build(self) -> crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput {
         crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput {
             resource_id_preference: self.resource_id_preference,
             next_token: self.next_token,

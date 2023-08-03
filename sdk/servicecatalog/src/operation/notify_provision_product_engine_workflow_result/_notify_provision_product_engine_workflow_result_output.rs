@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for NotifyProvisionProductEngineWorkflowR
 }
 impl NotifyProvisionProductEngineWorkflowResultOutput {
     /// Creates a new builder-style object to manufacture [`NotifyProvisionProductEngineWorkflowResultOutput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput).
-    pub fn builder() -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultOutputBuilder{
-        crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultOutputBuilder {
+        crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`NotifyProvisionProductEngineWorkflowResultOutput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl NotifyProvisionProductEngineWorkflowResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyProvisionProductEngineWorkflowResultOutput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput).
-    pub fn build(self) -> crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput{
+    pub fn build(self) -> crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput {
         crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput {
             _request_id: self._request_id,
         }

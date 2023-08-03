@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`is_long_term_pricing_auto_renew(bool)`](crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingFluentBuilder::is_long_term_pricing_auto_renew) / [`set_is_long_term_pricing_auto_renew(Option<bool>)`](crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingFluentBuilder::set_is_long_term_pricing_auto_renew): <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     /// - On success, responds with [`UpdateLongTermPricingOutput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput)
     /// - On failure, responds with [`SdkError<UpdateLongTermPricingError>`](crate::operation::update_long_term_pricing::UpdateLongTermPricingError)
-    pub fn update_long_term_pricing(
-        &self,
-    ) -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingFluentBuilder
-    {
+    pub fn update_long_term_pricing(&self) -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingFluentBuilder {
         crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingFluentBuilder::new(self.handle.clone())
     }
 }

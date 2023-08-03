@@ -63,9 +63,7 @@ impl GetEnvironmentOutput {
 
 /// A builder for [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ pub struct GetEnvironmentOutputBuilder {
 }
 impl GetEnvironmentOutputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -144,10 +136,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
@@ -167,10 +156,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    ) -> Self {
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
         self.monitors = input;
         self
     }

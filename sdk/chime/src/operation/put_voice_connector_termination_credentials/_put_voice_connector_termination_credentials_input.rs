@@ -22,34 +22,26 @@ impl PutVoiceConnectorTerminationCredentialsInput {
 }
 impl PutVoiceConnectorTerminationCredentialsInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsInputBuilder {
         crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -69,28 +61,26 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
         self
     }
     /// <p>The termination SIP credentials.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The termination SIP credentials.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Credential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Credential>> {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                credentials: self.credentials
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                credentials: self.credentials,
+            },
         )
     }
 }

@@ -10,10 +10,7 @@ impl GetTablesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_tables::GetTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tables::GetTablesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tables::GetTablesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_tables();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetTablesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tables::GetTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tables::GetTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tables::GetTablesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetTablesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tables::GetTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tables::GetTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tables::GetTablesError>,
     > {
         self.customize_middleware().await
@@ -133,18 +121,12 @@ impl GetTablesFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -195,18 +177,12 @@ impl GetTablesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The transaction ID at which to read the table contents.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID at which to read the table contents.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -220,10 +196,7 @@ impl GetTablesFluentBuilder {
         self
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn set_query_as_of_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_as_of_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
     }

@@ -30,16 +30,14 @@ impl CreateTrafficPolicyVersionInput {
 }
 impl CreateTrafficPolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionInput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput).
-    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder {
         crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficPolicyVersionInput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<::std::string::String>,
@@ -95,12 +93,10 @@ impl CreateTrafficPolicyVersionInputBuilder {
         crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput {
-                id: self.id,
-                document: self.document,
-                comment: self.comment,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput {
+            id: self.id,
+            document: self.document,
+            comment: self.comment,
+        })
     }
 }

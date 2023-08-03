@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTextTranslationJobOutput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput) with field(s):
     ///   - [`text_translation_job_properties(Option<TextTranslationJobProperties>)`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput::text_translation_job_properties): <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     /// - On failure, responds with [`SdkError<DescribeTextTranslationJobError>`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobError)
-    pub fn describe_text_translation_job(&self) -> crate::operation::describe_text_translation_job::builders::DescribeTextTranslationJobFluentBuilder{
+    pub fn describe_text_translation_job(
+        &self,
+    ) -> crate::operation::describe_text_translation_job::builders::DescribeTextTranslationJobFluentBuilder {
         crate::operation::describe_text_translation_job::builders::DescribeTextTranslationJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl DescribeClusterTracksInput {
 }
 impl DescribeClusterTracksInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder {
         crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksInputBuilder {
     pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct DescribeClusterTracksInputBuilder {
 }
 impl DescribeClusterTracksInputBuilder {
     /// <p>The name of the maintenance track. </p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track. </p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -98,16 +88,12 @@ impl DescribeClusterTracksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClusterTracksInput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_tracks::DescribeClusterTracksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_tracks::DescribeClusterTracksInput {
-                maintenance_track_name: self.maintenance_track_name,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_cluster_tracks::DescribeClusterTracksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_cluster_tracks::DescribeClusterTracksInput {
+            maintenance_track_name: self.maintenance_track_name,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

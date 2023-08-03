@@ -10,10 +10,7 @@ impl CreateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateConnectionFluentBuilder {
         }
     }
     /// Access the CreateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -157,18 +135,12 @@ impl CreateConnectionFluentBuilder {
         self.inner.get_device_id()
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn connected_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connected_device_id(input.into());
         self
     }
     /// <p>The ID of the second device in the connection.</p>
-    pub fn set_connected_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connected_device_id(input);
         self
     }
@@ -191,18 +163,12 @@ impl CreateConnectionFluentBuilder {
         self.inner.get_link_id()
     }
     /// <p>The ID of the link for the second device.</p>
-    pub fn connected_link_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connected_link_id(input.into());
         self
     }
     /// <p>The ID of the link for the second device.</p>
-    pub fn set_connected_link_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connected_link_id(input);
         self
     }
@@ -237,10 +203,7 @@ impl CreateConnectionFluentBuilder {
         self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

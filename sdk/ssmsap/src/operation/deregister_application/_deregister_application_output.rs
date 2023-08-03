@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterApplicationOutput {
 }
 impl DeregisterApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterApplicationOutput`](crate::operation::deregister_application::DeregisterApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_application::builders::DeregisterApplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_application::builders::DeregisterApplicationOutputBuilder {
         crate::operation::deregister_application::builders::DeregisterApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterApplicationOutput`](crate::operation::deregister_application::DeregisterApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterApplicationOutputBuilder {
     _request_id: Option<String>,
 }

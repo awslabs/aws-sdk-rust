@@ -9,8 +9,7 @@ pub struct DataLakeLifecycleConfiguration {
     pub expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
     #[doc(hidden)]
-    pub transitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
+    pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
 }
 impl DataLakeLifecycleConfiguration {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
@@ -18,9 +17,7 @@ impl DataLakeLifecycleConfiguration {
         self.expiration.as_ref()
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn transitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataLakeLifecycleTransition]> {
+    pub fn transitions(&self) -> ::std::option::Option<&[crate::types::DataLakeLifecycleTransition]> {
         self.transitions.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl DataLakeLifecycleConfiguration {
 
 /// A builder for [`DataLakeLifecycleConfiguration`](crate::types::DataLakeLifecycleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleConfigurationBuilder {
     pub(crate) expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
-    pub(crate) transitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
+    pub(crate) transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
 }
 impl DataLakeLifecycleConfigurationBuilder {
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
@@ -48,17 +42,12 @@ impl DataLakeLifecycleConfigurationBuilder {
         self
     }
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>) -> Self {
         self.expiration = input;
         self
     }
     /// <p>Provides data expiration details of Amazon Security Lake object.</p>
-    pub fn get_expiration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLakeLifecycleExpiration> {
+    pub fn get_expiration(&self) -> &::std::option::Option<crate::types::DataLakeLifecycleExpiration> {
         &self.expiration
     }
     /// Appends an item to `transitions`.
@@ -73,17 +62,12 @@ impl DataLakeLifecycleConfigurationBuilder {
         self
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn set_transitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,
-    ) -> Self {
+    pub fn set_transitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>) -> Self {
         self.transitions = input;
         self
     }
     /// <p>Provides data storage transition details of Amazon Security Lake object.</p>
-    pub fn get_transitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>> {
+    pub fn get_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>> {
         &self.transitions
     }
     /// Consumes the builder and constructs a [`DataLakeLifecycleConfiguration`](crate::types::DataLakeLifecycleConfiguration).

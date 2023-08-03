@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`rule_groups_namespaces(Option<Vec<RuleGroupsNamespaceSummary>>)`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput::rule_groups_namespaces): The list of the selected rule groups namespaces.
     ///   - [`next_token(Option<String>)`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput::next_token): Pagination token to use when requesting the next page in this list.
     /// - On failure, responds with [`SdkError<ListRuleGroupsNamespacesError>`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError)
-    pub fn list_rule_groups_namespaces(&self) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder{
+    pub fn list_rule_groups_namespaces(&self) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder {
         crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -4,22 +4,13 @@ pub fn de_list_stacks_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_stacks::ListStacksOutput,
-    crate::operation::list_stacks::ListStacksError,
-> {
+) -> std::result::Result<crate::operation::list_stacks::ListStacksOutput, crate::operation::list_stacks::ListStacksError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_stacks::ListStacksError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_stacks::ListStacksError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::list_stacks::ListStacksError::generic(
-        generic,
-    ))
+    Err(crate::operation::list_stacks::ListStacksError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,19 +18,13 @@ pub fn de_list_stacks_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_stacks::ListStacksOutput,
-    crate::operation::list_stacks::ListStacksError,
-> {
+) -> std::result::Result<crate::operation::list_stacks::ListStacksOutput, crate::operation::list_stacks::ListStacksError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::list_stacks::builders::ListStacksOutputBuilder::default();
+        let mut output = crate::operation::list_stacks::builders::ListStacksOutputBuilder::default();
         output = crate::protocol_serde::shape_list_stacks::de_list_stacks(_response_body, output)
             .map_err(crate::operation::list_stacks::ListStacksError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +33,7 @@ pub fn de_list_stacks_http_response_with_props(
 pub fn de_list_stacks(
     inp: &[u8],
     mut builder: crate::operation::list_stacks::builders::ListStacksOutputBuilder,
-) -> Result<
-    crate::operation::list_stacks::builders::ListStacksOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_stacks::builders::ListStacksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -101,9 +83,7 @@ pub fn de_list_stacks(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ListStacksResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ListStacksResult tag"));
     };
     Ok(builder)
 }

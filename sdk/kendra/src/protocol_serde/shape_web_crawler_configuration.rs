@@ -54,10 +54,7 @@ pub fn ser_web_crawler_configuration(
     if let Some(var_13) = &input.proxy_configuration {
         #[allow(unused_mut)]
         let mut object_14 = object.key("ProxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.authentication_configuration {
@@ -71,17 +68,9 @@ pub fn ser_web_crawler_configuration(
 
 pub(crate) fn de_web_crawler_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::WebCrawlerConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::WebCrawlerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -94,42 +83,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Urls" => {
-                                builder = builder
-                                    .set_urls(crate::protocol_serde::shape_urls::de_urls(tokens)?);
+                                builder = builder.set_urls(crate::protocol_serde::shape_urls::de_urls(tokens)?);
                             }
                             "CrawlDepth" => {
                                 builder = builder.set_crawl_depth(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "MaxLinksPerPage" => {
                                 builder = builder.set_max_links_per_page(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "MaxContentSizePerPageInMegaBytes" => {
                                 builder = builder.set_max_content_size_per_page_in_mega_bytes(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f32_lossy()),
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
                                 );
                             }
                             "MaxUrlsPerMinuteCrawlRate" => {
                                 builder = builder.set_max_urls_per_minute_crawl_rate(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
                                 );
                             }
                             "UrlInclusionPatterns" => {
@@ -143,33 +122,29 @@ where
                                 );
                             }
                             "ProxyConfiguration" => {
-                                builder = builder.set_proxy_configuration(
-                                    crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?
-                                );
+                                builder = builder
+                                    .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
                             }
                             "AuthenticationConfiguration" => {
                                 builder = builder.set_authentication_configuration(
-                                    crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens)?
+                                    crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

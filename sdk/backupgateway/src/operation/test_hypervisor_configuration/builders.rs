@@ -26,7 +26,7 @@ impl TestHypervisorConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestHypervisorConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder,
+    inner: crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder,
 }
 impl TestHypervisorConfigurationFluentBuilder {
     /// Creates a new `TestHypervisorConfiguration`.
@@ -37,7 +37,7 @@ impl TestHypervisorConfigurationFluentBuilder {
         }
     }
     /// Access the TestHypervisorConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl TestHypervisorConfigurationFluentBuilder {
             crate::operation::test_hypervisor_configuration::TestHypervisorConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl TestHypervisorConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl TestHypervisorConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl TestHypervisorConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl TestHypervisorConfigurationFluentBuilder {
             crate::operation::test_hypervisor_configuration::TestHypervisorConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError>,
     > {
         self.customize_middleware().await
     }

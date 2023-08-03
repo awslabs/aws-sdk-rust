@@ -37,9 +37,7 @@ impl NetworkHeader {
 
 /// A builder for [`NetworkHeader`](crate::types::NetworkHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkHeaderBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
@@ -66,17 +64,12 @@ impl NetworkHeaderBuilder {
         self
     }
     /// <p>Information about the destination of the component.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::NetworkPathComponentDetails>) -> Self {
         self.destination = input;
         self
     }
     /// <p>Information about the destination of the component.</p>
-    pub fn get_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::NetworkPathComponentDetails> {
         &self.destination
     }
     /// <p>Information about the origin of the component.</p>
@@ -85,10 +78,7 @@ impl NetworkHeaderBuilder {
         self
     }
     /// <p>Information about the origin of the component.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::NetworkPathComponentDetails>) -> Self {
         self.source = input;
         self
     }

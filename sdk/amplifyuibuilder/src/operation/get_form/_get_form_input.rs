@@ -36,9 +36,7 @@ impl GetFormInput {
 
 /// A builder for [`GetFormInput`](crate::operation::get_form::GetFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFormInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl GetFormInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -94,12 +86,7 @@ impl GetFormInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFormInput`](crate::operation::get_form::GetFormInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_form::GetFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_form::GetFormInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_form::GetFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

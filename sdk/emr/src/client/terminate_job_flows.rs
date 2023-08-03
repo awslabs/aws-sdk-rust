@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`job_flow_ids(Vec<String>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::set_job_flow_ids): <p>A list of job flows to be shut down.</p>
     /// - On success, responds with [`TerminateJobFlowsOutput`](crate::operation::terminate_job_flows::TerminateJobFlowsOutput)
     /// - On failure, responds with [`SdkError<TerminateJobFlowsError>`](crate::operation::terminate_job_flows::TerminateJobFlowsError)
-    pub fn terminate_job_flows(
-        &self,
-    ) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder {
-        crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_job_flows(&self) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder {
+        crate::operation::terminate_job_flows::builders::TerminateJobFlowsFluentBuilder::new(self.handle.clone())
     }
 }

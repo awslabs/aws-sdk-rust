@@ -32,10 +32,7 @@ impl ::std::fmt::Debug for EventsConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EventsConfiguration");
         formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "outbound_events_https_endpoint",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("outbound_events_https_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -71,40 +68,26 @@ impl EventsConfigurationBuilder {
         &self.bot_id
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
-    pub fn outbound_events_https_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_events_https_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_events_https_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
-    pub fn set_outbound_events_https_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_events_https_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_events_https_endpoint = input;
         self
     }
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
-    pub fn get_outbound_events_https_endpoint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_outbound_events_https_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.outbound_events_https_endpoint
     }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
@@ -125,10 +108,7 @@ impl ::std::fmt::Debug for EventsConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EventsConfigurationBuilder");
         formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "outbound_events_https_endpoint",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("outbound_events_https_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

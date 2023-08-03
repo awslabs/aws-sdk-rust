@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput::location): <p>The location of the continuous deployment policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
     /// - On failure, responds with [`SdkError<CreateContinuousDeploymentPolicyError>`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError)
-    pub fn create_continuous_deployment_policy(&self) -> crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyFluentBuilder{
+    pub fn create_continuous_deployment_policy(
+        &self,
+    ) -> crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyFluentBuilder {
         crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyFluentBuilder::new(self.handle.clone())
     }
 }

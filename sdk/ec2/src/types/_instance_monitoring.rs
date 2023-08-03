@@ -30,9 +30,7 @@ impl InstanceMonitoring {
 
 /// A builder for [`InstanceMonitoring`](crate::types::InstanceMonitoring).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceMonitoringBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring: ::std::option::Option<crate::types::Monitoring>,
@@ -58,10 +56,7 @@ impl InstanceMonitoringBuilder {
         self
     }
     /// <p>The monitoring for the instance.</p>
-    pub fn set_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::Monitoring>,
-    ) -> Self {
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::Monitoring>) -> Self {
         self.monitoring = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput) with field(s):
     ///   - [`problem(Option<Problem>)`](crate::operation::describe_problem::DescribeProblemOutput::problem): <p>Information about the problem. </p>
     /// - On failure, responds with [`SdkError<DescribeProblemError>`](crate::operation::describe_problem::DescribeProblemError)
-    pub fn describe_problem(
-        &self,
-    ) -> crate::operation::describe_problem::builders::DescribeProblemFluentBuilder {
-        crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_problem(&self) -> crate::operation::describe_problem::builders::DescribeProblemFluentBuilder {
+        crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::new(self.handle.clone())
     }
 }

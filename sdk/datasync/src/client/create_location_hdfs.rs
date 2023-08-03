@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationHdfsOutput`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput::location_arn): <p>The ARN of the source HDFS cluster location that's created. </p>
     /// - On failure, responds with [`SdkError<CreateLocationHdfsError>`](crate::operation::create_location_hdfs::CreateLocationHdfsError)
-    pub fn create_location_hdfs(
-        &self,
-    ) -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsFluentBuilder {
-        crate::operation::create_location_hdfs::builders::CreateLocationHdfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location_hdfs(&self) -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsFluentBuilder {
+        crate::operation::create_location_hdfs::builders::CreateLocationHdfsFluentBuilder::new(self.handle.clone())
     }
 }

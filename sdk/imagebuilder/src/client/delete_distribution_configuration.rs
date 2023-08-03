@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`distribution_configuration_arn(Option<String>)`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteDistributionConfigurationError>`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError)
-    pub fn delete_distribution_configuration(&self) -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationFluentBuilder{
+    pub fn delete_distribution_configuration(
+        &self,
+    ) -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationFluentBuilder {
         crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

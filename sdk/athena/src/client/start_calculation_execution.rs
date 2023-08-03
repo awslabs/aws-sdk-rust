@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`calculation_execution_id(Option<String>)`](crate::operation::start_calculation_execution::StartCalculationExecutionOutput::calculation_execution_id): <p>The calculation execution UUID.</p>
     ///   - [`state(Option<CalculationExecutionState>)`](crate::operation::start_calculation_execution::StartCalculationExecutionOutput::state): <p> <code>CREATING</code> - The calculation is in the process of being created.</p>  <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>  <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>  <p> <code>RUNNING</code> - The calculation is running.</p>  <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>  <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>  <p> <code>COMPLETED</code> - The calculation has completed without error.</p>  <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
     /// - On failure, responds with [`SdkError<StartCalculationExecutionError>`](crate::operation::start_calculation_execution::StartCalculationExecutionError)
-    pub fn start_calculation_execution(&self) -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionFluentBuilder{
+    pub fn start_calculation_execution(&self) -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionFluentBuilder {
         crate::operation::start_calculation_execution::builders::StartCalculationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

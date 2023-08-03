@@ -23,9 +23,7 @@ impl InternetMeasurementsLogDelivery {
 
 /// A builder for [`InternetMeasurementsLogDelivery`](crate::types::InternetMeasurementsLogDelivery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternetMeasurementsLogDeliveryBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
 }
@@ -46,8 +44,6 @@ impl InternetMeasurementsLogDeliveryBuilder {
     }
     /// Consumes the builder and constructs a [`InternetMeasurementsLogDelivery`](crate::types::InternetMeasurementsLogDelivery).
     pub fn build(self) -> crate::types::InternetMeasurementsLogDelivery {
-        crate::types::InternetMeasurementsLogDelivery {
-            s3_config: self.s3_config,
-        }
+        crate::types::InternetMeasurementsLogDelivery { s3_config: self.s3_config }
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::describe_addresses::DescribeAddressesOutput::addresses): <p>The Snow device shipping addresses that were created for this account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_addresses::DescribeAddressesOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressesError>`](crate::operation::describe_addresses::DescribeAddressesError)
-    pub fn describe_addresses(
-        &self,
-    ) -> crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder {
-        crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_addresses(&self) -> crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder {
+        crate::operation::describe_addresses::builders::DescribeAddressesFluentBuilder::new(self.handle.clone())
     }
 }

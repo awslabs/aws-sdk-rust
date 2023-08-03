@@ -26,7 +26,7 @@ impl UpdateServiceSyncBlockerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder,
+    inner: crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder,
 }
 impl UpdateServiceSyncBlockerFluentBuilder {
     /// Creates a new `UpdateServiceSyncBlocker`.
@@ -37,7 +37,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
         }
     }
     /// Access the UpdateServiceSyncBlocker as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
             crate::operation::update_service_sync_blocker::UpdateServiceSyncBlocker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateServiceSyncBlockerFluentBuilder {
             crate::operation::update_service_sync_blocker::UpdateServiceSyncBlocker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateServiceSyncBlockerFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The reason the service sync blocker was resolved.</p>
-    pub fn resolved_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolved_reason(input.into());
         self
     }
     /// <p>The reason the service sync blocker was resolved.</p>
-    pub fn set_resolved_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolved_reason(input);
         self
     }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTestGridSessionsOutput {
 }
 impl ListTestGridSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionsOutput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsOutputBuilder {
         crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionsOutput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionsOutputBuilder {
-    pub(crate) test_grid_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>,
+    pub(crate) test_grid_sessions: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListTestGridSessionsOutputBuilder {
         self
     }
     /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
-    pub fn set_test_grid_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>,
-    ) -> Self {
+    pub fn set_test_grid_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>) -> Self {
         self.test_grid_sessions = input;
         self
     }
     /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
-    pub fn get_test_grid_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>> {
+    pub fn get_test_grid_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>> {
         &self.test_grid_sessions
     }
     /// <p>Pagination token.</p>

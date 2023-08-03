@@ -36,17 +36,14 @@ impl ListProxySessionsInput {
 }
 impl ListProxySessionsInput {
     /// Creates a new builder-style object to manufacture [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
+    pub fn builder() -> crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
         crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProxySessionsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ProxySessionStatus>,
@@ -55,18 +52,12 @@ pub struct ListProxySessionsInputBuilder {
 }
 impl ListProxySessionsInputBuilder {
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -80,10 +71,7 @@ impl ListProxySessionsInputBuilder {
         self
     }
     /// <p>The proxy session status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxySessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProxySessionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -122,17 +110,12 @@ impl ListProxySessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_proxy_sessions::ListProxySessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_proxy_sessions::ListProxySessionsInput {
-                voice_connector_id: self.voice_connector_id,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_proxy_sessions::ListProxySessionsInput {
+            voice_connector_id: self.voice_connector_id,
+            status: self.status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

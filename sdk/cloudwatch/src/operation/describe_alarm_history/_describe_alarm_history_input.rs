@@ -64,17 +64,14 @@ impl DescribeAlarmHistoryInput {
 }
 impl DescribeAlarmHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder {
+    pub fn builder() -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder {
         crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
@@ -112,17 +109,12 @@ impl DescribeAlarmHistoryInputBuilder {
         self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn set_alarm_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
-    ) -> Self {
+    pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.alarm_types = input;
         self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn get_alarm_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+    pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
         &self.alarm_types
     }
     /// <p>The type of alarm histories to retrieve.</p>
@@ -131,10 +123,7 @@ impl DescribeAlarmHistoryInputBuilder {
         self
     }
     /// <p>The type of alarm histories to retrieve.</p>
-    pub fn set_history_item_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryItemType>,
-    ) -> Self {
+    pub fn set_history_item_type(mut self, input: ::std::option::Option<crate::types::HistoryItemType>) -> Self {
         self.history_item_type = input;
         self
     }
@@ -148,10 +137,7 @@ impl DescribeAlarmHistoryInputBuilder {
         self
     }
     /// <p>The starting date to retrieve alarm history.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -165,10 +151,7 @@ impl DescribeAlarmHistoryInputBuilder {
         self
     }
     /// <p>The ending date to retrieve alarm history.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -221,21 +204,17 @@ impl DescribeAlarmHistoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarm_history::DescribeAlarmHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_alarm_history::DescribeAlarmHistoryInput {
-                alarm_name: self.alarm_name,
-                alarm_types: self.alarm_types,
-                history_item_type: self.history_item_type,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                max_records: self.max_records,
-                next_token: self.next_token,
-                scan_by: self.scan_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_alarm_history::DescribeAlarmHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_alarm_history::DescribeAlarmHistoryInput {
+            alarm_name: self.alarm_name,
+            alarm_types: self.alarm_types,
+            history_item_type: self.history_item_type,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            max_records: self.max_records,
+            next_token: self.next_token,
+            scan_by: self.scan_by,
+        })
     }
 }

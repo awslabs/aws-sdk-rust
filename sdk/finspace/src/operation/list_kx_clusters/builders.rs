@@ -10,10 +10,7 @@ impl ListKxClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_kx_clusters::ListKxClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_kx_clusters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListKxClustersFluentBuilder {
         }
     }
     /// Access the ListKxClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_kx_clusters::builders::ListKxClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_kx_clusters::builders::ListKxClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListKxClustersFluentBuilder {
             crate::operation::list_kx_clusters::ListKxClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListKxClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListKxClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_clusters::ListKxClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListKxClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_clusters::ListKxClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ListKxClustersFluentBuilder {
             crate::operation::list_kx_clusters::ListKxClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -158,10 +136,7 @@ impl ListKxClustersFluentBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// </ul>
-    pub fn set_cluster_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KxClusterType>,
-    ) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
         self.inner = self.inner.set_cluster_type(input);
         self
     }

@@ -4,17 +4,10 @@ pub fn de_attach_vpn_gateway_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-    crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-> {
+) -> std::result::Result<crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput, crate::operation::attach_vpn_gateway::AttachVpnGatewayError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::attach_vpn_gateway::AttachVpnGatewayError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::attach_vpn_gateway::AttachVpnGatewayError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::attach_vpn_gateway::AttachVpnGatewayError::generic(generic))
@@ -25,23 +18,13 @@ pub fn de_attach_vpn_gateway_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-    crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-> {
+) -> std::result::Result<crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput, crate::operation::attach_vpn_gateway::AttachVpnGatewayError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_attach_vpn_gateway::de_attach_vpn_gateway(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::attach_vpn_gateway::AttachVpnGatewayError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder::default();
+        output = crate::protocol_serde::shape_attach_vpn_gateway::de_attach_vpn_gateway(_response_body, output)
+            .map_err(crate::operation::attach_vpn_gateway::AttachVpnGatewayError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -50,10 +33,7 @@ pub fn de_attach_vpn_gateway_http_response_with_props(
 pub fn de_attach_vpn_gateway(
     inp: &[u8],
     mut builder: crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder,
-) -> Result<
-    crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

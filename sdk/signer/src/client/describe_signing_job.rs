@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`job_owner(Option<String>)`](crate::operation::describe_signing_job::DescribeSigningJobOutput::job_owner): <p>The AWS account ID of the job owner.</p>
     ///   - [`job_invoker(Option<String>)`](crate::operation::describe_signing_job::DescribeSigningJobOutput::job_invoker): <p>The IAM entity that initiated the signing job.</p>
     /// - On failure, responds with [`SdkError<DescribeSigningJobError>`](crate::operation::describe_signing_job::DescribeSigningJobError)
-    pub fn describe_signing_job(
-        &self,
-    ) -> crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder {
-        crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_signing_job(&self) -> crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder {
+        crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::new(self.handle.clone())
     }
 }

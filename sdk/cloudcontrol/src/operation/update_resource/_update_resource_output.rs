@@ -30,9 +30,7 @@ impl UpdateResourceOutput {
 
 /// A builder for [`UpdateResourceOutput`](crate::operation::update_resource::UpdateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl UpdateResourceOutputBuilder {
     }
     /// <p>Represents the current status of the resource update request.</p>
     /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    pub fn set_progress_event(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressEvent>,
-    ) -> Self {
+    pub fn set_progress_event(mut self, input: ::std::option::Option<crate::types::ProgressEvent>) -> Self {
         self.progress_event = input;
         self
     }

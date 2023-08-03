@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput) with field(s):
     ///   - [`spot_datafeed_subscription(Option<SpotDatafeedSubscription>)`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput::spot_datafeed_subscription): <p>The Spot Instance data feed subscription.</p>
     /// - On failure, responds with [`SdkError<DescribeSpotDatafeedSubscriptionError>`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionError)
-    pub fn describe_spot_datafeed_subscription(&self) -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionFluentBuilder{
+    pub fn describe_spot_datafeed_subscription(
+        &self,
+    ) -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionFluentBuilder {
         crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

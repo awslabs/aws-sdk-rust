@@ -44,9 +44,7 @@ impl MergeShardsInput {
 
 /// A builder for [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeShardsInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_to_merge: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl MergeShardsInputBuilder {
         &self.stream_name
     }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-    pub fn shard_to_merge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_to_merge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-    pub fn set_shard_to_merge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_to_merge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_to_merge = input;
         self
     }
@@ -89,18 +81,12 @@ impl MergeShardsInputBuilder {
         &self.shard_to_merge
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub fn adjacent_shard_to_merge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjacent_shard_to_merge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adjacent_shard_to_merge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
-    pub fn set_adjacent_shard_to_merge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_adjacent_shard_to_merge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.adjacent_shard_to_merge = input;
         self
     }
@@ -123,12 +109,7 @@ impl MergeShardsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::merge_shards::MergeShardsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_shards::MergeShardsInput {
             stream_name: self.stream_name,
             shard_to_merge: self.shard_to_merge,

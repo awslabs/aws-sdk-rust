@@ -43,18 +43,14 @@ impl ListAttachedIndicesInput {
 }
 impl ListAttachedIndicesInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
-        crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
+        crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedIndicesInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -64,18 +60,12 @@ pub struct ListAttachedIndicesInputBuilder {
 }
 impl ListAttachedIndicesInputBuilder {
     /// <p>The ARN of the directory.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the directory.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -89,10 +79,7 @@ impl ListAttachedIndicesInputBuilder {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.target_reference = input;
         self
     }
@@ -134,10 +121,7 @@ impl ListAttachedIndicesInputBuilder {
         self
     }
     /// <p>The consistency level to use for this operation.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -148,18 +132,14 @@ impl ListAttachedIndicesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attached_indices::ListAttachedIndicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_attached_indices::ListAttachedIndicesInput {
-                directory_arn: self.directory_arn,
-                target_reference: self.target_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_attached_indices::ListAttachedIndicesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_attached_indices::ListAttachedIndicesInput {
+            directory_arn: self.directory_arn,
+            target_reference: self.target_reference,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            consistency_level: self.consistency_level,
+        })
     }
 }

@@ -30,9 +30,7 @@ pub struct AwsNetworkFirewallFirewallDetails {
     pub subnet_change_protection: bool,
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     #[doc(hidden)]
-    pub subnet_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
-    >,
+    pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     /// <p>The identifier of the VPC where the firewall is used.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -71,10 +69,7 @@ impl AwsNetworkFirewallFirewallDetails {
         self.subnet_change_protection
     }
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn subnet_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails]>
-    {
+    pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails]> {
         self.subnet_mappings.as_deref()
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
@@ -91,9 +86,7 @@ impl AwsNetworkFirewallFirewallDetails {
 
 /// A builder for [`AwsNetworkFirewallFirewallDetails`](crate::types::AwsNetworkFirewallFirewallDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallDetailsBuilder {
     pub(crate) delete_protection: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -103,9 +96,7 @@ pub struct AwsNetworkFirewallFirewallDetailsBuilder {
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_change_protection: ::std::option::Option<bool>,
     pub(crate) subnet_change_protection: ::std::option::Option<bool>,
-    pub(crate) subnet_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
-    >,
+    pub(crate) subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallDetailsBuilder {
@@ -166,18 +157,12 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
         &self.firewall_id
     }
     /// <p>A descriptive name of the firewall.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive name of the firewall.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -186,18 +171,12 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
         &self.firewall_name
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
@@ -211,10 +190,7 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
         self
     }
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
-    pub fn set_firewall_policy_change_protection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_firewall_policy_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.firewall_policy_change_protection = input;
         self
     }
@@ -241,10 +217,7 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
     ///
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn subnet_mappings(
-        mut self,
-        input: crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails,
-    ) -> Self {
+    pub fn subnet_mappings(mut self, input: crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails) -> Self {
         let mut v = self.subnet_mappings.unwrap_or_default();
         v.push(input);
         self.subnet_mappings = ::std::option::Option::Some(v);
@@ -253,19 +226,13 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     pub fn set_subnet_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     ) -> Self {
         self.subnet_mappings = input;
         self
     }
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn get_subnet_mappings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
-    > {
+    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>> {
         &self.subnet_mappings
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
@@ -291,9 +258,7 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
             firewall_id: self.firewall_id,
             firewall_name: self.firewall_name,
             firewall_policy_arn: self.firewall_policy_arn,
-            firewall_policy_change_protection: self
-                .firewall_policy_change_protection
-                .unwrap_or_default(),
+            firewall_policy_change_protection: self.firewall_policy_change_protection.unwrap_or_default(),
             subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
             subnet_mappings: self.subnet_mappings,
             vpc_id: self.vpc_id,

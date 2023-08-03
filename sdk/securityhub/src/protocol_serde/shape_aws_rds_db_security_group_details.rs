@@ -7,9 +7,7 @@ pub fn ser_aws_rds_db_security_group_details(
         object.key("DbSecurityGroupArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.db_security_group_description {
-        object
-            .key("DbSecurityGroupDescription")
-            .string(var_2.as_str());
+        object.key("DbSecurityGroupDescription").string(var_2.as_str());
     }
     if let Some(var_3) = &input.db_security_group_name {
         object.key("DbSecurityGroupName").string(var_3.as_str());
@@ -20,7 +18,10 @@ pub fn ser_aws_rds_db_security_group_details(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_security_group_ec2_security_group::ser_aws_rds_db_security_group_ec2_security_group(&mut object_7, item_6)?;
+                crate::protocol_serde::shape_aws_rds_db_security_group_ec2_security_group::ser_aws_rds_db_security_group_ec2_security_group(
+                    &mut object_7,
+                    item_6,
+                )?;
                 object_7.finish();
             }
         }
@@ -49,102 +50,78 @@ pub fn ser_aws_rds_db_security_group_details(
 
 pub(crate) fn de_aws_rds_db_security_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsRdsDbSecurityGroupDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsRdsDbSecurityGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsRdsDbSecurityGroupDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsRdsDbSecurityGroupDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DbSecurityGroupArn" => {
-                                builder = builder.set_db_security_group_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DbSecurityGroupArn" => {
+                            builder = builder.set_db_security_group_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DbSecurityGroupDescription" => {
-                                builder = builder.set_db_security_group_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "DbSecurityGroupDescription" => {
+                            builder = builder.set_db_security_group_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DbSecurityGroupName" => {
-                                builder = builder.set_db_security_group_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "DbSecurityGroupName" => {
+                            builder = builder.set_db_security_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Ec2SecurityGroups" => {
-                                builder = builder.set_ec2_security_groups(
+                            );
+                        }
+                        "Ec2SecurityGroups" => {
+                            builder = builder.set_ec2_security_groups(
                                     crate::protocol_serde::shape_aws_rds_db_security_group_ec2_security_groups::de_aws_rds_db_security_group_ec2_security_groups(tokens)?
                                 );
-                            }
-                            "IpRanges" => {
-                                builder = builder.set_ip_ranges(
-                                    crate::protocol_serde::shape_aws_rds_db_security_group_ip_ranges::de_aws_rds_db_security_group_ip_ranges(tokens)?
-                                );
-                            }
-                            "OwnerId" => {
-                                builder = builder.set_owner_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "VpcId" => {
-                                builder = builder.set_vpc_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "IpRanges" => {
+                            builder = builder.set_ip_ranges(
+                                crate::protocol_serde::shape_aws_rds_db_security_group_ip_ranges::de_aws_rds_db_security_group_ip_ranges(tokens)?,
+                            );
+                        }
+                        "OwnerId" => {
+                            builder = builder.set_owner_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "VpcId" => {
+                            builder = builder.set_vpc_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

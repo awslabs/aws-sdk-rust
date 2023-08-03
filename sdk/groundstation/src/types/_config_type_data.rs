@@ -33,9 +33,7 @@ pub enum ConfigTypeData {
 impl ConfigTypeData {
     /// Tries to convert the enum instance into [`AntennaDownlinkConfig`](crate::types::ConfigTypeData::AntennaDownlinkConfig), extracting the inner [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_antenna_downlink_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AntennaDownlinkConfig, &Self> {
+    pub fn as_antenna_downlink_config(&self) -> ::std::result::Result<&crate::types::AntennaDownlinkConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -48,9 +46,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`AntennaDownlinkDemodDecodeConfig`](crate::types::ConfigTypeData::AntennaDownlinkDemodDecodeConfig), extracting the inner [`AntennaDownlinkDemodDecodeConfig`](crate::types::AntennaDownlinkDemodDecodeConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_antenna_downlink_demod_decode_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AntennaDownlinkDemodDecodeConfig, &Self> {
+    pub fn as_antenna_downlink_demod_decode_config(&self) -> ::std::result::Result<&crate::types::AntennaDownlinkDemodDecodeConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkDemodDecodeConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -63,9 +59,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`AntennaUplinkConfig`](crate::types::ConfigTypeData::AntennaUplinkConfig), extracting the inner [`AntennaUplinkConfig`](crate::types::AntennaUplinkConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_antenna_uplink_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AntennaUplinkConfig, &Self> {
+    pub fn as_antenna_uplink_config(&self) -> ::std::result::Result<&crate::types::AntennaUplinkConfig, &Self> {
         if let ConfigTypeData::AntennaUplinkConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -78,9 +72,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`DataflowEndpointConfig`](crate::types::ConfigTypeData::DataflowEndpointConfig), extracting the inner [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dataflow_endpoint_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DataflowEndpointConfig, &Self> {
+    pub fn as_dataflow_endpoint_config(&self) -> ::std::result::Result<&crate::types::DataflowEndpointConfig, &Self> {
         if let ConfigTypeData::DataflowEndpointConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -93,9 +85,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`S3RecordingConfig`](crate::types::ConfigTypeData::S3RecordingConfig), extracting the inner [`S3RecordingConfig`](crate::types::S3RecordingConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_recording_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::S3RecordingConfig, &Self> {
+    pub fn as_s3_recording_config(&self) -> ::std::result::Result<&crate::types::S3RecordingConfig, &Self> {
         if let ConfigTypeData::S3RecordingConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -108,9 +98,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`TrackingConfig`](crate::types::ConfigTypeData::TrackingConfig), extracting the inner [`TrackingConfig`](crate::types::TrackingConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tracking_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TrackingConfig, &Self> {
+    pub fn as_tracking_config(&self) -> ::std::result::Result<&crate::types::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -123,9 +111,7 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`UplinkEchoConfig`](crate::types::ConfigTypeData::UplinkEchoConfig), extracting the inner [`UplinkEchoConfig`](crate::types::UplinkEchoConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_uplink_echo_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UplinkEchoConfig, &Self> {
+    pub fn as_uplink_echo_config(&self) -> ::std::result::Result<&crate::types::UplinkEchoConfig, &Self> {
         if let ConfigTypeData::UplinkEchoConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

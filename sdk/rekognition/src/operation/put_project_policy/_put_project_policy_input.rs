@@ -36,17 +36,14 @@ impl PutProjectPolicyInput {
 }
 impl PutProjectPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
-    pub fn builder() -> crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder {
         crate::operation::put_project_policy::builders::PutProjectPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProjectPolicyInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl PutProjectPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    pub fn policy_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    pub fn set_policy_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision_id = input;
         self
     }
@@ -103,18 +94,12 @@ impl PutProjectPolicyInputBuilder {
         &self.policy_revision_id
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -125,17 +110,12 @@ impl PutProjectPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_project_policy::PutProjectPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_project_policy::PutProjectPolicyInput {
-                project_arn: self.project_arn,
-                policy_name: self.policy_name,
-                policy_revision_id: self.policy_revision_id,
-                policy_document: self.policy_document,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_project_policy::PutProjectPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_project_policy::PutProjectPolicyInput {
+            project_arn: self.project_arn,
+            policy_name: self.policy_name,
+            policy_revision_id: self.policy_revision_id,
+            policy_document: self.policy_document,
+        })
     }
 }

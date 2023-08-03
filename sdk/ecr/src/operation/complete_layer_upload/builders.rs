@@ -40,9 +40,7 @@ impl CompleteLayerUploadFluentBuilder {
         }
     }
     /// Access the CompleteLayerUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl CompleteLayerUploadFluentBuilder {
             crate::operation::complete_layer_upload::CompleteLayerUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_layer_upload::CompleteLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_layer_upload::CompleteLayerUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl CompleteLayerUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl CompleteLayerUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_layer_upload::CompleteLayerUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_layer_upload::CompleteLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_layer_upload::CompleteLayerUploadError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl CompleteLayerUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_layer_upload::CompleteLayerUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_layer_upload::CompleteLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_layer_upload::CompleteLayerUploadError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl CompleteLayerUploadFluentBuilder {
             crate::operation::complete_layer_upload::CompleteLayerUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_layer_upload::CompleteLayerUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_layer_upload::CompleteLayerUploadError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +127,12 @@ impl CompleteLayerUploadFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to associate with the image layer.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to associate with the image layer.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -178,25 +159,17 @@ impl CompleteLayerUploadFluentBuilder {
     /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
     ///
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digests(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn layer_digests(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_digests(input.into());
         self
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn set_layer_digests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_digests(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_digests(input);
         self
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn get_layer_digests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_digests(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_layer_digests()
     }
 }

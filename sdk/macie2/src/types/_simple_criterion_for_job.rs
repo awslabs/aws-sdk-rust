@@ -51,9 +51,7 @@ impl SimpleCriterionForJob {
 
 /// A builder for [`SimpleCriterionForJob`](crate::types::SimpleCriterionForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimpleCriterionForJobBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>,
@@ -66,10 +64,7 @@ impl SimpleCriterionForJobBuilder {
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
         self.comparator = input;
         self
     }
@@ -83,10 +78,7 @@ impl SimpleCriterionForJobBuilder {
         self
     }
     /// <p>The property to use in the condition.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>) -> Self {
         self.key = input;
         self
     }
@@ -120,10 +112,7 @@ impl SimpleCriterionForJobBuilder {
     /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
     /// </ul>
     /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

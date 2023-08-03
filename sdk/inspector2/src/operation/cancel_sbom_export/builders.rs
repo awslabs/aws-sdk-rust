@@ -10,10 +10,7 @@ impl CancelSbomExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_sbom_export::CancelSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sbom_export::CancelSbomExportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_sbom_export::CancelSbomExportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_sbom_export();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelSbomExportFluentBuilder {
         }
     }
     /// Access the CancelSbomExport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_sbom_export::builders::CancelSbomExportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_sbom_export::builders::CancelSbomExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelSbomExportFluentBuilder {
             crate::operation::cancel_sbom_export::CancelSbomExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sbom_export::CancelSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_sbom_export::CancelSbomExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelSbomExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelSbomExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_sbom_export::CancelSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sbom_export::CancelSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_sbom_export::CancelSbomExportError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelSbomExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_sbom_export::CancelSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sbom_export::CancelSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_sbom_export::CancelSbomExportError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CancelSbomExportFluentBuilder {
             crate::operation::cancel_sbom_export::CancelSbomExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sbom_export::CancelSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_sbom_export::CancelSbomExportError>,
     > {
         self.customize_middleware().await
     }

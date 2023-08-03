@@ -35,9 +35,7 @@ impl ListConnectorsOutput {
 
 /// A builder for [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorsOutputBuilder {
     pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListConnectorsOutputBuilder {
         self
     }
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn set_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
-    ) -> Self {
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>) -> Self {
         self.connectors = input;
         self
     }
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn get_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
         &self.connectors
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>

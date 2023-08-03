@@ -59,9 +59,7 @@ impl Notification {
 
 /// A builder for [`Notification`](crate::types::Notification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationBuilder {
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -76,10 +74,7 @@ impl NotificationBuilder {
         self
     }
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
@@ -93,17 +88,12 @@ impl NotificationBuilder {
         self
     }
     /// <p>The comparison that's used for this notification.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The comparison that's used for this notification.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
@@ -126,10 +116,7 @@ impl NotificationBuilder {
         self
     }
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
-    pub fn set_threshold_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ThresholdType>,
-    ) -> Self {
+    pub fn set_threshold_type(mut self, input: ::std::option::Option<crate::types::ThresholdType>) -> Self {
         self.threshold_type = input;
         self
     }
@@ -143,17 +130,12 @@ impl NotificationBuilder {
         self
     }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
-    pub fn set_notification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationState>,
-    ) -> Self {
+    pub fn set_notification_state(mut self, input: ::std::option::Option<crate::types::NotificationState>) -> Self {
         self.notification_state = input;
         self
     }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
-    pub fn get_notification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationState> {
+    pub fn get_notification_state(&self) -> &::std::option::Option<crate::types::NotificationState> {
         &self.notification_state
     }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).

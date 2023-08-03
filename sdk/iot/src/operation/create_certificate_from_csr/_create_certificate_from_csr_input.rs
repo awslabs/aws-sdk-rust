@@ -23,36 +23,26 @@ impl CreateCertificateFromCsrInput {
 }
 impl CreateCertificateFromCsrInput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateFromCsrInput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput).
-    pub fn builder(
-    ) -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder {
         crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCertificateFromCsrInput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCertificateFromCsrInputBuilder {
     pub(crate) certificate_signing_request: ::std::option::Option<::std::string::String>,
     pub(crate) set_as_active: ::std::option::Option<bool>,
 }
 impl CreateCertificateFromCsrInputBuilder {
     /// <p>The certificate signing request (CSR).</p>
-    pub fn certificate_signing_request(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_signing_request = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate signing request (CSR).</p>
-    pub fn set_certificate_signing_request(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_signing_request(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_signing_request = input;
         self
     }
@@ -81,11 +71,9 @@ impl CreateCertificateFromCsrInputBuilder {
         crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
-                certificate_signing_request: self.certificate_signing_request,
-                set_as_active: self.set_as_active,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
+            certificate_signing_request: self.certificate_signing_request,
+            set_as_active: self.set_as_active,
+        })
     }
 }

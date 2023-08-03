@@ -40,16 +40,14 @@ impl ModifyEbsDefaultKmsKeyIdInput {
 }
 impl ModifyEbsDefaultKmsKeyIdInput {
     /// Creates a new builder-style object to manufacture [`ModifyEbsDefaultKmsKeyIdInput`](crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput).
-    pub fn builder() -> crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdInputBuilder{
+    pub fn builder() -> crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdInputBuilder {
         crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyEbsDefaultKmsKeyIdInput`](crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyEbsDefaultKmsKeyIdInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -117,11 +115,9 @@ impl ModifyEbsDefaultKmsKeyIdInputBuilder {
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput {
-                kms_key_id: self.kms_key_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput {
+            kms_key_id: self.kms_key_id,
+            dry_run: self.dry_run,
+        })
     }
 }

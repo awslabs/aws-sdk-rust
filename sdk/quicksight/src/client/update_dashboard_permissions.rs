@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`link_sharing_configuration(Option<LinkSharingConfiguration>)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::link_sharing_configuration): <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
     /// - On failure, responds with [`SdkError<UpdateDashboardPermissionsError>`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError)
-    pub fn update_dashboard_permissions(&self) -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsFluentBuilder{
+    pub fn update_dashboard_permissions(&self) -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsFluentBuilder {
         crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetClassificationScopeOutput {
 }
 impl GetClassificationScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_classification_scope::builders::GetClassificationScopeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_classification_scope::builders::GetClassificationScopeOutputBuilder {
         crate::operation::get_classification_scope::builders::GetClassificationScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassificationScopeOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,10 +84,7 @@ impl GetClassificationScopeOutputBuilder {
         self
     }
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScope>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ClassificationScope>) -> Self {
         self.s3 = input;
         self
     }

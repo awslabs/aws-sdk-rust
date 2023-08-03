@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`association_executions(Option<Vec<AssociationExecution>>)`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput::association_executions): <p>A list of the executions for the specified association ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeAssociationExecutionsError>`](crate::operation::describe_association_executions::DescribeAssociationExecutionsError)
-    pub fn describe_association_executions(&self) -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsFluentBuilder{
+    pub fn describe_association_executions(
+        &self,
+    ) -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsFluentBuilder {
         crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

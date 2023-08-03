@@ -9,49 +9,58 @@ pub fn de_apply_environment_managed_action_http_error(
     crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ElasticBeanstalkServiceException" => {
+            crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::ElasticBeanstalkServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(_response_body, output).map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ManagedActionInvalidStateException" => crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::ManagedActionInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ManagedActionInvalidStateException" => {
+            crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::ManagedActionInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ManagedActionInvalidStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_managed_action_invalid_state_exception::de_managed_action_invalid_state_exception_xml_err(_response_body, output).map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_managed_action_invalid_state_exception::de_managed_action_invalid_state_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::generic(generic),
     })
 }
 
@@ -67,16 +76,21 @@ pub fn de_apply_environment_managed_action_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder::default();
-        output = crate::protocol_serde::shape_apply_environment_managed_action::de_apply_environment_managed_action(_response_body, output).map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_apply_environment_managed_action::de_apply_environment_managed_action(_response_body, output)
+            .map_err(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_apply_environment_managed_action(inp: &[u8], mut builder: crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder) -> Result<crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_apply_environment_managed_action(
+    inp: &[u8],
+    mut builder: crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder,
+) -> Result<
+    crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

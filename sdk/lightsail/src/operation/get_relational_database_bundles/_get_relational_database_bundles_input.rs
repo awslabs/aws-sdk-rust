@@ -24,16 +24,14 @@ impl GetRelationalDatabaseBundlesInput {
 }
 impl GetRelationalDatabaseBundlesInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBundlesInput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput).
-    pub fn builder() -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder {
         crate::operation::get_relational_database_bundles::builders::GetRelationalDatabaseBundlesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseBundlesInput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseBundlesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_inactive: ::std::option::Option<bool>,
@@ -77,11 +75,9 @@ impl GetRelationalDatabaseBundlesInputBuilder {
         crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput {
-                page_token: self.page_token,
-                include_inactive: self.include_inactive,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput {
+            page_token: self.page_token,
+            include_inactive: self.include_inactive,
+        })
     }
 }

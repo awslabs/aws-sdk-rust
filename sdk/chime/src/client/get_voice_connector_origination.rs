@@ -7,10 +7,10 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput) with field(s):
     ///   - [`origination(Option<Origination>)`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput::origination): <p>The origination setting details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorOriginationError>`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError)
-    #[deprecated(
-        note = "Replaced by GetVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn get_voice_connector_origination(&self) -> crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder{
+    #[deprecated(note = "Replaced by GetVoiceConnectorOrigination in the Amazon Chime SDK Voice Namespace")]
+    pub fn get_voice_connector_origination(
+        &self,
+    ) -> crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder {
         crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,9 +39,7 @@ impl InitiateDeviceClaimFluentBuilder {
         }
     }
     /// Access the InitiateDeviceClaim as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl InitiateDeviceClaimFluentBuilder {
             crate::operation::initiate_device_claim::InitiateDeviceClaim,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_device_claim::InitiateDeviceClaimError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl InitiateDeviceClaimFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl InitiateDeviceClaimFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_device_claim::InitiateDeviceClaimError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl InitiateDeviceClaimFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_device_claim::InitiateDeviceClaimError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl InitiateDeviceClaimFluentBuilder {
             crate::operation::initiate_device_claim::InitiateDeviceClaim,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::initiate_device_claim::InitiateDeviceClaimError>,
     > {
         self.customize_middleware().await
     }

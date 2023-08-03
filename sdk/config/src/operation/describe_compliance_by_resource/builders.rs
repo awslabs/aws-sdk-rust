@@ -33,7 +33,7 @@ impl DescribeComplianceByResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComplianceByResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder,
+    inner: crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder,
 }
 impl DescribeComplianceByResourceFluentBuilder {
     /// Creates a new `DescribeComplianceByResource`.
@@ -44,7 +44,7 @@ impl DescribeComplianceByResourceFluentBuilder {
         }
     }
     /// Access the DescribeComplianceByResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl DescribeComplianceByResourceFluentBuilder {
             crate::operation::describe_compliance_by_resource::DescribeComplianceByResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl DescribeComplianceByResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl DescribeComplianceByResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl DescribeComplianceByResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError>,
     > {
         self.send_middleware().await
     }
@@ -121,31 +112,23 @@ impl DescribeComplianceByResourceFluentBuilder {
             crate::operation::describe_compliance_by_resource::DescribeComplianceByResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_compliance_by_resource::paginator::DescribeComplianceByResourcePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_compliance_by_resource::paginator::DescribeComplianceByResourcePaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_compliance_by_resource::paginator::DescribeComplianceByResourcePaginator {
         crate::operation::describe_compliance_by_resource::paginator::DescribeComplianceByResourcePaginator::new(self.handle, self.inner)
     }
     /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -177,17 +160,12 @@ impl DescribeComplianceByResourceFluentBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn set_compliance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
-    ) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn get_compliance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         self.inner.get_compliance_types()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>

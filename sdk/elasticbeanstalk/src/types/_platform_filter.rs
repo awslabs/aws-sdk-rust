@@ -56,9 +56,7 @@ impl PlatformFilter {
 
 /// A builder for [`PlatformFilter`](crate::types::PlatformFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlatformFilterBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<::std::string::String>,
@@ -125,10 +123,7 @@ impl PlatformFilterBuilder {
     /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
     /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

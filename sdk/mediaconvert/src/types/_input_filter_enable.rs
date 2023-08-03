@@ -39,13 +39,7 @@
 /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputFilterEnable {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for InputFilterEnable {
             "AUTO" => InputFilterEnable::Auto,
             "DISABLE" => InputFilterEnable::Disable,
             "FORCE" => InputFilterEnable::Force,
-            other => {
-                InputFilterEnable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InputFilterEnable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

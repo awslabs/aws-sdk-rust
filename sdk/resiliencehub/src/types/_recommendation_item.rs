@@ -44,9 +44,7 @@ impl RecommendationItem {
 
 /// A builder for [`RecommendationItem`](crate::types::RecommendationItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationItemBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl RecommendationItemBuilder {
         &self.resource_id
     }
     /// <p>The target account identifier.</p>
-    pub fn target_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target account identifier.</p>
-    pub fn set_target_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_account_id = input;
         self
     }
@@ -89,18 +81,12 @@ impl RecommendationItemBuilder {
         &self.target_account_id
     }
     /// <p>The target region.</p>
-    pub fn target_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target region.</p>
-    pub fn set_target_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_region = input;
         self
     }

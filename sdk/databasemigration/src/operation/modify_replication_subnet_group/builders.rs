@@ -26,7 +26,7 @@ impl ModifyReplicationSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyReplicationSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder,
+    inner: crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder,
 }
 impl ModifyReplicationSubnetGroupFluentBuilder {
     /// Creates a new `ModifyReplicationSubnetGroup`.
@@ -37,7 +37,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         }
     }
     /// Access the ModifyReplicationSubnetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
             crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,56 +105,36 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
             crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_subnet_group_identifier(input.into());
         self
     }
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn set_replication_subnet_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_subnet_group_identifier(input);
         self
     }
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn get_replication_subnet_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_subnet_group_identifier()
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn replication_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .replication_subnet_group_description(input.into());
+    pub fn replication_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_subnet_group_description(input.into());
         self
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn set_replication_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_subnet_group_description(input);
         self
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn get_replication_subnet_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_subnet_group_description()
     }
     /// Appends an item to `SubnetIds`.
@@ -176,10 +147,7 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         self
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

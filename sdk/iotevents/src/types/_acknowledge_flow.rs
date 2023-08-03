@@ -23,9 +23,7 @@ impl AcknowledgeFlow {
 
 /// A builder for [`AcknowledgeFlow`](crate::types::AcknowledgeFlow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeFlowBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl AcknowledgeFlowBuilder {
     }
     /// Consumes the builder and constructs a [`AcknowledgeFlow`](crate::types::AcknowledgeFlow).
     pub fn build(self) -> crate::types::AcknowledgeFlow {
-        crate::types::AcknowledgeFlow {
-            enabled: self.enabled,
-        }
+        crate::types::AcknowledgeFlow { enabled: self.enabled }
     }
 }

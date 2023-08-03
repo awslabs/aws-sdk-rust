@@ -36,9 +36,7 @@ impl GetMappingInput {
 
 /// A builder for [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMappingInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CatalogEntry>,
     pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
@@ -71,10 +69,7 @@ impl GetMappingInputBuilder {
         self
     }
     /// <p>A list of target tables.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
-    ) -> Self {
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>) -> Self {
         self.sinks = input;
         self
     }
@@ -97,12 +92,7 @@ impl GetMappingInputBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_mapping::GetMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mapping::GetMappingInput {
             source: self.source,
             sinks: self.sinks,

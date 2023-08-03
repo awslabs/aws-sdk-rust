@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateApplicationToEntitlementOutp
 }
 impl AssociateApplicationToEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementOutput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput).
-    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementOutputBuilder{
+    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementOutputBuilder {
         crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApplicationToEntitlementOutput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationToEntitlementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateApplicationToEntitlementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementOutput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput).
-    pub fn build(self) -> crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput{
+    pub fn build(self) -> crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput {
         crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput {
             _request_id: self._request_id,
         }

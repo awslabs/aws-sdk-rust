@@ -26,7 +26,7 @@ impl ListResourcesForTagOptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesForTagOptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder,
+    inner: crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder,
 }
 impl ListResourcesForTagOptionFluentBuilder {
     /// Creates a new `ListResourcesForTagOption`.
@@ -37,7 +37,7 @@ impl ListResourcesForTagOptionFluentBuilder {
         }
     }
     /// Access the ListResourcesForTagOption as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResourcesForTagOptionFluentBuilder {
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResourcesForTagOptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResourcesForTagOptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResourcesForTagOptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListResourcesForTagOptionFluentBuilder {
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator {
         crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::new(self.handle, self.inner)
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_option_id(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tag_option_id(input);
         self
     }
@@ -151,10 +134,7 @@ impl ListResourcesForTagOptionFluentBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
@@ -163,10 +143,7 @@ impl ListResourcesForTagOptionFluentBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

@@ -10,10 +10,7 @@ impl EnterStandbyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enter_standby::EnterStandbyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enter_standby::EnterStandbyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enter_standby::EnterStandbyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enter_standby();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl EnterStandbyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enter_standby::EnterStandby,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::enter_standby::EnterStandby, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::enter_standby::EnterStandbyError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl EnterStandbyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl EnterStandbyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::enter_standby::EnterStandby,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::enter_standby::EnterStandby, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::enter_standby::EnterStandbyError>,
     > {
         self.customize_middleware().await
@@ -125,32 +113,21 @@ impl EnterStandbyFluentBuilder {
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -164,10 +141,7 @@ impl EnterStandbyFluentBuilder {
         self
     }
     /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_should_decrement_desired_capacity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_should_decrement_desired_capacity(input);
         self
     }

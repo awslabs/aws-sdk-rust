@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`managed_keys(Option<Vec<String>>)`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput::managed_keys): <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
     ///   - [`next_marker(Option<String>)`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput::next_marker): <p>A null value and not currently used.</p>
     /// - On failure, responds with [`SdkError<GetRateBasedRuleManagedKeysError>`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError)
-    pub fn get_rate_based_rule_managed_keys(&self) -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysFluentBuilder{
+    pub fn get_rate_based_rule_managed_keys(
+        &self,
+    ) -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysFluentBuilder {
         crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysFluentBuilder::new(self.handle.clone())
     }
 }

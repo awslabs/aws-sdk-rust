@@ -20,9 +20,7 @@ impl SourceConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations), extracting the inner [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_app_integrations(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
+    pub fn as_app_integrations(&self) -> ::std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
         if let SourceConfiguration::AppIntegrations(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

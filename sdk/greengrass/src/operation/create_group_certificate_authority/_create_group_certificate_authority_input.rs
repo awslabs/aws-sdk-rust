@@ -22,34 +22,26 @@ impl CreateGroupCertificateAuthorityInput {
 }
 impl CreateGroupCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`CreateGroupCertificateAuthorityInput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder {
         crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGroupCertificateAuthorityInput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGroupCertificateAuthorityInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupCertificateAuthorityInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -80,11 +72,9 @@ impl CreateGroupCertificateAuthorityInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                group_id: self.group_id
-                ,
-            }
+                amzn_client_token: self.amzn_client_token,
+                group_id: self.group_id,
+            },
         )
     }
 }

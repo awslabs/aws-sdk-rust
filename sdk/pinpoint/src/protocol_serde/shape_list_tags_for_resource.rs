@@ -9,12 +9,8 @@ pub fn de_list_tags_for_resource_http_error(
     crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic))
@@ -32,14 +28,10 @@ pub fn de_list_tags_for_resource_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
-        output = output.set_tags_model(
-            crate::protocol_serde::shape_list_tags_for_resource_output::de_tags_model_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = output.set_tags_model(crate::protocol_serde::shape_list_tags_for_resource_output::de_tags_model_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -10,10 +10,7 @@ impl StartDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_deployment::StartDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_deployment::StartDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_deployment::StartDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartDeploymentFluentBuilder {
         }
     }
     /// Access the StartDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_deployment::builders::StartDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_deployment::builders::StartDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartDeploymentFluentBuilder {
             crate::operation::start_deployment::StartDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_deployment::StartDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_deployment::StartDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_deployment::StartDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_deployment::StartDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_deployment::StartDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_deployment::StartDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_deployment::StartDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_deployment::StartDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartDeploymentFluentBuilder {
             crate::operation::start_deployment::StartDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_deployment::StartDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_deployment::StartDeploymentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl StartDeploymentFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The environment ID.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -163,18 +135,12 @@ impl StartDeploymentFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_strategy_id(input.into());
         self
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_strategy_id(input);
         self
     }
@@ -183,18 +149,12 @@ impl StartDeploymentFluentBuilder {
         self.inner.get_deployment_strategy_id()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
@@ -203,18 +163,12 @@ impl StartDeploymentFluentBuilder {
         self.inner.get_configuration_profile_id()
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
-    pub fn configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_version(input.into());
         self
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
-    pub fn set_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_version(input);
         self
     }
@@ -241,45 +195,26 @@ impl StartDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    pub fn kms_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_identifier(input.into());
         self
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    pub fn set_kms_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_identifier(input);
         self
     }

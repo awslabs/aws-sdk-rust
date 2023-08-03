@@ -5,16 +5,16 @@ pub use crate::operation::list_app_component_recommendations::_list_app_componen
 
 impl ListAppComponentRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_app_component_recommendations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAppComponentRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppComponentRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder,
+    inner: crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder,
 }
 impl ListAppComponentRecommendationsFluentBuilder {
     /// Creates a new `ListAppComponentRecommendations`.
@@ -37,15 +37,20 @@ impl ListAppComponentRecommendationsFluentBuilder {
         }
     }
     /// Access the ListAppComponentRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_app_component_recommendations::ListAppComponentRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_app_component_recommendations::ListAppComponentRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListAppComponentRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListAppComponentRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_app_component_recommendations::ListAppComponentRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_app_component_recommendations::ListAppComponentRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator {
         crate::operation::list_app_component_recommendations::paginator::ListAppComponentRecommendationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }

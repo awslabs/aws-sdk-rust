@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RecordLifecycleActionHeartbeatOutput 
 }
 impl RecordLifecycleActionHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`RecordLifecycleActionHeartbeatOutput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput).
-    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatOutputBuilder{
+    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatOutputBuilder {
         crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatOutputBuilder::default()
     }
 }
 
 /// A builder for [`RecordLifecycleActionHeartbeatOutput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordLifecycleActionHeartbeatOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RecordLifecycleActionHeartbeatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RecordLifecycleActionHeartbeatOutput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput
-    {
+    pub fn build(self) -> crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput {
         crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput {
             _request_id: self._request_id,
         }

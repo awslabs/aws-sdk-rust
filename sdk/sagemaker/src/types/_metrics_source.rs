@@ -37,9 +37,7 @@ impl MetricsSource {
 
 /// A builder for [`MetricsSource`](crate::types::MetricsSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsSourceBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) content_digest: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl MetricsSourceBuilder {
         &self.content_type
     }
     /// <p>The hash key used for the metrics source.</p>
-    pub fn content_digest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash key used for the metrics source.</p>
-    pub fn set_content_digest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_digest = input;
         self
     }

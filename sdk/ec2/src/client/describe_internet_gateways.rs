@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`internet_gateways(Option<Vec<InternetGateway>>)`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput::internet_gateways): <p>Information about one or more internet gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInternetGatewaysError>`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysError)
-    pub fn describe_internet_gateways(
-        &self,
-    ) -> crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysFluentBuilder
-    {
+    pub fn describe_internet_gateways(&self) -> crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysFluentBuilder {
         crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

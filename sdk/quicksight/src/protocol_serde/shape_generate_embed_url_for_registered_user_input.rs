@@ -15,7 +15,10 @@ pub fn ser_generate_embed_url_for_registered_user_input(
     if let Some(var_4) = &input.experience_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ExperienceConfiguration").start_object();
-        crate::protocol_serde::shape_registered_user_embedding_experience_configuration::ser_registered_user_embedding_experience_configuration(&mut object_5, var_4)?;
+        crate::protocol_serde::shape_registered_user_embedding_experience_configuration::ser_registered_user_embedding_experience_configuration(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     if let Some(var_6) = &input.session_lifetime_in_minutes {

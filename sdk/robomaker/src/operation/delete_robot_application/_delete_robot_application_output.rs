@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRobotApplicationOutput {
 }
 impl DeleteRobotApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationOutput`](crate::operation::delete_robot_application::DeleteRobotApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_robot_application::builders::DeleteRobotApplicationOutputBuilder {
         crate::operation::delete_robot_application::builders::DeleteRobotApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRobotApplicationOutput`](crate::operation::delete_robot_application::DeleteRobotApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRobotApplicationOutputBuilder {
     _request_id: Option<String>,
 }

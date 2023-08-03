@@ -37,9 +37,7 @@ impl AssetPropertyValue {
 
 /// A builder for [`AssetPropertyValue`](crate::types::AssetPropertyValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     pub(crate) timestamp: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
@@ -52,10 +50,7 @@ impl AssetPropertyValueBuilder {
         self
     }
     /// <p>The value of the asset property.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyVariant>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyVariant>) -> Self {
         self.value = input;
         self
     }
@@ -69,10 +64,7 @@ impl AssetPropertyValueBuilder {
         self
     }
     /// <p>The asset property value timestamp.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::AssetPropertyTimestamp>) -> Self {
         self.timestamp = input;
         self
     }

@@ -42,9 +42,7 @@ impl ListFacesOutput {
 
 /// A builder for [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFacesOutputBuilder {
     pub(crate) faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl ListFacesOutputBuilder {
         self
     }
     /// <p>An array of <code>Face</code> objects. </p>
-    pub fn set_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
-    ) -> Self {
+    pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Face>>) -> Self {
         self.faces = input;
         self
     }
@@ -90,18 +85,12 @@ impl ListFacesOutputBuilder {
         &self.next_token
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_model_version = input;
         self
     }

@@ -23,9 +23,7 @@ impl Scte {
 
 /// A builder for [`Scte`](crate::types::Scte).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScteBuilder {
     pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
 }
@@ -42,17 +40,12 @@ impl ScteBuilder {
         self
     }
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub fn set_scte_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
-    ) -> Self {
+    pub fn set_scte_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>) -> Self {
         self.scte_filter = input;
         self
     }
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub fn get_scte_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>> {
+    pub fn get_scte_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>> {
         &self.scte_filter
     }
     /// Consumes the builder and constructs a [`Scte`](crate::types::Scte).

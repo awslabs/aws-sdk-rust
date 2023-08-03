@@ -8,8 +8,7 @@ pub struct ListSubscribedRuleGroupsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleGroup</code> objects.</p>
     #[doc(hidden)]
-    pub rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
+    pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListSubscribedRuleGroupsOutput {
@@ -18,9 +17,7 @@ impl ListSubscribedRuleGroupsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn rule_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SubscribedRuleGroupSummary]> {
+    pub fn rule_groups(&self) -> ::std::option::Option<&[crate::types::SubscribedRuleGroupSummary]> {
         self.rule_groups.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSubscribedRuleGroupsOutput {
 }
 impl ListSubscribedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
-    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder {
         crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
+    pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListSubscribedRuleGroupsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListSubscribedRuleGroupsOutputBuilder {
         self
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn set_rule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
-    ) -> Self {
+    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>) -> Self {
         self.rule_groups = input;
         self
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn get_rule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>> {
+    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>> {
         &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListSubscribedRuleGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
+    pub fn build(self) -> crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
             next_marker: self.next_marker,
             rule_groups: self.rule_groups,

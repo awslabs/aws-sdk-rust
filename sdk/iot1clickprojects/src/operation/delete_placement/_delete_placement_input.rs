@@ -29,27 +29,19 @@ impl DeletePlacementInput {
 
 /// A builder for [`DeletePlacementInput`](crate::operation::delete_placement::DeletePlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlacementInputBuilder {
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlacementInputBuilder {
     /// <p>The name of the empty placement to delete.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the empty placement to delete.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeletePlacementInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlacementInput`](crate::operation::delete_placement::DeletePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_placement::DeletePlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_placement::DeletePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_placement::DeletePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

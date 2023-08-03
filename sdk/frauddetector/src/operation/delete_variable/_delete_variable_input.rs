@@ -22,9 +22,7 @@ impl DeleteVariableInput {
 
 /// A builder for [`DeleteVariableInput`](crate::operation::delete_variable::DeleteVariableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVariableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteVariableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVariableInput`](crate::operation::delete_variable::DeleteVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_variable::DeleteVariableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_variable::DeleteVariableInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_variable::DeleteVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_variable::DeleteVariableInput { name: self.name })
     }
 }

@@ -10,10 +10,7 @@ impl CreateAccessPointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_point();
         fluent_builder.inner = self;
@@ -49,9 +46,7 @@ impl CreateAccessPointFluentBuilder {
         }
     }
     /// Access the CreateAccessPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +58,7 @@ impl CreateAccessPointFluentBuilder {
             crate::operation::create_access_point::CreateAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +68,7 @@ impl CreateAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +77,7 @@ impl CreateAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         let op = self
             .inner
@@ -112,9 +100,7 @@ impl CreateAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +114,7 @@ impl CreateAccessPointFluentBuilder {
             crate::operation::create_access_point::CreateAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         self.customize_middleware().await
     }
@@ -222,10 +206,7 @@ impl CreateAccessPointFluentBuilder {
     /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>
     /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
@@ -236,40 +217,26 @@ impl CreateAccessPointFluentBuilder {
         self.inner.get_vpc_configuration()
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn public_access_block_configuration(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.inner = self.inner.public_access_block_configuration(input);
         self
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn set_public_access_block_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.inner = self.inner.set_public_access_block_configuration(input);
         self
     }
     /// <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
-    pub fn get_public_access_block_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         self.inner.get_public_access_block_configuration()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn bucket_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    pub fn set_bucket_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_account_id(input);
         self
     }

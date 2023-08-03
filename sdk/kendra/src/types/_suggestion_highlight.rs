@@ -30,9 +30,7 @@ impl SuggestionHighlight {
 
 /// A builder for [`SuggestionHighlight`](crate::types::SuggestionHighlight).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestionHighlightBuilder {
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,

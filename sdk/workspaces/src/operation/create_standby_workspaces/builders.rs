@@ -26,8 +26,7 @@ impl CreateStandbyWorkspacesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder,
+    inner: crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder,
 }
 impl CreateStandbyWorkspacesFluentBuilder {
     /// Creates a new `CreateStandbyWorkspaces`.
@@ -38,10 +37,7 @@ impl CreateStandbyWorkspacesFluentBuilder {
         }
     }
     /// Access the CreateStandbyWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateStandbyWorkspacesFluentBuilder {
             crate::operation::create_standby_workspaces::CreateStandbyWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateStandbyWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateStandbyWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateStandbyWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateStandbyWorkspacesFluentBuilder {
             crate::operation::create_standby_workspaces::CreateStandbyWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_region(input.into());
         self
     }
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_region(input);
         self
     }
@@ -154,17 +133,12 @@ impl CreateStandbyWorkspacesFluentBuilder {
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn set_standby_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
-    ) -> Self {
+    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>) -> Self {
         self.inner = self.inner.set_standby_workspaces(input);
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn get_standby_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
         self.inner.get_standby_workspaces()
     }
 }

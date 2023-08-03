@@ -14,8 +14,7 @@ pub struct GenerateEmbedUrlForRegisteredUserInput {
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
     #[doc(hidden)]
-    pub experience_configuration:
-        ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
+    pub experience_configuration: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     #[doc(hidden)]
@@ -35,9 +34,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         self.user_arn.as_deref()
     }
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
-    pub fn experience_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
+    pub fn experience_configuration(&self) -> ::std::option::Option<&crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         self.experience_configuration.as_ref()
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
@@ -48,38 +45,29 @@ impl GenerateEmbedUrlForRegisteredUserInput {
 }
 impl GenerateEmbedUrlForRegisteredUserInput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserInput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder {
         crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateEmbedUrlForRegisteredUserInput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_lifetime_in_minutes: ::std::option::Option<i64>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) experience_configuration:
-        ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
+    pub(crate) experience_configuration: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
     pub(crate) allowed_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -116,10 +104,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         &self.user_arn
     }
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
-    pub fn experience_configuration(
-        mut self,
-        input: crate::types::RegisteredUserEmbeddingExperienceConfiguration,
-    ) -> Self {
+    pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.experience_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -132,9 +117,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         self
     }
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
-    pub fn get_experience_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
+    pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         &self.experience_configuration
     }
     /// Appends an item to `allowed_domains`.
@@ -143,10 +126,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     ///
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn allowed_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_domains.unwrap_or_default();
         v.push(input.into());
         self.allowed_domains = ::std::option::Option::Some(v);
@@ -154,35 +134,30 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn set_allowed_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_domains = input;
         self
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn get_allowed_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_domains
     }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserInput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput {
-                aws_account_id: self.aws_account_id
-                ,
-                session_lifetime_in_minutes: self.session_lifetime_in_minutes
-                ,
-                user_arn: self.user_arn
-                ,
-                experience_configuration: self.experience_configuration
-                ,
-                allowed_domains: self.allowed_domains
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+                user_arn: self.user_arn,
+                experience_configuration: self.experience_configuration,
+                allowed_domains: self.allowed_domains,
+            },
         )
     }
 }

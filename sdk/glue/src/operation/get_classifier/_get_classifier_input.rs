@@ -22,9 +22,7 @@ impl GetClassifierInput {
 
 /// A builder for [`GetClassifierInput`](crate::operation::get_classifier::GetClassifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassifierInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetClassifierInputBuilder {
     /// Consumes the builder and constructs a [`GetClassifierInput`](crate::operation::get_classifier::GetClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_classifier::GetClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_classifier::GetClassifierInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_classifier::GetClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_classifier::GetClassifierInput { name: self.name })
     }
 }

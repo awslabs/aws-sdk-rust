@@ -29,17 +29,14 @@ impl DisassociateLinkInput {
 }
 impl DisassociateLinkInput {
     /// Creates a new builder-style object to manufacture [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
-    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder {
         crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DisassociateLinkInputBuilder {
 }
 impl DisassociateLinkInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -97,10 +88,7 @@ impl DisassociateLinkInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_link::DisassociateLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disassociate_link::DisassociateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_link::DisassociateLinkInput {
             global_network_id: self.global_network_id,
             device_id: self.device_id,

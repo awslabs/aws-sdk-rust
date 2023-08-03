@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RemoveBackendConfigOutput {
 }
 impl RemoveBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder {
-        crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder {
+        crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveBackendConfigOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

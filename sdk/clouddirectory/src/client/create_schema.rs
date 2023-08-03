@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::operation::create_schema::CreateSchemaError)
-    pub fn create_schema(
-        &self,
-    ) -> crate::operation::create_schema::builders::CreateSchemaFluentBuilder {
-        crate::operation::create_schema::builders::CreateSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_schema(&self) -> crate::operation::create_schema::builders::CreateSchemaFluentBuilder {
+        crate::operation::create_schema::builders::CreateSchemaFluentBuilder::new(self.handle.clone())
     }
 }

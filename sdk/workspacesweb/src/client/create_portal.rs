@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::create_portal::CreatePortalOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`portal_endpoint(Option<String>)`](crate::operation::create_portal::CreatePortalOutput::portal_endpoint): <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     /// - On failure, responds with [`SdkError<CreatePortalError>`](crate::operation::create_portal::CreatePortalError)
-    pub fn create_portal(
-        &self,
-    ) -> crate::operation::create_portal::builders::CreatePortalFluentBuilder {
-        crate::operation::create_portal::builders::CreatePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_portal(&self) -> crate::operation::create_portal::builders::CreatePortalFluentBuilder {
+        crate::operation::create_portal::builders::CreatePortalFluentBuilder::new(self.handle.clone())
     }
 }

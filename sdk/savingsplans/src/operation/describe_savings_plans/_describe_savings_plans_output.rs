@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSavingsPlansOutput {
 }
 impl DescribeSavingsPlansOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOutput`](crate::operation::describe_savings_plans::DescribeSavingsPlansOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansOutputBuilder {
+    pub fn builder() -> crate::operation::describe_savings_plans::builders::DescribeSavingsPlansOutputBuilder {
         crate::operation::describe_savings_plans::builders::DescribeSavingsPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSavingsPlansOutput`](crate::operation::describe_savings_plans::DescribeSavingsPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOutputBuilder {
     pub(crate) savings_plans: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlan>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeSavingsPlansOutputBuilder {
         self
     }
     /// <p>Information about the Savings Plans.</p>
-    pub fn set_savings_plans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlan>>,
-    ) -> Self {
+    pub fn set_savings_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlan>>) -> Self {
         self.savings_plans = input;
         self
     }
     /// <p>Information about the Savings Plans.</p>
-    pub fn get_savings_plans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlan>> {
+    pub fn get_savings_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlan>> {
         &self.savings_plans
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>

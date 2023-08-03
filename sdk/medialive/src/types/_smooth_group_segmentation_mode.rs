@@ -38,13 +38,7 @@
 /// Smooth Group Segmentation Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SmoothGroupSegmentationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SmoothGroupSegmentationMode {
         match s {
             "USE_INPUT_SEGMENTATION" => SmoothGroupSegmentationMode::UseInputSegmentation,
             "USE_SEGMENT_DURATION" => SmoothGroupSegmentationMode::UseSegmentDuration,
-            other => SmoothGroupSegmentationMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SmoothGroupSegmentationMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

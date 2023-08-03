@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StopDevEnvironmentSessionOutput {
 }
 impl StopDevEnvironmentSessionOutput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
-    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder{
+    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder {
         crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentSessionOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -126,9 +124,7 @@ impl StopDevEnvironmentSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
+    pub fn build(self) -> crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
         crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
             space_name: self.space_name,
             project_name: self.project_name,

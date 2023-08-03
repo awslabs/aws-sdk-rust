@@ -38,9 +38,7 @@ impl FilterDateTimePickerControl {
         self.source_filter_id.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
@@ -61,31 +59,22 @@ impl FilterDateTimePickerControl {
 
 /// A builder for [`FilterDateTimePickerControl`](crate::types::FilterDateTimePickerControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterDateTimePickerControlBuilder {
     pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) display_options:
-        ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    pub(crate) display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
 }
 impl FilterDateTimePickerControlBuilder {
     /// <p>The ID of the <code>FilterDateTimePickerControl</code>.</p>
-    pub fn filter_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>FilterDateTimePickerControl</code>.</p>
-    pub fn set_filter_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_control_id = input;
         self
     }
@@ -108,18 +97,12 @@ impl FilterDateTimePickerControlBuilder {
         &self.title
     }
     /// <p>The source filter ID of the <code>FilterDateTimePickerControl</code>.</p>
-    pub fn source_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source filter ID of the <code>FilterDateTimePickerControl</code>.</p>
-    pub fn set_source_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_filter_id = input;
         self
     }
@@ -128,25 +111,17 @@ impl FilterDateTimePickerControlBuilder {
         &self.source_filter_id
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        mut self,
-        input: crate::types::DateTimePickerControlDisplayOptions,
-    ) -> Self {
+    pub fn display_options(mut self, input: crate::types::DateTimePickerControlDisplayOptions) -> Self {
         self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
-    ) -> Self {
+    pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>) -> Self {
         self.display_options = input;
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn get_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DateTimePickerControlDisplayOptions> {
+    pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DateTimePickerControlDisplayOptions> {
         &self.display_options
     }
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
@@ -163,10 +138,7 @@ impl FilterDateTimePickerControlBuilder {
     /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
     /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlDateTimePickerType>) -> Self {
         self.r#type = input;
         self
     }

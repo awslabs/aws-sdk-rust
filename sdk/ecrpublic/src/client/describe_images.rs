@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`image_details(Option<Vec<ImageDetail>>)`](crate::operation::describe_images::DescribeImagesOutput::image_details): <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_images::DescribeImagesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::operation::describe_images::DescribeImagesError)
-    pub fn describe_images(
-        &self,
-    ) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
-        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_images(&self) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
+        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,15 +44,12 @@ impl LaunchPermissionConfiguration {
 
 /// A builder for [`LaunchPermissionConfiguration`](crate::types::LaunchPermissionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchPermissionConfigurationBuilder {
     pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) organization_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organizational_unit_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchPermissionConfigurationBuilder {
     /// Appends an item to `user_ids`.
@@ -67,10 +64,7 @@ impl LaunchPermissionConfigurationBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_ids = input;
         self
     }
@@ -90,17 +84,12 @@ impl LaunchPermissionConfigurationBuilder {
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_user_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_groups = input;
         self
     }
     /// <p>The name of the group.</p>
-    pub fn get_user_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_groups
     }
     /// Appends an item to `organization_arns`.
@@ -108,27 +97,19 @@ impl LaunchPermissionConfigurationBuilder {
     /// To override the contents of this collection use [`set_organization_arns`](Self::set_organization_arns).
     ///
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    pub fn organization_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_arns.unwrap_or_default();
         v.push(input.into());
         self.organization_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    pub fn set_organization_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organization_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organization_arns = input;
         self
     }
     /// <p>The ARN for an Amazon Web Services Organization that you want to share your AMI with. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What is Organizations?</a>.</p>
-    pub fn get_organization_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organization_arns
     }
     /// Appends an item to `organizational_unit_arns`.
@@ -136,27 +117,19 @@ impl LaunchPermissionConfigurationBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_arns`](Self::set_organizational_unit_arns).
     ///
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    pub fn organizational_unit_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_arns.unwrap_or_default();
         v.push(input.into());
         self.organizational_unit_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    pub fn set_organizational_unit_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organizational_unit_arns = input;
         self
     }
     /// <p>The ARN for an Organizations organizational unit (OU) that you want to share your AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations terminology and concepts</a>.</p>
-    pub fn get_organizational_unit_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_arns
     }
     /// Consumes the builder and constructs a [`LaunchPermissionConfiguration`](crate::types::LaunchPermissionConfiguration).

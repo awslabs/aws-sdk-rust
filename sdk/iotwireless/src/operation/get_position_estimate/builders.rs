@@ -37,9 +37,7 @@ impl GetPositionEstimateFluentBuilder {
         }
     }
     /// Access the GetPositionEstimate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetPositionEstimateFluentBuilder {
             crate::operation::get_position_estimate::GetPositionEstimate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_estimate::GetPositionEstimateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetPositionEstimateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetPositionEstimateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_estimate::GetPositionEstimateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_estimate::GetPositionEstimateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetPositionEstimateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_estimate::GetPositionEstimateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_estimate::GetPositionEstimateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetPositionEstimateFluentBuilder {
             crate::operation::get_position_estimate::GetPositionEstimate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_estimate::GetPositionEstimateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn set_wi_fi_access_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
-    ) -> Self {
+    pub fn set_wi_fi_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>) -> Self {
         self.inner = self.inner.set_wi_fi_access_points(input);
         self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn get_wi_fi_access_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
+    pub fn get_wi_fi_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
         self.inner.get_wi_fi_access_points()
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
@@ -151,10 +133,7 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
-    pub fn set_cell_towers(
-        mut self,
-        input: ::std::option::Option<crate::types::CellTowers>,
-    ) -> Self {
+    pub fn set_cell_towers(mut self, input: ::std::option::Option<crate::types::CellTowers>) -> Self {
         self.inner = self.inner.set_cell_towers(input);
         self
     }
@@ -196,10 +175,7 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
     }

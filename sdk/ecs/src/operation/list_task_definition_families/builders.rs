@@ -27,7 +27,7 @@ impl ListTaskDefinitionFamiliesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTaskDefinitionFamiliesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder,
+    inner: crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder,
 }
 impl ListTaskDefinitionFamiliesFluentBuilder {
     /// Creates a new `ListTaskDefinitionFamilies`.
@@ -38,7 +38,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
         }
     }
     /// Access the ListTaskDefinitionFamilies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
             crate::operation::list_task_definition_families::ListTaskDefinitionFamilies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError>,
     > {
         self.send_middleware().await
     }
@@ -115,31 +106,23 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
             crate::operation::list_task_definition_families::ListTaskDefinitionFamilies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_task_definition_families::paginator::ListTaskDefinitionFamiliesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_task_definition_families::paginator::ListTaskDefinitionFamiliesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_task_definition_families::paginator::ListTaskDefinitionFamiliesPaginator {
         crate::operation::list_task_definition_families::paginator::ListTaskDefinitionFamiliesPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
-    pub fn family_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn family_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.family_prefix(input.into());
         self
     }
     /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
-    pub fn set_family_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_family_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_family_prefix(input);
         self
     }
@@ -153,10 +136,7 @@ impl ListTaskDefinitionFamiliesFluentBuilder {
         self
     }
     /// <p>The task definition family status to filter the <code>ListTaskDefinitionFamilies</code> results with. By default, both <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed. If this parameter is set to <code>ACTIVE</code>, only task definition families that have an <code>ACTIVE</code> task definition revision are returned. If this parameter is set to <code>INACTIVE</code>, only task definition families that do not have any <code>ACTIVE</code> task definition revisions are returned. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

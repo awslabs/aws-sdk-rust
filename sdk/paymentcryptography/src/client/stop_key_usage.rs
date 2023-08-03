@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopKeyUsageOutput`](crate::operation::stop_key_usage::StopKeyUsageOutput) with field(s):
     ///   - [`key(Option<Key>)`](crate::operation::stop_key_usage::StopKeyUsageOutput::key): <p>The <code>KeyARN</code> of the key.</p>
     /// - On failure, responds with [`SdkError<StopKeyUsageError>`](crate::operation::stop_key_usage::StopKeyUsageError)
-    pub fn stop_key_usage(
-        &self,
-    ) -> crate::operation::stop_key_usage::builders::StopKeyUsageFluentBuilder {
-        crate::operation::stop_key_usage::builders::StopKeyUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_key_usage(&self) -> crate::operation::stop_key_usage::builders::StopKeyUsageFluentBuilder {
+        crate::operation::stop_key_usage::builders::StopKeyUsageFluentBuilder::new(self.handle.clone())
     }
 }

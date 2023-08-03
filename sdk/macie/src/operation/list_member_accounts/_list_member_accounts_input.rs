@@ -22,17 +22,14 @@ impl ListMemberAccountsInput {
 }
 impl ListMemberAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder {
+    pub fn builder() -> crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder {
         crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMemberAccountsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListMemberAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_member_accounts::ListMemberAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_member_accounts::ListMemberAccountsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_member_accounts::ListMemberAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_member_accounts::ListMemberAccountsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`event_stream_arn(Option<String>)`](crate::operation::create_event_stream::CreateEventStreamOutput::event_stream_arn): <p>A unique identifier for the event stream.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_event_stream::CreateEventStreamOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<CreateEventStreamError>`](crate::operation::create_event_stream::CreateEventStreamError)
-    pub fn create_event_stream(
-        &self,
-    ) -> crate::operation::create_event_stream::builders::CreateEventStreamFluentBuilder {
-        crate::operation::create_event_stream::builders::CreateEventStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_event_stream(&self) -> crate::operation::create_event_stream::builders::CreateEventStreamFluentBuilder {
+        crate::operation::create_event_stream::builders::CreateEventStreamFluentBuilder::new(self.handle.clone())
     }
 }

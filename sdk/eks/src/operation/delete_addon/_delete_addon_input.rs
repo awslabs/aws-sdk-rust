@@ -36,9 +36,7 @@ impl DeleteAddonInput {
 
 /// A builder for [`DeleteAddonInput`](crate::operation::delete_addon::DeleteAddonInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAddonInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl DeleteAddonInputBuilder {
         &self.preserve
     }
     /// Consumes the builder and constructs a [`DeleteAddonInput`](crate::operation::delete_addon::DeleteAddonInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_addon::DeleteAddonInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_addon::DeleteAddonInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_addon::DeleteAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

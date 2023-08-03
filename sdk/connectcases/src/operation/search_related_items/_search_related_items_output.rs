@@ -8,9 +8,7 @@ pub struct SearchRelatedItemsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of items related to a case. </p>
     #[doc(hidden)]
-    pub related_items: ::std::option::Option<
-        ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
-    >,
+    pub related_items: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
     _request_id: Option<String>,
 }
 impl SearchRelatedItemsOutput {
@@ -19,10 +17,7 @@ impl SearchRelatedItemsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of items related to a case. </p>
-    pub fn related_items(
-        &self,
-    ) -> ::std::option::Option<&[::std::option::Option<crate::types::SearchRelatedItemsResponseItem>]>
-    {
+    pub fn related_items(&self) -> ::std::option::Option<&[::std::option::Option<crate::types::SearchRelatedItemsResponseItem>]> {
         self.related_items.as_deref()
     }
 }
@@ -33,22 +28,17 @@ impl ::aws_http::request_id::RequestId for SearchRelatedItemsOutput {
 }
 impl SearchRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder {
+    pub fn builder() -> crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder {
         crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRelatedItemsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) related_items: ::std::option::Option<
-        ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
-    >,
+    pub(crate) related_items: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
     _request_id: Option<String>,
 }
 impl SearchRelatedItemsOutputBuilder {
@@ -71,10 +61,7 @@ impl SearchRelatedItemsOutputBuilder {
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
     ///
     /// <p>A list of items related to a case. </p>
-    pub fn related_items(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchRelatedItemsResponseItem>,
-    ) -> Self {
+    pub fn related_items(mut self, input: ::std::option::Option<crate::types::SearchRelatedItemsResponseItem>) -> Self {
         let mut v = self.related_items.unwrap_or_default();
         v.push(input);
         self.related_items = ::std::option::Option::Some(v);
@@ -83,19 +70,13 @@ impl SearchRelatedItemsOutputBuilder {
     /// <p>A list of items related to a case. </p>
     pub fn set_related_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,
     ) -> Self {
         self.related_items = input;
         self
     }
     /// <p>A list of items related to a case. </p>
-    pub fn get_related_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>,
-    > {
+    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>> {
         &self.related_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

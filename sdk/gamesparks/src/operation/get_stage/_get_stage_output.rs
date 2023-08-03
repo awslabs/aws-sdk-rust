@@ -28,9 +28,7 @@ impl GetStageOutput {
 
 /// A builder for [`GetStageOutput`](crate::operation::get_stage::GetStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageOutputBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::StageDetails>,
     _request_id: Option<String>,

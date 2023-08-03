@@ -15,33 +15,25 @@ impl DeleteProvisioningTemplateInput {
 }
 impl DeleteProvisioningTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
-    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder {
         crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisioningTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProvisioningTemplateInputBuilder {
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet provision template to delete.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteProvisioningTemplateInputBuilder {
         crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput {
-                template_name: self.template_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput {
+            template_name: self.template_name,
+        })
     }
 }

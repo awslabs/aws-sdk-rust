@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`assignment(Option<Assignment>)`](crate::operation::get_assignment::GetAssignmentOutput::assignment): <p> The assignment. The response includes one Assignment element. </p>
     ///   - [`hit(Option<Hit>)`](crate::operation::get_assignment::GetAssignmentOutput::hit): <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     /// - On failure, responds with [`SdkError<GetAssignmentError>`](crate::operation::get_assignment::GetAssignmentError)
-    pub fn get_assignment(
-        &self,
-    ) -> crate::operation::get_assignment::builders::GetAssignmentFluentBuilder {
-        crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_assignment(&self) -> crate::operation::get_assignment::builders::GetAssignmentFluentBuilder {
+        crate::operation::get_assignment::builders::GetAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

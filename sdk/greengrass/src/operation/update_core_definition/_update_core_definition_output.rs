@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCoreDefinitionOutput {
 }
 impl UpdateCoreDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCoreDefinitionOutput`](crate::operation::update_core_definition::UpdateCoreDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::update_core_definition::builders::UpdateCoreDefinitionOutputBuilder {
         crate::operation::update_core_definition::builders::UpdateCoreDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCoreDefinitionOutput`](crate::operation::update_core_definition::UpdateCoreDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCoreDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

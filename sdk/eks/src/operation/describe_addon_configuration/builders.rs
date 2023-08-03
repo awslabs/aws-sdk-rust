@@ -26,7 +26,7 @@ impl DescribeAddonConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAddonConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder,
+    inner: crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder,
 }
 impl DescribeAddonConfigurationFluentBuilder {
     /// Creates a new `DescribeAddonConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeAddonConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeAddonConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAddonConfigurationFluentBuilder {
             crate::operation::describe_addon_configuration::DescribeAddonConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_configuration::DescribeAddonConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_configuration::DescribeAddonConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAddonConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAddonConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_configuration::DescribeAddonConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_configuration::DescribeAddonConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAddonConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_configuration::DescribeAddonConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_configuration::DescribeAddonConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAddonConfigurationFluentBuilder {
             crate::operation::describe_addon_configuration::DescribeAddonConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_configuration::DescribeAddonConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_configuration::DescribeAddonConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeAddonConfigurationFluentBuilder {
         self.inner.get_addon_name()
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn addon_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addon_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.addon_version(input.into());
         self
     }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    pub fn set_addon_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_addon_version(input);
         self
     }

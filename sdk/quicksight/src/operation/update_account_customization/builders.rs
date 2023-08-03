@@ -27,7 +27,7 @@ impl UpdateAccountCustomizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountCustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder,
+    inner: crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder,
 }
 impl UpdateAccountCustomizationFluentBuilder {
     /// Creates a new `UpdateAccountCustomization`.
@@ -38,7 +38,7 @@ impl UpdateAccountCustomizationFluentBuilder {
         }
     }
     /// Access the UpdateAccountCustomization as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateAccountCustomizationFluentBuilder {
             crate::operation::update_account_customization::UpdateAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_customization::UpdateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_customization::UpdateAccountCustomizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateAccountCustomizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_customization::UpdateAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_customization::UpdateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_customization::UpdateAccountCustomizationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_customization::UpdateAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_customization::UpdateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_customization::UpdateAccountCustomizationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateAccountCustomizationFluentBuilder {
             crate::operation::update_account_customization::UpdateAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_customization::UpdateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_customization::UpdateAccountCustomizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -161,17 +144,12 @@ impl UpdateAccountCustomizationFluentBuilder {
         self
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn set_account_customization(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountCustomization>,
-    ) -> Self {
+    pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.inner = self.inner.set_account_customization(input);
         self
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn get_account_customization(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+    pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         self.inner.get_account_customization()
     }
 }

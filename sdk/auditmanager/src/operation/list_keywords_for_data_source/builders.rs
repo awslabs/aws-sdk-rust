@@ -26,7 +26,7 @@ impl ListKeywordsForDataSourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder,
+    inner: crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder,
 }
 impl ListKeywordsForDataSourceFluentBuilder {
     /// Creates a new `ListKeywordsForDataSource`.
@@ -37,7 +37,7 @@ impl ListKeywordsForDataSourceFluentBuilder {
         }
     }
     /// Access the ListKeywordsForDataSource as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListKeywordsForDataSourceFluentBuilder {
             crate::operation::list_keywords_for_data_source::ListKeywordsForDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListKeywordsForDataSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListKeywordsForDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListKeywordsForDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListKeywordsForDataSourceFluentBuilder {
             crate::operation::list_keywords_for_data_source::ListKeywordsForDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_keywords_for_data_source::paginator::ListKeywordsForDataSourcePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_keywords_for_data_source::paginator::ListKeywordsForDataSourcePaginator{
+    pub fn into_paginator(self) -> crate::operation::list_keywords_for_data_source::paginator::ListKeywordsForDataSourcePaginator {
         crate::operation::list_keywords_for_data_source::paginator::ListKeywordsForDataSourcePaginator::new(self.handle, self.inner)
     }
     /// <p> The control mapping data source that the keywords apply to. </p>

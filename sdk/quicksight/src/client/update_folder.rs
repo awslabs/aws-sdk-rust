@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`folder_id(Option<String>)`](crate::operation::update_folder::UpdateFolderOutput::folder_id): <p>The ID of the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_folder::UpdateFolderOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateFolderError>`](crate::operation::update_folder::UpdateFolderError)
-    pub fn update_folder(
-        &self,
-    ) -> crate::operation::update_folder::builders::UpdateFolderFluentBuilder {
-        crate::operation::update_folder::builders::UpdateFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_folder(&self) -> crate::operation::update_folder::builders::UpdateFolderFluentBuilder {
+        crate::operation::update_folder::builders::UpdateFolderFluentBuilder::new(self.handle.clone())
     }
 }

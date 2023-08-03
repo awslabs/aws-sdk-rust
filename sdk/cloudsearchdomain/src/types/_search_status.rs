@@ -30,9 +30,7 @@ impl SearchStatus {
 
 /// A builder for [`SearchStatus`](crate::types::SearchStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchStatusBuilder {
     pub(crate) timems: ::std::option::Option<i64>,
     pub(crate) rid: ::std::option::Option<::std::string::String>,

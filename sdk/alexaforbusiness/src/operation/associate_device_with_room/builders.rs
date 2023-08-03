@@ -27,8 +27,7 @@ impl AssociateDeviceWithRoomInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithRoomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder,
+    inner: crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder,
 }
 impl AssociateDeviceWithRoomFluentBuilder {
     /// Creates a new `AssociateDeviceWithRoom`.
@@ -39,10 +38,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
         }
     }
     /// Access the AssociateDeviceWithRoom as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
             crate::operation::associate_device_with_room::AssociateDeviceWithRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_room::AssociateDeviceWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_room::AssociateDeviceWithRoomError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_room::AssociateDeviceWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_room::AssociateDeviceWithRoomError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_room::AssociateDeviceWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_room::AssociateDeviceWithRoomError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl AssociateDeviceWithRoomFluentBuilder {
             crate::operation::associate_device_with_room::AssociateDeviceWithRoom,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_room::AssociateDeviceWithRoomError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_room::AssociateDeviceWithRoomError>,
     > {
         self.customize_middleware().await
     }

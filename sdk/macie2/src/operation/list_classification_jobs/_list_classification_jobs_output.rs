@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListClassificationJobsOutput {
 }
 impl ListClassificationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListClassificationJobsOutput`](crate::operation::list_classification_jobs::ListClassificationJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_classification_jobs::builders::ListClassificationJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_classification_jobs::builders::ListClassificationJobsOutputBuilder {
         crate::operation::list_classification_jobs::builders::ListClassificationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClassificationJobsOutput`](crate::operation::list_classification_jobs::ListClassificationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClassificationJobsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListClassificationJobsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.items = input;
         self
     }

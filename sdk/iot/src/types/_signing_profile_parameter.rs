@@ -37,9 +37,7 @@ impl SigningProfileParameter {
 
 /// A builder for [`SigningProfileParameter`](crate::types::SigningProfileParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningProfileParameterBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SigningProfileParameterBuilder {
 }
 impl SigningProfileParameterBuilder {
     /// <p>Certificate ARN.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Certificate ARN.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -81,18 +73,12 @@ impl SigningProfileParameterBuilder {
         &self.platform
     }
     /// <p>The location of the code-signing certificate on your device.</p>
-    pub fn certificate_path_on_device(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_path_on_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_path_on_device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the code-signing certificate on your device.</p>
-    pub fn set_certificate_path_on_device(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_path_on_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_path_on_device = input;
         self
     }

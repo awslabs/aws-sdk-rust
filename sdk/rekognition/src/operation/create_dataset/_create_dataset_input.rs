@@ -36,9 +36,7 @@ impl CreateDatasetInput {
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,
@@ -51,10 +49,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
-    pub fn set_dataset_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetSource>,
-    ) -> Self {
+    pub fn set_dataset_source(mut self, input: ::std::option::Option<crate::types::DatasetSource>) -> Self {
         self.dataset_source = input;
         self
     }
@@ -68,10 +63,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -96,10 +88,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             dataset_source: self.dataset_source,
             dataset_type: self.dataset_type,

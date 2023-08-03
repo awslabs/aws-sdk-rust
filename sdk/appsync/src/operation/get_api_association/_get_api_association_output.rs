@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetApiAssociationOutput {
 }
 impl GetApiAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetApiAssociationOutput`](crate::operation::get_api_association::GetApiAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder {
         crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApiAssociationOutput`](crate::operation::get_api_association::GetApiAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiAssociationOutputBuilder {
     pub(crate) api_association: ::std::option::Option<crate::types::ApiAssociation>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetApiAssociationOutputBuilder {
         self
     }
     /// <p>The <code>ApiAssociation</code> object.</p>
-    pub fn set_api_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiAssociation>,
-    ) -> Self {
+    pub fn set_api_association(mut self, input: ::std::option::Option<crate::types::ApiAssociation>) -> Self {
         self.api_association = input;
         self
     }

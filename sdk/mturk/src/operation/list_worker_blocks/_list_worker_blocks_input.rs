@@ -22,17 +22,14 @@ impl ListWorkerBlocksInput {
 }
 impl ListWorkerBlocksInput {
     /// Creates a new builder-style object to manufacture [`ListWorkerBlocksInput`](crate::operation::list_worker_blocks::ListWorkerBlocksInput).
-    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksInputBuilder {
         crate::operation::list_worker_blocks::builders::ListWorkerBlocksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerBlocksInput`](crate::operation::list_worker_blocks::ListWorkerBlocksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerBlocksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListWorkerBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkerBlocksInput`](crate::operation::list_worker_blocks::ListWorkerBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_worker_blocks::ListWorkerBlocksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_worker_blocks::ListWorkerBlocksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_worker_blocks::ListWorkerBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_worker_blocks::ListWorkerBlocksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

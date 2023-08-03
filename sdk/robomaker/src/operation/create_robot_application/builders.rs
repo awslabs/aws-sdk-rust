@@ -37,10 +37,7 @@ impl CreateRobotApplicationFluentBuilder {
         }
     }
     /// Access the CreateRobotApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_robot_application::builders::CreateRobotApplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_robot_application::builders::CreateRobotApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateRobotApplicationFluentBuilder {
             crate::operation::create_robot_application::CreateRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application::CreateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application::CreateRobotApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateRobotApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_robot_application::CreateRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application::CreateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application::CreateRobotApplicationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_robot_application::CreateRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application::CreateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application::CreateRobotApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateRobotApplicationFluentBuilder {
             crate::operation::create_robot_application::CreateRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_robot_application::CreateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_robot_application::CreateRobotApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl CreateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
         self.inner.get_sources()
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
@@ -166,17 +147,12 @@ impl CreateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         self.inner.get_robot_software_suite()
     }
     /// Adds a key-value pair to `tags`.
@@ -184,30 +160,17 @@ impl CreateRobotApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
@@ -216,10 +179,7 @@ impl CreateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }

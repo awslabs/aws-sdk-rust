@@ -6,18 +6,12 @@
 pub struct GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
     #[doc(hidden)]
-    pub events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    pub fn events(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn events(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.events.as_ref()
     }
 }
@@ -28,21 +22,16 @@ impl ::aws_http::request_id::RequestId for GetCognitoEventsOutput {
 }
 impl GetCognitoEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetCognitoEventsOutput`](crate::operation::get_cognito_events::GetCognitoEventsOutput).
-    pub fn builder() -> crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder {
         crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCognitoEventsOutput`](crate::operation::get_cognito_events::GetCognitoEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCognitoEventsOutputBuilder {
-    pub(crate) events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) events: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCognitoEventsOutputBuilder {
@@ -51,32 +40,19 @@ impl GetCognitoEventsOutputBuilder {
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    pub fn events(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn events(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.events = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_events(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

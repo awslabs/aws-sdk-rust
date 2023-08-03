@@ -16,17 +16,14 @@ impl TranscriptionMessagesConcatenationConfiguration {
 }
 impl TranscriptionMessagesConcatenationConfiguration {
     /// Creates a new builder-style object to manufacture [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder {
         crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptionMessagesConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
@@ -37,10 +34,7 @@ impl TranscriptionMessagesConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
         self.state = input;
         self
     }

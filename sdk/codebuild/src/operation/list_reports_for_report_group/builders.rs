@@ -26,7 +26,7 @@ impl ListReportsForReportGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReportsForReportGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder,
+    inner: crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder,
 }
 impl ListReportsForReportGroupFluentBuilder {
     /// Creates a new `ListReportsForReportGroup`.
@@ -37,7 +37,7 @@ impl ListReportsForReportGroupFluentBuilder {
         }
     }
     /// Access the ListReportsForReportGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListReportsForReportGroupFluentBuilder {
             crate::operation::list_reports_for_report_group::ListReportsForReportGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reports_for_report_group::ListReportsForReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reports_for_report_group::ListReportsForReportGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListReportsForReportGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListReportsForReportGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reports_for_report_group::ListReportsForReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reports_for_report_group::ListReportsForReportGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListReportsForReportGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reports_for_report_group::ListReportsForReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reports_for_report_group::ListReportsForReportGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListReportsForReportGroupFluentBuilder {
             crate::operation::list_reports_for_report_group::ListReportsForReportGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reports_for_report_group::ListReportsForReportGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reports_for_report_group::ListReportsForReportGroupError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator {
         crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::new(self.handle, self.inner)
     }
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    pub fn report_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_group_arn(input.into());
         self
     }
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    pub fn set_report_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_group_arn(input);
         self
     }
@@ -166,10 +149,7 @@ impl ListReportsForReportGroupFluentBuilder {
         self
     }
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

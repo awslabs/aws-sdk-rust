@@ -38,9 +38,7 @@ impl RegistrationOutput {
 
 /// A builder for [`RegistrationOutput`](crate::types::RegistrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<::std::string::String>,
@@ -81,10 +79,7 @@ impl RegistrationOutputBuilder {
         self
     }
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }

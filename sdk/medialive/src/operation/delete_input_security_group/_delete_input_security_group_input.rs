@@ -16,35 +16,25 @@ impl DeleteInputSecurityGroupInput {
 }
 impl DeleteInputSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder {
         crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInputSecurityGroupInputBuilder {
     /// The Input Security Group to delete
-    pub fn input_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The Input Security Group to delete
-    pub fn set_input_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_security_group_id = input;
         self
     }
@@ -59,10 +49,8 @@ impl DeleteInputSecurityGroupInputBuilder {
         crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput {
+            input_security_group_id: self.input_security_group_id,
+        })
     }
 }

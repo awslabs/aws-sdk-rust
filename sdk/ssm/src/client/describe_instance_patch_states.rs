@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`instance_patch_states(Option<Vec<InstancePatchState>>)`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput::instance_patch_states): <p>The high-level patch state for the requested managed nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesError>`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError)
-    pub fn describe_instance_patch_states(&self) -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder{
+    pub fn describe_instance_patch_states(
+        &self,
+    ) -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder {
         crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::new(self.handle.clone())
     }
 }

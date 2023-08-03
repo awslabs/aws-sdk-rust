@@ -24,10 +24,7 @@ pub fn ser_put_compliance_items_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_compliance_item_entry::ser_compliance_item_entry(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_compliance_item_entry::ser_compliance_item_entry(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

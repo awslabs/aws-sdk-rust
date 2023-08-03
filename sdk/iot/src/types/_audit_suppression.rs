@@ -51,9 +51,7 @@ impl AuditSuppression {
 
 /// A builder for [`AuditSuppression`](crate::types::AuditSuppression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditSuppressionBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -82,17 +80,12 @@ impl AuditSuppressionBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
@@ -101,10 +94,7 @@ impl AuditSuppressionBuilder {
         self
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }

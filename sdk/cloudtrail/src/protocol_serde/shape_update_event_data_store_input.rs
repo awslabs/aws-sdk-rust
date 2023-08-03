@@ -15,10 +15,7 @@ pub fn ser_update_event_data_store_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_advanced_event_selector::ser_advanced_event_selector(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_advanced_event_selector::ser_advanced_event_selector(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

@@ -28,9 +28,7 @@ impl GetHomeRegionOutput {
 
 /// A builder for [`GetHomeRegionOutput`](crate::operation::get_home_region::GetHomeRegionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHomeRegionOutputBuilder {
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

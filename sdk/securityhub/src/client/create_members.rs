@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMembersOutput`](crate::operation::create_members::CreateMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::create_members::CreateMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::operation::create_members::CreateMembersError)
-    pub fn create_members(
-        &self,
-    ) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
-        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_members(&self) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
+        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(self.handle.clone())
     }
 }

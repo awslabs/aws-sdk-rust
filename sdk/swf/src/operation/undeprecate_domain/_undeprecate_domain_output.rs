@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UndeprecateDomainOutput {
 }
 impl UndeprecateDomainOutput {
     /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::operation::undeprecate_domain::UndeprecateDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_domain::builders::UndeprecateDomainOutputBuilder {
+    pub fn builder() -> crate::operation::undeprecate_domain::builders::UndeprecateDomainOutputBuilder {
         crate::operation::undeprecate_domain::builders::UndeprecateDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UndeprecateDomainOutput`](crate::operation::undeprecate_domain::UndeprecateDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeprecateDomainOutputBuilder {
     _request_id: Option<String>,
 }

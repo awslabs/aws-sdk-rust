@@ -9,92 +9,87 @@ pub fn de_get_credential_report_http_error(
     crate::operation::get_credential_report::GetCredentialReportError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_credential_report::GetCredentialReportError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::get_credential_report::GetCredentialReportError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ReportExpired" => crate::operation::get_credential_report::GetCredentialReportError::CredentialReportExpiredException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CredentialReportExpiredExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_credential_report_expired_exception::de_credential_report_expired_exception_xml_err(_response_body, output).map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CredentialReportExpiredExceptionBuilder::default();
+                output = crate::protocol_serde::shape_credential_report_expired_exception::de_credential_report_expired_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReportNotPresent" => crate::operation::get_credential_report::GetCredentialReportError::CredentialReportNotPresentException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CredentialReportNotPresentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_credential_report_not_present_exception::de_credential_report_not_present_exception_xml_err(_response_body, output).map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CredentialReportNotPresentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_credential_report_not_present_exception::de_credential_report_not_present_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReportInProgress" => crate::operation::get_credential_report::GetCredentialReportError::CredentialReportNotReadyException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CredentialReportNotReadyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_credential_report_not_ready_exception::de_credential_report_not_ready_exception_xml_err(_response_body, output).map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CredentialReportNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_credential_report_not_ready_exception::de_credential_report_not_ready_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceFailure" => crate::operation::get_credential_report::GetCredentialReportError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_credential_report::GetCredentialReportError::generic(generic)
+        _ => crate::operation::get_credential_report::GetCredentialReportError::generic(generic),
     })
 }
 
@@ -110,14 +105,9 @@ pub fn de_get_credential_report_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_credential_report::builders::GetCredentialReportOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_credential_report::de_get_credential_report(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_credential_report::de_get_credential_report(_response_body, output)
+            .map_err(crate::operation::get_credential_report::GetCredentialReportError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -126,10 +116,7 @@ pub fn de_get_credential_report_http_response_with_props(
 pub fn de_get_credential_report(
     inp: &[u8],
     mut builder: crate::operation::get_credential_report::builders::GetCredentialReportOutputBuilder,
-) -> Result<
-    crate::operation::get_credential_report::builders::GetCredentialReportOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_credential_report::builders::GetCredentialReportOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -197,9 +184,7 @@ pub fn de_get_credential_report(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetCredentialReportResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetCredentialReportResult tag"));
     };
     Ok(builder)
 }

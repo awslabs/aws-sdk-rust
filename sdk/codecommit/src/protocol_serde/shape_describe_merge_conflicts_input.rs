@@ -7,9 +7,7 @@ pub fn ser_describe_merge_conflicts_input(
         object.key("repositoryName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.destination_commit_specifier {
-        object
-            .key("destinationCommitSpecifier")
-            .string(var_2.as_str());
+        object.key("destinationCommitSpecifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.source_commit_specifier {
         object.key("sourceCommitSpecifier").string(var_3.as_str());
@@ -30,9 +28,7 @@ pub fn ser_describe_merge_conflicts_input(
         object.key("conflictDetailLevel").string(var_7.as_str());
     }
     if let Some(var_8) = &input.conflict_resolution_strategy {
-        object
-            .key("conflictResolutionStrategy")
-            .string(var_8.as_str());
+        object.key("conflictResolutionStrategy").string(var_8.as_str());
     }
     if let Some(var_9) = &input.next_token {
         object.key("nextToken").string(var_9.as_str());

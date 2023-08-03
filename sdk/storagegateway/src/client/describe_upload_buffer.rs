@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`upload_buffer_used_in_bytes(i64)`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput::upload_buffer_used_in_bytes): <p>The total number of bytes being used in the gateway's upload buffer.</p>
     ///   - [`upload_buffer_allocated_in_bytes(i64)`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput::upload_buffer_allocated_in_bytes): <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     /// - On failure, responds with [`SdkError<DescribeUploadBufferError>`](crate::operation::describe_upload_buffer::DescribeUploadBufferError)
-    pub fn describe_upload_buffer(
-        &self,
-    ) -> crate::operation::describe_upload_buffer::builders::DescribeUploadBufferFluentBuilder {
-        crate::operation::describe_upload_buffer::builders::DescribeUploadBufferFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_upload_buffer(&self) -> crate::operation::describe_upload_buffer::builders::DescribeUploadBufferFluentBuilder {
+        crate::operation::describe_upload_buffer::builders::DescribeUploadBufferFluentBuilder::new(self.handle.clone())
     }
 }

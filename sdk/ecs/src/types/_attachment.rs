@@ -44,9 +44,7 @@ impl Attachment {
 
 /// A builder for [`Attachment`](crate::types::Attachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -108,17 +106,12 @@ impl AttachmentBuilder {
         self
     }
     /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.details = input;
         self
     }
     /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).

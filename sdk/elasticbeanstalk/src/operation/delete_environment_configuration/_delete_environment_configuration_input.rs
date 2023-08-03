@@ -23,34 +23,26 @@ impl DeleteEnvironmentConfigurationInput {
 }
 impl DeleteEnvironmentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentConfigurationInput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput).
-    pub fn builder() -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder {
         crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentConfigurationInput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentConfigurationInputBuilder {
     /// <p>The name of the application the environment is associated with.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application the environment is associated with.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl DeleteEnvironmentConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -85,13 +71,9 @@ impl DeleteEnvironmentConfigurationInputBuilder {
         crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput {
-                application_name: self.application_name
-                ,
-                environment_name: self.environment_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput {
+            application_name: self.application_name,
+            environment_name: self.environment_name,
+        })
     }
 }

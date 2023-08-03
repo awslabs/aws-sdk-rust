@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`storage_config(InstanceStorageConfig)`](crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigFluentBuilder::storage_config) / [`set_storage_config(Option<InstanceStorageConfig>)`](crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigFluentBuilder::set_storage_config): <p>The storage configuration for the instance.</p>
     /// - On success, responds with [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateInstanceStorageConfigError>`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigError)
-    pub fn update_instance_storage_config(&self) -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigFluentBuilder{
+    pub fn update_instance_storage_config(
+        &self,
+    ) -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigFluentBuilder {
         crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigFluentBuilder::new(self.handle.clone())
     }
 }

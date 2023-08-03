@@ -5,8 +5,7 @@
 pub struct ListDataQualityJobDefinitionsOutput {
     /// <p>A list of data quality monitoring job definitions.</p>
     #[doc(hidden)]
-    pub job_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
+    pub job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDataQualityJobDefinitionsOutput {
 }
 impl ListDataQualityJobDefinitionsOutput {
     /// <p>A list of data quality monitoring job definitions.</p>
-    pub fn job_definition_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
+    pub fn job_definition_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
         self.job_definition_summaries.as_deref()
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataQualityJobDefinitionsOutput {
 }
 impl ListDataQualityJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityJobDefinitionsOutput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsOutputBuilder {
         crate::operation::list_data_quality_job_definitions::builders::ListDataQualityJobDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityJobDefinitionsOutput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityJobDefinitionsOutputBuilder {
-    pub(crate) job_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
+    pub(crate) job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListDataQualityJobDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_job_definition_summaries`](Self::set_job_definition_summaries).
     ///
     /// <p>A list of data quality monitoring job definitions.</p>
-    pub fn job_definition_summaries(
-        mut self,
-        input: crate::types::MonitoringJobDefinitionSummary,
-    ) -> Self {
+    pub fn job_definition_summaries(mut self, input: crate::types::MonitoringJobDefinitionSummary) -> Self {
         let mut v = self.job_definition_summaries.unwrap_or_default();
         v.push(input);
         self.job_definition_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListDataQualityJobDefinitionsOutputBuilder {
         self
     }
     /// <p>A list of data quality monitoring job definitions.</p>
-    pub fn get_job_definition_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
+    pub fn get_job_definition_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
         &self.job_definition_summaries
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
@@ -100,10 +89,7 @@ impl ListDataQualityJobDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataQualityJobDefinitionsOutput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput {
         crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsOutput {
             job_definition_summaries: self.job_definition_summaries,
             next_token: self.next_token,

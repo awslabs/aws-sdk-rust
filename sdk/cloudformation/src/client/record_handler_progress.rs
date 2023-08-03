@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder::set_client_request_token): <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
     /// - On success, responds with [`RecordHandlerProgressOutput`](crate::operation::record_handler_progress::RecordHandlerProgressOutput)
     /// - On failure, responds with [`SdkError<RecordHandlerProgressError>`](crate::operation::record_handler_progress::RecordHandlerProgressError)
-    pub fn record_handler_progress(
-        &self,
-    ) -> crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder
-    {
-        crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn record_handler_progress(&self) -> crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder {
+        crate::operation::record_handler_progress::builders::RecordHandlerProgressFluentBuilder::new(self.handle.clone())
     }
 }

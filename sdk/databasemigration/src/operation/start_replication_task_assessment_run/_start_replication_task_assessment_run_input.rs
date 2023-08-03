@@ -92,16 +92,14 @@ impl StartReplicationTaskAssessmentRunInput {
 }
 impl StartReplicationTaskAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
-    pub fn builder() -> crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder{
+    pub fn builder() -> crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder {
         crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentRunInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ pub struct StartReplicationTaskAssessmentRunInputBuilder {
 }
 impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -135,18 +127,12 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.replication_task_arn
     }
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
@@ -155,18 +141,12 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.service_access_role_arn
     }
     /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    pub fn result_location_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn result_location_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_location_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    pub fn set_result_location_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_result_location_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_location_bucket = input;
         self
     }
@@ -175,18 +155,12 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.result_location_bucket
     }
     /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    pub fn result_location_folder(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn result_location_folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_location_folder = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    pub fn set_result_location_folder(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_result_location_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_location_folder = input;
         self
     }
@@ -199,10 +173,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
     /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
-    pub fn result_encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn result_encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
@@ -211,10 +182,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
     /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
-    pub fn set_result_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_result_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_encryption_mode = input;
         self
     }
@@ -227,18 +195,12 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.result_encryption_mode
     }
     /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-    pub fn result_kms_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn result_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-    pub fn set_result_kms_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_result_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_kms_key_arn = input;
         self
     }
@@ -247,18 +209,12 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.result_kms_key_arn
     }
     /// <p>Unique name to identify the assessment run.</p>
-    pub fn assessment_run_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique name to identify the assessment run.</p>
-    pub fn set_assessment_run_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_name = input;
         self
     }
@@ -284,10 +240,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    pub fn set_include_only(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_include_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.include_only = input;
         self
     }
@@ -295,9 +248,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    pub fn get_include_only(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_include_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.include_only
     }
     /// Appends an item to `exclude`.
@@ -318,10 +269,7 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
     /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
     /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
-    pub fn set_exclude(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclude(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclude = input;
         self
     }
@@ -333,28 +281,24 @@ impl StartReplicationTaskAssessmentRunInputBuilder {
         &self.exclude
     }
     /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput {
-                replication_task_arn: self.replication_task_arn
-                ,
-                service_access_role_arn: self.service_access_role_arn
-                ,
-                result_location_bucket: self.result_location_bucket
-                ,
-                result_location_folder: self.result_location_folder
-                ,
-                result_encryption_mode: self.result_encryption_mode
-                ,
-                result_kms_key_arn: self.result_kms_key_arn
-                ,
-                assessment_run_name: self.assessment_run_name
-                ,
-                include_only: self.include_only
-                ,
-                exclude: self.exclude
-                ,
-            }
+                replication_task_arn: self.replication_task_arn,
+                service_access_role_arn: self.service_access_role_arn,
+                result_location_bucket: self.result_location_bucket,
+                result_location_folder: self.result_location_folder,
+                result_encryption_mode: self.result_encryption_mode,
+                result_kms_key_arn: self.result_kms_key_arn,
+                assessment_run_name: self.assessment_run_name,
+                include_only: self.include_only,
+                exclude: self.exclude,
+            },
         )
     }
 }

@@ -28,8 +28,7 @@ impl CreateMaintenanceWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder,
+    inner: crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder,
 }
 impl CreateMaintenanceWindowFluentBuilder {
     /// Creates a new `CreateMaintenanceWindow`.
@@ -40,10 +39,7 @@ impl CreateMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the CreateMaintenanceWindow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CreateMaintenanceWindowFluentBuilder {
             crate::operation::create_maintenance_window::CreateMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_maintenance_window::CreateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_maintenance_window::CreateMaintenanceWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CreateMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CreateMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_maintenance_window::CreateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_maintenance_window::CreateMaintenanceWindowError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CreateMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_maintenance_window::CreateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_maintenance_window::CreateMaintenanceWindowError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CreateMaintenanceWindowFluentBuilder {
             crate::operation::create_maintenance_window::CreateMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_maintenance_window::CreateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_maintenance_window::CreateMaintenanceWindowError>,
     > {
         self.customize_middleware().await
     }
@@ -197,18 +182,12 @@ impl CreateMaintenanceWindowFluentBuilder {
         self.inner.get_schedule()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_timezone(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_timezone(input);
         self
     }
@@ -322,10 +301,7 @@ impl CreateMaintenanceWindowFluentBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

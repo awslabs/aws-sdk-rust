@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFlowLogsOutput`](crate::operation::delete_flow_logs::DeleteFlowLogsOutput) with field(s):
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::delete_flow_logs::DeleteFlowLogsOutput::unsuccessful): <p>Information about the flow logs that could not be deleted successfully.</p>
     /// - On failure, responds with [`SdkError<DeleteFlowLogsError>`](crate::operation::delete_flow_logs::DeleteFlowLogsError)
-    pub fn delete_flow_logs(
-        &self,
-    ) -> crate::operation::delete_flow_logs::builders::DeleteFlowLogsFluentBuilder {
-        crate::operation::delete_flow_logs::builders::DeleteFlowLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_flow_logs(&self) -> crate::operation::delete_flow_logs::builders::DeleteFlowLogsFluentBuilder {
+        crate::operation::delete_flow_logs::builders::DeleteFlowLogsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
         }
     }
     /// Access the UpdateTypedLinkFacet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
             crate::operation::update_typed_link_facet::UpdateTypedLinkFacet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
             crate::operation::update_typed_link_facet::UpdateTypedLinkFacet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +147,12 @@ impl UpdateTypedLinkFacetFluentBuilder {
         self
     }
     /// <p>Attributes update structure.</p>
-    pub fn set_attribute_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>>,
-    ) -> Self {
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>>) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
     /// <p>Attributes update structure.</p>
-    pub fn get_attribute_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }
     /// Appends an item to `IdentityAttributeOrder`.
@@ -179,25 +160,17 @@ impl UpdateTypedLinkFacetFluentBuilder {
     /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
     ///
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn identity_attribute_order(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_attribute_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_attribute_order(input.into());
         self
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn set_identity_attribute_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identity_attribute_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_identity_attribute_order(input);
         self
     }
     /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn get_identity_attribute_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identity_attribute_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_identity_attribute_order()
     }
 }

@@ -10,10 +10,7 @@ impl UpdateConnectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connector();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConnectorFluentBuilder {
         }
     }
     /// Access the UpdateConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConnectorFluentBuilder {
             crate::operation::update_connector::UpdateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateConnectorFluentBuilder {
             crate::operation::update_connector::UpdateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl UpdateConnectorFluentBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn set_as2_config(
-        mut self,
-        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
-    ) -> Self {
+    pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
         self.inner = self.inner.set_as2_config(input);
         self
     }
@@ -204,10 +185,7 @@ impl UpdateConnectorFluentBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn set_sftp_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    ) -> Self {
+    pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
         self.inner = self.inner.set_sftp_config(input);
         self
     }

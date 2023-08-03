@@ -611,9 +611,7 @@ pub(crate) fn lens_describe_inventory_deletions_output_inventory_deletions(
 
 pub(crate) fn lens_describe_maintenance_window_execution_task_invocations_output_window_execution_task_invocation_identities(
     input: crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput,
-) -> ::std::option::Option<
-    ::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>,
-> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>> {
     let input = match input.window_execution_task_invocation_identities {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
@@ -723,9 +721,7 @@ pub(crate) fn lens_describe_patch_groups_output_mappings(
 
 pub(crate) fn lens_describe_patch_properties_output_properties(
     input: crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
-) -> ::std::option::Option<
-    ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-> {
+) -> ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
     let input = match input.properties {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

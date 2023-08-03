@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInstanceProfilesOutput {
 }
 impl ListInstanceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder {
         crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesOutputBuilder {
-    pub(crate) instance_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListInstanceProfilesOutputBuilder {
         self
     }
     /// <p>An object that contains information about your instance profiles.</p>
-    pub fn set_instance_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
-    ) -> Self {
+    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>) -> Self {
         self.instance_profiles = input;
         self
     }
     /// <p>An object that contains information about your instance profiles.</p>
-    pub fn get_instance_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
+    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
         &self.instance_profiles
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>

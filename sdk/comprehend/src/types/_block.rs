@@ -67,17 +67,14 @@ impl Block {
 
 /// A builder for [`Block`](crate::types::Block).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) block_type: ::std::option::Option<crate::types::BlockType>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
-    pub(crate) relationships:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>,
+    pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>,
 }
 impl BlockBuilder {
     /// <p>Unique identifier for the block.</p>
@@ -174,17 +171,12 @@ impl BlockBuilder {
         self
     }
     /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
-    pub fn set_relationships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>,
-    ) -> Self {
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>>) -> Self {
         self.relationships = input;
         self
     }
     /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block that's part of the line of text. </p>
-    pub fn get_relationships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationshipsListItem>> {
         &self.relationships
     }
     /// Consumes the builder and constructs a [`Block`](crate::types::Block).

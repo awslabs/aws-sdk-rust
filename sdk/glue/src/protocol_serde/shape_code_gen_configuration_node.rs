@@ -6,28 +6,19 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_1) = &input.athena_connector_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AthenaConnectorSource").start_object();
-        crate::protocol_serde::shape_athena_connector_source::ser_athena_connector_source(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_athena_connector_source::ser_athena_connector_source(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.jdbc_connector_source {
         #[allow(unused_mut)]
         let mut object_4 = object.key("JDBCConnectorSource").start_object();
-        crate::protocol_serde::shape_jdbc_connector_source::ser_jdbc_connector_source(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_jdbc_connector_source::ser_jdbc_connector_source(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.spark_connector_source {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SparkConnectorSource").start_object();
-        crate::protocol_serde::shape_spark_connector_source::ser_spark_connector_source(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_spark_connector_source::ser_spark_connector_source(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.catalog_source {
@@ -45,10 +36,7 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_11) = &input.s3_catalog_source {
         #[allow(unused_mut)]
         let mut object_12 = object.key("S3CatalogSource").start_object();
-        crate::protocol_serde::shape_s3_catalog_source::ser_s3_catalog_source(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_s3_catalog_source::ser_s3_catalog_source(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.s3_csv_source {
@@ -66,55 +54,37 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_17) = &input.s3_parquet_source {
         #[allow(unused_mut)]
         let mut object_18 = object.key("S3ParquetSource").start_object();
-        crate::protocol_serde::shape_s3_parquet_source::ser_s3_parquet_source(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_s3_parquet_source::ser_s3_parquet_source(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.relational_catalog_source {
         #[allow(unused_mut)]
         let mut object_20 = object.key("RelationalCatalogSource").start_object();
-        crate::protocol_serde::shape_relational_catalog_source::ser_relational_catalog_source(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_relational_catalog_source::ser_relational_catalog_source(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.dynamo_db_catalog_source {
         #[allow(unused_mut)]
         let mut object_22 = object.key("DynamoDBCatalogSource").start_object();
-        crate::protocol_serde::shape_dynamo_db_catalog_source::ser_dynamo_db_catalog_source(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_dynamo_db_catalog_source::ser_dynamo_db_catalog_source(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.jdbc_connector_target {
         #[allow(unused_mut)]
         let mut object_24 = object.key("JDBCConnectorTarget").start_object();
-        crate::protocol_serde::shape_jdbc_connector_target::ser_jdbc_connector_target(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_jdbc_connector_target::ser_jdbc_connector_target(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.spark_connector_target {
         #[allow(unused_mut)]
         let mut object_26 = object.key("SparkConnectorTarget").start_object();
-        crate::protocol_serde::shape_spark_connector_target::ser_spark_connector_target(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_spark_connector_target::ser_spark_connector_target(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.catalog_target {
         #[allow(unused_mut)]
         let mut object_28 = object.key("CatalogTarget").start_object();
-        crate::protocol_serde::shape_basic_catalog_target::ser_basic_catalog_target(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_basic_catalog_target::ser_basic_catalog_target(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.redshift_target {
@@ -126,28 +96,19 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_31) = &input.s3_catalog_target {
         #[allow(unused_mut)]
         let mut object_32 = object.key("S3CatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_catalog_target::ser_s3_catalog_target(
-            &mut object_32,
-            var_31,
-        )?;
+        crate::protocol_serde::shape_s3_catalog_target::ser_s3_catalog_target(&mut object_32, var_31)?;
         object_32.finish();
     }
     if let Some(var_33) = &input.s3_glue_parquet_target {
         #[allow(unused_mut)]
         let mut object_34 = object.key("S3GlueParquetTarget").start_object();
-        crate::protocol_serde::shape_s3_glue_parquet_target::ser_s3_glue_parquet_target(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_s3_glue_parquet_target::ser_s3_glue_parquet_target(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.s3_direct_target {
         #[allow(unused_mut)]
         let mut object_36 = object.key("S3DirectTarget").start_object();
-        crate::protocol_serde::shape_s3_direct_target::ser_s3_direct_target(
-            &mut object_36,
-            var_35,
-        )?;
+        crate::protocol_serde::shape_s3_direct_target::ser_s3_direct_target(&mut object_36, var_35)?;
         object_36.finish();
     }
     if let Some(var_37) = &input.apply_mapping {
@@ -195,19 +156,13 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_51) = &input.select_from_collection {
         #[allow(unused_mut)]
         let mut object_52 = object.key("SelectFromCollection").start_object();
-        crate::protocol_serde::shape_select_from_collection::ser_select_from_collection(
-            &mut object_52,
-            var_51,
-        )?;
+        crate::protocol_serde::shape_select_from_collection::ser_select_from_collection(&mut object_52, var_51)?;
         object_52.finish();
     }
     if let Some(var_53) = &input.fill_missing_values {
         #[allow(unused_mut)]
         let mut object_54 = object.key("FillMissingValues").start_object();
-        crate::protocol_serde::shape_fill_missing_values::ser_fill_missing_values(
-            &mut object_54,
-            var_53,
-        )?;
+        crate::protocol_serde::shape_fill_missing_values::ser_fill_missing_values(&mut object_54, var_53)?;
         object_54.finish();
     }
     if let Some(var_55) = &input.filter {
@@ -231,46 +186,31 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_61) = &input.direct_kinesis_source {
         #[allow(unused_mut)]
         let mut object_62 = object.key("DirectKinesisSource").start_object();
-        crate::protocol_serde::shape_direct_kinesis_source::ser_direct_kinesis_source(
-            &mut object_62,
-            var_61,
-        )?;
+        crate::protocol_serde::shape_direct_kinesis_source::ser_direct_kinesis_source(&mut object_62, var_61)?;
         object_62.finish();
     }
     if let Some(var_63) = &input.direct_kafka_source {
         #[allow(unused_mut)]
         let mut object_64 = object.key("DirectKafkaSource").start_object();
-        crate::protocol_serde::shape_direct_kafka_source::ser_direct_kafka_source(
-            &mut object_64,
-            var_63,
-        )?;
+        crate::protocol_serde::shape_direct_kafka_source::ser_direct_kafka_source(&mut object_64, var_63)?;
         object_64.finish();
     }
     if let Some(var_65) = &input.catalog_kinesis_source {
         #[allow(unused_mut)]
         let mut object_66 = object.key("CatalogKinesisSource").start_object();
-        crate::protocol_serde::shape_catalog_kinesis_source::ser_catalog_kinesis_source(
-            &mut object_66,
-            var_65,
-        )?;
+        crate::protocol_serde::shape_catalog_kinesis_source::ser_catalog_kinesis_source(&mut object_66, var_65)?;
         object_66.finish();
     }
     if let Some(var_67) = &input.catalog_kafka_source {
         #[allow(unused_mut)]
         let mut object_68 = object.key("CatalogKafkaSource").start_object();
-        crate::protocol_serde::shape_catalog_kafka_source::ser_catalog_kafka_source(
-            &mut object_68,
-            var_67,
-        )?;
+        crate::protocol_serde::shape_catalog_kafka_source::ser_catalog_kafka_source(&mut object_68, var_67)?;
         object_68.finish();
     }
     if let Some(var_69) = &input.drop_null_fields {
         #[allow(unused_mut)]
         let mut object_70 = object.key("DropNullFields").start_object();
-        crate::protocol_serde::shape_drop_null_fields::ser_drop_null_fields(
-            &mut object_70,
-            var_69,
-        )?;
+        crate::protocol_serde::shape_drop_null_fields::ser_drop_null_fields(&mut object_70, var_69)?;
         object_70.finish();
     }
     if let Some(var_71) = &input.merge {
@@ -306,19 +246,13 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_81) = &input.governed_catalog_target {
         #[allow(unused_mut)]
         let mut object_82 = object.key("GovernedCatalogTarget").start_object();
-        crate::protocol_serde::shape_governed_catalog_target::ser_governed_catalog_target(
-            &mut object_82,
-            var_81,
-        )?;
+        crate::protocol_serde::shape_governed_catalog_target::ser_governed_catalog_target(&mut object_82, var_81)?;
         object_82.finish();
     }
     if let Some(var_83) = &input.governed_catalog_source {
         #[allow(unused_mut)]
         let mut object_84 = object.key("GovernedCatalogSource").start_object();
-        crate::protocol_serde::shape_governed_catalog_source::ser_governed_catalog_source(
-            &mut object_84,
-            var_83,
-        )?;
+        crate::protocol_serde::shape_governed_catalog_source::ser_governed_catalog_source(&mut object_84, var_83)?;
         object_84.finish();
     }
     if let Some(var_85) = &input.microsoft_sql_server_catalog_source {
@@ -330,28 +264,19 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_87) = &input.my_sql_catalog_source {
         #[allow(unused_mut)]
         let mut object_88 = object.key("MySQLCatalogSource").start_object();
-        crate::protocol_serde::shape_my_sql_catalog_source::ser_my_sql_catalog_source(
-            &mut object_88,
-            var_87,
-        )?;
+        crate::protocol_serde::shape_my_sql_catalog_source::ser_my_sql_catalog_source(&mut object_88, var_87)?;
         object_88.finish();
     }
     if let Some(var_89) = &input.oracle_sql_catalog_source {
         #[allow(unused_mut)]
         let mut object_90 = object.key("OracleSQLCatalogSource").start_object();
-        crate::protocol_serde::shape_oracle_sql_catalog_source::ser_oracle_sql_catalog_source(
-            &mut object_90,
-            var_89,
-        )?;
+        crate::protocol_serde::shape_oracle_sql_catalog_source::ser_oracle_sql_catalog_source(&mut object_90, var_89)?;
         object_90.finish();
     }
     if let Some(var_91) = &input.postgre_sql_catalog_source {
         #[allow(unused_mut)]
         let mut object_92 = object.key("PostgreSQLCatalogSource").start_object();
-        crate::protocol_serde::shape_postgre_sql_catalog_source::ser_postgre_sql_catalog_source(
-            &mut object_92,
-            var_91,
-        )?;
+        crate::protocol_serde::shape_postgre_sql_catalog_source::ser_postgre_sql_catalog_source(&mut object_92, var_91)?;
         object_92.finish();
     }
     if let Some(var_93) = &input.microsoft_sql_server_catalog_target {
@@ -363,64 +288,43 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_95) = &input.my_sql_catalog_target {
         #[allow(unused_mut)]
         let mut object_96 = object.key("MySQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_my_sql_catalog_target::ser_my_sql_catalog_target(
-            &mut object_96,
-            var_95,
-        )?;
+        crate::protocol_serde::shape_my_sql_catalog_target::ser_my_sql_catalog_target(&mut object_96, var_95)?;
         object_96.finish();
     }
     if let Some(var_97) = &input.oracle_sql_catalog_target {
         #[allow(unused_mut)]
         let mut object_98 = object.key("OracleSQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_oracle_sql_catalog_target::ser_oracle_sql_catalog_target(
-            &mut object_98,
-            var_97,
-        )?;
+        crate::protocol_serde::shape_oracle_sql_catalog_target::ser_oracle_sql_catalog_target(&mut object_98, var_97)?;
         object_98.finish();
     }
     if let Some(var_99) = &input.postgre_sql_catalog_target {
         #[allow(unused_mut)]
         let mut object_100 = object.key("PostgreSQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_postgre_sql_catalog_target::ser_postgre_sql_catalog_target(
-            &mut object_100,
-            var_99,
-        )?;
+        crate::protocol_serde::shape_postgre_sql_catalog_target::ser_postgre_sql_catalog_target(&mut object_100, var_99)?;
         object_100.finish();
     }
     if let Some(var_101) = &input.dynamic_transform {
         #[allow(unused_mut)]
         let mut object_102 = object.key("DynamicTransform").start_object();
-        crate::protocol_serde::shape_dynamic_transform::ser_dynamic_transform(
-            &mut object_102,
-            var_101,
-        )?;
+        crate::protocol_serde::shape_dynamic_transform::ser_dynamic_transform(&mut object_102, var_101)?;
         object_102.finish();
     }
     if let Some(var_103) = &input.evaluate_data_quality {
         #[allow(unused_mut)]
         let mut object_104 = object.key("EvaluateDataQuality").start_object();
-        crate::protocol_serde::shape_evaluate_data_quality::ser_evaluate_data_quality(
-            &mut object_104,
-            var_103,
-        )?;
+        crate::protocol_serde::shape_evaluate_data_quality::ser_evaluate_data_quality(&mut object_104, var_103)?;
         object_104.finish();
     }
     if let Some(var_105) = &input.s3_catalog_hudi_source {
         #[allow(unused_mut)]
         let mut object_106 = object.key("S3CatalogHudiSource").start_object();
-        crate::protocol_serde::shape_s3_catalog_hudi_source::ser_s3_catalog_hudi_source(
-            &mut object_106,
-            var_105,
-        )?;
+        crate::protocol_serde::shape_s3_catalog_hudi_source::ser_s3_catalog_hudi_source(&mut object_106, var_105)?;
         object_106.finish();
     }
     if let Some(var_107) = &input.catalog_hudi_source {
         #[allow(unused_mut)]
         let mut object_108 = object.key("CatalogHudiSource").start_object();
-        crate::protocol_serde::shape_catalog_hudi_source::ser_catalog_hudi_source(
-            &mut object_108,
-            var_107,
-        )?;
+        crate::protocol_serde::shape_catalog_hudi_source::ser_catalog_hudi_source(&mut object_108, var_107)?;
         object_108.finish();
     }
     if let Some(var_109) = &input.s3_hudi_source {
@@ -432,91 +336,61 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_111) = &input.s3_hudi_catalog_target {
         #[allow(unused_mut)]
         let mut object_112 = object.key("S3HudiCatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_hudi_catalog_target::ser_s3_hudi_catalog_target(
-            &mut object_112,
-            var_111,
-        )?;
+        crate::protocol_serde::shape_s3_hudi_catalog_target::ser_s3_hudi_catalog_target(&mut object_112, var_111)?;
         object_112.finish();
     }
     if let Some(var_113) = &input.s3_hudi_direct_target {
         #[allow(unused_mut)]
         let mut object_114 = object.key("S3HudiDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_hudi_direct_target::ser_s3_hudi_direct_target(
-            &mut object_114,
-            var_113,
-        )?;
+        crate::protocol_serde::shape_s3_hudi_direct_target::ser_s3_hudi_direct_target(&mut object_114, var_113)?;
         object_114.finish();
     }
     if let Some(var_115) = &input.direct_jdbc_source {
         #[allow(unused_mut)]
         let mut object_116 = object.key("DirectJDBCSource").start_object();
-        crate::protocol_serde::shape_direct_jdbc_source::ser_direct_jdbc_source(
-            &mut object_116,
-            var_115,
-        )?;
+        crate::protocol_serde::shape_direct_jdbc_source::ser_direct_jdbc_source(&mut object_116, var_115)?;
         object_116.finish();
     }
     if let Some(var_117) = &input.s3_catalog_delta_source {
         #[allow(unused_mut)]
         let mut object_118 = object.key("S3CatalogDeltaSource").start_object();
-        crate::protocol_serde::shape_s3_catalog_delta_source::ser_s3_catalog_delta_source(
-            &mut object_118,
-            var_117,
-        )?;
+        crate::protocol_serde::shape_s3_catalog_delta_source::ser_s3_catalog_delta_source(&mut object_118, var_117)?;
         object_118.finish();
     }
     if let Some(var_119) = &input.catalog_delta_source {
         #[allow(unused_mut)]
         let mut object_120 = object.key("CatalogDeltaSource").start_object();
-        crate::protocol_serde::shape_catalog_delta_source::ser_catalog_delta_source(
-            &mut object_120,
-            var_119,
-        )?;
+        crate::protocol_serde::shape_catalog_delta_source::ser_catalog_delta_source(&mut object_120, var_119)?;
         object_120.finish();
     }
     if let Some(var_121) = &input.s3_delta_source {
         #[allow(unused_mut)]
         let mut object_122 = object.key("S3DeltaSource").start_object();
-        crate::protocol_serde::shape_s3_delta_source::ser_s3_delta_source(
-            &mut object_122,
-            var_121,
-        )?;
+        crate::protocol_serde::shape_s3_delta_source::ser_s3_delta_source(&mut object_122, var_121)?;
         object_122.finish();
     }
     if let Some(var_123) = &input.s3_delta_catalog_target {
         #[allow(unused_mut)]
         let mut object_124 = object.key("S3DeltaCatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_delta_catalog_target::ser_s3_delta_catalog_target(
-            &mut object_124,
-            var_123,
-        )?;
+        crate::protocol_serde::shape_s3_delta_catalog_target::ser_s3_delta_catalog_target(&mut object_124, var_123)?;
         object_124.finish();
     }
     if let Some(var_125) = &input.s3_delta_direct_target {
         #[allow(unused_mut)]
         let mut object_126 = object.key("S3DeltaDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_delta_direct_target::ser_s3_delta_direct_target(
-            &mut object_126,
-            var_125,
-        )?;
+        crate::protocol_serde::shape_s3_delta_direct_target::ser_s3_delta_direct_target(&mut object_126, var_125)?;
         object_126.finish();
     }
     if let Some(var_127) = &input.amazon_redshift_source {
         #[allow(unused_mut)]
         let mut object_128 = object.key("AmazonRedshiftSource").start_object();
-        crate::protocol_serde::shape_amazon_redshift_source::ser_amazon_redshift_source(
-            &mut object_128,
-            var_127,
-        )?;
+        crate::protocol_serde::shape_amazon_redshift_source::ser_amazon_redshift_source(&mut object_128, var_127)?;
         object_128.finish();
     }
     if let Some(var_129) = &input.amazon_redshift_target {
         #[allow(unused_mut)]
         let mut object_130 = object.key("AmazonRedshiftTarget").start_object();
-        crate::protocol_serde::shape_amazon_redshift_target::ser_amazon_redshift_target(
-            &mut object_130,
-            var_129,
-        )?;
+        crate::protocol_serde::shape_amazon_redshift_target::ser_amazon_redshift_target(&mut object_130, var_129)?;
         object_130.finish();
     }
     if let Some(var_131) = &input.evaluate_data_quality_multi_frame {
@@ -534,19 +408,13 @@ pub fn ser_code_gen_configuration_node(
     if let Some(var_135) = &input.snowflake_source {
         #[allow(unused_mut)]
         let mut object_136 = object.key("SnowflakeSource").start_object();
-        crate::protocol_serde::shape_snowflake_source::ser_snowflake_source(
-            &mut object_136,
-            var_135,
-        )?;
+        crate::protocol_serde::shape_snowflake_source::ser_snowflake_source(&mut object_136, var_135)?;
         object_136.finish();
     }
     if let Some(var_137) = &input.snowflake_target {
         #[allow(unused_mut)]
         let mut object_138 = object.key("SnowflakeTarget").start_object();
-        crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(
-            &mut object_138,
-            var_137,
-        )?;
+        crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(&mut object_138, var_137)?;
         object_138.finish();
     }
     Ok(())
@@ -554,17 +422,9 @@ pub fn ser_code_gen_configuration_node(
 
 pub(crate) fn de_code_gen_configuration_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CodeGenConfigurationNode>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CodeGenConfigurationNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -574,392 +434,278 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AthenaConnectorSource" => {
-                                builder = builder.set_athena_connector_source(
-                                    crate::protocol_serde::shape_athena_connector_source::de_athena_connector_source(tokens)?
-                                );
-                            }
-                            "JDBCConnectorSource" => {
-                                builder = builder.set_jdbc_connector_source(
-                                    crate::protocol_serde::shape_jdbc_connector_source::de_jdbc_connector_source(tokens)?
-                                );
-                            }
-                            "SparkConnectorSource" => {
-                                builder = builder.set_spark_connector_source(
-                                    crate::protocol_serde::shape_spark_connector_source::de_spark_connector_source(tokens)?
-                                );
-                            }
-                            "CatalogSource" => {
-                                builder = builder.set_catalog_source(
-                                    crate::protocol_serde::shape_catalog_source::de_catalog_source(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "RedshiftSource" => {
-                                builder = builder.set_redshift_source(
-                                    crate::protocol_serde::shape_redshift_source::de_redshift_source(tokens)?
-                                );
-                            }
-                            "S3CatalogSource" => {
-                                builder = builder.set_s3_catalog_source(
-                                    crate::protocol_serde::shape_s3_catalog_source::de_s3_catalog_source(tokens)?
-                                );
-                            }
-                            "S3CsvSource" => {
-                                builder = builder.set_s3_csv_source(
-                                    crate::protocol_serde::shape_s3_csv_source::de_s3_csv_source(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "S3JsonSource" => {
-                                builder = builder.set_s3_json_source(
-                                    crate::protocol_serde::shape_s3_json_source::de_s3_json_source(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "S3ParquetSource" => {
-                                builder = builder.set_s3_parquet_source(
-                                    crate::protocol_serde::shape_s3_parquet_source::de_s3_parquet_source(tokens)?
-                                );
-                            }
-                            "RelationalCatalogSource" => {
-                                builder = builder.set_relational_catalog_source(
-                                    crate::protocol_serde::shape_relational_catalog_source::de_relational_catalog_source(tokens)?
-                                );
-                            }
-                            "DynamoDBCatalogSource" => {
-                                builder = builder.set_dynamo_db_catalog_source(
-                                    crate::protocol_serde::shape_dynamo_db_catalog_source::de_dynamo_db_catalog_source(tokens)?
-                                );
-                            }
-                            "JDBCConnectorTarget" => {
-                                builder = builder.set_jdbc_connector_target(
-                                    crate::protocol_serde::shape_jdbc_connector_target::de_jdbc_connector_target(tokens)?
-                                );
-                            }
-                            "SparkConnectorTarget" => {
-                                builder = builder.set_spark_connector_target(
-                                    crate::protocol_serde::shape_spark_connector_target::de_spark_connector_target(tokens)?
-                                );
-                            }
-                            "CatalogTarget" => {
-                                builder = builder.set_catalog_target(
-                                    crate::protocol_serde::shape_basic_catalog_target::de_basic_catalog_target(tokens)?
-                                );
-                            }
-                            "RedshiftTarget" => {
-                                builder = builder.set_redshift_target(
-                                    crate::protocol_serde::shape_redshift_target::de_redshift_target(tokens)?
-                                );
-                            }
-                            "S3CatalogTarget" => {
-                                builder = builder.set_s3_catalog_target(
-                                    crate::protocol_serde::shape_s3_catalog_target::de_s3_catalog_target(tokens)?
-                                );
-                            }
-                            "S3GlueParquetTarget" => {
-                                builder = builder.set_s3_glue_parquet_target(
-                                    crate::protocol_serde::shape_s3_glue_parquet_target::de_s3_glue_parquet_target(tokens)?
-                                );
-                            }
-                            "S3DirectTarget" => {
-                                builder = builder.set_s3_direct_target(
-                                    crate::protocol_serde::shape_s3_direct_target::de_s3_direct_target(tokens)?
-                                );
-                            }
-                            "ApplyMapping" => {
-                                builder = builder.set_apply_mapping(
-                                    crate::protocol_serde::shape_apply_mapping::de_apply_mapping(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "SelectFields" => {
-                                builder = builder.set_select_fields(
-                                    crate::protocol_serde::shape_select_fields::de_select_fields(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "DropFields" => {
-                                builder = builder.set_drop_fields(
-                                    crate::protocol_serde::shape_drop_fields::de_drop_fields(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "RenameField" => {
-                                builder = builder.set_rename_field(
-                                    crate::protocol_serde::shape_rename_field::de_rename_field(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Spigot" => {
-                                builder = builder.set_spigot(
-                                    crate::protocol_serde::shape_spigot::de_spigot(tokens)?,
-                                );
-                            }
-                            "Join" => {
-                                builder = builder
-                                    .set_join(crate::protocol_serde::shape_join::de_join(tokens)?);
-                            }
-                            "SplitFields" => {
-                                builder = builder.set_split_fields(
-                                    crate::protocol_serde::shape_split_fields::de_split_fields(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "SelectFromCollection" => {
-                                builder = builder.set_select_from_collection(
-                                    crate::protocol_serde::shape_select_from_collection::de_select_from_collection(tokens)?
-                                );
-                            }
-                            "FillMissingValues" => {
-                                builder = builder.set_fill_missing_values(
-                                    crate::protocol_serde::shape_fill_missing_values::de_fill_missing_values(tokens)?
-                                );
-                            }
-                            "Filter" => {
-                                builder = builder.set_filter(
-                                    crate::protocol_serde::shape_filter::de_filter(tokens)?,
-                                );
-                            }
-                            "CustomCode" => {
-                                builder = builder.set_custom_code(
-                                    crate::protocol_serde::shape_custom_code::de_custom_code(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "SparkSQL" => {
-                                builder = builder.set_spark_sql(
-                                    crate::protocol_serde::shape_spark_sql::de_spark_sql(tokens)?,
-                                );
-                            }
-                            "DirectKinesisSource" => {
-                                builder = builder.set_direct_kinesis_source(
-                                    crate::protocol_serde::shape_direct_kinesis_source::de_direct_kinesis_source(tokens)?
-                                );
-                            }
-                            "DirectKafkaSource" => {
-                                builder = builder.set_direct_kafka_source(
-                                    crate::protocol_serde::shape_direct_kafka_source::de_direct_kafka_source(tokens)?
-                                );
-                            }
-                            "CatalogKinesisSource" => {
-                                builder = builder.set_catalog_kinesis_source(
-                                    crate::protocol_serde::shape_catalog_kinesis_source::de_catalog_kinesis_source(tokens)?
-                                );
-                            }
-                            "CatalogKafkaSource" => {
-                                builder = builder.set_catalog_kafka_source(
-                                    crate::protocol_serde::shape_catalog_kafka_source::de_catalog_kafka_source(tokens)?
-                                );
-                            }
-                            "DropNullFields" => {
-                                builder = builder.set_drop_null_fields(
-                                    crate::protocol_serde::shape_drop_null_fields::de_drop_null_fields(tokens)?
-                                );
-                            }
-                            "Merge" => {
-                                builder = builder.set_merge(
-                                    crate::protocol_serde::shape_merge::de_merge(tokens)?,
-                                );
-                            }
-                            "Union" => {
-                                builder = builder.set_union(
-                                    crate::protocol_serde::shape_union::de_union(tokens)?,
-                                );
-                            }
-                            "PIIDetection" => {
-                                builder = builder.set_pii_detection(
-                                    crate::protocol_serde::shape_pii_detection::de_pii_detection(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Aggregate" => {
-                                builder = builder.set_aggregate(
-                                    crate::protocol_serde::shape_aggregate::de_aggregate(tokens)?,
-                                );
-                            }
-                            "DropDuplicates" => {
-                                builder = builder.set_drop_duplicates(
-                                    crate::protocol_serde::shape_drop_duplicates::de_drop_duplicates(tokens)?
-                                );
-                            }
-                            "GovernedCatalogTarget" => {
-                                builder = builder.set_governed_catalog_target(
-                                    crate::protocol_serde::shape_governed_catalog_target::de_governed_catalog_target(tokens)?
-                                );
-                            }
-                            "GovernedCatalogSource" => {
-                                builder = builder.set_governed_catalog_source(
-                                    crate::protocol_serde::shape_governed_catalog_source::de_governed_catalog_source(tokens)?
-                                );
-                            }
-                            "MicrosoftSQLServerCatalogSource" => {
-                                builder = builder.set_microsoft_sql_server_catalog_source(
-                                    crate::protocol_serde::shape_microsoft_sql_server_catalog_source::de_microsoft_sql_server_catalog_source(tokens)?
-                                );
-                            }
-                            "MySQLCatalogSource" => {
-                                builder = builder.set_my_sql_catalog_source(
-                                    crate::protocol_serde::shape_my_sql_catalog_source::de_my_sql_catalog_source(tokens)?
-                                );
-                            }
-                            "OracleSQLCatalogSource" => {
-                                builder = builder.set_oracle_sql_catalog_source(
-                                    crate::protocol_serde::shape_oracle_sql_catalog_source::de_oracle_sql_catalog_source(tokens)?
-                                );
-                            }
-                            "PostgreSQLCatalogSource" => {
-                                builder = builder.set_postgre_sql_catalog_source(
-                                    crate::protocol_serde::shape_postgre_sql_catalog_source::de_postgre_sql_catalog_source(tokens)?
-                                );
-                            }
-                            "MicrosoftSQLServerCatalogTarget" => {
-                                builder = builder.set_microsoft_sql_server_catalog_target(
-                                    crate::protocol_serde::shape_microsoft_sql_server_catalog_target::de_microsoft_sql_server_catalog_target(tokens)?
-                                );
-                            }
-                            "MySQLCatalogTarget" => {
-                                builder = builder.set_my_sql_catalog_target(
-                                    crate::protocol_serde::shape_my_sql_catalog_target::de_my_sql_catalog_target(tokens)?
-                                );
-                            }
-                            "OracleSQLCatalogTarget" => {
-                                builder = builder.set_oracle_sql_catalog_target(
-                                    crate::protocol_serde::shape_oracle_sql_catalog_target::de_oracle_sql_catalog_target(tokens)?
-                                );
-                            }
-                            "PostgreSQLCatalogTarget" => {
-                                builder = builder.set_postgre_sql_catalog_target(
-                                    crate::protocol_serde::shape_postgre_sql_catalog_target::de_postgre_sql_catalog_target(tokens)?
-                                );
-                            }
-                            "DynamicTransform" => {
-                                builder = builder.set_dynamic_transform(
-                                    crate::protocol_serde::shape_dynamic_transform::de_dynamic_transform(tokens)?
-                                );
-                            }
-                            "EvaluateDataQuality" => {
-                                builder = builder.set_evaluate_data_quality(
-                                    crate::protocol_serde::shape_evaluate_data_quality::de_evaluate_data_quality(tokens)?
-                                );
-                            }
-                            "S3CatalogHudiSource" => {
-                                builder = builder.set_s3_catalog_hudi_source(
-                                    crate::protocol_serde::shape_s3_catalog_hudi_source::de_s3_catalog_hudi_source(tokens)?
-                                );
-                            }
-                            "CatalogHudiSource" => {
-                                builder = builder.set_catalog_hudi_source(
-                                    crate::protocol_serde::shape_catalog_hudi_source::de_catalog_hudi_source(tokens)?
-                                );
-                            }
-                            "S3HudiSource" => {
-                                builder = builder.set_s3_hudi_source(
-                                    crate::protocol_serde::shape_s3_hudi_source::de_s3_hudi_source(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "S3HudiCatalogTarget" => {
-                                builder = builder.set_s3_hudi_catalog_target(
-                                    crate::protocol_serde::shape_s3_hudi_catalog_target::de_s3_hudi_catalog_target(tokens)?
-                                );
-                            }
-                            "S3HudiDirectTarget" => {
-                                builder = builder.set_s3_hudi_direct_target(
-                                    crate::protocol_serde::shape_s3_hudi_direct_target::de_s3_hudi_direct_target(tokens)?
-                                );
-                            }
-                            "DirectJDBCSource" => {
-                                builder = builder.set_direct_jdbc_source(
-                                    crate::protocol_serde::shape_direct_jdbc_source::de_direct_jdbc_source(tokens)?
-                                );
-                            }
-                            "S3CatalogDeltaSource" => {
-                                builder = builder.set_s3_catalog_delta_source(
-                                    crate::protocol_serde::shape_s3_catalog_delta_source::de_s3_catalog_delta_source(tokens)?
-                                );
-                            }
-                            "CatalogDeltaSource" => {
-                                builder = builder.set_catalog_delta_source(
-                                    crate::protocol_serde::shape_catalog_delta_source::de_catalog_delta_source(tokens)?
-                                );
-                            }
-                            "S3DeltaSource" => {
-                                builder = builder.set_s3_delta_source(
-                                    crate::protocol_serde::shape_s3_delta_source::de_s3_delta_source(tokens)?
-                                );
-                            }
-                            "S3DeltaCatalogTarget" => {
-                                builder = builder.set_s3_delta_catalog_target(
-                                    crate::protocol_serde::shape_s3_delta_catalog_target::de_s3_delta_catalog_target(tokens)?
-                                );
-                            }
-                            "S3DeltaDirectTarget" => {
-                                builder = builder.set_s3_delta_direct_target(
-                                    crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens)?
-                                );
-                            }
-                            "AmazonRedshiftSource" => {
-                                builder = builder.set_amazon_redshift_source(
-                                    crate::protocol_serde::shape_amazon_redshift_source::de_amazon_redshift_source(tokens)?
-                                );
-                            }
-                            "AmazonRedshiftTarget" => {
-                                builder = builder.set_amazon_redshift_target(
-                                    crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens)?
-                                );
-                            }
-                            "EvaluateDataQualityMultiFrame" => {
-                                builder = builder.set_evaluate_data_quality_multi_frame(
-                                    crate::protocol_serde::shape_evaluate_data_quality_multi_frame::de_evaluate_data_quality_multi_frame(tokens)?
-                                );
-                            }
-                            "Recipe" => {
-                                builder = builder.set_recipe(
-                                    crate::protocol_serde::shape_recipe::de_recipe(tokens)?,
-                                );
-                            }
-                            "SnowflakeSource" => {
-                                builder = builder.set_snowflake_source(
-                                    crate::protocol_serde::shape_snowflake_source::de_snowflake_source(tokens)?
-                                );
-                            }
-                            "SnowflakeTarget" => {
-                                builder = builder.set_snowflake_target(
-                                    crate::protocol_serde::shape_snowflake_target::de_snowflake_target(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AthenaConnectorSource" => {
+                            builder = builder.set_athena_connector_source(
+                                crate::protocol_serde::shape_athena_connector_source::de_athena_connector_source(tokens)?,
+                            );
                         }
-                    }
+                        "JDBCConnectorSource" => {
+                            builder = builder
+                                .set_jdbc_connector_source(crate::protocol_serde::shape_jdbc_connector_source::de_jdbc_connector_source(tokens)?);
+                        }
+                        "SparkConnectorSource" => {
+                            builder = builder
+                                .set_spark_connector_source(crate::protocol_serde::shape_spark_connector_source::de_spark_connector_source(tokens)?);
+                        }
+                        "CatalogSource" => {
+                            builder = builder.set_catalog_source(crate::protocol_serde::shape_catalog_source::de_catalog_source(tokens)?);
+                        }
+                        "RedshiftSource" => {
+                            builder = builder.set_redshift_source(crate::protocol_serde::shape_redshift_source::de_redshift_source(tokens)?);
+                        }
+                        "S3CatalogSource" => {
+                            builder = builder.set_s3_catalog_source(crate::protocol_serde::shape_s3_catalog_source::de_s3_catalog_source(tokens)?);
+                        }
+                        "S3CsvSource" => {
+                            builder = builder.set_s3_csv_source(crate::protocol_serde::shape_s3_csv_source::de_s3_csv_source(tokens)?);
+                        }
+                        "S3JsonSource" => {
+                            builder = builder.set_s3_json_source(crate::protocol_serde::shape_s3_json_source::de_s3_json_source(tokens)?);
+                        }
+                        "S3ParquetSource" => {
+                            builder = builder.set_s3_parquet_source(crate::protocol_serde::shape_s3_parquet_source::de_s3_parquet_source(tokens)?);
+                        }
+                        "RelationalCatalogSource" => {
+                            builder = builder.set_relational_catalog_source(
+                                crate::protocol_serde::shape_relational_catalog_source::de_relational_catalog_source(tokens)?,
+                            );
+                        }
+                        "DynamoDBCatalogSource" => {
+                            builder = builder.set_dynamo_db_catalog_source(
+                                crate::protocol_serde::shape_dynamo_db_catalog_source::de_dynamo_db_catalog_source(tokens)?,
+                            );
+                        }
+                        "JDBCConnectorTarget" => {
+                            builder = builder
+                                .set_jdbc_connector_target(crate::protocol_serde::shape_jdbc_connector_target::de_jdbc_connector_target(tokens)?);
+                        }
+                        "SparkConnectorTarget" => {
+                            builder = builder
+                                .set_spark_connector_target(crate::protocol_serde::shape_spark_connector_target::de_spark_connector_target(tokens)?);
+                        }
+                        "CatalogTarget" => {
+                            builder = builder.set_catalog_target(crate::protocol_serde::shape_basic_catalog_target::de_basic_catalog_target(tokens)?);
+                        }
+                        "RedshiftTarget" => {
+                            builder = builder.set_redshift_target(crate::protocol_serde::shape_redshift_target::de_redshift_target(tokens)?);
+                        }
+                        "S3CatalogTarget" => {
+                            builder = builder.set_s3_catalog_target(crate::protocol_serde::shape_s3_catalog_target::de_s3_catalog_target(tokens)?);
+                        }
+                        "S3GlueParquetTarget" => {
+                            builder = builder
+                                .set_s3_glue_parquet_target(crate::protocol_serde::shape_s3_glue_parquet_target::de_s3_glue_parquet_target(tokens)?);
+                        }
+                        "S3DirectTarget" => {
+                            builder = builder.set_s3_direct_target(crate::protocol_serde::shape_s3_direct_target::de_s3_direct_target(tokens)?);
+                        }
+                        "ApplyMapping" => {
+                            builder = builder.set_apply_mapping(crate::protocol_serde::shape_apply_mapping::de_apply_mapping(tokens)?);
+                        }
+                        "SelectFields" => {
+                            builder = builder.set_select_fields(crate::protocol_serde::shape_select_fields::de_select_fields(tokens)?);
+                        }
+                        "DropFields" => {
+                            builder = builder.set_drop_fields(crate::protocol_serde::shape_drop_fields::de_drop_fields(tokens)?);
+                        }
+                        "RenameField" => {
+                            builder = builder.set_rename_field(crate::protocol_serde::shape_rename_field::de_rename_field(tokens)?);
+                        }
+                        "Spigot" => {
+                            builder = builder.set_spigot(crate::protocol_serde::shape_spigot::de_spigot(tokens)?);
+                        }
+                        "Join" => {
+                            builder = builder.set_join(crate::protocol_serde::shape_join::de_join(tokens)?);
+                        }
+                        "SplitFields" => {
+                            builder = builder.set_split_fields(crate::protocol_serde::shape_split_fields::de_split_fields(tokens)?);
+                        }
+                        "SelectFromCollection" => {
+                            builder = builder
+                                .set_select_from_collection(crate::protocol_serde::shape_select_from_collection::de_select_from_collection(tokens)?);
+                        }
+                        "FillMissingValues" => {
+                            builder =
+                                builder.set_fill_missing_values(crate::protocol_serde::shape_fill_missing_values::de_fill_missing_values(tokens)?);
+                        }
+                        "Filter" => {
+                            builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens)?);
+                        }
+                        "CustomCode" => {
+                            builder = builder.set_custom_code(crate::protocol_serde::shape_custom_code::de_custom_code(tokens)?);
+                        }
+                        "SparkSQL" => {
+                            builder = builder.set_spark_sql(crate::protocol_serde::shape_spark_sql::de_spark_sql(tokens)?);
+                        }
+                        "DirectKinesisSource" => {
+                            builder = builder
+                                .set_direct_kinesis_source(crate::protocol_serde::shape_direct_kinesis_source::de_direct_kinesis_source(tokens)?);
+                        }
+                        "DirectKafkaSource" => {
+                            builder =
+                                builder.set_direct_kafka_source(crate::protocol_serde::shape_direct_kafka_source::de_direct_kafka_source(tokens)?);
+                        }
+                        "CatalogKinesisSource" => {
+                            builder = builder
+                                .set_catalog_kinesis_source(crate::protocol_serde::shape_catalog_kinesis_source::de_catalog_kinesis_source(tokens)?);
+                        }
+                        "CatalogKafkaSource" => {
+                            builder =
+                                builder.set_catalog_kafka_source(crate::protocol_serde::shape_catalog_kafka_source::de_catalog_kafka_source(tokens)?);
+                        }
+                        "DropNullFields" => {
+                            builder = builder.set_drop_null_fields(crate::protocol_serde::shape_drop_null_fields::de_drop_null_fields(tokens)?);
+                        }
+                        "Merge" => {
+                            builder = builder.set_merge(crate::protocol_serde::shape_merge::de_merge(tokens)?);
+                        }
+                        "Union" => {
+                            builder = builder.set_union(crate::protocol_serde::shape_union::de_union(tokens)?);
+                        }
+                        "PIIDetection" => {
+                            builder = builder.set_pii_detection(crate::protocol_serde::shape_pii_detection::de_pii_detection(tokens)?);
+                        }
+                        "Aggregate" => {
+                            builder = builder.set_aggregate(crate::protocol_serde::shape_aggregate::de_aggregate(tokens)?);
+                        }
+                        "DropDuplicates" => {
+                            builder = builder.set_drop_duplicates(crate::protocol_serde::shape_drop_duplicates::de_drop_duplicates(tokens)?);
+                        }
+                        "GovernedCatalogTarget" => {
+                            builder = builder.set_governed_catalog_target(
+                                crate::protocol_serde::shape_governed_catalog_target::de_governed_catalog_target(tokens)?,
+                            );
+                        }
+                        "GovernedCatalogSource" => {
+                            builder = builder.set_governed_catalog_source(
+                                crate::protocol_serde::shape_governed_catalog_source::de_governed_catalog_source(tokens)?,
+                            );
+                        }
+                        "MicrosoftSQLServerCatalogSource" => {
+                            builder = builder.set_microsoft_sql_server_catalog_source(
+                                crate::protocol_serde::shape_microsoft_sql_server_catalog_source::de_microsoft_sql_server_catalog_source(tokens)?,
+                            );
+                        }
+                        "MySQLCatalogSource" => {
+                            builder = builder
+                                .set_my_sql_catalog_source(crate::protocol_serde::shape_my_sql_catalog_source::de_my_sql_catalog_source(tokens)?);
+                        }
+                        "OracleSQLCatalogSource" => {
+                            builder = builder.set_oracle_sql_catalog_source(
+                                crate::protocol_serde::shape_oracle_sql_catalog_source::de_oracle_sql_catalog_source(tokens)?,
+                            );
+                        }
+                        "PostgreSQLCatalogSource" => {
+                            builder = builder.set_postgre_sql_catalog_source(
+                                crate::protocol_serde::shape_postgre_sql_catalog_source::de_postgre_sql_catalog_source(tokens)?,
+                            );
+                        }
+                        "MicrosoftSQLServerCatalogTarget" => {
+                            builder = builder.set_microsoft_sql_server_catalog_target(
+                                crate::protocol_serde::shape_microsoft_sql_server_catalog_target::de_microsoft_sql_server_catalog_target(tokens)?,
+                            );
+                        }
+                        "MySQLCatalogTarget" => {
+                            builder = builder
+                                .set_my_sql_catalog_target(crate::protocol_serde::shape_my_sql_catalog_target::de_my_sql_catalog_target(tokens)?);
+                        }
+                        "OracleSQLCatalogTarget" => {
+                            builder = builder.set_oracle_sql_catalog_target(
+                                crate::protocol_serde::shape_oracle_sql_catalog_target::de_oracle_sql_catalog_target(tokens)?,
+                            );
+                        }
+                        "PostgreSQLCatalogTarget" => {
+                            builder = builder.set_postgre_sql_catalog_target(
+                                crate::protocol_serde::shape_postgre_sql_catalog_target::de_postgre_sql_catalog_target(tokens)?,
+                            );
+                        }
+                        "DynamicTransform" => {
+                            builder = builder.set_dynamic_transform(crate::protocol_serde::shape_dynamic_transform::de_dynamic_transform(tokens)?);
+                        }
+                        "EvaluateDataQuality" => {
+                            builder = builder
+                                .set_evaluate_data_quality(crate::protocol_serde::shape_evaluate_data_quality::de_evaluate_data_quality(tokens)?);
+                        }
+                        "S3CatalogHudiSource" => {
+                            builder = builder
+                                .set_s3_catalog_hudi_source(crate::protocol_serde::shape_s3_catalog_hudi_source::de_s3_catalog_hudi_source(tokens)?);
+                        }
+                        "CatalogHudiSource" => {
+                            builder =
+                                builder.set_catalog_hudi_source(crate::protocol_serde::shape_catalog_hudi_source::de_catalog_hudi_source(tokens)?);
+                        }
+                        "S3HudiSource" => {
+                            builder = builder.set_s3_hudi_source(crate::protocol_serde::shape_s3_hudi_source::de_s3_hudi_source(tokens)?);
+                        }
+                        "S3HudiCatalogTarget" => {
+                            builder = builder
+                                .set_s3_hudi_catalog_target(crate::protocol_serde::shape_s3_hudi_catalog_target::de_s3_hudi_catalog_target(tokens)?);
+                        }
+                        "S3HudiDirectTarget" => {
+                            builder = builder
+                                .set_s3_hudi_direct_target(crate::protocol_serde::shape_s3_hudi_direct_target::de_s3_hudi_direct_target(tokens)?);
+                        }
+                        "DirectJDBCSource" => {
+                            builder = builder.set_direct_jdbc_source(crate::protocol_serde::shape_direct_jdbc_source::de_direct_jdbc_source(tokens)?);
+                        }
+                        "S3CatalogDeltaSource" => {
+                            builder = builder.set_s3_catalog_delta_source(
+                                crate::protocol_serde::shape_s3_catalog_delta_source::de_s3_catalog_delta_source(tokens)?,
+                            );
+                        }
+                        "CatalogDeltaSource" => {
+                            builder =
+                                builder.set_catalog_delta_source(crate::protocol_serde::shape_catalog_delta_source::de_catalog_delta_source(tokens)?);
+                        }
+                        "S3DeltaSource" => {
+                            builder = builder.set_s3_delta_source(crate::protocol_serde::shape_s3_delta_source::de_s3_delta_source(tokens)?);
+                        }
+                        "S3DeltaCatalogTarget" => {
+                            builder = builder.set_s3_delta_catalog_target(
+                                crate::protocol_serde::shape_s3_delta_catalog_target::de_s3_delta_catalog_target(tokens)?,
+                            );
+                        }
+                        "S3DeltaDirectTarget" => {
+                            builder = builder
+                                .set_s3_delta_direct_target(crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens)?);
+                        }
+                        "AmazonRedshiftSource" => {
+                            builder = builder
+                                .set_amazon_redshift_source(crate::protocol_serde::shape_amazon_redshift_source::de_amazon_redshift_source(tokens)?);
+                        }
+                        "AmazonRedshiftTarget" => {
+                            builder = builder
+                                .set_amazon_redshift_target(crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens)?);
+                        }
+                        "EvaluateDataQualityMultiFrame" => {
+                            builder = builder.set_evaluate_data_quality_multi_frame(
+                                crate::protocol_serde::shape_evaluate_data_quality_multi_frame::de_evaluate_data_quality_multi_frame(tokens)?,
+                            );
+                        }
+                        "Recipe" => {
+                            builder = builder.set_recipe(crate::protocol_serde::shape_recipe::de_recipe(tokens)?);
+                        }
+                        "SnowflakeSource" => {
+                            builder = builder.set_snowflake_source(crate::protocol_serde::shape_snowflake_source::de_snowflake_source(tokens)?);
+                        }
+                        "SnowflakeTarget" => {
+                            builder = builder.set_snowflake_target(crate::protocol_serde::shape_snowflake_target::de_snowflake_target(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

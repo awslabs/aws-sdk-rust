@@ -37,9 +37,7 @@ impl S3BucketSource {
 
 /// A builder for [`S3BucketSource`](crate::types::S3BucketSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketSourceBuilder {
     pub(crate) s3_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct S3BucketSourceBuilder {
 }
 impl S3BucketSourceBuilder {
     /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
@@ -81,18 +73,12 @@ impl S3BucketSourceBuilder {
         &self.s3_bucket
     }
     /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }

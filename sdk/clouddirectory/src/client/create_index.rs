@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::operation::create_index::CreateIndexOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::operation::create_index::CreateIndexError)
-    pub fn create_index(
-        &self,
-    ) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
+    pub fn create_index(&self) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
         crate::operation::create_index::builders::CreateIndexFluentBuilder::new(self.handle.clone())
     }
 }

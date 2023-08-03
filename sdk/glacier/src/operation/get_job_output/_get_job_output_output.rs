@@ -98,10 +98,7 @@ impl GetJobOutputOutputBuilder {
         self
     }
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -153,18 +150,12 @@ impl GetJobOutputOutputBuilder {
         &self.status
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn content_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn set_content_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_range = input;
         self
     }
@@ -173,18 +164,12 @@ impl GetJobOutputOutputBuilder {
         &self.content_range
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn accept_ranges(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_ranges = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn set_accept_ranges(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_ranges(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_ranges = input;
         self
     }
@@ -207,18 +192,12 @@ impl GetJobOutputOutputBuilder {
         &self.content_type
     }
     /// <p>The description of an archive.</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of an archive.</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_description = input;
         self
     }

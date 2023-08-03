@@ -10,10 +10,7 @@ impl GetInvalidationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_invalidation::GetInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invalidation::GetInvalidationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invalidation::GetInvalidationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_invalidation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetInvalidationFluentBuilder {
         }
     }
     /// Access the GetInvalidation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_invalidation::builders::GetInvalidationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_invalidation::builders::GetInvalidationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetInvalidationFluentBuilder {
             crate::operation::get_invalidation::GetInvalidation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invalidation::GetInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invalidation::GetInvalidationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetInvalidationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetInvalidationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_invalidation::GetInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invalidation::GetInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invalidation::GetInvalidationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetInvalidationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_invalidation::GetInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invalidation::GetInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invalidation::GetInvalidationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetInvalidationFluentBuilder {
             crate::operation::get_invalidation::GetInvalidation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invalidation::GetInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invalidation::GetInvalidationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The distribution's ID.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_id(input.into());
         self
     }
     /// <p>The distribution's ID.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
     }

@@ -35,9 +35,7 @@ impl Metric {
         self.window.as_ref()
     }
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-    pub fn processing_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricProcessingConfig> {
+    pub fn processing_config(&self) -> ::std::option::Option<&crate::types::MetricProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
@@ -50,9 +48,7 @@ impl Metric {
 
 /// A builder for [`Metric`](crate::types::Metric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
@@ -89,17 +85,12 @@ impl MetricBuilder {
         self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
         &self.variables
     }
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
@@ -122,17 +113,12 @@ impl MetricBuilder {
         self
     }
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-    pub fn set_processing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricProcessingConfig>,
-    ) -> Self {
+    pub fn set_processing_config(mut self, input: ::std::option::Option<crate::types::MetricProcessingConfig>) -> Self {
         self.processing_config = input;
         self
     }
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
-    pub fn get_processing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricProcessingConfig> {
+    pub fn get_processing_config(&self) -> &::std::option::Option<crate::types::MetricProcessingConfig> {
         &self.processing_config
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).

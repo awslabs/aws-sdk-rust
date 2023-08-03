@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`logging_options(LoggingOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_logging_options): <p>The new values of the IoT Analytics logging options.</p>
     /// - On success, responds with [`PutLoggingOptionsOutput`](crate::operation::put_logging_options::PutLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::operation::put_logging_options::PutLoggingOptionsError)
-    pub fn put_logging_options(
-        &self,
-    ) -> crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder {
-        crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_logging_options(&self) -> crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder {
+        crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

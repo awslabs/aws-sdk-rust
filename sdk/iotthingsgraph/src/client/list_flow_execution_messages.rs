@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListFlowExecutionMessagesError>`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn list_flow_execution_messages(&self) -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder{
+    pub fn list_flow_execution_messages(&self) -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder {
         crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesFluentBuilder::new(self.handle.clone())
     }
 }

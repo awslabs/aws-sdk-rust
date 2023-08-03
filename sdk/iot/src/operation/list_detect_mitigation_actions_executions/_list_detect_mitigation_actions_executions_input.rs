@@ -57,16 +57,14 @@ impl ListDetectMitigationActionsExecutionsInput {
 }
 impl ListDetectMitigationActionsExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
-    pub fn builder() -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder {
         crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsExecutionsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
@@ -125,10 +123,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
         self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -142,10 +137,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
         self
     }
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -182,24 +174,22 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput {
-                task_id: self.task_id
-                ,
-                violation_id: self.violation_id
-                ,
-                thing_name: self.thing_name
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                task_id: self.task_id,
+                violation_id: self.violation_id,
+                thing_name: self.thing_name,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

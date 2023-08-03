@@ -30,9 +30,7 @@ impl PolicyToPath {
 
 /// A builder for [`PolicyToPath`](crate::types::PolicyToPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyToPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
@@ -64,17 +62,12 @@ impl PolicyToPathBuilder {
         self
     }
     /// <p>List of policy objects.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>List of policy objects.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>> {
         &self.policies
     }
     /// Consumes the builder and constructs a [`PolicyToPath`](crate::types::PolicyToPath).

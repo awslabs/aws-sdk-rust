@@ -29,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbParameterGroupsOutput {
 }
 impl DescribeDbParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
-    pub fn builder() -> crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsOutputBuilder {
         crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,
+    pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbParameterGroupsOutputBuilder {
@@ -72,17 +69,12 @@ impl DescribeDbParameterGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub fn set_db_parameter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,
-    ) -> Self {
+    pub fn set_db_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>) -> Self {
         self.db_parameter_groups = input;
         self
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub fn get_db_parameter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>> {
+    pub fn get_db_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>> {
         &self.db_parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +87,7 @@ impl DescribeDbParameterGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput {
         crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput {
             marker: self.marker,
             db_parameter_groups: self.db_parameter_groups,

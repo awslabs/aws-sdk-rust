@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput::creation_date): <p>The date the version was created.</p>
     ///   - [`state_machine_version_arn(Option<String>)`](crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput::state_machine_version_arn): <p>The Amazon Resource Name (ARN) (ARN) that identifies the state machine version.</p>
     /// - On failure, responds with [`SdkError<PublishStateMachineVersionError>`](crate::operation::publish_state_machine_version::PublishStateMachineVersionError)
-    pub fn publish_state_machine_version(&self) -> crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionFluentBuilder{
+    pub fn publish_state_machine_version(
+        &self,
+    ) -> crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionFluentBuilder {
         crate::operation::publish_state_machine_version::builders::PublishStateMachineVersionFluentBuilder::new(self.handle.clone())
     }
 }

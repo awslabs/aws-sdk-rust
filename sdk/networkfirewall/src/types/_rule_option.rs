@@ -30,9 +30,7 @@ impl RuleOption {
 
 /// A builder for [`RuleOption`](crate::types::RuleOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleOptionBuilder {
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl RuleOptionBuilder {
         self
     }
     /// <p></p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.settings = input;
         self
     }

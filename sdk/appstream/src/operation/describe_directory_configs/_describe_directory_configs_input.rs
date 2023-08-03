@@ -29,18 +29,14 @@ impl DescribeDirectoryConfigsInput {
 }
 impl DescribeDirectoryConfigsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectoryConfigsInput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsInputBuilder {
         crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectoryConfigsInput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsInputBuilder {
     pub(crate) directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,27 +48,19 @@ impl DescribeDirectoryConfigsInputBuilder {
     /// To override the contents of this collection use [`set_directory_names`](Self::set_directory_names).
     ///
     /// <p>The directory names.</p>
-    pub fn directory_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.directory_names.unwrap_or_default();
         v.push(input.into());
         self.directory_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The directory names.</p>
-    pub fn set_directory_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_directory_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.directory_names = input;
         self
     }
     /// <p>The directory names.</p>
-    pub fn get_directory_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.directory_names
     }
     /// <p>The maximum size of each page of results.</p>
@@ -110,12 +98,10 @@ impl DescribeDirectoryConfigsInputBuilder {
         crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput {
-                directory_names: self.directory_names,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput {
+            directory_names: self.directory_names,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

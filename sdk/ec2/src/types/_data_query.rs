@@ -58,9 +58,7 @@ impl DataQuery {
 
 /// A builder for [`DataQuery`](crate::types::DataQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl DataQueryBuilder {
         self
     }
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.statistic = input;
         self
     }

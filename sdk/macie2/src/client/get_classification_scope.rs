@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::name): <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     ///   - [`s3(Option<S3ClassificationScope>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::s3): <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
     /// - On failure, responds with [`SdkError<GetClassificationScopeError>`](crate::operation::get_classification_scope::GetClassificationScopeError)
-    pub fn get_classification_scope(
-        &self,
-    ) -> crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder
-    {
+    pub fn get_classification_scope(&self) -> crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder {
         crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::new(self.handle.clone())
     }
 }

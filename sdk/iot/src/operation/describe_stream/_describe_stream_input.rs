@@ -22,9 +22,7 @@ impl DescribeStreamInput {
 
 /// A builder for [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeStreamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stream::DescribeStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput {
-            stream_id: self.stream_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_stream::DescribeStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput { stream_id: self.stream_id })
     }
 }

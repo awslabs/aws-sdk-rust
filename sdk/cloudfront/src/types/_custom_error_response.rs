@@ -75,9 +75,7 @@ impl CustomErrorResponse {
 
 /// A builder for [`CustomErrorResponse`](crate::types::CustomErrorResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomErrorResponseBuilder {
     pub(crate) error_code: ::std::option::Option<i32>,
     pub(crate) response_page_path: ::std::option::Option<::std::string::String>,
@@ -106,10 +104,7 @@ impl CustomErrorResponseBuilder {
     /// </ul>
     /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for <code>ResponseCode</code>.</p>
     /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.</p>
-    pub fn response_page_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_page_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_page_path = ::std::option::Option::Some(input.into());
         self
     }
@@ -120,10 +115,7 @@ impl CustomErrorResponseBuilder {
     /// </ul>
     /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for <code>ResponseCode</code>.</p>
     /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.</p>
-    pub fn set_response_page_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_page_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_page_path = input;
         self
     }
@@ -144,10 +136,7 @@ impl CustomErrorResponseBuilder {
     /// <li> <p>You might want to return a <code>200</code> status code (OK) and static website so your customers don't know that your website is down.</p> </li>
     /// </ul>
     /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for <code>ResponsePagePath</code>.</p>
-    pub fn response_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_code = ::std::option::Option::Some(input.into());
         self
     }
@@ -158,10 +147,7 @@ impl CustomErrorResponseBuilder {
     /// <li> <p>You might want to return a <code>200</code> status code (OK) and static website so your customers don't know that your website is down.</p> </li>
     /// </ul>
     /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for <code>ResponsePagePath</code>.</p>
-    pub fn set_response_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_code = input;
         self
     }

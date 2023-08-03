@@ -10,10 +10,7 @@ impl RevokePermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_permissions::RevokePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_permissions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RevokePermissionsFluentBuilder {
         }
     }
     /// Access the RevokePermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RevokePermissionsFluentBuilder {
             crate::operation::revoke_permissions::RevokePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RevokePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RevokePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_permissions::RevokePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RevokePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_permissions::RevokePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RevokePermissionsFluentBuilder {
             crate::operation::revoke_permissions::RevokePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>The principal to be revoked permissions on the resource.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
@@ -177,17 +158,12 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
     /// Appends an item to `PermissionsWithGrantOption`.
@@ -200,17 +176,12 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions_with_grant_option(input);
         self
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn get_permissions_with_grant_option(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions_with_grant_option()
     }
 }

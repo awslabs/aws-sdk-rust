@@ -23,17 +23,14 @@ impl AggregateConformancePackComplianceSummaryFilters {
 }
 impl AggregateConformancePackComplianceSummaryFilters {
     /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
-    pub fn builder(
-    ) -> crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder {
+    pub fn builder() -> crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder {
         crate::types::builders::AggregateConformancePackComplianceSummaryFiltersBuilder::default()
     }
 }
 
 /// A builder for [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummaryFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

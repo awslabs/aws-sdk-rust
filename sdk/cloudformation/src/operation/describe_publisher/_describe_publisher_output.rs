@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribePublisherOutput {
 }
 impl DescribePublisherOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublisherOutput`](crate::operation::describe_publisher::DescribePublisherOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder {
+    pub fn builder() -> crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder {
         crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublisherOutput`](crate::operation::describe_publisher::DescribePublisherOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublisherOutputBuilder {
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
     pub(crate) publisher_status: ::std::option::Option<crate::types::PublisherStatus>,
@@ -81,10 +78,7 @@ impl DescribePublisherOutputBuilder {
         self
     }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-    pub fn set_publisher_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PublisherStatus>,
-    ) -> Self {
+    pub fn set_publisher_status(mut self, input: ::std::option::Option<crate::types::PublisherStatus>) -> Self {
         self.publisher_status = input;
         self
     }
@@ -98,10 +92,7 @@ impl DescribePublisherOutputBuilder {
         self
     }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -110,18 +101,12 @@ impl DescribePublisherOutputBuilder {
         &self.identity_provider
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    pub fn publisher_profile(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn publisher_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher_profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    pub fn set_publisher_profile(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_publisher_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher_profile = input;
         self
     }

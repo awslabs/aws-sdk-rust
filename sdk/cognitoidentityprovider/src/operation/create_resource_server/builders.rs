@@ -37,9 +37,7 @@ impl CreateResourceServerFluentBuilder {
         }
     }
     /// Access the CreateResourceServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateResourceServerFluentBuilder {
             crate::operation::create_resource_server::CreateResourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_server::CreateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_server::CreateResourceServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateResourceServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateResourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_server::CreateResourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_server::CreateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_server::CreateResourceServerError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateResourceServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_server::CreateResourceServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_server::CreateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_server::CreateResourceServerError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateResourceServerFluentBuilder {
             crate::operation::create_resource_server::CreateResourceServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_server::CreateResourceServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_server::CreateResourceServerError>,
     > {
         self.customize_middleware().await
     }
@@ -174,17 +161,12 @@ impl CreateResourceServerFluentBuilder {
         self
     }
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
     }
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    pub fn get_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         self.inner.get_scopes()
     }
 }

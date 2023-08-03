@@ -10,10 +10,7 @@ impl ListDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices::ListDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_devices();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl ListDevicesFluentBuilder {
         self.inner.get_limit()
     }
     /// <p>The pagination token for the list request.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pagination_token(input.into());
         self
     }
     /// <p>The pagination token for the list request.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
     }

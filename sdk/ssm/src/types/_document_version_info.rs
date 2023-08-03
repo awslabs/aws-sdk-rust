@@ -86,9 +86,7 @@ impl DocumentVersionInfo {
 
 /// A builder for [`DocumentVersionInfo`](crate::types::DocumentVersionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentVersionInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -131,18 +129,12 @@ impl DocumentVersionInfoBuilder {
         &self.display_name
     }
     /// <p>The document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -170,10 +162,7 @@ impl DocumentVersionInfoBuilder {
         self
     }
     /// <p>The date the document was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -201,10 +190,7 @@ impl DocumentVersionInfoBuilder {
         self
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -218,10 +204,7 @@ impl DocumentVersionInfoBuilder {
         self
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DocumentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -230,18 +213,12 @@ impl DocumentVersionInfoBuilder {
         &self.status
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn status_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn set_status_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_information = input;
         self
     }
@@ -255,10 +232,7 @@ impl DocumentVersionInfoBuilder {
         self
     }
     /// <p>The current status of the approval review for the latest version of the document.</p>
-    pub fn set_review_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewStatus>,
-    ) -> Self {
+    pub fn set_review_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
         self.review_status = input;
         self
     }

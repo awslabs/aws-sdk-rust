@@ -132,9 +132,7 @@ impl Component {
 
 /// A builder for [`Component`](crate::types::Component).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_component: ::std::option::Option<::std::string::String>,
@@ -169,18 +167,12 @@ impl ComponentBuilder {
         &self.component_id
     }
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
-    pub fn parent_component(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_component(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_component = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
-    pub fn set_parent_component(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_component(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_component = input;
         self
     }
@@ -193,42 +185,28 @@ impl ComponentBuilder {
     /// To override the contents of this collection use [`set_child_components`](Self::set_child_components).
     ///
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
-    pub fn child_components(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.child_components.unwrap_or_default();
         v.push(input.into());
         self.child_components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
-    pub fn set_child_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_child_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.child_components = input;
         self
     }
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
-    pub fn get_child_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_child_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.child_components
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -242,10 +220,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The type of the component.</p>
-    pub fn set_component_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentType>,
-    ) -> Self {
+    pub fn set_component_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
         self.component_type = input;
         self
     }
@@ -259,10 +234,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The status of the component.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -285,18 +257,12 @@ impl ComponentBuilder {
         &self.sap_hostname
     }
     /// <p>The kernel version of the component.</p>
-    pub fn sap_kernel_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sap_kernel_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sap_kernel_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The kernel version of the component.</p>
-    pub fn set_sap_kernel_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sap_kernel_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sap_kernel_version = input;
         self
     }
@@ -324,10 +290,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>Details of the SAP HANA system replication for the component.</p>
-    pub fn set_resilience(
-        mut self,
-        input: ::std::option::Option<crate::types::Resilience>,
-    ) -> Self {
+    pub fn set_resilience(mut self, input: ::std::option::Option<crate::types::Resilience>) -> Self {
         self.resilience = input;
         self
     }
@@ -341,10 +304,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The associated host of the component.</p>
-    pub fn set_associated_host(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociatedHost>,
-    ) -> Self {
+    pub fn set_associated_host(mut self, input: ::std::option::Option<crate::types::AssociatedHost>) -> Self {
         self.associated_host = input;
         self
     }
@@ -364,10 +324,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The SAP HANA databases of the component.</p>
-    pub fn set_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.databases = input;
         self
     }
@@ -389,10 +346,7 @@ impl ComponentBuilder {
     }
     /// <p>The hosts of the component.</p>
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
-    pub fn set_hosts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
-    ) -> Self {
+    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>) -> Self {
         self.hosts = input;
         self
     }
@@ -424,10 +378,7 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time at which the component was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

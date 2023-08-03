@@ -43,16 +43,14 @@ impl CreateSourceRepositoryBranchInput {
 }
 impl CreateSourceRepositoryBranchInput {
     /// Creates a new builder-style object to manufacture [`CreateSourceRepositoryBranchInput`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput).
-    pub fn builder() -> crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder{
+    pub fn builder() -> crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder {
         crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSourceRepositoryBranchInput`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranchInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.project_name
     }
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_repository_name = input;
         self
     }
@@ -124,18 +116,12 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.name
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    pub fn head_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn head_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.head_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    pub fn set_head_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_head_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.head_commit_id = input;
         self
     }
@@ -150,14 +136,12 @@ impl CreateSourceRepositoryBranchInputBuilder {
         crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                source_repository_name: self.source_repository_name,
-                name: self.name,
-                head_commit_id: self.head_commit_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            source_repository_name: self.source_repository_name,
+            name: self.name,
+            head_commit_id: self.head_commit_id,
+        })
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_snapshots::ListSnapshotsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::operation::list_snapshots::ListSnapshotsOutput::snapshots): <p>All of the returned snapshot objects.</p>
     /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::operation::list_snapshots::ListSnapshotsError)
-    pub fn list_snapshots(
-        &self,
-    ) -> crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder {
-        crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_snapshots(&self) -> crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder {
+        crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

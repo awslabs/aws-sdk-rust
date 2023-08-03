@@ -30,9 +30,7 @@ impl ManagedRuleGroupVersion {
 
 /// A builder for [`ManagedRuleGroupVersion`](crate::types::ManagedRuleGroupVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupVersionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,17 +56,12 @@ impl ManagedRuleGroupVersionBuilder {
         self
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_timestamp = input;
         self
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
-    pub fn get_last_update_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupVersion`](crate::types::ManagedRuleGroupVersion).

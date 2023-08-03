@@ -35,9 +35,7 @@ impl ListMembersOutput {
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListMembersOutputBuilder {
         self
     }
     /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>) -> Self {
         self.members = input;
         self
     }
     /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
         &self.members
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

@@ -118,9 +118,7 @@ impl ParallelDataProperties {
         self.last_updated_at.as_ref()
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn latest_update_attempt_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParallelDataStatus> {
+    pub fn latest_update_attempt_status(&self) -> ::std::option::Option<&crate::types::ParallelDataStatus> {
         self.latest_update_attempt_status.as_ref()
     }
     /// <p>The time that the most recent update was attempted.</p>
@@ -137,9 +135,7 @@ impl ParallelDataProperties {
 
 /// A builder for [`ParallelDataProperties`](crate::types::ParallelDataProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParallelDataPropertiesBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -156,8 +152,7 @@ pub struct ParallelDataPropertiesBuilder {
     pub(crate) encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) latest_update_attempt_status:
-        ::std::option::Option<crate::types::ParallelDataStatus>,
+    pub(crate) latest_update_attempt_status: ::std::option::Option<crate::types::ParallelDataStatus>,
     pub(crate) latest_update_attempt_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ParallelDataPropertiesBuilder {
@@ -209,10 +204,7 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
         self.status = input;
         self
     }
@@ -221,18 +213,12 @@ impl ParallelDataPropertiesBuilder {
         &self.status
     }
     /// <p>The source language of the translations in the parallel data file.</p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source language of the translations in the parallel data file.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_language_code = input;
         self
     }
@@ -245,27 +231,19 @@ impl ParallelDataPropertiesBuilder {
     /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
     ///
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn target_language_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_language_codes.unwrap_or_default();
         v.push(input.into());
         self.target_language_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn set_target_language_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_language_codes = input;
         self
     }
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn get_target_language_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_language_codes
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
@@ -274,17 +252,12 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
+    pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
         self.parallel_data_config = input;
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn get_parallel_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+    pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         &self.parallel_data_config
     }
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
@@ -363,10 +336,7 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -380,10 +350,7 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time at which the parallel data resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -397,10 +364,7 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time at which the parallel data resource was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -414,17 +378,12 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn set_latest_update_attempt_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
+    pub fn set_latest_update_attempt_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
         self.latest_update_attempt_status = input;
         self
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn get_latest_update_attempt_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataStatus> {
+    pub fn get_latest_update_attempt_status(&self) -> &::std::option::Option<crate::types::ParallelDataStatus> {
         &self.latest_update_attempt_status
     }
     /// <p>The time that the most recent update was attempted.</p>
@@ -433,17 +392,12 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn set_latest_update_attempt_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_update_attempt_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_update_attempt_at = input;
         self
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn get_latest_update_attempt_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_update_attempt_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_update_attempt_at
     }
     /// Consumes the builder and constructs a [`ParallelDataProperties`](crate::types::ParallelDataProperties).

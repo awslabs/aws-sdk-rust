@@ -9,8 +9,7 @@ pub struct ResourceDataSyncSource {
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
     #[doc(hidden)]
-    pub aws_organizations_source:
-        ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
+    pub aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
     #[doc(hidden)]
     pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -27,9 +26,7 @@ impl ResourceDataSyncSource {
         self.source_type.as_deref()
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn aws_organizations_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataSyncAwsOrganizationsSource> {
+    pub fn aws_organizations_source(&self) -> ::std::option::Option<&crate::types::ResourceDataSyncAwsOrganizationsSource> {
         self.aws_organizations_source.as_ref()
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
@@ -54,13 +51,10 @@ impl ResourceDataSyncSource {
 
 /// A builder for [`ResourceDataSyncSource`](crate::types::ResourceDataSyncSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncSourceBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_organizations_source:
-        ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
+    pub(crate) aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     pub(crate) source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_future_regions: ::std::option::Option<bool>,
     pub(crate) enable_all_ops_data_sources: ::std::option::Option<bool>,
@@ -81,25 +75,17 @@ impl ResourceDataSyncSourceBuilder {
         &self.source_type
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn aws_organizations_source(
-        mut self,
-        input: crate::types::ResourceDataSyncAwsOrganizationsSource,
-    ) -> Self {
+    pub fn aws_organizations_source(mut self, input: crate::types::ResourceDataSyncAwsOrganizationsSource) -> Self {
         self.aws_organizations_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn set_aws_organizations_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
-    ) -> Self {
+    pub fn set_aws_organizations_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>) -> Self {
         self.aws_organizations_source = input;
         self
     }
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    pub fn get_aws_organizations_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource> {
+    pub fn get_aws_organizations_source(&self) -> &::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource> {
         &self.aws_organizations_source
     }
     /// Appends an item to `source_regions`.
@@ -107,27 +93,19 @@ impl ResourceDataSyncSourceBuilder {
     /// To override the contents of this collection use [`set_source_regions`](Self::set_source_regions).
     ///
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn source_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_regions.unwrap_or_default();
         v.push(input.into());
         self.source_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn set_source_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_regions = input;
         self
     }
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    pub fn get_source_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_regions
     }
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>

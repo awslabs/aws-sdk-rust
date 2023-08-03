@@ -10,10 +10,7 @@ impl CreateFileSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_file_system();
         fluent_builder.inner = self;
@@ -53,9 +50,7 @@ impl CreateFileSystemFluentBuilder {
         }
     }
     /// Access the CreateFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_file_system::builders::CreateFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_file_system::builders::CreateFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +62,7 @@ impl CreateFileSystemFluentBuilder {
             crate::operation::create_file_system::CreateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +72,7 @@ impl CreateFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +81,7 @@ impl CreateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         let op = self
             .inner
@@ -116,9 +104,7 @@ impl CreateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -132,25 +118,17 @@ impl CreateFileSystemFluentBuilder {
             crate::operation::create_file_system::CreateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_system::CreateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_system::CreateFileSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    pub fn creation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creation_token(input.into());
         self
     }
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    pub fn set_creation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creation_token(input);
         self
     }
@@ -168,10 +146,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
-    pub fn set_performance_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceMode>,
-    ) -> Self {
+    pub fn set_performance_mode(mut self, input: ::std::option::Option<crate::types::PerformanceMode>) -> Self {
         self.inner = self.inner.set_performance_mode(input);
         self
     }
@@ -244,10 +219,7 @@ impl CreateFileSystemFluentBuilder {
     }
     /// <p>Specifies the throughput mode for the file system. The mode can be <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, with certain time restrictions. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
     /// <p>Default is <code>bursting</code>.</p>
-    pub fn set_throughput_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ThroughputMode>,
-    ) -> Self {
+    pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
         self.inner = self.inner.set_throughput_mode(input);
         self
     }
@@ -262,10 +234,7 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn set_provisioned_throughput_in_mibps(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_provisioned_throughput_in_mibps(input);
         self
     }
@@ -276,20 +245,14 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
     /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
-    pub fn availability_zone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_name(input.into());
         self
     }
     /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
     /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
-    pub fn set_availability_zone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone_name(input);
         self
     }
@@ -332,10 +295,7 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

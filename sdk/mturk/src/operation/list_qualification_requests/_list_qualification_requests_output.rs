@@ -11,8 +11,7 @@ pub struct ListQualificationRequestsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     #[doc(hidden)]
-    pub qualification_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
+    pub qualification_requests: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
     _request_id: Option<String>,
 }
 impl ListQualificationRequestsOutput {
@@ -25,9 +24,7 @@ impl ListQualificationRequestsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn qualification_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QualificationRequest]> {
+    pub fn qualification_requests(&self) -> ::std::option::Option<&[crate::types::QualificationRequest]> {
         self.qualification_requests.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListQualificationRequestsOutput {
 }
 impl ListQualificationRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListQualificationRequestsOutput`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput).
-    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder{
+    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder {
         crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQualificationRequestsOutput`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQualificationRequestsOutputBuilder {
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
+    pub(crate) qualification_requests: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
     _request_id: Option<String>,
 }
 impl ListQualificationRequestsOutputBuilder {
@@ -96,17 +90,12 @@ impl ListQualificationRequestsOutputBuilder {
         self
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn set_qualification_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>,
-    ) -> Self {
+    pub fn set_qualification_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>>) -> Self {
         self.qualification_requests = input;
         self
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn get_qualification_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>> {
+    pub fn get_qualification_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequest>> {
         &self.qualification_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -119,9 +108,7 @@ impl ListQualificationRequestsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListQualificationRequestsOutput`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
+    pub fn build(self) -> crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
         crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
             num_results: self.num_results,
             next_token: self.next_token,

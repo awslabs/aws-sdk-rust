@@ -50,17 +50,14 @@ impl UpdatePhoneNumberInput {
 }
 impl UpdatePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
         crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,
@@ -71,18 +68,12 @@ pub struct UpdatePhoneNumberInputBuilder {
 }
 impl UpdatePhoneNumberInputBuilder {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -105,18 +96,12 @@ impl UpdatePhoneNumberInputBuilder {
         &self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn two_way_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.two_way_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn set_two_way_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.two_way_channel_arn = input;
         self
     }
@@ -139,18 +124,12 @@ impl UpdatePhoneNumberInputBuilder {
         &self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -175,19 +154,14 @@ impl UpdatePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_phone_number::UpdatePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_phone_number::UpdatePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-                two_way_enabled: self.two_way_enabled,
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
-                opt_out_list_name: self.opt_out_list_name,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_phone_number::UpdatePhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+            two_way_enabled: self.two_way_enabled,
+            two_way_channel_arn: self.two_way_channel_arn,
+            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
+            opt_out_list_name: self.opt_out_list_name,
+            deletion_protection_enabled: self.deletion_protection_enabled,
+        })
     }
 }

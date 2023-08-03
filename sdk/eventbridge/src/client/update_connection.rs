@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_connection::UpdateConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified.</p>
     ///   - [`last_authorized_time(Option<DateTime>)`](crate::operation::update_connection::UpdateConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::operation::update_connection::UpdateConnectionError)
-    pub fn update_connection(
-        &self,
-    ) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
-        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connection(&self) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
+        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

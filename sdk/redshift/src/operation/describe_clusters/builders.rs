@@ -10,10 +10,7 @@ impl DescribeClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_clusters();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeClustersFluentBuilder {
         }
     }
     /// Access the DescribeClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.send_middleware().await
     }
@@ -118,38 +104,25 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_clusters::paginator::DescribeClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
-        crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
+        crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>
     /// <p>The default is that all clusters defined for an account are returned.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>
     /// <p>The default is that all clusters defined for an account are returned.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -205,10 +178,7 @@ impl DescribeClustersFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -226,10 +196,7 @@ impl DescribeClustersFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

@@ -26,7 +26,7 @@ impl DescribeProblemObservationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProblemObservationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder,
+    inner: crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder,
 }
 impl DescribeProblemObservationsFluentBuilder {
     /// Creates a new `DescribeProblemObservations`.
@@ -37,7 +37,7 @@ impl DescribeProblemObservationsFluentBuilder {
         }
     }
     /// Access the DescribeProblemObservations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeProblemObservationsFluentBuilder {
             crate::operation::describe_problem_observations::DescribeProblemObservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_problem_observations::DescribeProblemObservationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeProblemObservationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeProblemObservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_problem_observations::DescribeProblemObservationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeProblemObservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_problem_observations::DescribeProblemObservationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeProblemObservationsFluentBuilder {
             crate::operation::describe_problem_observations::DescribeProblemObservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_problem_observations::DescribeProblemObservationsError>,
     > {
         self.customize_middleware().await
     }

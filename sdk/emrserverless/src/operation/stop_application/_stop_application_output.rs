@@ -19,9 +19,7 @@ impl StopApplicationOutput {
 
 /// A builder for [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopApplicationOutputBuilder {
     _request_id: Option<String>,
 }

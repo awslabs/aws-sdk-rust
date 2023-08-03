@@ -30,27 +30,19 @@ impl DeleteVolumeOntapResponse {
 
 /// A builder for [`DeleteVolumeOntapResponse`](crate::types::DeleteVolumeOntapResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVolumeOntapResponseBuilder {
     pub(crate) final_backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteVolumeOntapResponseBuilder {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    pub fn final_backup_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_backup_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    pub fn set_final_backup_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_backup_id = input;
         self
     }
@@ -70,17 +62,12 @@ impl DeleteVolumeOntapResponseBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_final_backup_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.final_backup_tags = input;
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_final_backup_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteVolumeOntapResponse`](crate::types::DeleteVolumeOntapResponse).

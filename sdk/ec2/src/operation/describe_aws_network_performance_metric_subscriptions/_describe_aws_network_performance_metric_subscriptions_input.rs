@@ -36,16 +36,16 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsInput {
 }
 impl DescribeAwsNetworkPerformanceMetricSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAwsNetworkPerformanceMetricSubscriptionsInput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput).
-    pub fn builder() -> crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder
+    {
         crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAwsNetworkPerformanceMetricSubscriptionsInput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -93,10 +93,7 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
         self
     }
     /// <p>One or more filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -119,18 +116,19 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAwsNetworkPerformanceMetricSubscriptionsInput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

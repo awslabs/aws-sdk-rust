@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStreamingImageOutput`](crate::operation::update_streaming_image::UpdateStreamingImageOutput) with field(s):
     ///   - [`streaming_image(Option<StreamingImage>)`](crate::operation::update_streaming_image::UpdateStreamingImageOutput::streaming_image): <p>Represents a streaming image resource.</p>  <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>  <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>  <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
     /// - On failure, responds with [`SdkError<UpdateStreamingImageError>`](crate::operation::update_streaming_image::UpdateStreamingImageError)
-    pub fn update_streaming_image(
-        &self,
-    ) -> crate::operation::update_streaming_image::builders::UpdateStreamingImageFluentBuilder {
-        crate::operation::update_streaming_image::builders::UpdateStreamingImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_streaming_image(&self) -> crate::operation::update_streaming_image::builders::UpdateStreamingImageFluentBuilder {
+        crate::operation::update_streaming_image::builders::UpdateStreamingImageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ pub struct MultiplexProgramSettings {
 }
 impl MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn preferred_channel_pipeline(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PreferredChannelPipeline> {
+    pub fn preferred_channel_pipeline(&self) -> ::std::option::Option<&crate::types::PreferredChannelPipeline> {
         self.preferred_channel_pipeline.as_ref()
     }
     /// Unique program number.
@@ -29,9 +27,7 @@ impl MultiplexProgramSettings {
         self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn service_descriptor(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexProgramServiceDescriptor> {
+    pub fn service_descriptor(&self) -> ::std::option::Option<&crate::types::MultiplexProgramServiceDescriptor> {
         self.service_descriptor.as_ref()
     }
     /// Program video settings configuration.
@@ -48,38 +44,26 @@ impl MultiplexProgramSettings {
 
 /// A builder for [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexProgramSettingsBuilder {
-    pub(crate) preferred_channel_pipeline:
-        ::std::option::Option<crate::types::PreferredChannelPipeline>,
+    pub(crate) preferred_channel_pipeline: ::std::option::Option<crate::types::PreferredChannelPipeline>,
     pub(crate) program_number: ::std::option::Option<i32>,
-    pub(crate) service_descriptor:
-        ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+    pub(crate) service_descriptor: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
     pub(crate) video_settings: ::std::option::Option<crate::types::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettingsBuilder {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn preferred_channel_pipeline(
-        mut self,
-        input: crate::types::PreferredChannelPipeline,
-    ) -> Self {
+    pub fn preferred_channel_pipeline(mut self, input: crate::types::PreferredChannelPipeline) -> Self {
         self.preferred_channel_pipeline = ::std::option::Option::Some(input);
         self
     }
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn set_preferred_channel_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PreferredChannelPipeline>,
-    ) -> Self {
+    pub fn set_preferred_channel_pipeline(mut self, input: ::std::option::Option<crate::types::PreferredChannelPipeline>) -> Self {
         self.preferred_channel_pipeline = input;
         self
     }
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
-    pub fn get_preferred_channel_pipeline(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreferredChannelPipeline> {
+    pub fn get_preferred_channel_pipeline(&self) -> &::std::option::Option<crate::types::PreferredChannelPipeline> {
         &self.preferred_channel_pipeline
     }
     /// Unique program number.
@@ -97,25 +81,17 @@ impl MultiplexProgramSettingsBuilder {
         &self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn service_descriptor(
-        mut self,
-        input: crate::types::MultiplexProgramServiceDescriptor,
-    ) -> Self {
+    pub fn service_descriptor(mut self, input: crate::types::MultiplexProgramServiceDescriptor) -> Self {
         self.service_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn set_service_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
-    ) -> Self {
+    pub fn set_service_descriptor(mut self, input: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>) -> Self {
         self.service_descriptor = input;
         self
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
-    pub fn get_service_descriptor(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramServiceDescriptor> {
+    pub fn get_service_descriptor(&self) -> &::std::option::Option<crate::types::MultiplexProgramServiceDescriptor> {
         &self.service_descriptor
     }
     /// Program video settings configuration.
@@ -124,17 +100,12 @@ impl MultiplexProgramSettingsBuilder {
         self
     }
     /// Program video settings configuration.
-    pub fn set_video_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexVideoSettings>,
-    ) -> Self {
+    pub fn set_video_settings(mut self, input: ::std::option::Option<crate::types::MultiplexVideoSettings>) -> Self {
         self.video_settings = input;
         self
     }
     /// Program video settings configuration.
-    pub fn get_video_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexVideoSettings> {
+    pub fn get_video_settings(&self) -> &::std::option::Option<crate::types::MultiplexVideoSettings> {
         &self.video_settings
     }
     /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).

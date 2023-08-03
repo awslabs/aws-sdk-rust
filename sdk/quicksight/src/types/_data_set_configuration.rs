@@ -12,8 +12,7 @@ pub struct DataSetConfiguration {
     pub data_set_schema: ::std::option::Option<crate::types::DataSetSchema>,
     /// <p>A structure containing the list of column group schemas.</p>
     #[doc(hidden)]
-    pub column_group_schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>,
+    pub column_group_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>,
 }
 impl DataSetConfiguration {
     /// <p>Placeholder.</p>
@@ -25,9 +24,7 @@ impl DataSetConfiguration {
         self.data_set_schema.as_ref()
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn column_group_schema_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ColumnGroupSchema]> {
+    pub fn column_group_schema_list(&self) -> ::std::option::Option<&[crate::types::ColumnGroupSchema]> {
         self.column_group_schema_list.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl DataSetConfiguration {
 
 /// A builder for [`DataSetConfiguration`](crate::types::DataSetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetConfigurationBuilder {
     pub(crate) placeholder: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_schema: ::std::option::Option<crate::types::DataSetSchema>,
-    pub(crate) column_group_schema_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>,
+    pub(crate) column_group_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>,
 }
 impl DataSetConfigurationBuilder {
     /// <p>Placeholder.</p>
@@ -70,10 +64,7 @@ impl DataSetConfigurationBuilder {
         self
     }
     /// <p>Dataset schema.</p>
-    pub fn set_data_set_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetSchema>,
-    ) -> Self {
+    pub fn set_data_set_schema(mut self, input: ::std::option::Option<crate::types::DataSetSchema>) -> Self {
         self.data_set_schema = input;
         self
     }
@@ -93,17 +84,12 @@ impl DataSetConfigurationBuilder {
         self
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn set_column_group_schema_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>,
-    ) -> Self {
+    pub fn set_column_group_schema_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>>) -> Self {
         self.column_group_schema_list = input;
         self
     }
     /// <p>A structure containing the list of column group schemas.</p>
-    pub fn get_column_group_schema_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>> {
+    pub fn get_column_group_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupSchema>> {
         &self.column_group_schema_list
     }
     /// Consumes the builder and constructs a [`DataSetConfiguration`](crate::types::DataSetConfiguration).

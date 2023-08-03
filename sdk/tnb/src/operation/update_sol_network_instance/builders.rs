@@ -27,7 +27,7 @@ impl UpdateSolNetworkInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder,
+    inner: crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder,
 }
 impl UpdateSolNetworkInstanceFluentBuilder {
     /// Creates a new `UpdateSolNetworkInstance`.
@@ -38,7 +38,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         }
     }
     /// Access the UpdateSolNetworkInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
             crate::operation::update_sol_network_instance::UpdateSolNetworkInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateSolNetworkInstanceFluentBuilder {
             crate::operation::update_sol_network_instance::UpdateSolNetworkInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ns_instance_id(input.into());
         self
     }
     /// <p>ID of the network instance.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ns_instance_id(input);
         self
     }
@@ -147,10 +130,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self
     }
     /// <p>The type of update.</p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSolNetworkType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
@@ -164,17 +144,12 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self
     }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
-    pub fn set_modify_vnf_info_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSolNetworkModify>,
-    ) -> Self {
+    pub fn set_modify_vnf_info_data(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkModify>) -> Self {
         self.inner = self.inner.set_modify_vnf_info_data(input);
         self
     }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
-    pub fn get_modify_vnf_info_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateSolNetworkModify> {
+    pub fn get_modify_vnf_info_data(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkModify> {
         self.inner.get_modify_vnf_info_data()
     }
     /// Adds a key-value pair to `tags`.
@@ -182,30 +157,17 @@ impl UpdateSolNetworkInstanceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

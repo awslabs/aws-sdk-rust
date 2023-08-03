@@ -22,18 +22,14 @@ impl AssociateTrustStoreInput {
 }
 impl AssociateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
-    pub fn builder(
-    ) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
-        crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
+        crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrustStoreInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl AssociateTrustStoreInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -76,15 +66,11 @@ impl AssociateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_trust_store::AssociateTrustStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_trust_store::AssociateTrustStoreInput {
-                portal_arn: self.portal_arn,
-                trust_store_arn: self.trust_store_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreInput {
+            portal_arn: self.portal_arn,
+            trust_store_arn: self.trust_store_arn,
+        })
     }
 }

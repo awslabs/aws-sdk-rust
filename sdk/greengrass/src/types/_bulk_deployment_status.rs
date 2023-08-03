@@ -42,13 +42,7 @@
 /// The current status of the bulk deployment.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BulkDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for BulkDeploymentStatus {
             "Running" => BulkDeploymentStatus::Running,
             "Stopped" => BulkDeploymentStatus::Stopped,
             "Stopping" => BulkDeploymentStatus::Stopping,
-            other => BulkDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BulkDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl BulkDeploymentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Completed",
-            "Failed",
-            "Initializing",
-            "Running",
-            "Stopped",
-            "Stopping",
-        ]
+        &["Completed", "Failed", "Initializing", "Running", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for BulkDeploymentStatus {

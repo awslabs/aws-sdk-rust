@@ -22,9 +22,7 @@ impl LaunchAppInput {
 
 /// A builder for [`LaunchAppInput`](crate::operation::launch_app::LaunchAppInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchAppInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl LaunchAppInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`LaunchAppInput`](crate::operation::launch_app::LaunchAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::launch_app::LaunchAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::launch_app::LaunchAppInput {
-            app_id: self.app_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::launch_app::LaunchAppInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::launch_app::LaunchAppInput { app_id: self.app_id })
     }
 }

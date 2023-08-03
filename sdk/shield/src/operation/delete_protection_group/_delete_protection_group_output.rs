@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProtectionGroupOutput {
 }
 impl DeleteProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupOutput`](crate::operation::delete_protection_group::DeleteProtectionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_protection_group::builders::DeleteProtectionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_protection_group::builders::DeleteProtectionGroupOutputBuilder {
         crate::operation::delete_protection_group::builders::DeleteProtectionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProtectionGroupOutput`](crate::operation::delete_protection_group::DeleteProtectionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }

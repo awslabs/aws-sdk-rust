@@ -38,9 +38,7 @@ impl GetServerCertificateFluentBuilder {
         }
     }
     /// Access the GetServerCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_server_certificate::builders::GetServerCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_server_certificate::builders::GetServerCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetServerCertificateFluentBuilder {
             crate::operation::get_server_certificate::GetServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_certificate::GetServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_certificate::GetServerCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetServerCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_server_certificate::GetServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_certificate::GetServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_certificate::GetServerCertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_server_certificate::GetServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_certificate::GetServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_certificate::GetServerCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +106,19 @@ impl GetServerCertificateFluentBuilder {
             crate::operation::get_server_certificate::GetServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_certificate::GetServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_certificate::GetServerCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the server certificate you want to retrieve information about.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_certificate_name(input.into());
         self
     }
     /// <p>The name of the server certificate you want to retrieve information about.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_certificate_name(input);
         self
     }

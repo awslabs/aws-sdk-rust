@@ -26,8 +26,7 @@ impl GetCellReadinessSummaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCellReadinessSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder,
+    inner: crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder,
 }
 impl GetCellReadinessSummaryFluentBuilder {
     /// Creates a new `GetCellReadinessSummary`.
@@ -38,10 +37,7 @@ impl GetCellReadinessSummaryFluentBuilder {
         }
     }
     /// Access the GetCellReadinessSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetCellReadinessSummaryFluentBuilder {
             crate::operation::get_cell_readiness_summary::GetCellReadinessSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetCellReadinessSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetCellReadinessSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetCellReadinessSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl GetCellReadinessSummaryFluentBuilder {
             crate::operation::get_cell_readiness_summary::GetCellReadinessSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginator {
         crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the cell.</p>

@@ -10,10 +10,7 @@ impl DeleteNetworkSiteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_network_site::DeleteNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_site::DeleteNetworkSiteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_site::DeleteNetworkSiteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_network_site();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteNetworkSiteFluentBuilder {
         }
     }
     /// Access the DeleteNetworkSite as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteNetworkSiteFluentBuilder {
             crate::operation::delete_network_site::DeleteNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_site::DeleteNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_site::DeleteNetworkSiteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteNetworkSiteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_site::DeleteNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_site::DeleteNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_site::DeleteNetworkSiteError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_site::DeleteNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_site::DeleteNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_site::DeleteNetworkSiteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteNetworkSiteFluentBuilder {
             crate::operation::delete_network_site::DeleteNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_site::DeleteNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_site::DeleteNetworkSiteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_site_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_site_arn(input);
         self
     }

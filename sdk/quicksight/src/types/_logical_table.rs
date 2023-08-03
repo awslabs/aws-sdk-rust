@@ -37,13 +37,10 @@ impl LogicalTable {
 
 /// A builder for [`LogicalTable`](crate::types::LogicalTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogicalTableBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
-    pub(crate) data_transforms:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
+    pub(crate) data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
     pub(crate) source: ::std::option::Option<crate::types::LogicalTableSource>,
 }
 impl LogicalTableBuilder {
@@ -73,17 +70,12 @@ impl LogicalTableBuilder {
         self
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    pub fn set_data_transforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
-    ) -> Self {
+    pub fn set_data_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>) -> Self {
         self.data_transforms = input;
         self
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
-    pub fn get_data_transforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>> {
+    pub fn get_data_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>> {
         &self.data_transforms
     }
     /// <p>Source of this logical table.</p>
@@ -92,10 +84,7 @@ impl LogicalTableBuilder {
         self
     }
     /// <p>Source of this logical table.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalTableSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::LogicalTableSource>) -> Self {
         self.source = input;
         self
     }

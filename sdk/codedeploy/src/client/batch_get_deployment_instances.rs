@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
     /// - On failure, responds with [`SdkError<BatchGetDeploymentInstancesError>`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError)
     #[deprecated(note = "This operation is deprecated, use BatchGetDeploymentTargets instead.")]
-    pub fn batch_get_deployment_instances(&self) -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesFluentBuilder{
+    pub fn batch_get_deployment_instances(
+        &self,
+    ) -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesFluentBuilder {
         crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesFluentBuilder::new(self.handle.clone())
     }
 }

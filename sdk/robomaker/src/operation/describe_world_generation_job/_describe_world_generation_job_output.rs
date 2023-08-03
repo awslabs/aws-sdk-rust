@@ -108,14 +108,10 @@ pub struct DescribeWorldGenerationJobOutput {
     pub finished_worlds_summary: ::std::option::Option<crate::types::FinishedWorldsSummary>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     #[doc(hidden)]
-    pub world_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeWorldGenerationJobOutput {
@@ -208,9 +204,7 @@ impl DescribeWorldGenerationJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason why the world generation job failed.</p>
@@ -230,25 +224,15 @@ impl DescribeWorldGenerationJobOutput {
         self.world_count.as_ref()
     }
     /// <p>Summary information about finished worlds.</p>
-    pub fn finished_worlds_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FinishedWorldsSummary> {
+    pub fn finished_worlds_summary(&self) -> ::std::option::Option<&crate::types::FinishedWorldsSummary> {
         self.finished_worlds_summary.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn world_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.world_tags.as_ref()
     }
 }
@@ -259,16 +243,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorldGenerationJobOutput {
 }
 impl DescribeWorldGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput).
-    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder {
         crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorldGenerationJobOutput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorldGenerationJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorldGenerationJobStatus>,
@@ -279,12 +261,8 @@ pub struct DescribeWorldGenerationJobOutputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) world_count: ::std::option::Option<crate::types::WorldCount>,
     pub(crate) finished_worlds_summary: ::std::option::Option<crate::types::FinishedWorldsSummary>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) world_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeWorldGenerationJobOutputBuilder {
@@ -396,10 +374,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// <p>The world generation job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldGenerationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -457,10 +432,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -538,10 +510,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -578,24 +547,16 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn get_failure_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
         &self.failure_code
     }
     /// <p>The reason why the world generation job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the world generation job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -604,18 +565,12 @@ impl DescribeWorldGenerationJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -643,10 +598,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>Information about the world count.</p>
-    pub fn set_world_count(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldCount>,
-    ) -> Self {
+    pub fn set_world_count(mut self, input: ::std::option::Option<crate::types::WorldCount>) -> Self {
         self.world_count = input;
         self
     }
@@ -660,17 +612,12 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// <p>Summary information about finished worlds.</p>
-    pub fn set_finished_worlds_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FinishedWorldsSummary>,
-    ) -> Self {
+    pub fn set_finished_worlds_summary(mut self, input: ::std::option::Option<crate::types::FinishedWorldsSummary>) -> Self {
         self.finished_worlds_summary = input;
         self
     }
     /// <p>Summary information about finished worlds.</p>
-    pub fn get_finished_worlds_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::FinishedWorldsSummary> {
+    pub fn get_finished_worlds_summary(&self) -> &::std::option::Option<crate::types::FinishedWorldsSummary> {
         &self.finished_worlds_summary
     }
     /// Adds a key-value pair to `tags`.
@@ -678,32 +625,19 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `world_tags`.
@@ -711,32 +645,19 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn world_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.world_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.world_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn set_world_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_world_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.world_tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn get_world_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_world_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.world_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -749,9 +670,7 @@ impl DescribeWorldGenerationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorldGenerationJobOutput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
+    pub fn build(self) -> crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
         crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput {
             arn: self.arn,
             status: self.status,

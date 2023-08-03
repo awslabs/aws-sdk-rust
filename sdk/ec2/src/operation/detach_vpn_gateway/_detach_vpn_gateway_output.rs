@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachVpnGatewayOutput {
 }
 impl DetachVpnGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput).
-    pub fn builder() -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder {
         crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachVpnGatewayOutputBuilder {
     _request_id: Option<String>,
 }

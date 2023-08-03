@@ -6,19 +6,13 @@ pub fn ser_s3_data_repository_configuration(
     if let Some(var_1) = &input.auto_import_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AutoImportPolicy").start_object();
-        crate::protocol_serde::shape_auto_import_policy::ser_auto_import_policy(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_auto_import_policy::ser_auto_import_policy(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.auto_export_policy {
         #[allow(unused_mut)]
         let mut object_4 = object.key("AutoExportPolicy").start_object();
-        crate::protocol_serde::shape_auto_export_policy::ser_auto_export_policy(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_auto_export_policy::ser_auto_export_policy(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())
@@ -26,57 +20,39 @@ pub fn ser_s3_data_repository_configuration(
 
 pub(crate) fn de_s3_data_repository_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::S3DataRepositoryConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::S3DataRepositoryConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::S3DataRepositoryConfigurationBuilder::default();
+            let mut builder = crate::types::builders::S3DataRepositoryConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AutoImportPolicy" => {
-                                builder = builder.set_auto_import_policy(
-                                    crate::protocol_serde::shape_auto_import_policy::de_auto_import_policy(tokens)?
-                                );
-                            }
-                            "AutoExportPolicy" => {
-                                builder = builder.set_auto_export_policy(
-                                    crate::protocol_serde::shape_auto_export_policy::de_auto_export_policy(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AutoImportPolicy" => {
+                            builder = builder.set_auto_import_policy(crate::protocol_serde::shape_auto_import_policy::de_auto_import_policy(tokens)?);
                         }
-                    }
+                        "AutoExportPolicy" => {
+                            builder = builder.set_auto_export_policy(crate::protocol_serde::shape_auto_export_policy::de_auto_export_policy(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

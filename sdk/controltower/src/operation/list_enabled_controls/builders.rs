@@ -37,9 +37,7 @@ impl ListEnabledControlsFluentBuilder {
         }
     }
     /// Access the ListEnabledControls as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListEnabledControlsFluentBuilder {
             crate::operation::list_enabled_controls::ListEnabledControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListEnabledControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListEnabledControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_enabled_controls::ListEnabledControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListEnabledControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_enabled_controls::ListEnabledControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListEnabledControlsFluentBuilder {
             crate::operation::list_enabled_controls::ListEnabledControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_enabled_controls::ListEnabledControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_enabled_controls::ListEnabledControlsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator {
-        crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator {
+        crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_identifier(input.into());
         self
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn set_target_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_identifier(input);
         self
     }

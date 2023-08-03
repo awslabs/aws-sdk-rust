@@ -98,18 +98,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowStepGroupOutput {
 }
 impl GetWorkflowStepGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepGroupOutput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupOutputBuilder {
         crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepGroupOutput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -188,10 +184,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The status of the step group.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StepGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -219,10 +212,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The time at which the step group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -236,10 +226,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The time at which the step group was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -253,10 +240,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The time at which the step group ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -276,10 +260,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    ) -> Self {
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
         self.tools = input;
         self
     }
@@ -299,10 +280,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -322,10 +300,7 @@ impl GetWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }

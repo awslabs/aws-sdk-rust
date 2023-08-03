@@ -148,9 +148,7 @@ impl DomainSuggestion {
 
 /// A builder for [`DomainSuggestion`](crate::types::DomainSuggestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainSuggestionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability: ::std::option::Option<::std::string::String>,

@@ -22,35 +22,26 @@ impl UpdateChannelGroupInput {
 }
 impl UpdateChannelGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_group::builders::UpdateChannelGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_channel_group::builders::UpdateChannelGroupInputBuilder {
         crate::operation::update_channel_group::builders::UpdateChannelGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl UpdateChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_group::UpdateChannelGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_channel_group::UpdateChannelGroupInput {
-                channel_group_name: self.channel_group_name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_channel_group::UpdateChannelGroupInput {
+            channel_group_name: self.channel_group_name,
+            description: self.description,
+        })
     }
 }

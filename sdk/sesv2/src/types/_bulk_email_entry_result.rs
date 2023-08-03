@@ -71,9 +71,7 @@ impl BulkEmailEntryResult {
 
 /// A builder for [`BulkEmailEntryResult`](crate::types::BulkEmailEntryResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkEmailEntryResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BulkEmailStatus>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
@@ -120,10 +118,7 @@ impl BulkEmailEntryResultBuilder {
     /// <li> <p>TRANSIENT_FAILURE: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
     /// <li> <p>FAILED: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BulkEmailStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BulkEmailStatus>) -> Self {
         self.status = input;
         self
     }

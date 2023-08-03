@@ -29,16 +29,14 @@ impl PutChannelExpirationSettingsInput {
 }
 impl PutChannelExpirationSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
-    pub fn builder() -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder {
         crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutChannelExpirationSettingsInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
@@ -79,17 +77,12 @@ impl PutChannelExpirationSettingsInputBuilder {
         self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.expiration_settings = input;
         self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
@@ -99,12 +92,10 @@ impl PutChannelExpirationSettingsInputBuilder {
         crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput {
-                channel_arn: self.channel_arn,
-                chime_bearer: self.chime_bearer,
-                expiration_settings: self.expiration_settings,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput {
+            channel_arn: self.channel_arn,
+            chime_bearer: self.chime_bearer,
+            expiration_settings: self.expiration_settings,
+        })
     }
 }

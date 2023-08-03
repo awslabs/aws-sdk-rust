@@ -36,9 +36,7 @@ impl EndpointState {
 
 /// A builder for [`EndpointState`](crate::types::EndpointState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::EndpointStatusReason>,
@@ -50,10 +48,7 @@ impl EndpointStateBuilder {
         self
     }
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -67,10 +62,7 @@ impl EndpointStateBuilder {
         self
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatusReason>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::EndpointStatusReason>) -> Self {
         self.status_reason = input;
         self
     }

@@ -26,16 +26,14 @@ impl DescribeLoggingConfigurationInput {
 }
 impl DescribeLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
@@ -60,19 +58,13 @@ impl DescribeLoggingConfigurationInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -88,11 +80,9 @@ impl DescribeLoggingConfigurationInputBuilder {
         crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
-                firewall_arn: self.firewall_arn,
-                firewall_name: self.firewall_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+        })
     }
 }

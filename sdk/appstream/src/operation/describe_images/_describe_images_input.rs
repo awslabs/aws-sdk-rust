@@ -50,9 +50,7 @@ impl DescribeImagesInput {
 
 /// A builder for [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +71,7 @@ impl DescribeImagesInputBuilder {
         self
     }
     /// <p>The names of the public or private images to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -96,10 +91,7 @@ impl DescribeImagesInputBuilder {
         self
     }
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -152,10 +144,7 @@ impl DescribeImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_images::DescribeImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             names: self.names,
             arns: self.arns,

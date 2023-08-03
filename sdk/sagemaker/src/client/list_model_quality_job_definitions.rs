@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput::job_definition_summaries): <p>A list of summaries of model quality monitoring job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model quality monitoring job definitions, use it in the next request.</p>
     /// - On failure, responds with [`SdkError<ListModelQualityJobDefinitionsError>`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsError)
-    pub fn list_model_quality_job_definitions(&self) -> crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder{
+    pub fn list_model_quality_job_definitions(
+        &self,
+    ) -> crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder {
         crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

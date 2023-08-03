@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ops_items::DescribeOpsItemsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`ops_item_summaries(Option<Vec<OpsItemSummary>>)`](crate::operation::describe_ops_items::DescribeOpsItemsOutput::ops_item_summaries): <p>A list of OpsItems.</p>
     /// - On failure, responds with [`SdkError<DescribeOpsItemsError>`](crate::operation::describe_ops_items::DescribeOpsItemsError)
-    pub fn describe_ops_items(
-        &self,
-    ) -> crate::operation::describe_ops_items::builders::DescribeOpsItemsFluentBuilder {
-        crate::operation::describe_ops_items::builders::DescribeOpsItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ops_items(&self) -> crate::operation::describe_ops_items::builders::DescribeOpsItemsFluentBuilder {
+        crate::operation::describe_ops_items::builders::DescribeOpsItemsFluentBuilder::new(self.handle.clone())
     }
 }

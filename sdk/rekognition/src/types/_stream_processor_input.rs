@@ -23,9 +23,7 @@ impl StreamProcessorInput {
 
 /// A builder for [`StreamProcessorInput`](crate::types::StreamProcessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamProcessorInputBuilder {
     pub(crate) kinesis_video_stream: ::std::option::Option<crate::types::KinesisVideoStream>,
 }
@@ -36,17 +34,12 @@ impl StreamProcessorInputBuilder {
         self
     }
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-    pub fn set_kinesis_video_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisVideoStream>,
-    ) -> Self {
+    pub fn set_kinesis_video_stream(mut self, input: ::std::option::Option<crate::types::KinesisVideoStream>) -> Self {
         self.kinesis_video_stream = input;
         self
     }
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-    pub fn get_kinesis_video_stream(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisVideoStream> {
+    pub fn get_kinesis_video_stream(&self) -> &::std::option::Option<crate::types::KinesisVideoStream> {
         &self.kinesis_video_stream
     }
     /// Consumes the builder and constructs a [`StreamProcessorInput`](crate::types::StreamProcessorInput).

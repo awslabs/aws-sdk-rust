@@ -43,14 +43,11 @@ impl ListFileSharesOutput {
 
 /// A builder for [`ListFileSharesOutput`](crate::operation::list_file_shares::ListFileSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFileSharesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) file_share_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
+    pub(crate) file_share_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
     _request_id: Option<String>,
 }
 impl ListFileSharesOutputBuilder {
@@ -94,17 +91,12 @@ impl ListFileSharesOutputBuilder {
         self
     }
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
-    pub fn set_file_share_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
-    ) -> Self {
+    pub fn set_file_share_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>) -> Self {
         self.file_share_info_list = input;
         self
     }
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
-    pub fn get_file_share_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>> {
+    pub fn get_file_share_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>> {
         &self.file_share_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

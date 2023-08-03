@@ -37,9 +37,7 @@ impl ThingTypeMetadata {
 
 /// A builder for [`ThingTypeMetadata`](crate::types::ThingTypeMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingTypeMetadataBuilder {
     pub(crate) deprecated: ::std::option::Option<bool>,
     pub(crate) deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl ThingTypeMetadataBuilder {
         self
     }
     /// <p>The date and time when the thing type was deprecated.</p>
-    pub fn set_deprecation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deprecation_date = input;
         self
     }
@@ -83,10 +78,7 @@ impl ThingTypeMetadataBuilder {
         self
     }
     /// <p>The date and time when the thing type was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

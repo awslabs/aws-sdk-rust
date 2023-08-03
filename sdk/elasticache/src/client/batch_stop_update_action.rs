@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`processed_update_actions(Option<Vec<ProcessedUpdateAction>>)`](crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput::processed_update_actions): <p>Update actions that have been processed successfully</p>
     ///   - [`unprocessed_update_actions(Option<Vec<UnprocessedUpdateAction>>)`](crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput::unprocessed_update_actions): <p>Update actions that haven't been processed successfully</p>
     /// - On failure, responds with [`SdkError<BatchStopUpdateActionError>`](crate::operation::batch_stop_update_action::BatchStopUpdateActionError)
-    pub fn batch_stop_update_action(
-        &self,
-    ) -> crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionFluentBuilder
-    {
+    pub fn batch_stop_update_action(&self) -> crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionFluentBuilder {
         crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionFluentBuilder::new(self.handle.clone())
     }
 }

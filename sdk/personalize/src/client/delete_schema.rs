@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput)
     /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::operation::delete_schema::DeleteSchemaError)
-    pub fn delete_schema(
-        &self,
-    ) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
-        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schema(&self) -> crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder {
+        crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::new(self.handle.clone())
     }
 }

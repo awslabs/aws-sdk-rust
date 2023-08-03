@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePlacementGroupOutput {
 }
 impl DeletePlacementGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlacementGroupOutput`](crate::operation::delete_placement_group::DeletePlacementGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_placement_group::builders::DeletePlacementGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_placement_group::builders::DeletePlacementGroupOutputBuilder {
         crate::operation::delete_placement_group::builders::DeletePlacementGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlacementGroupOutput`](crate::operation::delete_placement_group::DeletePlacementGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlacementGroupOutputBuilder {
     _request_id: Option<String>,
 }

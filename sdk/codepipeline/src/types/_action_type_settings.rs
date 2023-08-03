@@ -44,9 +44,7 @@ impl ActionTypeSettings {
 
 /// A builder for [`ActionTypeSettings`](crate::types::ActionTypeSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypeSettingsBuilder {
     pub(crate) third_party_configuration_url: ::std::option::Option<::std::string::String>,
     pub(crate) entity_url_template: ::std::option::Option<::std::string::String>,
@@ -55,40 +53,26 @@ pub struct ActionTypeSettingsBuilder {
 }
 impl ActionTypeSettingsBuilder {
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-    pub fn third_party_configuration_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn third_party_configuration_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.third_party_configuration_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-    pub fn set_third_party_configuration_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_third_party_configuration_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.third_party_configuration_url = input;
         self
     }
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-    pub fn get_third_party_configuration_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_third_party_configuration_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.third_party_configuration_url
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
-    pub fn entity_url_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_url_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for a CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
-    pub fn set_entity_url_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_url_template = input;
         self
     }
@@ -97,18 +81,12 @@ impl ActionTypeSettingsBuilder {
         &self.entity_url_template
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
-    pub fn execution_url_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_url_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for CodeDeploy. This link is shown on the pipeline view page in the CodePipeline console and provides a link to the execution entity of the external action.</p>
-    pub fn set_execution_url_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_url_template = input;
         self
     }
@@ -117,18 +95,12 @@ impl ActionTypeSettingsBuilder {
         &self.execution_url_template
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn revision_url_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_url_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn set_revision_url_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_url_template = input;
         self
     }

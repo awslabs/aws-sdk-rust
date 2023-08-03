@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteLunaClientOutput`](crate::operation::delete_luna_client::DeleteLunaClientOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::delete_luna_client::DeleteLunaClientOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteLunaClientError>`](crate::operation::delete_luna_client::DeleteLunaClientError)
-    pub fn delete_luna_client(
-        &self,
-    ) -> crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder {
-        crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_luna_client(&self) -> crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder {
+        crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::new(self.handle.clone())
     }
 }

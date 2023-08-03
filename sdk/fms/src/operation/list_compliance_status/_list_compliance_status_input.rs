@@ -29,17 +29,14 @@ impl ListComplianceStatusInput {
 }
 impl ListComplianceStatusInput {
     /// Creates a new builder-style object to manufacture [`ListComplianceStatusInput`](crate::operation::list_compliance_status::ListComplianceStatusInput).
-    pub fn builder(
-    ) -> crate::operation::list_compliance_status::builders::ListComplianceStatusInputBuilder {
+    pub fn builder() -> crate::operation::list_compliance_status::builders::ListComplianceStatusInputBuilder {
         crate::operation::list_compliance_status::builders::ListComplianceStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComplianceStatusInput`](crate::operation::list_compliance_status::ListComplianceStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceStatusInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl ListComplianceStatusInputBuilder {
     /// Consumes the builder and constructs a [`ListComplianceStatusInput`](crate::operation::list_compliance_status::ListComplianceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_compliance_status::ListComplianceStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_compliance_status::ListComplianceStatusInput {
-                policy_id: self.policy_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_compliance_status::ListComplianceStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_compliance_status::ListComplianceStatusInput {
+            policy_id: self.policy_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

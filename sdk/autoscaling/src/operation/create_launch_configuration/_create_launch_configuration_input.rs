@@ -21,8 +21,7 @@ pub struct CreateLaunchConfigurationInput {
     pub classic_link_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Available for backward compatibility.</p>
     #[doc(hidden)]
-    pub classic_link_vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
@@ -47,8 +46,7 @@ pub struct CreateLaunchConfigurationInput {
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
     /// <p>The default value is <code>true</code> (enabled).</p> <important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -105,9 +103,7 @@ impl CreateLaunchConfigurationInput {
         self.classic_link_vpc_id.as_deref()
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn classic_link_vpc_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn classic_link_vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.classic_link_vpc_security_groups.as_deref()
     }
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
@@ -138,9 +134,7 @@ impl CreateLaunchConfigurationInput {
         self.ramdisk_id.as_deref()
     }
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
@@ -179,39 +173,33 @@ impl CreateLaunchConfigurationInput {
         self.placement_tenancy.as_deref()
     }
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metadata_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
+    pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
     }
 }
 impl CreateLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationInput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationInputBuilder {
         crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchConfigurationInput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchConfigurationInputBuilder {
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) classic_link_vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) classic_link_vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) instance_monitoring: ::std::option::Option<crate::types::InstanceMonitoring>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
     pub(crate) iam_instance_profile: ::std::option::Option<::std::string::String>,
@@ -222,18 +210,12 @@ pub struct CreateLaunchConfigurationInputBuilder {
 }
 impl CreateLaunchConfigurationInputBuilder {
     /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
-    pub fn launch_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
-    pub fn set_launch_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_configuration_name = input;
         self
     }
@@ -277,42 +259,28 @@ impl CreateLaunchConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn classic_link_vpc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classic_link_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classic_link_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn set_classic_link_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classic_link_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classic_link_vpc_id = input;
         self
     }
@@ -325,27 +293,19 @@ impl CreateLaunchConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
     ///
     /// <p>Available for backward compatibility.</p>
-    pub fn classic_link_vpc_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classic_link_vpc_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.classic_link_vpc_security_groups.unwrap_or_default();
         v.push(input.into());
         self.classic_link_vpc_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn set_classic_link_vpc_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_classic_link_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.classic_link_vpc_security_groups = input;
         self
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn get_classic_link_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classic_link_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.classic_link_vpc_security_groups
     }
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
@@ -384,19 +344,13 @@ impl CreateLaunchConfigurationInputBuilder {
     }
     /// <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -457,17 +411,12 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
@@ -482,10 +431,7 @@ impl CreateLaunchConfigurationInputBuilder {
     /// <p>The default value is <code>true</code> (enabled).</p> <important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
-    pub fn set_instance_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMonitoring>,
-    ) -> Self {
+    pub fn set_instance_monitoring(mut self, input: ::std::option::Option<crate::types::InstanceMonitoring>) -> Self {
         self.instance_monitoring = input;
         self
     }
@@ -493,9 +439,7 @@ impl CreateLaunchConfigurationInputBuilder {
     /// <p>The default value is <code>true</code> (enabled).</p> <important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
-    pub fn get_instance_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMonitoring> {
+    pub fn get_instance_monitoring(&self) -> &::std::option::Option<crate::types::InstanceMonitoring> {
         &self.instance_monitoring
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -522,18 +466,12 @@ impl CreateLaunchConfigurationInputBuilder {
         &self.spot_price
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_instance_profile = input;
         self
     }
@@ -581,20 +519,14 @@ impl CreateLaunchConfigurationInputBuilder {
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
     /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
-    pub fn placement_tenancy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_tenancy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
     /// <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
-    pub fn set_placement_tenancy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_tenancy = input;
         self
     }
@@ -610,17 +542,12 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_metadata_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataOptions>,
-    ) -> Self {
+    pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
         self.metadata_options = input;
         self
     }
     /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn get_metadata_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
+    pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         &self.metadata_options
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationInput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationInput).
@@ -630,28 +557,26 @@ impl CreateLaunchConfigurationInputBuilder {
         crate::operation::create_launch_configuration::CreateLaunchConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_launch_configuration::CreateLaunchConfigurationInput {
-                launch_configuration_name: self.launch_configuration_name,
-                image_id: self.image_id,
-                key_name: self.key_name,
-                security_groups: self.security_groups,
-                classic_link_vpc_id: self.classic_link_vpc_id,
-                classic_link_vpc_security_groups: self.classic_link_vpc_security_groups,
-                user_data: self.user_data,
-                instance_id: self.instance_id,
-                instance_type: self.instance_type,
-                kernel_id: self.kernel_id,
-                ramdisk_id: self.ramdisk_id,
-                block_device_mappings: self.block_device_mappings,
-                instance_monitoring: self.instance_monitoring,
-                spot_price: self.spot_price,
-                iam_instance_profile: self.iam_instance_profile,
-                ebs_optimized: self.ebs_optimized,
-                associate_public_ip_address: self.associate_public_ip_address,
-                placement_tenancy: self.placement_tenancy,
-                metadata_options: self.metadata_options,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_launch_configuration::CreateLaunchConfigurationInput {
+            launch_configuration_name: self.launch_configuration_name,
+            image_id: self.image_id,
+            key_name: self.key_name,
+            security_groups: self.security_groups,
+            classic_link_vpc_id: self.classic_link_vpc_id,
+            classic_link_vpc_security_groups: self.classic_link_vpc_security_groups,
+            user_data: self.user_data,
+            instance_id: self.instance_id,
+            instance_type: self.instance_type,
+            kernel_id: self.kernel_id,
+            ramdisk_id: self.ramdisk_id,
+            block_device_mappings: self.block_device_mappings,
+            instance_monitoring: self.instance_monitoring,
+            spot_price: self.spot_price,
+            iam_instance_profile: self.iam_instance_profile,
+            ebs_optimized: self.ebs_optimized,
+            associate_public_ip_address: self.associate_public_ip_address,
+            placement_tenancy: self.placement_tenancy,
+            metadata_options: self.metadata_options,
+        })
     }
 }

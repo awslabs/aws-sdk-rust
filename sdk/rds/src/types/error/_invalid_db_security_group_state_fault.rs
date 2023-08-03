@@ -17,10 +17,7 @@ impl InvalidDbSecurityGroupStateFault {
 }
 impl ::std::fmt::Display for InvalidDbSecurityGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]"
-        )?;
+        ::std::write!(f, "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -36,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDbSecurit
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidDbSecurityGroupStateFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDbSecurityGroupStateFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -52,9 +47,7 @@ impl InvalidDbSecurityGroupStateFault {
 
 /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::types::error::InvalidDbSecurityGroupStateFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidDbSecurityGroupStateFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidDbSecurityGroupStateFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

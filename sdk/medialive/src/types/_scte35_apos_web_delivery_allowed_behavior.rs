@@ -38,13 +38,7 @@
 /// Scte35 Apos Web Delivery Allowed Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35AposWebDeliveryAllowedBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35AposWebDeliveryAllowedBehavior {
         match s {
             "FOLLOW" => Scte35AposWebDeliveryAllowedBehavior::Follow,
             "IGNORE" => Scte35AposWebDeliveryAllowedBehavior::Ignore,
-            other => Scte35AposWebDeliveryAllowedBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Scte35AposWebDeliveryAllowedBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

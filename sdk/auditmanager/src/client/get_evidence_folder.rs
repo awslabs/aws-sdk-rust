@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput) with field(s):
     ///   - [`evidence_folder(Option<AssessmentEvidenceFolder>)`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput::evidence_folder): <p> The folder that the evidence is stored in. </p>
     /// - On failure, responds with [`SdkError<GetEvidenceFolderError>`](crate::operation::get_evidence_folder::GetEvidenceFolderError)
-    pub fn get_evidence_folder(
-        &self,
-    ) -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderFluentBuilder {
-        crate::operation::get_evidence_folder::builders::GetEvidenceFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_evidence_folder(&self) -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderFluentBuilder {
+        crate::operation::get_evidence_folder::builders::GetEvidenceFolderFluentBuilder::new(self.handle.clone())
     }
 }

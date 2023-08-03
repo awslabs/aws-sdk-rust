@@ -40,9 +40,7 @@ impl GetTokenBalanceInput {
 
 /// A builder for [`GetTokenBalanceInput`](crate::operation::get_token_balance::GetTokenBalanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTokenBalanceInputBuilder {
     pub(crate) token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     pub(crate) owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
@@ -55,10 +53,7 @@ impl GetTokenBalanceInputBuilder {
         self
     }
     /// <p>The container for the identifier for the token, including the unique token ID and its blockchain network.</p>
-    pub fn set_token_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenIdentifier>,
-    ) -> Self {
+    pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
         self.token_identifier = input;
         self
     }
@@ -72,10 +67,7 @@ impl GetTokenBalanceInputBuilder {
         self
     }
     /// <p>The container for the identifier for the owner.</p>
-    pub fn set_owner_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnerIdentifier>,
-    ) -> Self {
+    pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
         self.owner_identifier = input;
         self
     }
@@ -93,28 +85,20 @@ impl GetTokenBalanceInputBuilder {
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    pub fn set_at_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.at_blockchain_instant = input;
         self
     }
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    pub fn get_at_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.at_blockchain_instant
     }
     /// Consumes the builder and constructs a [`GetTokenBalanceInput`](crate::operation::get_token_balance::GetTokenBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_token_balance::GetTokenBalanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_token_balance::GetTokenBalanceInput {
             token_identifier: self.token_identifier,
             owner_identifier: self.owner_identifier,

@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateSuiteDefinitionOutput {
 }
 impl CreateSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSuiteDefinitionOutput`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_suite_definition::builders::CreateSuiteDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_suite_definition::builders::CreateSuiteDefinitionOutputBuilder {
         crate::operation::create_suite_definition::builders::CreateSuiteDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSuiteDefinitionOutput`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSuiteDefinitionOutputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ pub struct CreateSuiteDefinitionOutputBuilder {
 }
 impl CreateSuiteDefinitionOutputBuilder {
     /// <p>The UUID of the test suite created.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID of the test suite created.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -83,18 +73,12 @@ impl CreateSuiteDefinitionOutputBuilder {
         &self.suite_definition_id
     }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
-    pub fn suite_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
-    pub fn set_suite_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_arn = input;
         self
     }
@@ -103,18 +87,12 @@ impl CreateSuiteDefinitionOutputBuilder {
         &self.suite_definition_arn
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
-    pub fn suite_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
-    pub fn set_suite_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_name = input;
         self
     }
@@ -128,10 +106,7 @@ impl CreateSuiteDefinitionOutputBuilder {
         self
     }
     /// <p>The timestamp of when the test suite was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

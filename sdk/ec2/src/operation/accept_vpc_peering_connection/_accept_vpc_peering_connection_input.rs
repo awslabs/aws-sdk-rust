@@ -22,16 +22,14 @@ impl AcceptVpcPeeringConnectionInput {
 }
 impl AcceptVpcPeeringConnectionInput {
     /// Creates a new builder-style object to manufacture [`AcceptVpcPeeringConnectionInput`](crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput).
-    pub fn builder() -> crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder{
+    pub fn builder() -> crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder {
         crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptVpcPeeringConnectionInput`](crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptVpcPeeringConnectionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl AcceptVpcPeeringConnectionInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC peering connection. You must specify this parameter in the request.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl AcceptVpcPeeringConnectionInputBuilder {
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput {
-                dry_run: self.dry_run,
-                vpc_peering_connection_id: self.vpc_peering_connection_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput {
+            dry_run: self.dry_run,
+            vpc_peering_connection_id: self.vpc_peering_connection_id,
+        })
     }
 }

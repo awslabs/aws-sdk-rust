@@ -23,9 +23,7 @@ impl KubernetesDataSourceFreeTrial {
 
 /// A builder for [`KubernetesDataSourceFreeTrial`](crate::types::KubernetesDataSourceFreeTrial).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesDataSourceFreeTrialBuilder {
     pub(crate) audit_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
 }
@@ -36,10 +34,7 @@ impl KubernetesDataSourceFreeTrialBuilder {
         self
     }
     /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-    pub fn set_audit_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
-    ) -> Self {
+    pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::DataSourceFreeTrial>) -> Self {
         self.audit_logs = input;
         self
     }
@@ -49,8 +44,6 @@ impl KubernetesDataSourceFreeTrialBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesDataSourceFreeTrial`](crate::types::KubernetesDataSourceFreeTrial).
     pub fn build(self) -> crate::types::KubernetesDataSourceFreeTrial {
-        crate::types::KubernetesDataSourceFreeTrial {
-            audit_logs: self.audit_logs,
-        }
+        crate::types::KubernetesDataSourceFreeTrial { audit_logs: self.audit_logs }
     }
 }

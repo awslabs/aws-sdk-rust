@@ -26,7 +26,7 @@ impl CreateUsageReportSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUsageReportSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder,
+    inner: crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder,
 }
 impl CreateUsageReportSubscriptionFluentBuilder {
     /// Creates a new `CreateUsageReportSubscription`.
@@ -37,7 +37,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateUsageReportSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
             crate::operation::create_usage_report_subscription::CreateUsageReportSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateUsageReportSubscriptionFluentBuilder {
             crate::operation::create_usage_report_subscription::CreateUsageReportSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionError>,
     > {
         self.customize_middleware().await
     }

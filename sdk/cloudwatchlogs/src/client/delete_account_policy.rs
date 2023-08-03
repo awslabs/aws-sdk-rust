@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_type(PolicyType)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::policy_type) / [`set_policy_type(Option<PolicyType>)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::set_policy_type): <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
     /// - On success, responds with [`DeleteAccountPolicyOutput`](crate::operation::delete_account_policy::DeleteAccountPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountPolicyError>`](crate::operation::delete_account_policy::DeleteAccountPolicyError)
-    pub fn delete_account_policy(
-        &self,
-    ) -> crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder {
-        crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_account_policy(&self) -> crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder {
+        crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::new(self.handle.clone())
     }
 }

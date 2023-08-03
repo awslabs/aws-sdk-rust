@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePublicKeyOutput {
 }
 impl UpdatePublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicKeyOutput`](crate::operation::update_public_key::UpdatePublicKeyOutput).
-    pub fn builder() -> crate::operation::update_public_key::builders::UpdatePublicKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_public_key::builders::UpdatePublicKeyOutputBuilder {
         crate::operation::update_public_key::builders::UpdatePublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublicKeyOutput`](crate::operation::update_public_key::UpdatePublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicKeyOutputBuilder {
     pub(crate) public_key: ::std::option::Option<crate::types::PublicKey>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

@@ -48,9 +48,7 @@ pub fn ser_rule_condition(
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("SourceIpConfig");
     if let Some(var_19) = &input.source_ip_config {
-        crate::protocol_serde::shape_source_ip_condition_config::ser_source_ip_condition_config(
-            scope_18, var_19,
-        )?;
+        crate::protocol_serde::shape_source_ip_condition_config::ser_source_ip_condition_config(scope_18, var_19)?;
     }
     Ok(())
 }

@@ -10,10 +10,7 @@ impl CopyDbSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_snapshot::CopyDBSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_db_snapshot();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CopyDBSnapshotFluentBuilder {
         }
     }
     /// Access the CopyDBSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_db_snapshot::builders::CopyDbSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_db_snapshot::builders::CopyDbSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CopyDBSnapshotFluentBuilder {
             crate::operation::copy_db_snapshot::CopyDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_snapshot::CopyDBSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CopyDBSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CopyDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_snapshot::CopyDBSnapshotError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CopyDBSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_snapshot::CopyDBSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CopyDBSnapshotFluentBuilder {
             crate::operation::copy_db_snapshot::CopyDBSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_snapshot::CopyDBSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +120,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn source_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_snapshot_identifier(input.into());
         self
     }
@@ -154,10 +135,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn set_source_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_snapshot_identifier(input);
         self
     }
@@ -172,9 +150,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn get_source_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_snapshot_identifier()
     }
     /// <p>The identifier for the copy of the snapshot.</p>
@@ -186,10 +162,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn target_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_snapshot_identifier(input.into());
         self
     }
@@ -202,10 +175,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn set_target_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_snapshot_identifier(input);
         self
     }
@@ -218,9 +188,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn get_target_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_snapshot_identifier()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -259,10 +227,7 @@ impl CopyDBSnapshotFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -296,10 +261,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pre_signed_url(input.into());
         self
     }
@@ -315,10 +277,7 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }
@@ -339,19 +298,13 @@ impl CopyDBSnapshotFluentBuilder {
     }
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
     /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another, and your DB instance uses a nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this option when copying across Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
     /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another, and your DB instance uses a nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this option when copying across Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -362,27 +315,19 @@ impl CopyDBSnapshotFluentBuilder {
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn target_custom_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_custom_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_custom_availability_zone(input.into());
         self
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn set_target_custom_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_custom_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_custom_availability_zone(input);
         self
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn get_target_custom_availability_zone(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_custom_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_custom_availability_zone()
     }
     /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>

@@ -39,9 +39,7 @@ impl CreateResourceShareFluentBuilder {
         }
     }
     /// Access the CreateResourceShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateResourceShareFluentBuilder {
             crate::operation::create_resource_share::CreateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_share::CreateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_share::CreateResourceShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateResourceShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_share::CreateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_share::CreateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_share::CreateResourceShareError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_share::CreateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_share::CreateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_share::CreateResourceShareError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateResourceShareFluentBuilder {
             crate::operation::create_resource_share::CreateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_share::CreateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_share::CreateResourceShareError>,
     > {
         self.customize_middleware().await
     }
@@ -143,25 +130,17 @@ impl CreateResourceShareFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// Appends an item to `principals`.
@@ -194,10 +173,7 @@ impl CreateResourceShareFluentBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
@@ -225,10 +201,7 @@ impl CreateResourceShareFluentBuilder {
         self
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -275,25 +248,17 @@ impl CreateResourceShareFluentBuilder {
     /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn permission_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arns(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn set_permission_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permission_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_permission_arns(input);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn get_permission_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_permission_arns()
     }
     /// Appends an item to `sources`.
@@ -306,10 +271,7 @@ impl CreateResourceShareFluentBuilder {
         self
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }

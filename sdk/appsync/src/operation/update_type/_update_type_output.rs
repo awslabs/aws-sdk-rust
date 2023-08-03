@@ -28,9 +28,7 @@ impl UpdateTypeOutput {
 
 /// A builder for [`UpdateTypeOutput`](crate::operation::update_type::UpdateTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTypeOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     _request_id: Option<String>,

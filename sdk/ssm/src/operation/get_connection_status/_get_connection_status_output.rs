@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetConnectionStatusOutput {
 }
 impl GetConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_connection_status::builders::GetConnectionStatusOutputBuilder {
-        crate::operation::get_connection_status::builders::GetConnectionStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_connection_status::builders::GetConnectionStatusOutputBuilder {
+        crate::operation::get_connection_status::builders::GetConnectionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectionStatusOutput`](crate::operation::get_connection_status::GetConnectionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionStatusOutputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,
@@ -66,10 +62,7 @@ impl GetConnectionStatusOutputBuilder {
         self
     }
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.status = input;
         self
     }

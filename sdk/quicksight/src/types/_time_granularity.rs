@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TimeGranularity {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for TimeGranularity {
             "SECOND" => TimeGranularity::Second,
             "WEEK" => TimeGranularity::Week,
             "YEAR" => TimeGranularity::Year,
-            other => {
-                TimeGranularity::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TimeGranularity::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,17 +110,7 @@ impl TimeGranularity {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAY",
-            "HOUR",
-            "MILLISECOND",
-            "MINUTE",
-            "MONTH",
-            "QUARTER",
-            "SECOND",
-            "WEEK",
-            "YEAR",
-        ]
+        &["DAY", "HOUR", "MILLISECOND", "MINUTE", "MONTH", "QUARTER", "SECOND", "WEEK", "YEAR"]
     }
 }
 impl ::std::convert::AsRef<str> for TimeGranularity {

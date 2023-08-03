@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::get_map_sprites::GetMapSpritesOutput::content_type): <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     ///   - [`cache_control(Option<String>)`](crate::operation::get_map_sprites::GetMapSpritesOutput::cache_control): <p>The HTTP Cache-Control directive for the value.</p>
     /// - On failure, responds with [`SdkError<GetMapSpritesError>`](crate::operation::get_map_sprites::GetMapSpritesError)
-    pub fn get_map_sprites(
-        &self,
-    ) -> crate::operation::get_map_sprites::builders::GetMapSpritesFluentBuilder {
-        crate::operation::get_map_sprites::builders::GetMapSpritesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_map_sprites(&self) -> crate::operation::get_map_sprites::builders::GetMapSpritesFluentBuilder {
+        crate::operation::get_map_sprites::builders::GetMapSpritesFluentBuilder::new(self.handle.clone())
     }
 }

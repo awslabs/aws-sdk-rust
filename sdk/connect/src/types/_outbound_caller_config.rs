@@ -37,9 +37,7 @@ impl OutboundCallerConfig {
 
 /// A builder for [`OutboundCallerConfig`](crate::types::OutboundCallerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutboundCallerConfigBuilder {
     pub(crate) outbound_caller_id_name: ::std::option::Option<::std::string::String>,
     pub(crate) outbound_caller_id_number_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct OutboundCallerConfigBuilder {
 }
 impl OutboundCallerConfigBuilder {
     /// <p>The caller ID name.</p>
-    pub fn outbound_caller_id_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_caller_id_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_caller_id_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The caller ID name.</p>
-    pub fn set_outbound_caller_id_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_caller_id_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_caller_id_name = input;
         self
     }
@@ -67,40 +59,26 @@ impl OutboundCallerConfigBuilder {
         &self.outbound_caller_id_name
     }
     /// <p>The caller ID number.</p>
-    pub fn outbound_caller_id_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_caller_id_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_caller_id_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The caller ID number.</p>
-    pub fn set_outbound_caller_id_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_caller_id_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_caller_id_number_id = input;
         self
     }
     /// <p>The caller ID number.</p>
-    pub fn get_outbound_caller_id_number_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_outbound_caller_id_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outbound_caller_id_number_id
     }
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
-    pub fn outbound_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
-    pub fn set_outbound_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_flow_id = input;
         self
     }

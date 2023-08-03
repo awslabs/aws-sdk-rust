@@ -28,8 +28,7 @@ impl ListModelManifestNodesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelManifestNodesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder,
+    inner: crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder,
 }
 impl ListModelManifestNodesFluentBuilder {
     /// Creates a new `ListModelManifestNodes`.
@@ -40,10 +39,7 @@ impl ListModelManifestNodesFluentBuilder {
         }
     }
     /// Access the ListModelManifestNodes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ListModelManifestNodesFluentBuilder {
             crate::operation::list_model_manifest_nodes::ListModelManifestNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_manifest_nodes::ListModelManifestNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_manifest_nodes::ListModelManifestNodesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ListModelManifestNodesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ListModelManifestNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_manifest_nodes::ListModelManifestNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_manifest_nodes::ListModelManifestNodesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ListModelManifestNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_manifest_nodes::ListModelManifestNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_manifest_nodes::ListModelManifestNodesError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +107,15 @@ impl ListModelManifestNodesFluentBuilder {
             crate::operation::list_model_manifest_nodes::ListModelManifestNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_manifest_nodes::ListModelManifestNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_manifest_nodes::ListModelManifestNodesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_manifest_nodes::paginator::ListModelManifestNodesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_model_manifest_nodes::paginator::ListModelManifestNodesPaginator
-    {
-        crate::operation::list_model_manifest_nodes::paginator::ListModelManifestNodesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_model_manifest_nodes::paginator::ListModelManifestNodesPaginator {
+        crate::operation::list_model_manifest_nodes::paginator::ListModelManifestNodesPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the vehicle model to list information about. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

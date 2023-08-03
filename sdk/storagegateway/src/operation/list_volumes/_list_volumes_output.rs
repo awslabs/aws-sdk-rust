@@ -47,9 +47,7 @@ impl ListVolumesOutput {
 
 /// A builder for [`ListVolumesOutput`](crate::operation::list_volumes::ListVolumesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumesOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -97,17 +95,12 @@ impl ListVolumesOutputBuilder {
         self
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub fn set_volume_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>,
-    ) -> Self {
+    pub fn set_volume_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>) -> Self {
         self.volume_infos = input;
         self
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub fn get_volume_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>> {
+    pub fn get_volume_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>> {
         &self.volume_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

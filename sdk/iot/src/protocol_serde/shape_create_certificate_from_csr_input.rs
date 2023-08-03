@@ -4,9 +4,7 @@ pub fn ser_create_certificate_from_csr_input(
     input: &crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_signing_request {
-        object
-            .key("certificateSigningRequest")
-            .string(var_1.as_str());
+        object.key("certificateSigningRequest").string(var_1.as_str());
     }
     Ok(())
 }

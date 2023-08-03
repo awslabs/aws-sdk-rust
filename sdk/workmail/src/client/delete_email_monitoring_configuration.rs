@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::set_organization_id): <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     /// - On success, responds with [`DeleteEmailMonitoringConfigurationOutput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteEmailMonitoringConfigurationError>`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError)
-    pub fn delete_email_monitoring_configuration(&self) -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder{
+    pub fn delete_email_monitoring_configuration(
+        &self,
+    ) -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder {
         crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

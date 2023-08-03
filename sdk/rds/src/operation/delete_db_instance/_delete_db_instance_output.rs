@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbInstanceOutput {
 }
 impl DeleteDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput).
-    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -47,10 +44,7 @@ impl DeleteDbInstanceOutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }

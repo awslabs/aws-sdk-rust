@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`rows(Option<Vec<Row>>)`](crate::operation::execute_query::ExecuteQueryOutput::rows): <p>Represents a single row in the query results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::execute_query::ExecuteQueryOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<ExecuteQueryError>`](crate::operation::execute_query::ExecuteQueryError)
-    pub fn execute_query(
-        &self,
-    ) -> crate::operation::execute_query::builders::ExecuteQueryFluentBuilder {
-        crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_query(&self) -> crate::operation::execute_query::builders::ExecuteQueryFluentBuilder {
+        crate::operation::execute_query::builders::ExecuteQueryFluentBuilder::new(self.handle.clone())
     }
 }

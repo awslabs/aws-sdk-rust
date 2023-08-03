@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::read_pipeline::ReadPipelineOutput::pipeline): <p>A section of the response body that provides information about the pipeline.</p>
     ///   - [`warnings(Option<Vec<Warning>>)`](crate::operation::read_pipeline::ReadPipelineOutput::warnings): <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>  <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     /// - On failure, responds with [`SdkError<ReadPipelineError>`](crate::operation::read_pipeline::ReadPipelineError)
-    pub fn read_pipeline(
-        &self,
-    ) -> crate::operation::read_pipeline::builders::ReadPipelineFluentBuilder {
-        crate::operation::read_pipeline::builders::ReadPipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn read_pipeline(&self) -> crate::operation::read_pipeline::builders::ReadPipelineFluentBuilder {
+        crate::operation::read_pipeline::builders::ReadPipelineFluentBuilder::new(self.handle.clone())
     }
 }

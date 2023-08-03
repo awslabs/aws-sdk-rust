@@ -22,7 +22,9 @@ impl super::Client {
     /// - On success, responds with [`RegisterTaskWithMaintenanceWindowOutput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput) with field(s):
     ///   - [`window_task_id(Option<String>)`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput::window_task_id): <p>The ID of the task in the maintenance window.</p>
     /// - On failure, responds with [`SdkError<RegisterTaskWithMaintenanceWindowError>`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError)
-    pub fn register_task_with_maintenance_window(&self) -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowFluentBuilder{
+    pub fn register_task_with_maintenance_window(
+        &self,
+    ) -> crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowFluentBuilder {
         crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for SetLoadBalancerListenerSslCertificate
 }
 impl SetLoadBalancerListenerSslCertificateOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerListenerSslCertificateOutput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput).
-    pub fn builder() -> crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSslCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSslCertificateOutputBuilder {
         crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSslCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoadBalancerListenerSslCertificateOutput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSslCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl SetLoadBalancerListenerSslCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateOutput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput).
-    pub fn build(self) -> crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput{
+    pub fn build(self) -> crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput {
         crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput {
             _request_id: self._request_id,
         }

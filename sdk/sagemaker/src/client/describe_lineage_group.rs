@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::last_modified_time): <p>The last modified time of the lineage group.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     /// - On failure, responds with [`SdkError<DescribeLineageGroupError>`](crate::operation::describe_lineage_group::DescribeLineageGroupError)
-    pub fn describe_lineage_group(
-        &self,
-    ) -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder {
-        crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_lineage_group(&self) -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder {
+        crate::operation::describe_lineage_group::builders::DescribeLineageGroupFluentBuilder::new(self.handle.clone())
     }
 }

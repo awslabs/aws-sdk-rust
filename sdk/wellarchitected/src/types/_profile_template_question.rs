@@ -15,8 +15,7 @@ pub struct ProfileTemplateQuestion {
     pub question_description: ::std::option::Option<::std::string::String>,
     /// <p>The question choices.</p>
     #[doc(hidden)]
-    pub question_choices:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
+    pub question_choices: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
     /// <p>The minimum number of choices selected.</p>
     #[doc(hidden)]
     pub min_selected_choices: i32,
@@ -38,9 +37,7 @@ impl ProfileTemplateQuestion {
         self.question_description.as_deref()
     }
     /// <p>The question choices.</p>
-    pub fn question_choices(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileTemplateChoice]> {
+    pub fn question_choices(&self) -> ::std::option::Option<&[crate::types::ProfileTemplateChoice]> {
         self.question_choices.as_deref()
     }
     /// <p>The minimum number of choices selected.</p>
@@ -61,15 +58,12 @@ impl ProfileTemplateQuestion {
 
 /// A builder for [`ProfileTemplateQuestion`](crate::types::ProfileTemplateQuestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileTemplateQuestionBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) question_description: ::std::option::Option<::std::string::String>,
-    pub(crate) question_choices:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
+    pub(crate) question_choices: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
     pub(crate) min_selected_choices: ::std::option::Option<i32>,
     pub(crate) max_selected_choices: ::std::option::Option<i32>,
 }
@@ -89,18 +83,12 @@ impl ProfileTemplateQuestionBuilder {
         &self.question_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_title = input;
         self
     }
@@ -109,18 +97,12 @@ impl ProfileTemplateQuestionBuilder {
         &self.question_title
     }
     /// <p>The description of the question.</p>
-    pub fn question_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the question.</p>
-    pub fn set_question_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_description = input;
         self
     }
@@ -140,17 +122,12 @@ impl ProfileTemplateQuestionBuilder {
         self
     }
     /// <p>The question choices.</p>
-    pub fn set_question_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
-    ) -> Self {
+    pub fn set_question_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>) -> Self {
         self.question_choices = input;
         self
     }
     /// <p>The question choices.</p>
-    pub fn get_question_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>> {
+    pub fn get_question_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>> {
         &self.question_choices
     }
     /// <p>The minimum number of choices selected.</p>

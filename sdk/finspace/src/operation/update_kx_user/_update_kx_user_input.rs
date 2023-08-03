@@ -43,9 +43,7 @@ impl UpdateKxUserInput {
 
 /// A builder for [`UpdateKxUserInput`](crate::operation::update_kx_user::UpdateKxUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKxUserInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct UpdateKxUserInputBuilder {
 }
 impl UpdateKxUserInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl UpdateKxUserInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKxUserInput`](crate::operation::update_kx_user::UpdateKxUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_user::UpdateKxUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_kx_user::UpdateKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_kx_user::UpdateKxUserInput {
             environment_id: self.environment_id,
             user_name: self.user_name,

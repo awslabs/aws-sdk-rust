@@ -91,8 +91,7 @@ pub struct CapacityReservation {
     pub placement_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about instance capacity usage.</p>
     #[doc(hidden)]
-    pub capacity_allocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
+    pub capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -116,9 +115,7 @@ impl CapacityReservation {
         self.instance_type.as_deref()
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationInstancePlatform> {
+    pub fn instance_platform(&self) -> ::std::option::Option<&crate::types::CapacityReservationInstancePlatform> {
         self.instance_platform.as_ref()
     }
     /// <p>The Availability Zone in which the capacity is reserved.</p>
@@ -181,9 +178,7 @@ impl CapacityReservation {
     /// <li> <p> <code>open</code> - The Capacity Reservation accepts all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes launch into the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
     /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    pub fn instance_match_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
+    pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
@@ -207,9 +202,7 @@ impl CapacityReservation {
         self.placement_group_arn.as_deref()
     }
     /// <p>Information about instance capacity usage.</p>
-    pub fn capacity_allocations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityAllocation]> {
+    pub fn capacity_allocations(&self) -> ::std::option::Option<&[crate::types::CapacityAllocation]> {
         self.capacity_allocations.as_deref()
     }
 }
@@ -222,17 +215,14 @@ impl CapacityReservation {
 
 /// A builder for [`CapacityReservation`](crate::types::CapacityReservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityReservationBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_platform:
-        ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
+    pub(crate) instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
     pub(crate) total_instance_count: ::std::option::Option<i32>,
@@ -249,23 +239,16 @@ pub struct CapacityReservationBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) placement_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_allocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
+    pub(crate) capacity_allocations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -288,18 +271,12 @@ impl CapacityReservationBuilder {
         &self.owner_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
-    pub fn capacity_reservation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_arn = input;
         self
     }
@@ -308,18 +285,12 @@ impl CapacityReservationBuilder {
         &self.capacity_reservation_arn
     }
     /// <p>The Availability Zone ID of the Capacity Reservation.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone ID of the Capacity Reservation.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -328,18 +299,12 @@ impl CapacityReservationBuilder {
         &self.availability_zone_id
     }
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -348,40 +313,26 @@ impl CapacityReservationBuilder {
         &self.instance_type
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(
-        mut self,
-        input: crate::types::CapacityReservationInstancePlatform,
-    ) -> Self {
+    pub fn instance_platform(mut self, input: crate::types::CapacityReservationInstancePlatform) -> Self {
         self.instance_platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
-    ) -> Self {
+    pub fn set_instance_platform(mut self, input: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>) -> Self {
         self.instance_platform = input;
         self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn get_instance_platform(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationInstancePlatform> {
+    pub fn get_instance_platform(&self) -> &::std::option::Option<crate::types::CapacityReservationInstancePlatform> {
         &self.instance_platform
     }
     /// <p>The Availability Zone in which the capacity is reserved.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the capacity is reserved.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -403,10 +354,7 @@ impl CapacityReservationBuilder {
     /// <li> <p> <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationTenancy>,
-    ) -> Self {
+    pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::CapacityReservationTenancy>) -> Self {
         self.tenancy = input;
         self
     }
@@ -494,10 +442,7 @@ impl CapacityReservationBuilder {
     /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
         self
     }
@@ -518,10 +463,7 @@ impl CapacityReservationBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation was started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -535,10 +477,7 @@ impl CapacityReservationBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -560,10 +499,7 @@ impl CapacityReservationBuilder {
     /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it.</p> </li>
     /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time.</p> </li>
     /// </ul>
-    pub fn set_end_date_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndDateType>,
-    ) -> Self {
+    pub fn set_end_date_type(mut self, input: ::std::option::Option<crate::types::EndDateType>) -> Self {
         self.end_date_type = input;
         self
     }
@@ -589,10 +525,7 @@ impl CapacityReservationBuilder {
     /// <li> <p> <code>open</code> - The Capacity Reservation accepts all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes launch into the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
     /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    pub fn set_instance_match_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMatchCriteria>,
-    ) -> Self {
+    pub fn set_instance_match_criteria(mut self, input: ::std::option::Option<crate::types::InstanceMatchCriteria>) -> Self {
         self.instance_match_criteria = input;
         self
     }
@@ -601,9 +534,7 @@ impl CapacityReservationBuilder {
     /// <li> <p> <code>open</code> - The Capacity Reservation accepts all instances that have matching attributes (instance type, platform, and Availability Zone). Instances that have matching attributes launch into the Capacity Reservation automatically without specifying any additional parameters.</p> </li>
     /// <li> <p> <code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity. </p> </li>
     /// </ul>
-    pub fn get_instance_match_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
+    pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
         &self.instance_match_criteria
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
@@ -612,10 +543,7 @@ impl CapacityReservationBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -635,10 +563,7 @@ impl CapacityReservationBuilder {
         self
     }
     /// <p>Any tags assigned to the Capacity Reservation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -661,40 +586,26 @@ impl CapacityReservationBuilder {
         &self.outpost_arn
     }
     /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
-    pub fn set_capacity_reservation_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = input;
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs. Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
-    pub fn get_capacity_reservation_fleet_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_fleet_id
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which the Capacity Reservation was created. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn placement_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster placement group in which the Capacity Reservation was created. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_placement_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_group_arn = input;
         self
     }
@@ -714,17 +625,12 @@ impl CapacityReservationBuilder {
         self
     }
     /// <p>Information about instance capacity usage.</p>
-    pub fn set_capacity_allocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>,
-    ) -> Self {
+    pub fn set_capacity_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>>) -> Self {
         self.capacity_allocations = input;
         self
     }
     /// <p>Information about instance capacity usage.</p>
-    pub fn get_capacity_allocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>> {
+    pub fn get_capacity_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocation>> {
         &self.capacity_allocations
     }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).

@@ -28,8 +28,7 @@ impl AddListenerCertificatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder,
+    inner: crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder,
 }
 impl AddListenerCertificatesFluentBuilder {
     /// Creates a new `AddListenerCertificates`.
@@ -40,10 +39,7 @@ impl AddListenerCertificatesFluentBuilder {
         }
     }
     /// Access the AddListenerCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl AddListenerCertificatesFluentBuilder {
             crate::operation::add_listener_certificates::AddListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_listener_certificates::AddListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_listener_certificates::AddListenerCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl AddListenerCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl AddListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_listener_certificates::AddListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_listener_certificates::AddListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_listener_certificates::AddListenerCertificatesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl AddListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_listener_certificates::AddListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_listener_certificates::AddListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_listener_certificates::AddListenerCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl AddListenerCertificatesFluentBuilder {
             crate::operation::add_listener_certificates::AddListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_listener_certificates::AddListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_listener_certificates::AddListenerCertificatesError>,
     > {
         self.customize_middleware().await
     }
@@ -150,17 +135,12 @@ impl AddListenerCertificatesFluentBuilder {
         self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         self.inner.get_certificates()
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteRecipeVersionOutput {
 }
 impl DeleteRecipeVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder {
-        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder {
+        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecipeVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl DeleteRecipeVersionOutputBuilder {
         &self.name
     }
     /// <p>The version of the recipe that was deleted.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the recipe that was deleted.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }

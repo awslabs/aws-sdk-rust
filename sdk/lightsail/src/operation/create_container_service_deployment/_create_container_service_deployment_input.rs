@@ -8,9 +8,7 @@ pub struct CreateContainerServiceDeploymentInput {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
     #[doc(hidden)]
-    pub containers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    >,
+    pub containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
     #[doc(hidden)]
     pub public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
@@ -21,11 +19,7 @@ impl CreateContainerServiceDeploymentInput {
         self.service_name.as_deref()
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn containers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    > {
+    pub fn containers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Container>> {
         self.containers.as_ref()
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
@@ -35,21 +29,17 @@ impl CreateContainerServiceDeploymentInput {
 }
 impl CreateContainerServiceDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentInput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput).
-    pub fn builder() -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder{
+    pub fn builder() -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder {
         crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerServiceDeploymentInput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerServiceDeploymentInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
-    pub(crate) containers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    >,
+    pub(crate) containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     pub(crate) public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
 }
 impl CreateContainerServiceDeploymentInputBuilder {
@@ -72,11 +62,7 @@ impl CreateContainerServiceDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
     ///
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn containers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Container,
-    ) -> Self {
+    pub fn containers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Container) -> Self {
         let mut hash_map = self.containers.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.containers = ::std::option::Option::Some(hash_map);
@@ -85,19 +71,13 @@ impl CreateContainerServiceDeploymentInputBuilder {
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
     pub fn set_containers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     ) -> Self {
         self.containers = input;
         self
     }
     /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
-    > {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>> {
         &self.containers
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
@@ -106,10 +86,7 @@ impl CreateContainerServiceDeploymentInputBuilder {
         self
     }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
-    pub fn set_public_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointRequest>,
-    ) -> Self {
+    pub fn set_public_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointRequest>) -> Self {
         self.public_endpoint = input;
         self
     }
@@ -118,16 +95,18 @@ impl CreateContainerServiceDeploymentInputBuilder {
         &self.public_endpoint
     }
     /// Consumes the builder and constructs a [`CreateContainerServiceDeploymentInput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput {
-                service_name: self.service_name
-                ,
-                containers: self.containers
-                ,
-                public_endpoint: self.public_endpoint
-                ,
-            }
+                service_name: self.service_name,
+                containers: self.containers,
+                public_endpoint: self.public_endpoint,
+            },
         )
     }
 }

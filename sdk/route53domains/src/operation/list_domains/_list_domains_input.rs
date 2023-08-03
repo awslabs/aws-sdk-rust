@@ -48,12 +48,9 @@ impl ListDomainsInput {
 
 /// A builder for [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsInputBuilder {
-    pub(crate) filter_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub(crate) filter_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     pub(crate) sort_condition: ::std::option::Option<crate::types::SortCondition>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -71,17 +68,12 @@ impl ListDomainsInputBuilder {
         self
     }
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn set_filter_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
-    ) -> Self {
+    pub fn set_filter_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>) -> Self {
         self.filter_conditions = input;
         self
     }
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn get_filter_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+    pub fn get_filter_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
         &self.filter_conditions
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
@@ -90,10 +82,7 @@ impl ListDomainsInputBuilder {
         self
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
-    pub fn set_sort_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCondition>,
-    ) -> Self {
+    pub fn set_sort_condition(mut self, input: ::std::option::Option<crate::types::SortCondition>) -> Self {
         self.sort_condition = input;
         self
     }
@@ -136,12 +125,7 @@ impl ListDomainsInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domains::ListDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
             filter_conditions: self.filter_conditions,
             sort_condition: self.sort_condition,

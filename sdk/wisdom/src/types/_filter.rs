@@ -37,9 +37,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) field: ::std::option::Option<crate::types::FilterField>,
     pub(crate) operator: ::std::option::Option<crate::types::FilterOperator>,
@@ -66,10 +64,7 @@ impl FilterBuilder {
         self
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
         self.operator = input;
         self
     }

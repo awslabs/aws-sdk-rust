@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`destination_port_mappings(Option<Vec<DestinationPortMapping>>)`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput::destination_port_mappings): <p>The port mappings for the endpoint IP address that you specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsByDestinationError>`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError)
-    pub fn list_custom_routing_port_mappings_by_destination(&self) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder{
-        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::new(self.handle.clone())
+    pub fn list_custom_routing_port_mappings_by_destination(
+        &self,
+    ) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder {
+        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

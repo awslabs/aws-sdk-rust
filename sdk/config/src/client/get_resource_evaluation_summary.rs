@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`evaluation_context(Option<EvaluationContext>)`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput::evaluation_context): <p>Returns an <code>EvaluationContext</code> object.</p>
     ///   - [`resource_details(Option<ResourceDetails>)`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput::resource_details): <p>Returns a <code>ResourceDetails</code> object.</p>
     /// - On failure, responds with [`SdkError<GetResourceEvaluationSummaryError>`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError)
-    pub fn get_resource_evaluation_summary(&self) -> crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryFluentBuilder{
+    pub fn get_resource_evaluation_summary(
+        &self,
+    ) -> crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryFluentBuilder {
         crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryFluentBuilder::new(self.handle.clone())
     }
 }

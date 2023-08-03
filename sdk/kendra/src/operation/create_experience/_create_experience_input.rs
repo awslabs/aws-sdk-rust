@@ -50,17 +50,14 @@ impl CreateExperienceInput {
 }
 impl CreateExperienceInput {
     /// Creates a new builder-style object to manufacture [`CreateExperienceInput`](crate::operation::create_experience::CreateExperienceInput).
-    pub fn builder() -> crate::operation::create_experience::builders::CreateExperienceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_experience::builders::CreateExperienceInputBuilder {
         crate::operation::create_experience::builders::CreateExperienceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExperienceInput`](crate::operation::create_experience::CreateExperienceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExperienceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -118,17 +115,12 @@ impl CreateExperienceInputBuilder {
         self
     }
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
         &self.configuration
     }
     /// <p>A description for your Amazon Kendra experience.</p>
@@ -162,10 +154,7 @@ impl CreateExperienceInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperienceInput`](crate::operation::create_experience::CreateExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_experience::CreateExperienceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experience::CreateExperienceInput {
             name: self.name,
             index_id: self.index_id,

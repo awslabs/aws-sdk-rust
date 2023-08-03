@@ -30,9 +30,7 @@ impl Order {
 
 /// A builder for [`Order`](crate::types::Order).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderBuilder {
     pub(crate) column: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<i32>,

@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for StartVpcEndpointServicePrivateDnsVeri
 }
 impl StartVpcEndpointServicePrivateDnsVerificationOutput {
     /// Creates a new builder-style object to manufacture [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput).
-    pub fn builder() -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationOutputBuilder
+    {
         crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartVpcEndpointServicePrivateDnsVerificationOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +60,9 @@ impl StartVpcEndpointServicePrivateDnsVerificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput).
-    pub fn build(self) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput{
+    pub fn build(self) -> crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput {
         crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput {
-            return_value: self.return_value
-            ,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

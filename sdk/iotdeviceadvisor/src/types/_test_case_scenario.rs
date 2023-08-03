@@ -44,9 +44,7 @@ impl TestCaseScenario {
     /// <li> <p>Advanced</p> </li>
     /// <li> <p>Basic</p> </li>
     /// </ul>
-    pub fn test_case_scenario_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestCaseScenarioType> {
+    pub fn test_case_scenario_type(&self) -> ::std::option::Option<&crate::types::TestCaseScenarioType> {
         self.test_case_scenario_type.as_ref()
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
@@ -81,9 +79,7 @@ impl TestCaseScenario {
 
 /// A builder for [`TestCaseScenario`](crate::types::TestCaseScenario).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestCaseScenarioBuilder {
     pub(crate) test_case_scenario_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_scenario_type: ::std::option::Option<crate::types::TestCaseScenarioType>,
@@ -93,18 +89,12 @@ pub struct TestCaseScenarioBuilder {
 }
 impl TestCaseScenarioBuilder {
     /// <p>Provides test case scenario ID.</p>
-    pub fn test_case_scenario_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_case_scenario_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_case_scenario_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides test case scenario ID.</p>
-    pub fn set_test_case_scenario_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_case_scenario_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_case_scenario_id = input;
         self
     }
@@ -126,10 +116,7 @@ impl TestCaseScenarioBuilder {
     /// <li> <p>Advanced</p> </li>
     /// <li> <p>Basic</p> </li>
     /// </ul>
-    pub fn set_test_case_scenario_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TestCaseScenarioType>,
-    ) -> Self {
+    pub fn set_test_case_scenario_type(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioType>) -> Self {
         self.test_case_scenario_type = input;
         self
     }
@@ -138,9 +125,7 @@ impl TestCaseScenarioBuilder {
     /// <li> <p>Advanced</p> </li>
     /// <li> <p>Basic</p> </li>
     /// </ul>
-    pub fn get_test_case_scenario_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestCaseScenarioType> {
+    pub fn get_test_case_scenario_type(&self) -> &::std::option::Option<crate::types::TestCaseScenarioType> {
         &self.test_case_scenario_type
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
@@ -169,10 +154,7 @@ impl TestCaseScenarioBuilder {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestCaseScenarioStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,18 +187,12 @@ impl TestCaseScenarioBuilder {
         &self.failure
     }
     /// <p>Provides test case scenario system messages if any.</p>
-    pub fn system_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn system_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides test case scenario system messages if any.</p>
-    pub fn set_system_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_system_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.system_message = input;
         self
     }

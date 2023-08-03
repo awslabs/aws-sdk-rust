@@ -6,28 +6,20 @@
 pub struct GetDirectoryLimitsInput {}
 impl GetDirectoryLimitsInput {
     /// Creates a new builder-style object to manufacture [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsInputBuilder {
+    pub fn builder() -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsInputBuilder {
         crate::operation::get_directory_limits::builders::GetDirectoryLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDirectoryLimitsInputBuilder {}
 impl GetDirectoryLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_directory_limits::GetDirectoryLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_directory_limits::GetDirectoryLimitsInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_directory_limits::GetDirectoryLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_directory_limits::GetDirectoryLimitsInput {})
     }
 }

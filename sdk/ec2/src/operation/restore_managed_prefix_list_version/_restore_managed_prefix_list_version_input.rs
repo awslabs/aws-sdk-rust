@@ -36,16 +36,14 @@ impl RestoreManagedPrefixListVersionInput {
 }
 impl RestoreManagedPrefixListVersionInput {
     /// Creates a new builder-style object to manufacture [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
-    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder{
+    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder {
         crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreManagedPrefixListVersionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -124,15 +116,11 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput {
-                dry_run: self.dry_run
-                ,
-                prefix_list_id: self.prefix_list_id
-                ,
-                previous_version: self.previous_version
-                ,
-                current_version: self.current_version
-                ,
-            }
+                dry_run: self.dry_run,
+                prefix_list_id: self.prefix_list_id,
+                previous_version: self.previous_version,
+                current_version: self.current_version,
+            },
         )
     }
 }

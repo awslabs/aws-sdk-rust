@@ -15,34 +15,25 @@ impl DescribeCustomPluginInput {
 }
 impl DescribeCustomPluginInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
-    pub fn builder(
-    ) -> crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder {
+    pub fn builder() -> crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder {
         crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomPluginInputBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomPluginInputBuilder {
     /// <p>Returns information about a custom plugin.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns information about a custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_plugin_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_custom_plugin::DescribeCustomPluginInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
-                custom_plugin_arn: self.custom_plugin_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
+            custom_plugin_arn: self.custom_plugin_arn,
+        })
     }
 }

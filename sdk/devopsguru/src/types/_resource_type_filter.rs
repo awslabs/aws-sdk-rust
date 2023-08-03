@@ -63,13 +63,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -141,15 +135,9 @@ impl ::std::convert::From<&str> for ResourceTypeFilter {
             "ELASTICACHE_CACHE_CLUSTER" => ResourceTypeFilter::ElasticacheCacheCluster,
             "ELASTICSEARCH_DOMAIN" => ResourceTypeFilter::ElasticsearchDomain,
             "ELASTIC_BEANSTALK_ENVIRONMENT" => ResourceTypeFilter::ElasticBeanstalkEnvironment,
-            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER" => {
-                ResourceTypeFilter::ElasticLoadBalancerLoadBalancer
-            }
-            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER" => {
-                ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer
-            }
-            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP" => {
-                ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup
-            }
+            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER" => ResourceTypeFilter::ElasticLoadBalancerLoadBalancer,
+            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER" => ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer,
+            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP" => ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup,
             "KINESIS_STREAM" => ResourceTypeFilter::KinesisStream,
             "LAMBDA_FUNCTION" => ResourceTypeFilter::LambdaFunction,
             "LOG_GROUPS" => ResourceTypeFilter::LogGroups,
@@ -165,9 +153,7 @@ impl ::std::convert::From<&str> for ResourceTypeFilter {
             "SQS_QUEUE" => ResourceTypeFilter::SqsQueue,
             "STEP_FUNCTIONS_ACTIVITY" => ResourceTypeFilter::StepFunctionsActivity,
             "STEP_FUNCTIONS_STATE_MACHINE" => ResourceTypeFilter::StepFunctionsStateMachine,
-            other => ResourceTypeFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceTypeFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -191,15 +177,9 @@ impl ResourceTypeFilter {
             ResourceTypeFilter::ElasticacheCacheCluster => "ELASTICACHE_CACHE_CLUSTER",
             ResourceTypeFilter::ElasticsearchDomain => "ELASTICSEARCH_DOMAIN",
             ResourceTypeFilter::ElasticBeanstalkEnvironment => "ELASTIC_BEANSTALK_ENVIRONMENT",
-            ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => {
-                "ELASTIC_LOAD_BALANCER_LOAD_BALANCER"
-            }
-            ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => {
-                "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER"
-            }
-            ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => {
-                "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP"
-            }
+            ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => "ELASTIC_LOAD_BALANCER_LOAD_BALANCER",
+            ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER",
+            ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP",
             ResourceTypeFilter::KinesisStream => "KINESIS_STREAM",
             ResourceTypeFilter::LambdaFunction => "LAMBDA_FUNCTION",
             ResourceTypeFilter::LogGroups => "LOG_GROUPS",

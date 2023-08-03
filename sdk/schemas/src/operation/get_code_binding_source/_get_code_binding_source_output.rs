@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCodeBindingSourceOutput {
 }
 impl GetCodeBindingSourceOutput {
     /// Creates a new builder-style object to manufacture [`GetCodeBindingSourceOutput`](crate::operation::get_code_binding_source::GetCodeBindingSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_code_binding_source::builders::GetCodeBindingSourceOutputBuilder {
         crate::operation::get_code_binding_source::builders::GetCodeBindingSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCodeBindingSourceOutput`](crate::operation::get_code_binding_source::GetCodeBindingSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCodeBindingSourceOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAlternateContactOutput {
 }
 impl DeleteAlternateContactOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAlternateContactOutput`](crate::operation::delete_alternate_contact::DeleteAlternateContactOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_alternate_contact::builders::DeleteAlternateContactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_alternate_contact::builders::DeleteAlternateContactOutputBuilder {
         crate::operation::delete_alternate_contact::builders::DeleteAlternateContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlternateContactOutput`](crate::operation::delete_alternate_contact::DeleteAlternateContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlternateContactOutputBuilder {
     _request_id: Option<String>,
 }

@@ -40,9 +40,7 @@ impl VerifyPinDataInput {
         self.encryption_key_identifier.as_deref()
     }
     /// <p>The attributes and values for PIN data verification.</p>
-    pub fn verification_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PinVerificationAttributes> {
+    pub fn verification_attributes(&self) -> ::std::option::Option<&crate::types::PinVerificationAttributes> {
         self.verification_attributes.as_ref()
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.</p>
@@ -56,9 +54,7 @@ impl VerifyPinDataInput {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    pub fn pin_block_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PinBlockFormatForPinData> {
+    pub fn pin_block_format(&self) -> ::std::option::Option<&crate::types::PinBlockFormatForPinData> {
         self.pin_block_format.as_ref()
     }
     /// <p>The length of PIN being verified.</p>
@@ -73,10 +69,7 @@ impl VerifyPinDataInput {
 impl ::std::fmt::Debug for VerifyPinDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyPinDataInput");
-        formatter.field(
-            "verification_key_identifier",
-            &self.verification_key_identifier,
-        );
+        formatter.field("verification_key_identifier", &self.verification_key_identifier);
         formatter.field("encryption_key_identifier", &self.encryption_key_identifier);
         formatter.field("verification_attributes", &self.verification_attributes);
         formatter.field("encrypted_pin_block", &self.encrypted_pin_block);
@@ -100,8 +93,7 @@ impl VerifyPinDataInput {
 pub struct VerifyPinDataInputBuilder {
     pub(crate) verification_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) verification_attributes:
-        ::std::option::Option<crate::types::PinVerificationAttributes>,
+    pub(crate) verification_attributes: ::std::option::Option<crate::types::PinVerificationAttributes>,
     pub(crate) encrypted_pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
@@ -110,18 +102,12 @@ pub struct VerifyPinDataInputBuilder {
 }
 impl VerifyPinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the PIN verification key.</p>
-    pub fn verification_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PIN verification key.</p>
-    pub fn set_verification_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_key_identifier = input;
         self
     }
@@ -130,18 +116,12 @@ impl VerifyPinDataInputBuilder {
         &self.verification_key_identifier
     }
     /// <p>The <code>keyARN</code> of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    pub fn encryption_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    pub fn set_encryption_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_identifier = input;
         self
     }
@@ -150,40 +130,26 @@ impl VerifyPinDataInputBuilder {
         &self.encryption_key_identifier
     }
     /// <p>The attributes and values for PIN data verification.</p>
-    pub fn verification_attributes(
-        mut self,
-        input: crate::types::PinVerificationAttributes,
-    ) -> Self {
+    pub fn verification_attributes(mut self, input: crate::types::PinVerificationAttributes) -> Self {
         self.verification_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes and values for PIN data verification.</p>
-    pub fn set_verification_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::PinVerificationAttributes>,
-    ) -> Self {
+    pub fn set_verification_attributes(mut self, input: ::std::option::Option<crate::types::PinVerificationAttributes>) -> Self {
         self.verification_attributes = input;
         self
     }
     /// <p>The attributes and values for PIN data verification.</p>
-    pub fn get_verification_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::PinVerificationAttributes> {
+    pub fn get_verification_attributes(&self) -> &::std::option::Option<crate::types::PinVerificationAttributes> {
         &self.verification_attributes
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.</p>
-    pub fn encrypted_pin_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encrypted_pin_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.</p>
-    pub fn set_encrypted_pin_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encrypted_pin_block = input;
         self
     }
@@ -192,18 +158,12 @@ impl VerifyPinDataInputBuilder {
         &self.encrypted_pin_block
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_account_number = input;
         self
     }
@@ -221,19 +181,14 @@ impl VerifyPinDataInputBuilder {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    pub fn set_pin_block_format(
-        mut self,
-        input: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
-    ) -> Self {
+    pub fn set_pin_block_format(mut self, input: ::std::option::Option<crate::types::PinBlockFormatForPinData>) -> Self {
         self.pin_block_format = input;
         self
     }
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code> and <code>ISO_Format_3</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    pub fn get_pin_block_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
+    pub fn get_pin_block_format(&self) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
         &self.pin_block_format
     }
     /// <p>The length of PIN being verified.</p>
@@ -256,10 +211,7 @@ impl VerifyPinDataInputBuilder {
         self
     }
     /// <p>The attributes and values for the DUKPT encrypted PIN block data.</p>
-    pub fn set_dukpt_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptAttributes>,
-    ) -> Self {
+    pub fn set_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptAttributes>) -> Self {
         self.dukpt_attributes = input;
         self
     }
@@ -270,10 +222,7 @@ impl VerifyPinDataInputBuilder {
     /// Consumes the builder and constructs a [`VerifyPinDataInput`](crate::operation::verify_pin_data::VerifyPinDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_pin_data::VerifyPinDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_pin_data::VerifyPinDataInput {
             verification_key_identifier: self.verification_key_identifier,
             encryption_key_identifier: self.encryption_key_identifier,
@@ -289,10 +238,7 @@ impl VerifyPinDataInputBuilder {
 impl ::std::fmt::Debug for VerifyPinDataInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyPinDataInputBuilder");
-        formatter.field(
-            "verification_key_identifier",
-            &self.verification_key_identifier,
-        );
+        formatter.field("verification_key_identifier", &self.verification_key_identifier);
         formatter.field("encryption_key_identifier", &self.encryption_key_identifier);
         formatter.field("verification_attributes", &self.verification_attributes);
         formatter.field("encrypted_pin_block", &self.encrypted_pin_block);

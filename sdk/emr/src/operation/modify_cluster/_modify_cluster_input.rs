@@ -29,9 +29,7 @@ impl ModifyClusterInput {
 
 /// A builder for [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ModifyClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster::ModifyClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             cluster_id: self.cluster_id,
             step_concurrency_level: self.step_concurrency_level,

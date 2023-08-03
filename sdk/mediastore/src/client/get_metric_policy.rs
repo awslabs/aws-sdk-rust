@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput) with field(s):
     ///   - [`metric_policy(Option<MetricPolicy>)`](crate::operation::get_metric_policy::GetMetricPolicyOutput::metric_policy): <p>The metric policy that is associated with the specific container.</p>
     /// - On failure, responds with [`SdkError<GetMetricPolicyError>`](crate::operation::get_metric_policy::GetMetricPolicyError)
-    pub fn get_metric_policy(
-        &self,
-    ) -> crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder {
-        crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_policy(&self) -> crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder {
+        crate::operation::get_metric_policy::builders::GetMetricPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,13 +38,7 @@
 /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashIsoPlaybackDeviceCompatibility {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DashIsoPlaybackDeviceCompatibility {
         match s {
             "CENC_V1" => DashIsoPlaybackDeviceCompatibility::CencV1,
             "UNENCRYPTED_SEI" => DashIsoPlaybackDeviceCompatibility::UnencryptedSei,
-            other => DashIsoPlaybackDeviceCompatibility::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DashIsoPlaybackDeviceCompatibility::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

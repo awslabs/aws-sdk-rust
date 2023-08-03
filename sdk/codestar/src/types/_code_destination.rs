@@ -30,9 +30,7 @@ impl CodeDestination {
 
 /// A builder for [`CodeDestination`](crate::types::CodeDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeDestinationBuilder {
     pub(crate) code_commit: ::std::option::Option<crate::types::CodeCommitCodeDestination>,
     pub(crate) git_hub: ::std::option::Option<crate::types::GitHubCodeDestination>,
@@ -44,17 +42,12 @@ impl CodeDestinationBuilder {
         self
     }
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
-    pub fn set_code_commit(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeCommitCodeDestination>,
-    ) -> Self {
+    pub fn set_code_commit(mut self, input: ::std::option::Option<crate::types::CodeCommitCodeDestination>) -> Self {
         self.code_commit = input;
         self
     }
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
-    pub fn get_code_commit(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeCommitCodeDestination> {
+    pub fn get_code_commit(&self) -> &::std::option::Option<crate::types::CodeCommitCodeDestination> {
         &self.code_commit
     }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
@@ -63,10 +56,7 @@ impl CodeDestinationBuilder {
         self
     }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
-    pub fn set_git_hub(
-        mut self,
-        input: ::std::option::Option<crate::types::GitHubCodeDestination>,
-    ) -> Self {
+    pub fn set_git_hub(mut self, input: ::std::option::Option<crate::types::GitHubCodeDestination>) -> Self {
         self.git_hub = input;
         self
     }

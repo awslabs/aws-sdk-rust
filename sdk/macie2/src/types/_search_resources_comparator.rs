@@ -38,13 +38,7 @@
 /// <p>The operator to use in a condition that filters the results of a query. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SearchResourcesComparator {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SearchResourcesComparator {
         match s {
             "EQ" => SearchResourcesComparator::Eq,
             "NE" => SearchResourcesComparator::Ne,
-            other => SearchResourcesComparator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SearchResourcesComparator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

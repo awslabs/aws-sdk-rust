@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterWirelessDeviceOutput {
 }
 impl DeregisterWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder {
         crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterWirelessDeviceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterWirelessDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
+    pub fn build(self) -> crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
         crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
             _request_id: self._request_id,
         }

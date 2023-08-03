@@ -71,17 +71,14 @@ impl UpdateBudgetActionInput {
 }
 impl UpdateBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`UpdateBudgetActionInput`](crate::operation::update_budget_action::UpdateBudgetActionInput).
-    pub fn builder(
-    ) -> crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder {
+    pub fn builder() -> crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder {
         crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBudgetActionInput`](crate::operation::update_budget_action::UpdateBudgetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBudgetActionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -142,10 +139,7 @@ impl UpdateBudgetActionInputBuilder {
         self
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
@@ -159,10 +153,7 @@ impl UpdateBudgetActionInputBuilder {
         self
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn set_action_threshold(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionThreshold>,
-    ) -> Self {
+    pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
         self.action_threshold = input;
         self
     }
@@ -176,10 +167,7 @@ impl UpdateBudgetActionInputBuilder {
         self
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::Definition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.definition = input;
         self
     }
@@ -188,18 +176,12 @@ impl UpdateBudgetActionInputBuilder {
         &self.definition
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -213,10 +195,7 @@ impl UpdateBudgetActionInputBuilder {
         self
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn set_approval_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalModel>,
-    ) -> Self {
+    pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
         self.approval_model = input;
         self
     }
@@ -236,38 +215,28 @@ impl UpdateBudgetActionInputBuilder {
         self
     }
     /// <p> A list of subscribers.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p> A list of subscribers.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`UpdateBudgetActionInput`](crate::operation::update_budget_action::UpdateBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_budget_action::UpdateBudgetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_budget_action::UpdateBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                action_id: self.action_id,
-                notification_type: self.notification_type,
-                action_threshold: self.action_threshold,
-                definition: self.definition,
-                execution_role_arn: self.execution_role_arn,
-                approval_model: self.approval_model,
-                subscribers: self.subscribers,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_budget_action::UpdateBudgetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_budget_action::UpdateBudgetActionInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            action_id: self.action_id,
+            notification_type: self.notification_type,
+            action_threshold: self.action_threshold,
+            definition: self.definition,
+            execution_role_arn: self.execution_role_arn,
+            approval_model: self.approval_model,
+            subscribers: self.subscribers,
+        })
     }
 }

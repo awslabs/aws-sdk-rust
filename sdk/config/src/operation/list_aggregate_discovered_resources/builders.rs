@@ -5,16 +5,16 @@ pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_d
 
 impl ListAggregateDiscoveredResourcesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_aggregate_discovered_resources();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder,
+    inner: crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder,
 }
 impl ListAggregateDiscoveredResourcesFluentBuilder {
     /// Creates a new `ListAggregateDiscoveredResources`.
@@ -38,15 +38,20 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         }
     }
     /// Access the ListAggregateDiscoveredResources as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResources,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,45 +88,46 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResources,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator {
         crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the configuration aggregator. </p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator. </p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
     /// <p>The name of the configuration aggregator. </p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
@@ -129,10 +136,7 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -146,10 +150,7 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         self
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ResourceFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

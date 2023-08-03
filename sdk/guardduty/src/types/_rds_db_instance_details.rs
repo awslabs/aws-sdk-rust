@@ -58,9 +58,7 @@ impl RdsDbInstanceDetails {
 
 /// A builder for [`RdsDbInstanceDetails`](crate::types::RdsDbInstanceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsDbInstanceDetailsBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct RdsDbInstanceDetailsBuilder {
 }
 impl RdsDbInstanceDetailsBuilder {
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -105,18 +97,12 @@ impl RdsDbInstanceDetailsBuilder {
         &self.engine
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -125,18 +111,12 @@ impl RdsDbInstanceDetailsBuilder {
         &self.engine_version
     }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -145,18 +125,12 @@ impl RdsDbInstanceDetailsBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
-    pub fn db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
-    pub fn set_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_arn = input;
         self
     }
@@ -176,10 +150,7 @@ impl RdsDbInstanceDetailsBuilder {
         self
     }
     /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

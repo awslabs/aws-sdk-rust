@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteSchemaMappingOutput {
 }
 impl DeleteSchemaMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaMappingOutput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingOutputBuilder {
-        crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingOutputBuilder {
+        crate::operation::delete_schema_mapping::builders::DeleteSchemaMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSchemaMappingOutput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaMappingOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

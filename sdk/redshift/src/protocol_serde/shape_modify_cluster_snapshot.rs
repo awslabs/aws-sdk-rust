@@ -9,75 +9,70 @@ pub fn de_modify_cluster_snapshot_http_error(
     crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterSnapshotNotFound" => crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::ClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidClusterSnapshotState" => crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::InvalidClusterSnapshotStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidClusterSnapshotStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidClusterSnapshotStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRetentionPeriodFault" => crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::InvalidRetentionPeriodFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::generic(generic)
+        _ => crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::generic(generic),
     })
 }
 
@@ -93,16 +88,9 @@ pub fn de_modify_cluster_snapshot_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder::default();
-        output = crate::protocol_serde::shape_modify_cluster_snapshot::de_modify_cluster_snapshot(
-            _response_body,
-            output,
-        )
-        .map_err(
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled,
-        )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_modify_cluster_snapshot::de_modify_cluster_snapshot(_response_body, output)
+            .map_err(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -111,10 +99,7 @@ pub fn de_modify_cluster_snapshot_http_response_with_props(
 pub fn de_modify_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder,
-) -> Result<
-    crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

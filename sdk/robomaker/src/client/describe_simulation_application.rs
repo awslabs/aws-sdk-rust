@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`environment(Option<Environment>)`](crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI used to create the simulation application.</p>
     ///   - [`image_digest(Option<String>)`](crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput::image_digest): <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     /// - On failure, responds with [`SdkError<DescribeSimulationApplicationError>`](crate::operation::describe_simulation_application::DescribeSimulationApplicationError)
-    pub fn describe_simulation_application(&self) -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationFluentBuilder{
+    pub fn describe_simulation_application(
+        &self,
+    ) -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationFluentBuilder {
         crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl StopJobInput {
 
 /// A builder for [`StopJobInput`](crate::operation::stop_job::StopJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl StopJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopJobInput`](crate::operation::stop_job::StopJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_job::StopJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job::StopJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_job::StopJobInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

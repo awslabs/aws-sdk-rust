@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`admin_account(Option<String>)`](crate::operation::get_admin_account::GetAdminAccountOutput::admin_account): <p>The account that is set as the Firewall Manager default administrator.</p>
     ///   - [`role_status(Option<AccountRoleStatus>)`](crate::operation::get_admin_account::GetAdminAccountOutput::role_status): <p>The status of the account that you set as the Firewall Manager default administrator.</p>
     /// - On failure, responds with [`SdkError<GetAdminAccountError>`](crate::operation::get_admin_account::GetAdminAccountError)
-    pub fn get_admin_account(
-        &self,
-    ) -> crate::operation::get_admin_account::builders::GetAdminAccountFluentBuilder {
-        crate::operation::get_admin_account::builders::GetAdminAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_admin_account(&self) -> crate::operation::get_admin_account::builders::GetAdminAccountFluentBuilder {
+        crate::operation::get_admin_account::builders::GetAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

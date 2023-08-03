@@ -51,9 +51,7 @@ impl Type {
 
 /// A builder for [`Type`](crate::types::Type).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl TypeBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
         self.format = input;
         self
     }

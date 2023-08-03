@@ -5,15 +5,12 @@
 pub struct DeleteTransitGatewayPolicyTableOutput {
     /// <p>Provides details about the deleted transit gateway policy table.</p>
     #[doc(hidden)]
-    pub transit_gateway_policy_table:
-        ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
+    pub transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayPolicyTableOutput {
     /// <p>Provides details about the deleted transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTable> {
+    pub fn transit_gateway_policy_table(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTable> {
         self.transit_gateway_policy_table.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteTransitGatewayPolicyTableOutput
 }
 impl DeleteTransitGatewayPolicyTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPolicyTableOutput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableOutputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableOutputBuilder {
         crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayPolicyTableOutput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayPolicyTableOutputBuilder {
-    pub(crate) transit_gateway_policy_table:
-        ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
+    pub(crate) transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayPolicyTableOutputBuilder {
     /// <p>Provides details about the deleted transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTable,
-    ) -> Self {
+    pub fn transit_gateway_policy_table(mut self, input: crate::types::TransitGatewayPolicyTable) -> Self {
         self.transit_gateway_policy_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about the deleted transit gateway policy table.</p>
-    pub fn set_transit_gateway_policy_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
-    ) -> Self {
+    pub fn set_transit_gateway_policy_table(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyTable>) -> Self {
         self.transit_gateway_policy_table = input;
         self
     }
     /// <p>Provides details about the deleted transit gateway policy table.</p>
-    pub fn get_transit_gateway_policy_table(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTable> {
+    pub fn get_transit_gateway_policy_table(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyTable> {
         &self.transit_gateway_policy_table
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl DeleteTransitGatewayPolicyTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayPolicyTableOutput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput
-    {
+    pub fn build(self) -> crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput {
         crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput {
-            transit_gateway_policy_table: self.transit_gateway_policy_table
-            ,
+            transit_gateway_policy_table: self.transit_gateway_policy_table,
             _request_id: self._request_id,
         }
     }

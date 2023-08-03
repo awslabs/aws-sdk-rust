@@ -22,10 +22,7 @@ pub fn ser_create_instances_from_snapshot_input(
                     {
                         #[allow(unused_mut)]
                         let mut object_10 = array_8.value().start_object();
-                        crate::protocol_serde::shape_disk_map::ser_disk_map(
-                            &mut object_10,
-                            item_9,
-                        )?;
+                        crate::protocol_serde::shape_disk_map::ser_disk_map(&mut object_10, item_9)?;
                         object_10.finish();
                     }
                 }
@@ -67,10 +64,7 @@ pub fn ser_create_instances_from_snapshot_input(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_add_on_request::ser_add_on_request(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_add_on_request::ser_add_on_request(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
@@ -86,9 +80,7 @@ pub fn ser_create_instances_from_snapshot_input(
         object.key("restoreDate").string(var_26.as_str());
     }
     if let Some(var_27) = &input.use_latest_restorable_auto_snapshot {
-        object
-            .key("useLatestRestorableAutoSnapshot")
-            .boolean(*var_27);
+        object.key("useLatestRestorableAutoSnapshot").boolean(*var_27);
     }
     Ok(())
 }

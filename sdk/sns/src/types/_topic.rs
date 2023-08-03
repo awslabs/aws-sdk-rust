@@ -23,9 +23,7 @@ impl Topic {
 
 /// A builder for [`Topic`](crate::types::Topic).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl TopicBuilder {
     }
     /// Consumes the builder and constructs a [`Topic`](crate::types::Topic).
     pub fn build(self) -> crate::types::Topic {
-        crate::types::Topic {
-            topic_arn: self.topic_arn,
-        }
+        crate::types::Topic { topic_arn: self.topic_arn }
     }
 }

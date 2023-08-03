@@ -85,9 +85,7 @@ impl DescribeTableInput {
 
 /// A builder for [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -102,18 +100,12 @@ pub struct DescribeTableInputBuilder {
 }
 impl DescribeTableInputBuilder {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -164,18 +156,12 @@ impl DescribeTableInputBuilder {
         &self.database
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn set_connected_database(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connected_database = input;
         self
     }
@@ -240,18 +226,12 @@ impl DescribeTableInputBuilder {
         &self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -262,10 +242,7 @@ impl DescribeTableInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_table::DescribeTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,

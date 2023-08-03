@@ -46,9 +46,7 @@ impl AggregatedVariablesImpactExplanation {
 
 /// A builder for [`AggregatedVariablesImpactExplanation`](crate::types::AggregatedVariablesImpactExplanation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImpactExplanationBuilder {
     pub(crate) event_variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) relative_impact: ::std::option::Option<::std::string::String>,
@@ -60,42 +58,28 @@ impl AggregatedVariablesImpactExplanationBuilder {
     /// To override the contents of this collection use [`set_event_variable_names`](Self::set_event_variable_names).
     ///
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
-    pub fn event_variable_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variable_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_variable_names.unwrap_or_default();
         v.push(input.into());
         self.event_variable_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
-    pub fn set_event_variable_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variable_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_variable_names = input;
         self
     }
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
-    pub fn get_event_variable_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_variable_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_variable_names
     }
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
-    pub fn relative_impact(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_impact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_impact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
-    pub fn set_relative_impact(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_impact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_impact = input;
         self
     }

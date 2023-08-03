@@ -58,9 +58,7 @@ impl ImpersonationRule {
 
 /// A builder for [`ImpersonationRule`](crate::types::ImpersonationRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImpersonationRuleBuilder {
     pub(crate) impersonation_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct ImpersonationRuleBuilder {
 }
 impl ImpersonationRuleBuilder {
     /// <p>The identifier of the rule.</p>
-    pub fn impersonation_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rule.</p>
-    pub fn set_impersonation_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_rule_id = input;
         self
     }
@@ -144,17 +136,12 @@ impl ImpersonationRuleBuilder {
         self
     }
     /// <p>A list of user IDs that match the rule.</p>
-    pub fn set_target_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_users = input;
         self
     }
     /// <p>A list of user IDs that match the rule.</p>
-    pub fn get_target_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_users
     }
     /// Appends an item to `not_target_users`.
@@ -162,27 +149,19 @@ impl ImpersonationRuleBuilder {
     /// To override the contents of this collection use [`set_not_target_users`](Self::set_not_target_users).
     ///
     /// <p>A list of user IDs that don't match the rule.</p>
-    pub fn not_target_users(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn not_target_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_target_users.unwrap_or_default();
         v.push(input.into());
         self.not_target_users = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of user IDs that don't match the rule.</p>
-    pub fn set_not_target_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_target_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_target_users = input;
         self
     }
     /// <p>A list of user IDs that don't match the rule.</p>
-    pub fn get_not_target_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_target_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_target_users
     }
     /// Consumes the builder and constructs a [`ImpersonationRule`](crate::types::ImpersonationRule).

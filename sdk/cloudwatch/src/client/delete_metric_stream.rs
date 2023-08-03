@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::set_name): <p>The name of the metric stream to delete.</p>
     /// - On success, responds with [`DeleteMetricStreamOutput`](crate::operation::delete_metric_stream::DeleteMetricStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteMetricStreamError>`](crate::operation::delete_metric_stream::DeleteMetricStreamError)
-    pub fn delete_metric_stream(
-        &self,
-    ) -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder {
-        crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_metric_stream(&self) -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder {
+        crate::operation::delete_metric_stream::builders::DeleteMetricStreamFluentBuilder::new(self.handle.clone())
     }
 }

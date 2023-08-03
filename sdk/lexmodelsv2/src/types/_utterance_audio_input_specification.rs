@@ -23,26 +23,18 @@ impl UtteranceAudioInputSpecification {
 
 /// A builder for [`UtteranceAudioInputSpecification`](crate::types::UtteranceAudioInputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceAudioInputSpecificationBuilder {
     pub(crate) audio_file_s3_location: ::std::option::Option<::std::string::String>,
 }
 impl UtteranceAudioInputSpecificationBuilder {
     /// <p>Amazon S3 file pointing to the audio.</p>
-    pub fn audio_file_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_file_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_file_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 file pointing to the audio.</p>
-    pub fn set_audio_file_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_file_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_file_s3_location = input;
         self
     }

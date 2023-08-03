@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeletePricingPlanOutput {
 }
 impl DeletePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeletePricingPlanOutput`](crate::operation::delete_pricing_plan::DeletePricingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanOutputBuilder {
         crate::operation::delete_pricing_plan::builders::DeletePricingPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePricingPlanOutput`](crate::operation::delete_pricing_plan::DeletePricingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePricingPlanOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_logs::ListEventLogsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Option<Vec<EventLogEntry>>)`](crate::operation::list_event_logs::ListEventLogsOutput::items): <p>Information about each event retrieved in the list.</p>
     /// - On failure, responds with [`SdkError<ListEventLogsError>`](crate::operation::list_event_logs::ListEventLogsError)
-    pub fn list_event_logs(
-        &self,
-    ) -> crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder {
-        crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_logs(&self) -> crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder {
+        crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::new(self.handle.clone())
     }
 }

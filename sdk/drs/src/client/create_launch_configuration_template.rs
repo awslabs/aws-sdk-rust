@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateLaunchConfigurationTemplateOutput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput) with field(s):
     ///   - [`launch_configuration_template(Option<LaunchConfigurationTemplate>)`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput::launch_configuration_template): <p>Created Launch Configuration Template.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchConfigurationTemplateError>`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError)
-    pub fn create_launch_configuration_template(&self) -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder{
+    pub fn create_launch_configuration_template(
+        &self,
+    ) -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder {
         crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

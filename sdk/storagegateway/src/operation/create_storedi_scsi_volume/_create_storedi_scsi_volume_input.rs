@@ -91,18 +91,14 @@ impl CreateStorediScsiVolumeInput {
 }
 impl CreateStorediScsiVolumeInput {
     /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeInput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput).
-    pub fn builder(
-    ) -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder {
         crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStorediScsiVolumeInput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStorediScsiVolumeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disk_id: ::std::option::Option<::std::string::String>,
@@ -193,19 +189,13 @@ impl CreateStorediScsiVolumeInputBuilder {
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -261,10 +251,7 @@ impl CreateStorediScsiVolumeInputBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -281,18 +268,16 @@ impl CreateStorediScsiVolumeInputBuilder {
         crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput {
-                gateway_arn: self.gateway_arn,
-                disk_id: self.disk_id,
-                snapshot_id: self.snapshot_id,
-                preserve_existing_data: self.preserve_existing_data.unwrap_or_default(),
-                target_name: self.target_name,
-                network_interface_id: self.network_interface_id,
-                kms_encrypted: self.kms_encrypted,
-                kms_key: self.kms_key,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput {
+            gateway_arn: self.gateway_arn,
+            disk_id: self.disk_id,
+            snapshot_id: self.snapshot_id,
+            preserve_existing_data: self.preserve_existing_data.unwrap_or_default(),
+            target_name: self.target_name,
+            network_interface_id: self.network_interface_id,
+            kms_encrypted: self.kms_encrypted,
+            kms_key: self.kms_key,
+            tags: self.tags,
+        })
     }
 }

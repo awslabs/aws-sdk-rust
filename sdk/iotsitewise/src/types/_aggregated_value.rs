@@ -37,9 +37,7 @@ impl AggregatedValue {
 
 /// A builder for [`AggregatedValue`](crate::types::AggregatedValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedValueBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) quality: ::std::option::Option<crate::types::Quality>,
@@ -52,10 +50,7 @@ impl AggregatedValueBuilder {
         self
     }
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

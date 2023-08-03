@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsAccessScopesOutput {
     /// <p>The Network Access Scopes.</p>
     #[doc(hidden)]
-    pub network_insights_access_scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>>,
+    pub network_insights_access_scopes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeNetworkInsightsAccessScopesOutput {
 }
 impl DescribeNetworkInsightsAccessScopesOutput {
     /// <p>The Network Access Scopes.</p>
-    pub fn network_insights_access_scopes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkInsightsAccessScope]> {
+    pub fn network_insights_access_scopes(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsAccessScope]> {
         self.network_insights_access_scopes.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInsightsAccessScopesOu
 }
 impl DescribeNetworkInsightsAccessScopesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopesOutput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput).
-    pub fn builder() -> crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesOutputBuilder {
         crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAccessScopesOutput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopesOutputBuilder {
-    pub(crate) network_insights_access_scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>>,
+    pub(crate) network_insights_access_scopes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeNetworkInsightsAccessScopesOutputBuilder {
     /// To override the contents of this collection use [`set_network_insights_access_scopes`](Self::set_network_insights_access_scopes).
     ///
     /// <p>The Network Access Scopes.</p>
-    pub fn network_insights_access_scopes(
-        mut self,
-        input: crate::types::NetworkInsightsAccessScope,
-    ) -> Self {
+    pub fn network_insights_access_scopes(mut self, input: crate::types::NetworkInsightsAccessScope) -> Self {
         let mut v = self.network_insights_access_scopes.unwrap_or_default();
         v.push(input);
         self.network_insights_access_scopes = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeNetworkInsightsAccessScopesOutputBuilder {
         self
     }
     /// <p>The Network Access Scopes.</p>
-    pub fn get_network_insights_access_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>> {
+    pub fn get_network_insights_access_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScope>> {
         &self.network_insights_access_scopes
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +89,10 @@ impl DescribeNetworkInsightsAccessScopesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopesOutput`](crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput).
-    pub fn build(self) -> crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput{
+    pub fn build(self) -> crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput {
         crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopesOutput {
-            network_insights_access_scopes: self.network_insights_access_scopes
-            ,
-            next_token: self.next_token
-            ,
+            network_insights_access_scopes: self.network_insights_access_scopes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

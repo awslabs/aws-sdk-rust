@@ -154,9 +154,7 @@ impl GetCommandInvocationOutput {
         self.standard_error_url.as_deref()
     }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    pub fn cloud_watch_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
 }
@@ -167,17 +165,14 @@ impl ::aws_http::request_id::RequestId for GetCommandInvocationOutput {
 }
 impl GetCommandInvocationOutput {
     /// Creates a new builder-style object to manufacture [`GetCommandInvocationOutput`](crate::operation::get_command_invocation::GetCommandInvocationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_command_invocation::builders::GetCommandInvocationOutputBuilder {
+    pub fn builder() -> crate::operation::get_command_invocation::builders::GetCommandInvocationOutputBuilder {
         crate::operation::get_command_invocation::builders::GetCommandInvocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCommandInvocationOutput`](crate::operation::get_command_invocation::GetCommandInvocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommandInvocationOutputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -195,8 +190,7 @@ pub struct GetCommandInvocationOutputBuilder {
     pub(crate) standard_output_url: ::std::option::Option<::std::string::String>,
     pub(crate) standard_error_content: ::std::option::Option<::std::string::String>,
     pub(crate) standard_error_url: ::std::option::Option<::std::string::String>,
-    pub(crate) cloud_watch_output_config:
-        ::std::option::Option<crate::types::CloudWatchOutputConfig>,
+    pub(crate) cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     _request_id: Option<String>,
 }
 impl GetCommandInvocationOutputBuilder {
@@ -243,18 +237,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.comment
     }
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -263,18 +251,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.document_name
     }
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Systems Manager document (SSM document) version used in the request.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -313,20 +295,14 @@ impl GetCommandInvocationOutputBuilder {
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn execution_start_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn set_execution_start_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_start_date_time = input;
         self
     }
@@ -337,18 +313,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.execution_start_date_time
     }
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
-    pub fn execution_elapsed_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_elapsed_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_elapsed_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Duration since <code>ExecutionStartDateTime</code>.</p>
-    pub fn set_execution_elapsed_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_elapsed_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_elapsed_time = input;
         self
     }
@@ -359,20 +329,14 @@ impl GetCommandInvocationOutputBuilder {
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn execution_end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>
     /// <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>
     /// <p>If the plugin hasn't started to run, the string is empty.</p>
-    pub fn set_execution_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_end_date_time = input;
         self
     }
@@ -388,10 +352,7 @@ impl GetCommandInvocationOutputBuilder {
         self
     }
     /// <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CommandInvocationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CommandInvocationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -412,10 +373,7 @@ impl GetCommandInvocationOutputBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
@@ -432,10 +390,7 @@ impl GetCommandInvocationOutputBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -456,18 +411,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.status_details
     }
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
-    pub fn standard_output_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_output_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_output_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
-    pub fn set_standard_output_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_output_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_output_content = input;
         self
     }
@@ -476,18 +425,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.standard_output_content
     }
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
-    pub fn standard_output_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_output_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
-    pub fn set_standard_output_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_output_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_output_url = input;
         self
     }
@@ -496,18 +439,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.standard_output_url
     }
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn standard_error_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_error_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_error_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn set_standard_error_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_error_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_error_content = input;
         self
     }
@@ -516,18 +453,12 @@ impl GetCommandInvocationOutputBuilder {
         &self.standard_error_content
     }
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn standard_error_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_error_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_error_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
-    pub fn set_standard_error_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_error_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_error_url = input;
         self
     }
@@ -536,25 +467,17 @@ impl GetCommandInvocationOutputBuilder {
         &self.standard_error_url
     }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    pub fn cloud_watch_output_config(
-        mut self,
-        input: crate::types::CloudWatchOutputConfig,
-    ) -> Self {
+    pub fn cloud_watch_output_config(mut self, input: crate::types::CloudWatchOutputConfig) -> Self {
         self.cloud_watch_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    pub fn set_cloud_watch_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
         self.cloud_watch_output_config = input;
         self
     }
     /// <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
-    pub fn get_cloud_watch_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
+    pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
         &self.cloud_watch_output_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

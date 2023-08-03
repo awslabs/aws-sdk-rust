@@ -29,18 +29,14 @@ impl UpdateFleetMetadataInput {
 }
 impl UpdateFleetMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
-        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
+        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetMetadataInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -81,10 +77,7 @@ impl UpdateFleetMetadataInputBuilder {
         self
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    pub fn set_optimize_for_end_user_location(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_optimize_for_end_user_location(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optimize_for_end_user_location = input;
         self
     }
@@ -95,16 +88,12 @@ impl UpdateFleetMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetMetadataInput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_fleet_metadata::UpdateFleetMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_fleet_metadata::UpdateFleetMetadataInput {
-                fleet_arn: self.fleet_arn,
-                display_name: self.display_name,
-                optimize_for_end_user_location: self.optimize_for_end_user_location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_fleet_metadata::UpdateFleetMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_fleet_metadata::UpdateFleetMetadataInput {
+            fleet_arn: self.fleet_arn,
+            display_name: self.display_name,
+            optimize_for_end_user_location: self.optimize_for_end_user_location,
+        })
     }
 }

@@ -72,9 +72,7 @@ impl SourceControlDetails {
 
 /// A builder for [`SourceControlDetails`](crate::types::SourceControlDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceControlDetailsBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::SourceControlProvider>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl SourceControlDetailsBuilder {
         self
     }
     /// <p>The provider for the remote repository.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SourceControlProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -160,18 +155,12 @@ impl SourceControlDetailsBuilder {
         &self.folder
     }
     /// <p>The last commit ID for a commit in the remote repository.</p>
-    pub fn last_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last commit ID for a commit in the remote repository.</p>
-    pub fn set_last_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_commit_id = input;
         self
     }
@@ -185,17 +174,12 @@ impl SourceControlDetailsBuilder {
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn set_auth_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlAuthStrategy>,
-    ) -> Self {
+    pub fn set_auth_strategy(mut self, input: ::std::option::Option<crate::types::SourceControlAuthStrategy>) -> Self {
         self.auth_strategy = input;
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn get_auth_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
+    pub fn get_auth_strategy(&self) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
         &self.auth_strategy
     }
     /// <p>The value of an authorization token.</p>

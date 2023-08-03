@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StepExecutionState {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for StepExecutionState {
             "INTERRUPTED" => StepExecutionState::Interrupted,
             "PENDING" => StepExecutionState::Pending,
             "RUNNING" => StepExecutionState::Running,
-            other => StepExecutionState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StepExecutionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl StepExecutionState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "COMPLETED",
-            "CONTINUE",
-            "FAILED",
-            "INTERRUPTED",
-            "PENDING",
-            "RUNNING",
-        ]
+        &["CANCELLED", "COMPLETED", "CONTINUE", "FAILED", "INTERRUPTED", "PENDING", "RUNNING"]
     }
 }
 impl ::std::convert::AsRef<str> for StepExecutionState {

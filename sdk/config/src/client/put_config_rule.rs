@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::set_tags): <p>An array of tag object.</p>
     /// - On success, responds with [`PutConfigRuleOutput`](crate::operation::put_config_rule::PutConfigRuleOutput)
     /// - On failure, responds with [`SdkError<PutConfigRuleError>`](crate::operation::put_config_rule::PutConfigRuleError)
-    pub fn put_config_rule(
-        &self,
-    ) -> crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder {
-        crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_config_rule(&self) -> crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder {
+        crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::new(self.handle.clone())
     }
 }

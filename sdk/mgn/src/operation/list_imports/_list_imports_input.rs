@@ -37,9 +37,7 @@ impl ListImportsInput {
 
 /// A builder for [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListImportsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl ListImportsInputBuilder {
         self
     }
     /// <p>List imports request filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListImportsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListImportsRequestFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -92,12 +87,7 @@ impl ListImportsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_imports::ListImportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_imports::ListImportsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_imports::ListImportsInput {
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),

@@ -100,9 +100,7 @@ impl ::std::fmt::Debug for UpdateServicePipelineInput {
 }
 impl UpdateServicePipelineInput {
     /// Creates a new builder-style object to manufacture [`UpdateServicePipelineInput`](crate::operation::update_service_pipeline::UpdateServicePipelineInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder {
         crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder::default()
     }
 }
@@ -198,10 +196,7 @@ impl UpdateServicePipelineInputBuilder {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentUpdateType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentUpdateType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -229,24 +224,16 @@ impl UpdateServicePipelineInputBuilder {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn get_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
         &self.deployment_type
     }
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -255,18 +242,12 @@ impl UpdateServicePipelineInputBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }
@@ -277,19 +258,15 @@ impl UpdateServicePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServicePipelineInput`](crate::operation::update_service_pipeline::UpdateServicePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_pipeline::UpdateServicePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_pipeline::UpdateServicePipelineInput {
-                service_name: self.service_name,
-                spec: self.spec,
-                deployment_type: self.deployment_type,
-                template_major_version: self.template_major_version,
-                template_minor_version: self.template_minor_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_service_pipeline::UpdateServicePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_service_pipeline::UpdateServicePipelineInput {
+            service_name: self.service_name,
+            spec: self.spec,
+            deployment_type: self.deployment_type,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateServicePipelineInputBuilder {

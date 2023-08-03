@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::display_name): <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::description): <p>The description of the project.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
-    pub fn update_project(
-        &self,
-    ) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
-        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
+        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())
     }
 }

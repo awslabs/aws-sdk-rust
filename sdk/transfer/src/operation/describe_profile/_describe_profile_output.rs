@@ -28,9 +28,7 @@ impl DescribeProfileOutput {
 
 /// A builder for [`DescribeProfileOutput`](crate::operation::describe_profile::DescribeProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::DescribedProfile>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeProfileOutputBuilder {
         self
     }
     /// <p>The details of the specified profile, returned as an object.</p>
-    pub fn set_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedProfile>,
-    ) -> Self {
+    pub fn set_profile(mut self, input: ::std::option::Option<crate::types::DescribedProfile>) -> Self {
         self.profile = input;
         self
     }

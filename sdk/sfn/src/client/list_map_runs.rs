@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`map_runs(Option<Vec<MapRunListItem>>)`](crate::operation::list_map_runs::ListMapRunsOutput::map_runs): <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_map_runs::ListMapRunsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<ListMapRunsError>`](crate::operation::list_map_runs::ListMapRunsError)
-    pub fn list_map_runs(
-        &self,
-    ) -> crate::operation::list_map_runs::builders::ListMapRunsFluentBuilder {
-        crate::operation::list_map_runs::builders::ListMapRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_map_runs(&self) -> crate::operation::list_map_runs::builders::ListMapRunsFluentBuilder {
+        crate::operation::list_map_runs::builders::ListMapRunsFluentBuilder::new(self.handle.clone())
     }
 }

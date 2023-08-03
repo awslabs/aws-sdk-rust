@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ListCuratedEnvironmentImagesOutput {
 }
 impl ListCuratedEnvironmentImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
-    pub fn builder() -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder{
+    pub fn builder() -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder {
         crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCuratedEnvironmentImagesOutputBuilder {
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl ListCuratedEnvironmentImagesOutputBuilder {
         self
     }
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>> {
         &self.platforms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl ListCuratedEnvironmentImagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput {
+    pub fn build(self) -> crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput {
         crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput {
             platforms: self.platforms,
             _request_id: self._request_id,

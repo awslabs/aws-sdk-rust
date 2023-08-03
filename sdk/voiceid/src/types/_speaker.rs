@@ -104,18 +104,12 @@ impl SpeakerBuilder {
         &self.domain_id
     }
     /// <p>The client-provided identifier for the speaker.</p>
-    pub fn customer_speaker_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_speaker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client-provided identifier for the speaker.</p>
-    pub fn set_customer_speaker_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_speaker_id = input;
         self
     }
@@ -124,18 +118,12 @@ impl SpeakerBuilder {
         &self.customer_speaker_id
     }
     /// <p>The service-generated identifier for the speaker.</p>
-    pub fn generated_speaker_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_speaker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service-generated identifier for the speaker.</p>
-    pub fn set_generated_speaker_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_speaker_id = input;
         self
     }
@@ -163,10 +151,7 @@ impl SpeakerBuilder {
         self
     }
     /// <p>A timestamp of when the speaker was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -180,10 +165,7 @@ impl SpeakerBuilder {
         self
     }
     /// <p>A timestamp of the speaker's last update.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -197,10 +179,7 @@ impl SpeakerBuilder {
         self
     }
     /// <p>The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-    pub fn set_last_accessed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_accessed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed_at = input;
         self
     }

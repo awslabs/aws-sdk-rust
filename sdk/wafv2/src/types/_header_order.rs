@@ -35,9 +35,7 @@ impl HeaderOrder {
 
 /// A builder for [`HeaderOrder`](crate::types::HeaderOrder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderOrderBuilder {
     pub(crate) oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
@@ -60,10 +58,7 @@ impl HeaderOrderBuilder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn set_oversize_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::OversizeHandling>,
-    ) -> Self {
+    pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
         self.oversize_handling = input;
         self
     }

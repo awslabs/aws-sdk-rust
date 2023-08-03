@@ -119,9 +119,7 @@ impl CaseDetails {
         self.time_created.as_deref()
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
-    pub fn recent_communications(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecentCaseCommunications> {
+    pub fn recent_communications(&self) -> ::std::option::Option<&crate::types::RecentCaseCommunications> {
         self.recent_communications.as_ref()
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
@@ -142,9 +140,7 @@ impl CaseDetails {
 
 /// A builder for [`CaseDetails`](crate::types::CaseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaseDetailsBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_id: ::std::option::Option<::std::string::String>,
@@ -258,18 +254,12 @@ impl CaseDetailsBuilder {
         &self.service_code
     }
     /// <p>The category of problem for the support case.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of problem for the support case.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_code = input;
         self
     }
@@ -278,18 +268,12 @@ impl CaseDetailsBuilder {
         &self.category_code
     }
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    pub fn severity_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn severity_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    pub fn set_severity_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_severity_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity_code = input;
         self
     }
@@ -331,17 +315,12 @@ impl CaseDetailsBuilder {
         self
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
-    pub fn set_recent_communications(
-        mut self,
-        input: ::std::option::Option<crate::types::RecentCaseCommunications>,
-    ) -> Self {
+    pub fn set_recent_communications(mut self, input: ::std::option::Option<crate::types::RecentCaseCommunications>) -> Self {
         self.recent_communications = input;
         self
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
-    pub fn get_recent_communications(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecentCaseCommunications> {
+    pub fn get_recent_communications(&self) -> &::std::option::Option<crate::types::RecentCaseCommunications> {
         &self.recent_communications
     }
     /// Appends an item to `cc_email_addresses`.
@@ -349,27 +328,19 @@ impl CaseDetailsBuilder {
     /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
     ///
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn cc_email_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cc_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cc_email_addresses.unwrap_or_default();
         v.push(input.into());
         self.cc_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn set_cc_email_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cc_email_addresses = input;
         self
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn get_cc_email_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cc_email_addresses
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>

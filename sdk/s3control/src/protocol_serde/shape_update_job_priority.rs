@@ -2,8 +2,7 @@
 pub fn ser_update_job_priority_headers(
     input: &crate::operation::update_job_priority::UpdateJobPriorityInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_update_job_priority_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -28,104 +24,80 @@ pub fn de_update_job_priority_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_job_priority::UpdateJobPriorityOutput,
-    crate::operation::update_job_priority::UpdateJobPriorityError,
-> {
+) -> std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityOutput, crate::operation::update_job_priority::UpdateJobPriorityError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::update_job_priority::UpdateJobPriorityError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::operation::update_job_priority::UpdateJobPriorityError::BadRequestException({
+        "BadRequestException" => crate::operation::update_job_priority::UpdateJobPriorityError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_xml_err(_response_body, output).map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServiceException" => {
-            crate::operation::update_job_priority::UpdateJobPriorityError::InternalServiceException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::InternalServiceExceptionBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output).map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "NotFoundException" => {
-            crate::operation::update_job_priority::UpdateJobPriorityError::NotFoundException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceException" => crate::operation::update_job_priority::UpdateJobPriorityError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::operation::update_job_priority::UpdateJobPriorityError::TooManyRequestsException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::TooManyRequestsExceptionBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_xml_err(_response_body, output).map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::update_job_priority::UpdateJobPriorityError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::update_job_priority::UpdateJobPriorityError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_job_priority::UpdateJobPriorityError::generic(generic),
     })
 }
@@ -135,21 +107,14 @@ pub fn de_update_job_priority_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_job_priority::UpdateJobPriorityOutput,
-    crate::operation::update_job_priority::UpdateJobPriorityError,
-> {
+) -> std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityOutput, crate::operation::update_job_priority::UpdateJobPriorityError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder::default();
-        output = crate::protocol_serde::shape_update_job_priority::de_update_job_priority(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_update_job_priority::de_update_job_priority(_response_body, output)
+            .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -158,10 +123,7 @@ pub fn de_update_job_priority_http_response_with_props(
 pub fn de_update_job_priority(
     inp: &[u8],
     mut builder: crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder,
-) -> Result<
-    crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -169,11 +131,10 @@ pub fn de_update_job_priority(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("UpdateJobPriorityResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected UpdateJobPriorityResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected UpdateJobPriorityResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

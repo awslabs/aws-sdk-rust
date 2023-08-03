@@ -16,9 +16,7 @@ pub struct QueryWhatIfForecastInput {
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -39,11 +37,7 @@ impl QueryWhatIfForecastInput {
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filters.as_ref()
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -53,41 +47,29 @@ impl QueryWhatIfForecastInput {
 }
 impl QueryWhatIfForecastInput {
     /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
-    pub fn builder(
-    ) -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
-        crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
+        crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder::default()
     }
 }
 
 /// A builder for [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_date: ::std::option::Option<::std::string::String>,
     pub(crate) end_date: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl QueryWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn what_if_forecast_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn set_what_if_forecast_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_forecast_arn = input;
         self
     }
@@ -130,11 +112,7 @@ impl QueryWhatIfForecastInputBuilder {
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.filters = ::std::option::Option::Some(hash_map);
@@ -143,23 +121,14 @@ impl QueryWhatIfForecastInputBuilder {
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filters
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -179,18 +148,14 @@ impl QueryWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::query_what_if_forecast::QueryWhatIfForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastInput {
-                what_if_forecast_arn: self.what_if_forecast_arn,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                filters: self.filters,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::query_what_if_forecast::QueryWhatIfForecastInput {
+            what_if_forecast_arn: self.what_if_forecast_arn,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            filters: self.filters,
+            next_token: self.next_token,
+        })
     }
 }

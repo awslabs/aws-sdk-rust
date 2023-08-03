@@ -30,24 +30,20 @@ impl ListBillingGroupCostReportsInput {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListBillingGroupCostReportsFilter> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListBillingGroupCostReportsFilter> {
         self.filters.as_ref()
     }
 }
 impl ListBillingGroupCostReportsInput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
-    pub fn builder() -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder{
+    pub fn builder() -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder {
         crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -56,18 +52,12 @@ pub struct ListBillingGroupCostReportsInputBuilder {
 }
 impl ListBillingGroupCostReportsInputBuilder {
     /// <p>The preferred billing period for your report. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preferred billing period for your report. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -109,17 +99,12 @@ impl ListBillingGroupCostReportsInputBuilder {
         self
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
@@ -129,13 +114,11 @@ impl ListBillingGroupCostReportsInputBuilder {
         crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput {
-                billing_period: self.billing_period,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput {
+            billing_period: self.billing_period,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

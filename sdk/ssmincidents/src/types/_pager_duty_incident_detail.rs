@@ -37,9 +37,7 @@ impl PagerDutyIncidentDetail {
 
 /// A builder for [`PagerDutyIncidentDetail`](crate::types::PagerDutyIncidentDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PagerDutyIncidentDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_resolve: ::std::option::Option<bool>,

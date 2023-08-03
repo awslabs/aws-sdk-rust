@@ -37,10 +37,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
         }
     }
     /// Access the DeletePublicIpv4Pool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
             crate::operation::delete_public_ipv4_pool::DeletePublicIpv4Pool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeletePublicIpv4PoolFluentBuilder {
             crate::operation::delete_public_ipv4_pool::DeletePublicIpv4Pool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError>,
     > {
         self.customize_middleware().await
     }

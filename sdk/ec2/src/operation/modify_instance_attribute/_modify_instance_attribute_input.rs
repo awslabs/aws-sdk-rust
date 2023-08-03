@@ -14,9 +14,7 @@ pub struct ModifyInstanceAttributeInput {
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub block_device_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>,
-    >,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>>,
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
     #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
@@ -77,15 +75,11 @@ impl ModifyInstanceAttributeInput {
     }
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMappingSpecification]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMappingSpecification]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
-    pub fn disable_api_termination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn disable_api_termination(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.disable_api_termination.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -110,9 +104,7 @@ impl ModifyInstanceAttributeInput {
         self.instance_id.as_deref()
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn instance_initiated_shutdown_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
@@ -149,32 +141,25 @@ impl ModifyInstanceAttributeInput {
 }
 impl ModifyInstanceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceAttributeInput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeInputBuilder {
         crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceAttributeInput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceAttributeInputBuilder {
     pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
-    pub(crate) block_device_mappings: ::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>,
-    >,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>>,
     pub(crate) disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ebs_optimized: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) ena_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_initiated_shutdown_behavior:
-        ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) instance_type: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) kernel: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) ramdisk: ::std::option::Option<crate::types::AttributeValue>,
@@ -190,17 +175,12 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.source_dest_check = input;
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn get_source_dest_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
     }
     /// <p>The name of the attribute to modify.</p> <important>
@@ -213,10 +193,7 @@ impl ModifyInstanceAttributeInputBuilder {
     /// <p>The name of the attribute to modify.</p> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code> </p>
     /// </important>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -232,10 +209,7 @@ impl ModifyInstanceAttributeInputBuilder {
     ///
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn block_device_mappings(
-        mut self,
-        input: crate::types::InstanceBlockDeviceMappingSpecification,
-    ) -> Self {
+    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMappingSpecification) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
@@ -245,20 +219,14 @@ impl ModifyInstanceAttributeInputBuilder {
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>>,
     ) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>,
-    > {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>> {
         &self.block_device_mappings
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
@@ -267,17 +235,12 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
-    pub fn set_disable_api_termination(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_disable_api_termination(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.disable_api_termination = input;
         self
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
-    pub fn get_disable_api_termination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_disable_api_termination(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_api_termination
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -300,10 +263,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Specifies whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn set_ebs_optimized(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.ebs_optimized = input;
         self
     }
@@ -319,10 +279,7 @@ impl ModifyInstanceAttributeInputBuilder {
     }
     /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the instance.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    pub fn set_ena_support(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_ena_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.ena_support = input;
         self
     }
@@ -343,10 +300,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -369,25 +323,17 @@ impl ModifyInstanceAttributeInputBuilder {
         &self.instance_id
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn instance_initiated_shutdown_behavior(
-        mut self,
-        input: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::AttributeValue) -> Self {
         self.instance_initiated_shutdown_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn set_instance_initiated_shutdown_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn get_instance_initiated_shutdown_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeValue> {
+    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.instance_initiated_shutdown_behavior
     }
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
@@ -396,10 +342,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.instance_type = input;
         self
     }
@@ -413,10 +356,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
-    pub fn set_kernel(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_kernel(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.kernel = input;
         self
     }
@@ -430,10 +370,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
-    pub fn set_ramdisk(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_ramdisk(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.ramdisk = input;
         self
     }
@@ -451,10 +388,7 @@ impl ModifyInstanceAttributeInputBuilder {
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the instance.</p>
     /// <p>There is no way to disable enhanced networking with the Intel 82599 Virtual Function interface at this time.</p>
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
-    pub fn set_sriov_net_support(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_sriov_net_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.sriov_net_support = input;
         self
     }
@@ -470,10 +404,7 @@ impl ModifyInstanceAttributeInputBuilder {
         self
     }
     /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK or command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.</p>
-    pub fn set_user_data(
-        mut self,
-        input: ::std::option::Option<crate::types::BlobAttributeValue>,
-    ) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
         self.user_data = input;
         self
     }
@@ -503,18 +434,13 @@ impl ModifyInstanceAttributeInputBuilder {
     }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
     /// <p></p>
-    pub fn set_disable_api_stop(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_disable_api_stop(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.disable_api_stop = input;
         self
     }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>
     /// <p></p>
-    pub fn get_disable_api_stop(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_disable_api_stop(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_api_stop
     }
     /// Consumes the builder and constructs a [`ModifyInstanceAttributeInput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput).
@@ -524,26 +450,24 @@ impl ModifyInstanceAttributeInputBuilder {
         crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput {
-                source_dest_check: self.source_dest_check,
-                attribute: self.attribute,
-                block_device_mappings: self.block_device_mappings,
-                disable_api_termination: self.disable_api_termination,
-                dry_run: self.dry_run,
-                ebs_optimized: self.ebs_optimized,
-                ena_support: self.ena_support,
-                groups: self.groups,
-                instance_id: self.instance_id,
-                instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior,
-                instance_type: self.instance_type,
-                kernel: self.kernel,
-                ramdisk: self.ramdisk,
-                sriov_net_support: self.sriov_net_support,
-                user_data: self.user_data,
-                value: self.value,
-                disable_api_stop: self.disable_api_stop,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput {
+            source_dest_check: self.source_dest_check,
+            attribute: self.attribute,
+            block_device_mappings: self.block_device_mappings,
+            disable_api_termination: self.disable_api_termination,
+            dry_run: self.dry_run,
+            ebs_optimized: self.ebs_optimized,
+            ena_support: self.ena_support,
+            groups: self.groups,
+            instance_id: self.instance_id,
+            instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior,
+            instance_type: self.instance_type,
+            kernel: self.kernel,
+            ramdisk: self.ramdisk,
+            sriov_net_support: self.sriov_net_support,
+            user_data: self.user_data,
+            value: self.value,
+            disable_api_stop: self.disable_api_stop,
+        })
     }
 }

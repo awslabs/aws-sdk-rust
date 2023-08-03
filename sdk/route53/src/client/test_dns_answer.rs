@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`response_code(Option<String>)`](crate::operation::test_dns_answer::TestDnsAnswerOutput::response_code): <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
     ///   - [`protocol(Option<String>)`](crate::operation::test_dns_answer::TestDnsAnswerOutput::protocol): <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
     /// - On failure, responds with [`SdkError<TestDNSAnswerError>`](crate::operation::test_dns_answer::TestDNSAnswerError)
-    pub fn test_dns_answer(
-        &self,
-    ) -> crate::operation::test_dns_answer::builders::TestDNSAnswerFluentBuilder {
-        crate::operation::test_dns_answer::builders::TestDNSAnswerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_dns_answer(&self) -> crate::operation::test_dns_answer::builders::TestDNSAnswerFluentBuilder {
+        crate::operation::test_dns_answer::builders::TestDNSAnswerFluentBuilder::new(self.handle.clone())
     }
 }

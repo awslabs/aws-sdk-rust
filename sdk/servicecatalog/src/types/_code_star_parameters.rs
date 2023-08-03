@@ -44,9 +44,7 @@ impl CodeStarParameters {
 
 /// A builder for [`CodeStarParameters`](crate::types::CodeStarParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeStarParametersBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct CodeStarParametersBuilder {
 }
 impl CodeStarParametersBuilder {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -103,18 +95,12 @@ impl CodeStarParametersBuilder {
         &self.branch
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn artifact_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn set_artifact_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_path = input;
         self
     }

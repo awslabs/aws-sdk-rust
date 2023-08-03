@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`total(Option<MetricValue>)`](crate::operation::get_cost_forecast::GetCostForecastOutput::total): <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
     ///   - [`forecast_results_by_time(Option<Vec<ForecastResult>>)`](crate::operation::get_cost_forecast::GetCostForecastOutput::forecast_results_by_time): <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     /// - On failure, responds with [`SdkError<GetCostForecastError>`](crate::operation::get_cost_forecast::GetCostForecastError)
-    pub fn get_cost_forecast(
-        &self,
-    ) -> crate::operation::get_cost_forecast::builders::GetCostForecastFluentBuilder {
-        crate::operation::get_cost_forecast::builders::GetCostForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cost_forecast(&self) -> crate::operation::get_cost_forecast::builders::GetCostForecastFluentBuilder {
+        crate::operation::get_cost_forecast::builders::GetCostForecastFluentBuilder::new(self.handle.clone())
     }
 }

@@ -174,10 +174,7 @@ impl DelegatedAdministratorBuilder {
         self
     }
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
-    pub fn set_joined_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountJoinedMethod>,
-    ) -> Self {
+    pub fn set_joined_method(mut self, input: ::std::option::Option<crate::types::AccountJoinedMethod>) -> Self {
         self.joined_method = input;
         self
     }
@@ -191,10 +188,7 @@ impl DelegatedAdministratorBuilder {
         self
     }
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
-    pub fn set_joined_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_joined_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.joined_timestamp = input;
         self
     }
@@ -208,17 +202,12 @@ impl DelegatedAdministratorBuilder {
         self
     }
     /// <p>The date when the account was made a delegated administrator.</p>
-    pub fn set_delegation_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delegation_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delegation_enabled_date = input;
         self
     }
     /// <p>The date when the account was made a delegated administrator.</p>
-    pub fn get_delegation_enabled_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_delegation_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.delegation_enabled_date
     }
     /// Consumes the builder and constructs a [`DelegatedAdministrator`](crate::types::DelegatedAdministrator).

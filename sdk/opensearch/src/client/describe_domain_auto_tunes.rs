@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`auto_tunes(Option<Vec<AutoTune>>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::auto_tunes): <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError)
-    pub fn describe_domain_auto_tunes(
-        &self,
-    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder
-    {
+    pub fn describe_domain_auto_tunes(&self) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::new(self.handle.clone())
     }
 }

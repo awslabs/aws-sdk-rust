@@ -36,9 +36,7 @@ impl GetFileInput {
 
 /// A builder for [`GetFileInput`](crate::operation::get_file::GetFileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFileInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) commit_specifier: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetFileInputBuilder {
 }
 impl GetFileInputBuilder {
     /// <p>The name of the repository that contains the file.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the file.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetFileInputBuilder {
         &self.repository_name
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
-    pub fn commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
-    pub fn set_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_specifier = input;
         self
     }
@@ -100,12 +86,7 @@ impl GetFileInputBuilder {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`GetFileInput`](crate::operation::get_file::GetFileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_file::GetFileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_file::GetFileInput {
             repository_name: self.repository_name,
             commit_specifier: self.commit_specifier,

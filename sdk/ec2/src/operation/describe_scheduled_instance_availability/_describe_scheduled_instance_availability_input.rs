@@ -49,9 +49,7 @@ impl DescribeScheduledInstanceAvailabilityInput {
         self.filters.as_deref()
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn first_slot_start_time_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotDateTimeRangeRequest> {
+    pub fn first_slot_start_time_range(&self) -> ::std::option::Option<&crate::types::SlotDateTimeRangeRequest> {
         self.first_slot_start_time_range.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -71,29 +69,24 @@ impl DescribeScheduledInstanceAvailabilityInput {
         self.next_token.as_deref()
     }
     /// <p>The schedule recurrence.</p>
-    pub fn recurrence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduledInstanceRecurrenceRequest> {
+    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::ScheduledInstanceRecurrenceRequest> {
         self.recurrence.as_ref()
     }
 }
 impl DescribeScheduledInstanceAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledInstanceAvailabilityInput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput).
-    pub fn builder() -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder{
+    pub fn builder() -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder {
         crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledInstanceAvailabilityInput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) first_slot_start_time_range:
-        ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
+    pub(crate) first_slot_start_time_range: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) max_slot_duration_in_hours: ::std::option::Option<i32>,
     pub(crate) min_slot_duration_in_hours: ::std::option::Option<i32>,
@@ -137,10 +130,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -154,25 +144,17 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
         &self.filters
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn first_slot_start_time_range(
-        mut self,
-        input: crate::types::SlotDateTimeRangeRequest,
-    ) -> Self {
+    pub fn first_slot_start_time_range(mut self, input: crate::types::SlotDateTimeRangeRequest) -> Self {
         self.first_slot_start_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn set_first_slot_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>,
-    ) -> Self {
+    pub fn set_first_slot_start_time_range(mut self, input: ::std::option::Option<crate::types::SlotDateTimeRangeRequest>) -> Self {
         self.first_slot_start_time_range = input;
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn get_first_slot_start_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
+    pub fn get_first_slot_start_time_range(&self) -> &::std::option::Option<crate::types::SlotDateTimeRangeRequest> {
         &self.first_slot_start_time_range
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -237,40 +219,32 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest>) -> Self {
         self.recurrence = input;
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn get_recurrence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrenceRequest> {
         &self.recurrence
     }
     /// Consumes the builder and constructs a [`DescribeScheduledInstanceAvailabilityInput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityInput {
-                dry_run: self.dry_run
-                ,
-                filters: self.filters
-                ,
-                first_slot_start_time_range: self.first_slot_start_time_range
-                ,
-                max_results: self.max_results
-                ,
-                max_slot_duration_in_hours: self.max_slot_duration_in_hours
-                ,
-                min_slot_duration_in_hours: self.min_slot_duration_in_hours
-                ,
-                next_token: self.next_token
-                ,
-                recurrence: self.recurrence
-                ,
-            }
+                dry_run: self.dry_run,
+                filters: self.filters,
+                first_slot_start_time_range: self.first_slot_start_time_range,
+                max_results: self.max_results,
+                max_slot_duration_in_hours: self.max_slot_duration_in_hours,
+                min_slot_duration_in_hours: self.min_slot_duration_in_hours,
+                next_token: self.next_token,
+                recurrence: self.recurrence,
+            },
         )
     }
 }

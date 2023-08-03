@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     ///   - [`access_control_configurations(Option<Vec<AccessControlConfigurationSummary>>)`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput::access_control_configurations): <p>The details of your access control configurations.</p>
     /// - On failure, responds with [`SdkError<ListAccessControlConfigurationsError>`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsError)
-    pub fn list_access_control_configurations(&self) -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsFluentBuilder{
+    pub fn list_access_control_configurations(
+        &self,
+    ) -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsFluentBuilder {
         crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

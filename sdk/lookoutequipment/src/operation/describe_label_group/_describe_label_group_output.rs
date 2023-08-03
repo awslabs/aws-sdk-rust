@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeLabelGroupOutput {
 }
 impl DescribeLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder {
         crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelGroupOutputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ pub struct DescribeLabelGroupOutputBuilder {
 }
 impl DescribeLabelGroupOutputBuilder {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the label group. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
@@ -90,18 +81,12 @@ impl DescribeLabelGroupOutputBuilder {
         &self.label_group_name
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the label group. </p>
-    pub fn set_label_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
@@ -121,17 +106,12 @@ impl DescribeLabelGroupOutputBuilder {
         self
     }
     /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-    pub fn set_fault_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fault_codes = input;
         self
     }
     /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-    pub fn get_fault_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fault_codes
     }
     /// <p> The time at which the label group was created. </p>
@@ -140,10 +120,7 @@ impl DescribeLabelGroupOutputBuilder {
         self
     }
     /// <p> The time at which the label group was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -157,10 +134,7 @@ impl DescribeLabelGroupOutputBuilder {
         self
     }
     /// <p> The time at which the label group was updated. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

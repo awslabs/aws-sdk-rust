@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`fleets(Option<Vec<Fleet>>)`](crate::operation::describe_fleets::DescribeFleetsOutput::fleets): <p>Information about the fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleets::DescribeFleetsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetsError>`](crate::operation::describe_fleets::DescribeFleetsError)
-    pub fn describe_fleets(
-        &self,
-    ) -> crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder {
-        crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleets(&self) -> crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder {
+        crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder::new(self.handle.clone())
     }
 }

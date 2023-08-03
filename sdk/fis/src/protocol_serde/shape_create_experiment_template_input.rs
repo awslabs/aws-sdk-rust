@@ -10,7 +10,10 @@ pub fn ser_create_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_create_experiment_template_action_input::ser_create_experiment_template_action_input(&mut object_5, value_4)?;
+                crate::protocol_serde::shape_create_experiment_template_action_input::ser_create_experiment_template_action_input(
+                    &mut object_5,
+                    value_4,
+                )?;
                 object_5.finish();
             }
         }
@@ -25,7 +28,10 @@ pub fn ser_create_experiment_template_input(
     if let Some(var_8) = &input.log_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_create_experiment_template_log_configuration_input::ser_create_experiment_template_log_configuration_input(&mut object_9, var_8)?;
+        crate::protocol_serde::shape_create_experiment_template_log_configuration_input::ser_create_experiment_template_log_configuration_input(
+            &mut object_9,
+            var_8,
+        )?;
         object_9.finish();
     }
     if let Some(var_10) = &input.role_arn {
@@ -37,7 +43,10 @@ pub fn ser_create_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_create_experiment_template_stop_condition_input::ser_create_experiment_template_stop_condition_input(&mut object_14, item_13)?;
+                crate::protocol_serde::shape_create_experiment_template_stop_condition_input::ser_create_experiment_template_stop_condition_input(
+                    &mut object_14,
+                    item_13,
+                )?;
                 object_14.finish();
             }
         }
@@ -60,7 +69,10 @@ pub fn ser_create_experiment_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = object_20.key(key_21.as_str()).start_object();
-                crate::protocol_serde::shape_create_experiment_template_target_input::ser_create_experiment_template_target_input(&mut object_23, value_22)?;
+                crate::protocol_serde::shape_create_experiment_template_target_input::ser_create_experiment_template_target_input(
+                    &mut object_23,
+                    value_22,
+                )?;
                 object_23.finish();
             }
         }

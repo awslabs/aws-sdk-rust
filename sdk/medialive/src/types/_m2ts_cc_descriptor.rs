@@ -38,13 +38,7 @@
 /// M2ts Cc Descriptor
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsCcDescriptor {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsCcDescriptor {
         match s {
             "DISABLED" => M2tsCcDescriptor::Disabled,
             "ENABLED" => M2tsCcDescriptor::Enabled,
-            other => {
-                M2tsCcDescriptor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsCcDescriptor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

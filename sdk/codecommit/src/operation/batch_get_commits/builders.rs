@@ -10,10 +10,7 @@ impl BatchGetCommitsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_commits::BatchGetCommitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_commits::BatchGetCommitsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_commits::BatchGetCommitsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_commits();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetCommitsFluentBuilder {
         }
     }
     /// Access the BatchGetCommits as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_commits::builders::BatchGetCommitsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_commits::builders::BatchGetCommitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetCommitsFluentBuilder {
             crate::operation::batch_get_commits::BatchGetCommits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_commits::BatchGetCommitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_commits::BatchGetCommitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetCommitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetCommitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_commits::BatchGetCommitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_commits::BatchGetCommitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_commits::BatchGetCommitsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetCommitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_commits::BatchGetCommitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_commits::BatchGetCommitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_commits::BatchGetCommitsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetCommitsFluentBuilder {
             crate::operation::batch_get_commits::BatchGetCommits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_commits::BatchGetCommitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_commits::BatchGetCommitsError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +120,7 @@ impl BatchGetCommitsFluentBuilder {
     /// <p>The full commit IDs of the commits to get information about.</p> <note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    pub fn set_commit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_commit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_commit_ids(input);
         self
     }
@@ -150,18 +131,12 @@ impl BatchGetCommitsFluentBuilder {
         self.inner.get_commit_ids()
     }
     /// <p>The name of the repository that contains the commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

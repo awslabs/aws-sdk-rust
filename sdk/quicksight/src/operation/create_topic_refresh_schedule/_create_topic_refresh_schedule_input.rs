@@ -43,16 +43,14 @@ impl CreateTopicRefreshScheduleInput {
 }
 impl CreateTopicRefreshScheduleInput {
     /// Creates a new builder-style object to manufacture [`CreateTopicRefreshScheduleInput`](crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput).
-    pub fn builder() -> crate::operation::create_topic_refresh_schedule::builders::CreateTopicRefreshScheduleInputBuilder{
+    pub fn builder() -> crate::operation::create_topic_refresh_schedule::builders::CreateTopicRefreshScheduleInputBuilder {
         crate::operation::create_topic_refresh_schedule::builders::CreateTopicRefreshScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTopicRefreshScheduleInput`](crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTopicRefreshScheduleInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct CreateTopicRefreshScheduleInputBuilder {
 }
 impl CreateTopicRefreshScheduleInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -129,17 +121,12 @@ impl CreateTopicRefreshScheduleInputBuilder {
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
-    ) -> Self {
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
         self.refresh_schedule = input;
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn get_refresh_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+    pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`CreateTopicRefreshScheduleInput`](crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput).
@@ -149,14 +136,12 @@ impl CreateTopicRefreshScheduleInputBuilder {
         crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput {
-                aws_account_id: self.aws_account_id,
-                topic_id: self.topic_id,
-                dataset_arn: self.dataset_arn,
-                dataset_name: self.dataset_name,
-                refresh_schedule: self.refresh_schedule,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput {
+            aws_account_id: self.aws_account_id,
+            topic_id: self.topic_id,
+            dataset_arn: self.dataset_arn,
+            dataset_name: self.dataset_name,
+            refresh_schedule: self.refresh_schedule,
+        })
     }
 }

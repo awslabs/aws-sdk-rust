@@ -2,8 +2,7 @@
 pub fn ser_get_bucket_versioning_headers(
     input: &crate::operation::get_bucket_versioning::GetBucketVersioningInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_bucket_versioning_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -33,14 +29,9 @@ pub fn de_get_bucket_versioning_http_error(
     crate::operation::get_bucket_versioning::GetBucketVersioningError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_bucket_versioning::GetBucketVersioningError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_bucket_versioning::GetBucketVersioningError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_bucket_versioning::GetBucketVersioningError::generic(generic))
@@ -58,18 +49,10 @@ pub fn de_get_bucket_versioning_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_bucket_versioning::GetBucketVersioningError::unhandled)?;
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning(_response_body, output)
+            .map_err(crate::operation::get_bucket_versioning::GetBucketVersioningError::unhandled)?;
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -78,10 +61,7 @@ pub fn de_get_bucket_versioning_http_response_with_props(
 pub fn de_get_bucket_versioning(
     inp: &[u8],
     mut builder: crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder,
-) -> Result<
-    crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_bucket_versioning::builders::GetBucketVersioningOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -89,11 +69,10 @@ pub fn de_get_bucket_versioning(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("VersioningConfiguration") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected VersioningConfiguration but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected VersioningConfiguration but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

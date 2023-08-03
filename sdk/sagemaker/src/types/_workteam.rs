@@ -75,9 +75,7 @@ impl Workteam {
         self.last_updated_date.as_ref()
     }
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
@@ -90,13 +88,10 @@ impl Workteam {
 
 /// A builder for [`Workteam`](crate::types::Workteam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkteamBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
-    pub(crate) member_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) workforce_arn: ::std::option::Option<::std::string::String>,
     pub(crate) product_listing_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -104,23 +99,16 @@ pub struct WorkteamBuilder {
     pub(crate) sub_domain: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl WorkteamBuilder {
     /// <p>The name of the work team.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the work team.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_name = input;
         self
     }
@@ -142,18 +130,13 @@ impl WorkteamBuilder {
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-    pub fn set_member_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
-    ) -> Self {
+    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>) -> Self {
         self.member_definitions = input;
         self
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-    pub fn get_member_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
         &self.member_definitions
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
@@ -171,18 +154,12 @@ impl WorkteamBuilder {
         &self.workteam_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    pub fn workforce_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    pub fn set_workforce_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workforce_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workforce_arn = input;
         self
     }
@@ -195,27 +172,19 @@ impl WorkteamBuilder {
     /// To override the contents of this collection use [`set_product_listing_ids`](Self::set_product_listing_ids).
     ///
     /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-    pub fn product_listing_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_listing_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_listing_ids.unwrap_or_default();
         v.push(input.into());
         self.product_listing_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-    pub fn set_product_listing_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_product_listing_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.product_listing_ids = input;
         self
     }
     /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-    pub fn get_product_listing_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_listing_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.product_listing_ids
     }
     /// <p>A description of the work team.</p>
@@ -252,10 +221,7 @@ impl WorkteamBuilder {
         self
     }
     /// <p>The date and time that the work team was created (timestamp).</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -269,10 +235,7 @@ impl WorkteamBuilder {
         self
     }
     /// <p>The date and time that the work team was last updated (timestamp).</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -281,25 +244,17 @@ impl WorkteamBuilder {
         &self.last_updated_date
     }
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`Workteam`](crate::types::Workteam).

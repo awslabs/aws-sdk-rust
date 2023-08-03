@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateFuotaTaskOutput {
 }
 impl CreateFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::operation::create_fuota_task::CreateFuotaTaskOutput).
-    pub fn builder() -> crate::operation::create_fuota_task::builders::CreateFuotaTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_fuota_task::builders::CreateFuotaTaskOutputBuilder {
         crate::operation::create_fuota_task::builders::CreateFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFuotaTaskOutput`](crate::operation::create_fuota_task::CreateFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFuotaTaskOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

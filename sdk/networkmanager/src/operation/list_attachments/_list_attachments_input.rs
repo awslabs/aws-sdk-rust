@@ -57,9 +57,7 @@ impl ListAttachmentsInput {
 
 /// A builder for [`ListAttachmentsInput`](crate::operation::list_attachments::ListAttachmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachmentsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_type: ::std::option::Option<crate::types::AttachmentType>,
@@ -70,18 +68,12 @@ pub struct ListAttachmentsInputBuilder {
 }
 impl ListAttachmentsInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -95,10 +87,7 @@ impl ListAttachmentsInputBuilder {
         self
     }
     /// <p>The type of attachment.</p>
-    pub fn set_attachment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentType>,
-    ) -> Self {
+    pub fn set_attachment_type(mut self, input: ::std::option::Option<crate::types::AttachmentType>) -> Self {
         self.attachment_type = input;
         self
     }
@@ -107,18 +96,12 @@ impl ListAttachmentsInputBuilder {
         &self.attachment_type
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -132,10 +115,7 @@ impl ListAttachmentsInputBuilder {
         self
     }
     /// <p>The state of the attachment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentState>) -> Self {
         self.state = input;
         self
     }
@@ -174,10 +154,7 @@ impl ListAttachmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachmentsInput`](crate::operation::list_attachments::ListAttachmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attachments::ListAttachmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_attachments::ListAttachmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attachments::ListAttachmentsInput {
             core_network_id: self.core_network_id,
             attachment_type: self.attachment_type,

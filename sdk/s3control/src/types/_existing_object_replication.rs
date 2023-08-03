@@ -25,9 +25,7 @@ impl ExistingObjectReplication {
 
 /// A builder for [`ExistingObjectReplication`](crate::types::ExistingObjectReplication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExistingObjectReplicationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExistingObjectReplicationStatus>,
 }
@@ -38,23 +36,16 @@ impl ExistingObjectReplicationBuilder {
         self
     }
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExistingObjectReplicationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExistingObjectReplicationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExistingObjectReplicationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExistingObjectReplicationStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ExistingObjectReplication`](crate::types::ExistingObjectReplication).
     pub fn build(self) -> crate::types::ExistingObjectReplication {
-        crate::types::ExistingObjectReplication {
-            status: self.status,
-        }
+        crate::types::ExistingObjectReplication { status: self.status }
     }
 }

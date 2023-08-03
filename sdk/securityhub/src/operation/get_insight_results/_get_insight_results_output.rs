@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInsightResultsOutput {
 }
 impl GetInsightResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder {
+    pub fn builder() -> crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder {
         crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightResultsOutput`](crate::operation::get_insight_results::GetInsightResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightResultsOutputBuilder {
     pub(crate) insight_results: ::std::option::Option<crate::types::InsightResults>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetInsightResultsOutputBuilder {
         self
     }
     /// <p>The insight results returned by the operation.</p>
-    pub fn set_insight_results(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightResults>,
-    ) -> Self {
+    pub fn set_insight_results(mut self, input: ::std::option::Option<crate::types::InsightResults>) -> Self {
         self.insight_results = input;
         self
     }

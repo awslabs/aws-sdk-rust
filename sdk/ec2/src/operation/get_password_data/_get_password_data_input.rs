@@ -29,9 +29,7 @@ impl GetPasswordDataInput {
 
 /// A builder for [`GetPasswordDataInput`](crate::operation::get_password_data::GetPasswordDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPasswordDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -68,10 +66,7 @@ impl GetPasswordDataInputBuilder {
     /// Consumes the builder and constructs a [`GetPasswordDataInput`](crate::operation::get_password_data::GetPasswordDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_password_data::GetPasswordDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_password_data::GetPasswordDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_password_data::GetPasswordDataInput {
             instance_id: self.instance_id,
             dry_run: self.dry_run,

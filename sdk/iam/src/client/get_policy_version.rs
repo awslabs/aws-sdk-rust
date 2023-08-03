@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPolicyVersionOutput`](crate::operation::get_policy_version::GetPolicyVersionOutput) with field(s):
     ///   - [`policy_version(Option<PolicyVersion>)`](crate::operation::get_policy_version::GetPolicyVersionOutput::policy_version): <p>A structure containing details about the policy version.</p>
     /// - On failure, responds with [`SdkError<GetPolicyVersionError>`](crate::operation::get_policy_version::GetPolicyVersionError)
-    pub fn get_policy_version(
-        &self,
-    ) -> crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder {
-        crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_policy_version(&self) -> crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder {
+        crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

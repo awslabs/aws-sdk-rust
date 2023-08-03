@@ -10,10 +10,7 @@ impl RegisterAgentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_agent::RegisterAgentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_agent::RegisterAgentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_agent();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl RegisterAgentFluentBuilder {
         }
     }
     /// Access the RegisterAgent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_agent::builders::RegisterAgentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_agent::builders::RegisterAgentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl RegisterAgentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -123,10 +115,7 @@ impl RegisterAgentFluentBuilder {
         self
     }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
-    pub fn set_discovery_data(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryData>,
-    ) -> Self {
+    pub fn set_discovery_data(mut self, input: ::std::option::Option<crate::types::DiscoveryData>) -> Self {
         self.inner = self.inner.set_discovery_data(input);
         self
     }
@@ -140,10 +129,7 @@ impl RegisterAgentFluentBuilder {
         self
     }
     /// <p>Detailed information about the agent being registered.</p>
-    pub fn set_agent_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentDetails>,
-    ) -> Self {
+    pub fn set_agent_details(mut self, input: ::std::option::Option<crate::types::AgentDetails>) -> Self {
         self.inner = self.inner.set_agent_details(input);
         self
     }

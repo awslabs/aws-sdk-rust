@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for UpdateConfigurationOutput {
 }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
-        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
+        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,10 +94,7 @@ impl UpdateConfigurationOutputBuilder {
         self
     }
     /// <p>Required. The date and time of the configuration.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -129,17 +122,12 @@ impl UpdateConfigurationOutputBuilder {
         self
     }
     /// <p>The latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>The latest revision of the configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
         &self.latest_revision
     }
     /// <p>The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
@@ -168,17 +156,12 @@ impl UpdateConfigurationOutputBuilder {
         self
     }
     /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>>) -> Self {
         self.warnings = input;
         self
     }
     /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
-    pub fn get_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SanitizationWarning>> {
         &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

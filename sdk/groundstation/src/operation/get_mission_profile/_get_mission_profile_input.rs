@@ -16,34 +16,25 @@ impl GetMissionProfileInput {
 }
 impl GetMissionProfileInput {
     /// Creates a new builder-style object to manufacture [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder {
         crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMissionProfileInputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_id = input;
         self
     }
@@ -54,14 +45,9 @@ impl GetMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_mission_profile::GetMissionProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_mission_profile::GetMissionProfileInput {
-                mission_profile_id: self.mission_profile_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_mission_profile::GetMissionProfileInput {
+            mission_profile_id: self.mission_profile_id,
+        })
     }
 }

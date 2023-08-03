@@ -10,10 +10,7 @@ impl DescribeEvaluationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_evaluations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeEvaluationsFluentBuilder {
         }
     }
     /// Access the DescribeEvaluations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeEvaluationsFluentBuilder {
             crate::operation::describe_evaluations::DescribeEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeEvaluationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeEvaluationsFluentBuilder {
             crate::operation::describe_evaluations::DescribeEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluations::DescribeEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluations::DescribeEvaluationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
-        crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
+        crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
@@ -157,10 +136,7 @@ impl DescribeEvaluationsFluentBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::EvaluationFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
@@ -174,9 +150,7 @@ impl DescribeEvaluationsFluentBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
         self.inner.get_filter_variable()
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>

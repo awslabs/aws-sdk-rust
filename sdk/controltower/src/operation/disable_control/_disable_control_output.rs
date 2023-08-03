@@ -28,27 +28,19 @@ impl DisableControlOutput {
 
 /// A builder for [`DisableControlOutput`](crate::operation::disable_control::DisableControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableControlOutputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisableControlOutputBuilder {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn set_operation_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_identifier = input;
         self
     }

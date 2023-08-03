@@ -37,9 +37,7 @@ impl DeleteMediaPipelineFluentBuilder {
         }
     }
     /// Access the DeleteMediaPipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_media_pipeline::builders::DeleteMediaPipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteMediaPipelineFluentBuilder {
             crate::operation::delete_media_pipeline::DeleteMediaPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_pipeline::DeleteMediaPipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteMediaPipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteMediaPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_pipeline::DeleteMediaPipelineError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteMediaPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_pipeline::DeleteMediaPipelineError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteMediaPipelineFluentBuilder {
             crate::operation::delete_media_pipeline::DeleteMediaPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_pipeline::DeleteMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_pipeline::DeleteMediaPipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the media pipeline to delete.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_pipeline_id(input.into());
         self
     }
     /// <p>The ID of the media pipeline to delete.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
     }

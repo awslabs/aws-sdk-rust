@@ -34,9 +34,7 @@ impl InputDataConfig {
         self.input_format.as_ref()
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn document_reader_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
+    pub fn document_reader_config(&self) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
     }
 }
@@ -49,9 +47,7 @@ impl InputDataConfig {
 
 /// A builder for [`InputDataConfig`](crate::types::InputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) input_format: ::std::option::Option<crate::types::InputFormat>,
@@ -89,10 +85,7 @@ impl InputDataConfigBuilder {
     /// <li> <p> <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p> </li>
     /// <li> <p> <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p> </li>
     /// </ul>
-    pub fn set_input_format(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFormat>,
-    ) -> Self {
+    pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.input_format = input;
         self
     }
@@ -110,17 +103,12 @@ impl InputDataConfigBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
+    pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
         self.document_reader_config = input;
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn get_document_reader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+    pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
         &self.document_reader_config
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).

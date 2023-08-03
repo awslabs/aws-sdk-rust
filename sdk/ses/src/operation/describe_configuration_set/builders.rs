@@ -27,7 +27,7 @@ impl DescribeConfigurationSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder,
+    inner: crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder,
 }
 impl DescribeConfigurationSetFluentBuilder {
     /// Creates a new `DescribeConfigurationSet`.
@@ -38,10 +38,7 @@ impl DescribeConfigurationSetFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_set::builders::DescribeConfigurationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeConfigurationSetFluentBuilder {
             crate::operation::describe_configuration_set::DescribeConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_set::DescribeConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_set::DescribeConfigurationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeConfigurationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_set::DescribeConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_set::DescribeConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_set::DescribeConfigurationSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_set::DescribeConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_set::DescribeConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_set::DescribeConfigurationSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeConfigurationSetFluentBuilder {
             crate::operation::describe_configuration_set::DescribeConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_set::DescribeConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_set::DescribeConfigurationSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration set to describe.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set to describe.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl DescribeConfigurationSetFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_set_attribute_names`](Self::set_configuration_set_attribute_names).
     ///
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn configuration_set_attribute_names(
-        mut self,
-        input: crate::types::ConfigurationSetAttribute,
-    ) -> Self {
+    pub fn configuration_set_attribute_names(mut self, input: crate::types::ConfigurationSetAttribute) -> Self {
         self.inner = self.inner.configuration_set_attribute_names(input);
         self
     }
@@ -165,9 +142,7 @@ impl DescribeConfigurationSetFluentBuilder {
         self
     }
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn get_configuration_set_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>> {
+    pub fn get_configuration_set_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>> {
         self.inner.get_configuration_set_attribute_names()
     }
 }

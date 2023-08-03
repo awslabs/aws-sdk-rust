@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDistributionOutput {
 }
 impl DeleteDistributionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_distribution::builders::DeleteDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_distribution::builders::DeleteDistributionOutputBuilder {
         crate::operation::delete_distribution::builders::DeleteDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDistributionOutputBuilder {
     _request_id: Option<String>,
 }

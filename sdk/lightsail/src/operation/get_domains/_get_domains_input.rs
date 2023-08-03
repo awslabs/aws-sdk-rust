@@ -24,9 +24,7 @@ impl GetDomainsInput {
 
 /// A builder for [`GetDomainsInput`](crate::operation::get_domains::GetDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +47,7 @@ impl GetDomainsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetDomainsInput`](crate::operation::get_domains::GetDomainsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domains::GetDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domains::GetDomainsInput {
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domains::GetDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_domains::GetDomainsInput { page_token: self.page_token })
     }
 }

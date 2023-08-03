@@ -18,10 +18,7 @@ pub fn ser_update_bridge_input(
     if let Some(var_5) = &input.source_failover_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("sourceFailoverConfig").start_object();
-        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

@@ -10,9 +10,7 @@ pub struct DeleteVerifiedAccessGroupOutput {
 }
 impl DeleteVerifiedAccessGroupOutput {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessGroup> {
+    pub fn verified_access_group(&self) -> ::std::option::Option<&crate::types::VerifiedAccessGroup> {
         self.verified_access_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVerifiedAccessGroupOutput {
 }
 impl DeleteVerifiedAccessGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessGroupOutput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput).
-    pub fn builder() -> crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder {
         crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedAccessGroupOutput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessGroupOutputBuilder {
     pub(crate) verified_access_group: ::std::option::Option<crate::types::VerifiedAccessGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteVerifiedAccessGroupOutputBuilder {
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessGroup>,
-    ) -> Self {
+    pub fn set_verified_access_group(mut self, input: ::std::option::Option<crate::types::VerifiedAccessGroup>) -> Self {
         self.verified_access_group = input;
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn get_verified_access_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessGroup> {
+    pub fn get_verified_access_group(&self) -> &::std::option::Option<crate::types::VerifiedAccessGroup> {
         &self.verified_access_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl DeleteVerifiedAccessGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessGroupOutput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput {
+    pub fn build(self) -> crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput {
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput {
             verified_access_group: self.verified_access_group,
             _request_id: self._request_id,

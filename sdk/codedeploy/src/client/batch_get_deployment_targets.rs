@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput) with field(s):
     ///   - [`deployment_targets(Option<Vec<DeploymentTarget>>)`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput::deployment_targets): <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>  <ul>   <li> <p> <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance. </p> </li>   <li> <p> <b>Lambda</b>: The target object is a specific version of an Lambda function. </p> </li>   <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>   <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<BatchGetDeploymentTargetsError>`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsError)
-    pub fn batch_get_deployment_targets(&self) -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsFluentBuilder{
+    pub fn batch_get_deployment_targets(&self) -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsFluentBuilder {
         crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsFluentBuilder::new(self.handle.clone())
     }
 }

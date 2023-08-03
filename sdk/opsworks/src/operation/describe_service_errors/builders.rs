@@ -39,10 +39,7 @@ impl DescribeServiceErrorsFluentBuilder {
         }
     }
     /// Access the DescribeServiceErrors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeServiceErrorsFluentBuilder {
             crate::operation::describe_service_errors::DescribeServiceErrors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_errors::DescribeServiceErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_errors::DescribeServiceErrorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeServiceErrorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeServiceErrorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_errors::DescribeServiceErrorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_errors::DescribeServiceErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_errors::DescribeServiceErrorsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeServiceErrorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_errors::DescribeServiceErrorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_errors::DescribeServiceErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_errors::DescribeServiceErrorsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DescribeServiceErrorsFluentBuilder {
             crate::operation::describe_service_errors::DescribeServiceErrors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_errors::DescribeServiceErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_errors::DescribeServiceErrorsError>,
     > {
         self.customize_middleware().await
     }
@@ -158,25 +144,17 @@ impl DescribeServiceErrorsFluentBuilder {
     /// To override the contents of this collection use [`set_service_error_ids`](Self::set_service_error_ids).
     ///
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn service_error_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_error_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_error_ids(input.into());
         self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn set_service_error_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_error_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_error_ids(input);
         self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn get_service_error_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_error_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_error_ids()
     }
 }

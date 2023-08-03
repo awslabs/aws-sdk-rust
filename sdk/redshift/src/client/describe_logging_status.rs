@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     ///   - [`log_exports(Option<Vec<String>>)`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingStatusError>`](crate::operation::describe_logging_status::DescribeLoggingStatusError)
-    pub fn describe_logging_status(
-        &self,
-    ) -> crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder
-    {
-        crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_logging_status(&self) -> crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder {
+        crate::operation::describe_logging_status::builders::DescribeLoggingStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetThirdPartyJobDetailsOutput {
 }
 impl GetThirdPartyJobDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsOutputBuilder {
         crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsOutputBuilder {
     pub(crate) job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetThirdPartyJobDetailsOutputBuilder {
         self
     }
     /// <p>The details of the job, including any protected values defined for the job.</p>
-    pub fn set_job_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
-    ) -> Self {
+    pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::ThirdPartyJobDetails>) -> Self {
         self.job_details = input;
         self
     }
@@ -66,9 +59,7 @@ impl GetThirdPartyJobDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput {
+    pub fn build(self) -> crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput {
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput {
             job_details: self.job_details,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl DescribeReservationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_reservation::DescribeReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reservation::DescribeReservationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reservation::DescribeReservationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_reservation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeReservationFluentBuilder {
         }
     }
     /// Access the DescribeReservation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeReservationFluentBuilder {
             crate::operation::describe_reservation::DescribeReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reservation::DescribeReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reservation::DescribeReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reservation::DescribeReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reservation::DescribeReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reservation::DescribeReservationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reservation::DescribeReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reservation::DescribeReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reservation::DescribeReservationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeReservationFluentBuilder {
             crate::operation::describe_reservation::DescribeReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reservation::DescribeReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reservation::DescribeReservationError>,
     > {
         self.customize_middleware().await
     }
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn reservation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn set_reservation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_arn(input);
         self
     }

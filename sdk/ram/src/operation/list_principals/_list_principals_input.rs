@@ -94,9 +94,7 @@ impl ListPrincipalsInput {
 
 /// A builder for [`ListPrincipalsInput`](crate::operation::list_principals::ListPrincipalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalsInputBuilder {
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -121,10 +119,7 @@ impl ListPrincipalsInputBuilder {
     /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -182,10 +177,7 @@ impl ListPrincipalsInputBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -205,19 +197,13 @@ impl ListPrincipalsInputBuilder {
     }
     /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -231,27 +217,19 @@ impl ListPrincipalsInputBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_arns = input;
         self
     }
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -285,10 +263,7 @@ impl ListPrincipalsInputBuilder {
     /// Consumes the builder and constructs a [`ListPrincipalsInput`](crate::operation::list_principals::ListPrincipalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_principals::ListPrincipalsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_principals::ListPrincipalsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_principals::ListPrincipalsInput {
             resource_owner: self.resource_owner,
             resource_arn: self.resource_arn,

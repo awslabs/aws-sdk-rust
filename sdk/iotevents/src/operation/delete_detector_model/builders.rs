@@ -37,9 +37,7 @@ impl DeleteDetectorModelFluentBuilder {
         }
     }
     /// Access the DeleteDetectorModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteDetectorModelFluentBuilder {
             crate::operation::delete_detector_model::DeleteDetectorModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_detector_model::DeleteDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_detector_model::DeleteDetectorModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteDetectorModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteDetectorModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_detector_model::DeleteDetectorModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_detector_model::DeleteDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_detector_model::DeleteDetectorModelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteDetectorModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_detector_model::DeleteDetectorModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_detector_model::DeleteDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_detector_model::DeleteDetectorModelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteDetectorModelFluentBuilder {
             crate::operation::delete_detector_model::DeleteDetectorModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_detector_model::DeleteDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_detector_model::DeleteDetectorModelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the detector model to be deleted.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model to be deleted.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }

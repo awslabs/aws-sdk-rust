@@ -72,9 +72,7 @@ impl KeyPair {
 
 /// A builder for [`KeyPair`](crate::types::KeyPair).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyPairBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl KeyPairBuilder {
         self
     }
     /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -151,10 +146,7 @@ impl KeyPairBuilder {
         self
     }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -168,10 +160,7 @@ impl KeyPairBuilder {
         self
     }
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -191,10 +180,7 @@ impl KeyPairBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

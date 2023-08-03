@@ -36,16 +36,14 @@ impl UpdateFailbackReplicationConfigurationInput {
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder {
         crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFailbackReplicationConfigurationInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct UpdateFailbackReplicationConfigurationInputBuilder {
 }
 impl UpdateFailbackReplicationConfigurationInputBuilder {
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_instance_id = input;
         self
     }
@@ -116,19 +108,19 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
         &self.use_private_ip
     }
     /// Consumes the builder and constructs a [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput {
-                recovery_instance_id: self.recovery_instance_id
-                ,
-                name: self.name
-                ,
-                bandwidth_throttling: self.bandwidth_throttling
-                    .unwrap_or_default()
-                ,
-                use_private_ip: self.use_private_ip
-                ,
-            }
+                recovery_instance_id: self.recovery_instance_id,
+                name: self.name,
+                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
+                use_private_ip: self.use_private_ip,
+            },
         )
     }
 }

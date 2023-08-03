@@ -9,8 +9,7 @@ pub struct DbClusterSnapshotAttributesResult {
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of attributes and values for the cluster snapshot.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
+    pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
 }
 impl DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
@@ -18,9 +17,7 @@ impl DbClusterSnapshotAttributesResult {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The list of attributes and values for the cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbClusterSnapshotAttribute]> {
+    pub fn db_cluster_snapshot_attributes(&self) -> ::std::option::Option<&[crate::types::DbClusterSnapshotAttribute]> {
         self.db_cluster_snapshot_attributes.as_deref()
     }
 }
@@ -33,35 +30,24 @@ impl DbClusterSnapshotAttributesResult {
 
 /// A builder for [`DbClusterSnapshotAttributesResult`](crate::types::DbClusterSnapshotAttributesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterSnapshotAttributesResultBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_snapshot_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
+    pub(crate) db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
 }
 impl DbClusterSnapshotAttributesResultBuilder {
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
     }
     /// <p>The identifier of the cluster snapshot that the attributes apply to.</p>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
     /// Appends an item to `db_cluster_snapshot_attributes`.
@@ -69,10 +55,7 @@ impl DbClusterSnapshotAttributesResultBuilder {
     /// To override the contents of this collection use [`set_db_cluster_snapshot_attributes`](Self::set_db_cluster_snapshot_attributes).
     ///
     /// <p>The list of attributes and values for the cluster snapshot.</p>
-    pub fn db_cluster_snapshot_attributes(
-        mut self,
-        input: crate::types::DbClusterSnapshotAttribute,
-    ) -> Self {
+    pub fn db_cluster_snapshot_attributes(mut self, input: crate::types::DbClusterSnapshotAttribute) -> Self {
         let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
         v.push(input);
         self.db_cluster_snapshot_attributes = ::std::option::Option::Some(v);
@@ -87,9 +70,7 @@ impl DbClusterSnapshotAttributesResultBuilder {
         self
     }
     /// <p>The list of attributes and values for the cluster snapshot.</p>
-    pub fn get_db_cluster_snapshot_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>> {
+    pub fn get_db_cluster_snapshot_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>> {
         &self.db_cluster_snapshot_attributes
     }
     /// Consumes the builder and constructs a [`DbClusterSnapshotAttributesResult`](crate::types::DbClusterSnapshotAttributesResult).

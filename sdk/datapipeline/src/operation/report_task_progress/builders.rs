@@ -10,10 +10,7 @@ impl ReportTaskProgressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::report_task_progress::ReportTaskProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.report_task_progress();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl ReportTaskProgressFluentBuilder {
         }
     }
     /// Access the ReportTaskProgress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl ReportTaskProgressFluentBuilder {
             crate::operation::report_task_progress::ReportTaskProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl ReportTaskProgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl ReportTaskProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_progress::ReportTaskProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl ReportTaskProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_progress::ReportTaskProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl ReportTaskProgressFluentBuilder {
             crate::operation::report_task_progress::ReportTaskProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +138,7 @@ impl ReportTaskProgressFluentBuilder {
         self
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

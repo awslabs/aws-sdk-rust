@@ -27,7 +27,7 @@ impl DescribeJournalKinesisStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJournalKinesisStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamInputBuilder,
+    inner: crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamInputBuilder,
 }
 impl DescribeJournalKinesisStreamFluentBuilder {
     /// Creates a new `DescribeJournalKinesisStream`.
@@ -38,7 +38,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
         }
     }
     /// Access the DescribeJournalKinesisStream as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
             crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeJournalKinesisStreamFluentBuilder {
             crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError>,
     > {
         self.customize_middleware().await
     }

@@ -28,7 +28,7 @@ impl UpdateLedgerPermissionsModeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder,
+    inner: crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder,
 }
 impl UpdateLedgerPermissionsModeFluentBuilder {
     /// Creates a new `UpdateLedgerPermissionsMode`.
@@ -39,7 +39,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
         }
     }
     /// Access the UpdateLedgerPermissionsMode as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
             crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsMode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
             crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsMode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +143,7 @@ impl UpdateLedgerPermissionsModeFluentBuilder {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    pub fn set_permissions_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
+    pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
         self.inner = self.inner.set_permissions_mode(input);
         self
     }

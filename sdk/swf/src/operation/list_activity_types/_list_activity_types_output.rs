@@ -31,17 +31,14 @@ impl ::aws_http::request_id::RequestId for ListActivityTypesOutput {
 }
 impl ListActivityTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::operation::list_activity_types::ListActivityTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_activity_types::builders::ListActivityTypesOutputBuilder {
+    pub fn builder() -> crate::operation::list_activity_types::builders::ListActivityTypesOutputBuilder {
         crate::operation::list_activity_types::builders::ListActivityTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListActivityTypesOutput`](crate::operation::list_activity_types::ListActivityTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActivityTypesOutputBuilder {
     pub(crate) type_infos: ::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -60,34 +57,23 @@ impl ListActivityTypesOutputBuilder {
         self
     }
     /// <p>List of activity type information.</p>
-    pub fn set_type_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>>,
-    ) -> Self {
+    pub fn set_type_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>>) -> Self {
         self.type_infos = input;
         self
     }
     /// <p>List of activity type information.</p>
-    pub fn get_type_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>> {
+    pub fn get_type_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>> {
         &self.type_infos
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

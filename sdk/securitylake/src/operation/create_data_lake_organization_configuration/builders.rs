@@ -5,16 +5,16 @@ pub use crate::operation::create_data_lake_organization_configuration::_create_d
 
 impl CreateDataLakeOrganizationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_data_lake_organization_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateDataLakeOrganizationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataLakeOrganizationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder,
+    inner: crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder,
 }
 impl CreateDataLakeOrganizationConfigurationFluentBuilder {
     /// Creates a new `CreateDataLakeOrganizationConfiguration`.
@@ -37,15 +37,24 @@ impl CreateDataLakeOrganizationConfigurationFluentBuilder {
         }
     }
     /// Access the CreateDataLakeOrganizationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl CreateDataLakeOrganizationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl CreateDataLakeOrganizationConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `autoEnableNewAccount`.
@@ -99,29 +124,20 @@ impl CreateDataLakeOrganizationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_auto_enable_new_account`](Self::set_auto_enable_new_account).
     ///
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn auto_enable_new_account(
-        mut self,
-        input: crate::types::DataLakeAutoEnableNewAccountConfiguration,
-    ) -> Self {
+    pub fn auto_enable_new_account(mut self, input: crate::types::DataLakeAutoEnableNewAccountConfiguration) -> Self {
         self.inner = self.inner.auto_enable_new_account(input);
         self
     }
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
     pub fn set_auto_enable_new_account(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_auto_enable_new_account(input);
         self
     }
     /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
-    pub fn get_auto_enable_new_account(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
-    > {
+    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
         self.inner.get_auto_enable_new_account()
     }
 }

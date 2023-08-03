@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccessPolicyOutput {
 }
 impl UpdateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyOutputBuilder {
     pub(crate) access_policy_detail: ::std::option::Option<crate::types::AccessPolicyDetail>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl UpdateAccessPolicyOutputBuilder {
         self
     }
     /// <p>Details about the updated access policy.</p>
-    pub fn set_access_policy_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyDetail>,
-    ) -> Self {
+    pub fn set_access_policy_detail(mut self, input: ::std::option::Option<crate::types::AccessPolicyDetail>) -> Self {
         self.access_policy_detail = input;
         self
     }
     /// <p>Details about the updated access policy.</p>
-    pub fn get_access_policy_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessPolicyDetail> {
+    pub fn get_access_policy_detail(&self) -> &::std::option::Option<crate::types::AccessPolicyDetail> {
         &self.access_policy_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

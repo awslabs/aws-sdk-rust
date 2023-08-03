@@ -31,17 +31,14 @@ impl ListOutpostResolversInput {
 }
 impl ListOutpostResolversInput {
     /// Creates a new builder-style object to manufacture [`ListOutpostResolversInput`](crate::operation::list_outpost_resolvers::ListOutpostResolversInput).
-    pub fn builder(
-    ) -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversInputBuilder {
+    pub fn builder() -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversInputBuilder {
         crate::operation::list_outpost_resolvers::builders::ListOutpostResolversInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOutpostResolversInput`](crate::operation::list_outpost_resolvers::ListOutpostResolversInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostResolversInputBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,16 +93,12 @@ impl ListOutpostResolversInputBuilder {
     /// Consumes the builder and constructs a [`ListOutpostResolversInput`](crate::operation::list_outpost_resolvers::ListOutpostResolversInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_outpost_resolvers::ListOutpostResolversInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_outpost_resolvers::ListOutpostResolversInput {
-                outpost_arn: self.outpost_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_outpost_resolvers::ListOutpostResolversInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_outpost_resolvers::ListOutpostResolversInput {
+            outpost_arn: self.outpost_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

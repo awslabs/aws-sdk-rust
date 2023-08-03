@@ -26,8 +26,7 @@ impl GetLicenseConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_license_configuration::builders::GetLicenseConfigurationInputBuilder,
+    inner: crate::operation::get_license_configuration::builders::GetLicenseConfigurationInputBuilder,
 }
 impl GetLicenseConfigurationFluentBuilder {
     /// Creates a new `GetLicenseConfiguration`.
@@ -38,10 +37,7 @@ impl GetLicenseConfigurationFluentBuilder {
         }
     }
     /// Access the GetLicenseConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_license_configuration::builders::GetLicenseConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_license_configuration::builders::GetLicenseConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetLicenseConfigurationFluentBuilder {
             crate::operation::get_license_configuration::GetLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetLicenseConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_configuration::GetLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_license_configuration::GetLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetLicenseConfigurationFluentBuilder {
             crate::operation::get_license_configuration::GetLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_license_configuration::GetLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
     }

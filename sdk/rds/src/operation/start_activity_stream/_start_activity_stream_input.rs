@@ -43,18 +43,14 @@ impl StartActivityStreamInput {
 }
 impl StartActivityStreamInput {
     /// Creates a new builder-style object to manufacture [`StartActivityStreamInput`](crate::operation::start_activity_stream::StartActivityStreamInput).
-    pub fn builder(
-    ) -> crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder {
-        crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder {
+        crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`StartActivityStreamInput`](crate::operation::start_activity_stream::StartActivityStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartActivityStreamInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::ActivityStreamMode>,
@@ -83,10 +79,7 @@ impl StartActivityStreamInputBuilder {
         self
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityStreamMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ActivityStreamMode>) -> Self {
         self.mode = input;
         self
     }
@@ -128,10 +121,7 @@ impl StartActivityStreamInputBuilder {
         self
     }
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
-    pub fn set_engine_native_audit_fields_included(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_engine_native_audit_fields_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.engine_native_audit_fields_included = input;
         self
     }
@@ -142,18 +132,14 @@ impl StartActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`StartActivityStreamInput`](crate::operation::start_activity_stream::StartActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_activity_stream::StartActivityStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_activity_stream::StartActivityStreamInput {
-                resource_arn: self.resource_arn,
-                mode: self.mode,
-                kms_key_id: self.kms_key_id,
-                apply_immediately: self.apply_immediately,
-                engine_native_audit_fields_included: self.engine_native_audit_fields_included,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_activity_stream::StartActivityStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_activity_stream::StartActivityStreamInput {
+            resource_arn: self.resource_arn,
+            mode: self.mode,
+            kms_key_id: self.kms_key_id,
+            apply_immediately: self.apply_immediately,
+            engine_native_audit_fields_included: self.engine_native_audit_fields_included,
+        })
     }
 }

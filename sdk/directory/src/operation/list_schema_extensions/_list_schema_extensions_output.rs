@@ -5,8 +5,7 @@
 pub struct ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
     #[doc(hidden)]
-    pub schema_extensions_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>,
+    pub schema_extensions_info: ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSchemaExtensionsOutput {
 }
 impl ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
-    pub fn schema_extensions_info(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SchemaExtensionInfo]> {
+    pub fn schema_extensions_info(&self) -> ::std::option::Option<&[crate::types::SchemaExtensionInfo]> {
         self.schema_extensions_info.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSchemaExtensionsOutput {
 }
 impl ListSchemaExtensionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaExtensionsOutput`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schema_extensions::builders::ListSchemaExtensionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schema_extensions::builders::ListSchemaExtensionsOutputBuilder {
         crate::operation::list_schema_extensions::builders::ListSchemaExtensionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchemaExtensionsOutput`](crate::operation::list_schema_extensions::ListSchemaExtensionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaExtensionsOutputBuilder {
-    pub(crate) schema_extensions_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>,
+    pub(crate) schema_extensions_info: ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListSchemaExtensionsOutputBuilder {
         self
     }
     /// <p>Information about the schema extensions applied to the directory.</p>
-    pub fn set_schema_extensions_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>,
-    ) -> Self {
+    pub fn set_schema_extensions_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>>) -> Self {
         self.schema_extensions_info = input;
         self
     }
     /// <p>Information about the schema extensions applied to the directory.</p>
-    pub fn get_schema_extensions_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>> {
+    pub fn get_schema_extensions_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>> {
         &self.schema_extensions_info
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>

@@ -10,10 +10,7 @@ impl ImportKeyPairInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_key_pair::ImportKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_key_pair::ImportKeyPairError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_key_pair();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ImportKeyPairFluentBuilder {
         }
     }
     /// Access the ImportKeyPair as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ImportKeyPairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -149,10 +141,7 @@ impl ImportKeyPairFluentBuilder {
         self
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
-    pub fn set_public_key_material(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_public_key_material(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_public_key_material(input);
         self
     }
@@ -170,17 +159,12 @@ impl ImportKeyPairFluentBuilder {
         self
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

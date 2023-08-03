@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateTagOptionOutput {
 }
 impl UpdateTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTagOptionOutput`](crate::operation::update_tag_option::UpdateTagOptionOutput).
-    pub fn builder() -> crate::operation::update_tag_option::builders::UpdateTagOptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_tag_option::builders::UpdateTagOptionOutputBuilder {
         crate::operation::update_tag_option::builders::UpdateTagOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTagOptionOutput`](crate::operation::update_tag_option::UpdateTagOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagOptionOutputBuilder {
     pub(crate) tag_option_detail: ::std::option::Option<crate::types::TagOptionDetail>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateTagOptionOutputBuilder {
         self
     }
     /// <p>Information about the TagOption.</p>
-    pub fn set_tag_option_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::TagOptionDetail>,
-    ) -> Self {
+    pub fn set_tag_option_detail(mut self, input: ::std::option::Option<crate::types::TagOptionDetail>) -> Self {
         self.tag_option_detail = input;
         self
     }

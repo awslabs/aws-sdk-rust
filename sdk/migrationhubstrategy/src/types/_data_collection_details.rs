@@ -72,9 +72,7 @@ impl DataCollectionDetails {
 
 /// A builder for [`DataCollectionDetails`](crate::types::DataCollectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCollectionDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
     pub(crate) servers: ::std::option::Option<i32>,
@@ -92,10 +90,7 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The status of the assessment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -165,10 +160,7 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The start time of assessment. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -182,10 +174,7 @@ impl DataCollectionDetailsBuilder {
         self
     }
     /// <p> The time the assessment completes. </p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -194,18 +183,12 @@ impl DataCollectionDetailsBuilder {
         &self.completion_time
     }
     /// <p>The status message of the assessment.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the assessment.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

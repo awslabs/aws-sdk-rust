@@ -23,9 +23,7 @@ impl StatisticalThreshold {
 
 /// A builder for [`StatisticalThreshold`](crate::types::StatisticalThreshold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticalThresholdBuilder {
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl StatisticalThresholdBuilder {
     }
     /// Consumes the builder and constructs a [`StatisticalThreshold`](crate::types::StatisticalThreshold).
     pub fn build(self) -> crate::types::StatisticalThreshold {
-        crate::types::StatisticalThreshold {
-            statistic: self.statistic,
-        }
+        crate::types::StatisticalThreshold { statistic: self.statistic }
     }
 }

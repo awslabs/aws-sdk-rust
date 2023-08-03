@@ -10,10 +10,7 @@ impl ListAttachedLinksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_attached_links::ListAttachedLinksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_links::ListAttachedLinksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_links::ListAttachedLinksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_attached_links();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListAttachedLinksFluentBuilder {
         }
     }
     /// Access the ListAttachedLinks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListAttachedLinksFluentBuilder {
             crate::operation::list_attached_links::ListAttachedLinks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_links::ListAttachedLinksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_links::ListAttachedLinksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListAttachedLinksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListAttachedLinksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_links::ListAttachedLinksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_links::ListAttachedLinksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_links::ListAttachedLinksError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListAttachedLinksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_links::ListAttachedLinksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_links::ListAttachedLinksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_links::ListAttachedLinksError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListAttachedLinksFluentBuilder {
             crate::operation::list_attached_links::ListAttachedLinks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_links::ListAttachedLinksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_links::ListAttachedLinksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator {
-        crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator {
+        crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::new(self.handle, self.inner)
     }
     /// <p>Limits the number of returned links to the specified number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -164,18 +143,12 @@ impl ListAttachedLinksFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    pub fn sink_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sink_identifier(input.into());
         self
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    pub fn set_sink_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sink_identifier(input);
         self
     }

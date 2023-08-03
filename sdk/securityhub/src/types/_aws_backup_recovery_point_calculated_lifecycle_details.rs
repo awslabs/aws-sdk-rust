@@ -23,17 +23,14 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
 }
 impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
     /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
         crate::types::builders::AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     pub(crate) delete_at: ::std::option::Option<::std::string::String>,
     pub(crate) move_to_cold_storage_at: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
         &self.delete_at
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
-    pub fn move_to_cold_storage_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn move_to_cold_storage_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.move_to_cold_storage_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
-    pub fn set_move_to_cold_storage_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_move_to_cold_storage_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.move_to_cold_storage_at = input;
         self
     }

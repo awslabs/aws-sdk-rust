@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateResolverConfigOutput {
 }
 impl UpdateResolverConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverConfigOutput`](crate::operation::update_resolver_config::UpdateResolverConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resolver_config::builders::UpdateResolverConfigOutputBuilder {
+    pub fn builder() -> crate::operation::update_resolver_config::builders::UpdateResolverConfigOutputBuilder {
         crate::operation::update_resolver_config::builders::UpdateResolverConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResolverConfigOutput`](crate::operation::update_resolver_config::UpdateResolverConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverConfigOutputBuilder {
     pub(crate) resolver_config: ::std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateResolverConfigOutputBuilder {
         self
     }
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
-    pub fn set_resolver_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverConfig>,
-    ) -> Self {
+    pub fn set_resolver_config(mut self, input: ::std::option::Option<crate::types::ResolverConfig>) -> Self {
         self.resolver_config = input;
         self
     }

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`variant_import_jobs(Option<Vec<VariantImportJobItem>>)`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput::variant_import_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListVariantImportJobsError>`](crate::operation::list_variant_import_jobs::ListVariantImportJobsError)
-    pub fn list_variant_import_jobs(
-        &self,
-    ) -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder
-    {
+    pub fn list_variant_import_jobs(&self) -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder {
         crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

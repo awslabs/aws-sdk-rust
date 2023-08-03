@@ -37,9 +37,7 @@ impl ContentTypeProfile {
 
 /// A builder for [`ContentTypeProfile`](crate::types::ContentTypeProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentTypeProfileBuilder {
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,

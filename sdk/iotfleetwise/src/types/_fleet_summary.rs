@@ -59,9 +59,7 @@ impl FleetSummary {
 
 /// A builder for [`FleetSummary`](crate::types::FleetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -114,18 +112,12 @@ impl FleetSummaryBuilder {
         &self.description
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
@@ -139,10 +131,7 @@ impl FleetSummaryBuilder {
         self
     }
     /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -156,17 +145,12 @@ impl FleetSummaryBuilder {
         self
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`FleetSummary`](crate::types::FleetSummary).

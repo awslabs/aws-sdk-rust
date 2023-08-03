@@ -37,10 +37,7 @@ impl DescribeSecurityPolicyFluentBuilder {
         }
     }
     /// Access the DescribeSecurityPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_security_policy::builders::DescribeSecurityPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_security_policy::builders::DescribeSecurityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSecurityPolicyFluentBuilder {
             crate::operation::describe_security_policy::DescribeSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_policy::DescribeSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_policy::DescribeSecurityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSecurityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_policy::DescribeSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_policy::DescribeSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_policy::DescribeSecurityPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_policy::DescribeSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_policy::DescribeSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_policy::DescribeSecurityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeSecurityPolicyFluentBuilder {
             crate::operation::describe_security_policy::DescribeSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_policy::DescribeSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_policy::DescribeSecurityPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_policy_name(input.into());
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn set_security_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_policy_name(input);
         self
     }

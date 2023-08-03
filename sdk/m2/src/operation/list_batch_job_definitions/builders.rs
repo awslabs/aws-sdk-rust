@@ -26,8 +26,7 @@ impl ListBatchJobDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBatchJobDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder,
+    inner: crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder,
 }
 impl ListBatchJobDefinitionsFluentBuilder {
     /// Creates a new `ListBatchJobDefinitions`.
@@ -38,10 +37,7 @@ impl ListBatchJobDefinitionsFluentBuilder {
         }
     }
     /// Access the ListBatchJobDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListBatchJobDefinitionsFluentBuilder {
             crate::operation::list_batch_job_definitions::ListBatchJobDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListBatchJobDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListBatchJobDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListBatchJobDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListBatchJobDefinitionsFluentBuilder {
             crate::operation::list_batch_job_definitions::ListBatchJobDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_definitions::paginator::ListBatchJobDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_batch_job_definitions::paginator::ListBatchJobDefinitionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_batch_job_definitions::paginator::ListBatchJobDefinitionsPaginator {
         crate::operation::list_batch_job_definitions::paginator::ListBatchJobDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
@@ -162,18 +144,12 @@ impl ListBatchJobDefinitionsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

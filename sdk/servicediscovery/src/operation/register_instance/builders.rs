@@ -10,10 +10,7 @@ impl RegisterInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_instance();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl RegisterInstanceFluentBuilder {
         }
     }
     /// Access the RegisterInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl RegisterInstanceFluentBuilder {
             crate::operation::register_instance::RegisterInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl RegisterInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl RegisterInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl RegisterInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +117,7 @@ impl RegisterInstanceFluentBuilder {
             crate::operation::register_instance::RegisterInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -196,18 +180,12 @@ impl RegisterInstanceFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -290,11 +268,7 @@ impl RegisterInstanceFluentBuilder {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
@@ -369,12 +343,7 @@ impl RegisterInstanceFluentBuilder {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -449,11 +418,7 @@ impl RegisterInstanceFluentBuilder {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

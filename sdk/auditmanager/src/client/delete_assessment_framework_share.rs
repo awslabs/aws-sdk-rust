@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`request_type(ShareRequestType)`](crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareFluentBuilder::request_type) / [`set_request_type(Option<ShareRequestType>)`](crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareFluentBuilder::set_request_type): <p>Specifies whether the share request is a sent request or a received request.</p>
     /// - On success, responds with [`DeleteAssessmentFrameworkShareOutput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentFrameworkShareError>`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError)
-    pub fn delete_assessment_framework_share(&self) -> crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareFluentBuilder{
+    pub fn delete_assessment_framework_share(
+        &self,
+    ) -> crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareFluentBuilder {
         crate::operation::delete_assessment_framework_share::builders::DeleteAssessmentFrameworkShareFluentBuilder::new(self.handle.clone())
     }
 }

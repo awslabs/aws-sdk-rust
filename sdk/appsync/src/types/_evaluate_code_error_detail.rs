@@ -30,9 +30,7 @@ impl EvaluateCodeErrorDetail {
 
 /// A builder for [`EvaluateCodeErrorDetail`](crate::types::EvaluateCodeErrorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateCodeErrorDetailBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
@@ -64,17 +62,12 @@ impl EvaluateCodeErrorDetailBuilder {
         self
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn set_code_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
-    ) -> Self {
+    pub fn set_code_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>) -> Self {
         self.code_errors = input;
         self
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn get_code_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeError>> {
+    pub fn get_code_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeError>> {
         &self.code_errors
     }
     /// Consumes the builder and constructs a [`EvaluateCodeErrorDetail`](crate::types::EvaluateCodeErrorDetail).

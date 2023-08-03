@@ -10,10 +10,7 @@ impl GetSecurityPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_security_policy::GetSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_policy::GetSecurityPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_policy::GetSecurityPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_security_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSecurityPolicyFluentBuilder {
         }
     }
     /// Access the GetSecurityPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSecurityPolicyFluentBuilder {
             crate::operation::get_security_policy::GetSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_policy::GetSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_policy::GetSecurityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSecurityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_policy::GetSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_policy::GetSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_policy::GetSecurityPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSecurityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_policy::GetSecurityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_policy::GetSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_policy::GetSecurityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSecurityPolicyFluentBuilder {
             crate::operation::get_security_policy::GetSecurityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_policy::GetSecurityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_policy::GetSecurityPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl GetSecurityPolicyFluentBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

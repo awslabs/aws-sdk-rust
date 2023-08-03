@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateBrokerStorageOutput {
 }
 impl UpdateBrokerStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerStorageOutput`](crate::operation::update_broker_storage::UpdateBrokerStorageOutput).
-    pub fn builder(
-    ) -> crate::operation::update_broker_storage::builders::UpdateBrokerStorageOutputBuilder {
-        crate::operation::update_broker_storage::builders::UpdateBrokerStorageOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_broker_storage::builders::UpdateBrokerStorageOutputBuilder {
+        crate::operation::update_broker_storage::builders::UpdateBrokerStorageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBrokerStorageOutput`](crate::operation::update_broker_storage::UpdateBrokerStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBrokerStorageOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl UpdateBrokerStorageOutputBuilder {
         &self.cluster_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_operation_arn = input;
         self
     }

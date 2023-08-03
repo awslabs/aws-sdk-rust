@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`delivery_options(DeliveryOptions)`](crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::delivery_options) / [`set_delivery_options(Option<DeliveryOptions>)`](crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::set_delivery_options): <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     /// - On success, responds with [`PutConfigurationSetDeliveryOptionsOutput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetDeliveryOptionsError>`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError)
-    pub fn put_configuration_set_delivery_options(&self) -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder{
+    pub fn put_configuration_set_delivery_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder {
         crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::new(self.handle.clone())
     }
 }

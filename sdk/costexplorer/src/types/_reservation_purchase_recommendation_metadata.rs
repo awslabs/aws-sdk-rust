@@ -30,27 +30,19 @@ impl ReservationPurchaseRecommendationMetadata {
 
 /// A builder for [`ReservationPurchaseRecommendationMetadata`](crate::types::ReservationPurchaseRecommendationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationMetadataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadataBuilder {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl ReservationPurchaseRecommendationMetadataBuilder {
         &self.recommendation_id
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn set_generation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_timestamp = input;
         self
     }

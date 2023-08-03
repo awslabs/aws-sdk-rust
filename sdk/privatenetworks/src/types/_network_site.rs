@@ -93,9 +93,7 @@ impl NetworkSite {
 
 /// A builder for [`NetworkSite`](crate::types::NetworkSite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkSiteBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_site_name: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct NetworkSiteBuilder {
 }
 impl NetworkSiteBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -131,18 +123,12 @@ impl NetworkSiteBuilder {
         &self.network_site_arn
     }
     /// <p>The name of the network site.</p>
-    pub fn network_site_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network site.</p>
-    pub fn set_network_site_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_name = input;
         self
     }
@@ -170,10 +156,7 @@ impl NetworkSiteBuilder {
         self
     }
     /// <p>The status of the network site.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSiteStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkSiteStatus>) -> Self {
         self.status = input;
         self
     }
@@ -182,18 +165,12 @@ impl NetworkSiteBuilder {
         &self.status
     }
     /// <p>The status reason of the network site.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status reason of the network site.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -221,10 +198,7 @@ impl NetworkSiteBuilder {
         self
     }
     /// <p>The pending plan of the network site.</p>
-    pub fn set_pending_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
+    pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
         self.pending_plan = input;
         self
     }
@@ -238,10 +212,7 @@ impl NetworkSiteBuilder {
         self
     }
     /// <p>The current plan of the network site.</p>
-    pub fn set_current_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
+    pub fn set_current_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
         self.current_plan = input;
         self
     }
@@ -255,10 +226,7 @@ impl NetworkSiteBuilder {
         self
     }
     /// <p>The creation time of the network site.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -267,18 +235,12 @@ impl NetworkSiteBuilder {
         &self.created_at
     }
     /// <p> The parent Availability Zone for the network site. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The parent Availability Zone for the network site. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -287,18 +249,12 @@ impl NetworkSiteBuilder {
         &self.availability_zone
     }
     /// <p> The parent Availability Zone ID for the network site. </p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The parent Availability Zone ID for the network site. </p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }

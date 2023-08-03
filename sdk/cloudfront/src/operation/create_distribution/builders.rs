@@ -10,10 +10,7 @@ impl CreateDistributionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_distribution();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDistributionFluentBuilder {
         }
     }
     /// Access the CreateDistribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDistributionFluentBuilder {
             crate::operation::create_distribution::CreateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDistributionFluentBuilder {
             crate::operation::create_distribution::CreateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution::CreateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl CreateDistributionFluentBuilder {
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
+    pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
         self.inner = self.inner.set_distribution_config(input);
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn get_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+    pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
         self.inner.get_distribution_config()
     }
 }

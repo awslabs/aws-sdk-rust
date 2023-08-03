@@ -23,12 +23,9 @@ impl VirtualRouterSpec {
 
 /// A builder for [`VirtualRouterSpec`](crate::types::VirtualRouterSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterSpecBuilder {
-    pub(crate) listeners:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>>,
+    pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>>,
 }
 impl VirtualRouterSpecBuilder {
     /// Appends an item to `listeners`.
@@ -43,23 +40,16 @@ impl VirtualRouterSpecBuilder {
         self
     }
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>>) -> Self {
         self.listeners = input;
         self
     }
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn get_listeners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>> {
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>> {
         &self.listeners
     }
     /// Consumes the builder and constructs a [`VirtualRouterSpec`](crate::types::VirtualRouterSpec).
     pub fn build(self) -> crate::types::VirtualRouterSpec {
-        crate::types::VirtualRouterSpec {
-            listeners: self.listeners,
-        }
+        crate::types::VirtualRouterSpec { listeners: self.listeners }
     }
 }

@@ -26,7 +26,7 @@ impl DeleteExtensionAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteExtensionAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder,
+    inner: crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder,
 }
 impl DeleteExtensionAssociationFluentBuilder {
     /// Creates a new `DeleteExtensionAssociation`.
@@ -37,7 +37,7 @@ impl DeleteExtensionAssociationFluentBuilder {
         }
     }
     /// Access the DeleteExtensionAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_extension_association::builders::DeleteExtensionAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteExtensionAssociationFluentBuilder {
             crate::operation::delete_extension_association::DeleteExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension_association::DeleteExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension_association::DeleteExtensionAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteExtensionAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_extension_association::DeleteExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension_association::DeleteExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension_association::DeleteExtensionAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_extension_association::DeleteExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension_association::DeleteExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension_association::DeleteExtensionAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteExtensionAssociationFluentBuilder {
             crate::operation::delete_extension_association::DeleteExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_extension_association::DeleteExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_extension_association::DeleteExtensionAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the extension association to delete.</p>
-    pub fn extension_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_association_id(input.into());
         self
     }
     /// <p>The ID of the extension association to delete.</p>
-    pub fn set_extension_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_association_id(input);
         self
     }

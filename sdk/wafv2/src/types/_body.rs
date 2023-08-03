@@ -42,9 +42,7 @@ impl Body {
 
 /// A builder for [`Body`](crate::types::Body).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BodyBuilder {
     pub(crate) oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
@@ -73,10 +71,7 @@ impl BodyBuilder {
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit. </p>
     /// <p>Default: <code>CONTINUE</code> </p>
-    pub fn set_oversize_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::OversizeHandling>,
-    ) -> Self {
+    pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
         self.oversize_handling = input;
         self
     }

@@ -72,9 +72,7 @@ impl DetectorModelVersionSummary {
 
 /// A builder for [`DetectorModelVersionSummary`](crate::types::DetectorModelVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorModelVersionSummaryBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) detector_model_version: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct DetectorModelVersionSummaryBuilder {
 }
 impl DetectorModelVersionSummaryBuilder {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -107,18 +99,12 @@ impl DetectorModelVersionSummaryBuilder {
         &self.detector_model_name
     }
     /// <p>The ID of the detector model version.</p>
-    pub fn detector_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the detector model version.</p>
-    pub fn set_detector_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_version = input;
         self
     }
@@ -127,18 +113,12 @@ impl DetectorModelVersionSummaryBuilder {
         &self.detector_model_version
     }
     /// <p>The ARN of the detector model version.</p>
-    pub fn detector_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector model version.</p>
-    pub fn set_detector_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_arn = input;
         self
     }
@@ -166,10 +146,7 @@ impl DetectorModelVersionSummaryBuilder {
         self
     }
     /// <p>The time the detector model version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -183,10 +160,7 @@ impl DetectorModelVersionSummaryBuilder {
         self
     }
     /// <p>The last time the detector model version was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -200,10 +174,7 @@ impl DetectorModelVersionSummaryBuilder {
         self
     }
     /// <p>The status of the detector model version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorModelVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -217,10 +188,7 @@ impl DetectorModelVersionSummaryBuilder {
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    pub fn set_evaluation_method(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMethod>,
-    ) -> Self {
+    pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.evaluation_method = input;
         self
     }

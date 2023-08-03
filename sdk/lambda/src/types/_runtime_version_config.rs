@@ -30,27 +30,19 @@ impl RuntimeVersionConfig {
 
 /// A builder for [`RuntimeVersionConfig`](crate::types::RuntimeVersionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeVersionConfigBuilder {
     pub(crate) runtime_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::RuntimeVersionError>,
 }
 impl RuntimeVersionConfigBuilder {
     /// <p>The ARN of the runtime version you want the function to use.</p>
-    pub fn runtime_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the runtime version you want the function to use.</p>
-    pub fn set_runtime_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_version_arn = input;
         self
     }
@@ -64,10 +56,7 @@ impl RuntimeVersionConfigBuilder {
         self
     }
     /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeVersionError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::RuntimeVersionError>) -> Self {
         self.error = input;
         self
     }

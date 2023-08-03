@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput::last_updated_at): <p>The timestamp of when the calculated attribute definition was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<CreateCalculatedAttributeDefinitionError>`](crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError)
-    pub fn create_calculated_attribute_definition(&self) -> crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionFluentBuilder{
+    pub fn create_calculated_attribute_definition(
+        &self,
+    ) -> crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionFluentBuilder {
         crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::describe_organization_resource_collection_health::_des
 
 impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_organization_resource_collection_health();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationResourceCollectionHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder,
+    inner: crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder,
 }
 impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
     /// Creates a new `DescribeOrganizationResourceCollectionHealth`.
@@ -37,15 +37,24 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         }
     }
     /// Access the DescribeOrganizationResourceCollectionHealth as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealth, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealth,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,30 +93,45 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealth, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealth,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator{
-        crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator {
+        crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn organization_resource_collection_type(
-        mut self,
-        input: crate::types::OrganizationResourceCollectionType,
-    ) -> Self {
+    pub fn organization_resource_collection_type(mut self, input: crate::types::OrganizationResourceCollectionType) -> Self {
         self.inner = self.inner.organization_resource_collection_type(input);
         self
     }
@@ -117,9 +144,7 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         self
     }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_organization_resource_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationResourceCollectionType> {
+    pub fn get_organization_resource_collection_type(&self) -> &::std::option::Option<crate::types::OrganizationResourceCollectionType> {
         self.inner.get_organization_resource_collection_type()
     }
     /// Appends an item to `AccountIds`.
@@ -132,17 +157,12 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
@@ -150,25 +170,17 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_ids(input.into());
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_ids()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

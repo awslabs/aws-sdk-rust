@@ -15,35 +15,25 @@ impl DeleteSourceNetworkInput {
 }
 impl DeleteSourceNetworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceNetworkInput`](crate::operation::delete_source_network::DeleteSourceNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder {
-        crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder {
+        crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceNetworkInput`](crate::operation::delete_source_network::DeleteSourceNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceNetworkInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSourceNetworkInputBuilder {
     /// <p>ID of the Source Network to delete.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Source Network to delete.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteSourceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceNetworkInput`](crate::operation::delete_source_network::DeleteSourceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_source_network::DeleteSourceNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_source_network::DeleteSourceNetworkInput {
-                source_network_id: self.source_network_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_source_network::DeleteSourceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_source_network::DeleteSourceNetworkInput {
+            source_network_id: self.source_network_id,
+        })
     }
 }

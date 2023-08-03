@@ -10,10 +10,7 @@ impl DescribeExpressionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_expressions::DescribeExpressionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_expressions::DescribeExpressionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_expressions::DescribeExpressionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_expressions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeExpressionsFluentBuilder {
         }
     }
     /// Access the DescribeExpressions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_expressions::builders::DescribeExpressionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_expressions::builders::DescribeExpressionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeExpressionsFluentBuilder {
             crate::operation::describe_expressions::DescribeExpressions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_expressions::DescribeExpressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_expressions::DescribeExpressionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeExpressionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeExpressionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_expressions::DescribeExpressionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_expressions::DescribeExpressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_expressions::DescribeExpressionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeExpressionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_expressions::DescribeExpressionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_expressions::DescribeExpressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_expressions::DescribeExpressionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeExpressionsFluentBuilder {
             crate::operation::describe_expressions::DescribeExpressions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_expressions::DescribeExpressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_expressions::DescribeExpressionsError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +125,17 @@ impl DescribeExpressionsFluentBuilder {
     /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
     ///
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn expression_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression_names(input.into());
         self
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn set_expression_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_expression_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_expression_names(input);
         self
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn get_expression_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expression_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_expression_names()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>

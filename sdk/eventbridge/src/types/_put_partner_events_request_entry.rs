@@ -51,9 +51,7 @@ impl PutPartnerEventsRequestEntry {
 
 /// A builder for [`PutPartnerEventsRequestEntry`](crate::types::PutPartnerEventsRequestEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPartnerEventsRequestEntryBuilder {
     pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl PutPartnerEventsRequestEntryBuilder {
         self
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }

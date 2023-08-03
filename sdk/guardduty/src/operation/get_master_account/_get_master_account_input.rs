@@ -16,17 +16,14 @@ impl GetMasterAccountInput {
 }
 impl GetMasterAccountInput {
     /// Creates a new builder-style object to manufacture [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
-    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_master_account::builders::GetMasterAccountInputBuilder {
         crate::operation::get_master_account::builders::GetMasterAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMasterAccountInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl GetMasterAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_master_account::GetMasterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_master_account::GetMasterAccountInput {
-                detector_id: self.detector_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_master_account::GetMasterAccountInput {
+            detector_id: self.detector_id,
+        })
     }
 }

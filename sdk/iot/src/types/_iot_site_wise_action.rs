@@ -6,17 +6,14 @@
 pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
     #[doc(hidden)]
-    pub put_asset_property_value_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
-    pub fn put_asset_property_value_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PutAssetPropertyValueEntry]> {
+    pub fn put_asset_property_value_entries(&self) -> ::std::option::Option<&[crate::types::PutAssetPropertyValueEntry]> {
         self.put_asset_property_value_entries.as_deref()
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
@@ -33,12 +30,9 @@ impl IotSiteWiseAction {
 
 /// A builder for [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseActionBuilder {
-    pub(crate) put_asset_property_value_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub(crate) put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseActionBuilder {
@@ -47,10 +41,7 @@ impl IotSiteWiseActionBuilder {
     /// To override the contents of this collection use [`set_put_asset_property_value_entries`](Self::set_put_asset_property_value_entries).
     ///
     /// <p>A list of asset property value entries.</p>
-    pub fn put_asset_property_value_entries(
-        mut self,
-        input: crate::types::PutAssetPropertyValueEntry,
-    ) -> Self {
+    pub fn put_asset_property_value_entries(mut self, input: crate::types::PutAssetPropertyValueEntry) -> Self {
         let mut v = self.put_asset_property_value_entries.unwrap_or_default();
         v.push(input);
         self.put_asset_property_value_entries = ::std::option::Option::Some(v);
@@ -65,9 +56,7 @@ impl IotSiteWiseActionBuilder {
         self
     }
     /// <p>A list of asset property value entries.</p>
-    pub fn get_put_asset_property_value_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_put_asset_property_value_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
         &self.put_asset_property_value_entries
     }
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>

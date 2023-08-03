@@ -29,9 +29,7 @@ impl BundleInstanceOutput {
 
 /// A builder for [`BundleInstanceOutput`](crate::operation::bundle_instance::BundleInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleInstanceOutputBuilder {
     pub(crate) bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl BundleInstanceOutputBuilder {
         self
     }
     /// <p>Information about the bundle task.</p>
-    pub fn set_bundle_task(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleTask>,
-    ) -> Self {
+    pub fn set_bundle_task(mut self, input: ::std::option::Option<crate::types::BundleTask>) -> Self {
         self.bundle_task = input;
         self
     }

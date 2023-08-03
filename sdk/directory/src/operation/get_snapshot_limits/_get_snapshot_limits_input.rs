@@ -16,17 +16,14 @@ impl GetSnapshotLimitsInput {
 }
 impl GetSnapshotLimitsInput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder {
+    pub fn builder() -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder {
         crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotLimitsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl GetSnapshotLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_snapshot_limits::GetSnapshotLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
-                directory_id: self.directory_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
+            directory_id: self.directory_id,
+        })
     }
 }

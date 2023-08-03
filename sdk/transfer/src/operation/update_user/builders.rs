@@ -10,10 +10,7 @@ impl UpdateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user::UpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user::UpdateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,29 +96,20 @@ impl UpdateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-    pub fn home_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_directory(input.into());
         self
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-    pub fn set_home_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_directory(input);
         self
     }
@@ -142,17 +124,12 @@ impl UpdateUserFluentBuilder {
         self
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    pub fn set_home_directory_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HomeDirectoryType>,
-    ) -> Self {
+    pub fn set_home_directory_type(mut self, input: ::std::option::Option<crate::types::HomeDirectoryType>) -> Self {
         self.inner = self.inner.set_home_directory_type(input);
         self
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    pub fn get_home_directory_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HomeDirectoryType> {
+    pub fn get_home_directory_type(&self) -> &::std::option::Option<crate::types::HomeDirectoryType> {
         self.inner.get_home_directory_type()
     }
     /// Appends an item to `HomeDirectoryMappings`.
@@ -175,10 +152,7 @@ impl UpdateUserFluentBuilder {
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
-    pub fn set_home_directory_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
-    ) -> Self {
+    pub fn set_home_directory_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>) -> Self {
         self.inner = self.inner.set_home_directory_mappings(input);
         self
     }
@@ -188,9 +162,7 @@ impl UpdateUserFluentBuilder {
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
-    pub fn get_home_directory_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>> {
+    pub fn get_home_directory_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>> {
         self.inner.get_home_directory_mappings()
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -228,10 +200,7 @@ impl UpdateUserFluentBuilder {
         self
     }
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    pub fn set_posix_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::PosixProfile>,
-    ) -> Self {
+    pub fn set_posix_profile(mut self, input: ::std::option::Option<crate::types::PosixProfile>) -> Self {
         self.inner = self.inner.set_posix_profile(input);
         self
     }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3ObjectEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for S3ObjectEncryptionType {
             "NO_ENCRYPTION" => S3ObjectEncryptionType::NoEncryption,
             "SSE_KMS" => S3ObjectEncryptionType::SseKms,
             "SSE_S3" => S3ObjectEncryptionType::SseS3,
-            other => S3ObjectEncryptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3ObjectEncryptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

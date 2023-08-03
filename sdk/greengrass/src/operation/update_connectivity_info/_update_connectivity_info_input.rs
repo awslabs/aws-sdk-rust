@@ -23,21 +23,16 @@ impl UpdateConnectivityInfoInput {
 }
 impl UpdateConnectivityInfoInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
-    pub fn builder(
-    ) -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder {
         crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInfoInputBuilder {
-    pub(crate) connectivity_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
+    pub(crate) connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectivityInfoInputBuilder {
@@ -53,17 +48,12 @@ impl UpdateConnectivityInfoInputBuilder {
         self
     }
     /// A list of connectivity info.
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>) -> Self {
         self.connectivity_info = input;
         self
     }
     /// A list of connectivity info.
-    pub fn get_connectivity_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
         &self.connectivity_info
     }
     /// The thing name.
@@ -83,15 +73,11 @@ impl UpdateConnectivityInfoInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connectivity_info::UpdateConnectivityInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_connectivity_info::UpdateConnectivityInfoInput {
-                connectivity_info: self.connectivity_info,
-                thing_name: self.thing_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_connectivity_info::UpdateConnectivityInfoInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_connectivity_info::UpdateConnectivityInfoInput {
+            connectivity_info: self.connectivity_info,
+            thing_name: self.thing_name,
+        })
     }
 }

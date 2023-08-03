@@ -44,9 +44,7 @@ impl ChangeInfo {
 
 /// A builder for [`ChangeInfo`](crate::types::ChangeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeStatus>,
@@ -88,10 +86,7 @@ impl ChangeInfoBuilder {
         self
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn set_submitted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submitted_at = input;
         self
     }

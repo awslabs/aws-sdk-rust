@@ -35,9 +35,7 @@ impl ListResourcesOutput {
 
 /// A builder for [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListResourcesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain information about the resources.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }

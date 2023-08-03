@@ -51,9 +51,7 @@ impl EbsOptions {
 
 /// A builder for [`EbsOptions`](crate::types::EbsOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsOptionsBuilder {
     pub(crate) ebs_enabled: ::std::option::Option<bool>,
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
@@ -82,10 +80,7 @@ impl EbsOptionsBuilder {
         self
     }
     /// <p>Specifies the type of EBS volumes attached to data nodes.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }

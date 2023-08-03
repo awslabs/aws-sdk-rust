@@ -30,9 +30,7 @@ impl DomainInfo {
 
 /// A builder for [`DomainInfo`](crate::types::DomainInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainInfoBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
@@ -58,10 +56,7 @@ impl DomainInfoBuilder {
         self
     }
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }

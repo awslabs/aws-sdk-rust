@@ -23,9 +23,7 @@ impl GlueDataCatalogConfiguration {
 
 /// A builder for [`GlueDataCatalogConfiguration`](crate::types::GlueDataCatalogConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationBuilder {
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }

@@ -29,9 +29,7 @@ impl UpdateRecordsOutput {
 
 /// A builder for [`UpdateRecordsOutput`](crate::operation::update_records::UpdateRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecordsOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl UpdateRecordsOutputBuilder {
         self
     }
     /// A list of records that have been updated.
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.records = input;
         self
     }

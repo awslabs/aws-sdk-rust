@@ -42,9 +42,7 @@ impl ListHostKeysOutput {
 
 /// A builder for [`ListHostKeysOutput`](crate::operation::list_host_keys::ListHostKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostKeysOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -92,17 +90,12 @@ impl ListHostKeysOutputBuilder {
         self
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn set_host_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>,
-    ) -> Self {
+    pub fn set_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>) -> Self {
         self.host_keys = input;
         self
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn get_host_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>> {
+    pub fn get_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>> {
         &self.host_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

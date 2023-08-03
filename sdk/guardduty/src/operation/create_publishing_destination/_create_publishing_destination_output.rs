@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePublishingDestinationOutput {
 }
 impl CreatePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
-    pub fn builder() -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationOutputBuilder {
         crate::operation::create_publishing_destination::builders::CreatePublishingDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePublishingDestinationOutputBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePublishingDestinationOutputBuilder {
     /// <p>The ID of the publishing destination that is created.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the publishing destination that is created.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreatePublishingDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_publishing_destination::CreatePublishingDestinationOutput {
+    pub fn build(self) -> crate::operation::create_publishing_destination::CreatePublishingDestinationOutput {
         crate::operation::create_publishing_destination::CreatePublishingDestinationOutput {
             destination_id: self.destination_id,
             _request_id: self._request_id,

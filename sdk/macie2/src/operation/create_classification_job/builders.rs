@@ -26,8 +26,7 @@ impl CreateClassificationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClassificationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder,
+    inner: crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder,
 }
 impl CreateClassificationJobFluentBuilder {
     /// Creates a new `CreateClassificationJob`.
@@ -38,10 +37,7 @@ impl CreateClassificationJobFluentBuilder {
         }
     }
     /// Access the CreateClassificationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateClassificationJobFluentBuilder {
             crate::operation::create_classification_job::CreateClassificationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateClassificationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateClassificationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classification_job::CreateClassificationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateClassificationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classification_job::CreateClassificationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateClassificationJobFluentBuilder {
             crate::operation::create_classification_job::CreateClassificationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +114,17 @@ impl CreateClassificationJobFluentBuilder {
     /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
     ///
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    pub fn allow_list_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allow_list_ids(input.into());
         self
     }
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    pub fn set_allow_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allow_list_ids(input);
         self
     }
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    pub fn get_allow_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allow_list_ids()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -169,25 +146,17 @@ impl CreateClassificationJobFluentBuilder {
     /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
     ///
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    pub fn custom_data_identifier_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_data_identifier_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_data_identifier_ids(input.into());
         self
     }
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    pub fn set_custom_data_identifier_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_data_identifier_ids(input);
         self
     }
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    pub fn get_custom_data_identifier_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_custom_data_identifier_ids()
     }
     /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
@@ -253,27 +222,19 @@ impl CreateClassificationJobFluentBuilder {
     ///
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    pub fn managed_data_identifier_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_data_identifier_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_data_identifier_ids(input.into());
         self
     }
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    pub fn set_managed_data_identifier_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_managed_data_identifier_ids(input);
         self
     }
     /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    pub fn get_managed_data_identifier_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_managed_data_identifier_ids()
     }
     /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
@@ -287,10 +248,7 @@ impl CreateClassificationJobFluentBuilder {
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers.</p>
     /// <p>If the job is a recurring job and you don't specify a value for this property or you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the job starts to run.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn managed_data_identifier_selector(
-        mut self,
-        input: crate::types::ManagedDataIdentifierSelector,
-    ) -> Self {
+    pub fn managed_data_identifier_selector(mut self, input: crate::types::ManagedDataIdentifierSelector) -> Self {
         self.inner = self.inner.managed_data_identifier_selector(input);
         self
     }
@@ -305,10 +263,7 @@ impl CreateClassificationJobFluentBuilder {
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers.</p>
     /// <p>If the job is a recurring job and you don't specify a value for this property or you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the job starts to run.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn set_managed_data_identifier_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>,
-    ) -> Self {
+    pub fn set_managed_data_identifier_selector(mut self, input: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>) -> Self {
         self.inner = self.inner.set_managed_data_identifier_selector(input);
         self
     }
@@ -323,9 +278,7 @@ impl CreateClassificationJobFluentBuilder {
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers.</p>
     /// <p>If the job is a recurring job and you don't specify a value for this property or you specify ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set when the job starts to run.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn get_managed_data_identifier_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedDataIdentifierSelector> {
+    pub fn get_managed_data_identifier_selector(&self) -> &::std::option::Option<crate::types::ManagedDataIdentifierSelector> {
         self.inner.get_managed_data_identifier_selector()
     }
     /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
@@ -348,10 +301,7 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    pub fn set_s3_job_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::S3JobDefinition>,
-    ) -> Self {
+    pub fn set_s3_job_definition(mut self, input: ::std::option::Option<crate::types::S3JobDefinition>) -> Self {
         self.inner = self.inner.set_s3_job_definition(input);
         self
     }
@@ -379,17 +329,12 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-    pub fn set_schedule_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::JobScheduleFrequency>,
-    ) -> Self {
+    pub fn set_schedule_frequency(mut self, input: ::std::option::Option<crate::types::JobScheduleFrequency>) -> Self {
         self.inner = self.inner.set_schedule_frequency(input);
         self
     }
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-    pub fn get_schedule_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobScheduleFrequency> {
+    pub fn get_schedule_frequency(&self) -> &::std::option::Option<crate::types::JobScheduleFrequency> {
         self.inner.get_schedule_frequency()
     }
     /// Adds a key-value pair to `tags`.
@@ -398,32 +343,19 @@ impl CreateClassificationJobFluentBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

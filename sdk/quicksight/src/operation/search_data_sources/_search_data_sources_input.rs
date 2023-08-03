@@ -36,38 +36,28 @@ impl SearchDataSourcesInput {
 }
 impl SearchDataSourcesInput {
     /// Creates a new builder-style object to manufacture [`SearchDataSourcesInput`](crate::operation::search_data_sources::SearchDataSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::search_data_sources::builders::SearchDataSourcesInputBuilder {
+    pub fn builder() -> crate::operation::search_data_sources::builders::SearchDataSourcesInputBuilder {
         crate::operation::search_data_sources::builders::SearchDataSourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchDataSourcesInput`](crate::operation::search_data_sources::SearchDataSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDataSourcesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl SearchDataSourcesInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl SearchDataSourcesInputBuilder {
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>> {
         &self.filters
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -131,17 +116,12 @@ impl SearchDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`SearchDataSourcesInput`](crate::operation::search_data_sources::SearchDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_data_sources::SearchDataSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_data_sources::SearchDataSourcesInput {
-                aws_account_id: self.aws_account_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_data_sources::SearchDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_data_sources::SearchDataSourcesInput {
+            aws_account_id: self.aws_account_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

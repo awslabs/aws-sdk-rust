@@ -4,83 +4,65 @@ pub fn de_describe_ephemeris_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_ephemeris::DescribeEphemerisOutput,
-    crate::operation::describe_ephemeris::DescribeEphemerisError,
-> {
+) -> std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisOutput, crate::operation::describe_ephemeris::DescribeEphemerisError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyException" => {
-            crate::operation::describe_ephemeris::DescribeEphemerisError::DependencyException({
+        "DependencyException" => crate::operation::describe_ephemeris::DescribeEphemerisError::DependencyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::DependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(_response_body, output).map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::operation::describe_ephemeris::DescribeEphemerisError::InvalidParameterException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output).map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "ResourceNotFoundException" => {
-            crate::operation::describe_ephemeris::DescribeEphemerisError::ResourceNotFoundException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+                let mut output = crate::types::error::builders::DependencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterException" => crate::operation::describe_ephemeris::DescribeEphemerisError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_ephemeris::DescribeEphemerisError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::describe_ephemeris::DescribeEphemerisError::generic(generic),
     })
 }
@@ -90,23 +72,14 @@ pub fn de_describe_ephemeris_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_ephemeris::DescribeEphemerisOutput,
-    crate::operation::describe_ephemeris::DescribeEphemerisError,
-> {
+) -> std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisOutput, crate::operation::describe_ephemeris::DescribeEphemerisError>
+{
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_describe_ephemeris::de_describe_ephemeris(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder::default();
+        output = crate::protocol_serde::shape_describe_ephemeris::de_describe_ephemeris(_response_body, output)
+            .map_err(crate::operation::describe_ephemeris::DescribeEphemerisError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -114,123 +87,87 @@ pub fn de_describe_ephemeris_http_response_with_props(
 pub(crate) fn de_describe_ephemeris(
     value: &[u8],
     mut builder: crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder,
-) -> Result<
-    crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "creationTime" => {
-                        builder = builder.set_creation_time(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?,
-                        );
-                    }
-                    "enabled" => {
-                        builder = builder.set_enabled(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                tokens.next(),
-                            )?,
-                        );
-                    }
-                    "ephemerisId" => {
-                        builder = builder.set_ephemeris_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "creationTime" => {
+                    builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "enabled" => {
+                    builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "ephemerisId" => {
+                    builder = builder.set_ephemeris_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "invalidReason" => {
-                        builder = builder.set_invalid_reason(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::EphemerisInvalidReason::from(u.as_ref()))
-                            })
+                    );
+                }
+                "invalidReason" => {
+                    builder = builder.set_invalid_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisInvalidReason::from(u.as_ref())))
                             .transpose()?,
-                        );
-                    }
-                    "name" => {
-                        builder = builder.set_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "name" => {
+                    builder = builder.set_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "priority" => {
-                        builder = builder.set_priority(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "priority" => {
+                    builder = builder.set_priority(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i32::try_from)
                             .transpose()?,
-                        );
-                    }
-                    "satelliteId" => {
-                        builder = builder.set_satellite_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "satelliteId" => {
+                    builder = builder.set_satellite_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "status" => {
-                        builder = builder.set_status(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::EphemerisStatus::from(u.as_ref()))
-                            })
-                            .transpose()?,
-                        );
-                    }
-                    "suppliedData" => {
-                        builder = builder.set_supplied_data(
-                            crate::protocol_serde::shape_ephemeris_type_description::de_ephemeris_type_description(tokens)?
-                        );
-                    }
-                    "tags" => {
-                        builder = builder
-                            .set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EphemerisStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "suppliedData" => {
+                    builder = builder.set_supplied_data(crate::protocol_serde::shape_ephemeris_type_description::de_ephemeris_type_description(
+                        tokens,
+                    )?);
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

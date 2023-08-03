@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::retry_workflow_step::RetryWorkflowStepOutput::id): <p>The ID of the step.</p>
     ///   - [`status(Option<StepStatus>)`](crate::operation::retry_workflow_step::RetryWorkflowStepOutput::status): <p>The status of the step.</p>
     /// - On failure, responds with [`SdkError<RetryWorkflowStepError>`](crate::operation::retry_workflow_step::RetryWorkflowStepError)
-    pub fn retry_workflow_step(
-        &self,
-    ) -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepFluentBuilder {
-        crate::operation::retry_workflow_step::builders::RetryWorkflowStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retry_workflow_step(&self) -> crate::operation::retry_workflow_step::builders::RetryWorkflowStepFluentBuilder {
+        crate::operation::retry_workflow_step::builders::RetryWorkflowStepFluentBuilder::new(self.handle.clone())
     }
 }

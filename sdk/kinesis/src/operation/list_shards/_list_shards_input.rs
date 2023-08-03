@@ -64,9 +64,7 @@ impl ListShardsInput {
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>
-    pub fn stream_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
     /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can only specify one filter at a time. </p>
@@ -90,9 +88,7 @@ impl ListShardsInput {
 
 /// A builder for [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListShardsInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -149,20 +145,14 @@ impl ListShardsInputBuilder {
     /// <p>Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
     /// <p>If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards starting with the first one in the stream.</p>
     /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
-    pub fn exclusive_start_shard_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
     /// <p>If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards starting with the first one in the stream.</p>
     /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
-    pub fn set_exclusive_start_shard_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_shard_id = input;
         self
     }
@@ -197,18 +187,13 @@ impl ListShardsInputBuilder {
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>
-    pub fn set_stream_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stream_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stream_creation_timestamp = input;
         self
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>
-    pub fn get_stream_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_stream_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stream_creation_timestamp
     }
     /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can only specify one filter at a time. </p>
@@ -223,10 +208,7 @@ impl ListShardsInputBuilder {
     /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API, the <code>Type</code> is the required property and must be specified. If you specify the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or <code>AT_LATEST</code> types, you do not need to specify either the <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
     /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value for the optional <code>ShardId</code> property. The <code>ShardId</code> property is identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API. When <code>ShardId</code> property is specified, the response includes the shards starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided. </p>
     /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also provide the value for the optional <code>Timestamp</code> property. If you specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the provided timestamp to TIP are returned. </p>
-    pub fn set_shard_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardFilter>,
-    ) -> Self {
+    pub fn set_shard_filter(mut self, input: ::std::option::Option<crate::types::ShardFilter>) -> Self {
         self.shard_filter = input;
         self
     }
@@ -252,12 +234,7 @@ impl ListShardsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_shards::ListShardsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shards::ListShardsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_shards::ListShardsInput {
             stream_name: self.stream_name,
             next_token: self.next_token,

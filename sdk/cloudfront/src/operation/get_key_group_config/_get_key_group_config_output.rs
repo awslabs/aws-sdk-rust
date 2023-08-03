@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetKeyGroupConfigOutput {
 }
 impl GetKeyGroupConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_key_group_config::builders::GetKeyGroupConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_key_group_config::builders::GetKeyGroupConfigOutputBuilder {
         crate::operation::get_key_group_config::builders::GetKeyGroupConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyGroupConfigOutputBuilder {
     pub(crate) key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl GetKeyGroupConfigOutputBuilder {
         self
     }
     /// <p>The key group configuration.</p>
-    pub fn set_key_group_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyGroupConfig>,
-    ) -> Self {
+    pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
         self.key_group_config = input;
         self
     }

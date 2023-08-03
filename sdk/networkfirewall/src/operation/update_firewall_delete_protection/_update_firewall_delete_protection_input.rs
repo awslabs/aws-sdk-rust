@@ -44,16 +44,14 @@ impl UpdateFirewallDeleteProtectionInput {
 }
 impl UpdateFirewallDeleteProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionInput`](crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionInput).
-    pub fn builder() -> crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder {
         crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallDeleteProtectionInput`](crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -100,19 +98,13 @@ impl UpdateFirewallDeleteProtectionInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -142,17 +134,11 @@ impl UpdateFirewallDeleteProtectionInputBuilder {
         crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionInput {
-                update_token: self.update_token
-                ,
-                firewall_arn: self.firewall_arn
-                ,
-                firewall_name: self.firewall_name
-                ,
-                delete_protection: self.delete_protection
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionInput {
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            delete_protection: self.delete_protection,
+        })
     }
 }

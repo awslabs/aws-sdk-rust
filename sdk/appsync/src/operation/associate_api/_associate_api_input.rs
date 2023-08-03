@@ -29,9 +29,7 @@ impl AssociateApiInput {
 
 /// A builder for [`AssociateApiInput`](crate::operation::associate_api::AssociateApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApiInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl AssociateApiInputBuilder {
         &self.api_id
     }
     /// Consumes the builder and constructs a [`AssociateApiInput`](crate::operation::associate_api::AssociateApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_api::AssociateApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_api::AssociateApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_api::AssociateApiInput {
             domain_name: self.domain_name,
             api_id: self.api_id,

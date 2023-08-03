@@ -23,9 +23,7 @@ pub struct GetEntityOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub components: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
-    >,
+    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
     /// <p>The ID of the parent entity for this entity.</p>
     #[doc(hidden)]
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
@@ -69,11 +67,7 @@ impl GetEntityOutput {
         self.description.as_deref()
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
-    > {
+    pub fn components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>> {
         self.components.as_ref()
     }
     /// <p>The ID of the parent entity for this entity.</p>
@@ -111,9 +105,7 @@ impl GetEntityOutput {
 
 /// A builder for [`GetEntityOutput`](crate::operation::get_entity::GetEntityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntityOutputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
@@ -121,9 +113,7 @@ pub struct GetEntityOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
-    >,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) has_child_entities: ::std::option::Option<bool>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -221,11 +211,7 @@ impl GetEntityOutputBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentResponse,
-    ) -> Self {
+    pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentResponse) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.components = ::std::option::Option::Some(hash_map);
@@ -234,34 +220,22 @@ impl GetEntityOutputBuilder {
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn set_components(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>>,
     ) -> Self {
         self.components = input;
         self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
-    > {
+    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>> {
         &self.components
     }
     /// <p>The ID of the parent entity for this entity.</p>
-    pub fn parent_entity_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent entity for this entity.</p>
-    pub fn set_parent_entity_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_entity_id = input;
         self
     }
@@ -289,10 +263,7 @@ impl GetEntityOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -306,10 +277,7 @@ impl GetEntityOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

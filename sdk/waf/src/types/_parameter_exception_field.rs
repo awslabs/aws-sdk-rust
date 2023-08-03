@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,12 +100,8 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
     fn from(s: &str) -> Self {
         match s {
             "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
-            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => {
-                ParameterExceptionField::ByteMatchPositionalConstraint
-            }
-            "BYTE_MATCH_TEXT_TRANSFORMATION" => {
-                ParameterExceptionField::ByteMatchTextTransformation
-            }
+            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => ParameterExceptionField::ByteMatchPositionalConstraint,
+            "BYTE_MATCH_TEXT_TRANSFORMATION" => ParameterExceptionField::ByteMatchTextTransformation,
             "CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
             "GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
             "GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
@@ -121,17 +111,13 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "RATE_KEY" => ParameterExceptionField::RateKey,
             "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
             "RULE_TYPE" => ParameterExceptionField::RuleType,
-            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => {
-                ParameterExceptionField::SizeConstraintComparisonOperator
-            }
+            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => ParameterExceptionField::SizeConstraintComparisonOperator,
             "SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
             "TAGS" => ParameterExceptionField::Tags,
             "TAG_KEYS" => ParameterExceptionField::TagKeys,
             "WAF_ACTION" => ParameterExceptionField::WafAction,
             "WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
-            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -147,12 +133,8 @@ impl ParameterExceptionField {
     pub fn as_str(&self) -> &str {
         match self {
             ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
-            ParameterExceptionField::ByteMatchPositionalConstraint => {
-                "BYTE_MATCH_POSITIONAL_CONSTRAINT"
-            }
-            ParameterExceptionField::ByteMatchTextTransformation => {
-                "BYTE_MATCH_TEXT_TRANSFORMATION"
-            }
+            ParameterExceptionField::ByteMatchPositionalConstraint => "BYTE_MATCH_POSITIONAL_CONSTRAINT",
+            ParameterExceptionField::ByteMatchTextTransformation => "BYTE_MATCH_TEXT_TRANSFORMATION",
             ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
             ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
             ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
@@ -162,9 +144,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::RateKey => "RATE_KEY",
             ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
             ParameterExceptionField::RuleType => "RULE_TYPE",
-            ParameterExceptionField::SizeConstraintComparisonOperator => {
-                "SIZE_CONSTRAINT_COMPARISON_OPERATOR"
-            }
+            ParameterExceptionField::SizeConstraintComparisonOperator => "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
             ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
             ParameterExceptionField::Tags => "TAGS",
             ParameterExceptionField::TagKeys => "TAG_KEYS",

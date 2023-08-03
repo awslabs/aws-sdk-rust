@@ -37,10 +37,7 @@ impl ListIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the ListIpAccessSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListIpAccessSettingsFluentBuilder {
             crate::operation::list_ip_access_settings::ListIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ip_access_settings::ListIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ip_access_settings::ListIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ip_access_settings::ListIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListIpAccessSettingsFluentBuilder {
             crate::operation::list_ip_access_settings::ListIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ip_access_settings::ListIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ip_access_settings::paginator::ListIpAccessSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ip_access_settings::paginator::ListIpAccessSettingsPaginator {
-        crate::operation::list_ip_access_settings::paginator::ListIpAccessSettingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ip_access_settings::paginator::ListIpAccessSettingsPaginator {
+        crate::operation::list_ip_access_settings::paginator::ListIpAccessSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

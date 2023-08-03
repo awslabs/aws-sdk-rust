@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSipMediaApplicationOutput {
 }
 impl DeleteSipMediaApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSipMediaApplicationOutput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput).
-    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationOutputBuilder {
         crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSipMediaApplicationOutput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSipMediaApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSipMediaApplicationOutput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput {
+    pub fn build(self) -> crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput {
         crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput {
             _request_id: self._request_id,
         }

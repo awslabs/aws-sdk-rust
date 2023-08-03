@@ -15,17 +15,14 @@ impl DeregisterResourceInput {
 }
 impl DeregisterResourceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
+    pub fn builder() -> crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
         crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DeregisterResourceInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_resource::DeregisterResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_resource::DeregisterResourceInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_resource::DeregisterResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deregister_resource::DeregisterResourceInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

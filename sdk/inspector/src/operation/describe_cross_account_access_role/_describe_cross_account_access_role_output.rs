@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeCrossAccountAccessRoleOutput 
 }
 impl DescribeCrossAccountAccessRoleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
-    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder {
         crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCrossAccountAccessRoleOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) valid: ::std::option::Option<bool>,
@@ -86,10 +84,7 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self
     }
     /// <p>The date when the cross-account access role was registered.</p>
-    pub fn set_registered_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_at = input;
         self
     }
@@ -107,10 +102,7 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput
-    {
+    pub fn build(self) -> crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
         crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
             role_arn: self.role_arn,
             valid: self.valid,

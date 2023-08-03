@@ -28,8 +28,7 @@ impl BatchGetDocumentStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDocumentStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder,
+    inner: crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder,
 }
 impl BatchGetDocumentStatusFluentBuilder {
     /// Creates a new `BatchGetDocumentStatus`.
@@ -40,10 +39,7 @@ impl BatchGetDocumentStatusFluentBuilder {
         }
     }
     /// Access the BatchGetDocumentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl BatchGetDocumentStatusFluentBuilder {
             crate::operation::batch_get_document_status::BatchGetDocumentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_document_status::BatchGetDocumentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_document_status::BatchGetDocumentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl BatchGetDocumentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl BatchGetDocumentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_document_status::BatchGetDocumentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_document_status::BatchGetDocumentStatusError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl BatchGetDocumentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_document_status::BatchGetDocumentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_document_status::BatchGetDocumentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl BatchGetDocumentStatusFluentBuilder {
             crate::operation::batch_get_document_status::BatchGetDocumentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_document_status::BatchGetDocumentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_document_status::BatchGetDocumentStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -150,17 +135,12 @@ impl BatchGetDocumentStatusFluentBuilder {
         self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn set_document_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
-    ) -> Self {
+    pub fn set_document_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>) -> Self {
         self.inner = self.inner.set_document_info_list(input);
         self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn get_document_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
+    pub fn get_document_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
         self.inner.get_document_info_list()
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteResiliencyPolicyOutput {
 }
 impl DeleteResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyOutput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyOutputBuilder {
         crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResiliencyPolicyOutput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResiliencyPolicyOutputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

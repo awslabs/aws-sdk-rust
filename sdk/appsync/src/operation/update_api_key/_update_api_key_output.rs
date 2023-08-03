@@ -28,9 +28,7 @@ impl UpdateApiKeyOutput {
 
 /// A builder for [`UpdateApiKeyOutput`](crate::operation::update_api_key::UpdateApiKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiKeyOutputBuilder {
     pub(crate) api_key: ::std::option::Option<crate::types::ApiKey>,
     _request_id: Option<String>,

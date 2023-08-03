@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for MoveByoipCidrToIpamOutput {
 }
 impl MoveByoipCidrToIpamOutput {
     /// Creates a new builder-style object to manufacture [`MoveByoipCidrToIpamOutput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput).
-    pub fn builder(
-    ) -> crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder {
+    pub fn builder() -> crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder {
         crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder::default()
     }
 }
 
 /// A builder for [`MoveByoipCidrToIpamOutput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MoveByoipCidrToIpamOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

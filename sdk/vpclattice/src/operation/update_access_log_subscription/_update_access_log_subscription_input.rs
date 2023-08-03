@@ -22,56 +22,40 @@ impl UpdateAccessLogSubscriptionInput {
 }
 impl UpdateAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder {
         crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionInputBuilder {
     pub(crate) access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn get_access_log_subscription_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_log_subscription_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -86,11 +70,9 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
-                access_log_subscription_identifier: self.access_log_subscription_identifier,
-                destination_arn: self.destination_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
+            access_log_subscription_identifier: self.access_log_subscription_identifier,
+            destination_arn: self.destination_arn,
+        })
     }
 }

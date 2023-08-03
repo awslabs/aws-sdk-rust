@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::update_settings::UpdateSettingsOutput::directory_id): <p>The identifier of the directory.</p>
     /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::operation::update_settings::UpdateSettingsError)
-    pub fn update_settings(
-        &self,
-    ) -> crate::operation::update_settings::builders::UpdateSettingsFluentBuilder {
-        crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_settings(&self) -> crate::operation::update_settings::builders::UpdateSettingsFluentBuilder {
+        crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::new(self.handle.clone())
     }
 }

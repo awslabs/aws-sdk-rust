@@ -46,17 +46,14 @@ impl ::aws_http::request_id::RequestId for AssociateSubnetsOutput {
 }
 impl AssociateSubnetsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSubnetsOutput`](crate::operation::associate_subnets::AssociateSubnetsOutput).
-    pub fn builder() -> crate::operation::associate_subnets::builders::AssociateSubnetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_subnets::builders::AssociateSubnetsOutputBuilder {
         crate::operation::associate_subnets::builders::AssociateSubnetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSubnetsOutput`](crate::operation::associate_subnets::AssociateSubnetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSubnetsOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
@@ -80,18 +77,12 @@ impl AssociateSubnetsOutputBuilder {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -111,17 +102,12 @@ impl AssociateSubnetsOutputBuilder {
         self
     }
     /// <p>The IDs of the subnets that are associated with the firewall. </p>
-    pub fn set_subnet_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
-    ) -> Self {
+    pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.subnet_mappings = input;
         self
     }
     /// <p>The IDs of the subnets that are associated with the firewall. </p>
-    pub fn get_subnet_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         &self.subnet_mappings
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>

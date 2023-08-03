@@ -26,8 +26,7 @@ impl CreateHomeRegionControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHomeRegionControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder,
+    inner: crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder,
 }
 impl CreateHomeRegionControlFluentBuilder {
     /// Creates a new `CreateHomeRegionControl`.
@@ -38,10 +37,7 @@ impl CreateHomeRegionControlFluentBuilder {
         }
     }
     /// Access the CreateHomeRegionControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateHomeRegionControlFluentBuilder {
             crate::operation::create_home_region_control::CreateHomeRegionControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateHomeRegionControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateHomeRegionControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_home_region_control::CreateHomeRegionControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateHomeRegionControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_home_region_control::CreateHomeRegionControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateHomeRegionControlFluentBuilder {
             crate::operation::create_home_region_control::CreateHomeRegionControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError>,
     > {
         self.customize_middleware().await
     }

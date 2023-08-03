@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput::configuration_set_name): <p>The name of the configuration set.</p>
     ///   - [`sender_id(Option<String>)`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput::sender_id): <p>The current sender ID for the configuration set.</p>
     /// - On failure, responds with [`SdkError<DeleteDefaultSenderIdError>`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdError)
-    pub fn delete_default_sender_id(
-        &self,
-    ) -> crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdFluentBuilder
-    {
+    pub fn delete_default_sender_id(&self) -> crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdFluentBuilder {
         crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,7 +14,9 @@ impl super::Client {
     /// - On success, responds with [`CreateRecommendationTemplateOutput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput) with field(s):
     ///   - [`recommendation_template(Option<RecommendationTemplate>)`](crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput::recommendation_template): <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     /// - On failure, responds with [`SdkError<CreateRecommendationTemplateError>`](crate::operation::create_recommendation_template::CreateRecommendationTemplateError)
-    pub fn create_recommendation_template(&self) -> crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateFluentBuilder{
+    pub fn create_recommendation_template(
+        &self,
+    ) -> crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateFluentBuilder {
         crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,35 +27,27 @@ impl ::std::fmt::Display for MaxNumberOfConfigurationRecordersExceededException 
     }
 }
 impl ::std::error::Error for MaxNumberOfConfigurationRecordersExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaxNumberOfConfigurationRecordersExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaxNumberOfConfigurationRecordersExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaxNumberOfConfigurationRecordersExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxNumberOfConfigurationRecordersExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaxNumberOfConfigurationRecordersExceededException {
     /// Creates a new builder-style object to manufacture [`MaxNumberOfConfigurationRecordersExceededException`](crate::types::error::MaxNumberOfConfigurationRecordersExceededException).
-    pub fn builder(
-    ) -> crate::types::error::builders::MaxNumberOfConfigurationRecordersExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MaxNumberOfConfigurationRecordersExceededExceptionBuilder {
         crate::types::error::builders::MaxNumberOfConfigurationRecordersExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaxNumberOfConfigurationRecordersExceededException`](crate::types::error::MaxNumberOfConfigurationRecordersExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaxNumberOfConfigurationRecordersExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl MaxNumberOfConfigurationRecordersExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`status_reason(Option<String>)`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput::status_reason): <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
     ///   - [`last_modified(Option<String>)`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput::last_modified): <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     /// - On failure, responds with [`SdkError<PutProvisionedConcurrencyConfigError>`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError)
-    pub fn put_provisioned_concurrency_config(&self) -> crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigFluentBuilder{
+    pub fn put_provisioned_concurrency_config(
+        &self,
+    ) -> crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigFluentBuilder {
         crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl WithdrawByoipCidrInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.withdraw_byoip_cidr();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl WithdrawByoipCidrFluentBuilder {
         }
     }
     /// Access the WithdrawByoipCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl WithdrawByoipCidrFluentBuilder {
             crate::operation::withdraw_byoip_cidr::WithdrawByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl WithdrawByoipCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl WithdrawByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl WithdrawByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl WithdrawByoipCidrFluentBuilder {
             crate::operation::withdraw_byoip_cidr::WithdrawByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError>,
     > {
         self.customize_middleware().await
     }

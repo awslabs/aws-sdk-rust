@@ -16,10 +16,7 @@ pub fn ser_stream_journal_to_kinesis_input(
     if let Some(var_3) = &input.kinesis_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("KinesisConfiguration").start_object();
-        crate::protocol_serde::shape_kinesis_configuration::ser_kinesis_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_kinesis_configuration::ser_kinesis_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.role_arn {

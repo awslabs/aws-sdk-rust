@@ -49,9 +49,7 @@ impl ResourceGroup {
 
 /// A builder for [`ResourceGroup`](crate::types::ResourceGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceGroupBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ResourceGroupState>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl ResourceGroupBuilder {
     /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ResourceGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -108,18 +103,12 @@ impl ResourceGroupBuilder {
         &self.arn
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

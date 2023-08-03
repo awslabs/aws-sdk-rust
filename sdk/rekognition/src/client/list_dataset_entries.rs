@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`dataset_entries(Option<Vec<String>>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::dataset_entries): <p> A list of entries (images) in the dataset. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::operation::list_dataset_entries::ListDatasetEntriesError)
-    pub fn list_dataset_entries(
-        &self,
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder {
-        crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_entries(&self) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder {
+        crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(self.handle.clone())
     }
 }

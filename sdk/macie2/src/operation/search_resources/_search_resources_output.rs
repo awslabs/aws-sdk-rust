@@ -35,12 +35,9 @@ impl SearchResourcesOutput {
 
 /// A builder for [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesOutputBuilder {
-    pub(crate) matching_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>>,
+    pub(crate) matching_resources: ::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl SearchResourcesOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn set_matching_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>>,
-    ) -> Self {
+    pub fn set_matching_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>>) -> Self {
         self.matching_resources = input;
         self
     }
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn get_matching_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>> {
+    pub fn get_matching_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingResource>> {
         &self.matching_resources
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

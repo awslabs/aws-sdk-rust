@@ -37,9 +37,7 @@ impl UpdateLinkAttributesFluentBuilder {
         }
     }
     /// Access the UpdateLinkAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateLinkAttributesFluentBuilder {
             crate::operation::update_link_attributes::UpdateLinkAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_link_attributes::UpdateLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_link_attributes::UpdateLinkAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateLinkAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateLinkAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_link_attributes::UpdateLinkAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_link_attributes::UpdateLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_link_attributes::UpdateLinkAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateLinkAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_link_attributes::UpdateLinkAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_link_attributes::UpdateLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_link_attributes::UpdateLinkAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateLinkAttributesFluentBuilder {
             crate::operation::update_link_attributes::UpdateLinkAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_link_attributes::UpdateLinkAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_link_attributes::UpdateLinkAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,17 +129,12 @@ impl UpdateLinkAttributesFluentBuilder {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    ) -> Self {
+    pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn get_typed_link_specifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+    pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         self.inner.get_typed_link_specifier()
     }
     /// Appends an item to `AttributeUpdates`.
@@ -171,17 +147,12 @@ impl UpdateLinkAttributesFluentBuilder {
         self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>,
-    ) -> Self {
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
     /// <p>The attributes update structure.</p>
-    pub fn get_attribute_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }
 }

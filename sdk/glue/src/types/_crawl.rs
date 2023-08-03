@@ -58,9 +58,7 @@ impl Crawl {
 
 /// A builder for [`Crawl`](crate::types::Crawl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CrawlState>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +88,7 @@ impl CrawlBuilder {
         self
     }
     /// <p>The date and time on which the crawl started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -107,10 +102,7 @@ impl CrawlBuilder {
         self
     }
     /// <p>The date and time on which the crawl completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }
@@ -119,18 +111,12 @@ impl CrawlBuilder {
         &self.completed_on
     }
     /// <p>The error message associated with the crawl.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message associated with the crawl.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

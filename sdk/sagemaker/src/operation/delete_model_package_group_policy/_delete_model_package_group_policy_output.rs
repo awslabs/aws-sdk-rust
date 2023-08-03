@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelPackageGroupPolicyOutput {
 }
 impl DeleteModelPackageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageGroupPolicyOutput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput).
-    pub fn builder() -> crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyOutputBuilder {
         crate::operation::delete_model_package_group_policy::builders::DeleteModelPackageGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelPackageGroupPolicyOutput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelPackageGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteModelPackageGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteModelPackageGroupPolicyOutput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput {
         crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput {
             _request_id: self._request_id,
         }

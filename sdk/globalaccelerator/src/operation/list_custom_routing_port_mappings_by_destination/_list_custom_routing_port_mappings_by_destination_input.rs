@@ -36,16 +36,16 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
 }
 impl ListCustomRoutingPortMappingsByDestinationInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationInput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput).
-    pub fn builder() -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder{
-        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder {
+        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListCustomRoutingPortMappingsByDestinationInput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationInputBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_address: ::std::option::Option<::std::string::String>,
@@ -68,18 +68,12 @@ impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
         &self.endpoint_id
     }
     /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
-    pub fn destination_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
-    pub fn set_destination_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_address = input;
         self
     }
@@ -116,18 +110,19 @@ impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsByDestinationInput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput {
-                endpoint_id: self.endpoint_id
-                ,
-                destination_address: self.destination_address
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                endpoint_id: self.endpoint_id,
+                destination_address: self.destination_address,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

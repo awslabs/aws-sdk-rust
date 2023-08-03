@@ -16,17 +16,14 @@ impl DisableTopicRuleInput {
 }
 impl DisableTopicRuleInput {
     /// Creates a new builder-style object to manufacture [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
-    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder {
         crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,7 @@ impl DisableTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_topic_rule::DisableTopicRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_topic_rule::DisableTopicRuleInput {
-                rule_name: self.rule_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_topic_rule::DisableTopicRuleInput { rule_name: self.rule_name })
     }
 }

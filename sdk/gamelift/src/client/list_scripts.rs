@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`scripts(Option<Vec<Script>>)`](crate::operation::list_scripts::ListScriptsOutput::scripts): <p>A set of properties describing the requested script.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scripts::ListScriptsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<ListScriptsError>`](crate::operation::list_scripts::ListScriptsError)
-    pub fn list_scripts(
-        &self,
-    ) -> crate::operation::list_scripts::builders::ListScriptsFluentBuilder {
+    pub fn list_scripts(&self) -> crate::operation::list_scripts::builders::ListScriptsFluentBuilder {
         crate::operation::list_scripts::builders::ListScriptsFluentBuilder::new(self.handle.clone())
     }
 }

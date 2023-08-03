@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`primary_region(impl ::std::convert::Into<String>)`](crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder::primary_region) / [`set_primary_region(Option<String>)`](crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder::set_primary_region): <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key in this Region. </p>  <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
     /// - On success, responds with [`UpdatePrimaryRegionOutput`](crate::operation::update_primary_region::UpdatePrimaryRegionOutput)
     /// - On failure, responds with [`SdkError<UpdatePrimaryRegionError>`](crate::operation::update_primary_region::UpdatePrimaryRegionError)
-    pub fn update_primary_region(
-        &self,
-    ) -> crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder {
-        crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_primary_region(&self) -> crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder {
+        crate::operation::update_primary_region::builders::UpdatePrimaryRegionFluentBuilder::new(self.handle.clone())
     }
 }

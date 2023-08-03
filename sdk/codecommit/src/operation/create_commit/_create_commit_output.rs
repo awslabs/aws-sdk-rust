@@ -56,9 +56,7 @@ impl CreateCommitOutput {
 
 /// A builder for [`CreateCommitOutput`](crate::operation::create_commit::CreateCommitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCommitOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
@@ -108,17 +106,12 @@ impl CreateCommitOutputBuilder {
         self
     }
     /// <p>The files added as part of the committed file changes.</p>
-    pub fn set_files_added(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
-    ) -> Self {
+    pub fn set_files_added(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
         self.files_added = input;
         self
     }
     /// <p>The files added as part of the committed file changes.</p>
-    pub fn get_files_added(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_added(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
         &self.files_added
     }
     /// Appends an item to `files_updated`.
@@ -133,17 +126,12 @@ impl CreateCommitOutputBuilder {
         self
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    pub fn set_files_updated(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
-    ) -> Self {
+    pub fn set_files_updated(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
         self.files_updated = input;
         self
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    pub fn get_files_updated(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_updated(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
         &self.files_updated
     }
     /// Appends an item to `files_deleted`.
@@ -158,17 +146,12 @@ impl CreateCommitOutputBuilder {
         self
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub fn set_files_deleted(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
-    ) -> Self {
+    pub fn set_files_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>) -> Self {
         self.files_deleted = input;
         self
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub fn get_files_deleted(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
+    pub fn get_files_deleted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>> {
         &self.files_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

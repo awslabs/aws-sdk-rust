@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput) with field(s):
     ///   - [`recipe(Option<Recipe>)`](crate::operation::describe_recipe::DescribeRecipeOutput::recipe): <p>An object that describes the recipe.</p>
     /// - On failure, responds with [`SdkError<DescribeRecipeError>`](crate::operation::describe_recipe::DescribeRecipeError)
-    pub fn describe_recipe(
-        &self,
-    ) -> crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder {
-        crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_recipe(&self) -> crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder {
+        crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::new(self.handle.clone())
     }
 }

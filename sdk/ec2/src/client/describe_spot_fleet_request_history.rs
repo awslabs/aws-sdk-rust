@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`spot_fleet_request_id(Option<String>)`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput::spot_fleet_request_id): <p>The ID of the Spot Fleet request.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput::start_time): <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     /// - On failure, responds with [`SdkError<DescribeSpotFleetRequestHistoryError>`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError)
-    pub fn describe_spot_fleet_request_history(&self) -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryFluentBuilder{
+    pub fn describe_spot_fleet_request_history(
+        &self,
+    ) -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryFluentBuilder {
         crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryFluentBuilder::new(self.handle.clone())
     }
 }

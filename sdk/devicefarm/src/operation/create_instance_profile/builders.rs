@@ -37,10 +37,7 @@ impl CreateInstanceProfileFluentBuilder {
         }
     }
     /// Access the CreateInstanceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateInstanceProfileFluentBuilder {
             crate::operation::create_instance_profile::CreateInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_profile::CreateInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_profile::CreateInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_profile::CreateInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_profile::CreateInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_profile::CreateInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_profile::CreateInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_profile::CreateInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_profile::CreateInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateInstanceProfileFluentBuilder {
             crate::operation::create_instance_profile::CreateInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_profile::CreateInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_profile::CreateInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -171,27 +157,19 @@ impl CreateInstanceProfileFluentBuilder {
     ///
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclude_app_packages_from_cleanup(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
         self
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn set_exclude_app_packages_from_cleanup(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclude_app_packages_from_cleanup(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
         self
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
     /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn get_exclude_app_packages_from_cleanup(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude_app_packages_from_cleanup(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_exclude_app_packages_from_cleanup()
     }
     /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>

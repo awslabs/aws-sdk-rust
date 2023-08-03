@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`participants(Option<Vec<ParticipantSummary>>)`](crate::operation::list_participants::ListParticipantsOutput::participants): <p>List of the matching participants (summary information only).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_participants::ListParticipantsOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListParticipantsError>`](crate::operation::list_participants::ListParticipantsError)
-    pub fn list_participants(
-        &self,
-    ) -> crate::operation::list_participants::builders::ListParticipantsFluentBuilder {
-        crate::operation::list_participants::builders::ListParticipantsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_participants(&self) -> crate::operation::list_participants::builders::ListParticipantsFluentBuilder {
+        crate::operation::list_participants::builders::ListParticipantsFluentBuilder::new(self.handle.clone())
     }
 }

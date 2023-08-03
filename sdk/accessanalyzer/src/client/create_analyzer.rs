@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAnalyzerOutput`](crate::operation::create_analyzer::CreateAnalyzerOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_analyzer::CreateAnalyzerOutput::arn): <p>The ARN of the analyzer that was created by the request.</p>
     /// - On failure, responds with [`SdkError<CreateAnalyzerError>`](crate::operation::create_analyzer::CreateAnalyzerError)
-    pub fn create_analyzer(
-        &self,
-    ) -> crate::operation::create_analyzer::builders::CreateAnalyzerFluentBuilder {
-        crate::operation::create_analyzer::builders::CreateAnalyzerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_analyzer(&self) -> crate::operation::create_analyzer::builders::CreateAnalyzerFluentBuilder {
+        crate::operation::create_analyzer::builders::CreateAnalyzerFluentBuilder::new(self.handle.clone())
     }
 }

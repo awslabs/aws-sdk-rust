@@ -19,9 +19,7 @@ pub struct UpdateProvisionedProductPropertiesInput {
     /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     #[doc(hidden)]
-    pub provisioned_product_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    >,
+    pub provisioned_product_properties: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
     #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -46,9 +44,7 @@ impl UpdateProvisionedProductPropertiesInput {
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn provisioned_product_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>> {
         self.provisioned_product_properties.as_ref()
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
@@ -58,22 +54,18 @@ impl UpdateProvisionedProductPropertiesInput {
 }
 impl UpdateProvisionedProductPropertiesInput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisionedProductPropertiesInput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput).
-    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder {
         crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisionedProductPropertiesInput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_product_properties: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    >,
+    pub(crate) provisioned_product_properties: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProvisionedProductPropertiesInputBuilder {
@@ -82,10 +74,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -94,10 +83,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -110,18 +96,12 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
         &self.accept_language
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -138,11 +118,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
     /// <p>The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
     /// <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
-    pub fn provisioned_product_properties(
-        mut self,
-        k: crate::types::PropertyKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_properties(mut self, k: crate::types::PropertyKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.provisioned_product_properties.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.provisioned_product_properties = ::std::option::Option::Some(hash_map);
@@ -155,9 +131,7 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn set_provisioned_product_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>>,
     ) -> Self {
         self.provisioned_product_properties = input;
         self
@@ -169,24 +143,16 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn get_provisioned_product_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>> {
         &self.provisioned_product_properties
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -195,18 +161,19 @@ impl UpdateProvisionedProductPropertiesInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`UpdateProvisionedProductPropertiesInput`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesInput {
-                accept_language: self.accept_language
-                ,
-                provisioned_product_id: self.provisioned_product_id
-                ,
-                provisioned_product_properties: self.provisioned_product_properties
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
+                accept_language: self.accept_language,
+                provisioned_product_id: self.provisioned_product_id,
+                provisioned_product_properties: self.provisioned_product_properties,
+                idempotency_token: self.idempotency_token,
+            },
         )
     }
 }

@@ -91,16 +91,14 @@ impl ::aws_http::request_id::RequestId for DescribeProvisioningTemplateOutput {
 }
 impl DescribeProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningTemplateOutput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder {
         crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProvisioningTemplateOutput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -131,18 +129,12 @@ impl DescribeProvisioningTemplateOutputBuilder {
         &self.template_arn
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -170,10 +162,7 @@ impl DescribeProvisioningTemplateOutputBuilder {
         self
     }
     /// <p>The date when the provisioning template was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -187,10 +176,7 @@ impl DescribeProvisioningTemplateOutputBuilder {
         self
     }
     /// <p>The date when the provisioning template was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -213,18 +199,12 @@ impl DescribeProvisioningTemplateOutputBuilder {
         &self.default_version_id
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -247,18 +227,12 @@ impl DescribeProvisioningTemplateOutputBuilder {
         &self.enabled
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn set_provisioning_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_role_arn = input;
         self
     }
@@ -272,17 +246,12 @@ impl DescribeProvisioningTemplateOutputBuilder {
         self
     }
     /// <p>Gets information about a pre-provisioned hook.</p>
-    pub fn set_pre_provisioning_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningHook>,
-    ) -> Self {
+    pub fn set_pre_provisioning_hook(mut self, input: ::std::option::Option<crate::types::ProvisioningHook>) -> Self {
         self.pre_provisioning_hook = input;
         self
     }
     /// <p>Gets information about a pre-provisioned hook.</p>
-    pub fn get_pre_provisioning_hook(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningHook> {
+    pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
         &self.pre_provisioning_hook
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
@@ -309,9 +278,7 @@ impl DescribeProvisioningTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateOutput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput {
+    pub fn build(self) -> crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput {
         crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput {
             template_arn: self.template_arn,
             template_name: self.template_name,

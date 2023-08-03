@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SendTaskHeartbeatOutput {
 }
 impl SendTaskHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`SendTaskHeartbeatOutput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput).
-    pub fn builder(
-    ) -> crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatOutputBuilder {
+    pub fn builder() -> crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatOutputBuilder {
         crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendTaskHeartbeatOutput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTaskHeartbeatOutputBuilder {
     _request_id: Option<String>,
 }

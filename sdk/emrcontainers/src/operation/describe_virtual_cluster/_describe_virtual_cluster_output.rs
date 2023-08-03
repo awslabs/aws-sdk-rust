@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVirtualClusterOutput {
 }
 impl DescribeVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterOutput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterOutputBuilder {
         crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualClusterOutput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualClusterOutputBuilder {
     pub(crate) virtual_cluster: ::std::option::Option<crate::types::VirtualCluster>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeVirtualClusterOutputBuilder {
         self
     }
     /// <p>This output displays information about the specified virtual cluster.</p>
-    pub fn set_virtual_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualCluster>,
-    ) -> Self {
+    pub fn set_virtual_cluster(mut self, input: ::std::option::Option<crate::types::VirtualCluster>) -> Self {
         self.virtual_cluster = input;
         self
     }

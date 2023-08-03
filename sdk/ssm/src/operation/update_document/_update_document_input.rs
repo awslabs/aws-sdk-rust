@@ -75,9 +75,7 @@ impl UpdateDocumentInput {
 
 /// A builder for [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentInputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
@@ -115,17 +113,12 @@ impl UpdateDocumentInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
         &self.attachments
     }
     /// <p>The name of the SSM document that you want to update.</p>
@@ -173,20 +166,14 @@ impl UpdateDocumentInputBuilder {
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -202,10 +189,7 @@ impl UpdateDocumentInputBuilder {
         self
     }
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -230,10 +214,7 @@ impl UpdateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_document::UpdateDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_document::UpdateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_document::UpdateDocumentInput {
             content: self.content,
             attachments: self.attachments,

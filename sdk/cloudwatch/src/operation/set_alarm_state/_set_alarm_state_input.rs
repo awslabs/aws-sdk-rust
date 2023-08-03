@@ -45,9 +45,7 @@ impl SetAlarmStateInput {
 
 /// A builder for [`SetAlarmStateInput`](crate::operation::set_alarm_state::SetAlarmStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetAlarmStateInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_value: ::std::option::Option<crate::types::StateValue>,
@@ -75,10 +73,7 @@ impl SetAlarmStateInputBuilder {
         self
     }
     /// <p>The value of the state.</p>
-    pub fn set_state_value(
-        mut self,
-        input: ::std::option::Option<crate::types::StateValue>,
-    ) -> Self {
+    pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
         self.state_value = input;
         self
     }
@@ -102,19 +97,13 @@ impl SetAlarmStateInputBuilder {
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn state_reason_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_reason_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn set_state_reason_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_reason_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason_data = input;
         self
     }
@@ -126,10 +115,7 @@ impl SetAlarmStateInputBuilder {
     /// Consumes the builder and constructs a [`SetAlarmStateInput`](crate::operation::set_alarm_state::SetAlarmStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_alarm_state::SetAlarmStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_alarm_state::SetAlarmStateInput {
             alarm_name: self.alarm_name,
             state_value: self.state_value,

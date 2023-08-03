@@ -35,9 +35,7 @@ impl ListInstancesOutput {
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInstancesOutputBuilder {
         self
     }
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
         &self.instances
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>

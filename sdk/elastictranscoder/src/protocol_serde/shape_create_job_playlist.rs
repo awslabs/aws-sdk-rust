@@ -21,10 +21,7 @@ pub fn ser_create_job_playlist(
     if let Some(var_6) = &input.hls_content_protection {
         #[allow(unused_mut)]
         let mut object_7 = object.key("HlsContentProtection").start_object();
-        crate::protocol_serde::shape_hls_content_protection::ser_hls_content_protection(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_hls_content_protection::ser_hls_content_protection(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.play_ready_drm {

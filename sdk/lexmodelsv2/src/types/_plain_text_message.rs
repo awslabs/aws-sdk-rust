@@ -23,9 +23,7 @@ impl PlainTextMessage {
 
 /// A builder for [`PlainTextMessage`](crate::types::PlainTextMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlainTextMessageBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

@@ -22,9 +22,7 @@ impl DescribeRulesetInput {
 
 /// A builder for [`DescribeRulesetInput`](crate::operation::describe_ruleset::DescribeRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeRulesetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::operation::describe_ruleset::DescribeRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ruleset::DescribeRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_ruleset::DescribeRulesetInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ruleset::DescribeRulesetInput { name: self.name })
     }
 }

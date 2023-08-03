@@ -118,18 +118,12 @@ impl JoinDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
-    pub fn organizational_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
-    pub fn set_organizational_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit = input;
         self
     }
@@ -142,27 +136,19 @@ impl JoinDomainInputBuilder {
     /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).
     ///
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn domain_controllers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_controllers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_controllers.unwrap_or_default();
         v.push(input.into());
         self.domain_controllers = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn set_domain_controllers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_controllers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_controllers = input;
         self
     }
     /// <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
-    pub fn get_domain_controllers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_controllers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_controllers
     }
     /// <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
@@ -208,12 +194,7 @@ impl JoinDomainInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`JoinDomainInput`](crate::operation::join_domain::JoinDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::join_domain::JoinDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::join_domain::JoinDomainInput {
             gateway_arn: self.gateway_arn,
             domain_name: self.domain_name,

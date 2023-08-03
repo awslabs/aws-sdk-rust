@@ -5,16 +5,16 @@ pub use crate::operation::update_security_group_rule_descriptions_ingress::_upda
 
 impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_security_group_rule_descriptions_ingress();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder,
+    inner: crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder,
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
     /// Creates a new `UpdateSecurityGroupRuleDescriptionsIngress`.
@@ -37,15 +37,24 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
         }
     }
     /// Access the UpdateSecurityGroupRuleDescriptionsIngress as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -146,17 +171,12 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
         self
     }
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
-    pub fn get_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_ip_permissions()
     }
     /// Appends an item to `SecurityGroupRuleDescriptions`.
@@ -164,10 +184,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_rule_descriptions`](Self::set_security_group_rule_descriptions).
     ///
     /// <p>The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn security_group_rule_descriptions(
-        mut self,
-        input: crate::types::SecurityGroupRuleDescription,
-    ) -> Self {
+    pub fn security_group_rule_descriptions(mut self, input: crate::types::SecurityGroupRuleDescription) -> Self {
         self.inner = self.inner.security_group_rule_descriptions(input);
         self
     }
@@ -180,9 +197,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressFluentBuilder {
         self
     }
     /// <p>The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn get_security_group_rule_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleDescription>> {
+    pub fn get_security_group_rule_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleDescription>> {
         self.inner.get_security_group_rule_descriptions()
     }
 }

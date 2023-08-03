@@ -35,9 +35,7 @@ impl ListSchemasOutput {
 
 /// A builder for [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSchemasOutputBuilder {
         self
     }
     /// <p>A list of schemas.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>>) -> Self {
         self.schemas = input;
         self
     }
     /// <p>A list of schemas.</p>
-    pub fn get_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSchemaSummary>> {
         &self.schemas
     }
     /// <p>A token used to get the next set of schemas (if they exist).</p>

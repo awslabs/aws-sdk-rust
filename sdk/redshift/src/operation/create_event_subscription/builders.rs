@@ -28,8 +28,7 @@ impl CreateEventSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder,
+    inner: crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder,
 }
 impl CreateEventSubscriptionFluentBuilder {
     /// Creates a new `CreateEventSubscription`.
@@ -40,10 +39,7 @@ impl CreateEventSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateEventSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CreateEventSubscriptionFluentBuilder {
             crate::operation::create_event_subscription::CreateEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CreateEventSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CreateEventSubscriptionFluentBuilder {
             crate::operation::create_event_subscription::CreateEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
@@ -149,10 +131,7 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -168,18 +147,12 @@ impl CreateEventSubscriptionFluentBuilder {
         self.inner.get_subscription_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -218,10 +191,7 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>
     /// <p>Example: my-cluster-1, my-cluster-2</p>
     /// <p>Example: my-snapshot-20131010</p>
-    pub fn set_source_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_ids(input);
         self
     }
@@ -237,27 +207,19 @@ impl CreateEventSubscriptionFluentBuilder {
     ///
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>
@@ -301,10 +263,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

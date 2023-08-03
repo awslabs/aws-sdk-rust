@@ -22,18 +22,14 @@ impl AssociateConnectionAliasInput {
 }
 impl AssociateConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionAliasInput`](crate::operation::associate_connection_alias::AssociateConnectionAliasInput).
-    pub fn builder(
-    ) -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder {
         crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConnectionAliasInput`](crate::operation::associate_connection_alias::AssociateConnectionAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl AssociateConnectionAliasInputBuilder {
         crate::operation::associate_connection_alias::AssociateConnectionAliasInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_connection_alias::AssociateConnectionAliasInput {
-                alias_id: self.alias_id,
-                resource_id: self.resource_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_connection_alias::AssociateConnectionAliasInput {
+            alias_id: self.alias_id,
+            resource_id: self.resource_id,
+        })
     }
 }

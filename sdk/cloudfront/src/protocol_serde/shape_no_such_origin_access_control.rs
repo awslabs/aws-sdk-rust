@@ -3,10 +3,7 @@
 pub fn de_no_such_origin_access_control_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchOriginAccessControlBuilder,
-) -> Result<
-    crate::types::error::builders::NoSuchOriginAccessControlBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::NoSuchOriginAccessControlBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -19,8 +19,7 @@ pub fn ser_s3_initiate_restore_object_operation(
 
 pub fn de_s3_initiate_restore_object_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3InitiateRestoreObjectOperation, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::S3InitiateRestoreObjectOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3InitiateRestoreObjectOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {

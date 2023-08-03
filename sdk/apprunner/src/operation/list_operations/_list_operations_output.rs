@@ -5,8 +5,7 @@
 pub struct ListOperationsOutput {
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
-    pub operation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
+    pub operation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListOperationsOutput {
 }
 impl ListOperationsOutput {
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn operation_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OperationSummary]> {
+    pub fn operation_summary_list(&self) -> ::std::option::Option<&[crate::types::OperationSummary]> {
         self.operation_summary_list.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -38,12 +35,9 @@ impl ListOperationsOutput {
 
 /// A builder for [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOperationsOutputBuilder {
-    pub(crate) operation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
+    pub(crate) operation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListOperationsOutputBuilder {
         self
     }
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_operation_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
-    ) -> Self {
+    pub fn set_operation_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>) -> Self {
         self.operation_summary_list = input;
         self
     }
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn get_operation_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
+    pub fn get_operation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
         &self.operation_summary_list
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>

@@ -26,7 +26,7 @@ impl ListInputDeviceTransfersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInputDeviceTransfersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder,
+    inner: crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder,
 }
 impl ListInputDeviceTransfersFluentBuilder {
     /// Creates a new `ListInputDeviceTransfers`.
@@ -37,7 +37,7 @@ impl ListInputDeviceTransfersFluentBuilder {
         }
     }
     /// Access the ListInputDeviceTransfers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListInputDeviceTransfersFluentBuilder {
             crate::operation::list_input_device_transfers::ListInputDeviceTransfers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_device_transfers::ListInputDeviceTransfersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_device_transfers::ListInputDeviceTransfersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListInputDeviceTransfersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListInputDeviceTransfersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_device_transfers::ListInputDeviceTransfersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_device_transfers::ListInputDeviceTransfersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListInputDeviceTransfersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_device_transfers::ListInputDeviceTransfersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_device_transfers::ListInputDeviceTransfersError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListInputDeviceTransfersFluentBuilder {
             crate::operation::list_input_device_transfers::ListInputDeviceTransfers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_device_transfers::ListInputDeviceTransfersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_device_transfers::ListInputDeviceTransfersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_input_device_transfers::paginator::ListInputDeviceTransfersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_input_device_transfers::paginator::ListInputDeviceTransfersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_input_device_transfers::paginator::ListInputDeviceTransfersPaginator {
         crate::operation::list_input_device_transfers::paginator::ListInputDeviceTransfersPaginator::new(self.handle, self.inner)
     }
     /// Placeholder documentation for MaxResults
@@ -158,18 +144,12 @@ impl ListInputDeviceTransfersFluentBuilder {
         self.inner.get_next_token()
     }
     /// Placeholder documentation for __string
-    pub fn transfer_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transfer_type(input.into());
         self
     }
     /// Placeholder documentation for __string
-    pub fn set_transfer_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transfer_type(input);
         self
     }

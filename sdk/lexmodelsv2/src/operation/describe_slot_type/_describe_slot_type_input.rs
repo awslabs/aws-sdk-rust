@@ -36,17 +36,14 @@ impl DescribeSlotTypeInput {
 }
 impl DescribeSlotTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
-    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder {
         crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSlotTypeInputBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl DescribeSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_slot_type::DescribeSlotTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_slot_type::DescribeSlotTypeInput {
-                slot_type_id: self.slot_type_id,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_slot_type::DescribeSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_slot_type::DescribeSlotTypeInput {
+            slot_type_id: self.slot_type_id,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+        })
     }
 }

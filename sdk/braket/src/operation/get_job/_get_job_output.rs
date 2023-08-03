@@ -20,9 +20,7 @@ pub struct GetJobOutput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     #[doc(hidden)]
-    pub hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
@@ -61,9 +59,7 @@ pub struct GetJobOutput {
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
@@ -88,11 +84,7 @@ impl GetJobOutput {
         self.job_name.as_deref()
     }
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    pub fn hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.hyper_parameters.as_ref()
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
@@ -112,9 +104,7 @@ impl GetJobOutput {
         self.checkpoint_config.as_ref()
     }
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
-    pub fn algorithm_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlgorithmSpecification> {
+    pub fn algorithm_specification(&self) -> ::std::option::Option<&crate::types::AlgorithmSpecification> {
         self.algorithm_specification.as_ref()
     }
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
@@ -146,11 +136,7 @@ impl GetJobOutput {
         self.events.as_deref()
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -168,20 +154,15 @@ impl GetJobOutput {
 
 /// A builder for [`GetJobOutput`](crate::operation::get_job::GetJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobPrimaryStatus>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
-    pub(crate) hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) input_data_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
+    pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::JobOutputDataConfig>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
     pub(crate) checkpoint_config: ::std::option::Option<crate::types::JobCheckpointConfig>,
@@ -193,9 +174,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) billable_duration: ::std::option::Option<i32>,
     pub(crate) device_config: ::std::option::Option<crate::types::DeviceConfig>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
@@ -205,10 +184,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The status of the Amazon Braket job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobPrimaryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobPrimaryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -245,18 +221,12 @@ impl GetJobOutputBuilder {
         &self.role_arn
     }
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -296,19 +266,13 @@ impl GetJobOutputBuilder {
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn set_hyper_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.hyper_parameters = input;
         self
     }
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    pub fn get_hyper_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
     /// Appends an item to `input_data_config`.
@@ -323,17 +287,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>> {
         &self.input_data_config
     }
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
@@ -342,17 +301,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::JobOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::JobOutputDataConfig> {
         &self.output_data_config
     }
     /// <p>The user-defined criteria that specifies when to stop a job running.</p>
@@ -361,17 +315,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The user-defined criteria that specifies when to stop a job running.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::JobStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::JobStoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>The user-defined criteria that specifies when to stop a job running.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::JobStoppingCondition> {
         &self.stopping_condition
     }
     /// <p>Information about the output locations for job checkpoint data.</p>
@@ -380,17 +329,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>Information about the output locations for job checkpoint data.</p>
-    pub fn set_checkpoint_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobCheckpointConfig>,
-    ) -> Self {
+    pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::JobCheckpointConfig>) -> Self {
         self.checkpoint_config = input;
         self
     }
     /// <p>Information about the output locations for job checkpoint data.</p>
-    pub fn get_checkpoint_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobCheckpointConfig> {
+    pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::JobCheckpointConfig> {
         &self.checkpoint_config
     }
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
@@ -399,17 +343,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
-    pub fn set_algorithm_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmSpecification>,
-    ) -> Self {
+    pub fn set_algorithm_specification(mut self, input: ::std::option::Option<crate::types::AlgorithmSpecification>) -> Self {
         self.algorithm_specification = input;
         self
     }
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
-    pub fn get_algorithm_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmSpecification> {
+    pub fn get_algorithm_specification(&self) -> &::std::option::Option<crate::types::AlgorithmSpecification> {
         &self.algorithm_specification
     }
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
@@ -418,10 +357,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
-    pub fn set_instance_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfig>,
-    ) -> Self {
+    pub fn set_instance_config(mut self, input: ::std::option::Option<crate::types::InstanceConfig>) -> Self {
         self.instance_config = input;
         self
     }
@@ -435,10 +371,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -452,10 +385,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -469,10 +399,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The date and time that the Amazon Braket job ended.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -500,10 +427,7 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
-    pub fn set_device_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceConfig>,
-    ) -> Self {
+    pub fn set_device_config(mut self, input: ::std::option::Option<crate::types::DeviceConfig>) -> Self {
         self.device_config = input;
         self
     }
@@ -523,17 +447,12 @@ impl GetJobOutputBuilder {
         self
     }
     /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>) -> Self {
         self.events = input;
         self
     }
     /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>> {
         &self.events
     }
     /// Adds a key-value pair to `tags`.
@@ -541,32 +460,19 @@ impl GetJobOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`summary(Option<SystemTemplateSummary>)`](crate::operation::create_system_template::CreateSystemTemplateOutput::summary): <p>The summary object that describes the created system.</p>
     /// - On failure, responds with [`SdkError<CreateSystemTemplateError>`](crate::operation::create_system_template::CreateSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn create_system_template(
-        &self,
-    ) -> crate::operation::create_system_template::builders::CreateSystemTemplateFluentBuilder {
-        crate::operation::create_system_template::builders::CreateSystemTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_system_template(&self) -> crate::operation::create_system_template::builders::CreateSystemTemplateFluentBuilder {
+        crate::operation::create_system_template::builders::CreateSystemTemplateFluentBuilder::new(self.handle.clone())
     }
 }

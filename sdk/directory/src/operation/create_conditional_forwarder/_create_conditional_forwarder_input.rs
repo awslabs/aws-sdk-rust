@@ -30,16 +30,14 @@ impl CreateConditionalForwarderInput {
 }
 impl CreateConditionalForwarderInput {
     /// Creates a new builder-style object to manufacture [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
-    pub fn builder() -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderInputBuilder{
+    pub fn builder() -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderInputBuilder {
         crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConditionalForwarderInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl CreateConditionalForwarderInputBuilder {
         &self.directory_id
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_domain_name = input;
         self
     }
@@ -92,17 +84,12 @@ impl CreateConditionalForwarderInputBuilder {
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// Consumes the builder and constructs a [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
@@ -112,12 +99,10 @@ impl CreateConditionalForwarderInputBuilder {
         crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput {
-                directory_id: self.directory_id,
-                remote_domain_name: self.remote_domain_name,
-                dns_ip_addrs: self.dns_ip_addrs,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput {
+            directory_id: self.directory_id,
+            remote_domain_name: self.remote_domain_name,
+            dns_ip_addrs: self.dns_ip_addrs,
+        })
     }
 }

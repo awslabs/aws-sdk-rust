@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStorageLensConfigurationTaggingOut
 }
 impl GetStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder{
+    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder {
         crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetStorageLensConfigurationTaggingOutputBuilder {
         self
     }
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of S3 Storage Lens configuration requested.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +64,9 @@ impl GetStorageLensConfigurationTaggingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingOutput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput).
-    pub fn build(self) -> crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput{
+    pub fn build(self) -> crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput {
         crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput {
-            tags: self.tags
-            ,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

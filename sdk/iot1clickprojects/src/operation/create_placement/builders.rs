@@ -10,10 +10,7 @@ impl CreatePlacementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_placement::CreatePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement::CreatePlacementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement::CreatePlacementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_placement();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePlacementFluentBuilder {
         }
     }
     /// Access the CreatePlacement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_placement::builders::CreatePlacementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_placement::builders::CreatePlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreatePlacementFluentBuilder {
             crate::operation::create_placement::CreatePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement::CreatePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement::CreatePlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreatePlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreatePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_placement::CreatePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement::CreatePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement::CreatePlacementError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreatePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_placement::CreatePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement::CreatePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement::CreatePlacementError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreatePlacementFluentBuilder {
             crate::operation::create_placement::CreatePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement::CreatePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement::CreatePlacementError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the placement to be created.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_name(input.into());
         self
     }
     /// <p>The name of the placement to be created.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
     }
@@ -161,30 +139,17 @@ impl CreatePlacementFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

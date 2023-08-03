@@ -40,9 +40,7 @@ pub struct IosClientBrandingAttributes {
     pub forgot_password_link: ::std::option::Option<::std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     #[doc(hidden)]
-    pub login_message: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub login_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IosClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
@@ -84,11 +82,7 @@ impl IosClientBrandingAttributes {
         self.forgot_password_link.as_deref()
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn login_message(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn login_message(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.login_message.as_ref()
     }
 }
@@ -101,9 +95,7 @@ impl IosClientBrandingAttributes {
 
 /// A builder for [`IosClientBrandingAttributes`](crate::types::IosClientBrandingAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IosClientBrandingAttributesBuilder {
     pub(crate) logo_url: ::std::option::Option<::std::string::String>,
     pub(crate) logo2x_url: ::std::option::Option<::std::string::String>,
@@ -111,9 +103,7 @@ pub struct IosClientBrandingAttributesBuilder {
     pub(crate) support_email: ::std::option::Option<::std::string::String>,
     pub(crate) support_link: ::std::option::Option<::std::string::String>,
     pub(crate) forgot_password_link: ::std::option::Option<::std::string::String>,
-    pub(crate) login_message: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) login_message: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IosClientBrandingAttributesBuilder {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
@@ -176,10 +166,7 @@ impl IosClientBrandingAttributesBuilder {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn support_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_email = ::std::option::Option::Some(input.into());
         self
     }
@@ -189,10 +176,7 @@ impl IosClientBrandingAttributesBuilder {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_support_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_email = input;
         self
     }
@@ -235,18 +219,12 @@ impl IosClientBrandingAttributesBuilder {
         &self.support_link
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    pub fn forgot_password_link(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forgot_password_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forgot_password_link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    pub fn set_forgot_password_link(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forgot_password_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forgot_password_link = input;
         self
     }
@@ -259,11 +237,7 @@ impl IosClientBrandingAttributesBuilder {
     /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
     ///
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn login_message(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn login_message(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.login_message.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.login_message = ::std::option::Option::Some(hash_map);
@@ -272,19 +246,13 @@ impl IosClientBrandingAttributesBuilder {
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn set_login_message(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.login_message = input;
         self
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
-    pub fn get_login_message(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_login_message(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.login_message
     }
     /// Consumes the builder and constructs a [`IosClientBrandingAttributes`](crate::types::IosClientBrandingAttributes).

@@ -40,13 +40,7 @@
 /// <p>The property to use in a condition that determines whether an S3 bucket is included or excluded from a classification job. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SimpleCriterionKeyForJob {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,14 +58,10 @@ impl ::std::convert::From<&str> for SimpleCriterionKeyForJob {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => SimpleCriterionKeyForJob::AccountId,
-            "S3_BUCKET_EFFECTIVE_PERMISSION" => {
-                SimpleCriterionKeyForJob::S3BucketEffectivePermission
-            }
+            "S3_BUCKET_EFFECTIVE_PERMISSION" => SimpleCriterionKeyForJob::S3BucketEffectivePermission,
             "S3_BUCKET_NAME" => SimpleCriterionKeyForJob::S3BucketName,
             "S3_BUCKET_SHARED_ACCESS" => SimpleCriterionKeyForJob::S3BucketSharedAccess,
-            other => SimpleCriterionKeyForJob::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimpleCriterionKeyForJob::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -87,9 +77,7 @@ impl SimpleCriterionKeyForJob {
     pub fn as_str(&self) -> &str {
         match self {
             SimpleCriterionKeyForJob::AccountId => "ACCOUNT_ID",
-            SimpleCriterionKeyForJob::S3BucketEffectivePermission => {
-                "S3_BUCKET_EFFECTIVE_PERMISSION"
-            }
+            SimpleCriterionKeyForJob::S3BucketEffectivePermission => "S3_BUCKET_EFFECTIVE_PERMISSION",
             SimpleCriterionKeyForJob::S3BucketName => "S3_BUCKET_NAME",
             SimpleCriterionKeyForJob::S3BucketSharedAccess => "S3_BUCKET_SHARED_ACCESS",
             SimpleCriterionKeyForJob::Unknown(value) => value.as_str(),

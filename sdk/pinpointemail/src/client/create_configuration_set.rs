@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder
-    {
+    pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

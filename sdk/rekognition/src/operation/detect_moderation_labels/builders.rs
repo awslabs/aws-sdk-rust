@@ -40,10 +40,7 @@ impl DetectModerationLabelsFluentBuilder {
         }
     }
     /// Access the DetectModerationLabels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DetectModerationLabelsFluentBuilder {
             crate::operation::detect_moderation_labels::DetectModerationLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_moderation_labels::DetectModerationLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_moderation_labels::DetectModerationLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DetectModerationLabelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DetectModerationLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_moderation_labels::DetectModerationLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_moderation_labels::DetectModerationLabelsError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DetectModerationLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_moderation_labels::DetectModerationLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_moderation_labels::DetectModerationLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DetectModerationLabelsFluentBuilder {
             crate::operation::detect_moderation_labels::DetectModerationLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_moderation_labels::DetectModerationLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_moderation_labels::DetectModerationLabelsError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +152,7 @@ impl DetectModerationLabelsFluentBuilder {
         self
     }
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
-    pub fn set_human_loop_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopConfig>,
-    ) -> Self {
+    pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
     }

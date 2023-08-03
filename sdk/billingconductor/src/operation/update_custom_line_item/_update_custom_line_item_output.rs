@@ -44,9 +44,7 @@ impl UpdateCustomLineItemOutput {
         self.description.as_deref()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn charge_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> ::std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p> The most recent time when the custom line item was modified. </p>
@@ -79,9 +77,7 @@ impl ::aws_http::request_id::RequestId for UpdateCustomLineItemOutput {
 }
 impl UpdateCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemOutput`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput).
-    pub fn builder(
-    ) -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder {
         crate::operation::update_custom_line_item::builders::UpdateCustomLineItemOutputBuilder::default()
     }
 }
@@ -115,18 +111,12 @@ impl UpdateCustomLineItemOutputBuilder {
         &self.arn
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -168,17 +158,12 @@ impl UpdateCustomLineItemOutputBuilder {
         self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn set_charge_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
-    ) -> Self {
+    pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>) -> Self {
         self.charge_details = input;
         self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn get_charge_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
+    pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
         &self.charge_details
     }
     /// <p> The most recent time when the custom line item was modified. </p>

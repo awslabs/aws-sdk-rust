@@ -17,36 +17,27 @@ impl DeleteCertificateInput {
 }
 impl DeleteCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
         crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCertificateInputBuilder {
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCertificateInputBuilder {
     /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -58,14 +49,9 @@ impl DeleteCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_certificate::DeleteCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_certificate::DeleteCertificateInput {
-                certificate_name: self.certificate_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_certificate::DeleteCertificateInput {
+            certificate_name: self.certificate_name,
+        })
     }
 }

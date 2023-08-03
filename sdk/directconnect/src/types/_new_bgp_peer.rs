@@ -51,9 +51,7 @@ impl NewBgpPeer {
 
 /// A builder for [`NewBgpPeer`](crate::types::NewBgpPeer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewBgpPeerBuilder {
     pub(crate) asn: ::std::option::Option<i32>,
     pub(crate) auth_key: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl NewBgpPeerBuilder {
         self
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.address_family = input;
         self
     }
@@ -108,18 +103,12 @@ impl NewBgpPeerBuilder {
         &self.address_family
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amazon_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amazon_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn set_amazon_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amazon_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amazon_address = input;
         self
     }
@@ -128,18 +117,12 @@ impl NewBgpPeerBuilder {
         &self.amazon_address
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_address = input;
         self
     }

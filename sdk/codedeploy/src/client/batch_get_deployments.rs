@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchGetDeploymentsOutput`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput) with field(s):
     ///   - [`deployments_info(Option<Vec<DeploymentInfo>>)`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput::deployments_info): <p> Information about the deployments. </p>
     /// - On failure, responds with [`SdkError<BatchGetDeploymentsError>`](crate::operation::batch_get_deployments::BatchGetDeploymentsError)
-    pub fn batch_get_deployments(
-        &self,
-    ) -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsFluentBuilder {
-        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_deployments(&self) -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsFluentBuilder {
+        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

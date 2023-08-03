@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`blueprints(Option<Vec<Blueprint>>)`](crate::operation::get_blueprints::GetBlueprintsOutput::blueprints): <p>An array of key-value pairs that contains information about the available blueprints.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_blueprints::GetBlueprintsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetBlueprintsError>`](crate::operation::get_blueprints::GetBlueprintsError)
-    pub fn get_blueprints(
-        &self,
-    ) -> crate::operation::get_blueprints::builders::GetBlueprintsFluentBuilder {
-        crate::operation::get_blueprints::builders::GetBlueprintsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_blueprints(&self) -> crate::operation::get_blueprints::builders::GetBlueprintsFluentBuilder {
+        crate::operation::get_blueprints::builders::GetBlueprintsFluentBuilder::new(self.handle.clone())
     }
 }

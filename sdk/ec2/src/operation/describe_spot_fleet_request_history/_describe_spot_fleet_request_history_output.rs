@@ -52,16 +52,14 @@ impl ::aws_http::request_id::RequestId for DescribeSpotFleetRequestHistoryOutput
 }
 impl DescribeSpotFleetRequestHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotFleetRequestHistoryOutput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput).
-    pub fn builder() -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryOutputBuilder {
         crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotFleetRequestHistoryOutput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestHistoryOutputBuilder {
     pub(crate) history_records: ::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>>,
     pub(crate) last_evaluated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -83,17 +81,12 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         self
     }
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
-    pub fn set_history_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>>,
-    ) -> Self {
+    pub fn set_history_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>>) -> Self {
         self.history_records = input;
         self
     }
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
-    pub fn get_history_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>> {
+    pub fn get_history_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>> {
         &self.history_records
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
@@ -104,10 +97,7 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
     }
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
-    pub fn set_last_evaluated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_evaluated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_evaluated_time = input;
         self
     }
@@ -131,18 +121,12 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_fleet_request_id = input;
         self
     }
@@ -156,10 +140,7 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         self
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -177,21 +158,13 @@ impl DescribeSpotFleetRequestHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotFleetRequestHistoryOutput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput
-    {
+    pub fn build(self) -> crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput {
         crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput {
-            history_records: self.history_records
-            ,
-            last_evaluated_time: self.last_evaluated_time
-            ,
-            next_token: self.next_token
-            ,
-            spot_fleet_request_id: self.spot_fleet_request_id
-            ,
-            start_time: self.start_time
-            ,
+            history_records: self.history_records,
+            last_evaluated_time: self.last_evaluated_time,
+            next_token: self.next_token,
+            spot_fleet_request_id: self.spot_fleet_request_id,
+            start_time: self.start_time,
             _request_id: self._request_id,
         }
     }

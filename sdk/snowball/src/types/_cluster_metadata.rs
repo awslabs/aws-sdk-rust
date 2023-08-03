@@ -56,8 +56,7 @@ pub struct ClusterMetadata {
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
@@ -125,9 +124,7 @@ impl ClusterMetadata {
         self.tax_documents.as_ref()
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
 }
@@ -140,9 +137,7 @@ impl ClusterMetadata {
 
 /// A builder for [`ClusterMetadata`](crate::types::ClusterMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterMetadataBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -158,8 +153,7 @@ pub struct ClusterMetadataBuilder {
     pub(crate) notification: ::std::option::Option<crate::types::Notification>,
     pub(crate) forwarding_address_id: ::std::option::Option<::std::string::String>,
     pub(crate) tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
-    pub(crate) on_device_service_configuration:
-        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub(crate) on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadataBuilder {
     /// <p>The automatically generated ID for a cluster.</p>
@@ -224,10 +218,7 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The current status of the cluster.</p>
-    pub fn set_cluster_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterState>,
-    ) -> Self {
+    pub fn set_cluster_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
         self.cluster_state = input;
         self
     }
@@ -259,10 +250,7 @@ impl ClusterMetadataBuilder {
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    pub fn set_snowball_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowballType>,
-    ) -> Self {
+    pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
         self.snowball_type = input;
         self
     }
@@ -278,10 +266,7 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -295,10 +280,7 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::JobResource>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.resources = input;
         self
     }
@@ -338,10 +320,7 @@ impl ClusterMetadataBuilder {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
         self
     }
@@ -361,10 +340,7 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -373,18 +349,12 @@ impl ClusterMetadataBuilder {
         &self.notification
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forwarding_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forwarding_address_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forwarding_address_id = input;
         self
     }
@@ -398,10 +368,7 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn set_tax_documents(
-        mut self,
-        input: ::std::option::Option<crate::types::TaxDocuments>,
-    ) -> Self {
+    pub fn set_tax_documents(mut self, input: ::std::option::Option<crate::types::TaxDocuments>) -> Self {
         self.tax_documents = input;
         self
     }
@@ -410,25 +377,17 @@ impl ClusterMetadataBuilder {
         &self.tax_documents
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(
-        mut self,
-        input: crate::types::OnDeviceServiceConfiguration,
-    ) -> Self {
+    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
         self.on_device_service_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn set_on_device_service_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
-    ) -> Self {
+    pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
         self.on_device_service_configuration = input;
         self
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn get_on_device_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+    pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
         &self.on_device_service_configuration
     }
     /// Consumes the builder and constructs a [`ClusterMetadata`](crate::types::ClusterMetadata).

@@ -23,9 +23,7 @@ impl StopMultiplexInput {
 
 /// A builder for [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl StopMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_multiplex::StopMultiplexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_multiplex::StopMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_multiplex::StopMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

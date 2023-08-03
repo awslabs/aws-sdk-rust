@@ -29,16 +29,14 @@ impl DeleteRouteRequestParameterInput {
 }
 impl DeleteRouteRequestParameterInput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteRequestParameterInput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput).
-    pub fn builder() -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder{
+    pub fn builder() -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder {
         crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteRequestParameterInput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteRequestParameterInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_parameter_key: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeleteRouteRequestParameterInputBuilder {
         &self.api_id
     }
     /// <p>The route request parameter key.</p>
-    pub fn request_parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route request parameter key.</p>
-    pub fn set_request_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_parameter_key = input;
         self
     }
@@ -100,12 +92,10 @@ impl DeleteRouteRequestParameterInputBuilder {
         crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput {
-                api_id: self.api_id,
-                request_parameter_key: self.request_parameter_key,
-                route_id: self.route_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput {
+            api_id: self.api_id,
+            request_parameter_key: self.request_parameter_key,
+            route_id: self.route_id,
+        })
     }
 }

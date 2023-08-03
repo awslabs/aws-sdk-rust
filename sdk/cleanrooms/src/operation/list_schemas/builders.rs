@@ -10,10 +10,7 @@ impl ListSchemasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_schemas::ListSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schemas::ListSchemasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_schemas();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListSchemasFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_schemas::ListSchemas,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListSchemasFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_schemas::ListSchemas,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError>,
     > {
         self.customize_middleware().await
@@ -116,24 +104,15 @@ impl ListSchemasFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
-        crate::operation::list_schemas::paginator::ListSchemasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collaboration_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
@@ -147,10 +126,7 @@ impl ListSchemasFluentBuilder {
         self
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-    pub fn set_schema_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaType>,
-    ) -> Self {
+    pub fn set_schema_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.inner = self.inner.set_schema_type(input);
         self
     }

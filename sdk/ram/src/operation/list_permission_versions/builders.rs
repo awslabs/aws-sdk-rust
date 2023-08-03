@@ -37,10 +37,7 @@ impl ListPermissionVersionsFluentBuilder {
         }
     }
     /// Access the ListPermissionVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_permission_versions::builders::ListPermissionVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_permission_versions::builders::ListPermissionVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPermissionVersionsFluentBuilder {
             crate::operation::list_permission_versions::ListPermissionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_versions::ListPermissionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_versions::ListPermissionVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPermissionVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPermissionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permission_versions::ListPermissionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_versions::ListPermissionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_versions::ListPermissionVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPermissionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permission_versions::ListPermissionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_versions::ListPermissionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_versions::ListPermissionVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListPermissionVersionsFluentBuilder {
             crate::operation::list_permission_versions::ListPermissionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permission_versions::ListPermissionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permission_versions::ListPermissionVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator
-    {
-        crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator {
+        crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }

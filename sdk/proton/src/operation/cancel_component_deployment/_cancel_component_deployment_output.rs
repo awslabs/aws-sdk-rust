@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelComponentDeploymentOutput {
 }
 impl CancelComponentDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentOutputBuilder {
         crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentOutputBuilder {
     pub(crate) component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CancelComponentDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput {
+    pub fn build(self) -> crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput {
         crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput {
             component: self.component,
             _request_id: self._request_id,

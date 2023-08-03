@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateResolverRuleOutput`](crate::operation::associate_resolver_rule::AssociateResolverRuleOutput) with field(s):
     ///   - [`resolver_rule_association(Option<ResolverRuleAssociation>)`](crate::operation::associate_resolver_rule::AssociateResolverRuleOutput::resolver_rule_association): <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<AssociateResolverRuleError>`](crate::operation::associate_resolver_rule::AssociateResolverRuleError)
-    pub fn associate_resolver_rule(
-        &self,
-    ) -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleFluentBuilder
-    {
-        crate::operation::associate_resolver_rule::builders::AssociateResolverRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_resolver_rule(&self) -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleFluentBuilder {
+        crate::operation::associate_resolver_rule::builders::AssociateResolverRuleFluentBuilder::new(self.handle.clone())
     }
 }

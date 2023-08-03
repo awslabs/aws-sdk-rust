@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBucketReplicationOutput {
 }
 impl DeleteBucketReplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketReplicationOutput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationOutputBuilder {
         crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketReplicationOutput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketReplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteBucketReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBucketReplicationOutput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput {
+    pub fn build(self) -> crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput {
         crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput {
             _request_id: self._request_id,
         }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPortfolioAccessOutput {
 }
 impl ListPortfolioAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListPortfolioAccessOutput`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessOutputBuilder {
-        crate::operation::list_portfolio_access::builders::ListPortfolioAccessOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_portfolio_access::builders::ListPortfolioAccessOutputBuilder {
+        crate::operation::list_portfolio_access::builders::ListPortfolioAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPortfolioAccessOutput`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPortfolioAccessOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -58,32 +54,21 @@ impl ListPortfolioAccessOutputBuilder {
         self
     }
     /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

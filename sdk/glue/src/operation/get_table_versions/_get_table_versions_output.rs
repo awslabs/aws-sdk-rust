@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetTableVersionsOutput {
 }
 impl GetTableVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionsOutput`](crate::operation::get_table_versions::GetTableVersionsOutput).
-    pub fn builder() -> crate::operation::get_table_versions::builders::GetTableVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_versions::builders::GetTableVersionsOutputBuilder {
         crate::operation::get_table_versions::builders::GetTableVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableVersionsOutput`](crate::operation::get_table_versions::GetTableVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableVersionsOutputBuilder {
     pub(crate) table_versions: ::std::option::Option<::std::vec::Vec<crate::types::TableVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetTableVersionsOutputBuilder {
         self
     }
     /// <p>A list of strings identifying available versions of the specified table.</p>
-    pub fn set_table_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableVersion>>,
-    ) -> Self {
+    pub fn set_table_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableVersion>>) -> Self {
         self.table_versions = input;
         self
     }
     /// <p>A list of strings identifying available versions of the specified table.</p>
-    pub fn get_table_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersion>> {
+    pub fn get_table_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersion>> {
         &self.table_versions
     }
     /// <p>A continuation token, if the list of available versions does not include the last one.</p>

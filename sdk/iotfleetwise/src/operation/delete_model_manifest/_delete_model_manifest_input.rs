@@ -15,18 +15,14 @@ impl DeleteModelManifestInput {
 }
 impl DeleteModelManifestInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_manifest::builders::DeleteModelManifestInputBuilder {
-        crate::operation::delete_model_manifest::builders::DeleteModelManifestInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_model_manifest::builders::DeleteModelManifestInputBuilder {
+        crate::operation::delete_model_manifest::builders::DeleteModelManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DeleteModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_manifest::DeleteModelManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_model_manifest::DeleteModelManifestInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestInput { name: self.name })
     }
 }

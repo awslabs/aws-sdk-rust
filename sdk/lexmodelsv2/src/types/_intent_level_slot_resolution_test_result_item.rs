@@ -12,8 +12,7 @@ pub struct IntentLevelSlotResolutionTestResultItem {
     pub multi_turn_conversation: bool,
     /// <p>The results for the slot resolution in the test execution result.</p>
     #[doc(hidden)]
-    pub slot_resolution_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
+    pub slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResultItem {
     /// <p>The name of the intent that was recognized.</p>
@@ -25,9 +24,7 @@ impl IntentLevelSlotResolutionTestResultItem {
         self.multi_turn_conversation
     }
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub fn slot_resolution_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SlotResolutionTestResultItem]> {
+    pub fn slot_resolution_results(&self) -> ::std::option::Option<&[crate::types::SlotResolutionTestResultItem]> {
         self.slot_resolution_results.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl IntentLevelSlotResolutionTestResultItem {
 
 /// A builder for [`IntentLevelSlotResolutionTestResultItem`](crate::types::IntentLevelSlotResolutionTestResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,
-    pub(crate) slot_resolution_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
+    pub(crate) slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResultItemBuilder {
     /// <p>The name of the intent that was recognized.</p>
@@ -83,27 +77,19 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
     /// To override the contents of this collection use [`set_slot_resolution_results`](Self::set_slot_resolution_results).
     ///
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub fn slot_resolution_results(
-        mut self,
-        input: crate::types::SlotResolutionTestResultItem,
-    ) -> Self {
+    pub fn slot_resolution_results(mut self, input: crate::types::SlotResolutionTestResultItem) -> Self {
         let mut v = self.slot_resolution_results.unwrap_or_default();
         v.push(input);
         self.slot_resolution_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub fn set_slot_resolution_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
-    ) -> Self {
+    pub fn set_slot_resolution_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>) -> Self {
         self.slot_resolution_results = input;
         self
     }
     /// <p>The results for the slot resolution in the test execution result.</p>
-    pub fn get_slot_resolution_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>> {
+    pub fn get_slot_resolution_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>> {
         &self.slot_resolution_results
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResultItem`](crate::types::IntentLevelSlotResolutionTestResultItem).

@@ -26,7 +26,7 @@ impl DeleteRecommenderConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRecommenderConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder,
+    inner: crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder,
 }
 impl DeleteRecommenderConfigurationFluentBuilder {
     /// Creates a new `DeleteRecommenderConfiguration`.
@@ -37,7 +37,7 @@ impl DeleteRecommenderConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteRecommenderConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRecommenderConfigurationFluentBuilder {
             crate::operation::delete_recommender_configuration::DeleteRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRecommenderConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteRecommenderConfigurationFluentBuilder {
             crate::operation::delete_recommender_configuration::DeleteRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommender_id(input.into());
         self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_recommender_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommender_id(input);
         self
     }

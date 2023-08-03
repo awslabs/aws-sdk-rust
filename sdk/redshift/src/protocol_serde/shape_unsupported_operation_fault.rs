@@ -3,10 +3,7 @@
 pub fn de_unsupported_operation_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::UnsupportedOperationFaultBuilder,
-) -> Result<
-    crate::types::error::builders::UnsupportedOperationFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::UnsupportedOperationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

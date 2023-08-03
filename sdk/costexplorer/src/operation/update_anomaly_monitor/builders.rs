@@ -37,9 +37,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
         }
     }
     /// Access the UpdateAnomalyMonitor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
             crate::operation::update_anomaly_monitor::UpdateAnomalyMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateAnomalyMonitorFluentBuilder {
             crate::operation::update_anomaly_monitor::UpdateAnomalyMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError>,
     > {
         self.customize_middleware().await
     }

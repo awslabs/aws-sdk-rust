@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetTableObjectsOutput {
 }
 impl GetTableObjectsOutput {
     /// Creates a new builder-style object to manufacture [`GetTableObjectsOutput`](crate::operation::get_table_objects::GetTableObjectsOutput).
-    pub fn builder() -> crate::operation::get_table_objects::builders::GetTableObjectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_objects::builders::GetTableObjectsOutputBuilder {
         crate::operation::get_table_objects::builders::GetTableObjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableObjectsOutput`](crate::operation::get_table_objects::GetTableObjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableObjectsOutputBuilder {
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetTableObjectsOutputBuilder {
         self
     }
     /// <p>A list of objects organized by partition keys.</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>>,
-    ) -> Self {
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>>) -> Self {
         self.objects = input;
         self
     }
     /// <p>A list of objects organized by partition keys.</p>
-    pub fn get_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionObjects>> {
         &self.objects
     }
     /// <p>A continuation token indicating whether additional data is available.</p>

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`transcription_job_name(impl ::std::convert::Into<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::set_transcription_job_name): <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     /// - On success, responds with [`DeleteTranscriptionJobOutput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput)
     /// - On failure, responds with [`SdkError<DeleteTranscriptionJobError>`](crate::operation::delete_transcription_job::DeleteTranscriptionJobError)
-    pub fn delete_transcription_job(
-        &self,
-    ) -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder
-    {
+    pub fn delete_transcription_job(&self) -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder {
         crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteMultiRegionAccessPointOutput {
 }
 impl DeleteMultiRegionAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput).
-    pub fn builder() -> crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointOutputBuilder{
+    pub fn builder() -> crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointOutputBuilder {
         crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointOutputBuilder {
     pub(crate) request_token_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteMultiRegionAccessPointOutputBuilder {
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn request_token_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
-    pub fn set_request_token_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token_arn = input;
         self
     }
@@ -66,10 +58,7 @@ impl DeleteMultiRegionAccessPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointOutput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput
-    {
+    pub fn build(self) -> crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput {
         crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput {
             request_token_arn: self.request_token_arn,
             _request_id: self._request_id,

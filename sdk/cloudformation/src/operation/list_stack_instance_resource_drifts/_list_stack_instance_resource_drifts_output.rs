@@ -5,8 +5,7 @@
 pub struct ListStackInstanceResourceDriftsOutput {
     /// <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified stack instances.</p>
     #[doc(hidden)]
-    pub summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStackInstanceResourceDriftsOutput {
 }
 impl ListStackInstanceResourceDriftsOutput {
     /// <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StackInstanceResourceDriftsSummary]> {
+    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::StackInstanceResourceDriftsSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStackInstanceResourceDriftsOutput
 }
 impl ListStackInstanceResourceDriftsOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstanceResourceDriftsOutput`](crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput).
-    pub fn builder() -> crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsOutputBuilder{
+    pub fn builder() -> crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsOutputBuilder {
         crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackInstanceResourceDriftsOutput`](crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackInstanceResourceDriftsOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListStackInstanceResourceDriftsOutputBuilder {
         self
     }
     /// <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>,
-        >,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>>
-    {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceResourceDriftsSummary>> {
         &self.summaries
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -100,15 +86,10 @@ impl ListStackInstanceResourceDriftsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStackInstanceResourceDriftsOutput`](crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput
-    {
+    pub fn build(self) -> crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput {
         crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput {
-            summaries: self.summaries
-            ,
-            next_token: self.next_token
-            ,
+            summaries: self.summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

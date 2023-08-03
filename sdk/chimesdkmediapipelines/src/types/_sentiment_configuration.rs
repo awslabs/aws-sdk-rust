@@ -37,9 +37,7 @@ impl SentimentConfiguration {
 
 /// A builder for [`SentimentConfiguration`](crate::types::SentimentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SentimentConfigurationBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) sentiment_type: ::std::option::Option<crate::types::SentimentType>,
@@ -66,10 +64,7 @@ impl SentimentConfigurationBuilder {
         self
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
-    pub fn set_sentiment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentType>,
-    ) -> Self {
+    pub fn set_sentiment_type(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
         self.sentiment_type = input;
         self
     }

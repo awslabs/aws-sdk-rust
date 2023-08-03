@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceServerReplicationTypeError>`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeError)
-    pub fn update_source_server_replication_type(&self) -> crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeFluentBuilder{
+    pub fn update_source_server_replication_type(
+        &self,
+    ) -> crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeFluentBuilder {
         crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeFluentBuilder::new(self.handle.clone())
     }
 }

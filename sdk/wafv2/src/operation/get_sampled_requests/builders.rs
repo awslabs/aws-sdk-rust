@@ -10,10 +10,7 @@ impl GetSampledRequestsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sampled_requests::GetSampledRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampled_requests::GetSampledRequestsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_sampled_requests();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetSampledRequestsFluentBuilder {
         }
     }
     /// Access the GetSampledRequests as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetSampledRequestsFluentBuilder {
             crate::operation::get_sampled_requests::GetSampledRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampled_requests::GetSampledRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetSampledRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetSampledRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampled_requests::GetSampledRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampled_requests::GetSampledRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetSampledRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampled_requests::GetSampledRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampled_requests::GetSampledRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetSampledRequestsFluentBuilder {
             crate::operation::get_sampled_requests::GetSampledRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampled_requests::GetSampledRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampled_requests::GetSampledRequestsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl GetSampledRequestsFluentBuilder {
         self.inner.get_web_acl_arn()
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
-    pub fn rule_metric_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_metric_name(input.into());
         self
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
-    pub fn set_rule_metric_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_metric_name(input);
         self
     }
@@ -192,10 +170,7 @@ impl GetSampledRequestsFluentBuilder {
         self
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
-    pub fn set_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeWindow>,
-    ) -> Self {
+    pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
         self.inner = self.inner.set_time_window(input);
         self
     }

@@ -31,9 +31,7 @@ impl AdditionalResources {
 
 /// A builder for [`AdditionalResources`](crate::types::AdditionalResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalResourcesBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AdditionalResourceType>,
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>,
@@ -45,10 +43,7 @@ impl AdditionalResourcesBuilder {
         self
     }
     /// <p>Type of additional resource for a custom lens.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AdditionalResourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AdditionalResourceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -68,17 +63,12 @@ impl AdditionalResourcesBuilder {
         self
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>) -> Self {
         self.content = input;
         self
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`AdditionalResources`](crate::types::AdditionalResources).

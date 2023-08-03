@@ -30,9 +30,7 @@ impl UsageDataSourceResult {
 
 /// A builder for [`UsageDataSourceResult`](crate::types::UsageDataSourceResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageDataSourceResultBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,
@@ -44,10 +42,7 @@ impl UsageDataSourceResultBuilder {
         self
     }
     /// <p>The data source type that generated usage.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }

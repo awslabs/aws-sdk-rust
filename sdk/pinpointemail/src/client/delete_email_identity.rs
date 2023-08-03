@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`email_identity(impl ::std::convert::Into<String>)`](crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder::set_email_identity): <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
     /// - On success, responds with [`DeleteEmailIdentityOutput`](crate::operation::delete_email_identity::DeleteEmailIdentityOutput)
     /// - On failure, responds with [`SdkError<DeleteEmailIdentityError>`](crate::operation::delete_email_identity::DeleteEmailIdentityError)
-    pub fn delete_email_identity(
-        &self,
-    ) -> crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder {
-        crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_email_identity(&self) -> crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder {
+        crate::operation::delete_email_identity::builders::DeleteEmailIdentityFluentBuilder::new(self.handle.clone())
     }
 }

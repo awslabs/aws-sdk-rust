@@ -44,9 +44,7 @@ impl VpnConnectionDeviceType {
 
 /// A builder for [`VpnConnectionDeviceType`](crate::types::VpnConnectionDeviceType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpnConnectionDeviceTypeBuilder {
     pub(crate) vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) vendor: ::std::option::Option<::std::string::String>,
@@ -55,25 +53,17 @@ pub struct VpnConnectionDeviceTypeBuilder {
 }
 impl VpnConnectionDeviceTypeBuilder {
     /// <p>Customer gateway device identifier.</p>
-    pub fn vpn_connection_device_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_device_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_device_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer gateway device identifier.</p>
-    pub fn set_vpn_connection_device_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_device_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_device_type_id = input;
         self
     }
     /// <p>Customer gateway device identifier.</p>
-    pub fn get_vpn_connection_device_type_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_connection_device_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_device_type_id
     }
     /// <p>Customer gateway device vendor.</p>

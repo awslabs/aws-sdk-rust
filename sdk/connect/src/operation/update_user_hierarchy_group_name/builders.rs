@@ -26,7 +26,7 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder,
+    inner: crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder,
 }
 impl UpdateUserHierarchyGroupNameFluentBuilder {
     /// Creates a new `UpdateUserHierarchyGroupName`.
@@ -37,7 +37,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
         }
     }
     /// Access the UpdateUserHierarchyGroupName as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
             crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
             crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateUserHierarchyGroupNameFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_group_id(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_group_id(input);
         self
     }

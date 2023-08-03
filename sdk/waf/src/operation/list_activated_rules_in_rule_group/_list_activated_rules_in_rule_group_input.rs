@@ -29,16 +29,14 @@ impl ListActivatedRulesInRuleGroupInput {
 }
 impl ListActivatedRulesInRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupInput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput).
-    pub fn builder() -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupInputBuilder {
         crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListActivatedRulesInRuleGroupInput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupInputBuilder {
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListActivatedRulesInRuleGroupInputBuilder {
 }
 impl ListActivatedRulesInRuleGroupInputBuilder {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_id = input;
         self
     }
@@ -100,16 +92,10 @@ impl ListActivatedRulesInRuleGroupInputBuilder {
         crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput {
-                rule_group_id: self.rule_group_id
-                ,
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput {
+            rule_group_id: self.rule_group_id,
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

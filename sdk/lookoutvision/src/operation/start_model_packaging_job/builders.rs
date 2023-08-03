@@ -39,8 +39,7 @@ impl StartModelPackagingJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartModelPackagingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder,
+    inner: crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder,
 }
 impl StartModelPackagingJobFluentBuilder {
     /// Creates a new `StartModelPackagingJob`.
@@ -51,10 +50,7 @@ impl StartModelPackagingJobFluentBuilder {
         }
     }
     /// Access the StartModelPackagingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +62,7 @@ impl StartModelPackagingJobFluentBuilder {
             crate::operation::start_model_packaging_job::StartModelPackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_model_packaging_job::StartModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_model_packaging_job::StartModelPackagingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +72,7 @@ impl StartModelPackagingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +81,7 @@ impl StartModelPackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_model_packaging_job::StartModelPackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_model_packaging_job::StartModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_model_packaging_job::StartModelPackagingJobError>,
     > {
         let op = self
             .inner
@@ -115,9 +104,7 @@ impl StartModelPackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_model_packaging_job::StartModelPackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_model_packaging_job::StartModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_model_packaging_job::StartModelPackagingJobError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +118,7 @@ impl StartModelPackagingJobFluentBuilder {
             crate::operation::start_model_packaging_job::StartModelPackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_model_packaging_job::StartModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_model_packaging_job::StartModelPackagingJobError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +137,12 @@ impl StartModelPackagingJobFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p> The version of the model within the project that you want to package. </p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version(input.into());
         self
     }
     /// <p> The version of the model within the project that you want to package. </p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version(input);
         self
     }
@@ -191,17 +170,12 @@ impl StartModelPackagingJobFluentBuilder {
         self
     }
     /// <p>The configuration for the model packaging job. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ModelPackagingConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The configuration for the model packaging job. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>A description for the model packaging job. </p>

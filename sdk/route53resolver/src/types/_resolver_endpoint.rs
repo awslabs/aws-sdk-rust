@@ -132,9 +132,7 @@ impl ResolverEndpoint {
         self.modification_time.as_deref()
     }
     /// <p> The Resolver endpoint IP address type. </p>
-    pub fn resolver_endpoint_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
+    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
@@ -155,9 +153,7 @@ impl ResolverEndpoint {
 
 /// A builder for [`ResolverEndpoint`](crate::types::ResolverEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverEndpointBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -191,18 +187,12 @@ impl ResolverEndpointBuilder {
         &self.id
     }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -243,27 +233,19 @@ impl ResolverEndpointBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
@@ -280,10 +262,7 @@ impl ResolverEndpointBuilder {
     /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
     /// </ul>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
         self.direction = input;
         self
     }
@@ -353,10 +332,7 @@ impl ResolverEndpointBuilder {
     /// </ul> </li>
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverEndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -377,18 +353,12 @@ impl ResolverEndpointBuilder {
         &self.status
     }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -397,18 +367,12 @@ impl ResolverEndpointBuilder {
         &self.status_message
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -417,18 +381,12 @@ impl ResolverEndpointBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn modification_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_modification_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modification_time = input;
         self
     }
@@ -442,17 +400,12 @@ impl ResolverEndpointBuilder {
         self
     }
     /// <p> The Resolver endpoint IP address type. </p>
-    pub fn set_resolver_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointType>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.resolver_endpoint_type = input;
         self
     }
     /// <p> The Resolver endpoint IP address type. </p>
-    pub fn get_resolver_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         &self.resolver_endpoint_type
     }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
@@ -470,18 +423,12 @@ impl ResolverEndpointBuilder {
         &self.outpost_arn
     }
     /// <p> The Amazon EC2 instance type. </p>
-    pub fn preferred_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon EC2 instance type. </p>
-    pub fn set_preferred_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }

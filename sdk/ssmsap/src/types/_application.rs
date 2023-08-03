@@ -54,9 +54,7 @@ impl Application {
         self.status.as_ref()
     }
     /// <p>The latest discovery result for the application.</p>
-    pub fn discovery_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationDiscoveryStatus> {
+    pub fn discovery_status(&self) -> ::std::option::Option<&crate::types::ApplicationDiscoveryStatus> {
         self.discovery_status.as_ref()
     }
     /// <p>The components of the application.</p>
@@ -81,9 +79,7 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationType>,
@@ -139,18 +135,12 @@ impl ApplicationBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    pub fn app_registry_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_registry_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    pub fn set_app_registry_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_registry_arn = input;
         self
     }
@@ -164,10 +154,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -181,17 +168,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The latest discovery result for the application.</p>
-    pub fn set_discovery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
-    ) -> Self {
+    pub fn set_discovery_status(mut self, input: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>) -> Self {
         self.discovery_status = input;
         self
     }
     /// <p>The latest discovery result for the application.</p>
-    pub fn get_discovery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDiscoveryStatus> {
+    pub fn get_discovery_status(&self) -> &::std::option::Option<crate::types::ApplicationDiscoveryStatus> {
         &self.discovery_status
     }
     /// Appends an item to `components`.
@@ -206,10 +188,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The components of the application.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.components = input;
         self
     }
@@ -223,10 +202,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The time at which the application was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -235,18 +211,12 @@ impl ApplicationBuilder {
         &self.last_updated
     }
     /// <p>The status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

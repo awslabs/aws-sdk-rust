@@ -92,9 +92,7 @@ impl DynamoDbAction {
 
 /// A builder for [`DynamoDbAction`](crate::types::DynamoDbAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamoDbActionBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ impl DynamoDbActionBuilder {
         &self.operation
     }
     /// <p>The hash key name.</p>
-    pub fn hash_key_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hash_key_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hash_key_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash key name.</p>
-    pub fn set_hash_key_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hash_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash_key_field = input;
         self
     }
@@ -171,18 +163,12 @@ impl DynamoDbActionBuilder {
         &self.hash_key_field
     }
     /// <p>The hash key value.</p>
-    pub fn hash_key_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hash_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hash_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash key value.</p>
-    pub fn set_hash_key_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hash_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash_key_value = input;
         self
     }
@@ -196,10 +182,7 @@ impl DynamoDbActionBuilder {
         self
     }
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
-    pub fn set_hash_key_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamoKeyType>,
-    ) -> Self {
+    pub fn set_hash_key_type(mut self, input: ::std::option::Option<crate::types::DynamoKeyType>) -> Self {
         self.hash_key_type = input;
         self
     }
@@ -208,18 +191,12 @@ impl DynamoDbActionBuilder {
         &self.hash_key_type
     }
     /// <p>The range key name.</p>
-    pub fn range_key_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn range_key_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.range_key_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range key name.</p>
-    pub fn set_range_key_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_range_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.range_key_field = input;
         self
     }
@@ -228,18 +205,12 @@ impl DynamoDbActionBuilder {
         &self.range_key_field
     }
     /// <p>The range key value.</p>
-    pub fn range_key_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn range_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.range_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range key value.</p>
-    pub fn set_range_key_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_range_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.range_key_value = input;
         self
     }
@@ -253,10 +224,7 @@ impl DynamoDbActionBuilder {
         self
     }
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
-    pub fn set_range_key_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamoKeyType>,
-    ) -> Self {
+    pub fn set_range_key_type(mut self, input: ::std::option::Option<crate::types::DynamoKeyType>) -> Self {
         self.range_key_type = input;
         self
     }
@@ -265,18 +233,12 @@ impl DynamoDbActionBuilder {
         &self.range_key_type
     }
     /// <p>The action payload. This name can be customized.</p>
-    pub fn payload_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn payload_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action payload. This name can be customized.</p>
-    pub fn set_payload_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_payload_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_field = input;
         self
     }

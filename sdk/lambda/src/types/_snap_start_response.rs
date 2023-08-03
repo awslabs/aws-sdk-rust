@@ -17,9 +17,7 @@ impl SnapStartResponse {
         self.apply_on.as_ref()
     }
     /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-    pub fn optimization_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapStartOptimizationStatus> {
+    pub fn optimization_status(&self) -> ::std::option::Option<&crate::types::SnapStartOptimizationStatus> {
         self.optimization_status.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl SnapStartResponse {
 
 /// A builder for [`SnapStartResponse`](crate::types::SnapStartResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapStartResponseBuilder {
     pub(crate) apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
-    pub(crate) optimization_status:
-        ::std::option::Option<crate::types::SnapStartOptimizationStatus>,
+    pub(crate) optimization_status: ::std::option::Option<crate::types::SnapStartOptimizationStatus>,
 }
 impl SnapStartResponseBuilder {
     /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
@@ -47,10 +42,7 @@ impl SnapStartResponseBuilder {
         self
     }
     /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
-    pub fn set_apply_on(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapStartApplyOn>,
-    ) -> Self {
+    pub fn set_apply_on(mut self, input: ::std::option::Option<crate::types::SnapStartApplyOn>) -> Self {
         self.apply_on = input;
         self
     }
@@ -64,17 +56,12 @@ impl SnapStartResponseBuilder {
         self
     }
     /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-    pub fn set_optimization_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapStartOptimizationStatus>,
-    ) -> Self {
+    pub fn set_optimization_status(mut self, input: ::std::option::Option<crate::types::SnapStartOptimizationStatus>) -> Self {
         self.optimization_status = input;
         self
     }
     /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-    pub fn get_optimization_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapStartOptimizationStatus> {
+    pub fn get_optimization_status(&self) -> &::std::option::Option<crate::types::SnapStartOptimizationStatus> {
         &self.optimization_status
     }
     /// Consumes the builder and constructs a [`SnapStartResponse`](crate::types::SnapStartResponse).

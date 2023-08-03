@@ -62,9 +62,7 @@ impl WirelessGatewayStatistics {
 
 /// A builder for [`WirelessGatewayStatistics`](crate::types::WirelessGatewayStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessGatewayStatisticsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -136,10 +134,7 @@ impl WirelessGatewayStatisticsBuilder {
         self
     }
     /// <p>LoRaWAN gateway info.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanGateway>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanGateway>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -150,20 +145,14 @@ impl WirelessGatewayStatisticsBuilder {
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn last_uplink_received_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_uplink_received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn set_last_uplink_received_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_uplink_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_uplink_received_at = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput) with field(s):
     ///   - [`thumbnail_details(Option<Vec<ThumbnailDetail>>)`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput::thumbnail_details): Placeholder documentation for __listOfThumbnailDetail
     /// - On failure, responds with [`SdkError<DescribeThumbnailsError>`](crate::operation::describe_thumbnails::DescribeThumbnailsError)
-    pub fn describe_thumbnails(
-        &self,
-    ) -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder {
-        crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_thumbnails(&self) -> crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder {
+        crate::operation::describe_thumbnails::builders::DescribeThumbnailsFluentBuilder::new(self.handle.clone())
     }
 }

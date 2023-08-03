@@ -30,9 +30,7 @@ impl PlatformInput {
 
 /// A builder for [`PlatformInput`](crate::types::PlatformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlatformInputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -58,17 +56,12 @@ impl PlatformInputBuilder {
         self
     }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`PlatformInput`](crate::types::PlatformInput).

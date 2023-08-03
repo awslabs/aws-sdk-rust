@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMountTargetOutput {
 }
 impl DeleteMountTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder {
         crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMountTargetOutputBuilder {
     _request_id: Option<String>,
 }

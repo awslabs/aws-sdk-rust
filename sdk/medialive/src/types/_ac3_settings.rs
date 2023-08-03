@@ -65,9 +65,7 @@ impl Ac3Settings {
 
 /// A builder for [`Ac3Settings`](crate::types::Ac3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ac3SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<f64>,
     pub(crate) bitstream_mode: ::std::option::Option<crate::types::Ac3BitstreamMode>,
@@ -98,10 +96,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
-    pub fn set_bitstream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3BitstreamMode>,
-    ) -> Self {
+    pub fn set_bitstream_mode(mut self, input: ::std::option::Option<crate::types::Ac3BitstreamMode>) -> Self {
         self.bitstream_mode = input;
         self
     }
@@ -115,10 +110,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Dolby Digital coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3CodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Ac3CodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -146,10 +138,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
-    pub fn set_drc_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3DrcProfile>,
-    ) -> Self {
+    pub fn set_drc_profile(mut self, input: ::std::option::Option<crate::types::Ac3DrcProfile>) -> Self {
         self.drc_profile = input;
         self
     }
@@ -163,10 +152,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
-    pub fn set_lfe_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3LfeFilter>,
-    ) -> Self {
+    pub fn set_lfe_filter(mut self, input: ::std::option::Option<crate::types::Ac3LfeFilter>) -> Self {
         self.lfe_filter = input;
         self
     }
@@ -180,10 +166,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3MetadataControl>,
-    ) -> Self {
+    pub fn set_metadata_control(mut self, input: ::std::option::Option<crate::types::Ac3MetadataControl>) -> Self {
         self.metadata_control = input;
         self
     }

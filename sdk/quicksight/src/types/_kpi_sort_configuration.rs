@@ -23,12 +23,9 @@ impl KpiSortConfiguration {
 
 /// A builder for [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KpiSortConfigurationBuilder {
-    pub(crate) trend_group_sort:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) trend_group_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
 }
 impl KpiSortConfigurationBuilder {
     /// Appends an item to `trend_group_sort`.
@@ -43,17 +40,12 @@ impl KpiSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn set_trend_group_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_trend_group_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.trend_group_sort = input;
         self
     }
     /// <p>The sort configuration of the trend group fields.</p>
-    pub fn get_trend_group_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_trend_group_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.trend_group_sort
     }
     /// Consumes the builder and constructs a [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).

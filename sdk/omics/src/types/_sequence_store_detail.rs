@@ -65,9 +65,7 @@ impl SequenceStoreDetail {
 
 /// A builder for [`SequenceStoreDetail`](crate::types::SequenceStoreDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SequenceStoreDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -154,10 +152,7 @@ impl SequenceStoreDetailBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -166,18 +161,12 @@ impl SequenceStoreDetailBuilder {
         &self.creation_time
     }
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    pub fn fallback_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fallback_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fallback_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    pub fn set_fallback_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fallback_location = input;
         self
     }

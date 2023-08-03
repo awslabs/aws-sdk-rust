@@ -39,37 +39,28 @@ impl GetComplianceDetailsByConfigRuleInput {
 }
 impl GetComplianceDetailsByConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailsByConfigRuleInput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput).
-    pub fn builder() -> crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder{
+    pub fn builder() -> crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder {
         crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceDetailsByConfigRuleInput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRuleInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) compliance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
+    pub(crate) compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleInputBuilder {
     /// <p>The name of the Config rule for which you want compliance information.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Config rule for which you want compliance information.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -91,18 +82,13 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn set_compliance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
-    ) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.compliance_types = input;
         self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn get_compliance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         &self.compliance_types
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -134,18 +120,19 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetComplianceDetailsByConfigRuleInput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput {
-                config_rule_name: self.config_rule_name
-                ,
-                compliance_types: self.compliance_types
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                config_rule_name: self.config_rule_name,
+                compliance_types: self.compliance_types,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

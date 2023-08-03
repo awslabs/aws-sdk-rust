@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`infrastructure_configuration(Option<InfrastructureConfiguration>)`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput::infrastructure_configuration): <p>The infrastructure configuration object.</p>
     /// - On failure, responds with [`SdkError<GetInfrastructureConfigurationError>`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError)
-    pub fn get_infrastructure_configuration(&self) -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationFluentBuilder{
+    pub fn get_infrastructure_configuration(
+        &self,
+    ) -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationFluentBuilder {
         crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

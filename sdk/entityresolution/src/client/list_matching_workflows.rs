@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`workflow_summaries(Option<Vec<MatchingWorkflowSummary>>)`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput::workflow_summaries): <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput::next_token): <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     /// - On failure, responds with [`SdkError<ListMatchingWorkflowsError>`](crate::operation::list_matching_workflows::ListMatchingWorkflowsError)
-    pub fn list_matching_workflows(
-        &self,
-    ) -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder
-    {
-        crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_matching_workflows(&self) -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder {
+        crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

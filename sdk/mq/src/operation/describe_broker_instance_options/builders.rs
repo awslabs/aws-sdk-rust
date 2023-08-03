@@ -26,7 +26,7 @@ impl DescribeBrokerInstanceOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder,
+    inner: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder,
 }
 impl DescribeBrokerInstanceOptionsFluentBuilder {
     /// Creates a new `DescribeBrokerInstanceOptions`.
@@ -37,7 +37,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
         }
     }
     /// Access the DescribeBrokerInstanceOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
             crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
             crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeBrokerInstanceOptionsFluentBuilder {
         self.inner.get_engine_type()
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn host_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_instance_type(input.into());
         self
     }
     /// <p>Filter response by host instance type.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_instance_type(input);
         self
     }

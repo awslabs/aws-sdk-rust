@@ -38,10 +38,7 @@ impl DescribeScheduledAuditFluentBuilder {
         }
     }
     /// Access the DescribeScheduledAudit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeScheduledAuditFluentBuilder {
             crate::operation::describe_scheduled_audit::DescribeScheduledAudit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_audit::DescribeScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_audit::DescribeScheduledAuditError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeScheduledAuditFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeScheduledAuditFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_audit::DescribeScheduledAuditOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_audit::DescribeScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_audit::DescribeScheduledAuditError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeScheduledAuditFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_audit::DescribeScheduledAuditOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_audit::DescribeScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_audit::DescribeScheduledAuditError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeScheduledAuditFluentBuilder {
             crate::operation::describe_scheduled_audit::DescribeScheduledAudit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_audit::DescribeScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_audit::DescribeScheduledAuditError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_audit_name(input.into());
         self
     }
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
     }

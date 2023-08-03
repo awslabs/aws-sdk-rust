@@ -10,10 +10,7 @@ impl PutSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_session::PutSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_session::PutSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_session();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl PutSessionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_session::PutSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_session::PutSession, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl PutSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl PutSessionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_session::PutSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_session::PutSession, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         self.customize_middleware().await
@@ -171,19 +159,13 @@ impl PutSessionFluentBuilder {
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub fn set_session_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_session_attributes(input);
         self
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn get_session_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_session_attributes()
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
@@ -192,10 +174,7 @@ impl PutSessionFluentBuilder {
         self
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
-    pub fn set_dialog_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogAction>,
-    ) -> Self {
+    pub fn set_dialog_action(mut self, input: ::std::option::Option<crate::types::DialogAction>) -> Self {
         self.inner = self.inner.set_dialog_action(input);
         self
     }
@@ -227,10 +206,7 @@ impl PutSessionFluentBuilder {
     /// <li> <p> <code>slotToElict</code> </p> </li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub fn set_recent_intent_summary_view(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
-    ) -> Self {
+    pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>) -> Self {
         self.inner = self.inner.set_recent_intent_summary_view(input);
         self
     }
@@ -242,9 +218,7 @@ impl PutSessionFluentBuilder {
     /// <li> <p> <code>slotToElict</code> </p> </li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub fn get_recent_intent_summary_view(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>> {
+    pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>> {
         self.inner.get_recent_intent_summary_view()
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
@@ -312,18 +286,13 @@ impl PutSessionFluentBuilder {
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn set_active_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
-    ) -> Self {
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
         self.inner = self.inner.set_active_contexts(input);
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn get_active_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
         self.inner.get_active_contexts()
     }
 }

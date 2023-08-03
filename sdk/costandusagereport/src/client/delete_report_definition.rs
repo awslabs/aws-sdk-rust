@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteReportDefinitionOutput`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput) with field(s):
     ///   - [`response_message(Option<String>)`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput::response_message): <p>Whether the deletion was successful or not.</p>
     /// - On failure, responds with [`SdkError<DeleteReportDefinitionError>`](crate::operation::delete_report_definition::DeleteReportDefinitionError)
-    pub fn delete_report_definition(
-        &self,
-    ) -> crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder
-    {
+    pub fn delete_report_definition(&self) -> crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder {
         crate::operation::delete_report_definition::builders::DeleteReportDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

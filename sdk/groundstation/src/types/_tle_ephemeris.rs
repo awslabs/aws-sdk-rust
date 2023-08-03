@@ -30,9 +30,7 @@ impl TleEphemeris {
 
 /// A builder for [`TleEphemeris`](crate::types::TleEphemeris).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TleEphemerisBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
@@ -64,10 +62,7 @@ impl TleEphemerisBuilder {
         self
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub fn set_tle_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
-    ) -> Self {
+    pub fn set_tle_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>) -> Self {
         self.tle_data = input;
         self
     }

@@ -43,9 +43,7 @@ impl GetStatisticsInput {
 
 /// A builder for [`GetStatisticsInput`](crate::operation::get_statistics::GetStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStatisticsInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl GetStatisticsInputBuilder {
         &self.query_string
     }
     /// <p>The aggregation field name.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The aggregation field name.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_field = input;
         self
     }
@@ -102,18 +94,12 @@ impl GetStatisticsInputBuilder {
         &self.aggregation_field
     }
     /// <p>The version of the query used to search.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the query used to search.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -124,10 +110,7 @@ impl GetStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetStatisticsInput`](crate::operation::get_statistics::GetStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_statistics::GetStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_statistics::GetStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_statistics::GetStatisticsInput {
             index_name: self.index_name,
             query_string: self.query_string,

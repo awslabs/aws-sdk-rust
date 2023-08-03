@@ -14,9 +14,7 @@ pub struct StartContentUploadOutput {
     pub url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The headers to include in the upload.</p>
     #[doc(hidden)]
-    pub headers_to_include: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContentUploadOutput {
@@ -33,11 +31,7 @@ impl StartContentUploadOutput {
         self.url_expiry.as_ref()
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn headers_to_include(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn headers_to_include(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers_to_include.as_ref()
     }
 }
@@ -59,8 +53,7 @@ impl ::aws_http::request_id::RequestId for StartContentUploadOutput {
 }
 impl StartContentUploadOutput {
     /// Creates a new builder-style object to manufacture [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder {
+    pub fn builder() -> crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder {
         crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::default()
     }
 }
@@ -72,9 +65,7 @@ pub struct StartContentUploadOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) headers_to_include: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContentUploadOutputBuilder {
@@ -112,10 +103,7 @@ impl StartContentUploadOutputBuilder {
         self
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn set_url_expiry(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_url_expiry(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.url_expiry = input;
         self
     }
@@ -141,19 +129,13 @@ impl StartContentUploadOutputBuilder {
     /// <p>The headers to include in the upload.</p>
     pub fn set_headers_to_include(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.headers_to_include = input;
         self
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn get_headers_to_include(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers_to_include(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers_to_include
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

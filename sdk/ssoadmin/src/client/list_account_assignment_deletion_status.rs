@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`account_assignments_deletion_status(Option<Vec<AccountAssignmentOperationStatusMetadata>>)`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput::account_assignments_deletion_status): <p>The status object for the account assignment deletion operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountAssignmentDeletionStatusError>`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError)
-    pub fn list_account_assignment_deletion_status(&self) -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder{
-        crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::new(self.handle.clone())
+    pub fn list_account_assignment_deletion_status(
+        &self,
+    ) -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder {
+        crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

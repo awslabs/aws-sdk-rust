@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateClusterVersionOutput {
 }
 impl UpdateClusterVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterVersionOutput`](crate::operation::update_cluster_version::UpdateClusterVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_cluster_version::builders::UpdateClusterVersionOutputBuilder {
+    pub fn builder() -> crate::operation::update_cluster_version::builders::UpdateClusterVersionOutputBuilder {
         crate::operation::update_cluster_version::builders::UpdateClusterVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterVersionOutput`](crate::operation::update_cluster_version::UpdateClusterVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterVersionOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

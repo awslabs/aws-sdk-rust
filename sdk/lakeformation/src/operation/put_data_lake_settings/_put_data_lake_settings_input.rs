@@ -22,18 +22,14 @@ impl PutDataLakeSettingsInput {
 }
 impl PutDataLakeSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
-        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder {
+        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDataLakeSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_lake_settings: ::std::option::Option<crate::types::DataLakeSettings>,
@@ -59,10 +55,7 @@ impl PutDataLakeSettingsInputBuilder {
         self
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    pub fn set_data_lake_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeSettings>,
-    ) -> Self {
+    pub fn set_data_lake_settings(mut self, input: ::std::option::Option<crate::types::DataLakeSettings>) -> Self {
         self.data_lake_settings = input;
         self
     }
@@ -73,15 +66,11 @@ impl PutDataLakeSettingsInputBuilder {
     /// Consumes the builder and constructs a [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_data_lake_settings::PutDataLakeSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_data_lake_settings::PutDataLakeSettingsInput {
-                catalog_id: self.catalog_id,
-                data_lake_settings: self.data_lake_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_data_lake_settings::PutDataLakeSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_data_lake_settings::PutDataLakeSettingsInput {
+            catalog_id: self.catalog_id,
+            data_lake_settings: self.data_lake_settings,
+        })
     }
 }

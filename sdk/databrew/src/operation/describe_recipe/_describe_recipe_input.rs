@@ -29,9 +29,7 @@ impl DescribeRecipeInput {
 
 /// A builder for [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeRecipeInputBuilder {
         &self.name
     }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }
@@ -74,10 +66,7 @@ impl DescribeRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recipe::DescribeRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput {
             name: self.name,
             recipe_version: self.recipe_version,

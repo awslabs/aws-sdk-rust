@@ -29,9 +29,7 @@ impl PutItemsInput {
 
 /// A builder for [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutItemsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
@@ -63,10 +61,7 @@ impl PutItemsInputBuilder {
         self
     }
     /// <p>A list of item data.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>) -> Self {
         self.items = input;
         self
     }
@@ -75,12 +70,7 @@ impl PutItemsInputBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_items::PutItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_items::PutItemsInput {
             dataset_arn: self.dataset_arn,
             items: self.items,

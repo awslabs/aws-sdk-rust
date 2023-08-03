@@ -35,9 +35,7 @@ impl ListStreamsOutput {
 
 /// A builder for [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsOutputBuilder {
     pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// <p>A list of streams.</p>
-    pub fn set_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
-    ) -> Self {
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>) -> Self {
         self.streams = input;
         self
     }
     /// <p>A list of streams.</p>
-    pub fn get_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>> {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>> {
         &self.streams
     }
     /// <p>A token used to get the next set of results.</p>

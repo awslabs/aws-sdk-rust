@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachRolePolicyOutput {
 }
 impl AttachRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachRolePolicyOutput`](crate::operation::attach_role_policy::AttachRolePolicyOutput).
-    pub fn builder() -> crate::operation::attach_role_policy::builders::AttachRolePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_role_policy::builders::AttachRolePolicyOutputBuilder {
         crate::operation::attach_role_policy::builders::AttachRolePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachRolePolicyOutput`](crate::operation::attach_role_policy::AttachRolePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachRolePolicyOutputBuilder {
     _request_id: Option<String>,
 }

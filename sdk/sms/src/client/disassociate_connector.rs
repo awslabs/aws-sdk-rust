@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`connector_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::set_connector_id): <p>The ID of the connector.</p>
     /// - On success, responds with [`DisassociateConnectorOutput`](crate::operation::disassociate_connector::DisassociateConnectorOutput)
     /// - On failure, responds with [`SdkError<DisassociateConnectorError>`](crate::operation::disassociate_connector::DisassociateConnectorError)
-    pub fn disassociate_connector(
-        &self,
-    ) -> crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder
-    {
-        crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_connector(&self) -> crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder {
+        crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::new(self.handle.clone())
     }
 }

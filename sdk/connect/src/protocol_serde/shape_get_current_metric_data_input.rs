@@ -9,10 +9,7 @@ pub fn ser_get_current_metric_data_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_current_metric::ser_current_metric(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_current_metric::ser_current_metric(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

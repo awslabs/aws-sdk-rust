@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExpirationModelType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ExpirationModelType {
         match s {
             "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
             "KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
-            other => ExpirationModelType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExpirationModelType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

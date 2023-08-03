@@ -9,8 +9,7 @@ pub struct AccountAttribute {
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of attribute values.</p>
     #[doc(hidden)]
-    pub attribute_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
+    pub attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
 }
 impl AccountAttribute {
     /// <p>The name of the attribute.</p>
@@ -31,28 +30,19 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
 }
 impl AccountAttributeBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -72,17 +62,12 @@ impl AccountAttributeBuilder {
         self
     }
     /// <p>A list of attribute values.</p>
-    pub fn set_attribute_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
-    ) -> Self {
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>) -> Self {
         self.attribute_values = input;
         self
     }
     /// <p>A list of attribute values.</p>
-    pub fn get_attribute_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>> {
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>> {
         &self.attribute_values
     }
     /// Consumes the builder and constructs a [`AccountAttribute`](crate::types::AccountAttribute).

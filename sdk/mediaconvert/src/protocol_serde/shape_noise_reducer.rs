@@ -29,17 +29,9 @@ pub fn ser_noise_reducer(
 
 pub(crate) fn de_noise_reducer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NoiseReducer>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NoiseReducer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,54 +41,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "filter" => {
-                                builder = builder.set_filter(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::NoiseReducerFilter::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "filter" => {
+                            builder = builder.set_filter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NoiseReducerFilter::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "filterSettings" => {
-                                builder = builder.set_filter_settings(
-                                    crate::protocol_serde::shape_noise_reducer_filter_settings::de_noise_reducer_filter_settings(tokens)?
-                                );
-                            }
-                            "spatialFilterSettings" => {
-                                builder = builder.set_spatial_filter_settings(
-                                    crate::protocol_serde::shape_noise_reducer_spatial_filter_settings::de_noise_reducer_spatial_filter_settings(tokens)?
-                                );
-                            }
-                            "temporalFilterSettings" => {
-                                builder = builder.set_temporal_filter_settings(
-                                    crate::protocol_serde::shape_noise_reducer_temporal_filter_settings::de_noise_reducer_temporal_filter_settings(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "filterSettings" => {
+                            builder = builder.set_filter_settings(
+                                crate::protocol_serde::shape_noise_reducer_filter_settings::de_noise_reducer_filter_settings(tokens)?,
+                            );
+                        }
+                        "spatialFilterSettings" => {
+                            builder = builder.set_spatial_filter_settings(
+                                crate::protocol_serde::shape_noise_reducer_spatial_filter_settings::de_noise_reducer_spatial_filter_settings(tokens)?,
+                            );
+                        }
+                        "temporalFilterSettings" => {
+                            builder = builder.set_temporal_filter_settings(
+                                crate::protocol_serde::shape_noise_reducer_temporal_filter_settings::de_noise_reducer_temporal_filter_settings(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

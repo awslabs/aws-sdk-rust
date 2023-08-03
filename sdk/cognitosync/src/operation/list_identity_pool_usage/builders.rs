@@ -59,10 +59,7 @@ impl ListIdentityPoolUsageFluentBuilder {
         }
     }
     /// Access the ListIdentityPoolUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +71,7 @@ impl ListIdentityPoolUsageFluentBuilder {
             crate::operation::list_identity_pool_usage::ListIdentityPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -86,10 +81,7 @@ impl ListIdentityPoolUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -98,9 +90,7 @@ impl ListIdentityPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError>,
     > {
         let op = self
             .inner
@@ -123,9 +113,7 @@ impl ListIdentityPoolUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError>,
     > {
         self.send_middleware().await
     }
@@ -139,9 +127,7 @@ impl ListIdentityPoolUsageFluentBuilder {
             crate::operation::list_identity_pool_usage::ListIdentityPoolUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError>,
     > {
         self.customize_middleware().await
     }

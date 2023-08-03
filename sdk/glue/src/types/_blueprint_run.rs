@@ -98,9 +98,7 @@ impl BlueprintRun {
 
 /// A builder for [`BlueprintRun`](crate::types::BlueprintRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueprintRunBuilder {
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ pub struct BlueprintRunBuilder {
 }
 impl BlueprintRunBuilder {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_name = input;
         self
     }
@@ -149,18 +141,12 @@ impl BlueprintRunBuilder {
         &self.run_id
     }
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -186,10 +172,7 @@ impl BlueprintRunBuilder {
     /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
     /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueprintRunState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::BlueprintRunState>) -> Self {
         self.state = input;
         self
     }
@@ -209,10 +192,7 @@ impl BlueprintRunBuilder {
         self
     }
     /// <p>The date and time that the blueprint run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -226,10 +206,7 @@ impl BlueprintRunBuilder {
         self
     }
     /// <p>The date and time that the blueprint run completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }
@@ -238,18 +215,12 @@ impl BlueprintRunBuilder {
         &self.completed_on
     }
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -258,18 +229,12 @@ impl BlueprintRunBuilder {
         &self.error_message
     }
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
-    pub fn rollback_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rollback_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
-    pub fn set_rollback_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rollback_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_error_message = input;
         self
     }

@@ -50,16 +50,14 @@ impl StartDataQualityRuleRecommendationRunInput {
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
-    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder{
+    pub fn builder() -> crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder {
         crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
@@ -75,10 +73,7 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         self
     }
     /// <p>The data source (Glue table) associated with this run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -129,18 +124,12 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         &self.timeout
     }
     /// <p>A name for the ruleset.</p>
-    pub fn created_ruleset_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_ruleset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_ruleset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the ruleset.</p>
-    pub fn set_created_ruleset_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_ruleset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_ruleset_name = input;
         self
     }
@@ -163,22 +152,21 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput {
-                data_source: self.data_source
-                ,
-                role: self.role
-                ,
-                number_of_workers: self.number_of_workers
-                ,
-                timeout: self.timeout
-                ,
-                created_ruleset_name: self.created_ruleset_name
-                ,
-                client_token: self.client_token
-                ,
-            }
+                data_source: self.data_source,
+                role: self.role,
+                number_of_workers: self.number_of_workers,
+                timeout: self.timeout,
+                created_ruleset_name: self.created_ruleset_name,
+                client_token: self.client_token,
+            },
         )
     }
 }

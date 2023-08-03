@@ -5,8 +5,7 @@
 pub struct ListModelPackagingJobsOutput {
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
     #[doc(hidden)]
-    pub model_packaging_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
+    pub model_packaging_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelPackagingJobsOutput {
 }
 impl ListModelPackagingJobsOutput {
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
-    pub fn model_packaging_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackagingJobMetadata]> {
+    pub fn model_packaging_jobs(&self) -> ::std::option::Option<&[crate::types::ModelPackagingJobMetadata]> {
         self.model_packaging_jobs.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelPackagingJobsOutput {
 }
 impl ListModelPackagingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagingJobsOutput`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsOutputBuilder {
         crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackagingJobsOutput`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackagingJobsOutputBuilder {
-    pub(crate) model_packaging_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
+    pub(crate) model_packaging_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListModelPackagingJobsOutputBuilder {
         self
     }
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
-    pub fn set_model_packaging_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
-    ) -> Self {
+    pub fn set_model_packaging_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>) -> Self {
         self.model_packaging_jobs = input;
         self
     }
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
-    pub fn get_model_packaging_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>> {
+    pub fn get_model_packaging_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>> {
         &self.model_packaging_jobs
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -99,9 +86,7 @@ impl ListModelPackagingJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListModelPackagingJobsOutput`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput {
+    pub fn build(self) -> crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput {
         crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput {
             model_packaging_jobs: self.model_packaging_jobs,
             next_token: self.next_token,

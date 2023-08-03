@@ -46,9 +46,7 @@ impl UpdateRuleInput {
 
 /// A builder for [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -105,10 +103,7 @@ impl UpdateRuleInputBuilder {
     /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -122,12 +117,7 @@ impl UpdateRuleInputBuilder {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule::UpdateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
             rule_id: self.rule_id,
             change_token: self.change_token,

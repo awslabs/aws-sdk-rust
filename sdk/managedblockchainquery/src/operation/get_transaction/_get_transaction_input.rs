@@ -29,27 +29,19 @@ impl GetTransactionInput {
 
 /// A builder for [`GetTransactionInput`](crate::operation::get_transaction::GetTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransactionInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
 }
 impl GetTransactionInputBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetTransactionInputBuilder {
     /// Consumes the builder and constructs a [`GetTransactionInput`](crate::operation::get_transaction::GetTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_transaction::GetTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transaction::GetTransactionInput {
             transaction_hash: self.transaction_hash,
             network: self.network,

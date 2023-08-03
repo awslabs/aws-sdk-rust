@@ -27,7 +27,7 @@ impl UpdateDataSetPermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSetPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsInputBuilder,
+    inner: crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsInputBuilder,
 }
 impl UpdateDataSetPermissionsFluentBuilder {
     /// Creates a new `UpdateDataSetPermissions`.
@@ -38,7 +38,7 @@ impl UpdateDataSetPermissionsFluentBuilder {
         }
     }
     /// Access the UpdateDataSetPermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateDataSetPermissionsFluentBuilder {
             crate::operation::update_data_set_permissions::UpdateDataSetPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateDataSetPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateDataSetPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateDataSetPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateDataSetPermissionsFluentBuilder {
             crate::operation::update_data_set_permissions::UpdateDataSetPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_set_permissions::UpdateDataSetPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -165,17 +148,12 @@ impl UpdateDataSetPermissionsFluentBuilder {
         self
     }
     /// <p>The resource permissions that you want to grant to the dataset.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
     /// <p>The resource permissions that you want to grant to the dataset.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
     /// Appends an item to `RevokePermissions`.
@@ -188,17 +166,12 @@ impl UpdateDataSetPermissionsFluentBuilder {
         self
     }
     /// <p>The resource permissions that you want to revoke from the dataset.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
     /// <p>The resource permissions that you want to revoke from the dataset.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
 }

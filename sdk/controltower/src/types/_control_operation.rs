@@ -51,9 +51,7 @@ impl ControlOperation {
 
 /// A builder for [`ControlOperation`](crate::types::ControlOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlOperationBuilder {
     pub(crate) operation_type: ::std::option::Option<crate::types::ControlOperationType>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,10 +66,7 @@ impl ControlOperationBuilder {
         self
     }
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlOperationType>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::ControlOperationType>) -> Self {
         self.operation_type = input;
         self
     }
@@ -85,10 +80,7 @@ impl ControlOperationBuilder {
         self
     }
     /// <p>The time that the operation began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -102,10 +94,7 @@ impl ControlOperationBuilder {
         self
     }
     /// <p>The time that the operation finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -119,10 +108,7 @@ impl ControlOperationBuilder {
         self
     }
     /// <p>One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlOperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlOperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -131,18 +117,12 @@ impl ControlOperationBuilder {
         &self.status
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -22,18 +22,14 @@ impl ListTagsForResourceInput {
 }
 impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
-        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -45,17 +41,12 @@ impl ListTagsForResourceInputBuilder {
         self
     }
     /// <p>Returns a list of tags for a specific resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeForTagging>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Returns a list of tags for a specific resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
         &self.resource_type
     }
     /// <p>The resource ID for which you want to see a list of tags.</p>
@@ -75,15 +66,11 @@ impl ListTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_resource::ListTagsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+        })
     }
 }

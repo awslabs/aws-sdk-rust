@@ -23,33 +23,23 @@ impl ResourceDataSyncDestinationDataSharing {
 
 /// A builder for [`ResourceDataSyncDestinationDataSharing`](crate::types::ResourceDataSyncDestinationDataSharing).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncDestinationDataSharingBuilder {
     pub(crate) destination_data_sharing_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncDestinationDataSharingBuilder {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    pub fn destination_data_sharing_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_data_sharing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_data_sharing_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    pub fn set_destination_data_sharing_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_data_sharing_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_data_sharing_type = input;
         self
     }
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    pub fn get_destination_data_sharing_type(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_data_sharing_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_data_sharing_type
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncDestinationDataSharing`](crate::types::ResourceDataSyncDestinationDataSharing).

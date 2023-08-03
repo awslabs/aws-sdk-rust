@@ -23,9 +23,7 @@ impl LifecycleTransitionReason {
 
 /// A builder for [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleTransitionReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LifecycleTransitionReasonBuilder {
     }
     /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
     pub fn build(self) -> crate::types::LifecycleTransitionReason {
-        crate::types::LifecycleTransitionReason {
-            message: self.message,
-        }
+        crate::types::LifecycleTransitionReason { message: self.message }
     }
 }

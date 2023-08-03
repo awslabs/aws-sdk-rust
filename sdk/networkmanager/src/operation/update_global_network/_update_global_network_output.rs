@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGlobalNetworkOutput {
 }
 impl UpdateGlobalNetworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalNetworkOutput`](crate::operation::update_global_network::UpdateGlobalNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::update_global_network::builders::UpdateGlobalNetworkOutputBuilder {
-        crate::operation::update_global_network::builders::UpdateGlobalNetworkOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_global_network::builders::UpdateGlobalNetworkOutputBuilder {
+        crate::operation::update_global_network::builders::UpdateGlobalNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalNetworkOutput`](crate::operation::update_global_network::UpdateGlobalNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalNetworkOutputBuilder {
     pub(crate) global_network: ::std::option::Option<crate::types::GlobalNetwork>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateGlobalNetworkOutputBuilder {
         self
     }
     /// <p>Information about the global network object.</p>
-    pub fn set_global_network(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalNetwork>,
-    ) -> Self {
+    pub fn set_global_network(mut self, input: ::std::option::Option<crate::types::GlobalNetwork>) -> Self {
         self.global_network = input;
         self
     }

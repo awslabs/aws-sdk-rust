@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachLoadBalancersOutput {
 }
 impl DetachLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancersOutput`](crate::operation::detach_load_balancers::DetachLoadBalancersOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersOutputBuilder {
-        crate::operation::detach_load_balancers::builders::DetachLoadBalancersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersOutputBuilder {
+        crate::operation::detach_load_balancers::builders::DetachLoadBalancersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachLoadBalancersOutput`](crate::operation::detach_load_balancers::DetachLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachLoadBalancersOutputBuilder {
     _request_id: Option<String>,
 }

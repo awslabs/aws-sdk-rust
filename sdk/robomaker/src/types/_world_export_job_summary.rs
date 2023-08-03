@@ -127,9 +127,7 @@ impl WorldExportJobSummary {
 
 /// A builder for [`WorldExportJobSummary`](crate::types::WorldExportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorldExportJobSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorldExportJobStatus>,
@@ -234,10 +232,7 @@ impl WorldExportJobSummaryBuilder {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldExportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorldExportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -289,10 +284,7 @@ impl WorldExportJobSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -312,10 +304,7 @@ impl WorldExportJobSummaryBuilder {
         self
     }
     /// <p>A list of worlds.</p>
-    pub fn set_worlds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.worlds = input;
         self
     }
@@ -329,10 +318,7 @@ impl WorldExportJobSummaryBuilder {
         self
     }
     /// <p>The output location.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
         self.output_location = input;
         self
     }

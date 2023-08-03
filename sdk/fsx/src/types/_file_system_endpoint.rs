@@ -30,9 +30,7 @@ impl FileSystemEndpoint {
 
 /// A builder for [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemEndpointBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl FileSystemEndpointBuilder {
         self
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
     /// <p>IP addresses of the file system endpoint.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).

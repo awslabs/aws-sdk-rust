@@ -9,12 +9,8 @@ pub fn de_request_environment_info_http_error(
     crate::operation::request_environment_info::RequestEnvironmentInfoError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::request_environment_info::RequestEnvironmentInfoError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::request_environment_info::RequestEnvironmentInfoError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::request_environment_info::RequestEnvironmentInfoError::generic(generic))
@@ -32,9 +28,7 @@ pub fn de_request_environment_info_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::request_environment_info::builders::RequestEnvironmentInfoOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -121,16 +121,14 @@ impl GetInterpolatedAssetPropertyValuesInput {
 }
 impl GetInterpolatedAssetPropertyValuesInput {
     /// Creates a new builder-style object to manufacture [`GetInterpolatedAssetPropertyValuesInput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput).
-    pub fn builder() -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder{
+    pub fn builder() -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder {
         crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInterpolatedAssetPropertyValuesInput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
@@ -176,18 +174,12 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.property_id
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_alias = input;
         self
     }
@@ -369,36 +361,28 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.interval_window_in_seconds
     }
     /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesInput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput {
-                asset_id: self.asset_id
-                ,
-                property_id: self.property_id
-                ,
-                property_alias: self.property_alias
-                ,
-                start_time_in_seconds: self.start_time_in_seconds
-                ,
-                start_time_offset_in_nanos: self.start_time_offset_in_nanos
-                ,
-                end_time_in_seconds: self.end_time_in_seconds
-                ,
-                end_time_offset_in_nanos: self.end_time_offset_in_nanos
-                ,
-                quality: self.quality
-                ,
-                interval_in_seconds: self.interval_in_seconds
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                r#type: self.r#type
-                ,
-                interval_window_in_seconds: self.interval_window_in_seconds
-                ,
-            }
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                property_alias: self.property_alias,
+                start_time_in_seconds: self.start_time_in_seconds,
+                start_time_offset_in_nanos: self.start_time_offset_in_nanos,
+                end_time_in_seconds: self.end_time_in_seconds,
+                end_time_offset_in_nanos: self.end_time_offset_in_nanos,
+                quality: self.quality,
+                interval_in_seconds: self.interval_in_seconds,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                r#type: self.r#type,
+                interval_window_in_seconds: self.interval_window_in_seconds,
+            },
         )
     }
 }

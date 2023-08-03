@@ -15,8 +15,7 @@ pub struct ResponseHeadersPolicy {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A response headers policy configuration.</p>
     #[doc(hidden)]
-    pub response_headers_policy_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
+    pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
 }
 impl ResponseHeadersPolicy {
     /// <p>The identifier for the response headers policy.</p>
@@ -28,9 +27,7 @@ impl ResponseHeadersPolicy {
         self.last_modified_time.as_ref()
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
+    pub fn response_headers_policy_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
         self.response_headers_policy_config.as_ref()
     }
 }
@@ -43,14 +40,11 @@ impl ResponseHeadersPolicy {
 
 /// A builder for [`ResponseHeadersPolicy`](crate::types::ResponseHeadersPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) response_headers_policy_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
+    pub(crate) response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
 }
 impl ResponseHeadersPolicyBuilder {
     /// <p>The identifier for the response headers policy.</p>
@@ -73,10 +67,7 @@ impl ResponseHeadersPolicyBuilder {
         self
     }
     /// <p>The date and time when the response headers policy was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -85,25 +76,17 @@ impl ResponseHeadersPolicyBuilder {
         &self.last_modified_time
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyConfig,
-    ) -> Self {
+    pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.response_headers_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn set_response_headers_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
-    ) -> Self {
+    pub fn set_response_headers_policy_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>) -> Self {
         self.response_headers_policy_config = input;
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn get_response_headers_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+    pub fn get_response_headers_policy_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
         &self.response_headers_policy_config
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicy`](crate::types::ResponseHeadersPolicy).

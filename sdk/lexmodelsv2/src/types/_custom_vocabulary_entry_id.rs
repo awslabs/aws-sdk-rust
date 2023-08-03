@@ -23,9 +23,7 @@ impl CustomVocabularyEntryId {
 
 /// A builder for [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomVocabularyEntryIdBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CustomVocabularyEntryIdBuilder {
     }
     /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
     pub fn build(self) -> crate::types::CustomVocabularyEntryId {
-        crate::types::CustomVocabularyEntryId {
-            item_id: self.item_id,
-        }
+        crate::types::CustomVocabularyEntryId { item_id: self.item_id }
     }
 }

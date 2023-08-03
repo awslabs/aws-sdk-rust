@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`ldaps_settings_info(Option<Vec<LdapsSettingInfo>>)`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput::ldaps_settings_info): <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput::next_token): <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     /// - On failure, responds with [`SdkError<DescribeLDAPSSettingsError>`](crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError)
-    pub fn describe_ldaps_settings(
-        &self,
-    ) -> crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder
-    {
-        crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ldaps_settings(&self) -> crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder {
+        crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::new(self.handle.clone())
     }
 }

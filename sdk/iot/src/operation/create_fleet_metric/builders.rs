@@ -10,10 +10,7 @@ impl CreateFleetMetricInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_metric::CreateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_metric::CreateFleetMetricError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_metric::CreateFleetMetricError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_fleet_metric();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateFleetMetricFluentBuilder {
         }
     }
     /// Access the CreateFleetMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fleet_metric::builders::CreateFleetMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fleet_metric::builders::CreateFleetMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateFleetMetricFluentBuilder {
             crate::operation::create_fleet_metric::CreateFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_metric::CreateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_metric::CreateFleetMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateFleetMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_metric::CreateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_metric::CreateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_metric::CreateFleetMetricError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateFleetMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_metric::CreateFleetMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_metric::CreateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_metric::CreateFleetMetricError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateFleetMetricFluentBuilder {
             crate::operation::create_fleet_metric::CreateFleetMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_metric::CreateFleetMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_metric::CreateFleetMetricError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +141,7 @@ impl CreateFleetMetricFluentBuilder {
         self
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.inner = self.inner.set_aggregation_type(input);
         self
     }
@@ -183,18 +164,12 @@ impl CreateFleetMetricFluentBuilder {
         self.inner.get_period()
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregation_field(input.into());
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
@@ -217,18 +192,12 @@ impl CreateFleetMetricFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_version(input.into());
         self
     }
     /// <p>The query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
     }
@@ -274,10 +243,7 @@ impl CreateFleetMetricFluentBuilder {
         self
     }
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

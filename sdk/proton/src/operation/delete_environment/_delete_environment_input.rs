@@ -15,17 +15,14 @@ impl DeleteEnvironmentInput {
 }
 impl DeleteEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_environment::DeleteEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_environment::DeleteEnvironmentInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput { name: self.name })
     }
 }

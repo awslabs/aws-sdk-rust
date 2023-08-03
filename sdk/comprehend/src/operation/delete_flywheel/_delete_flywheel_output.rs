@@ -19,9 +19,7 @@ impl DeleteFlywheelOutput {
 
 /// A builder for [`DeleteFlywheelOutput`](crate::operation::delete_flywheel::DeleteFlywheelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlywheelOutputBuilder {
     _request_id: Option<String>,
 }

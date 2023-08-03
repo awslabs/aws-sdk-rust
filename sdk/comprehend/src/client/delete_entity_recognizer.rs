@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`entity_recognizer_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     /// - On success, responds with [`DeleteEntityRecognizerOutput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput)
     /// - On failure, responds with [`SdkError<DeleteEntityRecognizerError>`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError)
-    pub fn delete_entity_recognizer(
-        &self,
-    ) -> crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder
-    {
+    pub fn delete_entity_recognizer(&self) -> crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder {
         crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl StopAppBlockBuilderInput {
 }
 impl StopAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder {
-        crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder {
+        crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl StopAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_app_block_builder::StopAppBlockBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_app_block_builder::StopAppBlockBuilderInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_app_block_builder::StopAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_app_block_builder::StopAppBlockBuilderInput { name: self.name })
     }
 }

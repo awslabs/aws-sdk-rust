@@ -15,7 +15,10 @@ pub fn ser_cmaf_package_create_or_update_parameters(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_hls_manifest_create_or_update_parameters::ser_hls_manifest_create_or_update_parameters(&mut object_6, item_5)?;
+                crate::protocol_serde::shape_hls_manifest_create_or_update_parameters::ser_hls_manifest_create_or_update_parameters(
+                    &mut object_6,
+                    item_5,
+                )?;
                 object_6.finish();
             }
         }

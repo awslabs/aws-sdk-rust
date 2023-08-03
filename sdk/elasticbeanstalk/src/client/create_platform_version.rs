@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`platform_summary(Option<PlatformSummary>)`](crate::operation::create_platform_version::CreatePlatformVersionOutput::platform_summary): <p>Detailed information about the new version of the custom platform.</p>
     ///   - [`builder_value(Option<Builder>)`](crate::operation::create_platform_version::CreatePlatformVersionOutput::builder_value): <p>The builder used to create the custom platform.</p>
     /// - On failure, responds with [`SdkError<CreatePlatformVersionError>`](crate::operation::create_platform_version::CreatePlatformVersionError)
-    pub fn create_platform_version(
-        &self,
-    ) -> crate::operation::create_platform_version::builders::CreatePlatformVersionFluentBuilder
-    {
-        crate::operation::create_platform_version::builders::CreatePlatformVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_platform_version(&self) -> crate::operation::create_platform_version::builders::CreatePlatformVersionFluentBuilder {
+        crate::operation::create_platform_version::builders::CreatePlatformVersionFluentBuilder::new(self.handle.clone())
     }
 }

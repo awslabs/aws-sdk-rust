@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateConnectorRegistrationOutput`](crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput::connector_arn): <p>The ARN of the connector being updated.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectorRegistrationError>`](crate::operation::update_connector_registration::UpdateConnectorRegistrationError)
-    pub fn update_connector_registration(&self) -> crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationFluentBuilder{
+    pub fn update_connector_registration(
+        &self,
+    ) -> crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationFluentBuilder {
         crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`outbound_caller_config(OutboundCallerConfig)`](crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigFluentBuilder::outbound_caller_config) / [`set_outbound_caller_config(Option<OutboundCallerConfig>)`](crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigFluentBuilder::set_outbound_caller_config): <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     /// - On success, responds with [`UpdateQueueOutboundCallerConfigOutput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateQueueOutboundCallerConfigError>`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigError)
-    pub fn update_queue_outbound_caller_config(&self) -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigFluentBuilder{
+    pub fn update_queue_outbound_caller_config(
+        &self,
+    ) -> crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigFluentBuilder {
         crate::operation::update_queue_outbound_caller_config::builders::UpdateQueueOutboundCallerConfigFluentBuilder::new(self.handle.clone())
     }
 }

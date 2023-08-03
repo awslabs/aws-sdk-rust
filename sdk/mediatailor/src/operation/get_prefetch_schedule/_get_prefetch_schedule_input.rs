@@ -22,18 +22,14 @@ impl GetPrefetchScheduleInput {
 }
 impl GetPrefetchScheduleInput {
     /// Creates a new builder-style object to manufacture [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleInputBuilder {
-        crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleInputBuilder {
+        crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPrefetchScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl GetPrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetPrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
-                name: self.name,
-                playback_configuration_name: self.playback_configuration_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
+            name: self.name,
+            playback_configuration_name: self.playback_configuration_name,
+        })
     }
 }

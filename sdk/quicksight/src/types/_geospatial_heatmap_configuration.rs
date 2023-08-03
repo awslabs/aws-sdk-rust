@@ -10,9 +10,7 @@ pub struct GeospatialHeatmapConfiguration {
 }
 impl GeospatialHeatmapConfiguration {
     /// <p>The color scale specification for the heatmap point style.</p>
-    pub fn heatmap_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeospatialHeatmapColorScale> {
+    pub fn heatmap_color(&self) -> ::std::option::Option<&crate::types::GeospatialHeatmapColorScale> {
         self.heatmap_color.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl GeospatialHeatmapConfiguration {
 
 /// A builder for [`GeospatialHeatmapConfiguration`](crate::types::GeospatialHeatmapConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialHeatmapConfigurationBuilder {
     pub(crate) heatmap_color: ::std::option::Option<crate::types::GeospatialHeatmapColorScale>,
 }
@@ -38,17 +34,12 @@ impl GeospatialHeatmapConfigurationBuilder {
         self
     }
     /// <p>The color scale specification for the heatmap point style.</p>
-    pub fn set_heatmap_color(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialHeatmapColorScale>,
-    ) -> Self {
+    pub fn set_heatmap_color(mut self, input: ::std::option::Option<crate::types::GeospatialHeatmapColorScale>) -> Self {
         self.heatmap_color = input;
         self
     }
     /// <p>The color scale specification for the heatmap point style.</p>
-    pub fn get_heatmap_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialHeatmapColorScale> {
+    pub fn get_heatmap_color(&self) -> &::std::option::Option<crate::types::GeospatialHeatmapColorScale> {
         &self.heatmap_color
     }
     /// Consumes the builder and constructs a [`GeospatialHeatmapConfiguration`](crate::types::GeospatialHeatmapConfiguration).

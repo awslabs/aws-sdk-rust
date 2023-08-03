@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`MergePullRequestByThreeWayOutput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput::pull_request): <p>Returns information about a pull request.</p>
     /// - On failure, responds with [`SdkError<MergePullRequestByThreeWayError>`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError)
-    pub fn merge_pull_request_by_three_way(&self) -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayFluentBuilder{
+    pub fn merge_pull_request_by_three_way(
+        &self,
+    ) -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayFluentBuilder {
         crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayFluentBuilder::new(self.handle.clone())
     }
 }

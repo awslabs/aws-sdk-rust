@@ -58,9 +58,7 @@ impl NotifyConfigurationType {
 
 /// A builder for [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyConfigurationTypeBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) reply_to: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>Email template used when a detected risk event is blocked.</p>
-    pub fn set_block_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
+    pub fn set_block_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
         self.block_email = input;
         self
     }
@@ -135,10 +130,7 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>The email template used when a detected risk event is allowed.</p>
-    pub fn set_no_action_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
+    pub fn set_no_action_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
         self.no_action_email = input;
         self
     }
@@ -152,10 +144,7 @@ impl NotifyConfigurationTypeBuilder {
         self
     }
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
-    pub fn set_mfa_email(
-        mut self,
-        input: ::std::option::Option<crate::types::NotifyEmailType>,
-    ) -> Self {
+    pub fn set_mfa_email(mut self, input: ::std::option::Option<crate::types::NotifyEmailType>) -> Self {
         self.mfa_email = input;
         self
     }

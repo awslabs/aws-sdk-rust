@@ -23,9 +23,7 @@ impl ComputeType {
 
 /// A builder for [`ComputeType`](crate::types::ComputeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeTypeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Compute>,
 }

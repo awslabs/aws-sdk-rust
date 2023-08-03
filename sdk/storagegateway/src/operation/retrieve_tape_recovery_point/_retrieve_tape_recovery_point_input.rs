@@ -23,16 +23,14 @@ impl RetrieveTapeRecoveryPointInput {
 }
 impl RetrieveTapeRecoveryPointInput {
     /// Creates a new builder-style object to manufacture [`RetrieveTapeRecoveryPointInput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput).
-    pub fn builder() -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder{
+    pub fn builder() -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder {
         crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveTapeRecoveryPointInput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveTapeRecoveryPointInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl RetrieveTapeRecoveryPointInputBuilder {
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput {
-                tape_arn: self.tape_arn,
-                gateway_arn: self.gateway_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput {
+            tape_arn: self.tape_arn,
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

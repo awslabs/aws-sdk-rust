@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`metadata(Option<DocumentVersionMetadata>)`](crate::operation::get_document_version::GetDocumentVersionOutput::metadata): <p>The version metadata.</p>
     ///   - [`custom_metadata(Option<HashMap<String, String>>)`](crate::operation::get_document_version::GetDocumentVersionOutput::custom_metadata): <p>The custom metadata on the document version.</p>
     /// - On failure, responds with [`SdkError<GetDocumentVersionError>`](crate::operation::get_document_version::GetDocumentVersionError)
-    pub fn get_document_version(
-        &self,
-    ) -> crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder {
-        crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_document_version(&self) -> crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder {
+        crate::operation::get_document_version::builders::GetDocumentVersionFluentBuilder::new(self.handle.clone())
     }
 }

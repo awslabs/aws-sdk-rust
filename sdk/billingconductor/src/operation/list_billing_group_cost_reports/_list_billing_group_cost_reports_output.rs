@@ -5,8 +5,7 @@
 pub struct ListBillingGroupCostReportsOutput {
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
     #[doc(hidden)]
-    pub billing_group_cost_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
+    pub billing_group_cost_reports: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBillingGroupCostReportsOutput {
 }
 impl ListBillingGroupCostReportsOutput {
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-    pub fn billing_group_cost_reports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BillingGroupCostReportElement]> {
+    pub fn billing_group_cost_reports(&self) -> ::std::option::Option<&[crate::types::BillingGroupCostReportElement]> {
         self.billing_group_cost_reports.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBillingGroupCostReportsOutput {
 }
 impl ListBillingGroupCostReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput).
-    pub fn builder() -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsOutputBuilder {
         crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsOutputBuilder {
-    pub(crate) billing_group_cost_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
+    pub(crate) billing_group_cost_reports: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListBillingGroupCostReportsOutputBuilder {
     /// To override the contents of this collection use [`set_billing_group_cost_reports`](Self::set_billing_group_cost_reports).
     ///
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-    pub fn billing_group_cost_reports(
-        mut self,
-        input: crate::types::BillingGroupCostReportElement,
-    ) -> Self {
+    pub fn billing_group_cost_reports(mut self, input: crate::types::BillingGroupCostReportElement) -> Self {
         let mut v = self.billing_group_cost_reports.unwrap_or_default();
         v.push(input);
         self.billing_group_cost_reports = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListBillingGroupCostReportsOutputBuilder {
         self
     }
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-    pub fn get_billing_group_cost_reports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>> {
+    pub fn get_billing_group_cost_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>> {
         &self.billing_group_cost_reports
     }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
@@ -100,9 +89,7 @@ impl ListBillingGroupCostReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput {
+    pub fn build(self) -> crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput {
         crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput {
             billing_group_cost_reports: self.billing_group_cost_reports,
             next_token: self.next_token,

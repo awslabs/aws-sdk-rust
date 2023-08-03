@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeBudgetActionsForAccountOutput
 }
 impl DescribeBudgetActionsForAccountOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput).
-    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountOutputBuilder {
         crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionsForAccountOutput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountOutputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeBudgetActionsForAccountOutputBuilder {
         self
     }
     /// <p> A list of the budget action resources information. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -91,15 +86,10 @@ impl DescribeBudgetActionsForAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountOutput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput
-    {
+    pub fn build(self) -> crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput {
         crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput {
-            actions: self.actions
-            ,
-            next_token: self.next_token
-            ,
+            actions: self.actions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_profiles::ListProfilesOutput::next_token): <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     ///   - [`profiles(Option<Vec<ListedProfile>>)`](crate::operation::list_profiles::ListProfilesOutput::profiles): <p>Returns an array, where each item contains the details of a profile.</p>
     /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::operation::list_profiles::ListProfilesError)
-    pub fn list_profiles(
-        &self,
-    ) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
-        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profiles(&self) -> crate::operation::list_profiles::builders::ListProfilesFluentBuilder {
+        crate::operation::list_profiles::builders::ListProfilesFluentBuilder::new(self.handle.clone())
     }
 }

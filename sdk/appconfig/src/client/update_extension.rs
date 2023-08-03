@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`actions(Option<HashMap<ActionPoint, Vec<Action>>>)`](crate::operation::update_extension::UpdateExtensionOutput::actions): <p>The actions defined in the extension.</p>
     ///   - [`parameters(Option<HashMap<String, Parameter>>)`](crate::operation::update_extension::UpdateExtensionOutput::parameters): <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     /// - On failure, responds with [`SdkError<UpdateExtensionError>`](crate::operation::update_extension::UpdateExtensionError)
-    pub fn update_extension(
-        &self,
-    ) -> crate::operation::update_extension::builders::UpdateExtensionFluentBuilder {
-        crate::operation::update_extension::builders::UpdateExtensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_extension(&self) -> crate::operation::update_extension::builders::UpdateExtensionFluentBuilder {
+        crate::operation::update_extension::builders::UpdateExtensionFluentBuilder::new(self.handle.clone())
     }
 }

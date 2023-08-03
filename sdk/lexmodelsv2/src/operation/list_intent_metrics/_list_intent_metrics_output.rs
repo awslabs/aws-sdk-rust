@@ -37,17 +37,14 @@ impl ::aws_http::request_id::RequestId for ListIntentMetricsOutput {
 }
 impl ListIntentMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntentMetricsOutput`](crate::operation::list_intent_metrics::ListIntentMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_intent_metrics::builders::ListIntentMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::list_intent_metrics::builders::ListIntentMetricsOutputBuilder {
         crate::operation::list_intent_metrics::builders::ListIntentMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntentMetricsOutput`](crate::operation::list_intent_metrics::ListIntentMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>>,
@@ -81,17 +78,12 @@ impl ListIntentMetricsOutputBuilder {
         self
     }
     /// <p>The results for the intent metrics.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>The results for the intent metrics.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>> {
         &self.results
     }
     /// <p>If the response from the ListIntentMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>

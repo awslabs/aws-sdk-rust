@@ -10,10 +10,7 @@ impl CreateTrustStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_trust_store::CreateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_trust_store();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateTrustStoreFluentBuilder {
         }
     }
     /// Access the CreateTrustStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateTrustStoreFluentBuilder {
             crate::operation::create_trust_store::CreateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateTrustStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trust_store::CreateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trust_store::CreateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateTrustStoreFluentBuilder {
             crate::operation::create_trust_store::CreateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust_store::CreateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl CreateTrustStoreFluentBuilder {
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn set_certificate_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_certificate_list(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.inner = self.inner.set_certificate_list(input);
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn get_certificate_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_certificate_list(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         self.inner.get_certificate_list()
     }
     /// Appends an item to `tags`.
@@ -155,10 +134,7 @@ impl CreateTrustStoreFluentBuilder {
         self
     }
     /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

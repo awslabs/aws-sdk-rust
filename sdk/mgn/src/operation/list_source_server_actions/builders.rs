@@ -26,8 +26,7 @@ impl ListSourceServerActionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSourceServerActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder,
+    inner: crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder,
 }
 impl ListSourceServerActionsFluentBuilder {
     /// Creates a new `ListSourceServerActions`.
@@ -38,10 +37,7 @@ impl ListSourceServerActionsFluentBuilder {
         }
     }
     /// Access the ListSourceServerActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListSourceServerActionsFluentBuilder {
             crate::operation::list_source_server_actions::ListSourceServerActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_server_actions::ListSourceServerActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_server_actions::ListSourceServerActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListSourceServerActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListSourceServerActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_server_actions::ListSourceServerActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_server_actions::ListSourceServerActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_server_actions::ListSourceServerActionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListSourceServerActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_server_actions::ListSourceServerActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_server_actions::ListSourceServerActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_server_actions::ListSourceServerActionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListSourceServerActionsFluentBuilder {
             crate::operation::list_source_server_actions::ListSourceServerActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_server_actions::ListSourceServerActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_server_actions::ListSourceServerActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_source_server_actions::paginator::ListSourceServerActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_source_server_actions::paginator::ListSourceServerActionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_source_server_actions::paginator::ListSourceServerActionsPaginator {
         crate::operation::list_source_server_actions::paginator::ListSourceServerActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -159,17 +135,12 @@ impl ListSourceServerActionsFluentBuilder {
         self
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>

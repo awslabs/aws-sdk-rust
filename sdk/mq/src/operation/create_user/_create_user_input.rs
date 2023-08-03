@@ -58,9 +58,7 @@ impl CreateUserInput {
 
 /// A builder for [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) console_access: ::std::option::Option<bool>,
@@ -110,10 +108,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -164,12 +159,7 @@ impl CreateUserInputBuilder {
         &self.replication_user
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user::CreateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             broker_id: self.broker_id,
             console_access: self.console_access,

@@ -29,9 +29,7 @@ impl DeleteDatasetOutput {
 
 /// A builder for [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetOutputBuilder {
     pub(crate) dataset: ::std::option::Option<crate::types::Dataset>,
     _request_id: Option<String>,

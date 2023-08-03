@@ -10,10 +10,7 @@ impl CreateFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet::CreateFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_fleet();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateFleetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_fleet::CreateFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_fleet::CreateFleet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateFleetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_fleet::CreateFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_fleet::CreateFleet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         self.customize_middleware().await
@@ -148,10 +136,7 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
-    pub fn set_spot_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotOptionsRequest>,
-    ) -> Self {
+    pub fn set_spot_options(mut self, input: ::std::option::Option<crate::types::SpotOptionsRequest>) -> Self {
         self.inner = self.inner.set_spot_options(input);
         self
     }
@@ -165,25 +150,17 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
-    pub fn set_on_demand_options(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDemandOptionsRequest>,
-    ) -> Self {
+    pub fn set_on_demand_options(mut self, input: ::std::option::Option<crate::types::OnDemandOptionsRequest>) -> Self {
         self.inner = self.inner.set_on_demand_options(input);
         self
     }
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
-    pub fn get_on_demand_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDemandOptionsRequest> {
+    pub fn get_on_demand_options(&self) -> &::std::option::Option<crate::types::OnDemandOptionsRequest> {
         self.inner.get_on_demand_options()
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        mut self,
-        input: crate::types::FleetExcessCapacityTerminationPolicy,
-    ) -> Self {
+    pub fn excess_capacity_termination_policy(mut self, input: crate::types::FleetExcessCapacityTerminationPolicy) -> Self {
         self.inner = self.inner.excess_capacity_termination_policy(input);
         self
     }
@@ -198,9 +175,7 @@ impl CreateFleetFluentBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn get_excess_capacity_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+    pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
         self.inner.get_excess_capacity_termination_policy()
     }
     /// Appends an item to `LaunchTemplateConfigs`.
@@ -208,50 +183,34 @@ impl CreateFleetFluentBuilder {
     /// To override the contents of this collection use [`set_launch_template_configs`](Self::set_launch_template_configs).
     ///
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub fn launch_template_configs(
-        mut self,
-        input: crate::types::FleetLaunchTemplateConfigRequest,
-    ) -> Self {
+    pub fn launch_template_configs(mut self, input: crate::types::FleetLaunchTemplateConfigRequest) -> Self {
         self.inner = self.inner.launch_template_configs(input);
         self
     }
     /// <p>The configuration for the EC2 Fleet.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     ) -> Self {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub fn get_launch_template_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>
-    {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>> {
         self.inner.get_launch_template_configs()
     }
     /// <p>The number of units to request.</p>
-    pub fn target_capacity_specification(
-        mut self,
-        input: crate::types::TargetCapacitySpecificationRequest,
-    ) -> Self {
+    pub fn target_capacity_specification(mut self, input: crate::types::TargetCapacitySpecificationRequest) -> Self {
         self.inner = self.inner.target_capacity_specification(input);
         self
     }
     /// <p>The number of units to request.</p>
-    pub fn set_target_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
-    ) -> Self {
+    pub fn set_target_capacity_specification(mut self, input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>) -> Self {
         self.inner = self.inner.set_target_capacity_specification(input);
         self
     }
     /// <p>The number of units to request.</p>
-    pub fn get_target_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
+    pub fn get_target_capacity_specification(&self) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
         self.inner.get_target_capacity_specification()
     }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
@@ -260,10 +219,7 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
-    pub fn set_terminate_instances_with_expiration(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_terminate_instances_with_expiration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances_with_expiration(input);
         self
     }
@@ -309,10 +265,7 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
-    pub fn set_valid_from(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_valid_from(input);
         self
     }
@@ -326,10 +279,7 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
-    pub fn set_valid_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_valid_until(input);
         self
     }
@@ -365,19 +315,14 @@ impl CreateFleetFluentBuilder {
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Reserved.</p>

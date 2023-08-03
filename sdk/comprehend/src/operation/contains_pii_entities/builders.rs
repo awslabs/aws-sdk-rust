@@ -37,9 +37,7 @@ impl ContainsPiiEntitiesFluentBuilder {
         }
     }
     /// Access the ContainsPiiEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ContainsPiiEntitiesFluentBuilder {
             crate::operation::contains_pii_entities::ContainsPiiEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::contains_pii_entities::ContainsPiiEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ContainsPiiEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ContainsPiiEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::contains_pii_entities::ContainsPiiEntitiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ContainsPiiEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::contains_pii_entities::ContainsPiiEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ContainsPiiEntitiesFluentBuilder {
             crate::operation::contains_pii_entities::ContainsPiiEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::contains_pii_entities::ContainsPiiEntitiesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl ContainsPiiEntitiesFluentBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

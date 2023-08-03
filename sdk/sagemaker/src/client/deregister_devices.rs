@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`device_names(Vec<String>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::device_names) / [`set_device_names(Option<Vec<String>>)`](crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::set_device_names): <p>The unique IDs of the devices.</p>
     /// - On success, responds with [`DeregisterDevicesOutput`](crate::operation::deregister_devices::DeregisterDevicesOutput)
     /// - On failure, responds with [`SdkError<DeregisterDevicesError>`](crate::operation::deregister_devices::DeregisterDevicesError)
-    pub fn deregister_devices(
-        &self,
-    ) -> crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder {
-        crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_devices(&self) -> crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder {
+        crate::operation::deregister_devices::builders::DeregisterDevicesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl MaxCountRule {
 
 /// A builder for [`MaxCountRule`](crate::types::MaxCountRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaxCountRuleBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) max_count: ::std::option::Option<i32>,

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLunaClientsOutput {
 }
 impl ListLunaClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
-    pub fn builder() -> crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder {
         crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLunaClientsOutputBuilder {
     pub(crate) client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListLunaClientsOutputBuilder {
         self
     }
     /// <p>The list of clients.</p>
-    pub fn set_client_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_list = input;
         self
     }
     /// <p>The list of clients.</p>
-    pub fn get_client_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_list
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>

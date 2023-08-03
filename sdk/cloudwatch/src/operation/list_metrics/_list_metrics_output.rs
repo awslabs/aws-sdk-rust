@@ -44,9 +44,7 @@ impl ListMetricsOutput {
 
 /// A builder for [`ListMetricsOutput`](crate::operation::list_metrics::ListMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricsOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl ListMetricsOutputBuilder {
         self
     }
     /// <p>The metrics that match your request. </p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
         self.metrics = input;
         self
     }
@@ -97,10 +92,7 @@ impl ListMetricsOutputBuilder {
     ///
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn owning_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owning_accounts.unwrap_or_default();
         v.push(input.into());
         self.owning_accounts = ::std::option::Option::Some(v);
@@ -108,18 +100,13 @@ impl ListMetricsOutputBuilder {
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn set_owning_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owning_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owning_accounts = input;
         self
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn get_owning_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owning_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.owning_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bot_id(Option<String>)`](crate::operation::delete_bot_alias::DeleteBotAliasOutput::bot_id): <p>The unique identifier of the bot that contains the alias to delete.</p>
     ///   - [`bot_alias_status(Option<BotAliasStatus>)`](crate::operation::delete_bot_alias::DeleteBotAliasOutput::bot_alias_status): <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
     /// - On failure, responds with [`SdkError<DeleteBotAliasError>`](crate::operation::delete_bot_alias::DeleteBotAliasError)
-    pub fn delete_bot_alias(
-        &self,
-    ) -> crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder {
-        crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bot_alias(&self) -> crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder {
+        crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

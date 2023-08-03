@@ -26,7 +26,7 @@ impl DisassociateRoleFromGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRoleFromGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder,
+    inner: crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder,
 }
 impl DisassociateRoleFromGroupFluentBuilder {
     /// Creates a new `DisassociateRoleFromGroup`.
@@ -37,7 +37,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
         }
     }
     /// Access the DisassociateRoleFromGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
             crate::operation::disassociate_role_from_group::DisassociateRoleFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateRoleFromGroupFluentBuilder {
             crate::operation::disassociate_role_from_group::DisassociateRoleFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError>,
     > {
         self.customize_middleware().await
     }

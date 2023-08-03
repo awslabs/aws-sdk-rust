@@ -30,9 +30,7 @@ impl TestSetTurnResult {
 
 /// A builder for [`TestSetTurnResult`](crate::types::TestSetTurnResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetTurnResultBuilder {
     pub(crate) agent: ::std::option::Option<crate::types::AgentTurnResult>,
     pub(crate) user: ::std::option::Option<crate::types::UserTurnResult>,
@@ -44,10 +42,7 @@ impl TestSetTurnResultBuilder {
         self
     }
     /// <p>Contains information about the agent messages in the turn.</p>
-    pub fn set_agent(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentTurnResult>,
-    ) -> Self {
+    pub fn set_agent(mut self, input: ::std::option::Option<crate::types::AgentTurnResult>) -> Self {
         self.agent = input;
         self
     }

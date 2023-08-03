@@ -12,10 +12,7 @@ pub fn ser_create_group_input(
     if let Some(var_3) = &input.insights_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("InsightsConfiguration").start_object();
-        crate::protocol_serde::shape_insights_configuration::ser_insights_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_insights_configuration::ser_insights_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

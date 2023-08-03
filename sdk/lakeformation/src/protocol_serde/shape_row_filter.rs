@@ -9,10 +9,7 @@ pub fn ser_row_filter(
     if let Some(var_2) = &input.all_rows_wildcard {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AllRowsWildcard").start_object();
-        crate::protocol_serde::shape_all_rows_wildcard::ser_all_rows_wildcard(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_all_rows_wildcard::ser_all_rows_wildcard(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())
@@ -22,12 +19,7 @@ pub(crate) fn de_row_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::RowFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -37,40 +29,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FilterExpression" => {
-                                builder = builder.set_filter_expression(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FilterExpression" => {
+                            builder = builder.set_filter_expression(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AllRowsWildcard" => {
-                                builder = builder.set_all_rows_wildcard(
-                                    crate::protocol_serde::shape_all_rows_wildcard::de_all_rows_wildcard(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "AllRowsWildcard" => {
+                            builder = builder.set_all_rows_wildcard(crate::protocol_serde::shape_all_rows_wildcard::de_all_rows_wildcard(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

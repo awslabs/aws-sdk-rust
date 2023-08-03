@@ -18,8 +18,7 @@ pub struct StreamingImage {
     pub ec2_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption configuration.</p>
     #[doc(hidden)]
-    pub encryption_configuration:
-        ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
+    pub encryption_configuration: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
     #[doc(hidden)]
     pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,9 +45,7 @@ pub struct StreamingImage {
     pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StreamingImage {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
@@ -64,9 +61,7 @@ impl StreamingImage {
         self.ec2_image_id.as_deref()
     }
     /// <p>The encryption configuration.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingImageEncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::StreamingImageEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
@@ -102,11 +97,7 @@ impl StreamingImage {
         self.streaming_image_id.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -143,8 +134,7 @@ pub struct StreamingImageBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -153,9 +143,7 @@ pub struct StreamingImageBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::StreamingImageStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StreamingImageBuilder {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
@@ -201,25 +189,17 @@ impl StreamingImageBuilder {
         &self.ec2_image_id
     }
     /// <p>The encryption configuration.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::StreamingImageEncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::StreamingImageEncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption configuration.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingImageEncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::StreamingImageEncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Appends an item to `eula_ids`.
@@ -234,10 +214,7 @@ impl StreamingImageBuilder {
         self
     }
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eula_ids = input;
         self
     }
@@ -293,10 +270,7 @@ impl StreamingImageBuilder {
         self
     }
     /// <p>The current state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingImageState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::StreamingImageState>) -> Self {
         self.state = input;
         self
     }
@@ -310,32 +284,21 @@ impl StreamingImageBuilder {
         self
     }
     /// <p>The status code.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingImageStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StreamingImageStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The status code.</p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingImageStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StreamingImageStatusCode> {
         &self.status_code
     }
     /// <p>The status message for the streaming image.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the streaming image.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -344,18 +307,12 @@ impl StreamingImageBuilder {
         &self.status_message
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_image_id = input;
         self
     }
@@ -368,32 +325,19 @@ impl StreamingImageBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StreamingImage`](crate::types::StreamingImage).

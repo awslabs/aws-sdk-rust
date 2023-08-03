@@ -53,9 +53,7 @@ impl AssetPropertyVariant {
 
 /// A builder for [`AssetPropertyVariant`](crate::types::AssetPropertyVariant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyVariantBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
     pub(crate) integer_value: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ impl AssetPropertyVariantBuilder {
         &self.string_value
     }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    pub fn integer_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integer_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integer_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    pub fn set_integer_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integer_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integer_value = input;
         self
     }
@@ -112,18 +104,12 @@ impl AssetPropertyVariantBuilder {
         &self.double_value
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    pub fn boolean_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn boolean_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.boolean_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    pub fn set_boolean_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_boolean_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.boolean_value = input;
         self
     }

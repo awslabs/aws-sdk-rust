@@ -15,17 +15,14 @@ impl DeleteGraphqlApiInput {
 }
 impl DeleteGraphqlApiInput {
     /// Creates a new builder-style object to manufacture [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
-    pub fn builder() -> crate::operation::delete_graphql_api::builders::DeleteGraphqlApiInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_graphql_api::builders::DeleteGraphqlApiInputBuilder {
         crate::operation::delete_graphql_api::builders::DeleteGraphqlApiInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGraphqlApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DeleteGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_graphql_api::DeleteGraphqlApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_graphql_api::DeleteGraphqlApiInput {
-                api_id: self.api_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_graphql_api::DeleteGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_graphql_api::DeleteGraphqlApiInput { api_id: self.api_id })
     }
 }

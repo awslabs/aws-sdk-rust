@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`broker_id(impl ::std::convert::Into<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On success, responds with [`RebootBrokerOutput`](crate::operation::reboot_broker::RebootBrokerOutput)
     /// - On failure, responds with [`SdkError<RebootBrokerError>`](crate::operation::reboot_broker::RebootBrokerError)
-    pub fn reboot_broker(
-        &self,
-    ) -> crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder {
-        crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_broker(&self) -> crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder {
+        crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::new(self.handle.clone())
     }
 }

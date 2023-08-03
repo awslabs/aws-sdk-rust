@@ -119,18 +119,14 @@ impl ::aws_http::request_id::RequestId for DescribeWhatIfAnalysisOutput {
 }
 impl DescribeWhatIfAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisOutputBuilder {
         crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisOutputBuilder {
     pub(crate) what_if_analysis_name: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,
@@ -145,18 +141,12 @@ pub struct DescribeWhatIfAnalysisOutputBuilder {
 }
 impl DescribeWhatIfAnalysisOutputBuilder {
     /// <p>The name of the what-if analysis.</p>
-    pub fn what_if_analysis_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the what-if analysis.</p>
-    pub fn set_what_if_analysis_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_name = input;
         self
     }
@@ -165,18 +155,12 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         &self.what_if_analysis_name
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn what_if_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_arn = input;
         self
     }
@@ -204,10 +188,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self
     }
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
-    pub fn set_estimated_time_remaining_in_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
     }
@@ -273,10 +254,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self
     }
     /// <p>When the what-if analysis was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -304,10 +282,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -319,9 +294,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
@@ -342,10 +315,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn set_time_series_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
-    ) -> Self {
+    pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
         self
     }
@@ -356,9 +326,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn get_time_series_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+    pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -371,9 +339,7 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput {
+    pub fn build(self) -> crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput {
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput {
             what_if_analysis_name: self.what_if_analysis_name,
             what_if_analysis_arn: self.what_if_analysis_arn,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`collectors(Option<Vec<CollectorResponse>>)`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput::collectors): <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetAdvisorCollectorsError>`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError)
-    pub fn describe_fleet_advisor_collectors(&self) -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsFluentBuilder{
+    pub fn describe_fleet_advisor_collectors(
+        &self,
+    ) -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsFluentBuilder {
         crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsFluentBuilder::new(self.handle.clone())
     }
 }

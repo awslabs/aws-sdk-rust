@@ -86,9 +86,7 @@ impl ReadSetListItem {
         self.file_type.as_ref()
     }
     /// <p>Details about a sequence.</p>
-    pub fn sequence_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SequenceInformation> {
+    pub fn sequence_information(&self) -> ::std::option::Option<&crate::types::SequenceInformation> {
         self.sequence_information.as_ref()
     }
     /// <p>When the read set was created.</p>
@@ -109,9 +107,7 @@ impl ReadSetListItem {
 
 /// A builder for [`ReadSetListItem`](crate::types::ReadSetListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadSetListItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -157,18 +153,12 @@ impl ReadSetListItemBuilder {
         &self.arn
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -247,18 +237,12 @@ impl ReadSetListItemBuilder {
         &self.description
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn reference_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn set_reference_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_arn = input;
         self
     }
@@ -286,17 +270,12 @@ impl ReadSetListItemBuilder {
         self
     }
     /// <p>Details about a sequence.</p>
-    pub fn set_sequence_information(
-        mut self,
-        input: ::std::option::Option<crate::types::SequenceInformation>,
-    ) -> Self {
+    pub fn set_sequence_information(mut self, input: ::std::option::Option<crate::types::SequenceInformation>) -> Self {
         self.sequence_information = input;
         self
     }
     /// <p>Details about a sequence.</p>
-    pub fn get_sequence_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::SequenceInformation> {
+    pub fn get_sequence_information(&self) -> &::std::option::Option<crate::types::SequenceInformation> {
         &self.sequence_information
     }
     /// <p>When the read set was created.</p>
@@ -305,10 +284,7 @@ impl ReadSetListItemBuilder {
         self
     }
     /// <p>When the read set was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -317,18 +293,12 @@ impl ReadSetListItemBuilder {
         &self.creation_time
     }
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

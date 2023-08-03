@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourceDefinitionOutput {
 }
 impl DeleteResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDefinitionOutput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionOutputBuilder {
         crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceDefinitionOutput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteResourceDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteResourceDefinitionOutput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput {
         crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput {
             _request_id: self._request_id,
         }

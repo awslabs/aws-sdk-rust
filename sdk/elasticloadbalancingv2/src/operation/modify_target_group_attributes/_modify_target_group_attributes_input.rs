@@ -22,35 +22,26 @@ impl ModifyTargetGroupAttributesInput {
 }
 impl ModifyTargetGroupAttributesInput {
     /// Creates a new builder-style object to manufacture [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
-    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesInputBuilder {
         crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -70,17 +61,12 @@ impl ModifyTargetGroupAttributesInputBuilder {
         self
     }
     /// <p>The attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
@@ -90,11 +76,9 @@ impl ModifyTargetGroupAttributesInputBuilder {
         crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput {
-                target_group_arn: self.target_group_arn,
-                attributes: self.attributes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput {
+            target_group_arn: self.target_group_arn,
+            attributes: self.attributes,
+        })
     }
 }

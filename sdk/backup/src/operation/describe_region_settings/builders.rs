@@ -37,10 +37,7 @@ impl DescribeRegionSettingsFluentBuilder {
         }
     }
     /// Access the DescribeRegionSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeRegionSettingsFluentBuilder {
             crate::operation::describe_region_settings::DescribeRegionSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_region_settings::DescribeRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_region_settings::DescribeRegionSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeRegionSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeRegionSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_region_settings::DescribeRegionSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_region_settings::DescribeRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_region_settings::DescribeRegionSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeRegionSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_region_settings::DescribeRegionSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_region_settings::DescribeRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_region_settings::DescribeRegionSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeRegionSettingsFluentBuilder {
             crate::operation::describe_region_settings::DescribeRegionSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_region_settings::DescribeRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_region_settings::DescribeRegionSettingsError>,
     > {
         self.customize_middleware().await
     }

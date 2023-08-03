@@ -95,9 +95,7 @@ impl NetAppOntapsvm {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the SVM are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The amount of storage in the SVM that's being used for snapshots.</p>
@@ -118,9 +116,7 @@ impl NetAppOntapsvm {
 
 /// A builder for [`NetAppOntapsvm`](crate::types::NetAppOntapsvm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetAppOntapsvmBuilder {
     pub(crate) cluster_uuid: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -131,8 +127,7 @@ pub struct NetAppOntapsvmBuilder {
     pub(crate) total_capacity_provisioned: ::std::option::Option<i64>,
     pub(crate) total_logical_capacity_used: ::std::option::Option<i64>,
     pub(crate) max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) nfs_exported_volumes: ::std::option::Option<i64>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) total_snapshot_capacity_used: ::std::option::Option<i64>,
@@ -200,27 +195,19 @@ impl NetAppOntapsvmBuilder {
     /// To override the contents of this collection use [`set_enabled_protocols`](Self::set_enabled_protocols).
     ///
     /// <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
-    pub fn enabled_protocols(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enabled_protocols(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_protocols.unwrap_or_default();
         v.push(input.into());
         self.enabled_protocols = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
-    pub fn set_enabled_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enabled_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enabled_protocols = input;
         self
     }
     /// <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
-    pub fn get_enabled_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_protocols(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_protocols
     }
     /// <p>The storage space that's being used in the SVM.</p>
@@ -271,17 +258,12 @@ impl NetAppOntapsvmBuilder {
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the SVM.</p>
-    pub fn set_max_p95_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaxP95Performance>,
-    ) -> Self {
+    pub fn set_max_p95_performance(mut self, input: ::std::option::Option<crate::types::MaxP95Performance>) -> Self {
         self.max_p95_performance = input;
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the SVM.</p>
-    pub fn get_max_p95_performance(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaxP95Performance> {
+    pub fn get_max_p95_performance(&self) -> &::std::option::Option<crate::types::MaxP95Performance> {
         &self.max_p95_performance
     }
     /// Appends an item to `recommendations`.
@@ -296,17 +278,12 @@ impl NetAppOntapsvmBuilder {
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the SVM. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the SVM. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>The number of NFS volumes in the SVM.</p>
@@ -331,18 +308,13 @@ impl NetAppOntapsvmBuilder {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the SVM are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn set_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStatus>,
-    ) -> Self {
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.recommendation_status = input;
         self
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the SVM are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn get_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         &self.recommendation_status
     }
     /// <p>The amount of storage in the SVM that's being used for snapshots.</p>

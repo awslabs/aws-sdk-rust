@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`step_status(Option<UpgradeStatus>)`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput::step_status): <p>The status of the current step that an upgrade is on.</p>
     ///   - [`upgrade_name(Option<String>)`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput::upgrade_name): <p>A string that describes the update.</p>
     /// - On failure, responds with [`SdkError<GetUpgradeStatusError>`](crate::operation::get_upgrade_status::GetUpgradeStatusError)
-    pub fn get_upgrade_status(
-        &self,
-    ) -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder {
-        crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_upgrade_status(&self) -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder {
+        crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::new(self.handle.clone())
     }
 }

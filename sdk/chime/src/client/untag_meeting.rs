@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UntagMeetingOutput`](crate::operation::untag_meeting::UntagMeetingOutput)
     /// - On failure, responds with [`SdkError<UntagMeetingError>`](crate::operation::untag_meeting::UntagMeetingError)
     #[deprecated(note = "Use UntagResource in the Amazon Chime SDK Meetings Namespace.")]
-    pub fn untag_meeting(
-        &self,
-    ) -> crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder {
-        crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_meeting(&self) -> crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder {
+        crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::new(self.handle.clone())
     }
 }

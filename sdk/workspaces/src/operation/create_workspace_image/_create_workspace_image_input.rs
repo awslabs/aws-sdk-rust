@@ -36,17 +36,14 @@ impl CreateWorkspaceImageInput {
 }
 impl CreateWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageInputBuilder {
+    pub fn builder() -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageInputBuilder {
         crate::operation::create_workspace_image::builders::CreateWorkspaceImageInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspaceImageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -108,10 +105,7 @@ impl CreateWorkspaceImageInputBuilder {
         self
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -122,17 +116,13 @@ impl CreateWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workspace_image::CreateWorkspaceImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_workspace_image::CreateWorkspaceImageInput {
-                name: self.name,
-                description: self.description,
-                workspace_id: self.workspace_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_workspace_image::CreateWorkspaceImageInput {
+            name: self.name,
+            description: self.description,
+            workspace_id: self.workspace_id,
+            tags: self.tags,
+        })
     }
 }

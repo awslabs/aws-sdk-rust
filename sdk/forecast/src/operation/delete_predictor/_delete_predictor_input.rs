@@ -22,26 +22,18 @@ impl DeletePredictorInput {
 
 /// A builder for [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePredictorInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePredictorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeletePredictorInputBuilder {
     /// Consumes the builder and constructs a [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_predictor::DeletePredictorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_predictor::DeletePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_predictor::DeletePredictorInput {
             predictor_arn: self.predictor_arn,
         })

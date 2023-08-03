@@ -19,9 +19,7 @@ impl DeletePromptOutput {
 
 /// A builder for [`DeletePromptOutput`](crate::operation::delete_prompt::DeletePromptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePromptOutputBuilder {
     _request_id: Option<String>,
 }

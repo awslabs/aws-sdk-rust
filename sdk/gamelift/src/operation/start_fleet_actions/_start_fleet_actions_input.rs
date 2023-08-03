@@ -29,17 +29,14 @@ impl StartFleetActionsInput {
 }
 impl StartFleetActionsInput {
     /// Creates a new builder-style object to manufacture [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
-    pub fn builder(
-    ) -> crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
+    pub fn builder() -> crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
         crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFleetActionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
@@ -72,17 +69,12 @@ impl StartFleetActionsInputBuilder {
         self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         &self.actions
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
@@ -102,16 +94,11 @@ impl StartFleetActionsInputBuilder {
     /// Consumes the builder and constructs a [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_fleet_actions::StartFleetActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_fleet_actions::StartFleetActionsInput {
-                fleet_id: self.fleet_id,
-                actions: self.actions,
-                location: self.location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_fleet_actions::StartFleetActionsInput {
+            fleet_id: self.fleet_id,
+            actions: self.actions,
+            location: self.location,
+        })
     }
 }

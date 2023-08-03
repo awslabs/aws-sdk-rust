@@ -21,8 +21,7 @@ pub struct TimestreamConfiguration {
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Specifies how to map measures to multi-measure records.</p>
     #[doc(hidden)]
-    pub mixed_measure_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     /// <p>Name of the measure column.</p>
     #[doc(hidden)]
     pub measure_name_column: ::std::option::Option<::std::string::String>,
@@ -45,15 +44,11 @@ impl TimestreamConfiguration {
         self.dimension_mappings.as_deref()
     }
     /// <p>Multi-measure mappings.</p>
-    pub fn multi_measure_mappings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
+    pub fn multi_measure_mappings(&self) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
         self.multi_measure_mappings.as_ref()
     }
     /// <p>Specifies how to map measures to multi-measure records.</p>
-    pub fn mixed_measure_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
+    pub fn mixed_measure_mappings(&self) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
         self.mixed_measure_mappings.as_deref()
     }
     /// <p>Name of the measure column.</p>
@@ -70,34 +65,24 @@ impl TimestreamConfiguration {
 
 /// A builder for [`TimestreamConfiguration`](crate::types::TimestreamConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestreamConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_column: ::std::option::Option<::std::string::String>,
-    pub(crate) dimension_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
+    pub(crate) dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
     pub(crate) multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
-    pub(crate) mixed_measure_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub(crate) mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     pub(crate) measure_name_column: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamConfigurationBuilder {
     /// <p>Name of Timestream database to which the query result will be written.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of Timestream database to which the query result will be written.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -145,17 +130,12 @@ impl TimestreamConfigurationBuilder {
         self
     }
     /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
-    pub fn set_dimension_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
-    ) -> Self {
+    pub fn set_dimension_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>) -> Self {
         self.dimension_mappings = input;
         self
     }
     /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
-    pub fn get_dimension_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
+    pub fn get_dimension_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
         &self.dimension_mappings
     }
     /// <p>Multi-measure mappings.</p>
@@ -164,17 +144,12 @@ impl TimestreamConfigurationBuilder {
         self
     }
     /// <p>Multi-measure mappings.</p>
-    pub fn set_multi_measure_mappings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiMeasureMappings>,
-    ) -> Self {
+    pub fn set_multi_measure_mappings(mut self, input: ::std::option::Option<crate::types::MultiMeasureMappings>) -> Self {
         self.multi_measure_mappings = input;
         self
     }
     /// <p>Multi-measure mappings.</p>
-    pub fn get_multi_measure_mappings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
+    pub fn get_multi_measure_mappings(&self) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
         &self.multi_measure_mappings
     }
     /// Appends an item to `mixed_measure_mappings`.
@@ -189,32 +164,21 @@ impl TimestreamConfigurationBuilder {
         self
     }
     /// <p>Specifies how to map measures to multi-measure records.</p>
-    pub fn set_mixed_measure_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
-    ) -> Self {
+    pub fn set_mixed_measure_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>) -> Self {
         self.mixed_measure_mappings = input;
         self
     }
     /// <p>Specifies how to map measures to multi-measure records.</p>
-    pub fn get_mixed_measure_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
+    pub fn get_mixed_measure_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
         &self.mixed_measure_mappings
     }
     /// <p>Name of the measure column.</p>
-    pub fn measure_name_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn measure_name_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.measure_name_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the measure column.</p>
-    pub fn set_measure_name_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_measure_name_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.measure_name_column = input;
         self
     }

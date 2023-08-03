@@ -10,10 +10,7 @@ impl CreateFrameworkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_framework::CreateFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_framework::CreateFrameworkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_framework();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateFrameworkFluentBuilder {
         }
     }
     /// Access the CreateFramework as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_framework::builders::CreateFrameworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_framework::builders::CreateFrameworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateFrameworkFluentBuilder {
             crate::operation::create_framework::CreateFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_framework::CreateFrameworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateFrameworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_framework::CreateFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_framework::CreateFrameworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_framework::CreateFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_framework::CreateFrameworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateFrameworkFluentBuilder {
             crate::operation::create_framework::CreateFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_framework::CreateFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_framework::CreateFrameworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_name(input.into());
         self
     }
     /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateFrameworkFluentBuilder {
         self.inner.get_framework_name()
     }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_description(input.into());
         self
     }
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_description(input);
         self
     }
@@ -172,32 +144,21 @@ impl CreateFrameworkFluentBuilder {
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
-    ) -> Self {
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         self.inner.get_framework_controls()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -221,19 +182,13 @@ impl CreateFrameworkFluentBuilder {
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
     pub fn set_framework_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_framework_tags(input);
         self
     }
     /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
-    pub fn get_framework_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_framework_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_framework_tags()
     }
 }

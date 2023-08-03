@@ -10,10 +10,7 @@ impl ListWavesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_waves::ListWavesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_waves::ListWavesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_waves::ListWavesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_waves();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListWavesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_waves::ListWaves,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_waves::ListWaves, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_waves::ListWavesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListWavesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListWavesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_waves::ListWaves,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_waves::ListWaves, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_waves::ListWavesError>,
     > {
         self.customize_middleware().await
@@ -124,10 +112,7 @@ impl ListWavesFluentBuilder {
         self
     }
     /// <p>Waves list filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWavesRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListWavesRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

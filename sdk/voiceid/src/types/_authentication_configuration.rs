@@ -23,9 +23,7 @@ impl AuthenticationConfiguration {
 
 /// A builder for [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationConfigurationBuilder {
     pub(crate) acceptance_threshold: ::std::option::Option<i32>,
 }

@@ -71,9 +71,7 @@ impl StartEngagementInput {
 
 /// A builder for [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEngagementInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) sender: ::std::option::Option<::std::string::String>,
@@ -142,18 +140,12 @@ impl StartEngagementInputBuilder {
         &self.content
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_subject = input;
         self
     }
@@ -162,18 +154,12 @@ impl StartEngagementInputBuilder {
         &self.public_subject
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_content = input;
         self
     }
@@ -196,18 +182,12 @@ impl StartEngagementInputBuilder {
         &self.incident_id
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -218,10 +198,7 @@ impl StartEngagementInputBuilder {
     /// Consumes the builder and constructs a [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_engagement::StartEngagementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_engagement::StartEngagementInput {
             contact_id: self.contact_id,
             sender: self.sender,

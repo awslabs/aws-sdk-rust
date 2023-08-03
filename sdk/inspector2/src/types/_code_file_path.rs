@@ -44,9 +44,7 @@ impl CodeFilePath {
 
 /// A builder for [`CodeFilePath`](crate::types::CodeFilePath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeFilePathBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_path: ::std::option::Option<::std::string::String>,

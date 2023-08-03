@@ -29,16 +29,14 @@ impl ListControlInsightsByControlDomainInput {
 }
 impl ListControlInsightsByControlDomainInput {
     /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
-    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder{
+    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder {
         crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainInputBuilder {
     pub(crate) control_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListControlInsightsByControlDomainInputBuilder {
 }
 impl ListControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain. </p>
-    pub fn control_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the control domain. </p>
-    pub fn set_control_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_domain_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListControlInsightsByControlDomainInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput {
-                control_domain_id: self.control_domain_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                control_domain_id: self.control_domain_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

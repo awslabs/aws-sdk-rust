@@ -44,9 +44,7 @@ impl DeploymentConfig {
 
 /// A builder for [`DeploymentConfig`](crate::types::DeploymentConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentConfigBuilder {
     pub(crate) concurrent_deployment_percentage: ::std::option::Option<i32>,
     pub(crate) failure_threshold_percentage: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl DeploymentConfigBuilder {
         self
     }
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
-    pub fn set_concurrent_deployment_percentage(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_concurrent_deployment_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_deployment_percentage = input;
         self
     }
@@ -91,10 +86,7 @@ impl DeploymentConfigBuilder {
         self
     }
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
-    pub fn set_robot_deployment_timeout_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_robot_deployment_timeout_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.robot_deployment_timeout_in_seconds = input;
         self
     }
@@ -108,10 +100,7 @@ impl DeploymentConfigBuilder {
         self
     }
     /// <p>The download condition file.</p>
-    pub fn set_download_condition_file(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Object>,
-    ) -> Self {
+    pub fn set_download_condition_file(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.download_condition_file = input;
         self
     }

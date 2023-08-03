@@ -51,9 +51,7 @@ impl FilterBuilder {
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            pattern: self.pattern,
-        }
+        crate::types::Filter { pattern: self.pattern }
     }
 }
 impl ::std::fmt::Debug for FilterBuilder {

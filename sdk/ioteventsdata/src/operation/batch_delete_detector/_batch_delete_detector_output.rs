@@ -5,15 +5,12 @@
 pub struct BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     #[doc(hidden)]
-    pub batch_delete_detector_error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
+    pub batch_delete_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    pub fn batch_delete_detector_error_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchDeleteDetectorErrorEntry]> {
+    pub fn batch_delete_detector_error_entries(&self) -> ::std::option::Option<&[crate::types::BatchDeleteDetectorErrorEntry]> {
         self.batch_delete_detector_error_entries.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteDetectorOutput {
 }
 impl BatchDeleteDetectorOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorOutput`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_detector::builders::BatchDeleteDetectorOutputBuilder {
-        crate::operation::batch_delete_detector::builders::BatchDeleteDetectorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_detector::builders::BatchDeleteDetectorOutputBuilder {
+        crate::operation::batch_delete_detector::builders::BatchDeleteDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteDetectorOutput`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorOutputBuilder {
-    pub(crate) batch_delete_detector_error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
+    pub(crate) batch_delete_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDetectorOutputBuilder {
@@ -47,10 +39,7 @@ impl BatchDeleteDetectorOutputBuilder {
     /// To override the contents of this collection use [`set_batch_delete_detector_error_entries`](Self::set_batch_delete_detector_error_entries).
     ///
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    pub fn batch_delete_detector_error_entries(
-        mut self,
-        input: crate::types::BatchDeleteDetectorErrorEntry,
-    ) -> Self {
+    pub fn batch_delete_detector_error_entries(mut self, input: crate::types::BatchDeleteDetectorErrorEntry) -> Self {
         let mut v = self.batch_delete_detector_error_entries.unwrap_or_default();
         v.push(input);
         self.batch_delete_detector_error_entries = ::std::option::Option::Some(v);
@@ -65,9 +54,7 @@ impl BatchDeleteDetectorOutputBuilder {
         self
     }
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    pub fn get_batch_delete_detector_error_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>> {
+    pub fn get_batch_delete_detector_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>> {
         &self.batch_delete_detector_error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

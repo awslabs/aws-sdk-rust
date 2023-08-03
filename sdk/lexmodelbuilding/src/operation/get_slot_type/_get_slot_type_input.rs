@@ -29,9 +29,7 @@ impl GetSlotTypeInput {
 
 /// A builder for [`GetSlotTypeInput`](crate::operation::get_slot_type::GetSlotTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSlotTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetSlotTypeInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetSlotTypeInput`](crate::operation::get_slot_type::GetSlotTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_slot_type::GetSlotTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_slot_type::GetSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_slot_type::GetSlotTypeInput {
             name: self.name,
             version: self.version,

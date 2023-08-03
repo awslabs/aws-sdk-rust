@@ -22,9 +22,7 @@ impl GetDataCatalogInput {
 
 /// A builder for [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_catalog::GetDataCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_data_catalog::GetDataCatalogInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_data_catalog::GetDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_data_catalog::GetDataCatalogInput { name: self.name })
     }
 }

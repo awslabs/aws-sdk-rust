@@ -28,7 +28,7 @@ impl DisassociateResolverRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResolverRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder,
+    inner: crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder,
 }
 impl DisassociateResolverRuleFluentBuilder {
     /// Creates a new `DisassociateResolverRule`.
@@ -39,10 +39,7 @@ impl DisassociateResolverRuleFluentBuilder {
         }
     }
     /// Access the DisassociateResolverRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DisassociateResolverRuleFluentBuilder {
             crate::operation::disassociate_resolver_rule::DisassociateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DisassociateResolverRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DisassociateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DisassociateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DisassociateResolverRuleFluentBuilder {
             crate::operation::disassociate_resolver_rule::DisassociateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +126,12 @@ impl DisassociateResolverRuleFluentBuilder {
         self.inner.get_vpc_id()
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_id(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
     }

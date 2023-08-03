@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     /// - On success, responds with [`PutPublicAccessBlockOutput`](crate::operation::put_public_access_block::PutPublicAccessBlockOutput)
     /// - On failure, responds with [`SdkError<PutPublicAccessBlockError>`](crate::operation::put_public_access_block::PutPublicAccessBlockError)
-    pub fn put_public_access_block(
-        &self,
-    ) -> crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder
-    {
-        crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_public_access_block(&self) -> crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder {
+        crate::operation::put_public_access_block::builders::PutPublicAccessBlockFluentBuilder::new(self.handle.clone())
     }
 }

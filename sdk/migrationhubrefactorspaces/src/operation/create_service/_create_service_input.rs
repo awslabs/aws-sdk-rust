@@ -29,9 +29,7 @@ pub struct CreateServiceInput {
     pub lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointInput>,
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -70,11 +68,7 @@ impl CreateServiceInput {
         self.lambda_endpoint.as_ref()
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -117,9 +111,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
     pub(crate) url_endpoint: ::std::option::Option<crate::types::UrlEndpointInput>,
     pub(crate) lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointInput>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceInputBuilder {
@@ -152,18 +144,12 @@ impl CreateServiceInputBuilder {
         &self.description
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
@@ -172,18 +158,12 @@ impl CreateServiceInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
@@ -211,10 +191,7 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::ServiceEndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
@@ -228,10 +205,7 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
-    pub fn set_url_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::UrlEndpointInput>,
-    ) -> Self {
+    pub fn set_url_endpoint(mut self, input: ::std::option::Option<crate::types::UrlEndpointInput>) -> Self {
         self.url_endpoint = input;
         self
     }
@@ -245,10 +219,7 @@ impl CreateServiceInputBuilder {
         self
     }
     /// <p>The configuration for the Lambda endpoint type.</p>
-    pub fn set_lambda_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaEndpointInput>,
-    ) -> Self {
+    pub fn set_lambda_endpoint(mut self, input: ::std::option::Option<crate::types::LambdaEndpointInput>) -> Self {
         self.lambda_endpoint = input;
         self
     }
@@ -261,32 +232,19 @@ impl CreateServiceInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -306,10 +264,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             description: self.description,

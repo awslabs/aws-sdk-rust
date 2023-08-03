@@ -38,16 +38,14 @@ impl PutBucketOwnershipControlsInput {
 }
 impl PutBucketOwnershipControlsInput {
     /// Creates a new builder-style object to manufacture [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
-    pub fn builder() -> crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder {
         crate::operation::put_bucket_ownership_controls::builders::PutBucketOwnershipControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ impl PutBucketOwnershipControlsInputBuilder {
         &self.content_md5
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -112,17 +104,12 @@ impl PutBucketOwnershipControlsInputBuilder {
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
-    pub fn set_ownership_controls(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipControls>,
-    ) -> Self {
+    pub fn set_ownership_controls(mut self, input: ::std::option::Option<crate::types::OwnershipControls>) -> Self {
         self.ownership_controls = input;
         self
     }
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
-    pub fn get_ownership_controls(
-        &self,
-    ) -> &::std::option::Option<crate::types::OwnershipControls> {
+    pub fn get_ownership_controls(&self) -> &::std::option::Option<crate::types::OwnershipControls> {
         &self.ownership_controls
     }
     /// Consumes the builder and constructs a [`PutBucketOwnershipControlsInput`](crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput).
@@ -132,13 +119,11 @@ impl PutBucketOwnershipControlsInputBuilder {
         crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput {
-                bucket: self.bucket,
-                content_md5: self.content_md5,
-                expected_bucket_owner: self.expected_bucket_owner,
-                ownership_controls: self.ownership_controls,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput {
+            bucket: self.bucket,
+            content_md5: self.content_md5,
+            expected_bucket_owner: self.expected_bucket_owner,
+            ownership_controls: self.ownership_controls,
+        })
     }
 }

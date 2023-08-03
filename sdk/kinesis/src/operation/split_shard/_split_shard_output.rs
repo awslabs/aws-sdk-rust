@@ -19,9 +19,7 @@ impl SplitShardOutput {
 
 /// A builder for [`SplitShardOutput`](crate::operation::split_shard::SplitShardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplitShardOutputBuilder {
     _request_id: Option<String>,
 }

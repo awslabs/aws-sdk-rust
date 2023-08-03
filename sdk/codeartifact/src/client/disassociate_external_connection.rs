@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateExternalConnectionOutput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput::repository): <p> The repository associated with the removed external connection. </p>
     /// - On failure, responds with [`SdkError<DisassociateExternalConnectionError>`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionError)
-    pub fn disassociate_external_connection(&self) -> crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionFluentBuilder{
+    pub fn disassociate_external_connection(
+        &self,
+    ) -> crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionFluentBuilder {
         crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionFluentBuilder::new(self.handle.clone())
     }
 }

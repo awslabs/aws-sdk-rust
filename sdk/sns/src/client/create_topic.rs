@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTopicOutput`](crate::operation::create_topic::CreateTopicOutput) with field(s):
     ///   - [`topic_arn(Option<String>)`](crate::operation::create_topic::CreateTopicOutput::topic_arn): <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     /// - On failure, responds with [`SdkError<CreateTopicError>`](crate::operation::create_topic::CreateTopicError)
-    pub fn create_topic(
-        &self,
-    ) -> crate::operation::create_topic::builders::CreateTopicFluentBuilder {
+    pub fn create_topic(&self) -> crate::operation::create_topic::builders::CreateTopicFluentBuilder {
         crate::operation::create_topic::builders::CreateTopicFluentBuilder::new(self.handle.clone())
     }
 }

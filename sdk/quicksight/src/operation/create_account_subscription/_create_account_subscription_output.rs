@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateAccountSubscriptionOutput {
 }
 impl CreateAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountSubscriptionOutput`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput).
-    pub fn builder() -> crate::operation::create_account_subscription::builders::CreateAccountSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::create_account_subscription::builders::CreateAccountSubscriptionOutputBuilder {
         crate::operation::create_account_subscription::builders::CreateAccountSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccountSubscriptionOutput`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccountSubscriptionOutputBuilder {
     pub(crate) signup_response: ::std::option::Option<crate::types::SignupResponse>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl CreateAccountSubscriptionOutputBuilder {
         self
     }
     /// <p>A <code>SignupResponse</code> object that returns information about a newly created Amazon QuickSight account.</p>
-    pub fn set_signup_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SignupResponse>,
-    ) -> Self {
+    pub fn set_signup_response(mut self, input: ::std::option::Option<crate::types::SignupResponse>) -> Self {
         self.signup_response = input;
         self
     }
@@ -107,9 +102,7 @@ impl CreateAccountSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccountSubscriptionOutput`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_account_subscription::CreateAccountSubscriptionOutput {
+    pub fn build(self) -> crate::operation::create_account_subscription::CreateAccountSubscriptionOutput {
         crate::operation::create_account_subscription::CreateAccountSubscriptionOutput {
             signup_response: self.signup_response,
             status: self.status.unwrap_or_default(),

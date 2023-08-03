@@ -19,9 +19,7 @@ impl ResumeProcessesOutput {
 
 /// A builder for [`ResumeProcessesOutput`](crate::operation::resume_processes::ResumeProcessesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeProcessesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -19,10 +19,7 @@ pub fn ser_custom_connector_source_properties(
     if let Some(var_6) = &input.data_transfer_api {
         #[allow(unused_mut)]
         let mut object_7 = object.key("dataTransferApi").start_object();
-        crate::protocol_serde::shape_data_transfer_api::ser_data_transfer_api(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_data_transfer_api::ser_data_transfer_api(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -30,66 +27,46 @@ pub fn ser_custom_connector_source_properties(
 
 pub(crate) fn de_custom_connector_source_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CustomConnectorSourceProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CustomConnectorSourceProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::CustomConnectorSourcePropertiesBuilder::default();
+            let mut builder = crate::types::builders::CustomConnectorSourcePropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "entityName" => {
-                                builder = builder.set_entity_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "entityName" => {
+                            builder = builder.set_entity_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "customProperties" => {
-                                builder = builder.set_custom_properties(
-                                    crate::protocol_serde::shape_custom_properties::de_custom_properties(tokens)?
-                                );
-                            }
-                            "dataTransferApi" => {
-                                builder = builder.set_data_transfer_api(
-                                    crate::protocol_serde::shape_data_transfer_api::de_data_transfer_api(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "customProperties" => {
+                            builder = builder.set_custom_properties(crate::protocol_serde::shape_custom_properties::de_custom_properties(tokens)?);
+                        }
+                        "dataTransferApi" => {
+                            builder = builder.set_data_transfer_api(crate::protocol_serde::shape_data_transfer_api::de_data_transfer_api(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

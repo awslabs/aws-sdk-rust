@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ApplySecurityGroupsToLoadBalancerOutput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput) with field(s):
     ///   - [`security_groups(Option<Vec<String>>)`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput::security_groups): <p>The IDs of the security groups associated with the load balancer.</p>
     /// - On failure, responds with [`SdkError<ApplySecurityGroupsToLoadBalancerError>`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError)
-    pub fn apply_security_groups_to_load_balancer(&self) -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerFluentBuilder{
+    pub fn apply_security_groups_to_load_balancer(
+        &self,
+    ) -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerFluentBuilder {
         crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

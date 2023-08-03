@@ -43,18 +43,14 @@ impl ListAppVersionResourcesInput {
 }
 impl ListAppVersionResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesInput`](crate::operation::list_app_version_resources::ListAppVersionResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder {
         crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionResourcesInput`](crate::operation::list_app_version_resources::ListAppVersionResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -92,18 +88,12 @@ impl ListAppVersionResourcesInputBuilder {
         &self.app_version
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -146,14 +136,12 @@ impl ListAppVersionResourcesInputBuilder {
         crate::operation::list_app_version_resources::ListAppVersionResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_version_resources::ListAppVersionResourcesInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                resolution_id: self.resolution_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_app_version_resources::ListAppVersionResourcesInput {
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            resolution_id: self.resolution_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

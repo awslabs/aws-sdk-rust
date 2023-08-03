@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopWorkspacesOutput`](crate::operation::stop_workspaces::StopWorkspacesOutput) with field(s):
     ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::stop_workspaces::StopWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be stopped.</p>
     /// - On failure, responds with [`SdkError<StopWorkspacesError>`](crate::operation::stop_workspaces::StopWorkspacesError)
-    pub fn stop_workspaces(
-        &self,
-    ) -> crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder {
-        crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_workspaces(&self) -> crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder {
+        crate::operation::stop_workspaces::builders::StopWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

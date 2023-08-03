@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(Option<WorkspaceStatus>)`](crate::operation::create_workspace::CreateWorkspaceOutput::status): The status of the workspace that was just created (usually CREATING).
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_workspace::CreateWorkspaceOutput::tags): The tags of this workspace.
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::operation::create_workspace::CreateWorkspaceError)
-    pub fn create_workspace(
-        &self,
-    ) -> crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder {
-        crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workspace(&self) -> crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder {
+        crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

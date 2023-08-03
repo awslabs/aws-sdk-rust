@@ -30,9 +30,7 @@ impl FreeTrialFeatureConfigurationResult {
 
 /// A builder for [`FreeTrialFeatureConfigurationResult`](crate::types::FreeTrialFeatureConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeTrialFeatureConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     pub(crate) free_trial_days_remaining: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl FreeTrialFeatureConfigurationResultBuilder {
         self
     }
     /// <p>The name of the feature for which the free trial is configured.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FreeTrialFeatureResult>) -> Self {
         self.name = input;
         self
     }

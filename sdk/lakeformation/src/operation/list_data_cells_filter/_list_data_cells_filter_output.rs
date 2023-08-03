@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataCellsFilterOutput {
 }
 impl ListDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterOutputBuilder {
+    pub fn builder() -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterOutputBuilder {
         crate::operation::list_data_cells_filter::builders::ListDataCellsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataCellsFilterOutputBuilder {
-    pub(crate) data_cells_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>>,
+    pub(crate) data_cells_filters: ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListDataCellsFilterOutputBuilder {
         self
     }
     /// <p>A list of <code>DataCellFilter</code> structures.</p>
-    pub fn set_data_cells_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>>,
-    ) -> Self {
+    pub fn set_data_cells_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>>) -> Self {
         self.data_cells_filters = input;
         self
     }
     /// <p>A list of <code>DataCellFilter</code> structures.</p>
-    pub fn get_data_cells_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>> {
+    pub fn get_data_cells_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>> {
         &self.data_cells_filters
     }
     /// <p>A continuation token, if not all requested data cell filters have been returned.</p>

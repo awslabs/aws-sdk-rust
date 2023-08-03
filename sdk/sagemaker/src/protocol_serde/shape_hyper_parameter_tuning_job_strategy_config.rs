@@ -6,10 +6,7 @@ pub fn ser_hyper_parameter_tuning_job_strategy_config(
     if let Some(var_1) = &input.hyperband_strategy_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("HyperbandStrategyConfig").start_object();
-        crate::protocol_serde::shape_hyperband_strategy_config::ser_hyperband_strategy_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_hyperband_strategy_config::ser_hyperband_strategy_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())
@@ -17,52 +14,38 @@ pub fn ser_hyper_parameter_tuning_job_strategy_config(
 
 pub(crate) fn de_hyper_parameter_tuning_job_strategy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HyperParameterTuningJobStrategyConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HyperParameterTuningJobStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::HyperParameterTuningJobStrategyConfigBuilder::default();
+            let mut builder = crate::types::builders::HyperParameterTuningJobStrategyConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "HyperbandStrategyConfig" => {
-                                builder = builder.set_hyperband_strategy_config(
-                                    crate::protocol_serde::shape_hyperband_strategy_config::de_hyperband_strategy_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "HyperbandStrategyConfig" => {
+                            builder = builder.set_hyperband_strategy_config(
+                                crate::protocol_serde::shape_hyperband_strategy_config::de_hyperband_strategy_config(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

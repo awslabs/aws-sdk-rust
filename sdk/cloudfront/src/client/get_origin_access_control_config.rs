@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
     /// - On failure, responds with [`SdkError<GetOriginAccessControlConfigError>`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError)
-    pub fn get_origin_access_control_config(&self) -> crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder{
+    pub fn get_origin_access_control_config(
+        &self,
+    ) -> crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder {
         crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder::new(self.handle.clone())
     }
 }

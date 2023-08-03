@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`input_configurations(Vec<InputConfiguration>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::input_configurations) / [`set_input_configurations(Option<Vec<InputConfiguration>>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_input_configurations): <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
     /// - On success, responds with [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput)
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::operation::start_application::StartApplicationError)
-    pub fn start_application(
-        &self,
-    ) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {
-        crate::operation::start_application::builders::StartApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_application(&self) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {
+        crate::operation::start_application::builders::StartApplicationFluentBuilder::new(self.handle.clone())
     }
 }

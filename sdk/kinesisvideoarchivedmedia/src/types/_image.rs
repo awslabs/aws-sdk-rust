@@ -49,9 +49,7 @@ impl Image {
 
 /// A builder for [`Image`](crate::types::Image).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageBuilder {
     pub(crate) time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error: ::std::option::Option<crate::types::ImageError>,
@@ -64,10 +62,7 @@ impl ImageBuilder {
         self
     }
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-    pub fn set_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_stamp = input;
         self
     }
@@ -108,18 +103,12 @@ impl ImageBuilder {
         &self.error
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn image_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn set_image_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_content = input;
         self
     }

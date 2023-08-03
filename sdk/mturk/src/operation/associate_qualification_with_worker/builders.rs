@@ -5,16 +5,16 @@ pub use crate::operation::associate_qualification_with_worker::_associate_qualif
 
 impl AssociateQualificationWithWorkerInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_qualification_with_worker();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder,
+    inner: crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder,
 }
 impl AssociateQualificationWithWorkerFluentBuilder {
     /// Creates a new `AssociateQualificationWithWorker`.
@@ -40,15 +40,20 @@ impl AssociateQualificationWithWorkerFluentBuilder {
         }
     }
     /// Access the AssociateQualificationWithWorker as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorker, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorker,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl AssociateQualificationWithWorkerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,32 +90,35 @@ impl AssociateQualificationWithWorkerFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorker, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorker,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }

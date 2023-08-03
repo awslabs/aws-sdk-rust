@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetMultiRegionAccessPointOutput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput) with field(s):
     ///   - [`access_point(Option<MultiRegionAccessPointReport>)`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput::access_point): <p>A container element containing the details of the requested Multi-Region Access Point.</p>
     /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointError>`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError)
-    pub fn get_multi_region_access_point(&self) -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointFluentBuilder{
+    pub fn get_multi_region_access_point(&self) -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointFluentBuilder {
         crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

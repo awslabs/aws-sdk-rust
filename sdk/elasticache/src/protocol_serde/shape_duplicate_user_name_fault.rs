@@ -3,10 +3,7 @@
 pub fn de_duplicate_user_name_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DuplicateUserNameFaultBuilder,
-) -> Result<
-    crate::types::error::builders::DuplicateUserNameFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DuplicateUserNameFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

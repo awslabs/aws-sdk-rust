@@ -30,9 +30,7 @@ impl ContentArtifactsConfiguration {
 
 /// A builder for [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentArtifactsConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
     pub(crate) mux_type: ::std::option::Option<crate::types::ContentMuxType>,
@@ -58,10 +56,7 @@ impl ContentArtifactsConfigurationBuilder {
         self
     }
     /// <p>The MUX type of the artifact configuration.</p>
-    pub fn set_mux_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentMuxType>,
-    ) -> Self {
+    pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::ContentMuxType>) -> Self {
         self.mux_type = input;
         self
     }

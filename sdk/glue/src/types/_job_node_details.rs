@@ -23,9 +23,7 @@ impl JobNodeDetails {
 
 /// A builder for [`JobNodeDetails`](crate::types::JobNodeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobNodeDetailsBuilder {
     pub(crate) job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
 }
@@ -42,10 +40,7 @@ impl JobNodeDetailsBuilder {
         self
     }
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn set_job_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
-    ) -> Self {
+    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>) -> Self {
         self.job_runs = input;
         self
     }
@@ -55,8 +50,6 @@ impl JobNodeDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`JobNodeDetails`](crate::types::JobNodeDetails).
     pub fn build(self) -> crate::types::JobNodeDetails {
-        crate::types::JobNodeDetails {
-            job_runs: self.job_runs,
-        }
+        crate::types::JobNodeDetails { job_runs: self.job_runs }
     }
 }

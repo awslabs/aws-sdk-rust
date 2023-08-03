@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbInstanceToPointInTimeOutput 
 }
 impl RestoreDbInstanceToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeOutput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput).
-    pub fn builder() -> crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeOutputBuilder{
+    pub fn builder() -> crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeOutputBuilder {
         crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbInstanceToPointInTimeOutput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbInstanceToPointInTimeOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl RestoreDbInstanceToPointInTimeOutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }
@@ -68,13 +63,9 @@ impl RestoreDbInstanceToPointInTimeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeOutput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput
-    {
+    pub fn build(self) -> crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput {
         crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput {
-            db_instance: self.db_instance
-            ,
+            db_instance: self.db_instance,
             _request_id: self._request_id,
         }
     }

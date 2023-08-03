@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRepositoriesOutput {
 }
 impl ListRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
-    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesOutputBuilder {
-    pub(crate) repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListRepositoriesOutputBuilder {
         self
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
         &self.repositories
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>

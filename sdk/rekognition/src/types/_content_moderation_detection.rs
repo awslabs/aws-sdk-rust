@@ -51,9 +51,7 @@ impl ContentModerationDetection {
 
 /// A builder for [`ContentModerationDetection`](crate::types::ContentModerationDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentModerationDetectionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) moderation_label: ::std::option::Option<crate::types::ModerationLabel>,
@@ -82,10 +80,7 @@ impl ContentModerationDetectionBuilder {
         self
     }
     /// <p>The content moderation label detected by in the stored video.</p>
-    pub fn set_moderation_label(
-        mut self,
-        input: ::std::option::Option<crate::types::ModerationLabel>,
-    ) -> Self {
+    pub fn set_moderation_label(mut self, input: ::std::option::Option<crate::types::ModerationLabel>) -> Self {
         self.moderation_label = input;
         self
     }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutEncryptionConfigOutput {
 }
 impl PutEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutEncryptionConfigOutput`](crate::operation::put_encryption_config::PutEncryptionConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::put_encryption_config::builders::PutEncryptionConfigOutputBuilder {
-        crate::operation::put_encryption_config::builders::PutEncryptionConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_encryption_config::builders::PutEncryptionConfigOutputBuilder {
+        crate::operation::put_encryption_config::builders::PutEncryptionConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutEncryptionConfigOutput`](crate::operation::put_encryption_config::PutEncryptionConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEncryptionConfigOutputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl PutEncryptionConfigOutputBuilder {
         self
     }
     /// <p>The new encryption configuration.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }

@@ -30,27 +30,19 @@ impl AwsS3BucketLoggingConfiguration {
 
 /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::types::AwsS3BucketLoggingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketLoggingConfigurationBuilder {
     pub(crate) destination_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_file_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketLoggingConfigurationBuilder {
     /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
-    pub fn destination_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
-    pub fn set_destination_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_bucket_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl AwsS3BucketLoggingConfigurationBuilder {
         &self.destination_bucket_name
     }
     /// <p>The prefix added to log files for the S3 bucket.</p>
-    pub fn log_file_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_file_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix added to log files for the S3 bucket.</p>
-    pub fn set_log_file_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_file_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_file_prefix = input;
         self
     }

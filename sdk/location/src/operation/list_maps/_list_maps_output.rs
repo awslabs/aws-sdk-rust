@@ -35,9 +35,7 @@ impl ListMapsOutput {
 
 /// A builder for [`ListMapsOutput`](crate::operation::list_maps::ListMapsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMapsOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListMapsOutputBuilder {
         self
     }
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>

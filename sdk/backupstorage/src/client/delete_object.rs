@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`object_name(impl ::std::convert::Into<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::object_name) / [`set_object_name(Option<String>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_object_name): The name of the Object.
     /// - On success, responds with [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput)
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::operation::delete_object::DeleteObjectError)
-    pub fn delete_object(
-        &self,
-    ) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
-        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_object(&self) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
+        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(self.handle.clone())
     }
 }

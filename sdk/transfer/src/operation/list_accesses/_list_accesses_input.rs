@@ -36,9 +36,7 @@ impl ListAccessesInput {
 
 /// A builder for [`ListAccessesInput`](crate::operation::list_accesses::ListAccessesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl ListAccessesInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`ListAccessesInput`](crate::operation::list_accesses::ListAccessesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accesses::ListAccessesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accesses::ListAccessesInput {
             max_results: self.max_results,
             next_token: self.next_token,

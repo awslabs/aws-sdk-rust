@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`is_valid(Option<bool>)`](crate::operation::validate_pipeline::ValidatePipelineOutput::is_valid): <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
     ///   - [`errors(Option<Vec<ValidationMessage>>)`](crate::operation::validate_pipeline::ValidatePipelineOutput::errors): <p>A list of errors if the configuration is invalid.</p>
     /// - On failure, responds with [`SdkError<ValidatePipelineError>`](crate::operation::validate_pipeline::ValidatePipelineError)
-    pub fn validate_pipeline(
-        &self,
-    ) -> crate::operation::validate_pipeline::builders::ValidatePipelineFluentBuilder {
-        crate::operation::validate_pipeline::builders::ValidatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn validate_pipeline(&self) -> crate::operation::validate_pipeline::builders::ValidatePipelineFluentBuilder {
+        crate::operation::validate_pipeline::builders::ValidatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

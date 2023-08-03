@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFunctionConcurrencyOutput {
 }
 impl GetFunctionConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionConcurrencyOutput`](crate::operation::get_function_concurrency::GetFunctionConcurrencyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyOutputBuilder {
         crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionConcurrencyOutput`](crate::operation::get_function_concurrency::GetFunctionConcurrencyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionConcurrencyOutputBuilder {
     pub(crate) reserved_concurrent_executions: ::std::option::Option<i32>,
     _request_id: Option<String>,

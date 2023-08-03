@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`namespace_name(Option<String>)`](crate::operation::delete_namespace::DeleteNamespaceOutput::namespace_name): <p>The name of the namespace to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::operation::delete_namespace::DeleteNamespaceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn delete_namespace(
-        &self,
-    ) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
-        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_namespace(&self) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
+        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_cluster_snapshots(Option<Vec<DbClusterSnapshot>>)`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput::db_cluster_snapshots): <p>Provides a list of DB cluster snapshots for the user.</p>
     /// - On failure, responds with [`SdkError<DescribeDBClusterSnapshotsError>`](crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError)
-    pub fn describe_db_cluster_snapshots(&self) -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDBClusterSnapshotsFluentBuilder{
+    pub fn describe_db_cluster_snapshots(
+        &self,
+    ) -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDBClusterSnapshotsFluentBuilder {
         crate::operation::describe_db_cluster_snapshots::builders::DescribeDBClusterSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

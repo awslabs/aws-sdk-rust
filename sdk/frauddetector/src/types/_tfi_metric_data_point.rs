@@ -44,9 +44,7 @@ impl TfiMetricDataPoint {
 
 /// A builder for [`TfiMetricDataPoint`](crate::types::TfiMetricDataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TfiMetricDataPointBuilder {
     pub(crate) fpr: ::std::option::Option<f32>,
     pub(crate) precision: ::std::option::Option<f32>,

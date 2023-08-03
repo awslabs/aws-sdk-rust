@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::create_backup_plan::CreateBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::operation::create_backup_plan::CreateBackupPlanOutput::advanced_backup_settings): <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// - On failure, responds with [`SdkError<CreateBackupPlanError>`](crate::operation::create_backup_plan::CreateBackupPlanError)
-    pub fn create_backup_plan(
-        &self,
-    ) -> crate::operation::create_backup_plan::builders::CreateBackupPlanFluentBuilder {
-        crate::operation::create_backup_plan::builders::CreateBackupPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_backup_plan(&self) -> crate::operation::create_backup_plan::builders::CreateBackupPlanFluentBuilder {
+        crate::operation::create_backup_plan::builders::CreateBackupPlanFluentBuilder::new(self.handle.clone())
     }
 }

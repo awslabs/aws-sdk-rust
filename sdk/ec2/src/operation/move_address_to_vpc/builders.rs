@@ -10,10 +10,7 @@ impl MoveAddressToVpcInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_address_to_vpc::MoveAddressToVpcError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.move_address_to_vpc();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl MoveAddressToVpcFluentBuilder {
         }
     }
     /// Access the MoveAddressToVpc as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::move_address_to_vpc::builders::MoveAddressToVpcInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::move_address_to_vpc::builders::MoveAddressToVpcInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl MoveAddressToVpcFluentBuilder {
             crate::operation::move_address_to_vpc::MoveAddressToVpc,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_address_to_vpc::MoveAddressToVpcError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl MoveAddressToVpcFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl MoveAddressToVpcFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_address_to_vpc::MoveAddressToVpcError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl MoveAddressToVpcFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_address_to_vpc::MoveAddressToVpcError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl MoveAddressToVpcFluentBuilder {
             crate::operation::move_address_to_vpc::MoveAddressToVpc,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::move_address_to_vpc::MoveAddressToVpcError>,
     > {
         self.customize_middleware().await
     }

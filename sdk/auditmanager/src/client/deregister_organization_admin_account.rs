@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`admin_account_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p> The identifier for the administrator account. </p>
     /// - On success, responds with [`DeregisterOrganizationAdminAccountOutput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<DeregisterOrganizationAdminAccountError>`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError)
-    pub fn deregister_organization_admin_account(&self) -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountFluentBuilder{
+    pub fn deregister_organization_admin_account(
+        &self,
+    ) -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountFluentBuilder {
         crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

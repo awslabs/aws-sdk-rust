@@ -5,16 +5,16 @@ pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balan
 
 impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.detach_load_balancer_target_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -32,7 +32,7 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder,
+    inner: crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder,
 }
 impl DetachLoadBalancerTargetGroupsFluentBuilder {
     /// Creates a new `DetachLoadBalancerTargetGroups`.
@@ -43,15 +43,20 @@ impl DetachLoadBalancerTargetGroupsFluentBuilder {
         }
     }
     /// Access the DetachLoadBalancerTargetGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +65,17 @@ impl DetachLoadBalancerTargetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -87,32 +93,35 @@ impl DetachLoadBalancerTargetGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -125,25 +134,17 @@ impl DetachLoadBalancerTargetGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn target_group_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_ar_ns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_group_ar_ns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn get_target_group_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_group_ar_ns()
     }
 }

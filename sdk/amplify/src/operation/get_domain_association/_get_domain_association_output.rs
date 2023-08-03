@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDomainAssociationOutput {
 }
 impl GetDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_domain_association::builders::GetDomainAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::get_domain_association::builders::GetDomainAssociationOutputBuilder {
         crate::operation::get_domain_association::builders::GetDomainAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainAssociationOutputBuilder {
     pub(crate) domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl GetDomainAssociationOutputBuilder {
         self
     }
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
-    pub fn set_domain_association(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainAssociation>,
-    ) -> Self {
+    pub fn set_domain_association(mut self, input: ::std::option::Option<crate::types::DomainAssociation>) -> Self {
         self.domain_association = input;
         self
     }
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
-    pub fn get_domain_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainAssociation> {
+    pub fn get_domain_association(&self) -> &::std::option::Option<crate::types::DomainAssociation> {
         &self.domain_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

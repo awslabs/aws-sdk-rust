@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetIntrospectionSchemaOutput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput) with field(s):
     ///   - [`schema(Option<Blob>)`](crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput::schema): <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>  <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     /// - On failure, responds with [`SdkError<GetIntrospectionSchemaError>`](crate::operation::get_introspection_schema::GetIntrospectionSchemaError)
-    pub fn get_introspection_schema(
-        &self,
-    ) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder
-    {
+    pub fn get_introspection_schema(&self) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder {
         crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl super::Client {
     ///   - [`route_response_selection_expression(Option<String>)`](crate::operation::create_route::CreateRouteOutput::route_response_selection_expression): <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
     ///   - [`target(Option<String>)`](crate::operation::create_route::CreateRouteOutput::target): <p>The target for the route.</p>
     /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::operation::create_route::CreateRouteError)
-    pub fn create_route(
-        &self,
-    ) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
+    pub fn create_route(&self) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
         crate::operation::create_route::builders::CreateRouteFluentBuilder::new(self.handle.clone())
     }
 }

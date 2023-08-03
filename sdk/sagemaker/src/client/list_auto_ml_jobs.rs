@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`auto_ml_job_summaries(Option<Vec<AutoMlJobSummary>>)`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput::auto_ml_job_summaries): <p>Returns a summary list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAutoMLJobsError>`](crate::operation::list_auto_ml_jobs::ListAutoMLJobsError)
-    pub fn list_auto_ml_jobs(
-        &self,
-    ) -> crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder {
-        crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_auto_ml_jobs(&self) -> crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder {
+        crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::new(self.handle.clone())
     }
 }

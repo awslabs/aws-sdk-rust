@@ -28,9 +28,7 @@ impl CreateWorkgroupOutput {
 
 /// A builder for [`CreateWorkgroupOutput`](crate::operation::create_workgroup::CreateWorkgroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkgroupOutputBuilder {
     pub(crate) workgroup: ::std::option::Option<crate::types::Workgroup>,
     _request_id: Option<String>,

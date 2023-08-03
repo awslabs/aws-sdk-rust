@@ -29,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder {
         crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsOutputBuilder {
-    pub(crate) configuration_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
+    pub(crate) configuration_sets: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +55,12 @@ impl ListConfigurationSetsOutputBuilder {
         self
     }
     /// <p>A list of configuration sets.</p>
-    pub fn set_configuration_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
-    ) -> Self {
+    pub fn set_configuration_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>) -> Self {
         self.configuration_sets = input;
         self
     }
     /// <p>A list of configuration sets.</p>
-    pub fn get_configuration_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>> {
+    pub fn get_configuration_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>> {
         &self.configuration_sets
     }
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>

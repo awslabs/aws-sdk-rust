@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdatePolicyTemplateOutput {
 }
 impl UpdatePolicyTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyTemplateOutput`](crate::operation::update_policy_template::UpdatePolicyTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder {
         crate::operation::update_policy_template::builders::UpdatePolicyTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePolicyTemplateOutput`](crate::operation::update_policy_template::UpdatePolicyTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePolicyTemplateOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_template_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct UpdatePolicyTemplateOutputBuilder {
 }
 impl UpdatePolicyTemplateOutputBuilder {
     /// <p>The ID of the policy store that contains the updated policy template.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the policy store that contains the updated policy template.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -82,18 +73,12 @@ impl UpdatePolicyTemplateOutputBuilder {
         &self.policy_store_id
     }
     /// <p>The ID of the updated policy template.</p>
-    pub fn policy_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the updated policy template.</p>
-    pub fn set_policy_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_template_id = input;
         self
     }
@@ -107,10 +92,7 @@ impl UpdatePolicyTemplateOutputBuilder {
         self
     }
     /// <p>The date and time that the policy template was originally created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -124,10 +106,7 @@ impl UpdatePolicyTemplateOutputBuilder {
         self
     }
     /// <p>The date and time that the policy template was most recently updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

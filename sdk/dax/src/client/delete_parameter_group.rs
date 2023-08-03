@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput) with field(s):
     ///   - [`deletion_message(Option<String>)`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput::deletion_message): <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     /// - On failure, responds with [`SdkError<DeleteParameterGroupError>`](crate::operation::delete_parameter_group::DeleteParameterGroupError)
-    pub fn delete_parameter_group(
-        &self,
-    ) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder {
-        crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_parameter_group(&self) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder {
+        crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

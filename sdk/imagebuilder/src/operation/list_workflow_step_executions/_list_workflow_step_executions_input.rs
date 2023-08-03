@@ -29,16 +29,14 @@ impl ListWorkflowStepExecutionsInput {
 }
 impl ListWorkflowStepExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepExecutionsInput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput).
-    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder {
         crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepExecutionsInput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepExecutionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListWorkflowStepExecutionsInputBuilder {
         &self.next_token
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListWorkflowStepExecutionsInputBuilder {
         crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                workflow_execution_id: self.workflow_execution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            workflow_execution_id: self.workflow_execution_id,
+        })
     }
 }

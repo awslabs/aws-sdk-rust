@@ -27,9 +27,7 @@ impl ApplicationAggregatedStatus {
         self.health_status.as_ref()
     }
     /// <p>Application aggregated status progress status.</p>
-    pub fn progress_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationProgressStatus> {
+    pub fn progress_status(&self) -> ::std::option::Option<&crate::types::ApplicationProgressStatus> {
         self.progress_status.as_ref()
     }
     /// <p>Application aggregated status total source servers amount.</p>
@@ -46,9 +44,7 @@ impl ApplicationAggregatedStatus {
 
 /// A builder for [`ApplicationAggregatedStatus`](crate::types::ApplicationAggregatedStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationAggregatedStatusBuilder {
     pub(crate) last_update_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<crate::types::ApplicationHealthStatus>,
@@ -57,18 +53,12 @@ pub struct ApplicationAggregatedStatusBuilder {
 }
 impl ApplicationAggregatedStatusBuilder {
     /// <p>Application aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_update_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application aggregated status last update dateTime.</p>
-    pub fn set_last_update_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_update_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_date_time = input;
         self
     }
@@ -82,17 +72,12 @@ impl ApplicationAggregatedStatusBuilder {
         self
     }
     /// <p>Application aggregated status health status.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationHealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::ApplicationHealthStatus>) -> Self {
         self.health_status = input;
         self
     }
     /// <p>Application aggregated status health status.</p>
-    pub fn get_health_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationHealthStatus> {
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ApplicationHealthStatus> {
         &self.health_status
     }
     /// <p>Application aggregated status progress status.</p>
@@ -101,17 +86,12 @@ impl ApplicationAggregatedStatusBuilder {
         self
     }
     /// <p>Application aggregated status progress status.</p>
-    pub fn set_progress_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationProgressStatus>,
-    ) -> Self {
+    pub fn set_progress_status(mut self, input: ::std::option::Option<crate::types::ApplicationProgressStatus>) -> Self {
         self.progress_status = input;
         self
     }
     /// <p>Application aggregated status progress status.</p>
-    pub fn get_progress_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationProgressStatus> {
+    pub fn get_progress_status(&self) -> &::std::option::Option<crate::types::ApplicationProgressStatus> {
         &self.progress_status
     }
     /// <p>Application aggregated status total source servers amount.</p>

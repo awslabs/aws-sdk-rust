@@ -26,9 +26,7 @@ impl ExecutionStartedEventDetails {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
@@ -93,17 +91,12 @@ impl ExecutionStartedEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
+    pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
         self.input_details = input;
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn get_input_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+    pub fn get_input_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.input_details
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
@@ -121,18 +114,12 @@ impl ExecutionStartedEventDetailsBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
-    pub fn state_machine_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias used for starting the state machine execution.</p>
-    pub fn set_state_machine_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_alias_arn = input;
         self
     }
@@ -141,18 +128,12 @@ impl ExecutionStartedEventDetailsBuilder {
         &self.state_machine_alias_arn
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version used for starting the state machine execution.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_version_arn = input;
         self
     }

@@ -24,9 +24,7 @@ pub struct ModelPackageContainerDefinition {
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure with Model Input details.</p>
     #[doc(hidden)]
     pub model_input: ::std::option::Option<crate::types::ModelInput>,
@@ -65,11 +63,7 @@ impl ModelPackageContainerDefinition {
         self.product_id.as_deref()
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>A structure with Model Input details.</p>
@@ -98,18 +92,14 @@ impl ModelPackageContainerDefinition {
 
 /// A builder for [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) container_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) model_input: ::std::option::Option<crate::types::ModelInput>,
     pub(crate) framework: ::std::option::Option<::std::string::String>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
@@ -117,18 +107,12 @@ pub struct ModelPackageContainerDefinitionBuilder {
 }
 impl ModelPackageContainerDefinitionBuilder {
     /// <p>The DNS host name for the Docker container.</p>
-    pub fn container_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS host name for the Docker container.</p>
-    pub fn set_container_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_hostname = input;
         self
     }
@@ -170,20 +154,14 @@ impl ModelPackageContainerDefinitionBuilder {
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
-    pub fn model_data_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_data_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
-    pub fn set_model_data_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_data_url = input;
         self
     }
@@ -212,11 +190,7 @@ impl ModelPackageContainerDefinitionBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -225,19 +199,13 @@ impl ModelPackageContainerDefinitionBuilder {
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>A structure with Model Input details.</p>
@@ -246,10 +214,7 @@ impl ModelPackageContainerDefinitionBuilder {
         self
     }
     /// <p>A structure with Model Input details.</p>
-    pub fn set_model_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelInput>,
-    ) -> Self {
+    pub fn set_model_input(mut self, input: ::std::option::Option<crate::types::ModelInput>) -> Self {
         self.model_input = input;
         self
     }
@@ -272,18 +237,12 @@ impl ModelPackageContainerDefinitionBuilder {
         &self.framework
     }
     /// <p>The framework version of the Model Package Container Image.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The framework version of the Model Package Container Image.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }
@@ -292,18 +251,12 @@ impl ModelPackageContainerDefinitionBuilder {
         &self.framework_version
     }
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
-    pub fn nearest_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nearest_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nearest_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
-    pub fn set_nearest_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nearest_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nearest_model_name = input;
         self
     }

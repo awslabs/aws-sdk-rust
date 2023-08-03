@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentConfigurationOutput 
 }
 impl DeleteEnvironmentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentConfigurationOutput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationOutputBuilder {
         crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentConfigurationOutput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteEnvironmentConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentConfigurationOutput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput {
         crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationOutput {
             _request_id: self._request_id,
         }

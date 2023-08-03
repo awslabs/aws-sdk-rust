@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`TerminateProvisionedProductOutput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput::record_detail): <p>Information about the result of this request.</p>
     /// - On failure, responds with [`SdkError<TerminateProvisionedProductError>`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductError)
-    pub fn terminate_provisioned_product(&self) -> crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductFluentBuilder{
+    pub fn terminate_provisioned_product(
+        &self,
+    ) -> crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductFluentBuilder {
         crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductFluentBuilder::new(self.handle.clone())
     }
 }

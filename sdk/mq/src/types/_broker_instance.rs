@@ -37,9 +37,7 @@ impl BrokerInstance {
 
 /// A builder for [`BrokerInstance`](crate::types::BrokerInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerInstanceBuilder {
     pub(crate) console_url: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl BrokerInstanceBuilder {
         self
     }
     /// <p>The broker's wire-level protocol endpoints.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }

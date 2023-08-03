@@ -15,18 +15,14 @@ impl GetFieldLevelEncryptionInput {
 }
 impl GetFieldLevelEncryptionInput {
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionInput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput).
-    pub fn builder(
-    ) -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder {
         crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFieldLevelEncryptionInput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetFieldLevelEncryptionInputBuilder {
         crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionInput { id: self.id })
     }
 }

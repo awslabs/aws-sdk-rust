@@ -51,9 +51,7 @@ impl SessionSummary {
 
 /// A builder for [`SessionSummary`](crate::types::SessionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionSummaryBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl SessionSummaryBuilder {
         self
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineVersion>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::EngineVersion>) -> Self {
         self.engine_version = input;
         self
     }
@@ -108,18 +103,12 @@ impl SessionSummaryBuilder {
         &self.engine_version
     }
     /// <p>The notebook version.</p>
-    pub fn notebook_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notebook version.</p>
-    pub fn set_notebook_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_version = input;
         self
     }

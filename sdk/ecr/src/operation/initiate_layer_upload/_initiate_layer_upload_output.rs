@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for InitiateLayerUploadOutput {
 }
 impl InitiateLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateLayerUploadOutput`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadOutputBuilder {
-        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadOutputBuilder {
+        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateLayerUploadOutput`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateLayerUploadOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) part_size: ::std::option::Option<i64>,

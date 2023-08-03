@@ -30,27 +30,19 @@ impl MinimumEngineVersionPerAllowedValue {
 
 /// A builder for [`MinimumEngineVersionPerAllowedValue`](crate::types::MinimumEngineVersionPerAllowedValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MinimumEngineVersionPerAllowedValueBuilder {
     pub(crate) allowed_value: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl MinimumEngineVersionPerAllowedValueBuilder {
     /// <p>The allowed value for an option setting.</p>
-    pub fn allowed_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allowed value for an option setting.</p>
-    pub fn set_allowed_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_value = input;
         self
     }
@@ -59,18 +51,12 @@ impl MinimumEngineVersionPerAllowedValueBuilder {
         &self.allowed_value
     }
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum DB engine version required for the allowed value.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }

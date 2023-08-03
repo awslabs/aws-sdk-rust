@@ -36,18 +36,14 @@ impl GetAutoMergingPreviewInput {
 }
 impl GetAutoMergingPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
-    pub fn builder(
-    ) -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder {
         crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoMergingPreviewInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) consolidation: ::std::option::Option<crate::types::Consolidation>,
@@ -75,10 +71,7 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>A list of matching attributes that represent matching criteria.</p>
-    pub fn set_consolidation(
-        mut self,
-        input: ::std::option::Option<crate::types::Consolidation>,
-    ) -> Self {
+    pub fn set_consolidation(mut self, input: ::std::option::Option<crate::types::Consolidation>) -> Self {
         self.consolidation = input;
         self
     }
@@ -92,17 +85,12 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
+    pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.conflict_resolution = input;
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn get_conflict_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+    pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
@@ -111,10 +99,7 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
-    pub fn set_min_allowed_confidence_score_for_merging(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_min_allowed_confidence_score_for_merging(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_allowed_confidence_score_for_merging = input;
         self
     }
@@ -125,18 +110,13 @@ impl GetAutoMergingPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput {
-                domain_name: self.domain_name,
-                consolidation: self.consolidation,
-                conflict_resolution: self.conflict_resolution,
-                min_allowed_confidence_score_for_merging: self
-                    .min_allowed_confidence_score_for_merging,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput {
+            domain_name: self.domain_name,
+            consolidation: self.consolidation,
+            conflict_resolution: self.conflict_resolution,
+            min_allowed_confidence_score_for_merging: self.min_allowed_confidence_score_for_merging,
+        })
     }
 }

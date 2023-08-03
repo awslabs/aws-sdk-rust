@@ -61,9 +61,7 @@ impl FolderSearchFilter {
 
 /// A builder for [`FolderSearchFilter`](crate::types::FolderSearchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderSearchFilterBuilder {
     pub(crate) operator: ::std::option::Option<crate::types::FilterOperator>,
     pub(crate) name: ::std::option::Option<crate::types::FolderFilterAttribute>,
@@ -80,10 +78,7 @@ impl FolderSearchFilterBuilder {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching for. For example, <code>"Name":"FOLDER_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>FOLDER_NAME</code>.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
         self.operator = input;
         self
     }
@@ -119,10 +114,7 @@ impl FolderSearchFilterBuilder {
     /// <li> <p> <code>FOLDER_NAME</code>: Any folders whose names have a substring match to this value will be returned.</p> </li>
     /// <li> <p> <code>PARENT_FOLDER_ARN</code>: Provide an ARN of a folder, and any folders that are directly under that parent folder are returned. If you choose to use this option and leave the value blank, all root-level folders in the account are returned. </p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderFilterAttribute>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FolderFilterAttribute>) -> Self {
         self.name = input;
         self
     }

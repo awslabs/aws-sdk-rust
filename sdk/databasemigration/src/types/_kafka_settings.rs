@@ -63,8 +63,7 @@ pub struct KafkaSettings {
     pub sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
     #[doc(hidden)]
-    pub ssl_endpoint_identification_algorithm:
-        ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
+    pub ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
 impl KafkaSettings {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
@@ -144,9 +143,7 @@ impl KafkaSettings {
         self.sasl_mechanism.as_ref()
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
-    pub fn ssl_endpoint_identification_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KafkaSslEndpointIdentificationAlgorithm> {
+    pub fn ssl_endpoint_identification_algorithm(&self) -> ::std::option::Option<&crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         self.ssl_endpoint_identification_algorithm.as_ref()
     }
 }
@@ -156,41 +153,23 @@ impl ::std::fmt::Debug for KafkaSettings {
         formatter.field("broker", &self.broker);
         formatter.field("topic", &self.topic);
         formatter.field("message_format", &self.message_format);
-        formatter.field(
-            "include_transaction_details",
-            &self.include_transaction_details,
-        );
+        formatter.field("include_transaction_details", &self.include_transaction_details);
         formatter.field("include_partition_value", &self.include_partition_value);
-        formatter.field(
-            "partition_include_schema_table",
-            &self.partition_include_schema_table,
-        );
-        formatter.field(
-            "include_table_alter_operations",
-            &self.include_table_alter_operations,
-        );
+        formatter.field("partition_include_schema_table", &self.partition_include_schema_table);
+        formatter.field("include_table_alter_operations", &self.include_table_alter_operations);
         formatter.field("include_control_details", &self.include_control_details);
         formatter.field("message_max_bytes", &self.message_max_bytes);
         formatter.field("include_null_and_empty", &self.include_null_and_empty);
         formatter.field("security_protocol", &self.security_protocol);
-        formatter.field(
-            "ssl_client_certificate_arn",
-            &self.ssl_client_certificate_arn,
-        );
+        formatter.field("ssl_client_certificate_arn", &self.ssl_client_certificate_arn);
         formatter.field("ssl_client_key_arn", &self.ssl_client_key_arn);
-        formatter.field(
-            "ssl_client_key_password",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ssl_client_key_password", &"*** Sensitive Data Redacted ***");
         formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
         formatter.field("sasl_username", &self.sasl_username);
         formatter.field("sasl_password", &"*** Sensitive Data Redacted ***");
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
         formatter.field("sasl_mechanism", &self.sasl_mechanism);
-        formatter.field(
-            "ssl_endpoint_identification_algorithm",
-            &self.ssl_endpoint_identification_algorithm,
-        );
+        formatter.field("ssl_endpoint_identification_algorithm", &self.ssl_endpoint_identification_algorithm);
         formatter.finish()
     }
 }
@@ -224,8 +203,7 @@ pub struct KafkaSettingsBuilder {
     pub(crate) sasl_password: ::std::option::Option<::std::string::String>,
     pub(crate) no_hex_prefix: ::std::option::Option<bool>,
     pub(crate) sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
-    pub(crate) ssl_endpoint_identification_algorithm:
-        ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
+    pub(crate) ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
 impl KafkaSettingsBuilder {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
@@ -262,10 +240,7 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
-    pub fn set_message_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageFormatValue>,
-    ) -> Self {
+    pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatValue>) -> Self {
         self.message_format = input;
         self
     }
@@ -307,10 +282,7 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same partition, which causes throttling. The default is <code>false</code>.</p>
-    pub fn set_partition_include_schema_table(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_partition_include_schema_table(mut self, input: ::std::option::Option<bool>) -> Self {
         self.partition_include_schema_table = input;
         self
     }
@@ -324,10 +296,7 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
-    pub fn set_include_table_alter_operations(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_table_alter_operations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_table_alter_operations = input;
         self
     }
@@ -383,32 +352,21 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
-    pub fn set_security_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaSecurityProtocol>,
-    ) -> Self {
+    pub fn set_security_protocol(mut self, input: ::std::option::Option<crate::types::KafkaSecurityProtocol>) -> Self {
         self.security_protocol = input;
         self
     }
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
-    pub fn get_security_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::KafkaSecurityProtocol> {
+    pub fn get_security_protocol(&self) -> &::std::option::Option<crate::types::KafkaSecurityProtocol> {
         &self.security_protocol
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_client_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_client_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
-    pub fn set_ssl_client_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_client_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_client_certificate_arn = input;
         self
     }
@@ -417,18 +375,12 @@ impl KafkaSettingsBuilder {
         &self.ssl_client_certificate_arn
     }
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_client_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_client_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn set_ssl_client_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_client_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_client_key_arn = input;
         self
     }
@@ -437,18 +389,12 @@ impl KafkaSettingsBuilder {
         &self.ssl_client_key_arn
     }
     /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_key_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_client_key_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_client_key_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn set_ssl_client_key_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_client_key_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_client_key_password = input;
         self
     }
@@ -457,18 +403,12 @@ impl KafkaSettingsBuilder {
         &self.ssl_client_key_password
     }
     /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
-    pub fn ssl_ca_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_ca_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_ca_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
-    pub fn set_ssl_ca_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_ca_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_ca_certificate_arn = input;
         self
     }
@@ -477,18 +417,12 @@ impl KafkaSettingsBuilder {
         &self.ssl_ca_certificate_arn
     }
     /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn sasl_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sasl_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sasl_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn set_sasl_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sasl_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sasl_username = input;
         self
     }
@@ -497,18 +431,12 @@ impl KafkaSettingsBuilder {
         &self.sasl_username
     }
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn sasl_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sasl_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sasl_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn set_sasl_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sasl_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sasl_password = input;
         self
     }
@@ -536,10 +464,7 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
-    pub fn set_sasl_mechanism(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaSaslMechanism>,
-    ) -> Self {
+    pub fn set_sasl_mechanism(mut self, input: ::std::option::Option<crate::types::KafkaSaslMechanism>) -> Self {
         self.sasl_mechanism = input;
         self
     }
@@ -548,10 +473,7 @@ impl KafkaSettingsBuilder {
         &self.sasl_mechanism
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
-    pub fn ssl_endpoint_identification_algorithm(
-        mut self,
-        input: crate::types::KafkaSslEndpointIdentificationAlgorithm,
-    ) -> Self {
+    pub fn ssl_endpoint_identification_algorithm(mut self, input: crate::types::KafkaSslEndpointIdentificationAlgorithm) -> Self {
         self.ssl_endpoint_identification_algorithm = ::std::option::Option::Some(input);
         self
     }
@@ -564,9 +486,7 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
-    pub fn get_ssl_endpoint_identification_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm> {
+    pub fn get_ssl_endpoint_identification_algorithm(&self) -> &::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         &self.ssl_endpoint_identification_algorithm
     }
     /// Consumes the builder and constructs a [`KafkaSettings`](crate::types::KafkaSettings).
@@ -601,41 +521,23 @@ impl ::std::fmt::Debug for KafkaSettingsBuilder {
         formatter.field("broker", &self.broker);
         formatter.field("topic", &self.topic);
         formatter.field("message_format", &self.message_format);
-        formatter.field(
-            "include_transaction_details",
-            &self.include_transaction_details,
-        );
+        formatter.field("include_transaction_details", &self.include_transaction_details);
         formatter.field("include_partition_value", &self.include_partition_value);
-        formatter.field(
-            "partition_include_schema_table",
-            &self.partition_include_schema_table,
-        );
-        formatter.field(
-            "include_table_alter_operations",
-            &self.include_table_alter_operations,
-        );
+        formatter.field("partition_include_schema_table", &self.partition_include_schema_table);
+        formatter.field("include_table_alter_operations", &self.include_table_alter_operations);
         formatter.field("include_control_details", &self.include_control_details);
         formatter.field("message_max_bytes", &self.message_max_bytes);
         formatter.field("include_null_and_empty", &self.include_null_and_empty);
         formatter.field("security_protocol", &self.security_protocol);
-        formatter.field(
-            "ssl_client_certificate_arn",
-            &self.ssl_client_certificate_arn,
-        );
+        formatter.field("ssl_client_certificate_arn", &self.ssl_client_certificate_arn);
         formatter.field("ssl_client_key_arn", &self.ssl_client_key_arn);
-        formatter.field(
-            "ssl_client_key_password",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ssl_client_key_password", &"*** Sensitive Data Redacted ***");
         formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
         formatter.field("sasl_username", &self.sasl_username);
         formatter.field("sasl_password", &"*** Sensitive Data Redacted ***");
         formatter.field("no_hex_prefix", &self.no_hex_prefix);
         formatter.field("sasl_mechanism", &self.sasl_mechanism);
-        formatter.field(
-            "ssl_endpoint_identification_algorithm",
-            &self.ssl_endpoint_identification_algorithm,
-        );
+        formatter.field("ssl_endpoint_identification_algorithm", &self.ssl_endpoint_identification_algorithm);
         formatter.finish()
     }
 }

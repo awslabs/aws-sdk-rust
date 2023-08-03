@@ -40,7 +40,7 @@ impl DescribeEc2InstanceLimitsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEC2InstanceLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder,
+    inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder,
 }
 impl DescribeEC2InstanceLimitsFluentBuilder {
     /// Creates a new `DescribeEC2InstanceLimits`.
@@ -51,7 +51,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         }
     }
     /// Access the DescribeEC2InstanceLimits as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +63,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
             crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +73,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +82,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError>,
     > {
         let op = self
             .inner
@@ -112,9 +105,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +119,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
             crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         self
     }
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
-    pub fn set_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.inner = self.inner.set_ec2_instance_type(input);
         self
     }

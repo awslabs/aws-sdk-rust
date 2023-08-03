@@ -35,9 +35,7 @@ impl DeleteSnapshotOutput {
 
 /// A builder for [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
@@ -64,10 +62,7 @@ impl DeleteSnapshotOutputBuilder {
         self
     }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::SnapshotLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }

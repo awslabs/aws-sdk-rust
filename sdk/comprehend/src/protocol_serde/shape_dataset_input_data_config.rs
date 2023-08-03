@@ -20,16 +20,20 @@ pub fn ser_dataset_input_data_config(
     }
     if let Some(var_6) = &input.document_classifier_input_data_config {
         #[allow(unused_mut)]
-        let mut object_7 = object
-            .key("DocumentClassifierInputDataConfig")
-            .start_object();
-        crate::protocol_serde::shape_dataset_document_classifier_input_data_config::ser_dataset_document_classifier_input_data_config(&mut object_7, var_6)?;
+        let mut object_7 = object.key("DocumentClassifierInputDataConfig").start_object();
+        crate::protocol_serde::shape_dataset_document_classifier_input_data_config::ser_dataset_document_classifier_input_data_config(
+            &mut object_7,
+            var_6,
+        )?;
         object_7.finish();
     }
     if let Some(var_8) = &input.entity_recognizer_input_data_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("EntityRecognizerInputDataConfig").start_object();
-        crate::protocol_serde::shape_dataset_entity_recognizer_input_data_config::ser_dataset_entity_recognizer_input_data_config(&mut object_9, var_8)?;
+        crate::protocol_serde::shape_dataset_entity_recognizer_input_data_config::ser_dataset_entity_recognizer_input_data_config(
+            &mut object_9,
+            var_8,
+        )?;
         object_9.finish();
     }
     Ok(())

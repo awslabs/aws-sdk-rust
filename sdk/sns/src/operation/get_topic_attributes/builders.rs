@@ -10,10 +10,7 @@ impl GetTopicAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_topic_attributes::GetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_attributes::GetTopicAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_topic_attributes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTopicAttributesFluentBuilder {
         }
     }
     /// Access the GetTopicAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_topic_attributes::builders::GetTopicAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_topic_attributes::builders::GetTopicAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTopicAttributesFluentBuilder {
             crate::operation::get_topic_attributes::GetTopicAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_attributes::GetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTopicAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTopicAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_attributes::GetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_attributes::GetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTopicAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_attributes::GetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_attributes::GetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetTopicAttributesFluentBuilder {
             crate::operation::get_topic_attributes::GetTopicAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_topic_attributes::GetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_topic_attributes::GetTopicAttributesError>,
     > {
         self.customize_middleware().await
     }

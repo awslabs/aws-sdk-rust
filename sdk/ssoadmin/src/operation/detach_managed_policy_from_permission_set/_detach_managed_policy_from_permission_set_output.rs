@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachManagedPolicyFromPermissionSetO
 }
 impl DetachManagedPolicyFromPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetOutput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput).
-    pub fn builder() -> crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetOutputBuilder {
         crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachManagedPolicyFromPermissionSetOutput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachManagedPolicyFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DetachManagedPolicyFromPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetachManagedPolicyFromPermissionSetOutput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput).
-    pub fn build(self) -> crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput{
+    pub fn build(self) -> crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput {
         crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput {
             _request_id: self._request_id,
         }

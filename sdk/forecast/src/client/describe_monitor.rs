@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_monitor::DescribeMonitorOutput::last_modification_time): <p>The timestamp of the latest modification to the monitor.</p>
     ///   - [`estimated_evaluation_time_remaining_in_minutes(Option<i64>)`](crate::operation::describe_monitor::DescribeMonitorOutput::estimated_evaluation_time_remaining_in_minutes): <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
     /// - On failure, responds with [`SdkError<DescribeMonitorError>`](crate::operation::describe_monitor::DescribeMonitorError)
-    pub fn describe_monitor(
-        &self,
-    ) -> crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder {
-        crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_monitor(&self) -> crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder {
+        crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::new(self.handle.clone())
     }
 }

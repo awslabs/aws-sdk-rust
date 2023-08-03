@@ -5,23 +5,23 @@
 pub struct GetAutomatedDiscoveryConfigurationInput {}
 impl GetAutomatedDiscoveryConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationInput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput).
-    pub fn builder() -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationInputBuilder {
         crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutomatedDiscoveryConfigurationInput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutomatedDiscoveryConfigurationInputBuilder {}
 impl GetAutomatedDiscoveryConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationInput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput {})
     }
 }

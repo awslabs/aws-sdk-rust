@@ -22,9 +22,7 @@ impl DescribeAddressInput {
 
 /// A builder for [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressInputBuilder {
     pub(crate) address_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeAddressInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_address::DescribeAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_address::DescribeAddressInput {
-            address_id: self.address_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_address::DescribeAddressInput { address_id: self.address_id })
     }
 }

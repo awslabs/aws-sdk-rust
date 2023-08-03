@@ -10,10 +10,7 @@ impl AssociateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_user::AssociateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user::AssociateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_user();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl AssociateUserFluentBuilder {
         }
     }
     /// Access the AssociateUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_user::builders::AssociateUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_user::builders::AssociateUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl AssociateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -150,10 +142,7 @@ impl AssociateUserFluentBuilder {
         self
     }
     /// <p>The identity provider of the user.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }

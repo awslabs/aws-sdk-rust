@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterPackageVersionOutput {
 }
 impl DeregisterPackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder {
         crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterPackageVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterPackageVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
+    pub fn build(self) -> crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
         crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
             _request_id: self._request_id,
         }

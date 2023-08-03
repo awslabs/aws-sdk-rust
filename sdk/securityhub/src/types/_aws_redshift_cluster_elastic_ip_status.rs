@@ -30,9 +30,7 @@ impl AwsRedshiftClusterElasticIpStatus {
 
 /// A builder for [`AwsRedshiftClusterElasticIpStatus`](crate::types::AwsRedshiftClusterElasticIpStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterElasticIpStatusBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`successful_set(Option<Vec<OrganizationEventDetails>>)`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput::successful_set): <p>Information about the events that could be retrieved.</p>
     ///   - [`failed_set(Option<Vec<OrganizationEventDetailsErrorItem>>)`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput::failed_set): <p>Error messages for any events that could not be retrieved.</p>
     /// - On failure, responds with [`SdkError<DescribeEventDetailsForOrganizationError>`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError)
-    pub fn describe_event_details_for_organization(&self) -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationFluentBuilder{
-        crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn describe_event_details_for_organization(
+        &self,
+    ) -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationFluentBuilder {
+        crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

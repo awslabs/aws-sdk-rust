@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<StagingSourceServer>>)`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput::items): <p>A list of source servers on a staging Account that are extensible.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput::next_token): <p>The token of the next extensible source server to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListExtensibleSourceServersError>`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError)
-    pub fn list_extensible_source_servers(&self) -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder{
+    pub fn list_extensible_source_servers(
+        &self,
+    ) -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder {
         crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::new(self.handle.clone())
     }
 }

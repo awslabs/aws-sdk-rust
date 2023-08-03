@@ -35,9 +35,7 @@ impl GetDetectorsOutput {
 
 /// A builder for [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorsOutputBuilder {
     pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetDetectorsOutputBuilder {
         self
     }
     /// <p>The detectors.</p>
-    pub fn set_detectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
-    ) -> Self {
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>) -> Self {
         self.detectors = input;
         self
     }

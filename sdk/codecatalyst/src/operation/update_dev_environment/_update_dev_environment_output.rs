@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for UpdateDevEnvironmentOutput {
 }
 impl UpdateDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevEnvironmentOutput`](crate::operation::update_dev_environment::UpdateDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentOutputBuilder {
         crate::operation::update_dev_environment::builders::UpdateDevEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevEnvironmentOutput`](crate::operation::update_dev_environment::UpdateDevEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevEnvironmentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
@@ -161,17 +158,12 @@ impl UpdateDevEnvironmentOutputBuilder {
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.ides = input;
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-    pub fn get_ides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
@@ -180,10 +172,7 @@ impl UpdateDevEnvironmentOutputBuilder {
         self
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }

@@ -85,10 +85,7 @@ impl StepBuilder {
         self
     }
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub fn set_start_position(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.start_position = input;
         self
     }

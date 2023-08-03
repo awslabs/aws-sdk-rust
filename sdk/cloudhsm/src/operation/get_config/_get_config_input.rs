@@ -36,9 +36,7 @@ impl GetConfigInput {
 
 /// A builder for [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_version: ::std::option::Option<crate::types::ClientVersion>,
@@ -65,10 +63,7 @@ impl GetConfigInputBuilder {
         self
     }
     /// <p>The client version.</p>
-    pub fn set_client_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVersion>,
-    ) -> Self {
+    pub fn set_client_version(mut self, input: ::std::option::Option<crate::types::ClientVersion>) -> Self {
         self.client_version = input;
         self
     }
@@ -88,10 +83,7 @@ impl GetConfigInputBuilder {
         self
     }
     /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
-    pub fn set_hapg_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hapg_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hapg_list = input;
         self
     }
@@ -100,12 +92,7 @@ impl GetConfigInputBuilder {
         &self.hapg_list
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_config::GetConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_config::GetConfigInput {
             client_arn: self.client_arn,
             client_version: self.client_version,

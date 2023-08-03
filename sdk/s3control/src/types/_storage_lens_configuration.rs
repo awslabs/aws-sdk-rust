@@ -72,9 +72,7 @@ impl StorageLensConfiguration {
 
 /// A builder for [`StorageLensConfiguration`](crate::types::StorageLensConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageLensConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) account_level: ::std::option::Option<crate::types::AccountLevel>,
@@ -106,10 +104,7 @@ impl StorageLensConfigurationBuilder {
         self
     }
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
-    pub fn set_account_level(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountLevel>,
-    ) -> Self {
+    pub fn set_account_level(mut self, input: ::std::option::Option<crate::types::AccountLevel>) -> Self {
         self.account_level = input;
         self
     }
@@ -151,10 +146,7 @@ impl StorageLensConfigurationBuilder {
         self
     }
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
-    pub fn set_data_export(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensDataExport>,
-    ) -> Self {
+    pub fn set_data_export(mut self, input: ::std::option::Option<crate::types::StorageLensDataExport>) -> Self {
         self.data_export = input;
         self
     }
@@ -182,10 +174,7 @@ impl StorageLensConfigurationBuilder {
         self
     }
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
-    pub fn set_aws_org(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensAwsOrg>,
-    ) -> Self {
+    pub fn set_aws_org(mut self, input: ::std::option::Option<crate::types::StorageLensAwsOrg>) -> Self {
         self.aws_org = input;
         self
     }
@@ -194,18 +183,12 @@ impl StorageLensConfigurationBuilder {
         &self.aws_org
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
-    pub fn storage_lens_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
-    pub fn set_storage_lens_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_lens_arn = input;
         self
     }

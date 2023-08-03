@@ -6,12 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput) with field(s):
     ///   - [`authorization_data(Option<AuthorizationData>)`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput::authorization_data): <p>An authorization token data object that corresponds to a public registry.</p>
     /// - On failure, responds with [`SdkError<GetAuthorizationTokenError>`](crate::operation::get_authorization_token::GetAuthorizationTokenError)
-    pub fn get_authorization_token(
-        &self,
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder
-    {
-        crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_authorization_token(&self) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder {
+        crate::operation::get_authorization_token::builders::GetAuthorizationTokenFluentBuilder::new(self.handle.clone())
     }
 }

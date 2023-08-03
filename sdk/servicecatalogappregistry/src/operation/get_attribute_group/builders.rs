@@ -10,10 +10,7 @@ impl GetAttributeGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_group::GetAttributeGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_group::GetAttributeGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_group::GetAttributeGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_attribute_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAttributeGroupFluentBuilder {
         }
     }
     /// Access the GetAttributeGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetAttributeGroupFluentBuilder {
             crate::operation::get_attribute_group::GetAttributeGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_group::GetAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_group::GetAttributeGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetAttributeGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetAttributeGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_group::GetAttributeGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_group::GetAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_group::GetAttributeGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetAttributeGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_group::GetAttributeGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_group::GetAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_group::GetAttributeGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetAttributeGroupFluentBuilder {
             crate::operation::get_attribute_group::GetAttributeGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_group::GetAttributeGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_group::GetAttributeGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_group(input.into());
         self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self
     }

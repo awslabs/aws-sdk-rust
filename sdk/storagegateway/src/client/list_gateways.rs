@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`gateways(Option<Vec<GatewayInfo>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>An array of <code>GatewayInfo</code> objects.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::marker): <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
-    pub fn list_gateways(
-        &self,
-    ) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
-        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
+        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

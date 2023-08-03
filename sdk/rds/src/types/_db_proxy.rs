@@ -126,17 +126,14 @@ impl DbProxy {
 
 /// A builder for [`DbProxy`](crate::types::DbProxy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbProxyBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DbProxyStatus>,
     pub(crate) engine_family: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -149,18 +146,12 @@ pub struct DbProxyBuilder {
 }
 impl DbProxyBuilder {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -197,18 +188,12 @@ impl DbProxyBuilder {
         &self.status
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
-    pub fn engine_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
-    pub fn set_engine_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_family = input;
         self
     }
@@ -235,27 +220,19 @@ impl DbProxyBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `vpc_subnet_ids`.
@@ -263,27 +240,19 @@ impl DbProxyBuilder {
     /// To override the contents of this collection use [`set_vpc_subnet_ids`](Self::set_vpc_subnet_ids).
     ///
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn vpc_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn set_vpc_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_subnet_ids = input;
         self
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn get_vpc_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// Appends an item to `auth`.
@@ -298,17 +267,12 @@ impl DbProxyBuilder {
         self
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub fn set_auth(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
-    ) -> Self {
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>) -> Self {
         self.auth = input;
         self
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub fn get_auth(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>> {
         &self.auth
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
@@ -393,10 +357,7 @@ impl DbProxyBuilder {
         self
     }
     /// <p>The date and time when the proxy was first created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -410,10 +371,7 @@ impl DbProxyBuilder {
         self
     }
     /// <p>The date and time when the proxy was last updated.</p>
-    pub fn set_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_date = input;
         self
     }

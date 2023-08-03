@@ -27,7 +27,7 @@ impl ListTargetsForSecurityProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTargetsForSecurityProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder,
+    inner: crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder,
 }
 impl ListTargetsForSecurityProfileFluentBuilder {
     /// Creates a new `ListTargetsForSecurityProfile`.
@@ -38,7 +38,7 @@ impl ListTargetsForSecurityProfileFluentBuilder {
         }
     }
     /// Access the ListTargetsForSecurityProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListTargetsForSecurityProfileFluentBuilder {
             crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListTargetsForSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListTargetsForSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListTargetsForSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -115,31 +106,23 @@ impl ListTargetsForSecurityProfileFluentBuilder {
             crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_targets_for_security_profile::paginator::ListTargetsForSecurityProfilePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_targets_for_security_profile::paginator::ListTargetsForSecurityProfilePaginator{
+    pub fn into_paginator(self) -> crate::operation::list_targets_for_security_profile::paginator::ListTargetsForSecurityProfilePaginator {
         crate::operation::list_targets_for_security_profile::paginator::ListTargetsForSecurityProfilePaginator::new(self.handle, self.inner)
     }
     /// <p>The security profile.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The security profile.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }

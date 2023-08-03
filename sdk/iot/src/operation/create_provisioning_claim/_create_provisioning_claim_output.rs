@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateProvisioningClaimOutput {
 }
 impl CreateProvisioningClaimOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
-    pub fn builder(
-    ) -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder {
         crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningClaimOutputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ pub struct CreateProvisioningClaimOutputBuilder {
 }
 impl CreateProvisioningClaimOutputBuilder {
     /// <p>The ID of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -83,18 +73,12 @@ impl CreateProvisioningClaimOutputBuilder {
         &self.certificate_id
     }
     /// <p>The provisioning claim certificate.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provisioning claim certificate.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -122,10 +106,7 @@ impl CreateProvisioningClaimOutputBuilder {
         self
     }
     /// <p>The provisioning claim expiration time.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
@@ -143,9 +124,7 @@ impl CreateProvisioningClaimOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
+    pub fn build(self) -> crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
         crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
             certificate_id: self.certificate_id,
             certificate_pem: self.certificate_pem,

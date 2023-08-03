@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::untag_resource::UntagResourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::untag_resource::UntagResourceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
-    pub fn untag_resource(
-        &self,
-    ) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
-        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
+        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(self.handle.clone())
     }
 }

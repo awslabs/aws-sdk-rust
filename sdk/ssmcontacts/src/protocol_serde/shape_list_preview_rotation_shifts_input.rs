@@ -33,10 +33,7 @@ pub fn ser_list_preview_rotation_shifts_input(
     if let Some(var_8) = &input.recurrence {
         #[allow(unused_mut)]
         let mut object_9 = object.key("Recurrence").start_object();
-        crate::protocol_serde::shape_recurrence_settings::ser_recurrence_settings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_recurrence_settings::ser_recurrence_settings(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.overrides {
@@ -45,10 +42,7 @@ pub fn ser_list_preview_rotation_shifts_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_preview_override::ser_preview_override(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_preview_override::ser_preview_override(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

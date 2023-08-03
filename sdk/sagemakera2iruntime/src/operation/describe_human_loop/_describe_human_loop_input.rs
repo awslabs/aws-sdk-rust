@@ -15,34 +15,25 @@ impl DescribeHumanLoopInput {
 }
 impl DescribeHumanLoopInput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
-    pub fn builder(
-    ) -> crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
+    pub fn builder() -> crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
         crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want information about.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human loop that you want information about.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_human_loop::DescribeHumanLoopInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_human_loop::DescribeHumanLoopInput {
-                human_loop_name: self.human_loop_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_human_loop::DescribeHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_human_loop::DescribeHumanLoopInput {
+            human_loop_name: self.human_loop_name,
+        })
     }
 }

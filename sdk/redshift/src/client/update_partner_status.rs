@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`database_name(Option<String>)`](crate::operation::update_partner_status::UpdatePartnerStatusOutput::database_name): <p>The name of the database that receives data from the partner.</p>
     ///   - [`partner_name(Option<String>)`](crate::operation::update_partner_status::UpdatePartnerStatusOutput::partner_name): <p>The name of the partner that is authorized to send data.</p>
     /// - On failure, responds with [`SdkError<UpdatePartnerStatusError>`](crate::operation::update_partner_status::UpdatePartnerStatusError)
-    pub fn update_partner_status(
-        &self,
-    ) -> crate::operation::update_partner_status::builders::UpdatePartnerStatusFluentBuilder {
-        crate::operation::update_partner_status::builders::UpdatePartnerStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_partner_status(&self) -> crate::operation::update_partner_status::builders::UpdatePartnerStatusFluentBuilder {
+        crate::operation::update_partner_status::builders::UpdatePartnerStatusFluentBuilder::new(self.handle.clone())
     }
 }

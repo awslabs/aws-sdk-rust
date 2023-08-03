@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Application>>)`](crate::operation::list_applications::ListApplicationsOutput::items): <p>Applications list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>Response next token.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

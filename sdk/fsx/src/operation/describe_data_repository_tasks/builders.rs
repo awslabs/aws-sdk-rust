@@ -27,7 +27,7 @@ impl DescribeDataRepositoryTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder,
+    inner: crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder,
 }
 impl DescribeDataRepositoryTasksFluentBuilder {
     /// Creates a new `DescribeDataRepositoryTasks`.
@@ -38,7 +38,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
         }
     }
     /// Access the DescribeDataRepositoryTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
             crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl DescribeDataRepositoryTasksFluentBuilder {
             crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator {
         crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TaskIds`.
@@ -137,10 +126,7 @@ impl DescribeDataRepositoryTasksFluentBuilder {
         self
     }
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub fn set_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_task_ids(input);
         self
     }
@@ -158,17 +144,12 @@ impl DescribeDataRepositoryTasksFluentBuilder {
         self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>

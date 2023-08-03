@@ -15,35 +15,25 @@ impl GetTranscriptionJobInput {
 }
 impl GetTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
-        crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
+        crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTranscriptionJobInputBuilder {
     pub(crate) transcription_job_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTranscriptionJobInputBuilder {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcription_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn set_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcription_job_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetTranscriptionJobInputBuilder {
     /// Consumes the builder and constructs a [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_transcription_job::GetTranscriptionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_transcription_job::GetTranscriptionJobInput {
-                transcription_job_name: self.transcription_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_transcription_job::GetTranscriptionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_transcription_job::GetTranscriptionJobInput {
+            transcription_job_name: self.transcription_job_name,
+        })
     }
 }

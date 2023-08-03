@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`task_run_id(Option<String>)`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
     ///   - [`status(Option<TaskStatusType>)`](crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput::status): <p>The status for this run.</p>
     /// - On failure, responds with [`SdkError<CancelMLTaskRunError>`](crate::operation::cancel_ml_task_run::CancelMLTaskRunError)
-    pub fn cancel_ml_task_run(
-        &self,
-    ) -> crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder {
-        crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_ml_task_run(&self) -> crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder {
+        crate::operation::cancel_ml_task_run::builders::CancelMLTaskRunFluentBuilder::new(self.handle.clone())
     }
 }

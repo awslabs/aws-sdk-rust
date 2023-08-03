@@ -29,16 +29,14 @@ impl DescribeAppVersionAppComponentInput {
 }
 impl DescribeAppVersionAppComponentInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionAppComponentInput`](crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentInput).
-    pub fn builder() -> crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentInputBuilder{
+    pub fn builder() -> crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentInputBuilder {
         crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionAppComponentInput`](crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionAppComponentInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl DescribeAppVersionAppComponentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentInput {
-                app_arn: self.app_arn
-                ,
-                app_version: self.app_version
-                ,
-                id: self.id
-                ,
-            }
+                app_arn: self.app_arn,
+                app_version: self.app_version,
+                id: self.id,
+            },
         )
     }
 }

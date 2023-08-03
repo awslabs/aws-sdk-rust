@@ -38,9 +38,7 @@ impl Audio {
 
 /// A builder for [`Audio`](crate::types::Audio).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

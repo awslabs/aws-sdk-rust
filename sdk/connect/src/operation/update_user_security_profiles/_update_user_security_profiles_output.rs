@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserSecurityProfilesOutput {
 }
 impl UpdateUserSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput).
-    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder{
+    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder {
         crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserSecurityProfilesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateUserSecurityProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
+    pub fn build(self) -> crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
             _request_id: self._request_id,
         }

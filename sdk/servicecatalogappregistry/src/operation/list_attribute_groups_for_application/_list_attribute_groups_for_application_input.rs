@@ -29,16 +29,14 @@ impl ListAttributeGroupsForApplicationInput {
 }
 impl ListAttributeGroupsForApplicationInput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput).
-    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder{
+    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder {
         crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttributeGroupsForApplicationInput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListAttributeGroupsForApplicationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationInput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput {
-                application: self.application
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                application: self.application,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`sub_channels(Option<Vec<SubChannelSummary>>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::sub_channels): <p>The information about each sub-channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sub_channels::ListSubChannelsOutput::next_token): <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     /// - On failure, responds with [`SdkError<ListSubChannelsError>`](crate::operation::list_sub_channels::ListSubChannelsError)
-    pub fn list_sub_channels(
-        &self,
-    ) -> crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder {
-        crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sub_channels(&self) -> crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder {
+        crate::operation::list_sub_channels::builders::ListSubChannelsFluentBuilder::new(self.handle.clone())
     }
 }

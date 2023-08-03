@@ -37,10 +37,7 @@ impl DescribeTaskExecutionFluentBuilder {
         }
     }
     /// Access the DescribeTaskExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_task_execution::builders::DescribeTaskExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_task_execution::builders::DescribeTaskExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeTaskExecutionFluentBuilder {
             crate::operation::describe_task_execution::DescribeTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_execution::DescribeTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_execution::DescribeTaskExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeTaskExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_execution::DescribeTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_execution::DescribeTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_execution::DescribeTaskExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeTaskExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_execution::DescribeTaskExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_execution::DescribeTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_execution::DescribeTaskExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeTaskExecutionFluentBuilder {
             crate::operation::describe_task_execution::DescribeTaskExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_execution::DescribeTaskExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_execution::DescribeTaskExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_execution_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_execution_arn(input);
         self
     }

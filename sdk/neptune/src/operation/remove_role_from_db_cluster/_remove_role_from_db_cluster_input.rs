@@ -29,18 +29,14 @@ impl RemoveRoleFromDbClusterInput {
 }
 impl RemoveRoleFromDbClusterInput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterInput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput).
-    pub fn builder(
-    ) -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder {
         crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRoleFromDbClusterInput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRoleFromDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct RemoveRoleFromDbClusterInputBuilder {
 }
 impl RemoveRoleFromDbClusterInputBuilder {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -102,12 +92,10 @@ impl RemoveRoleFromDbClusterInputBuilder {
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                role_arn: self.role_arn,
-                feature_name: self.feature_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            role_arn: self.role_arn,
+            feature_name: self.feature_name,
+        })
     }
 }

@@ -30,8 +30,7 @@ impl ListDeploymentInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder,
+    inner: crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder,
 }
 impl ListDeploymentInstancesFluentBuilder {
     /// Creates a new `ListDeploymentInstances`.
@@ -42,10 +41,7 @@ impl ListDeploymentInstancesFluentBuilder {
         }
     }
     /// Access the ListDeploymentInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl ListDeploymentInstancesFluentBuilder {
             crate::operation::list_deployment_instances::ListDeploymentInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl ListDeploymentInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl ListDeploymentInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_instances::ListDeploymentInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl ListDeploymentInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_instances::ListDeploymentInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -122,34 +109,23 @@ impl ListDeploymentInstancesFluentBuilder {
             crate::operation::list_deployment_instances::ListDeploymentInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator {
         crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -197,10 +173,7 @@ impl ListDeploymentInstancesFluentBuilder {
     /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
     /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    pub fn set_instance_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
-    ) -> Self {
+    pub fn set_instance_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>) -> Self {
         self.inner = self.inner.set_instance_status_filter(input);
         self
     }
@@ -213,9 +186,7 @@ impl ListDeploymentInstancesFluentBuilder {
     /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
     /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    pub fn get_instance_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
+    pub fn get_instance_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
         self.inner.get_instance_status_filter()
     }
     /// Appends an item to `instanceTypeFilter`.
@@ -228,17 +199,12 @@ impl ListDeploymentInstancesFluentBuilder {
         self
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn set_instance_type_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
-    ) -> Self {
+    pub fn set_instance_type_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_type_filter(input);
         self
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn get_instance_type_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+    pub fn get_instance_type_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         self.inner.get_instance_type_filter()
     }
 }

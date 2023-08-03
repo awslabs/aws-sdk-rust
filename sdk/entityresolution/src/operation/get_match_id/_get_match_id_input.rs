@@ -8,9 +8,7 @@ pub struct GetMatchIdInput {
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The record to fetch the Match ID for.</p>
     #[doc(hidden)]
-    pub record: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetMatchIdInput {
     /// <p>The name of the workflow.</p>
@@ -18,11 +16,7 @@ impl GetMatchIdInput {
         self.workflow_name.as_deref()
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn record(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn record(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.record.as_ref()
     }
 }
@@ -46,24 +40,16 @@ impl GetMatchIdInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetMatchIdInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
-    pub(crate) record: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetMatchIdInputBuilder {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -76,41 +62,23 @@ impl GetMatchIdInputBuilder {
     /// To override the contents of this collection use [`set_record`](Self::set_record).
     ///
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn record(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.record.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.record = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.record = input;
         self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.record
     }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_match_id::GetMatchIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_match_id::GetMatchIdInput {
             workflow_name: self.workflow_name,
             record: self.record,

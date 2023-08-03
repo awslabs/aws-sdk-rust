@@ -5,8 +5,7 @@
 pub struct GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
     #[doc(hidden)]
-    pub ipam_pool_allocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
+    pub ipam_pool_allocations: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetIpamPoolAllocationsOutput {
 }
 impl GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn ipam_pool_allocations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpamPoolAllocation]> {
+    pub fn ipam_pool_allocations(&self) -> ::std::option::Option<&[crate::types::IpamPoolAllocation]> {
         self.ipam_pool_allocations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetIpamPoolAllocationsOutput {
 }
 impl GetIpamPoolAllocationsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder {
         crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamPoolAllocationsOutputBuilder {
-    pub(crate) ipam_pool_allocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
+    pub(crate) ipam_pool_allocations: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl GetIpamPoolAllocationsOutputBuilder {
         self
     }
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn set_ipam_pool_allocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>) -> Self {
         self.ipam_pool_allocations = input;
         self
     }
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn get_ipam_pool_allocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>> {
+    pub fn get_ipam_pool_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>> {
         &self.ipam_pool_allocations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -99,9 +86,7 @@ impl GetIpamPoolAllocationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
+    pub fn build(self) -> crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
             ipam_pool_allocations: self.ipam_pool_allocations,
             next_token: self.next_token,

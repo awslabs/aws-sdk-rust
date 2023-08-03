@@ -35,9 +35,7 @@ impl CreateProfileOutput {
 
 /// A builder for [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileOutputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl CreateProfileOutputBuilder {
         &self.profile_arn
     }
     /// <p>Version of the profile.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version of the profile.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }

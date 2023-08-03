@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`message_id(impl ::std::convert::Into<String>)`](crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder::set_message_id): <p>The message ID.</p>
     /// - On success, responds with [`RedactRoomMessageOutput`](crate::operation::redact_room_message::RedactRoomMessageOutput)
     /// - On failure, responds with [`SdkError<RedactRoomMessageError>`](crate::operation::redact_room_message::RedactRoomMessageError)
-    pub fn redact_room_message(
-        &self,
-    ) -> crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder {
-        crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn redact_room_message(&self) -> crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder {
+        crate::operation::redact_room_message::builders::RedactRoomMessageFluentBuilder::new(self.handle.clone())
     }
 }

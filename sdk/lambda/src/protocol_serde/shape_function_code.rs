@@ -4,9 +4,7 @@ pub fn ser_function_code(
     input: &crate::types::FunctionCode,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.zip_file {
-        object
-            .key("ZipFile")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.s3_bucket {
         object.key("S3Bucket").string(var_2.as_str());

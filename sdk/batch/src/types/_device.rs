@@ -39,14 +39,11 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceBuilder {
     pub(crate) host_path: ::std::option::Option<::std::string::String>,
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>,
 }
 impl DeviceBuilder {
     /// <p>The path for the device on the host container instance.</p>
@@ -64,18 +61,12 @@ impl DeviceBuilder {
         &self.host_path
     }
     /// <p>The path inside the container that's used to expose the host device. By default, the <code>hostPath</code> value is used.</p>
-    pub fn container_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path inside the container that's used to expose the host device. By default, the <code>hostPath</code> value is used.</p>
-    pub fn set_container_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_path = input;
         self
     }
@@ -95,17 +86,12 @@ impl DeviceBuilder {
         self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceCgroupPermission>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).

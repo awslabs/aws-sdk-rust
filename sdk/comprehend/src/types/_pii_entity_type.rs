@@ -73,13 +73,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -197,13 +191,9 @@ impl ::std::convert::From<&str> for PiiEntityType {
             "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" => PiiEntityType::UkUniqueTaxpayerReferenceNumber,
             "URL" => PiiEntityType::Url,
             "USERNAME" => PiiEntityType::Username,
-            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => {
-                PiiEntityType::UsIndividualTaxIdentificationNumber
-            }
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => PiiEntityType::UsIndividualTaxIdentificationNumber,
             "VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
-            other => {
-                PiiEntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PiiEntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -253,9 +243,7 @@ impl PiiEntityType {
             PiiEntityType::UkUniqueTaxpayerReferenceNumber => "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
             PiiEntityType::Url => "URL",
             PiiEntityType::Username => "USERNAME",
-            PiiEntityType::UsIndividualTaxIdentificationNumber => {
-                "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
-            }
+            PiiEntityType::UsIndividualTaxIdentificationNumber => "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
             PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
             PiiEntityType::Unknown(value) => value.as_str(),
         }

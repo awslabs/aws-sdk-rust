@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRotationOverridesOutput {
 }
 impl ListRotationOverridesOutput {
     /// Creates a new builder-style object to manufacture [`ListRotationOverridesOutput`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesOutputBuilder {
         crate::operation::list_rotation_overrides::builders::ListRotationOverridesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRotationOverridesOutput`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationOverridesOutputBuilder {
-    pub(crate) rotation_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>>,
+    pub(crate) rotation_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListRotationOverridesOutputBuilder {
         self
     }
     /// <p>A list of rotation overrides in the specified time range.</p>
-    pub fn set_rotation_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>>,
-    ) -> Self {
+    pub fn set_rotation_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>>) -> Self {
         self.rotation_overrides = input;
         self
     }
     /// <p>A list of rotation overrides in the specified time range.</p>
-    pub fn get_rotation_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>> {
+    pub fn get_rotation_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>> {
         &self.rotation_overrides
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

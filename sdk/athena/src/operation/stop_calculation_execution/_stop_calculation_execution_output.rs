@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for StopCalculationExecutionOutput {
 }
 impl StopCalculationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionOutputBuilder {
         crate::operation::stop_calculation_execution::builders::StopCalculationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCalculationExecutionOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,
@@ -72,10 +68,7 @@ impl StopCalculationExecutionOutputBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationExecutionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.state = input;
         self
     }
@@ -100,9 +93,7 @@ impl StopCalculationExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_calculation_execution::StopCalculationExecutionOutput {
+    pub fn build(self) -> crate::operation::stop_calculation_execution::StopCalculationExecutionOutput {
         crate::operation::stop_calculation_execution::StopCalculationExecutionOutput {
             state: self.state,
             _request_id: self._request_id,

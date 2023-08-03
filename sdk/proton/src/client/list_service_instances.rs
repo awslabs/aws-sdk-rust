@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instances::ListServiceInstancesOutput::next_token): <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     ///   - [`service_instances(Option<Vec<ServiceInstanceSummary>>)`](crate::operation::list_service_instances::ListServiceInstancesOutput::service_instances): <p>An array of service instances with summary data.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstancesError>`](crate::operation::list_service_instances::ListServiceInstancesError)
-    pub fn list_service_instances(
-        &self,
-    ) -> crate::operation::list_service_instances::builders::ListServiceInstancesFluentBuilder {
-        crate::operation::list_service_instances::builders::ListServiceInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_instances(&self) -> crate::operation::list_service_instances::builders::ListServiceInstancesFluentBuilder {
+        crate::operation::list_service_instances::builders::ListServiceInstancesFluentBuilder::new(self.handle.clone())
     }
 }

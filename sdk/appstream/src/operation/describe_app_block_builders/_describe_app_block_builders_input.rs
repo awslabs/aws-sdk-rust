@@ -29,18 +29,14 @@ impl DescribeAppBlockBuildersInput {
 }
 impl DescribeAppBlockBuildersInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppBlockBuildersInput`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder {
         crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppBlockBuildersInput`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppBlockBuildersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl DescribeAppBlockBuildersInputBuilder {
         self
     }
     /// <p>The names of the app block builders.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -105,12 +98,10 @@ impl DescribeAppBlockBuildersInputBuilder {
         crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput {
-                names: self.names,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput {
+            names: self.names,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

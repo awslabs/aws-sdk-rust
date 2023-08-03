@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`configured_table_summaries(Option<Vec<ConfiguredTableSummary>>)`](crate::operation::list_configured_tables::ListConfiguredTablesOutput::configured_table_summaries): <p>The configured tables listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configured_tables::ListConfiguredTablesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListConfiguredTablesError>`](crate::operation::list_configured_tables::ListConfiguredTablesError)
-    pub fn list_configured_tables(
-        &self,
-    ) -> crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder {
-        crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configured_tables(&self) -> crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder {
+        crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::new(self.handle.clone())
     }
 }

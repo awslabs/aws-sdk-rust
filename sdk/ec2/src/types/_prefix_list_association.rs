@@ -30,9 +30,7 @@ impl PrefixListAssociation {
 
 /// A builder for [`PrefixListAssociation`](crate::types::PrefixListAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefixListAssociationBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl PrefixListAssociationBuilder {
         &self.resource_id
     }
     /// <p>The owner of the resource.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the resource.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner = input;
         self
     }

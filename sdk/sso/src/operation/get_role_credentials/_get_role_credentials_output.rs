@@ -29,8 +29,7 @@ impl ::aws_http::request_id::RequestId for GetRoleCredentialsOutput {
 }
 impl GetRoleCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetRoleCredentialsOutput`](crate::operation::get_role_credentials::GetRoleCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_role_credentials::builders::GetRoleCredentialsOutputBuilder {
+    pub fn builder() -> crate::operation::get_role_credentials::builders::GetRoleCredentialsOutputBuilder {
         crate::operation::get_role_credentials::builders::GetRoleCredentialsOutputBuilder::default()
     }
 }
@@ -49,10 +48,7 @@ impl GetRoleCredentialsOutputBuilder {
         self
     }
     /// <p>The credentials for the role that is assigned to the user.</p>
-    pub fn set_role_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::RoleCredentials>,
-    ) -> Self {
+    pub fn set_role_credentials(mut self, input: ::std::option::Option<crate::types::RoleCredentials>) -> Self {
         self.role_credentials = input;
         self
     }

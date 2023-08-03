@@ -38,9 +38,7 @@ impl ListPlatformBranchesFluentBuilder {
         }
     }
     /// Access the ListPlatformBranches as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListPlatformBranchesFluentBuilder {
             crate::operation::list_platform_branches::ListPlatformBranches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_branches::ListPlatformBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_branches::ListPlatformBranchesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListPlatformBranchesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListPlatformBranchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_branches::ListPlatformBranchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_branches::ListPlatformBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_branches::ListPlatformBranchesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListPlatformBranchesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_branches::ListPlatformBranchesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_branches::ListPlatformBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_branches::ListPlatformBranchesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListPlatformBranchesFluentBuilder {
             crate::operation::list_platform_branches::ListPlatformBranches,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_branches::ListPlatformBranchesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_branches::ListPlatformBranchesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator {
-        crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator {
+        crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -190,10 +172,7 @@ impl ListPlatformBranchesFluentBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -221,9 +200,7 @@ impl ListPlatformBranchesFluentBuilder {
     /// </ul>
     /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>

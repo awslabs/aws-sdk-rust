@@ -9,10 +9,12 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput) with field(s):
     ///   - [`channel_membership(Option<ChannelMembershipForAppInstanceUserSummary>)`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput::channel_membership): <p>The channel to which a user belongs.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelMembershipForAppInstanceUserError>`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserError)
-    #[deprecated(
-        note = "Replaced by DescribeChannelMembershipForAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn describe_channel_membership_for_app_instance_user(&self) -> crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserFluentBuilder{
-        crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Replaced by DescribeChannelMembershipForAppInstanceUser in the Amazon Chime SDK Messaging Namespace")]
+    pub fn describe_channel_membership_for_app_instance_user(
+        &self,
+    ) -> crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserFluentBuilder {
+        crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

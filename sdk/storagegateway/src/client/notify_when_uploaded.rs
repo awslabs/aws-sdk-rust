@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`file_share_arn(Option<String>)`](crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share.</p>
     ///   - [`notification_id(Option<String>)`](crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput::notification_id): <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
     /// - On failure, responds with [`SdkError<NotifyWhenUploadedError>`](crate::operation::notify_when_uploaded::NotifyWhenUploadedError)
-    pub fn notify_when_uploaded(
-        &self,
-    ) -> crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedFluentBuilder {
-        crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn notify_when_uploaded(&self) -> crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedFluentBuilder {
+        crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedFluentBuilder::new(self.handle.clone())
     }
 }

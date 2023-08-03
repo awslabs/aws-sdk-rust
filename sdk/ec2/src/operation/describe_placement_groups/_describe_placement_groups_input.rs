@@ -58,18 +58,14 @@ impl DescribePlacementGroupsInput {
 }
 impl DescribePlacementGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder {
         crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -109,10 +105,7 @@ impl DescribePlacementGroupsInputBuilder {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -158,18 +151,13 @@ impl DescribePlacementGroupsInputBuilder {
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn set_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_names = input;
         self
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn get_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.group_names
     }
     /// Appends an item to `group_ids`.
@@ -184,10 +172,7 @@ impl DescribePlacementGroupsInputBuilder {
         self
     }
     /// <p>The IDs of the placement groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_ids = input;
         self
     }
@@ -202,13 +187,11 @@ impl DescribePlacementGroupsInputBuilder {
         crate::operation::describe_placement_groups::DescribePlacementGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                group_names: self.group_names,
-                group_ids: self.group_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            group_names: self.group_names,
+            group_ids: self.group_ids,
+        })
     }
 }

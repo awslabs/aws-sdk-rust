@@ -37,8 +37,7 @@ impl DescribeFleetAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder,
+    inner: crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder,
 }
 impl DescribeFleetAttributesFluentBuilder {
     /// Creates a new `DescribeFleetAttributes`.
@@ -49,10 +48,7 @@ impl DescribeFleetAttributesFluentBuilder {
         }
     }
     /// Access the DescribeFleetAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +60,7 @@ impl DescribeFleetAttributesFluentBuilder {
             crate::operation::describe_fleet_attributes::DescribeFleetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_attributes::DescribeFleetAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +70,7 @@ impl DescribeFleetAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +79,7 @@ impl DescribeFleetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_attributes::DescribeFleetAttributesError>,
     > {
         let op = self
             .inner
@@ -113,9 +102,7 @@ impl DescribeFleetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_attributes::DescribeFleetAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -129,19 +116,14 @@ impl DescribeFleetAttributesFluentBuilder {
             crate::operation::describe_fleet_attributes::DescribeFleetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_attributes::DescribeFleetAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_attributes::paginator::DescribeFleetAttributesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fleet_attributes::paginator::DescribeFleetAttributesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_attributes::paginator::DescribeFleetAttributesPaginator {
         crate::operation::describe_fleet_attributes::paginator::DescribeFleetAttributesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `FleetIds`.
@@ -154,10 +136,7 @@ impl DescribeFleetAttributesFluentBuilder {
         self
     }
     /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }

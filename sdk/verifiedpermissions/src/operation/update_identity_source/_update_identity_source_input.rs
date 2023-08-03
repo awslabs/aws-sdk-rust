@@ -32,9 +32,7 @@ impl UpdateIdentitySourceInput {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn update_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateConfiguration> {
+    pub fn update_configuration(&self) -> ::std::option::Option<&crate::types::UpdateConfiguration> {
         self.update_configuration.as_ref()
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
@@ -44,17 +42,14 @@ impl UpdateIdentitySourceInput {
 }
 impl UpdateIdentitySourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
-    pub fn builder(
-    ) -> crate::operation::update_identity_source::builders::UpdateIdentitySourceInputBuilder {
+    pub fn builder() -> crate::operation::update_identity_source::builders::UpdateIdentitySourceInputBuilder {
         crate::operation::update_identity_source::builders::UpdateIdentitySourceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIdentitySourceInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_source_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +58,12 @@ pub struct UpdateIdentitySourceInputBuilder {
 }
 impl UpdateIdentitySourceInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -83,18 +72,12 @@ impl UpdateIdentitySourceInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_source_id = input;
         self
     }
@@ -114,10 +97,7 @@ impl UpdateIdentitySourceInputBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn set_update_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateConfiguration>,
-    ) -> Self {
+    pub fn set_update_configuration(mut self, input: ::std::option::Option<crate::types::UpdateConfiguration>) -> Self {
         self.update_configuration = input;
         self
     }
@@ -125,24 +105,16 @@ impl UpdateIdentitySourceInputBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn get_update_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateConfiguration> {
+    pub fn get_update_configuration(&self) -> &::std::option::Option<crate::types::UpdateConfiguration> {
         &self.update_configuration
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_entity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_entity_type = input;
         self
     }
@@ -153,17 +125,13 @@ impl UpdateIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_source::UpdateIdentitySourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_identity_source::UpdateIdentitySourceInput {
-                policy_store_id: self.policy_store_id,
-                identity_source_id: self.identity_source_id,
-                update_configuration: self.update_configuration,
-                principal_entity_type: self.principal_entity_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_identity_source::UpdateIdentitySourceInput {
+            policy_store_id: self.policy_store_id,
+            identity_source_id: self.identity_source_id,
+            update_configuration: self.update_configuration,
+            principal_entity_type: self.principal_entity_type,
+        })
     }
 }

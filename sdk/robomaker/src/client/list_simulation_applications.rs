@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`simulation_application_summaries(Option<Vec<SimulationApplicationSummary>>)`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput::simulation_application_summaries): <p>A list of simulation application summaries that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListSimulationApplicationsError>`](crate::operation::list_simulation_applications::ListSimulationApplicationsError)
-    pub fn list_simulation_applications(&self) -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsFluentBuilder{
+    pub fn list_simulation_applications(&self) -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsFluentBuilder {
         crate::operation::list_simulation_applications::builders::ListSimulationApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

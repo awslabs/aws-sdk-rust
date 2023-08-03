@@ -37,9 +37,7 @@ impl ListBootstrapActionsFluentBuilder {
         }
     }
     /// Access the ListBootstrapActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListBootstrapActionsFluentBuilder {
             crate::operation::list_bootstrap_actions::ListBootstrapActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bootstrap_actions::ListBootstrapActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bootstrap_actions::ListBootstrapActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListBootstrapActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListBootstrapActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bootstrap_actions::ListBootstrapActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bootstrap_actions::ListBootstrapActionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListBootstrapActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bootstrap_actions::ListBootstrapActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bootstrap_actions::ListBootstrapActionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListBootstrapActionsFluentBuilder {
             crate::operation::list_bootstrap_actions::ListBootstrapActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bootstrap_actions::ListBootstrapActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bootstrap_actions::ListBootstrapActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_bootstrap_actions::paginator::ListBootstrapActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_bootstrap_actions::paginator::ListBootstrapActionsPaginator {
-        crate::operation::list_bootstrap_actions::paginator::ListBootstrapActionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_bootstrap_actions::paginator::ListBootstrapActionsPaginator {
+        crate::operation::list_bootstrap_actions::paginator::ListBootstrapActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

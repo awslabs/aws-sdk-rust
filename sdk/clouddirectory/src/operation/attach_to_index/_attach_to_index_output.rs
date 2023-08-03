@@ -28,27 +28,19 @@ impl AttachToIndexOutput {
 
 /// A builder for [`AttachToIndexOutput`](crate::operation::attach_to_index::AttachToIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachToIndexOutputBuilder {
     pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AttachToIndexOutputBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attached_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn set_attached_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attached_object_identifier = input;
         self
     }

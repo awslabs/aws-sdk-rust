@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnalysisFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,15 +69,11 @@ impl ::std::convert::From<&str> for AnalysisFilterAttribute {
             "ANALYSIS_NAME" => AnalysisFilterAttribute::AnalysisName,
             "DIRECT_QUICKSIGHT_OWNER" => AnalysisFilterAttribute::DirectQuicksightOwner,
             "DIRECT_QUICKSIGHT_SOLE_OWNER" => AnalysisFilterAttribute::DirectQuicksightSoleOwner,
-            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => {
-                AnalysisFilterAttribute::DirectQuicksightViewerOrOwner
-            }
+            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => AnalysisFilterAttribute::DirectQuicksightViewerOrOwner,
             "QUICKSIGHT_OWNER" => AnalysisFilterAttribute::QuicksightOwner,
             "QUICKSIGHT_USER" => AnalysisFilterAttribute::QuicksightUser,
             "QUICKSIGHT_VIEWER_OR_OWNER" => AnalysisFilterAttribute::QuicksightViewerOrOwner,
-            other => AnalysisFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnalysisFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -101,9 +91,7 @@ impl AnalysisFilterAttribute {
             AnalysisFilterAttribute::AnalysisName => "ANALYSIS_NAME",
             AnalysisFilterAttribute::DirectQuicksightOwner => "DIRECT_QUICKSIGHT_OWNER",
             AnalysisFilterAttribute::DirectQuicksightSoleOwner => "DIRECT_QUICKSIGHT_SOLE_OWNER",
-            AnalysisFilterAttribute::DirectQuicksightViewerOrOwner => {
-                "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
-            }
+            AnalysisFilterAttribute::DirectQuicksightViewerOrOwner => "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER",
             AnalysisFilterAttribute::QuicksightOwner => "QUICKSIGHT_OWNER",
             AnalysisFilterAttribute::QuicksightUser => "QUICKSIGHT_USER",
             AnalysisFilterAttribute::QuicksightViewerOrOwner => "QUICKSIGHT_VIEWER_OR_OWNER",

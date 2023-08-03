@@ -10,10 +10,7 @@ impl ListTaskTemplatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_task_templates::ListTaskTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_templates::ListTaskTemplatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_templates::ListTaskTemplatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_task_templates();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTaskTemplatesFluentBuilder {
         }
     }
     /// Access the ListTaskTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTaskTemplatesFluentBuilder {
             crate::operation::list_task_templates::ListTaskTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_templates::ListTaskTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_templates::ListTaskTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTaskTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTaskTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_task_templates::ListTaskTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_templates::ListTaskTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_templates::ListTaskTemplatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTaskTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_task_templates::ListTaskTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_templates::ListTaskTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_templates::ListTaskTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTaskTemplatesFluentBuilder {
             crate::operation::list_task_templates::ListTaskTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_task_templates::ListTaskTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_task_templates::ListTaskTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_task_templates::paginator::ListTaskTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_task_templates::paginator::ListTaskTemplatesPaginator {
-        crate::operation::list_task_templates::paginator::ListTaskTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_task_templates::paginator::ListTaskTemplatesPaginator {
+        crate::operation::list_task_templates::paginator::ListTaskTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,10 +172,7 @@ impl ListTaskTemplatesFluentBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

@@ -30,9 +30,7 @@ impl AvailabilityOptionsStatus {
 
 /// A builder for [`AvailabilityOptionsStatus`](crate::types::AvailabilityOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

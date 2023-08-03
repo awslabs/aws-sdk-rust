@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_signal_catalog::UpdateSignalCatalogOutput::name): <p> The name of the updated signal catalog. </p>
     ///   - [`arn(Option<String>)`](crate::operation::update_signal_catalog::UpdateSignalCatalogOutput::arn): <p> The ARN of the updated signal catalog. </p>
     /// - On failure, responds with [`SdkError<UpdateSignalCatalogError>`](crate::operation::update_signal_catalog::UpdateSignalCatalogError)
-    pub fn update_signal_catalog(
-        &self,
-    ) -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogFluentBuilder {
-        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_signal_catalog(&self) -> crate::operation::update_signal_catalog::builders::UpdateSignalCatalogFluentBuilder {
+        crate::operation::update_signal_catalog::builders::UpdateSignalCatalogFluentBuilder::new(self.handle.clone())
     }
 }

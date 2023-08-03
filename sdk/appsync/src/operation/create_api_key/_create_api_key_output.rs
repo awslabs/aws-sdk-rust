@@ -28,9 +28,7 @@ impl CreateApiKeyOutput {
 
 /// A builder for [`CreateApiKeyOutput`](crate::operation::create_api_key::CreateApiKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiKeyOutputBuilder {
     pub(crate) api_key: ::std::option::Option<crate::types::ApiKey>,
     _request_id: Option<String>,

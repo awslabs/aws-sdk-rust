@@ -93,9 +93,7 @@ impl ReplicationTaskStats {
 
 /// A builder for [`ReplicationTaskStats`](crate::types::ReplicationTaskStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationTaskStatsBuilder {
     pub(crate) full_load_progress_percent: ::std::option::Option<i32>,
     pub(crate) elapsed_time_millis: ::std::option::Option<i64>,
@@ -200,10 +198,7 @@ impl ReplicationTaskStatsBuilder {
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fn set_fresh_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_fresh_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.fresh_start_date = input;
         self
     }
@@ -217,10 +212,7 @@ impl ReplicationTaskStatsBuilder {
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -234,10 +226,7 @@ impl ReplicationTaskStatsBuilder {
         self
     }
     /// <p>The date the replication task was stopped.</p>
-    pub fn set_stop_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_date = input;
         self
     }
@@ -251,10 +240,7 @@ impl ReplicationTaskStatsBuilder {
         self
     }
     /// <p>The date the replication task full load was started.</p>
-    pub fn set_full_load_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_full_load_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.full_load_start_date = input;
         self
     }
@@ -268,17 +254,12 @@ impl ReplicationTaskStatsBuilder {
         self
     }
     /// <p>The date the replication task full load was completed.</p>
-    pub fn set_full_load_finish_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_full_load_finish_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.full_load_finish_date = input;
         self
     }
     /// <p>The date the replication task full load was completed.</p>
-    pub fn get_full_load_finish_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_full_load_finish_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.full_load_finish_date
     }
     /// Consumes the builder and constructs a [`ReplicationTaskStats`](crate::types::ReplicationTaskStats).

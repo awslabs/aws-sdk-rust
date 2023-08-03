@@ -30,13 +30,10 @@ pub struct OriginEndpointListConfiguration {
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     #[doc(hidden)]
-    pub hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     #[doc(hidden)]
-    pub low_latency_hls_manifests: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>,
-    >,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -72,15 +69,11 @@ impl OriginEndpointListConfiguration {
         self.modified_at.as_ref()
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListHlsManifestConfiguration]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::ListHlsManifestConfiguration]> {
         self.hls_manifests.as_deref()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListLowLatencyHlsManifestConfiguration]> {
+    pub fn low_latency_hls_manifests(&self) -> ::std::option::Option<&[crate::types::ListLowLatencyHlsManifestConfiguration]> {
         self.low_latency_hls_manifests.as_deref()
     }
 }
@@ -93,9 +86,7 @@ impl OriginEndpointListConfiguration {
 
 /// A builder for [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
@@ -105,11 +96,8 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>,
-    >,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -127,18 +115,12 @@ impl OriginEndpointListConfigurationBuilder {
         &self.arn
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -161,18 +143,12 @@ impl OriginEndpointListConfigurationBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -186,10 +162,7 @@ impl OriginEndpointListConfigurationBuilder {
         self
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
@@ -217,10 +190,7 @@ impl OriginEndpointListConfigurationBuilder {
         self
     }
     /// <p>The date and time the origin endpoint was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -234,10 +204,7 @@ impl OriginEndpointListConfigurationBuilder {
         self
     }
     /// <p>The date and time the origin endpoint was modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
@@ -257,17 +224,12 @@ impl OriginEndpointListConfigurationBuilder {
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -275,10 +237,7 @@ impl OriginEndpointListConfigurationBuilder {
     /// To override the contents of this collection use [`set_low_latency_hls_manifests`](Self::set_low_latency_hls_manifests).
     ///
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        mut self,
-        input: crate::types::ListLowLatencyHlsManifestConfiguration,
-    ) -> Self {
+    pub fn low_latency_hls_manifests(mut self, input: crate::types::ListLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
         v.push(input);
         self.low_latency_hls_manifests = ::std::option::Option::Some(v);
@@ -287,18 +246,13 @@ impl OriginEndpointListConfigurationBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn set_low_latency_hls_manifests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
     ) -> Self {
         self.low_latency_hls_manifests = input;
         self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>
-    {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).

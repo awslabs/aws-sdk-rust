@@ -13,9 +13,7 @@ pub fn ser_trusted_certificate_public_key(
         object.key("PublicKeyCertificate").string(var_3.as_str());
     }
     if let Some(var_4) = &input.certificate_authority_public_key_identifier {
-        object
-            .key("CertificateAuthorityPublicKeyIdentifier")
-            .string(var_4.as_str());
+        object.key("CertificateAuthorityPublicKeyIdentifier").string(var_4.as_str());
     }
     Ok(())
 }

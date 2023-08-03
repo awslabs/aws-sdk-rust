@@ -37,29 +37,20 @@ impl StorageType {
 
 /// A builder for [`StorageType`](crate::types::StorageType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageTypeBuilder {
     pub(crate) storage_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_type_limits:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
+    pub(crate) storage_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
 }
 impl StorageTypeBuilder {
     /// <p>The name of the storage type.</p>
-    pub fn storage_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the storage type.</p>
-    pub fn set_storage_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type_name = input;
         self
     }
@@ -68,18 +59,12 @@ impl StorageTypeBuilder {
         &self.storage_type_name
     }
     /// <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
-    pub fn storage_sub_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_sub_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_sub_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
-    pub fn set_storage_sub_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_sub_type_name = input;
         self
     }
@@ -99,17 +84,12 @@ impl StorageTypeBuilder {
         self
     }
     /// <p>Limits that are applicable for the given storage type.</p>
-    pub fn set_storage_type_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
-    ) -> Self {
+    pub fn set_storage_type_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>) -> Self {
         self.storage_type_limits = input;
         self
     }
     /// <p>Limits that are applicable for the given storage type.</p>
-    pub fn get_storage_type_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
+    pub fn get_storage_type_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
         &self.storage_type_limits
     }
     /// Consumes the builder and constructs a [`StorageType`](crate::types::StorageType).

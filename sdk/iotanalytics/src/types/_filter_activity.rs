@@ -37,9 +37,7 @@ impl FilterActivity {
 
 /// A builder for [`FilterActivity`](crate::types::FilterActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,

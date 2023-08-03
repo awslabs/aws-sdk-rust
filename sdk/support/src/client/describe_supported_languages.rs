@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput) with field(s):
     ///   - [`supported_languages(Option<Vec<SupportedLanguage>>)`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput::supported_languages): <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
     /// - On failure, responds with [`SdkError<DescribeSupportedLanguagesError>`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesError)
-    pub fn describe_supported_languages(&self) -> crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesFluentBuilder{
+    pub fn describe_supported_languages(&self) -> crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesFluentBuilder {
         crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesFluentBuilder::new(self.handle.clone())
     }
 }

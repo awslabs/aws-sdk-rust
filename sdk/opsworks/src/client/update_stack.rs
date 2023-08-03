@@ -23,9 +23,7 @@ impl super::Client {
     ///   - [`agent_version(impl ::std::convert::Into<String>)`](crate::operation::update_stack::builders::UpdateStackFluentBuilder::agent_version) / [`set_agent_version(Option<String>)`](crate::operation::update_stack::builders::UpdateStackFluentBuilder::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>   <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>  </ul>  <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>   <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>  </note>
     /// - On success, responds with [`UpdateStackOutput`](crate::operation::update_stack::UpdateStackOutput)
     /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::operation::update_stack::UpdateStackError)
-    pub fn update_stack(
-        &self,
-    ) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
+    pub fn update_stack(&self) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
         crate::operation::update_stack::builders::UpdateStackFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl CoipCidr {
 
 /// A builder for [`CoipCidr`](crate::types::CoipCidr).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
@@ -75,25 +73,17 @@ impl CoipCidrBuilder {
         &self.coip_pool_id
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p> The ID of the local gateway route table. </p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// Consumes the builder and constructs a [`CoipCidr`](crate::types::CoipCidr).

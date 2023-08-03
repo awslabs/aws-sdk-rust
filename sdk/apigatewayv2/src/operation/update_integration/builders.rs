@@ -10,10 +10,7 @@ impl UpdateIntegrationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_integration::UpdateIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration::UpdateIntegrationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration::UpdateIntegrationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_integration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateIntegrationFluentBuilder {
         }
     }
     /// Access the UpdateIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_integration::builders::UpdateIntegrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_integration::builders::UpdateIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateIntegrationFluentBuilder {
             crate::operation::update_integration::UpdateIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration::UpdateIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration::UpdateIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_integration::UpdateIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration::UpdateIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration::UpdateIntegrationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_integration::UpdateIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration::UpdateIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration::UpdateIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateIntegrationFluentBuilder {
             crate::operation::update_integration::UpdateIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_integration::UpdateIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_integration::UpdateIntegrationError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateIntegrationFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -162,10 +140,7 @@ impl UpdateIntegrationFluentBuilder {
         self
     }
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
         self.inner = self.inner.set_connection_type(input);
         self
     }
@@ -177,10 +152,7 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn content_handling_strategy(
-        mut self,
-        input: crate::types::ContentHandlingStrategy,
-    ) -> Self {
+    pub fn content_handling_strategy(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
         self.inner = self.inner.content_handling_strategy(input);
         self
     }
@@ -188,10 +160,7 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn set_content_handling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    ) -> Self {
+    pub fn set_content_handling_strategy(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
         self.inner = self.inner.set_content_handling_strategy(input);
         self
     }
@@ -199,24 +168,16 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn get_content_handling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+    pub fn get_content_handling_strategy(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         self.inner.get_content_handling_strategy()
     }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-    pub fn credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.credentials_arn(input.into());
         self
     }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-    pub fn set_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_credentials_arn(input);
         self
     }
@@ -239,18 +200,12 @@ impl UpdateIntegrationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
@@ -259,18 +214,12 @@ impl UpdateIntegrationFluentBuilder {
         self.inner.get_integration_id()
     }
     /// <p>Specifies the integration's HTTP method type.</p>
-    pub fn integration_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_method(input.into());
         self
     }
     /// <p>Specifies the integration's HTTP method type.</p>
-    pub fn set_integration_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_method(input);
         self
     }
@@ -279,18 +228,12 @@ impl UpdateIntegrationFluentBuilder {
         self.inner.get_integration_method()
     }
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-    pub fn integration_subtype(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_subtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_subtype(input.into());
         self
     }
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-    pub fn set_integration_subtype(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_subtype(input);
         self
     }
@@ -314,10 +257,7 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-    pub fn set_integration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationType>,
-    ) -> Self {
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.inner = self.inner.set_integration_type(input);
         self
     }
@@ -333,20 +273,14 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-    pub fn integration_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_uri(input.into());
         self
     }
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-    pub fn set_integration_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_uri(input);
         self
     }
@@ -368,10 +302,7 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-    pub fn set_passthrough_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::PassthroughBehavior>,
-    ) -> Self {
+    pub fn set_passthrough_behavior(mut self, input: ::std::option::Option<crate::types::PassthroughBehavior>) -> Self {
         self.inner = self.inner.set_passthrough_behavior(input);
         self
     }
@@ -379,24 +310,16 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-    pub fn get_passthrough_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::PassthroughBehavior> {
+    pub fn get_passthrough_behavior(&self) -> &::std::option::Option<crate::types::PassthroughBehavior> {
         self.inner.get_passthrough_behavior()
     }
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-    pub fn payload_format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn payload_format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_format_version(input.into());
         self
     }
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-    pub fn set_payload_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_payload_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_format_version(input);
         self
     }
@@ -440,9 +363,7 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
     pub fn set_request_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_parameters(input);
         self
@@ -458,11 +379,7 @@ impl UpdateIntegrationFluentBuilder {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn get_request_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_parameters()
     }
     /// Adds a key-value pair to `RequestTemplates`.
@@ -481,19 +398,13 @@ impl UpdateIntegrationFluentBuilder {
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
     pub fn set_request_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_templates(input);
         self
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub fn get_request_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_templates()
     }
     /// Adds a key-value pair to `ResponseParameters`.
@@ -513,10 +424,7 @@ impl UpdateIntegrationFluentBuilder {
     pub fn set_response_parameters(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
@@ -526,33 +434,22 @@ impl UpdateIntegrationFluentBuilder {
     pub fn get_response_parameters(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.inner.get_response_parameters()
     }
     /// <p>The template selection expression for the integration.</p>
-    pub fn template_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_selection_expression(input.into());
         self
     }
     /// <p>The template selection expression for the integration.</p>
-    pub fn set_template_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_selection_expression(input);
         self
     }
     /// <p>The template selection expression for the integration.</p>
-    pub fn get_template_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_template_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_selection_expression()
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
@@ -575,10 +472,7 @@ impl UpdateIntegrationFluentBuilder {
         self
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
-    pub fn set_tls_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsConfigInput>,
-    ) -> Self {
+    pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfigInput>) -> Self {
         self.inner = self.inner.set_tls_config(input);
         self
     }

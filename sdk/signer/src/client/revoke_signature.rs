@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder::set_reason): <p>The reason for revoking the signing job.</p>
     /// - On success, responds with [`RevokeSignatureOutput`](crate::operation::revoke_signature::RevokeSignatureOutput)
     /// - On failure, responds with [`SdkError<RevokeSignatureError>`](crate::operation::revoke_signature::RevokeSignatureError)
-    pub fn revoke_signature(
-        &self,
-    ) -> crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder {
-        crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_signature(&self) -> crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder {
+        crate::operation::revoke_signature::builders::RevokeSignatureFluentBuilder::new(self.handle.clone())
     }
 }

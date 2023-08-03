@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfiguredTableAnalysisRuleOutp
 }
 impl DeleteConfiguredTableAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
-    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder {
         crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfiguredTableAnalysisRuleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl DeleteConfiguredTableAnalysisRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
-    pub fn build(self) -> crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput{
+    pub fn build(self) -> crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput {
         crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput {
             _request_id: self._request_id,
         }

@@ -29,18 +29,14 @@ impl ListWorkflowStepGroupsInput {
 }
 impl ListWorkflowStepGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepGroupsInput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder {
         crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepGroupsInput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl ListWorkflowStepGroupsInputBuilder {
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-                workflow_id: self.workflow_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+            workflow_id: self.workflow_id,
+        })
     }
 }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteTopicRefreshScheduleError>`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError)
-    pub fn delete_topic_refresh_schedule(&self) -> crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleFluentBuilder{
+    pub fn delete_topic_refresh_schedule(
+        &self,
+    ) -> crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleFluentBuilder {
         crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleFluentBuilder::new(self.handle.clone())
     }
 }

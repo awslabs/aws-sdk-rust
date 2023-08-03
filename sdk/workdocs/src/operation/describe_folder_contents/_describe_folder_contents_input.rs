@@ -78,9 +78,7 @@ impl ::std::fmt::Debug for DescribeFolderContentsInput {
 }
 impl DescribeFolderContentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderContentsInput`](crate::operation::describe_folder_contents::DescribeFolderContentsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder {
         crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder::default()
     }
 }
@@ -100,18 +98,12 @@ pub struct DescribeFolderContentsInputBuilder {
 }
 impl DescribeFolderContentsInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -139,10 +131,7 @@ impl DescribeFolderContentsInputBuilder {
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSortType>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ResourceSortType>) -> Self {
         self.sort = input;
         self
     }
@@ -198,10 +187,7 @@ impl DescribeFolderContentsInputBuilder {
         self
     }
     /// <p>The type of items.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderContentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FolderContentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -226,22 +212,18 @@ impl DescribeFolderContentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFolderContentsInput`](crate::operation::describe_folder_contents::DescribeFolderContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_folder_contents::DescribeFolderContentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_folder_contents::DescribeFolderContentsInput {
-                authentication_token: self.authentication_token,
-                folder_id: self.folder_id,
-                sort: self.sort,
-                order: self.order,
-                limit: self.limit,
-                marker: self.marker,
-                r#type: self.r#type,
-                include: self.include,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_folder_contents::DescribeFolderContentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_folder_contents::DescribeFolderContentsInput {
+            authentication_token: self.authentication_token,
+            folder_id: self.folder_id,
+            sort: self.sort,
+            order: self.order,
+            limit: self.limit,
+            marker: self.marker,
+            r#type: self.r#type,
+            include: self.include,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeFolderContentsInputBuilder {

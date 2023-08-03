@@ -9,8 +9,7 @@ pub struct GetInfrastructureConfigurationOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure configuration object.</p>
     #[doc(hidden)]
-    pub infrastructure_configuration:
-        ::std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     _request_id: Option<String>,
 }
 impl GetInfrastructureConfigurationOutput {
@@ -19,9 +18,7 @@ impl GetInfrastructureConfigurationOutput {
         self.request_id.as_deref()
     }
     /// <p>The infrastructure configuration object.</p>
-    pub fn infrastructure_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InfrastructureConfiguration> {
+    pub fn infrastructure_configuration(&self) -> ::std::option::Option<&crate::types::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for GetInfrastructureConfigurationOutput 
 }
 impl GetInfrastructureConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetInfrastructureConfigurationOutput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput).
-    pub fn builder() -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationOutputBuilder {
         crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInfrastructureConfigurationOutput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) infrastructure_configuration:
-        ::std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub(crate) infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     _request_id: Option<String>,
 }
 impl GetInfrastructureConfigurationOutputBuilder {
@@ -64,25 +58,17 @@ impl GetInfrastructureConfigurationOutputBuilder {
         &self.request_id
     }
     /// <p>The infrastructure configuration object.</p>
-    pub fn infrastructure_configuration(
-        mut self,
-        input: crate::types::InfrastructureConfiguration,
-    ) -> Self {
+    pub fn infrastructure_configuration(mut self, input: crate::types::InfrastructureConfiguration) -> Self {
         self.infrastructure_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The infrastructure configuration object.</p>
-    pub fn set_infrastructure_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InfrastructureConfiguration>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration(mut self, input: ::std::option::Option<crate::types::InfrastructureConfiguration>) -> Self {
         self.infrastructure_configuration = input;
         self
     }
     /// <p>The infrastructure configuration object.</p>
-    pub fn get_infrastructure_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InfrastructureConfiguration> {
+    pub fn get_infrastructure_configuration(&self) -> &::std::option::Option<crate::types::InfrastructureConfiguration> {
         &self.infrastructure_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,10 +81,7 @@ impl GetInfrastructureConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInfrastructureConfigurationOutput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput {
         crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput {
             request_id: self.request_id,
             infrastructure_configuration: self.infrastructure_configuration,

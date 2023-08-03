@@ -30,27 +30,19 @@ impl CacheNodeTypeSpecificValue {
 
 /// A builder for [`CacheNodeTypeSpecificValue`](crate::types::CacheNodeTypeSpecificValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheNodeTypeSpecificValueBuilder {
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl CacheNodeTypeSpecificValueBuilder {
     /// <p>The cache node type for which this value applies.</p>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache node type for which this value applies.</p>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }

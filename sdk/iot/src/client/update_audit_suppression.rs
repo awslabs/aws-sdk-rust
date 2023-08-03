@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionFluentBuilder::set_description): <p> The description of the audit suppression. </p>
     /// - On success, responds with [`UpdateAuditSuppressionOutput`](crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput)
     /// - On failure, responds with [`SdkError<UpdateAuditSuppressionError>`](crate::operation::update_audit_suppression::UpdateAuditSuppressionError)
-    pub fn update_audit_suppression(
-        &self,
-    ) -> crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionFluentBuilder
-    {
+    pub fn update_audit_suppression(&self) -> crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionFluentBuilder {
         crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionFluentBuilder::new(self.handle.clone())
     }
 }

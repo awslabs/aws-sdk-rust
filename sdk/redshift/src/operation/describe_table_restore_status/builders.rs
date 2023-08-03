@@ -26,7 +26,7 @@ impl DescribeTableRestoreStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder,
+    inner: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder,
 }
 impl DescribeTableRestoreStatusFluentBuilder {
     /// Creates a new `DescribeTableRestoreStatus`.
@@ -37,7 +37,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
         }
     }
     /// Access the DescribeTableRestoreStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
             crate::operation::describe_table_restore_status::DescribeTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeTableRestoreStatusFluentBuilder {
             crate::operation::describe_table_restore_status::DescribeTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator {
         crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -147,18 +130,12 @@ impl DescribeTableRestoreStatusFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn table_restore_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_restore_request_id(input.into());
         self
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_restore_request_id(input);
         self
     }

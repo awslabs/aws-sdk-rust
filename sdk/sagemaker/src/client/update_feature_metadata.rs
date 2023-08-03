@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`parameter_removals(Vec<String>)`](crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder::parameter_removals) / [`set_parameter_removals(Option<Vec<String>>)`](crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder::set_parameter_removals): <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
     /// - On success, responds with [`UpdateFeatureMetadataOutput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateFeatureMetadataError>`](crate::operation::update_feature_metadata::UpdateFeatureMetadataError)
-    pub fn update_feature_metadata(
-        &self,
-    ) -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder
-    {
-        crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_feature_metadata(&self) -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder {
+        crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataFluentBuilder::new(self.handle.clone())
     }
 }

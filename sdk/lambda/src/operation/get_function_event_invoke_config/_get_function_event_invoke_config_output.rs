@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for GetFunctionEventInvokeConfigOutput {
 }
 impl GetFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionEventInvokeConfigOutput`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput).
-    pub fn builder() -> crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigOutputBuilder{
+    pub fn builder() -> crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigOutputBuilder {
         crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionEventInvokeConfigOutput`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionEventInvokeConfigOutputBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
         self
     }
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -161,10 +156,7 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
         self
     }
@@ -176,9 +168,7 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -191,10 +181,7 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFunctionEventInvokeConfigOutput`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput
-    {
+    pub fn build(self) -> crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput {
         crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput {
             last_modified: self.last_modified,
             function_arn: self.function_arn,

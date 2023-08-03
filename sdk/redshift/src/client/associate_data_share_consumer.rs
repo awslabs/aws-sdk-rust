@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<AssociateDataShareConsumerError>`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError)
-    pub fn associate_data_share_consumer(&self) -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerFluentBuilder{
+    pub fn associate_data_share_consumer(
+        &self,
+    ) -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerFluentBuilder {
         crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerFluentBuilder::new(self.handle.clone())
     }
 }

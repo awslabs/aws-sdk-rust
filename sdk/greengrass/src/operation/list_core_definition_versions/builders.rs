@@ -26,7 +26,7 @@ impl ListCoreDefinitionVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCoreDefinitionVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder,
+    inner: crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder,
 }
 impl ListCoreDefinitionVersionsFluentBuilder {
     /// Creates a new `ListCoreDefinitionVersions`.
@@ -37,7 +37,7 @@ impl ListCoreDefinitionVersionsFluentBuilder {
         }
     }
     /// Access the ListCoreDefinitionVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCoreDefinitionVersionsFluentBuilder {
             crate::operation::list_core_definition_versions::ListCoreDefinitionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCoreDefinitionVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCoreDefinitionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCoreDefinitionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListCoreDefinitionVersionsFluentBuilder {
             crate::operation::list_core_definition_versions::ListCoreDefinitionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_id(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTrustStoreOutput {
 }
 impl DeleteTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustStoreOutput`](crate::operation::delete_trust_store::DeleteTrustStoreOutput).
-    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreOutputBuilder {
         crate::operation::delete_trust_store::builders::DeleteTrustStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrustStoreOutput`](crate::operation::delete_trust_store::DeleteTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrustStoreOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,10 +10,7 @@ impl UpdateFeatureGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_feature_group::UpdateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_group::UpdateFeatureGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_group::UpdateFeatureGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_feature_group();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateFeatureGroupFluentBuilder {
         }
     }
     /// Access the UpdateFeatureGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateFeatureGroupFluentBuilder {
             crate::operation::update_feature_group::UpdateFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_group::UpdateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_group::UpdateFeatureGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateFeatureGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_feature_group::UpdateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_group::UpdateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_group::UpdateFeatureGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_feature_group::UpdateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_group::UpdateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_group::UpdateFeatureGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl UpdateFeatureGroupFluentBuilder {
             crate::operation::update_feature_group::UpdateFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_feature_group::UpdateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_feature_group::UpdateFeatureGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -154,17 +132,12 @@ impl UpdateFeatureGroupFluentBuilder {
         self
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    pub fn set_feature_additions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
-    ) -> Self {
+    pub fn set_feature_additions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
         self.inner = self.inner.set_feature_additions(input);
         self
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    pub fn get_feature_additions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+    pub fn get_feature_additions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
         self.inner.get_feature_additions()
     }
     /// <p>Updates the feature group online store configuration.</p>
@@ -173,17 +146,12 @@ impl UpdateFeatureGroupFluentBuilder {
         self
     }
     /// <p>Updates the feature group online store configuration.</p>
-    pub fn set_online_store_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
-    ) -> Self {
+    pub fn set_online_store_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>) -> Self {
         self.inner = self.inner.set_online_store_config(input);
         self
     }
     /// <p>Updates the feature group online store configuration.</p>
-    pub fn get_online_store_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnlineStoreConfigUpdate> {
+    pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfigUpdate> {
         self.inner.get_online_store_config()
     }
 }

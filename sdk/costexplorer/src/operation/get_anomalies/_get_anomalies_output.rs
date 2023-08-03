@@ -35,9 +35,7 @@ impl GetAnomaliesOutput {
 
 /// A builder for [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomaliesOutputBuilder {
     pub(crate) anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetAnomaliesOutputBuilder {
         self
     }
     /// <p>A list of cost anomalies. </p>
-    pub fn set_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
-    ) -> Self {
+    pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
     }
@@ -68,18 +63,12 @@ impl GetAnomaliesOutputBuilder {
         &self.anomalies
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

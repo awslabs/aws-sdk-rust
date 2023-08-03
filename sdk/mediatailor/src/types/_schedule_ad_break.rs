@@ -44,9 +44,7 @@ impl ScheduleAdBreak {
 
 /// A builder for [`ScheduleAdBreak`](crate::types::ScheduleAdBreak).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleAdBreakBuilder {
     pub(crate) approximate_duration_seconds: ::std::option::Option<i64>,
     pub(crate) approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,32 +72,21 @@ impl ScheduleAdBreakBuilder {
         self
     }
     /// <p>The approximate time that the ad will start playing.</p>
-    pub fn set_approximate_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_approximate_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.approximate_start_time = input;
         self
     }
     /// <p>The approximate time that the ad will start playing.</p>
-    pub fn get_approximate_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_approximate_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.approximate_start_time
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -108,18 +95,12 @@ impl ScheduleAdBreakBuilder {
         &self.source_location_name
     }
     /// <p>The name of the VOD source used for the ad break.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD source used for the ad break.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vod_source_name = input;
         self
     }

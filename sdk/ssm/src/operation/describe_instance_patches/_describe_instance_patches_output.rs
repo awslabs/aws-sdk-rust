@@ -46,18 +46,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstancePatchesOutput {
 }
 impl DescribeInstancePatchesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchesOutput`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesOutputBuilder {
         crate::operation::describe_instance_patches::builders::DescribeInstancePatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchesOutput`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchesOutputBuilder {
     pub(crate) patches: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,10 +90,7 @@ impl DescribeInstancePatchesOutputBuilder {
     /// <li> <p>InstalledTime (DateTime)</p> </li>
     /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
-    pub fn set_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>,
-    ) -> Self {
+    pub fn set_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>) -> Self {
         self.patches = input;
         self
     }
@@ -111,9 +104,7 @@ impl DescribeInstancePatchesOutputBuilder {
     /// <li> <p>InstalledTime (DateTime)</p> </li>
     /// <li> <p>InstalledBy (string)</p> </li>
     /// </ul>
-    pub fn get_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>> {
+    pub fn get_patches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>> {
         &self.patches
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -140,9 +131,7 @@ impl DescribeInstancePatchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchesOutput`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_instance_patches::DescribeInstancePatchesOutput {
+    pub fn build(self) -> crate::operation::describe_instance_patches::DescribeInstancePatchesOutput {
         crate::operation::describe_instance_patches::DescribeInstancePatchesOutput {
             patches: self.patches,
             next_token: self.next_token,

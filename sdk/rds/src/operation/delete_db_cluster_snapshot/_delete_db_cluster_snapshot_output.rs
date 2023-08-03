@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbClusterSnapshotOutput {
 }
 impl DeleteDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotOutputBuilder {
         crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbClusterSnapshotOutputBuilder {
     pub(crate) db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
@@ -48,18 +44,13 @@ impl DeleteDbClusterSnapshotOutputBuilder {
     }
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn set_db_cluster_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::DbClusterSnapshot>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot(mut self, input: ::std::option::Option<crate::types::DbClusterSnapshot>) -> Self {
         self.db_cluster_snapshot = input;
         self
     }
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn get_db_cluster_snapshot(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
+    pub fn get_db_cluster_snapshot(&self) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
         &self.db_cluster_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +63,7 @@ impl DeleteDbClusterSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput {
+    pub fn build(self) -> crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput {
         crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput {
             db_cluster_snapshot: self.db_cluster_snapshot,
             _request_id: self._request_id,

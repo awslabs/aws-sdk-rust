@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`default_s3_location(impl ::std::convert::Into<String>)`](crate::operation::update_studio::builders::UpdateStudioFluentBuilder::default_s3_location) / [`set_default_s3_location(Option<String>)`](crate::operation::update_studio::builders::UpdateStudioFluentBuilder::set_default_s3_location): <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     /// - On success, responds with [`UpdateStudioOutput`](crate::operation::update_studio::UpdateStudioOutput)
     /// - On failure, responds with [`SdkError<UpdateStudioError>`](crate::operation::update_studio::UpdateStudioError)
-    pub fn update_studio(
-        &self,
-    ) -> crate::operation::update_studio::builders::UpdateStudioFluentBuilder {
-        crate::operation::update_studio::builders::UpdateStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_studio(&self) -> crate::operation::update_studio::builders::UpdateStudioFluentBuilder {
+        crate::operation::update_studio::builders::UpdateStudioFluentBuilder::new(self.handle.clone())
     }
 }

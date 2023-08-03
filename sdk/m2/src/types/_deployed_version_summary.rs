@@ -37,9 +37,7 @@ impl DeployedVersionSummary {
 
 /// A builder for [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeployedVersionSummaryBuilder {
     pub(crate) application_version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentLifecycle>,
@@ -66,10 +64,7 @@ impl DeployedVersionSummaryBuilder {
         self
     }
     /// <p>The status of the deployment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -78,18 +73,12 @@ impl DeployedVersionSummaryBuilder {
         &self.status
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

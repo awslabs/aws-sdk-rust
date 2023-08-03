@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClusterTracksOutput {
 }
 impl DescribeClusterTracksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterTracksOutput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder {
         crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterTracksOutput`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterTracksOutputBuilder {
-    pub(crate) maintenance_tracks:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
+    pub(crate) maintenance_tracks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeClusterTracksOutputBuilder {
         self
     }
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    pub fn set_maintenance_tracks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>,
-    ) -> Self {
+    pub fn set_maintenance_tracks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>>) -> Self {
         self.maintenance_tracks = input;
         self
     }
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    pub fn get_maintenance_tracks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>> {
+    pub fn get_maintenance_tracks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceTrack>> {
         &self.maintenance_tracks
     }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>

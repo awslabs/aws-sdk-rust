@@ -38,13 +38,7 @@
 /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2SceneChangeDetect {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2SceneChangeDetect {
         match s {
             "DISABLED" => Mpeg2SceneChangeDetect::Disabled,
             "ENABLED" => Mpeg2SceneChangeDetect::Enabled,
-            other => Mpeg2SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Mpeg2SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

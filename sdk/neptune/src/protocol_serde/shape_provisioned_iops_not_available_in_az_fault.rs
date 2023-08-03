@@ -3,10 +3,7 @@
 pub fn de_provisioned_iops_not_available_in_az_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ProvisionedIopsNotAvailableInAzFaultBuilder,
-) -> Result<
-    crate::types::error::builders::ProvisionedIopsNotAvailableInAzFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::ProvisionedIopsNotAvailableInAzFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

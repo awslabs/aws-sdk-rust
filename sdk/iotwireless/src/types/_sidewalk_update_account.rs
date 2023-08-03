@@ -36,18 +36,12 @@ pub struct SidewalkUpdateAccountBuilder {
 }
 impl SidewalkUpdateAccountBuilder {
     /// <p>The new Sidewalk application server private key.</p>
-    pub fn app_server_private_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_server_private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_server_private_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new Sidewalk application server private key.</p>
-    pub fn set_app_server_private_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_server_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_server_private_key = input;
         self
     }

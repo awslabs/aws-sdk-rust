@@ -22,17 +22,14 @@ impl PutProtocolsListInput {
 }
 impl PutProtocolsListInput {
     /// Creates a new builder-style object to manufacture [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
-    pub fn builder() -> crate::operation::put_protocols_list::builders::PutProtocolsListInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_protocols_list::builders::PutProtocolsListInputBuilder {
         crate::operation::put_protocols_list::builders::PutProtocolsListInputBuilder::default()
     }
 }
 
 /// A builder for [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProtocolsListInputBuilder {
     pub(crate) protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,10 +41,7 @@ impl PutProtocolsListInputBuilder {
         self
     }
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
-    pub fn set_protocols_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolsListData>,
-    ) -> Self {
+    pub fn set_protocols_list(mut self, input: ::std::option::Option<crate::types::ProtocolsListData>) -> Self {
         self.protocols_list = input;
         self
     }
@@ -67,10 +61,7 @@ impl PutProtocolsListInputBuilder {
         self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -81,15 +72,10 @@ impl PutProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_protocols_list::PutProtocolsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_protocols_list::PutProtocolsListInput {
-                protocols_list: self.protocols_list,
-                tag_list: self.tag_list,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_protocols_list::PutProtocolsListInput {
+            protocols_list: self.protocols_list,
+            tag_list: self.tag_list,
+        })
     }
 }

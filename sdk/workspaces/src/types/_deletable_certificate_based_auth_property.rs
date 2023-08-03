@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeletableCertificateBasedAuthProperty {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,9 +48,11 @@ pub enum DeletableCertificateBasedAuthProperty {
 impl ::std::convert::From<&str> for DeletableCertificateBasedAuthProperty {
     fn from(s: &str) -> Self {
         match s {
-                        "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN" => DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn,
-other => DeletableCertificateBasedAuthProperty::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN" => {
+                DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn
+            }
+            other => DeletableCertificateBasedAuthProperty::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for DeletableCertificateBasedAuthProperty {
@@ -70,9 +66,11 @@ impl DeletableCertificateBasedAuthProperty {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN",
-    DeletableCertificateBasedAuthProperty::Unknown(value) => value.as_str()
-}
+            DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => {
+                "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN"
+            }
+            DeletableCertificateBasedAuthProperty::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

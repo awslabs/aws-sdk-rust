@@ -37,10 +37,7 @@ impl CreateGroupMembershipFluentBuilder {
         }
     }
     /// Access the CreateGroupMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_group_membership::builders::CreateGroupMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateGroupMembershipFluentBuilder {
             crate::operation::create_group_membership::CreateGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_group_membership::CreateGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group_membership::CreateGroupMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateGroupMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_group_membership::CreateGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_group_membership::CreateGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group_membership::CreateGroupMembershipError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_group_membership::CreateGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_group_membership::CreateGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group_membership::CreateGroupMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateGroupMembershipFluentBuilder {
             crate::operation::create_group_membership::CreateGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_group_membership::CreateGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group_membership::CreateGroupMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }

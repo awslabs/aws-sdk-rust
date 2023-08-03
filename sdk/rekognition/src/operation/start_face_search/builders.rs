@@ -10,10 +10,7 @@ impl StartFaceSearchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_face_search::StartFaceSearchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_search::StartFaceSearchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_search::StartFaceSearchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_face_search();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StartFaceSearchFluentBuilder {
         }
     }
     /// Access the StartFaceSearch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_face_search::builders::StartFaceSearchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_face_search::builders::StartFaceSearchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StartFaceSearchFluentBuilder {
             crate::operation::start_face_search::StartFaceSearch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_search::StartFaceSearchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_search::StartFaceSearchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StartFaceSearchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StartFaceSearchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_face_search::StartFaceSearchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_search::StartFaceSearchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_search::StartFaceSearchError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StartFaceSearchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_face_search::StartFaceSearchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_search::StartFaceSearchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_search::StartFaceSearchError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl StartFaceSearchFluentBuilder {
             crate::operation::start_face_search::StartFaceSearch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_search::StartFaceSearchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_search::StartFaceSearchError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl StartFaceSearchFluentBuilder {
         self.inner.get_video()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -172,18 +150,12 @@ impl StartFaceSearchFluentBuilder {
         self.inner.get_face_match_threshold()
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -197,17 +169,12 @@ impl StartFaceSearchFluentBuilder {
         self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>

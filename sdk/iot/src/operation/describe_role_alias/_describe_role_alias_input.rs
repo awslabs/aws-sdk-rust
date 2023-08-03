@@ -15,17 +15,14 @@ impl DescribeRoleAliasInput {
 }
 impl DescribeRoleAliasInput {
     /// Creates a new builder-style object to manufacture [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
-    pub fn builder(
-    ) -> crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder {
+    pub fn builder() -> crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder {
         crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DescribeRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_role_alias::DescribeRoleAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_role_alias::DescribeRoleAliasInput {
-                role_alias: self.role_alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_role_alias::DescribeRoleAliasInput { role_alias: self.role_alias })
     }
 }

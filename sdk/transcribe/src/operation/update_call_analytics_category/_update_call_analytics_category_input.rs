@@ -29,16 +29,14 @@ impl UpdateCallAnalyticsCategoryInput {
 }
 impl UpdateCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryInput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput).
-    pub fn builder() -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder{
+    pub fn builder() -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder {
         crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCallAnalyticsCategoryInput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
@@ -46,18 +44,12 @@ pub struct UpdateCallAnalyticsCategoryInputBuilder {
 }
 impl UpdateCallAnalyticsCategoryInputBuilder {
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_name = input;
         self
     }
@@ -77,10 +69,7 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         self
     }
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -109,12 +98,10 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput {
-                category_name: self.category_name,
-                rules: self.rules,
-                input_type: self.input_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput {
+            category_name: self.category_name,
+            rules: self.rules,
+            input_type: self.input_type,
+        })
     }
 }

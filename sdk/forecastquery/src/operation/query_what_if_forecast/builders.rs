@@ -37,9 +37,7 @@ impl QueryWhatIfForecastFluentBuilder {
         }
     }
     /// Access the QueryWhatIfForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl QueryWhatIfForecastFluentBuilder {
             crate::operation::query_what_if_forecast::QueryWhatIfForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl QueryWhatIfForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl QueryWhatIfForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl QueryWhatIfForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl QueryWhatIfForecastFluentBuilder {
             crate::operation::query_what_if_forecast::QueryWhatIfForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_what_if_forecast::QueryWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_what_if_forecast::QueryWhatIfForecastError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn what_if_forecast_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
-    pub fn set_what_if_forecast_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_forecast_arn(input);
         self
     }
@@ -177,34 +158,21 @@ impl QueryWhatIfForecastFluentBuilder {
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k.into(), v.into());
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
     /// <p> <code>{"item_id" : "client_21"}</code> </p>
     /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filters()
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>

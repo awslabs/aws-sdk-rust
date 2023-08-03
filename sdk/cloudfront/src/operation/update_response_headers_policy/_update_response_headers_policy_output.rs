@@ -13,9 +13,7 @@ pub struct UpdateResponseHeadersPolicyOutput {
 }
 impl UpdateResponseHeadersPolicyOutput {
     /// <p>A response headers policy.</p>
-    pub fn response_headers_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
     /// <p>The current version of the response headers policy.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateResponseHeadersPolicyOutput {
 }
 impl UpdateResponseHeadersPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
-    pub fn builder() -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyOutputBuilder {
         crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyOutputBuilder {
     pub(crate) response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl UpdateResponseHeadersPolicyOutputBuilder {
         self
     }
     /// <p>A response headers policy.</p>
-    pub fn set_response_headers_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
-    ) -> Self {
+    pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
         self.response_headers_policy = input;
         self
     }
     /// <p>A response headers policy.</p>
-    pub fn get_response_headers_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
+    pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
         &self.response_headers_policy
     }
     /// <p>The current version of the response headers policy.</p>
@@ -89,9 +80,7 @@ impl UpdateResponseHeadersPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput {
+    pub fn build(self) -> crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput {
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput {
             response_headers_policy: self.response_headers_policy,
             e_tag: self.e_tag,

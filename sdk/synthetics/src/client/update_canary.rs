@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`artifact_config(ArtifactConfigInput)`](crate::operation::update_canary::builders::UpdateCanaryFluentBuilder::artifact_config) / [`set_artifact_config(Option<ArtifactConfigInput>)`](crate::operation::update_canary::builders::UpdateCanaryFluentBuilder::set_artifact_config): <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     /// - On success, responds with [`UpdateCanaryOutput`](crate::operation::update_canary::UpdateCanaryOutput)
     /// - On failure, responds with [`SdkError<UpdateCanaryError>`](crate::operation::update_canary::UpdateCanaryError)
-    pub fn update_canary(
-        &self,
-    ) -> crate::operation::update_canary::builders::UpdateCanaryFluentBuilder {
-        crate::operation::update_canary::builders::UpdateCanaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_canary(&self) -> crate::operation::update_canary::builders::UpdateCanaryFluentBuilder {
+        crate::operation::update_canary::builders::UpdateCanaryFluentBuilder::new(self.handle.clone())
     }
 }

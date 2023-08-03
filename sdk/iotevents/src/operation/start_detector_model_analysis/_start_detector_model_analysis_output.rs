@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDetectorModelAnalysisOutput {
 }
 impl StartDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput).
-    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder {
         crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisOutputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StartDetectorModelAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
+    pub fn build(self) -> crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
             analysis_id: self.analysis_id,
             _request_id: self._request_id,

@@ -23,9 +23,7 @@ impl AwsIamRolePolicy {
 
 /// A builder for [`AwsIamRolePolicy`](crate::types::AwsIamRolePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamRolePolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }

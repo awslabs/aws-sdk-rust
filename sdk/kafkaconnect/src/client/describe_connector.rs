@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`worker_configuration(Option<WorkerConfigurationDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::worker_configuration): <p>Specifies which worker configuration was used for the connector.</p>
     ///   - [`state_description(Option<StateDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::state_description): <p>Details about the state of a connector.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectorError>`](crate::operation::describe_connector::DescribeConnectorError)
-    pub fn describe_connector(
-        &self,
-    ) -> crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder {
-        crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connector(&self) -> crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder {
+        crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::new(self.handle.clone())
     }
 }

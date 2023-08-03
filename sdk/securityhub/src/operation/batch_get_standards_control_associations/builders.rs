@@ -5,16 +5,16 @@ pub use crate::operation::batch_get_standards_control_associations::_batch_get_s
 
 impl BatchGetStandardsControlAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_get_standards_control_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchGetStandardsControlAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder,
+    inner: crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder,
 }
 impl BatchGetStandardsControlAssociationsFluentBuilder {
     /// Creates a new `BatchGetStandardsControlAssociations`.
@@ -37,15 +37,22 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
         }
     }
     /// Access the BatchGetStandardsControlAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `StandardsControlAssociationIds`.
@@ -99,10 +116,7 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_standards_control_association_ids`](Self::set_standards_control_association_ids).
     ///
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    pub fn standards_control_association_ids(
-        mut self,
-        input: crate::types::StandardsControlAssociationId,
-    ) -> Self {
+    pub fn standards_control_association_ids(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         self.inner = self.inner.standards_control_association_ids(input);
         self
     }
@@ -115,9 +129,7 @@ impl BatchGetStandardsControlAssociationsFluentBuilder {
         self
     }
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    pub fn get_standards_control_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>> {
+    pub fn get_standards_control_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>> {
         self.inner.get_standards_control_association_ids()
     }
 }

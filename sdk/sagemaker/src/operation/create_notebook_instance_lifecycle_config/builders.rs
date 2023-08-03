@@ -5,16 +5,16 @@ pub use crate::operation::create_notebook_instance_lifecycle_config::_create_not
 
 impl CreateNotebookInstanceLifecycleConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_notebook_instance_lifecycle_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl CreateNotebookInstanceLifecycleConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNotebookInstanceLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigInputBuilder,
+    inner: crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigInputBuilder,
 }
 impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
     /// Creates a new `CreateNotebookInstanceLifecycleConfig`.
@@ -42,15 +42,22 @@ impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
         }
     }
     /// Access the CreateNotebookInstanceLifecycleConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +66,17 @@ impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,43 +94,40 @@ impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .notebook_instance_lifecycle_config_name(input.into());
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.notebook_instance_lifecycle_config_name(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_notebook_instance_lifecycle_config_name(input);
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_notebook_instance_lifecycle_config_name(input);
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notebook_instance_lifecycle_config_name()
     }
     /// Appends an item to `OnCreate`.
@@ -135,17 +140,12 @@ impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
         self
     }
     /// <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn set_on_create(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    ) -> Self {
+    pub fn set_on_create(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
         self.inner = self.inner.set_on_create(input);
         self
     }
     /// <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn get_on_create(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+    pub fn get_on_create(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
         self.inner.get_on_create()
     }
     /// Appends an item to `OnStart`.
@@ -158,17 +158,12 @@ impl CreateNotebookInstanceLifecycleConfigFluentBuilder {
         self
     }
     /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn set_on_start(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
-    ) -> Self {
+    pub fn set_on_start(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>) -> Self {
         self.inner = self.inner.set_on_start(input);
         self
     }
     /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
-    pub fn get_on_start(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+    pub fn get_on_start(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
         self.inner.get_on_start()
     }
 }

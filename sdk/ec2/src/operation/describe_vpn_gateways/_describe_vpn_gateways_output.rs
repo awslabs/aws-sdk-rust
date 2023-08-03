@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpnGatewaysOutput {
 }
 impl DescribeVpnGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpnGatewaysOutput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysOutputBuilder {
-        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysOutputBuilder {
+        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpnGatewaysOutput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpnGatewaysOutputBuilder {
     pub(crate) vpn_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeVpnGatewaysOutputBuilder {
         self
     }
     /// <p>Information about one or more virtual private gateways.</p>
-    pub fn set_vpn_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
-    ) -> Self {
+    pub fn set_vpn_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>) -> Self {
         self.vpn_gateways = input;
         self
     }
     /// <p>Information about one or more virtual private gateways.</p>
-    pub fn get_vpn_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>> {
+    pub fn get_vpn_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>> {
         &self.vpn_gateways
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

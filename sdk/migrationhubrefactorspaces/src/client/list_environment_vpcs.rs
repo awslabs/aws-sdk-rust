@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`environment_vpc_list(Option<Vec<EnvironmentVpc>>)`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput::environment_vpc_list): <p>The list of <code>EnvironmentVpc</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentVpcsError>`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsError)
-    pub fn list_environment_vpcs(
-        &self,
-    ) -> crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsFluentBuilder {
-        crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environment_vpcs(&self) -> crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsFluentBuilder {
+        crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsFluentBuilder::new(self.handle.clone())
     }
 }

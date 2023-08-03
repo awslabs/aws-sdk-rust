@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccountOutput`](crate::operation::create_account::CreateAccountOutput) with field(s):
     ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::operation::create_account::CreateAccountOutput::create_account_status): <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<CreateAccountError>`](crate::operation::create_account::CreateAccountError)
-    pub fn create_account(
-        &self,
-    ) -> crate::operation::create_account::builders::CreateAccountFluentBuilder {
-        crate::operation::create_account::builders::CreateAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_account(&self) -> crate::operation::create_account::builders::CreateAccountFluentBuilder {
+        crate::operation::create_account::builders::CreateAccountFluentBuilder::new(self.handle.clone())
     }
 }

@@ -75,9 +75,7 @@ impl SnapshotTierStatus {
         self.last_tiering_progress
     }
     /// <p>The status of the last archive or restore process.</p>
-    pub fn last_tiering_operation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TieringOperationStatus> {
+    pub fn last_tiering_operation_status(&self) -> ::std::option::Option<&crate::types::TieringOperationStatus> {
         self.last_tiering_operation_status.as_ref()
     }
     /// <p>A message describing the status of the last archive or restore process.</p>
@@ -102,9 +100,7 @@ impl SnapshotTierStatus {
 
 /// A builder for [`SnapshotTierStatus`](crate::types::SnapshotTierStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotTierStatusBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -114,8 +110,7 @@ pub struct SnapshotTierStatusBuilder {
     pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) last_tiering_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_tiering_progress: ::std::option::Option<i32>,
-    pub(crate) last_tiering_operation_status:
-        ::std::option::Option<crate::types::TieringOperationStatus>,
+    pub(crate) last_tiering_operation_status: ::std::option::Option<crate::types::TieringOperationStatus>,
     pub(crate) last_tiering_operation_status_detail: ::std::option::Option<::std::string::String>,
     pub(crate) archival_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -189,10 +184,7 @@ impl SnapshotTierStatusBuilder {
         self
     }
     /// <p>The tags that are assigned to the snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -206,10 +198,7 @@ impl SnapshotTierStatusBuilder {
         self
     }
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
-    pub fn set_storage_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageTier>,
-    ) -> Self {
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
         self.storage_tier = input;
         self
     }
@@ -223,17 +212,12 @@ impl SnapshotTierStatusBuilder {
         self
     }
     /// <p>The date and time when the last archive or restore process was started.</p>
-    pub fn set_last_tiering_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_tiering_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_tiering_start_time = input;
         self
     }
     /// <p>The date and time when the last archive or restore process was started.</p>
-    pub fn get_last_tiering_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_tiering_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_tiering_start_time
     }
     /// <p>The progress of the last archive or restore process, as a percentage.</p>
@@ -251,47 +235,31 @@ impl SnapshotTierStatusBuilder {
         &self.last_tiering_progress
     }
     /// <p>The status of the last archive or restore process.</p>
-    pub fn last_tiering_operation_status(
-        mut self,
-        input: crate::types::TieringOperationStatus,
-    ) -> Self {
+    pub fn last_tiering_operation_status(mut self, input: crate::types::TieringOperationStatus) -> Self {
         self.last_tiering_operation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the last archive or restore process.</p>
-    pub fn set_last_tiering_operation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TieringOperationStatus>,
-    ) -> Self {
+    pub fn set_last_tiering_operation_status(mut self, input: ::std::option::Option<crate::types::TieringOperationStatus>) -> Self {
         self.last_tiering_operation_status = input;
         self
     }
     /// <p>The status of the last archive or restore process.</p>
-    pub fn get_last_tiering_operation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TieringOperationStatus> {
+    pub fn get_last_tiering_operation_status(&self) -> &::std::option::Option<crate::types::TieringOperationStatus> {
         &self.last_tiering_operation_status
     }
     /// <p>A message describing the status of the last archive or restore process.</p>
-    pub fn last_tiering_operation_status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_tiering_operation_status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_tiering_operation_status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the status of the last archive or restore process.</p>
-    pub fn set_last_tiering_operation_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_tiering_operation_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_tiering_operation_status_detail = input;
         self
     }
     /// <p>A message describing the status of the last archive or restore process.</p>
-    pub fn get_last_tiering_operation_status_detail(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_tiering_operation_status_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_tiering_operation_status_detail
     }
     /// <p>The date and time when the last archive process was completed.</p>
@@ -300,17 +268,12 @@ impl SnapshotTierStatusBuilder {
         self
     }
     /// <p>The date and time when the last archive process was completed.</p>
-    pub fn set_archival_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_archival_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.archival_complete_time = input;
         self
     }
     /// <p>The date and time when the last archive process was completed.</p>
-    pub fn get_archival_complete_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_archival_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.archival_complete_time
     }
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
@@ -319,10 +282,7 @@ impl SnapshotTierStatusBuilder {
         self
     }
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
-    pub fn set_restore_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_expiry_time = input;
         self
     }

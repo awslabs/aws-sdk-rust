@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCalculatedAttributeDefinitionOu
 }
 impl DeleteCalculatedAttributeDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCalculatedAttributeDefinitionOutput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionOutputBuilder {
         crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCalculatedAttributeDefinitionOutput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCalculatedAttributeDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteCalculatedAttributeDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCalculatedAttributeDefinitionOutput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput).
-    pub fn build(self) -> crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput{
+    pub fn build(self) -> crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput {
         crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput {
             _request_id: self._request_id,
         }

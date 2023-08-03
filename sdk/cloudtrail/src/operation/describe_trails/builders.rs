@@ -10,10 +10,7 @@ impl DescribeTrailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_trails::DescribeTrailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_trails::DescribeTrailsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_trails();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeTrailsFluentBuilder {
         }
     }
     /// Access the DescribeTrails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_trails::builders::DescribeTrailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_trails::builders::DescribeTrailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeTrailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -127,10 +119,7 @@ impl DescribeTrailsFluentBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn trail_name_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trail_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trail_name_list(input.into());
         self
     }
@@ -143,10 +132,7 @@ impl DescribeTrailsFluentBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn set_trail_name_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trail_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trail_name_list(input);
         self
     }
@@ -159,9 +145,7 @@ impl DescribeTrailsFluentBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn get_trail_name_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trail_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_trail_name_list()
     }
     /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a trail that was created in a different Region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and Region replication trails will not be returned. The default is true.</p>

@@ -12,10 +12,7 @@ pub fn ser_update_service_settings_input(
     if let Some(var_3) = &input.organization_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OrganizationConfiguration").start_object();
-        crate::protocol_serde::shape_organization_configuration::ser_organization_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_organization_configuration::ser_organization_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.enable_cross_accounts_discovery {

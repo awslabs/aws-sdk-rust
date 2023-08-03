@@ -30,27 +30,19 @@ impl UpdateCognitoUserPoolConfiguration {
 
 /// A builder for [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
-    pub fn user_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
-    pub fn set_user_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_arn = input;
         self
     }
@@ -70,10 +62,7 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
         self
     }
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    pub fn set_client_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_ids = input;
         self
     }

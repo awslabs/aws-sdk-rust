@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TableCellImageScalingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for TableCellImageScalingConfiguration {
             "DO_NOT_SCALE" => TableCellImageScalingConfiguration::DoNotScale,
             "FIT_TO_CELL_HEIGHT" => TableCellImageScalingConfiguration::FitToCellHeight,
             "FIT_TO_CELL_WIDTH" => TableCellImageScalingConfiguration::FitToCellWidth,
-            other => TableCellImageScalingConfiguration::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => TableCellImageScalingConfiguration::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -26,7 +26,7 @@ impl GetServiceInstanceSyncStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceInstanceSyncStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder,
+    inner: crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder,
 }
 impl GetServiceInstanceSyncStatusFluentBuilder {
     /// Creates a new `GetServiceInstanceSyncStatus`.
@@ -37,7 +37,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
         }
     }
     /// Access the GetServiceInstanceSyncStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
             crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
             crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl GetServiceInstanceSyncStatusFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }

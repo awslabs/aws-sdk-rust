@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`identity_resolution_jobs_list(Option<Vec<IdentityResolutionJob>>)`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput::identity_resolution_jobs_list): <p>A list of Identity Resolution Jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListIdentityResolutionJobsError>`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError)
-    pub fn list_identity_resolution_jobs(&self) -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsFluentBuilder{
+    pub fn list_identity_resolution_jobs(
+        &self,
+    ) -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsFluentBuilder {
         crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsFluentBuilder::new(self.handle.clone())
     }
 }

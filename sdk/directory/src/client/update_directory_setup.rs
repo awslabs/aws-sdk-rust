@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`create_snapshot_before_update(bool)`](crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder::create_snapshot_before_update) / [`set_create_snapshot_before_update(Option<bool>)`](crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder::set_create_snapshot_before_update): <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
     /// - On success, responds with [`UpdateDirectorySetupOutput`](crate::operation::update_directory_setup::UpdateDirectorySetupOutput)
     /// - On failure, responds with [`SdkError<UpdateDirectorySetupError>`](crate::operation::update_directory_setup::UpdateDirectorySetupError)
-    pub fn update_directory_setup(
-        &self,
-    ) -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder {
-        crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_directory_setup(&self) -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder {
+        crate::operation::update_directory_setup::builders::UpdateDirectorySetupFluentBuilder::new(self.handle.clone())
     }
 }

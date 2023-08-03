@@ -44,9 +44,7 @@ impl PlacementSummary {
 
 /// A builder for [`PlacementSummary`](crate::types::PlacementSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementSummaryBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl PlacementSummaryBuilder {
         &self.project_name
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -94,10 +86,7 @@ impl PlacementSummaryBuilder {
         self
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -111,10 +100,7 @@ impl PlacementSummaryBuilder {
         self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn set_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_date = input;
         self
     }

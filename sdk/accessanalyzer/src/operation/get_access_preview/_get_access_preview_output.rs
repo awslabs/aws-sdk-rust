@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccessPreviewOutput {
 }
 impl GetAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPreviewOutput`](crate::operation::get_access_preview::GetAccessPreviewOutput).
-    pub fn builder() -> crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder {
         crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPreviewOutput`](crate::operation::get_access_preview::GetAccessPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPreviewOutputBuilder {
     pub(crate) access_preview: ::std::option::Option<crate::types::AccessPreview>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetAccessPreviewOutputBuilder {
         self
     }
     /// <p>An object that contains information about the access preview.</p>
-    pub fn set_access_preview(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPreview>,
-    ) -> Self {
+    pub fn set_access_preview(mut self, input: ::std::option::Option<crate::types::AccessPreview>) -> Self {
         self.access_preview = input;
         self
     }

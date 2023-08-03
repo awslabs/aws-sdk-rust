@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`notification_summaries(Option<Vec<ProfileNotificationSummary>>)`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput::notification_summaries): <p>Notification summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProfileNotificationsError>`](crate::operation::list_profile_notifications::ListProfileNotificationsError)
-    pub fn list_profile_notifications(
-        &self,
-    ) -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder
-    {
+    pub fn list_profile_notifications(&self) -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder {
         crate::operation::list_profile_notifications::builders::ListProfileNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

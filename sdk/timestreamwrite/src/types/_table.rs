@@ -31,8 +31,7 @@ pub struct Table {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     #[doc(hidden)]
-    pub magnetic_store_write_properties:
-        ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
+    pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p> The schema of the table. </p>
     #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
@@ -59,9 +58,7 @@ impl Table {
         self.table_status.as_ref()
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
-    pub fn retention_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionProperties> {
+    pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
     /// <p>The time when the Timestream table was created. </p>
@@ -73,9 +70,7 @@ impl Table {
         self.last_updated_time.as_ref()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
+    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
     /// <p> The schema of the table. </p>
@@ -92,9 +87,7 @@ impl Table {
 
 /// A builder for [`Table`](crate::types::Table).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
@@ -103,8 +96,7 @@ pub struct TableBuilder {
     pub(crate) retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) magnetic_store_write_properties:
-        ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
+    pub(crate) magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
 }
 impl TableBuilder {
@@ -137,18 +129,12 @@ impl TableBuilder {
         &self.table_name
     }
     /// <p>The name of the Timestream database that contains this table.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database that contains this table.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -170,10 +156,7 @@ impl TableBuilder {
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
-    pub fn set_table_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableStatus>,
-    ) -> Self {
+    pub fn set_table_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
         self.table_status = input;
         self
     }
@@ -191,17 +174,12 @@ impl TableBuilder {
         self
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
-    pub fn set_retention_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionProperties>,
-    ) -> Self {
+    pub fn set_retention_properties(mut self, input: ::std::option::Option<crate::types::RetentionProperties>) -> Self {
         self.retention_properties = input;
         self
     }
     /// <p>The retention duration for the memory store and magnetic store.</p>
-    pub fn get_retention_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionProperties> {
+    pub fn get_retention_properties(&self) -> &::std::option::Option<crate::types::RetentionProperties> {
         &self.retention_properties
     }
     /// <p>The time when the Timestream table was created. </p>
@@ -210,10 +188,7 @@ impl TableBuilder {
         self
     }
     /// <p>The time when the Timestream table was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -227,10 +202,7 @@ impl TableBuilder {
         self
     }
     /// <p>The time when the Timestream table was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -239,25 +211,17 @@ impl TableBuilder {
         &self.last_updated_time
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(
-        mut self,
-        input: crate::types::MagneticStoreWriteProperties,
-    ) -> Self {
+    pub fn magnetic_store_write_properties(mut self, input: crate::types::MagneticStoreWriteProperties) -> Self {
         self.magnetic_store_write_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn set_magnetic_store_write_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
-    ) -> Self {
+    pub fn set_magnetic_store_write_properties(mut self, input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>) -> Self {
         self.magnetic_store_write_properties = input;
         self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn get_magnetic_store_write_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
+    pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         &self.magnetic_store_write_properties
     }
     /// <p> The schema of the table. </p>

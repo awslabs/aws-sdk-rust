@@ -10,9 +10,7 @@ pub struct UpdateTimeToLiveOutput {
 }
 impl UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn time_to_live_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeToLiveSpecification> {
+    pub fn time_to_live_specification(&self) -> ::std::option::Option<&crate::types::TimeToLiveSpecification> {
         self.time_to_live_specification.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateTimeToLiveOutput {
 }
 impl UpdateTimeToLiveOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput).
-    pub fn builder(
-    ) -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder {
+    pub fn builder() -> crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder {
         crate::operation::update_time_to_live::builders::UpdateTimeToLiveOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTimeToLiveOutputBuilder {
-    pub(crate) time_to_live_specification:
-        ::std::option::Option<crate::types::TimeToLiveSpecification>,
+    pub(crate) time_to_live_specification: ::std::option::Option<crate::types::TimeToLiveSpecification>,
     _request_id: Option<String>,
 }
 impl UpdateTimeToLiveOutputBuilder {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn time_to_live_specification(
-        mut self,
-        input: crate::types::TimeToLiveSpecification,
-    ) -> Self {
+    pub fn time_to_live_specification(mut self, input: crate::types::TimeToLiveSpecification) -> Self {
         self.time_to_live_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn set_time_to_live_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeToLiveSpecification>,
-    ) -> Self {
+    pub fn set_time_to_live_specification(mut self, input: ::std::option::Option<crate::types::TimeToLiveSpecification>) -> Self {
         self.time_to_live_specification = input;
         self
     }
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
-    pub fn get_time_to_live_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
+    pub fn get_time_to_live_specification(&self) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
         &self.time_to_live_specification
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

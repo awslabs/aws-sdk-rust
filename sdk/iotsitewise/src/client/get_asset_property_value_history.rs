@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`asset_property_value_history(Option<Vec<AssetPropertyValue>>)`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput::asset_property_value_history): <p>The asset property's value history.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<GetAssetPropertyValueHistoryError>`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError)
-    pub fn get_asset_property_value_history(&self) -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder{
+    pub fn get_asset_property_value_history(
+        &self,
+    ) -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder {
         crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
     }
 }

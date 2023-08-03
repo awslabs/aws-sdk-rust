@@ -52,18 +52,14 @@ impl CreateOutpostResolverInput {
 }
 impl CreateOutpostResolverInput {
     /// Creates a new builder-style object to manufacture [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
-    pub fn builder(
-    ) -> crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder {
         crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOutpostResolverInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -75,19 +71,13 @@ pub struct CreateOutpostResolverInputBuilder {
 impl CreateOutpostResolverInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -125,18 +115,12 @@ impl CreateOutpostResolverInputBuilder {
         &self.instance_count
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
-    pub fn preferred_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
-    pub fn set_preferred_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_instance_type = input;
         self
     }
@@ -170,10 +154,7 @@ impl CreateOutpostResolverInputBuilder {
         self
     }
     /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -184,19 +165,15 @@ impl CreateOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_outpost_resolver::CreateOutpostResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_outpost_resolver::CreateOutpostResolverInput {
-                creator_request_id: self.creator_request_id,
-                name: self.name,
-                instance_count: self.instance_count,
-                preferred_instance_type: self.preferred_instance_type,
-                outpost_arn: self.outpost_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_outpost_resolver::CreateOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_outpost_resolver::CreateOutpostResolverInput {
+            creator_request_id: self.creator_request_id,
+            name: self.name,
+            instance_count: self.instance_count,
+            preferred_instance_type: self.preferred_instance_type,
+            outpost_arn: self.outpost_arn,
+            tags: self.tags,
+        })
     }
 }

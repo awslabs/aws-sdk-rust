@@ -30,9 +30,7 @@ impl DecimalNumber {
 
 /// A builder for [`DecimalNumber`](crate::types::DecimalNumber).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalNumberBuilder {
     pub(crate) unscaled_value: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) scale: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl DecimalNumberBuilder {
         self
     }
     /// <p>The unscaled numeric value.</p>
-    pub fn set_unscaled_value(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_unscaled_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.unscaled_value = input;
         self
     }

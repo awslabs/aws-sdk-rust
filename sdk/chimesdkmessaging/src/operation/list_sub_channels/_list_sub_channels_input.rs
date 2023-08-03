@@ -120,10 +120,7 @@ impl ListSubChannelsInputBuilder {
     /// Consumes the builder and constructs a [`ListSubChannelsInput`](crate::operation::list_sub_channels::ListSubChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sub_channels::ListSubChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_sub_channels::ListSubChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sub_channels::ListSubChannelsInput {
             channel_arn: self.channel_arn,
             chime_bearer: self.chime_bearer,

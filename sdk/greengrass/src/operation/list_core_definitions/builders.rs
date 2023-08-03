@@ -37,9 +37,7 @@ impl ListCoreDefinitionsFluentBuilder {
         }
     }
     /// Access the ListCoreDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_core_definitions::builders::ListCoreDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListCoreDefinitionsFluentBuilder {
             crate::operation::list_core_definitions::ListCoreDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definitions::ListCoreDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definitions::ListCoreDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListCoreDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListCoreDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_definitions::ListCoreDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definitions::ListCoreDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definitions::ListCoreDefinitionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListCoreDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_definitions::ListCoreDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definitions::ListCoreDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definitions::ListCoreDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListCoreDefinitionsFluentBuilder {
             crate::operation::list_core_definitions::ListCoreDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_definitions::ListCoreDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_definitions::ListCoreDefinitionsError>,
     > {
         self.customize_middleware().await
     }

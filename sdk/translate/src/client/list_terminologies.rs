@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`terminology_properties_list(Option<Vec<TerminologyProperties>>)`](crate::operation::list_terminologies::ListTerminologiesOutput::terminology_properties_list): <p>The properties list of the custom terminologies returned on the list request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_terminologies::ListTerminologiesOutput::next_token): <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     /// - On failure, responds with [`SdkError<ListTerminologiesError>`](crate::operation::list_terminologies::ListTerminologiesError)
-    pub fn list_terminologies(
-        &self,
-    ) -> crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder {
-        crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_terminologies(&self) -> crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder {
+        crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::new(self.handle.clone())
     }
 }

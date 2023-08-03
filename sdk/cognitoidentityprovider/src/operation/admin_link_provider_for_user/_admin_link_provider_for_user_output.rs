@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AdminLinkProviderForUserOutput {
 }
 impl AdminLinkProviderForUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminLinkProviderForUserOutput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput).
-    pub fn builder() -> crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserOutputBuilder{
+    pub fn builder() -> crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserOutputBuilder {
         crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminLinkProviderForUserOutput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminLinkProviderForUserOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AdminLinkProviderForUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminLinkProviderForUserOutput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput {
+    pub fn build(self) -> crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput {
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput {
             _request_id: self._request_id,
         }

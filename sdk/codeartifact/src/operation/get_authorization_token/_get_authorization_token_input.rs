@@ -29,18 +29,14 @@ impl GetAuthorizationTokenInput {
 }
 impl GetAuthorizationTokenInput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
         crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl GetAuthorizationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_authorization_token::GetAuthorizationTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_authorization_token::GetAuthorizationTokenInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                duration_seconds: self.duration_seconds,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_authorization_token::GetAuthorizationTokenInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            duration_seconds: self.duration_seconds,
+        })
     }
 }

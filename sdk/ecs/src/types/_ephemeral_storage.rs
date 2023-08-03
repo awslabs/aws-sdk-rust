@@ -29,9 +29,7 @@ impl EphemeralStorage {
 
 /// A builder for [`EphemeralStorage`](crate::types::EphemeralStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EphemeralStorageBuilder {
     pub(crate) size_in_gi_b: ::std::option::Option<i32>,
 }

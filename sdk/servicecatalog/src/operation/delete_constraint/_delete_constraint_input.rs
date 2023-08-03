@@ -30,17 +30,14 @@ impl DeleteConstraintInput {
 }
 impl DeleteConstraintInput {
     /// Creates a new builder-style object to manufacture [`DeleteConstraintInput`](crate::operation::delete_constraint::DeleteConstraintInput).
-    pub fn builder() -> crate::operation::delete_constraint::builders::DeleteConstraintInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_constraint::builders::DeleteConstraintInputBuilder {
         crate::operation::delete_constraint::builders::DeleteConstraintInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConstraintInput`](crate::operation::delete_constraint::DeleteConstraintInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConstraintInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl DeleteConstraintInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -63,10 +57,7 @@ impl DeleteConstraintInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -95,10 +86,7 @@ impl DeleteConstraintInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConstraintInput`](crate::operation::delete_constraint::DeleteConstraintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_constraint::DeleteConstraintInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_constraint::DeleteConstraintInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_constraint::DeleteConstraintInput {
             accept_language: self.accept_language,
             id: self.id,

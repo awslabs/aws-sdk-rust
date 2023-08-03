@@ -6,10 +6,7 @@ pub fn ser_update_user_phone_config_input(
     if let Some(var_1) = &input.phone_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PhoneConfig").start_object();
-        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

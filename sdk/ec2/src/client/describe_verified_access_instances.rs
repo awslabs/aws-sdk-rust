@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`verified_access_instances(Option<Vec<VerifiedAccessInstance>>)`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput::verified_access_instances): <p>The IDs of the Verified Access instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVerifiedAccessInstancesError>`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesError)
-    pub fn describe_verified_access_instances(&self) -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder{
+    pub fn describe_verified_access_instances(
+        &self,
+    ) -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder {
         crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::new(self.handle.clone())
     }
 }

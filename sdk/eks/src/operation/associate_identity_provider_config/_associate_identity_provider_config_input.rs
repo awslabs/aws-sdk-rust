@@ -11,9 +11,7 @@ pub struct AssociateIdentityProviderConfigInput {
     pub oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfigRequest>,
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -28,11 +26,7 @@ impl AssociateIdentityProviderConfigInput {
         self.oidc.as_ref()
     }
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -42,22 +36,18 @@ impl AssociateIdentityProviderConfigInput {
 }
 impl AssociateIdentityProviderConfigInput {
     /// Creates a new builder-style object to manufacture [`AssociateIdentityProviderConfigInput`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigInput).
-    pub fn builder() -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigInputBuilder{
+    pub fn builder() -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigInputBuilder {
         crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIdentityProviderConfigInput`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIdentityProviderConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfigRequest>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIdentityProviderConfigInputBuilder {
@@ -81,17 +71,12 @@ impl AssociateIdentityProviderConfigInputBuilder {
         self
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn set_oidc(
-        mut self,
-        input: ::std::option::Option<crate::types::OidcIdentityProviderConfigRequest>,
-    ) -> Self {
+    pub fn set_oidc(mut self, input: ::std::option::Option<crate::types::OidcIdentityProviderConfigRequest>) -> Self {
         self.oidc = input;
         self
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn get_oidc(
-        &self,
-    ) -> &::std::option::Option<crate::types::OidcIdentityProviderConfigRequest> {
+    pub fn get_oidc(&self) -> &::std::option::Option<crate::types::OidcIdentityProviderConfigRequest> {
         &self.oidc
     }
     /// Adds a key-value pair to `tags`.
@@ -99,47 +84,28 @@ impl AssociateIdentityProviderConfigInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -156,15 +122,11 @@ impl AssociateIdentityProviderConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigInput {
-                cluster_name: self.cluster_name
-                ,
-                oidc: self.oidc
-                ,
-                tags: self.tags
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                cluster_name: self.cluster_name,
+                oidc: self.oidc,
+                tags: self.tags,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }

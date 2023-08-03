@@ -31,9 +31,7 @@ impl SelectParameters {
         self.expression.as_deref()
     }
     /// <p>Describes how the results of the select job are serialized.</p>
-    pub fn output_serialization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputSerialization> {
+    pub fn output_serialization(&self) -> ::std::option::Option<&crate::types::OutputSerialization> {
         self.output_serialization.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl SelectParameters {
 
 /// A builder for [`SelectParameters`](crate::types::SelectParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectParametersBuilder {
     pub(crate) input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     pub(crate) expression_type: ::std::option::Option<crate::types::ExpressionType>,
@@ -62,17 +58,12 @@ impl SelectParametersBuilder {
         self
     }
     /// <p>Describes the serialization format of the object.</p>
-    pub fn set_input_serialization(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSerialization>,
-    ) -> Self {
+    pub fn set_input_serialization(mut self, input: ::std::option::Option<crate::types::InputSerialization>) -> Self {
         self.input_serialization = input;
         self
     }
     /// <p>Describes the serialization format of the object.</p>
-    pub fn get_input_serialization(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputSerialization> {
+    pub fn get_input_serialization(&self) -> &::std::option::Option<crate::types::InputSerialization> {
         &self.input_serialization
     }
     /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
@@ -81,10 +72,7 @@ impl SelectParametersBuilder {
         self
     }
     /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
-    pub fn set_expression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
+    pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
         self.expression_type = input;
         self
     }
@@ -112,17 +100,12 @@ impl SelectParametersBuilder {
         self
     }
     /// <p>Describes how the results of the select job are serialized.</p>
-    pub fn set_output_serialization(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputSerialization>,
-    ) -> Self {
+    pub fn set_output_serialization(mut self, input: ::std::option::Option<crate::types::OutputSerialization>) -> Self {
         self.output_serialization = input;
         self
     }
     /// <p>Describes how the results of the select job are serialized.</p>
-    pub fn get_output_serialization(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputSerialization> {
+    pub fn get_output_serialization(&self) -> &::std::option::Option<crate::types::OutputSerialization> {
         &self.output_serialization
     }
     /// Consumes the builder and constructs a [`SelectParameters`](crate::types::SelectParameters).

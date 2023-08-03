@@ -10,10 +10,7 @@ impl PutBucketLoggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_logging::PutBucketLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_logging::PutBucketLoggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_logging::PutBucketLoggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_bucket_logging();
         fluent_builder.inner = self;
@@ -83,9 +80,7 @@ impl PutBucketLoggingFluentBuilder {
         }
     }
     /// Access the PutBucketLogging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_logging::builders::PutBucketLoggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_logging::builders::PutBucketLoggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +92,7 @@ impl PutBucketLoggingFluentBuilder {
             crate::operation::put_bucket_logging::PutBucketLogging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_logging::PutBucketLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_logging::PutBucketLoggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -109,10 +102,7 @@ impl PutBucketLoggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -121,9 +111,7 @@ impl PutBucketLoggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_logging::PutBucketLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_logging::PutBucketLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_logging::PutBucketLoggingError>,
     > {
         let op = self
             .inner
@@ -146,9 +134,7 @@ impl PutBucketLoggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_logging::PutBucketLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_logging::PutBucketLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_logging::PutBucketLoggingError>,
     > {
         self.send_middleware().await
     }
@@ -162,9 +148,7 @@ impl PutBucketLoggingFluentBuilder {
             crate::operation::put_bucket_logging::PutBucketLogging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_logging::PutBucketLoggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_logging::PutBucketLoggingError>,
     > {
         self.customize_middleware().await
     }
@@ -188,17 +172,12 @@ impl PutBucketLoggingFluentBuilder {
         self
     }
     /// <p>Container for logging status information.</p>
-    pub fn set_bucket_logging_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketLoggingStatus>,
-    ) -> Self {
+    pub fn set_bucket_logging_status(mut self, input: ::std::option::Option<crate::types::BucketLoggingStatus>) -> Self {
         self.inner = self.inner.set_bucket_logging_status(input);
         self
     }
     /// <p>Container for logging status information.</p>
-    pub fn get_bucket_logging_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketLoggingStatus> {
+    pub fn get_bucket_logging_status(&self) -> &::std::option::Option<crate::types::BucketLoggingStatus> {
         self.inner.get_bucket_logging_status()
     }
     /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
@@ -226,33 +205,22 @@ impl PutBucketLoggingFluentBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

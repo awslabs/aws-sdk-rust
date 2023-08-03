@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`endpoint_settings(Option<Vec<EndpointSetting>>)`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput::endpoint_settings): <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointSettingsError>`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError)
-    pub fn describe_endpoint_settings(
-        &self,
-    ) -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder
-    {
+    pub fn describe_endpoint_settings(&self) -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder {
         crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::new(self.handle.clone())
     }
 }

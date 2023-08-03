@@ -22,18 +22,14 @@ impl ListPartnerAccountsInput {
 }
 impl ListPartnerAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListPartnerAccountsInput`](crate::operation::list_partner_accounts::ListPartnerAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder {
-        crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder {
+        crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPartnerAccountsInput`](crate::operation::list_partner_accounts::ListPartnerAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartnerAccountsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListPartnerAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListPartnerAccountsInput`](crate::operation::list_partner_accounts::ListPartnerAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_partner_accounts::ListPartnerAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_partner_accounts::ListPartnerAccountsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_partner_accounts::ListPartnerAccountsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_partner_accounts::ListPartnerAccountsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

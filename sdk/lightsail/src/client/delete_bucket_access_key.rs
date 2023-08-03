@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBucketAccessKeyOutput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBucketAccessKeyError>`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError)
-    pub fn delete_bucket_access_key(
-        &self,
-    ) -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyFluentBuilder
-    {
+    pub fn delete_bucket_access_key(&self) -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyFluentBuilder {
         crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyFluentBuilder::new(self.handle.clone())
     }
 }

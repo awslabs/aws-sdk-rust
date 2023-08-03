@@ -39,18 +39,14 @@ impl CreateInstanceProfileInput {
 }
 impl CreateInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder {
         crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
@@ -59,19 +55,13 @@ pub struct CreateInstanceProfileInputBuilder {
 impl CreateInstanceProfileInputBuilder {
     /// <p>The name of the instance profile to create.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance profile to create.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_name = input;
         self
     }
@@ -116,10 +106,7 @@ impl CreateInstanceProfileInputBuilder {
     /// <p>A list of tags that you want to attach to the newly created IAM instance profile. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -132,16 +119,12 @@ impl CreateInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance_profile::CreateInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_profile::CreateInstanceProfileInput {
-                instance_profile_name: self.instance_profile_name,
-                path: self.path,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_instance_profile::CreateInstanceProfileInput {
+            instance_profile_name: self.instance_profile_name,
+            path: self.path,
+            tags: self.tags,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl DescribeOptionGroupsFluentBuilder {
         }
     }
     /// Access the DescribeOptionGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_option_groups::builders::DescribeOptionGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_option_groups::builders::DescribeOptionGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeOptionGroupsFluentBuilder {
             crate::operation::describe_option_groups::DescribeOptionGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_groups::DescribeOptionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_groups::DescribeOptionGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeOptionGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeOptionGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_option_groups::DescribeOptionGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_groups::DescribeOptionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_groups::DescribeOptionGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeOptionGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_option_groups::DescribeOptionGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_groups::DescribeOptionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_groups::DescribeOptionGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl DescribeOptionGroupsFluentBuilder {
             crate::operation::describe_option_groups::DescribeOptionGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_groups::DescribeOptionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_groups::DescribeOptionGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_option_groups::paginator::DescribeOptionGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_option_groups::paginator::DescribeOptionGroupsPaginator {
-        crate::operation::describe_option_groups::paginator::DescribeOptionGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_option_groups::paginator::DescribeOptionGroupsPaginator {
+        crate::operation::describe_option_groups::paginator::DescribeOptionGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -163,10 +139,7 @@ impl DescribeOptionGroupsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -265,18 +238,12 @@ impl DescribeOptionGroupsFluentBuilder {
         self.inner.get_engine_name()
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_engine_version(input.into());
         self
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_engine_version(input);
         self
     }

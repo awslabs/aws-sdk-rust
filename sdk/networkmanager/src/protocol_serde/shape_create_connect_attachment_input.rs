@@ -15,10 +15,7 @@ pub fn ser_create_connect_attachment_input(
     if let Some(var_4) = &input.options {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Options").start_object();
-        crate::protocol_serde::shape_connect_attachment_options::ser_connect_attachment_options(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_connect_attachment_options::ser_connect_attachment_options(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

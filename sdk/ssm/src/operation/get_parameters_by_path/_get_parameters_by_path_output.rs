@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetParametersByPathOutput {
 }
 impl GetParametersByPathOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersByPathOutput`](crate::operation::get_parameters_by_path::GetParametersByPathOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_by_path::builders::GetParametersByPathOutputBuilder {
+    pub fn builder() -> crate::operation::get_parameters_by_path::builders::GetParametersByPathOutputBuilder {
         crate::operation::get_parameters_by_path::builders::GetParametersByPathOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetParametersByPathOutput`](crate::operation::get_parameters_by_path::GetParametersByPathOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersByPathOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetParametersByPathOutputBuilder {
         self
     }
     /// <p>A list of parameters found in the specified hierarchy.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of parameters found in the specified hierarchy.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

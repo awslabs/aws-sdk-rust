@@ -27,8 +27,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSnapshotAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder,
+    inner: crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder,
 }
 impl AuthorizeSnapshotAccessFluentBuilder {
     /// Creates a new `AuthorizeSnapshotAccess`.
@@ -39,10 +38,7 @@ impl AuthorizeSnapshotAccessFluentBuilder {
         }
     }
     /// Access the AuthorizeSnapshotAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AuthorizeSnapshotAccessFluentBuilder {
             crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AuthorizeSnapshotAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AuthorizeSnapshotAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AuthorizeSnapshotAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl AuthorizeSnapshotAccessFluentBuilder {
             crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -160,18 +139,12 @@ impl AuthorizeSnapshotAccessFluentBuilder {
         self.inner.get_snapshot_arn()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }
@@ -181,19 +154,13 @@ impl AuthorizeSnapshotAccessFluentBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn account_with_restore_access(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_with_restore_access(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn set_account_with_restore_access(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_with_restore_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_with_restore_access(input);
         self
     }

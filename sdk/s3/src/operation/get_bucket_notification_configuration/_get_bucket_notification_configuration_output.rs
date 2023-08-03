@@ -6,16 +6,13 @@
 pub struct GetBucketNotificationConfigurationOutput {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     #[doc(hidden)]
-    pub topic_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
     #[doc(hidden)]
-    pub queue_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
+    pub queue_configurations: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     #[doc(hidden)]
-    pub lambda_function_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>>,
+    pub lambda_function_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>>,
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     #[doc(hidden)]
     pub event_bridge_configuration: ::std::option::Option<crate::types::EventBridgeConfiguration>,
@@ -24,27 +21,19 @@ pub struct GetBucketNotificationConfigurationOutput {
 }
 impl GetBucketNotificationConfigurationOutput {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
-    pub fn topic_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TopicConfiguration]> {
+    pub fn topic_configurations(&self) -> ::std::option::Option<&[crate::types::TopicConfiguration]> {
         self.topic_configurations.as_deref()
     }
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
-    pub fn queue_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QueueConfiguration]> {
+    pub fn queue_configurations(&self) -> ::std::option::Option<&[crate::types::QueueConfiguration]> {
         self.queue_configurations.as_deref()
     }
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
-    pub fn lambda_function_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LambdaFunctionConfiguration]> {
+    pub fn lambda_function_configurations(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionConfiguration]> {
         self.lambda_function_configurations.as_deref()
     }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
-    pub fn event_bridge_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventBridgeConfiguration> {
+    pub fn event_bridge_configuration(&self) -> ::std::option::Option<&crate::types::EventBridgeConfiguration> {
         self.event_bridge_configuration.as_ref()
     }
 }
@@ -60,25 +49,19 @@ impl ::aws_http::request_id::RequestId for GetBucketNotificationConfigurationOut
 }
 impl GetBucketNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketNotificationConfigurationOutput`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationOutputBuilder {
         crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketNotificationConfigurationOutput`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketNotificationConfigurationOutputBuilder {
-    pub(crate) topic_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    pub(crate) queue_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
-    pub(crate) lambda_function_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>>,
-    pub(crate) event_bridge_configuration:
-        ::std::option::Option<crate::types::EventBridgeConfiguration>,
+    pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub(crate) queue_configurations: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
+    pub(crate) lambda_function_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>>,
+    pub(crate) event_bridge_configuration: ::std::option::Option<crate::types::EventBridgeConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -95,17 +78,12 @@ impl GetBucketNotificationConfigurationOutputBuilder {
         self
     }
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
-    pub fn set_topic_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    ) -> Self {
+    pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
         self.topic_configurations = input;
         self
     }
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
-    pub fn get_topic_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         &self.topic_configurations
     }
     /// Appends an item to `queue_configurations`.
@@ -120,17 +98,12 @@ impl GetBucketNotificationConfigurationOutputBuilder {
         self
     }
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
-    pub fn set_queue_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
-    ) -> Self {
+    pub fn set_queue_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>) -> Self {
         self.queue_configurations = input;
         self
     }
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
-    pub fn get_queue_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>> {
+    pub fn get_queue_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>> {
         &self.queue_configurations
     }
     /// Appends an item to `lambda_function_configurations`.
@@ -138,10 +111,7 @@ impl GetBucketNotificationConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_lambda_function_configurations`](Self::set_lambda_function_configurations).
     ///
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
-    pub fn lambda_function_configurations(
-        mut self,
-        input: crate::types::LambdaFunctionConfiguration,
-    ) -> Self {
+    pub fn lambda_function_configurations(mut self, input: crate::types::LambdaFunctionConfiguration) -> Self {
         let mut v = self.lambda_function_configurations.unwrap_or_default();
         v.push(input);
         self.lambda_function_configurations = ::std::option::Option::Some(v);
@@ -156,31 +126,21 @@ impl GetBucketNotificationConfigurationOutputBuilder {
         self
     }
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
-    pub fn get_lambda_function_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>> {
+    pub fn get_lambda_function_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>> {
         &self.lambda_function_configurations
     }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
-    pub fn event_bridge_configuration(
-        mut self,
-        input: crate::types::EventBridgeConfiguration,
-    ) -> Self {
+    pub fn event_bridge_configuration(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
         self.event_bridge_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
-    pub fn set_event_bridge_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeConfiguration>,
-    ) -> Self {
+    pub fn set_event_bridge_configuration(mut self, input: ::std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
         self.event_bridge_configuration = input;
         self
     }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
-    pub fn get_event_bridge_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+    pub fn get_event_bridge_configuration(&self) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
         &self.event_bridge_configuration
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -188,10 +148,7 @@ impl GetBucketNotificationConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -205,16 +162,12 @@ impl GetBucketNotificationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBucketNotificationConfigurationOutput`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput {
         crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput {
-            topic_configurations: self.topic_configurations
-            ,
-            queue_configurations: self.queue_configurations
-            ,
-            lambda_function_configurations: self.lambda_function_configurations
-            ,
-            event_bridge_configuration: self.event_bridge_configuration
-            ,
+            topic_configurations: self.topic_configurations,
+            queue_configurations: self.queue_configurations,
+            lambda_function_configurations: self.lambda_function_configurations,
+            event_bridge_configuration: self.event_bridge_configuration,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

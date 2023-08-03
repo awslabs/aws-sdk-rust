@@ -28,9 +28,7 @@ impl GetGroupQueryOutput {
 
 /// A builder for [`GetGroupQueryOutput`](crate::operation::get_group_query::GetGroupQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupQueryOutputBuilder {
     pub(crate) group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetGroupQueryOutputBuilder {
         self
     }
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
-    pub fn set_group_query(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupQuery>,
-    ) -> Self {
+    pub fn set_group_query(mut self, input: ::std::option::Option<crate::types::GroupQuery>) -> Self {
         self.group_query = input;
         self
     }

@@ -59,9 +59,7 @@ impl Limitation {
 
 /// A builder for [`Limitation`](crate::types::Limitation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitationBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,

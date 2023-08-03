@@ -30,16 +30,14 @@ impl RegisterOnPremisesInstanceInput {
 }
 impl RegisterOnPremisesInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceInput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput).
-    pub fn builder() -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder{
+    pub fn builder() -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder {
         crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterOnPremisesInstanceInput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_session_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct RegisterOnPremisesInstanceInputBuilder {
 }
 impl RegisterOnPremisesInstanceInputBuilder {
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl RegisterOnPremisesInstanceInputBuilder {
         &self.instance_name
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn iam_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn set_iam_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_session_arn = input;
         self
     }
@@ -107,12 +93,10 @@ impl RegisterOnPremisesInstanceInputBuilder {
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
-                instance_name: self.instance_name,
-                iam_session_arn: self.iam_session_arn,
-                iam_user_arn: self.iam_user_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
+            instance_name: self.instance_name,
+            iam_session_arn: self.iam_session_arn,
+            iam_user_arn: self.iam_user_arn,
+        })
     }
 }

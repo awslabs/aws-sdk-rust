@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`firewall_rule_groups(Option<Vec<FirewallRuleGroupMetadata>>)`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput::firewall_rule_groups): <p>A list of your firewall rule groups.</p>  <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
     /// - On failure, responds with [`SdkError<ListFirewallRuleGroupsError>`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError)
-    pub fn list_firewall_rule_groups(
-        &self,
-    ) -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsFluentBuilder
-    {
+    pub fn list_firewall_rule_groups(&self) -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsFluentBuilder {
         crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsFluentBuilder::new(self.handle.clone())
     }
 }

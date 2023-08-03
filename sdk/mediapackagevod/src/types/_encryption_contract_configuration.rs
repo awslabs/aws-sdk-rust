@@ -30,9 +30,7 @@ impl EncryptionContractConfiguration {
 
 /// A builder for [`EncryptionContractConfiguration`](crate::types::EncryptionContractConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionContractConfigurationBuilder {
     pub(crate) preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     pub(crate) preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,
@@ -44,17 +42,12 @@ impl EncryptionContractConfigurationBuilder {
         self
     }
     /// A collection of audio encryption presets.
-    pub fn set_preset_speke20_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::PresetSpeke20Audio>,
-    ) -> Self {
+    pub fn set_preset_speke20_audio(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Audio>) -> Self {
         self.preset_speke20_audio = input;
         self
     }
     /// A collection of audio encryption presets.
-    pub fn get_preset_speke20_audio(
-        &self,
-    ) -> &::std::option::Option<crate::types::PresetSpeke20Audio> {
+    pub fn get_preset_speke20_audio(&self) -> &::std::option::Option<crate::types::PresetSpeke20Audio> {
         &self.preset_speke20_audio
     }
     /// A collection of video encryption presets.
@@ -63,17 +56,12 @@ impl EncryptionContractConfigurationBuilder {
         self
     }
     /// A collection of video encryption presets.
-    pub fn set_preset_speke20_video(
-        mut self,
-        input: ::std::option::Option<crate::types::PresetSpeke20Video>,
-    ) -> Self {
+    pub fn set_preset_speke20_video(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Video>) -> Self {
         self.preset_speke20_video = input;
         self
     }
     /// A collection of video encryption presets.
-    pub fn get_preset_speke20_video(
-        &self,
-    ) -> &::std::option::Option<crate::types::PresetSpeke20Video> {
+    pub fn get_preset_speke20_video(&self) -> &::std::option::Option<crate::types::PresetSpeke20Video> {
         &self.preset_speke20_video
     }
     /// Consumes the builder and constructs a [`EncryptionContractConfiguration`](crate::types::EncryptionContractConfiguration).

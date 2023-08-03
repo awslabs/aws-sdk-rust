@@ -22,34 +22,26 @@ impl CreateProgressUpdateStreamInput {
 }
 impl CreateProgressUpdateStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamInput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput).
-    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder{
+    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder {
         crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProgressUpdateStreamInput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProgressUpdateStreamInputBuilder {
     pub(crate) progress_update_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateProgressUpdateStreamInputBuilder {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn progress_update_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_progress_update_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl CreateProgressUpdateStreamInputBuilder {
         crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput {
-                progress_update_stream_name: self.progress_update_stream_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput {
+            progress_update_stream_name: self.progress_update_stream_name,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

@@ -27,7 +27,7 @@ impl PutConfigurationSetVdmOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationSetVdmOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsInputBuilder,
+    inner: crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsInputBuilder,
 }
 impl PutConfigurationSetVdmOptionsFluentBuilder {
     /// Creates a new `PutConfigurationSetVdmOptions`.
@@ -38,7 +38,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
         }
     }
     /// Access the PutConfigurationSetVdmOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
             crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
             crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -147,10 +130,7 @@ impl PutConfigurationSetVdmOptionsFluentBuilder {
         self
     }
     /// <p>The VDM options to apply to the configuration set.</p>
-    pub fn set_vdm_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VdmOptions>,
-    ) -> Self {
+    pub fn set_vdm_options(mut self, input: ::std::option::Option<crate::types::VdmOptions>) -> Self {
         self.inner = self.inner.set_vdm_options(input);
         self
     }

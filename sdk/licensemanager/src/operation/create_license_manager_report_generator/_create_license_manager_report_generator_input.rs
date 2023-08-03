@@ -65,16 +65,14 @@ impl CreateLicenseManagerReportGeneratorInput {
 }
 impl CreateLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
-    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder{
+    pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder {
         crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorInputBuilder {
     pub(crate) report_generator_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
@@ -86,18 +84,12 @@ pub struct CreateLicenseManagerReportGeneratorInputBuilder {
 }
 impl CreateLicenseManagerReportGeneratorInputBuilder {
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_generator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_generator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the report generator.</p>
-    pub fn set_report_generator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_generator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_generator_name = input;
         self
     }
@@ -125,10 +117,7 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>) -> Self {
         self.r#type = input;
         self
     }
@@ -146,10 +135,7 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    pub fn set_report_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportContext>,
-    ) -> Self {
+    pub fn set_report_context(mut self, input: ::std::option::Option<crate::types::ReportContext>) -> Self {
         self.report_context = input;
         self
     }
@@ -163,10 +149,7 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
+    pub fn set_report_frequency(mut self, input: ::std::option::Option<crate::types::ReportFrequency>) -> Self {
         self.report_frequency = input;
         self
     }
@@ -214,10 +197,7 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Tags to add to the report generator.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -226,24 +206,22 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput {
-                report_generator_name: self.report_generator_name
-                ,
-                r#type: self.r#type
-                ,
-                report_context: self.report_context
-                ,
-                report_frequency: self.report_frequency
-                ,
-                client_token: self.client_token
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-            }
+                report_generator_name: self.report_generator_name,
+                r#type: self.r#type,
+                report_context: self.report_context,
+                report_frequency: self.report_frequency,
+                client_token: self.client_token,
+                description: self.description,
+                tags: self.tags,
+            },
         )
     }
 }

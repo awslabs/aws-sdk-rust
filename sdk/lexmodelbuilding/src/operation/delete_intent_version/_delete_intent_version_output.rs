@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIntentVersionOutput {
 }
 impl DeleteIntentVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntentVersionOutput`](crate::operation::delete_intent_version::DeleteIntentVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_intent_version::builders::DeleteIntentVersionOutputBuilder {
-        crate::operation::delete_intent_version::builders::DeleteIntentVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_intent_version::builders::DeleteIntentVersionOutputBuilder {
+        crate::operation::delete_intent_version::builders::DeleteIntentVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntentVersionOutput`](crate::operation::delete_intent_version::DeleteIntentVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntentVersionOutputBuilder {
     _request_id: Option<String>,
 }

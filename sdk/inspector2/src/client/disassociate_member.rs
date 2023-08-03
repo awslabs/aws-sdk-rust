@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateMemberOutput`](crate::operation::disassociate_member::DisassociateMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::disassociate_member::DisassociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::operation::disassociate_member::DisassociateMemberError)
-    pub fn disassociate_member(
-        &self,
-    ) -> crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder {
-        crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_member(&self) -> crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder {
+        crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::new(self.handle.clone())
     }
 }

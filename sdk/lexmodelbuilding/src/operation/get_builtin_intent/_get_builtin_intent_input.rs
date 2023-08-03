@@ -15,17 +15,14 @@ impl GetBuiltinIntentInput {
 }
 impl GetBuiltinIntentInput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentInput`](crate::operation::get_builtin_intent::GetBuiltinIntentInput).
-    pub fn builder() -> crate::operation::get_builtin_intent::builders::GetBuiltinIntentInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_builtin_intent::builders::GetBuiltinIntentInputBuilder {
         crate::operation::get_builtin_intent::builders::GetBuiltinIntentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBuiltinIntentInput`](crate::operation::get_builtin_intent::GetBuiltinIntentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentInputBuilder {
     pub(crate) signature: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetBuiltinIntentInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinIntentInput`](crate::operation::get_builtin_intent::GetBuiltinIntentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_builtin_intent::GetBuiltinIntentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_builtin_intent::GetBuiltinIntentInput {
-                signature: self.signature,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_builtin_intent::GetBuiltinIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_builtin_intent::GetBuiltinIntentInput { signature: self.signature })
     }
 }

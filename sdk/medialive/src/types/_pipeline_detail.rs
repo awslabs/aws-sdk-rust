@@ -51,9 +51,7 @@ impl PipelineDetail {
 
 /// A builder for [`PipelineDetail`](crate::types::PipelineDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineDetailBuilder {
     pub(crate) active_input_attachment_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_input_switch_action_name: ::std::option::Option<::std::string::String>,
@@ -63,84 +61,54 @@ pub struct PipelineDetailBuilder {
 }
 impl PipelineDetailBuilder {
     /// The name of the active input attachment currently being ingested by this pipeline.
-    pub fn active_input_attachment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_input_attachment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_input_attachment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the active input attachment currently being ingested by this pipeline.
-    pub fn set_active_input_attachment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_input_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_input_attachment_name = input;
         self
     }
     /// The name of the active input attachment currently being ingested by this pipeline.
-    pub fn get_active_input_attachment_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_active_input_attachment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_input_attachment_name
     }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
-    pub fn active_input_switch_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_input_switch_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_input_switch_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
-    pub fn set_active_input_switch_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_input_switch_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_input_switch_action_name = input;
         self
     }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
-    pub fn get_active_input_switch_action_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_active_input_switch_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_input_switch_action_name
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
-    pub fn active_motion_graphics_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_motion_graphics_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_motion_graphics_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
-    pub fn set_active_motion_graphics_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_motion_graphics_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_motion_graphics_action_name = input;
         self
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
-    pub fn get_active_motion_graphics_action_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_active_motion_graphics_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_motion_graphics_action_name
     }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
-    pub fn active_motion_graphics_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_motion_graphics_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_motion_graphics_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
-    pub fn set_active_motion_graphics_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_motion_graphics_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_motion_graphics_uri = input;
         self
     }

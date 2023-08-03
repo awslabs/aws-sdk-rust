@@ -10,10 +10,7 @@ impl CreateDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDeploymentFluentBuilder {
         }
     }
     /// Access the CreateDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateDeploymentFluentBuilder {
         self.inner.get_stage_name()
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    pub fn stage_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stage_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_description(input.into());
         self
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    pub fn set_stage_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stage_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_description(input);
         self
     }
@@ -204,10 +182,7 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
-    pub fn set_cache_cluster_size(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheClusterSize>,
-    ) -> Self {
+    pub fn set_cache_cluster_size(mut self, input: ::std::option::Option<crate::types::CacheClusterSize>) -> Self {
         self.inner = self.inner.set_cache_cluster_size(input);
         self
     }
@@ -220,30 +195,17 @@ impl CreateDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.variables(k.into(), v.into());
         self
     }
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_variables(input);
         self
     }
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_variables()
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
@@ -252,17 +214,12 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    pub fn set_canary_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCanarySettings>,
-    ) -> Self {
+    pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::DeploymentCanarySettings>) -> Self {
         self.inner = self.inner.set_canary_settings(input);
         self
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    pub fn get_canary_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
+    pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
         self.inner.get_canary_settings()
     }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>

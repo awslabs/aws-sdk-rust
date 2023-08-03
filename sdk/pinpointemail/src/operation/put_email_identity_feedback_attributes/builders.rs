@@ -5,16 +5,16 @@ pub use crate::operation::put_email_identity_feedback_attributes::_put_email_ide
 
 impl PutEmailIdentityFeedbackAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_email_identity_feedback_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder,
+    inner: crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder,
 }
 impl PutEmailIdentityFeedbackAttributesFluentBuilder {
     /// Creates a new `PutEmailIdentityFeedbackAttributes`.
@@ -39,15 +39,20 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
         }
     }
     /// Access the PutEmailIdentityFeedbackAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }

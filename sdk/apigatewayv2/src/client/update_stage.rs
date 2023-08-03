@@ -29,9 +29,7 @@ impl super::Client {
     ///   - [`stage_variables(Option<HashMap<String, String>>)`](crate::operation::update_stage::UpdateStageOutput::stage_variables): <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_stage::UpdateStageOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<UpdateStageError>`](crate::operation::update_stage::UpdateStageError)
-    pub fn update_stage(
-        &self,
-    ) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
+    pub fn update_stage(&self) -> crate::operation::update_stage::builders::UpdateStageFluentBuilder {
         crate::operation::update_stage::builders::UpdateStageFluentBuilder::new(self.handle.clone())
     }
 }

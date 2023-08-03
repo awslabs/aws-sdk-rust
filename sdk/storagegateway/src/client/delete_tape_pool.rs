@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTapePoolOutput`](crate::operation::delete_tape_pool::DeleteTapePoolOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::delete_tape_pool::DeleteTapePoolOutput::pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTapePoolError>`](crate::operation::delete_tape_pool::DeleteTapePoolError)
-    pub fn delete_tape_pool(
-        &self,
-    ) -> crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder {
-        crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_tape_pool(&self) -> crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder {
+        crate::operation::delete_tape_pool::builders::DeleteTapePoolFluentBuilder::new(self.handle.clone())
     }
 }

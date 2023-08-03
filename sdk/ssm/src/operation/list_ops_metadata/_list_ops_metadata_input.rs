@@ -36,9 +36,7 @@ impl ListOpsMetadataInput {
 
 /// A builder for [`ListOpsMetadataInput`](crate::operation::list_ops_metadata::ListOpsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsMetadataInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,17 +55,12 @@ impl ListOpsMetadataInputBuilder {
         self
     }
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -101,10 +94,7 @@ impl ListOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListOpsMetadataInput`](crate::operation::list_ops_metadata::ListOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ops_metadata::ListOpsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_ops_metadata::ListOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ops_metadata::ListOpsMetadataInput {
             filters: self.filters,
             max_results: self.max_results,

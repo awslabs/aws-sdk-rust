@@ -56,9 +56,7 @@ impl NotFoundException {
 
 /// A builder for [`NotFoundException`](crate::types::error::NotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotFoundExceptionBuilder {
     pub(crate) error_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct NotFoundExceptionBuilder {
 }
 impl NotFoundExceptionBuilder {
     /// <p>The attribute which caused the error.</p>
-    pub fn error_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute which caused the error.</p>
-    pub fn set_error_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_attribute = input;
         self
     }
@@ -106,10 +98,7 @@ impl NotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

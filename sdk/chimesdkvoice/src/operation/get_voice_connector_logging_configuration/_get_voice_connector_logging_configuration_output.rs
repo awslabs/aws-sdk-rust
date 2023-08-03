@@ -10,9 +10,7 @@ pub struct GetVoiceConnectorLoggingConfigurationOutput {
 }
 impl GetVoiceConnectorLoggingConfigurationOutput {
     /// <p>The logging configuration details .</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorLoggingConfiguration
 }
 impl GetVoiceConnectorLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorLoggingConfigurationOutput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationOutputBuilder {
         crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorLoggingConfigurationOutput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetVoiceConnectorLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>The logging configuration details .</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The logging configuration details .</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,9 @@ impl GetVoiceConnectorLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorLoggingConfigurationOutput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput {
         crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput {
-            logging_configuration: self.logging_configuration
-            ,
+            logging_configuration: self.logging_configuration,
             _request_id: self._request_id,
         }
     }

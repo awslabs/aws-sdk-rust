@@ -10,10 +10,7 @@ impl RemoveEndpointsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_endpoints::RemoveEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_endpoints::RemoveEndpointsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_endpoints::RemoveEndpointsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_endpoints();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl RemoveEndpointsFluentBuilder {
         }
     }
     /// Access the RemoveEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_endpoints::builders::RemoveEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_endpoints::builders::RemoveEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl RemoveEndpointsFluentBuilder {
             crate::operation::remove_endpoints::RemoveEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_endpoints::RemoveEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_endpoints::RemoveEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl RemoveEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl RemoveEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_endpoints::RemoveEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_endpoints::RemoveEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_endpoints::RemoveEndpointsError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl RemoveEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_endpoints::RemoveEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_endpoints::RemoveEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_endpoints::RemoveEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl RemoveEndpointsFluentBuilder {
             crate::operation::remove_endpoints::RemoveEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_endpoints::RemoveEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_endpoints::RemoveEndpointsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,32 +121,21 @@ impl RemoveEndpointsFluentBuilder {
         self
     }
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    pub fn set_endpoint_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>>,
-    ) -> Self {
+    pub fn set_endpoint_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>>) -> Self {
         self.inner = self.inner.set_endpoint_identifiers(input);
         self
     }
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    pub fn get_endpoint_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>> {
+    pub fn get_endpoint_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>> {
         self.inner.get_endpoint_identifiers()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }

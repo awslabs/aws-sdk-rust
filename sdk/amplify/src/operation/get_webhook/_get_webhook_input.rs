@@ -23,9 +23,7 @@ impl GetWebhookInput {
 
 /// A builder for [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWebhookInputBuilder {
     pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl GetWebhookInputBuilder {
         &self.webhook_id
     }
     /// Consumes the builder and constructs a [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_webhook::GetWebhookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_webhook::GetWebhookInput {
-            webhook_id: self.webhook_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_webhook::GetWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_webhook::GetWebhookInput { webhook_id: self.webhook_id })
     }
 }

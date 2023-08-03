@@ -5,8 +5,7 @@
 pub struct ListBusinessReportSchedulesOutput {
     /// <p>The schedule of the reports.</p>
     #[doc(hidden)]
-    pub business_report_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
+    pub business_report_schedules: ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBusinessReportSchedulesOutput {
 }
 impl ListBusinessReportSchedulesOutput {
     /// <p>The schedule of the reports.</p>
-    pub fn business_report_schedules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BusinessReportSchedule]> {
+    pub fn business_report_schedules(&self) -> ::std::option::Option<&[crate::types::BusinessReportSchedule]> {
         self.business_report_schedules.as_deref()
     }
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBusinessReportSchedulesOutput {
 }
 impl ListBusinessReportSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListBusinessReportSchedulesOutput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput).
-    pub fn builder() -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesOutputBuilder{
+    pub fn builder() -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesOutputBuilder {
         crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBusinessReportSchedulesOutput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBusinessReportSchedulesOutputBuilder {
-    pub(crate) business_report_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
+    pub(crate) business_report_schedules: ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListBusinessReportSchedulesOutputBuilder {
     /// To override the contents of this collection use [`set_business_report_schedules`](Self::set_business_report_schedules).
     ///
     /// <p>The schedule of the reports.</p>
-    pub fn business_report_schedules(
-        mut self,
-        input: crate::types::BusinessReportSchedule,
-    ) -> Self {
+    pub fn business_report_schedules(mut self, input: crate::types::BusinessReportSchedule) -> Self {
         let mut v = self.business_report_schedules.unwrap_or_default();
         v.push(input);
         self.business_report_schedules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The schedule of the reports.</p>
-    pub fn set_business_report_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
-    ) -> Self {
+    pub fn set_business_report_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>) -> Self {
         self.business_report_schedules = input;
         self
     }
     /// <p>The schedule of the reports.</p>
-    pub fn get_business_report_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>> {
+    pub fn get_business_report_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>> {
         &self.business_report_schedules
     }
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
@@ -100,9 +86,7 @@ impl ListBusinessReportSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBusinessReportSchedulesOutput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput {
+    pub fn build(self) -> crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput {
         crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput {
             business_report_schedules: self.business_report_schedules,
             next_token: self.next_token,

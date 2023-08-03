@@ -5,17 +5,11 @@
 pub struct CreateSolFunctionPackageInput {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSolFunctionPackageInput {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -28,9 +22,7 @@ impl ::std::fmt::Debug for CreateSolFunctionPackageInput {
 }
 impl CreateSolFunctionPackageInput {
     /// Creates a new builder-style object to manufacture [`CreateSolFunctionPackageInput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageInput).
-    pub fn builder(
-    ) -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder {
         crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder::default()
     }
 }
@@ -39,9 +31,7 @@ impl CreateSolFunctionPackageInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateSolFunctionPackageInputBuilder {
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSolFunctionPackageInputBuilder {
     /// Adds a key-value pair to `tags`.
@@ -49,32 +39,19 @@ impl CreateSolFunctionPackageInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSolFunctionPackageInput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageInput).
@@ -84,11 +61,7 @@ impl CreateSolFunctionPackageInputBuilder {
         crate::operation::create_sol_function_package::CreateSolFunctionPackageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageInput {
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_sol_function_package::CreateSolFunctionPackageInput { tags: self.tags })
     }
 }
 impl ::std::fmt::Debug for CreateSolFunctionPackageInputBuilder {

@@ -17,8 +17,7 @@ pub struct GetTemporaryGlueTableCredentialsInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
     #[doc(hidden)]
-    pub supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetTemporaryGlueTableCredentialsInput {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
@@ -38,31 +37,26 @@ impl GetTemporaryGlueTableCredentialsInput {
         self.audit_context.as_ref()
     }
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn supported_permission_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionType]> {
+    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
 }
 impl GetTemporaryGlueTableCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
-    pub fn builder() -> crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder {
         crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemporaryGlueTableCredentialsInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetTemporaryGlueTableCredentialsInputBuilder {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
@@ -91,17 +85,12 @@ impl GetTemporaryGlueTableCredentialsInputBuilder {
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
@@ -124,10 +113,7 @@ impl GetTemporaryGlueTableCredentialsInputBuilder {
         self
     }
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.audit_context = input;
         self
     }
@@ -147,34 +133,29 @@ impl GetTemporaryGlueTableCredentialsInputBuilder {
         self
     }
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// Consumes the builder and constructs a [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput {
-                table_arn: self.table_arn
-                ,
-                permissions: self.permissions
-                ,
-                duration_seconds: self.duration_seconds
-                ,
-                audit_context: self.audit_context
-                ,
-                supported_permission_types: self.supported_permission_types
-                ,
-            }
+                table_arn: self.table_arn,
+                permissions: self.permissions,
+                duration_seconds: self.duration_seconds,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+            },
         )
     }
 }

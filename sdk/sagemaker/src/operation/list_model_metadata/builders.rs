@@ -10,10 +10,7 @@ impl ListModelMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_model_metadata::ListModelMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_metadata::ListModelMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_metadata::ListModelMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_model_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListModelMetadataFluentBuilder {
         }
     }
     /// Access the ListModelMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListModelMetadataFluentBuilder {
             crate::operation::list_model_metadata::ListModelMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_metadata::ListModelMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_metadata::ListModelMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListModelMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListModelMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_metadata::ListModelMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_metadata::ListModelMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_metadata::ListModelMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListModelMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_metadata::ListModelMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_metadata::ListModelMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_metadata::ListModelMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListModelMetadataFluentBuilder {
             crate::operation::list_model_metadata::ListModelMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_metadata::ListModelMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_metadata::ListModelMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator {
-        crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator {
+        crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::new(self.handle, self.inner)
     }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
     pub fn search_expression(mut self, input: crate::types::ModelMetadataSearchExpression) -> Self {
@@ -139,17 +118,12 @@ impl ListModelMetadataFluentBuilder {
         self
     }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelMetadataSearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::ModelMetadataSearchExpression>) -> Self {
         self.inner = self.inner.set_search_expression(input);
         self
     }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    pub fn get_search_expression(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelMetadataSearchExpression> {
+    pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::ModelMetadataSearchExpression> {
         self.inner.get_search_expression()
     }
     /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>

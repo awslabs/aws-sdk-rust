@@ -42,9 +42,7 @@ impl BatchGetTracesOutput {
 
 /// A builder for [`BatchGetTracesOutput`](crate::operation::batch_get_traces::BatchGetTracesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTracesOutputBuilder {
     pub(crate) traces: ::std::option::Option<::std::vec::Vec<crate::types::Trace>>,
     pub(crate) unprocessed_trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl BatchGetTracesOutputBuilder {
         self
     }
     /// <p>Full traces for the specified requests.</p>
-    pub fn set_traces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trace>>,
-    ) -> Self {
+    pub fn set_traces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trace>>) -> Self {
         self.traces = input;
         self
     }
@@ -80,27 +75,19 @@ impl BatchGetTracesOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_trace_ids`](Self::set_unprocessed_trace_ids).
     ///
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn unprocessed_trace_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unprocessed_trace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.unprocessed_trace_ids.unwrap_or_default();
         v.push(input.into());
         self.unprocessed_trace_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn set_unprocessed_trace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_unprocessed_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.unprocessed_trace_ids = input;
         self
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn get_unprocessed_trace_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_unprocessed_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.unprocessed_trace_ids
     }
     /// <p>Pagination token.</p>

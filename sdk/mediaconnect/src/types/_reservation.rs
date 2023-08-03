@@ -90,9 +90,7 @@ impl Reservation {
         self.reservation_state.as_ref()
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
@@ -109,9 +107,7 @@ impl Reservation {
 
 /// A builder for [`Reservation`](crate::types::Reservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i32>,
@@ -129,18 +125,12 @@ pub struct ReservationBuilder {
 }
 impl ReservationBuilder {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -168,10 +158,7 @@ impl ReservationBuilder {
         self
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
-    pub fn set_duration_units(
-        mut self,
-        input: ::std::option::Option<crate::types::DurationUnits>,
-    ) -> Self {
+    pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::DurationUnits>) -> Self {
         self.duration_units = input;
         self
     }
@@ -208,18 +195,12 @@ impl ReservationBuilder {
         &self.offering_arn
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
-    pub fn offering_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
-    pub fn set_offering_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_description = input;
         self
     }
@@ -228,18 +209,12 @@ impl ReservationBuilder {
         &self.offering_description
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn price_per_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn price_per_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_per_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn set_price_per_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_price_per_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.price_per_unit = input;
         self
     }
@@ -253,10 +228,7 @@ impl ReservationBuilder {
         self
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn set_price_units(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceUnits>,
-    ) -> Self {
+    pub fn set_price_units(mut self, input: ::std::option::Option<crate::types::PriceUnits>) -> Self {
         self.price_units = input;
         self
     }
@@ -265,18 +237,12 @@ impl ReservationBuilder {
         &self.price_units
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-    pub fn reservation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-    pub fn set_reservation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_arn = input;
         self
     }
@@ -285,18 +251,12 @@ impl ReservationBuilder {
         &self.reservation_arn
     }
     /// The name that you assigned to the reservation when you purchased the offering.
-    pub fn reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name that you assigned to the reservation when you purchased the offering.
-    pub fn set_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_name = input;
         self
     }
@@ -310,10 +270,7 @@ impl ReservationBuilder {
         self
     }
     /// The status of your reservation.
-    pub fn set_reservation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationState>,
-    ) -> Self {
+    pub fn set_reservation_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
         self.reservation_state = input;
         self
     }
@@ -327,17 +284,12 @@ impl ReservationBuilder {
         self
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ResourceSpecification> {
         &self.resource_specification
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.

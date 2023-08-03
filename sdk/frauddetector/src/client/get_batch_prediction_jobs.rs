@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`batch_predictions(Option<Vec<BatchPrediction>>)`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput::batch_predictions): <p>An array containing the details of each batch prediction job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput::next_token): <p>The next token for the subsequent request.</p>
     /// - On failure, responds with [`SdkError<GetBatchPredictionJobsError>`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsError)
-    pub fn get_batch_prediction_jobs(
-        &self,
-    ) -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder
-    {
+    pub fn get_batch_prediction_jobs(&self) -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder {
         crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteFeaturedResultsSetError>>)`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput::errors): <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteFeaturedResultsSetError>`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError)
-    pub fn batch_delete_featured_results_set(&self) -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetFluentBuilder{
+    pub fn batch_delete_featured_results_set(
+        &self,
+    ) -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetFluentBuilder {
         crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetFluentBuilder::new(self.handle.clone())
     }
 }

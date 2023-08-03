@@ -51,9 +51,7 @@ impl TestGridSessionAction {
 
 /// A builder for [`TestGridSessionAction`](crate::types::TestGridSessionAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestGridSessionActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +80,7 @@ impl TestGridSessionActionBuilder {
         self
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started = input;
         self
     }
@@ -122,18 +117,12 @@ impl TestGridSessionActionBuilder {
         &self.status_code
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn set_request_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_method = input;
         self
     }

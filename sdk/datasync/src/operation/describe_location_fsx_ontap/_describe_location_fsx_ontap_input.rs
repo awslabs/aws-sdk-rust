@@ -15,18 +15,14 @@ impl DescribeLocationFsxOntapInput {
 }
 impl DescribeLocationFsxOntapInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapInput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapInputBuilder {
         crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxOntapInput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOntapInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DescribeLocationFsxOntapInputBuilder {
         crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput {
-                location_arn: self.location_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput {
+            location_arn: self.location_arn,
+        })
     }
 }

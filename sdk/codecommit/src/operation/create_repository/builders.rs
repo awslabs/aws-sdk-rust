@@ -10,10 +10,7 @@ impl CreateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_repository();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRepositoryFluentBuilder {
         }
     }
     /// Access the CreateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,29 +102,21 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
     /// </note>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the new repository to be created.</p> <note>
     /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
     /// </note>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -151,20 +129,14 @@ impl CreateRepositoryFluentBuilder {
     /// <p>A comment or description about the new repository.</p> <note>
     /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    pub fn repository_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_description(input.into());
         self
     }
     /// <p>A comment or description about the new repository.</p> <note>
     /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    pub fn set_repository_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_description(input);
         self
     }
@@ -179,30 +151,17 @@ impl CreateRepositoryFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

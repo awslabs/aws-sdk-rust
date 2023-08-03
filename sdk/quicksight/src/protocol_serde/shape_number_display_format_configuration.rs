@@ -41,97 +41,74 @@ pub fn ser_number_display_format_configuration(
 
 pub(crate) fn de_number_display_format_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::NumberDisplayFormatConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::NumberDisplayFormatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::NumberDisplayFormatConfigurationBuilder::default();
+            let mut builder = crate::types::builders::NumberDisplayFormatConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Prefix" => {
-                                builder = builder.set_prefix(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Prefix" => {
+                            builder = builder.set_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Suffix" => {
-                                builder = builder.set_suffix(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SeparatorConfiguration" => {
-                                builder = builder.set_separator_configuration(
-                                    crate::protocol_serde::shape_numeric_separator_configuration::de_numeric_separator_configuration(tokens)?
-                                );
-                            }
-                            "DecimalPlacesConfiguration" => {
-                                builder = builder.set_decimal_places_configuration(
-                                    crate::protocol_serde::shape_decimal_places_configuration::de_decimal_places_configuration(tokens)?
-                                );
-                            }
-                            "NumberScale" => {
-                                builder = builder.set_number_scale(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::NumberScale::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "NegativeValueConfiguration" => {
-                                builder = builder.set_negative_value_configuration(
-                                    crate::protocol_serde::shape_negative_value_configuration::de_negative_value_configuration(tokens)?
-                                );
-                            }
-                            "NullValueFormatConfiguration" => {
-                                builder = builder.set_null_value_format_configuration(
-                                    crate::protocol_serde::shape_null_value_format_configuration::de_null_value_format_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Suffix" => {
+                            builder = builder.set_suffix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SeparatorConfiguration" => {
+                            builder = builder.set_separator_configuration(
+                                crate::protocol_serde::shape_numeric_separator_configuration::de_numeric_separator_configuration(tokens)?,
+                            );
+                        }
+                        "DecimalPlacesConfiguration" => {
+                            builder = builder.set_decimal_places_configuration(
+                                crate::protocol_serde::shape_decimal_places_configuration::de_decimal_places_configuration(tokens)?,
+                            );
+                        }
+                        "NumberScale" => {
+                            builder = builder.set_number_scale(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NumberScale::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NegativeValueConfiguration" => {
+                            builder = builder.set_negative_value_configuration(
+                                crate::protocol_serde::shape_negative_value_configuration::de_negative_value_configuration(tokens)?,
+                            );
+                        }
+                        "NullValueFormatConfiguration" => {
+                            builder = builder.set_null_value_format_configuration(
+                                crate::protocol_serde::shape_null_value_format_configuration::de_null_value_format_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

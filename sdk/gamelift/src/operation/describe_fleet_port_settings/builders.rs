@@ -34,7 +34,7 @@ impl DescribeFleetPortSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder,
+    inner: crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder,
 }
 impl DescribeFleetPortSettingsFluentBuilder {
     /// Creates a new `DescribeFleetPortSettings`.
@@ -45,7 +45,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
         }
     }
     /// Access the DescribeFleetPortSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
             crate::operation::describe_fleet_port_settings::DescribeFleetPortSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl DescribeFleetPortSettingsFluentBuilder {
             crate::operation::describe_fleet_port_settings::DescribeFleetPortSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError>,
     > {
         self.customize_middleware().await
     }

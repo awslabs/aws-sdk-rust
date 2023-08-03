@@ -58,9 +58,7 @@ impl PrefetchSchedule {
 
 /// A builder for [`PrefetchSchedule`](crate::types::PrefetchSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefetchScheduleBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
@@ -90,10 +88,7 @@ impl PrefetchScheduleBuilder {
         self
     }
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
-    pub fn set_consumption(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchConsumption>,
-    ) -> Self {
+    pub fn set_consumption(mut self, input: ::std::option::Option<crate::types::PrefetchConsumption>) -> Self {
         self.consumption = input;
         self
     }
@@ -116,18 +111,12 @@ impl PrefetchScheduleBuilder {
         &self.name
     }
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -141,10 +130,7 @@ impl PrefetchScheduleBuilder {
         self
     }
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
-    pub fn set_retrieval(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchRetrieval>,
-    ) -> Self {
+    pub fn set_retrieval(mut self, input: ::std::option::Option<crate::types::PrefetchRetrieval>) -> Self {
         self.retrieval = input;
         self
     }

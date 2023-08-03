@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetRateBasedRuleManagedKeysOutput {
 }
 impl GetRateBasedRuleManagedKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
-    pub fn builder() -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysOutputBuilder{
+    pub fn builder() -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysOutputBuilder {
         crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysOutputBuilder {
     pub(crate) managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetRateBasedRuleManagedKeysOutputBuilder {
         self
     }
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-    pub fn set_managed_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_keys = input;
         self
     }
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-    pub fn get_managed_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_keys
     }
     /// <p>A null value and not currently used.</p>
@@ -93,9 +86,7 @@ impl GetRateBasedRuleManagedKeysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput {
+    pub fn build(self) -> crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput {
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput {
             managed_keys: self.managed_keys,
             next_marker: self.next_marker,

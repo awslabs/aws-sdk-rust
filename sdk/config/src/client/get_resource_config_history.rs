@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`configuration_items(Option<Vec<ConfigurationItem>>)`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput::configuration_items): <p>A list that contains the configuration history of one or more resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetResourceConfigHistoryError>`](crate::operation::get_resource_config_history::GetResourceConfigHistoryError)
-    pub fn get_resource_config_history(&self) -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder{
+    pub fn get_resource_config_history(&self) -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder {
         crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::new(self.handle.clone())
     }
 }

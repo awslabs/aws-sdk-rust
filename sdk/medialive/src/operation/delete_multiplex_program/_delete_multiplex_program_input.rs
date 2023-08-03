@@ -23,18 +23,14 @@ impl DeleteMultiplexProgramInput {
 }
 impl DeleteMultiplexProgramInput {
     /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
-    pub fn builder(
-    ) -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder {
         crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMultiplexProgramInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
@@ -71,15 +67,11 @@ impl DeleteMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput {
-                multiplex_id: self.multiplex_id,
-                program_name: self.program_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput {
+            multiplex_id: self.multiplex_id,
+            program_name: self.program_name,
+        })
     }
 }

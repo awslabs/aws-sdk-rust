@@ -37,9 +37,7 @@ impl ResetImageAttributeFluentBuilder {
         }
     }
     /// Access the ResetImageAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ResetImageAttributeFluentBuilder {
             crate::operation::reset_image_attribute::ResetImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ResetImageAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ResetImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_image_attribute::ResetImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ResetImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_image_attribute::ResetImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ResetImageAttributeFluentBuilder {
             crate::operation::reset_image_attribute::ResetImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_image_attribute::ResetImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_image_attribute::ResetImageAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl ResetImageAttributeFluentBuilder {
         self
     }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

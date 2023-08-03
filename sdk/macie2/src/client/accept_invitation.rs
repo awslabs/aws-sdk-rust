@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`master_account(impl ::std::convert::Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::master_account) / [`set_master_account(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_master_account): <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     /// - On success, responds with [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput)
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::operation::accept_invitation::AcceptInvitationError)
-    pub fn accept_invitation(
-        &self,
-    ) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
-        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_invitation(&self) -> crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder {
+        crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::new(self.handle.clone())
     }
 }

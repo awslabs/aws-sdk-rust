@@ -10,10 +10,7 @@ impl PublishBatchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish_batch::PublishBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_batch::PublishBatchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.publish_batch();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl PublishBatchFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish_batch::PublishBatch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish_batch::PublishBatch, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl PublishBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,10 +102,7 @@ impl PublishBatchFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish_batch::PublishBatch,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish_batch::PublishBatch, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
     > {
         self.customize_middleware().await
@@ -138,10 +126,7 @@ impl PublishBatchFluentBuilder {
     /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
     ///
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(
-        mut self,
-        input: crate::types::PublishBatchRequestEntry,
-    ) -> Self {
+    pub fn publish_batch_request_entries(mut self, input: crate::types::PublishBatchRequestEntry) -> Self {
         self.inner = self.inner.publish_batch_request_entries(input);
         self
     }
@@ -154,9 +139,7 @@ impl PublishBatchFluentBuilder {
         self
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn get_publish_batch_request_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
+    pub fn get_publish_batch_request_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
         self.inner.get_publish_batch_request_entries()
     }
 }

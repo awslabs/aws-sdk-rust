@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetObjectRetentionOutput`](crate::operation::get_object_retention::GetObjectRetentionOutput) with field(s):
     ///   - [`retention(Option<ObjectLockRetention>)`](crate::operation::get_object_retention::GetObjectRetentionOutput::retention): <p>The container element for an object's retention settings.</p>
     /// - On failure, responds with [`SdkError<GetObjectRetentionError>`](crate::operation::get_object_retention::GetObjectRetentionError)
-    pub fn get_object_retention(
-        &self,
-    ) -> crate::operation::get_object_retention::builders::GetObjectRetentionFluentBuilder {
-        crate::operation::get_object_retention::builders::GetObjectRetentionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_retention(&self) -> crate::operation::get_object_retention::builders::GetObjectRetentionFluentBuilder {
+        crate::operation::get_object_retention::builders::GetObjectRetentionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -83,9 +83,7 @@ impl Pipeline {
         self.ingest_endpoint_urls.as_deref()
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
-    pub fn log_publishing_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
@@ -102,9 +100,7 @@ impl Pipeline {
 
 /// A builder for [`Pipeline`](crate::types::Pipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -121,18 +117,12 @@ pub struct PipelineBuilder {
 }
 impl PipelineBuilder {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -188,10 +178,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The current status of the pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,10 +192,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The reason for the current status of the pipeline.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatusReason>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::PipelineStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
@@ -217,18 +201,12 @@ impl PipelineBuilder {
         &self.status_reason
     }
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
-    pub fn pipeline_configuration_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
-    pub fn set_pipeline_configuration_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_configuration_body = input;
         self
     }
@@ -242,10 +220,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The date and time when the pipeline was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -259,10 +234,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The date and time when the pipeline was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -275,27 +247,19 @@ impl PipelineBuilder {
     /// To override the contents of this collection use [`set_ingest_endpoint_urls`](Self::set_ingest_endpoint_urls).
     ///
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn ingest_endpoint_urls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingest_endpoint_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ingest_endpoint_urls.unwrap_or_default();
         v.push(input.into());
         self.ingest_endpoint_urls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn set_ingest_endpoint_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ingest_endpoint_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ingest_endpoint_urls = input;
         self
     }
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn get_ingest_endpoint_urls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ingest_endpoint_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ingest_endpoint_urls
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
@@ -304,17 +268,12 @@ impl PipelineBuilder {
         self
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPublishingOptions>,
-    ) -> Self {
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::LogPublishingOptions>) -> Self {
         self.log_publishing_options = input;
         self
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogPublishingOptions> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptions> {
         &self.log_publishing_options
     }
     /// Appends an item to `vpc_endpoints`.
@@ -329,17 +288,12 @@ impl PipelineBuilder {
         self
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
-    pub fn set_vpc_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
-    ) -> Self {
+    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
         self.vpc_endpoints = input;
         self
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
-    pub fn get_vpc_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
     /// Consumes the builder and constructs a [`Pipeline`](crate::types::Pipeline).

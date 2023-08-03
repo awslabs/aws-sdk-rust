@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     ///   - [`snapshot_copy_grants(Option<Vec<SnapshotCopyGrant>>)`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput::snapshot_copy_grants): <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotCopyGrantsError>`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError)
-    pub fn describe_snapshot_copy_grants(&self) -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsFluentBuilder{
+    pub fn describe_snapshot_copy_grants(
+        &self,
+    ) -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsFluentBuilder {
         crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsFluentBuilder::new(self.handle.clone())
     }
 }

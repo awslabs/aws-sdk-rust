@@ -37,10 +37,7 @@ impl GetNotificationChannelFluentBuilder {
         }
     }
     /// Access the GetNotificationChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetNotificationChannelFluentBuilder {
             crate::operation::get_notification_channel::GetNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_channel::GetNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_channel::GetNotificationChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetNotificationChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_notification_channel::GetNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_channel::GetNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_channel::GetNotificationChannelError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_notification_channel::GetNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_channel::GetNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_channel::GetNotificationChannelError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetNotificationChannelFluentBuilder {
             crate::operation::get_notification_channel::GetNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_channel::GetNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_channel::GetNotificationChannelError>,
     > {
         self.customize_middleware().await
     }

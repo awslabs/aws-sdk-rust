@@ -10,10 +10,7 @@ impl GetNamedQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_named_query::GetNamedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_named_query::GetNamedQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_named_query::GetNamedQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_named_query();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetNamedQueryFluentBuilder {
         }
     }
     /// Access the GetNamedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_named_query::builders::GetNamedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_named_query::builders::GetNamedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetNamedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetNamedQueryFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.named_query_id(input.into());
         self
     }
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_named_query_id(input);
         self
     }

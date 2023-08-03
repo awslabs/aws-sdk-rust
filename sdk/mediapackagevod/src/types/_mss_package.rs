@@ -37,9 +37,7 @@ impl MssPackage {
 
 /// A builder for [`MssPackage`](crate::types::MssPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MssPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::MssEncryption>,
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
@@ -52,10 +50,7 @@ impl MssPackageBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::MssEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::MssEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -75,17 +70,12 @@ impl MssPackageBuilder {
         self
     }
     /// A list of MSS manifest configurations.
-    pub fn set_mss_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
-    ) -> Self {
+    pub fn set_mss_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>) -> Self {
         self.mss_manifests = input;
         self
     }
     /// A list of MSS manifest configurations.
-    pub fn get_mss_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MssManifest>> {
+    pub fn get_mss_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MssManifest>> {
         &self.mss_manifests
     }
     /// The duration (in seconds) of each segment.

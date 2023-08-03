@@ -39,13 +39,7 @@
 /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264FieldEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for H264FieldEncoding {
             "FORCE_FIELD" => H264FieldEncoding::ForceField,
             "MBAFF" => H264FieldEncoding::Mbaff,
             "PAFF" => H264FieldEncoding::Paff,
-            other => {
-                H264FieldEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264FieldEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

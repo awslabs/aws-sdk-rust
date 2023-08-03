@@ -26,8 +26,7 @@ impl GetAssessmentReportUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder,
+    inner: crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder,
 }
 impl GetAssessmentReportUrlFluentBuilder {
     /// Creates a new `GetAssessmentReportUrl`.
@@ -38,10 +37,7 @@ impl GetAssessmentReportUrlFluentBuilder {
         }
     }
     /// Access the GetAssessmentReportUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAssessmentReportUrlFluentBuilder {
             crate::operation::get_assessment_report_url::GetAssessmentReportUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report_url::GetAssessmentReportUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAssessmentReportUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAssessmentReportUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report_url::GetAssessmentReportUrlError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAssessmentReportUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report_url::GetAssessmentReportUrlError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetAssessmentReportUrlFluentBuilder {
             crate::operation::get_assessment_report_url::GetAssessmentReportUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report_url::GetAssessmentReportUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn assessment_report_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_report_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn set_assessment_report_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_report_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl GetAssessmentReportUrlFluentBuilder {
         self.inner.get_assessment_report_id()
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }

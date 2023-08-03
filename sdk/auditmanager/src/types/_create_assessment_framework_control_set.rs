@@ -9,8 +9,7 @@ pub struct CreateAssessmentFrameworkControlSet {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
     #[doc(hidden)]
-    pub controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
@@ -18,9 +17,7 @@ impl CreateAssessmentFrameworkControlSet {
         self.name.as_deref()
     }
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
-    pub fn controls(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CreateAssessmentFrameworkControl]> {
+    pub fn controls(&self) -> ::std::option::Option<&[crate::types::CreateAssessmentFrameworkControl]> {
         self.controls.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl CreateAssessmentFrameworkControlSet {
 
 /// A builder for [`CreateAssessmentFrameworkControlSet`](crate::types::CreateAssessmentFrameworkControlSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl CreateAssessmentFrameworkControlSetBuilder {
     /// <p> The name of the control set. </p>
@@ -68,20 +62,12 @@ impl CreateAssessmentFrameworkControlSetBuilder {
         self
     }
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
-    pub fn set_controls(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>,
-        >,
-    ) -> Self {
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
         self.controls = input;
         self
     }
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
-    pub fn get_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>
-    {
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>> {
         &self.controls
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControlSet`](crate::types::CreateAssessmentFrameworkControlSet).

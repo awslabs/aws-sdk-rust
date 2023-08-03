@@ -31,17 +31,14 @@ impl ListPlatformVersionsInput {
 }
 impl ListPlatformVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPlatformVersionsInput`](crate::operation::list_platform_versions::ListPlatformVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder {
         crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlatformVersionsInput`](crate::operation::list_platform_versions::ListPlatformVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformVersionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -60,17 +57,12 @@ impl ListPlatformVersionsInputBuilder {
         self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
         &self.filters
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
@@ -107,16 +99,12 @@ impl ListPlatformVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPlatformVersionsInput`](crate::operation::list_platform_versions::ListPlatformVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_platform_versions::ListPlatformVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_platform_versions::ListPlatformVersionsInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_platform_versions::ListPlatformVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_platform_versions::ListPlatformVersionsInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

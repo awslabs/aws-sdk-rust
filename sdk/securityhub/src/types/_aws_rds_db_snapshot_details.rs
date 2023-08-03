@@ -102,8 +102,7 @@ pub struct AwsRdsDbSnapshotDetails {
     pub iam_database_authentication_enabled: bool,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     #[doc(hidden)]
-    pub processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     /// <p>The identifier for the source DB instance.</p>
     #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
@@ -231,9 +230,7 @@ impl AwsRdsDbSnapshotDetails {
         self.iam_database_authentication_enabled
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn processor_features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
+    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
         self.processor_features.as_deref()
     }
     /// <p>The identifier for the source DB instance.</p>
@@ -250,9 +247,7 @@ impl AwsRdsDbSnapshotDetails {
 
 /// A builder for [`AwsRdsDbSnapshotDetails`](crate::types::AwsRdsDbSnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbSnapshotDetailsBuilder {
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -279,24 +274,17 @@ pub struct AwsRdsDbSnapshotDetailsBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
-    pub(crate) processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSnapshotDetailsBuilder {
     /// <p>The name or ARN of the DB snapshot that is used to restore the DB instance.</p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the DB snapshot that is used to restore the DB instance.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
         self
     }
@@ -305,18 +293,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.db_snapshot_identifier
     }
     /// <p>A name for the DB instance.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the DB instance.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -325,18 +307,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.db_instance_identifier
     }
     /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
-    pub fn snapshot_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
-    pub fn set_snapshot_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_create_time = input;
         self
     }
@@ -449,18 +425,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.port
     }
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -483,18 +453,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.vpc_id
     }
     /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
-    pub fn instance_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
-    pub fn set_instance_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_create_time = input;
         self
     }
@@ -503,18 +467,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.instance_create_time
     }
     /// <p>The master user name for the DB snapshot.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user name for the DB snapshot.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -523,18 +481,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.master_username
     }
     /// <p>The version of the database engine.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the database engine.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -543,18 +495,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.engine_version
     }
     /// <p>License model information for the restored DB instance.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License model information for the restored DB instance.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -563,18 +509,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.license_model
     }
     /// <p>The type of the DB snapshot.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the DB snapshot.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -597,18 +537,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.iops
     }
     /// <p>The option group name for the DB snapshot.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The option group name for the DB snapshot.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -631,18 +565,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.percent_progress
     }
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -651,25 +579,17 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.source_region
     }
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
-    pub fn source_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
-    pub fn set_source_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_snapshot_identifier = input;
         self
     }
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
-    pub fn get_source_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_snapshot_identifier
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
@@ -702,18 +622,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         &self.storage_type
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    pub fn tde_credential_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tde_credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tde_credential_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    pub fn set_tde_credential_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tde_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tde_credential_arn = input;
         self
     }
@@ -769,10 +683,7 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
@@ -792,32 +703,21 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn set_processor_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
-    ) -> Self {
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>) -> Self {
         self.processor_features = input;
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn get_processor_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
         &self.processor_features
     }
     /// <p>The identifier for the source DB instance.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the source DB instance.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
@@ -852,9 +752,7 @@ impl AwsRdsDbSnapshotDetailsBuilder {
             encrypted: self.encrypted.unwrap_or_default(),
             kms_key_id: self.kms_key_id,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self
-                .iam_database_authentication_enabled
-                .unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
             processor_features: self.processor_features,
             dbi_resource_id: self.dbi_resource_id,
         }

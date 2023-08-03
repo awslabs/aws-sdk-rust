@@ -37,9 +37,7 @@ impl UpdateSecurityConfigFluentBuilder {
         }
     }
     /// Access the UpdateSecurityConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateSecurityConfigFluentBuilder {
             crate::operation::update_security_config::UpdateSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_config::UpdateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_config::UpdateSecurityConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateSecurityConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_config::UpdateSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_config::UpdateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_config::UpdateSecurityConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_security_config::UpdateSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_config::UpdateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_config::UpdateSecurityConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateSecurityConfigFluentBuilder {
             crate::operation::update_security_config::UpdateSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_security_config::UpdateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_security_config::UpdateSecurityConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateSecurityConfigFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn config_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_version(input.into());
         self
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn set_config_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_version(input);
         self
     }
@@ -176,10 +157,7 @@ impl UpdateSecurityConfigFluentBuilder {
         self
     }
     /// <p>SAML options in in the form of a key-value map.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.inner = self.inner.set_saml_options(input);
         self
     }

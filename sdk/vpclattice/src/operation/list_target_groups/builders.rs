@@ -10,10 +10,7 @@ impl ListTargetGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_target_groups::ListTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_target_groups::ListTargetGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_target_groups::ListTargetGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_target_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTargetGroupsFluentBuilder {
         }
     }
     /// Access the ListTargetGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTargetGroupsFluentBuilder {
             crate::operation::list_target_groups::ListTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_target_groups::ListTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_target_groups::ListTargetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTargetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_target_groups::ListTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_target_groups::ListTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_target_groups::ListTargetGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_target_groups::ListTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_target_groups::ListTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_target_groups::ListTargetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTargetGroupsFluentBuilder {
             crate::operation::list_target_groups::ListTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_target_groups::ListTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_target_groups::ListTargetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_target_groups::paginator::ListTargetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_target_groups::paginator::ListTargetGroupsPaginator {
-        crate::operation::list_target_groups::paginator::ListTargetGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_target_groups::paginator::ListTargetGroupsPaginator {
+        crate::operation::list_target_groups::paginator::ListTargetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,18 +141,12 @@ impl ListTargetGroupsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn vpc_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_vpc_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_identifier(input);
         self
     }
@@ -187,10 +160,7 @@ impl ListTargetGroupsFluentBuilder {
         self
     }
     /// <p>The target group type.</p>
-    pub fn set_target_group_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupType>,
-    ) -> Self {
+    pub fn set_target_group_type(mut self, input: ::std::option::Option<crate::types::TargetGroupType>) -> Self {
         self.inner = self.inner.set_target_group_type(input);
         self
     }

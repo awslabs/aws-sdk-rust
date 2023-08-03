@@ -43,9 +43,7 @@ impl DeleteAnalysisInput {
 
 /// A builder for [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DeleteAnalysisInputBuilder {
 }
 impl DeleteAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl DeleteAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_analysis::DeleteAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_analysis::DeleteAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_analysis::DeleteAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

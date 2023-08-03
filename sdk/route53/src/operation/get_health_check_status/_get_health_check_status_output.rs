@@ -6,15 +6,12 @@
 pub struct GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
     #[doc(hidden)]
-    pub health_check_observations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub fn health_check_observations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
+    pub fn health_check_observations(&self) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
         self.health_check_observations.as_deref()
     }
 }
@@ -25,21 +22,16 @@ impl ::aws_http::request_id::RequestId for GetHealthCheckStatusOutput {
 }
 impl GetHealthCheckStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusOutput`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder {
         crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetHealthCheckStatusOutput`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckStatusOutputBuilder {
-    pub(crate) health_check_observations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckStatusOutputBuilder {
@@ -48,27 +40,19 @@ impl GetHealthCheckStatusOutputBuilder {
     /// To override the contents of this collection use [`set_health_check_observations`](Self::set_health_check_observations).
     ///
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub fn health_check_observations(
-        mut self,
-        input: crate::types::HealthCheckObservation,
-    ) -> Self {
+    pub fn health_check_observations(mut self, input: crate::types::HealthCheckObservation) -> Self {
         let mut v = self.health_check_observations.unwrap_or_default();
         v.push(input);
         self.health_check_observations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub fn set_health_check_observations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
-    ) -> Self {
+    pub fn set_health_check_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>) -> Self {
         self.health_check_observations = input;
         self
     }
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub fn get_health_check_observations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
+    pub fn get_health_check_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
         &self.health_check_observations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

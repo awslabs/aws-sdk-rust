@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`number_of_profiles_in_sample(i64)`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput::number_of_profiles_in_sample): <p>The number of profiles found in this preview dry run.</p>
     ///   - [`number_of_profiles_will_be_merged(i64)`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput::number_of_profiles_will_be_merged): <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
     /// - On failure, responds with [`SdkError<GetAutoMergingPreviewError>`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError)
-    pub fn get_auto_merging_preview(
-        &self,
-    ) -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewFluentBuilder
-    {
+    pub fn get_auto_merging_preview(&self) -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewFluentBuilder {
         crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewFluentBuilder::new(self.handle.clone())
     }
 }

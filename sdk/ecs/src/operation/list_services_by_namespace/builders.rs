@@ -26,8 +26,7 @@ impl ListServicesByNamespaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicesByNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder,
+    inner: crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder,
 }
 impl ListServicesByNamespaceFluentBuilder {
     /// Creates a new `ListServicesByNamespace`.
@@ -38,10 +37,7 @@ impl ListServicesByNamespaceFluentBuilder {
         }
     }
     /// Access the ListServicesByNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListServicesByNamespaceFluentBuilder {
             crate::operation::list_services_by_namespace::ListServicesByNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_services_by_namespace::ListServicesByNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_services_by_namespace::ListServicesByNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListServicesByNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListServicesByNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_services_by_namespace::ListServicesByNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_services_by_namespace::ListServicesByNamespaceError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListServicesByNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_services_by_namespace::ListServicesByNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_services_by_namespace::ListServicesByNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListServicesByNamespaceFluentBuilder {
             crate::operation::list_services_by_namespace::ListServicesByNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_services_by_namespace::ListServicesByNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_services_by_namespace::ListServicesByNamespaceError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator {
         crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::new(self.handle, self.inner)
     }
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p>

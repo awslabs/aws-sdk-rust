@@ -27,7 +27,7 @@ impl DescribeProvisioningParametersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProvisioningParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder,
+    inner: crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder,
 }
 impl DescribeProvisioningParametersFluentBuilder {
     /// Creates a new `DescribeProvisioningParameters`.
@@ -38,7 +38,7 @@ impl DescribeProvisioningParametersFluentBuilder {
         }
     }
     /// Access the DescribeProvisioningParameters as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeProvisioningParametersFluentBuilder {
             crate::operation::describe_provisioning_parameters::DescribeProvisioningParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeProvisioningParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeProvisioningParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeProvisioningParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeProvisioningParametersFluentBuilder {
             crate::operation::describe_provisioning_parameters::DescribeProvisioningParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl DescribeProvisioningParametersFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -138,10 +124,7 @@ impl DescribeProvisioningParametersFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -182,18 +165,12 @@ impl DescribeProvisioningParametersFluentBuilder {
         self.inner.get_product_name()
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_id(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -202,18 +179,12 @@ impl DescribeProvisioningParametersFluentBuilder {
         self.inner.get_provisioning_artifact_id()
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_name(input.into());
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_name(input);
         self
     }

@@ -30,9 +30,7 @@ impl SavingsPlanRateFilter {
 
 /// A builder for [`SavingsPlanRateFilter`](crate::types::SavingsPlanRateFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanRateFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanRateFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SavingsPlanRateFilterBuilder {
         self
     }
     /// <p>The filter name.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanRateFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SavingsPlanRateFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl SavingsPlanRateFilterBuilder {
         self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

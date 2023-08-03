@@ -24,9 +24,7 @@ impl ShuffleConfig {
 
 /// A builder for [`ShuffleConfig`](crate::types::ShuffleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShuffleConfigBuilder {
     pub(crate) seed: ::std::option::Option<i64>,
 }

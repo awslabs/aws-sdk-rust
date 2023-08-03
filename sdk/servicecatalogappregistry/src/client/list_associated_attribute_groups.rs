@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`attribute_groups(Option<Vec<String>>)`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput::attribute_groups): <p>A list of attribute group IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
     /// - On failure, responds with [`SdkError<ListAssociatedAttributeGroupsError>`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError)
-    pub fn list_associated_attribute_groups(&self) -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder{
+    pub fn list_associated_attribute_groups(
+        &self,
+    ) -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder {
         crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsFluentBuilder::new(self.handle.clone())
     }
 }

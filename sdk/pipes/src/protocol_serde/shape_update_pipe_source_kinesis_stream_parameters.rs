@@ -12,16 +12,11 @@ pub fn ser_update_pipe_source_kinesis_stream_parameters(
     if let Some(var_2) = &input.dead_letter_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DeadLetterConfig").start_object();
-        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.on_partial_batch_item_failure {
-        object
-            .key("OnPartialBatchItemFailure")
-            .string(var_4.as_str());
+        object.key("OnPartialBatchItemFailure").string(var_4.as_str());
     }
     if let Some(var_5) = &input.maximum_batching_window_in_seconds {
         object.key("MaximumBatchingWindowInSeconds").number(

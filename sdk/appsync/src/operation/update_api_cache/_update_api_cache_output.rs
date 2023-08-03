@@ -29,9 +29,7 @@ impl UpdateApiCacheOutput {
 
 /// A builder for [`UpdateApiCacheOutput`](crate::operation::update_api_cache::UpdateApiCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiCacheOutputBuilder {
     pub(crate) api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,

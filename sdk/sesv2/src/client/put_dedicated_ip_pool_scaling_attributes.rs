@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`scaling_mode(ScalingMode)`](crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder::scaling_mode) / [`set_scaling_mode(Option<ScalingMode>)`](crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder::set_scaling_mode): <p>The scaling mode to apply to the dedicated IP pool.</p> <note>   <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>  </note>
     /// - On success, responds with [`PutDedicatedIpPoolScalingAttributesOutput`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput)
     /// - On failure, responds with [`SdkError<PutDedicatedIpPoolScalingAttributesError>`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesError)
-    pub fn put_dedicated_ip_pool_scaling_attributes(&self) -> crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder{
-        crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder::new(self.handle.clone())
+    pub fn put_dedicated_ip_pool_scaling_attributes(
+        &self,
+    ) -> crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder {
+        crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutMetricFilterOutput {
 }
 impl PutMetricFilterOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricFilterOutput`](crate::operation::put_metric_filter::PutMetricFilterOutput).
-    pub fn builder() -> crate::operation::put_metric_filter::builders::PutMetricFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_metric_filter::builders::PutMetricFilterOutputBuilder {
         crate::operation::put_metric_filter::builders::PutMetricFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMetricFilterOutput`](crate::operation::put_metric_filter::PutMetricFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricFilterOutputBuilder {
     _request_id: Option<String>,
 }

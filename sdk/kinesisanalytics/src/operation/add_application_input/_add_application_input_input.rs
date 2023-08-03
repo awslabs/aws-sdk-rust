@@ -30,18 +30,14 @@ impl AddApplicationInputInput {
 }
 impl AddApplicationInputInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
-    pub fn builder(
-    ) -> crate::operation::add_application_input::builders::AddApplicationInputInputBuilder {
-        crate::operation::add_application_input::builders::AddApplicationInputInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_application_input::builders::AddApplicationInputInputBuilder {
+        crate::operation::add_application_input::builders::AddApplicationInputInputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationInputInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -49,18 +45,12 @@ pub struct AddApplicationInputInputBuilder {
 }
 impl AddApplicationInputInputBuilder {
     /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -99,16 +89,12 @@ impl AddApplicationInputInputBuilder {
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_input::AddApplicationInputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_application_input::AddApplicationInputInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                input: self.input,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_application_input::AddApplicationInputInput {
+            application_name: self.application_name,
+            current_application_version_id: self.current_application_version_id,
+            input: self.input,
+        })
     }
 }

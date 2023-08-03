@@ -29,9 +29,7 @@ impl DeleteBranchOutput {
 
 /// A builder for [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBranchOutputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,

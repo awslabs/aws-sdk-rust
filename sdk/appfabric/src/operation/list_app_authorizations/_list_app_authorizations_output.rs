@@ -5,8 +5,7 @@
 pub struct ListAppAuthorizationsOutput {
     /// <p>Contains a list of app authorization summaries.</p>
     #[doc(hidden)]
-    pub app_authorization_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
+    pub app_authorization_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAppAuthorizationsOutput {
 }
 impl ListAppAuthorizationsOutput {
     /// <p>Contains a list of app authorization summaries.</p>
-    pub fn app_authorization_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppAuthorizationSummary]> {
+    pub fn app_authorization_summary_list(&self) -> ::std::option::Option<&[crate::types::AppAuthorizationSummary]> {
         self.app_authorization_summary_list.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppAuthorizationsOutput {
 }
 impl ListAppAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppAuthorizationsOutput`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder {
         crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppAuthorizationsOutput`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppAuthorizationsOutputBuilder {
-    pub(crate) app_authorization_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
+    pub(crate) app_authorization_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListAppAuthorizationsOutputBuilder {
     /// To override the contents of this collection use [`set_app_authorization_summary_list`](Self::set_app_authorization_summary_list).
     ///
     /// <p>Contains a list of app authorization summaries.</p>
-    pub fn app_authorization_summary_list(
-        mut self,
-        input: crate::types::AppAuthorizationSummary,
-    ) -> Self {
+    pub fn app_authorization_summary_list(mut self, input: crate::types::AppAuthorizationSummary) -> Self {
         let mut v = self.app_authorization_summary_list.unwrap_or_default();
         v.push(input);
         self.app_authorization_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListAppAuthorizationsOutputBuilder {
         self
     }
     /// <p>Contains a list of app authorization summaries.</p>
-    pub fn get_app_authorization_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>> {
+    pub fn get_app_authorization_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>> {
         &self.app_authorization_summary_list
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>

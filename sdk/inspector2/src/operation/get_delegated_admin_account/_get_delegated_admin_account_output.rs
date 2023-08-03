@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDelegatedAdminAccountOutput {
 }
 impl GetDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountOutput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput).
-    pub fn builder() -> crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountOutputBuilder {
         crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDelegatedAdminAccountOutput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDelegatedAdminAccountOutputBuilder {
     pub(crate) delegated_admin: ::std::option::Option<crate::types::DelegatedAdmin>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetDelegatedAdminAccountOutputBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-    pub fn set_delegated_admin(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegatedAdmin>,
-    ) -> Self {
+    pub fn set_delegated_admin(mut self, input: ::std::option::Option<crate::types::DelegatedAdmin>) -> Self {
         self.delegated_admin = input;
         self
     }
@@ -63,9 +58,7 @@ impl GetDelegatedAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDelegatedAdminAccountOutput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput {
+    pub fn build(self) -> crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput {
         crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput {
             delegated_admin: self.delegated_admin,
             _request_id: self._request_id,

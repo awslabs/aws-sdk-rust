@@ -33,9 +33,7 @@ pub fn ser_event_destination(
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("CloudWatchDestination");
     if let Some(var_12) = &input.cloud_watch_destination {
-        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(
-            scope_11, var_12,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(scope_11, var_12)?;
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("SNSDestination");

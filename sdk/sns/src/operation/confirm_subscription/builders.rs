@@ -10,10 +10,7 @@ impl ConfirmSubscriptionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_subscription::ConfirmSubscriptionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.confirm_subscription();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ConfirmSubscriptionFluentBuilder {
         }
     }
     /// Access the ConfirmSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::confirm_subscription::builders::ConfirmSubscriptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::confirm_subscription::builders::ConfirmSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ConfirmSubscriptionFluentBuilder {
             crate::operation::confirm_subscription::ConfirmSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_subscription::ConfirmSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ConfirmSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ConfirmSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_subscription::ConfirmSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ConfirmSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_subscription::ConfirmSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ConfirmSubscriptionFluentBuilder {
             crate::operation::confirm_subscription::ConfirmSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_subscription::ConfirmSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_subscription::ConfirmSubscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl ConfirmSubscriptionFluentBuilder {
         self.inner.get_token()
     }
     /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
-    pub fn authenticate_on_unsubscribe(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authenticate_on_unsubscribe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authenticate_on_unsubscribe(input.into());
         self
     }
     /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
-    pub fn set_authenticate_on_unsubscribe(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authenticate_on_unsubscribe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authenticate_on_unsubscribe(input);
         self
     }

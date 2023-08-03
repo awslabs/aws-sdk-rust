@@ -37,9 +37,7 @@ impl GetRequestValidatorsFluentBuilder {
         }
     }
     /// Access the GetRequestValidators as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_request_validators::builders::GetRequestValidatorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_request_validators::builders::GetRequestValidatorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetRequestValidatorsFluentBuilder {
             crate::operation::get_request_validators::GetRequestValidators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_request_validators::GetRequestValidatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_request_validators::GetRequestValidatorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetRequestValidatorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetRequestValidatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_request_validators::GetRequestValidatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_request_validators::GetRequestValidatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_request_validators::GetRequestValidatorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetRequestValidatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_request_validators::GetRequestValidatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_request_validators::GetRequestValidatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_request_validators::GetRequestValidatorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetRequestValidatorsFluentBuilder {
             crate::operation::get_request_validators::GetRequestValidators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_request_validators::GetRequestValidatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_request_validators::GetRequestValidatorsError>,
     > {
         self.customize_middleware().await
     }

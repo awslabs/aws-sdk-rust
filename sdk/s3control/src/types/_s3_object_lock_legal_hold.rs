@@ -23,9 +23,7 @@ impl S3ObjectLockLegalHold {
 
 /// A builder for [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ObjectLockLegalHoldBuilder {
     pub(crate) status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
 }
@@ -36,10 +34,7 @@ impl S3ObjectLockLegalHoldBuilder {
         self
     }
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl S3ObjectLockLegalHoldBuilder {
     }
     /// Consumes the builder and constructs a [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
     pub fn build(self) -> crate::types::S3ObjectLockLegalHold {
-        crate::types::S3ObjectLockLegalHold {
-            status: self.status,
-        }
+        crate::types::S3ObjectLockLegalHold { status: self.status }
     }
 }

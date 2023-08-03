@@ -30,9 +30,7 @@ impl ColumnStatisticsError {
 
 /// A builder for [`ColumnStatisticsError`](crate::types::ColumnStatisticsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnStatisticsErrorBuilder {
     pub(crate) column_statistics: ::std::option::Option<crate::types::ColumnStatistics>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
@@ -44,10 +42,7 @@ impl ColumnStatisticsErrorBuilder {
         self
     }
     /// <p>The <code>ColumnStatistics</code> of the column.</p>
-    pub fn set_column_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnStatistics>,
-    ) -> Self {
+    pub fn set_column_statistics(mut self, input: ::std::option::Option<crate::types::ColumnStatistics>) -> Self {
         self.column_statistics = input;
         self
     }

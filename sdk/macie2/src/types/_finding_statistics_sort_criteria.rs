@@ -13,9 +13,7 @@ pub struct FindingStatisticsSortCriteria {
 }
 impl FindingStatisticsSortCriteria {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn attribute_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingStatisticsSortAttributeName> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::FindingStatisticsSortAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
@@ -32,35 +30,24 @@ impl FindingStatisticsSortCriteria {
 
 /// A builder for [`FindingStatisticsSortCriteria`](crate::types::FindingStatisticsSortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingStatisticsSortCriteriaBuilder {
-    pub(crate) attribute_name:
-        ::std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
+    pub(crate) attribute_name: ::std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl FindingStatisticsSortCriteriaBuilder {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn attribute_name(
-        mut self,
-        input: crate::types::FindingStatisticsSortAttributeName,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: crate::types::FindingStatisticsSortAttributeName) -> Self {
         self.attribute_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::FindingStatisticsSortAttributeName>) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn get_attribute_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingStatisticsSortAttributeName> {
+    pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::FindingStatisticsSortAttributeName> {
         &self.attribute_name
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>

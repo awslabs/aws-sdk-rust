@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RestoreCoreNetworkPolicyVersionOutput
 }
 impl RestoreCoreNetworkPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionOutput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput).
-    pub fn builder() -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionOutputBuilder{
+    pub fn builder() -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionOutputBuilder {
         crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreCoreNetworkPolicyVersionOutput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreCoreNetworkPolicyVersionOutputBuilder {
     pub(crate) core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl RestoreCoreNetworkPolicyVersionOutputBuilder {
         self
     }
     /// <p>Describes the restored core network policy.</p>
-    pub fn set_core_network_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkPolicy>,
-    ) -> Self {
+    pub fn set_core_network_policy(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicy>) -> Self {
         self.core_network_policy = input;
         self
     }
     /// <p>Describes the restored core network policy.</p>
-    pub fn get_core_network_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
+    pub fn get_core_network_policy(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
         &self.core_network_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,13 +58,9 @@ impl RestoreCoreNetworkPolicyVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreCoreNetworkPolicyVersionOutput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput
-    {
+    pub fn build(self) -> crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput {
         crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput {
-            core_network_policy: self.core_network_policy
-            ,
+            core_network_policy: self.core_network_policy,
             _request_id: self._request_id,
         }
     }

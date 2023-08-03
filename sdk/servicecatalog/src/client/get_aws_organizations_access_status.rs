@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`GetAwsOrganizationsAccessStatusOutput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput) with field(s):
     ///   - [`access_status(Option<AccessStatus>)`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput::access_status): <p>The status of the portfolio share feature.</p>
     /// - On failure, responds with [`SdkError<GetAWSOrganizationsAccessStatusError>`](crate::operation::get_aws_organizations_access_status::GetAWSOrganizationsAccessStatusError)
-    pub fn get_aws_organizations_access_status(&self) -> crate::operation::get_aws_organizations_access_status::builders::GetAWSOrganizationsAccessStatusFluentBuilder{
+    pub fn get_aws_organizations_access_status(
+        &self,
+    ) -> crate::operation::get_aws_organizations_access_status::builders::GetAWSOrganizationsAccessStatusFluentBuilder {
         crate::operation::get_aws_organizations_access_status::builders::GetAWSOrganizationsAccessStatusFluentBuilder::new(self.handle.clone())
     }
 }

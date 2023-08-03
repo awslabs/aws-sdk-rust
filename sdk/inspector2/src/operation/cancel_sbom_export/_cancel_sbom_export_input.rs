@@ -15,17 +15,14 @@ impl CancelSbomExportInput {
 }
 impl CancelSbomExportInput {
     /// Creates a new builder-style object to manufacture [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
-    pub fn builder() -> crate::operation::cancel_sbom_export::builders::CancelSbomExportInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_sbom_export::builders::CancelSbomExportInputBuilder {
         crate::operation::cancel_sbom_export::builders::CancelSbomExportInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSbomExportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl CancelSbomExportInputBuilder {
     /// Consumes the builder and constructs a [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_sbom_export::CancelSbomExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_sbom_export::CancelSbomExportInput {
-                report_id: self.report_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_sbom_export::CancelSbomExportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_sbom_export::CancelSbomExportInput { report_id: self.report_id })
     }
 }

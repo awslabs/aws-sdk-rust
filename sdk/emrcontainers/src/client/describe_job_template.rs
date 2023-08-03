@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput) with field(s):
     ///   - [`job_template(Option<JobTemplate>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::job_template): <p>This output displays information about the specified job template.</p>
     /// - On failure, responds with [`SdkError<DescribeJobTemplateError>`](crate::operation::describe_job_template::DescribeJobTemplateError)
-    pub fn describe_job_template(
-        &self,
-    ) -> crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder {
-        crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_template(&self) -> crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder {
+        crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

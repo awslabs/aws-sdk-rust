@@ -58,9 +58,7 @@ impl SegmentDemographics {
 
 /// A builder for [`SegmentDemographics`](crate::types::SegmentDemographics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentDemographicsBuilder {
     pub(crate) app_version: ::std::option::Option<crate::types::SetDimension>,
     pub(crate) channel: ::std::option::Option<crate::types::SetDimension>,
@@ -76,10 +74,7 @@ impl SegmentDemographicsBuilder {
         self
     }
     /// <p>The app version criteria for the segment.</p>
-    pub fn set_app_version(
-        mut self,
-        input: ::std::option::Option<crate::types::SetDimension>,
-    ) -> Self {
+    pub fn set_app_version(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
         self.app_version = input;
         self
     }
@@ -107,10 +102,7 @@ impl SegmentDemographicsBuilder {
         self
     }
     /// <p>The device type criteria for the segment.</p>
-    pub fn set_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SetDimension>,
-    ) -> Self {
+    pub fn set_device_type(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
         self.device_type = input;
         self
     }
@@ -152,10 +144,7 @@ impl SegmentDemographicsBuilder {
         self
     }
     /// <p>The device platform criteria for the segment.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::SetDimension>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
         self.platform = input;
         self
     }

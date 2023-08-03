@@ -6,10 +6,7 @@ pub fn ser_create_kx_cluster_input(
     if let Some(var_1) = &input.auto_scaling_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("autoScalingConfiguration").start_object();
-        crate::protocol_serde::shape_auto_scaling_configuration::ser_auto_scaling_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_auto_scaling_configuration::ser_auto_scaling_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.availability_zone_id {
@@ -33,10 +30,7 @@ pub fn ser_create_kx_cluster_input(
     if let Some(var_9) = &input.capacity_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("capacityConfiguration").start_object();
-        crate::protocol_serde::shape_capacity_configuration::ser_capacity_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_capacity_configuration::ser_capacity_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.client_token {
@@ -54,10 +48,7 @@ pub fn ser_create_kx_cluster_input(
     if let Some(var_15) = &input.code {
         #[allow(unused_mut)]
         let mut object_16 = object.key("code").start_object();
-        crate::protocol_serde::shape_code_configuration::ser_code_configuration(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_code_configuration::ser_code_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.command_line_arguments {
@@ -112,10 +103,7 @@ pub fn ser_create_kx_cluster_input(
     if let Some(var_34) = &input.vpc_configuration {
         #[allow(unused_mut)]
         let mut object_35 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-            &mut object_35,
-            var_34,
-        )?;
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_35, var_34)?;
         object_35.finish();
     }
     Ok(())

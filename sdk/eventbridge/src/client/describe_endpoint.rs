@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::creation_time): <p>The time the endpoint you asked for information about was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::last_modified_time): <p>The last time the endpoint you asked for information about was modified.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::operation::describe_endpoint::DescribeEndpointError)
-    pub fn describe_endpoint(
-        &self,
-    ) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
-        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint(&self) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
+        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(self.handle.clone())
     }
 }

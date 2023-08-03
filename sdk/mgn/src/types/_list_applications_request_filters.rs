@@ -37,9 +37,7 @@ impl ListApplicationsRequestFilters {
 
 /// A builder for [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsRequestFiltersBuilder {
     pub(crate) application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,
@@ -51,27 +49,19 @@ impl ListApplicationsRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
     ///
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_i_ds.unwrap_or_default();
         v.push(input.into());
         self.application_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter applications list by application ID.</p>
-    pub fn set_application_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_i_ds = input;
         self
     }
     /// <p>Filter applications list by application ID.</p>
-    pub fn get_application_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_i_ds
     }
     /// <p>Filter applications list by archival status.</p>
@@ -100,10 +90,7 @@ impl ListApplicationsRequestFiltersBuilder {
         self
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn set_wave_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wave_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wave_i_ds = input;
         self
     }

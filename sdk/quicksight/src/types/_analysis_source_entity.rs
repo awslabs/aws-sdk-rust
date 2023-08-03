@@ -23,9 +23,7 @@ impl AnalysisSourceEntity {
 
 /// A builder for [`AnalysisSourceEntity`](crate::types::AnalysisSourceEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisSourceEntityBuilder {
     pub(crate) source_template: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
 }
@@ -36,17 +34,12 @@ impl AnalysisSourceEntityBuilder {
         self
     }
     /// <p>The source template for the source entity of the analysis.</p>
-    pub fn set_source_template(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceTemplate>,
-    ) -> Self {
+    pub fn set_source_template(mut self, input: ::std::option::Option<crate::types::AnalysisSourceTemplate>) -> Self {
         self.source_template = input;
         self
     }
     /// <p>The source template for the source entity of the analysis.</p>
-    pub fn get_source_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalysisSourceTemplate> {
+    pub fn get_source_template(&self) -> &::std::option::Option<crate::types::AnalysisSourceTemplate> {
         &self.source_template
     }
     /// Consumes the builder and constructs a [`AnalysisSourceEntity`](crate::types::AnalysisSourceEntity).

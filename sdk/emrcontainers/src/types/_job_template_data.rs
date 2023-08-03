@@ -12,24 +12,17 @@ pub struct JobTemplateData {
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p> The configuration settings that are used to override defaults configuration.</p>
     #[doc(hidden)]
-    pub configuration_overrides:
-        ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
+    pub configuration_overrides: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
     #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration of parameters existing in the job template.</p>
     #[doc(hidden)]
-    pub parameter_configuration: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TemplateParameterConfiguration,
-        >,
-    >,
+    pub parameter_configuration:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>>,
     /// <p>The tags assigned to jobs started using the job template.</p>
     #[doc(hidden)]
-    pub job_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub job_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobTemplateData {
     /// <p>The execution role ARN of the job run.</p>
@@ -41,9 +34,7 @@ impl JobTemplateData {
         self.release_label.as_deref()
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParametricConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ParametricConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
@@ -53,20 +44,11 @@ impl JobTemplateData {
     /// <p>The configuration of parameters existing in the job template.</p>
     pub fn parameter_configuration(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TemplateParameterConfiguration,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>> {
         self.parameter_configuration.as_ref()
     }
     /// <p>The tags assigned to jobs started using the job template.</p>
-    pub fn job_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn job_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.job_tags.as_ref()
     }
 }
@@ -79,39 +61,24 @@ impl JobTemplateData {
 
 /// A builder for [`JobTemplateData`](crate::types::JobTemplateData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobTemplateDataBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_overrides:
-        ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
+    pub(crate) configuration_overrides: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
     pub(crate) job_driver: ::std::option::Option<crate::types::JobDriver>,
-    pub(crate) parameter_configuration: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TemplateParameterConfiguration,
-        >,
-    >,
-    pub(crate) job_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameter_configuration:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>>,
+    pub(crate) job_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobTemplateDataBuilder {
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -120,18 +87,12 @@ impl JobTemplateDataBuilder {
         &self.execution_role_arn
     }
     /// <p> The release version of Amazon EMR.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The release version of Amazon EMR.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -140,25 +101,17 @@ impl JobTemplateDataBuilder {
         &self.release_label
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
-    pub fn configuration_overrides(
-        mut self,
-        input: crate::types::ParametricConfigurationOverrides,
-    ) -> Self {
+    pub fn configuration_overrides(mut self, input: crate::types::ParametricConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ParametricConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
     /// <p> The configuration settings that are used to override defaults configuration.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParametricConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ParametricConfigurationOverrides> {
         &self.configuration_overrides
     }
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
@@ -193,12 +146,7 @@ impl JobTemplateDataBuilder {
     /// <p>The configuration of parameters existing in the job template.</p>
     pub fn set_parameter_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TemplateParameterConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>>,
     ) -> Self {
         self.parameter_configuration = input;
         self
@@ -206,12 +154,7 @@ impl JobTemplateDataBuilder {
     /// <p>The configuration of parameters existing in the job template.</p>
     pub fn get_parameter_configuration(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TemplateParameterConfiguration,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TemplateParameterConfiguration>> {
         &self.parameter_configuration
     }
     /// Adds a key-value pair to `job_tags`.
@@ -219,32 +162,19 @@ impl JobTemplateDataBuilder {
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
     ///
     /// <p>The tags assigned to jobs started using the job template.</p>
-    pub fn job_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.job_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.job_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to jobs started using the job template.</p>
-    pub fn set_job_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.job_tags = input;
         self
     }
     /// <p>The tags assigned to jobs started using the job template.</p>
-    pub fn get_job_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.job_tags
     }
     /// Consumes the builder and constructs a [`JobTemplateData`](crate::types::JobTemplateData).

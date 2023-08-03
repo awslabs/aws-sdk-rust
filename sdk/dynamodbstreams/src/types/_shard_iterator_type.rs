@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ShardIteratorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ShardIteratorType {
             "AT_SEQUENCE_NUMBER" => ShardIteratorType::AtSequenceNumber,
             "LATEST" => ShardIteratorType::Latest,
             "TRIM_HORIZON" => ShardIteratorType::TrimHorizon,
-            other => {
-                ShardIteratorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ShardIteratorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ShardIteratorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFTER_SEQUENCE_NUMBER",
-            "AT_SEQUENCE_NUMBER",
-            "LATEST",
-            "TRIM_HORIZON",
-        ]
+        &["AFTER_SEQUENCE_NUMBER", "AT_SEQUENCE_NUMBER", "LATEST", "TRIM_HORIZON"]
     }
 }
 impl ::std::convert::AsRef<str> for ShardIteratorType {

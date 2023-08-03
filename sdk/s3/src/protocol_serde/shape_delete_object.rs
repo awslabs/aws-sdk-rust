@@ -2,8 +2,7 @@
 pub fn ser_delete_object_headers(
     input: &crate::operation::delete_object::DeleteObjectInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.mfa {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_object_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "mfa",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-mfa", header_value);
@@ -27,10 +23,7 @@ pub fn ser_delete_object_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -44,10 +37,7 @@ pub fn ser_delete_object_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "bypass_governance_retention",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
@@ -60,10 +50,7 @@ pub fn ser_delete_object_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -77,24 +64,14 @@ pub fn de_delete_object_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_object::DeleteObjectOutput,
-    crate::operation::delete_object::DeleteObjectError,
-> {
+) -> std::result::Result<crate::operation::delete_object::DeleteObjectOutput, crate::operation::delete_object::DeleteObjectError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_object::DeleteObjectError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_object::DeleteObjectError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::delete_object::DeleteObjectError::generic(
-        generic,
-    ))
+    Err(crate::operation::delete_object::DeleteObjectError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -102,51 +79,27 @@ pub fn de_delete_object_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_object::DeleteObjectOutput,
-    crate::operation::delete_object::DeleteObjectError,
-> {
+) -> std::result::Result<crate::operation::delete_object::DeleteObjectOutput, crate::operation::delete_object::DeleteObjectError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_object::builders::DeleteObjectOutputBuilder::default();
+        let mut output = crate::operation::delete_object::builders::DeleteObjectOutputBuilder::default();
         output = output.set_delete_marker(
-            crate::protocol_serde::shape_delete_object_output::de_delete_marker_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::delete_object::DeleteObjectError::unhandled(
-                    "Failed to parse DeleteMarker from header `x-amz-delete-marker",
-                )
+            crate::protocol_serde::shape_delete_object_output::de_delete_marker_header(_response_headers).map_err(|_| {
+                crate::operation::delete_object::DeleteObjectError::unhandled("Failed to parse DeleteMarker from header `x-amz-delete-marker")
             })?,
         );
         output = output.set_request_charged(
-            crate::protocol_serde::shape_delete_object_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::delete_object::DeleteObjectError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
+            crate::protocol_serde::shape_delete_object_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::delete_object::DeleteObjectError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged")
             })?,
         );
         output = output.set_version_id(
-            crate::protocol_serde::shape_delete_object_output::de_version_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::delete_object::DeleteObjectError::unhandled(
-                    "Failed to parse VersionId from header `x-amz-version-id",
-                )
+            crate::protocol_serde::shape_delete_object_output::de_version_id_header(_response_headers).map_err(|_| {
+                crate::operation::delete_object::DeleteObjectError::unhandled("Failed to parse VersionId from header `x-amz-version-id")
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -37,9 +37,7 @@ impl DynamicDefaultValue {
 
 /// A builder for [`DynamicDefaultValue`](crate::types::DynamicDefaultValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamicDefaultValueBuilder {
     pub(crate) user_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) group_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
@@ -52,10 +50,7 @@ impl DynamicDefaultValueBuilder {
         self
     }
     /// <p>The column that contains the username.</p>
-    pub fn set_user_name_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_user_name_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.user_name_column = input;
         self
     }
@@ -69,10 +64,7 @@ impl DynamicDefaultValueBuilder {
         self
     }
     /// <p>The column that contains the group name.</p>
-    pub fn set_group_name_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_group_name_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.group_name_column = input;
         self
     }
@@ -86,17 +78,12 @@ impl DynamicDefaultValueBuilder {
         self
     }
     /// <p>The column that contains the default value of each user or group.</p>
-    pub fn set_default_value_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_default_value_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.default_value_column = input;
         self
     }
     /// <p>The column that contains the default value of each user or group.</p>
-    pub fn get_default_value_column(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+    pub fn get_default_value_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
         &self.default_value_column
     }
     /// Consumes the builder and constructs a [`DynamicDefaultValue`](crate::types::DynamicDefaultValue).

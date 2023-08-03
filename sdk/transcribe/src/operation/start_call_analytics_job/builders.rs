@@ -50,10 +50,7 @@ impl StartCallAnalyticsJobFluentBuilder {
         }
     }
     /// Access the StartCallAnalyticsJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +62,7 @@ impl StartCallAnalyticsJobFluentBuilder {
             crate::operation::start_call_analytics_job::StartCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +72,7 @@ impl StartCallAnalyticsJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +81,7 @@ impl StartCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError>,
     > {
         let op = self
             .inner
@@ -114,9 +104,7 @@ impl StartCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError>,
     > {
         self.send_middleware().await
     }
@@ -130,27 +118,19 @@ impl StartCallAnalyticsJobFluentBuilder {
             crate::operation::start_call_analytics_job::StartCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn call_analytics_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.call_analytics_job_name(input.into());
         self
     }
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn set_call_analytics_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_call_analytics_job_name(input);
         self
     }
@@ -182,10 +162,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    pub fn output_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_location(input.into());
         self
     }
@@ -198,10 +175,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_location(input);
         self
     }
@@ -233,10 +207,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_encryption_kms_key_id(input.into());
         self
     }
@@ -256,10 +227,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn set_output_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_encryption_kms_key_id(input);
         self
     }
@@ -279,28 +247,20 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn get_output_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_encryption_kms_key_id()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -316,10 +276,7 @@ impl StartCallAnalyticsJobFluentBuilder {
         self
     }
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
@@ -337,17 +294,12 @@ impl StartCallAnalyticsJobFluentBuilder {
         self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn set_channel_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    ) -> Self {
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
         self.inner = self.inner.set_channel_definitions(input);
         self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn get_channel_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         self.inner.get_channel_definitions()
     }
 }

@@ -37,10 +37,7 @@ impl GetCampaignStateBatchFluentBuilder {
         }
     }
     /// Access the GetCampaignStateBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetCampaignStateBatchFluentBuilder {
             crate::operation::get_campaign_state_batch::GetCampaignStateBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_state_batch::GetCampaignStateBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_state_batch::GetCampaignStateBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetCampaignStateBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetCampaignStateBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_state_batch::GetCampaignStateBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_state_batch::GetCampaignStateBatchError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetCampaignStateBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_state_batch::GetCampaignStateBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_state_batch::GetCampaignStateBatchError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetCampaignStateBatchFluentBuilder {
             crate::operation::get_campaign_state_batch::GetCampaignStateBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_campaign_state_batch::GetCampaignStateBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_campaign_state_batch::GetCampaignStateBatchError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +119,12 @@ impl GetCampaignStateBatchFluentBuilder {
         self
     }
     /// List of CampaignId
-    pub fn set_campaign_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_campaign_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_campaign_ids(input);
         self
     }
     /// List of CampaignId
-    pub fn get_campaign_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_campaign_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_campaign_ids()
     }
 }

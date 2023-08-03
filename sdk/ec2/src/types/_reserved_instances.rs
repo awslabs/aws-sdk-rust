@@ -85,9 +85,7 @@ impl ReservedInstances {
         self.instance_type.as_ref()
     }
     /// <p>The Reserved Instance product platform description.</p>
-    pub fn product_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RiProductDescription> {
+    pub fn product_description(&self) -> ::std::option::Option<&crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>The ID of the Reserved Instance.</p>
@@ -144,9 +142,7 @@ impl ReservedInstances {
 
 /// A builder for [`ReservedInstances`](crate::types::ReservedInstances).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstancesBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i64>,
@@ -163,25 +159,18 @@ pub struct ReservedInstancesBuilder {
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     pub(crate) offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
-    pub(crate) recurring_charges:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ReservedInstancesBuilder {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -251,10 +240,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The instance type on which the Reserved Instance can be used.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -268,32 +254,21 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The Reserved Instance product platform description.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<crate::types::RiProductDescription>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<crate::types::RiProductDescription>) -> Self {
         self.product_description = input;
         self
     }
     /// <p>The Reserved Instance product platform description.</p>
-    pub fn get_product_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiProductDescription> {
+    pub fn get_product_description(&self) -> &::std::option::Option<crate::types::RiProductDescription> {
         &self.product_description
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_id = input;
         self
     }
@@ -321,10 +296,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The state of the Reserved Instance purchase.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedInstanceState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReservedInstanceState>) -> Self {
         self.state = input;
         self
     }
@@ -352,10 +324,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.currency_code = input;
         self
     }
@@ -369,10 +338,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The tenancy of the instance.</p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::Tenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.instance_tenancy = input;
         self
     }
@@ -386,10 +352,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The offering class of the Reserved Instance.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClassType>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
         self.offering_class = input;
         self
     }
@@ -403,10 +366,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The Reserved Instance offering type.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTypeValues>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingTypeValues>) -> Self {
         self.offering_type = input;
         self
     }
@@ -426,17 +386,12 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>The recurring charge tag assigned to the resource.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
         self.recurring_charges = input;
         self
     }
     /// <p>The recurring charge tag assigned to the resource.</p>
-    pub fn get_recurring_charges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// <p>The scope of the Reserved Instance.</p>
@@ -465,10 +420,7 @@ impl ReservedInstancesBuilder {
         self
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

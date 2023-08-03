@@ -15,17 +15,14 @@ impl DeleteLunaClientInput {
 }
 impl DeleteLunaClientInput {
     /// Creates a new builder-style object to manufacture [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
-    pub fn builder() -> crate::operation::delete_luna_client::builders::DeleteLunaClientInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_luna_client::builders::DeleteLunaClientInputBuilder {
         crate::operation::delete_luna_client::builders::DeleteLunaClientInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLunaClientInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DeleteLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_luna_client::DeleteLunaClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_luna_client::DeleteLunaClientInput {
-                client_arn: self.client_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_luna_client::DeleteLunaClientInput { client_arn: self.client_arn })
     }
 }

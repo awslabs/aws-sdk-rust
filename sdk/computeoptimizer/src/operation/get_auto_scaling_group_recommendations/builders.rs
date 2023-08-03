@@ -5,16 +5,16 @@ pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scal
 
 impl GetAutoScalingGroupRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_auto_scaling_group_recommendations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder,
+    inner: crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder,
 }
 impl GetAutoScalingGroupRecommendationsFluentBuilder {
     /// Creates a new `GetAutoScalingGroupRecommendations`.
@@ -38,15 +38,20 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
         }
     }
     /// Access the GetAutoScalingGroupRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `accountIds`.
@@ -109,19 +124,14 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `autoScalingGroupArns`.
@@ -129,25 +139,17 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn auto_scaling_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn set_auto_scaling_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn get_auto_scaling_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_scaling_group_arns()
     }
     /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
@@ -191,10 +193,7 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -203,25 +202,17 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn recommendation_preferences(
-        mut self,
-        input: crate::types::RecommendationPreferences,
-    ) -> Self {
+    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.inner = self.inner.recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn set_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationPreferences>,
-    ) -> Self {
+    pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+    pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         self.inner.get_recommendation_preferences()
     }
 }

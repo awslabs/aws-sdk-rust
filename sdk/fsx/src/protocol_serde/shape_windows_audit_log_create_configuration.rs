@@ -7,9 +7,7 @@ pub fn ser_windows_audit_log_create_configuration(
         object.key("FileAccessAuditLogLevel").string(var_1.as_str());
     }
     if let Some(var_2) = &input.file_share_access_audit_log_level {
-        object
-            .key("FileShareAccessAuditLogLevel")
-            .string(var_2.as_str());
+        object.key("FileShareAccessAuditLogLevel").string(var_2.as_str());
     }
     if let Some(var_3) = &input.audit_log_destination {
         object.key("AuditLogDestination").string(var_3.as_str());

@@ -37,9 +37,7 @@ impl BatchDetectEntitiesFluentBuilder {
         }
     }
     /// Access the BatchDetectEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchDetectEntitiesFluentBuilder {
             crate::operation::batch_detect_entities::BatchDetectEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_entities::BatchDetectEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_entities::BatchDetectEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchDetectEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchDetectEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_entities::BatchDetectEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_entities::BatchDetectEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_entities::BatchDetectEntitiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchDetectEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_entities::BatchDetectEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_entities::BatchDetectEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_entities::BatchDetectEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchDetectEntitiesFluentBuilder {
             crate::operation::batch_detect_entities::BatchDetectEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_entities::BatchDetectEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_entities::BatchDetectEntitiesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl BatchDetectEntitiesFluentBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_text_list(input);
         self
     }
@@ -149,10 +133,7 @@ impl BatchDetectEntitiesFluentBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

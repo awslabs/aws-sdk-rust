@@ -30,9 +30,7 @@ impl DocumentClassificationConfig {
 
 /// A builder for [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentClassificationConfigBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl DocumentClassificationConfigBuilder {
         self
     }
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
         self.mode = input;
         self
     }
@@ -67,10 +62,7 @@ impl DocumentClassificationConfigBuilder {
         self
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }

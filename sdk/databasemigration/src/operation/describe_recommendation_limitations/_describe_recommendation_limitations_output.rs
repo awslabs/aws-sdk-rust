@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeRecommendationLimitationsOutp
 }
 impl DescribeRecommendationLimitationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationLimitationsOutput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput).
-    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder {
         crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationLimitationsOutput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationLimitationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limitations: ::std::option::Option<::std::vec::Vec<crate::types::Limitation>>,
@@ -70,17 +68,12 @@ impl DescribeRecommendationLimitationsOutputBuilder {
         self
     }
     /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
-    pub fn set_limitations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Limitation>>,
-    ) -> Self {
+    pub fn set_limitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Limitation>>) -> Self {
         self.limitations = input;
         self
     }
     /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
-    pub fn get_limitations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Limitation>> {
+    pub fn get_limitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Limitation>> {
         &self.limitations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,12 +86,10 @@ impl DescribeRecommendationLimitationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationLimitationsOutput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput).
-    pub fn build(self) -> crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput{
+    pub fn build(self) -> crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput {
         crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput {
-            next_token: self.next_token
-            ,
-            limitations: self.limitations
-            ,
+            next_token: self.next_token,
+            limitations: self.limitations,
             _request_id: self._request_id,
         }
     }

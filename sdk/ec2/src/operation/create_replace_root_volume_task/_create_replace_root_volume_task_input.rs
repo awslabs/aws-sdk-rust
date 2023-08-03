@@ -61,23 +61,20 @@ impl CreateReplaceRootVolumeTaskInput {
 }
 impl CreateReplaceRootVolumeTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateReplaceRootVolumeTaskInput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput).
-    pub fn builder() -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder{
+    pub fn builder() -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder {
         crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplaceRootVolumeTaskInput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplaceRootVolumeTaskInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_replaced_root_volume: ::std::option::Option<bool>,
 }
@@ -153,17 +150,12 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self
     }
     /// <p>The tags to apply to the root volume replacement task.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the root volume replacement task.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing information, architecture type, and virtualization type as that of the instance.</p>
@@ -204,16 +196,14 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput {
-                instance_id: self.instance_id,
-                snapshot_id: self.snapshot_id,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-                image_id: self.image_id,
-                delete_replaced_root_volume: self.delete_replaced_root_volume,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput {
+            instance_id: self.instance_id,
+            snapshot_id: self.snapshot_id,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+            tag_specifications: self.tag_specifications,
+            image_id: self.image_id,
+            delete_replaced_root_volume: self.delete_replaced_root_volume,
+        })
     }
 }

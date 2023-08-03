@@ -15,16 +15,14 @@ impl StopTargetedSentimentDetectionJobInput {
 }
 impl StopTargetedSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder {
         crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTargetedSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput { job_id: self.job_id },
         )
     }
 }

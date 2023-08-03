@@ -81,9 +81,7 @@ impl RdsConfiguration {
 
 /// A builder for [`RdsConfiguration`](crate::types::RdsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsConfigurationBuilder {
     pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ pub struct RdsConfigurationBuilder {
 }
 impl RdsConfigurationBuilder {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
-    pub fn engine_edition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_edition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
-    pub fn set_engine_edition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_edition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_edition = input;
         self
     }
@@ -117,18 +109,12 @@ impl RdsConfigurationBuilder {
         &self.engine_edition
     }
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -210,18 +196,12 @@ impl RdsConfigurationBuilder {
         &self.storage_iops
     }
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
-    pub fn deployment_option(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_option(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_option = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
-    pub fn set_deployment_option(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_option = input;
         self
     }
@@ -230,18 +210,12 @@ impl RdsConfigurationBuilder {
         &self.deployment_option
     }
     /// <p>Describes the recommended target Amazon RDS engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the recommended target Amazon RDS engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }

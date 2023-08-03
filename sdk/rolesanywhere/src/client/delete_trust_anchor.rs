@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrustAnchorOutput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::delete_trust_anchor::DeleteTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<DeleteTrustAnchorError>`](crate::operation::delete_trust_anchor::DeleteTrustAnchorError)
-    pub fn delete_trust_anchor(
-        &self,
-    ) -> crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorFluentBuilder {
-        crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_trust_anchor(&self) -> crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorFluentBuilder {
+        crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorFluentBuilder::new(self.handle.clone())
     }
 }

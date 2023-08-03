@@ -5,8 +5,7 @@
 pub struct ListIamPolicyAssignmentsOutput {
     /// <p>Information describing the IAM policy assignments.</p>
     #[doc(hidden)]
-    pub iam_policy_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
+    pub iam_policy_assignments: ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListIamPolicyAssignmentsOutput {
 }
 impl ListIamPolicyAssignmentsOutput {
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn iam_policy_assignments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IamPolicyAssignmentSummary]> {
+    pub fn iam_policy_assignments(&self) -> ::std::option::Option<&[crate::types::IamPolicyAssignmentSummary]> {
         self.iam_policy_assignments.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,19 +42,16 @@ impl ::aws_http::request_id::RequestId for ListIamPolicyAssignmentsOutput {
 }
 impl ListIamPolicyAssignmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsOutput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput).
-    pub fn builder() -> crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsOutputBuilder{
+    pub fn builder() -> crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsOutputBuilder {
         crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIamPolicyAssignmentsOutput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsOutputBuilder {
-    pub(crate) iam_policy_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
+    pub(crate) iam_policy_assignments: ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -69,27 +63,19 @@ impl ListIamPolicyAssignmentsOutputBuilder {
     /// To override the contents of this collection use [`set_iam_policy_assignments`](Self::set_iam_policy_assignments).
     ///
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn iam_policy_assignments(
-        mut self,
-        input: crate::types::IamPolicyAssignmentSummary,
-    ) -> Self {
+    pub fn iam_policy_assignments(mut self, input: crate::types::IamPolicyAssignmentSummary) -> Self {
         let mut v = self.iam_policy_assignments.unwrap_or_default();
         v.push(input);
         self.iam_policy_assignments = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn set_iam_policy_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
-    ) -> Self {
+    pub fn set_iam_policy_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>) -> Self {
         self.iam_policy_assignments = input;
         self
     }
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn get_iam_policy_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>> {
+    pub fn get_iam_policy_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IamPolicyAssignmentSummary>> {
         &self.iam_policy_assignments
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -144,9 +130,7 @@ impl ListIamPolicyAssignmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsOutput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput {
+    pub fn build(self) -> crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput {
         crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput {
             iam_policy_assignments: self.iam_policy_assignments,
             next_token: self.next_token,

@@ -36,9 +36,7 @@ impl DescribeStacksOutput {
 
 /// A builder for [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStacksOutputBuilder {
     pub(crate) stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DescribeStacksOutputBuilder {
         self
     }
     /// <p>A list of stack structures.</p>
-    pub fn set_stacks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
-    ) -> Self {
+    pub fn set_stacks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>) -> Self {
         self.stacks = input;
         self
     }

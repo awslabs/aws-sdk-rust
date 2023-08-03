@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::update_app_instance::UpdateAppInstanceOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceError>`](crate::operation::update_app_instance::UpdateAppInstanceError)
     #[deprecated(note = "Replaced by UpdateAppInstance in the Amazon Chime SDK Identity Namespace")]
-    pub fn update_app_instance(
-        &self,
-    ) -> crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder {
-        crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_app_instance(&self) -> crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder {
+        crate::operation::update_app_instance::builders::UpdateAppInstanceFluentBuilder::new(self.handle.clone())
     }
 }

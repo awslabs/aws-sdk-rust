@@ -10,10 +10,7 @@ impl ListFolderMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_folder_members::ListFolderMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_folder_members::ListFolderMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_folder_members::ListFolderMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_folder_members();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFolderMembersFluentBuilder {
         }
     }
     /// Access the ListFolderMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListFolderMembersFluentBuilder {
             crate::operation::list_folder_members::ListFolderMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_folder_members::ListFolderMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_folder_members::ListFolderMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListFolderMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListFolderMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_folder_members::ListFolderMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_folder_members::ListFolderMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_folder_members::ListFolderMembersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListFolderMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_folder_members::ListFolderMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_folder_members::ListFolderMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_folder_members::ListFolderMembersError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ListFolderMembersFluentBuilder {
             crate::operation::list_folder_members::ListFolderMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_folder_members::ListFolderMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_folder_members::ListFolderMembersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

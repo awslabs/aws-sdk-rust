@@ -15,34 +15,25 @@ impl ConfirmConnectionInput {
 }
 impl ConfirmConnectionInput {
     /// Creates a new builder-style object to manufacture [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
-    pub fn builder() -> crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder {
         crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmConnectionInputBuilder {
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl ConfirmConnectionInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_connection::ConfirmConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_connection::ConfirmConnectionInput {
-                connection_id: self.connection_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::confirm_connection::ConfirmConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::confirm_connection::ConfirmConnectionInput {
+            connection_id: self.connection_id,
+        })
     }
 }

@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_facet::builders::DeleteFacetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_facet::builders::DeleteFacetFluentBuilder::set_name): <p>The name of the facet to delete.</p>
     /// - On success, responds with [`DeleteFacetOutput`](crate::operation::delete_facet::DeleteFacetOutput)
     /// - On failure, responds with [`SdkError<DeleteFacetError>`](crate::operation::delete_facet::DeleteFacetError)
-    pub fn delete_facet(
-        &self,
-    ) -> crate::operation::delete_facet::builders::DeleteFacetFluentBuilder {
+    pub fn delete_facet(&self) -> crate::operation::delete_facet::builders::DeleteFacetFluentBuilder {
         crate::operation::delete_facet::builders::DeleteFacetFluentBuilder::new(self.handle.clone())
     }
 }

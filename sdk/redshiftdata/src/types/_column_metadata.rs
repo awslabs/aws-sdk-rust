@@ -107,9 +107,7 @@ impl ColumnMetadata {
 
 /// A builder for [`ColumnMetadata`](crate::types::ColumnMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnMetadataBuilder {
     pub(crate) is_case_sensitive: ::std::option::Option<bool>,
     pub(crate) is_currency: ::std::option::Option<bool>,
@@ -295,18 +293,12 @@ impl ColumnMetadataBuilder {
         &self.length
     }
     /// <p>The default value of the column. </p>
-    pub fn column_default(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_default(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_default = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the column. </p>
-    pub fn set_column_default(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_column_default(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_default = input;
         self
     }

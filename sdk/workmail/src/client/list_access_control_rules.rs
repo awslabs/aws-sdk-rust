@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListAccessControlRulesOutput`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<AccessControlRule>>)`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput::rules): <p>The access control rules.</p>
     /// - On failure, responds with [`SdkError<ListAccessControlRulesError>`](crate::operation::list_access_control_rules::ListAccessControlRulesError)
-    pub fn list_access_control_rules(
-        &self,
-    ) -> crate::operation::list_access_control_rules::builders::ListAccessControlRulesFluentBuilder
-    {
+    pub fn list_access_control_rules(&self) -> crate::operation::list_access_control_rules::builders::ListAccessControlRulesFluentBuilder {
         crate::operation::list_access_control_rules::builders::ListAccessControlRulesFluentBuilder::new(self.handle.clone())
     }
 }

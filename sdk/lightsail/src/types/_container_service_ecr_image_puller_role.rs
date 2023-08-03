@@ -31,9 +31,7 @@ impl ContainerServiceEcrImagePullerRole {
 
 /// A builder for [`ContainerServiceEcrImagePullerRole`](crate::types::ContainerServiceEcrImagePullerRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRoleBuilder {
     pub(crate) is_active: ::std::option::Option<bool>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
         &self.is_active
     }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }

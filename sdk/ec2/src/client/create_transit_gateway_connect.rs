@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayConnectOutput`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectOutput) with field(s):
     ///   - [`transit_gateway_connect(Option<TransitGatewayConnect>)`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectOutput::transit_gateway_connect): <p>Information about the Connect attachment.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayConnectError>`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectError)
-    pub fn create_transit_gateway_connect(&self) -> crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectFluentBuilder{
+    pub fn create_transit_gateway_connect(
+        &self,
+    ) -> crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectFluentBuilder {
         crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectFluentBuilder::new(self.handle.clone())
     }
 }

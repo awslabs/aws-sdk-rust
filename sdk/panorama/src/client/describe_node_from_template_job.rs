@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`template_parameters(Option<HashMap<String, String>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
     ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
     /// - On failure, responds with [`SdkError<DescribeNodeFromTemplateJobError>`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError)
-    pub fn describe_node_from_template_job(&self) -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder{
+    pub fn describe_node_from_template_job(
+        &self,
+    ) -> crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder {
         crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::new(self.handle.clone())
     }
 }

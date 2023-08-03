@@ -10,10 +10,7 @@ impl ListObjectVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_object_versions::ListObjectVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_versions::ListObjectVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_versions::ListObjectVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_object_versions();
         fluent_builder.inner = self;
@@ -50,9 +47,7 @@ impl ListObjectVersionsFluentBuilder {
         }
     }
     /// Access the ListObjectVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_object_versions::builders::ListObjectVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_object_versions::builders::ListObjectVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +59,7 @@ impl ListObjectVersionsFluentBuilder {
             crate::operation::list_object_versions::ListObjectVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_versions::ListObjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_versions::ListObjectVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +69,7 @@ impl ListObjectVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +78,7 @@ impl ListObjectVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_versions::ListObjectVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_versions::ListObjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_versions::ListObjectVersionsError>,
     > {
         let op = self
             .inner
@@ -113,9 +101,7 @@ impl ListObjectVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_versions::ListObjectVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_versions::ListObjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_versions::ListObjectVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -129,9 +115,7 @@ impl ListObjectVersionsFluentBuilder {
             crate::operation::list_object_versions::ListObjectVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_versions::ListObjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_versions::ListObjectVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -169,10 +153,7 @@ impl ListObjectVersionsFluentBuilder {
         self
     }
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
@@ -232,18 +213,12 @@ impl ListObjectVersionsFluentBuilder {
         self.inner.get_prefix()
     }
     /// <p>Specifies the object version you want to start listing from.</p>
-    pub fn version_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id_marker(input.into());
         self
     }
     /// <p>Specifies the object version you want to start listing from.</p>
-    pub fn set_version_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id_marker(input);
         self
     }
@@ -252,18 +227,12 @@ impl ListObjectVersionsFluentBuilder {
         self.inner.get_version_id_marker()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -277,10 +246,7 @@ impl ListObjectVersionsFluentBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
@@ -293,25 +259,17 @@ impl ListObjectVersionsFluentBuilder {
     /// To override the contents of this collection use [`set_optional_object_attributes`](Self::set_optional_object_attributes).
     ///
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn optional_object_attributes(
-        mut self,
-        input: crate::types::OptionalObjectAttributes,
-    ) -> Self {
+    pub fn optional_object_attributes(mut self, input: crate::types::OptionalObjectAttributes) -> Self {
         self.inner = self.inner.optional_object_attributes(input);
         self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn set_optional_object_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
-    ) -> Self {
+    pub fn set_optional_object_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>) -> Self {
         self.inner = self.inner.set_optional_object_attributes(input);
         self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    pub fn get_optional_object_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
+    pub fn get_optional_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
         self.inner.get_optional_object_attributes()
     }
 }

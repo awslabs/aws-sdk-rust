@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`index_name(impl ::std::convert::Into<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::index_name) / [`set_index_name(Option<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::set_index_name): <p>The name of the place index resource to be deleted.</p>
     /// - On success, responds with [`DeletePlaceIndexOutput`](crate::operation::delete_place_index::DeletePlaceIndexOutput)
     /// - On failure, responds with [`SdkError<DeletePlaceIndexError>`](crate::operation::delete_place_index::DeletePlaceIndexError)
-    pub fn delete_place_index(
-        &self,
-    ) -> crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder {
-        crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_place_index(&self) -> crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder {
+        crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::new(self.handle.clone())
     }
 }

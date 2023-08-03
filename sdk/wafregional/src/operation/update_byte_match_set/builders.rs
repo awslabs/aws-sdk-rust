@@ -10,10 +10,7 @@ impl UpdateByteMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_byte_match_set::UpdateByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_byte_match_set();
         fluent_builder.inner = self;
@@ -56,9 +53,7 @@ impl UpdateByteMatchSetFluentBuilder {
         }
     }
     /// Access the UpdateByteMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_byte_match_set::builders::UpdateByteMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_byte_match_set::builders::UpdateByteMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -70,9 +65,7 @@ impl UpdateByteMatchSetFluentBuilder {
             crate::operation::update_byte_match_set::UpdateByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -82,10 +75,7 @@ impl UpdateByteMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -94,9 +84,7 @@ impl UpdateByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_byte_match_set::UpdateByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError>,
     > {
         let op = self
             .inner
@@ -119,9 +107,7 @@ impl UpdateByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_byte_match_set::UpdateByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -135,25 +121,17 @@ impl UpdateByteMatchSetFluentBuilder {
             crate::operation::update_byte_match_set::UpdateByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_byte_match_set::UpdateByteMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.byte_match_set_id(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_byte_match_set_id(input);
         self
     }
@@ -195,10 +173,7 @@ impl UpdateByteMatchSetFluentBuilder {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -208,9 +183,7 @@ impl UpdateByteMatchSetFluentBuilder {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
         self.inner.get_updates()
     }
 }

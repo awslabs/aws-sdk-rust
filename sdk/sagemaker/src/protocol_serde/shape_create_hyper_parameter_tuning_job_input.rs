@@ -4,9 +4,7 @@ pub fn ser_create_hyper_parameter_tuning_job_input(
     input: &crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.hyper_parameter_tuning_job_name {
-        object
-            .key("HyperParameterTuningJobName")
-            .string(var_1.as_str());
+        object.key("HyperParameterTuningJobName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.hyper_parameter_tuning_job_config {
         #[allow(unused_mut)]
@@ -26,7 +24,10 @@ pub fn ser_create_hyper_parameter_tuning_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_hyper_parameter_training_job_definition::ser_hyper_parameter_training_job_definition(&mut object_9, item_8)?;
+                crate::protocol_serde::shape_hyper_parameter_training_job_definition::ser_hyper_parameter_training_job_definition(
+                    &mut object_9,
+                    item_8,
+                )?;
                 object_9.finish();
             }
         }
@@ -35,7 +36,10 @@ pub fn ser_create_hyper_parameter_tuning_job_input(
     if let Some(var_10) = &input.warm_start_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("WarmStartConfig").start_object();
-        crate::protocol_serde::shape_hyper_parameter_tuning_job_warm_start_config::ser_hyper_parameter_tuning_job_warm_start_config(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_hyper_parameter_tuning_job_warm_start_config::ser_hyper_parameter_tuning_job_warm_start_config(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {

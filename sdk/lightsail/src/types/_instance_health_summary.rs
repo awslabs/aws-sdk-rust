@@ -70,9 +70,7 @@ impl InstanceHealthSummary {
     /// <ul>
     /// <li> <p> <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
-    pub fn instance_health_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceHealthReason> {
+    pub fn instance_health_reason(&self) -> ::std::option::Option<&crate::types::InstanceHealthReason> {
         self.instance_health_reason.as_ref()
     }
 }
@@ -85,9 +83,7 @@ impl InstanceHealthSummary {
 
 /// A builder for [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceHealthSummaryBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_health: ::std::option::Option<crate::types::InstanceHealthState>,
@@ -95,18 +91,12 @@ pub struct InstanceHealthSummaryBuilder {
 }
 impl InstanceHealthSummaryBuilder {
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -120,10 +110,7 @@ impl InstanceHealthSummaryBuilder {
         self
     }
     /// <p>Describes the overall instance health. Valid values are below.</p>
-    pub fn set_instance_health(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHealthState>,
-    ) -> Self {
+    pub fn set_instance_health(mut self, input: ::std::option::Option<crate::types::InstanceHealthState>) -> Self {
         self.instance_health = input;
         self
     }
@@ -183,10 +170,7 @@ impl InstanceHealthSummaryBuilder {
     /// <ul>
     /// <li> <p> <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
-    pub fn set_instance_health_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHealthReason>,
-    ) -> Self {
+    pub fn set_instance_health_reason(mut self, input: ::std::option::Option<crate::types::InstanceHealthReason>) -> Self {
         self.instance_health_reason = input;
         self
     }
@@ -214,9 +198,7 @@ impl InstanceHealthSummaryBuilder {
     /// <ul>
     /// <li> <p> <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
-    pub fn get_instance_health_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceHealthReason> {
+    pub fn get_instance_health_reason(&self) -> &::std::option::Option<crate::types::InstanceHealthReason> {
         &self.instance_health_reason
     }
     /// Consumes the builder and constructs a [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).

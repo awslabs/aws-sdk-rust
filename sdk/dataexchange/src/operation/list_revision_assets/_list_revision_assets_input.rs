@@ -36,17 +36,14 @@ impl ListRevisionAssetsInput {
 }
 impl ListRevisionAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListRevisionAssetsInput`](crate::operation::list_revision_assets::ListRevisionAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder {
+    pub fn builder() -> crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder {
         crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRevisionAssetsInput`](crate::operation::list_revision_assets::ListRevisionAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRevisionAssetsInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -113,17 +110,12 @@ impl ListRevisionAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListRevisionAssetsInput`](crate::operation::list_revision_assets::ListRevisionAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_revision_assets::ListRevisionAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_revision_assets::ListRevisionAssetsInput {
-                data_set_id: self.data_set_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                revision_id: self.revision_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_revision_assets::ListRevisionAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_revision_assets::ListRevisionAssetsInput {
+            data_set_id: self.data_set_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            revision_id: self.revision_id,
+        })
     }
 }

@@ -37,7 +37,7 @@ impl GetMediaForFragmentListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMediaForFragmentListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder,
+    inner: crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder,
 }
 impl GetMediaForFragmentListFluentBuilder {
     /// Creates a new `GetMediaForFragmentList`.
@@ -48,10 +48,7 @@ impl GetMediaForFragmentListFluentBuilder {
         }
     }
     /// Access the GetMediaForFragmentList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +60,7 @@ impl GetMediaForFragmentListFluentBuilder {
             crate::operation::get_media_for_fragment_list::GetMediaForFragmentList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +70,7 @@ impl GetMediaForFragmentListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +79,7 @@ impl GetMediaForFragmentListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError>,
     > {
         let op = self
             .inner
@@ -112,9 +102,7 @@ impl GetMediaForFragmentListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +116,7 @@ impl GetMediaForFragmentListFluentBuilder {
             crate::operation::get_media_for_fragment_list::GetMediaForFragmentList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError>,
     > {
         self.customize_middleware().await
     }
@@ -172,10 +158,7 @@ impl GetMediaForFragmentListFluentBuilder {
         self
     }
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    pub fn set_fragments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fragments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fragments(input);
         self
     }

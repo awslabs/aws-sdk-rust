@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::set_username): <p>The user name of the user you want to disable.</p>
     /// - On success, responds with [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput)
     /// - On failure, responds with [`SdkError<AdminDisableUserError>`](crate::operation::admin_disable_user::AdminDisableUserError)
-    pub fn admin_disable_user(
-        &self,
-    ) -> crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder {
-        crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_disable_user(&self) -> crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder {
+        crate::operation::admin_disable_user::builders::AdminDisableUserFluentBuilder::new(self.handle.clone())
     }
 }

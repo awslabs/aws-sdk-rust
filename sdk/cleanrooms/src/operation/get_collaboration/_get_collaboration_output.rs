@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCollaborationOutput {
 }
 impl GetCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationOutput`](crate::operation::get_collaboration::GetCollaborationOutput).
-    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationOutputBuilder {
         crate::operation::get_collaboration::builders::GetCollaborationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCollaborationOutput`](crate::operation::get_collaboration::GetCollaborationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCollaborationOutputBuilder {
     pub(crate) collaboration: ::std::option::Option<crate::types::Collaboration>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetCollaborationOutputBuilder {
         self
     }
     /// <p>The entire collaboration for this identifier.</p>
-    pub fn set_collaboration(
-        mut self,
-        input: ::std::option::Option<crate::types::Collaboration>,
-    ) -> Self {
+    pub fn set_collaboration(mut self, input: ::std::option::Option<crate::types::Collaboration>) -> Self {
         self.collaboration = input;
         self
     }

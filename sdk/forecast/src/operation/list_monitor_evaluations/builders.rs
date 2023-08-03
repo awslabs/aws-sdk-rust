@@ -38,10 +38,7 @@ impl ListMonitorEvaluationsFluentBuilder {
         }
     }
     /// Access the ListMonitorEvaluations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListMonitorEvaluationsFluentBuilder {
             crate::operation::list_monitor_evaluations::ListMonitorEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListMonitorEvaluationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListMonitorEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListMonitorEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +106,15 @@ impl ListMonitorEvaluationsFluentBuilder {
             crate::operation::list_monitor_evaluations::ListMonitorEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_monitor_evaluations::paginator::ListMonitorEvaluationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_monitor_evaluations::paginator::ListMonitorEvaluationsPaginator
-    {
-        crate::operation::list_monitor_evaluations::paginator::ListMonitorEvaluationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_monitor_evaluations::paginator::ListMonitorEvaluationsPaginator {
+        crate::operation::list_monitor_evaluations::paginator::ListMonitorEvaluationsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,10 +184,7 @@ impl ListMonitorEvaluationsFluentBuilder {
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

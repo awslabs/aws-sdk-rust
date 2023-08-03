@@ -12,10 +12,7 @@ pub fn ser_start_table_data_import_job_input(
     if let Some(var_3) = &input.data_source {
         #[allow(unused_mut)]
         let mut object_4 = object.key("dataSource").start_object();
-        crate::protocol_serde::shape_import_data_source::ser_import_data_source(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_import_data_source::ser_import_data_source(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.import_options {

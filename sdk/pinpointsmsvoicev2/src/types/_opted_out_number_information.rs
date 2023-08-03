@@ -37,9 +37,7 @@ impl OptedOutNumberInformation {
 
 /// A builder for [`OptedOutNumberInformation`](crate::types::OptedOutNumberInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptedOutNumberInformationBuilder {
     pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,
     pub(crate) opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,18 +45,12 @@ pub struct OptedOutNumberInformationBuilder {
 }
 impl OptedOutNumberInformationBuilder {
     /// <p>The phone number that is opted out.</p>
-    pub fn opted_out_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opted_out_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opted_out_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number that is opted out.</p>
-    pub fn set_opted_out_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opted_out_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opted_out_number = input;
         self
     }
@@ -72,10 +64,7 @@ impl OptedOutNumberInformationBuilder {
         self
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_opted_out_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_opted_out_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.opted_out_timestamp = input;
         self
     }

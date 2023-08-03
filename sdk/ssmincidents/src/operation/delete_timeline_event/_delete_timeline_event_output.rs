@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTimelineEventOutput {
 }
 impl DeleteTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTimelineEventOutput`](crate::operation::delete_timeline_event::DeleteTimelineEventOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventOutputBuilder {
-        crate::operation::delete_timeline_event::builders::DeleteTimelineEventOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventOutputBuilder {
+        crate::operation::delete_timeline_event::builders::DeleteTimelineEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTimelineEventOutput`](crate::operation::delete_timeline_event::DeleteTimelineEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTimelineEventOutputBuilder {
     _request_id: Option<String>,
 }

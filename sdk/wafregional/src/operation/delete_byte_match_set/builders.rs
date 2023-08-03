@@ -10,10 +10,7 @@ impl DeleteByteMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_byte_match_set();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DeleteByteMatchSetFluentBuilder {
         }
     }
     /// Access the DeleteByteMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl DeleteByteMatchSetFluentBuilder {
             crate::operation::delete_byte_match_set::DeleteByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl DeleteByteMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl DeleteByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl DeleteByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl DeleteByteMatchSetFluentBuilder {
             crate::operation::delete_byte_match_set::DeleteByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_byte_match_set::DeleteByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_byte_match_set::DeleteByteMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.byte_match_set_id(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_byte_match_set_id(input);
         self
     }

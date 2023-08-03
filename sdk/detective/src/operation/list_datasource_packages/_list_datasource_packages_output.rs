@@ -5,12 +5,8 @@
 pub struct ListDatasourcePackagesOutput {
     /// <p>Details on the data source packages active in the behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_packages: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    >,
+    pub datasource_packages:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,12 +16,7 @@ impl ListDatasourcePackagesOutput {
     /// <p>Details on the data source packages active in the behavior graph.</p>
     pub fn datasource_packages(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>> {
         self.datasource_packages.as_ref()
     }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
@@ -40,25 +31,17 @@ impl ::aws_http::request_id::RequestId for ListDatasourcePackagesOutput {
 }
 impl ListDatasourcePackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder {
         crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasourcePackagesOutputBuilder {
-    pub(crate) datasource_packages: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    >,
+    pub(crate) datasource_packages:
+        ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -68,11 +51,7 @@ impl ListDatasourcePackagesOutputBuilder {
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
     ///
     /// <p>Details on the data source packages active in the behavior graph.</p>
-    pub fn datasource_packages(
-        mut self,
-        k: crate::types::DatasourcePackage,
-        v: crate::types::DatasourcePackageIngestDetail,
-    ) -> Self {
+    pub fn datasource_packages(mut self, k: crate::types::DatasourcePackage, v: crate::types::DatasourcePackageIngestDetail) -> Self {
         let mut hash_map = self.datasource_packages.unwrap_or_default();
         hash_map.insert(k, v);
         self.datasource_packages = ::std::option::Option::Some(hash_map);
@@ -81,12 +60,7 @@ impl ListDatasourcePackagesOutputBuilder {
     /// <p>Details on the data source packages active in the behavior graph.</p>
     pub fn set_datasource_packages(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DatasourcePackage,
-                crate::types::DatasourcePackageIngestDetail,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     ) -> Self {
         self.datasource_packages = input;
         self
@@ -94,12 +68,7 @@ impl ListDatasourcePackagesOutputBuilder {
     /// <p>Details on the data source packages active in the behavior graph.</p>
     pub fn get_datasource_packages(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>> {
         &self.datasource_packages
     }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>

@@ -37,10 +37,7 @@ impl GetEventSourceMappingFluentBuilder {
         }
     }
     /// Access the GetEventSourceMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_event_source_mapping::builders::GetEventSourceMappingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_event_source_mapping::builders::GetEventSourceMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetEventSourceMappingFluentBuilder {
             crate::operation::get_event_source_mapping::GetEventSourceMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_source_mapping::GetEventSourceMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetEventSourceMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetEventSourceMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_source_mapping::GetEventSourceMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_source_mapping::GetEventSourceMappingError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetEventSourceMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_source_mapping::GetEventSourceMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_source_mapping::GetEventSourceMappingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetEventSourceMappingFluentBuilder {
             crate::operation::get_event_source_mapping::GetEventSourceMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_source_mapping::GetEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_source_mapping::GetEventSourceMappingError>,
     > {
         self.customize_middleware().await
     }

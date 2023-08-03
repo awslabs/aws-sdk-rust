@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateOpsItemRelatedItemOutput 
 }
 impl DisassociateOpsItemRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput).
-    pub fn builder() -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemOutputBuilder {
         crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateOpsItemRelatedItemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateOpsItemRelatedItemOutput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput {
         crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput {
             _request_id: self._request_id,
         }

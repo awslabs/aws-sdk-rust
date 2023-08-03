@@ -8,9 +8,7 @@ pub struct GetOpsMetadataOutput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>OpsMetadata for an Application Manager application.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,11 +20,7 @@ impl GetOpsMetadataOutput {
         self.resource_id.as_deref()
     }
     /// <p>OpsMetadata for an Application Manager application.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata.as_ref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -48,14 +42,10 @@ impl GetOpsMetadataOutput {
 
 /// A builder for [`GetOpsMetadataOutput`](crate::operation::get_ops_metadata::GetOpsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsMetadataOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,11 +69,7 @@ impl GetOpsMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>OpsMetadata for an Application Manager application.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataValue,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metadata = ::std::option::Option::Some(hash_map);
@@ -92,19 +78,13 @@ impl GetOpsMetadataOutputBuilder {
     /// <p>OpsMetadata for an Application Manager application.</p>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>OpsMetadata for an Application Manager application.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         &self.metadata
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

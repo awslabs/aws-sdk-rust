@@ -43,14 +43,11 @@ impl FairsharePolicy {
 
 /// A builder for [`FairsharePolicy`](crate::types::FairsharePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FairsharePolicyBuilder {
     pub(crate) share_decay_seconds: ::std::option::Option<i32>,
     pub(crate) compute_reservation: ::std::option::Option<i32>,
-    pub(crate) share_distribution:
-        ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
+    pub(crate) share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
 }
 impl FairsharePolicyBuilder {
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
@@ -102,17 +99,12 @@ impl FairsharePolicyBuilder {
         self
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub fn set_share_distribution(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
-    ) -> Self {
+    pub fn set_share_distribution(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>) -> Self {
         self.share_distribution = input;
         self
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub fn get_share_distribution(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>> {
+    pub fn get_share_distribution(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>> {
         &self.share_distribution
     }
     /// Consumes the builder and constructs a [`FairsharePolicy`](crate::types::FairsharePolicy).

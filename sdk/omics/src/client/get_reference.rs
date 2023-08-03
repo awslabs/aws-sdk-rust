@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetReferenceOutput`](crate::operation::get_reference::GetReferenceOutput) with field(s):
     ///   - [`payload(ByteStream)`](crate::operation::get_reference::GetReferenceOutput::payload): <p>The reference file payload.</p>
     /// - On failure, responds with [`SdkError<GetReferenceError>`](crate::operation::get_reference::GetReferenceError)
-    pub fn get_reference(
-        &self,
-    ) -> crate::operation::get_reference::builders::GetReferenceFluentBuilder {
-        crate::operation::get_reference::builders::GetReferenceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_reference(&self) -> crate::operation::get_reference::builders::GetReferenceFluentBuilder {
+        crate::operation::get_reference::builders::GetReferenceFluentBuilder::new(self.handle.clone())
     }
 }

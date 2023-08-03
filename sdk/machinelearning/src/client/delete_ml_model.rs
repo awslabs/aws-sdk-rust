@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMlModelOutput`](crate::operation::delete_ml_model::DeleteMlModelOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::delete_ml_model::DeleteMlModelOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteMLModelError>`](crate::operation::delete_ml_model::DeleteMLModelError)
-    pub fn delete_ml_model(
-        &self,
-    ) -> crate::operation::delete_ml_model::builders::DeleteMLModelFluentBuilder {
-        crate::operation::delete_ml_model::builders::DeleteMLModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ml_model(&self) -> crate::operation::delete_ml_model::builders::DeleteMLModelFluentBuilder {
+        crate::operation::delete_ml_model::builders::DeleteMLModelFluentBuilder::new(self.handle.clone())
     }
 }

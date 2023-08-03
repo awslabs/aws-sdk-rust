@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`position_filtering(Option<PositionFiltering>)`](crate::operation::describe_tracker::DescribeTrackerOutput::position_filtering): <p>The position filtering method of the tracker resource.</p>
     ///   - [`event_bridge_enabled(Option<bool>)`](crate::operation::describe_tracker::DescribeTrackerOutput::event_bridge_enabled): <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>
     /// - On failure, responds with [`SdkError<DescribeTrackerError>`](crate::operation::describe_tracker::DescribeTrackerError)
-    pub fn describe_tracker(
-        &self,
-    ) -> crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder {
-        crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tracker(&self) -> crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder {
+        crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl GetApiCacheOutput {
 
 /// A builder for [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiCacheOutputBuilder {
     pub(crate) api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,

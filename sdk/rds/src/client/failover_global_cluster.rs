@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`FailoverGlobalClusterOutput`](crate::operation::failover_global_cluster::FailoverGlobalClusterOutput) with field(s):
     ///   - [`global_cluster(Option<GlobalCluster>)`](crate::operation::failover_global_cluster::FailoverGlobalClusterOutput::global_cluster): <p>A data type representing an Aurora global database.</p>
     /// - On failure, responds with [`SdkError<FailoverGlobalClusterError>`](crate::operation::failover_global_cluster::FailoverGlobalClusterError)
-    pub fn failover_global_cluster(
-        &self,
-    ) -> crate::operation::failover_global_cluster::builders::FailoverGlobalClusterFluentBuilder
-    {
-        crate::operation::failover_global_cluster::builders::FailoverGlobalClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn failover_global_cluster(&self) -> crate::operation::failover_global_cluster::builders::FailoverGlobalClusterFluentBuilder {
+        crate::operation::failover_global_cluster::builders::FailoverGlobalClusterFluentBuilder::new(self.handle.clone())
     }
 }

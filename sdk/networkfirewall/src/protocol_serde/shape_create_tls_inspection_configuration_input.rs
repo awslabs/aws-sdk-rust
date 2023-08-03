@@ -4,9 +4,7 @@ pub fn ser_create_tls_inspection_configuration_input(
     input: &crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tls_inspection_configuration_name {
-        object
-            .key("TLSInspectionConfigurationName")
-            .string(var_1.as_str());
+        object.key("TLSInspectionConfigurationName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tls_inspection_configuration {
         #[allow(unused_mut)]
@@ -32,10 +30,7 @@ pub fn ser_create_tls_inspection_configuration_input(
     if let Some(var_9) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

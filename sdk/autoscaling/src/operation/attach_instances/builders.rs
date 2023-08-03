@@ -10,10 +10,7 @@ impl AttachInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_instances::AttachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_instances::AttachInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_instances::AttachInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_instances();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl AttachInstancesFluentBuilder {
         }
     }
     /// Access the AttachInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_instances::builders::AttachInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::attach_instances::builders::AttachInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl AttachInstancesFluentBuilder {
             crate::operation::attach_instances::AttachInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_instances::AttachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_instances::AttachInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl AttachInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl AttachInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_instances::AttachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_instances::AttachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_instances::AttachInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl AttachInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_instances::AttachInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_instances::AttachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_instances::AttachInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl AttachInstancesFluentBuilder {
             crate::operation::attach_instances::AttachInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_instances::AttachInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_instances::AttachInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -135,32 +119,21 @@ impl AttachInstancesFluentBuilder {
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

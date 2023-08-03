@@ -20,9 +20,7 @@ pub struct GetEventIntegrationOutput {
     pub event_filter: ::std::option::Option<crate::types::EventFilter>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEventIntegrationOutput {
@@ -47,11 +45,7 @@ impl GetEventIntegrationOutput {
         self.event_filter.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -62,27 +56,21 @@ impl ::aws_http::request_id::RequestId for GetEventIntegrationOutput {
 }
 impl GetEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetEventIntegrationOutput`](crate::operation::get_event_integration::GetEventIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder {
-        crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder {
+        crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventIntegrationOutput`](crate::operation::get_event_integration::GetEventIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventIntegrationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_integration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_bridge_bus: ::std::option::Option<::std::string::String>,
     pub(crate) event_filter: ::std::option::Option<crate::types::EventFilter>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEventIntegrationOutputBuilder {
@@ -115,18 +103,12 @@ impl GetEventIntegrationOutputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
-    pub fn event_integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
-    pub fn set_event_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_integration_arn = input;
         self
     }
@@ -135,18 +117,12 @@ impl GetEventIntegrationOutputBuilder {
         &self.event_integration_arn
     }
     /// <p>The EventBridge bus.</p>
-    pub fn event_bridge_bus(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bridge_bus(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bridge_bus = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EventBridge bus.</p>
-    pub fn set_event_bridge_bus(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bridge_bus(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bridge_bus = input;
         self
     }
@@ -160,10 +136,7 @@ impl GetEventIntegrationOutputBuilder {
         self
     }
     /// <p>The event filter.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::EventFilter>) -> Self {
         self.event_filter = input;
         self
     }
@@ -176,32 +149,19 @@ impl GetEventIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

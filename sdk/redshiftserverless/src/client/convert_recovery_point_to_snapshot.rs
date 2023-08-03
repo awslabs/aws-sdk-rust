@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`ConvertRecoveryPointToSnapshotOutput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput::snapshot): <p>The snapshot converted from the recovery point.</p>
     /// - On failure, responds with [`SdkError<ConvertRecoveryPointToSnapshotError>`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotError)
-    pub fn convert_recovery_point_to_snapshot(&self) -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotFluentBuilder{
+    pub fn convert_recovery_point_to_snapshot(
+        &self,
+    ) -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotFluentBuilder {
         crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

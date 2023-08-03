@@ -26,7 +26,7 @@ impl IncreaseReplicationFactorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IncreaseReplicationFactorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder,
+    inner: crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder,
 }
 impl IncreaseReplicationFactorFluentBuilder {
     /// Creates a new `IncreaseReplicationFactor`.
@@ -37,7 +37,7 @@ impl IncreaseReplicationFactorFluentBuilder {
         }
     }
     /// Access the IncreaseReplicationFactor as a reference.
-    pub fn as_input(&self) -> &crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl IncreaseReplicationFactorFluentBuilder {
             crate::operation::increase_replication_factor::IncreaseReplicationFactor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl IncreaseReplicationFactorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl IncreaseReplicationFactorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl IncreaseReplicationFactorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_replication_factor::IncreaseReplicationFactorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl IncreaseReplicationFactorFluentBuilder {
             crate::operation::increase_replication_factor::IncreaseReplicationFactor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError>,
     > {
         self.customize_middleware().await
     }
@@ -153,25 +142,17 @@ impl IncreaseReplicationFactorFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
 }

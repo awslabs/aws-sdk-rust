@@ -36,18 +36,14 @@ impl ListImagesInRecycleBinInput {
 }
 impl ListImagesInRecycleBinInput {
     /// Creates a new builder-style object to manufacture [`ListImagesInRecycleBinInput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput).
-    pub fn builder(
-    ) -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder {
         crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagesInRecycleBinInput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesInRecycleBinInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -67,10 +63,7 @@ impl ListImagesInRecycleBinInputBuilder {
         self
     }
     /// <p>The IDs of the AMIs to list. Omit this parameter to list all of the AMIs that are in the Recycle Bin. You can specify up to 20 IDs in a single request.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_ids = input;
         self
     }
@@ -127,13 +120,11 @@ impl ListImagesInRecycleBinInputBuilder {
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput {
-                image_ids: self.image_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinInput {
+            image_ids: self.image_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -44,9 +44,7 @@ pub struct RuleGroup {
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub custom_response_bodies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    >,
+    pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
@@ -104,9 +102,7 @@ impl RuleGroup {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn custom_response_bodies(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         self.custom_response_bodies.as_ref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
@@ -127,9 +123,7 @@ impl RuleGroup {
 
 /// A builder for [`RuleGroup`](crate::types::RuleGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -139,9 +133,7 @@ pub struct RuleGroupBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     pub(crate) label_namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_response_bodies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    >,
+    pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     pub(crate) available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
 }
@@ -234,10 +226,7 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -251,10 +240,7 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VisibilityConfig>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.visibility_config = input;
         self
     }
@@ -273,10 +259,7 @@ impl RuleGroupBuilder {
     /// </account></code> </p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn label_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
         self
     }
@@ -291,10 +274,7 @@ impl RuleGroupBuilder {
     /// </account></code> </p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn set_label_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
         self
     }
@@ -319,11 +299,7 @@ impl RuleGroupBuilder {
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CustomResponseBody,
-    ) -> Self {
+    pub fn custom_response_bodies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CustomResponseBody) -> Self {
         let mut hash_map = self.custom_response_bodies.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.custom_response_bodies = ::std::option::Option::Some(hash_map);
@@ -334,9 +310,7 @@ impl RuleGroupBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_custom_response_bodies(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     ) -> Self {
         self.custom_response_bodies = input;
         self
@@ -346,9 +320,7 @@ impl RuleGroupBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn get_custom_response_bodies(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
         &self.custom_response_bodies
     }
     /// Appends an item to `available_labels`.
@@ -363,17 +335,12 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn set_available_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
+    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.available_labels = input;
         self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn get_available_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.available_labels
     }
     /// Appends an item to `consumed_labels`.
@@ -388,17 +355,12 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn set_consumed_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
+    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.consumed_labels = input;
         self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn get_consumed_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.consumed_labels
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).

@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`typed_link_specifiers(Option<Vec<TypedLinkSpecifier>>)`](crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput::typed_link_specifiers): <p>Returns a typed link specifier as output.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListOutgoingTypedLinksError>`](crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError)
-    pub fn list_outgoing_typed_links(
-        &self,
-    ) -> crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksFluentBuilder
-    {
+    pub fn list_outgoing_typed_links(&self) -> crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksFluentBuilder {
         crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -73,9 +73,7 @@ impl CreateStateMachineInput {
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Tags to be added when creating a state machine.</p>
@@ -85,9 +83,7 @@ impl CreateStateMachineInput {
         self.tags.as_deref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
@@ -116,8 +112,7 @@ impl ::std::fmt::Debug for CreateStateMachineInput {
 }
 impl CreateStateMachineInput {
     /// Creates a new builder-style object to manufacture [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
-    pub fn builder(
-    ) -> crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
+    pub fn builder() -> crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
         crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder::default()
     }
 }
@@ -212,10 +207,7 @@ impl CreateStateMachineInputBuilder {
         self
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StateMachineType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StateMachineType>) -> Self {
         self.r#type = input;
         self
     }
@@ -233,19 +225,14 @@ impl CreateStateMachineInputBuilder {
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// Appends an item to `tags`.
@@ -264,10 +251,7 @@ impl CreateStateMachineInputBuilder {
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -283,17 +267,12 @@ impl CreateStateMachineInputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfiguration>,
-    ) -> Self {
+    pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
         self.tracing_configuration = input;
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
         &self.tracing_configuration
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
@@ -311,18 +290,12 @@ impl CreateStateMachineInputBuilder {
         &self.publish
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_description = input;
         self
     }
@@ -333,23 +306,18 @@ impl CreateStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_state_machine::CreateStateMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_state_machine::CreateStateMachineInput {
-                name: self.name,
-                definition: self.definition,
-                role_arn: self.role_arn,
-                r#type: self.r#type,
-                logging_configuration: self.logging_configuration,
-                tags: self.tags,
-                tracing_configuration: self.tracing_configuration,
-                publish: self.publish,
-                version_description: self.version_description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_state_machine::CreateStateMachineInput {
+            name: self.name,
+            definition: self.definition,
+            role_arn: self.role_arn,
+            r#type: self.r#type,
+            logging_configuration: self.logging_configuration,
+            tags: self.tags,
+            tracing_configuration: self.tracing_configuration,
+            publish: self.publish,
+            version_description: self.version_description,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateStateMachineInputBuilder {

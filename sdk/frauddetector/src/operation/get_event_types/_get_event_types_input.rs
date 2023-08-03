@@ -36,9 +36,7 @@ impl GetEventTypesInput {
 
 /// A builder for [`GetEventTypesInput`](crate::operation::get_event_types::GetEventTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventTypesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetEventTypesInput`](crate::operation::get_event_types::GetEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_types::GetEventTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_event_types::GetEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_types::GetEventTypesInput {
             name: self.name,
             next_token: self.next_token,

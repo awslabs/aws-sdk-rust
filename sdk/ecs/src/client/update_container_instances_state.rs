@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`container_instances(Option<Vec<ContainerInstance>>)`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput::container_instances): <p>The list of container instances.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<UpdateContainerInstancesStateError>`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateError)
-    pub fn update_container_instances_state(&self) -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateFluentBuilder{
+    pub fn update_container_instances_state(
+        &self,
+    ) -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateFluentBuilder {
         crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateFluentBuilder::new(self.handle.clone())
     }
 }

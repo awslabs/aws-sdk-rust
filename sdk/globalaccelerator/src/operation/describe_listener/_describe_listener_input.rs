@@ -15,17 +15,14 @@ impl DescribeListenerInput {
 }
 impl DescribeListenerInput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
-    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_listener::builders::DescribeListenerInputBuilder {
         crate::operation::describe_listener::builders::DescribeListenerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeListenerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_listener::DescribeListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_listener::DescribeListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_listener::DescribeListenerInput {
             listener_arn: self.listener_arn,
         })

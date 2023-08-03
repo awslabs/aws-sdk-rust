@@ -9,75 +9,70 @@ pub fn de_delete_auto_scaling_group_http_error(
     crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceContention" => crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output).map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceInUse" => crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::ResourceInUseFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceInUseFaultBuilder::default();
-                    output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(_response_body, output).map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceInUseFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ScalingActivityInProgress" => crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::ScalingActivityInProgressFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ScalingActivityInProgressFaultBuilder::default();
-                    output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(_response_body, output).map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ScalingActivityInProgressFaultBuilder::default();
+                output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::generic(generic)
+        _ => crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError::generic(generic),
     })
 }
 
@@ -93,9 +88,7 @@ pub fn de_delete_auto_scaling_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

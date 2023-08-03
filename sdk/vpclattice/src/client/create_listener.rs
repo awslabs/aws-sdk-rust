@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`service_id(Option<String>)`](crate::operation::create_listener::CreateListenerOutput::service_id): <p>The ID of the service.</p>
     ///   - [`default_action(Option<RuleAction>)`](crate::operation::create_listener::CreateListenerOutput::default_action): <p>The action for the default rule.</p>
     /// - On failure, responds with [`SdkError<CreateListenerError>`](crate::operation::create_listener::CreateListenerError)
-    pub fn create_listener(
-        &self,
-    ) -> crate::operation::create_listener::builders::CreateListenerFluentBuilder {
-        crate::operation::create_listener::builders::CreateListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_listener(&self) -> crate::operation::create_listener::builders::CreateListenerFluentBuilder {
+        crate::operation::create_listener::builders::CreateListenerFluentBuilder::new(self.handle.clone())
     }
 }

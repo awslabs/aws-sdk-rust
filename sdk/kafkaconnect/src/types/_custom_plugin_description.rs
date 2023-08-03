@@ -30,27 +30,19 @@ impl CustomPluginDescription {
 
 /// A builder for [`CustomPluginDescription`](crate::types::CustomPluginDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomPluginDescriptionBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i64>,
 }
 impl CustomPluginDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_plugin_arn = input;
         self
     }

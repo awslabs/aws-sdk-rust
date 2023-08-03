@@ -107,9 +107,7 @@ impl NetworkInfo {
 
 /// A builder for [`NetworkInfo`](crate::types::NetworkInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInfoBuilder {
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,
@@ -127,18 +125,12 @@ pub struct NetworkInfoBuilder {
 }
 impl NetworkInfoBuilder {
     /// <p>The network performance.</p>
-    pub fn network_performance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_performance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_performance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network performance.</p>
-    pub fn set_network_performance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_performance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_performance = input;
         self
     }
@@ -200,17 +192,12 @@ impl NetworkInfoBuilder {
         self
     }
     /// <p>Describes the network cards for the instance type.</p>
-    pub fn set_network_cards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkCardInfo>>,
-    ) -> Self {
+    pub fn set_network_cards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkCardInfo>>) -> Self {
         self.network_cards = input;
         self
     }
     /// <p>Describes the network cards for the instance type.</p>
-    pub fn get_network_cards(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkCardInfo>> {
+    pub fn get_network_cards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkCardInfo>> {
         &self.network_cards
     }
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
@@ -261,10 +248,7 @@ impl NetworkInfoBuilder {
         self
     }
     /// <p>Indicates whether Elastic Network Adapter (ENA) is supported.</p>
-    pub fn set_ena_support(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSupport>,
-    ) -> Self {
+    pub fn set_ena_support(mut self, input: ::std::option::Option<crate::types::EnaSupport>) -> Self {
         self.ena_support = input;
         self
     }
@@ -306,10 +290,7 @@ impl NetworkInfoBuilder {
         self
     }
     /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
-    pub fn set_encryption_in_transit_supported(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_encryption_in_transit_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_in_transit_supported = input;
         self
     }

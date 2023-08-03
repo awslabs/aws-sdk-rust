@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`service_access_role_arn(Option<String>)`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput::service_access_role_arn): <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     ///   - [`s3_bucket_name(Option<String>)`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput::s3_bucket_name): <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
     /// - On failure, responds with [`SdkError<CreateFleetAdvisorCollectorError>`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError)
-    pub fn create_fleet_advisor_collector(&self) -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorFluentBuilder{
+    pub fn create_fleet_advisor_collector(
+        &self,
+    ) -> crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorFluentBuilder {
         crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorFluentBuilder::new(self.handle.clone())
     }
 }

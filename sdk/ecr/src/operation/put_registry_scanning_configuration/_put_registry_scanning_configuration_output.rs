@@ -5,15 +5,12 @@
 pub struct PutRegistryScanningConfigurationOutput {
     /// <p>The scanning configuration for your registry.</p>
     #[doc(hidden)]
-    pub registry_scanning_configuration:
-        ::std::option::Option<crate::types::RegistryScanningConfiguration>,
+    pub registry_scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,
 }
 impl PutRegistryScanningConfigurationOutput {
     /// <p>The scanning configuration for your registry.</p>
-    pub fn registry_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistryScanningConfiguration> {
+    pub fn registry_scanning_configuration(&self) -> ::std::option::Option<&crate::types::RegistryScanningConfiguration> {
         self.registry_scanning_configuration.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for PutRegistryScanningConfigurationOutpu
 }
 impl PutRegistryScanningConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationOutput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput).
-    pub fn builder() -> crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationOutputBuilder {
         crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationOutputBuilder {
-    pub(crate) registry_scanning_configuration:
-        ::std::option::Option<crate::types::RegistryScanningConfiguration>,
+    pub(crate) registry_scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,
 }
 impl PutRegistryScanningConfigurationOutputBuilder {
     /// <p>The scanning configuration for your registry.</p>
-    pub fn registry_scanning_configuration(
-        mut self,
-        input: crate::types::RegistryScanningConfiguration,
-    ) -> Self {
+    pub fn registry_scanning_configuration(mut self, input: crate::types::RegistryScanningConfiguration) -> Self {
         self.registry_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scanning configuration for your registry.</p>
-    pub fn set_registry_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
-    ) -> Self {
+    pub fn set_registry_scanning_configuration(mut self, input: ::std::option::Option<crate::types::RegistryScanningConfiguration>) -> Self {
         self.registry_scanning_configuration = input;
         self
     }
     /// <p>The scanning configuration for your registry.</p>
-    pub fn get_registry_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistryScanningConfiguration> {
+    pub fn get_registry_scanning_configuration(&self) -> &::std::option::Option<crate::types::RegistryScanningConfiguration> {
         &self.registry_scanning_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl PutRegistryScanningConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationOutput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput {
         crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput {
-            registry_scanning_configuration: self.registry_scanning_configuration
-            ,
+            registry_scanning_configuration: self.registry_scanning_configuration,
             _request_id: self._request_id,
         }
     }

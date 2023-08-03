@@ -9,123 +9,124 @@ pub fn de_copy_db_cluster_snapshot_http_error(
     crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotAlreadyExistsFault" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::DbClusterSnapshotAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterSnapshotAlreadyExistsFault" => {
+            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::DbClusterSnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbClusterSnapshotAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_already_exists_fault::de_db_cluster_snapshot_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_db_cluster_snapshot_already_exists_fault::de_db_cluster_snapshot_already_exists_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "DBClusterSnapshotNotFoundFault" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::DbClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidDBClusterSnapshotStateFault" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::InvalidDbClusterSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::InvalidDbClusterSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDbClusterSnapshotStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidDBClusterStateFault" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "KMSKeyNotAccessibleFault" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::KmsKeyNotAccessibleFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotQuotaExceeded" => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::SnapshotQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::generic(generic)
+        _ => crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::generic(generic),
     })
 }
 
@@ -141,17 +142,9 @@ pub fn de_copy_db_cluster_snapshot_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_copy_db_cluster_snapshot::de_copy_db_cluster_snapshot(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled,
-            )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_copy_db_cluster_snapshot::de_copy_db_cluster_snapshot(_response_body, output)
+            .map_err(crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -160,10 +153,7 @@ pub fn de_copy_db_cluster_snapshot_http_response_with_props(
 pub fn de_copy_db_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder,
-) -> Result<
-    crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -44,34 +44,24 @@ impl LoadBalancerTargetGroupState {
 
 /// A builder for [`LoadBalancerTargetGroupState`](crate::types::LoadBalancerTargetGroupState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTargetGroupStateBuilder {
     pub(crate) load_balancer_target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerTargetGroupStateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn load_balancer_target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_load_balancer_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_target_group_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn get_load_balancer_target_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_load_balancer_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_target_group_arn
     }
     /// <p>The state of the target group.</p>

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`custom_redirect_domain(impl ::std::convert::Into<String>)`](crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsFluentBuilder::custom_redirect_domain) / [`set_custom_redirect_domain(Option<String>)`](crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsFluentBuilder::set_custom_redirect_domain): <p>The domain that you want to use to track open and click events.</p>
     /// - On success, responds with [`PutConfigurationSetTrackingOptionsOutput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetTrackingOptionsError>`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsError)
-    pub fn put_configuration_set_tracking_options(&self) -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsFluentBuilder{
+    pub fn put_configuration_set_tracking_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsFluentBuilder {
         crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

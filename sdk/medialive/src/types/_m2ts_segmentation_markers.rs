@@ -42,13 +42,7 @@
 /// M2ts Segmentation Markers
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsSegmentationMarkers {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for M2tsSegmentationMarkers {
             "PSI_SEGSTART" => M2tsSegmentationMarkers::PsiSegstart,
             "RAI_ADAPT" => M2tsSegmentationMarkers::RaiAdapt,
             "RAI_SEGSTART" => M2tsSegmentationMarkers::RaiSegstart,
-            other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl M2tsSegmentationMarkers {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EBP",
-            "EBP_LEGACY",
-            "NONE",
-            "PSI_SEGSTART",
-            "RAI_ADAPT",
-            "RAI_SEGSTART",
-        ]
+        &["EBP", "EBP_LEGACY", "NONE", "PSI_SEGSTART", "RAI_ADAPT", "RAI_SEGSTART"]
     }
 }
 impl ::std::convert::AsRef<str> for M2tsSegmentationMarkers {

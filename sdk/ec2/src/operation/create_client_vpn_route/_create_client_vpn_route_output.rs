@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateClientVpnRouteOutput {
 }
 impl CreateClientVpnRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder {
         crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClientVpnRouteOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateClientVpnRouteOutputBuilder {
         self
     }
     /// <p>The current state of the route.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnRouteStatus>) -> Self {
         self.status = input;
         self
     }

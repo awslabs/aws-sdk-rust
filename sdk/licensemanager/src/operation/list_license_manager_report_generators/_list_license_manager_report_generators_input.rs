@@ -35,16 +35,14 @@ impl ListLicenseManagerReportGeneratorsInput {
 }
 impl ListLicenseManagerReportGeneratorsInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsInput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput).
-    pub fn builder() -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder{
+    pub fn builder() -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder {
         crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseManagerReportGeneratorsInput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl ListLicenseManagerReportGeneratorsInputBuilder {
     /// <ul>
     /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -112,16 +107,18 @@ impl ListLicenseManagerReportGeneratorsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLicenseManagerReportGeneratorsInput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsInput {
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

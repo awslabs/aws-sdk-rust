@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`services(Option<Vec<InsightImpactGraphService>>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::services): <p>The Amazon Web Services instrumented services related to the insight.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetInsightImpactGraphError>`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphError)
-    pub fn get_insight_impact_graph(
-        &self,
-    ) -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphFluentBuilder
-    {
+    pub fn get_insight_impact_graph(&self) -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphFluentBuilder {
         crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphFluentBuilder::new(self.handle.clone())
     }
 }

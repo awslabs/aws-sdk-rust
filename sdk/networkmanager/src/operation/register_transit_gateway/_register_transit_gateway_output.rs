@@ -5,15 +5,12 @@
 pub struct RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
     #[doc(hidden)]
-    pub transit_gateway_registration:
-        ::std::option::Option<crate::types::TransitGatewayRegistration>,
+    pub transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,
 }
 impl RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
-    pub fn transit_gateway_registration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRegistration> {
+    pub fn transit_gateway_registration(&self) -> ::std::option::Option<&crate::types::TransitGatewayRegistration> {
         self.transit_gateway_registration.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for RegisterTransitGatewayOutput {
 }
 impl RegisterTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayOutput`](crate::operation::register_transit_gateway::RegisterTransitGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::register_transit_gateway::builders::RegisterTransitGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_transit_gateway::builders::RegisterTransitGatewayOutputBuilder {
         crate::operation::register_transit_gateway::builders::RegisterTransitGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterTransitGatewayOutput`](crate::operation::register_transit_gateway::RegisterTransitGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayOutputBuilder {
-    pub(crate) transit_gateway_registration:
-        ::std::option::Option<crate::types::TransitGatewayRegistration>,
+    pub(crate) transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,
 }
 impl RegisterTransitGatewayOutputBuilder {
     /// <p>Information about the transit gateway registration.</p>
-    pub fn transit_gateway_registration(
-        mut self,
-        input: crate::types::TransitGatewayRegistration,
-    ) -> Self {
+    pub fn transit_gateway_registration(mut self, input: crate::types::TransitGatewayRegistration) -> Self {
         self.transit_gateway_registration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the transit gateway registration.</p>
-    pub fn set_transit_gateway_registration(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRegistration>,
-    ) -> Self {
+    pub fn set_transit_gateway_registration(mut self, input: ::std::option::Option<crate::types::TransitGatewayRegistration>) -> Self {
         self.transit_gateway_registration = input;
         self
     }
     /// <p>Information about the transit gateway registration.</p>
-    pub fn get_transit_gateway_registration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRegistration> {
+    pub fn get_transit_gateway_registration(&self) -> &::std::option::Option<crate::types::TransitGatewayRegistration> {
         &self.transit_gateway_registration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

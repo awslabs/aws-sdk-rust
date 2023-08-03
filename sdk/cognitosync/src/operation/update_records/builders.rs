@@ -10,10 +10,7 @@ impl UpdateRecordsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_records::UpdateRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_records::UpdateRecordsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_records::UpdateRecordsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_records();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateRecordsFluentBuilder {
         }
     }
     /// Access the UpdateRecords as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_records::builders::UpdateRecordsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_records::builders::UpdateRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl UpdateRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,18 +110,12 @@ impl UpdateRecordsFluentBuilder {
         self.customize_middleware().await
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -189,32 +175,21 @@ impl UpdateRecordsFluentBuilder {
         self
     }
     /// A list of patch operations.
-    pub fn set_record_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>>,
-    ) -> Self {
+    pub fn set_record_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>>) -> Self {
         self.inner = self.inner.set_record_patches(input);
         self
     }
     /// A list of patch operations.
-    pub fn get_record_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>> {
+    pub fn get_record_patches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>> {
         self.inner.get_record_patches()
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn sync_session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sync_session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_session_token(input.into());
         self
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn set_sync_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sync_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_session_token(input);
         self
     }
@@ -223,18 +198,12 @@ impl UpdateRecordsFluentBuilder {
         self.inner.get_sync_session_token()
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-    pub fn client_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_context(input.into());
         self
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-    pub fn set_client_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_context(input);
         self
     }

@@ -42,9 +42,7 @@ impl EfsVolumeConfiguration {
         self.transit_encryption_port
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn authorization_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EfsAuthorizationConfig> {
+    pub fn authorization_config(&self) -> ::std::option::Option<&crate::types::EfsAuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -57,9 +55,7 @@ impl EfsVolumeConfiguration {
 
 /// A builder for [`EfsVolumeConfiguration`](crate::types::EfsVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EfsVolumeConfigurationBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_directory: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ pub struct EfsVolumeConfigurationBuilder {
 }
 impl EfsVolumeConfigurationBuilder {
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -91,20 +81,14 @@ impl EfsVolumeConfigurationBuilder {
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.</p>
     /// </important>
-    pub fn root_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume is used instead. Specifying <code>/</code> has the same effect as omitting this parameter. The maximum length is 4,096 characters.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code>, which enforces the path set on the Amazon EFS access point.</p>
     /// </important>
-    pub fn set_root_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_directory = input;
         self
     }
@@ -120,17 +104,12 @@ impl EfsVolumeConfigurationBuilder {
         self
     }
     /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn set_transit_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::EfsTransitEncryption>,
-    ) -> Self {
+    pub fn set_transit_encryption(mut self, input: ::std::option::Option<crate::types::EfsTransitEncryption>) -> Self {
         self.transit_encryption = input;
         self
     }
     /// <p>Determines whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn get_transit_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::EfsTransitEncryption> {
+    pub fn get_transit_encryption(&self) -> &::std::option::Option<crate::types::EfsTransitEncryption> {
         &self.transit_encryption
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you don't specify a transit encryption port, it uses the port selection strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
@@ -153,17 +132,12 @@ impl EfsVolumeConfigurationBuilder {
         self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn set_authorization_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EfsAuthorizationConfig>,
-    ) -> Self {
+    pub fn set_authorization_config(mut self, input: ::std::option::Option<crate::types::EfsAuthorizationConfig>) -> Self {
         self.authorization_config = input;
         self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn get_authorization_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::EfsAuthorizationConfig> {
+    pub fn get_authorization_config(&self) -> &::std::option::Option<crate::types::EfsAuthorizationConfig> {
         &self.authorization_config
     }
     /// Consumes the builder and constructs a [`EfsVolumeConfiguration`](crate::types::EfsVolumeConfiguration).

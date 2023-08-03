@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`checksum(Option<String>)`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput::checksum): <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
     ///   - [`archive_id(Option<String>)`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput::archive_id): <p>The ID of the archive. This value is also included as part of the location.</p>
     /// - On failure, responds with [`SdkError<CompleteMultipartUploadError>`](crate::operation::complete_multipart_upload::CompleteMultipartUploadError)
-    pub fn complete_multipart_upload(
-        &self,
-    ) -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadFluentBuilder
-    {
+    pub fn complete_multipart_upload(&self) -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadFluentBuilder {
         crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl ResumeWorkflowRunInput {
 }
 impl ResumeWorkflowRunInput {
     /// Creates a new builder-style object to manufacture [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
-    pub fn builder(
-    ) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
+    pub fn builder() -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
         crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeWorkflowRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +83,7 @@ impl ResumeWorkflowRunInputBuilder {
         self
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn set_node_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.node_ids = input;
         self
     }
@@ -100,16 +94,11 @@ impl ResumeWorkflowRunInputBuilder {
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_workflow_run::ResumeWorkflowRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
-                name: self.name,
-                run_id: self.run_id,
-                node_ids: self.node_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
+            name: self.name,
+            run_id: self.run_id,
+            node_ids: self.node_ids,
+        })
     }
 }

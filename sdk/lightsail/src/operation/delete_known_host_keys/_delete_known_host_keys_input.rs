@@ -15,35 +15,25 @@ impl DeleteKnownHostKeysInput {
 }
 impl DeleteKnownHostKeysInput {
     /// Creates a new builder-style object to manufacture [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
-    pub fn builder(
-    ) -> crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder {
-        crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder {
+        crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKnownHostKeysInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKnownHostKeysInputBuilder {
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteKnownHostKeysInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput {
-                instance_name: self.instance_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput {
+            instance_name: self.instance_name,
+        })
     }
 }

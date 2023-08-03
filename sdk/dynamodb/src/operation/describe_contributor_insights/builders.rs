@@ -26,7 +26,7 @@ impl DescribeContributorInsightsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContributorInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder,
+    inner: crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder,
 }
 impl DescribeContributorInsightsFluentBuilder {
     /// Creates a new `DescribeContributorInsights`.
@@ -37,7 +37,7 @@ impl DescribeContributorInsightsFluentBuilder {
         }
     }
     /// Access the DescribeContributorInsights as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeContributorInsightsFluentBuilder {
             crate::operation::describe_contributor_insights::DescribeContributorInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contributor_insights::DescribeContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contributor_insights::DescribeContributorInsightsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeContributorInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeContributorInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contributor_insights::DescribeContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contributor_insights::DescribeContributorInsightsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeContributorInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contributor_insights::DescribeContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contributor_insights::DescribeContributorInsightsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeContributorInsightsFluentBuilder {
             crate::operation::describe_contributor_insights::DescribeContributorInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contributor_insights::DescribeContributorInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contributor_insights::DescribeContributorInsightsError>,
     > {
         self.customize_middleware().await
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<VpcLink>>)`](crate::operation::get_vpc_links::GetVpcLinksOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_vpc_links::GetVpcLinksOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetVpcLinksError>`](crate::operation::get_vpc_links::GetVpcLinksError)
-    pub fn get_vpc_links(
-        &self,
-    ) -> crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder {
-        crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vpc_links(&self) -> crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder {
+        crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::new(self.handle.clone())
     }
 }

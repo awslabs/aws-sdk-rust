@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`share_id(Option<String>)`](crate::operation::create_profile_share::CreateProfileShareOutput::share_id): <p>The ID associated with the share.</p>
     ///   - [`profile_arn(Option<String>)`](crate::operation::create_profile_share::CreateProfileShareOutput::profile_arn): <p>The profile ARN.</p>
     /// - On failure, responds with [`SdkError<CreateProfileShareError>`](crate::operation::create_profile_share::CreateProfileShareError)
-    pub fn create_profile_share(
-        &self,
-    ) -> crate::operation::create_profile_share::builders::CreateProfileShareFluentBuilder {
-        crate::operation::create_profile_share::builders::CreateProfileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profile_share(&self) -> crate::operation::create_profile_share::builders::CreateProfileShareFluentBuilder {
+        crate::operation::create_profile_share::builders::CreateProfileShareFluentBuilder::new(self.handle.clone())
     }
 }

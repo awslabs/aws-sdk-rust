@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::configure_logs::ConfigureLogsOutput::ingress_access_logs): Configure ingress access logging.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::configure_logs::ConfigureLogsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<ConfigureLogsError>`](crate::operation::configure_logs::ConfigureLogsError)
-    pub fn configure_logs(
-        &self,
-    ) -> crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder {
-        crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn configure_logs(&self) -> crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder {
+        crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::new(self.handle.clone())
     }
 }

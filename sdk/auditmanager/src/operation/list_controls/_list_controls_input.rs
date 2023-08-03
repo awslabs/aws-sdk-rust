@@ -36,9 +36,7 @@ impl ListControlsInput {
 
 /// A builder for [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlsInputBuilder {
     pub(crate) control_type: ::std::option::Option<crate::types::ControlType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListControlsInputBuilder {
         self
     }
     /// <p> The type of control, such as a standard control or a custom control. </p>
-    pub fn set_control_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlType>,
-    ) -> Self {
+    pub fn set_control_type(mut self, input: ::std::option::Option<crate::types::ControlType>) -> Self {
         self.control_type = input;
         self
     }
@@ -91,12 +86,7 @@ impl ListControlsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_controls::ListControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_controls::ListControlsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_controls::ListControlsInput {
             control_type: self.control_type,
             next_token: self.next_token,

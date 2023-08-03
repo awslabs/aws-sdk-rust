@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_schemas::DescribeSchemasOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`schemas(Option<Vec<String>>)`](crate::operation::describe_schemas::DescribeSchemasOutput::schemas): <p>The described schema.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemasError>`](crate::operation::describe_schemas::DescribeSchemasError)
-    pub fn describe_schemas(
-        &self,
-    ) -> crate::operation::describe_schemas::builders::DescribeSchemasFluentBuilder {
-        crate::operation::describe_schemas::builders::DescribeSchemasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_schemas(&self) -> crate::operation::describe_schemas::builders::DescribeSchemasFluentBuilder {
+        crate::operation::describe_schemas::builders::DescribeSchemasFluentBuilder::new(self.handle.clone())
     }
 }

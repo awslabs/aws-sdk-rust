@@ -34,9 +34,7 @@ impl AddressField {
 
 /// A builder for [`AddressField`](crate::types::AddressField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressFieldBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,6 @@ impl AddressFieldBuilder {
     }
     /// Consumes the builder and constructs a [`AddressField`](crate::types::AddressField).
     pub fn build(self) -> crate::types::AddressField {
-        crate::types::AddressField {
-            identifier: self.identifier,
-        }
+        crate::types::AddressField { identifier: self.identifier }
     }
 }

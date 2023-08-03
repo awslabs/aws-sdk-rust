@@ -38,10 +38,7 @@ impl DisassociateRouteTableFluentBuilder {
         }
     }
     /// Access the DisassociateRouteTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DisassociateRouteTableFluentBuilder {
             crate::operation::disassociate_route_table::DisassociateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_route_table::DisassociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_route_table::DisassociateRouteTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DisassociateRouteTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DisassociateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_route_table::DisassociateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_route_table::DisassociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_route_table::DisassociateRouteTableError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DisassociateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_route_table::DisassociateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_route_table::DisassociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_route_table::DisassociateRouteTableError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DisassociateRouteTableFluentBuilder {
             crate::operation::disassociate_route_table::DisassociateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_route_table::DisassociateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_route_table::DisassociateRouteTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

@@ -31,9 +31,7 @@ impl CalculatedSpend {
 
 /// A builder for [`CalculatedSpend`](crate::types::CalculatedSpend).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculatedSpendBuilder {
     pub(crate) actual_spend: ::std::option::Option<crate::types::Spend>,
     pub(crate) forecasted_spend: ::std::option::Option<crate::types::Spend>,
@@ -59,10 +57,7 @@ impl CalculatedSpendBuilder {
         self
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
-    pub fn set_forecasted_spend(
-        mut self,
-        input: ::std::option::Option<crate::types::Spend>,
-    ) -> Self {
+    pub fn set_forecasted_spend(mut self, input: ::std::option::Option<crate::types::Spend>) -> Self {
         self.forecasted_spend = input;
         self
     }

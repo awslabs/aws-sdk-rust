@@ -59,18 +59,12 @@ impl EndpointAttributesBuilder {
         &self.device_token
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn voip_device_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voip_device_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voip_device_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn set_voip_device_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voip_device_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voip_device_token = input;
         self
     }

@@ -29,17 +29,14 @@ impl GetFaceDetectionInput {
 }
 impl GetFaceDetectionInput {
     /// Creates a new builder-style object to manufacture [`GetFaceDetectionInput`](crate::operation::get_face_detection::GetFaceDetectionInput).
-    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionInputBuilder {
         crate::operation::get_face_detection::builders::GetFaceDetectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFaceDetectionInput`](crate::operation::get_face_detection::GetFaceDetectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFaceDetectionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl GetFaceDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetFaceDetectionInput`](crate::operation::get_face_detection::GetFaceDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_face_detection::GetFaceDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_face_detection::GetFaceDetectionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_face_detection::GetFaceDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_face_detection::GetFaceDetectionInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

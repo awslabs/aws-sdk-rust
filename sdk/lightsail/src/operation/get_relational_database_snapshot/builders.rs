@@ -26,7 +26,7 @@ impl GetRelationalDatabaseSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder,
+    inner: crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder,
 }
 impl GetRelationalDatabaseSnapshotFluentBuilder {
     /// Creates a new `GetRelationalDatabaseSnapshot`.
@@ -37,7 +37,7 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabaseSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
             crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl GetRelationalDatabaseSnapshotFluentBuilder {
             crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_snapshot_name(input.into());
         self
     }
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
     }
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn get_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_snapshot_name()
     }
 }

@@ -6,10 +6,7 @@ pub fn ser_sheet_control_layout_configuration(
     if let Some(var_1) = &input.grid_layout {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GridLayout").start_object();
-        crate::protocol_serde::shape_grid_layout_configuration::ser_grid_layout_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_grid_layout_configuration::ser_grid_layout_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())
@@ -17,52 +14,38 @@ pub fn ser_sheet_control_layout_configuration(
 
 pub(crate) fn de_sheet_control_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SheetControlLayoutConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SheetControlLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::SheetControlLayoutConfigurationBuilder::default();
+            let mut builder = crate::types::builders::SheetControlLayoutConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "GridLayout" => {
-                                builder = builder.set_grid_layout(
-                                    crate::protocol_serde::shape_grid_layout_configuration::de_grid_layout_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "GridLayout" => {
+                            builder = builder.set_grid_layout(crate::protocol_serde::shape_grid_layout_configuration::de_grid_layout_configuration(
+                                tokens,
+                            )?);
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

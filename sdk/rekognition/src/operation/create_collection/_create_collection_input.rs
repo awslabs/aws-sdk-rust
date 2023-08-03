@@ -8,9 +8,7 @@ pub struct CreateCollectionInput {
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCollectionInput {
     /// <p>ID for the collection that you are creating.</p>
@@ -18,47 +16,32 @@ impl CreateCollectionInput {
         self.collection_id.as_deref()
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateCollectionInput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
-    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionInputBuilder {
         crate::operation::create_collection::builders::CreateCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCollectionInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCollectionInputBuilder {
     /// <p>ID for the collection that you are creating.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID for the collection that you are creating.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -71,41 +54,25 @@ impl CreateCollectionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_collection::CreateCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
             collection_id: self.collection_id,
             tags: self.tags,

@@ -5,8 +5,7 @@
 pub struct GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
     #[doc(hidden)]
-    pub interpolated_asset_property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
+    pub interpolated_asset_property_values: ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetInterpolatedAssetPropertyValuesOutput {
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
-    pub fn interpolated_asset_property_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InterpolatedAssetPropertyValue]> {
+    pub fn interpolated_asset_property_values(&self) -> ::std::option::Option<&[crate::types::InterpolatedAssetPropertyValue]> {
         self.interpolated_asset_property_values.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetInterpolatedAssetPropertyValuesOut
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetInterpolatedAssetPropertyValuesOutput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput).
-    pub fn builder() -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder{
+    pub fn builder() -> crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder {
         crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInterpolatedAssetPropertyValuesOutput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesOutputBuilder {
-    pub(crate) interpolated_asset_property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
+    pub(crate) interpolated_asset_property_values: ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl GetInterpolatedAssetPropertyValuesOutputBuilder {
     /// To override the contents of this collection use [`set_interpolated_asset_property_values`](Self::set_interpolated_asset_property_values).
     ///
     /// <p>The requested interpolated values.</p>
-    pub fn interpolated_asset_property_values(
-        mut self,
-        input: crate::types::InterpolatedAssetPropertyValue,
-    ) -> Self {
+    pub fn interpolated_asset_property_values(mut self, input: crate::types::InterpolatedAssetPropertyValue) -> Self {
         let mut v = self.interpolated_asset_property_values.unwrap_or_default();
         v.push(input);
         self.interpolated_asset_property_values = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl GetInterpolatedAssetPropertyValuesOutputBuilder {
         self
     }
     /// <p>The requested interpolated values.</p>
-    pub fn get_interpolated_asset_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>> {
+    pub fn get_interpolated_asset_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>> {
         &self.interpolated_asset_property_values
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -100,12 +89,10 @@ impl GetInterpolatedAssetPropertyValuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesOutput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput).
-    pub fn build(self) -> crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput{
+    pub fn build(self) -> crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
         crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
-            interpolated_asset_property_values: self.interpolated_asset_property_values
-            ,
-            next_token: self.next_token
-            ,
+            interpolated_asset_property_values: self.interpolated_asset_property_values,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

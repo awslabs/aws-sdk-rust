@@ -23,9 +23,7 @@ impl OutputGroupDetail {
 
 /// A builder for [`OutputGroupDetail`](crate::types::OutputGroupDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputGroupDetailBuilder {
     pub(crate) output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
 }
@@ -42,17 +40,12 @@ impl OutputGroupDetailBuilder {
         self
     }
     /// Details about the output
-    pub fn set_output_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
-    ) -> Self {
+    pub fn set_output_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>) -> Self {
         self.output_details = input;
         self
     }
     /// Details about the output
-    pub fn get_output_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>> {
+    pub fn get_output_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>> {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`OutputGroupDetail`](crate::types::OutputGroupDetail).

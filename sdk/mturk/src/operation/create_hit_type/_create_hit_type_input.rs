@@ -23,8 +23,7 @@ pub struct CreateHitTypeInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     #[doc(hidden)]
-    pub qualification_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
 }
 impl CreateHitTypeInput {
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
@@ -52,9 +51,7 @@ impl CreateHitTypeInput {
         self.description.as_deref()
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
+    pub fn qualification_requirements(&self) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
         self.qualification_requirements.as_deref()
     }
 }
@@ -67,9 +64,7 @@ impl CreateHitTypeInput {
 
 /// A builder for [`CreateHitTypeInput`](crate::operation::create_hit_type::CreateHitTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHitTypeInputBuilder {
     pub(crate) auto_approval_delay_in_seconds: ::std::option::Option<i64>,
     pub(crate) assignment_duration_in_seconds: ::std::option::Option<i64>,
@@ -77,8 +72,7 @@ pub struct CreateHitTypeInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub(crate) qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
 }
 impl CreateHitTypeInputBuilder {
     /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
@@ -170,36 +164,25 @@ impl CreateHitTypeInputBuilder {
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        mut self,
-        input: crate::types::QualificationRequirement,
-    ) -> Self {
+    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         let mut v = self.qualification_requirements.unwrap_or_default();
         v.push(input);
         self.qualification_requirements = ::std::option::Option::Some(v);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
-    ) -> Self {
+    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
         self.qualification_requirements = input;
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn get_qualification_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
         &self.qualification_requirements
     }
     /// Consumes the builder and constructs a [`CreateHitTypeInput`](crate::operation::create_hit_type::CreateHitTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit_type::CreateHitTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_hit_type::CreateHitTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hit_type::CreateHitTypeInput {
             auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds,
             assignment_duration_in_seconds: self.assignment_duration_in_seconds,

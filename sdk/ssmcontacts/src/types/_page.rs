@@ -72,9 +72,7 @@ impl Page {
 
 /// A builder for [`Page`](crate::types::Page).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PageBuilder {
     pub(crate) page_arn: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_arn: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl PageBuilder {
         &self.page_arn
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub fn engagement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub fn set_engagement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engagement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_arn = input;
         self
     }
@@ -168,10 +160,7 @@ impl PageBuilder {
         self
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub fn set_sent_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sent_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sent_time = input;
         self
     }
@@ -185,10 +174,7 @@ impl PageBuilder {
         self
     }
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub fn set_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delivery_time = input;
         self
     }
@@ -202,10 +188,7 @@ impl PageBuilder {
         self
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub fn set_read_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_read_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.read_time = input;
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationFromEnvironmentOutpu
 }
 impl DeleteApplicationFromEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationFromEnvironmentOutput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput).
-    pub fn builder() -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentOutputBuilder {
         crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationFromEnvironmentOutput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationFromEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteApplicationFromEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationFromEnvironmentOutput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput
-    {
+    pub fn build(self) -> crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput {
         crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput {
             _request_id: self._request_id,
         }

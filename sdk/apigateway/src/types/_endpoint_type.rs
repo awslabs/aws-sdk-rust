@@ -39,13 +39,7 @@
 /// <p>The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EndpointType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for EndpointType {
             "EDGE" => EndpointType::Edge,
             "PRIVATE" => EndpointType::Private,
             "REGIONAL" => EndpointType::Regional,
-            other => {
-                EndpointType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EndpointType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

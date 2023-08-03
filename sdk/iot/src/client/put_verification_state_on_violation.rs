@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`verification_state_description(impl ::std::convert::Into<String>)`](crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationFluentBuilder::verification_state_description) / [`set_verification_state_description(Option<String>)`](crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationFluentBuilder::set_verification_state_description): <p>The description of the verification state of the violation (detect alarm).</p>
     /// - On success, responds with [`PutVerificationStateOnViolationOutput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput)
     /// - On failure, responds with [`SdkError<PutVerificationStateOnViolationError>`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationError)
-    pub fn put_verification_state_on_violation(&self) -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationFluentBuilder{
+    pub fn put_verification_state_on_violation(
+        &self,
+    ) -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationFluentBuilder {
         crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationFluentBuilder::new(self.handle.clone())
     }
 }

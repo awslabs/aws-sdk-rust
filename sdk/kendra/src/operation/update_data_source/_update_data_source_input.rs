@@ -33,8 +33,7 @@ pub struct UpdateDataSourceInput {
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     #[doc(hidden)]
-    pub custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInput {
     /// <p>The identifier of the data source connector you want to update.</p>
@@ -54,9 +53,7 @@ impl UpdateDataSourceInput {
         self.configuration.as_ref()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn vpc_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>A new description for the data source connector.</p>
@@ -77,25 +74,20 @@ impl UpdateDataSourceInput {
     }
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn custom_document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
 impl UpdateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
         crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataSourceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -106,8 +98,7 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub(crate) custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The identifier of the data source connector you want to update.</p>
@@ -158,17 +149,12 @@ impl UpdateDataSourceInputBuilder {
         self
     }
     /// <p>Configuration information you want to update for the data source connector.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Configuration information you want to update for the data source connector.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.configuration
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
@@ -177,17 +163,12 @@ impl UpdateDataSourceInputBuilder {
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn get_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
         &self.vpc_configuration
     }
     /// <p>A new description for the data source connector.</p>
@@ -233,18 +214,12 @@ impl UpdateDataSourceInputBuilder {
         &self.role_arn
     }
     /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -254,10 +229,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        mut self,
-        input: crate::types::CustomDocumentEnrichmentConfiguration,
-    ) -> Self {
+    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
         self.custom_document_enrichment_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -272,32 +244,24 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn get_custom_document_enrichment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn get_custom_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
         &self.custom_document_enrichment_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_source::UpdateDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_source::UpdateDataSourceInput {
-                id: self.id,
-                name: self.name,
-                index_id: self.index_id,
-                configuration: self.configuration,
-                vpc_configuration: self.vpc_configuration,
-                description: self.description,
-                schedule: self.schedule,
-                role_arn: self.role_arn,
-                language_code: self.language_code,
-                custom_document_enrichment_configuration: self
-                    .custom_document_enrichment_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
+            id: self.id,
+            name: self.name,
+            index_id: self.index_id,
+            configuration: self.configuration,
+            vpc_configuration: self.vpc_configuration,
+            description: self.description,
+            schedule: self.schedule,
+            role_arn: self.role_arn,
+            language_code: self.language_code,
+            custom_document_enrichment_configuration: self.custom_document_enrichment_configuration,
+        })
     }
 }

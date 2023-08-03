@@ -10,10 +10,7 @@ impl ValidatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline::ValidatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline::ValidatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline::ValidatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.validate_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ValidatePipelineFluentBuilder {
         }
     }
     /// Access the ValidatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::validate_pipeline::builders::ValidatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ValidatePipelineFluentBuilder {
             crate::operation::validate_pipeline::ValidatePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline::ValidatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline::ValidatePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ValidatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ValidatePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline::ValidatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline::ValidatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline::ValidatePipelineError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ValidatePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline::ValidatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline::ValidatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline::ValidatePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ValidatePipelineFluentBuilder {
             crate::operation::validate_pipeline::ValidatePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_pipeline::ValidatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_pipeline::ValidatePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_configuration_body(input.into());
         self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn set_pipeline_configuration_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_configuration_body(input);
         self
     }

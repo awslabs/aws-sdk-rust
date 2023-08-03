@@ -17,9 +17,7 @@ impl LoRaWanSendDataToDevice {
         self.f_port
     }
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-    pub fn participating_gateways(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParticipatingGateways> {
+    pub fn participating_gateways(&self) -> ::std::option::Option<&crate::types::ParticipatingGateways> {
         self.participating_gateways.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LoRaWanSendDataToDevice {
 
 /// A builder for [`LoRaWanSendDataToDevice`](crate::types::LoRaWanSendDataToDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanSendDataToDeviceBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) participating_gateways: ::std::option::Option<crate::types::ParticipatingGateways>,
@@ -60,17 +56,12 @@ impl LoRaWanSendDataToDeviceBuilder {
         self
     }
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-    pub fn set_participating_gateways(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipatingGateways>,
-    ) -> Self {
+    pub fn set_participating_gateways(mut self, input: ::std::option::Option<crate::types::ParticipatingGateways>) -> Self {
         self.participating_gateways = input;
         self
     }
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-    pub fn get_participating_gateways(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParticipatingGateways> {
+    pub fn get_participating_gateways(&self) -> &::std::option::Option<crate::types::ParticipatingGateways> {
         &self.participating_gateways
     }
     /// Consumes the builder and constructs a [`LoRaWanSendDataToDevice`](crate::types::LoRaWanSendDataToDevice).

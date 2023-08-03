@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`channel_flows(Option<Vec<ChannelFlowSummary>>)`](crate::operation::list_channel_flows::ListChannelFlowsOutput::channel_flows): <p>The information about each channel flow.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_flows::ListChannelFlowsOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelFlowsError>`](crate::operation::list_channel_flows::ListChannelFlowsError)
-    pub fn list_channel_flows(
-        &self,
-    ) -> crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder {
-        crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channel_flows(&self) -> crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder {
+        crate::operation::list_channel_flows::builders::ListChannelFlowsFluentBuilder::new(self.handle.clone())
     }
 }

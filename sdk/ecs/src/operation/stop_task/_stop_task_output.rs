@@ -28,9 +28,7 @@ impl StopTaskOutput {
 
 /// A builder for [`StopTaskOutput`](crate::operation::stop_task::StopTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTaskOutputBuilder {
     pub(crate) task: ::std::option::Option<crate::types::Task>,
     _request_id: Option<String>,

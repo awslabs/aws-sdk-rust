@@ -73,9 +73,7 @@ impl Finding {
         self.service.as_deref()
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    pub fn service_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InspectorServiceAttributes> {
+    pub fn service_attributes(&self) -> ::std::option::Option<&crate::types::InspectorServiceAttributes> {
         self.service_attributes.as_ref()
     }
     /// <p>The type of the host from which the finding is generated.</p>
@@ -144,9 +142,7 @@ impl Finding {
 
 /// A builder for [`Finding`](crate::types::Finding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version: ::std::option::Option<i32>,
@@ -216,17 +212,12 @@ impl FindingBuilder {
         self
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    pub fn set_service_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::InspectorServiceAttributes>,
-    ) -> Self {
+    pub fn set_service_attributes(mut self, input: ::std::option::Option<crate::types::InspectorServiceAttributes>) -> Self {
         self.service_attributes = input;
         self
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    pub fn get_service_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::InspectorServiceAttributes> {
+    pub fn get_service_attributes(&self) -> &::std::option::Option<crate::types::InspectorServiceAttributes> {
         &self.service_attributes
     }
     /// <p>The type of the host from which the finding is generated.</p>
@@ -249,10 +240,7 @@ impl FindingBuilder {
         self
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn set_asset_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetAttributes>,
-    ) -> Self {
+    pub fn set_asset_attributes(mut self, input: ::std::option::Option<crate::types::AssetAttributes>) -> Self {
         self.asset_attributes = input;
         self
     }
@@ -303,18 +291,12 @@ impl FindingBuilder {
         &self.description
     }
     /// <p>The recommendation for the finding.</p>
-    pub fn recommendation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation for the finding.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation = input;
         self
     }
@@ -390,17 +372,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Appends an item to `user_attributes`.
@@ -415,17 +392,12 @@ impl FindingBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.user_attributes = input;
         self
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn get_user_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.user_attributes
     }
     /// <p>The time when the finding was generated.</p>
@@ -434,10 +406,7 @@ impl FindingBuilder {
         self
     }
     /// <p>The time when the finding was generated.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -451,10 +420,7 @@ impl FindingBuilder {
         self
     }
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

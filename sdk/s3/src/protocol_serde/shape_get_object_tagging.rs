@@ -2,8 +2,7 @@
 pub fn ser_get_object_tagging_headers(
     input: &crate::operation::get_object_tagging::GetObjectTaggingInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_object_tagging_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -27,10 +23,7 @@ pub fn ser_get_object_tagging_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -44,19 +37,11 @@ pub fn de_get_object_tagging_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_object_tagging::GetObjectTaggingOutput,
-    crate::operation::get_object_tagging::GetObjectTaggingError,
-> {
+) -> std::result::Result<crate::operation::get_object_tagging::GetObjectTaggingOutput, crate::operation::get_object_tagging::GetObjectTaggingError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_object_tagging::GetObjectTaggingError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_object_tagging::GetObjectTaggingError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_object_tagging::GetObjectTaggingError::generic(generic))
@@ -67,37 +52,19 @@ pub fn de_get_object_tagging_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_object_tagging::GetObjectTaggingOutput,
-    crate::operation::get_object_tagging::GetObjectTaggingError,
-> {
+) -> std::result::Result<crate::operation::get_object_tagging::GetObjectTaggingOutput, crate::operation::get_object_tagging::GetObjectTaggingError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_object_tagging::GetObjectTaggingError::unhandled)?;
+        let mut output = crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging(_response_body, output)
+            .map_err(crate::operation::get_object_tagging::GetObjectTaggingError::unhandled)?;
         output = output.set_version_id(
-            crate::protocol_serde::shape_get_object_tagging_output::de_version_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object_tagging::GetObjectTaggingError::unhandled(
-                    "Failed to parse VersionId from header `x-amz-version-id",
-                )
+            crate::protocol_serde::shape_get_object_tagging_output::de_version_id_header(_response_headers).map_err(|_| {
+                crate::operation::get_object_tagging::GetObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id")
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -106,10 +73,7 @@ pub fn de_get_object_tagging_http_response_with_props(
 pub fn de_get_object_tagging(
     inp: &[u8],
     mut builder: crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder,
-) -> Result<
-    crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -117,11 +81,10 @@ pub fn de_get_object_tagging(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("Tagging") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected Tagging but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected Tagging but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

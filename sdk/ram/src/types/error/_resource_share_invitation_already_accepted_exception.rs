@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ResourceShareInvitationAlreadyAcceptedException {
     }
 }
 impl ::std::error::Error for ResourceShareInvitationAlreadyAcceptedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ResourceShareInvitationAlreadyAcceptedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ResourceShareInvitationAlreadyAcceptedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ResourceShareInvitationAlreadyAcceptedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceShareInvitationAlreadyAcceptedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ResourceShareInvitationAlreadyAcceptedException {
     /// Creates a new builder-style object to manufacture [`ResourceShareInvitationAlreadyAcceptedException`](crate::types::error::ResourceShareInvitationAlreadyAcceptedException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ResourceShareInvitationAlreadyAcceptedExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::ResourceShareInvitationAlreadyAcceptedExceptionBuilder {
         crate::types::error::builders::ResourceShareInvitationAlreadyAcceptedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ResourceShareInvitationAlreadyAcceptedException`](crate::types::error::ResourceShareInvitationAlreadyAcceptedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceShareInvitationAlreadyAcceptedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ResourceShareInvitationAlreadyAcceptedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -6,19 +6,13 @@ pub fn ser_sapo_data_connector_profile_credentials(
     if let Some(var_1) = &input.basic_auth_credentials {
         #[allow(unused_mut)]
         let mut object_2 = object.key("basicAuthCredentials").start_object();
-        crate::protocol_serde::shape_basic_auth_credentials::ser_basic_auth_credentials(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_basic_auth_credentials::ser_basic_auth_credentials(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.o_auth_credentials {
         #[allow(unused_mut)]
         let mut object_4 = object.key("oAuthCredentials").start_object();
-        crate::protocol_serde::shape_o_auth_credentials::ser_o_auth_credentials(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_o_auth_credentials::ser_o_auth_credentials(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

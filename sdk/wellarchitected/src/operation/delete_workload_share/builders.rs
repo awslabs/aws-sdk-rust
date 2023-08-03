@@ -37,9 +37,7 @@ impl DeleteWorkloadShareFluentBuilder {
         }
     }
     /// Access the DeleteWorkloadShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workload_share::builders::DeleteWorkloadShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_workload_share::builders::DeleteWorkloadShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteWorkloadShareFluentBuilder {
             crate::operation::delete_workload_share::DeleteWorkloadShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workload_share::DeleteWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workload_share::DeleteWorkloadShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteWorkloadShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteWorkloadShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workload_share::DeleteWorkloadShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workload_share::DeleteWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workload_share::DeleteWorkloadShareError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteWorkloadShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workload_share::DeleteWorkloadShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workload_share::DeleteWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workload_share::DeleteWorkloadShareError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteWorkloadShareFluentBuilder {
             crate::operation::delete_workload_share::DeleteWorkloadShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workload_share::DeleteWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workload_share::DeleteWorkloadShareError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +141,7 @@ impl DeleteWorkloadShareFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
@@ -165,10 +149,7 @@ impl DeleteWorkloadShareFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

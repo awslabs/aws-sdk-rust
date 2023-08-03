@@ -26,8 +26,7 @@ impl ListEventSourceMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventSourceMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder,
+    inner: crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder,
 }
 impl ListEventSourceMappingsFluentBuilder {
     /// Creates a new `ListEventSourceMappings`.
@@ -38,10 +37,7 @@ impl ListEventSourceMappingsFluentBuilder {
         }
     }
     /// Access the ListEventSourceMappings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListEventSourceMappingsFluentBuilder {
             crate::operation::list_event_source_mappings::ListEventSourceMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListEventSourceMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListEventSourceMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListEventSourceMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListEventSourceMappingsFluentBuilder {
             crate::operation::list_event_source_mappings::ListEventSourceMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator {
         crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -142,10 +124,7 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
         self
     }
@@ -158,10 +137,7 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
@@ -186,10 +162,7 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -202,10 +175,7 @@ impl ListEventSourceMappingsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

@@ -51,9 +51,7 @@ impl ModelInputConfiguration {
 
 /// A builder for [`ModelInputConfiguration`](crate::types::ModelInputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelInputConfigurationBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::ModelInputDataFormat>,
@@ -63,18 +61,12 @@ pub struct ModelInputConfigurationBuilder {
 }
 impl ModelInputConfigurationBuilder {
     /// <p>The event type name.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type name.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -88,10 +80,7 @@ impl ModelInputConfigurationBuilder {
         self
     }
     /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelInputDataFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ModelInputDataFormat>) -> Self {
         self.format = input;
         self
     }
@@ -114,18 +103,12 @@ impl ModelInputConfigurationBuilder {
         &self.use_event_variables
     }
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    pub fn json_input_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn json_input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.json_input_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    pub fn set_json_input_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_json_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.json_input_template = input;
         self
     }
@@ -134,18 +117,12 @@ impl ModelInputConfigurationBuilder {
         &self.json_input_template
     }
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    pub fn csv_input_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn csv_input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_input_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    pub fn set_csv_input_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_csv_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_input_template = input;
         self
     }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`function_instances(Option<Vec<ListSolFunctionInstanceInfo>>)`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput::function_instances): <p>Network function instances.</p>
     /// - On failure, responds with [`SdkError<ListSolFunctionInstancesError>`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesError)
-    pub fn list_sol_function_instances(&self) -> crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesFluentBuilder{
+    pub fn list_sol_function_instances(&self) -> crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesFluentBuilder {
         crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesFluentBuilder::new(self.handle.clone())
     }
 }

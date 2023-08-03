@@ -14,7 +14,11 @@ impl super::Client {
     /// - On success, responds with [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     /// - On failure, responds with [`SdkError<StartDataQualityRulesetEvaluationRunError>`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError)
-    pub fn start_data_quality_ruleset_evaluation_run(&self) -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunFluentBuilder{
-        crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunFluentBuilder::new(self.handle.clone())
+    pub fn start_data_quality_ruleset_evaluation_run(
+        &self,
+    ) -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunFluentBuilder {
+        crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

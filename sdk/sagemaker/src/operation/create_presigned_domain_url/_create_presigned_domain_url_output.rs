@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePresignedDomainUrlOutput {
 }
 impl CreatePresignedDomainUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedDomainUrlOutput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput).
-    pub fn builder() -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlOutputBuilder {
         crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePresignedDomainUrlOutput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresignedDomainUrlOutputBuilder {
     pub(crate) authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePresignedDomainUrlOutputBuilder {
     /// <p>The presigned URL.</p>
-    pub fn authorized_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned URL.</p>
-    pub fn set_authorized_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorized_url = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreatePresignedDomainUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePresignedDomainUrlOutput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput {
+    pub fn build(self) -> crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput {
         crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput {
             authorized_url: self.authorized_url,
             _request_id: self._request_id,

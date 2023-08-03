@@ -39,10 +39,7 @@ impl DescribeLanguageModelFluentBuilder {
         }
     }
     /// Access the DescribeLanguageModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_language_model::builders::DescribeLanguageModelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_language_model::builders::DescribeLanguageModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeLanguageModelFluentBuilder {
             crate::operation::describe_language_model::DescribeLanguageModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_language_model::DescribeLanguageModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_language_model::DescribeLanguageModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeLanguageModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeLanguageModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_language_model::DescribeLanguageModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_language_model::DescribeLanguageModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_language_model::DescribeLanguageModelError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeLanguageModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_language_model::DescribeLanguageModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_language_model::DescribeLanguageModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_language_model::DescribeLanguageModelError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DescribeLanguageModelFluentBuilder {
             crate::operation::describe_language_model::DescribeLanguageModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_language_model::DescribeLanguageModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_language_model::DescribeLanguageModelError>,
     > {
         self.customize_middleware().await
     }

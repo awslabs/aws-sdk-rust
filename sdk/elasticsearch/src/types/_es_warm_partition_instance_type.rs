@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EsWarmPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum EsWarmPartitionInstanceType {
 impl ::std::convert::From<&str> for EsWarmPartitionInstanceType {
     fn from(s: &str) -> Self {
         match s {
-            "ultrawarm1.large.elasticsearch" => {
-                EsWarmPartitionInstanceType::Ultrawarm1LargeElasticsearch
-            }
-            "ultrawarm1.medium.elasticsearch" => {
-                EsWarmPartitionInstanceType::Ultrawarm1MediumElasticsearch
-            }
-            other => EsWarmPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "ultrawarm1.large.elasticsearch" => EsWarmPartitionInstanceType::Ultrawarm1LargeElasticsearch,
+            "ultrawarm1.medium.elasticsearch" => EsWarmPartitionInstanceType::Ultrawarm1MediumElasticsearch,
+            other => EsWarmPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl EsWarmPartitionInstanceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            EsWarmPartitionInstanceType::Ultrawarm1LargeElasticsearch => {
-                "ultrawarm1.large.elasticsearch"
-            }
-            EsWarmPartitionInstanceType::Ultrawarm1MediumElasticsearch => {
-                "ultrawarm1.medium.elasticsearch"
-            }
+            EsWarmPartitionInstanceType::Ultrawarm1LargeElasticsearch => "ultrawarm1.large.elasticsearch",
+            EsWarmPartitionInstanceType::Ultrawarm1MediumElasticsearch => "ultrawarm1.medium.elasticsearch",
             EsWarmPartitionInstanceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ultrawarm1.large.elasticsearch",
-            "ultrawarm1.medium.elasticsearch",
-        ]
+        &["ultrawarm1.large.elasticsearch", "ultrawarm1.medium.elasticsearch"]
     }
 }
 impl ::std::convert::AsRef<str> for EsWarmPartitionInstanceType {

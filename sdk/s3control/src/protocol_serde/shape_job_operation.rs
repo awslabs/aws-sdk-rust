@@ -7,24 +7,15 @@ pub fn ser_job_operation(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.lambda_invoke {
         let inner_writer = scope.start_el("LambdaInvoke");
-        crate::protocol_serde::shape_lambda_invoke_operation::ser_lambda_invoke_operation(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_lambda_invoke_operation::ser_lambda_invoke_operation(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.s3_put_object_copy {
         let inner_writer = scope.start_el("S3PutObjectCopy");
-        crate::protocol_serde::shape_s3_copy_object_operation::ser_s3_copy_object_operation(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_copy_object_operation::ser_s3_copy_object_operation(var_2, inner_writer)?
     }
     if let Some(var_3) = &input.s3_put_object_acl {
         let inner_writer = scope.start_el("S3PutObjectAcl");
-        crate::protocol_serde::shape_s3_set_object_acl_operation::ser_s3_set_object_acl_operation(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_set_object_acl_operation::ser_s3_set_object_acl_operation(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.s3_put_object_tagging {
         let inner_writer = scope.start_el("S3PutObjectTagging");

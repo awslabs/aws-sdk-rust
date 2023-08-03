@@ -23,17 +23,14 @@ impl RebootInputDeviceInput {
 }
 impl RebootInputDeviceInput {
     /// Creates a new builder-style object to manufacture [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder {
+    pub fn builder() -> crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder {
         crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootInputDeviceInputBuilder {
     pub(crate) force: ::std::option::Option<crate::types::RebootInputDeviceForce>,
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
@@ -45,10 +42,7 @@ impl RebootInputDeviceInputBuilder {
         self
     }
     /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
-    pub fn set_force(
-        mut self,
-        input: ::std::option::Option<crate::types::RebootInputDeviceForce>,
-    ) -> Self {
+    pub fn set_force(mut self, input: ::std::option::Option<crate::types::RebootInputDeviceForce>) -> Self {
         self.force = input;
         self
     }
@@ -57,18 +51,12 @@ impl RebootInputDeviceInputBuilder {
         &self.force
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_device_id = input;
         self
     }
@@ -79,15 +67,10 @@ impl RebootInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_input_device::RebootInputDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reboot_input_device::RebootInputDeviceInput {
-                force: self.force,
-                input_device_id: self.input_device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reboot_input_device::RebootInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reboot_input_device::RebootInputDeviceInput {
+            force: self.force,
+            input_device_id: self.input_device_id,
+        })
     }
 }

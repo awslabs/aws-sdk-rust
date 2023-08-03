@@ -37,9 +37,7 @@ impl AddProfilePermissionFluentBuilder {
         }
     }
     /// Access the AddProfilePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AddProfilePermissionFluentBuilder {
             crate::operation::add_profile_permission::AddProfilePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_profile_permission::AddProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_profile_permission::AddProfilePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AddProfilePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AddProfilePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_profile_permission::AddProfilePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_profile_permission::AddProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_profile_permission::AddProfilePermissionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AddProfilePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_profile_permission::AddProfilePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_profile_permission::AddProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_profile_permission::AddProfilePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AddProfilePermissionFluentBuilder {
             crate::operation::add_profile_permission::AddProfilePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_profile_permission::AddProfilePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_profile_permission::AddProfilePermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl AddProfilePermissionFluentBuilder {
         self.inner.get_profile_name()
     }
     /// <p>The version of the signing profile.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_version(input.into());
         self
     }
     /// <p>The version of the signing profile.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_version(input);
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`analysis_rule_type(ConfiguredTableAnalysisRuleType)`](crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleFluentBuilder::analysis_rule_type) / [`set_analysis_rule_type(Option<ConfiguredTableAnalysisRuleType>)`](crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleFluentBuilder::set_analysis_rule_type): <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     /// - On success, responds with [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteConfiguredTableAnalysisRuleError>`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleError)
-    pub fn delete_configured_table_analysis_rule(&self) -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleFluentBuilder{
+    pub fn delete_configured_table_analysis_rule(
+        &self,
+    ) -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleFluentBuilder {
         crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleFluentBuilder::new(self.handle.clone())
     }
 }

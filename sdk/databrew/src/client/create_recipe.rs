@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRecipeOutput`](crate::operation::create_recipe::CreateRecipeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_recipe::CreateRecipeOutput::name): <p>The name of the recipe that you created.</p>
     /// - On failure, responds with [`SdkError<CreateRecipeError>`](crate::operation::create_recipe::CreateRecipeError)
-    pub fn create_recipe(
-        &self,
-    ) -> crate::operation::create_recipe::builders::CreateRecipeFluentBuilder {
-        crate::operation::create_recipe::builders::CreateRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_recipe(&self) -> crate::operation::create_recipe::builders::CreateRecipeFluentBuilder {
+        crate::operation::create_recipe::builders::CreateRecipeFluentBuilder::new(self.handle.clone())
     }
 }

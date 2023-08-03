@@ -7,9 +7,7 @@ pub fn ser_create_component_version_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.inline_recipe {
-        object
-            .key("inlineRecipe")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("inlineRecipe").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.lambda_function {
         #[allow(unused_mut)]

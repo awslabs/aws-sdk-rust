@@ -10,10 +10,7 @@ impl CreateAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_alias::CreateAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_alias::CreateAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alias::CreateAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_alias();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl CreateAliasFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_alias::CreateAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_alias::CreateAlias, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_alias::CreateAliasError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl CreateAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl CreateAliasFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_alias::CreateAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_alias::CreateAlias, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_alias::CreateAliasError>,
     > {
         self.customize_middleware().await
@@ -150,10 +138,7 @@ impl CreateAliasFluentBuilder {
         self
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
-    pub fn set_routing_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingStrategy>,
-    ) -> Self {
+    pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.inner = self.inner.set_routing_strategy(input);
         self
     }
@@ -171,10 +156,7 @@ impl CreateAliasFluentBuilder {
         self
     }
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::create_proxy_session::CreateProxySessionOutput::proxy_session): <p>The proxy session details.</p>
     /// - On failure, responds with [`SdkError<CreateProxySessionError>`](crate::operation::create_proxy_session::CreateProxySessionError)
     #[deprecated(note = "Replaced by CreateProxySession in the Amazon Chime SDK Voice Namespace")]
-    pub fn create_proxy_session(
-        &self,
-    ) -> crate::operation::create_proxy_session::builders::CreateProxySessionFluentBuilder {
-        crate::operation::create_proxy_session::builders::CreateProxySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_proxy_session(&self) -> crate::operation::create_proxy_session::builders::CreateProxySessionFluentBuilder {
+        crate::operation::create_proxy_session::builders::CreateProxySessionFluentBuilder::new(self.handle.clone())
     }
 }

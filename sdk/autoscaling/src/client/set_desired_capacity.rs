@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`honor_cooldown(bool)`](crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder::honor_cooldown) / [`set_honor_cooldown(Option<bool>)`](crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder::set_honor_cooldown): <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     /// - On success, responds with [`SetDesiredCapacityOutput`](crate::operation::set_desired_capacity::SetDesiredCapacityOutput)
     /// - On failure, responds with [`SdkError<SetDesiredCapacityError>`](crate::operation::set_desired_capacity::SetDesiredCapacityError)
-    pub fn set_desired_capacity(
-        &self,
-    ) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder {
-        crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_desired_capacity(&self) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder {
+        crate::operation::set_desired_capacity::builders::SetDesiredCapacityFluentBuilder::new(self.handle.clone())
     }
 }

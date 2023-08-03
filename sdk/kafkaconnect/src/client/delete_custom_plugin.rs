@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`custom_plugin_arn(Option<String>)`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
     ///   - [`custom_plugin_state(Option<CustomPluginState>)`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput::custom_plugin_state): <p>The state of the custom plugin.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomPluginError>`](crate::operation::delete_custom_plugin::DeleteCustomPluginError)
-    pub fn delete_custom_plugin(
-        &self,
-    ) -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder {
-        crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_custom_plugin(&self) -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder {
+        crate::operation::delete_custom_plugin::builders::DeleteCustomPluginFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,8 +27,7 @@ impl GetDefaultPatchBaselineInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder,
+    inner: crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder,
 }
 impl GetDefaultPatchBaselineFluentBuilder {
     /// Creates a new `GetDefaultPatchBaseline`.
@@ -39,10 +38,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
         }
     }
     /// Access the GetDefaultPatchBaseline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
             crate::operation::get_default_patch_baseline::GetDefaultPatchBaseline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
             crate::operation::get_default_patch_baseline::GetDefaultPatchBaseline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +116,7 @@ impl GetDefaultPatchBaselineFluentBuilder {
         self
     }
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }

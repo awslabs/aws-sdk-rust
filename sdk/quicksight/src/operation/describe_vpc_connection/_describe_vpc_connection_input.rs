@@ -22,36 +22,26 @@ impl DescribeVpcConnectionInput {
 }
 impl DescribeVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcConnectionInput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionInputBuilder {
         crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcConnectionInput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want described.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connection that you want described.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl DescribeVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn set_vpc_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_id = input;
         self
     }
@@ -82,15 +66,11 @@ impl DescribeVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcConnectionInput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpc_connection::DescribeVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_connection::DescribeVpcConnectionInput {
-                aws_account_id: self.aws_account_id,
-                vpc_connection_id: self.vpc_connection_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_vpc_connection::DescribeVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_vpc_connection::DescribeVpcConnectionInput {
+            aws_account_id: self.aws_account_id,
+            vpc_connection_id: self.vpc_connection_id,
+        })
     }
 }

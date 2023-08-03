@@ -10,10 +10,7 @@ impl GetMetricDataV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_metric_data_v2::GetMetricDataV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data_v2::GetMetricDataV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_metric_data_v2();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetMetricDataV2FluentBuilder {
         }
     }
     /// Access the GetMetricDataV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetMetricDataV2FluentBuilder {
             crate::operation::get_metric_data_v2::GetMetricDataV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data_v2::GetMetricDataV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetMetricDataV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetMetricDataV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_data_v2::GetMetricDataV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data_v2::GetMetricDataV2Error>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetMetricDataV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_data_v2::GetMetricDataV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data_v2::GetMetricDataV2Error>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl GetMetricDataV2FluentBuilder {
             crate::operation::get_metric_data_v2::GetMetricDataV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data_v2::GetMetricDataV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data_v2::GetMetricDataV2Error>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator {
-        crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator {
+        crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the resource. This includes the <code>instanceId</code> an Amazon Connect instance.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +134,7 @@ impl GetMetricDataV2FluentBuilder {
         self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -174,10 +150,7 @@ impl GetMetricDataV2FluentBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -226,10 +199,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
     /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -266,10 +236,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
     /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
-    pub fn set_groupings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
@@ -903,10 +870,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// </dl>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }

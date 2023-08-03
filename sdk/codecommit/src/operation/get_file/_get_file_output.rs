@@ -67,9 +67,7 @@ impl GetFileOutput {
 
 /// A builder for [`GetFileOutput`](crate::operation::get_file::GetFileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFileOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl GetFileOutputBuilder {
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.file_mode = input;
         self
     }
@@ -165,10 +160,7 @@ impl GetFileOutputBuilder {
         self
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
-    pub fn set_file_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_file_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file_content = input;
         self
     }

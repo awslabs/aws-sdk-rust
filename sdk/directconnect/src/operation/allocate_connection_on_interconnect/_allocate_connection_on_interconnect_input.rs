@@ -43,16 +43,14 @@ impl AllocateConnectionOnInterconnectInput {
 }
 impl AllocateConnectionOnInterconnectInput {
     /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
-    pub fn builder() -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder{
+    pub fn builder() -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder {
         crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectInputBuilder {
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the provisioned connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioned connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -96,18 +88,12 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.connection_name
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -116,18 +102,12 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.owner_account
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_id = input;
         self
     }
@@ -150,20 +130,20 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.vlan
     }
     /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput {
-                bandwidth: self.bandwidth
-                ,
-                connection_name: self.connection_name
-                ,
-                owner_account: self.owner_account
-                ,
-                interconnect_id: self.interconnect_id
-                ,
-                vlan: self.vlan
-                ,
-            }
+                bandwidth: self.bandwidth,
+                connection_name: self.connection_name,
+                owner_account: self.owner_account,
+                interconnect_id: self.interconnect_id,
+                vlan: self.vlan,
+            },
         )
     }
 }

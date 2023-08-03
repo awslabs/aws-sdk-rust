@@ -37,9 +37,7 @@ impl UpdateRegionSettingsFluentBuilder {
         }
     }
     /// Access the UpdateRegionSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateRegionSettingsFluentBuilder {
             crate::operation::update_region_settings::UpdateRegionSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_region_settings::UpdateRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_region_settings::UpdateRegionSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateRegionSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateRegionSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_region_settings::UpdateRegionSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_region_settings::UpdateRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_region_settings::UpdateRegionSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateRegionSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_region_settings::UpdateRegionSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_region_settings::UpdateRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_region_settings::UpdateRegionSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateRegionSettingsFluentBuilder {
             crate::operation::update_region_settings::UpdateRegionSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_region_settings::UpdateRegionSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_region_settings::UpdateRegionSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,11 +114,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
     ///
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    pub fn resource_type_opt_in_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_opt_in_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         self.inner = self.inner.resource_type_opt_in_preference(k.into(), v);
         self
     }
@@ -144,9 +127,7 @@ impl UpdateRegionSettingsFluentBuilder {
         self
     }
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    pub fn get_resource_type_opt_in_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_opt_in_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         self.inner.get_resource_type_opt_in_preference()
     }
     /// Adds a key-value pair to `ResourceTypeManagementPreference`.
@@ -154,11 +135,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
     ///
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
-    pub fn resource_type_management_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_management_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         self.inner = self.inner.resource_type_management_preference(k.into(), v);
         self
     }
@@ -171,9 +148,7 @@ impl UpdateRegionSettingsFluentBuilder {
         self
     }
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
-    pub fn get_resource_type_management_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_management_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         self.inner.get_resource_type_management_preference()
     }
 }

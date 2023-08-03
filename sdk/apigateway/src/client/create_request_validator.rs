@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`validate_request_body(bool)`](crate::operation::create_request_validator::CreateRequestValidatorOutput::validate_request_body): <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     ///   - [`validate_request_parameters(bool)`](crate::operation::create_request_validator::CreateRequestValidatorOutput::validate_request_parameters): <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     /// - On failure, responds with [`SdkError<CreateRequestValidatorError>`](crate::operation::create_request_validator::CreateRequestValidatorError)
-    pub fn create_request_validator(
-        &self,
-    ) -> crate::operation::create_request_validator::builders::CreateRequestValidatorFluentBuilder
-    {
+    pub fn create_request_validator(&self) -> crate::operation::create_request_validator::builders::CreateRequestValidatorFluentBuilder {
         crate::operation::create_request_validator::builders::CreateRequestValidatorFluentBuilder::new(self.handle.clone())
     }
 }

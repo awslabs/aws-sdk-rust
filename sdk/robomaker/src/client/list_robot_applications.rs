@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`robot_application_summaries(Option<Vec<RobotApplicationSummary>>)`](crate::operation::list_robot_applications::ListRobotApplicationsOutput::robot_application_summaries): <p>A list of robot application summaries that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_robot_applications::ListRobotApplicationsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListRobotApplicationsError>`](crate::operation::list_robot_applications::ListRobotApplicationsError)
-    pub fn list_robot_applications(
-        &self,
-    ) -> crate::operation::list_robot_applications::builders::ListRobotApplicationsFluentBuilder
-    {
-        crate::operation::list_robot_applications::builders::ListRobotApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_robot_applications(&self) -> crate::operation::list_robot_applications::builders::ListRobotApplicationsFluentBuilder {
+        crate::operation::list_robot_applications::builders::ListRobotApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

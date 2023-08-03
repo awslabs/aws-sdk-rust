@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbClusterSnapshotOutput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput) with field(s):
     ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon RDS DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<DeleteDBClusterSnapshotError>`](crate::operation::delete_db_cluster_snapshot::DeleteDBClusterSnapshotError)
-    pub fn delete_db_cluster_snapshot(
-        &self,
-    ) -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDBClusterSnapshotFluentBuilder
-    {
+    pub fn delete_db_cluster_snapshot(&self) -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDBClusterSnapshotFluentBuilder {
         crate::operation::delete_db_cluster_snapshot::builders::DeleteDBClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

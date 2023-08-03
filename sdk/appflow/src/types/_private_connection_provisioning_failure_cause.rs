@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PrivateConnectionProvisioningFailureCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +61,11 @@ impl ::std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => PrivateConnectionProvisioningFailureCause::AccessDenied,
-            "CONNECTOR_AUTHENTICATION" => {
-                PrivateConnectionProvisioningFailureCause::ConnectorAuthentication
-            }
+            "CONNECTOR_AUTHENTICATION" => PrivateConnectionProvisioningFailureCause::ConnectorAuthentication,
             "CONNECTOR_SERVER" => PrivateConnectionProvisioningFailureCause::ConnectorServer,
             "INTERNAL_SERVER" => PrivateConnectionProvisioningFailureCause::InternalServer,
             "VALIDATION" => PrivateConnectionProvisioningFailureCause::Validation,
-            other => PrivateConnectionProvisioningFailureCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => PrivateConnectionProvisioningFailureCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,9 +81,7 @@ impl PrivateConnectionProvisioningFailureCause {
     pub fn as_str(&self) -> &str {
         match self {
             PrivateConnectionProvisioningFailureCause::AccessDenied => "ACCESS_DENIED",
-            PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => {
-                "CONNECTOR_AUTHENTICATION"
-            }
+            PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => "CONNECTOR_AUTHENTICATION",
             PrivateConnectionProvisioningFailureCause::ConnectorServer => "CONNECTOR_SERVER",
             PrivateConnectionProvisioningFailureCause::InternalServer => "INTERNAL_SERVER",
             PrivateConnectionProvisioningFailureCause::Validation => "VALIDATION",

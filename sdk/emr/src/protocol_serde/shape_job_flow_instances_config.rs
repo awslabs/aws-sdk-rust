@@ -21,10 +21,7 @@ pub fn ser_job_flow_instances_config(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_instance_group_config::ser_instance_group_config(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_instance_group_config::ser_instance_group_config(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_job_flow_instances_config(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_instance_fleet_config::ser_instance_fleet_config(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_instance_fleet_config::ser_instance_fleet_config(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -55,14 +49,10 @@ pub fn ser_job_flow_instances_config(
         object_14.finish();
     }
     if input.keep_job_flow_alive_when_no_steps {
-        object
-            .key("KeepJobFlowAliveWhenNoSteps")
-            .boolean(input.keep_job_flow_alive_when_no_steps);
+        object.key("KeepJobFlowAliveWhenNoSteps").boolean(input.keep_job_flow_alive_when_no_steps);
     }
     if input.termination_protected {
-        object
-            .key("TerminationProtected")
-            .boolean(input.termination_protected);
+        object.key("TerminationProtected").boolean(input.termination_protected);
     }
     if let Some(var_15) = &input.hadoop_version {
         object.key("HadoopVersion").string(var_15.as_str());
@@ -80,19 +70,13 @@ pub fn ser_job_flow_instances_config(
         array_18.finish();
     }
     if let Some(var_20) = &input.emr_managed_master_security_group {
-        object
-            .key("EmrManagedMasterSecurityGroup")
-            .string(var_20.as_str());
+        object.key("EmrManagedMasterSecurityGroup").string(var_20.as_str());
     }
     if let Some(var_21) = &input.emr_managed_slave_security_group {
-        object
-            .key("EmrManagedSlaveSecurityGroup")
-            .string(var_21.as_str());
+        object.key("EmrManagedSlaveSecurityGroup").string(var_21.as_str());
     }
     if let Some(var_22) = &input.service_access_security_group {
-        object
-            .key("ServiceAccessSecurityGroup")
-            .string(var_22.as_str());
+        object.key("ServiceAccessSecurityGroup").string(var_22.as_str());
     }
     if let Some(var_23) = &input.additional_master_security_groups {
         let mut array_24 = object.key("AdditionalMasterSecurityGroups").start_array();

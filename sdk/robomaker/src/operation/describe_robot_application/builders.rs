@@ -26,7 +26,7 @@ impl DescribeRobotApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRobotApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder,
+    inner: crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder,
 }
 impl DescribeRobotApplicationFluentBuilder {
     /// Creates a new `DescribeRobotApplication`.
@@ -37,10 +37,7 @@ impl DescribeRobotApplicationFluentBuilder {
         }
     }
     /// Access the DescribeRobotApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_robot_application::builders::DescribeRobotApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeRobotApplicationFluentBuilder {
             crate::operation::describe_robot_application::DescribeRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_robot_application::DescribeRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_robot_application::DescribeRobotApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeRobotApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_robot_application::DescribeRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_robot_application::DescribeRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_robot_application::DescribeRobotApplicationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_robot_application::DescribeRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_robot_application::DescribeRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_robot_application::DescribeRobotApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeRobotApplicationFluentBuilder {
             crate::operation::describe_robot_application::DescribeRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_robot_application::DescribeRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_robot_application::DescribeRobotApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribeRobotApplicationFluentBuilder {
         self.inner.get_application()
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_version(input.into());
         self
     }
     /// <p>The version of the robot application to describe.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_version(input);
         self
     }

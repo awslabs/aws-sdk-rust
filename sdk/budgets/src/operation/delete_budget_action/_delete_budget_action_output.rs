@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteBudgetActionOutput {
 }
 impl DeleteBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::operation::delete_budget_action::DeleteBudgetActionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder {
         crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBudgetActionOutput`](crate::operation::delete_budget_action::DeleteBudgetActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBudgetActionOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,

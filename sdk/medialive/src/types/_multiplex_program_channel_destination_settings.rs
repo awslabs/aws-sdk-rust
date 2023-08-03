@@ -30,9 +30,7 @@ impl MultiplexProgramChannelDestinationSettings {
 
 /// A builder for [`MultiplexProgramChannelDestinationSettings`](crate::types::MultiplexProgramChannelDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexProgramChannelDestinationSettingsBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,

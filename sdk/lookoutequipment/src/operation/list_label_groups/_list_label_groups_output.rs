@@ -8,8 +8,7 @@ pub struct ListLabelGroupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> A summary of the label groups. </p>
     #[doc(hidden)]
-    pub label_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
+    pub label_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListLabelGroupsOutput {
@@ -18,9 +17,7 @@ impl ListLabelGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p> A summary of the label groups. </p>
-    pub fn label_group_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LabelGroupSummary]> {
+    pub fn label_group_summaries(&self) -> ::std::option::Option<&[crate::types::LabelGroupSummary]> {
         self.label_group_summaries.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListLabelGroupsOutput {
 }
 impl ListLabelGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelGroupsOutput`](crate::operation::list_label_groups::ListLabelGroupsOutput).
-    pub fn builder() -> crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder {
         crate::operation::list_label_groups::builders::ListLabelGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLabelGroupsOutput`](crate::operation::list_label_groups::ListLabelGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) label_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
+    pub(crate) label_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListLabelGroupsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListLabelGroupsOutputBuilder {
         self
     }
     /// <p> A summary of the label groups. </p>
-    pub fn set_label_group_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
-    ) -> Self {
+    pub fn set_label_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>) -> Self {
         self.label_group_summaries = input;
         self
     }
     /// <p> A summary of the label groups. </p>
-    pub fn get_label_group_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>> {
+    pub fn get_label_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>> {
         &self.label_group_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

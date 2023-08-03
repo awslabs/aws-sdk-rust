@@ -6,37 +6,25 @@ pub fn ser_heat_map_configuration(
     if let Some(var_1) = &input.field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldWells").start_object();
-        crate::protocol_serde::shape_heat_map_field_wells::ser_heat_map_field_wells(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_heat_map_field_wells::ser_heat_map_field_wells(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sort_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SortConfiguration").start_object();
-        crate::protocol_serde::shape_heat_map_sort_configuration::ser_heat_map_sort_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_heat_map_sort_configuration::ser_heat_map_sort_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.row_label_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RowLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.column_label_options {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ColumnLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.color_scale {
@@ -54,10 +42,7 @@ pub fn ser_heat_map_configuration(
     if let Some(var_13) = &input.data_labels {
         #[allow(unused_mut)]
         let mut object_14 = object.key("DataLabels").start_object();
-        crate::protocol_serde::shape_data_label_options::ser_data_label_options(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.tooltip {
@@ -71,17 +56,9 @@ pub fn ser_heat_map_configuration(
 
 pub(crate) fn de_heat_map_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HeatMapConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HeatMapConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -91,70 +68,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldWells" => {
-                                builder = builder.set_field_wells(
-                                    crate::protocol_serde::shape_heat_map_field_wells::de_heat_map_field_wells(tokens)?
-                                );
-                            }
-                            "SortConfiguration" => {
-                                builder = builder.set_sort_configuration(
-                                    crate::protocol_serde::shape_heat_map_sort_configuration::de_heat_map_sort_configuration(tokens)?
-                                );
-                            }
-                            "RowLabelOptions" => {
-                                builder = builder.set_row_label_options(
-                                    crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?
-                                );
-                            }
-                            "ColumnLabelOptions" => {
-                                builder = builder.set_column_label_options(
-                                    crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?
-                                );
-                            }
-                            "ColorScale" => {
-                                builder = builder.set_color_scale(
-                                    crate::protocol_serde::shape_color_scale::de_color_scale(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Legend" => {
-                                builder = builder.set_legend(
-                                    crate::protocol_serde::shape_legend_options::de_legend_options(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "DataLabels" => {
-                                builder = builder.set_data_labels(
-                                    crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?
-                                );
-                            }
-                            "Tooltip" => {
-                                builder = builder.set_tooltip(
-                                    crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldWells" => {
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_heat_map_field_wells::de_heat_map_field_wells(tokens)?);
                         }
-                    }
+                        "SortConfiguration" => {
+                            builder = builder.set_sort_configuration(
+                                crate::protocol_serde::shape_heat_map_sort_configuration::de_heat_map_sort_configuration(tokens)?,
+                            );
+                        }
+                        "RowLabelOptions" => {
+                            builder = builder.set_row_label_options(
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                            );
+                        }
+                        "ColumnLabelOptions" => {
+                            builder = builder.set_column_label_options(
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                            );
+                        }
+                        "ColorScale" => {
+                            builder = builder.set_color_scale(crate::protocol_serde::shape_color_scale::de_color_scale(tokens)?);
+                        }
+                        "Legend" => {
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);
+                        }
+                        "DataLabels" => {
+                            builder = builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                        }
+                        "Tooltip" => {
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput::target_groups): <p>Information about the target groups.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeTargetGroupsError>`](crate::operation::describe_target_groups::DescribeTargetGroupsError)
-    pub fn describe_target_groups(
-        &self,
-    ) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder {
-        crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_target_groups(&self) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder {
+        crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

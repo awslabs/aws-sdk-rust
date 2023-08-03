@@ -44,9 +44,7 @@ impl PatchOperation {
 
 /// A builder for [`PatchOperation`](crate::types::PatchOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchOperationBuilder {
     pub(crate) op: ::std::option::Option<crate::types::Op>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

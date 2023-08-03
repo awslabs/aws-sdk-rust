@@ -34,16 +34,14 @@ impl GetFindingsReportAccountSummaryInput {
 }
 impl GetFindingsReportAccountSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportAccountSummaryInput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput).
-    pub fn builder() -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryInputBuilder{
+    pub fn builder() -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryInputBuilder {
         crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsReportAccountSummaryInput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -107,13 +105,10 @@ impl GetFindingsReportAccountSummaryInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                daily_reports_only: self.daily_reports_only
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                daily_reports_only: self.daily_reports_only,
+            },
         )
     }
 }

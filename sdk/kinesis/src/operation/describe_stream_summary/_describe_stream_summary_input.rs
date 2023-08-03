@@ -22,18 +22,14 @@ impl DescribeStreamSummaryInput {
 }
 impl DescribeStreamSummaryInput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder {
         crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamSummaryInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DescribeStreamSummaryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stream_summary::DescribeStreamSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stream_summary::DescribeStreamSummaryInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stream_summary::DescribeStreamSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stream_summary::DescribeStreamSummaryInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+        })
     }
 }

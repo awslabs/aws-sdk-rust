@@ -37,9 +37,7 @@ impl SmartHomeAppliance {
 
 /// A builder for [`SmartHomeAppliance`](crate::types::SmartHomeAppliance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmartHomeApplianceBuilder {
     pub(crate) friendly_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SmartHomeApplianceBuilder {
 }
 impl SmartHomeApplianceBuilder {
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn friendly_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn friendly_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn set_friendly_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_friendly_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.friendly_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl SmartHomeApplianceBuilder {
         &self.description
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn manufacturer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manufacturer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manufacturer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn set_manufacturer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manufacturer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer_name = input;
         self
     }

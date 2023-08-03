@@ -10,10 +10,7 @@ impl ListApplicationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_applications::ListApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applications::ListApplicationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_applications();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ListApplicationsFluentBuilder {
         }
     }
     /// Access the ListApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl ListApplicationsFluentBuilder {
             crate::operation::list_applications::ListApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applications::ListApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl ListApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl ListApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_applications::ListApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applications::ListApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl ListApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_applications::ListApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applications::ListApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl ListApplicationsFluentBuilder {
             crate::operation::list_applications::ListApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_applications::ListApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +126,17 @@ impl ListApplicationsFluentBuilder {
         self.inner.get_limit()
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn exclusive_start_application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_application_name(input.into());
         self
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn set_exclusive_start_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_application_name(input);
         self
     }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    pub fn get_exclusive_start_application_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_exclusive_start_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_application_name()
     }
 }

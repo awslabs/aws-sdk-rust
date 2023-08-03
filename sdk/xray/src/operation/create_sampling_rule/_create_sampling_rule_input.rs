@@ -40,17 +40,14 @@ impl CreateSamplingRuleInput {
 }
 impl CreateSamplingRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder {
+    pub fn builder() -> crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder {
         crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSamplingRuleInputBuilder {
     pub(crate) sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -62,10 +59,7 @@ impl CreateSamplingRuleInputBuilder {
         self
     }
     /// <p>The rule definition.</p>
-    pub fn set_sampling_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingRule>,
-    ) -> Self {
+    pub fn set_sampling_rule(mut self, input: ::std::option::Option<crate::types::SamplingRule>) -> Self {
         self.sampling_rule = input;
         self
     }
@@ -103,10 +97,7 @@ impl CreateSamplingRuleInputBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -126,15 +117,10 @@ impl CreateSamplingRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sampling_rule::CreateSamplingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sampling_rule::CreateSamplingRuleInput {
-                sampling_rule: self.sampling_rule,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_sampling_rule::CreateSamplingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_sampling_rule::CreateSamplingRuleInput {
+            sampling_rule: self.sampling_rule,
+            tags: self.tags,
+        })
     }
 }

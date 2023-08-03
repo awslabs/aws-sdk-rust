@@ -28,9 +28,7 @@ impl GetEventOutput {
 
 /// A builder for [`GetEventOutput`](crate::operation::get_event::GetEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventOutputBuilder {
     pub(crate) event: ::std::option::Option<crate::types::Event>,
     _request_id: Option<String>,

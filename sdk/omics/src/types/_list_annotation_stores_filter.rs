@@ -23,9 +23,7 @@ impl ListAnnotationStoresFilter {
 
 /// A builder for [`ListAnnotationStoresFilter`](crate::types::ListAnnotationStoresFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationStoresFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
 }
@@ -46,8 +44,6 @@ impl ListAnnotationStoresFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListAnnotationStoresFilter`](crate::types::ListAnnotationStoresFilter).
     pub fn build(self) -> crate::types::ListAnnotationStoresFilter {
-        crate::types::ListAnnotationStoresFilter {
-            status: self.status,
-        }
+        crate::types::ListAnnotationStoresFilter { status: self.status }
     }
 }

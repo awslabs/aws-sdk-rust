@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
     pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     _request_id: Option<String>,
@@ -49,17 +47,12 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-    pub fn set_account_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
-    ) -> Self {
+    pub fn set_account_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>) -> Self {
         self.account_quotas = input;
         self
     }
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-    pub fn get_account_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
+    pub fn get_account_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>> {
         &self.account_quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +65,7 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
+    pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
             account_quotas: self.account_quotas,
             _request_id: self._request_id,

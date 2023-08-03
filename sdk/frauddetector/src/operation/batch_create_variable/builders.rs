@@ -37,9 +37,7 @@ impl BatchCreateVariableFluentBuilder {
         }
     }
     /// Access the BatchCreateVariable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchCreateVariableFluentBuilder {
             crate::operation::batch_create_variable::BatchCreateVariable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_variable::BatchCreateVariableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_variable::BatchCreateVariableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchCreateVariableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchCreateVariableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_variable::BatchCreateVariableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_variable::BatchCreateVariableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_variable::BatchCreateVariableError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchCreateVariableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_variable::BatchCreateVariableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_variable::BatchCreateVariableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_variable::BatchCreateVariableError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchCreateVariableFluentBuilder {
             crate::operation::batch_create_variable::BatchCreateVariable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_variable::BatchCreateVariableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_variable::BatchCreateVariableError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl BatchCreateVariableFluentBuilder {
         self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn set_variable_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
-    ) -> Self {
+    pub fn set_variable_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>) -> Self {
         self.inner = self.inner.set_variable_entries(input);
         self
     }
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn get_variable_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
+    pub fn get_variable_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
         self.inner.get_variable_entries()
     }
     /// Appends an item to `tags`.
@@ -155,10 +137,7 @@ impl BatchCreateVariableFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

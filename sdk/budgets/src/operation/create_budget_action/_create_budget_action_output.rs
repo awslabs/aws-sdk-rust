@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateBudgetActionOutput {
 }
 impl CreateBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::operation::create_budget_action::CreateBudgetActionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder {
+    pub fn builder() -> crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder {
         crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBudgetActionOutput`](crate::operation::create_budget_action::CreateBudgetActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBudgetActionOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,

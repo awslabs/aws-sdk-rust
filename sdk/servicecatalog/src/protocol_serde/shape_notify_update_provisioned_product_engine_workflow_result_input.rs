@@ -21,10 +21,7 @@ pub fn ser_notify_update_provisioned_product_engine_workflow_result_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_record_output::ser_record_output(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_record_output::ser_record_output(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

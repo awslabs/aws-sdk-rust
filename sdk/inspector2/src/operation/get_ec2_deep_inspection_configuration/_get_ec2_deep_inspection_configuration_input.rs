@@ -5,23 +5,23 @@
 pub struct GetEc2DeepInspectionConfigurationInput {}
 impl GetEc2DeepInspectionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetEc2DeepInspectionConfigurationInput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput).
-    pub fn builder() -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationInputBuilder {
         crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEc2DeepInspectionConfigurationInput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEc2DeepInspectionConfigurationInputBuilder {}
 impl GetEc2DeepInspectionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEc2DeepInspectionConfigurationInput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput {})
     }
 }

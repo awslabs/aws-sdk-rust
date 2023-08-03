@@ -22,18 +22,14 @@ impl ListSizeConstraintSetsInput {
 }
 impl ListSizeConstraintSetsInput {
     /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsInput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder {
         crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSizeConstraintSetsInput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSizeConstraintSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListSizeConstraintSetsInputBuilder {
         crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

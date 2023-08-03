@@ -26,17 +26,14 @@ impl ListPlaceIndexesInput {
 }
 impl ListPlaceIndexesInput {
     /// Creates a new builder-style object to manufacture [`ListPlaceIndexesInput`](crate::operation::list_place_indexes::ListPlaceIndexesInput).
-    pub fn builder() -> crate::operation::list_place_indexes::builders::ListPlaceIndexesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_place_indexes::builders::ListPlaceIndexesInputBuilder {
         crate::operation::list_place_indexes::builders::ListPlaceIndexesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlaceIndexesInput`](crate::operation::list_place_indexes::ListPlaceIndexesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlaceIndexesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -79,15 +76,10 @@ impl ListPlaceIndexesInputBuilder {
     /// Consumes the builder and constructs a [`ListPlaceIndexesInput`](crate::operation::list_place_indexes::ListPlaceIndexesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_place_indexes::ListPlaceIndexesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_place_indexes::ListPlaceIndexesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_place_indexes::ListPlaceIndexesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_place_indexes::ListPlaceIndexesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

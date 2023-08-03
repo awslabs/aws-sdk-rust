@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`webhook_name(impl ::std::convert::Into<String>)`](crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyFluentBuilder::webhook_name) / [`set_webhook_name(Option<String>)`](crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyFluentBuilder::set_webhook_name): <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     /// - On success, responds with [`RegisterWebhookWithThirdPartyOutput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput)
     /// - On failure, responds with [`SdkError<RegisterWebhookWithThirdPartyError>`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError)
-    pub fn register_webhook_with_third_party(&self) -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyFluentBuilder{
+    pub fn register_webhook_with_third_party(
+        &self,
+    ) -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyFluentBuilder {
         crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyFluentBuilder::new(self.handle.clone())
     }
 }

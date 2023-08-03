@@ -38,13 +38,7 @@
 /// Data View Export File Format
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExportFileFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ExportFileFormat {
         match s {
             "DELIMITED_TEXT" => ExportFileFormat::DelimitedText,
             "PARQUET" => ExportFileFormat::Parquet,
-            other => {
-                ExportFileFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExportFileFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

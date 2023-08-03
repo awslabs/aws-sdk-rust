@@ -38,10 +38,7 @@ impl ResetSnapshotAttributeFluentBuilder {
         }
     }
     /// Access the ResetSnapshotAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ResetSnapshotAttributeFluentBuilder {
             crate::operation::reset_snapshot_attribute::ResetSnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ResetSnapshotAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ResetSnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ResetSnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ResetSnapshotAttributeFluentBuilder {
             crate::operation::reset_snapshot_attribute::ResetSnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl ResetSnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

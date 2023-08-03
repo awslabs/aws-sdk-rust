@@ -26,7 +26,7 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBProxyTargetGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder,
+    inner: crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder,
 }
 impl DescribeDBProxyTargetGroupsFluentBuilder {
     /// Creates a new `DescribeDBProxyTargetGroups`.
@@ -37,7 +37,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
         }
     }
     /// Access the DescribeDBProxyTargetGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
             crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
             crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator {
         crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -147,18 +130,12 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
         self.inner.get_db_proxy_name()
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
     }
@@ -176,10 +153,7 @@ impl DescribeDBProxyTargetGroupsFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

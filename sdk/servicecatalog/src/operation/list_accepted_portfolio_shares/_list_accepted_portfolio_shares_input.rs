@@ -54,16 +54,14 @@ impl ListAcceptedPortfolioSharesInput {
 }
 impl ListAcceptedPortfolioSharesInput {
     /// Creates a new builder-style object to manufacture [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
-    pub fn builder() -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder{
+    pub fn builder() -> crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder {
         crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAcceptedPortfolioSharesInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -88,10 +83,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -147,10 +139,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
     /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
-    pub fn set_portfolio_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioShareType>,
-    ) -> Self {
+    pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
         self.portfolio_share_type = input;
         self
     }
@@ -160,9 +149,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
     /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
     /// </ul>
-    pub fn get_portfolio_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+    pub fn get_portfolio_share_type(&self) -> &::std::option::Option<crate::types::PortfolioShareType> {
         &self.portfolio_share_type
     }
     /// Consumes the builder and constructs a [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
@@ -172,13 +159,11 @@ impl ListAcceptedPortfolioSharesInputBuilder {
         crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
-                accept_language: self.accept_language,
-                page_token: self.page_token,
-                page_size: self.page_size,
-                portfolio_share_type: self.portfolio_share_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
+            accept_language: self.accept_language,
+            page_token: self.page_token,
+            page_size: self.page_size,
+            portfolio_share_type: self.portfolio_share_type,
+        })
     }
 }

@@ -58,9 +58,7 @@ impl Qualification {
 
 /// A builder for [`Qualification`](crate::types::Qualification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QualificationBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct QualificationBuilder {
 }
 impl QualificationBuilder {
     /// <p> The ID of the Qualification type for the Qualification.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Qualification type for the Qualification.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -110,10 +102,7 @@ impl QualificationBuilder {
         self
     }
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
-    pub fn set_grant_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_grant_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.grant_time = input;
         self
     }
@@ -155,10 +144,7 @@ impl QualificationBuilder {
         self
     }
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QualificationStatus>) -> Self {
         self.status = input;
         self
     }

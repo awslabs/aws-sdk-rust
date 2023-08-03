@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateTrustStoreOutput {
 }
 impl DisassociateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrustStoreOutput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreOutputBuilder {
         crate::operation::disassociate_trust_store::builders::DisassociateTrustStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTrustStoreOutput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTrustStoreOutputBuilder {
     _request_id: Option<String>,
 }

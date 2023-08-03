@@ -10,10 +10,7 @@ impl DescribeRaidArraysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_raid_arrays::DescribeRaidArraysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_raid_arrays::DescribeRaidArraysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_raid_arrays::DescribeRaidArraysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_raid_arrays();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeRaidArraysFluentBuilder {
         }
     }
     /// Access the DescribeRaidArrays as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeRaidArraysFluentBuilder {
             crate::operation::describe_raid_arrays::DescribeRaidArrays,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_raid_arrays::DescribeRaidArraysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_raid_arrays::DescribeRaidArraysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeRaidArraysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeRaidArraysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_raid_arrays::DescribeRaidArraysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_raid_arrays::DescribeRaidArraysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_raid_arrays::DescribeRaidArraysError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeRaidArraysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_raid_arrays::DescribeRaidArraysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_raid_arrays::DescribeRaidArraysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_raid_arrays::DescribeRaidArraysError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DescribeRaidArraysFluentBuilder {
             crate::operation::describe_raid_arrays::DescribeRaidArrays,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_raid_arrays::DescribeRaidArraysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_raid_arrays::DescribeRaidArraysError>,
     > {
         self.customize_middleware().await
     }
@@ -158,25 +142,17 @@ impl DescribeRaidArraysFluentBuilder {
     /// To override the contents of this collection use [`set_raid_array_ids`](Self::set_raid_array_ids).
     ///
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn raid_array_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn raid_array_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.raid_array_ids(input.into());
         self
     }
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn set_raid_array_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_raid_array_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_raid_array_ids(input);
         self
     }
     /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
-    pub fn get_raid_array_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_raid_array_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_raid_array_ids()
     }
 }

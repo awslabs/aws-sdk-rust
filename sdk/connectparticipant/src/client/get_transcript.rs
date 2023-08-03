@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`transcript(Option<Vec<Item>>)`](crate::operation::get_transcript::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transcript::GetTranscriptOutput::next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::operation::get_transcript::GetTranscriptError)
-    pub fn get_transcript(
-        &self,
-    ) -> crate::operation::get_transcript::builders::GetTranscriptFluentBuilder {
-        crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_transcript(&self) -> crate::operation::get_transcript::builders::GetTranscriptFluentBuilder {
+        crate::operation::get_transcript::builders::GetTranscriptFluentBuilder::new(self.handle.clone())
     }
 }

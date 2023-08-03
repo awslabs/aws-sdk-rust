@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RobotDeploymentStep {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for RobotDeploymentStep {
             "Finished" => RobotDeploymentStep::FinishedStep,
             "Launching" => RobotDeploymentStep::LaunchingStep,
             "Validating" => RobotDeploymentStep::ValidatingStep,
-            other => RobotDeploymentStep::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RobotDeploymentStep::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

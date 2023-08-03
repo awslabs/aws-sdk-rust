@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCustomRoutingListenerOutput {
 }
 impl DescribeCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerOutput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput).
-    pub fn builder() -> crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerOutputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerOutputBuilder {
         crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomRoutingListenerOutput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomRoutingListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::CustomRoutingListener>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeCustomRoutingListenerOutputBuilder {
         self
     }
     /// <p>The description of a listener for a custom routing accelerator.</p>
-    pub fn set_listener(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRoutingListener>,
-    ) -> Self {
+    pub fn set_listener(mut self, input: ::std::option::Option<crate::types::CustomRoutingListener>) -> Self {
         self.listener = input;
         self
     }
@@ -63,10 +58,7 @@ impl DescribeCustomRoutingListenerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingListenerOutput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput
-    {
+    pub fn build(self) -> crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput {
         crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput {
             listener: self.listener,
             _request_id: self._request_id,

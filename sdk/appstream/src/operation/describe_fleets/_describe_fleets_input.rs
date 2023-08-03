@@ -29,9 +29,7 @@ impl DescribeFleetsInput {
 
 /// A builder for [`DescribeFleetsInput`](crate::operation::describe_fleets::DescribeFleetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,10 +47,7 @@ impl DescribeFleetsInputBuilder {
         self
     }
     /// <p>The names of the fleets to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -77,10 +72,7 @@ impl DescribeFleetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetsInput`](crate::operation::describe_fleets::DescribeFleetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleets::DescribeFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_fleets::DescribeFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_fleets::DescribeFleetsInput {
             names: self.names,
             next_token: self.next_token,

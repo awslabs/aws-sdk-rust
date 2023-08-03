@@ -10,10 +10,7 @@ impl SetTagsForResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_tags_for_resource::SetTagsForResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_tags_for_resource::SetTagsForResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_tags_for_resource();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SetTagsForResourceFluentBuilder {
         }
     }
     /// Access the SetTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SetTagsForResourceFluentBuilder {
             crate::operation::set_tags_for_resource::SetTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_tags_for_resource::SetTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_tags_for_resource::SetTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SetTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SetTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_tags_for_resource::SetTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_tags_for_resource::SetTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SetTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_tags_for_resource::SetTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_tags_for_resource::SetTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SetTagsForResourceFluentBuilder {
             crate::operation::set_tags_for_resource::SetTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_tags_for_resource::SetTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_tags_for_resource::SetTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +130,7 @@ impl SetTagsForResourceFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -31,18 +31,14 @@ impl ListDataLakeExceptionsInput {
 }
 impl ListDataLakeExceptionsInput {
     /// Creates a new builder-style object to manufacture [`ListDataLakeExceptionsInput`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsInputBuilder {
         crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataLakeExceptionsInput`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataLakeExceptionsInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -61,10 +57,7 @@ impl ListDataLakeExceptionsInputBuilder {
         self
     }
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -110,12 +103,10 @@ impl ListDataLakeExceptionsInputBuilder {
         crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsInput {
-                regions: self.regions,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsInput {
+            regions: self.regions,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

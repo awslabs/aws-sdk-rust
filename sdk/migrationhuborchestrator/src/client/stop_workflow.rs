@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::stop_workflow::StopWorkflowOutput::status_message): <p>The status message of the migration workflow.</p>
     ///   - [`last_stop_time(Option<DateTime>)`](crate::operation::stop_workflow::StopWorkflowOutput::last_stop_time): <p>The time at which the migration workflow was stopped.</p>
     /// - On failure, responds with [`SdkError<StopWorkflowError>`](crate::operation::stop_workflow::StopWorkflowError)
-    pub fn stop_workflow(
-        &self,
-    ) -> crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder {
-        crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_workflow(&self) -> crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder {
+        crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

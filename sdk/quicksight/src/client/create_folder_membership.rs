@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`folder_member(Option<FolderMember>)`](crate::operation::create_folder_membership::CreateFolderMembershipOutput::folder_member): <p>Information about the member in the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_folder_membership::CreateFolderMembershipOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<CreateFolderMembershipError>`](crate::operation::create_folder_membership::CreateFolderMembershipError)
-    pub fn create_folder_membership(
-        &self,
-    ) -> crate::operation::create_folder_membership::builders::CreateFolderMembershipFluentBuilder
-    {
+    pub fn create_folder_membership(&self) -> crate::operation::create_folder_membership::builders::CreateFolderMembershipFluentBuilder {
         crate::operation::create_folder_membership::builders::CreateFolderMembershipFluentBuilder::new(self.handle.clone())
     }
 }

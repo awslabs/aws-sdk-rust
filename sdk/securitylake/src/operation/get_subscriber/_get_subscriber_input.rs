@@ -22,26 +22,18 @@ impl GetSubscriberInput {
 
 /// A builder for [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriberInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriberInputBuilder {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subscriber::GetSubscriberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_subscriber::GetSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_subscriber::GetSubscriberInput {
             subscriber_id: self.subscriber_id,
         })

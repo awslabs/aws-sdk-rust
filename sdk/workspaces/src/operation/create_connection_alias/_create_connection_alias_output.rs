@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateConnectionAliasOutput {
 }
 impl CreateConnectionAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionAliasOutput`](crate::operation::create_connection_alias::CreateConnectionAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::create_connection_alias::builders::CreateConnectionAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection_alias::builders::CreateConnectionAliasOutputBuilder {
         crate::operation::create_connection_alias::builders::CreateConnectionAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionAliasOutput`](crate::operation::create_connection_alias::CreateConnectionAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionAliasOutputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

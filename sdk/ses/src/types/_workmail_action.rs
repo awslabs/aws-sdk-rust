@@ -31,9 +31,7 @@ impl WorkmailAction {
 
 /// A builder for [`WorkmailAction`](crate::types::WorkmailAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkmailActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) organization_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl WorkmailActionBuilder {
         &self.topic_arn
     }
     /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
-    pub fn organization_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
-    pub fn set_organization_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_arn = input;
         self
     }

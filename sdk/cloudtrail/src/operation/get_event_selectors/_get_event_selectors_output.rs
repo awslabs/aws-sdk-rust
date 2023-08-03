@@ -11,8 +11,7 @@ pub struct GetEventSelectorsOutput {
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
     /// <p> The advanced event selectors that are configured for the trail. </p>
     #[doc(hidden)]
-    pub advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     _request_id: Option<String>,
 }
 impl GetEventSelectorsOutput {
@@ -25,9 +24,7 @@ impl GetEventSelectorsOutput {
         self.event_selectors.as_deref()
     }
     /// <p> The advanced event selectors that are configured for the trail. </p>
-    pub fn advanced_event_selectors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
+    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
         self.advanced_event_selectors.as_deref()
     }
 }
@@ -38,22 +35,18 @@ impl ::aws_http::request_id::RequestId for GetEventSelectorsOutput {
 }
 impl GetEventSelectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetEventSelectorsOutput`](crate::operation::get_event_selectors::GetEventSelectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_event_selectors::builders::GetEventSelectorsOutputBuilder {
+    pub fn builder() -> crate::operation::get_event_selectors::builders::GetEventSelectorsOutputBuilder {
         crate::operation::get_event_selectors::builders::GetEventSelectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventSelectorsOutput`](crate::operation::get_event_selectors::GetEventSelectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventSelectorsOutputBuilder {
     pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
-    pub(crate) advanced_event_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     _request_id: Option<String>,
 }
 impl GetEventSelectorsOutputBuilder {
@@ -83,17 +76,12 @@ impl GetEventSelectorsOutputBuilder {
         self
     }
     /// <p>The event selectors that are configured for the trail.</p>
-    pub fn set_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
-    ) -> Self {
+    pub fn set_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>) -> Self {
         self.event_selectors = input;
         self
     }
     /// <p>The event selectors that are configured for the trail.</p>
-    pub fn get_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
+    pub fn get_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
         &self.event_selectors
     }
     /// Appends an item to `advanced_event_selectors`.
@@ -108,17 +96,12 @@ impl GetEventSelectorsOutputBuilder {
         self
     }
     /// <p> The advanced event selectors that are configured for the trail. </p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.advanced_event_selectors = input;
         self
     }
     /// <p> The advanced event selectors that are configured for the trail. </p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

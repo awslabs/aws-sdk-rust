@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`undo_deprecate(bool)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::undo_deprecate) / [`set_undo_deprecate(Option<bool>)`](crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::set_undo_deprecate): <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     /// - On success, responds with [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput)
     /// - On failure, responds with [`SdkError<DeprecateThingTypeError>`](crate::operation::deprecate_thing_type::DeprecateThingTypeError)
-    pub fn deprecate_thing_type(
-        &self,
-    ) -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder {
-        crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deprecate_thing_type(&self) -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder {
+        crate::operation::deprecate_thing_type::builders::DeprecateThingTypeFluentBuilder::new(self.handle.clone())
     }
 }

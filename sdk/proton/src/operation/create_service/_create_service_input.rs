@@ -146,18 +146,12 @@ impl CreateServiceInputBuilder {
         &self.description
     }
     /// <p>The name of the service template that's used to create the service.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template that's used to create the service.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -166,18 +160,12 @@ impl CreateServiceInputBuilder {
         &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -186,18 +174,12 @@ impl CreateServiceInputBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }
@@ -220,18 +202,12 @@ impl CreateServiceInputBuilder {
         &self.spec
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn repository_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn set_repository_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_connection_arn = input;
         self
     }
@@ -240,18 +216,12 @@ impl CreateServiceInputBuilder {
         &self.repository_connection_arn
     }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn repository_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    pub fn set_repository_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_id = input;
         self
     }
@@ -287,10 +257,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -302,10 +269,7 @@ impl CreateServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
             name: self.name,
             description: self.description,

@@ -36,18 +36,14 @@ impl SendWorkflowStepStateInput {
 }
 impl SendWorkflowStepStateInput {
     /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
-    pub fn builder(
-    ) -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder {
         crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder::default()
     }
 }
 
 /// A builder for [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl SendWorkflowStepStateInputBuilder {
         self
     }
     /// <p>Indicates whether the specified step succeeded or failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomStepStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomStepStatus>) -> Self {
         self.status = input;
         self
     }
@@ -117,17 +110,13 @@ impl SendWorkflowStepStateInputBuilder {
     /// Consumes the builder and constructs a [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::send_workflow_step_state::SendWorkflowStepStateInput {
-                workflow_id: self.workflow_id,
-                execution_id: self.execution_id,
-                token: self.token,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::send_workflow_step_state::SendWorkflowStepStateInput {
+            workflow_id: self.workflow_id,
+            execution_id: self.execution_id,
+            token: self.token,
+            status: self.status,
+        })
     }
 }

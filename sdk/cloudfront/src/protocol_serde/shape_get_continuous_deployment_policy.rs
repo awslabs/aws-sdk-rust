@@ -9,49 +9,53 @@ pub fn de_get_continuous_deployment_policy_http_error(
     crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "NoSuchContinuousDeploymentPolicy" => crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "NoSuchContinuousDeploymentPolicy" => {
+            crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchContinuousDeploymentPolicyBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_continuous_deployment_policy::de_no_such_continuous_deployment_policy_xml_err(_response_body, output).map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_continuous_deployment_policy::de_no_such_continuous_deployment_policy_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::generic(generic),
     })
 }
 
@@ -68,15 +72,16 @@ pub fn de_get_continuous_deployment_policy_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_continuous_deployment_policy::builders::GetContinuousDeploymentPolicyOutputBuilder::default();
         output = output.set_continuous_deployment_policy(
-            crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_continuous_deployment_policy_payload(_response_body)?
+            crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_continuous_deployment_policy_payload(_response_body)?,
         );
         output = output.set_e_tag(
-            crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_e_tag_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+            crate::protocol_serde::shape_get_continuous_deployment_policy_output::de_e_tag_header(_response_headers).map_err(|_| {
+                crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::unhandled(
+                    "Failed to parse ETag from header `ETag",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

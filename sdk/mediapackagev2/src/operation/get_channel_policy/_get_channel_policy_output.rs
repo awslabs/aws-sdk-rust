@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetChannelPolicyOutput {
 }
 impl GetChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
-    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder {
         crate::operation::get_channel_policy::builders::GetChannelPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelPolicyOutputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct GetChannelPolicyOutputBuilder {
 }
 impl GetChannelPolicyOutputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }

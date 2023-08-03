@@ -36,23 +36,19 @@ impl BatchGetPartitionInput {
 }
 impl BatchGetPartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
         crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetPartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) partitions_to_get:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) partitions_to_get: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BatchGetPartitionInputBuilder {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -70,18 +66,12 @@ impl BatchGetPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -115,33 +105,23 @@ impl BatchGetPartitionInputBuilder {
         self
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn set_partitions_to_get(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
+    pub fn set_partitions_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
         self.partitions_to_get = input;
         self
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn get_partitions_to_get(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_partitions_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
         &self.partitions_to_get
     }
     /// Consumes the builder and constructs a [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_partition::BatchGetPartitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_partition::BatchGetPartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                partitions_to_get: self.partitions_to_get,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_partition::BatchGetPartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_partition::BatchGetPartitionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partitions_to_get: self.partitions_to_get,
+        })
     }
 }

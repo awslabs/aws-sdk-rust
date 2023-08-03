@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`replication_run_list(Option<Vec<ReplicationRun>>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::replication_run_list): <p>Information about the replication runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_replication_runs::GetReplicationRunsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetReplicationRunsError>`](crate::operation::get_replication_runs::GetReplicationRunsError)
-    pub fn get_replication_runs(
-        &self,
-    ) -> crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder {
-        crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_replication_runs(&self) -> crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder {
+        crate::operation::get_replication_runs::builders::GetReplicationRunsFluentBuilder::new(self.handle.clone())
     }
 }

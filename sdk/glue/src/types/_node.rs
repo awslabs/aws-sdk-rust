@@ -58,9 +58,7 @@ impl Node {
 
 /// A builder for [`Node`](crate::types::Node).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NodeType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl NodeBuilder {
         self
     }
     /// <p>Details of the Trigger when the node represents a Trigger.</p>
-    pub fn set_trigger_details(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerNodeDetails>,
-    ) -> Self {
+    pub fn set_trigger_details(mut self, input: ::std::option::Option<crate::types::TriggerNodeDetails>) -> Self {
         self.trigger_details = input;
         self
     }
@@ -135,10 +130,7 @@ impl NodeBuilder {
         self
     }
     /// <p>Details of the Job when the node represents a Job.</p>
-    pub fn set_job_details(
-        mut self,
-        input: ::std::option::Option<crate::types::JobNodeDetails>,
-    ) -> Self {
+    pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::JobNodeDetails>) -> Self {
         self.job_details = input;
         self
     }
@@ -152,10 +144,7 @@ impl NodeBuilder {
         self
     }
     /// <p>Details of the crawler when the node represents a crawler.</p>
-    pub fn set_crawler_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CrawlerNodeDetails>,
-    ) -> Self {
+    pub fn set_crawler_details(mut self, input: ::std::option::Option<crate::types::CrawlerNodeDetails>) -> Self {
         self.crawler_details = input;
         self
     }

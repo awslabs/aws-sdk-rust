@@ -14,14 +14,8 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::send_channel_message::SendChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`message_id(Option<String>)`](crate::operation::send_channel_message::SendChannelMessageOutput::message_id): <p>The ID string assigned to each message.</p>
     /// - On failure, responds with [`SdkError<SendChannelMessageError>`](crate::operation::send_channel_message::SendChannelMessageError)
-    #[deprecated(
-        note = "Replaced by SendChannelMessage in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn send_channel_message(
-        &self,
-    ) -> crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder {
-        crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Replaced by SendChannelMessage in the Amazon Chime SDK Messaging Namespace")]
+    pub fn send_channel_message(&self) -> crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder {
+        crate::operation::send_channel_message::builders::SendChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,27 +29,19 @@ impl RegisterVolumeInput {
 
 /// A builder for [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterVolumeInputBuilder {
     pub(crate) ec2_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterVolumeInputBuilder {
     /// <p>The Amazon EBS volume ID.</p>
-    pub fn ec2_volume_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EBS volume ID.</p>
-    pub fn set_ec2_volume_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_volume_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl RegisterVolumeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_volume::RegisterVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_volume::RegisterVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_volume::RegisterVolumeInput {
             ec2_volume_id: self.ec2_volume_id,
             stack_id: self.stack_id,

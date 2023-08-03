@@ -10,10 +10,7 @@ impl GetLoadBalancerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer::GetLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer::GetLoadBalancerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_load_balancer();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLoadBalancerFluentBuilder {
         }
     }
     /// Access the GetLoadBalancer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_load_balancer::builders::GetLoadBalancerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_load_balancer::builders::GetLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetLoadBalancerFluentBuilder {
             crate::operation::get_load_balancer::GetLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer::GetLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer::GetLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer::GetLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer::GetLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer::GetLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetLoadBalancerFluentBuilder {
             crate::operation::get_load_balancer::GetLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer::GetLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }

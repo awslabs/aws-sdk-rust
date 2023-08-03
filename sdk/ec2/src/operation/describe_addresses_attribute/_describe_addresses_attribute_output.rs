@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAddressesAttributeOutput {
 }
 impl DescribeAddressesAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesAttributeOutput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput).
-    pub fn builder() -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeOutputBuilder {
         crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesAttributeOutput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesAttributeOutputBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeAddressesAttributeOutputBuilder {
         self
     }
     /// <p>Information about the IP addresses.</p>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>>) -> Self {
         self.addresses = input;
         self
     }
     /// <p>Information about the IP addresses.</p>
-    pub fn get_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>> {
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>> {
         &self.addresses
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -93,9 +86,7 @@ impl DescribeAddressesAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAddressesAttributeOutput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput {
+    pub fn build(self) -> crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput {
         crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput {
             addresses: self.addresses,
             next_token: self.next_token,

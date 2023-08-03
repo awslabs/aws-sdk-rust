@@ -10,10 +10,7 @@ impl CreateRecommenderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_recommender::CreateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender::CreateRecommenderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender::CreateRecommenderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_recommender();
         fluent_builder.inner = self;
@@ -60,9 +57,7 @@ impl CreateRecommenderFluentBuilder {
         }
     }
     /// Access the CreateRecommender as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_recommender::builders::CreateRecommenderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_recommender::builders::CreateRecommenderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateRecommenderFluentBuilder {
             crate::operation::create_recommender::CreateRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender::CreateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender::CreateRecommenderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -86,10 +79,7 @@ impl CreateRecommenderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -98,9 +88,7 @@ impl CreateRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recommender::CreateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender::CreateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender::CreateRecommenderError>,
     > {
         let op = self
             .inner
@@ -123,9 +111,7 @@ impl CreateRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_recommender::CreateRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender::CreateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender::CreateRecommenderError>,
     > {
         self.send_middleware().await
     }
@@ -139,9 +125,7 @@ impl CreateRecommenderFluentBuilder {
             crate::operation::create_recommender::CreateRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_recommender::CreateRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_recommender::CreateRecommenderError>,
     > {
         self.customize_middleware().await
     }
@@ -160,18 +144,12 @@ impl CreateRecommenderFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -199,17 +177,12 @@ impl CreateRecommenderFluentBuilder {
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn set_recommender_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommenderConfig>,
-    ) -> Self {
+    pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
         self.inner = self.inner.set_recommender_config(input);
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn get_recommender_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+    pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         self.inner.get_recommender_config()
     }
     /// Appends an item to `tags`.
@@ -222,10 +195,7 @@ impl CreateRecommenderFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the recommender.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

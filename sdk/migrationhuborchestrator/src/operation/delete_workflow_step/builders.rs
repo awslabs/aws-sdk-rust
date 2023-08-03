@@ -10,10 +10,7 @@ impl DeleteWorkflowStepInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step::DeleteWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step::DeleteWorkflowStepError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step::DeleteWorkflowStepError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_workflow_step();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteWorkflowStepFluentBuilder {
         }
     }
     /// Access the DeleteWorkflowStep as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workflow_step::builders::DeleteWorkflowStepInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_workflow_step::builders::DeleteWorkflowStepInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteWorkflowStepFluentBuilder {
             crate::operation::delete_workflow_step::DeleteWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step::DeleteWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step::DeleteWorkflowStepError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteWorkflowStepFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step::DeleteWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step::DeleteWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step::DeleteWorkflowStepError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step::DeleteWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step::DeleteWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step::DeleteWorkflowStepError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteWorkflowStepFluentBuilder {
             crate::operation::delete_workflow_step::DeleteWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workflow_step::DeleteWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workflow_step::DeleteWorkflowStepError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteWorkflowStepFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The ID of the step group that contains the step you want to delete.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_group_id(input.into());
         self
     }
     /// <p>The ID of the step group that contains the step you want to delete.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
     }

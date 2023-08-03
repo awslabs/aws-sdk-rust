@@ -10,10 +10,7 @@ impl DescribeAcLsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_ac_ls::DescribeAcLsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ac_ls::DescribeACLsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ac_ls::DescribeACLsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_ac_ls();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeACLsFluentBuilder {
         }
     }
     /// Access the DescribeACLs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ac_ls::builders::DescribeAcLsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ac_ls::builders::DescribeAcLsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeACLsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl DescribeACLsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ac_ls::paginator::DescribeAcLsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ac_ls::paginator::DescribeAcLsPaginator {
-        crate::operation::describe_ac_ls::paginator::DescribeAcLsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ac_ls::paginator::DescribeAcLsPaginator {
+        crate::operation::describe_ac_ls::paginator::DescribeAcLsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the ACL</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

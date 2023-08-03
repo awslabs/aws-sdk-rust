@@ -9,10 +9,7 @@ pub fn ser_line_chart_sort_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_field_sort_options::ser_field_sort_options(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_field_sort_options::ser_field_sort_options(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -21,19 +18,13 @@ pub fn ser_line_chart_sort_configuration(
     if let Some(var_5) = &input.category_items_limit_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("CategoryItemsLimitConfiguration").start_object();
-        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.color_items_limit_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ColorItemsLimitConfiguration").start_object();
-        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.small_multiples_sort {
@@ -42,10 +33,7 @@ pub fn ser_line_chart_sort_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_field_sort_options::ser_field_sort_options(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_field_sort_options::ser_field_sort_options(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -53,13 +41,8 @@ pub fn ser_line_chart_sort_configuration(
     }
     if let Some(var_13) = &input.small_multiples_limit_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object
-            .key("SmallMultiplesLimitConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(
-            &mut object_14,
-            var_13,
-        )?;
+        let mut object_14 = object.key("SmallMultiplesLimitConfiguration").start_object();
+        crate::protocol_serde::shape_items_limit_configuration::ser_items_limit_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
     Ok(())
@@ -67,17 +50,9 @@ pub fn ser_line_chart_sort_configuration(
 
 pub(crate) fn de_line_chart_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::LineChartSortConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::LineChartSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -87,51 +62,44 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CategorySort" => {
-                                builder = builder.set_category_sort(
-                                    crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?
-                                );
-                            }
-                            "CategoryItemsLimitConfiguration" => {
-                                builder = builder.set_category_items_limit_configuration(
-                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?
-                                );
-                            }
-                            "ColorItemsLimitConfiguration" => {
-                                builder = builder.set_color_items_limit_configuration(
-                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?
-                                );
-                            }
-                            "SmallMultiplesSort" => {
-                                builder = builder.set_small_multiples_sort(
-                                    crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?
-                                );
-                            }
-                            "SmallMultiplesLimitConfiguration" => {
-                                builder = builder.set_small_multiples_limit_configuration(
-                                    crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CategorySort" => {
+                            builder =
+                                builder.set_category_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
                         }
-                    }
+                        "CategoryItemsLimitConfiguration" => {
+                            builder = builder.set_category_items_limit_configuration(
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                            );
+                        }
+                        "ColorItemsLimitConfiguration" => {
+                            builder = builder.set_color_items_limit_configuration(
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                            );
+                        }
+                        "SmallMultiplesSort" => {
+                            builder = builder
+                                .set_small_multiples_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
+                        }
+                        "SmallMultiplesLimitConfiguration" => {
+                            builder = builder.set_small_multiples_limit_configuration(
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

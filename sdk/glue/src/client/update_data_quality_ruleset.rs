@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput::description): <p>A description of the ruleset.</p>
     ///   - [`ruleset(Option<String>)`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput::ruleset): <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     /// - On failure, responds with [`SdkError<UpdateDataQualityRulesetError>`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError)
-    pub fn update_data_quality_ruleset(&self) -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetFluentBuilder{
+    pub fn update_data_quality_ruleset(&self) -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetFluentBuilder {
         crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetFluentBuilder::new(self.handle.clone())
     }
 }

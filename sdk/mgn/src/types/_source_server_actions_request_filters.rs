@@ -23,9 +23,7 @@ impl SourceServerActionsRequestFilters {
 
 /// A builder for [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceServerActionsRequestFiltersBuilder {
     pub(crate) action_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl SourceServerActionsRequestFiltersBuilder {
         self
     }
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn set_action_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_action_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.action_i_ds = input;
         self
     }
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn get_action_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.action_i_ds
     }
     /// Consumes the builder and constructs a [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).

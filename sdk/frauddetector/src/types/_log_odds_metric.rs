@@ -37,9 +37,7 @@ impl LogOddsMetric {
 
 /// A builder for [`LogOddsMetric`](crate::types::LogOddsMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogOddsMetricBuilder {
     pub(crate) variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct LogOddsMetricBuilder {
 }
 impl LogOddsMetricBuilder {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variable.</p>
-    pub fn set_variable_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl LogOddsMetricBuilder {
         &self.variable_name
     }
     /// <p>The type of variable.</p>
-    pub fn variable_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of variable.</p>
-    pub fn set_variable_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_type = input;
         self
     }

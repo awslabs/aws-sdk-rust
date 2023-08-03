@@ -36,18 +36,14 @@ impl ListDiscoveredResourcesInput {
 }
 impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInputBuilder {
     pub(crate) member_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -60,42 +56,28 @@ impl ListDiscoveredResourcesInputBuilder {
     /// To override the contents of this collection use [`set_member_account_ids`](Self::set_member_account_ids).
     ///
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn member_account_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.member_account_ids.unwrap_or_default();
         v.push(input.into());
         self.member_account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn set_member_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.member_account_ids = input;
         self
     }
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn get_member_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.member_account_ids
     }
     /// <p>The type of resources to discover.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resources to discover.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -138,13 +120,11 @@ impl ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
-                member_account_ids: self.member_account_ids,
-                resource_type: self.resource_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
+            member_account_ids: self.member_account_ids,
+            resource_type: self.resource_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

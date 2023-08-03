@@ -42,10 +42,7 @@ impl AttachClassicLinkVpcFluentBuilder {
         }
     }
     /// Access the AttachClassicLinkVpc as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl AttachClassicLinkVpcFluentBuilder {
             crate::operation::attach_classic_link_vpc::AttachClassicLinkVpc,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl AttachClassicLinkVpcFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl AttachClassicLinkVpcFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl AttachClassicLinkVpcFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl AttachClassicLinkVpcFluentBuilder {
             crate::operation::attach_classic_link_vpc::AttachClassicLinkVpc,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +138,7 @@ impl AttachClassicLinkVpcFluentBuilder {
         self
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }

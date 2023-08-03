@@ -23,22 +23,17 @@ impl AddFlowMediaStreamsInput {
 }
 impl AddFlowMediaStreamsInput {
     /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
-        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
+        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) media_streams:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+    pub(crate) media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
@@ -67,31 +62,22 @@ impl AddFlowMediaStreamsInputBuilder {
         self
     }
     /// The media streams that you want to add to the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.media_streams = input;
         self
     }
     /// The media streams that you want to add to the flow.
-    pub fn get_media_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
         &self.media_streams
     }
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
-                flow_arn: self.flow_arn,
-                media_streams: self.media_streams,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
+            flow_arn: self.flow_arn,
+            media_streams: self.media_streams,
+        })
     }
 }

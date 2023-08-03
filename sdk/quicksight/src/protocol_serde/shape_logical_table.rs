@@ -12,10 +12,7 @@ pub fn ser_logical_table(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_transform_operation::ser_transform_operation(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_transform_operation::ser_transform_operation(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_logical_table(
     if let Some(var_6) = &input.source {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Source").start_object();
-        crate::protocol_serde::shape_logical_table_source::ser_logical_table_source(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_logical_table_source::ser_logical_table_source(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -35,17 +29,9 @@ pub fn ser_logical_table(
 
 pub(crate) fn de_logical_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::LogicalTable>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::LogicalTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,45 +41,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Alias" => {
-                                builder = builder.set_alias(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Alias" => {
+                            builder = builder.set_alias(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DataTransforms" => {
-                                builder = builder.set_data_transforms(
-                                    crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens)?
-                                );
-                            }
-                            "Source" => {
-                                builder = builder.set_source(
-                                    crate::protocol_serde::shape_logical_table_source::de_logical_table_source(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "DataTransforms" => {
+                            builder = builder.set_data_transforms(
+                                crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens)?,
+                            );
+                        }
+                        "Source" => {
+                            builder = builder.set_source(crate::protocol_serde::shape_logical_table_source::de_logical_table_source(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

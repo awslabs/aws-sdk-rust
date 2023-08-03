@@ -30,9 +30,7 @@ impl ElasticsearchVersionStatus {
 
 /// A builder for [`ElasticsearchVersionStatus`](crate::types::ElasticsearchVersionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchVersionStatusBuilder {
     pub(crate) options: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartContentModerationOutput {
 }
 impl StartContentModerationOutput {
     /// Creates a new builder-style object to manufacture [`StartContentModerationOutput`](crate::operation::start_content_moderation::StartContentModerationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder {
         crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartContentModerationOutput`](crate::operation::start_content_moderation::StartContentModerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContentModerationOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -36,9 +36,7 @@ impl EnterStandbyInput {
 
 /// A builder for [`EnterStandbyInput`](crate::operation::enter_standby::EnterStandbyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnterStandbyInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -57,32 +55,21 @@ impl EnterStandbyInputBuilder {
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -96,10 +83,7 @@ impl EnterStandbyInputBuilder {
         self
     }
     /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_should_decrement_desired_capacity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.should_decrement_desired_capacity = input;
         self
     }
@@ -108,12 +92,7 @@ impl EnterStandbyInputBuilder {
         &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`EnterStandbyInput`](crate::operation::enter_standby::EnterStandbyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enter_standby::EnterStandbyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enter_standby::EnterStandbyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enter_standby::EnterStandbyInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

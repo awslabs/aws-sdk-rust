@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayOutput {
 }
 impl CreateTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayOutput`](crate::operation::create_transit_gateway::CreateTransitGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder {
         crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayOutput`](crate::operation::create_transit_gateway::CreateTransitGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayOutputBuilder {
     pub(crate) transit_gateway: ::std::option::Option<crate::types::TransitGateway>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateTransitGatewayOutputBuilder {
         self
     }
     /// <p>Information about the transit gateway.</p>
-    pub fn set_transit_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGateway>,
-    ) -> Self {
+    pub fn set_transit_gateway(mut self, input: ::std::option::Option<crate::types::TransitGateway>) -> Self {
         self.transit_gateway = input;
         self
     }

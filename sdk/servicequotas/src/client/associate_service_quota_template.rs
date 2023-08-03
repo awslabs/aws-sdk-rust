@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateFluentBuilder::send) it.
     /// - On success, responds with [`AssociateServiceQuotaTemplateOutput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput)
     /// - On failure, responds with [`SdkError<AssociateServiceQuotaTemplateError>`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateError)
-    pub fn associate_service_quota_template(&self) -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateFluentBuilder{
+    pub fn associate_service_quota_template(
+        &self,
+    ) -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateFluentBuilder {
         crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateFluentBuilder::new(self.handle.clone())
     }
 }

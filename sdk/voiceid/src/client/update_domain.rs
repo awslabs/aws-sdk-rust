@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainOutput`](crate::operation::update_domain::UpdateDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::operation::update_domain::UpdateDomainOutput::domain): <p>Details about the updated domain</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::operation::update_domain::UpdateDomainError)
-    pub fn update_domain(
-        &self,
-    ) -> crate::operation::update_domain::builders::UpdateDomainFluentBuilder {
-        crate::operation::update_domain::builders::UpdateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_domain(&self) -> crate::operation::update_domain::builders::UpdateDomainFluentBuilder {
+        crate::operation::update_domain::builders::UpdateDomainFluentBuilder::new(self.handle.clone())
     }
 }

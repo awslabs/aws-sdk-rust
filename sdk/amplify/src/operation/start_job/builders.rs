@@ -10,10 +10,7 @@ impl StartJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_job::StartJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_job::StartJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job::StartJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_job();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartJobFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_job::StartJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_job::StartJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_job::StartJobError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_job::StartJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_job::StartJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_job::StartJobError>,
     > {
         self.customize_middleware().await
@@ -197,18 +185,12 @@ impl StartJobFluentBuilder {
         self.inner.get_commit_id()
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }
@@ -222,10 +204,7 @@ impl StartJobFluentBuilder {
         self
     }
     /// <p> The commit date and time for the job. </p>
-    pub fn set_commit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_commit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_commit_time(input);
         self
     }

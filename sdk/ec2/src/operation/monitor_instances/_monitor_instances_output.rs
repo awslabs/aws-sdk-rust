@@ -5,15 +5,12 @@
 pub struct MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
     #[doc(hidden)]
-    pub instance_monitorings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
+    pub instance_monitorings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
     _request_id: Option<String>,
 }
 impl MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
-    pub fn instance_monitorings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceMonitoring]> {
+    pub fn instance_monitorings(&self) -> ::std::option::Option<&[crate::types::InstanceMonitoring]> {
         self.instance_monitorings.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for MonitorInstancesOutput {
 }
 impl MonitorInstancesOutput {
     /// Creates a new builder-style object to manufacture [`MonitorInstancesOutput`](crate::operation::monitor_instances::MonitorInstancesOutput).
-    pub fn builder() -> crate::operation::monitor_instances::builders::MonitorInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::monitor_instances::builders::MonitorInstancesOutputBuilder {
         crate::operation::monitor_instances::builders::MonitorInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`MonitorInstancesOutput`](crate::operation::monitor_instances::MonitorInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorInstancesOutputBuilder {
-    pub(crate) instance_monitorings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
+    pub(crate) instance_monitorings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
     _request_id: Option<String>,
 }
 impl MonitorInstancesOutputBuilder {
@@ -53,17 +46,12 @@ impl MonitorInstancesOutputBuilder {
         self
     }
     /// <p>The monitoring information.</p>
-    pub fn set_instance_monitorings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
-    ) -> Self {
+    pub fn set_instance_monitorings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>) -> Self {
         self.instance_monitorings = input;
         self
     }
     /// <p>The monitoring information.</p>
-    pub fn get_instance_monitorings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>> {
+    pub fn get_instance_monitorings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>> {
         &self.instance_monitorings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,9 +11,7 @@ pub struct DescribeSpotDatafeedSubscriptionOutput {
 }
 impl DescribeSpotDatafeedSubscriptionOutput {
     /// <p>The Spot Instance data feed subscription.</p>
-    pub fn spot_datafeed_subscription(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpotDatafeedSubscription> {
+    pub fn spot_datafeed_subscription(&self) -> ::std::option::Option<&crate::types::SpotDatafeedSubscription> {
         self.spot_datafeed_subscription.as_ref()
     }
 }
@@ -24,42 +22,31 @@ impl ::aws_http::request_id::RequestId for DescribeSpotDatafeedSubscriptionOutpu
 }
 impl DescribeSpotDatafeedSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput).
-    pub fn builder() -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionOutputBuilder {
         crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotDatafeedSubscriptionOutputBuilder {
-    pub(crate) spot_datafeed_subscription:
-        ::std::option::Option<crate::types::SpotDatafeedSubscription>,
+    pub(crate) spot_datafeed_subscription: ::std::option::Option<crate::types::SpotDatafeedSubscription>,
     _request_id: Option<String>,
 }
 impl DescribeSpotDatafeedSubscriptionOutputBuilder {
     /// <p>The Spot Instance data feed subscription.</p>
-    pub fn spot_datafeed_subscription(
-        mut self,
-        input: crate::types::SpotDatafeedSubscription,
-    ) -> Self {
+    pub fn spot_datafeed_subscription(mut self, input: crate::types::SpotDatafeedSubscription) -> Self {
         self.spot_datafeed_subscription = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Spot Instance data feed subscription.</p>
-    pub fn set_spot_datafeed_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotDatafeedSubscription>,
-    ) -> Self {
+    pub fn set_spot_datafeed_subscription(mut self, input: ::std::option::Option<crate::types::SpotDatafeedSubscription>) -> Self {
         self.spot_datafeed_subscription = input;
         self
     }
     /// <p>The Spot Instance data feed subscription.</p>
-    pub fn get_spot_datafeed_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotDatafeedSubscription> {
+    pub fn get_spot_datafeed_subscription(&self) -> &::std::option::Option<crate::types::SpotDatafeedSubscription> {
         &self.spot_datafeed_subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +59,9 @@ impl DescribeSpotDatafeedSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotDatafeedSubscriptionOutput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput
-    {
+    pub fn build(self) -> crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput {
         crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput {
-            spot_datafeed_subscription: self.spot_datafeed_subscription
-            ,
+            spot_datafeed_subscription: self.spot_datafeed_subscription,
             _request_id: self._request_id,
         }
     }

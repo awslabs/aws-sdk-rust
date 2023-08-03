@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<StackSetOperationResultSummary>>)`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsOutput::summaries): <p>A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified operation results, for accounts and Amazon Web Services Regions that are included in the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsOutput::next_token): <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListStackSetOperationResultsError>`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError)
-    pub fn list_stack_set_operation_results(&self) -> crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsFluentBuilder{
+    pub fn list_stack_set_operation_results(
+        &self,
+    ) -> crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsFluentBuilder {
         crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsFluentBuilder::new(self.handle.clone())
     }
 }

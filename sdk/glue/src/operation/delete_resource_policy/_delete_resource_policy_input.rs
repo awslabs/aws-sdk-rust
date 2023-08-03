@@ -22,35 +22,26 @@ impl DeleteResourcePolicyInput {
 }
 impl DeleteResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInputBuilder {
     pub(crate) policy_hash_condition: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>The hash value returned when this policy was set.</p>
-    pub fn policy_hash_condition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_hash_condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash_condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash value returned when this policy was set.</p>
-    pub fn set_policy_hash_condition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_hash_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash_condition = input;
         self
     }
@@ -75,15 +66,11 @@ impl DeleteResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-                policy_hash_condition: self.policy_hash_condition,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
+            policy_hash_condition: self.policy_hash_condition,
+            resource_arn: self.resource_arn,
+        })
     }
 }

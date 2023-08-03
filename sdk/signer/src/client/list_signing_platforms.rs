@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`platforms(Option<Vec<SigningPlatform>>)`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput::platforms): <p>A list of all platforms that match the request parameters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput::next_token): <p>Value for specifying the next set of paginated results to return.</p>
     /// - On failure, responds with [`SdkError<ListSigningPlatformsError>`](crate::operation::list_signing_platforms::ListSigningPlatformsError)
-    pub fn list_signing_platforms(
-        &self,
-    ) -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsFluentBuilder {
-        crate::operation::list_signing_platforms::builders::ListSigningPlatformsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_signing_platforms(&self) -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsFluentBuilder {
+        crate::operation::list_signing_platforms::builders::ListSigningPlatformsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssumeImpersonationRoleOutput {
 }
 impl AssumeImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleOutput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder {
         crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssumeImpersonationRoleOutput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssumeImpersonationRoleOutputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in: ::std::option::Option<i64>,
@@ -84,9 +80,7 @@ impl AssumeImpersonationRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssumeImpersonationRoleOutput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
+    pub fn build(self) -> crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
         crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput {
             token: self.token,
             expires_in: self.expires_in,

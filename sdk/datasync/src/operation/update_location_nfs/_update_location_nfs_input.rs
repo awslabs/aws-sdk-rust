@@ -42,17 +42,14 @@ impl UpdateLocationNfsInput {
 }
 impl UpdateLocationNfsInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
-    pub fn builder(
-    ) -> crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder {
+    pub fn builder() -> crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder {
         crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationNfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
@@ -103,10 +100,7 @@ impl UpdateLocationNfsInputBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    pub fn set_on_prem_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPremConfig>,
-    ) -> Self {
+    pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.on_prem_config = input;
         self
     }
@@ -120,10 +114,7 @@ impl UpdateLocationNfsInputBuilder {
         self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
@@ -134,17 +125,12 @@ impl UpdateLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_location_nfs::UpdateLocationNfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_location_nfs::UpdateLocationNfsInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                on_prem_config: self.on_prem_config,
-                mount_options: self.mount_options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_location_nfs::UpdateLocationNfsInput {
+            location_arn: self.location_arn,
+            subdirectory: self.subdirectory,
+            on_prem_config: self.on_prem_config,
+            mount_options: self.mount_options,
+        })
     }
 }

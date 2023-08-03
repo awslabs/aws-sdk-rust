@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`thing_type_properties(Option<ThingTypeProperties>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_properties): <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
     ///   - [`thing_type_metadata(Option<ThingTypeMetadata>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_metadata): <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     /// - On failure, responds with [`SdkError<DescribeThingTypeError>`](crate::operation::describe_thing_type::DescribeThingTypeError)
-    pub fn describe_thing_type(
-        &self,
-    ) -> crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder {
-        crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_thing_type(&self) -> crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder {
+        crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::new(self.handle.clone())
     }
 }

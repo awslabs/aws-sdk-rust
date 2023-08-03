@@ -5,16 +5,16 @@ pub use crate::operation::update_firewall_policy_change_protection::_update_fire
 
 impl UpdateFirewallPolicyChangeProtectionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_firewall_policy_change_protection();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateFirewallPolicyChangeProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder,
+    inner: crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder,
 }
 impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
     /// Creates a new `UpdateFirewallPolicyChangeProtection`.
@@ -37,15 +37,22 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
         }
     }
     /// Access the UpdateFirewallPolicyChangeProtection as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -133,19 +150,13 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
@@ -160,10 +171,7 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
         self
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn set_firewall_policy_change_protection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_firewall_policy_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_firewall_policy_change_protection(input);
         self
     }

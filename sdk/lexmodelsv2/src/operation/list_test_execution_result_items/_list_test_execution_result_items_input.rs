@@ -22,9 +22,7 @@ impl ListTestExecutionResultItemsInput {
         self.test_execution_id.as_deref()
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn result_filter_by(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestExecutionResultFilterBy> {
+    pub fn result_filter_by(&self) -> ::std::option::Option<&crate::types::TestExecutionResultFilterBy> {
         self.result_filter_by.as_ref()
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -38,16 +36,14 @@ impl ListTestExecutionResultItemsInput {
 }
 impl ListTestExecutionResultItemsInput {
     /// Creates a new builder-style object to manufacture [`ListTestExecutionResultItemsInput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput).
-    pub fn builder() -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder{
+    pub fn builder() -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder {
         crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestExecutionResultItemsInput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestExecutionResultItemsInputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) result_filter_by: ::std::option::Option<crate::types::TestExecutionResultFilterBy>,
@@ -56,18 +52,12 @@ pub struct ListTestExecutionResultItemsInputBuilder {
 }
 impl ListTestExecutionResultItemsInputBuilder {
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_execution_id = input;
         self
     }
@@ -81,17 +71,12 @@ impl ListTestExecutionResultItemsInputBuilder {
         self
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn set_result_filter_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionResultFilterBy>,
-    ) -> Self {
+    pub fn set_result_filter_by(mut self, input: ::std::option::Option<crate::types::TestExecutionResultFilterBy>) -> Self {
         self.result_filter_by = input;
         self
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn get_result_filter_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
+    pub fn get_result_filter_by(&self) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
         &self.result_filter_by
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -129,13 +114,11 @@ impl ListTestExecutionResultItemsInputBuilder {
         crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput {
-                test_execution_id: self.test_execution_id,
-                result_filter_by: self.result_filter_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput {
+            test_execution_id: self.test_execution_id,
+            result_filter_by: self.result_filter_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

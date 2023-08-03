@@ -10,10 +10,7 @@ impl CreateBillingGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_billing_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateBillingGroupFluentBuilder {
         }
     }
     /// Access the CreateBillingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateBillingGroupFluentBuilder {
             crate::operation::create_billing_group::CreateBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateBillingGroupFluentBuilder {
             crate::operation::create_billing_group::CreateBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl CreateBillingGroupFluentBuilder {
         self
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
-    pub fn set_account_grouping(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountGrouping>,
-    ) -> Self {
+    pub fn set_account_grouping(mut self, input: ::std::option::Option<crate::types::AccountGrouping>) -> Self {
         self.inner = self.inner.set_account_grouping(input);
         self
     }
@@ -173,32 +154,21 @@ impl CreateBillingGroupFluentBuilder {
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn set_computation_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputationPreference>,
-    ) -> Self {
+    pub fn set_computation_preference(mut self, input: ::std::option::Option<crate::types::ComputationPreference>) -> Self {
         self.inner = self.inner.set_computation_preference(input);
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn get_computation_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+    pub fn get_computation_preference(&self) -> &::std::option::Option<crate::types::ComputationPreference> {
         self.inner.get_computation_preference()
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn primary_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_account_id(input.into());
         self
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn set_primary_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_account_id(input);
         self
     }
@@ -225,30 +195,17 @@ impl CreateBillingGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

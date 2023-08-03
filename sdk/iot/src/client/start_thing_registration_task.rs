@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput::task_id): <p>The bulk thing provisioning task ID.</p>
     /// - On failure, responds with [`SdkError<StartThingRegistrationTaskError>`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskError)
-    pub fn start_thing_registration_task(&self) -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskFluentBuilder{
+    pub fn start_thing_registration_task(
+        &self,
+    ) -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskFluentBuilder {
         crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskFluentBuilder::new(self.handle.clone())
     }
 }

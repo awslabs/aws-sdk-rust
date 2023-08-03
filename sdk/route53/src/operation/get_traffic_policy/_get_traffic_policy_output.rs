@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetTrafficPolicyOutput {
 }
 impl GetTrafficPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyOutput`](crate::operation::get_traffic_policy::GetTrafficPolicyOutput).
-    pub fn builder() -> crate::operation::get_traffic_policy::builders::GetTrafficPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_policy::builders::GetTrafficPolicyOutputBuilder {
         crate::operation::get_traffic_policy::builders::GetTrafficPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficPolicyOutput`](crate::operation::get_traffic_policy::GetTrafficPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyOutputBuilder {
     pub(crate) traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl GetTrafficPolicyOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
-    pub fn set_traffic_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficPolicy>,
-    ) -> Self {
+    pub fn set_traffic_policy(mut self, input: ::std::option::Option<crate::types::TrafficPolicy>) -> Self {
         self.traffic_policy = input;
         self
     }

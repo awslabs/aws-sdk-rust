@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`services(Option<Vec<Service>>)`](crate::operation::describe_services::DescribeServicesOutput::services): <p>The list of services described.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::describe_services::DescribeServicesOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<DescribeServicesError>`](crate::operation::describe_services::DescribeServicesError)
-    pub fn describe_services(
-        &self,
-    ) -> crate::operation::describe_services::builders::DescribeServicesFluentBuilder {
-        crate::operation::describe_services::builders::DescribeServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_services(&self) -> crate::operation::describe_services::builders::DescribeServicesFluentBuilder {
+        crate::operation::describe_services::builders::DescribeServicesFluentBuilder::new(self.handle.clone())
     }
 }

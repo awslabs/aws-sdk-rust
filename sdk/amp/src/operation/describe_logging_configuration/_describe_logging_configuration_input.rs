@@ -16,16 +16,14 @@ impl DescribeLoggingConfigurationInput {
 }
 impl DescribeLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl DescribeLoggingConfigurationInputBuilder {
         crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
-                workspace_id: self.workspace_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
+            workspace_id: self.workspace_id,
+        })
     }
 }

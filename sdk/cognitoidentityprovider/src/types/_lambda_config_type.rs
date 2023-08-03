@@ -39,8 +39,7 @@ pub struct LambdaConfigType {
     pub custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     /// <p>A custom email sender Lambda trigger.</p>
     #[doc(hidden)]
-    pub custom_email_sender:
-        ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
+    pub custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
     #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -87,15 +86,11 @@ impl LambdaConfigType {
         self.user_migration.as_deref()
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
-    pub fn custom_sms_sender(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomSmsLambdaVersionConfigType> {
+    pub fn custom_sms_sender(&self) -> ::std::option::Option<&crate::types::CustomSmsLambdaVersionConfigType> {
         self.custom_sms_sender.as_ref()
     }
     /// <p>A custom email sender Lambda trigger.</p>
-    pub fn custom_email_sender(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomEmailLambdaVersionConfigType> {
+    pub fn custom_email_sender(&self) -> ::std::option::Option<&crate::types::CustomEmailLambdaVersionConfigType> {
         self.custom_email_sender.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
@@ -112,9 +107,7 @@ impl LambdaConfigType {
 
 /// A builder for [`LambdaConfigType`](crate::types::LambdaConfigType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaConfigTypeBuilder {
     pub(crate) pre_sign_up: ::std::option::Option<::std::string::String>,
     pub(crate) custom_message: ::std::option::Option<::std::string::String>,
@@ -126,10 +119,8 @@ pub struct LambdaConfigTypeBuilder {
     pub(crate) verify_auth_challenge_response: ::std::option::Option<::std::string::String>,
     pub(crate) pre_token_generation: ::std::option::Option<::std::string::String>,
     pub(crate) user_migration: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_sms_sender:
-        ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
-    pub(crate) custom_email_sender:
-        ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
+    pub(crate) custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
+    pub(crate) custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConfigTypeBuilder {
@@ -148,18 +139,12 @@ impl LambdaConfigTypeBuilder {
         &self.pre_sign_up
     }
     /// <p>A custom Message Lambda trigger.</p>
-    pub fn custom_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom Message Lambda trigger.</p>
-    pub fn set_custom_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_message = input;
         self
     }
@@ -168,18 +153,12 @@ impl LambdaConfigTypeBuilder {
         &self.custom_message
     }
     /// <p>A post-confirmation Lambda trigger.</p>
-    pub fn post_confirmation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn post_confirmation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_confirmation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A post-confirmation Lambda trigger.</p>
-    pub fn set_post_confirmation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_post_confirmation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_confirmation = input;
         self
     }
@@ -188,18 +167,12 @@ impl LambdaConfigTypeBuilder {
         &self.post_confirmation
     }
     /// <p>A pre-authentication Lambda trigger.</p>
-    pub fn pre_authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pre-authentication Lambda trigger.</p>
-    pub fn set_pre_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_authentication = input;
         self
     }
@@ -208,18 +181,12 @@ impl LambdaConfigTypeBuilder {
         &self.pre_authentication
     }
     /// <p>A post-authentication Lambda trigger.</p>
-    pub fn post_authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn post_authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A post-authentication Lambda trigger.</p>
-    pub fn set_post_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_post_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_authentication = input;
         self
     }
@@ -228,18 +195,12 @@ impl LambdaConfigTypeBuilder {
         &self.post_authentication
     }
     /// <p>Defines the authentication challenge.</p>
-    pub fn define_auth_challenge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn define_auth_challenge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.define_auth_challenge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Defines the authentication challenge.</p>
-    pub fn set_define_auth_challenge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_define_auth_challenge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.define_auth_challenge = input;
         self
     }
@@ -248,18 +209,12 @@ impl LambdaConfigTypeBuilder {
         &self.define_auth_challenge
     }
     /// <p>Creates an authentication challenge.</p>
-    pub fn create_auth_challenge(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn create_auth_challenge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_auth_challenge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Creates an authentication challenge.</p>
-    pub fn set_create_auth_challenge(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_create_auth_challenge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_auth_challenge = input;
         self
     }
@@ -268,40 +223,26 @@ impl LambdaConfigTypeBuilder {
         &self.create_auth_challenge
     }
     /// <p>Verifies the authentication challenge response.</p>
-    pub fn verify_auth_challenge_response(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verify_auth_challenge_response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verify_auth_challenge_response = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Verifies the authentication challenge response.</p>
-    pub fn set_verify_auth_challenge_response(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verify_auth_challenge_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verify_auth_challenge_response = input;
         self
     }
     /// <p>Verifies the authentication challenge response.</p>
-    pub fn get_verify_auth_challenge_response(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verify_auth_challenge_response(&self) -> &::std::option::Option<::std::string::String> {
         &self.verify_auth_challenge_response
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
-    pub fn pre_token_generation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_token_generation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_token_generation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
-    pub fn set_pre_token_generation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_token_generation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_token_generation = input;
         self
     }
@@ -310,18 +251,12 @@ impl LambdaConfigTypeBuilder {
         &self.pre_token_generation
     }
     /// <p>The user migration Lambda config type.</p>
-    pub fn user_migration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_migration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_migration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user migration Lambda config type.</p>
-    pub fn set_user_migration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_migration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_migration = input;
         self
     }
@@ -330,47 +265,31 @@ impl LambdaConfigTypeBuilder {
         &self.user_migration
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
-    pub fn custom_sms_sender(
-        mut self,
-        input: crate::types::CustomSmsLambdaVersionConfigType,
-    ) -> Self {
+    pub fn custom_sms_sender(mut self, input: crate::types::CustomSmsLambdaVersionConfigType) -> Self {
         self.custom_sms_sender = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
-    pub fn set_custom_sms_sender(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
-    ) -> Self {
+    pub fn set_custom_sms_sender(mut self, input: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>) -> Self {
         self.custom_sms_sender = input;
         self
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
-    pub fn get_custom_sms_sender(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType> {
+    pub fn get_custom_sms_sender(&self) -> &::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType> {
         &self.custom_sms_sender
     }
     /// <p>A custom email sender Lambda trigger.</p>
-    pub fn custom_email_sender(
-        mut self,
-        input: crate::types::CustomEmailLambdaVersionConfigType,
-    ) -> Self {
+    pub fn custom_email_sender(mut self, input: crate::types::CustomEmailLambdaVersionConfigType) -> Self {
         self.custom_email_sender = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom email sender Lambda trigger.</p>
-    pub fn set_custom_email_sender(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
-    ) -> Self {
+    pub fn set_custom_email_sender(mut self, input: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>) -> Self {
         self.custom_email_sender = input;
         self
     }
     /// <p>A custom email sender Lambda trigger.</p>
-    pub fn get_custom_email_sender(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType> {
+    pub fn get_custom_email_sender(&self) -> &::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType> {
         &self.custom_email_sender
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>

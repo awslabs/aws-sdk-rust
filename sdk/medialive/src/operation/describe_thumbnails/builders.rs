@@ -10,10 +10,7 @@ impl DescribeThumbnailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_thumbnails::DescribeThumbnailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thumbnails::DescribeThumbnailsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thumbnails::DescribeThumbnailsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_thumbnails();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeThumbnailsFluentBuilder {
         }
     }
     /// Access the DescribeThumbnails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_thumbnails::builders::DescribeThumbnailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_thumbnails::builders::DescribeThumbnailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeThumbnailsFluentBuilder {
             crate::operation::describe_thumbnails::DescribeThumbnails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thumbnails::DescribeThumbnailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thumbnails::DescribeThumbnailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeThumbnailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeThumbnailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thumbnails::DescribeThumbnailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thumbnails::DescribeThumbnailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thumbnails::DescribeThumbnailsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeThumbnailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thumbnails::DescribeThumbnailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thumbnails::DescribeThumbnailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thumbnails::DescribeThumbnailsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeThumbnailsFluentBuilder {
             crate::operation::describe_thumbnails::DescribeThumbnails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thumbnails::DescribeThumbnailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thumbnails::DescribeThumbnailsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl DescribeThumbnailsFluentBuilder {
         self.inner.get_pipeline_id()
     }
     /// thumbnail type
-    pub fn thumbnail_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbnail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thumbnail_type(input.into());
         self
     }
     /// thumbnail type
-    pub fn set_thumbnail_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thumbnail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thumbnail_type(input);
         self
     }

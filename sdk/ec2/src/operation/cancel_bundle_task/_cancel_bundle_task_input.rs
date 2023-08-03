@@ -23,17 +23,14 @@ impl CancelBundleTaskInput {
 }
 impl CancelBundleTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
-    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder {
         crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBundleTaskInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -70,15 +67,10 @@ impl CancelBundleTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_bundle_task::CancelBundleTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_bundle_task::CancelBundleTaskInput {
-                bundle_id: self.bundle_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_bundle_task::CancelBundleTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_bundle_task::CancelBundleTaskInput {
+            bundle_id: self.bundle_id,
+            dry_run: self.dry_run,
+        })
     }
 }

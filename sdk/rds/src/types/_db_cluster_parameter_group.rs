@@ -45,9 +45,7 @@ impl DbClusterParameterGroup {
 
 /// A builder for [`DbClusterParameterGroup`](crate::types::DbClusterParameterGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterParameterGroupBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -56,40 +54,26 @@ pub struct DbClusterParameterGroupBuilder {
 }
 impl DbClusterParameterGroupBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
     /// <p>The name of the DB cluster parameter group.</p>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     /// <p>The name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -112,25 +96,17 @@ impl DbClusterParameterGroupBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
-    pub fn db_cluster_parameter_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
-    pub fn set_db_cluster_parameter_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
-    pub fn get_db_cluster_parameter_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_arn
     }
     /// Consumes the builder and constructs a [`DbClusterParameterGroup`](crate::types::DbClusterParameterGroup).

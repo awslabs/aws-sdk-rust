@@ -5,15 +5,12 @@
 pub struct DisassociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
     #[doc(hidden)]
-    pub iam_instance_profile_association:
-        ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
+    pub iam_instance_profile_association: ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateIamInstanceProfileOutput {
     /// <p>Information about the IAM instance profile association.</p>
-    pub fn iam_instance_profile_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamInstanceProfileAssociation> {
+    pub fn iam_instance_profile_association(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileAssociation> {
         self.iam_instance_profile_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DisassociateIamInstanceProfileOutput 
 }
 impl DisassociateIamInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIamInstanceProfileOutput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput).
-    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileOutputBuilder {
         crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIamInstanceProfileOutput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIamInstanceProfileOutputBuilder {
-    pub(crate) iam_instance_profile_association:
-        ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
+    pub(crate) iam_instance_profile_association: ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateIamInstanceProfileOutputBuilder {
     /// <p>Information about the IAM instance profile association.</p>
-    pub fn iam_instance_profile_association(
-        mut self,
-        input: crate::types::IamInstanceProfileAssociation,
-    ) -> Self {
+    pub fn iam_instance_profile_association(mut self, input: crate::types::IamInstanceProfileAssociation) -> Self {
         self.iam_instance_profile_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the IAM instance profile association.</p>
-    pub fn set_iam_instance_profile_association(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
-    ) -> Self {
+    pub fn set_iam_instance_profile_association(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileAssociation>) -> Self {
         self.iam_instance_profile_association = input;
         self
     }
     /// <p>Information about the IAM instance profile association.</p>
-    pub fn get_iam_instance_profile_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileAssociation> {
+    pub fn get_iam_instance_profile_association(&self) -> &::std::option::Option<crate::types::IamInstanceProfileAssociation> {
         &self.iam_instance_profile_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl DisassociateIamInstanceProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateIamInstanceProfileOutput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput {
         crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput {
             iam_instance_profile_association: self.iam_instance_profile_association,
             _request_id: self._request_id,

@@ -21,9 +21,7 @@ pub struct GetUserAttributeVerificationCodeInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetUserAttributeVerificationCodeInput {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
@@ -44,11 +42,7 @@ impl GetUserAttributeVerificationCodeInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
@@ -63,7 +57,7 @@ impl ::std::fmt::Debug for GetUserAttributeVerificationCodeInput {
 }
 impl GetUserAttributeVerificationCodeInput {
     /// Creates a new builder-style object to manufacture [`GetUserAttributeVerificationCodeInput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput).
-    pub fn builder() -> crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder{
+    pub fn builder() -> crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder {
         crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder::default()
     }
 }
@@ -74,9 +68,7 @@ impl GetUserAttributeVerificationCodeInput {
 pub struct GetUserAttributeVerificationCodeInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
@@ -94,18 +86,12 @@ impl GetUserAttributeVerificationCodeInputBuilder {
         &self.access_token
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -149,9 +135,7 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -166,24 +150,22 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`GetUserAttributeVerificationCodeInput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput {
-                access_token: self.access_token
-                ,
-                attribute_name: self.attribute_name
-                ,
-                client_metadata: self.client_metadata
-                ,
-            }
+                access_token: self.access_token,
+                attribute_name: self.attribute_name,
+                client_metadata: self.client_metadata,
+            },
         )
     }
 }

@@ -30,9 +30,7 @@ impl LocalDeviceResourceData {
 
 /// A builder for [`LocalDeviceResourceData`](crate::types::LocalDeviceResourceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalDeviceResourceDataBuilder {
     pub(crate) group_owner_setting: ::std::option::Option<crate::types::GroupOwnerSetting>,
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl LocalDeviceResourceDataBuilder {
         self
     }
     /// Group/owner related settings for local resources.
-    pub fn set_group_owner_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupOwnerSetting>,
-    ) -> Self {
+    pub fn set_group_owner_setting(mut self, input: ::std::option::Option<crate::types::GroupOwnerSetting>) -> Self {
         self.group_owner_setting = input;
         self
     }
     /// Group/owner related settings for local resources.
-    pub fn get_group_owner_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupOwnerSetting> {
+    pub fn get_group_owner_setting(&self) -> &::std::option::Option<crate::types::GroupOwnerSetting> {
         &self.group_owner_setting
     }
     /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.

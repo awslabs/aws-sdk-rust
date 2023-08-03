@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchReadExceptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for BatchReadExceptionType {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
-            "CannotListParentOfRootException" => {
-                BatchReadExceptionType::CannotListParentOfRootException
-            }
+            "CannotListParentOfRootException" => BatchReadExceptionType::CannotListParentOfRootException,
             "DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
             "FacetValidationException" => BatchReadExceptionType::FacetValidationException,
             "InternalServiceException" => BatchReadExceptionType::InternalServiceException,
@@ -105,9 +97,7 @@ impl ::std::convert::From<&str> for BatchReadExceptionType {
             "NotPolicyException" => BatchReadExceptionType::NotPolicyException,
             "ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
             "ValidationException" => BatchReadExceptionType::ValidationException,
-            other => BatchReadExceptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchReadExceptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -123,9 +113,7 @@ impl BatchReadExceptionType {
     pub fn as_str(&self) -> &str {
         match self {
             BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchReadExceptionType::CannotListParentOfRootException => {
-                "CannotListParentOfRootException"
-            }
+            BatchReadExceptionType::CannotListParentOfRootException => "CannotListParentOfRootException",
             BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
             BatchReadExceptionType::FacetValidationException => "FacetValidationException",
             BatchReadExceptionType::InternalServiceException => "InternalServiceException",

@@ -37,9 +37,7 @@ impl GetDeploymentStatusFluentBuilder {
         }
     }
     /// Access the GetDeploymentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployment_status::builders::GetDeploymentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDeploymentStatusFluentBuilder {
             crate::operation::get_deployment_status::GetDeploymentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_status::GetDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_status::GetDeploymentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDeploymentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDeploymentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_status::GetDeploymentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_status::GetDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_status::GetDeploymentStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDeploymentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_status::GetDeploymentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_status::GetDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_status::GetDeploymentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetDeploymentStatusFluentBuilder {
             crate::operation::get_deployment_status::GetDeploymentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_status::GetDeploymentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_status::GetDeploymentStatusError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// The ID of the deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

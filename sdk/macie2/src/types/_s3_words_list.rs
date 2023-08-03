@@ -30,9 +30,7 @@ impl S3WordsList {
 
 /// A builder for [`S3WordsList`](crate::types::S3WordsList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3WordsListBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key: ::std::option::Option<::std::string::String>,

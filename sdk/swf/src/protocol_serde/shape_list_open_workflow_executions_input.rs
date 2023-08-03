@@ -9,19 +9,13 @@ pub fn ser_list_open_workflow_executions_input(
     if let Some(var_2) = &input.start_time_filter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("startTimeFilter").start_object();
-        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.type_filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("typeFilter").start_object();
-        crate::protocol_serde::shape_workflow_type_filter::ser_workflow_type_filter(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_workflow_type_filter::ser_workflow_type_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tag_filter {
@@ -45,10 +39,7 @@ pub fn ser_list_open_workflow_executions_input(
     if let Some(var_11) = &input.execution_filter {
         #[allow(unused_mut)]
         let mut object_12 = object.key("executionFilter").start_object();
-        crate::protocol_serde::shape_workflow_execution_filter::ser_workflow_execution_filter(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_workflow_execution_filter::ser_workflow_execution_filter(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

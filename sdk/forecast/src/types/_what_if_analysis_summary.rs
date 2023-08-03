@@ -95,9 +95,7 @@ impl WhatIfAnalysisSummary {
 
 /// A builder for [`WhatIfAnalysisSummary`](crate::types::WhatIfAnalysisSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WhatIfAnalysisSummaryBuilder {
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_analysis_name: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ pub struct WhatIfAnalysisSummaryBuilder {
 }
 impl WhatIfAnalysisSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn what_if_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_arn = input;
         self
     }
@@ -129,18 +121,12 @@ impl WhatIfAnalysisSummaryBuilder {
         &self.what_if_analysis_arn
     }
     /// <p>The name of the what-if analysis.</p>
-    pub fn what_if_analysis_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the what-if analysis.</p>
-    pub fn set_what_if_analysis_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_name = input;
         self
     }
@@ -220,10 +206,7 @@ impl WhatIfAnalysisSummaryBuilder {
         self
     }
     /// <p>When the what-if analysis was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -251,10 +234,7 @@ impl WhatIfAnalysisSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -266,9 +246,7 @@ impl WhatIfAnalysisSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`WhatIfAnalysisSummary`](crate::types::WhatIfAnalysisSummary).

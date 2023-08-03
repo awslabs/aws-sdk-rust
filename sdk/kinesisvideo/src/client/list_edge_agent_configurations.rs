@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`edge_configs(Option<Vec<ListEdgeAgentConfigurationsEdgeConfig>>)`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput::edge_configs): <p>A description of a single stream's edge configuration.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput::next_token): <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
     /// - On failure, responds with [`SdkError<ListEdgeAgentConfigurationsError>`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError)
-    pub fn list_edge_agent_configurations(&self) -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsFluentBuilder{
+    pub fn list_edge_agent_configurations(
+        &self,
+    ) -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsFluentBuilder {
         crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -53,13 +53,7 @@
 /// Temporal Filter Strength
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TemporalFilterStrength {
     #[allow(missing_docs)] // documentation missing in model
@@ -119,9 +113,7 @@ impl ::std::convert::From<&str> for TemporalFilterStrength {
             "STRENGTH_7" => TemporalFilterStrength::Strength7,
             "STRENGTH_8" => TemporalFilterStrength::Strength8,
             "STRENGTH_9" => TemporalFilterStrength::Strength9,
-            other => TemporalFilterStrength::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TemporalFilterStrength::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

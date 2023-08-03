@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`extension_versions(Option<Vec<ExtensionVersionDetails>>)`](crate::operation::list_extension_versions::ListExtensionVersionsOutput::extension_versions): <p>The list of extension versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extension_versions::ListExtensionVersionsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     /// - On failure, responds with [`SdkError<ListExtensionVersionsError>`](crate::operation::list_extension_versions::ListExtensionVersionsError)
-    pub fn list_extension_versions(
-        &self,
-    ) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsFluentBuilder
-    {
-        crate::operation::list_extension_versions::builders::ListExtensionVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_extension_versions(&self) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsFluentBuilder {
+        crate::operation::list_extension_versions::builders::ListExtensionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

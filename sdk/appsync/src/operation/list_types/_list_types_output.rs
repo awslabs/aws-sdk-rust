@@ -35,9 +35,7 @@ impl ListTypesOutput {
 
 /// A builder for [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesOutputBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListTypesOutputBuilder {
         self
     }
     /// <p>The <code>Type</code> objects.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Type>>) -> Self {
         self.types = input;
         self
     }

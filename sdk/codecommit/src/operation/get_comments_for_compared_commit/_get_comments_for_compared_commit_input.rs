@@ -43,16 +43,14 @@ impl GetCommentsForComparedCommitInput {
 }
 impl GetCommentsForComparedCommitInput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
-    pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder{
+    pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {
         crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommentsForComparedCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct GetCommentsForComparedCommitInputBuilder {
 }
 impl GetCommentsForComparedCommitInputBuilder {
     /// <p>The name of the repository where you want to compare commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you want to compare commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -82,18 +74,12 @@ impl GetCommentsForComparedCommitInputBuilder {
         &self.repository_name
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -102,18 +88,12 @@ impl GetCommentsForComparedCommitInputBuilder {
         &self.before_commit_id
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -156,14 +136,12 @@ impl GetCommentsForComparedCommitInputBuilder {
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput {
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput {
+            repository_name: self.repository_name,
+            before_commit_id: self.before_commit_id,
+            after_commit_id: self.after_commit_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

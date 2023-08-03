@@ -52,22 +52,17 @@ impl DescribeScheduledActionsInput {
 }
 impl DescribeScheduledActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_action_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,18 +70,12 @@ pub struct DescribeScheduledActionsInputBuilder {
 }
 impl DescribeScheduledActionsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -100,10 +89,7 @@ impl DescribeScheduledActionsInputBuilder {
     ///
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn scheduled_action_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scheduled_action_names.unwrap_or_default();
         v.push(input.into());
         self.scheduled_action_names = ::std::option::Option::Some(v);
@@ -111,18 +97,13 @@ impl DescribeScheduledActionsInputBuilder {
     }
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn set_scheduled_action_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scheduled_action_names = input;
         self
     }
     /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 actions.</p>
-    pub fn get_scheduled_action_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scheduled_action_names
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
@@ -131,10 +112,7 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -148,10 +126,7 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -194,15 +169,13 @@ impl DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                scheduled_action_names: self.scheduled_action_names,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            scheduled_action_names: self.scheduled_action_names,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_records: self.max_records,
+        })
     }
 }

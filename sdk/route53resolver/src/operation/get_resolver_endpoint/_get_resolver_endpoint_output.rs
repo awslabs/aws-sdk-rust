@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResolverEndpointOutput {
 }
 impl GetResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverEndpointOutput`](crate::operation::get_resolver_endpoint::GetResolverEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointOutputBuilder {
-        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointOutputBuilder {
+        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverEndpointOutput`](crate::operation::get_resolver_endpoint::GetResolverEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverEndpointOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetResolverEndpointOutputBuilder {
         self
     }
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
-    pub fn set_resolver_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpoint>,
-    ) -> Self {
+    pub fn set_resolver_endpoint(mut self, input: ::std::option::Option<crate::types::ResolverEndpoint>) -> Self {
         self.resolver_endpoint = input;
         self
     }

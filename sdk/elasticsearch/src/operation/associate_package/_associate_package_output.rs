@@ -11,9 +11,7 @@ pub struct AssociatePackageOutput {
 }
 impl AssociatePackageOutput {
     /// <p><code>DomainPackageDetails</code></p>
-    pub fn domain_package_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainPackageDetails> {
+    pub fn domain_package_details(&self) -> ::std::option::Option<&crate::types::DomainPackageDetails> {
         self.domain_package_details.as_ref()
     }
 }
@@ -24,17 +22,14 @@ impl ::aws_http::request_id::RequestId for AssociatePackageOutput {
 }
 impl AssociatePackageOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::operation::associate_package::AssociatePackageOutput).
-    pub fn builder() -> crate::operation::associate_package::builders::AssociatePackageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_package::builders::AssociatePackageOutputBuilder {
         crate::operation::associate_package::builders::AssociatePackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePackageOutput`](crate::operation::associate_package::AssociatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePackageOutputBuilder {
     pub(crate) domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,
@@ -46,17 +41,12 @@ impl AssociatePackageOutputBuilder {
         self
     }
     /// <p><code>DomainPackageDetails</code></p>
-    pub fn set_domain_package_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainPackageDetails>,
-    ) -> Self {
+    pub fn set_domain_package_details(mut self, input: ::std::option::Option<crate::types::DomainPackageDetails>) -> Self {
         self.domain_package_details = input;
         self
     }
     /// <p><code>DomainPackageDetails</code></p>
-    pub fn get_domain_package_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainPackageDetails> {
+    pub fn get_domain_package_details(&self) -> &::std::option::Option<crate::types::DomainPackageDetails> {
         &self.domain_package_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

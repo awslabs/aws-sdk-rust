@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectorDefinitionOutput {
 }
 impl DeleteConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorDefinitionOutput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionOutputBuilder {
         crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectorDefinitionOutput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectorDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteConnectorDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConnectorDefinitionOutput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput {
         crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput {
             _request_id: self._request_id,
         }

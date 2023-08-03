@@ -30,9 +30,7 @@ impl ArtifactSourceType {
 
 /// A builder for [`ArtifactSourceType`](crate::types::ArtifactSourceType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactSourceTypeBuilder {
     pub(crate) source_id_type: ::std::option::Option<crate::types::ArtifactSourceIdType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ArtifactSourceTypeBuilder {
         self
     }
     /// <p>The type of ID.</p>
-    pub fn set_source_id_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSourceIdType>,
-    ) -> Self {
+    pub fn set_source_id_type(mut self, input: ::std::option::Option<crate::types::ArtifactSourceIdType>) -> Self {
         self.source_id_type = input;
         self
     }

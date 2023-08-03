@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetIceServerConfigOutput {
 }
 impl GetIceServerConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigOutputBuilder {
-        crate::operation::get_ice_server_config::builders::GetIceServerConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_ice_server_config::builders::GetIceServerConfigOutputBuilder {
+        crate::operation::get_ice_server_config::builders::GetIceServerConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIceServerConfigOutputBuilder {
     pub(crate) ice_server_list: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl GetIceServerConfigOutputBuilder {
         self
     }
     /// <p>The list of ICE server information objects.</p>
-    pub fn set_ice_server_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
-    ) -> Self {
+    pub fn set_ice_server_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>) -> Self {
         self.ice_server_list = input;
         self
     }
     /// <p>The list of ICE server information objects.</p>
-    pub fn get_ice_server_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IceServer>> {
+    pub fn get_ice_server_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IceServer>> {
         &self.ice_server_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

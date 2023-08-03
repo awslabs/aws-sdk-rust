@@ -10,10 +10,7 @@ impl SignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sign::SignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sign::SignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.sign();
         fluent_builder.inner = self;
@@ -61,10 +58,7 @@ impl SignFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign::Sign,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign::Sign, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>,
     > {
         let handle = self.handle.clone();
@@ -75,20 +69,14 @@ impl SignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::sign::SignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::sign::SignOutput, ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>> {
         let op = self
             .inner
             .build()
@@ -108,10 +96,7 @@ impl SignFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::sign::SignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::sign::SignOutput, ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>> {
         self.send_middleware().await
     }
 
@@ -120,10 +105,7 @@ impl SignFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign::Sign,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign::Sign, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError>,
     > {
         self.customize_middleware().await
@@ -216,10 +198,7 @@ impl SignFluentBuilder {
     /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
     /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
     /// </ul>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }
@@ -251,18 +230,13 @@ impl SignFluentBuilder {
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_grant_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_grant_tokens(input);
         self
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn get_grant_tokens(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_grant_tokens()
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
@@ -273,18 +247,13 @@ impl SignFluentBuilder {
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
-    pub fn set_signing_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmSpec>) -> Self {
         self.inner = self.inner.set_signing_algorithm(input);
         self
     }
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
-    pub fn get_signing_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
+    pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
         self.inner.get_signing_algorithm()
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>

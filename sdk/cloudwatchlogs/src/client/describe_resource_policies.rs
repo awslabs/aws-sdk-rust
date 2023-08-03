@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput::resource_policies): <p>The resource policies that exist in this account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePoliciesError>`](crate::operation::describe_resource_policies::DescribeResourcePoliciesError)
-    pub fn describe_resource_policies(
-        &self,
-    ) -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesFluentBuilder
-    {
+    pub fn describe_resource_policies(&self) -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesFluentBuilder {
         crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

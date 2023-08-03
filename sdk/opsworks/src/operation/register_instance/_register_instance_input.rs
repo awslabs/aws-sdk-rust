@@ -57,17 +57,14 @@ impl RegisterInstanceInput {
 }
 impl RegisterInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
-    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
         crate::operation::register_instance::builders::RegisterInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterInstanceInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
@@ -135,18 +132,12 @@ impl RegisterInstanceInputBuilder {
         &self.private_ip
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    pub fn rsa_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rsa_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rsa_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    pub fn set_rsa_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rsa_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rsa_public_key = input;
         self
     }
@@ -155,18 +146,12 @@ impl RegisterInstanceInputBuilder {
         &self.rsa_public_key
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn rsa_public_key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rsa_public_key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rsa_public_key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn set_rsa_public_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rsa_public_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rsa_public_key_fingerprint = input;
         self
     }
@@ -180,10 +165,7 @@ impl RegisterInstanceInputBuilder {
         self
     }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-    pub fn set_instance_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdentity>,
-    ) -> Self {
+    pub fn set_instance_identity(mut self, input: ::std::option::Option<crate::types::InstanceIdentity>) -> Self {
         self.instance_identity = input;
         self
     }
@@ -194,10 +176,7 @@ impl RegisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_instance::RegisterInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_instance::RegisterInstanceInput {
             stack_id: self.stack_id,
             hostname: self.hostname,

@@ -28,8 +28,7 @@ impl ModifySnapshotAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder,
+    inner: crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder,
 }
 impl ModifySnapshotAttributeFluentBuilder {
     /// Creates a new `ModifySnapshotAttribute`.
@@ -40,10 +39,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         }
     }
     /// Access the ModifySnapshotAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ModifySnapshotAttributeFluentBuilder {
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ModifySnapshotAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl ModifySnapshotAttributeFluentBuilder {
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +117,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -144,25 +126,17 @@ impl ModifySnapshotAttributeFluentBuilder {
         self.inner.get_attribute()
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn create_volume_permission(
-        mut self,
-        input: crate::types::CreateVolumePermissionModifications,
-    ) -> Self {
+    pub fn create_volume_permission(mut self, input: crate::types::CreateVolumePermissionModifications) -> Self {
         self.inner = self.inner.create_volume_permission(input);
         self
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn set_create_volume_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateVolumePermissionModifications>,
-    ) -> Self {
+    pub fn set_create_volume_permission(mut self, input: ::std::option::Option<crate::types::CreateVolumePermissionModifications>) -> Self {
         self.inner = self.inner.set_create_volume_permission(input);
         self
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn get_create_volume_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateVolumePermissionModifications> {
+    pub fn get_create_volume_permission(&self) -> &::std::option::Option<crate::types::CreateVolumePermissionModifications> {
         self.inner.get_create_volume_permission()
     }
     /// Appends an item to `GroupNames`.
@@ -175,17 +149,12 @@ impl ModifySnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The group to modify for the snapshot.</p>
-    pub fn set_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
     }
     /// <p>The group to modify for the snapshot.</p>
-    pub fn get_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }
     /// <p>The type of operation to perform to the attribute.</p>
@@ -194,10 +163,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The type of operation to perform to the attribute.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationType>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.inner = self.inner.set_operation_type(input);
         self
     }
@@ -229,10 +195,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self
     }
     /// <p>The account ID to modify for the snapshot.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }

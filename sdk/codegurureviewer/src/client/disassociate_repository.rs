@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`repository_association(Option<RepositoryAssociation>)`](crate::operation::disassociate_repository::DisassociateRepositoryOutput::repository_association): <p>Information about the disassociated repository.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::disassociate_repository::DisassociateRepositoryOutput::tags): <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DisassociateRepositoryError>`](crate::operation::disassociate_repository::DisassociateRepositoryError)
-    pub fn disassociate_repository(
-        &self,
-    ) -> crate::operation::disassociate_repository::builders::DisassociateRepositoryFluentBuilder
-    {
+    pub fn disassociate_repository(&self) -> crate::operation::disassociate_repository::builders::DisassociateRepositoryFluentBuilder {
         crate::operation::disassociate_repository::builders::DisassociateRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

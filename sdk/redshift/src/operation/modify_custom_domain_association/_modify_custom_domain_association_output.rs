@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for ModifyCustomDomainAssociationOutput {
 }
 impl ModifyCustomDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCustomDomainAssociationOutput`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput).
-    pub fn builder() -> crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationOutputBuilder {
         crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCustomDomainAssociationOutput`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCustomDomainAssociationOutputBuilder {
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct ModifyCustomDomainAssociationOutputBuilder {
 }
 impl ModifyCustomDomainAssociationOutputBuilder {
     /// <p>The custom domain name associated with the result for the changed custom domain association.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom domain name associated with the result for the changed custom domain association.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
@@ -81,40 +73,26 @@ impl ModifyCustomDomainAssociationOutputBuilder {
         &self.custom_domain_name
     }
     /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
-    pub fn custom_domain_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
-    pub fn set_custom_domain_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = input;
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
-    pub fn get_custom_domain_certificate_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_certificate_arn
     }
     /// <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -123,25 +101,17 @@ impl ModifyCustomDomainAssociationOutputBuilder {
         &self.cluster_identifier
     }
     /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
-    pub fn custom_domain_cert_expiry_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_cert_expiry_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_cert_expiry_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
-    pub fn set_custom_domain_cert_expiry_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_cert_expiry_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_cert_expiry_time = input;
         self
     }
     /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
-    pub fn get_custom_domain_cert_expiry_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_domain_cert_expiry_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_cert_expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -154,10 +124,7 @@ impl ModifyCustomDomainAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyCustomDomainAssociationOutput`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput {
         crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput {
             custom_domain_name: self.custom_domain_name,
             custom_domain_certificate_arn: self.custom_domain_certificate_arn,

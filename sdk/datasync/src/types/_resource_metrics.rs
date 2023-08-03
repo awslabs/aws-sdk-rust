@@ -51,9 +51,7 @@ impl ResourceMetrics {
 
 /// A builder for [`ResourceMetrics`](crate::types::ResourceMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceMetricsBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) p95_metrics: ::std::option::Option<crate::types::P95Metrics>,
@@ -68,10 +66,7 @@ impl ResourceMetricsBuilder {
         self
     }
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -85,10 +80,7 @@ impl ResourceMetricsBuilder {
         self
     }
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
-    pub fn set_p95_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::P95Metrics>,
-    ) -> Self {
+    pub fn set_p95_metrics(mut self, input: ::std::option::Option<crate::types::P95Metrics>) -> Self {
         self.p95_metrics = input;
         self
     }
@@ -130,10 +122,7 @@ impl ResourceMetricsBuilder {
         self
     }
     /// <p>The type of on-premises storage system resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
         self.resource_type = input;
         self
     }

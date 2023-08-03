@@ -9,20 +9,15 @@ pub struct RunConfigurationUpdate {
     pub flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
     #[doc(hidden)]
-    pub application_restore_configuration:
-        ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
+    pub application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
 }
 impl RunConfigurationUpdate {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn flink_run_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FlinkRunConfiguration> {
+    pub fn flink_run_configuration(&self) -> ::std::option::Option<&crate::types::FlinkRunConfiguration> {
         self.flink_run_configuration.as_ref()
     }
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
-    pub fn application_restore_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {
+    pub fn application_restore_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {
         self.application_restore_configuration.as_ref()
     }
 }
@@ -35,13 +30,10 @@ impl RunConfigurationUpdate {
 
 /// A builder for [`RunConfigurationUpdate`](crate::types::RunConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunConfigurationUpdateBuilder {
     pub(crate) flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
-    pub(crate) application_restore_configuration:
-        ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
+    pub(crate) application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
 }
 impl RunConfigurationUpdateBuilder {
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
@@ -50,39 +42,26 @@ impl RunConfigurationUpdateBuilder {
         self
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn set_flink_run_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FlinkRunConfiguration>,
-    ) -> Self {
+    pub fn set_flink_run_configuration(mut self, input: ::std::option::Option<crate::types::FlinkRunConfiguration>) -> Self {
         self.flink_run_configuration = input;
         self
     }
     /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn get_flink_run_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
+    pub fn get_flink_run_configuration(&self) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
         &self.flink_run_configuration
     }
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
-    pub fn application_restore_configuration(
-        mut self,
-        input: crate::types::ApplicationRestoreConfiguration,
-    ) -> Self {
+    pub fn application_restore_configuration(mut self, input: crate::types::ApplicationRestoreConfiguration) -> Self {
         self.application_restore_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
-    pub fn set_application_restore_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
-    ) -> Self {
+    pub fn set_application_restore_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>) -> Self {
         self.application_restore_configuration = input;
         self
     }
     /// <p>Describes updates to the restore behavior of a restarting application.</p>
-    pub fn get_application_restore_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
+    pub fn get_application_restore_configuration(&self) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
         &self.application_restore_configuration
     }
     /// Consumes the builder and constructs a [`RunConfigurationUpdate`](crate::types::RunConfigurationUpdate).

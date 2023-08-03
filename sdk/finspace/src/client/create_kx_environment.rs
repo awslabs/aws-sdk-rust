@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`kms_key_id(Option<String>)`](crate::operation::create_kx_environment::CreateKxEnvironmentOutput::kms_key_id): <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::create_kx_environment::CreateKxEnvironmentOutput::creation_timestamp): <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     /// - On failure, responds with [`SdkError<CreateKxEnvironmentError>`](crate::operation::create_kx_environment::CreateKxEnvironmentError)
-    pub fn create_kx_environment(
-        &self,
-    ) -> crate::operation::create_kx_environment::builders::CreateKxEnvironmentFluentBuilder {
-        crate::operation::create_kx_environment::builders::CreateKxEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_kx_environment(&self) -> crate::operation::create_kx_environment::builders::CreateKxEnvironmentFluentBuilder {
+        crate::operation::create_kx_environment::builders::CreateKxEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

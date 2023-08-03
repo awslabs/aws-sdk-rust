@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainFluentBuilder::set_domain_name): <p>The domain name that will become the default domain.</p>
     /// - On success, responds with [`UpdateDefaultMailDomainOutput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput)
     /// - On failure, responds with [`SdkError<UpdateDefaultMailDomainError>`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError)
-    pub fn update_default_mail_domain(
-        &self,
-    ) -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainFluentBuilder
-    {
+    pub fn update_default_mail_domain(&self) -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainFluentBuilder {
         crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainFluentBuilder::new(self.handle.clone())
     }
 }

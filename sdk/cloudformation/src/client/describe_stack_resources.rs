@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput) with field(s):
     ///   - [`stack_resources(Option<Vec<StackResource>>)`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput::stack_resources): <p>A list of <code>StackResource</code> structures.</p>
     /// - On failure, responds with [`SdkError<DescribeStackResourcesError>`](crate::operation::describe_stack_resources::DescribeStackResourcesError)
-    pub fn describe_stack_resources(
-        &self,
-    ) -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesFluentBuilder
-    {
+    pub fn describe_stack_resources(&self) -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesFluentBuilder {
         crate::operation::describe_stack_resources::builders::DescribeStackResourcesFluentBuilder::new(self.handle.clone())
     }
 }

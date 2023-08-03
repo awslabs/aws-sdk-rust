@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`customer_owned_ipv4_pool(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::customer_owned_ipv4_pool): <p>The ID of the customer-owned address pool.</p>
     ///   - [`carrier_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::carrier_ip): <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     /// - On failure, responds with [`SdkError<AllocateAddressError>`](crate::operation::allocate_address::AllocateAddressError)
-    pub fn allocate_address(
-        &self,
-    ) -> crate::operation::allocate_address::builders::AllocateAddressFluentBuilder {
-        crate::operation::allocate_address::builders::AllocateAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn allocate_address(&self) -> crate::operation::allocate_address::builders::AllocateAddressFluentBuilder {
+        crate::operation::allocate_address::builders::AllocateAddressFluentBuilder::new(self.handle.clone())
     }
 }

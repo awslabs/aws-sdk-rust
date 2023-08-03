@@ -23,9 +23,7 @@ impl DeleteAgentInput {
 
 /// A builder for [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAgentInputBuilder {
     pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DeleteAgentInputBuilder {
         &self.agent_arn
     }
     /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_agent::DeleteAgentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_agent::DeleteAgentInput {
-            agent_arn: self.agent_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent::DeleteAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_agent::DeleteAgentInput { agent_arn: self.agent_arn })
     }
 }

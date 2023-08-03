@@ -22,16 +22,14 @@ impl GetRateBasedRuleManagedKeysInput {
 }
 impl GetRateBasedRuleManagedKeysInput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysInput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput).
-    pub fn builder() -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder{
+    pub fn builder() -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder {
         crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRateBasedRuleManagedKeysInput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput {
-                rule_id: self.rule_id,
-                next_marker: self.next_marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput {
+            rule_id: self.rule_id,
+            next_marker: self.next_marker,
+        })
     }
 }

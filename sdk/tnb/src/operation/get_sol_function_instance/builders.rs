@@ -27,8 +27,7 @@ impl GetSolFunctionInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSolFunctionInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder,
+    inner: crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder,
 }
 impl GetSolFunctionInstanceFluentBuilder {
     /// Creates a new `GetSolFunctionInstance`.
@@ -39,10 +38,7 @@ impl GetSolFunctionInstanceFluentBuilder {
         }
     }
     /// Access the GetSolFunctionInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl GetSolFunctionInstanceFluentBuilder {
             crate::operation::get_sol_function_instance::GetSolFunctionInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl GetSolFunctionInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl GetSolFunctionInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl GetSolFunctionInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl GetSolFunctionInstanceFluentBuilder {
             crate::operation::get_sol_function_instance::GetSolFunctionInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the network function.</p>
-    pub fn vnf_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vnf_instance_id(input.into());
         self
     }
     /// <p>ID of the network function.</p>
-    pub fn set_vnf_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vnf_instance_id(input);
         self
     }

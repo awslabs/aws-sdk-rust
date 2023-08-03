@@ -10,10 +10,7 @@ impl AddFlowOutputsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_flow_outputs::AddFlowOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_outputs::AddFlowOutputsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_outputs::AddFlowOutputsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_flow_outputs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddFlowOutputsFluentBuilder {
         }
     }
     /// Access the AddFlowOutputs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddFlowOutputsFluentBuilder {
             crate::operation::add_flow_outputs::AddFlowOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_outputs::AddFlowOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_outputs::AddFlowOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddFlowOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddFlowOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_outputs::AddFlowOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_outputs::AddFlowOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_outputs::AddFlowOutputsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddFlowOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_outputs::AddFlowOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_outputs::AddFlowOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_outputs::AddFlowOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddFlowOutputsFluentBuilder {
             crate::operation::add_flow_outputs::AddFlowOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_outputs::AddFlowOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_outputs::AddFlowOutputsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AddFlowOutputsFluentBuilder {
         self
     }
     /// A list of outputs that you want to add.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// A list of outputs that you want to add.
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
         self.inner.get_outputs()
     }
 }

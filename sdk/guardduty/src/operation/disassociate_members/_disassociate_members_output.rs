@@ -5,15 +5,12 @@
 pub struct DisassociateMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     #[doc(hidden)]
-    pub unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl DisassociateMembersOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn unprocessed_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DisassociateMembersOutput {
 }
 impl DisassociateMembersOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMembersOutput`](crate::operation::disassociate_members::DisassociateMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_members::builders::DisassociateMembersOutputBuilder {
-        crate::operation::disassociate_members::builders::DisassociateMembersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_members::builders::DisassociateMembersOutputBuilder {
+        crate::operation::disassociate_members::builders::DisassociateMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMembersOutput`](crate::operation::disassociate_members::DisassociateMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMembersOutputBuilder {
-    pub(crate) unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl DisassociateMembersOutputBuilder {
@@ -54,17 +46,12 @@ impl DisassociateMembersOutputBuilder {
         self
     }
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

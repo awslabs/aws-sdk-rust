@@ -19,21 +19,15 @@ pub struct DataFormatConversionConfiguration {
 }
 impl DataFormatConversionConfiguration {
     /// <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn schema_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaConfiguration> {
+    pub fn schema_configuration(&self) -> ::std::option::Option<&crate::types::SchemaConfiguration> {
         self.schema_configuration.as_ref()
     }
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn input_format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputFormatConfiguration> {
+    pub fn input_format_configuration(&self) -> ::std::option::Option<&crate::types::InputFormatConfiguration> {
         self.input_format_configuration.as_ref()
     }
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn output_format_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputFormatConfiguration> {
+    pub fn output_format_configuration(&self) -> ::std::option::Option<&crate::types::OutputFormatConfiguration> {
         self.output_format_configuration.as_ref()
     }
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
@@ -50,15 +44,11 @@ impl DataFormatConversionConfiguration {
 
 /// A builder for [`DataFormatConversionConfiguration`](crate::types::DataFormatConversionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataFormatConversionConfigurationBuilder {
     pub(crate) schema_configuration: ::std::option::Option<crate::types::SchemaConfiguration>,
-    pub(crate) input_format_configuration:
-        ::std::option::Option<crate::types::InputFormatConfiguration>,
-    pub(crate) output_format_configuration:
-        ::std::option::Option<crate::types::OutputFormatConfiguration>,
+    pub(crate) input_format_configuration: ::std::option::Option<crate::types::InputFormatConfiguration>,
+    pub(crate) output_format_configuration: ::std::option::Option<crate::types::OutputFormatConfiguration>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl DataFormatConversionConfigurationBuilder {
@@ -68,61 +58,40 @@ impl DataFormatConversionConfigurationBuilder {
         self
     }
     /// <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn set_schema_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaConfiguration>,
-    ) -> Self {
+    pub fn set_schema_configuration(mut self, input: ::std::option::Option<crate::types::SchemaConfiguration>) -> Self {
         self.schema_configuration = input;
         self
     }
     /// <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn get_schema_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaConfiguration> {
+    pub fn get_schema_configuration(&self) -> &::std::option::Option<crate::types::SchemaConfiguration> {
         &self.schema_configuration
     }
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn input_format_configuration(
-        mut self,
-        input: crate::types::InputFormatConfiguration,
-    ) -> Self {
+    pub fn input_format_configuration(mut self, input: crate::types::InputFormatConfiguration) -> Self {
         self.input_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn set_input_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFormatConfiguration>,
-    ) -> Self {
+    pub fn set_input_format_configuration(mut self, input: ::std::option::Option<crate::types::InputFormatConfiguration>) -> Self {
         self.input_format_configuration = input;
         self
     }
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn get_input_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputFormatConfiguration> {
+    pub fn get_input_format_configuration(&self) -> &::std::option::Option<crate::types::InputFormatConfiguration> {
         &self.input_format_configuration
     }
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn output_format_configuration(
-        mut self,
-        input: crate::types::OutputFormatConfiguration,
-    ) -> Self {
+    pub fn output_format_configuration(mut self, input: crate::types::OutputFormatConfiguration) -> Self {
         self.output_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn set_output_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormatConfiguration>,
-    ) -> Self {
+    pub fn set_output_format_configuration(mut self, input: ::std::option::Option<crate::types::OutputFormatConfiguration>) -> Self {
         self.output_format_configuration = input;
         self
     }
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
-    pub fn get_output_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputFormatConfiguration> {
+    pub fn get_output_format_configuration(&self) -> &::std::option::Option<crate::types::OutputFormatConfiguration> {
         &self.output_format_configuration
     }
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>

@@ -47,9 +47,7 @@ impl DataProcessing {
 
 /// A builder for [`DataProcessing`](crate::types::DataProcessing).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataProcessingBuilder {
     pub(crate) input_filter: ::std::option::Option<::std::string::String>,
     pub(crate) output_filter: ::std::option::Option<::std::string::String>,
@@ -75,19 +73,13 @@ impl DataProcessingBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
-    pub fn output_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch transform job. If you want SageMaker to store the entire input dataset in the output file, leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined dataset, you get an error.</p>
     /// <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code> </p>
-    pub fn set_output_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_filter = input;
         self
     }
@@ -108,10 +100,7 @@ impl DataProcessingBuilder {
     /// <p>For JSON or JSONLines objects, such as a JSON array, SageMaker adds the transformed data to the input JSON object in an attribute called <code>SageMakerOutput</code>. The joined result for JSON must be a key-value pair object. If the input is not a key-value pair object, SageMaker creates a new JSON file. In the new JSON file, and the input data is stored under the <code>SageMakerInput</code> key and the results are stored in <code>SageMakerOutput</code>.</p>
     /// <p>For CSV data, SageMaker takes each row as a JSON array and joins the transformed data with the input by appending each transformed row to the end of the input. The joined data has the original input data followed by the transformed data and the output is a CSV file.</p>
     /// <p>For information on how joining in applied, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow for Associating Inferences with Input Records</a>.</p>
-    pub fn set_join_source(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinSource>,
-    ) -> Self {
+    pub fn set_join_source(mut self, input: ::std::option::Option<crate::types::JoinSource>) -> Self {
         self.join_source = input;
         self
     }

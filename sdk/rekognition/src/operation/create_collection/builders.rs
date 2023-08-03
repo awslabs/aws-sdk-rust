@@ -10,10 +10,7 @@ impl CreateCollectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_collection();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl CreateCollectionFluentBuilder {
         }
     }
     /// Access the CreateCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl CreateCollectionFluentBuilder {
             crate::operation::create_collection::CreateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl CreateCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl CreateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl CreateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl CreateCollectionFluentBuilder {
             crate::operation::create_collection::CreateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID for the collection that you are creating.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>ID for the collection that you are creating.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -152,30 +130,17 @@ impl CreateCollectionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

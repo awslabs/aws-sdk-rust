@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput) with field(s):
     ///   - [`connect_peer(Option<ConnectPeer>)`](crate::operation::get_connect_peer::GetConnectPeerOutput::connect_peer): <p>Returns information about a core network Connect peer.</p>
     /// - On failure, responds with [`SdkError<GetConnectPeerError>`](crate::operation::get_connect_peer::GetConnectPeerError)
-    pub fn get_connect_peer(
-        &self,
-    ) -> crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder {
-        crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connect_peer(&self) -> crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder {
+        crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartExportTaskOutput`](crate::operation::start_export_task::StartExportTaskOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::start_export_task::StartExportTaskOutput::export_id): <p>A unique identifier used to query the status of an export request.</p>
     /// - On failure, responds with [`SdkError<StartExportTaskError>`](crate::operation::start_export_task::StartExportTaskError)
-    pub fn start_export_task(
-        &self,
-    ) -> crate::operation::start_export_task::builders::StartExportTaskFluentBuilder {
-        crate::operation::start_export_task::builders::StartExportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_export_task(&self) -> crate::operation::start_export_task::builders::StartExportTaskFluentBuilder {
+        crate::operation::start_export_task::builders::StartExportTaskFluentBuilder::new(self.handle.clone())
     }
 }

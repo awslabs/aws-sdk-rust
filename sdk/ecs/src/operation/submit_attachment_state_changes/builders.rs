@@ -29,7 +29,7 @@ impl SubmitAttachmentStateChangesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder,
+    inner: crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder,
 }
 impl SubmitAttachmentStateChangesFluentBuilder {
     /// Creates a new `SubmitAttachmentStateChanges`.
@@ -40,7 +40,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
         }
     }
     /// Access the SubmitAttachmentStateChanges as a reference.
-    pub fn as_input(&self) -> &crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
             crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChanges,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl SubmitAttachmentStateChangesFluentBuilder {
             crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChanges,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +136,12 @@ impl SubmitAttachmentStateChangesFluentBuilder {
         self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>> {
         self.inner.get_attachments()
     }
 }

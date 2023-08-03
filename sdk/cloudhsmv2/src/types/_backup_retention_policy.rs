@@ -30,9 +30,7 @@ impl BackupRetentionPolicy {
 
 /// A builder for [`BackupRetentionPolicy`](crate::types::BackupRetentionPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupRetentionPolicyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BackupRetentionType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl BackupRetentionPolicyBuilder {
         self
     }
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupRetentionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::BackupRetentionType>) -> Self {
         self.r#type = input;
         self
     }

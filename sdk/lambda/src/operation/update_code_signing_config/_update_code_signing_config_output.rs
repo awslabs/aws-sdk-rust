@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateCodeSigningConfigOutput {
 }
 impl UpdateCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeSigningConfigOutput`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigOutputBuilder {
         crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCodeSigningConfigOutput`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCodeSigningConfigOutputBuilder {
     pub(crate) code_signing_config: ::std::option::Option<crate::types::CodeSigningConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateCodeSigningConfigOutputBuilder {
         self
     }
     /// <p>The code signing configuration</p>
-    pub fn set_code_signing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeSigningConfig>,
-    ) -> Self {
+    pub fn set_code_signing_config(mut self, input: ::std::option::Option<crate::types::CodeSigningConfig>) -> Self {
         self.code_signing_config = input;
         self
     }
     /// <p>The code signing configuration</p>
-    pub fn get_code_signing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeSigningConfig> {
+    pub fn get_code_signing_config(&self) -> &::std::option::Option<crate::types::CodeSigningConfig> {
         &self.code_signing_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateCodeSigningConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCodeSigningConfigOutput`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput {
+    pub fn build(self) -> crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput {
         crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput {
             code_signing_config: self.code_signing_config,
             _request_id: self._request_id,

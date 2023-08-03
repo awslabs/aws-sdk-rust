@@ -10,10 +10,7 @@ impl UpdateRecipeJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_recipe_job::UpdateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recipe_job::UpdateRecipeJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_recipe_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRecipeJobFluentBuilder {
         }
     }
     /// Access the UpdateRecipeJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_recipe_job::builders::UpdateRecipeJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_recipe_job::builders::UpdateRecipeJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateRecipeJobFluentBuilder {
             crate::operation::update_recipe_job::UpdateRecipeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recipe_job::UpdateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateRecipeJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateRecipeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recipe_job::UpdateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recipe_job::UpdateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateRecipeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recipe_job::UpdateRecipeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recipe_job::UpdateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateRecipeJobFluentBuilder {
             crate::operation::update_recipe_job::UpdateRecipeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recipe_job::UpdateRecipeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
     }
@@ -156,10 +134,7 @@ impl UpdateRecipeJobFluentBuilder {
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
@@ -191,10 +166,7 @@ impl UpdateRecipeJobFluentBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
         self.inner = self.inner.set_log_subscription(input);
         self
     }
@@ -240,10 +212,7 @@ impl UpdateRecipeJobFluentBuilder {
         self
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -261,17 +230,12 @@ impl UpdateRecipeJobFluentBuilder {
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    ) -> Self {
+    pub fn set_data_catalog_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
         self.inner = self.inner.set_data_catalog_outputs(input);
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn get_data_catalog_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
+    pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
         self.inner.get_data_catalog_outputs()
     }
     /// Appends an item to `DatabaseOutputs`.
@@ -284,17 +248,12 @@ impl UpdateRecipeJobFluentBuilder {
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn set_database_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
-    ) -> Self {
+    pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.inner = self.inner.set_database_outputs(input);
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn get_database_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
+    pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         self.inner.get_database_outputs()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>

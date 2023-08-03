@@ -38,13 +38,7 @@
 /// Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35ArchiveAllowedFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35ArchiveAllowedFlag {
         match s {
             "ARCHIVE_ALLOWED" => Scte35ArchiveAllowedFlag::ArchiveAllowed,
             "ARCHIVE_NOT_ALLOWED" => Scte35ArchiveAllowedFlag::ArchiveNotAllowed,
-            other => Scte35ArchiveAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Scte35ArchiveAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

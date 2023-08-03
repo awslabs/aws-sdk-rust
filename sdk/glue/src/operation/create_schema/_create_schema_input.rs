@@ -33,9 +33,7 @@ pub struct CreateSchemaInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
@@ -75,11 +73,7 @@ impl CreateSchemaInput {
         self.description.as_deref()
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
@@ -96,18 +90,14 @@ impl CreateSchemaInput {
 
 /// A builder for [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSchemaInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
     pub(crate) compatibility: ::std::option::Option<crate::types::Compatibility>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl CreateSchemaInputBuilder {
@@ -123,10 +113,7 @@ impl CreateSchemaInputBuilder {
     /// <customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
-    pub fn set_registry_id(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryId>,
-    ) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
         self.registry_id = input;
         self
     }
@@ -157,10 +144,7 @@ impl CreateSchemaInputBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -194,10 +178,7 @@ impl CreateSchemaInputBuilder {
     /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
     /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
     /// </ul>
-    pub fn set_compatibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Compatibility>,
-    ) -> Self {
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
         self.compatibility = input;
         self
     }
@@ -234,47 +215,28 @@ impl CreateSchemaInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -283,12 +245,7 @@ impl CreateSchemaInputBuilder {
         &self.schema_definition
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_schema::CreateSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
             registry_id: self.registry_id,
             schema_name: self.schema_name,

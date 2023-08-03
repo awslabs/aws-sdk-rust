@@ -29,16 +29,14 @@ impl GetSourceRepositoryCloneUrlsInput {
 }
 impl GetSourceRepositoryCloneUrlsInput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
-    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder{
+    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder {
         crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
         &self.project_name
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source repository.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_repository_name = input;
         self
     }
@@ -100,12 +92,10 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                source_repository_name: self.source_repository_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            source_repository_name: self.source_repository_name,
+        })
     }
 }

@@ -49,13 +49,7 @@
 /// <p>Supported RfRegions</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for SupportedRfRegion {
             "KR920" => SupportedRfRegion::Kr920,
             "RU864" => SupportedRfRegion::Ru864,
             "US915" => SupportedRfRegion::Us915,
-            other => {
-                SupportedRfRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SupportedRfRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -139,8 +131,7 @@ impl SupportedRfRegion {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AS923-1", "AS923-2", "AS923-3", "AS923-4", "AU915", "CN470", "CN779", "EU433",
-            "EU868", "IN865", "KR920", "RU864", "US915",
+            "AS923-1", "AS923-2", "AS923-3", "AS923-4", "AU915", "CN470", "CN779", "EU433", "EU868", "IN865", "KR920", "RU864", "US915",
         ]
     }
 }

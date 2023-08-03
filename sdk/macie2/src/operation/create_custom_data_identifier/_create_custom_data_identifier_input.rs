@@ -33,9 +33,7 @@ pub struct CreateCustomDataIdentifierInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCustomDataIdentifierInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -75,26 +73,20 @@ impl CreateCustomDataIdentifierInput {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateCustomDataIdentifierInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDataIdentifierInput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput).
-    pub fn builder() -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder{
+    pub fn builder() -> crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder {
         crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomDataIdentifierInput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomDataIdentifierInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -104,9 +96,7 @@ pub struct CreateCustomDataIdentifierInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regex: ::std::option::Option<::std::string::String>,
     pub(crate) severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCustomDataIdentifierInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -152,17 +142,12 @@ impl CreateCustomDataIdentifierInputBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ignore_words = input;
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn get_ignore_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ignore_words
     }
     /// Appends an item to `keywords`.
@@ -177,10 +162,7 @@ impl CreateCustomDataIdentifierInputBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }
@@ -247,18 +229,13 @@ impl CreateCustomDataIdentifierInputBuilder {
     }
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn set_severity_levels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
-    ) -> Self {
+    pub fn set_severity_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>) -> Self {
         self.severity_levels = input;
         self
     }
     /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
     /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn get_severity_levels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
+    pub fn get_severity_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
         &self.severity_levels
     }
     /// Adds a key-value pair to `tags`.
@@ -267,11 +244,7 @@ impl CreateCustomDataIdentifierInputBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -279,22 +252,13 @@ impl CreateCustomDataIdentifierInputBuilder {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
     /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCustomDataIdentifierInput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput).
@@ -304,18 +268,16 @@ impl CreateCustomDataIdentifierInputBuilder {
         crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput {
-                client_token: self.client_token,
-                description: self.description,
-                ignore_words: self.ignore_words,
-                keywords: self.keywords,
-                maximum_match_distance: self.maximum_match_distance,
-                name: self.name,
-                regex: self.regex,
-                severity_levels: self.severity_levels,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierInput {
+            client_token: self.client_token,
+            description: self.description,
+            ignore_words: self.ignore_words,
+            keywords: self.keywords,
+            maximum_match_distance: self.maximum_match_distance,
+            name: self.name,
+            regex: self.regex,
+            severity_levels: self.severity_levels,
+            tags: self.tags,
+        })
     }
 }

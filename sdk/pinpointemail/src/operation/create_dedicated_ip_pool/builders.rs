@@ -37,10 +37,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
         }
     }
     /// Access the CreateDedicatedIpPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +133,7 @@ impl CreateDedicatedIpPoolFluentBuilder {
         self
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

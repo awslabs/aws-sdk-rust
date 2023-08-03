@@ -30,9 +30,7 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,

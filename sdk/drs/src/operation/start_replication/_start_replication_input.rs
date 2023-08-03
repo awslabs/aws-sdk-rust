@@ -15,34 +15,25 @@ impl StartReplicationInput {
 }
 impl StartReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
-    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder {
         crate::operation::start_replication::builders::StartReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationInputBuilder {
     /// <p>The ID of the Source Server to start replication for.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server to start replication for.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl StartReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_replication::StartReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_replication::StartReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replication::StartReplicationInput {
             source_server_id: self.source_server_id,
         })

@@ -37,10 +37,7 @@ impl ModifyBackupAttributesFluentBuilder {
         }
     }
     /// Access the ModifyBackupAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyBackupAttributesFluentBuilder {
             crate::operation::modify_backup_attributes::ModifyBackupAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_backup_attributes::ModifyBackupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_backup_attributes::ModifyBackupAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyBackupAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyBackupAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_backup_attributes::ModifyBackupAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_backup_attributes::ModifyBackupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_backup_attributes::ModifyBackupAttributesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyBackupAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_backup_attributes::ModifyBackupAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_backup_attributes::ModifyBackupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_backup_attributes::ModifyBackupAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ModifyBackupAttributesFluentBuilder {
             crate::operation::modify_backup_attributes::ModifyBackupAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_backup_attributes::ModifyBackupAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_backup_attributes::ModifyBackupAttributesError>,
     > {
         self.customize_middleware().await
     }

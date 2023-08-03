@@ -10,9 +10,7 @@ pub struct GetLoggingOptionsOutput {
 }
 impl GetLoggingOptionsOutput {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_log_delivery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogDeliveryOptions> {
+    pub fn cloud_watch_log_delivery(&self) -> ::std::option::Option<&crate::types::CloudWatchLogDeliveryOptions> {
         self.cloud_watch_log_delivery.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for GetLoggingOptionsOutput {
 }
 impl GetLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
         crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggingOptionsOutputBuilder {
-    pub(crate) cloud_watch_log_delivery:
-        ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
+    pub(crate) cloud_watch_log_delivery: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
     _request_id: Option<String>,
 }
 impl GetLoggingOptionsOutputBuilder {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_log_delivery(
-        mut self,
-        input: crate::types::CloudWatchLogDeliveryOptions,
-    ) -> Self {
+    pub fn cloud_watch_log_delivery(mut self, input: crate::types::CloudWatchLogDeliveryOptions) -> Self {
         self.cloud_watch_log_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_log_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_delivery(mut self, input: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>) -> Self {
         self.cloud_watch_log_delivery = input;
         self
     }
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn get_cloud_watch_log_delivery(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
+    pub fn get_cloud_watch_log_delivery(&self) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
         &self.cloud_watch_log_delivery
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

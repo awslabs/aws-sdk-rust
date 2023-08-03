@@ -8,8 +8,7 @@ pub struct UpdateApplicationMaintenanceConfigurationInput {
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the application maintenance configuration update.</p>
     #[doc(hidden)]
-    pub application_maintenance_configuration_update:
-        ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
+    pub application_maintenance_configuration_update: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
 }
 impl UpdateApplicationMaintenanceConfigurationInput {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
@@ -17,43 +16,33 @@ impl UpdateApplicationMaintenanceConfigurationInput {
         self.application_name.as_deref()
     }
     /// <p>Describes the application maintenance configuration update.</p>
-    pub fn application_maintenance_configuration_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationMaintenanceConfigurationUpdate> {
+    pub fn application_maintenance_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationMaintenanceConfigurationUpdate> {
         self.application_maintenance_configuration_update.as_ref()
     }
 }
 impl UpdateApplicationMaintenanceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationInput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput).
-    pub fn builder() -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder
+    {
         crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationMaintenanceConfigurationInput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
-    pub(crate) application_maintenance_configuration_update:
-        ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
+    pub(crate) application_maintenance_configuration_update: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
 }
 impl UpdateApplicationMaintenanceConfigurationInputBuilder {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -62,10 +51,7 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>Describes the application maintenance configuration update.</p>
-    pub fn application_maintenance_configuration_update(
-        mut self,
-        input: crate::types::ApplicationMaintenanceConfigurationUpdate,
-    ) -> Self {
+    pub fn application_maintenance_configuration_update(mut self, input: crate::types::ApplicationMaintenanceConfigurationUpdate) -> Self {
         self.application_maintenance_configuration_update = ::std::option::Option::Some(input);
         self
     }
@@ -84,14 +70,17 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
         &self.application_maintenance_configuration_update
     }
     /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationInput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput {
-                application_name: self.application_name
-                ,
-                application_maintenance_configuration_update: self.application_maintenance_configuration_update
-                ,
-            }
+                application_name: self.application_name,
+                application_maintenance_configuration_update: self.application_maintenance_configuration_update,
+            },
         )
     }
 }

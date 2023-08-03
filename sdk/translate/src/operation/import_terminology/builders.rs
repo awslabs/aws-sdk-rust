@@ -10,10 +10,7 @@ impl ImportTerminologyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_terminology::ImportTerminologyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_terminology::ImportTerminologyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_terminology();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ImportTerminologyFluentBuilder {
         }
     }
     /// Access the ImportTerminology as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_terminology::builders::ImportTerminologyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_terminology::builders::ImportTerminologyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ImportTerminologyFluentBuilder {
             crate::operation::import_terminology::ImportTerminology,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_terminology::ImportTerminologyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ImportTerminologyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ImportTerminologyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_terminology::ImportTerminologyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_terminology::ImportTerminologyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ImportTerminologyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_terminology::ImportTerminologyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_terminology::ImportTerminologyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ImportTerminologyFluentBuilder {
             crate::operation::import_terminology::ImportTerminology,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_terminology::ImportTerminologyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_terminology::ImportTerminologyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +127,7 @@ impl ImportTerminologyFluentBuilder {
         self
     }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
         self
     }
@@ -174,10 +155,7 @@ impl ImportTerminologyFluentBuilder {
         self
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
-    pub fn set_terminology_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyData>,
-    ) -> Self {
+    pub fn set_terminology_data(mut self, input: ::std::option::Option<crate::types::TerminologyData>) -> Self {
         self.inner = self.inner.set_terminology_data(input);
         self
     }
@@ -191,10 +169,7 @@ impl ImportTerminologyFluentBuilder {
         self
     }
     /// <p>The encryption key for the custom terminology being imported.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -212,10 +187,7 @@ impl ImportTerminologyFluentBuilder {
         self
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

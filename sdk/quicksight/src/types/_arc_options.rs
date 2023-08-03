@@ -23,9 +23,7 @@ impl ArcOptions {
 
 /// A builder for [`ArcOptions`](crate::types::ArcOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArcOptionsBuilder {
     pub(crate) arc_thickness: ::std::option::Option<crate::types::ArcThickness>,
 }
@@ -36,10 +34,7 @@ impl ArcOptionsBuilder {
         self
     }
     /// <p>The arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_arc_thickness(
-        mut self,
-        input: ::std::option::Option<crate::types::ArcThickness>,
-    ) -> Self {
+    pub fn set_arc_thickness(mut self, input: ::std::option::Option<crate::types::ArcThickness>) -> Self {
         self.arc_thickness = input;
         self
     }

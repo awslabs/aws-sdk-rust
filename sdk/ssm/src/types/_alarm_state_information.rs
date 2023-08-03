@@ -30,9 +30,7 @@ impl AlarmStateInformation {
 
 /// A builder for [`AlarmStateInformation`](crate::types::AlarmStateInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmStateInformationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ExternalAlarmState>,
@@ -58,10 +56,7 @@ impl AlarmStateInformationBuilder {
         self
     }
     /// <p>The state of your CloudWatch alarm.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalAlarmState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExternalAlarmState>) -> Self {
         self.state = input;
         self
     }

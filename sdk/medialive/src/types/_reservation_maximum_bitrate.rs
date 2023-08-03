@@ -39,13 +39,7 @@
 /// Maximum bitrate in megabits per second
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservationMaximumBitrate {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ReservationMaximumBitrate {
             "MAX_10_MBPS" => ReservationMaximumBitrate::Max10Mbps,
             "MAX_20_MBPS" => ReservationMaximumBitrate::Max20Mbps,
             "MAX_50_MBPS" => ReservationMaximumBitrate::Max50Mbps,
-            other => ReservationMaximumBitrate::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservationMaximumBitrate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

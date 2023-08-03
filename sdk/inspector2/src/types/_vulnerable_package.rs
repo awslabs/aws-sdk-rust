@@ -93,9 +93,7 @@ impl VulnerablePackage {
 
 /// A builder for [`VulnerablePackage`](crate::types::VulnerablePackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VulnerablePackageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -139,18 +137,12 @@ impl VulnerablePackageBuilder {
         &self.version
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_layer_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn set_source_layer_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_hash = input;
         self
     }
@@ -206,10 +198,7 @@ impl VulnerablePackageBuilder {
         self
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn set_package_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageManager>,
-    ) -> Self {
+    pub fn set_package_manager(mut self, input: ::std::option::Option<crate::types::PackageManager>) -> Self {
         self.package_manager = input;
         self
     }
@@ -232,18 +221,12 @@ impl VulnerablePackageBuilder {
         &self.file_path
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    pub fn fixed_in_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fixed_in_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fixed_in_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    pub fn set_fixed_in_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fixed_in_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fixed_in_version = input;
         self
     }
@@ -266,18 +249,12 @@ impl VulnerablePackageBuilder {
         &self.remediation
     }
     /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
-    pub fn source_lambda_layer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_lambda_layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_lambda_layer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
-    pub fn set_source_lambda_layer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_lambda_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_lambda_layer_arn = input;
         self
     }

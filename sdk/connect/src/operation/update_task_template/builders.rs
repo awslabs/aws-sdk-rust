@@ -10,10 +10,7 @@ impl UpdateTaskTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_task_template::UpdateTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_template::UpdateTaskTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_template::UpdateTaskTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_task_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTaskTemplateFluentBuilder {
         }
     }
     /// Access the UpdateTaskTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_task_template::builders::UpdateTaskTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_task_template::builders::UpdateTaskTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateTaskTemplateFluentBuilder {
             crate::operation::update_task_template::UpdateTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_template::UpdateTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_template::UpdateTaskTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateTaskTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_task_template::UpdateTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_template::UpdateTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_template::UpdateTaskTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_task_template::UpdateTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_template::UpdateTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_template::UpdateTaskTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateTaskTemplateFluentBuilder {
             crate::operation::update_task_template::UpdateTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_task_template::UpdateTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_task_template::UpdateTaskTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_template_id(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_template_id(input);
         self
     }
@@ -185,18 +163,12 @@ impl UpdateTaskTemplateFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_id(input.into());
         self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_id(input);
         self
     }
@@ -210,10 +182,7 @@ impl UpdateTaskTemplateFluentBuilder {
         self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateConstraints>,
-    ) -> Self {
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
         self.inner = self.inner.set_constraints(input);
         self
     }
@@ -227,10 +196,7 @@ impl UpdateTaskTemplateFluentBuilder {
         self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn set_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateDefaults>,
-    ) -> Self {
+    pub fn set_defaults(mut self, input: ::std::option::Option<crate::types::TaskTemplateDefaults>) -> Self {
         self.inner = self.inner.set_defaults(input);
         self
     }
@@ -244,10 +210,7 @@ impl UpdateTaskTemplateFluentBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -265,17 +228,12 @@ impl UpdateTaskTemplateFluentBuilder {
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
         self.inner.get_fields()
     }
 }

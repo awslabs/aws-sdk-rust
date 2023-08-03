@@ -23,9 +23,7 @@ impl ScoreAttributes {
 
 /// A builder for [`ScoreAttributes`](crate::types::ScoreAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScoreAttributesBuilder {
     pub(crate) score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }
@@ -36,10 +34,7 @@ impl ScoreAttributesBuilder {
         self
     }
     /// <p>A relative ranking for how relevant the response is to the query.</p>
-    pub fn set_score_confidence(
-        mut self,
-        input: ::std::option::Option<crate::types::ScoreConfidence>,
-    ) -> Self {
+    pub fn set_score_confidence(mut self, input: ::std::option::Option<crate::types::ScoreConfidence>) -> Self {
         self.score_confidence = input;
         self
     }

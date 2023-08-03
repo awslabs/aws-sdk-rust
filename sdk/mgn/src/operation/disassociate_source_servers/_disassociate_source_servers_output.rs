@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateSourceServersOutput {
 }
 impl DisassociateSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
-    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder {
         crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSourceServersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateSourceServersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
+    pub fn build(self) -> crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
             _request_id: self._request_id,
         }

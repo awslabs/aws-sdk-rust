@@ -22,10 +22,7 @@ pub fn ser_case_filter(
                 {
                     #[allow(unused_mut)]
                     let mut object_5 = array_3.value().start_object();
-                    crate::protocol_serde::shape_case_filter::ser_case_filter(
-                        &mut object_5,
-                        item_4,
-                    )?;
+                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_5, item_4)?;
                     object_5.finish();
                 }
             }
@@ -37,22 +34,13 @@ pub fn ser_case_filter(
                 {
                     #[allow(unused_mut)]
                     let mut object_8 = array_6.value().start_object();
-                    crate::protocol_serde::shape_case_filter::ser_case_filter(
-                        &mut object_8,
-                        item_7,
-                    )?;
+                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_8, item_7)?;
                     object_8.finish();
                 }
             }
             array_6.finish();
         }
-        crate::types::CaseFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "CaseFilter",
-                ),
-            )
-        }
+        crate::types::CaseFilter::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("CaseFilter")),
     }
     Ok(())
 }

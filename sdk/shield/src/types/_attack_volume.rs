@@ -20,15 +20,11 @@ impl AttackVolume {
         self.bits_per_second.as_ref()
     }
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-    pub fn packets_per_second(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
+    pub fn packets_per_second(&self) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
         self.packets_per_second.as_ref()
     }
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-    pub fn requests_per_second(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
+    pub fn requests_per_second(&self) -> ::std::option::Option<&crate::types::AttackVolumeStatistics> {
         self.requests_per_second.as_ref()
     }
 }
@@ -41,9 +37,7 @@ impl AttackVolume {
 
 /// A builder for [`AttackVolume`](crate::types::AttackVolume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttackVolumeBuilder {
     pub(crate) bits_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
     pub(crate) packets_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
@@ -56,17 +50,12 @@ impl AttackVolumeBuilder {
         self
     }
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
-    pub fn set_bits_per_second(
-        mut self,
-        input: ::std::option::Option<crate::types::AttackVolumeStatistics>,
-    ) -> Self {
+    pub fn set_bits_per_second(mut self, input: ::std::option::Option<crate::types::AttackVolumeStatistics>) -> Self {
         self.bits_per_second = input;
         self
     }
     /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
-    pub fn get_bits_per_second(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
+    pub fn get_bits_per_second(&self) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
         &self.bits_per_second
     }
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
@@ -75,17 +64,12 @@ impl AttackVolumeBuilder {
         self
     }
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-    pub fn set_packets_per_second(
-        mut self,
-        input: ::std::option::Option<crate::types::AttackVolumeStatistics>,
-    ) -> Self {
+    pub fn set_packets_per_second(mut self, input: ::std::option::Option<crate::types::AttackVolumeStatistics>) -> Self {
         self.packets_per_second = input;
         self
     }
     /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
-    pub fn get_packets_per_second(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
+    pub fn get_packets_per_second(&self) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
         &self.packets_per_second
     }
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
@@ -94,17 +78,12 @@ impl AttackVolumeBuilder {
         self
     }
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-    pub fn set_requests_per_second(
-        mut self,
-        input: ::std::option::Option<crate::types::AttackVolumeStatistics>,
-    ) -> Self {
+    pub fn set_requests_per_second(mut self, input: ::std::option::Option<crate::types::AttackVolumeStatistics>) -> Self {
         self.requests_per_second = input;
         self
     }
     /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
-    pub fn get_requests_per_second(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
+    pub fn get_requests_per_second(&self) -> &::std::option::Option<crate::types::AttackVolumeStatistics> {
         &self.requests_per_second
     }
     /// Consumes the builder and constructs a [`AttackVolume`](crate::types::AttackVolume).

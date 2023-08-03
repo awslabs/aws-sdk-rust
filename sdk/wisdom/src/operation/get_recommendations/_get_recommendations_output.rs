@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutputBuilder {
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>,
-    pub(crate) triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationsOutputBuilder {
@@ -59,17 +54,12 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p>The recommendations.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The recommendations.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>> {
         &self.recommendations
     }
     /// Appends an item to `triggers`.
@@ -84,17 +74,12 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p>The triggers corresponding to recommendations.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>>) -> Self {
         self.triggers = input;
         self
     }
     /// <p>The triggers corresponding to recommendations.</p>
-    pub fn get_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>> {
         &self.triggers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

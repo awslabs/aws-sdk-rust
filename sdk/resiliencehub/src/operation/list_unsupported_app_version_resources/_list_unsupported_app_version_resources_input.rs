@@ -43,16 +43,14 @@ impl ListUnsupportedAppVersionResourcesInput {
 }
 impl ListUnsupportedAppVersionResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
-    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder {
         crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
         &self.app_version
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn set_resolution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution_id = input;
         self
     }
@@ -138,20 +130,20 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput {
-                app_arn: self.app_arn
-                ,
-                app_version: self.app_version
-                ,
-                resolution_id: self.resolution_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                app_arn: self.app_arn,
+                app_version: self.app_version,
+                resolution_id: self.resolution_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

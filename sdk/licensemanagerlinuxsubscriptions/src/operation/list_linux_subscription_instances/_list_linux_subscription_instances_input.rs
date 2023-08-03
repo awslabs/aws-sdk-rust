@@ -64,16 +64,14 @@ impl ListLinuxSubscriptionInstancesInput {
 }
 impl ListLinuxSubscriptionInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
-    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder{
+    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder {
         crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLinuxSubscriptionInstancesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -126,10 +124,7 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
     /// <li> <p> <code>equals</code> </p> </li>
     /// <li> <p> <code>Notequal</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -189,15 +184,10 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
         crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

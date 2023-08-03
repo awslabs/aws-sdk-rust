@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::create_db_instance::CreateDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
     /// - On failure, responds with [`SdkError<CreateDBInstanceError>`](crate::operation::create_db_instance::CreateDBInstanceError)
-    pub fn create_db_instance(
-        &self,
-    ) -> crate::operation::create_db_instance::builders::CreateDBInstanceFluentBuilder {
-        crate::operation::create_db_instance::builders::CreateDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_db_instance(&self) -> crate::operation::create_db_instance::builders::CreateDBInstanceFluentBuilder {
+        crate::operation::create_db_instance::builders::CreateDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

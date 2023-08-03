@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`device_fleet_name(impl ::std::convert::Into<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::set_device_fleet_name): <p>The name of the fleet to delete.</p>
     /// - On success, responds with [`DeleteDeviceFleetOutput`](crate::operation::delete_device_fleet::DeleteDeviceFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceFleetError>`](crate::operation::delete_device_fleet::DeleteDeviceFleetError)
-    pub fn delete_device_fleet(
-        &self,
-    ) -> crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder {
-        crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_device_fleet(&self) -> crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder {
+        crate::operation::delete_device_fleet::builders::DeleteDeviceFleetFluentBuilder::new(self.handle.clone())
     }
 }

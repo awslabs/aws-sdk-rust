@@ -36,16 +36,14 @@ impl ListTestGridSessionArtifactsInput {
 }
 impl ListTestGridSessionArtifactsInput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionArtifactsInput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput).
-    pub fn builder() -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder{
+    pub fn builder() -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder {
         crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionArtifactsInput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsInputBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>,
@@ -73,17 +71,12 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self
     }
     /// <p>Limit results to a specified type of artifact.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestGridSessionArtifactCategory>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Limit results to a specified type of artifact.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
         &self.r#type
     }
     /// <p>The maximum number of results to be returned by a request.</p>
@@ -121,13 +114,11 @@ impl ListTestGridSessionArtifactsInputBuilder {
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
-                session_arn: self.session_arn,
-                r#type: self.r#type,
-                max_result: self.max_result,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
+            session_arn: self.session_arn,
+            r#type: self.r#type,
+            max_result: self.max_result,
+            next_token: self.next_token,
+        })
     }
 }

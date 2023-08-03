@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteObjectsOnCancelOutput {
 }
 impl DeleteObjectsOnCancelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelOutput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelOutputBuilder {
         crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteObjectsOnCancelOutput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObjectsOnCancelOutputBuilder {
     _request_id: Option<String>,
 }

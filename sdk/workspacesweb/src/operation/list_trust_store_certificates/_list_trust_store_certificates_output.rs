@@ -35,19 +35,16 @@ impl ::aws_http::request_id::RequestId for ListTrustStoreCertificatesOutput {
 }
 impl ListTrustStoreCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput).
-    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder {
         crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustStoreCertificatesOutputBuilder {
-    pub(crate) certificate_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub(crate) certificate_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,32 +62,21 @@ impl ListTrustStoreCertificatesOutputBuilder {
         self
     }
     /// <p>The certificate list.</p>
-    pub fn set_certificate_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
-    ) -> Self {
+    pub fn set_certificate_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>) -> Self {
         self.certificate_list = input;
         self
     }
     /// <p>The certificate list.</p>
-    pub fn get_certificate_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
+    pub fn get_certificate_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
         &self.certificate_list
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -122,9 +108,7 @@ impl ListTrustStoreCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
+    pub fn build(self) -> crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
             certificate_list: self.certificate_list,
             trust_store_arn: self.trust_store_arn,

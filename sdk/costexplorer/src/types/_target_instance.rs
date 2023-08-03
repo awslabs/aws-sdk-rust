@@ -24,8 +24,7 @@ pub struct TargetInstance {
     pub expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
     #[doc(hidden)]
-    pub platform_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
 }
 impl TargetInstance {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
@@ -49,15 +48,11 @@ impl TargetInstance {
         self.resource_details.as_ref()
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn expected_resource_utilization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceUtilization> {
+    pub fn expected_resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
         self.expected_resource_utilization.as_ref()
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    pub fn platform_differences(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlatformDifference]> {
+    pub fn platform_differences(&self) -> ::std::option::Option<&[crate::types::PlatformDifference]> {
         self.platform_differences.as_deref()
     }
 }
@@ -70,34 +65,24 @@ impl TargetInstance {
 
 /// A builder for [`TargetInstance`](crate::types::TargetInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetInstanceBuilder {
     pub(crate) estimated_monthly_cost: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_monthly_savings: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) default_target_instance: ::std::option::Option<bool>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
-    pub(crate) expected_resource_utilization:
-        ::std::option::Option<crate::types::ResourceUtilization>,
-    pub(crate) platform_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub(crate) expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
+    pub(crate) platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
 }
 impl TargetInstanceBuilder {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-    pub fn estimated_monthly_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-    pub fn set_estimated_monthly_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_cost = input;
         self
     }
@@ -106,18 +91,12 @@ impl TargetInstanceBuilder {
         &self.estimated_monthly_cost
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_savings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_savings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn set_estimated_monthly_savings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_savings = input;
         self
     }
@@ -126,18 +105,12 @@ impl TargetInstanceBuilder {
         &self.estimated_monthly_savings
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -165,10 +138,7 @@ impl TargetInstanceBuilder {
         self
     }
     /// <p>Details on the target instance type. </p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }
@@ -177,25 +147,17 @@ impl TargetInstanceBuilder {
         &self.resource_details
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn expected_resource_utilization(
-        mut self,
-        input: crate::types::ResourceUtilization,
-    ) -> Self {
+    pub fn expected_resource_utilization(mut self, input: crate::types::ResourceUtilization) -> Self {
         self.expected_resource_utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn set_expected_resource_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceUtilization>,
-    ) -> Self {
+    pub fn set_expected_resource_utilization(mut self, input: ::std::option::Option<crate::types::ResourceUtilization>) -> Self {
         self.expected_resource_utilization = input;
         self
     }
     /// <p>The expected utilization metrics for target instance type.</p>
-    pub fn get_expected_resource_utilization(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceUtilization> {
+    pub fn get_expected_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
         &self.expected_resource_utilization
     }
     /// Appends an item to `platform_differences`.
@@ -210,17 +172,12 @@ impl TargetInstanceBuilder {
         self
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    pub fn set_platform_differences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
-    ) -> Self {
+    pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>) -> Self {
         self.platform_differences = input;
         self
     }
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    pub fn get_platform_differences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
+    pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
         &self.platform_differences
     }
     /// Consumes the builder and constructs a [`TargetInstance`](crate::types::TargetInstance).

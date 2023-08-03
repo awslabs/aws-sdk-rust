@@ -37,9 +37,7 @@ impl ListStageDeploymentsFluentBuilder {
         }
     }
     /// Access the ListStageDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stage_deployments::builders::ListStageDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_stage_deployments::builders::ListStageDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListStageDeploymentsFluentBuilder {
             crate::operation::list_stage_deployments::ListStageDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_deployments::ListStageDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stage_deployments::ListStageDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListStageDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListStageDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stage_deployments::ListStageDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_deployments::ListStageDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stage_deployments::ListStageDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListStageDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stage_deployments::ListStageDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_deployments::ListStageDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stage_deployments::ListStageDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListStageDeploymentsFluentBuilder {
             crate::operation::list_stage_deployments::ListStageDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_deployments::ListStageDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stage_deployments::ListStageDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stage_deployments::paginator::ListStageDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stage_deployments::paginator::ListStageDeploymentsPaginator {
-        crate::operation::list_stage_deployments::paginator::ListStageDeploymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stage_deployments::paginator::ListStageDeploymentsPaginator {
+        crate::operation::list_stage_deployments::paginator::ListStageDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`imports(Option<Vec<String>>)`](crate::operation::list_imports::ListImportsOutput::imports): <p>A list of stack names that are importing the specified exported output value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
-    pub fn list_imports(
-        &self,
-    ) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
+    pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
         crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`solution_version_arn(Option<String>)`](crate::operation::get_solution_metrics::GetSolutionMetricsOutput::solution_version_arn): <p>The same solution version ARN as specified in the request.</p>
     ///   - [`metrics(Option<HashMap<String, f64>>)`](crate::operation::get_solution_metrics::GetSolutionMetricsOutput::metrics): <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
     /// - On failure, responds with [`SdkError<GetSolutionMetricsError>`](crate::operation::get_solution_metrics::GetSolutionMetricsError)
-    pub fn get_solution_metrics(
-        &self,
-    ) -> crate::operation::get_solution_metrics::builders::GetSolutionMetricsFluentBuilder {
-        crate::operation::get_solution_metrics::builders::GetSolutionMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_solution_metrics(&self) -> crate::operation::get_solution_metrics::builders::GetSolutionMetricsFluentBuilder {
+        crate::operation::get_solution_metrics::builders::GetSolutionMetricsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,13 +39,7 @@
 /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SanitizationWarningReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,12 +56,8 @@ impl ::std::convert::From<&str> for SanitizationWarningReason {
         match s {
             "DISALLOWED_ATTRIBUTE_REMOVED" => SanitizationWarningReason::DisallowedAttributeRemoved,
             "DISALLOWED_ELEMENT_REMOVED" => SanitizationWarningReason::DisallowedElementRemoved,
-            "INVALID_ATTRIBUTE_VALUE_REMOVED" => {
-                SanitizationWarningReason::InvalidAttributeValueRemoved
-            }
-            other => SanitizationWarningReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "INVALID_ATTRIBUTE_VALUE_REMOVED" => SanitizationWarningReason::InvalidAttributeValueRemoved,
+            other => SanitizationWarningReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,9 +74,7 @@ impl SanitizationWarningReason {
         match self {
             SanitizationWarningReason::DisallowedAttributeRemoved => "DISALLOWED_ATTRIBUTE_REMOVED",
             SanitizationWarningReason::DisallowedElementRemoved => "DISALLOWED_ELEMENT_REMOVED",
-            SanitizationWarningReason::InvalidAttributeValueRemoved => {
-                "INVALID_ATTRIBUTE_VALUE_REMOVED"
-            }
+            SanitizationWarningReason::InvalidAttributeValueRemoved => "INVALID_ATTRIBUTE_VALUE_REMOVED",
             SanitizationWarningReason::Unknown(value) => value.as_str(),
         }
     }

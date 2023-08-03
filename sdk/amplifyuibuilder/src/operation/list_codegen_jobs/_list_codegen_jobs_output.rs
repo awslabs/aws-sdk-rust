@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCodegenJobsOutput {
 }
 impl ListCodegenJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListCodegenJobsOutput`](crate::operation::list_codegen_jobs::ListCodegenJobsOutput).
-    pub fn builder() -> crate::operation::list_codegen_jobs::builders::ListCodegenJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_codegen_jobs::builders::ListCodegenJobsOutputBuilder {
         crate::operation::list_codegen_jobs::builders::ListCodegenJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCodegenJobsOutput`](crate::operation::list_codegen_jobs::ListCodegenJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodegenJobsOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCodegenJobsOutputBuilder {
         self
     }
     /// <p>The list of code generation jobs for the Amplify app.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>The list of code generation jobs for the Amplify app.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodegenJobSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's included if more results are available.</p>

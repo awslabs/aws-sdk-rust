@@ -44,9 +44,7 @@ impl ListNamespacesInput {
 
 /// A builder for [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -104,27 +102,19 @@ impl ListNamespacesInputBuilder {
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
     /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
     /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_namespaces::ListNamespacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_namespaces::ListNamespacesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -26,7 +26,7 @@ impl DescribeRouterConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRouterConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationInputBuilder,
+    inner: crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationInputBuilder,
 }
 impl DescribeRouterConfigurationFluentBuilder {
     /// Creates a new `DescribeRouterConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeRouterConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeRouterConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRouterConfigurationFluentBuilder {
             crate::operation::describe_router_configuration::DescribeRouterConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_router_configuration::DescribeRouterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_router_configuration::DescribeRouterConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRouterConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRouterConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_router_configuration::DescribeRouterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_router_configuration::DescribeRouterConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRouterConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_router_configuration::DescribeRouterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_router_configuration::DescribeRouterConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeRouterConfigurationFluentBuilder {
             crate::operation::describe_router_configuration::DescribeRouterConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_router_configuration::DescribeRouterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_router_configuration::DescribeRouterConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeRouterConfigurationFluentBuilder {
         self.inner.get_virtual_interface_id()
     }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    pub fn router_type_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn router_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.router_type_identifier(input.into());
         self
     }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    pub fn set_router_type_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_router_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_router_type_identifier(input);
         self
     }

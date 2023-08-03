@@ -37,13 +37,7 @@
 /// <p>The wireless gateway type.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WirelessGatewayType {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for WirelessGatewayType {
     fn from(s: &str) -> Self {
         match s {
             "LoRaWAN" => WirelessGatewayType::LoRaWan,
-            other => WirelessGatewayType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

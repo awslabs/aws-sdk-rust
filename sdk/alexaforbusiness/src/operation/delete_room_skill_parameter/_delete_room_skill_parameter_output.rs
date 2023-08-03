@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRoomSkillParameterOutput {
 }
 impl DeleteRoomSkillParameterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRoomSkillParameterOutput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput).
-    pub fn builder() -> crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterOutputBuilder{
+    pub fn builder() -> crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterOutputBuilder {
         crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoomSkillParameterOutput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoomSkillParameterOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRoomSkillParameterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRoomSkillParameterOutput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput {
+    pub fn build(self) -> crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput {
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput {
             _request_id: self._request_id,
         }

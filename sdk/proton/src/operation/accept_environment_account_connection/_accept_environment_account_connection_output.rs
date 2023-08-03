@@ -5,15 +5,12 @@
 pub struct AcceptEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection data that's returned by Proton.</p>
     #[doc(hidden)]
-    pub environment_account_connection:
-        ::std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl AcceptEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection data that's returned by Proton.</p>
-    pub fn environment_account_connection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentAccountConnection> {
+    pub fn environment_account_connection(&self) -> ::std::option::Option<&crate::types::EnvironmentAccountConnection> {
         self.environment_account_connection.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for AcceptEnvironmentAccountConnectionOut
 }
 impl AcceptEnvironmentAccountConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AcceptEnvironmentAccountConnectionOutput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput).
-    pub fn builder() -> crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionOutputBuilder {
         crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptEnvironmentAccountConnectionOutput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptEnvironmentAccountConnectionOutputBuilder {
-    pub(crate) environment_account_connection:
-        ::std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub(crate) environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl AcceptEnvironmentAccountConnectionOutputBuilder {
     /// <p>The environment account connection data that's returned by Proton.</p>
-    pub fn environment_account_connection(
-        mut self,
-        input: crate::types::EnvironmentAccountConnection,
-    ) -> Self {
+    pub fn environment_account_connection(mut self, input: crate::types::EnvironmentAccountConnection) -> Self {
         self.environment_account_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The environment account connection data that's returned by Proton.</p>
-    pub fn set_environment_account_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
-    ) -> Self {
+    pub fn set_environment_account_connection(mut self, input: ::std::option::Option<crate::types::EnvironmentAccountConnection>) -> Self {
         self.environment_account_connection = input;
         self
     }
     /// <p>The environment account connection data that's returned by Proton.</p>
-    pub fn get_environment_account_connection(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentAccountConnection> {
+    pub fn get_environment_account_connection(&self) -> &::std::option::Option<crate::types::EnvironmentAccountConnection> {
         &self.environment_account_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl AcceptEnvironmentAccountConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptEnvironmentAccountConnectionOutput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput).
-    pub fn build(self) -> crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput{
+    pub fn build(self) -> crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput {
         crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput {
-            environment_account_connection: self.environment_account_connection
-            ,
+            environment_account_connection: self.environment_account_connection,
             _request_id: self._request_id,
         }
     }

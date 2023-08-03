@@ -75,17 +75,14 @@ impl CreateGrantInput {
 
 /// A builder for [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGrantInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
 }
 impl CreateGrantInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -160,10 +157,7 @@ impl CreateGrantInputBuilder {
     /// <ul>
     /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
     /// </ul>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -206,26 +200,16 @@ impl CreateGrantInputBuilder {
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn set_allowed_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
-    ) -> Self {
+    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
         self.allowed_operations = input;
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn get_allowed_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         &self.allowed_operations
     }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_grant::CreateGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
             client_token: self.client_token,
             grant_name: self.grant_name,

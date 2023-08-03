@@ -10,10 +10,7 @@ impl GetBlockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_block::GetBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_block::GetBlockError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_block::GetBlockError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_block();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl GetBlockFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_block::GetBlock,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_block::GetBlock, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_block::GetBlockError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl GetBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl GetBlockFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_block::GetBlock,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_block::GetBlock, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_block::GetBlockError>,
     > {
         self.customize_middleware().await
@@ -138,10 +126,7 @@ impl GetBlockFluentBuilder {
     }
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn set_block_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_block_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.inner = self.inner.set_block_address(input);
         self
     }
@@ -158,10 +143,7 @@ impl GetBlockFluentBuilder {
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn set_digest_tip_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.inner = self.inner.set_digest_tip_address(input);
         self
     }

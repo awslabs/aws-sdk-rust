@@ -57,18 +57,14 @@ impl DescribeReservedNodesInput {
 }
 impl DescribeReservedNodesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder {
         crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesInputBuilder {
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +76,12 @@ pub struct DescribeReservedNodesInputBuilder {
 }
 impl DescribeReservedNodesInputBuilder {
     /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -100,18 +90,12 @@ impl DescribeReservedNodesInputBuilder {
         &self.reservation_id
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = input;
         self
     }
@@ -148,18 +132,12 @@ impl DescribeReservedNodesInputBuilder {
         &self.duration
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -198,20 +176,16 @@ impl DescribeReservedNodesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_nodes::DescribeReservedNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesInput {
-                reservation_id: self.reservation_id,
-                reserved_nodes_offering_id: self.reserved_nodes_offering_id,
-                node_type: self.node_type,
-                duration: self.duration,
-                offering_type: self.offering_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_reserved_nodes::DescribeReservedNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_reserved_nodes::DescribeReservedNodesInput {
+            reservation_id: self.reservation_id,
+            reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+            node_type: self.node_type,
+            duration: self.duration,
+            offering_type: self.offering_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

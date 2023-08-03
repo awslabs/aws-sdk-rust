@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>  <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     /// - On success, responds with [`DeactivateTypeOutput`](crate::operation::deactivate_type::DeactivateTypeOutput)
     /// - On failure, responds with [`SdkError<DeactivateTypeError>`](crate::operation::deactivate_type::DeactivateTypeError)
-    pub fn deactivate_type(
-        &self,
-    ) -> crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder {
-        crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deactivate_type(&self) -> crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder {
+        crate::operation::deactivate_type::builders::DeactivateTypeFluentBuilder::new(self.handle.clone())
     }
 }

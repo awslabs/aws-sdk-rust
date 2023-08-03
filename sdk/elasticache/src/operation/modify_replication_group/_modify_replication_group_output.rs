@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyReplicationGroupOutput {
 }
 impl ModifyReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupOutput`](crate::operation::modify_replication_group::ModifyReplicationGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder {
         crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReplicationGroupOutput`](crate::operation::modify_replication_group::ModifyReplicationGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyReplicationGroupOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

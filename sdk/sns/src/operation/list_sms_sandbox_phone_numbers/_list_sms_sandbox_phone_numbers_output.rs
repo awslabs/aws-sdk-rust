@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSmsSandboxPhoneNumbersOutput {
 }
 impl ListSmsSandboxPhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`ListSmsSandboxPhoneNumbersOutput`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput).
-    pub fn builder() -> crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder{
+    pub fn builder() -> crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder {
         crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSmsSandboxPhoneNumbersOutput`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSmsSandboxPhoneNumbersOutputBuilder {
-    pub(crate) phone_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>,
+    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSmsSandboxPhoneNumbersOutputBuilder {
         self
     }
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>A list of the calling account's pending and verified phone numbers.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
@@ -94,9 +86,7 @@ impl ListSmsSandboxPhoneNumbersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSmsSandboxPhoneNumbersOutput`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
+    pub fn build(self) -> crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
         crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
             phone_numbers: self.phone_numbers,
             next_token: self.next_token,

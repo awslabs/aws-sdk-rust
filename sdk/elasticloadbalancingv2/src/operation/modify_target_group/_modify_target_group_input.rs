@@ -82,17 +82,14 @@ impl ModifyTargetGroupInput {
 }
 impl ModifyTargetGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
+    pub fn builder() -> crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
         crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
@@ -107,18 +104,12 @@ pub struct ModifyTargetGroupInputBuilder {
 }
 impl ModifyTargetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -132,10 +123,7 @@ impl ModifyTargetGroupInputBuilder {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.health_check_protocol = input;
         self
     }
@@ -144,18 +132,12 @@ impl ModifyTargetGroupInputBuilder {
         &self.health_check_protocol
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_port = input;
         self
     }
@@ -166,20 +148,14 @@ impl ModifyTargetGroupInputBuilder {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
@@ -276,23 +252,18 @@ impl ModifyTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_target_group::ModifyTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_target_group::ModifyTargetGroupInput {
-                target_group_arn: self.target_group_arn,
-                health_check_protocol: self.health_check_protocol,
-                health_check_port: self.health_check_port,
-                health_check_path: self.health_check_path,
-                health_check_enabled: self.health_check_enabled,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                health_check_timeout_seconds: self.health_check_timeout_seconds,
-                healthy_threshold_count: self.healthy_threshold_count,
-                unhealthy_threshold_count: self.unhealthy_threshold_count,
-                matcher: self.matcher,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_target_group::ModifyTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_target_group::ModifyTargetGroupInput {
+            target_group_arn: self.target_group_arn,
+            health_check_protocol: self.health_check_protocol,
+            health_check_port: self.health_check_port,
+            health_check_path: self.health_check_path,
+            health_check_enabled: self.health_check_enabled,
+            health_check_interval_seconds: self.health_check_interval_seconds,
+            health_check_timeout_seconds: self.health_check_timeout_seconds,
+            healthy_threshold_count: self.healthy_threshold_count,
+            unhealthy_threshold_count: self.unhealthy_threshold_count,
+            matcher: self.matcher,
+        })
     }
 }

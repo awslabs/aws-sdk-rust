@@ -39,9 +39,7 @@ impl ListReceiptRuleSetsFluentBuilder {
         }
     }
     /// Access the ListReceiptRuleSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListReceiptRuleSetsFluentBuilder {
             crate::operation::list_receipt_rule_sets::ListReceiptRuleSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListReceiptRuleSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListReceiptRuleSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListReceiptRuleSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl ListReceiptRuleSetsFluentBuilder {
             crate::operation::list_receipt_rule_sets::ListReceiptRuleSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError>,
     > {
         self.customize_middleware().await
     }

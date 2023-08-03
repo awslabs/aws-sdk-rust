@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAutomatedDiscoveryConfiguration
 }
 impl UpdateAutomatedDiscoveryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput).
-    pub fn builder() -> crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationOutputBuilder {
         crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAutomatedDiscoveryConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput {
         crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput {
             _request_id: self._request_id,
         }

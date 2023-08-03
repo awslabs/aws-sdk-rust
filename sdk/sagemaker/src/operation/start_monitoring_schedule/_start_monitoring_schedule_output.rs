@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartMonitoringScheduleOutput {
 }
 impl StartMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleOutput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleOutputBuilder {
         crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMonitoringScheduleOutput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMonitoringScheduleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StartMonitoringScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMonitoringScheduleOutput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput {
+    pub fn build(self) -> crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput {
         crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput {
             _request_id: self._request_id,
         }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceSyncConfigOutput {
 }
 impl UpdateServiceSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSyncConfigOutput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigOutputBuilder {
         crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSyncConfigOutput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateServiceSyncConfigOutputBuilder {
         self
     }
     /// <p>The detailed data of the Proton Ops file.</p>
-    pub fn set_service_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSyncConfig>,
-    ) -> Self {
+    pub fn set_service_sync_config(mut self, input: ::std::option::Option<crate::types::ServiceSyncConfig>) -> Self {
         self.service_sync_config = input;
         self
     }
     /// <p>The detailed data of the Proton Ops file.</p>
-    pub fn get_service_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
+    pub fn get_service_sync_config(&self) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
         &self.service_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateServiceSyncConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncConfigOutput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput {
+    pub fn build(self) -> crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput {
         crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput {
             service_sync_config: self.service_sync_config,
             _request_id: self._request_id,

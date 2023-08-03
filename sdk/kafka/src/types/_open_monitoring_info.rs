@@ -23,9 +23,7 @@ impl OpenMonitoringInfo {
 
 /// A builder for [`OpenMonitoringInfo`](crate::types::OpenMonitoringInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenMonitoringInfoBuilder {
     pub(crate) prometheus: ::std::option::Option<crate::types::PrometheusInfo>,
 }
@@ -36,10 +34,7 @@ impl OpenMonitoringInfoBuilder {
         self
     }
     /// <p>Prometheus settings.</p>
-    pub fn set_prometheus(
-        mut self,
-        input: ::std::option::Option<crate::types::PrometheusInfo>,
-    ) -> Self {
+    pub fn set_prometheus(mut self, input: ::std::option::Option<crate::types::PrometheusInfo>) -> Self {
         self.prometheus = input;
         self
     }
@@ -49,8 +44,6 @@ impl OpenMonitoringInfoBuilder {
     }
     /// Consumes the builder and constructs a [`OpenMonitoringInfo`](crate::types::OpenMonitoringInfo).
     pub fn build(self) -> crate::types::OpenMonitoringInfo {
-        crate::types::OpenMonitoringInfo {
-            prometheus: self.prometheus,
-        }
+        crate::types::OpenMonitoringInfo { prometheus: self.prometheus }
     }
 }

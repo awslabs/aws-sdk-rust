@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInvitationsCountOutput {
 }
 impl GetInvitationsCountOutput {
     /// Creates a new builder-style object to manufacture [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder {
-        crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder {
+        crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutputBuilder {
     pub(crate) invitations_count: ::std::option::Option<i32>,
     _request_id: Option<String>,

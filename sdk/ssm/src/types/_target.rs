@@ -78,9 +78,7 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -114,10 +112,7 @@ impl TargetBuilder {
     }
     /// <p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
     /// <p>Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of 50.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

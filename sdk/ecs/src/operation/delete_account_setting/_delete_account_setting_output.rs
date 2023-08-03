@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountSettingOutput {
 }
 impl DeleteAccountSettingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSettingOutput`](crate::operation::delete_account_setting::DeleteAccountSettingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_account_setting::builders::DeleteAccountSettingOutputBuilder {
+    pub fn builder() -> crate::operation::delete_account_setting::builders::DeleteAccountSettingOutputBuilder {
         crate::operation::delete_account_setting::builders::DeleteAccountSettingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountSettingOutput`](crate::operation::delete_account_setting::DeleteAccountSettingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountSettingOutputBuilder {
     pub(crate) setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,

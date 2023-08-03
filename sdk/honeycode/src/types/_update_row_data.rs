@@ -9,9 +9,7 @@ pub struct UpdateRowData {
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     #[doc(hidden)]
-    pub cells_to_update: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    >,
+    pub cells_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
@@ -19,11 +17,7 @@ impl UpdateRowData {
         self.row_id.as_deref()
     }
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_update(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    > {
+    pub fn cells_to_update(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
         self.cells_to_update.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl UpdateRowData {
 
 /// A builder for [`UpdateRowData`](crate::types::UpdateRowData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRowDataBuilder {
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
-    pub(crate) cells_to_update: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    >,
+    pub(crate) cells_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl UpdateRowDataBuilder {
     /// <p> The id of the row that needs to be updated. </p>
@@ -65,11 +55,7 @@ impl UpdateRowDataBuilder {
     /// To override the contents of this collection use [`set_cells_to_update`](Self::set_cells_to_update).
     ///
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_update(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CellInput,
-    ) -> Self {
+    pub fn cells_to_update(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CellInput) -> Self {
         let mut hash_map = self.cells_to_update.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.cells_to_update = ::std::option::Option::Some(hash_map);
@@ -78,19 +64,13 @@ impl UpdateRowDataBuilder {
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub fn set_cells_to_update(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
     ) -> Self {
         self.cells_to_update = input;
         self
     }
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn get_cells_to_update(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    > {
+    pub fn get_cells_to_update(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
         &self.cells_to_update
     }
     /// Consumes the builder and constructs a [`UpdateRowData`](crate::types::UpdateRowData).

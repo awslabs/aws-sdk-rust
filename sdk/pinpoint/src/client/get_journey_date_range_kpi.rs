@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`GetJourneyDateRangeKpiOutput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput) with field(s):
     ///   - [`journey_date_range_kpi_response(Option<JourneyDateRangeKpiResponse>)`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput::journey_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetJourneyDateRangeKpiError>`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError)
-    pub fn get_journey_date_range_kpi(
-        &self,
-    ) -> crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiFluentBuilder
-    {
+    pub fn get_journey_date_range_kpi(&self) -> crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiFluentBuilder {
         crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiFluentBuilder::new(self.handle.clone())
     }
 }

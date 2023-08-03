@@ -6,17 +6,14 @@ pub fn ser_public_key_config_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_xml_unset_payload()),
     };
-    Ok(
-        crate::protocol_serde::shape_create_public_key_input::ser_public_key_config_payload(
-            payload,
-        )?,
-    )
+    Ok(crate::protocol_serde::shape_create_public_key_input::ser_public_key_config_payload(
+        payload,
+    )?)
 }
 
 pub fn ser_public_key_config_payload(
     input: &crate::types::PublicKeyConfig,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

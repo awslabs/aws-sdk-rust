@@ -143,9 +143,7 @@ impl FaceDetail {
 
 /// A builder for [`FaceDetail`](crate::types::FaceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceDetailBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) age_range: ::std::option::Option<crate::types::AgeRange>,
@@ -172,10 +170,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>Bounding box of the face. Default attribute.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -217,10 +212,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-    pub fn set_eyeglasses(
-        mut self,
-        input: ::std::option::Option<crate::types::Eyeglasses>,
-    ) -> Self {
+    pub fn set_eyeglasses(mut self, input: ::std::option::Option<crate::types::Eyeglasses>) -> Self {
         self.eyeglasses = input;
         self
     }
@@ -234,10 +226,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-    pub fn set_sunglasses(
-        mut self,
-        input: ::std::option::Option<crate::types::Sunglasses>,
-    ) -> Self {
+    pub fn set_sunglasses(mut self, input: ::std::option::Option<crate::types::Sunglasses>) -> Self {
         self.sunglasses = input;
         self
     }
@@ -327,10 +316,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-    pub fn set_emotions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
-    ) -> Self {
+    pub fn set_emotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>) -> Self {
         self.emotions = input;
         self
     }
@@ -350,10 +336,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-    pub fn set_landmarks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
-    ) -> Self {
+    pub fn set_landmarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>) -> Self {
         self.landmarks = input;
         self
     }
@@ -409,10 +392,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
-    pub fn set_face_occluded(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceOccluded>,
-    ) -> Self {
+    pub fn set_face_occluded(mut self, input: ::std::option::Option<crate::types::FaceOccluded>) -> Self {
         self.face_occluded = input;
         self
     }
@@ -426,10 +406,7 @@ impl FaceDetailBuilder {
         self
     }
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
-    pub fn set_eye_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::EyeDirection>,
-    ) -> Self {
+    pub fn set_eye_direction(mut self, input: ::std::option::Option<crate::types::EyeDirection>) -> Self {
         self.eye_direction = input;
         self
     }

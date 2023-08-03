@@ -29,16 +29,14 @@ impl GetLoggerDefinitionVersionInput {
 }
 impl GetLoggerDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetLoggerDefinitionVersionInput`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput).
-    pub fn builder() -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder {
         crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggerDefinitionVersionInput`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionVersionInputBuilder {
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) logger_definition_version_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetLoggerDefinitionVersionInputBuilder {
 }
 impl GetLoggerDefinitionVersionInputBuilder {
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logger_definition_id = input;
         self
     }
@@ -66,25 +58,17 @@ impl GetLoggerDefinitionVersionInputBuilder {
         &self.logger_definition_id
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn logger_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_logger_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logger_definition_version_id = input;
         self
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn get_logger_definition_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_logger_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logger_definition_version_id
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -108,12 +92,10 @@ impl GetLoggerDefinitionVersionInputBuilder {
         crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput {
-                logger_definition_id: self.logger_definition_id,
-                logger_definition_version_id: self.logger_definition_version_id,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput {
+            logger_definition_id: self.logger_definition_id,
+            logger_definition_version_id: self.logger_definition_version_id,
+            next_token: self.next_token,
+        })
     }
 }

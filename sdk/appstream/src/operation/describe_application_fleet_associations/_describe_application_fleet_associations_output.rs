@@ -5,8 +5,7 @@
 pub struct DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
     #[doc(hidden)]
-    pub application_fleet_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
+    pub application_fleet_associations: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeApplicationFleetAssociationsOutput {
 }
 impl DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
-    pub fn application_fleet_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationFleetAssociation]> {
+    pub fn application_fleet_associations(&self) -> ::std::option::Option<&[crate::types::ApplicationFleetAssociation]> {
         self.application_fleet_associations.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationFleetAssociationsO
 }
 impl DescribeApplicationFleetAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationFleetAssociationsOutput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsOutputBuilder {
         crate::operation::describe_application_fleet_associations::builders::DescribeApplicationFleetAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationFleetAssociationsOutput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsOutputBuilder {
-    pub(crate) application_fleet_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
+    pub(crate) application_fleet_associations: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeApplicationFleetAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_application_fleet_associations`](Self::set_application_fleet_associations).
     ///
     /// <p>The application fleet associations in the list.</p>
-    pub fn application_fleet_associations(
-        mut self,
-        input: crate::types::ApplicationFleetAssociation,
-    ) -> Self {
+    pub fn application_fleet_associations(mut self, input: crate::types::ApplicationFleetAssociation) -> Self {
         let mut v = self.application_fleet_associations.unwrap_or_default();
         v.push(input);
         self.application_fleet_associations = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeApplicationFleetAssociationsOutputBuilder {
         self
     }
     /// <p>The application fleet associations in the list.</p>
-    pub fn get_application_fleet_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>> {
+    pub fn get_application_fleet_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>> {
         &self.application_fleet_associations
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -100,12 +89,10 @@ impl DescribeApplicationFleetAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationFleetAssociationsOutput`](crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput {
         crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput {
-            application_fleet_associations: self.application_fleet_associations
-            ,
-            next_token: self.next_token
-            ,
+            application_fleet_associations: self.application_fleet_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

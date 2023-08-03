@@ -37,10 +37,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         }
     }
     /// Access the UpdateNotebookInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateNotebookInstanceFluentBuilder {
             crate::operation::update_notebook_instance::UpdateNotebookInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notebook_instance::UpdateNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notebook_instance::UpdateNotebookInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateNotebookInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notebook_instance::UpdateNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notebook_instance::UpdateNotebookInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notebook_instance::UpdateNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notebook_instance::UpdateNotebookInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateNotebookInstanceFluentBuilder {
             crate::operation::update_notebook_instance::UpdateNotebookInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notebook_instance::UpdateNotebookInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notebook_instance::UpdateNotebookInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the notebook instance to update.</p>
-    pub fn notebook_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notebook_instance_name(input.into());
         self
     }
     /// <p>The name of the notebook instance to update.</p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self
     }
     /// <p>The Amazon ML compute instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -181,18 +158,12 @@ impl UpdateNotebookInstanceFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    pub fn lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_config_name(input.into());
         self
     }
     /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
-    pub fn set_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_config_name(input);
         self
     }
@@ -229,18 +200,12 @@ impl UpdateNotebookInstanceFluentBuilder {
         self.inner.get_volume_size_in_gb()
     }
     /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn default_code_repository(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_code_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_code_repository(input.into());
         self
     }
     /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn set_default_code_repository(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_code_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_code_repository(input);
         self
     }
@@ -253,25 +218,17 @@ impl UpdateNotebookInstanceFluentBuilder {
     /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
     ///
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn additional_code_repositories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_code_repositories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_code_repositories(input.into());
         self
     }
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn set_additional_code_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_code_repositories(input);
         self
     }
     /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn get_additional_code_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_code_repositories()
     }
     /// Appends an item to `AcceleratorTypes`.
@@ -279,28 +236,17 @@ impl UpdateNotebookInstanceFluentBuilder {
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
     /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_types(
-        mut self,
-        input: crate::types::NotebookInstanceAcceleratorType,
-    ) -> Self {
+    pub fn accelerator_types(mut self, input: crate::types::NotebookInstanceAcceleratorType) -> Self {
         self.inner = self.inner.accelerator_types(input);
         self
     }
     /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn set_accelerator_types(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>,
-        >,
-    ) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
     /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn get_accelerator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>
-    {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>> {
         self.inner.get_accelerator_types()
     }
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
@@ -309,10 +255,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self
     }
     /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn set_disassociate_accelerator_types(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_disassociate_accelerator_types(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_accelerator_types(input);
         self
     }
@@ -326,10 +269,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self
     }
     /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn set_disassociate_default_code_repository(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_disassociate_default_code_repository(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_default_code_repository(input);
         self
     }
@@ -343,13 +283,8 @@ impl UpdateNotebookInstanceFluentBuilder {
         self
     }
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
-    pub fn set_disassociate_additional_code_repositories(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_disassociate_additional_code_repositories(input);
+    pub fn set_disassociate_additional_code_repositories(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disassociate_additional_code_repositories(input);
         self
     }
     /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
@@ -366,10 +301,7 @@ impl UpdateNotebookInstanceFluentBuilder {
     /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
     /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
     /// </note>
-    pub fn set_root_access(
-        mut self,
-        input: ::std::option::Option<crate::types::RootAccess>,
-    ) -> Self {
+    pub fn set_root_access(mut self, input: ::std::option::Option<crate::types::RootAccess>) -> Self {
         self.inner = self.inner.set_root_access(input);
         self
     }
@@ -380,10 +312,7 @@ impl UpdateNotebookInstanceFluentBuilder {
         self.inner.get_root_access()
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    pub fn instance_metadata_service_configuration(
-        mut self,
-        input: crate::types::InstanceMetadataServiceConfiguration,
-    ) -> Self {
+    pub fn instance_metadata_service_configuration(mut self, input: crate::types::InstanceMetadataServiceConfiguration) -> Self {
         self.inner = self.inner.instance_metadata_service_configuration(input);
         self
     }
@@ -392,15 +321,11 @@ impl UpdateNotebookInstanceFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_instance_metadata_service_configuration(input);
+        self.inner = self.inner.set_instance_metadata_service_configuration(input);
         self
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    pub fn get_instance_metadata_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataServiceConfiguration> {
+    pub fn get_instance_metadata_service_configuration(&self) -> &::std::option::Option<crate::types::InstanceMetadataServiceConfiguration> {
         self.inner.get_instance_metadata_service_configuration()
     }
 }

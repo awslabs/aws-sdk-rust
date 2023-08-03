@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateVehicleFleetOutput {
 }
 impl DisassociateVehicleFleetOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateVehicleFleetOutput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetOutputBuilder {
         crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateVehicleFleetOutput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateVehicleFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateVehicleFleetOutput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput {
+    pub fn build(self) -> crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput {
         crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput {
             _request_id: self._request_id,
         }

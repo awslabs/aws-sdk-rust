@@ -27,9 +27,7 @@ pub struct AdminRespondToAuthChallengeInput {
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
     #[doc(hidden)]
-    pub challenge_responses: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub challenge_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
@@ -61,9 +59,7 @@ pub struct AdminRespondToAuthChallengeInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdminRespondToAuthChallengeInput {
     /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -91,11 +87,7 @@ impl AdminRespondToAuthChallengeInput {
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
-    pub fn challenge_responses(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn challenge_responses(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_responses.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
@@ -103,9 +95,7 @@ impl AdminRespondToAuthChallengeInput {
         self.session.as_deref()
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    pub fn analytics_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -133,11 +123,7 @@ impl AdminRespondToAuthChallengeInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
@@ -157,7 +143,7 @@ impl ::std::fmt::Debug for AdminRespondToAuthChallengeInput {
 }
 impl AdminRespondToAuthChallengeInput {
     /// Creates a new builder-style object to manufacture [`AdminRespondToAuthChallengeInput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput).
-    pub fn builder() -> crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder{
+    pub fn builder() -> crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder {
         crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeInputBuilder::default()
     }
 }
@@ -169,15 +155,11 @@ pub struct AdminRespondToAuthChallengeInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
-    pub(crate) challenge_responses: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) challenge_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     pub(crate) context_data: ::std::option::Option<crate::types::ContextDataType>,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -214,10 +196,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
         self
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
-    pub fn set_challenge_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeNameType>,
-    ) -> Self {
+    pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.challenge_name = input;
         self
     }
@@ -267,9 +246,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
     pub fn set_challenge_responses(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.challenge_responses = input;
         self
@@ -287,11 +264,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
-    pub fn get_challenge_responses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_challenge_responses(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_responses
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
@@ -314,17 +287,12 @@ impl AdminRespondToAuthChallengeInputBuilder {
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         &self.analytics_metadata
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -333,10 +301,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDataType>,
-    ) -> Self {
+    pub fn set_context_data(mut self, input: ::std::option::Option<crate::types::ContextDataType>) -> Self {
         self.context_data = input;
         self
     }
@@ -402,9 +367,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -430,11 +393,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`AdminRespondToAuthChallengeInput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput).
@@ -444,18 +403,16 @@ impl AdminRespondToAuthChallengeInputBuilder {
         crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                challenge_name: self.challenge_name,
-                challenge_responses: self.challenge_responses,
-                session: self.session,
-                analytics_metadata: self.analytics_metadata,
-                context_data: self.context_data,
-                client_metadata: self.client_metadata,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+            challenge_name: self.challenge_name,
+            challenge_responses: self.challenge_responses,
+            session: self.session,
+            analytics_metadata: self.analytics_metadata,
+            context_data: self.context_data,
+            client_metadata: self.client_metadata,
+        })
     }
 }
 impl ::std::fmt::Debug for AdminRespondToAuthChallengeInputBuilder {

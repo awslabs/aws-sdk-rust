@@ -5,16 +5,16 @@ pub use crate::operation::delete_pending_aggregation_request::_delete_pending_ag
 
 impl DeletePendingAggregationRequestInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_pending_aggregation_request();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeletePendingAggregationRequestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePendingAggregationRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder,
+    inner: crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder,
 }
 impl DeletePendingAggregationRequestFluentBuilder {
     /// Creates a new `DeletePendingAggregationRequest`.
@@ -37,15 +37,20 @@ impl DeletePendingAggregationRequestFluentBuilder {
         }
     }
     /// Access the DeletePendingAggregationRequest as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequest, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequest,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DeletePendingAggregationRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DeletePendingAggregationRequestFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequest, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequest,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn requester_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_account_id(input.into());
         self
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn set_requester_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_account_id(input);
         self
     }
@@ -115,18 +124,12 @@ impl DeletePendingAggregationRequestFluentBuilder {
         self.inner.get_requester_account_id()
     }
     /// <p>The region requesting to aggregate data.</p>
-    pub fn requester_aws_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_aws_region(input.into());
         self
     }
     /// <p>The region requesting to aggregate data.</p>
-    pub fn set_requester_aws_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_aws_region(input);
         self
     }

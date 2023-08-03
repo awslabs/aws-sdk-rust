@@ -10,9 +10,7 @@ pub struct ModifyIpamResourceDiscoveryOutput {
 }
 impl ModifyIpamResourceDiscoveryOutput {
     /// <p>A resource discovery.</p>
-    pub fn ipam_resource_discovery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamResourceDiscovery> {
+    pub fn ipam_resource_discovery(&self) -> ::std::option::Option<&crate::types::IpamResourceDiscovery> {
         self.ipam_resource_discovery.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyIpamResourceDiscoveryOutput {
 }
 impl ModifyIpamResourceDiscoveryOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamResourceDiscoveryOutput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput).
-    pub fn builder() -> crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryOutputBuilder{
+    pub fn builder() -> crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryOutputBuilder {
         crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIpamResourceDiscoveryOutput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceDiscoveryOutputBuilder {
     pub(crate) ipam_resource_discovery: ::std::option::Option<crate::types::IpamResourceDiscovery>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl ModifyIpamResourceDiscoveryOutputBuilder {
         self
     }
     /// <p>A resource discovery.</p>
-    pub fn set_ipam_resource_discovery(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamResourceDiscovery>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery(mut self, input: ::std::option::Option<crate::types::IpamResourceDiscovery>) -> Self {
         self.ipam_resource_discovery = input;
         self
     }
     /// <p>A resource discovery.</p>
-    pub fn get_ipam_resource_discovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamResourceDiscovery> {
+    pub fn get_ipam_resource_discovery(&self) -> &::std::option::Option<crate::types::IpamResourceDiscovery> {
         &self.ipam_resource_discovery
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl ModifyIpamResourceDiscoveryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyIpamResourceDiscoveryOutput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput {
+    pub fn build(self) -> crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput {
         crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput {
             ipam_resource_discovery: self.ipam_resource_discovery,
             _request_id: self._request_id,

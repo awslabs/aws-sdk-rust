@@ -30,9 +30,7 @@ impl DimensionMapping {
 
 /// A builder for [`DimensionMapping`](crate::types::DimensionMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionMappingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
@@ -58,17 +56,12 @@ impl DimensionMappingBuilder {
         self
     }
     /// <p>Type for the dimension. </p>
-    pub fn set_dimension_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionValueType>,
-    ) -> Self {
+    pub fn set_dimension_value_type(mut self, input: ::std::option::Option<crate::types::DimensionValueType>) -> Self {
         self.dimension_value_type = input;
         self
     }
     /// <p>Type for the dimension. </p>
-    pub fn get_dimension_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DimensionValueType> {
+    pub fn get_dimension_value_type(&self) -> &::std::option::Option<crate::types::DimensionValueType> {
         &self.dimension_value_type
     }
     /// Consumes the builder and constructs a [`DimensionMapping`](crate::types::DimensionMapping).

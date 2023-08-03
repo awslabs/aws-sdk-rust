@@ -29,16 +29,14 @@ impl ListConnectorDefinitionVersionsInput {
 }
 impl ListConnectorDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder {
         crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorDefinitionVersionsInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListConnectorDefinitionVersionsInputBuilder {
 }
 impl ListConnectorDefinitionVersionsInputBuilder {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_definition_id = input;
         self
     }
@@ -102,13 +94,10 @@ impl ListConnectorDefinitionVersionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput {
-                connector_definition_id: self.connector_definition_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                connector_definition_id: self.connector_definition_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

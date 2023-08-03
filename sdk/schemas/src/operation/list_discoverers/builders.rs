@@ -10,10 +10,7 @@ impl ListDiscoverersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_discoverers::ListDiscoverersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discoverers::ListDiscoverersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discoverers::ListDiscoverersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_discoverers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDiscoverersFluentBuilder {
         }
     }
     /// Access the ListDiscoverers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_discoverers::builders::ListDiscoverersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_discoverers::builders::ListDiscoverersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDiscoverersFluentBuilder {
             crate::operation::list_discoverers::ListDiscoverers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discoverers::ListDiscoverersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discoverers::ListDiscoverersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDiscoverersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDiscoverersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discoverers::ListDiscoverersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discoverers::ListDiscoverersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discoverers::ListDiscoverersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDiscoverersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discoverers::ListDiscoverersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discoverers::ListDiscoverersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discoverers::ListDiscoverersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListDiscoverersFluentBuilder {
             crate::operation::list_discoverers::ListDiscoverers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discoverers::ListDiscoverersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discoverers::ListDiscoverersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_discoverers::paginator::ListDiscoverersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_discoverers::paginator::ListDiscoverersPaginator {
-        crate::operation::list_discoverers::paginator::ListDiscoverersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_discoverers::paginator::ListDiscoverersPaginator {
+        crate::operation::list_discoverers::paginator::ListDiscoverersPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-    pub fn discoverer_id_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discoverer_id_prefix(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-    pub fn set_discoverer_id_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discoverer_id_prefix(input);
         self
     }
@@ -182,18 +155,12 @@ impl ListDiscoverersFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-    pub fn source_arn_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_arn_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn_prefix(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-    pub fn set_source_arn_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_arn_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn_prefix(input);
         self
     }

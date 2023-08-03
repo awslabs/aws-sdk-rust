@@ -22,17 +22,14 @@ impl WithdrawByoipCidrInput {
 }
 impl WithdrawByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
-    pub fn builder(
-    ) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
+    pub fn builder() -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder {
         crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WithdrawByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -69,15 +66,10 @@ impl WithdrawByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput {
-                cidr: self.cidr,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput {
+            cidr: self.cidr,
+            dry_run: self.dry_run,
+        })
     }
 }

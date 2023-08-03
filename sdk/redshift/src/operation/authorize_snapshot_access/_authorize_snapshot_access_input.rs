@@ -39,18 +39,14 @@ impl AuthorizeSnapshotAccessInput {
 }
 impl AuthorizeSnapshotAccessInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeSnapshotAccessInput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput).
-    pub fn builder(
-    ) -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder {
         crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeSnapshotAccessInput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeSnapshotAccessInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +55,12 @@ pub struct AuthorizeSnapshotAccessInputBuilder {
 }
 impl AuthorizeSnapshotAccessInputBuilder {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -93,18 +83,12 @@ impl AuthorizeSnapshotAccessInputBuilder {
         &self.snapshot_arn
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_cluster_identifier = input;
         self
     }
@@ -114,19 +98,13 @@ impl AuthorizeSnapshotAccessInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn account_with_restore_access(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn set_account_with_restore_access(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_with_restore_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_with_restore_access = input;
         self
     }
@@ -142,13 +120,11 @@ impl AuthorizeSnapshotAccessInputBuilder {
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_arn: self.snapshot_arn,
-                snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-                account_with_restore_access: self.account_with_restore_access,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
+            snapshot_identifier: self.snapshot_identifier,
+            snapshot_arn: self.snapshot_arn,
+            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
+            account_with_restore_access: self.account_with_restore_access,
+        })
     }
 }

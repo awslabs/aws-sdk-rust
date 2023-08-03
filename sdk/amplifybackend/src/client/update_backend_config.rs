@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`error(Option<String>)`](crate::operation::update_backend_config::UpdateBackendConfigOutput::error): <p>If the request fails, this error is returned.</p>
     ///   - [`login_auth_config(Option<LoginAuthConfigReqObj>)`](crate::operation::update_backend_config::UpdateBackendConfigOutput::login_auth_config): <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
     /// - On failure, responds with [`SdkError<UpdateBackendConfigError>`](crate::operation::update_backend_config::UpdateBackendConfigError)
-    pub fn update_backend_config(
-        &self,
-    ) -> crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder {
-        crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_backend_config(&self) -> crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder {
+        crate::operation::update_backend_config::builders::UpdateBackendConfigFluentBuilder::new(self.handle.clone())
     }
 }

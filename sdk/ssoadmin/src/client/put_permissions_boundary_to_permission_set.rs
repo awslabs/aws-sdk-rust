@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`permissions_boundary(PermissionsBoundary)`](crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder::permissions_boundary) / [`set_permissions_boundary(Option<PermissionsBoundary>)`](crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder::set_permissions_boundary): <p>The permissions boundary that you want to attach to a <code>PermissionSet</code>.</p>
     /// - On success, responds with [`PutPermissionsBoundaryToPermissionSetOutput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput)
     /// - On failure, responds with [`SdkError<PutPermissionsBoundaryToPermissionSetError>`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError)
-    pub fn put_permissions_boundary_to_permission_set(&self) -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder{
-        crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn put_permissions_boundary_to_permission_set(
+        &self,
+    ) -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder {
+        crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

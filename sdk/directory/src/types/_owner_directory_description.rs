@@ -37,9 +37,7 @@ impl OwnerDirectoryDescription {
         self.dns_ip_addrs.as_deref()
     }
     /// <p>Information about the VPC settings for the directory.</p>
-    pub fn vpc_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
+    pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
@@ -60,9 +58,7 @@ impl OwnerDirectoryDescription {
 
 /// A builder for [`OwnerDirectoryDescription`](crate::types::OwnerDirectoryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OwnerDirectoryDescriptionBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -112,17 +108,12 @@ impl OwnerDirectoryDescriptionBuilder {
         self
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// <p>Information about the VPC settings for the directory.</p>
@@ -131,17 +122,12 @@ impl OwnerDirectoryDescriptionBuilder {
         self
     }
     /// <p>Information about the VPC settings for the directory.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>) -> Self {
         self.vpc_settings = input;
         self
     }
     /// <p>Information about the VPC settings for the directory.</p>
-    pub fn get_vpc_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
+    pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
         &self.vpc_settings
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
@@ -150,10 +136,7 @@ impl OwnerDirectoryDescriptionBuilder {
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn set_radius_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusSettings>,
-    ) -> Self {
+    pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
         self.radius_settings = input;
         self
     }
@@ -167,10 +150,7 @@ impl OwnerDirectoryDescriptionBuilder {
         self
     }
     /// <p>Information about the status of the RADIUS server.</p>
-    pub fn set_radius_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusStatus>,
-    ) -> Self {
+    pub fn set_radius_status(mut self, input: ::std::option::Option<crate::types::RadiusStatus>) -> Self {
         self.radius_status = input;
         self
     }

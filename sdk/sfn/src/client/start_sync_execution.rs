@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`trace_header(Option<String>)`](crate::operation::start_sync_execution::StartSyncExecutionOutput::trace_header): <p>The X-Ray trace header that was passed to the execution.</p>
     ///   - [`billing_details(Option<BillingDetails>)`](crate::operation::start_sync_execution::StartSyncExecutionOutput::billing_details): <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     /// - On failure, responds with [`SdkError<StartSyncExecutionError>`](crate::operation::start_sync_execution::StartSyncExecutionError)
-    pub fn start_sync_execution(
-        &self,
-    ) -> crate::operation::start_sync_execution::builders::StartSyncExecutionFluentBuilder {
-        crate::operation::start_sync_execution::builders::StartSyncExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_sync_execution(&self) -> crate::operation::start_sync_execution::builders::StartSyncExecutionFluentBuilder {
+        crate::operation::start_sync_execution::builders::StartSyncExecutionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`create_time(Option<DateTime>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::create_time): <p>The date and time at which the policy was created.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::update_time): <p>The date and time at which the policy was last updated.</p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)
-    pub fn get_resource_policy(
-        &self,
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {
-        crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_policy(&self) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {
+        crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

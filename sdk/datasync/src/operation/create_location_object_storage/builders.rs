@@ -26,7 +26,7 @@ impl CreateLocationObjectStorageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationObjectStorageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageInputBuilder,
+    inner: crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageInputBuilder,
 }
 impl CreateLocationObjectStorageFluentBuilder {
     /// Creates a new `CreateLocationObjectStorage`.
@@ -37,7 +37,7 @@ impl CreateLocationObjectStorageFluentBuilder {
         }
     }
     /// Access the CreateLocationObjectStorage as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLocationObjectStorageFluentBuilder {
             crate::operation::create_location_object_storage::CreateLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_object_storage::CreateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_object_storage::CreateLocationObjectStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLocationObjectStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_object_storage::CreateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_object_storage::CreateLocationObjectStorageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_object_storage::CreateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_object_storage::CreateLocationObjectStorageError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateLocationObjectStorageFluentBuilder {
             crate::operation::create_location_object_storage::CreateLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_object_storage::CreateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_object_storage::CreateLocationObjectStorageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    pub fn server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    pub fn set_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
@@ -160,17 +143,12 @@ impl CreateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn set_server_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    ) -> Self {
+    pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
         self.inner = self.inner.set_server_protocol(input);
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn get_server_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
+    pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
         self.inner.get_server_protocol()
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
@@ -239,10 +217,7 @@ impl CreateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -260,10 +235,7 @@ impl CreateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -293,10 +265,7 @@ impl CreateLocationObjectStorageFluentBuilder {
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    pub fn set_server_certificate(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_server_certificate(input);
         self
     }

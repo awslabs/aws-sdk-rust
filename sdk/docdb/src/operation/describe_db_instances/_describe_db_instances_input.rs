@@ -59,18 +59,14 @@ impl DescribeDbInstancesInput {
 }
 impl DescribeDbInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
-        crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
+        crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbInstancesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -83,10 +79,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +88,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -132,10 +122,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only the information about the instances that are associated with the clusters that are identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the information about the instances that are identified by these ARNs.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -185,17 +172,13 @@ impl DescribeDbInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_instances::DescribeDbInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_instances::DescribeDbInstancesInput {
-                db_instance_identifier: self.db_instance_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_instances::DescribeDbInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_db_instances::DescribeDbInstancesInput {
+            db_instance_identifier: self.db_instance_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

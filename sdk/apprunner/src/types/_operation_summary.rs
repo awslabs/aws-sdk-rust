@@ -65,9 +65,7 @@ impl OperationSummary {
 
 /// A builder for [`OperationSummary`](crate::types::OperationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::OperationType>,
@@ -112,10 +110,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The current state of the operation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -143,10 +138,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -160,10 +152,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -177,10 +166,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

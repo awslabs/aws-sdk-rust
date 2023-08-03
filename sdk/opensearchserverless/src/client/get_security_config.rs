@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSecurityConfigOutput`](crate::operation::get_security_config::GetSecurityConfigOutput) with field(s):
     ///   - [`security_config_detail(Option<SecurityConfigDetail>)`](crate::operation::get_security_config::GetSecurityConfigOutput::security_config_detail): <p>Details of the requested security configuration.</p>
     /// - On failure, responds with [`SdkError<GetSecurityConfigError>`](crate::operation::get_security_config::GetSecurityConfigError)
-    pub fn get_security_config(
-        &self,
-    ) -> crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder {
-        crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_security_config(&self) -> crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder {
+        crate::operation::get_security_config::builders::GetSecurityConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl ListEphemeridesOutput {
 
 /// A builder for [`ListEphemeridesOutput`](crate::operation::list_ephemerides::ListEphemeridesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEphemeridesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ephemerides: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>,
@@ -70,17 +68,12 @@ impl ListEphemeridesOutputBuilder {
         self
     }
     /// <p>List of ephemerides.</p>
-    pub fn set_ephemerides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>,
-    ) -> Self {
+    pub fn set_ephemerides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>>) -> Self {
         self.ephemerides = input;
         self
     }
     /// <p>List of ephemerides.</p>
-    pub fn get_ephemerides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>> {
+    pub fn get_ephemerides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisItem>> {
         &self.ephemerides
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

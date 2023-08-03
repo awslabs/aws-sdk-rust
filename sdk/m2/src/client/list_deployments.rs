@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`deployments(Option<Vec<DeploymentSummary>>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>The list of deployments that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
-    pub fn list_deployments(
-        &self,
-    ) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
-        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
+        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

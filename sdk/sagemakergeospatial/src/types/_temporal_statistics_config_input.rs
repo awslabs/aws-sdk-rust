@@ -37,9 +37,7 @@ impl TemporalStatisticsConfigInput {
 
 /// A builder for [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemporalStatisticsConfigInputBuilder {
     pub(crate) group_by: ::std::option::Option<crate::types::GroupBy>,
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
@@ -72,17 +70,12 @@ impl TemporalStatisticsConfigInputBuilder {
         self
     }
     /// <p>The list of the statistics method options.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>) -> Self {
         self.statistics = input;
         self
     }
     /// <p>The list of the statistics method options.</p>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>> {
         &self.statistics
     }
     /// Appends an item to `target_bands`.
@@ -97,17 +90,12 @@ impl TemporalStatisticsConfigInputBuilder {
         self
     }
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_bands = input;
         self
     }
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    pub fn get_target_bands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).

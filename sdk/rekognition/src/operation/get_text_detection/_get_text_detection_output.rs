@@ -77,23 +77,19 @@ impl ::aws_http::request_id::RequestId for GetTextDetectionOutput {
 }
 impl GetTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetTextDetectionOutput`](crate::operation::get_text_detection::GetTextDetectionOutput).
-    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder {
         crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTextDetectionOutput`](crate::operation::get_text_detection::GetTextDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTextDetectionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
-    pub(crate) text_detections:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>>,
+    pub(crate) text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) text_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -108,10 +104,7 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>Current status of the text detection job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -120,18 +113,12 @@ impl GetTextDetectionOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -145,10 +132,7 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -168,17 +152,12 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    pub fn set_text_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>>,
-    ) -> Self {
+    pub fn set_text_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>>) -> Self {
         self.text_detections = input;
         self
     }
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    pub fn get_text_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>> {
+    pub fn get_text_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>> {
         &self.text_detections
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
@@ -196,18 +175,12 @@ impl GetTextDetectionOutputBuilder {
         &self.next_token
     }
     /// <p>Version number of the text detection model that was used to detect text.</p>
-    pub fn text_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn text_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the text detection model that was used to detect text.</p>
-    pub fn set_text_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_text_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_model_version = input;
         self
     }

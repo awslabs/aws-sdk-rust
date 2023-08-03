@@ -37,9 +37,7 @@ impl RelationalCatalogSource {
 
 /// A builder for [`RelationalCatalogSource`](crate::types::RelationalCatalogSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationalCatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

@@ -73,16 +73,14 @@ impl ::aws_http::request_id::RequestId for StartTargetedSentimentDetectionJobOut
 }
 impl StartTargetedSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobOutput`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput).
-    pub fn builder() -> crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobOutputBuilder {
         crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTargetedSentimentDetectionJobOutput`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -199,14 +197,11 @@ impl StartTargetedSentimentDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartTargetedSentimentDetectionJobOutput`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput).
-    pub fn build(self) -> crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput{
+    pub fn build(self) -> crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput {
         crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobOutput {
-            job_id: self.job_id
-            ,
-            job_arn: self.job_arn
-            ,
-            job_status: self.job_status
-            ,
+            job_id: self.job_id,
+            job_arn: self.job_arn,
+            job_status: self.job_status,
             _request_id: self._request_id,
         }
     }

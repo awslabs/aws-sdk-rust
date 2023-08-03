@@ -26,7 +26,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
+    inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
 }
 impl DescribeVpcPeeringConnectionsFluentBuilder {
     /// Creates a new `DescribeVpcPeeringConnections`.
@@ -37,7 +37,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         }
     }
     /// Access the DescribeVpcPeeringConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator {
         crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -176,10 +165,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -227,27 +213,19 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
     ///
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn vpc_peering_connection_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_peering_connection_ids(input.into());
         self
     }
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn set_vpc_peering_connection_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_ids(input);
         self
     }
     /// <p>The IDs of the VPC peering connections.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn get_vpc_peering_connection_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_peering_connection_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_peering_connection_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

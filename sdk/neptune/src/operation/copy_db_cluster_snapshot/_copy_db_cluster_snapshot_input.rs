@@ -84,18 +84,14 @@ impl CopyDbClusterSnapshotInput {
 }
 impl CopyDbClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder {
         crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyDbClusterSnapshotInputBuilder {
     pub(crate) source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -112,10 +108,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn source_db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -126,10 +119,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn set_source_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = input;
         self
     }
@@ -140,9 +130,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn get_source_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_snapshot_identifier
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
@@ -153,10 +141,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn target_db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -168,10 +153,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn set_target_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = input;
         self
     }
@@ -183,9 +165,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn get_target_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_snapshot_identifier
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
@@ -215,18 +195,12 @@ impl CopyDbClusterSnapshotInputBuilder {
         &self.kms_key_id
     }
     /// <p>Not currently supported.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }
@@ -260,10 +234,7 @@ impl CopyDbClusterSnapshotInputBuilder {
         self
     }
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -274,19 +245,15 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
-                source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,
-                target_db_cluster_snapshot_identifier: self.target_db_cluster_snapshot_identifier,
-                kms_key_id: self.kms_key_id,
-                pre_signed_url: self.pre_signed_url,
-                copy_tags: self.copy_tags,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
+            source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,
+            target_db_cluster_snapshot_identifier: self.target_db_cluster_snapshot_identifier,
+            kms_key_id: self.kms_key_id,
+            pre_signed_url: self.pre_signed_url,
+            copy_tags: self.copy_tags,
+            tags: self.tags,
+        })
     }
 }

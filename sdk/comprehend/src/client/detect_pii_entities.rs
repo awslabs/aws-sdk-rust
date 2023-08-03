@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec<PiiEntity>>)`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput::entities): <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     /// - On failure, responds with [`SdkError<DetectPiiEntitiesError>`](crate::operation::detect_pii_entities::DetectPiiEntitiesError)
-    pub fn detect_pii_entities(
-        &self,
-    ) -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder {
-        crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_pii_entities(&self) -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder {
+        crate::operation::detect_pii_entities::builders::DetectPiiEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

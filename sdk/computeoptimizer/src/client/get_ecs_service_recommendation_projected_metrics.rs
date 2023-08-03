@@ -11,7 +11,11 @@ impl super::Client {
     /// - On success, responds with [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput) with field(s):
     ///   - [`recommended_option_projected_metrics(Option<Vec<EcsServiceRecommendedOptionProjectedMetric>>)`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput::recommended_option_projected_metrics): <p> An array of objects that describes the projected metrics. </p>
     /// - On failure, responds with [`SdkError<GetECSServiceRecommendationProjectedMetricsError>`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError)
-    pub fn get_ecs_service_recommendation_projected_metrics(&self) -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetECSServiceRecommendationProjectedMetricsFluentBuilder{
-        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetECSServiceRecommendationProjectedMetricsFluentBuilder::new(self.handle.clone())
+    pub fn get_ecs_service_recommendation_projected_metrics(
+        &self,
+    ) -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetECSServiceRecommendationProjectedMetricsFluentBuilder {
+        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetECSServiceRecommendationProjectedMetricsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

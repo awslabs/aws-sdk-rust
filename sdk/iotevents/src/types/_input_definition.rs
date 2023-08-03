@@ -23,9 +23,7 @@ impl InputDefinition {
 
 /// A builder for [`InputDefinition`](crate::types::InputDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDefinitionBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
@@ -42,23 +40,16 @@ impl InputDefinitionBuilder {
         self
     }
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`InputDefinition`](crate::types::InputDefinition).
     pub fn build(self) -> crate::types::InputDefinition {
-        crate::types::InputDefinition {
-            attributes: self.attributes,
-        }
+        crate::types::InputDefinition { attributes: self.attributes }
     }
 }

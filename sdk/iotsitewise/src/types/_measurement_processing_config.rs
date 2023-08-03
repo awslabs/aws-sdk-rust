@@ -23,9 +23,7 @@ impl MeasurementProcessingConfig {
 
 /// A builder for [`MeasurementProcessingConfig`](crate::types::MeasurementProcessingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeasurementProcessingConfigBuilder {
     pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
@@ -36,10 +34,7 @@ impl MeasurementProcessingConfigBuilder {
         self
     }
     /// <p>The forwarding configuration for the given measurement property. </p>
-    pub fn set_forwarding_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ForwardingConfig>,
-    ) -> Self {
+    pub fn set_forwarding_config(mut self, input: ::std::option::Option<crate::types::ForwardingConfig>) -> Self {
         self.forwarding_config = input;
         self
     }

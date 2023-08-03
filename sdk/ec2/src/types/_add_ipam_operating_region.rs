@@ -24,9 +24,7 @@ impl AddIpamOperatingRegion {
 
 /// A builder for [`AddIpamOperatingRegion`](crate::types::AddIpamOperatingRegion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddIpamOperatingRegionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
 }

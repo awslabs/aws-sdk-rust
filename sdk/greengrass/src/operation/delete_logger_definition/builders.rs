@@ -37,10 +37,7 @@ impl DeleteLoggerDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteLoggerDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteLoggerDefinitionFluentBuilder {
             crate::operation::delete_logger_definition::DeleteLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logger_definition::DeleteLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logger_definition::DeleteLoggerDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteLoggerDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logger_definition::DeleteLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logger_definition::DeleteLoggerDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logger_definition::DeleteLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logger_definition::DeleteLoggerDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteLoggerDefinitionFluentBuilder {
             crate::operation::delete_logger_definition::DeleteLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_logger_definition::DeleteLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_logger_definition::DeleteLoggerDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logger_definition_id(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logger_definition_id(input);
         self
     }

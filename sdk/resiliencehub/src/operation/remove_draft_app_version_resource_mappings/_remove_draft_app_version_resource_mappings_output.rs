@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RemoveDraftAppVersionResourceMappings
 }
 impl RemoveDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsOutput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput).
-    pub fn builder() -> crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder {
         crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveDraftAppVersionResourceMappingsOutput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappingsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl RemoveDraftAppVersionResourceMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsOutput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput).
-    pub fn build(self) -> crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput{
+    pub fn build(self) -> crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput {
         crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
             _request_id: self._request_id,
         }
     }

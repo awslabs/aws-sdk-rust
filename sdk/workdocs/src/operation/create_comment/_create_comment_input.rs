@@ -98,18 +98,12 @@ pub struct CreateCommentInputBuilder {
 }
 impl CreateCommentInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -193,10 +187,7 @@ impl CreateCommentInputBuilder {
         self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentVisibilityType>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::CommentVisibilityType>) -> Self {
         self.visibility = input;
         self
     }
@@ -221,10 +212,7 @@ impl CreateCommentInputBuilder {
     /// Consumes the builder and constructs a [`CreateCommentInput`](crate::operation::create_comment::CreateCommentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_comment::CreateCommentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_comment::CreateCommentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_comment::CreateCommentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

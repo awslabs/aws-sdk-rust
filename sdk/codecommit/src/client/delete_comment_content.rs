@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCommentContentOutput`](crate::operation::delete_comment_content::DeleteCommentContentOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::operation::delete_comment_content::DeleteCommentContentOutput::comment): <p>Information about the comment you just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteCommentContentError>`](crate::operation::delete_comment_content::DeleteCommentContentError)
-    pub fn delete_comment_content(
-        &self,
-    ) -> crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder {
-        crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_comment_content(&self) -> crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder {
+        crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::new(self.handle.clone())
     }
 }

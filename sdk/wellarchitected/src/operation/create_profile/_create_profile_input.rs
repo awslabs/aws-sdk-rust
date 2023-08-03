@@ -11,8 +11,7 @@ pub struct CreateProfileInput {
     pub profile_description: ::std::option::Option<::std::string::String>,
     /// <p>The profile questions.</p>
     #[doc(hidden)]
-    pub profile_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
+    pub profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
@@ -21,9 +20,7 @@ pub struct CreateProfileInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the profile.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProfileInput {
     /// <p>Name of the profile.</p>
@@ -35,9 +32,7 @@ impl CreateProfileInput {
         self.profile_description.as_deref()
     }
     /// <p>The profile questions.</p>
-    pub fn profile_questions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
+    pub fn profile_questions(&self) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
         self.profile_questions.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
@@ -48,11 +43,7 @@ impl CreateProfileInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,18 +56,13 @@ impl CreateProfileInput {
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_description: ::std::option::Option<::std::string::String>,
-    pub(crate) profile_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
+    pub(crate) profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProfileInputBuilder {
     /// <p>Name of the profile.</p>
@@ -94,18 +80,12 @@ impl CreateProfileInputBuilder {
         &self.profile_name
     }
     /// <p>The profile description.</p>
-    pub fn profile_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile description.</p>
-    pub fn set_profile_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_description = input;
         self
     }
@@ -125,27 +105,19 @@ impl CreateProfileInputBuilder {
         self
     }
     /// <p>The profile questions.</p>
-    pub fn set_profile_questions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
-    ) -> Self {
+    pub fn set_profile_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>) -> Self {
         self.profile_questions = input;
         self
     }
     /// <p>The profile questions.</p>
-    pub fn get_profile_questions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+    pub fn get_profile_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
         &self.profile_questions
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -153,10 +125,7 @@ impl CreateProfileInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -172,41 +141,25 @@ impl CreateProfileInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the profile.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the profile.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_profile::CreateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
             profile_name: self.profile_name,
             profile_description: self.profile_description,

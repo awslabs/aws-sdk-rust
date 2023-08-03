@@ -2,8 +2,7 @@
 pub fn ser_delete_function_headers(
     input: &crate::operation::delete_function::DeleteFunctionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_function_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -28,24 +24,15 @@ pub fn de_delete_function_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_function::DeleteFunctionOutput,
-    crate::operation::delete_function::DeleteFunctionError,
-> {
+) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::delete_function::DeleteFunctionError::unhandled(generic))
-        }
+        None => return Err(crate::operation::delete_function::DeleteFunctionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -55,11 +42,8 @@ pub fn de_delete_function_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::FunctionInUseBuilder::default();
-                output = crate::protocol_serde::shape_function_in_use::de_function_in_use_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                output = crate::protocol_serde::shape_function_in_use::de_function_in_use_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -68,74 +52,66 @@ pub fn de_delete_function_http_error(
             }
             tmp
         }),
-        "InvalidIfMatchVersion" => {
-            crate::operation::delete_function::DeleteFunctionError::InvalidIfMatchVersion({
+        "InvalidIfMatchVersion" => crate::operation::delete_function::DeleteFunctionError::InvalidIfMatchVersion({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NoSuchFunctionExists" => {
-            crate::operation::delete_function::DeleteFunctionError::NoSuchFunctionExists({
+                let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NoSuchFunctionExists" => crate::operation::delete_function::DeleteFunctionError::NoSuchFunctionExists({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PreconditionFailed" => {
-            crate::operation::delete_function::DeleteFunctionError::PreconditionFailed({
+                let mut output = crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
+                output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PreconditionFailed" => crate::operation::delete_function::DeleteFunctionError::PreconditionFailed({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::PreconditionFailedBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::operation::delete_function::DeleteFunctionError::UnsupportedOperation({
+                let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
+                output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::delete_function::DeleteFunctionError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::UnsupportedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_function::DeleteFunctionError::generic(generic),
     })
 }
@@ -145,17 +121,11 @@ pub fn de_delete_function_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_function::DeleteFunctionOutput,
-    crate::operation::delete_function::DeleteFunctionError,
-> {
+) -> std::result::Result<crate::operation::delete_function::DeleteFunctionOutput, crate::operation::delete_function::DeleteFunctionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_function::builders::DeleteFunctionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_function::builders::DeleteFunctionOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

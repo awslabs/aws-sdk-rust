@@ -10,10 +10,7 @@ impl DeleteBackupVaultInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault::DeleteBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault::DeleteBackupVaultError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault::DeleteBackupVaultError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_backup_vault();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBackupVaultFluentBuilder {
         }
     }
     /// Access the DeleteBackupVault as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_backup_vault::builders::DeleteBackupVaultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_backup_vault::builders::DeleteBackupVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteBackupVaultFluentBuilder {
             crate::operation::delete_backup_vault::DeleteBackupVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault::DeleteBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault::DeleteBackupVaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteBackupVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteBackupVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault::DeleteBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault::DeleteBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault::DeleteBackupVaultError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteBackupVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault::DeleteBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault::DeleteBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault::DeleteBackupVaultError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteBackupVaultFluentBuilder {
             crate::operation::delete_backup_vault::DeleteBackupVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_vault::DeleteBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault::DeleteBackupVaultError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }

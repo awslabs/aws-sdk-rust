@@ -29,16 +29,14 @@ impl ListConfigurationRevisionsInput {
 }
 impl ListConfigurationRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
-    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder{
+    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder {
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationRevisionsInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListConfigurationRevisionsInputBuilder {
 }
 impl ListConfigurationRevisionsInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListConfigurationRevisionsInputBuilder {
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
-                configuration_id: self.configuration_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
+            configuration_id: self.configuration_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

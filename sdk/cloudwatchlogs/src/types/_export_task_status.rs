@@ -30,9 +30,7 @@ impl ExportTaskStatus {
 
 /// A builder for [`ExportTaskStatus`](crate::types::ExportTaskStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ExportTaskStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ExportTaskStatusBuilder {
         self
     }
     /// <p>The status code of the export task.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ExportTaskStatusCode>) -> Self {
         self.code = input;
         self
     }

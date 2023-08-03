@@ -23,9 +23,7 @@ impl BatchGetObjectInformation {
 
 /// A builder for [`BatchGetObjectInformation`](crate::types::BatchGetObjectInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetObjectInformationBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
@@ -36,10 +34,7 @@ impl BatchGetObjectInformationBuilder {
         self
     }
     /// <p>A reference to the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }

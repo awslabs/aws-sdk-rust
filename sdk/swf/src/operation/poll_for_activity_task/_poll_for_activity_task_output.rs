@@ -57,17 +57,14 @@ impl ::aws_http::request_id::RequestId for PollForActivityTaskOutput {
 }
 impl PollForActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder {
+    pub fn builder() -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder {
         crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForActivityTaskOutputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
@@ -126,17 +123,12 @@ impl PollForActivityTaskOutputBuilder {
         self
     }
     /// <p>The workflow execution that started this activity task.</p>
-    pub fn set_workflow_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The workflow execution that started this activity task.</p>
-    pub fn get_workflow_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+    pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.workflow_execution
     }
     /// <p>The type of this activity task.</p>
@@ -145,10 +137,7 @@ impl PollForActivityTaskOutputBuilder {
         self
     }
     /// <p>The type of this activity task.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }

@@ -42,7 +42,7 @@ impl DetectProtectiveEquipmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder,
+    inner: crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder,
 }
 impl DetectProtectiveEquipmentFluentBuilder {
     /// Creates a new `DetectProtectiveEquipment`.
@@ -53,7 +53,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
         }
     }
     /// Access the DetectProtectiveEquipment as a reference.
-    pub fn as_input(&self) -> &crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +65,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
             crate::operation::detect_protective_equipment::DetectProtectiveEquipment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +75,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +84,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError>,
     > {
         let op = self
             .inner
@@ -114,9 +107,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +121,7 @@ impl DetectProtectiveEquipmentFluentBuilder {
             crate::operation::detect_protective_equipment::DetectProtectiveEquipment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,25 +140,17 @@ impl DetectProtectiveEquipmentFluentBuilder {
         self.inner.get_image()
     }
     /// <p>An array of PPE types that you want to summarize.</p>
-    pub fn summarization_attributes(
-        mut self,
-        input: crate::types::ProtectiveEquipmentSummarizationAttributes,
-    ) -> Self {
+    pub fn summarization_attributes(mut self, input: crate::types::ProtectiveEquipmentSummarizationAttributes) -> Self {
         self.inner = self.inner.summarization_attributes(input);
         self
     }
     /// <p>An array of PPE types that you want to summarize.</p>
-    pub fn set_summarization_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,
-    ) -> Self {
+    pub fn set_summarization_attributes(mut self, input: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>) -> Self {
         self.inner = self.inner.set_summarization_attributes(input);
         self
     }
     /// <p>An array of PPE types that you want to summarize.</p>
-    pub fn get_summarization_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes> {
+    pub fn get_summarization_attributes(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes> {
         self.inner.get_summarization_attributes()
     }
 }

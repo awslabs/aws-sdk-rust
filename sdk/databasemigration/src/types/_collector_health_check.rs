@@ -44,9 +44,7 @@ impl CollectorHealthCheck {
 
 /// A builder for [`CollectorHealthCheck`](crate::types::CollectorHealthCheck).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectorHealthCheckBuilder {
     pub(crate) collector_status: ::std::option::Option<crate::types::CollectorStatus>,
     pub(crate) local_collector_s3_access: ::std::option::Option<bool>,
@@ -60,10 +58,7 @@ impl CollectorHealthCheckBuilder {
         self
     }
     /// <p>The status of the Fleet Advisor collector.</p>
-    pub fn set_collector_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectorStatus>,
-    ) -> Self {
+    pub fn set_collector_status(mut self, input: ::std::option::Option<crate::types::CollectorStatus>) -> Self {
         self.collector_status = input;
         self
     }
@@ -105,10 +100,7 @@ impl CollectorHealthCheckBuilder {
         self
     }
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
-    pub fn set_web_collector_granted_role_based_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_web_collector_granted_role_based_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.web_collector_granted_role_based_access = input;
         self
     }

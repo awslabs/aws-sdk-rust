@@ -27,7 +27,7 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder,
+    inner: crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder,
 }
 impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     /// Creates a new `ProvisionPublicIpv4PoolCidr`.
@@ -38,7 +38,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         }
     }
     /// Access the ProvisionPublicIpv4PoolCidr as a reference.
-    pub fn as_input(&self) -> &crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError>,
     > {
         self.customize_middleware().await
     }

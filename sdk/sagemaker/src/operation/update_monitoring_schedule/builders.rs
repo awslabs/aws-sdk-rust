@@ -26,7 +26,7 @@ impl UpdateMonitoringScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitoringScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleInputBuilder,
+    inner: crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleInputBuilder,
 }
 impl UpdateMonitoringScheduleFluentBuilder {
     /// Creates a new `UpdateMonitoringSchedule`.
@@ -37,10 +37,7 @@ impl UpdateMonitoringScheduleFluentBuilder {
         }
     }
     /// Access the UpdateMonitoringSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateMonitoringScheduleFluentBuilder {
             crate::operation::update_monitoring_schedule::UpdateMonitoringSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateMonitoringScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateMonitoringScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateMonitoringScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateMonitoringScheduleFluentBuilder {
             crate::operation::update_monitoring_schedule::UpdateMonitoringSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
@@ -144,25 +124,17 @@ impl UpdateMonitoringScheduleFluentBuilder {
         self.inner.get_monitoring_schedule_name()
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn monitoring_schedule_config(
-        mut self,
-        input: crate::types::MonitoringScheduleConfig,
-    ) -> Self {
+    pub fn monitoring_schedule_config(mut self, input: crate::types::MonitoringScheduleConfig) -> Self {
         self.inner = self.inner.monitoring_schedule_config(input);
         self
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn set_monitoring_schedule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_config(mut self, input: ::std::option::Option<crate::types::MonitoringScheduleConfig>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_config(input);
         self
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn get_monitoring_schedule_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+    pub fn get_monitoring_schedule_config(&self) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
         self.inner.get_monitoring_schedule_config()
     }
 }

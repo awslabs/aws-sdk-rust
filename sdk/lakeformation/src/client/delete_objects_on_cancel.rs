@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`objects(Vec<VirtualObject>)`](crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelFluentBuilder::objects) / [`set_objects(Option<Vec<VirtualObject>>)`](crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelFluentBuilder::set_objects): <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
     /// - On success, responds with [`DeleteObjectsOnCancelOutput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput)
     /// - On failure, responds with [`SdkError<DeleteObjectsOnCancelError>`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError)
-    pub fn delete_objects_on_cancel(
-        &self,
-    ) -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelFluentBuilder
-    {
+    pub fn delete_objects_on_cancel(&self) -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelFluentBuilder {
         crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelFluentBuilder::new(self.handle.clone())
     }
 }

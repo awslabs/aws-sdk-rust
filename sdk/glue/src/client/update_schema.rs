@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`schema_name(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`registry_name(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::registry_name): <p>The name of the registry that contains the schema.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::operation::update_schema::UpdateSchemaError)
-    pub fn update_schema(
-        &self,
-    ) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
-        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_schema(&self) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
+        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(self.handle.clone())
     }
 }

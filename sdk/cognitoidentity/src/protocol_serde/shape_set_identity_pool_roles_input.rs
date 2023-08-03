@@ -23,10 +23,7 @@ pub fn ser_set_identity_pool_roles_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_role_mapping::ser_role_mapping(
-                    &mut object_10,
-                    value_9,
-                )?;
+                crate::protocol_serde::shape_role_mapping::ser_role_mapping(&mut object_10, value_9)?;
                 object_10.finish();
             }
         }

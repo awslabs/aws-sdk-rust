@@ -26,7 +26,7 @@ impl StartSourceNetworkReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSourceNetworkReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder,
+    inner: crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder,
 }
 impl StartSourceNetworkReplicationFluentBuilder {
     /// Creates a new `StartSourceNetworkReplication`.
@@ -37,7 +37,7 @@ impl StartSourceNetworkReplicationFluentBuilder {
         }
     }
     /// Access the StartSourceNetworkReplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartSourceNetworkReplicationFluentBuilder {
             crate::operation::start_source_network_replication::StartSourceNetworkReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_replication::StartSourceNetworkReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartSourceNetworkReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartSourceNetworkReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_replication::StartSourceNetworkReplicationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartSourceNetworkReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_replication::StartSourceNetworkReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartSourceNetworkReplicationFluentBuilder {
             crate::operation::start_source_network_replication::StartSourceNetworkReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_source_network_replication::StartSourceNetworkReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_source_network_replication::StartSourceNetworkReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the Source Network to replicate.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_network_id(input.into());
         self
     }
     /// <p>ID of the Source Network to replicate.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_network_id(input);
         self
     }

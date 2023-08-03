@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAuditSuppressionsOutput {
 }
 impl ListAuditSuppressionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditSuppressionsOutput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsOutputBuilder {
         crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditSuppressionsOutput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditSuppressionsOutputBuilder {
     pub(crate) suppressions: ::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListAuditSuppressionsOutputBuilder {
         self
     }
     /// <p> List of audit suppressions. </p>
-    pub fn set_suppressions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>>,
-    ) -> Self {
+    pub fn set_suppressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>>) -> Self {
         self.suppressions = input;
         self
     }
     /// <p> List of audit suppressions. </p>
-    pub fn get_suppressions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>> {
+    pub fn get_suppressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>> {
         &self.suppressions
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>

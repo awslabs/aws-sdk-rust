@@ -35,12 +35,9 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
-    pub(crate) domain_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
+    pub(crate) domain_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-    pub fn set_domain_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
-    ) -> Self {
+    pub fn set_domain_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>) -> Self {
         self.domain_summaries = input;
         self
     }
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-    pub fn get_domain_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
+    pub fn get_domain_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
         &self.domain_summaries
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>

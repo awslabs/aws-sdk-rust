@@ -30,9 +30,7 @@ impl TopicPreference {
 
 /// A builder for [`TopicPreference`](crate::types::TopicPreference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicPreferenceBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
@@ -58,17 +56,12 @@ impl TopicPreferenceBuilder {
         self
     }
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub fn set_subscription_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionStatus>,
-    ) -> Self {
+    pub fn set_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
         self.subscription_status = input;
         self
     }
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub fn get_subscription_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+    pub fn get_subscription_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
         &self.subscription_status
     }
     /// Consumes the builder and constructs a [`TopicPreference`](crate::types::TopicPreference).

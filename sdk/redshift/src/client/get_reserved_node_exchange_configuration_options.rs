@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput::marker): <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
     ///   - [`reserved_node_configuration_option_list(Option<Vec<ReservedNodeConfigurationOption>>)`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput::reserved_node_configuration_option_list): <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     /// - On failure, responds with [`SdkError<GetReservedNodeExchangeConfigurationOptionsError>`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError)
-    pub fn get_reserved_node_exchange_configuration_options(&self) -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsFluentBuilder{
-        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsFluentBuilder::new(self.handle.clone())
+    pub fn get_reserved_node_exchange_configuration_options(
+        &self,
+    ) -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsFluentBuilder {
+        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

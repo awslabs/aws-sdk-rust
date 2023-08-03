@@ -51,9 +51,7 @@ impl SsekmsBuilder {
     }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     pub fn build(self) -> crate::types::Ssekms {
-        crate::types::Ssekms {
-            key_id: self.key_id,
-        }
+        crate::types::Ssekms { key_id: self.key_id }
     }
 }
 impl ::std::fmt::Debug for SsekmsBuilder {

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`model_version_number(Option<String>)`](crate::operation::update_model_version::UpdateModelVersionOutput::model_version_number): <p>The model version number of the model version updated.</p>
     ///   - [`status(Option<String>)`](crate::operation::update_model_version::UpdateModelVersionOutput::status): <p>The status of the updated model version.</p>
     /// - On failure, responds with [`SdkError<UpdateModelVersionError>`](crate::operation::update_model_version::UpdateModelVersionError)
-    pub fn update_model_version(
-        &self,
-    ) -> crate::operation::update_model_version::builders::UpdateModelVersionFluentBuilder {
-        crate::operation::update_model_version::builders::UpdateModelVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_model_version(&self) -> crate::operation::update_model_version::builders::UpdateModelVersionFluentBuilder {
+        crate::operation::update_model_version::builders::UpdateModelVersionFluentBuilder::new(self.handle.clone())
     }
 }

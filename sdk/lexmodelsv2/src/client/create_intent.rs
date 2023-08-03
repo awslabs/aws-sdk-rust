@@ -37,11 +37,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_intent::CreateIntentOutput::creation_date_time): <p>A timestamp of the date and time that the intent was created.</p>
     ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::operation::create_intent::CreateIntentOutput::initial_response_setting): <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     /// - On failure, responds with [`SdkError<CreateIntentError>`](crate::operation::create_intent::CreateIntentError)
-    pub fn create_intent(
-        &self,
-    ) -> crate::operation::create_intent::builders::CreateIntentFluentBuilder {
-        crate::operation::create_intent::builders::CreateIntentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_intent(&self) -> crate::operation::create_intent::builders::CreateIntentFluentBuilder {
+        crate::operation::create_intent::builders::CreateIntentFluentBuilder::new(self.handle.clone())
     }
 }

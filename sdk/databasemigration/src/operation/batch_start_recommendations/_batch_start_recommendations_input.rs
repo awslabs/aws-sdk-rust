@@ -5,8 +5,7 @@
 pub struct BatchStartRecommendationsInput {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
     #[doc(hidden)]
-    pub data:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
+    pub data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
 }
 impl BatchStartRecommendationsInput {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
@@ -16,19 +15,16 @@ impl BatchStartRecommendationsInput {
 }
 impl BatchStartRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
-    pub fn builder() -> crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder {
         crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsInputBuilder {
-    pub(crate) data:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
+    pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
 }
 impl BatchStartRecommendationsInputBuilder {
     /// Appends an item to `data`.
@@ -43,20 +39,12 @@ impl BatchStartRecommendationsInputBuilder {
         self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>) -> Self {
         self.data = input;
         self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>
-    {
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
@@ -66,10 +54,6 @@ impl BatchStartRecommendationsInputBuilder {
         crate::operation::batch_start_recommendations::BatchStartRecommendationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_start_recommendations::BatchStartRecommendationsInput {
-                data: self.data,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_start_recommendations::BatchStartRecommendationsInput { data: self.data })
     }
 }

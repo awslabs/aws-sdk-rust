@@ -42,10 +42,7 @@ pub fn ser_cache_settings(
     if let Some(var_10) = &input.forwarded_query_strings {
         #[allow(unused_mut)]
         let mut object_11 = object.key("forwardedQueryStrings").start_object();
-        crate::protocol_serde::shape_query_string_object::ser_query_string_object(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_query_string_object::ser_query_string_object(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())
@@ -53,17 +50,9 @@ pub fn ser_cache_settings(
 
 pub(crate) fn de_cache_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CacheSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CacheSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -73,90 +62,66 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "defaultTTL" => {
-                                builder = builder.set_default_ttl(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "defaultTTL" => {
+                            builder = builder.set_default_ttl(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "minimumTTL" => {
-                                builder = builder.set_minimum_ttl(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "maximumTTL" => {
-                                builder = builder.set_maximum_ttl(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "allowedHTTPMethods" => {
-                                builder = builder.set_allowed_http_methods(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "cachedHTTPMethods" => {
-                                builder = builder.set_cached_http_methods(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "forwardedCookies" => {
-                                builder = builder.set_forwarded_cookies(
-                                    crate::protocol_serde::shape_cookie_object::de_cookie_object(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "forwardedHeaders" => {
-                                builder = builder.set_forwarded_headers(
-                                    crate::protocol_serde::shape_header_object::de_header_object(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "forwardedQueryStrings" => {
-                                builder = builder.set_forwarded_query_strings(
-                                    crate::protocol_serde::shape_query_string_object::de_query_string_object(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "minimumTTL" => {
+                            builder = builder.set_minimum_ttl(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maximumTTL" => {
+                            builder = builder.set_maximum_ttl(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "allowedHTTPMethods" => {
+                            builder = builder.set_allowed_http_methods(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "cachedHTTPMethods" => {
+                            builder = builder.set_cached_http_methods(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "forwardedCookies" => {
+                            builder = builder.set_forwarded_cookies(crate::protocol_serde::shape_cookie_object::de_cookie_object(tokens)?);
+                        }
+                        "forwardedHeaders" => {
+                            builder = builder.set_forwarded_headers(crate::protocol_serde::shape_header_object::de_header_object(tokens)?);
+                        }
+                        "forwardedQueryStrings" => {
+                            builder = builder
+                                .set_forwarded_query_strings(crate::protocol_serde::shape_query_string_object::de_query_string_object(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

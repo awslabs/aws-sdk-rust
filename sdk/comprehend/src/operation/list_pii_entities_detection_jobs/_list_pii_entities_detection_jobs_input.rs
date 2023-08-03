@@ -29,16 +29,14 @@ impl ListPiiEntitiesDetectionJobsInput {
 }
 impl ListPiiEntitiesDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsInput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder {
         crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPiiEntitiesDetectionJobsInput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPiiEntitiesDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,12 @@ impl ListPiiEntitiesDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter> {
         &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -99,12 +92,10 @@ impl ListPiiEntitiesDetectionJobsInputBuilder {
         crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

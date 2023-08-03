@@ -10,10 +10,7 @@ impl UpdateBackupPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_backup_plan::UpdateBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backup_plan::UpdateBackupPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backup_plan::UpdateBackupPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_backup_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBackupPlanFluentBuilder {
         }
     }
     /// Access the UpdateBackupPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_backup_plan::builders::UpdateBackupPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBackupPlanFluentBuilder {
             crate::operation::update_backup_plan::UpdateBackupPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backup_plan::UpdateBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backup_plan::UpdateBackupPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBackupPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBackupPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backup_plan::UpdateBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backup_plan::UpdateBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backup_plan::UpdateBackupPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBackupPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backup_plan::UpdateBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backup_plan::UpdateBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backup_plan::UpdateBackupPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateBackupPlanFluentBuilder {
             crate::operation::update_backup_plan::UpdateBackupPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backup_plan::UpdateBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backup_plan::UpdateBackupPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_id(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateBackupPlanFluentBuilder {
         self
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPlanInput>,
-    ) -> Self {
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlanInput>) -> Self {
         self.inner = self.inner.set_backup_plan(input);
         self
     }

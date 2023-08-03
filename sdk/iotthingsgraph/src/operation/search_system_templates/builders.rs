@@ -38,10 +38,7 @@ impl SearchSystemTemplatesFluentBuilder {
         }
     }
     /// Access the SearchSystemTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SearchSystemTemplatesFluentBuilder {
             crate::operation::search_system_templates::SearchSystemTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_templates::SearchSystemTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_templates::SearchSystemTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SearchSystemTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SearchSystemTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_system_templates::SearchSystemTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_templates::SearchSystemTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_templates::SearchSystemTemplatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SearchSystemTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_system_templates::SearchSystemTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_templates::SearchSystemTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_templates::SearchSystemTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl SearchSystemTemplatesFluentBuilder {
             crate::operation::search_system_templates::SearchSystemTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_system_templates::SearchSystemTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_system_templates::SearchSystemTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator {
-        crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator {
+        crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -145,17 +126,12 @@ impl SearchSystemTemplatesFluentBuilder {
         self
     }
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>

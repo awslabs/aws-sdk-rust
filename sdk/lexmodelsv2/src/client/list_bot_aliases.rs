@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_aliases::ListBotAliasesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     ///   - [`bot_id(Option<String>)`](crate::operation::list_bot_aliases::ListBotAliasesOutput::bot_id): <p>The identifier of the bot associated with the aliases.</p>
     /// - On failure, responds with [`SdkError<ListBotAliasesError>`](crate::operation::list_bot_aliases::ListBotAliasesError)
-    pub fn list_bot_aliases(
-        &self,
-    ) -> crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder {
-        crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bot_aliases(&self) -> crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder {
+        crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::new(self.handle.clone())
     }
 }

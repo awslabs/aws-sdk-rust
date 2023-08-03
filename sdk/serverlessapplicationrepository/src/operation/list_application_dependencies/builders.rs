@@ -26,7 +26,7 @@ impl ListApplicationDependenciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationDependenciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder,
+    inner: crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder,
 }
 impl ListApplicationDependenciesFluentBuilder {
     /// Creates a new `ListApplicationDependencies`.
@@ -37,7 +37,7 @@ impl ListApplicationDependenciesFluentBuilder {
         }
     }
     /// Access the ListApplicationDependencies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListApplicationDependenciesFluentBuilder {
             crate::operation::list_application_dependencies::ListApplicationDependencies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dependencies::ListApplicationDependenciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dependencies::ListApplicationDependenciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListApplicationDependenciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListApplicationDependenciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_dependencies::ListApplicationDependenciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dependencies::ListApplicationDependenciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dependencies::ListApplicationDependenciesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListApplicationDependenciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_dependencies::ListApplicationDependenciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dependencies::ListApplicationDependenciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dependencies::ListApplicationDependenciesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListApplicationDependenciesFluentBuilder {
             crate::operation::list_application_dependencies::ListApplicationDependencies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dependencies::ListApplicationDependenciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dependencies::ListApplicationDependenciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_application_dependencies::paginator::ListApplicationDependenciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_application_dependencies::paginator::ListApplicationDependenciesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_application_dependencies::paginator::ListApplicationDependenciesPaginator {
         crate::operation::list_application_dependencies::paginator::ListApplicationDependenciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -175,18 +158,12 @@ impl ListApplicationDependenciesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The semantic version of the application to get.</p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
     /// <p>The semantic version of the application to get.</p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }

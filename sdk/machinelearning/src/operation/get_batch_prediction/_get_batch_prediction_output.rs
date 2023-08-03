@@ -148,17 +148,14 @@ impl ::aws_http::request_id::RequestId for GetBatchPredictionOutput {
 }
 impl GetBatchPredictionOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionOutput`](crate::operation::get_batch_prediction::GetBatchPredictionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_prediction::builders::GetBatchPredictionOutputBuilder {
+    pub fn builder() -> crate::operation::get_batch_prediction::builders::GetBatchPredictionOutputBuilder {
         crate::operation::get_batch_prediction::builders::GetBatchPredictionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchPredictionOutput`](crate::operation::get_batch_prediction::GetBatchPredictionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchPredictionOutputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
@@ -181,18 +178,12 @@ pub struct GetBatchPredictionOutputBuilder {
 }
 impl GetBatchPredictionOutputBuilder {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }
@@ -215,40 +206,26 @@ impl GetBatchPredictionOutputBuilder {
         &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
-    pub fn batch_prediction_data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
-    pub fn set_batch_prediction_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_data_source_id = input;
         self
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
-    pub fn get_batch_prediction_data_source_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_batch_prediction_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch_prediction_data_source_id
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_data_location_s3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_data_location_s3 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn set_input_data_location_s3(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_data_location_s3 = input;
         self
     }
@@ -257,18 +234,12 @@ impl GetBatchPredictionOutputBuilder {
         &self.input_data_location_s3
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_by_iam_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_iam_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn set_created_by_iam_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_by_iam_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by_iam_user = input;
         self
     }
@@ -282,10 +253,7 @@ impl GetBatchPredictionOutputBuilder {
         self
     }
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -299,10 +267,7 @@ impl GetBatchPredictionOutputBuilder {
         self
     }
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -421,10 +386,7 @@ impl GetBatchPredictionOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn set_finished_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finished_at = input;
         self
     }
@@ -438,10 +400,7 @@ impl GetBatchPredictionOutputBuilder {
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }

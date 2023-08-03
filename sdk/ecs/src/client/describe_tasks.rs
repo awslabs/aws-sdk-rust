@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<Task>>)`](crate::operation::describe_tasks::DescribeTasksOutput::tasks): <p>The list of tasks.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::describe_tasks::DescribeTasksOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<DescribeTasksError>`](crate::operation::describe_tasks::DescribeTasksError)
-    pub fn describe_tasks(
-        &self,
-    ) -> crate::operation::describe_tasks::builders::DescribeTasksFluentBuilder {
-        crate::operation::describe_tasks::builders::DescribeTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tasks(&self) -> crate::operation::describe_tasks::builders::DescribeTasksFluentBuilder {
+        crate::operation::describe_tasks::builders::DescribeTasksFluentBuilder::new(self.handle.clone())
     }
 }

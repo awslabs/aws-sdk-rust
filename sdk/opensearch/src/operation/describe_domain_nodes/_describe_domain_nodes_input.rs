@@ -16,18 +16,14 @@ impl DescribeDomainNodesInput {
 }
 impl DescribeDomainNodesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainNodesInput`](crate::operation::describe_domain_nodes::DescribeDomainNodesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_domain_nodes::builders::DescribeDomainNodesInputBuilder {
-        crate::operation::describe_domain_nodes::builders::DescribeDomainNodesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_domain_nodes::builders::DescribeDomainNodesInputBuilder {
+        crate::operation::describe_domain_nodes::builders::DescribeDomainNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainNodesInput`](crate::operation::describe_domain_nodes::DescribeDomainNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainNodesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl DescribeDomainNodesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainNodesInput`](crate::operation::describe_domain_nodes::DescribeDomainNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domain_nodes::DescribeDomainNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_nodes::DescribeDomainNodesInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_domain_nodes::DescribeDomainNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_domain_nodes::DescribeDomainNodesInput {
+            domain_name: self.domain_name,
+        })
     }
 }

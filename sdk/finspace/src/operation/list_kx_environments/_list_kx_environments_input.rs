@@ -22,17 +22,14 @@ impl ListKxEnvironmentsInput {
 }
 impl ListKxEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListKxEnvironmentsInput`](crate::operation::list_kx_environments::ListKxEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsInputBuilder {
+    pub fn builder() -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsInputBuilder {
         crate::operation::list_kx_environments::builders::ListKxEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxEnvironmentsInput`](crate::operation::list_kx_environments::ListKxEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxEnvironmentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListKxEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListKxEnvironmentsInput`](crate::operation::list_kx_environments::ListKxEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kx_environments::ListKxEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_kx_environments::ListKxEnvironmentsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_kx_environments::ListKxEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_kx_environments::ListKxEnvironmentsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

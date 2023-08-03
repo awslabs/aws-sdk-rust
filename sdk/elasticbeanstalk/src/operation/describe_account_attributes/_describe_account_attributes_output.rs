@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
     pub(crate) resource_quotas: ::std::option::Option<crate::types::ResourceQuotas>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
-    pub fn set_resource_quotas(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuotas>,
-    ) -> Self {
+    pub fn set_resource_quotas(mut self, input: ::std::option::Option<crate::types::ResourceQuotas>) -> Self {
         self.resource_quotas = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
+    pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
             resource_quotas: self.resource_quotas,
             _request_id: self._request_id,

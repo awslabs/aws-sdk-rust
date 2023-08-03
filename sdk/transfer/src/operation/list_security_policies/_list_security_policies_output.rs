@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSecurityPoliciesOutput {
 }
 impl ListSecurityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityPoliciesOutput`](crate::operation::list_security_policies::ListSecurityPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder {
         crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityPoliciesOutput`](crate::operation::list_security_policies::ListSecurityPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) security_policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,27 +61,19 @@ impl ListSecurityPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_security_policy_names`](Self::set_security_policy_names).
     ///
     /// <p>An array of security policies that were listed.</p>
-    pub fn security_policy_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_policy_names.unwrap_or_default();
         v.push(input.into());
         self.security_policy_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of security policies that were listed.</p>
-    pub fn set_security_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_policy_names = input;
         self
     }
     /// <p>An array of security policies that were listed.</p>
-    pub fn get_security_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_policy_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

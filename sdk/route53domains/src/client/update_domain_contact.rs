@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_domain_contact::UpdateDomainContactOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainContactError>`](crate::operation::update_domain_contact::UpdateDomainContactError)
-    pub fn update_domain_contact(
-        &self,
-    ) -> crate::operation::update_domain_contact::builders::UpdateDomainContactFluentBuilder {
-        crate::operation::update_domain_contact::builders::UpdateDomainContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_domain_contact(&self) -> crate::operation::update_domain_contact::builders::UpdateDomainContactFluentBuilder {
+        crate::operation::update_domain_contact::builders::UpdateDomainContactFluentBuilder::new(self.handle.clone())
     }
 }

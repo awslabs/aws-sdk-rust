@@ -39,9 +39,7 @@ impl DescribePhoneNumberFluentBuilder {
         }
     }
     /// Access the DescribePhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribePhoneNumberFluentBuilder {
             crate::operation::describe_phone_number::DescribePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_number::DescribePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_number::DescribePhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribePhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phone_number::DescribePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_number::DescribePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_number::DescribePhoneNumberError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phone_number::DescribePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_number::DescribePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_number::DescribePhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl DescribePhoneNumberFluentBuilder {
             crate::operation::describe_phone_number::DescribePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_number::DescribePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_number::DescribePhoneNumberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }

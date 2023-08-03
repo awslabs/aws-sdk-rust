@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateTemplatePermissionsError>`](crate::operation::update_template_permissions::UpdateTemplatePermissionsError)
-    pub fn update_template_permissions(&self) -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsFluentBuilder{
+    pub fn update_template_permissions(&self) -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsFluentBuilder {
         crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -96,13 +96,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClarifyTextLanguage {
     #[allow(missing_docs)] // documentation missing in model
@@ -291,9 +285,7 @@ impl ::std::convert::From<&str> for ClarifyTextLanguage {
             "xx" => ClarifyTextLanguage::MultiLanguage,
             "yo" => ClarifyTextLanguage::Yoruba,
             "zh" => ClarifyTextLanguage::Chinese,
-            other => ClarifyTextLanguage::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClarifyTextLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -374,11 +366,9 @@ impl ClarifyTextLanguage {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa",
-            "fi", "fr", "ga", "gu", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "kn", "ky",
-            "lb", "lij", "lt", "lv", "mk", "ml", "mr", "nb", "ne", "nl", "pl", "pt", "ro", "ru",
-            "sa", "si", "sk", "sl", "sq", "sr", "sv", "ta", "te", "tl", "tn", "tr", "tt", "uk",
-            "ur", "xx", "yo", "zh",
+            "af", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fr", "ga", "gu", "he", "hi", "hr", "hu", "hy",
+            "id", "is", "it", "kn", "ky", "lb", "lij", "lt", "lv", "mk", "ml", "mr", "nb", "ne", "nl", "pl", "pt", "ro", "ru", "sa", "si", "sk",
+            "sl", "sq", "sr", "sv", "ta", "te", "tl", "tn", "tr", "tt", "uk", "ur", "xx", "yo", "zh",
         ]
     }
 }

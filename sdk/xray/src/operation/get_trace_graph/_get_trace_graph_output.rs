@@ -35,9 +35,7 @@ impl GetTraceGraphOutput {
 
 /// A builder for [`GetTraceGraphOutput`](crate::operation::get_trace_graph::GetTraceGraphOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTraceGraphOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetTraceGraphOutputBuilder {
         self
     }
     /// <p>The services that have processed one of the specified requests.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
         self.services = input;
         self
     }

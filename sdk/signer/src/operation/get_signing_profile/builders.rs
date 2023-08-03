@@ -10,10 +10,7 @@ impl GetSigningProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_signing_profile::GetSigningProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_profile::GetSigningProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_profile::GetSigningProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_signing_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSigningProfileFluentBuilder {
         }
     }
     /// Access the GetSigningProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSigningProfileFluentBuilder {
             crate::operation::get_signing_profile::GetSigningProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_profile::GetSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_profile::GetSigningProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSigningProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSigningProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signing_profile::GetSigningProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_profile::GetSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_profile::GetSigningProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSigningProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signing_profile::GetSigningProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_profile::GetSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_profile::GetSigningProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSigningProfileFluentBuilder {
             crate::operation::get_signing_profile::GetSigningProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_profile::GetSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_profile::GetSigningProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetSigningProfileFluentBuilder {
         self.inner.get_profile_name()
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_owner(input.into());
         self
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_owner(input);
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RelationshipType {
         match s {
             "CAUSE_OF_INPUT_ANOMALY_GROUP" => RelationshipType::CauseOfInputAnomalyGroup,
             "EFFECT_OF_INPUT_ANOMALY_GROUP" => RelationshipType::EffectOfInputAnomalyGroup,
-            other => {
-                RelationshipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RelationshipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,10 +75,7 @@ impl RelationshipType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CAUSE_OF_INPUT_ANOMALY_GROUP",
-            "EFFECT_OF_INPUT_ANOMALY_GROUP",
-        ]
+        &["CAUSE_OF_INPUT_ANOMALY_GROUP", "EFFECT_OF_INPUT_ANOMALY_GROUP"]
     }
 }
 impl ::std::convert::AsRef<str> for RelationshipType {

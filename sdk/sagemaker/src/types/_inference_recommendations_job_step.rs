@@ -16,8 +16,7 @@ pub struct InferenceRecommendationsJobStep {
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>The details for a specific benchmark.</p>
     #[doc(hidden)]
-    pub inference_benchmark:
-        ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
+    pub inference_benchmark: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
 }
 impl InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
@@ -34,9 +33,7 @@ impl InferenceRecommendationsJobStep {
         self.status.as_ref()
     }
     /// <p>The details for a specific benchmark.</p>
-    pub fn inference_benchmark(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobInferenceBenchmark> {
+    pub fn inference_benchmark(&self) -> ::std::option::Option<&crate::types::RecommendationJobInferenceBenchmark> {
         self.inference_benchmark.as_ref()
     }
 }
@@ -49,15 +46,12 @@ impl InferenceRecommendationsJobStep {
 
 /// A builder for [`InferenceRecommendationsJobStep`](crate::types::InferenceRecommendationsJobStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceRecommendationsJobStepBuilder {
     pub(crate) step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecommendationJobStatus>,
-    pub(crate) inference_benchmark:
-        ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
+    pub(crate) inference_benchmark: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
 }
 impl InferenceRecommendationsJobStepBuilder {
     /// <p>The type of the subtask.</p>
@@ -68,10 +62,7 @@ impl InferenceRecommendationsJobStepBuilder {
     }
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    pub fn set_step_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStepType>,
-    ) -> Self {
+    pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.step_type = input;
         self
     }
@@ -100,10 +91,7 @@ impl InferenceRecommendationsJobStepBuilder {
         self
     }
     /// <p>The current status of the benchmark.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -112,25 +100,17 @@ impl InferenceRecommendationsJobStepBuilder {
         &self.status
     }
     /// <p>The details for a specific benchmark.</p>
-    pub fn inference_benchmark(
-        mut self,
-        input: crate::types::RecommendationJobInferenceBenchmark,
-    ) -> Self {
+    pub fn inference_benchmark(mut self, input: crate::types::RecommendationJobInferenceBenchmark) -> Self {
         self.inference_benchmark = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for a specific benchmark.</p>
-    pub fn set_inference_benchmark(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
-    ) -> Self {
+    pub fn set_inference_benchmark(mut self, input: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>) -> Self {
         self.inference_benchmark = input;
         self
     }
     /// <p>The details for a specific benchmark.</p>
-    pub fn get_inference_benchmark(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobInferenceBenchmark> {
+    pub fn get_inference_benchmark(&self) -> &::std::option::Option<crate::types::RecommendationJobInferenceBenchmark> {
         &self.inference_benchmark
     }
     /// Consumes the builder and constructs a [`InferenceRecommendationsJobStep`](crate::types::InferenceRecommendationsJobStep).

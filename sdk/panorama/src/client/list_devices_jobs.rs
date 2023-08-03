@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`device_jobs(Option<Vec<DeviceJob>>)`](crate::operation::list_devices_jobs::ListDevicesJobsOutput::device_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices_jobs::ListDevicesJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDevicesJobsError>`](crate::operation::list_devices_jobs::ListDevicesJobsError)
-    pub fn list_devices_jobs(
-        &self,
-    ) -> crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder {
-        crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_devices_jobs(&self) -> crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder {
+        crate::operation::list_devices_jobs::builders::ListDevicesJobsFluentBuilder::new(self.handle.clone())
     }
 }

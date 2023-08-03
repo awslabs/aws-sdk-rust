@@ -35,9 +35,7 @@ impl ListCollectorsOutput {
 
 /// A builder for [`ListCollectorsOutput`](crate::operation::list_collectors::ListCollectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectorsOutputBuilder {
     pub(crate) collectors: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCollectorsOutputBuilder {
         self
     }
     /// <p> The list of all the installed collectors. </p>
-    pub fn set_collectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>,
-    ) -> Self {
+    pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>) -> Self {
         self.collectors = input;
         self
     }
     /// <p> The list of all the installed collectors. </p>
-    pub fn get_collectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Collector>> {
+    pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Collector>> {
         &self.collectors
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>

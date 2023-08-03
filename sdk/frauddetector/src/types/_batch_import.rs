@@ -107,9 +107,7 @@ impl BatchImport {
 
 /// A builder for [`BatchImport`](crate::types::BatchImport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AsyncJobStatus>,
@@ -146,10 +144,7 @@ impl BatchImportBuilder {
         self
     }
     /// <p>The status of the batch import job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AsyncJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -158,18 +153,12 @@ impl BatchImportBuilder {
         &self.status
     }
     /// <p>The reason batch import job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason batch import job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -192,18 +181,12 @@ impl BatchImportBuilder {
         &self.start_time
     }
     /// <p>Timestamp of when batch import job completed.</p>
-    pub fn completion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when batch import job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completion_time = input;
         self
     }
@@ -240,18 +223,12 @@ impl BatchImportBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }

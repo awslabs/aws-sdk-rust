@@ -29,17 +29,14 @@ impl ListLogPatternSetsInput {
 }
 impl ListLogPatternSetsInput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder {
+    pub fn builder() -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder {
         crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogPatternSetsInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct ListLogPatternSetsInputBuilder {
 }
 impl ListLogPatternSetsInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -97,16 +88,12 @@ impl ListLogPatternSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_log_pattern_sets::ListLogPatternSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_log_pattern_sets::ListLogPatternSetsInput {
-                resource_group_name: self.resource_group_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_log_pattern_sets::ListLogPatternSetsInput {
+            resource_group_name: self.resource_group_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

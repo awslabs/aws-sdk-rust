@@ -51,10 +51,7 @@ pub fn ser_wcdma_obj(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_wcdma_nmr_obj::ser_wcdma_nmr_obj(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_wcdma_nmr_obj::ser_wcdma_nmr_obj(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

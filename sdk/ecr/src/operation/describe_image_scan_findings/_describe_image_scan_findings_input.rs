@@ -43,16 +43,14 @@ impl DescribeImageScanFindingsInput {
 }
 impl DescribeImageScanFindingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageScanFindingsInput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput).
-    pub fn builder() -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder {
         crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageScanFindingsInput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageScanFindingsInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl DescribeImageScanFindingsInputBuilder {
         &self.registry_id
     }
     /// <p>The repository for the image for which to describe the scan findings.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository for the image for which to describe the scan findings.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -101,10 +93,7 @@ impl DescribeImageScanFindingsInputBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.image_id = input;
         self
     }
@@ -147,14 +136,12 @@ impl DescribeImageScanFindingsInputBuilder {
         crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                image_id: self.image_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_id: self.image_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPermissionAssociationsOutput {
 }
 impl ListPermissionAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
-    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder {
         crate::operation::list_permission_associations::builders::ListPermissionAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionAssociationsOutputBuilder {
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListPermissionAssociationsOutputBuilder {
         self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A structure with information about this customer managed permission.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedPermission>> {
         &self.permissions
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -94,9 +86,7 @@ impl ListPermissionAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPermissionAssociationsOutput`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
         crate::operation::list_permission_associations::ListPermissionAssociationsOutput {
             permissions: self.permissions,
             next_token: self.next_token,

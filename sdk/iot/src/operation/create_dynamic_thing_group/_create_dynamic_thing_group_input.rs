@@ -33,9 +33,7 @@ impl CreateDynamicThingGroupInput {
         self.thing_group_name.as_deref()
     }
     /// <p>The dynamic thing group properties.</p>
-    pub fn thing_group_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThingGroupProperties> {
+    pub fn thing_group_properties(&self) -> ::std::option::Option<&crate::types::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
     /// <p>The dynamic thing group index name.</p> <note>
@@ -62,18 +60,14 @@ impl CreateDynamicThingGroupInput {
 }
 impl CreateDynamicThingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDynamicThingGroupInput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupInputBuilder {
         crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDynamicThingGroupInput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDynamicThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
@@ -84,18 +78,12 @@ pub struct CreateDynamicThingGroupInputBuilder {
 }
 impl CreateDynamicThingGroupInputBuilder {
     /// <p>The dynamic thing group name to create.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group name to create.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -109,17 +97,12 @@ impl CreateDynamicThingGroupInputBuilder {
         self
     }
     /// <p>The dynamic thing group properties.</p>
-    pub fn set_thing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingGroupProperties>,
-    ) -> Self {
+    pub fn set_thing_group_properties(mut self, input: ::std::option::Option<crate::types::ThingGroupProperties>) -> Self {
         self.thing_group_properties = input;
         self
     }
     /// <p>The dynamic thing group properties.</p>
-    pub fn get_thing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+    pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
         &self.thing_group_properties
     }
     /// <p>The dynamic thing group index name.</p> <note>
@@ -162,20 +145,14 @@ impl CreateDynamicThingGroupInputBuilder {
     /// <p>The dynamic thing group query version.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group query version.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -197,10 +174,7 @@ impl CreateDynamicThingGroupInputBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -215,15 +189,13 @@ impl CreateDynamicThingGroupInputBuilder {
         crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                thing_group_properties: self.thing_group_properties,
-                index_name: self.index_name,
-                query_string: self.query_string,
-                query_version: self.query_version,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
+            thing_group_name: self.thing_group_name,
+            thing_group_properties: self.thing_group_properties,
+            index_name: self.index_name,
+            query_string: self.query_string,
+            query_version: self.query_version,
+            tags: self.tags,
+        })
     }
 }

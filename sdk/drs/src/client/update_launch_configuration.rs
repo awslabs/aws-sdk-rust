@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`copy_tags(Option<bool>)`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationError)
-    pub fn update_launch_configuration(&self) -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder{
+    pub fn update_launch_configuration(&self) -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder {
         crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

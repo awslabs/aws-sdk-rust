@@ -31,18 +31,14 @@ impl DescribeWorkspaceBundlesInput {
 }
 impl DescribeWorkspaceBundlesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceBundlesInput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder {
         crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceBundlesInput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesInputBuilder {
     pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -61,10 +57,7 @@ impl DescribeWorkspaceBundlesInputBuilder {
         self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn set_bundle_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bundle_ids = input;
         self
     }
@@ -110,12 +103,10 @@ impl DescribeWorkspaceBundlesInputBuilder {
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput {
-                bundle_ids: self.bundle_ids,
-                owner: self.owner,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput {
+            bundle_ids: self.bundle_ids,
+            owner: self.owner,
+            next_token: self.next_token,
+        })
     }
 }

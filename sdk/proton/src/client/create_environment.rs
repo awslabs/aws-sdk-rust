@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
-    pub fn create_environment(
-        &self,
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
-        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_environment(&self) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
+        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

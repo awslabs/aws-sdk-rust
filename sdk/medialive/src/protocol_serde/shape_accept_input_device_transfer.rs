@@ -9,168 +9,167 @@ pub fn de_accept_input_device_transfer_http_error(
     crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadGatewayException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::BadGatewayException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "BadRequestException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "GatewayTimeoutException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::GatewayTimeoutException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InternalServerErrorException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::InternalServerErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerErrorException" => {
+            crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "NotFoundException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::NotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::TooManyRequestsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "UnprocessableEntityException" => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::UnprocessableEntityException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "UnprocessableEntityException" => {
+            crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::UnprocessableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnprocessableEntityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(_response_body, output).map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError::generic(generic),
     })
 }
 
@@ -186,9 +185,7 @@ pub fn de_accept_input_device_transfer_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

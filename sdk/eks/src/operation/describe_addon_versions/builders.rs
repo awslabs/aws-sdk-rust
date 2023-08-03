@@ -37,10 +37,7 @@ impl DescribeAddonVersionsFluentBuilder {
         }
     }
     /// Access the DescribeAddonVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAddonVersionsFluentBuilder {
             crate::operation::describe_addon_versions::DescribeAddonVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_versions::DescribeAddonVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAddonVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAddonVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_versions::DescribeAddonVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAddonVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_versions::DescribeAddonVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl DescribeAddonVersionsFluentBuilder {
             crate::operation::describe_addon_versions::DescribeAddonVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addon_versions::DescribeAddonVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
-        crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
+        crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn kubernetes_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kubernetes_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kubernetes_version(input.into());
         self
     }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
-    pub fn set_kubernetes_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kubernetes_version(input);
         self
     }
@@ -212,10 +187,7 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
@@ -233,10 +205,7 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn set_publishers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_publishers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_publishers(input);
         self
     }
@@ -254,10 +223,7 @@ impl DescribeAddonVersionsFluentBuilder {
         self
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owners(input);
         self
     }

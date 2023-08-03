@@ -10,10 +10,7 @@ impl CreateWorkflowStepInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_workflow_step();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWorkflowStepFluentBuilder {
         }
     }
     /// Access the CreateWorkflowStep as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateWorkflowStepFluentBuilder {
             crate::operation::create_workflow_step::CreateWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateWorkflowStepFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateWorkflowStepFluentBuilder {
             crate::operation::create_workflow_step::CreateWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateWorkflowStepFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_group_id(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.inner = self.inner.set_step_action_type(input);
         self
     }
@@ -202,10 +177,7 @@ impl CreateWorkflowStepFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn workflow_step_automation_configuration(
-        mut self,
-        input: crate::types::WorkflowStepAutomationConfiguration,
-    ) -> Self {
+    pub fn workflow_step_automation_configuration(mut self, input: crate::types::WorkflowStepAutomationConfiguration) -> Self {
         self.inner = self.inner.workflow_step_automation_configuration(input);
         self
     }
@@ -218,9 +190,7 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn get_workflow_step_automation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
+    pub fn get_workflow_step_automation_configuration(&self) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
         self.inner.get_workflow_step_automation_configuration()
     }
     /// Appends an item to `stepTarget`.
@@ -233,17 +203,12 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_target(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_target(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_step_target(input);
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_target(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_step_target()
     }
     /// Appends an item to `outputs`.
@@ -256,17 +221,12 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
         self.inner.get_outputs()
     }
     /// Appends an item to `previous`.
@@ -279,10 +239,7 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_previous(input);
         self
     }
@@ -300,10 +257,7 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_next(input);
         self
     }

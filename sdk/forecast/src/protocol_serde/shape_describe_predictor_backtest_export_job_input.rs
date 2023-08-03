@@ -4,9 +4,7 @@ pub fn ser_describe_predictor_backtest_export_job_input(
     input: &crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.predictor_backtest_export_job_arn {
-        object
-            .key("PredictorBacktestExportJobArn")
-            .string(var_1.as_str());
+        object.key("PredictorBacktestExportJobArn").string(var_1.as_str());
     }
     Ok(())
 }

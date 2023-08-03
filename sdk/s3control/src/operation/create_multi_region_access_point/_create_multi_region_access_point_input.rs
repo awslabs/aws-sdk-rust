@@ -23,24 +23,20 @@ impl CreateMultiRegionAccessPointInput {
         self.client_token.as_deref()
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateMultiRegionAccessPointInput> {
+    pub fn details(&self) -> ::std::option::Option<&crate::types::CreateMultiRegionAccessPointInput> {
         self.details.as_ref()
     }
 }
 impl CreateMultiRegionAccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
-    pub fn builder() -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder{
+    pub fn builder() -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder {
         crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -81,17 +77,12 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateMultiRegionAccessPointInput>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::CreateMultiRegionAccessPointInput>) -> Self {
         self.details = input;
         self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateMultiRegionAccessPointInput> {
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::CreateMultiRegionAccessPointInput> {
         &self.details
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput).
@@ -101,12 +92,10 @@ impl CreateMultiRegionAccessPointInputBuilder {
         crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput {
-                account_id: self.account_id,
-                client_token: self.client_token,
-                details: self.details,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput {
+            account_id: self.account_id,
+            client_token: self.client_token,
+            details: self.details,
+        })
     }
 }

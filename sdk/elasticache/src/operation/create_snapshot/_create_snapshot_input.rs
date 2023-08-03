@@ -51,9 +51,7 @@ impl CreateSnapshotInput {
 
 /// A builder for [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct CreateSnapshotInputBuilder {
 }
 impl CreateSnapshotInputBuilder {
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl CreateSnapshotInputBuilder {
         &self.replication_group_id
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -103,18 +89,12 @@ impl CreateSnapshotInputBuilder {
         &self.cache_cluster_id
     }
     /// <p>A name for the snapshot being created.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the snapshot being created.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -148,10 +128,7 @@ impl CreateSnapshotInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,10 +139,7 @@ impl CreateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot::CreateSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
             replication_group_id: self.replication_group_id,
             cache_cluster_id: self.cache_cluster_id,

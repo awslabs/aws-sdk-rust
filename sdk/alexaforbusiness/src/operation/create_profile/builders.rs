@@ -10,10 +10,7 @@ impl CreateProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_profile::CreateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profile::CreateProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateProfileFluentBuilder {
         }
     }
     /// Access the CreateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -163,10 +155,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>The distance unit to be used by devices in the profile.</p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
@@ -180,10 +169,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    pub fn set_temperature_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::TemperatureUnit>,
-    ) -> Self {
+    pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
         self.inner = self.inner.set_temperature_unit(input);
         self
     }
@@ -220,18 +206,12 @@ impl CreateProfileFluentBuilder {
         self.inner.get_locale()
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -296,25 +276,17 @@ impl CreateProfileFluentBuilder {
         self.inner.get_data_retention_opt_in()
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn meeting_room_configuration(
-        mut self,
-        input: crate::types::CreateMeetingRoomConfiguration,
-    ) -> Self {
+    pub fn meeting_room_configuration(mut self, input: crate::types::CreateMeetingRoomConfiguration) -> Self {
         self.inner = self.inner.meeting_room_configuration(input);
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn set_meeting_room_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_room_configuration(mut self, input: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>) -> Self {
         self.inner = self.inner.set_meeting_room_configuration(input);
         self
     }
     /// <p>The meeting room settings of a room profile.</p>
-    pub fn get_meeting_room_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateMeetingRoomConfiguration> {
+    pub fn get_meeting_room_configuration(&self) -> &::std::option::Option<crate::types::CreateMeetingRoomConfiguration> {
         self.inner.get_meeting_room_configuration()
     }
     /// Appends an item to `Tags`.
@@ -327,10 +299,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>The tags for the profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

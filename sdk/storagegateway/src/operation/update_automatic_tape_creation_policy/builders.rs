@@ -5,16 +5,16 @@ pub use crate::operation::update_automatic_tape_creation_policy::_update_automat
 
 impl UpdateAutomaticTapeCreationPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_automatic_tape_creation_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAutomaticTapeCreationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder,
+    inner: crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder,
 }
 impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
     /// Creates a new `UpdateAutomaticTapeCreationPolicy`.
@@ -40,15 +40,20 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
         }
     }
     /// Access the UpdateAutomaticTapeCreationPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `AutomaticTapeCreationRules`.
@@ -102,10 +117,7 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
     /// To override the contents of this collection use [`set_automatic_tape_creation_rules`](Self::set_automatic_tape_creation_rules).
     ///
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(
-        mut self,
-        input: crate::types::AutomaticTapeCreationRule,
-    ) -> Self {
+    pub fn automatic_tape_creation_rules(mut self, input: crate::types::AutomaticTapeCreationRule) -> Self {
         self.inner = self.inner.automatic_tape_creation_rules(input);
         self
     }
@@ -118,9 +130,7 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
         self
     }
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
-    pub fn get_automatic_tape_creation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
+    pub fn get_automatic_tape_creation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
         self.inner.get_automatic_tape_creation_rules()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>

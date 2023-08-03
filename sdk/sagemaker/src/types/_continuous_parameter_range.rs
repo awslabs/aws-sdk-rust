@@ -100,9 +100,7 @@ impl ContinuousParameterRange {
 
 /// A builder for [`ContinuousParameterRange`](crate::types::ContinuousParameterRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousParameterRangeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) min_value: ::std::option::Option<::std::string::String>,
@@ -214,10 +212,7 @@ impl ContinuousParameterRangeBuilder {
     /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
     /// </dd>
     /// </dl>
-    pub fn set_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterScalingType>,
-    ) -> Self {
+    pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::HyperParameterScalingType>) -> Self {
         self.scaling_type = input;
         self
     }
@@ -250,9 +245,7 @@ impl ContinuousParameterRangeBuilder {
     /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
     /// </dd>
     /// </dl>
-    pub fn get_scaling_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterScalingType> {
+    pub fn get_scaling_type(&self) -> &::std::option::Option<crate::types::HyperParameterScalingType> {
         &self.scaling_type
     }
     /// Consumes the builder and constructs a [`ContinuousParameterRange`](crate::types::ContinuousParameterRange).

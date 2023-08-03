@@ -39,9 +39,7 @@ impl CostCategoryValues {
 
 /// A builder for [`CostCategoryValues`](crate::types::CostCategoryValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategoryValuesBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,10 +72,7 @@ impl CostCategoryValuesBuilder {
         self
     }
     /// <p>The specific value of the Cost Category.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -97,17 +92,12 @@ impl CostCategoryValuesBuilder {
         self
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-    pub fn set_match_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
-    ) -> Self {
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
         self.match_options = input;
         self
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-    pub fn get_match_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`CostCategoryValues`](crate::types::CostCategoryValues).

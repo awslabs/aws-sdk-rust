@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationHdfsOutput {
 }
 impl CreateLocationHdfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder {
+    pub fn builder() -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder {
         crate::operation::create_location_hdfs::builders::CreateLocationHdfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationHdfsOutput`](crate::operation::create_location_hdfs::CreateLocationHdfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

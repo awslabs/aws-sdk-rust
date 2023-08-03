@@ -15,18 +15,14 @@ impl GetPendingJobExecutionsInput {
 }
 impl GetPendingJobExecutionsInput {
     /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder {
         crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPendingJobExecutionsInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetPendingJobExecutionsInputBuilder {
         crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput {
-                thing_name: self.thing_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput { thing_name: self.thing_name })
     }
 }

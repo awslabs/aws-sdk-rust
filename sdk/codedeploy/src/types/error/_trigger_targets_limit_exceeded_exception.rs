@@ -27,17 +27,13 @@ impl ::std::fmt::Display for TriggerTargetsLimitExceededException {
     }
 }
 impl ::std::error::Error for TriggerTargetsLimitExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TriggerTargetsLimitExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TriggerTargetsLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TriggerTargetsLimitExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TriggerTargetsLimitExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -51,9 +47,7 @@ impl TriggerTargetsLimitExceededException {
 
 /// A builder for [`TriggerTargetsLimitExceededException`](crate::types::error::TriggerTargetsLimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TriggerTargetsLimitExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -80,10 +74,7 @@ impl TriggerTargetsLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

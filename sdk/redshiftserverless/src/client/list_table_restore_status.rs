@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput::next_token): <p>If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will returns results on the next page.</p>
     ///   - [`table_restore_statuses(Option<Vec<TableRestoreStatus>>)`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput::table_restore_statuses): <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListTableRestoreStatusError>`](crate::operation::list_table_restore_status::ListTableRestoreStatusError)
-    pub fn list_table_restore_status(
-        &self,
-    ) -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder
-    {
+    pub fn list_table_restore_status(&self) -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder {
         crate::operation::list_table_restore_status::builders::ListTableRestoreStatusFluentBuilder::new(self.handle.clone())
     }
 }

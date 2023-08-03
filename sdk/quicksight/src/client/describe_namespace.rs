@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_namespace::DescribeNamespaceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_namespace::DescribeNamespaceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeNamespaceError>`](crate::operation::describe_namespace::DescribeNamespaceError)
-    pub fn describe_namespace(
-        &self,
-    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder {
-        crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_namespace(&self) -> crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder {
+        crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,26 +22,18 @@ impl DeleteKeyspaceInput {
 
 /// A builder for [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeyspaceInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyspaceInputBuilder {
     /// <p>The name of the keyspace to be deleted.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace to be deleted.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteKeyspaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_keyspace::DeleteKeyspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyspace::DeleteKeyspaceInput {
             keyspace_name: self.keyspace_name,
         })

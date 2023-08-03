@@ -94,9 +94,7 @@ impl AwsKmsKeyDetails {
 
 /// A builder for [`AwsKmsKeyDetails`](crate::types::AwsKmsKeyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsKmsKeyDetailsBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<f64>,
@@ -109,18 +107,12 @@ pub struct AwsKmsKeyDetailsBuilder {
 }
 impl AwsKmsKeyDetailsBuilder {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }

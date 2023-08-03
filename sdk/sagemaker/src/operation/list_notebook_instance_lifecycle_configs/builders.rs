@@ -5,16 +5,16 @@ pub use crate::operation::list_notebook_instance_lifecycle_configs::_list_notebo
 
 impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_notebook_instance_lifecycle_configs();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder,
+    inner: crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder,
 }
 impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
     /// Creates a new `ListNotebookInstanceLifecycleConfigs`.
@@ -37,15 +37,22 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         }
     }
     /// Access the ListNotebookInstanceLifecycleConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +89,38 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator{
-        crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator {
+        crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,54 +156,35 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey> {
         self.inner.get_sort_by()
     }
     /// <p>The sort order for results.</p>
-    pub fn sort_order(
-        mut self,
-        input: crate::types::NotebookInstanceLifecycleConfigSortOrder,
-    ) -> Self {
+    pub fn sort_order(mut self, input: crate::types::NotebookInstanceLifecycleConfigSortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
     /// <p>The sort order for results.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>The sort order for results.</p>
-    pub fn get_sort_order(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder> {
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder> {
         self.inner.get_sort_order()
     }
     /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -195,10 +198,7 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -212,10 +212,7 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -229,17 +226,12 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
@@ -248,17 +240,12 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
 }

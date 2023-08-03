@@ -37,10 +37,7 @@ impl ImportPlaybackKeyPairFluentBuilder {
         }
     }
     /// Access the ImportPlaybackKeyPair as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ImportPlaybackKeyPairFluentBuilder {
             crate::operation::import_playback_key_pair::ImportPlaybackKeyPair,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ImportPlaybackKeyPairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ImportPlaybackKeyPairFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ImportPlaybackKeyPairFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ImportPlaybackKeyPairFluentBuilder {
             crate::operation::import_playback_key_pair::ImportPlaybackKeyPair,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn public_key_material(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_key_material(input.into());
         self
     }
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn set_public_key_material(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_key_material(input);
         self
     }
@@ -162,30 +142,17 @@ impl ImportPlaybackKeyPairFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetDocumentationVersionsOutput {
 }
 impl GetDocumentationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentationVersionsOutput`](crate::operation::get_documentation_versions::GetDocumentationVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsOutputBuilder {
         crate::operation::get_documentation_versions::builders::GetDocumentationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentationVersionsOutput`](crate::operation::get_documentation_versions::GetDocumentationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentationVersionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DocumentationVersion>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl GetDocumentationVersionsOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentationVersion>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentationVersion>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentationVersion>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentationVersion>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>
@@ -96,9 +87,7 @@ impl GetDocumentationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDocumentationVersionsOutput`](crate::operation::get_documentation_versions::GetDocumentationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_documentation_versions::GetDocumentationVersionsOutput {
+    pub fn build(self) -> crate::operation::get_documentation_versions::GetDocumentationVersionsOutput {
         crate::operation::get_documentation_versions::GetDocumentationVersionsOutput {
             items: self.items,
             position: self.position,

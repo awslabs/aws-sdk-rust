@@ -15,8 +15,7 @@ pub struct AssetModelCompositeModelDefinition {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The asset property definitions for this composite model.</p>
     #[doc(hidden)]
-    pub properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
 }
 impl AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
@@ -32,9 +31,7 @@ impl AssetModelCompositeModelDefinition {
         self.r#type.as_deref()
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelPropertyDefinition]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetModelPropertyDefinition]> {
         self.properties.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl AssetModelCompositeModelDefinition {
 
 /// A builder for [`AssetModelCompositeModelDefinition`](crate::types::AssetModelCompositeModelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetModelCompositeModelDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
 }
 impl AssetModelCompositeModelDefinitionBuilder {
     /// <p>The name of the composite model.</p>
@@ -112,17 +106,12 @@ impl AssetModelCompositeModelDefinitionBuilder {
         self
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetModelCompositeModelDefinition`](crate::types::AssetModelCompositeModelDefinition).

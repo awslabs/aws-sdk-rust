@@ -30,9 +30,7 @@ impl Highlight {
 
 /// A builder for [`Highlight`](crate::types::Highlight).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HighlightBuilder {
     pub(crate) begin_offset_inclusive: ::std::option::Option<i32>,
     pub(crate) end_offset_exclusive: ::std::option::Option<i32>,

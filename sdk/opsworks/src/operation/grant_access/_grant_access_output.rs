@@ -11,9 +11,7 @@ pub struct GrantAccessOutput {
 }
 impl GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn temporary_credential(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemporaryCredential> {
+    pub fn temporary_credential(&self) -> ::std::option::Option<&crate::types::TemporaryCredential> {
         self.temporary_credential.as_ref()
     }
 }
@@ -31,9 +29,7 @@ impl GrantAccessOutput {
 
 /// A builder for [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantAccessOutputBuilder {
     pub(crate) temporary_credential: ::std::option::Option<crate::types::TemporaryCredential>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl GrantAccessOutputBuilder {
         self
     }
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn set_temporary_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::TemporaryCredential>,
-    ) -> Self {
+    pub fn set_temporary_credential(mut self, input: ::std::option::Option<crate::types::TemporaryCredential>) -> Self {
         self.temporary_credential = input;
         self
     }
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn get_temporary_credential(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemporaryCredential> {
+    pub fn get_temporary_credential(&self) -> &::std::option::Option<crate::types::TemporaryCredential> {
         &self.temporary_credential
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

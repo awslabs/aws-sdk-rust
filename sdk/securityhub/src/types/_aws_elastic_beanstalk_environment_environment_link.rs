@@ -23,35 +23,26 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
     /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink).
-    pub fn builder() -> crate::types::builders::AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
         crate::types::builders::AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
     /// <p>The name of the linked environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the linked environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }

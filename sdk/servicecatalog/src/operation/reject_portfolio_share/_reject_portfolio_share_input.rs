@@ -49,17 +49,14 @@ impl RejectPortfolioShareInput {
 }
 impl RejectPortfolioShareInput {
     /// Creates a new builder-style object to manufacture [`RejectPortfolioShareInput`](crate::operation::reject_portfolio_share::RejectPortfolioShareInput).
-    pub fn builder(
-    ) -> crate::operation::reject_portfolio_share::builders::RejectPortfolioShareInputBuilder {
+    pub fn builder() -> crate::operation::reject_portfolio_share::builders::RejectPortfolioShareInputBuilder {
         crate::operation::reject_portfolio_share::builders::RejectPortfolioShareInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectPortfolioShareInput`](crate::operation::reject_portfolio_share::RejectPortfolioShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectPortfolioShareInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -71,10 +68,7 @@ impl RejectPortfolioShareInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -83,10 +77,7 @@ impl RejectPortfolioShareInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -130,10 +121,7 @@ impl RejectPortfolioShareInputBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    pub fn set_portfolio_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioShareType>,
-    ) -> Self {
+    pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
         self.portfolio_share_type = input;
         self
     }
@@ -144,24 +132,18 @@ impl RejectPortfolioShareInputBuilder {
     /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
     /// </ul>
     /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    pub fn get_portfolio_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+    pub fn get_portfolio_share_type(&self) -> &::std::option::Option<crate::types::PortfolioShareType> {
         &self.portfolio_share_type
     }
     /// Consumes the builder and constructs a [`RejectPortfolioShareInput`](crate::operation::reject_portfolio_share::RejectPortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_portfolio_share::RejectPortfolioShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reject_portfolio_share::RejectPortfolioShareInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                portfolio_share_type: self.portfolio_share_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reject_portfolio_share::RejectPortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reject_portfolio_share::RejectPortfolioShareInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            portfolio_share_type: self.portfolio_share_type,
+        })
     }
 }

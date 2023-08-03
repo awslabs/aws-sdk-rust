@@ -10,10 +10,7 @@ impl CreateFaqInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_faq::CreateFaqOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_faq::CreateFaqError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_faq::CreateFaqError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_faq();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateFaqFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_faq::CreateFaq,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_faq::CreateFaq, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_faq::CreateFaqError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateFaqFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateFaqFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_faq::CreateFaq,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_faq::CreateFaq, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_faq::CreateFaqError>,
     > {
         self.customize_middleware().await
@@ -194,10 +182,7 @@ impl CreateFaqFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -217,10 +202,7 @@ impl CreateFaqFluentBuilder {
     /// <p>The default format is CSV.</p>
     /// <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::FaqFileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FaqFileFormat>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
@@ -246,18 +228,12 @@ impl CreateFaqFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language_code(input.into());
         self
     }
     /// <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

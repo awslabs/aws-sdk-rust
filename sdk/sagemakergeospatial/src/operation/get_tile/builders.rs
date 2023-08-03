@@ -10,10 +10,7 @@ impl GetTileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_tile::GetTileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tile::GetTileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_tile();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetTileFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tile::GetTile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tile::GetTile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetTileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_tile::GetTileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_tile::GetTileOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetTileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_tile::GetTileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_tile::GetTileOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl GetTileFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tile::GetTile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tile::GetTile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
     > {
         self.customize_middleware().await
@@ -164,17 +148,12 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn set_image_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_assets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_assets(input);
         self
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn get_image_assets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_assets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_image_assets()
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
@@ -220,18 +199,12 @@ impl GetTileFluentBuilder {
         self.inner.get_image_mask()
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_format(input.into());
         self
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
@@ -240,18 +213,12 @@ impl GetTileFluentBuilder {
         self.inner.get_output_format()
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn time_range_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_range_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.time_range_filter(input.into());
         self
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn set_time_range_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_range_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_range_filter(input);
         self
     }
@@ -260,18 +227,12 @@ impl GetTileFluentBuilder {
         self.inner.get_time_range_filter()
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn property_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_filters(input.into());
         self
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_filters(input);
         self
     }
@@ -285,10 +246,7 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>The output data type of the tile operation.</p>
-    pub fn set_output_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputType>,
-    ) -> Self {
+    pub fn set_output_data_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
         self.inner = self.inner.set_output_data_type(input);
         self
     }
@@ -297,18 +255,12 @@ impl GetTileFluentBuilder {
         self.inner.get_output_data_type()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }

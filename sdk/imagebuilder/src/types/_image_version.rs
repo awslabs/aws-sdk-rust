@@ -154,9 +154,7 @@ impl ImageVersion {
 
 /// A builder for [`ImageVersion`](crate::types::ImageVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageVersionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -404,10 +402,7 @@ impl ImageVersionBuilder {
         self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn set_image_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageSource>,
-    ) -> Self {
+    pub fn set_image_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
         self.image_source = input;
         self
     }

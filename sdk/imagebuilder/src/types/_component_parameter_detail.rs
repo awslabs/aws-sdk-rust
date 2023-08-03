@@ -44,9 +44,7 @@ impl ComponentParameterDetail {
 
 /// A builder for [`ComponentParameterDetail`](crate::types::ComponentParameterDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentParameterDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -87,27 +85,19 @@ impl ComponentParameterDetailBuilder {
     /// To override the contents of this collection use [`set_default_value`](Self::set_default_value).
     ///
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.default_value.unwrap_or_default();
         v.push(input.into());
         self.default_value = ::std::option::Option::Some(v);
         self
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.default_value = input;
         self
     }
     /// <p>The default value of this parameter if no input is provided.</p>
-    pub fn get_default_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.default_value
     }
     /// <p>Describes this parameter.</p>

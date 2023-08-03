@@ -27,9 +27,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFleetOutput`](crate::operation::update_fleet::UpdateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::operation::update_fleet::UpdateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<UpdateFleetError>`](crate::operation::update_fleet::UpdateFleetError)
-    pub fn update_fleet(
-        &self,
-    ) -> crate::operation::update_fleet::builders::UpdateFleetFluentBuilder {
+    pub fn update_fleet(&self) -> crate::operation::update_fleet::builders::UpdateFleetFluentBuilder {
         crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,27 +29,19 @@ impl UpdateSnapshotInput {
 
 /// A builder for [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSnapshotInputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,
 }
 impl UpdateSnapshotInputBuilder {
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl UpdateSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_snapshot::UpdateSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_snapshot::UpdateSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_snapshot::UpdateSnapshotInput {
             snapshot_name: self.snapshot_name,
             retention_period: self.retention_period,

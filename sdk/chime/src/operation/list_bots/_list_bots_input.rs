@@ -36,9 +36,7 @@ impl ListBotsInput {
 
 /// A builder for [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListBotsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bots::ListBotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bots::ListBotsInput {
             account_id: self.account_id,
             max_results: self.max_results,

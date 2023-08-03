@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`global_clusters(Option<Vec<GlobalCluster>>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::global_clusters): <p>The list of global clusters returned by this request.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::operation::describe_global_clusters::DescribeGlobalClustersError)
-    pub fn describe_global_clusters(
-        &self,
-    ) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder
-    {
+    pub fn describe_global_clusters(&self) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder {
         crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::new(self.handle.clone())
     }
 }

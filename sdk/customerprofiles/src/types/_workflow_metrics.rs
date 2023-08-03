@@ -10,9 +10,7 @@ pub struct WorkflowMetrics {
 }
 impl WorkflowMetrics {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowMetrics> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegrationWorkflowMetrics> {
         self.appflow_integration.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl WorkflowMetrics {
 
 /// A builder for [`WorkflowMetrics`](crate::types::WorkflowMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowMetricsBuilder {
-    pub(crate) appflow_integration:
-        ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>,
+    pub(crate) appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>,
 }
 impl WorkflowMetricsBuilder {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn appflow_integration(
-        mut self,
-        input: crate::types::AppflowIntegrationWorkflowMetrics,
-    ) -> Self {
+    pub fn appflow_integration(mut self, input: crate::types::AppflowIntegrationWorkflowMetrics) -> Self {
         self.appflow_integration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_appflow_integration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>,
-    ) -> Self {
+    pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>) -> Self {
         self.appflow_integration = input;
         self
     }
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn get_appflow_integration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics> {
+    pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics> {
         &self.appflow_integration
     }
     /// Consumes the builder and constructs a [`WorkflowMetrics`](crate::types::WorkflowMetrics).

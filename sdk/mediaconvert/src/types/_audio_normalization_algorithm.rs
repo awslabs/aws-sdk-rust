@@ -40,13 +40,7 @@
 /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioNormalizationAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AudioNormalizationAlgorithm {
             "ITU_BS_1770_2" => AudioNormalizationAlgorithm::ItuBs17702,
             "ITU_BS_1770_3" => AudioNormalizationAlgorithm::ItuBs17703,
             "ITU_BS_1770_4" => AudioNormalizationAlgorithm::ItuBs17704,
-            other => AudioNormalizationAlgorithm::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AudioNormalizationAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AudioNormalizationAlgorithm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ITU_BS_1770_1",
-            "ITU_BS_1770_2",
-            "ITU_BS_1770_3",
-            "ITU_BS_1770_4",
-        ]
+        &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioNormalizationAlgorithm {

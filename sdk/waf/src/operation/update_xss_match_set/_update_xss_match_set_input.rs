@@ -40,17 +40,14 @@ impl UpdateXssMatchSetInput {
 }
 impl UpdateXssMatchSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetInput`](crate::operation::update_xss_match_set::UpdateXssMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_xss_match_set::builders::UpdateXssMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::update_xss_match_set::builders::UpdateXssMatchSetInputBuilder {
         crate::operation::update_xss_match_set::builders::UpdateXssMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateXssMatchSetInput`](crate::operation::update_xss_match_set::UpdateXssMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateXssMatchSetInputBuilder {
     pub(crate) xss_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -58,18 +55,12 @@ pub struct UpdateXssMatchSetInputBuilder {
 }
 impl UpdateXssMatchSetInputBuilder {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xss_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn set_xss_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.xss_match_set_id = input;
         self
     }
@@ -113,10 +104,7 @@ impl UpdateXssMatchSetInputBuilder {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -126,24 +114,17 @@ impl UpdateXssMatchSetInputBuilder {
     /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateXssMatchSetInput`](crate::operation::update_xss_match_set::UpdateXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_xss_match_set::UpdateXssMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_xss_match_set::UpdateXssMatchSetInput {
-                xss_match_set_id: self.xss_match_set_id,
-                change_token: self.change_token,
-                updates: self.updates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_xss_match_set::UpdateXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_xss_match_set::UpdateXssMatchSetInput {
+            xss_match_set_id: self.xss_match_set_id,
+            change_token: self.change_token,
+            updates: self.updates,
+        })
     }
 }

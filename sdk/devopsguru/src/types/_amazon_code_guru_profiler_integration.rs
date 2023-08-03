@@ -23,9 +23,7 @@ impl AmazonCodeGuruProfilerIntegration {
 
 /// A builder for [`AmazonCodeGuruProfilerIntegration`](crate::types::AmazonCodeGuruProfilerIntegration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonCodeGuruProfilerIntegrationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EventSourceOptInStatus>,
 }
@@ -36,10 +34,7 @@ impl AmazonCodeGuruProfilerIntegrationBuilder {
         self
     }
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceOptInStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventSourceOptInStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl AmazonCodeGuruProfilerIntegrationBuilder {
     }
     /// Consumes the builder and constructs a [`AmazonCodeGuruProfilerIntegration`](crate::types::AmazonCodeGuruProfilerIntegration).
     pub fn build(self) -> crate::types::AmazonCodeGuruProfilerIntegration {
-        crate::types::AmazonCodeGuruProfilerIntegration {
-            status: self.status,
-        }
+        crate::types::AmazonCodeGuruProfilerIntegration { status: self.status }
     }
 }

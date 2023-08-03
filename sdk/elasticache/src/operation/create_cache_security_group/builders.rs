@@ -27,7 +27,7 @@ impl CreateCacheSecurityGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCacheSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder,
+    inner: crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder,
 }
 impl CreateCacheSecurityGroupFluentBuilder {
     /// Creates a new `CreateCacheSecurityGroup`.
@@ -38,7 +38,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
         }
     }
     /// Access the CreateCacheSecurityGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
             crate::operation::create_cache_security_group::CreateCacheSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_security_group::CreateCacheSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_security_group::CreateCacheSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_security_group::CreateCacheSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,29 +106,21 @@ impl CreateCacheSecurityGroupFluentBuilder {
             crate::operation::create_cache_security_group::CreateCacheSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_security_group::CreateCacheSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());
         self
     }
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }
@@ -171,10 +154,7 @@ impl CreateCacheSecurityGroupFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

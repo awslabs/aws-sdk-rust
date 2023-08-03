@@ -86,9 +86,7 @@ impl UpdateAddress {
 
 /// A builder for [`UpdateAddress`](crate::types::UpdateAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAddressBuilder {
     pub(crate) address1: ::std::option::Option<::std::string::String>,
     pub(crate) address2: ::std::option::Option<::std::string::String>,

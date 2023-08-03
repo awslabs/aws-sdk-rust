@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`read_time(Option<DateTime>)`](crate::operation::describe_page::DescribePageOutput::read_time): <p>The time that the contact channel acknowledged the engagement.</p>
     ///   - [`delivery_time(Option<DateTime>)`](crate::operation::describe_page::DescribePageOutput::delivery_time): <p>The time that the contact channel received the engagement.</p>
     /// - On failure, responds with [`SdkError<DescribePageError>`](crate::operation::describe_page::DescribePageError)
-    pub fn describe_page(
-        &self,
-    ) -> crate::operation::describe_page::builders::DescribePageFluentBuilder {
-        crate::operation::describe_page::builders::DescribePageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_page(&self) -> crate::operation::describe_page::builders::DescribePageFluentBuilder {
+        crate::operation::describe_page::builders::DescribePageFluentBuilder::new(self.handle.clone())
     }
 }

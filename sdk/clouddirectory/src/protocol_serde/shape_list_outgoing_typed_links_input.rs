@@ -36,10 +36,7 @@ pub fn ser_list_outgoing_typed_links_input(
     if let Some(var_10) = &input.object_reference {
         #[allow(unused_mut)]
         let mut object_11 = object.key("ObjectReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`attributes(Option<WorkflowAttributes>)`](crate::operation::get_workflow::GetWorkflowOutput::attributes): <p>Attributes provided for workflow execution.</p>
     ///   - [`metrics(Option<WorkflowMetrics>)`](crate::operation::get_workflow::GetWorkflowOutput::metrics): <p>Workflow specific execution metrics.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
-    pub fn get_workflow(
-        &self,
-    ) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
+    pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

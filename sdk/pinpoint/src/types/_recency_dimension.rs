@@ -30,9 +30,7 @@ impl RecencyDimension {
 
 /// A builder for [`RecencyDimension`](crate::types::RecencyDimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecencyDimensionBuilder {
     pub(crate) duration: ::std::option::Option<crate::types::Duration>,
     pub(crate) recency_type: ::std::option::Option<crate::types::RecencyType>,
@@ -58,10 +56,7 @@ impl RecencyDimensionBuilder {
         self
     }
     /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
-    pub fn set_recency_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecencyType>,
-    ) -> Self {
+    pub fn set_recency_type(mut self, input: ::std::option::Option<crate::types::RecencyType>) -> Self {
         self.recency_type = input;
         self
     }

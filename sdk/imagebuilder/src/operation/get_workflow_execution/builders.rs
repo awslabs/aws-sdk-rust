@@ -37,9 +37,7 @@ impl GetWorkflowExecutionFluentBuilder {
         }
     }
     /// Access the GetWorkflowExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetWorkflowExecutionFluentBuilder {
             crate::operation::get_workflow_execution::GetWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetWorkflowExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_execution::GetWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_execution::GetWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetWorkflowExecutionFluentBuilder {
             crate::operation::get_workflow_execution::GetWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_execution_id(input.into());
         self
     }
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_execution_id(input);
         self
     }

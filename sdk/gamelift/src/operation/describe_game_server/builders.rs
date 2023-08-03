@@ -10,10 +10,7 @@ impl DescribeGameServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server::DescribeGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server::DescribeGameServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server::DescribeGameServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_game_server();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DescribeGameServerFluentBuilder {
         }
     }
     /// Access the DescribeGameServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_game_server::builders::DescribeGameServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_game_server::builders::DescribeGameServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DescribeGameServerFluentBuilder {
             crate::operation::describe_game_server::DescribeGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server::DescribeGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server::DescribeGameServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DescribeGameServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DescribeGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server::DescribeGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server::DescribeGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server::DescribeGameServerError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DescribeGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server::DescribeGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server::DescribeGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server::DescribeGameServerError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl DescribeGameServerFluentBuilder {
             crate::operation::describe_game_server::DescribeGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_server::DescribeGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_server::DescribeGameServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -147,18 +125,12 @@ impl DescribeGameServerFluentBuilder {
         self.inner.get_game_server_group_name()
     }
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_id(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
     }

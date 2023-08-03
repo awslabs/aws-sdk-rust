@@ -38,12 +38,10 @@ pub struct UpdateKxEnvironmentNetworkOutput {
     pub dedicated_service_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
     #[doc(hidden)]
-    pub transit_gateway_configuration:
-        ::std::option::Option<crate::types::TransitGatewayConfiguration>,
+    pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
     #[doc(hidden)]
-    pub custom_dns_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
     #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -101,15 +99,11 @@ impl UpdateKxEnvironmentNetworkOutput {
         self.dedicated_service_account_id.as_deref()
     }
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
-    pub fn transit_gateway_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayConfiguration> {
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfiguration> {
         self.transit_gateway_configuration.as_ref()
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn custom_dns_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomDnsServer]> {
+    pub fn custom_dns_configuration(&self) -> ::std::option::Option<&[crate::types::CustomDnsServer]> {
         self.custom_dns_configuration.as_deref()
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
@@ -132,16 +126,14 @@ impl ::aws_http::request_id::RequestId for UpdateKxEnvironmentNetworkOutput {
 }
 impl UpdateKxEnvironmentNetworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKxEnvironmentNetworkOutput`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput).
-    pub fn builder() -> crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkOutputBuilder{
+    pub fn builder() -> crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkOutputBuilder {
         crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKxEnvironmentNetworkOutput`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKxEnvironmentNetworkOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -154,10 +146,8 @@ pub struct UpdateKxEnvironmentNetworkOutputBuilder {
     pub(crate) environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_service_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) transit_gateway_configuration:
-        ::std::option::Option<crate::types::TransitGatewayConfiguration>,
-    pub(crate) custom_dns_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
+    pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
+    pub(crate) custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -179,18 +169,12 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         &self.name
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -199,18 +183,12 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         &self.environment_id
     }
     /// <p>The unique identifier of the AWS account that is used to create the kdb environment.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the AWS account that is used to create the kdb environment.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -224,10 +202,7 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         self
     }
     /// <p>The status of the kdb environment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -264,18 +239,12 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         &self.dns_status
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -298,18 +267,12 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         &self.description
     }
     /// <p>The ARN identifier of the environment.</p>
-    pub fn environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of the environment.</p>
-    pub fn set_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_arn = input;
         self
     }
@@ -332,47 +295,31 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         &self.kms_key_id
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
-    pub fn dedicated_service_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedicated_service_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedicated_service_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
-    pub fn set_dedicated_service_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dedicated_service_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedicated_service_account_id = input;
         self
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
-    pub fn get_dedicated_service_account_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_dedicated_service_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dedicated_service_account_id
     }
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
-    pub fn transit_gateway_configuration(
-        mut self,
-        input: crate::types::TransitGatewayConfiguration,
-    ) -> Self {
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfiguration) -> Self {
         self.transit_gateway_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
-    pub fn set_transit_gateway_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
-    ) -> Self {
+    pub fn set_transit_gateway_configuration(mut self, input: ::std::option::Option<crate::types::TransitGatewayConfiguration>) -> Self {
         self.transit_gateway_configuration = input;
         self
     }
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
-    pub fn get_transit_gateway_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
         &self.transit_gateway_configuration
     }
     /// Appends an item to `custom_dns_configuration`.
@@ -387,17 +334,12 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn set_custom_dns_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
-    ) -> Self {
+    pub fn set_custom_dns_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>) -> Self {
         self.custom_dns_configuration = input;
         self
     }
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
-    pub fn get_custom_dns_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+    pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
         &self.custom_dns_configuration
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
@@ -406,10 +348,7 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         self
     }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -423,10 +362,7 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         self
     }
     /// <p>The timestamp at which the kdb environment was updated. </p>
-    pub fn set_update_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_timestamp = input;
         self
     }
@@ -439,27 +375,19 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
     /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
     ///
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn availability_zone_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_ids.unwrap_or_default();
         v.push(input.into());
         self.availability_zone_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn set_availability_zone_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zone_ids = input;
         self
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn get_availability_zone_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zone_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -472,9 +400,7 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateKxEnvironmentNetworkOutput`](crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput {
+    pub fn build(self) -> crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput {
         crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput {
             name: self.name,
             environment_id: self.environment_id,

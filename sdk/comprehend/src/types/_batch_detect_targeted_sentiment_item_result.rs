@@ -30,13 +30,10 @@ impl BatchDetectTargetedSentimentItemResult {
 
 /// A builder for [`BatchDetectTargetedSentimentItemResult`](crate::types::BatchDetectTargetedSentimentItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
-    pub(crate) entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
 }
 impl BatchDetectTargetedSentimentItemResultBuilder {
     /// <p>The zero-based index of this result in the input list.</p>
@@ -65,17 +62,12 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
         self
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
         &self.entities
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentItemResult`](crate::types::BatchDetectTargetedSentimentItemResult).

@@ -45,18 +45,12 @@ pub struct OrderedPhoneNumberBuilder {
 }
 impl OrderedPhoneNumberBuilder {
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e164_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn set_e164_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_e164_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e164_phone_number = input;
         self
     }
@@ -70,10 +64,7 @@ impl OrderedPhoneNumberBuilder {
         self
     }
     /// <p>The phone number status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>) -> Self {
         self.status = input;
         self
     }

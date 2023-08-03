@@ -26,7 +26,7 @@ impl UpdateResourceDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder,
+    inner: crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder,
 }
 impl UpdateResourceDefinitionFluentBuilder {
     /// Creates a new `UpdateResourceDefinition`.
@@ -37,10 +37,7 @@ impl UpdateResourceDefinitionFluentBuilder {
         }
     }
     /// Access the UpdateResourceDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateResourceDefinitionFluentBuilder {
             crate::operation::update_resource_definition::UpdateResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_definition::UpdateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_definition::UpdateResourceDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateResourceDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_definition::UpdateResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_definition::UpdateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_definition::UpdateResourceDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_definition::UpdateResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_definition::UpdateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_definition::UpdateResourceDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateResourceDefinitionFluentBuilder {
             crate::operation::update_resource_definition::UpdateResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_definition::UpdateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_definition::UpdateResourceDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateResourceDefinitionFluentBuilder {
         self.inner.get_name()
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_definition_id(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_definition_id(input);
         self
     }

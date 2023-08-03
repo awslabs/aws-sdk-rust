@@ -5,16 +5,16 @@ pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_asso
 
 impl DeleteVpcAssociationAuthorizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_vpc_association_authorization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DeleteVpcAssociationAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVPCAssociationAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder,
+    inner: crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder,
 }
 impl DeleteVPCAssociationAuthorizationFluentBuilder {
     /// Creates a new `DeleteVPCAssociationAuthorization`.
@@ -39,15 +39,20 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
         }
     }
     /// Access the DeleteVPCAssociationAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

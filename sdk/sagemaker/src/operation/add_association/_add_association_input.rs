@@ -48,9 +48,7 @@ impl AddAssociationInput {
 
 /// A builder for [`AddAssociationInput`](crate::operation::add_association::AddAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAssociationInputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -72,18 +70,12 @@ impl AddAssociationInputBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -109,10 +101,7 @@ impl AddAssociationInputBuilder {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.association_type = input;
         self
     }
@@ -123,18 +112,13 @@ impl AddAssociationInputBuilder {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         &self.association_type
     }
     /// Consumes the builder and constructs a [`AddAssociationInput`](crate::operation::add_association::AddAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_association::AddAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_association::AddAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_association::AddAssociationInput {
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,

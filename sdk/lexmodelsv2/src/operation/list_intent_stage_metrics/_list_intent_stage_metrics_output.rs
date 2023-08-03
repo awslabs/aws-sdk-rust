@@ -37,22 +37,17 @@ impl ::aws_http::request_id::RequestId for ListIntentStageMetricsOutput {
 }
 impl ListIntentStageMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsOutputBuilder {
         crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentStageMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -83,17 +78,12 @@ impl ListIntentStageMetricsOutputBuilder {
         self
     }
     /// <p>The results for the intent stage metrics.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>The results for the intent stage metrics.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>> {
         &self.results
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
@@ -123,9 +113,7 @@ impl ListIntentStageMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput {
+    pub fn build(self) -> crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput {
         crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput {
             bot_id: self.bot_id,
             results: self.results,

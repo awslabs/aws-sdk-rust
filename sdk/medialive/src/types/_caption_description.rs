@@ -33,9 +33,7 @@ impl CaptionDescription {
         self.caption_selector_name.as_deref()
     }
     /// Additional settings for captions destination that depend on the destination type.
-    pub fn destination_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptionDestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::CaptionDestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
@@ -60,14 +58,11 @@ impl CaptionDescription {
 
 /// A builder for [`CaptionDescription`](crate::types::CaptionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionDescriptionBuilder {
     pub(crate) accessibility: ::std::option::Option<crate::types::AccessibilityType>,
     pub(crate) caption_selector_name: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_settings:
-        ::std::option::Option<crate::types::CaptionDestinationSettings>,
+    pub(crate) destination_settings: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) language_description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,10 +74,7 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    pub fn set_accessibility(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessibilityType>,
-    ) -> Self {
+    pub fn set_accessibility(mut self, input: ::std::option::Option<crate::types::AccessibilityType>) -> Self {
         self.accessibility = input;
         self
     }
@@ -91,18 +83,12 @@ impl CaptionDescriptionBuilder {
         &self.accessibility
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn caption_selector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caption_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caption_selector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn set_caption_selector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caption_selector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caption_selector_name = input;
         self
     }
@@ -116,32 +102,21 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Additional settings for captions destination that depend on the destination type.
-    pub fn set_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionDestinationSettings>,
-    ) -> Self {
+    pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::CaptionDestinationSettings>) -> Self {
         self.destination_settings = input;
         self
     }
     /// Additional settings for captions destination that depend on the destination type.
-    pub fn get_destination_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptionDestinationSettings> {
+    pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::CaptionDestinationSettings> {
         &self.destination_settings
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -150,18 +125,12 @@ impl CaptionDescriptionBuilder {
         &self.language_code
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn language_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn set_language_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_description = input;
         self
     }

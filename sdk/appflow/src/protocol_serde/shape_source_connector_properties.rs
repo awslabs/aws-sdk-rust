@@ -6,28 +6,19 @@ pub fn ser_source_connector_properties(
     if let Some(var_1) = &input.amplitude {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Amplitude").start_object();
-        crate::protocol_serde::shape_amplitude_source_properties::ser_amplitude_source_properties(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_amplitude_source_properties::ser_amplitude_source_properties(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.datadog {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Datadog").start_object();
-        crate::protocol_serde::shape_datadog_source_properties::ser_datadog_source_properties(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_datadog_source_properties::ser_datadog_source_properties(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.dynatrace {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Dynatrace").start_object();
-        crate::protocol_serde::shape_dynatrace_source_properties::ser_dynatrace_source_properties(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_dynatrace_source_properties::ser_dynatrace_source_properties(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.google_analytics {
@@ -45,19 +36,13 @@ pub fn ser_source_connector_properties(
     if let Some(var_11) = &input.marketo {
         #[allow(unused_mut)]
         let mut object_12 = object.key("Marketo").start_object();
-        crate::protocol_serde::shape_marketo_source_properties::ser_marketo_source_properties(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_marketo_source_properties::ser_marketo_source_properties(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.s3 {
         #[allow(unused_mut)]
         let mut object_14 = object.key("S3").start_object();
-        crate::protocol_serde::shape_s3_source_properties::ser_s3_source_properties(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_s3_source_properties::ser_s3_source_properties(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.salesforce {
@@ -75,19 +60,13 @@ pub fn ser_source_connector_properties(
     if let Some(var_19) = &input.singular {
         #[allow(unused_mut)]
         let mut object_20 = object.key("Singular").start_object();
-        crate::protocol_serde::shape_singular_source_properties::ser_singular_source_properties(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_singular_source_properties::ser_singular_source_properties(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.slack {
         #[allow(unused_mut)]
         let mut object_22 = object.key("Slack").start_object();
-        crate::protocol_serde::shape_slack_source_properties::ser_slack_source_properties(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_slack_source_properties::ser_slack_source_properties(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.trendmicro {
@@ -99,28 +78,19 @@ pub fn ser_source_connector_properties(
     if let Some(var_25) = &input.veeva {
         #[allow(unused_mut)]
         let mut object_26 = object.key("Veeva").start_object();
-        crate::protocol_serde::shape_veeva_source_properties::ser_veeva_source_properties(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_veeva_source_properties::ser_veeva_source_properties(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.zendesk {
         #[allow(unused_mut)]
         let mut object_28 = object.key("Zendesk").start_object();
-        crate::protocol_serde::shape_zendesk_source_properties::ser_zendesk_source_properties(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_zendesk_source_properties::ser_zendesk_source_properties(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.sapo_data {
         #[allow(unused_mut)]
         let mut object_30 = object.key("SAPOData").start_object();
-        crate::protocol_serde::shape_sapo_data_source_properties::ser_sapo_data_source_properties(
-            &mut object_30,
-            var_29,
-        )?;
+        crate::protocol_serde::shape_sapo_data_source_properties::ser_sapo_data_source_properties(&mut object_30, var_29)?;
         object_30.finish();
     }
     if let Some(var_31) = &input.custom_connector {
@@ -132,10 +102,7 @@ pub fn ser_source_connector_properties(
     if let Some(var_33) = &input.pardot {
         #[allow(unused_mut)]
         let mut object_34 = object.key("Pardot").start_object();
-        crate::protocol_serde::shape_pardot_source_properties::ser_pardot_source_properties(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_pardot_source_properties::ser_pardot_source_properties(&mut object_34, var_33)?;
         object_34.finish();
     }
     Ok(())
@@ -143,17 +110,9 @@ pub fn ser_source_connector_properties(
 
 pub(crate) fn de_source_connector_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SourceConnectorProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SourceConnectorProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -163,111 +122,98 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Amplitude" => {
-                                builder = builder.set_amplitude(
-                                    crate::protocol_serde::shape_amplitude_source_properties::de_amplitude_source_properties(tokens)?
-                                );
-                            }
-                            "Datadog" => {
-                                builder = builder.set_datadog(
-                                    crate::protocol_serde::shape_datadog_source_properties::de_datadog_source_properties(tokens)?
-                                );
-                            }
-                            "Dynatrace" => {
-                                builder = builder.set_dynatrace(
-                                    crate::protocol_serde::shape_dynatrace_source_properties::de_dynatrace_source_properties(tokens)?
-                                );
-                            }
-                            "GoogleAnalytics" => {
-                                builder = builder.set_google_analytics(
-                                    crate::protocol_serde::shape_google_analytics_source_properties::de_google_analytics_source_properties(tokens)?
-                                );
-                            }
-                            "InforNexus" => {
-                                builder = builder.set_infor_nexus(
-                                    crate::protocol_serde::shape_infor_nexus_source_properties::de_infor_nexus_source_properties(tokens)?
-                                );
-                            }
-                            "Marketo" => {
-                                builder = builder.set_marketo(
-                                    crate::protocol_serde::shape_marketo_source_properties::de_marketo_source_properties(tokens)?
-                                );
-                            }
-                            "S3" => {
-                                builder = builder.set_s3(
-                                    crate::protocol_serde::shape_s3_source_properties::de_s3_source_properties(tokens)?
-                                );
-                            }
-                            "Salesforce" => {
-                                builder = builder.set_salesforce(
-                                    crate::protocol_serde::shape_salesforce_source_properties::de_salesforce_source_properties(tokens)?
-                                );
-                            }
-                            "ServiceNow" => {
-                                builder = builder.set_service_now(
-                                    crate::protocol_serde::shape_service_now_source_properties::de_service_now_source_properties(tokens)?
-                                );
-                            }
-                            "Singular" => {
-                                builder = builder.set_singular(
-                                    crate::protocol_serde::shape_singular_source_properties::de_singular_source_properties(tokens)?
-                                );
-                            }
-                            "Slack" => {
-                                builder = builder.set_slack(
-                                    crate::protocol_serde::shape_slack_source_properties::de_slack_source_properties(tokens)?
-                                );
-                            }
-                            "Trendmicro" => {
-                                builder = builder.set_trendmicro(
-                                    crate::protocol_serde::shape_trendmicro_source_properties::de_trendmicro_source_properties(tokens)?
-                                );
-                            }
-                            "Veeva" => {
-                                builder = builder.set_veeva(
-                                    crate::protocol_serde::shape_veeva_source_properties::de_veeva_source_properties(tokens)?
-                                );
-                            }
-                            "Zendesk" => {
-                                builder = builder.set_zendesk(
-                                    crate::protocol_serde::shape_zendesk_source_properties::de_zendesk_source_properties(tokens)?
-                                );
-                            }
-                            "SAPOData" => {
-                                builder = builder.set_sapo_data(
-                                    crate::protocol_serde::shape_sapo_data_source_properties::de_sapo_data_source_properties(tokens)?
-                                );
-                            }
-                            "CustomConnector" => {
-                                builder = builder.set_custom_connector(
-                                    crate::protocol_serde::shape_custom_connector_source_properties::de_custom_connector_source_properties(tokens)?
-                                );
-                            }
-                            "Pardot" => {
-                                builder = builder.set_pardot(
-                                    crate::protocol_serde::shape_pardot_source_properties::de_pardot_source_properties(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Amplitude" => {
+                            builder = builder.set_amplitude(
+                                crate::protocol_serde::shape_amplitude_source_properties::de_amplitude_source_properties(tokens)?,
+                            );
                         }
-                    }
+                        "Datadog" => {
+                            builder = builder.set_datadog(crate::protocol_serde::shape_datadog_source_properties::de_datadog_source_properties(
+                                tokens,
+                            )?);
+                        }
+                        "Dynatrace" => {
+                            builder = builder.set_dynatrace(
+                                crate::protocol_serde::shape_dynatrace_source_properties::de_dynatrace_source_properties(tokens)?,
+                            );
+                        }
+                        "GoogleAnalytics" => {
+                            builder = builder.set_google_analytics(
+                                crate::protocol_serde::shape_google_analytics_source_properties::de_google_analytics_source_properties(tokens)?,
+                            );
+                        }
+                        "InforNexus" => {
+                            builder = builder.set_infor_nexus(
+                                crate::protocol_serde::shape_infor_nexus_source_properties::de_infor_nexus_source_properties(tokens)?,
+                            );
+                        }
+                        "Marketo" => {
+                            builder = builder.set_marketo(crate::protocol_serde::shape_marketo_source_properties::de_marketo_source_properties(
+                                tokens,
+                            )?);
+                        }
+                        "S3" => {
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3_source_properties::de_s3_source_properties(tokens)?);
+                        }
+                        "Salesforce" => {
+                            builder = builder
+                                .set_salesforce(crate::protocol_serde::shape_salesforce_source_properties::de_salesforce_source_properties(tokens)?);
+                        }
+                        "ServiceNow" => {
+                            builder = builder.set_service_now(
+                                crate::protocol_serde::shape_service_now_source_properties::de_service_now_source_properties(tokens)?,
+                            );
+                        }
+                        "Singular" => {
+                            builder = builder.set_singular(crate::protocol_serde::shape_singular_source_properties::de_singular_source_properties(
+                                tokens,
+                            )?);
+                        }
+                        "Slack" => {
+                            builder = builder.set_slack(crate::protocol_serde::shape_slack_source_properties::de_slack_source_properties(tokens)?);
+                        }
+                        "Trendmicro" => {
+                            builder = builder
+                                .set_trendmicro(crate::protocol_serde::shape_trendmicro_source_properties::de_trendmicro_source_properties(tokens)?);
+                        }
+                        "Veeva" => {
+                            builder = builder.set_veeva(crate::protocol_serde::shape_veeva_source_properties::de_veeva_source_properties(tokens)?);
+                        }
+                        "Zendesk" => {
+                            builder = builder.set_zendesk(crate::protocol_serde::shape_zendesk_source_properties::de_zendesk_source_properties(
+                                tokens,
+                            )?);
+                        }
+                        "SAPOData" => {
+                            builder = builder.set_sapo_data(
+                                crate::protocol_serde::shape_sapo_data_source_properties::de_sapo_data_source_properties(tokens)?,
+                            );
+                        }
+                        "CustomConnector" => {
+                            builder = builder.set_custom_connector(
+                                crate::protocol_serde::shape_custom_connector_source_properties::de_custom_connector_source_properties(tokens)?,
+                            );
+                        }
+                        "Pardot" => {
+                            builder = builder.set_pardot(crate::protocol_serde::shape_pardot_source_properties::de_pardot_source_properties(
+                                tokens,
+                            )?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -12,8 +12,7 @@ pub struct LoadForecast {
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
     #[doc(hidden)]
-    pub metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
+    pub metric_specification: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
 }
 impl LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
@@ -25,9 +24,7 @@ impl LoadForecast {
         self.values.as_deref()
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingMetricSpecification> {
+    pub fn metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMetricSpecification> {
         self.metric_specification.as_ref()
     }
 }
@@ -40,14 +37,11 @@ impl LoadForecast {
 
 /// A builder for [`LoadForecast`](crate::types::LoadForecast).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadForecastBuilder {
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
+    pub(crate) metric_specification: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
 }
 impl LoadForecastBuilder {
     /// Appends an item to `timestamps`.
@@ -62,17 +56,12 @@ impl LoadForecastBuilder {
         self
     }
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.timestamps = input;
         self
     }
     /// <p>The timestamps for the data points, in UTC format.</p>
-    pub fn get_timestamps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -96,25 +85,17 @@ impl LoadForecastBuilder {
         &self.values
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingMetricSpecification,
-    ) -> Self {
+    pub fn metric_specification(mut self, input: crate::types::PredictiveScalingMetricSpecification) -> Self {
         self.metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn set_metric_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
-    ) -> Self {
+    pub fn set_metric_specification(mut self, input: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>) -> Self {
         self.metric_specification = input;
         self
     }
     /// <p>The metric specification for the load forecast.</p>
-    pub fn get_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingMetricSpecification> {
+    pub fn get_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingMetricSpecification> {
         &self.metric_specification
     }
     /// Consumes the builder and constructs a [`LoadForecast`](crate::types::LoadForecast).

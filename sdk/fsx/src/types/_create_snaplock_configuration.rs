@@ -46,9 +46,7 @@ impl CreateSnaplockConfiguration {
         self.privileged_delete.as_ref()
     }
     /// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
-    pub fn retention_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnaplockRetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::SnaplockRetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Specifies the retention mode of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. You can choose one of the following retention modes: </p>
@@ -74,9 +72,7 @@ impl CreateSnaplockConfiguration {
 
 /// A builder for [`CreateSnaplockConfiguration`](crate::types::CreateSnaplockConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnaplockConfigurationBuilder {
     pub(crate) audit_log_volume: ::std::option::Option<bool>,
     pub(crate) autocommit_period: ::std::option::Option<crate::types::AutocommitPeriod>,
@@ -109,10 +105,7 @@ impl CreateSnaplockConfigurationBuilder {
         self
     }
     /// <p>The configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_autocommit_period(
-        mut self,
-        input: ::std::option::Option<crate::types::AutocommitPeriod>,
-    ) -> Self {
+    pub fn set_autocommit_period(mut self, input: ::std::option::Option<crate::types::AutocommitPeriod>) -> Self {
         self.autocommit_period = input;
         self
     }
@@ -128,10 +121,7 @@ impl CreateSnaplockConfigurationBuilder {
     }
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete WORM files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
-    pub fn set_privileged_delete(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivilegedDelete>,
-    ) -> Self {
+    pub fn set_privileged_delete(mut self, input: ::std::option::Option<crate::types::PrivilegedDelete>) -> Self {
         self.privileged_delete = input;
         self
     }
@@ -146,17 +136,12 @@ impl CreateSnaplockConfigurationBuilder {
         self
     }
     /// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::SnaplockRetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::SnaplockRetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
     /// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
-    pub fn get_retention_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnaplockRetentionPeriod> {
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::SnaplockRetentionPeriod> {
         &self.retention_period
     }
     /// <p>Specifies the retention mode of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. You can choose one of the following retention modes: </p>
@@ -173,10 +158,7 @@ impl CreateSnaplockConfigurationBuilder {
     /// <li> <p> <code>COMPLIANCE</code>: Files transitioned to write once, read many (WORM) on a Compliance volume can't be deleted until their retention periods expire. This retention mode is used to address government or industry-specific mandates or to protect against ransomware attacks. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-compliance.html">SnapLock Compliance</a>. </p> </li>
     /// <li> <p> <code>ENTERPRISE</code>: Files transitioned to WORM on an Enterprise volume can be deleted by authorized users before their retention periods expire using privileged delete. This retention mode is used to advance an organization's data integrity and internal compliance or to test retention settings before using SnapLock Compliance. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock Enterprise</a>. </p> </li>
     /// </ul>
-    pub fn set_snaplock_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnaplockType>,
-    ) -> Self {
+    pub fn set_snaplock_type(mut self, input: ::std::option::Option<crate::types::SnaplockType>) -> Self {
         self.snaplock_type = input;
         self
     }

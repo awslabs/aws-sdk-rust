@@ -27,35 +27,27 @@ impl ::std::fmt::Display for MaximumRuleTemplatesAssociatedWithRepositoryExcepti
     }
 }
 impl ::std::error::Error for MaximumRuleTemplatesAssociatedWithRepositoryException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaximumRuleTemplatesAssociatedWithRepositoryException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaximumRuleTemplatesAssociatedWithRepositoryException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// Creates a new builder-style object to manufacture [`MaximumRuleTemplatesAssociatedWithRepositoryException`](crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException).
-    pub fn builder(
-    ) -> crate::types::error::builders::MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder {
         crate::types::error::builders::MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaximumRuleTemplatesAssociatedWithRepositoryException`](crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,17 +74,12 @@ impl MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`MaximumRuleTemplatesAssociatedWithRepositoryException`](crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException {
+    pub fn build(self) -> crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException {
         crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException {
             message: self.message,
             meta: self.meta.unwrap_or_default(),

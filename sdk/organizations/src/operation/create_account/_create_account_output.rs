@@ -10,9 +10,7 @@ pub struct CreateAccountOutput {
 }
 impl CreateAccountOutput {
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn create_account_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> ::std::option::Option<&crate::types::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl CreateAccountOutput {
 
 /// A builder for [`CreateAccountOutput`](crate::operation::create_account::CreateAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccountOutputBuilder {
     pub(crate) create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateAccountOutputBuilder {
         self
     }
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn set_create_account_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateAccountStatus>,
-    ) -> Self {
+    pub fn set_create_account_status(mut self, input: ::std::option::Option<crate::types::CreateAccountStatus>) -> Self {
         self.create_account_status = input;
         self
     }
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn get_create_account_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateAccountStatus> {
+    pub fn get_create_account_status(&self) -> &::std::option::Option<crate::types::CreateAccountStatus> {
         &self.create_account_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

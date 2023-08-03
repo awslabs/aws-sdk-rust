@@ -37,9 +37,7 @@ impl CreateSourceNetworkFluentBuilder {
         }
     }
     /// Access the CreateSourceNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_source_network::builders::CreateSourceNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_source_network::builders::CreateSourceNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateSourceNetworkFluentBuilder {
             crate::operation::create_source_network::CreateSourceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_network::CreateSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_network::CreateSourceNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateSourceNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateSourceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_network::CreateSourceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_network::CreateSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_network::CreateSourceNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateSourceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_network::CreateSourceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_network::CreateSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_network::CreateSourceNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateSourceNetworkFluentBuilder {
             crate::operation::create_source_network::CreateSourceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_network::CreateSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_network::CreateSourceNetworkError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreateSourceNetworkFluentBuilder {
         self.inner.get_vpc_id()
     }
     /// <p>Account containing the VPC to protect.</p>
-    pub fn origin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_account_id(input.into());
         self
     }
     /// <p>Account containing the VPC to protect.</p>
-    pub fn set_origin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_account_id(input);
         self
     }
@@ -157,18 +138,12 @@ impl CreateSourceNetworkFluentBuilder {
         self.inner.get_origin_account_id()
     }
     /// <p>Region containing the VPC to protect.</p>
-    pub fn origin_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_region(input.into());
         self
     }
     /// <p>Region containing the VPC to protect.</p>
-    pub fn set_origin_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_region(input);
         self
     }
@@ -181,30 +156,17 @@ impl CreateSourceNetworkFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInboundConnectionOutput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput) with field(s):
     ///   - [`connection(Option<InboundConnection>)`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput::connection): <p>The deleted inbound connection.</p>
     /// - On failure, responds with [`SdkError<DeleteInboundConnectionError>`](crate::operation::delete_inbound_connection::DeleteInboundConnectionError)
-    pub fn delete_inbound_connection(
-        &self,
-    ) -> crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder
-    {
+    pub fn delete_inbound_connection(&self) -> crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder {
         crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionFluentBuilder::new(self.handle.clone())
     }
 }

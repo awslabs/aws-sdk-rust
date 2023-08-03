@@ -30,18 +30,14 @@ impl DescribeDomainAutoTunesInput {
 }
 impl DescribeDomainAutoTunesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesInput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainAutoTunesInput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -97,12 +93,10 @@ impl DescribeDomainAutoTunesInputBuilder {
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput {
-                domain_name: self.domain_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput {
+            domain_name: self.domain_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

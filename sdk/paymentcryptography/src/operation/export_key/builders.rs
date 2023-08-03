@@ -10,10 +10,7 @@ impl ExportKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_key::ExportKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_key::ExportKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_key::ExportKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_key();
         fluent_builder.inner = self;
@@ -79,10 +76,7 @@ impl ExportKeyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_key::ExportKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_key::ExportKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_key::ExportKeyError>,
     > {
         let handle = self.handle.clone();
@@ -93,10 +87,7 @@ impl ExportKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,10 +129,7 @@ impl ExportKeyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_key::ExportKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_key::ExportKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_key::ExportKeyError>,
     > {
         self.customize_middleware().await
@@ -152,10 +140,7 @@ impl ExportKeyFluentBuilder {
         self
     }
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
-    pub fn set_key_material(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportKeyMaterial>,
-    ) -> Self {
+    pub fn set_key_material(mut self, input: ::std::option::Option<crate::types::ExportKeyMaterial>) -> Self {
         self.inner = self.inner.set_key_material(input);
         self
     }
@@ -164,18 +149,12 @@ impl ExportKeyFluentBuilder {
         self.inner.get_key_material()
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    pub fn export_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_key_identifier(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    pub fn set_export_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_key_identifier(input);
         self
     }

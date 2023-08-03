@@ -43,9 +43,7 @@ impl StartConnectionInput {
 
 /// A builder for [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartConnectionInputBuilder {
     pub(crate) device_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct StartConnectionInputBuilder {
 }
 impl StartConnectionInputBuilder {
     /// <p> The serial number of the dongle. </p>
-    pub fn device_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The serial number of the dongle. </p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_serial_number = input;
         self
     }
@@ -88,18 +80,12 @@ impl StartConnectionInputBuilder {
         &self.asset_id
     }
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The public key of the client. </p>
-    pub fn set_client_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_public_key = input;
         self
     }
@@ -124,10 +110,7 @@ impl StartConnectionInputBuilder {
     /// Consumes the builder and constructs a [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_connection::StartConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_connection::StartConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_connection::StartConnectionInput {
             device_serial_number: self.device_serial_number,
             asset_id: self.asset_id,

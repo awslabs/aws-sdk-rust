@@ -27,7 +27,7 @@ impl DescribeVirtualInterfacesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder,
+    inner: crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder,
 }
 impl DescribeVirtualInterfacesFluentBuilder {
     /// Creates a new `DescribeVirtualInterfaces`.
@@ -38,7 +38,7 @@ impl DescribeVirtualInterfacesFluentBuilder {
         }
     }
     /// Access the DescribeVirtualInterfaces as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeVirtualInterfacesFluentBuilder {
             crate::operation::describe_virtual_interfaces::DescribeVirtualInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeVirtualInterfacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeVirtualInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeVirtualInterfacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DescribeVirtualInterfacesFluentBuilder {
             crate::operation::describe_virtual_interfaces::DescribeVirtualInterfaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -142,18 +125,12 @@ impl DescribeVirtualInterfacesFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }

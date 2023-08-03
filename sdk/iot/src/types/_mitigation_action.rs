@@ -44,9 +44,7 @@ impl MitigationAction {
 
 /// A builder for [`MitigationAction`](crate::types::MitigationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MitigationActionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -102,17 +100,12 @@ impl MitigationActionBuilder {
         self
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.action_params = input;
         self
     }
     /// <p>The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.</p>
-    pub fn get_action_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         &self.action_params
     }
     /// Consumes the builder and constructs a [`MitigationAction`](crate::types::MitigationAction).

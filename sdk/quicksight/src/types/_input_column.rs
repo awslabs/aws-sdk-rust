@@ -30,9 +30,7 @@ impl InputColumn {
 
 /// A builder for [`InputColumn`](crate::types::InputColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputColumnDataType>,
@@ -58,10 +56,7 @@ impl InputColumnBuilder {
         self
     }
     /// <p>The data type of the column.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputColumnDataType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputColumnDataType>) -> Self {
         self.r#type = input;
         self
     }

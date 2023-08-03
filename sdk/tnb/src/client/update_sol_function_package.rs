@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput) with field(s):
     ///   - [`operational_state(Option<OperationalState>)`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput::operational_state): <p>Operational state of the function package.</p>
     /// - On failure, responds with [`SdkError<UpdateSolFunctionPackageError>`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageError)
-    pub fn update_sol_function_package(&self) -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder{
+    pub fn update_sol_function_package(&self) -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder {
         crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageFluentBuilder::new(self.handle.clone())
     }
 }

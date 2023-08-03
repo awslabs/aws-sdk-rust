@@ -22,34 +22,26 @@ impl DescribeUserHierarchyGroupInput {
 }
 impl DescribeUserHierarchyGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyGroupInput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder {
         crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserHierarchyGroupInput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserHierarchyGroupInputBuilder {
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUserHierarchyGroupInputBuilder {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeUserHierarchyGroupInputBuilder {
         crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput {
-                hierarchy_group_id: self.hierarchy_group_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput {
+            hierarchy_group_id: self.hierarchy_group_id,
+            instance_id: self.instance_id,
+        })
     }
 }

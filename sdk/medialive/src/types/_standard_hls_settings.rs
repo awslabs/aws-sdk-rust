@@ -30,27 +30,19 @@ impl StandardHlsSettings {
 
 /// A builder for [`StandardHlsSettings`](crate::types::StandardHlsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandardHlsSettingsBuilder {
     pub(crate) audio_rendition_sets: ::std::option::Option<::std::string::String>,
     pub(crate) m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,
 }
 impl StandardHlsSettingsBuilder {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-    pub fn audio_rendition_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_rendition_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_rendition_sets = ::std::option::Option::Some(input.into());
         self
     }
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-    pub fn set_audio_rendition_sets(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_rendition_sets(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_rendition_sets = input;
         self
     }
@@ -64,10 +56,7 @@ impl StandardHlsSettingsBuilder {
         self
     }
     /// Settings information for the .m3u8 container
-    pub fn set_m3u8_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8Settings>,
-    ) -> Self {
+    pub fn set_m3u8_settings(mut self, input: ::std::option::Option<crate::types::M3u8Settings>) -> Self {
         self.m3u8_settings = input;
         self
     }

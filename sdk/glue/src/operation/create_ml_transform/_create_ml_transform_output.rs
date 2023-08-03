@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateMlTransformOutput {
 }
 impl CreateMlTransformOutput {
     /// Creates a new builder-style object to manufacture [`CreateMlTransformOutput`](crate::operation::create_ml_transform::CreateMlTransformOutput).
-    pub fn builder(
-    ) -> crate::operation::create_ml_transform::builders::CreateMlTransformOutputBuilder {
+    pub fn builder() -> crate::operation::create_ml_transform::builders::CreateMlTransformOutputBuilder {
         crate::operation::create_ml_transform::builders::CreateMlTransformOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMlTransformOutput`](crate::operation::create_ml_transform::CreateMlTransformOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

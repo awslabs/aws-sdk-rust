@@ -23,9 +23,7 @@ impl PartitionValueList {
 
 /// A builder for [`PartitionValueList`](crate::types::PartitionValueList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionValueListBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl PartitionValueListBuilder {
         self
     }
     /// <p>The list of partition values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -55,8 +50,6 @@ impl PartitionValueListBuilder {
     }
     /// Consumes the builder and constructs a [`PartitionValueList`](crate::types::PartitionValueList).
     pub fn build(self) -> crate::types::PartitionValueList {
-        crate::types::PartitionValueList {
-            values: self.values,
-        }
+        crate::types::PartitionValueList { values: self.values }
     }
 }

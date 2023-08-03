@@ -32,9 +32,7 @@ impl CreateKeyInput {
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -64,13 +62,10 @@ impl CreateKeyInput {
 
 /// A builder for [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyInputBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
-    pub(crate) key_check_value_algorithm:
-        ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
+    pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) exportable: ::std::option::Option<bool>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -82,10 +77,7 @@ impl CreateKeyInputBuilder {
         self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn set_key_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAttributes>,
-    ) -> Self {
+    pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
         self.key_attributes = input;
         self
     }
@@ -95,27 +87,19 @@ impl CreateKeyInputBuilder {
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        mut self,
-        input: crate::types::KeyCheckValueAlgorithm,
-    ) -> Self {
+    pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.key_check_value_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn set_key_check_value_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
-    ) -> Self {
+    pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.key_check_value_algorithm = input;
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn get_key_check_value_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
+    pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         &self.key_check_value_algorithm
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -168,10 +152,7 @@ impl CreateKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -185,12 +166,7 @@ impl CreateKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_key::CreateKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
             key_attributes: self.key_attributes,
             key_check_value_algorithm: self.key_check_value_algorithm,

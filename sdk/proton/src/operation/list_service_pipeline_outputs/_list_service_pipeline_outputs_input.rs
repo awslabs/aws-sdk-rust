@@ -29,16 +29,14 @@ impl ListServicePipelineOutputsInput {
 }
 impl ListServicePipelineOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListServicePipelineOutputsInput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput).
-    pub fn builder() -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder {
         crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServicePipelineOutputsInput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicePipelineOutputsInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListServicePipelineOutputsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListServicePipelineOutputsInputBuilder {
         crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput {
-                service_name: self.service_name,
-                next_token: self.next_token,
-                deployment_id: self.deployment_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput {
+            service_name: self.service_name,
+            next_token: self.next_token,
+            deployment_id: self.deployment_id,
+        })
     }
 }

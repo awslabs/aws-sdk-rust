@@ -29,9 +29,7 @@ impl DeleteLicenseInput {
 
 /// A builder for [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteLicenseInputBuilder {
         &self.license_arn
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Current version of the license.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteLicenseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_license::DeleteLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_license::DeleteLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_license::DeleteLicenseInput {
             license_arn: self.license_arn,
             source_version: self.source_version,

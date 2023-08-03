@@ -36,9 +36,7 @@ impl ListPlacementsInput {
 
 /// A builder for [`ListPlacementsInput`](crate::operation::list_placements::ListPlacementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlacementsInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListPlacementsInputBuilder {
     /// Consumes the builder and constructs a [`ListPlacementsInput`](crate::operation::list_placements::ListPlacementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_placements::ListPlacementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_placements::ListPlacementsInput {
             project_name: self.project_name,
             next_token: self.next_token,

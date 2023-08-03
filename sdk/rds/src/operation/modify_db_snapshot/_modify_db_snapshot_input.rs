@@ -61,17 +61,14 @@ impl ModifyDbSnapshotInput {
 }
 impl ModifyDbSnapshotInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotInput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotInput).
-    pub fn builder() -> crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder {
         crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbSnapshotInput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbSnapshotInputBuilder {
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ pub struct ModifyDbSnapshotInputBuilder {
 }
 impl ModifyDbSnapshotInputBuilder {
     /// <p>The identifier of the DB snapshot to modify.</p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the DB snapshot to modify.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
         self
     }
@@ -114,10 +105,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -137,10 +125,7 @@ impl ModifyDbSnapshotInputBuilder {
     /// </ul>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"> Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -165,19 +150,13 @@ impl ModifyDbSnapshotInputBuilder {
     }
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The option group to identify with the upgraded DB snapshot.</p>
     /// <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -189,16 +168,11 @@ impl ModifyDbSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbSnapshotInput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_snapshot::ModifyDbSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_db_snapshot::ModifyDbSnapshotInput {
-                db_snapshot_identifier: self.db_snapshot_identifier,
-                engine_version: self.engine_version,
-                option_group_name: self.option_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_db_snapshot::ModifyDbSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_db_snapshot::ModifyDbSnapshotInput {
+            db_snapshot_identifier: self.db_snapshot_identifier,
+            engine_version: self.engine_version,
+            option_group_name: self.option_group_name,
+        })
     }
 }

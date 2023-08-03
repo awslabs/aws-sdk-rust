@@ -7,14 +7,10 @@ pub fn ser_list_feature_groups_input(
         object.key("NameContains").string(var_1.as_str());
     }
     if let Some(var_2) = &input.feature_group_status_equals {
-        object
-            .key("FeatureGroupStatusEquals")
-            .string(var_2.as_str());
+        object.key("FeatureGroupStatusEquals").string(var_2.as_str());
     }
     if let Some(var_3) = &input.offline_store_status_equals {
-        object
-            .key("OfflineStoreStatusEquals")
-            .string(var_3.as_str());
+        object.key("OfflineStoreStatusEquals").string(var_3.as_str());
     }
     if let Some(var_4) = &input.creation_time_after {
         object

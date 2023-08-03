@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClusterSubnetGroupOutput {
 }
 impl DeleteClusterSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSubnetGroupOutput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput).
-    pub fn builder() -> crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupOutputBuilder {
         crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterSubnetGroupOutput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteClusterSubnetGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteClusterSubnetGroupOutput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput {
+    pub fn build(self) -> crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput {
         crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput {
             _request_id: self._request_id,
         }

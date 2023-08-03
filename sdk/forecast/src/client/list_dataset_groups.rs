@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`dataset_groups(Option<Vec<DatasetGroupSummary>>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::dataset_groups): <p>An array of objects that summarize each dataset group's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListDatasetGroupsError>`](crate::operation::list_dataset_groups::ListDatasetGroupsError)
-    pub fn list_dataset_groups(
-        &self,
-    ) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder {
-        crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_groups(&self) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder {
+        crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

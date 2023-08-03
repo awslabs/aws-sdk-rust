@@ -22,9 +22,7 @@ impl BatchGetViewInput {
 
 /// A builder for [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetViewInputBuilder {
     pub(crate) view_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetViewInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub fn set_view_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_view_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.view_arns = input;
         self
     }
@@ -55,12 +50,7 @@ impl BatchGetViewInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_view::BatchGetViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_view::BatchGetViewInput {
-            view_arns: self.view_arns,
-        })
+    ) -> ::std::result::Result<crate::operation::batch_get_view::BatchGetViewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_view::BatchGetViewInput { view_arns: self.view_arns })
     }
 }

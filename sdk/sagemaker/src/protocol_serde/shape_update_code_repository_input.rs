@@ -9,10 +9,7 @@ pub fn ser_update_code_repository_input(
     if let Some(var_2) = &input.git_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("GitConfig").start_object();
-        crate::protocol_serde::shape_git_config_for_update::ser_git_config_for_update(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_git_config_for_update::ser_git_config_for_update(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

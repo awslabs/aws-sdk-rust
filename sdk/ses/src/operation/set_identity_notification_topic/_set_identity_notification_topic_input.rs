@@ -36,16 +36,14 @@ impl SetIdentityNotificationTopicInput {
 }
 impl SetIdentityNotificationTopicInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityNotificationTopicInput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput).
-    pub fn builder() -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder{
+    pub fn builder() -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder {
         crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityNotificationTopicInput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
@@ -81,10 +79,7 @@ impl SetIdentityNotificationTopicInputBuilder {
         self
     }
     /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
@@ -113,12 +108,10 @@ impl SetIdentityNotificationTopicInputBuilder {
         crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput {
-                identity: self.identity,
-                notification_type: self.notification_type,
-                sns_topic: self.sns_topic,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput {
+            identity: self.identity,
+            notification_type: self.notification_type,
+            sns_topic: self.sns_topic,
+        })
     }
 }

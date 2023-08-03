@@ -29,9 +29,7 @@ impl DeleteNetworkInput {
 
 /// A builder for [`DeleteNetworkInput`](crate::operation::delete_network::DeleteNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInputBuilder {
     pub(crate) network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkInput`](crate::operation::delete_network::DeleteNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network::DeleteNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_network::DeleteNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_network::DeleteNetworkInput {
             network_arn: self.network_arn,
             client_token: self.client_token,

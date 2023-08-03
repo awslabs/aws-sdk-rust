@@ -29,27 +29,19 @@ impl GetJourneyInput {
 
 /// A builder for [`GetJourneyInput`](crate::operation::get_journey::GetJourneyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJourneyInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -72,12 +64,7 @@ impl GetJourneyInputBuilder {
         &self.journey_id
     }
     /// Consumes the builder and constructs a [`GetJourneyInput`](crate::operation::get_journey::GetJourneyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_journey::GetJourneyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_journey::GetJourneyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_journey::GetJourneyInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

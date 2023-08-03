@@ -7,9 +7,7 @@ pub fn ser_select_aggregate_resource_config_input(
         object.key("Expression").string(var_1.as_str());
     }
     if let Some(var_2) = &input.configuration_aggregator_name {
-        object
-            .key("ConfigurationAggregatorName")
-            .string(var_2.as_str());
+        object.key("ConfigurationAggregatorName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.limit {
         object.key("Limit").number(

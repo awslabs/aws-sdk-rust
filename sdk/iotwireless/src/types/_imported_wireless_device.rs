@@ -23,9 +23,7 @@ impl ImportedWirelessDevice {
 
 /// A builder for [`ImportedWirelessDevice`](crate::types::ImportedWirelessDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportedWirelessDeviceBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
 }
@@ -36,10 +34,7 @@ impl ImportedWirelessDeviceBuilder {
         self
     }
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::ImportedSidewalkDevice>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -49,8 +44,6 @@ impl ImportedWirelessDeviceBuilder {
     }
     /// Consumes the builder and constructs a [`ImportedWirelessDevice`](crate::types::ImportedWirelessDevice).
     pub fn build(self) -> crate::types::ImportedWirelessDevice {
-        crate::types::ImportedWirelessDevice {
-            sidewalk: self.sidewalk,
-        }
+        crate::types::ImportedWirelessDevice { sidewalk: self.sidewalk }
     }
 }

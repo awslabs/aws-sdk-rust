@@ -59,9 +59,7 @@ impl Redirect {
 
 /// A builder for [`Redirect`](crate::types::Redirect).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedirectBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) http_redirect_code: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl RedirectBuilder {
         &self.host_name
     }
     /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
-    pub fn http_redirect_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_redirect_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_redirect_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
-    pub fn set_http_redirect_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_redirect_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_redirect_code = input;
         self
     }
@@ -121,20 +113,14 @@ impl RedirectBuilder {
     /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn replace_key_prefix_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replace_key_prefix_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replace_key_prefix_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn set_replace_key_prefix_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replace_key_prefix_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replace_key_prefix_with = input;
         self
     }
@@ -147,20 +133,14 @@ impl RedirectBuilder {
     /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn replace_key_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replace_key_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replace_key_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn set_replace_key_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replace_key_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replace_key_with = input;
         self
     }

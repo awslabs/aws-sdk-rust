@@ -36,16 +36,14 @@ impl GetJourneyExecutionMetricsInput {
 }
 impl GetJourneyExecutionMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetJourneyExecutionMetricsInput`](crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsInput).
-    pub fn builder() -> crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsInputBuilder{
+    pub fn builder() -> crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsInputBuilder {
         crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetJourneyExecutionMetricsInput`](crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyExecutionMetricsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct GetJourneyExecutionMetricsInputBuilder {
 }
 impl GetJourneyExecutionMetricsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl GetJourneyExecutionMetricsInputBuilder {
         crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsInput {
-                application_id: self.application_id,
-                journey_id: self.journey_id,
-                next_token: self.next_token,
-                page_size: self.page_size,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsInput {
+            application_id: self.application_id,
+            journey_id: self.journey_id,
+            next_token: self.next_token,
+            page_size: self.page_size,
+        })
     }
 }

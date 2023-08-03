@@ -10,10 +10,7 @@ impl CreateVocabularyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_vocabulary::CreateVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vocabulary::CreateVocabularyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_vocabulary();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateVocabularyFluentBuilder {
         }
     }
     /// Access the CreateVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vocabulary::builders::CreateVocabularyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vocabulary::builders::CreateVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateVocabularyFluentBuilder {
             crate::operation::create_vocabulary::CreateVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vocabulary::CreateVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vocabulary::CreateVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vocabulary::CreateVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateVocabularyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vocabulary::CreateVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vocabulary::CreateVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateVocabularyFluentBuilder {
             crate::operation::create_vocabulary::CreateVocabulary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vocabulary::CreateVocabularyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateVocabularyFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
@@ -176,17 +154,12 @@ impl CreateVocabularyFluentBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         self.inner.get_language_code()
     }
     /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
@@ -208,30 +181,17 @@ impl CreateVocabularyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

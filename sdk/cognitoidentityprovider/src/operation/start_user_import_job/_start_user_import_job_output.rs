@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for StartUserImportJobOutput {
 }
 impl StartUserImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder {
-        crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder {
+        crate::operation::start_user_import_job::builders::StartUserImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartUserImportJobOutputBuilder {
     pub(crate) user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl StartUserImportJobOutputBuilder {
         self
     }
     /// <p>The job object that represents the user import job.</p>
-    pub fn set_user_import_job(
-        mut self,
-        input: ::std::option::Option<crate::types::UserImportJobType>,
-    ) -> Self {
+    pub fn set_user_import_job(mut self, input: ::std::option::Option<crate::types::UserImportJobType>) -> Self {
         self.user_import_job = input;
         self
     }

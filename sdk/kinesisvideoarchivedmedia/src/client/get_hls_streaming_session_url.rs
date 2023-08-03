@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`GetHlsStreamingSessionUrlOutput`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput) with field(s):
     ///   - [`hls_streaming_session_url(Option<String>)`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput::hls_streaming_session_url): <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
     /// - On failure, responds with [`SdkError<GetHLSStreamingSessionURLError>`](crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError)
-    pub fn get_hls_streaming_session_url(&self) -> crate::operation::get_hls_streaming_session_url::builders::GetHLSStreamingSessionURLFluentBuilder{
+    pub fn get_hls_streaming_session_url(&self) -> crate::operation::get_hls_streaming_session_url::builders::GetHLSStreamingSessionURLFluentBuilder {
         crate::operation::get_hls_streaming_session_url::builders::GetHLSStreamingSessionURLFluentBuilder::new(self.handle.clone())
     }
 }

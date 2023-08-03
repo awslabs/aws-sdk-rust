@@ -5,8 +5,7 @@
 pub struct ListDelegatedAdminAccountsOutput {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     #[doc(hidden)]
-    pub delegated_admin_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
+    pub delegated_admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDelegatedAdminAccountsOutput {
 }
 impl ListDelegatedAdminAccountsOutput {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-    pub fn delegated_admin_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DelegatedAdminAccount]> {
+    pub fn delegated_admin_accounts(&self) -> ::std::option::Option<&[crate::types::DelegatedAdminAccount]> {
         self.delegated_admin_accounts.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDelegatedAdminAccountsOutput {
 }
 impl ListDelegatedAdminAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput).
-    pub fn builder() -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsOutputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsOutputBuilder {
         crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDelegatedAdminAccountsOutputBuilder {
-    pub(crate) delegated_admin_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
+    pub(crate) delegated_admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListDelegatedAdminAccountsOutputBuilder {
         self
     }
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-    pub fn set_delegated_admin_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
-    ) -> Self {
+    pub fn set_delegated_admin_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>) -> Self {
         self.delegated_admin_accounts = input;
         self
     }
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-    pub fn get_delegated_admin_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>> {
+    pub fn get_delegated_admin_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>> {
         &self.delegated_admin_accounts
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -97,9 +86,7 @@ impl ListDelegatedAdminAccountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput {
+    pub fn build(self) -> crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput {
         crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput {
             delegated_admin_accounts: self.delegated_admin_accounts,
             next_token: self.next_token,

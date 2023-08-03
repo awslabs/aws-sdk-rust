@@ -39,8 +39,7 @@ pub struct CreateDomainInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     #[doc(hidden)]
-    pub app_security_group_management:
-        ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>A collection of <code>Domain</code> settings.</p>
     #[doc(hidden)]
     pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
@@ -80,9 +79,7 @@ impl CreateDomainInput {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn app_network_access_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
+    pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
@@ -95,9 +92,7 @@ impl CreateDomainInput {
         self.kms_key_id.as_deref()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn app_security_group_management(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
+    pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
@@ -105,9 +100,7 @@ impl CreateDomainInput {
         self.domain_settings.as_ref()
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn default_space_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
+    pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
 }
@@ -120,9 +113,7 @@ impl CreateDomainInput {
 
 /// A builder for [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_mode: ::std::option::Option<crate::types::AuthMode>,
@@ -133,8 +124,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     pub(crate) home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) app_security_group_management:
-        ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
 }
@@ -175,10 +165,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
-    pub fn set_default_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_default_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.default_user_settings = input;
         self
     }
@@ -199,10 +186,7 @@ impl CreateDomainInputBuilder {
         self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -238,10 +222,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -264,10 +245,7 @@ impl CreateDomainInputBuilder {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn set_app_network_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppNetworkAccessType>,
-    ) -> Self {
+    pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.app_network_access_type = input;
         self
     }
@@ -276,34 +254,24 @@ impl CreateDomainInputBuilder {
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    pub fn get_app_network_access_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
+    pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn home_efs_file_system_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn set_home_efs_file_system_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_efs_file_system_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_kms_key_id = input;
         self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn get_home_efs_file_system_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_home_efs_file_system_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.home_efs_file_system_kms_key_id
     }
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
@@ -321,25 +289,17 @@ impl CreateDomainInputBuilder {
         &self.kms_key_id
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn app_security_group_management(
-        mut self,
-        input: crate::types::AppSecurityGroupManagement,
-    ) -> Self {
+    pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.app_security_group_management = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn set_app_security_group_management(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    ) -> Self {
+    pub fn set_app_security_group_management(mut self, input: ::std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
         self.app_security_group_management = input;
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    pub fn get_app_security_group_management(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+    pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
@@ -348,10 +308,7 @@ impl CreateDomainInputBuilder {
         self
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainSettings>,
-    ) -> Self {
+    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
         self.domain_settings = input;
         self
     }
@@ -365,26 +322,16 @@ impl CreateDomainInputBuilder {
         self
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn set_default_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultSpaceSettings>,
-    ) -> Self {
+    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.default_space_settings = input;
         self
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn get_default_space_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         &self.default_space_settings
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_domain::CreateDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
             domain_name: self.domain_name,
             auth_mode: self.auth_mode,

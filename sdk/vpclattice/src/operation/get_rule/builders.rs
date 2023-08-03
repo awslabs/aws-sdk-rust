@@ -10,10 +10,7 @@ impl GetRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_rule::GetRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rule::GetRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_rule();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetRuleFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_rule::GetRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_rule::GetRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rule::GetRuleOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_rule::GetRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rule::GetRuleOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_rule::GetRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,27 +91,18 @@ impl GetRuleFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_rule::GetRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_rule::GetRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_rule::GetRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -133,18 +111,12 @@ impl GetRuleFluentBuilder {
         self.inner.get_service_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
@@ -153,18 +125,12 @@ impl GetRuleFluentBuilder {
         self.inner.get_listener_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
-    pub fn rule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
-    pub fn set_rule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_identifier(input);
         self
     }

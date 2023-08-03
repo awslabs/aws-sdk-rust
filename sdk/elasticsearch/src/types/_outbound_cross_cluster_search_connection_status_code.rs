@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OutboundCrossClusterSearchConnectionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,16 +72,12 @@ impl ::std::convert::From<&str> for OutboundCrossClusterSearchConnectionStatusCo
             "ACTIVE" => OutboundCrossClusterSearchConnectionStatusCode::Active,
             "DELETED" => OutboundCrossClusterSearchConnectionStatusCode::Deleted,
             "DELETING" => OutboundCrossClusterSearchConnectionStatusCode::Deleting,
-            "PENDING_ACCEPTANCE" => {
-                OutboundCrossClusterSearchConnectionStatusCode::PendingAcceptance
-            }
+            "PENDING_ACCEPTANCE" => OutboundCrossClusterSearchConnectionStatusCode::PendingAcceptance,
             "PROVISIONING" => OutboundCrossClusterSearchConnectionStatusCode::Provisioning,
             "REJECTED" => OutboundCrossClusterSearchConnectionStatusCode::Rejected,
             "VALIDATING" => OutboundCrossClusterSearchConnectionStatusCode::Validating,
             "VALIDATION_FAILED" => OutboundCrossClusterSearchConnectionStatusCode::ValidationFailed,
-            other => OutboundCrossClusterSearchConnectionStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OutboundCrossClusterSearchConnectionStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -105,9 +95,7 @@ impl OutboundCrossClusterSearchConnectionStatusCode {
             OutboundCrossClusterSearchConnectionStatusCode::Active => "ACTIVE",
             OutboundCrossClusterSearchConnectionStatusCode::Deleted => "DELETED",
             OutboundCrossClusterSearchConnectionStatusCode::Deleting => "DELETING",
-            OutboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => {
-                "PENDING_ACCEPTANCE"
-            }
+            OutboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
             OutboundCrossClusterSearchConnectionStatusCode::Provisioning => "PROVISIONING",
             OutboundCrossClusterSearchConnectionStatusCode::Rejected => "REJECTED",
             OutboundCrossClusterSearchConnectionStatusCode::Validating => "VALIDATING",

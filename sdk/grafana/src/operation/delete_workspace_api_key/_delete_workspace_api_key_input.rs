@@ -22,18 +22,14 @@ impl DeleteWorkspaceApiKeyInput {
 }
 impl DeleteWorkspaceApiKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder {
         crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
-                key_name: self.key_name,
-                workspace_id: self.workspace_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
+            key_name: self.key_name,
+            workspace_id: self.workspace_id,
+        })
     }
 }

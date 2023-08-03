@@ -40,9 +40,7 @@ impl AddRoleToDBInstanceFluentBuilder {
         }
     }
     /// Access the AddRoleToDBInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_role_to_db_instance::builders::AddRoleToDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl AddRoleToDBInstanceFluentBuilder {
             crate::operation::add_role_to_db_instance::AddRoleToDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl AddRoleToDBInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl AddRoleToDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl AddRoleToDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +108,17 @@ impl AddRoleToDBInstanceFluentBuilder {
             crate::operation::add_role_to_db_instance::AddRoleToDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
     /// <p>The name of the DB instance to associate the IAM role with.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }

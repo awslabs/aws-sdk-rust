@@ -5,16 +5,14 @@
 pub struct DescribeCrossAccountAccessRoleInput {}
 impl DescribeCrossAccountAccessRoleInput {
     /// Creates a new builder-style object to manufacture [`DescribeCrossAccountAccessRoleInput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput).
-    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleInputBuilder{
+    pub fn builder() -> crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleInputBuilder {
         crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCrossAccountAccessRoleInput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCrossAccountAccessRoleInputBuilder {}
 impl DescribeCrossAccountAccessRoleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleInput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput).
@@ -24,9 +22,6 @@ impl DescribeCrossAccountAccessRoleInputBuilder {
         crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput {
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput {})
     }
 }

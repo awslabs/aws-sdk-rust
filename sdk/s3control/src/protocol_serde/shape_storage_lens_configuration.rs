@@ -23,10 +23,7 @@ pub fn ser_storage_lens_configuration(
     }
     if let Some(var_5) = &input.data_export {
         let inner_writer = scope.start_el("DataExport");
-        crate::protocol_serde::shape_storage_lens_data_export::ser_storage_lens_data_export(
-            var_5,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_storage_lens_data_export::ser_storage_lens_data_export(var_5, inner_writer)?
     }
     {
         let mut inner_writer = scope.start_el("IsEnabled").finish();
@@ -34,10 +31,7 @@ pub fn ser_storage_lens_configuration(
     }
     if let Some(var_6) = &input.aws_org {
         let inner_writer = scope.start_el("AwsOrg");
-        crate::protocol_serde::shape_storage_lens_aws_org::ser_storage_lens_aws_org(
-            var_6,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_storage_lens_aws_org::ser_storage_lens_aws_org(var_6, inner_writer)?
     }
     if let Some(var_7) = &input.storage_lens_arn {
         let mut inner_writer = scope.start_el("StorageLensArn").finish();

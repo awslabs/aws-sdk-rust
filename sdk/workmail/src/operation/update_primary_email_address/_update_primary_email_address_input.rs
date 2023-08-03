@@ -29,16 +29,14 @@ impl UpdatePrimaryEmailAddressInput {
 }
 impl UpdatePrimaryEmailAddressInput {
     /// Creates a new builder-style object to manufacture [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
-    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder{
+    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder {
         crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePrimaryEmailAddressInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdatePrimaryEmailAddressInputBuilder {
 }
 impl UpdatePrimaryEmailAddressInputBuilder {
     /// <p>The organization that contains the user, group, or resource to update.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization that contains the user, group, or resource to update.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl UpdatePrimaryEmailAddressInputBuilder {
         crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                email: self.email,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput {
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            email: self.email,
+        })
     }
 }

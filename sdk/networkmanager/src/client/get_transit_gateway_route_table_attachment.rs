@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetTransitGatewayRouteTableAttachmentOutput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput) with field(s):
     ///   - [`transit_gateway_route_table_attachment(Option<TransitGatewayRouteTableAttachment>)`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput::transit_gateway_route_table_attachment): <p>Returns information about the transit gateway route table attachment.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayRouteTableAttachmentError>`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError)
-    pub fn get_transit_gateway_route_table_attachment(&self) -> crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentFluentBuilder{
-        crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_route_table_attachment(
+        &self,
+    ) -> crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentFluentBuilder {
+        crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

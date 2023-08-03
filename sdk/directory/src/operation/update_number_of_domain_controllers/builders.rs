@@ -5,16 +5,16 @@ pub use crate::operation::update_number_of_domain_controllers::_update_number_of
 
 impl UpdateNumberOfDomainControllersInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_number_of_domain_controllers();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateNumberOfDomainControllersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder,
+    inner: crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder,
 }
 impl UpdateNumberOfDomainControllersFluentBuilder {
     /// Creates a new `UpdateNumberOfDomainControllers`.
@@ -37,15 +37,20 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
         }
     }
     /// Access the UpdateNumberOfDomainControllers as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>

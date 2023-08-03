@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccessKeyOutput`](crate::operation::create_access_key::CreateAccessKeyOutput) with field(s):
     ///   - [`access_key(Option<AccessKey>)`](crate::operation::create_access_key::CreateAccessKeyOutput::access_key): <p>A structure with details about the access key.</p>
     /// - On failure, responds with [`SdkError<CreateAccessKeyError>`](crate::operation::create_access_key::CreateAccessKeyError)
-    pub fn create_access_key(
-        &self,
-    ) -> crate::operation::create_access_key::builders::CreateAccessKeyFluentBuilder {
-        crate::operation::create_access_key::builders::CreateAccessKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_key(&self) -> crate::operation::create_access_key::builders::CreateAccessKeyFluentBuilder {
+        crate::operation::create_access_key::builders::CreateAccessKeyFluentBuilder::new(self.handle.clone())
     }
 }

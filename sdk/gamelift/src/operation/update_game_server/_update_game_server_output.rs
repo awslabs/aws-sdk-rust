@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGameServerOutput {
 }
 impl UpdateGameServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameServerOutput`](crate::operation::update_game_server::UpdateGameServerOutput).
-    pub fn builder() -> crate::operation::update_game_server::builders::UpdateGameServerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_game_server::builders::UpdateGameServerOutputBuilder {
         crate::operation::update_game_server::builders::UpdateGameServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGameServerOutput`](crate::operation::update_game_server::UpdateGameServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameServerOutputBuilder {
     pub(crate) game_server: ::std::option::Option<crate::types::GameServer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateGameServerOutputBuilder {
         self
     }
     /// <p>Object that describes the newly updated game server.</p>
-    pub fn set_game_server(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServer>,
-    ) -> Self {
+    pub fn set_game_server(mut self, input: ::std::option::Option<crate::types::GameServer>) -> Self {
         self.game_server = input;
         self
     }

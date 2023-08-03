@@ -26,7 +26,7 @@ impl DescribeComponentConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder,
+    inner: crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder,
 }
 impl DescribeComponentConfigurationFluentBuilder {
     /// Creates a new `DescribeComponentConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeComponentConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeComponentConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeComponentConfigurationFluentBuilder {
             crate::operation::describe_component_configuration::DescribeComponentConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_component_configuration::DescribeComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_component_configuration::DescribeComponentConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeComponentConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeComponentConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_component_configuration::DescribeComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_component_configuration::DescribeComponentConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeComponentConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_component_configuration::DescribeComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_component_configuration::DescribeComponentConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeComponentConfigurationFluentBuilder {
             crate::operation::describe_component_configuration::DescribeComponentConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_component_configuration::DescribeComponentConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_component_configuration::DescribeComponentConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeComponentConfigurationFluentBuilder {
         self.inner.get_resource_group_name()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
     }

@@ -30,9 +30,7 @@ impl UpdateServiceNetworkVpcAssociationOutput {
         self.arn.as_deref()
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The account that created the association.</p>
@@ -51,16 +49,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceNetworkVpcAssociationOut
 }
 impl UpdateServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkVpcAssociationOutput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput).
-    pub fn builder() -> crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationOutputBuilder {
         crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceNetworkVpcAssociationOutput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -104,17 +100,12 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
         &self.status
     }
     /// <p>The account that created the association.</p>
@@ -136,27 +127,19 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -169,18 +152,13 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationOutput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput).
-    pub fn build(self) -> crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput{
+    pub fn build(self) -> crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput {
         crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            status: self.status
-            ,
-            created_by: self.created_by
-            ,
-            security_group_ids: self.security_group_ids
-            ,
+            id: self.id,
+            arn: self.arn,
+            status: self.status,
+            created_by: self.created_by,
+            security_group_ids: self.security_group_ids,
             _request_id: self._request_id,
         }
     }

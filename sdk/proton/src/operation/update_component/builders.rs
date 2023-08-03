@@ -10,10 +10,7 @@ impl UpdateComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_component();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateComponentFluentBuilder {
         }
     }
     /// Access the UpdateComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_component::builders::UpdateComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_component::builders::UpdateComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl UpdateComponentFluentBuilder {
             crate::operation::update_component::UpdateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl UpdateComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl UpdateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl UpdateComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_component::UpdateComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl UpdateComponentFluentBuilder {
             crate::operation::update_component::UpdateComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_component::UpdateComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_component::UpdateComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl UpdateComponentFluentBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>) -> Self {
         self.inner = self.inner.set_deployment_type(input);
         self
     }
@@ -190,9 +171,7 @@ impl UpdateComponentFluentBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn get_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentDeploymentUpdateType> {
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::ComponentDeploymentUpdateType> {
         self.inner.get_deployment_type()
     }
     /// <p>An optional customer-provided description of the component.</p>
@@ -224,18 +203,12 @@ impl UpdateComponentFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
@@ -260,20 +233,14 @@ impl UpdateComponentFluentBuilder {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn template_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_file(input.into());
         self
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn set_template_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_file(input);
         self
     }

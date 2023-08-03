@@ -36,9 +36,7 @@ impl GetBlueprintInput {
 
 /// A builder for [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlueprintInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) include_blueprint: ::std::option::Option<bool>,
@@ -88,12 +86,7 @@ impl GetBlueprintInputBuilder {
         &self.include_parameter_spec
     }
     /// Consumes the builder and constructs a [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_blueprint::GetBlueprintInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_blueprint::GetBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blueprint::GetBlueprintInput {
             name: self.name,
             include_blueprint: self.include_blueprint,

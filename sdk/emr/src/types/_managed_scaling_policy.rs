@@ -23,9 +23,7 @@ impl ManagedScalingPolicy {
 
 /// A builder for [`ManagedScalingPolicy`](crate::types::ManagedScalingPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedScalingPolicyBuilder {
     pub(crate) compute_limits: ::std::option::Option<crate::types::ComputeLimits>,
 }
@@ -36,10 +34,7 @@ impl ManagedScalingPolicyBuilder {
         self
     }
     /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
-    pub fn set_compute_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeLimits>,
-    ) -> Self {
+    pub fn set_compute_limits(mut self, input: ::std::option::Option<crate::types::ComputeLimits>) -> Self {
         self.compute_limits = input;
         self
     }

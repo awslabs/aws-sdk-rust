@@ -10,10 +10,7 @@ impl GetAccountSummaryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_account_summary::GetAccountSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_summary::GetAccountSummaryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_account_summary();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetAccountSummaryFluentBuilder {
         }
     }
     /// Access the GetAccountSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_account_summary::builders::GetAccountSummaryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_account_summary::builders::GetAccountSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetAccountSummaryFluentBuilder {
             crate::operation::get_account_summary::GetAccountSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_summary::GetAccountSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetAccountSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetAccountSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_summary::GetAccountSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_summary::GetAccountSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetAccountSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_summary::GetAccountSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_summary::GetAccountSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetAccountSummaryFluentBuilder {
             crate::operation::get_account_summary::GetAccountSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_summary::GetAccountSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError>,
     > {
         self.customize_middleware().await
     }

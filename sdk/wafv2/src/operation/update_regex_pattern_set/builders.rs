@@ -46,10 +46,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         }
     }
     /// Access the UpdateRegexPatternSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +58,7 @@ impl UpdateRegexPatternSetFluentBuilder {
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +68,7 @@ impl UpdateRegexPatternSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +77,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         let op = self
             .inner
@@ -110,9 +100,7 @@ impl UpdateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +114,7 @@ impl UpdateRegexPatternSetFluentBuilder {
             crate::operation::update_regex_pattern_set::UpdateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>,
     > {
         self.customize_middleware().await
     }
@@ -213,17 +199,12 @@ impl UpdateRegexPatternSetFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_regular_expression_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    ) -> Self {
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.inner = self.inner.set_regular_expression_list(input);
         self
     }
     /// <p></p>
-    pub fn get_regular_expression_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         self.inner.get_regular_expression_list()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>

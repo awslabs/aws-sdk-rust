@@ -35,9 +35,7 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
@@ -70,17 +68,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p>Information about the projects.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the projects.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

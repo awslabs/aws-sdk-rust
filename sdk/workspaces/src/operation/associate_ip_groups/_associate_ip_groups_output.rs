@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateIpGroupsOutput {
 }
 impl AssociateIpGroupsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateIpGroupsOutput`](crate::operation::associate_ip_groups::AssociateIpGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::associate_ip_groups::builders::AssociateIpGroupsOutputBuilder {
         crate::operation::associate_ip_groups::builders::AssociateIpGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpGroupsOutput`](crate::operation::associate_ip_groups::AssociateIpGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpGroupsOutputBuilder {
     _request_id: Option<String>,
 }

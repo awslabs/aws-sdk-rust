@@ -17,9 +17,7 @@ impl Tiering {
         self.days
     }
     /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
-    pub fn access_tier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IntelligentTieringAccessTier> {
+    pub fn access_tier(&self) -> ::std::option::Option<&crate::types::IntelligentTieringAccessTier> {
         self.access_tier.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl Tiering {
 
 /// A builder for [`Tiering`](crate::types::Tiering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TieringBuilder {
     pub(crate) days: ::std::option::Option<i32>,
     pub(crate) access_tier: ::std::option::Option<crate::types::IntelligentTieringAccessTier>,
@@ -60,17 +56,12 @@ impl TieringBuilder {
         self
     }
     /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
-    pub fn set_access_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::IntelligentTieringAccessTier>,
-    ) -> Self {
+    pub fn set_access_tier(mut self, input: ::std::option::Option<crate::types::IntelligentTieringAccessTier>) -> Self {
         self.access_tier = input;
         self
     }
     /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
-    pub fn get_access_tier(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntelligentTieringAccessTier> {
+    pub fn get_access_tier(&self) -> &::std::option::Option<crate::types::IntelligentTieringAccessTier> {
         &self.access_tier
     }
     /// Consumes the builder and constructs a [`Tiering`](crate::types::Tiering).

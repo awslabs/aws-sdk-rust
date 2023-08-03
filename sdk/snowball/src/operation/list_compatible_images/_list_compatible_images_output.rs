@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCompatibleImagesOutput {
 }
 impl ListCompatibleImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListCompatibleImagesOutput`](crate::operation::list_compatible_images::ListCompatibleImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_compatible_images::builders::ListCompatibleImagesOutputBuilder {
+    pub fn builder() -> crate::operation::list_compatible_images::builders::ListCompatibleImagesOutputBuilder {
         crate::operation::list_compatible_images::builders::ListCompatibleImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCompatibleImagesOutput`](crate::operation::list_compatible_images::ListCompatibleImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCompatibleImagesOutputBuilder {
-    pub(crate) compatible_images:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
+    pub(crate) compatible_images: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListCompatibleImagesOutputBuilder {
         self
     }
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub fn set_compatible_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
-    ) -> Self {
+    pub fn set_compatible_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>) -> Self {
         self.compatible_images = input;
         self
     }
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub fn get_compatible_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>> {
+    pub fn get_compatible_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>> {
         &self.compatible_images
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>

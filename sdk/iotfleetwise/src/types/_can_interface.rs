@@ -37,9 +37,7 @@ impl CanInterface {
 
 /// A builder for [`CanInterface`](crate::types::CanInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanInterfaceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl CanInterfaceBuilder {
         &self.name
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn protocol_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the communication protocol for the interface.</p>
-    pub fn set_protocol_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl CanInterfaceBuilder {
         &self.protocol_name
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the communication protocol for the interface.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_version = input;
         self
     }

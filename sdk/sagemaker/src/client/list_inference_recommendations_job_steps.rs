@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`steps(Option<Vec<InferenceRecommendationsJobStep>>)`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput::steps): <p>A list of all subtask details in Inference Recommender.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput::next_token): <p>A token that you can specify in your next request to return more results from the list.</p>
     /// - On failure, responds with [`SdkError<ListInferenceRecommendationsJobStepsError>`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError)
-    pub fn list_inference_recommendations_job_steps(&self) -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsFluentBuilder{
-        crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsFluentBuilder::new(self.handle.clone())
+    pub fn list_inference_recommendations_job_steps(
+        &self,
+    ) -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsFluentBuilder {
+        crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -35,12 +35,9 @@ impl ListFraudstersOutput {
 
 /// A builder for [`ListFraudstersOutput`](crate::operation::list_fraudsters::ListFraudstersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFraudstersOutputBuilder {
-    pub(crate) fraudster_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>>,
+    pub(crate) fraudster_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListFraudstersOutputBuilder {
         self
     }
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
-    pub fn set_fraudster_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>>,
-    ) -> Self {
+    pub fn set_fraudster_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>>) -> Self {
         self.fraudster_summaries = input;
         self
     }
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
-    pub fn get_fraudster_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>> {
+    pub fn get_fraudster_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FraudsterSummary>> {
         &self.fraudster_summaries
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>

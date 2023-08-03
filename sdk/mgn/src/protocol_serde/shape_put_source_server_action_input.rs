@@ -34,10 +34,7 @@ pub fn ser_put_source_server_action_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = object_10.key(key_11.as_str()).start_object();
-                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(
-                    &mut object_13,
-                    value_12,
-                )?;
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_13, value_12)?;
                 object_13.finish();
             }
         }

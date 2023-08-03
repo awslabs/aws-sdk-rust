@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartExpenseAnalysisOutput`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput::job_id): <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     /// - On failure, responds with [`SdkError<StartExpenseAnalysisError>`](crate::operation::start_expense_analysis::StartExpenseAnalysisError)
-    pub fn start_expense_analysis(
-        &self,
-    ) -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisFluentBuilder {
-        crate::operation::start_expense_analysis::builders::StartExpenseAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_expense_analysis(&self) -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisFluentBuilder {
+        crate::operation::start_expense_analysis::builders::StartExpenseAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

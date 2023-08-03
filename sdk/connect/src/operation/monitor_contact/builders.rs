@@ -10,10 +10,7 @@ impl MonitorContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::monitor_contact::MonitorContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::monitor_contact::MonitorContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::monitor_contact::MonitorContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.monitor_contact();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl MonitorContactFluentBuilder {
         }
     }
     /// Access the MonitorContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::monitor_contact::builders::MonitorContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::monitor_contact::builders::MonitorContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl MonitorContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -166,17 +158,12 @@ impl MonitorContactFluentBuilder {
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn set_allowed_monitor_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
-    ) -> Self {
+    pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
         self.inner = self.inner.set_allowed_monitor_capabilities(input);
         self
     }
     /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
-    pub fn get_allowed_monitor_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
+    pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
         self.inner.get_allowed_monitor_capabilities()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>

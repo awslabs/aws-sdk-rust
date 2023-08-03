@@ -4,9 +4,7 @@ pub fn ser_update_api_input(
     input: &crate::operation::update_api::UpdateApiInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.api_key_selection_expression {
-        object
-            .key("apiKeySelectionExpression")
-            .string(var_1.as_str());
+        object.key("apiKeySelectionExpression").string(var_1.as_str());
     }
     if let Some(var_2) = &input.cors_configuration {
         #[allow(unused_mut)]
@@ -33,9 +31,7 @@ pub fn ser_update_api_input(
         object.key("routeKey").string(var_9.as_str());
     }
     if let Some(var_10) = &input.route_selection_expression {
-        object
-            .key("routeSelectionExpression")
-            .string(var_10.as_str());
+        object.key("routeSelectionExpression").string(var_10.as_str());
     }
     if let Some(var_11) = &input.target {
         object.key("target").string(var_11.as_str());

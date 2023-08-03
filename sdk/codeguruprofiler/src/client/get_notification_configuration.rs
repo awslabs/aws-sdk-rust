@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetNotificationConfigurationOutput`](crate::operation::get_notification_configuration::GetNotificationConfigurationOutput) with field(s):
     ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::operation::get_notification_configuration::GetNotificationConfigurationOutput::notification_configuration): <p>The current notification configuration for this profiling group.</p>
     /// - On failure, responds with [`SdkError<GetNotificationConfigurationError>`](crate::operation::get_notification_configuration::GetNotificationConfigurationError)
-    pub fn get_notification_configuration(&self) -> crate::operation::get_notification_configuration::builders::GetNotificationConfigurationFluentBuilder{
+    pub fn get_notification_configuration(
+        &self,
+    ) -> crate::operation::get_notification_configuration::builders::GetNotificationConfigurationFluentBuilder {
         crate::operation::get_notification_configuration::builders::GetNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

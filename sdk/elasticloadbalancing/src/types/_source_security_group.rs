@@ -30,9 +30,7 @@ impl SourceSecurityGroup {
 
 /// A builder for [`SourceSecurityGroup`](crate::types::SourceSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceSecurityGroupBuilder {
     pub(crate) owner_alias: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

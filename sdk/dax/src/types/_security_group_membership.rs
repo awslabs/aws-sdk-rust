@@ -30,27 +30,19 @@ impl SecurityGroupMembership {
 
 /// A builder for [`SecurityGroupMembership`](crate::types::SecurityGroupMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupMembershipBuilder {
     pub(crate) security_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupMembershipBuilder {
     /// <p>The unique ID for this security group.</p>
-    pub fn security_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for this security group.</p>
-    pub fn set_security_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_identifier = input;
         self
     }

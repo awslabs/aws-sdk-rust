@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`message_id(Option<String>)`](crate::operation::redact_channel_message::RedactChannelMessageOutput::message_id): <p>The ID of the message being redacted.</p>
     ///   - [`sub_channel_id(Option<String>)`](crate::operation::redact_channel_message::RedactChannelMessageOutput::sub_channel_id): <p>The ID of the SubChannel in the response.</p> <note>   <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>  </note>
     /// - On failure, responds with [`SdkError<RedactChannelMessageError>`](crate::operation::redact_channel_message::RedactChannelMessageError)
-    pub fn redact_channel_message(
-        &self,
-    ) -> crate::operation::redact_channel_message::builders::RedactChannelMessageFluentBuilder {
-        crate::operation::redact_channel_message::builders::RedactChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn redact_channel_message(&self) -> crate::operation::redact_channel_message::builders::RedactChannelMessageFluentBuilder {
+        crate::operation::redact_channel_message::builders::RedactChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

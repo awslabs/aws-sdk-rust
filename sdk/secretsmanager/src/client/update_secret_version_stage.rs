@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput::arn): <p>The ARN of the secret that was updated.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput::name): <p>The name of the secret that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateSecretVersionStageError>`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageError)
-    pub fn update_secret_version_stage(&self) -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageFluentBuilder{
+    pub fn update_secret_version_stage(&self) -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageFluentBuilder {
         crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageFluentBuilder::new(self.handle.clone())
     }
 }

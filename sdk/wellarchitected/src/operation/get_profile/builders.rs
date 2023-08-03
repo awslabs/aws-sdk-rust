@@ -10,10 +10,7 @@ impl GetProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_profile::GetProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile::GetProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile::GetProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_profile();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetProfileFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_profile::GetProfile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_profile::GetProfile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_profile::GetProfileError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetProfileFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_profile::GetProfile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_profile::GetProfile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_profile::GetProfileError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl GetProfileFluentBuilder {
         self.inner.get_profile_arn()
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_version(input.into());
         self
     }
     /// <p>The profile version.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_version(input);
         self
     }

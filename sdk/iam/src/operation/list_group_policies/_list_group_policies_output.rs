@@ -38,17 +38,14 @@ impl ::aws_http::request_id::RequestId for ListGroupPoliciesOutput {
 }
 impl ListGroupPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupPoliciesOutput`](crate::operation::list_group_policies::ListGroupPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder {
         crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupPoliciesOutput`](crate::operation::list_group_policies::ListGroupPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupPoliciesOutputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -70,18 +67,13 @@ impl ListGroupPoliciesOutputBuilder {
     }
     /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>

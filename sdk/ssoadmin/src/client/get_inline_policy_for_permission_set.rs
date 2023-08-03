@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetInlinePolicyForPermissionSetOutput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput) with field(s):
     ///   - [`inline_policy(Option<String>)`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput::inline_policy): <p>The inline policy that is attached to the permission set.</p>
     /// - On failure, responds with [`SdkError<GetInlinePolicyForPermissionSetError>`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError)
-    pub fn get_inline_policy_for_permission_set(&self) -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetFluentBuilder{
+    pub fn get_inline_policy_for_permission_set(
+        &self,
+    ) -> crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetFluentBuilder {
         crate::operation::get_inline_policy_for_permission_set::builders::GetInlinePolicyForPermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

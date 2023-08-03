@@ -37,9 +37,7 @@ impl RuleConfig {
 
 /// A builder for [`RuleConfig`](crate::types::RuleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleConfigBuilder {
     pub(crate) inverted: ::std::option::Option<bool>,
     pub(crate) threshold: ::std::option::Option<i32>,

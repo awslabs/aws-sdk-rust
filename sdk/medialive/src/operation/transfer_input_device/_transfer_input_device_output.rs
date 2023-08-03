@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for TransferInputDeviceOutput {
 }
 impl TransferInputDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TransferInputDeviceOutput`](crate::operation::transfer_input_device::TransferInputDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::transfer_input_device::builders::TransferInputDeviceOutputBuilder {
-        crate::operation::transfer_input_device::builders::TransferInputDeviceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::transfer_input_device::builders::TransferInputDeviceOutputBuilder {
+        crate::operation::transfer_input_device::builders::TransferInputDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`TransferInputDeviceOutput`](crate::operation::transfer_input_device::TransferInputDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferInputDeviceOutputBuilder {
     _request_id: Option<String>,
 }

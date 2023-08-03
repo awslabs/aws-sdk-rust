@@ -10,10 +10,7 @@ impl RegisterVolumeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_volume::RegisterVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_volume::RegisterVolumeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_volume::RegisterVolumeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_volume();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RegisterVolumeFluentBuilder {
         }
     }
     /// Access the RegisterVolume as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_volume::builders::RegisterVolumeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_volume::builders::RegisterVolumeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl RegisterVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl RegisterVolumeFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon EBS volume ID.</p>
-    pub fn ec2_volume_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_volume_id(input.into());
         self
     }
     /// <p>The Amazon EBS volume ID.</p>
-    pub fn set_ec2_volume_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_volume_id(input);
         self
     }

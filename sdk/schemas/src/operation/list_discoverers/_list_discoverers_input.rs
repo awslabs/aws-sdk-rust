@@ -43,9 +43,7 @@ impl ListDiscoverersInput {
 
 /// A builder for [`ListDiscoverersInput`](crate::operation::list_discoverers::ListDiscoverersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoverersInputBuilder {
     pub(crate) discoverer_id_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct ListDiscoverersInputBuilder {
 }
 impl ListDiscoverersInputBuilder {
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-    pub fn discoverer_id_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-    pub fn set_discoverer_id_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id_prefix = input;
         self
     }
@@ -102,18 +94,12 @@ impl ListDiscoverersInputBuilder {
         &self.next_token
     }
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-    pub fn source_arn_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_arn_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-    pub fn set_source_arn_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_arn_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn_prefix = input;
         self
     }
@@ -124,10 +110,7 @@ impl ListDiscoverersInputBuilder {
     /// Consumes the builder and constructs a [`ListDiscoverersInput`](crate::operation::list_discoverers::ListDiscoverersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_discoverers::ListDiscoverersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_discoverers::ListDiscoverersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_discoverers::ListDiscoverersInput {
             discoverer_id_prefix: self.discoverer_id_prefix,
             limit: self.limit,

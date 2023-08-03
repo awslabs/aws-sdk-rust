@@ -28,9 +28,7 @@ impl GetDevEndpointOutput {
 
 /// A builder for [`GetDevEndpointOutput`](crate::operation::get_dev_endpoint::GetDevEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevEndpointOutputBuilder {
     pub(crate) dev_endpoint: ::std::option::Option<crate::types::DevEndpoint>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetDevEndpointOutputBuilder {
         self
     }
     /// <p>A <code>DevEndpoint</code> definition.</p>
-    pub fn set_dev_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEndpoint>,
-    ) -> Self {
+    pub fn set_dev_endpoint(mut self, input: ::std::option::Option<crate::types::DevEndpoint>) -> Self {
         self.dev_endpoint = input;
         self
     }

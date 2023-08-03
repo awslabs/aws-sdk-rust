@@ -22,17 +22,14 @@ impl ModifyWorkspaceStateInput {
 }
 impl ModifyWorkspaceStateInput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
-    pub fn builder(
-    ) -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {
+    pub fn builder() -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {
         crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceStateInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_state: ::std::option::Option<crate::types::TargetWorkspaceState>,
@@ -58,31 +55,22 @@ impl ModifyWorkspaceStateInputBuilder {
         self
     }
     /// <p>The WorkSpace state.</p>
-    pub fn set_workspace_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetWorkspaceState>,
-    ) -> Self {
+    pub fn set_workspace_state(mut self, input: ::std::option::Option<crate::types::TargetWorkspaceState>) -> Self {
         self.workspace_state = input;
         self
     }
     /// <p>The WorkSpace state.</p>
-    pub fn get_workspace_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
+    pub fn get_workspace_state(&self) -> &::std::option::Option<crate::types::TargetWorkspaceState> {
         &self.workspace_state
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_workspace_state::ModifyWorkspaceStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
-                workspace_id: self.workspace_id,
-                workspace_state: self.workspace_state,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
+            workspace_id: self.workspace_id,
+            workspace_state: self.workspace_state,
+        })
     }
 }

@@ -6,30 +6,18 @@
 pub struct PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     #[doc(hidden)]
-    pub default_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     #[doc(hidden)]
-    pub device_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
-    >,
+    pub device_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>>,
 }
 impl PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
-    pub fn default_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_attributes.as_ref()
     }
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
-    pub fn device_templates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
-    > {
+    pub fn device_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>> {
         self.device_templates.as_ref()
     }
 }
@@ -42,16 +30,10 @@ impl PlacementTemplate {
 
 /// A builder for [`PlacementTemplate`](crate::types::PlacementTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementTemplateBuilder {
-    pub(crate) default_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) device_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
-    >,
+    pub(crate) default_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) device_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>>,
 }
 impl PlacementTemplateBuilder {
     /// Adds a key-value pair to `default_attributes`.
@@ -72,19 +54,13 @@ impl PlacementTemplateBuilder {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub fn set_default_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_attributes = input;
         self
     }
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
-    pub fn get_default_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_attributes
     }
     /// Adds a key-value pair to `device_templates`.
@@ -92,11 +68,7 @@ impl PlacementTemplateBuilder {
     /// To override the contents of this collection use [`set_device_templates`](Self::set_device_templates).
     ///
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
-    pub fn device_templates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::DeviceTemplate,
-    ) -> Self {
+    pub fn device_templates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DeviceTemplate) -> Self {
         let mut hash_map = self.device_templates.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.device_templates = ::std::option::Option::Some(hash_map);
@@ -105,19 +77,13 @@ impl PlacementTemplateBuilder {
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub fn set_device_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>>,
     ) -> Self {
         self.device_templates = input;
         self
     }
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
-    pub fn get_device_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
-    > {
+    pub fn get_device_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>> {
         &self.device_templates
     }
     /// Consumes the builder and constructs a [`PlacementTemplate`](crate::types::PlacementTemplate).

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`event_aggregates(Option<Vec<EventAggregate>>)`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput::event_aggregates): <p>The number of events in each category that meet the optional filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     /// - On failure, responds with [`SdkError<DescribeEventAggregatesError>`](crate::operation::describe_event_aggregates::DescribeEventAggregatesError)
-    pub fn describe_event_aggregates(
-        &self,
-    ) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder
-    {
+    pub fn describe_event_aggregates(&self) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder {
         crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesFluentBuilder::new(self.handle.clone())
     }
 }

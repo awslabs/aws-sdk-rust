@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSmbLocalGroupsOutput {
 }
 impl UpdateSmbLocalGroupsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbLocalGroupsOutput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsOutputBuilder {
         crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbLocalGroupsOutput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbLocalGroupsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

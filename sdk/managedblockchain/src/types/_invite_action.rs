@@ -24,9 +24,7 @@ impl InviteAction {
 
 /// A builder for [`InviteAction`](crate::types::InviteAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteActionBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +45,6 @@ impl InviteActionBuilder {
     }
     /// Consumes the builder and constructs a [`InviteAction`](crate::types::InviteAction).
     pub fn build(self) -> crate::types::InviteAction {
-        crate::types::InviteAction {
-            principal: self.principal,
-        }
+        crate::types::InviteAction { principal: self.principal }
     }
 }

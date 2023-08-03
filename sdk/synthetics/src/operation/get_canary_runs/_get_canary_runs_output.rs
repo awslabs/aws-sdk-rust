@@ -35,9 +35,7 @@ impl GetCanaryRunsOutput {
 
 /// A builder for [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCanaryRunsOutputBuilder {
     pub(crate) canary_runs: ::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetCanaryRunsOutputBuilder {
         self
     }
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    pub fn set_canary_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>>,
-    ) -> Self {
+    pub fn set_canary_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>>) -> Self {
         self.canary_runs = input;
         self
     }
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    pub fn get_canary_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>> {
+    pub fn get_canary_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>> {
         &self.canary_runs
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>

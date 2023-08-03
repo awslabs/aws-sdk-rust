@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput) with field(s):
     ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput::catalog_data): <p>The catalog data for the repository.</p>
     /// - On failure, responds with [`SdkError<PutRepositoryCatalogDataError>`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError)
-    pub fn put_repository_catalog_data(&self) -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataFluentBuilder{
+    pub fn put_repository_catalog_data(&self) -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataFluentBuilder {
         crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataFluentBuilder::new(self.handle.clone())
     }
 }

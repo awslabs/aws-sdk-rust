@@ -30,9 +30,7 @@ impl LookupAttribute {
 
 /// A builder for [`LookupAttribute`](crate::types::LookupAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupAttributeBuilder {
     pub(crate) attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl LookupAttributeBuilder {
         self
     }
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub fn set_attribute_key(
-        mut self,
-        input: ::std::option::Option<crate::types::LookupAttributeKey>,
-    ) -> Self {
+    pub fn set_attribute_key(mut self, input: ::std::option::Option<crate::types::LookupAttributeKey>) -> Self {
         self.attribute_key = input;
         self
     }
@@ -56,18 +51,12 @@ impl LookupAttributeBuilder {
         &self.attribute_key
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }

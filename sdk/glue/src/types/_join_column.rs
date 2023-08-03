@@ -30,9 +30,7 @@ impl JoinColumn {
 
 /// A builder for [`JoinColumn`](crate::types::JoinColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinColumnBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
@@ -64,17 +62,12 @@ impl JoinColumnBuilder {
         self
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.keys = input;
         self
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn get_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.keys
     }
     /// Consumes the builder and constructs a [`JoinColumn`](crate::types::JoinColumn).

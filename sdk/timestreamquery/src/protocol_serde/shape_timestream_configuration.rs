@@ -18,10 +18,7 @@ pub fn ser_timestream_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_timestream_configuration(
     if let Some(var_8) = &input.multi_measure_mappings {
         #[allow(unused_mut)]
         let mut object_9 = object.key("MultiMeasureMappings").start_object();
-        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.mixed_measure_mappings {
@@ -42,10 +36,7 @@ pub fn ser_timestream_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -59,17 +50,9 @@ pub fn ser_timestream_configuration(
 
 pub(crate) fn de_timestream_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TimestreamConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TimestreamConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,77 +62,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DatabaseName" => {
-                                builder = builder.set_database_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DatabaseName" => {
+                            builder = builder.set_database_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TableName" => {
-                                builder = builder.set_table_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TimeColumn" => {
-                                builder = builder.set_time_column(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "DimensionMappings" => {
-                                builder = builder.set_dimension_mappings(
-                                    crate::protocol_serde::shape_dimension_mapping_list::de_dimension_mapping_list(tokens)?
-                                );
-                            }
-                            "MultiMeasureMappings" => {
-                                builder = builder.set_multi_measure_mappings(
-                                    crate::protocol_serde::shape_multi_measure_mappings::de_multi_measure_mappings(tokens)?
-                                );
-                            }
-                            "MixedMeasureMappings" => {
-                                builder = builder.set_mixed_measure_mappings(
-                                    crate::protocol_serde::shape_mixed_measure_mapping_list::de_mixed_measure_mapping_list(tokens)?
-                                );
-                            }
-                            "MeasureNameColumn" => {
-                                builder = builder.set_measure_name_column(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "TableName" => {
+                            builder = builder.set_table_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TimeColumn" => {
+                            builder = builder.set_time_column(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DimensionMappings" => {
+                            builder = builder
+                                .set_dimension_mappings(crate::protocol_serde::shape_dimension_mapping_list::de_dimension_mapping_list(tokens)?);
+                        }
+                        "MultiMeasureMappings" => {
+                            builder = builder
+                                .set_multi_measure_mappings(crate::protocol_serde::shape_multi_measure_mappings::de_multi_measure_mappings(tokens)?);
+                        }
+                        "MixedMeasureMappings" => {
+                            builder = builder.set_mixed_measure_mappings(
+                                crate::protocol_serde::shape_mixed_measure_mapping_list::de_mixed_measure_mapping_list(tokens)?,
+                            );
+                        }
+                        "MeasureNameColumn" => {
+                            builder = builder.set_measure_name_column(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

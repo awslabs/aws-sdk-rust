@@ -68,9 +68,7 @@ impl RateBasedRule {
 
 /// A builder for [`RateBasedRule`](crate::types::RateBasedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateBasedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -134,17 +132,12 @@ impl RateBasedRuleBuilder {
         self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn set_match_predicates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
+    pub fn set_match_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
         self.match_predicates = input;
         self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn get_match_predicates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+    pub fn get_match_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
         &self.match_predicates
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>

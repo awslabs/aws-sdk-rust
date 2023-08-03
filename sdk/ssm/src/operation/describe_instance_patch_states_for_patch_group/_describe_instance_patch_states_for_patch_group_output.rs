@@ -5,8 +5,7 @@
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
     #[doc(hidden)]
-    pub instance_patch_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
+    pub instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeInstancePatchStatesForPatchGroupOutput {
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
-    pub fn instance_patch_states(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstancePatchState]> {
+    pub fn instance_patch_states(&self) -> ::std::option::Option<&[crate::types::InstancePatchState]> {
         self.instance_patch_states.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeInstancePatchStatesForPatchGr
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput).
-    pub fn builder() -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupOutputBuilder {
         crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutputBuilder {
-    pub(crate) instance_patch_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
+    pub(crate) instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +55,12 @@ impl DescribeInstancePatchStatesForPatchGroupOutputBuilder {
         self
     }
     /// <p>The high-level patch state for the requested managed nodes. </p>
-    pub fn set_instance_patch_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
-    ) -> Self {
+    pub fn set_instance_patch_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>) -> Self {
         self.instance_patch_states = input;
         self
     }
     /// <p>The high-level patch state for the requested managed nodes. </p>
-    pub fn get_instance_patch_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>> {
+    pub fn get_instance_patch_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>> {
         &self.instance_patch_states
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -97,12 +87,10 @@ impl DescribeInstancePatchStatesForPatchGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput).
-    pub fn build(self) -> crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput{
+    pub fn build(self) -> crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput {
         crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput {
-            instance_patch_states: self.instance_patch_states
-            ,
-            next_token: self.next_token
-            ,
+            instance_patch_states: self.instance_patch_states,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

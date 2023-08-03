@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StartAttachmentUploadOutput {
 }
 impl StartAttachmentUploadOutput {
     /// Creates a new builder-style object to manufacture [`StartAttachmentUploadOutput`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadOutputBuilder {
         crate::operation::start_attachment_upload::builders::StartAttachmentUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartAttachmentUploadOutput`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAttachmentUploadOutputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
@@ -47,18 +43,12 @@ pub struct StartAttachmentUploadOutputBuilder {
 }
 impl StartAttachmentUploadOutputBuilder {
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -72,10 +62,7 @@ impl StartAttachmentUploadOutputBuilder {
         self
     }
     /// <p>Fields to be used while uploading the attachment.</p>
-    pub fn set_upload_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::UploadMetadata>,
-    ) -> Self {
+    pub fn set_upload_metadata(mut self, input: ::std::option::Option<crate::types::UploadMetadata>) -> Self {
         self.upload_metadata = input;
         self
     }

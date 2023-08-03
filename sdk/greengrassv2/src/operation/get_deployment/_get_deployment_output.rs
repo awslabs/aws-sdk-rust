@@ -26,12 +26,7 @@ pub struct GetDeploymentOutput {
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     #[doc(hidden)]
-    pub components: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    >,
+    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     #[doc(hidden)]
     pub deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
@@ -49,9 +44,7 @@ pub struct GetDeploymentOutput {
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutput {
@@ -86,12 +79,7 @@ impl GetDeploymentOutput {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn components(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         self.components.as_ref()
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -99,9 +87,7 @@ impl GetDeploymentOutput {
         self.deployment_policies.as_ref()
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentIoTJobConfiguration> {
+    pub fn iot_job_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentIoTJobConfiguration> {
         self.iot_job_configuration.as_ref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
@@ -117,11 +103,7 @@ impl GetDeploymentOutput {
         self.parent_target_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -139,9 +121,7 @@ impl GetDeploymentOutput {
 
 /// A builder for [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentOutputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -150,21 +130,13 @@ pub struct GetDeploymentOutputBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) iot_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) iot_job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    >,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     pub(crate) deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
-    pub(crate) iot_job_configuration:
-        ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
+    pub(crate) iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) is_latest_for_target: ::std::option::Option<bool>,
     pub(crate) parent_target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutputBuilder {
@@ -197,18 +169,12 @@ impl GetDeploymentOutputBuilder {
         &self.revision_id
     }
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -217,18 +183,12 @@ impl GetDeploymentOutputBuilder {
         &self.deployment_id
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn set_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_name = input;
         self
     }
@@ -242,10 +202,7 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The status of the deployment.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -286,11 +243,7 @@ impl GetDeploymentOutputBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn components(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentDeploymentSpecification,
-    ) -> Self {
+    pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDeploymentSpecification) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.components = ::std::option::Option::Some(hash_map);
@@ -299,12 +252,7 @@ impl GetDeploymentOutputBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn set_components(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentDeploymentSpecification,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     ) -> Self {
         self.components = input;
         self
@@ -312,12 +260,7 @@ impl GetDeploymentOutputBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn get_components(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         &self.components
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -326,39 +269,26 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn set_deployment_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentPolicies>,
-    ) -> Self {
+    pub fn set_deployment_policies(mut self, input: ::std::option::Option<crate::types::DeploymentPolicies>) -> Self {
         self.deployment_policies = input;
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn get_deployment_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentPolicies> {
+    pub fn get_deployment_policies(&self) -> &::std::option::Option<crate::types::DeploymentPolicies> {
         &self.deployment_policies
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(
-        mut self,
-        input: crate::types::DeploymentIoTJobConfiguration,
-    ) -> Self {
+    pub fn iot_job_configuration(mut self, input: crate::types::DeploymentIoTJobConfiguration) -> Self {
         self.iot_job_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn set_iot_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
-    ) -> Self {
+    pub fn set_iot_job_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>) -> Self {
         self.iot_job_configuration = input;
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn get_iot_job_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
+    pub fn get_iot_job_configuration(&self) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
         &self.iot_job_configuration
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
@@ -367,10 +297,7 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -393,18 +320,12 @@ impl GetDeploymentOutputBuilder {
         &self.is_latest_for_target
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_target_arn = input;
         self
     }
@@ -417,32 +338,19 @@ impl GetDeploymentOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

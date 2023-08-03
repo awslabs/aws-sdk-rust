@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for GetCredentialsForIdentityOutput {
 }
 impl GetCredentialsForIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
-    pub fn builder() -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityOutputBuilder{
+    pub fn builder() -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityOutputBuilder {
         crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCredentialsForIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
@@ -65,10 +63,7 @@ impl GetCredentialsForIdentityOutputBuilder {
         self
     }
     /// <p>Credentials for the provided identity ID.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -86,9 +81,7 @@ impl GetCredentialsForIdentityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput {
+    pub fn build(self) -> crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput {
         crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput {
             identity_id: self.identity_id,
             credentials: self.credentials,

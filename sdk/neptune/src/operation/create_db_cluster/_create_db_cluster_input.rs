@@ -116,16 +116,14 @@ pub struct CreateDbClusterInput {
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub enable_cloudwatch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     #[doc(hidden)]
-    pub serverless_v2_scaling_configuration:
-        ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -266,9 +264,7 @@ impl CreateDbClusterInput {
         self.enable_iam_database_authentication
     }
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
@@ -277,9 +273,7 @@ impl CreateDbClusterInput {
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
@@ -296,9 +290,7 @@ impl CreateDbClusterInput {
 
 /// A builder for [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbClusterInputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
@@ -307,8 +299,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -324,11 +315,9 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) pre_signed_url: ::std::option::Option<::std::string::String>,
     pub(crate) enable_iam_database_authentication: ::std::option::Option<bool>,
-    pub(crate) enable_cloudwatch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
-    pub(crate) serverless_v2_scaling_configuration:
-        ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInputBuilder {
@@ -337,27 +326,19 @@ impl CreateDbClusterInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
@@ -390,18 +371,12 @@ impl CreateDbClusterInputBuilder {
         &self.backup_retention_period
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn character_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn character_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.character_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn set_character_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.character_set_name = input;
         self
     }
@@ -424,18 +399,12 @@ impl CreateDbClusterInputBuilder {
         &self.copy_tags_to_snapshot
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -451,10 +420,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -466,10 +432,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -489,10 +452,7 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -501,10 +461,7 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
@@ -513,9 +470,7 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -523,46 +478,32 @@ impl CreateDbClusterInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -591,19 +532,13 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The version number of the database engine to use for the new DB cluster.</p>
     /// <p>Example: <code>1.0.2.1</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the database engine to use for the new DB cluster.</p>
     /// <p>Example: <code>1.0.2.1</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -630,18 +565,12 @@ impl CreateDbClusterInputBuilder {
         &self.port
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -650,18 +579,12 @@ impl CreateDbClusterInputBuilder {
         &self.master_username
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -670,18 +593,12 @@ impl CreateDbClusterInputBuilder {
         &self.master_user_password
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -698,10 +615,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -714,10 +628,7 @@ impl CreateDbClusterInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -738,10 +649,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -750,10 +658,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -762,31 +667,21 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
-    pub fn replication_source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
-    pub fn set_replication_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_source_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
-    pub fn get_replication_source_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_source_identifier
     }
     /// Appends an item to `tags`.
@@ -801,10 +696,7 @@ impl CreateDbClusterInputBuilder {
         self
     }
     /// <p>The tags to assign to the new DB cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -865,18 +757,12 @@ impl CreateDbClusterInputBuilder {
         &self.kms_key_id
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }
@@ -892,10 +778,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
     /// <p>Default: <code>false</code>.</p>
-    pub fn set_enable_iam_database_authentication(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_iam_database_authentication = input;
         self
     }
@@ -909,27 +792,19 @@ impl CreateDbClusterInputBuilder {
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    pub fn get_enable_cloudwatch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
@@ -948,42 +823,28 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(
-        mut self,
-        input: crate::types::ServerlessV2ScalingConfiguration,
-    ) -> Self {
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
         self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
-    ) -> Self {
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
         self.serverless_v2_scaling_configuration = input;
         self
     }
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         &self.serverless_v2_scaling_configuration
     }
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
@@ -994,10 +855,7 @@ impl CreateDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_cluster::CreateDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_db_cluster::CreateDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_cluster::CreateDbClusterInput {
             availability_zones: self.availability_zones,
             backup_retention_period: self.backup_retention_period,

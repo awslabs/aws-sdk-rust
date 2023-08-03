@@ -9,10 +9,7 @@ pub fn ser_associate_aws_account_with_partner_account_input(
     if let Some(var_2) = &input.sidewalk {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Sidewalk").start_object();
-        crate::protocol_serde::shape_sidewalk_account_info::ser_sidewalk_account_info(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_sidewalk_account_info::ser_sidewalk_account_info(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.tags {

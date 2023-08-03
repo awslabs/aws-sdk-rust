@@ -15,33 +15,25 @@ impl DeleteEmailMonitoringConfigurationInput {
 }
 impl DeleteEmailMonitoringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
-    pub fn builder() -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationInputBuilder {
         crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEmailMonitoringConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl DeleteEmailMonitoringConfigurationInputBuilder {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput {
-                organization_id: self.organization_id
-                ,
-            }
+                organization_id: self.organization_id,
+            },
         )
     }
 }

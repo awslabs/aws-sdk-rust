@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`application_version_summaries(Option<Vec<ApplicationVersionSummary>>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::application_version_summaries): <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>  <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_versions::ListApplicationVersionsOutput::next_token): <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::operation::list_application_versions::ListApplicationVersionsError)
-    pub fn list_application_versions(
-        &self,
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder
-    {
+    pub fn list_application_versions(&self) -> crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

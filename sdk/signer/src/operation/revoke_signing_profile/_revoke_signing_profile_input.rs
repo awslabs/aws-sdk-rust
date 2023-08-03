@@ -36,17 +36,14 @@ impl RevokeSigningProfileInput {
 }
 impl RevokeSigningProfileInput {
     /// Creates a new builder-style object to manufacture [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
-    pub fn builder(
-    ) -> crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder {
+    pub fn builder() -> crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder {
         crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl RevokeSigningProfileInputBuilder {
         &self.profile_name
     }
     /// <p>The version of the signing profile to be revoked.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the signing profile to be revoked.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -108,10 +99,7 @@ impl RevokeSigningProfileInputBuilder {
         self
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
-    pub fn set_effective_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_effective_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.effective_time = input;
         self
     }
@@ -122,17 +110,13 @@ impl RevokeSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_signing_profile::RevokeSigningProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_signing_profile::RevokeSigningProfileInput {
-                profile_name: self.profile_name,
-                profile_version: self.profile_version,
-                reason: self.reason,
-                effective_time: self.effective_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::revoke_signing_profile::RevokeSigningProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::revoke_signing_profile::RevokeSigningProfileInput {
+            profile_name: self.profile_name,
+            profile_version: self.profile_version,
+            reason: self.reason,
+            effective_time: self.effective_time,
+        })
     }
 }

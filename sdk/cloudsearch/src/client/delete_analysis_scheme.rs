@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAnalysisSchemeOutput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput) with field(s):
     ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput::analysis_scheme): <p>The status of the analysis scheme being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteAnalysisSchemeError>`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError)
-    pub fn delete_analysis_scheme(
-        &self,
-    ) -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeFluentBuilder {
-        crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_analysis_scheme(&self) -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeFluentBuilder {
+        crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeFluentBuilder::new(self.handle.clone())
     }
 }

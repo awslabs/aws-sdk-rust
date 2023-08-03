@@ -19,12 +19,7 @@ pub struct ListOrdersInput {
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OrderFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListOrdersInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
@@ -47,12 +42,7 @@ impl ListOrdersInput {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::OrderFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
 }
@@ -65,19 +55,12 @@ impl ListOrdersInput {
 
 /// A builder for [`ListOrdersInput`](crate::operation::list_orders::ListOrdersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrdersInputBuilder {
     pub(crate) network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OrderFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListOrdersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
@@ -132,11 +115,7 @@ impl ListOrdersInputBuilder {
     /// <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::OrderFilterKeys,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::OrderFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -150,12 +129,7 @@ impl ListOrdersInputBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::OrderFilterKeys,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
@@ -168,21 +142,11 @@ impl ListOrdersInputBuilder {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::OrderFilterKeys,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::OrderFilterKeys, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListOrdersInput`](crate::operation::list_orders::ListOrdersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_orders::ListOrdersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_orders::ListOrdersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_orders::ListOrdersInput {
             network_arn: self.network_arn,
             start_token: self.start_token,

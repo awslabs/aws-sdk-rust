@@ -36,9 +36,7 @@ impl CreateScriptInput {
 
 /// A builder for [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScriptInputBuilder {
     pub(crate) dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
     pub(crate) dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
@@ -57,17 +55,12 @@ impl CreateScriptInputBuilder {
         self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn set_dag_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
-    ) -> Self {
+    pub fn set_dag_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>) -> Self {
         self.dag_nodes = input;
         self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn get_dag_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
+    pub fn get_dag_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
         &self.dag_nodes
     }
     /// Appends an item to `dag_edges`.
@@ -82,17 +75,12 @@ impl CreateScriptInputBuilder {
         self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn set_dag_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
-    ) -> Self {
+    pub fn set_dag_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>) -> Self {
         self.dag_edges = input;
         self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn get_dag_edges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
+    pub fn get_dag_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
         &self.dag_edges
     }
     /// <p>The programming language of the resulting code from the DAG.</p>
@@ -110,12 +98,7 @@ impl CreateScriptInputBuilder {
         &self.language
     }
     /// Consumes the builder and constructs a [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_script::CreateScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_script::CreateScriptInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_script::CreateScriptInput {
             dag_nodes: self.dag_nodes,
             dag_edges: self.dag_edges,

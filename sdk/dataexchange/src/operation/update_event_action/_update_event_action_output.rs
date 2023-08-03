@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for UpdateEventActionOutput {
 }
 impl UpdateEventActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventActionOutput`](crate::operation::update_event_action::UpdateEventActionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_event_action::builders::UpdateEventActionOutputBuilder {
+    pub fn builder() -> crate::operation::update_event_action::builders::UpdateEventActionOutputBuilder {
         crate::operation::update_event_action::builders::UpdateEventActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventActionOutput`](crate::operation::update_event_action::UpdateEventActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -111,10 +108,7 @@ impl UpdateEventActionOutputBuilder {
         self
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -156,10 +150,7 @@ impl UpdateEventActionOutputBuilder {
         self
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

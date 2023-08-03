@@ -29,7 +29,7 @@ impl SetLoadBasedAutoScalingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetLoadBasedAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder,
+    inner: crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder,
 }
 impl SetLoadBasedAutoScalingFluentBuilder {
     /// Creates a new `SetLoadBasedAutoScaling`.
@@ -40,10 +40,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         }
     }
     /// Access the SetLoadBasedAutoScaling as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
             crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
             crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +146,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
-    pub fn set_up_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_up_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.inner = self.inner.set_up_scaling(input);
         self
     }
@@ -177,10 +160,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
-    pub fn set_down_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_down_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.inner = self.inner.set_down_scaling(input);
         self
     }

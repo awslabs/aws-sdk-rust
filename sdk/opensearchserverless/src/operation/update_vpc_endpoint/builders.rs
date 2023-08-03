@@ -10,10 +10,7 @@ impl UpdateVpcEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_vpc_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVpcEndpointFluentBuilder {
         }
     }
     /// Access the UpdateVpcEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateVpcEndpointFluentBuilder {
             crate::operation::update_vpc_endpoint::UpdateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateVpcEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateVpcEndpointFluentBuilder {
             crate::operation::update_vpc_endpoint::UpdateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +125,17 @@ impl UpdateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
     ///
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    pub fn add_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_subnet_ids(input.into());
         self
     }
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    pub fn set_add_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_subnet_ids(input);
         self
     }
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    pub fn get_add_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_subnet_ids()
     }
     /// Appends an item to `removeSubnetIds`.
@@ -167,25 +143,17 @@ impl UpdateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_remove_subnet_ids`](Self::set_remove_subnet_ids).
     ///
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    pub fn remove_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_subnet_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    pub fn set_remove_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_subnet_ids(input);
         self
     }
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    pub fn get_remove_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_subnet_ids()
     }
     /// Appends an item to `addSecurityGroupIds`.
@@ -193,25 +161,17 @@ impl UpdateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
     ///
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn add_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_security_group_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_add_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_security_group_ids(input);
         self
     }
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn get_add_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_security_group_ids()
     }
     /// Appends an item to `removeSecurityGroupIds`.
@@ -219,25 +179,17 @@ impl UpdateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
     ///
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    pub fn remove_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_security_group_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    pub fn set_remove_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_security_group_ids(input);
         self
     }
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    pub fn get_remove_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_security_group_ids()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>

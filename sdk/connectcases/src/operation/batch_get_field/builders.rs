@@ -10,10 +10,7 @@ impl BatchGetFieldInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_field::BatchGetFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_field::BatchGetFieldError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_field::BatchGetFieldError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_field();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetFieldFluentBuilder {
         }
     }
     /// Access the BatchGetField as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl BatchGetFieldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl BatchGetFieldFluentBuilder {
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         self.inner.get_fields()
     }
 }

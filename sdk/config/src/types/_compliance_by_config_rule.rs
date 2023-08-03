@@ -30,27 +30,19 @@ impl ComplianceByConfigRule {
 
 /// A builder for [`ComplianceByConfigRule`](crate::types::ComplianceByConfigRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceByConfigRuleBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance: ::std::option::Option<crate::types::Compliance>,
 }
 impl ComplianceByConfigRuleBuilder {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Config rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl ComplianceByConfigRuleBuilder {
         self
     }
     /// <p>Indicates whether the Config rule is compliant.</p>
-    pub fn set_compliance(
-        mut self,
-        input: ::std::option::Option<crate::types::Compliance>,
-    ) -> Self {
+    pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::Compliance>) -> Self {
         self.compliance = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListAssociationsOutput {
     /// <p>A list of associations and their properties.</p>
     #[doc(hidden)]
-    pub association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>,
+    pub association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>,
     /// <p>A token for getting the next set of associations, if there are any.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssociationsOutput {
 }
 impl ListAssociationsOutput {
     /// <p>A list of associations and their properties.</p>
-    pub fn association_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationSummary]> {
+    pub fn association_summaries(&self) -> ::std::option::Option<&[crate::types::AssociationSummary]> {
         self.association_summaries.as_deref()
     }
     /// <p>A token for getting the next set of associations, if there are any.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssociationsOutput {
 }
 impl ListAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput).
-    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsOutputBuilder {
         crate::operation::list_associations::builders::ListAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsOutputBuilder {
-    pub(crate) association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>,
+    pub(crate) association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListAssociationsOutputBuilder {
         self
     }
     /// <p>A list of associations and their properties.</p>
-    pub fn set_association_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>,
-    ) -> Self {
+    pub fn set_association_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>>) -> Self {
         self.association_summaries = input;
         self
     }
     /// <p>A list of associations and their properties.</p>
-    pub fn get_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>> {
+    pub fn get_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>> {
         &self.association_summaries
     }
     /// <p>A token for getting the next set of associations, if there are any.</p>

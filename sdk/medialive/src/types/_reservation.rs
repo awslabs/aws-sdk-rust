@@ -48,8 +48,7 @@ pub struct Reservation {
     pub reservation_id: ::std::option::Option<::std::string::String>,
     /// Resource configuration details
     #[doc(hidden)]
-    pub resource_specification:
-        ::std::option::Option<crate::types::ReservationResourceSpecification>,
+    pub resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
@@ -58,9 +57,7 @@ pub struct Reservation {
     pub state: ::std::option::Option<crate::types::ReservationState>,
     /// A collection of key-value pairs
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
@@ -123,9 +120,7 @@ impl Reservation {
         self.reservation_id.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
@@ -137,11 +132,7 @@ impl Reservation {
         self.state.as_ref()
     }
     /// A collection of key-value pairs
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -158,9 +149,7 @@ impl Reservation {
 
 /// A builder for [`Reservation`](crate::types::Reservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -176,13 +165,10 @@ pub struct ReservationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ReservationResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     pub(crate) start: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReservationState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) usage_price: ::std::option::Option<f64>,
 }
 impl ReservationBuilder {
@@ -215,18 +201,12 @@ impl ReservationBuilder {
         &self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -254,17 +234,12 @@ impl ReservationBuilder {
         self
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn set_duration_units(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingDurationUnits>,
-    ) -> Self {
+    pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::OfferingDurationUnits>) -> Self {
         self.duration_units = input;
         self
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn get_duration_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
+    pub fn get_duration_units(&self) -> &::std::option::Option<crate::types::OfferingDurationUnits> {
         &self.duration_units
     }
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
@@ -310,18 +285,12 @@ impl ReservationBuilder {
         &self.name
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn set_offering_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_description = input;
         self
     }
@@ -349,10 +318,7 @@ impl ReservationBuilder {
         self
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingType>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingType>) -> Self {
         self.offering_type = input;
         self
     }
@@ -380,10 +346,7 @@ impl ReservationBuilder {
         self
     }
     /// Renewal settings for the reservation
-    pub fn set_renewal_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalSettings>,
-    ) -> Self {
+    pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
         self.renewal_settings = input;
         self
     }
@@ -392,18 +355,12 @@ impl ReservationBuilder {
         &self.renewal_settings
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -412,25 +369,17 @@ impl ReservationBuilder {
         &self.reservation_id
     }
     /// Resource configuration details
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ReservationResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ReservationResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// Resource configuration details
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ReservationResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// Resource configuration details
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ReservationResourceSpecification> {
         &self.resource_specification
     }
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
@@ -453,10 +402,7 @@ impl ReservationBuilder {
         self
     }
     /// Current state of reservation, e.g. 'ACTIVE'
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
         self.state = input;
         self
     }
@@ -469,32 +415,19 @@ impl ReservationBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`traffic_policy_version_marker(Option<String>)`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput::traffic_policy_version_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListTrafficPolicyVersionsError>`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError)
-    pub fn list_traffic_policy_versions(&self) -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsFluentBuilder{
+    pub fn list_traffic_policy_versions(&self) -> crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsFluentBuilder {
         crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsFluentBuilder::new(self.handle.clone())
     }
 }

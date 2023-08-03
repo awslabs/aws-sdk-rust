@@ -27,7 +27,7 @@ impl DescribeExportConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeExportConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder,
+    inner: crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder,
 }
 impl DescribeExportConfigurationsFluentBuilder {
     /// Creates a new `DescribeExportConfigurations`.
@@ -38,7 +38,7 @@ impl DescribeExportConfigurationsFluentBuilder {
         }
     }
     /// Access the DescribeExportConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeExportConfigurationsFluentBuilder {
             crate::operation::describe_export_configurations::DescribeExportConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_configurations::DescribeExportConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeExportConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeExportConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_configurations::DescribeExportConfigurationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeExportConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_configurations::DescribeExportConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeExportConfigurationsFluentBuilder {
             crate::operation::describe_export_configurations::DescribeExportConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_export_configurations::DescribeExportConfigurationsError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +120,7 @@ impl DescribeExportConfigurationsFluentBuilder {
         self
     }
     /// <p>A list of continuous export IDs to search for.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_export_ids(input);
         self
     }

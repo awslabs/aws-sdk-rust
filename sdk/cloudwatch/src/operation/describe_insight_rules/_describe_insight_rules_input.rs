@@ -22,17 +22,14 @@ impl DescribeInsightRulesInput {
 }
 impl DescribeInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
+    pub fn builder() -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
         crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInsightRulesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl DescribeInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_insight_rules::DescribeInsightRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_insight_rules::DescribeInsightRulesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_insight_rules::DescribeInsightRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_insight_rules::DescribeInsightRulesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

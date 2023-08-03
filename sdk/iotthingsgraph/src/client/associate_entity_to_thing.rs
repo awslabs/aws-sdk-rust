@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateEntityToThingOutput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput)
     /// - On failure, responds with [`SdkError<AssociateEntityToThingError>`](crate::operation::associate_entity_to_thing::AssociateEntityToThingError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn associate_entity_to_thing(
-        &self,
-    ) -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingFluentBuilder
-    {
+    pub fn associate_entity_to_thing(&self) -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingFluentBuilder {
         crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingFluentBuilder::new(self.handle.clone())
     }
 }

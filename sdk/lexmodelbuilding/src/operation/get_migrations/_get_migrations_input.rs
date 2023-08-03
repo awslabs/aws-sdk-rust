@@ -24,9 +24,7 @@ pub struct GetMigrationsInput {
 }
 impl GetMigrationsInput {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn sort_by_attribute(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MigrationSortAttribute> {
+    pub fn sort_by_attribute(&self) -> ::std::option::Option<&crate::types::MigrationSortAttribute> {
         self.sort_by_attribute.as_ref()
     }
     /// <p>The order so sort the list.</p>
@@ -59,9 +57,7 @@ impl GetMigrationsInput {
 
 /// A builder for [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMigrationsInputBuilder {
     pub(crate) sort_by_attribute: ::std::option::Option<crate::types::MigrationSortAttribute>,
     pub(crate) sort_by_order: ::std::option::Option<crate::types::SortOrder>,
@@ -77,17 +73,12 @@ impl GetMigrationsInputBuilder {
         self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn set_sort_by_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationSortAttribute>,
-    ) -> Self {
+    pub fn set_sort_by_attribute(mut self, input: ::std::option::Option<crate::types::MigrationSortAttribute>) -> Self {
         self.sort_by_attribute = input;
         self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn get_sort_by_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
+    pub fn get_sort_by_attribute(&self) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
         &self.sort_by_attribute
     }
     /// <p>The order so sort the list.</p>
@@ -96,10 +87,7 @@ impl GetMigrationsInputBuilder {
         self
     }
     /// <p>The order so sort the list.</p>
-    pub fn set_sort_by_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrder>,
-    ) -> Self {
+    pub fn set_sort_by_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_by_order = input;
         self
     }
@@ -108,18 +96,12 @@ impl GetMigrationsInputBuilder {
         &self.sort_by_order
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn v1_bot_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn set_v1_bot_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v1_bot_name_contains = input;
         self
     }
@@ -133,17 +115,12 @@ impl GetMigrationsInputBuilder {
         self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn set_migration_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
+    pub fn set_migration_status_equals(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
         self.migration_status_equals = input;
         self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn get_migration_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStatus> {
+    pub fn get_migration_status_equals(&self) -> &::std::option::Option<crate::types::MigrationStatus> {
         &self.migration_status_equals
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
@@ -177,10 +154,7 @@ impl GetMigrationsInputBuilder {
     /// Consumes the builder and constructs a [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_migrations::GetMigrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_migrations::GetMigrationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_migrations::GetMigrationsInput {
             sort_by_attribute: self.sort_by_attribute,
             sort_by_order: self.sort_by_order,

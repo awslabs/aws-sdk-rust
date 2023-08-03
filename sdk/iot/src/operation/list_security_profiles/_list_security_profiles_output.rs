@@ -5,8 +5,7 @@
 pub struct ListSecurityProfilesOutput {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
     #[doc(hidden)]
-    pub security_profile_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
+    pub security_profile_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityProfilesOutput {
 }
 impl ListSecurityProfilesOutput {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub fn security_profile_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityProfileIdentifier]> {
+    pub fn security_profile_identifiers(&self) -> ::std::option::Option<&[crate::types::SecurityProfileIdentifier]> {
         self.security_profile_identifiers.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityProfilesOutput {
 }
 impl ListSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesOutput`](crate::operation::list_security_profiles::ListSecurityProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder {
         crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesOutput`](crate::operation::list_security_profiles::ListSecurityProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesOutputBuilder {
-    pub(crate) security_profile_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
+    pub(crate) security_profile_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +47,7 @@ impl ListSecurityProfilesOutputBuilder {
     /// To override the contents of this collection use [`set_security_profile_identifiers`](Self::set_security_profile_identifiers).
     ///
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub fn security_profile_identifiers(
-        mut self,
-        input: crate::types::SecurityProfileIdentifier,
-    ) -> Self {
+    pub fn security_profile_identifiers(mut self, input: crate::types::SecurityProfileIdentifier) -> Self {
         let mut v = self.security_profile_identifiers.unwrap_or_default();
         v.push(input);
         self.security_profile_identifiers = ::std::option::Option::Some(v);
@@ -72,9 +62,7 @@ impl ListSecurityProfilesOutputBuilder {
         self
     }
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub fn get_security_profile_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>> {
+    pub fn get_security_profile_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>> {
         &self.security_profile_identifiers
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

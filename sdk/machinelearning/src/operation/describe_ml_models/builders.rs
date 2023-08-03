@@ -10,10 +10,7 @@ impl DescribeMlModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_ml_models::DescribeMlModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ml_models::DescribeMLModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ml_models::DescribeMLModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_ml_models();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeMLModelsFluentBuilder {
         }
     }
     /// Access the DescribeMLModels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeMLModelsFluentBuilder {
             crate::operation::describe_ml_models::DescribeMLModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ml_models::DescribeMLModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ml_models::DescribeMLModelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeMLModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeMLModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ml_models::DescribeMlModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ml_models::DescribeMLModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ml_models::DescribeMLModelsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeMLModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ml_models::DescribeMlModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ml_models::DescribeMLModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ml_models::DescribeMLModelsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeMLModelsFluentBuilder {
             crate::operation::describe_ml_models::DescribeMLModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ml_models::DescribeMLModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ml_models::DescribeMLModelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator {
-        crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator {
+        crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
     /// <ul>
@@ -161,10 +140,7 @@ impl DescribeMLModelsFluentBuilder {
     /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
     /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::MlModelFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::MlModelFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
@@ -180,9 +156,7 @@ impl DescribeMLModelsFluentBuilder {
     /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
     /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::MlModelFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::MlModelFilterVariable> {
         self.inner.get_filter_variable()
     }
     /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>

@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeAgentVersionsOutput {
 }
 impl DescribeAgentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder {
         crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentVersionsOutputBuilder {
     pub(crate) agent_versions: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeAgentVersionsOutputBuilder {
         self
     }
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn set_agent_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
-    ) -> Self {
+    pub fn set_agent_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>) -> Self {
         self.agent_versions = input;
         self
     }
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn get_agent_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
+    pub fn get_agent_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
         &self.agent_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

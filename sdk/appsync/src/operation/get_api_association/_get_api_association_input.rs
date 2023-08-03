@@ -15,17 +15,14 @@ impl GetApiAssociationInput {
 }
 impl GetApiAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetApiAssociationInput`](crate::operation::get_api_association::GetApiAssociationInput).
-    pub fn builder(
-    ) -> crate::operation::get_api_association::builders::GetApiAssociationInputBuilder {
+    pub fn builder() -> crate::operation::get_api_association::builders::GetApiAssociationInputBuilder {
         crate::operation::get_api_association::builders::GetApiAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApiAssociationInput`](crate::operation::get_api_association::GetApiAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiAssociationInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetApiAssociationInputBuilder {
     /// Consumes the builder and constructs a [`GetApiAssociationInput`](crate::operation::get_api_association::GetApiAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api_association::GetApiAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_api_association::GetApiAssociationInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_api_association::GetApiAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_api_association::GetApiAssociationInput {
+            domain_name: self.domain_name,
+        })
     }
 }

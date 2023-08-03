@@ -29,16 +29,14 @@ impl ListFunctionDefinitionVersionsInput {
 }
 impl ListFunctionDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListFunctionDefinitionVersionsInput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsInputBuilder {
         crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFunctionDefinitionVersionsInput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionDefinitionVersionsInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListFunctionDefinitionVersionsInputBuilder {
 }
 impl ListFunctionDefinitionVersionsInputBuilder {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_definition_id = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListFunctionDefinitionVersionsInputBuilder {
         crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput {
-                function_definition_id: self.function_definition_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput {
+            function_definition_id: self.function_definition_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

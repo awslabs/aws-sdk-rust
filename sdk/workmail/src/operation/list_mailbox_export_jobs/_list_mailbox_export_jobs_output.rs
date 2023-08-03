@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMailboxExportJobsOutput {
 }
 impl ListMailboxExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListMailboxExportJobsOutput`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsOutputBuilder {
         crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMailboxExportJobsOutput`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMailboxExportJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListMailboxExportJobsOutputBuilder {
         self
     }
     /// <p>The mailbox export job details.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>>) -> Self {
         self.jobs = input;
         self
     }
     /// <p>The mailbox export job details.</p>
-    pub fn get_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>> {
         &self.jobs
     }
     /// <p>The token to use to retrieve the next page of results.</p>

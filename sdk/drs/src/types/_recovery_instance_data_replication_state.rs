@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecoveryInstanceDataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,15 +89,11 @@ impl ::std::convert::From<&str> for RecoveryInstanceDataReplicationState {
             "INITIATING" => RecoveryInstanceDataReplicationState::Initiating,
             "NOT_STARTED" => RecoveryInstanceDataReplicationState::NotStarted,
             "PAUSED" => RecoveryInstanceDataReplicationState::Paused,
-            "REPLICATION_STATE_NOT_AVAILABLE" => {
-                RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable
-            }
+            "REPLICATION_STATE_NOT_AVAILABLE" => RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable,
             "RESCAN" => RecoveryInstanceDataReplicationState::Rescan,
             "STALLED" => RecoveryInstanceDataReplicationState::Stalled,
             "STOPPED" => RecoveryInstanceDataReplicationState::Stopped,
-            other => RecoveryInstanceDataReplicationState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RecoveryInstanceDataReplicationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -126,9 +116,7 @@ impl RecoveryInstanceDataReplicationState {
             RecoveryInstanceDataReplicationState::Initiating => "INITIATING",
             RecoveryInstanceDataReplicationState::NotStarted => "NOT_STARTED",
             RecoveryInstanceDataReplicationState::Paused => "PAUSED",
-            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => {
-                "REPLICATION_STATE_NOT_AVAILABLE"
-            }
+            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => "REPLICATION_STATE_NOT_AVAILABLE",
             RecoveryInstanceDataReplicationState::Rescan => "RESCAN",
             RecoveryInstanceDataReplicationState::Stalled => "STALLED",
             RecoveryInstanceDataReplicationState::Stopped => "STOPPED",

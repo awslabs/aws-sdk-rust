@@ -30,9 +30,7 @@ impl JobError {
 
 /// A builder for [`JobError`](crate::types::JobError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::JobErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

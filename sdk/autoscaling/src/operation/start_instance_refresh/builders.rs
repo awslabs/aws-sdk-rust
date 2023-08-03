@@ -41,9 +41,7 @@ impl StartInstanceRefreshFluentBuilder {
         }
     }
     /// Access the StartInstanceRefresh as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl StartInstanceRefreshFluentBuilder {
             crate::operation::start_instance_refresh::StartInstanceRefresh,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_refresh::StartInstanceRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl StartInstanceRefreshFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl StartInstanceRefreshFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_refresh::StartInstanceRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl StartInstanceRefreshFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_refresh::StartInstanceRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl StartInstanceRefreshFluentBuilder {
             crate::operation::start_instance_refresh::StartInstanceRefresh,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_refresh::StartInstanceRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -152,10 +133,7 @@ impl StartInstanceRefreshFluentBuilder {
         self
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    pub fn set_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshStrategy>,
-    ) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::RefreshStrategy>) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
     }
@@ -175,10 +153,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn set_desired_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredConfiguration>,
-    ) -> Self {
+    pub fn set_desired_configuration(mut self, input: ::std::option::Option<crate::types::DesiredConfiguration>) -> Self {
         self.inner = self.inner.set_desired_configuration(input);
         self
     }
@@ -186,9 +161,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn get_desired_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DesiredConfiguration> {
+    pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
         self.inner.get_desired_configuration()
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
@@ -207,10 +180,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <li> <p>Checkpoints</p> </li>
     /// <li> <p>Skip matching</p> </li>
     /// </ul>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
     }

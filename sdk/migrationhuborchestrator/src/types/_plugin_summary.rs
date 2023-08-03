@@ -58,9 +58,7 @@ impl PluginSummary {
 
 /// A builder for [`PluginSummary`](crate::types::PluginSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PluginSummaryBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ impl PluginSummaryBuilder {
         &self.version
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn registered_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn set_registered_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_time = input;
         self
     }

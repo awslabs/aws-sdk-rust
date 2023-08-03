@@ -51,15 +51,12 @@ impl UserContext {
 
 /// A builder for [`UserContext`](crate::types::UserContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserContextBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) data_source_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
+    pub(crate) data_source_groups: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
 }
 impl UserContextBuilder {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
@@ -102,10 +99,7 @@ impl UserContextBuilder {
         self
     }
     /// <p>The list of groups you want to filter search results based on the groups' access to documents.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -125,17 +119,12 @@ impl UserContextBuilder {
         self
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub fn set_data_source_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>,
-    ) -> Self {
+    pub fn set_data_source_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>>) -> Self {
         self.data_source_groups = input;
         self
     }
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
-    pub fn get_data_source_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>> {
+    pub fn get_data_source_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceGroup>> {
         &self.data_source_groups
     }
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).

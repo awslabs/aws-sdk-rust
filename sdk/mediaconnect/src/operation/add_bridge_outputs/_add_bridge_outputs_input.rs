@@ -23,21 +23,17 @@ impl AddBridgeOutputsInput {
 }
 impl AddBridgeOutputsInput {
     /// Creates a new builder-style object to manufacture [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
-    pub fn builder() -> crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder {
         crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeOutputsInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) outputs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
 }
 impl AddBridgeOutputsInputBuilder {
     /// The ARN of the bridge that you want to update.
@@ -66,31 +62,21 @@ impl AddBridgeOutputsInputBuilder {
         self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>) -> Self {
         self.outputs = input;
         self
     }
     /// The outputs that you want to add to this bridge.
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_bridge_outputs::AddBridgeOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
-                bridge_arn: self.bridge_arn,
-                outputs: self.outputs,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
+            bridge_arn: self.bridge_arn,
+            outputs: self.outputs,
+        })
     }
 }

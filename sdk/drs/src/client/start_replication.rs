@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput) with field(s):
     ///   - [`source_server(Option<SourceServer>)`](crate::operation::start_replication::StartReplicationOutput::source_server): <p>The Source Server that this action was targeted on.</p>
     /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::operation::start_replication::StartReplicationError)
-    pub fn start_replication(
-        &self,
-    ) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
-        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_replication(&self) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
+        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentTemplatesOutput {
 }
 impl ListEnvironmentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder {
         crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
+    pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplatesOutputBuilder {
@@ -73,17 +68,12 @@ impl ListEnvironmentTemplatesOutputBuilder {
         self
     }
     /// <p>An array of environment templates with detail data.</p>
-    pub fn set_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
-    ) -> Self {
+    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>) -> Self {
         self.templates = input;
         self
     }
     /// <p>An array of environment templates with detail data.</p>
-    pub fn get_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>> {
+    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>> {
         &self.templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl ListEnvironmentTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
         crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
             next_token: self.next_token,
             templates: self.templates,

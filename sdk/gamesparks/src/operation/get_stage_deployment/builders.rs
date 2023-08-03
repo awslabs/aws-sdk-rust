@@ -10,10 +10,7 @@ impl GetStageDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_stage_deployment::GetStageDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_stage_deployment::GetStageDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_stage_deployment::GetStageDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_stage_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetStageDeploymentFluentBuilder {
         }
     }
     /// Access the GetStageDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_stage_deployment::builders::GetStageDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_stage_deployment::builders::GetStageDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetStageDeploymentFluentBuilder {
             crate::operation::get_stage_deployment::GetStageDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_stage_deployment::GetStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_stage_deployment::GetStageDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetStageDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetStageDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_stage_deployment::GetStageDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_stage_deployment::GetStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_stage_deployment::GetStageDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetStageDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_stage_deployment::GetStageDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_stage_deployment::GetStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_stage_deployment::GetStageDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetStageDeploymentFluentBuilder {
             crate::operation::get_stage_deployment::GetStageDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_stage_deployment::GetStageDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_stage_deployment::GetStageDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl GetStageDeploymentFluentBuilder {
         self.inner.get_stage_name()
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

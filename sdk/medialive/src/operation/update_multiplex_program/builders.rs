@@ -37,10 +37,7 @@ impl UpdateMultiplexProgramFluentBuilder {
         }
     }
     /// Access the UpdateMultiplexProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_multiplex_program::builders::UpdateMultiplexProgramInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_multiplex_program::builders::UpdateMultiplexProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateMultiplexProgramFluentBuilder {
             crate::operation::update_multiplex_program::UpdateMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multiplex_program::UpdateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multiplex_program::UpdateMultiplexProgramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateMultiplexProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_multiplex_program::UpdateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multiplex_program::UpdateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multiplex_program::UpdateMultiplexProgramError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_multiplex_program::UpdateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multiplex_program::UpdateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multiplex_program::UpdateMultiplexProgramError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateMultiplexProgramFluentBuilder {
             crate::operation::update_multiplex_program::UpdateMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_multiplex_program::UpdateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_multiplex_program::UpdateMultiplexProgramError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +124,17 @@ impl UpdateMultiplexProgramFluentBuilder {
         self.inner.get_multiplex_id()
     }
     /// The new settings for a multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.inner = self.inner.multiplex_program_settings(input);
         self
     }
     /// The new settings for a multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.inner = self.inner.set_multiplex_program_settings(input);
         self
     }
     /// The new settings for a multiplex program.
-    pub fn get_multiplex_program_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
         self.inner.get_multiplex_program_settings()
     }
     /// The name of the program to update.

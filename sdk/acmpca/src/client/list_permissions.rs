@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::list_permissions::ListPermissionsOutput::permissions): <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
-    pub fn list_permissions(
-        &self,
-    ) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
-        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
+        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

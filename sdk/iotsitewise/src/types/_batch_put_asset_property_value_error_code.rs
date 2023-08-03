@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchPutAssetPropertyValueErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,29 +73,15 @@ impl ::std::convert::From<&str> for BatchPutAssetPropertyValueErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchPutAssetPropertyValueErrorCode::AccessDeniedException,
-            "ConflictingOperationException" => {
-                BatchPutAssetPropertyValueErrorCode::ConflictingOperationException
-            }
-            "InternalFailureException" => {
-                BatchPutAssetPropertyValueErrorCode::InternalFailureException
-            }
-            "InvalidRequestException" => {
-                BatchPutAssetPropertyValueErrorCode::InvalidRequestException
-            }
+            "ConflictingOperationException" => BatchPutAssetPropertyValueErrorCode::ConflictingOperationException,
+            "InternalFailureException" => BatchPutAssetPropertyValueErrorCode::InternalFailureException,
+            "InvalidRequestException" => BatchPutAssetPropertyValueErrorCode::InvalidRequestException,
             "LimitExceededException" => BatchPutAssetPropertyValueErrorCode::LimitExceededException,
-            "ResourceNotFoundException" => {
-                BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException
-            }
-            "ServiceUnavailableException" => {
-                BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException
-            }
+            "ResourceNotFoundException" => BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException,
+            "ServiceUnavailableException" => BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException,
             "ThrottlingException" => BatchPutAssetPropertyValueErrorCode::ThrottlingException,
-            "TimestampOutOfRangeException" => {
-                BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException
-            }
-            other => BatchPutAssetPropertyValueErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "TimestampOutOfRangeException" => BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException,
+            other => BatchPutAssetPropertyValueErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -117,26 +97,14 @@ impl BatchPutAssetPropertyValueErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             BatchPutAssetPropertyValueErrorCode::AccessDeniedException => "AccessDeniedException",
-            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => {
-                "ConflictingOperationException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InternalFailureException => {
-                "InternalFailureException"
-            }
-            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => {
-                "InvalidRequestException"
-            }
+            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => "ConflictingOperationException",
+            BatchPutAssetPropertyValueErrorCode::InternalFailureException => "InternalFailureException",
+            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => "InvalidRequestException",
             BatchPutAssetPropertyValueErrorCode::LimitExceededException => "LimitExceededException",
-            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => {
-                "ResourceNotFoundException"
-            }
-            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => {
-                "ServiceUnavailableException"
-            }
+            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => "ResourceNotFoundException",
+            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => "ServiceUnavailableException",
             BatchPutAssetPropertyValueErrorCode::ThrottlingException => "ThrottlingException",
-            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => {
-                "TimestampOutOfRangeException"
-            }
+            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => "TimestampOutOfRangeException",
             BatchPutAssetPropertyValueErrorCode::Unknown(value) => value.as_str(),
         }
     }

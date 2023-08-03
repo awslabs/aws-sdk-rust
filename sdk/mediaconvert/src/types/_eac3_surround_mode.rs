@@ -39,13 +39,7 @@
 /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3SurroundMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Eac3SurroundMode {
             "DISABLED" => Eac3SurroundMode::Disabled,
             "ENABLED" => Eac3SurroundMode::Enabled,
             "NOT_INDICATED" => Eac3SurroundMode::NotIndicated,
-            other => {
-                Eac3SurroundMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3SurroundMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

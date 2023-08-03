@@ -22,9 +22,7 @@ impl DescribeAttackInput {
 
 /// A builder for [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAttackInputBuilder {
     pub(crate) attack_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeAttackInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_attack::DescribeAttackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_attack::DescribeAttackInput {
-            attack_id: self.attack_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_attack::DescribeAttackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_attack::DescribeAttackInput { attack_id: self.attack_id })
     }
 }

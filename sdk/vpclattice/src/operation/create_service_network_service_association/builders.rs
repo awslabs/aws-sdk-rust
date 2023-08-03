@@ -5,16 +5,16 @@ pub use crate::operation::create_service_network_service_association::_create_se
 
 impl CreateServiceNetworkServiceAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_service_network_service_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkServiceAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder,
+    inner: crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder,
 }
 impl CreateServiceNetworkServiceAssociationFluentBuilder {
     /// Creates a new `CreateServiceNetworkServiceAssociation`.
@@ -40,15 +40,24 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
         }
     }
     /// Access the CreateServiceNetworkServiceAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +66,19 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +96,30 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -112,18 +137,12 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -132,18 +151,12 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
         self.inner.get_service_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
@@ -156,30 +169,17 @@ impl CreateServiceNetworkServiceAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the association.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for the association.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags for the association.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

@@ -22,9 +22,7 @@ impl DeleteComponentInput {
 
 /// A builder for [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteComponentInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_component::DeleteComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput {
-            arn: self.arn,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput { arn: self.arn })
     }
 }

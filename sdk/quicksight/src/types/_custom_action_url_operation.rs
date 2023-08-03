@@ -42,9 +42,7 @@ impl CustomActionUrlOperation {
 
 /// A builder for [`CustomActionUrlOperation`](crate::types::CustomActionUrlOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionUrlOperationBuilder {
     pub(crate) url_template: ::std::option::Option<::std::string::String>,
     pub(crate) url_target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
@@ -82,10 +80,7 @@ impl CustomActionUrlOperationBuilder {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub fn set_url_target(
-        mut self,
-        input: ::std::option::Option<crate::types::UrlTargetConfiguration>,
-    ) -> Self {
+    pub fn set_url_target(mut self, input: ::std::option::Option<crate::types::UrlTargetConfiguration>) -> Self {
         self.url_target = input;
         self
     }

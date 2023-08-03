@@ -47,17 +47,14 @@ impl CreateProtectionInput {
 }
 impl CreateProtectionInput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionInput`](crate::operation::create_protection::CreateProtectionInput).
-    pub fn builder() -> crate::operation::create_protection::builders::CreateProtectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_protection::builders::CreateProtectionInputBuilder {
         crate::operation::create_protection::builders::CreateProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProtectionInput`](crate::operation::create_protection::CreateProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProtectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -131,10 +128,7 @@ impl CreateProtectionInputBuilder {
         self
     }
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -145,10 +139,7 @@ impl CreateProtectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateProtectionInput`](crate::operation::create_protection::CreateProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_protection::CreateProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_protection::CreateProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_protection::CreateProtectionInput {
             name: self.name,
             resource_arn: self.resource_arn,

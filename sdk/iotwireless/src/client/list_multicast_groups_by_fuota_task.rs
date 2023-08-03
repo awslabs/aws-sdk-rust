@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec<MulticastGroupByFuotaTask>>)`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput::multicast_group_list): <p>List of multicast groups associated with a FUOTA task.</p>
     /// - On failure, responds with [`SdkError<ListMulticastGroupsByFuotaTaskError>`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskError)
-    pub fn list_multicast_groups_by_fuota_task(&self) -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder{
+    pub fn list_multicast_groups_by_fuota_task(
+        &self,
+    ) -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder {
         crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskFluentBuilder::new(self.handle.clone())
     }
 }

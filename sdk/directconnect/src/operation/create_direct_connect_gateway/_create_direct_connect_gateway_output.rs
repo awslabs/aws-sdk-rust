@@ -10,9 +10,7 @@ pub struct CreateDirectConnectGatewayOutput {
 }
 impl CreateDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDirectConnectGatewayOutput {
 }
 impl CreateDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput).
-    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayOutputBuilder{
+    pub fn builder() -> crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayOutputBuilder {
         crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDirectConnectGatewayOutput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayOutputBuilder {
     pub(crate) direct_connect_gateway: ::std::option::Option<crate::types::DirectConnectGateway>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateDirectConnectGatewayOutputBuilder {
         self
     }
     /// <p>The Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGateway>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway(mut self, input: ::std::option::Option<crate::types::DirectConnectGateway>) -> Self {
         self.direct_connect_gateway = input;
         self
     }
     /// <p>The Direct Connect gateway.</p>
-    pub fn get_direct_connect_gateway(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGateway> {
+    pub fn get_direct_connect_gateway(&self) -> &::std::option::Option<crate::types::DirectConnectGateway> {
         &self.direct_connect_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateDirectConnectGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDirectConnectGatewayOutput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput {
+    pub fn build(self) -> crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput {
         crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput {
             direct_connect_gateway: self.direct_connect_gateway,
             _request_id: self._request_id,

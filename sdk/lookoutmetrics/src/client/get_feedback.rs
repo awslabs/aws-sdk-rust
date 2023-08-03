@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`anomaly_group_time_series_feedback(Option<Vec<TimeSeriesFeedback>>)`](crate::operation::get_feedback::GetFeedbackOutput::anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_feedback::GetFeedbackOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetFeedbackError>`](crate::operation::get_feedback::GetFeedbackError)
-    pub fn get_feedback(
-        &self,
-    ) -> crate::operation::get_feedback::builders::GetFeedbackFluentBuilder {
+    pub fn get_feedback(&self) -> crate::operation::get_feedback::builders::GetFeedbackFluentBuilder {
         crate::operation::get_feedback::builders::GetFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

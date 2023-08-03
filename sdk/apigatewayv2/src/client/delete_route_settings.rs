@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`DeleteRouteSettingsOutput`](crate::operation::delete_route_settings::DeleteRouteSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteSettingsError>`](crate::operation::delete_route_settings::DeleteRouteSettingsError)
-    pub fn delete_route_settings(
-        &self,
-    ) -> crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder {
-        crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_route_settings(&self) -> crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder {
+        crate::operation::delete_route_settings::builders::DeleteRouteSettingsFluentBuilder::new(self.handle.clone())
     }
 }

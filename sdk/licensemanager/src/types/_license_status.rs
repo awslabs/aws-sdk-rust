@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LicenseStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for LicenseStatus {
             "PENDING_AVAILABLE" => LicenseStatus::PendingAvailable,
             "PENDING_DELETE" => LicenseStatus::PendingDelete,
             "SUSPENDED" => LicenseStatus::Suspended,
-            other => {
-                LicenseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => LicenseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

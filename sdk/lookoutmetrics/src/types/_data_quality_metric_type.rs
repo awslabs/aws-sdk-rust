@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataQualityMetricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,27 +75,17 @@ pub enum DataQualityMetricType {
 impl ::std::convert::From<&str> for DataQualityMetricType {
     fn from(s: &str) -> Self {
         match s {
-            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataEndTimeStamp
-            }
-            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataStartTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataEndTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataStartTimeStamp
-            }
+            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataEndTimeStamp,
+            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataStartTimeStamp,
+            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataEndTimeStamp,
+            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataStartTimeStamp,
             "COLUMN_COMPLETENESS" => DataQualityMetricType::ColumnCompleteness,
             "DIMENSION_UNIQUENESS" => DataQualityMetricType::DimensionUniqueness,
             "INVALID_ROWS_COMPLIANCE" => DataQualityMetricType::InvalidRowsCompliance,
             "ROWS_PARTIAL_COMPLIANCE" => DataQualityMetricType::RowsPartialCompliance,
             "ROWS_PROCESSED" => DataQualityMetricType::RowsProcessed,
             "TIME_SERIES_COUNT" => DataQualityMetricType::TimeSeriesCount,
-            other => DataQualityMetricType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataQualityMetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -116,18 +100,10 @@ impl DataQualityMetricType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_START_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => {
-                "BACKTEST_TRAINING_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => {
-                "BACKTEST_TRAINING_DATA_START_TIME_STAMP"
-            }
+            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
+            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
+            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
+            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
             DataQualityMetricType::ColumnCompleteness => "COLUMN_COMPLETENESS",
             DataQualityMetricType::DimensionUniqueness => "DIMENSION_UNIQUENESS",
             DataQualityMetricType::InvalidRowsCompliance => "INVALID_ROWS_COMPLIANCE",

@@ -64,15 +64,11 @@ impl TrafficMirrorFilterRule {
         self.protocol
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
-    pub fn destination_port_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
+    pub fn destination_port_range(&self) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
         self.destination_port_range.as_ref()
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
-    pub fn source_port_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
+    pub fn source_port_range(&self) -> ::std::option::Option<&crate::types::TrafficMirrorPortRange> {
         self.source_port_range.as_ref()
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
@@ -97,9 +93,7 @@ impl TrafficMirrorFilterRule {
 
 /// A builder for [`TrafficMirrorFilterRule`](crate::types::TrafficMirrorFilterRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficMirrorFilterRuleBuilder {
     pub(crate) traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
@@ -115,40 +109,26 @@ pub struct TrafficMirrorFilterRuleBuilder {
 }
 impl TrafficMirrorFilterRuleBuilder {
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn set_traffic_mirror_filter_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = input;
         self
     }
     /// <p>The ID of the Traffic Mirror rule.</p>
-    pub fn get_traffic_mirror_filter_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_mirror_filter_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_mirror_filter_rule_id
     }
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = input;
         self
     }
@@ -162,10 +142,7 @@ impl TrafficMirrorFilterRuleBuilder {
         self
     }
     /// <p>The traffic direction assigned to the Traffic Mirror rule.</p>
-    pub fn set_traffic_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficDirection>,
-    ) -> Self {
+    pub fn set_traffic_direction(mut self, input: ::std::option::Option<crate::types::TrafficDirection>) -> Self {
         self.traffic_direction = input;
         self
     }
@@ -193,10 +170,7 @@ impl TrafficMirrorFilterRuleBuilder {
         self
     }
     /// <p>The action assigned to the Traffic Mirror rule.</p>
-    pub fn set_rule_action(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorRuleAction>,
-    ) -> Self {
+    pub fn set_rule_action(mut self, input: ::std::option::Option<crate::types::TrafficMirrorRuleAction>) -> Self {
         self.rule_action = input;
         self
     }
@@ -224,17 +198,12 @@ impl TrafficMirrorFilterRuleBuilder {
         self
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
-    pub fn set_destination_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorPortRange>,
-    ) -> Self {
+    pub fn set_destination_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRange>) -> Self {
         self.destination_port_range = input;
         self
     }
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
-    pub fn get_destination_port_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
+    pub fn get_destination_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
         &self.destination_port_range
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
@@ -243,32 +212,21 @@ impl TrafficMirrorFilterRuleBuilder {
         self
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
-    pub fn set_source_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorPortRange>,
-    ) -> Self {
+    pub fn set_source_port_range(mut self, input: ::std::option::Option<crate::types::TrafficMirrorPortRange>) -> Self {
         self.source_port_range = input;
         self
     }
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
-    pub fn get_source_port_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
+    pub fn get_source_port_range(&self) -> &::std::option::Option<crate::types::TrafficMirrorPortRange> {
         &self.source_port_range
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -277,18 +235,12 @@ impl TrafficMirrorFilterRuleBuilder {
         &self.destination_cidr_block
     }
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn source_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
-    pub fn set_source_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_cidr_block = input;
         self
     }

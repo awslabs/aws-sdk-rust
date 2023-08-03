@@ -27,9 +27,7 @@ impl EdgeDeployment {
         self.r#type.as_ref()
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    pub fn failure_handling_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
     /// <p>Returns a list of Definition objects.</p>
@@ -46,9 +44,7 @@ impl EdgeDeployment {
 
 /// A builder for [`EdgeDeployment`](crate::types::EdgeDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeDeploymentBuilder {
     pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DeploymentType>,
@@ -57,18 +53,12 @@ pub struct EdgeDeploymentBuilder {
 }
 impl EdgeDeploymentBuilder {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn set_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_name = input;
         self
     }
@@ -96,17 +86,12 @@ impl EdgeDeploymentBuilder {
         self
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    pub fn set_failure_handling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureHandlingPolicy>,
-    ) -> Self {
+    pub fn set_failure_handling_policy(mut self, input: ::std::option::Option<crate::types::FailureHandlingPolicy>) -> Self {
         self.failure_handling_policy = input;
         self
     }
     /// <p>Determines whether to rollback to previous configuration if deployment fails.</p>
-    pub fn get_failure_handling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
+    pub fn get_failure_handling_policy(&self) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
         &self.failure_handling_policy
     }
     /// Appends an item to `definitions`.
@@ -121,17 +106,12 @@ impl EdgeDeploymentBuilder {
         self
     }
     /// <p>Returns a list of Definition objects.</p>
-    pub fn set_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>,
-    ) -> Self {
+    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Definition>>) -> Self {
         self.definitions = input;
         self
     }
     /// <p>Returns a list of Definition objects.</p>
-    pub fn get_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Definition>> {
+    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Definition>> {
         &self.definitions
     }
     /// Consumes the builder and constructs a [`EdgeDeployment`](crate::types::EdgeDeployment).

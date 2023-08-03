@@ -18,8 +18,7 @@ pub struct CostCategorySplitChargeRule {
     pub method: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
     #[doc(hidden)]
-    pub parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
@@ -38,9 +37,7 @@ impl CostCategorySplitChargeRule {
         self.method.as_ref()
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRuleParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRuleParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -53,15 +50,12 @@ impl CostCategorySplitChargeRule {
 
 /// A builder for [`CostCategorySplitChargeRule`](crate::types::CostCategorySplitChargeRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRuleBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) method: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>,
-    pub(crate) parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRuleBuilder {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
@@ -90,10 +84,7 @@ impl CostCategorySplitChargeRuleBuilder {
         self
     }
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }
@@ -113,10 +104,7 @@ impl CostCategorySplitChargeRuleBuilder {
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn set_method(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>,
-    ) -> Self {
+    pub fn set_method(mut self, input: ::std::option::Option<crate::types::CostCategorySplitChargeMethod>) -> Self {
         self.method = input;
         self
     }
@@ -124,9 +112,7 @@ impl CostCategorySplitChargeRuleBuilder {
     /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
     /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn get_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostCategorySplitChargeMethod> {
+    pub fn get_method(&self) -> &::std::option::Option<crate::types::CostCategorySplitChargeMethod> {
         &self.method
     }
     /// Appends an item to `parameters`.
@@ -141,20 +127,12 @@ impl CostCategorySplitChargeRuleBuilder {
         self
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>
-    {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRule`](crate::types::CostCategorySplitChargeRule).

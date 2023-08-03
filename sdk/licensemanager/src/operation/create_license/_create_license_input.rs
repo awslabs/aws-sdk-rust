@@ -71,9 +71,7 @@ impl CreateLicenseInput {
         self.beneficiary.as_deref()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Information about the license.</p>
@@ -94,9 +92,7 @@ impl CreateLicenseInput {
 
 /// A builder for [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseInputBuilder {
     pub(crate) license_name: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
@@ -106,8 +102,7 @@ pub struct CreateLicenseInputBuilder {
     pub(crate) validity: ::std::option::Option<crate::types::DatetimeRange>,
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,
-    pub(crate) consumption_configuration:
-        ::std::option::Option<crate::types::ConsumptionConfiguration>,
+    pub(crate) consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     pub(crate) license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -188,10 +183,7 @@ impl CreateLicenseInputBuilder {
         self
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn set_validity(
-        mut self,
-        input: ::std::option::Option<crate::types::DatetimeRange>,
-    ) -> Self {
+    pub fn set_validity(mut self, input: ::std::option::Option<crate::types::DatetimeRange>) -> Self {
         self.validity = input;
         self
     }
@@ -211,17 +203,12 @@ impl CreateLicenseInputBuilder {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>License beneficiary.</p>
@@ -239,25 +226,17 @@ impl CreateLicenseInputBuilder {
         &self.beneficiary
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(
-        mut self,
-        input: crate::types::ConsumptionConfiguration,
-    ) -> Self {
+    pub fn consumption_configuration(mut self, input: crate::types::ConsumptionConfiguration) -> Self {
         self.consumption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn set_consumption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumptionConfiguration>,
-    ) -> Self {
+    pub fn set_consumption_configuration(mut self, input: ::std::option::Option<crate::types::ConsumptionConfiguration>) -> Self {
         self.consumption_configuration = input;
         self
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn get_consumption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+    pub fn get_consumption_configuration(&self) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
         &self.consumption_configuration
     }
     /// Appends an item to `license_metadata`.
@@ -272,17 +251,12 @@ impl CreateLicenseInputBuilder {
         self
     }
     /// <p>Information about the license.</p>
-    pub fn set_license_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_license_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.license_metadata = input;
         self
     }
     /// <p>Information about the license.</p>
-    pub fn get_license_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_license_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         &self.license_metadata
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -302,10 +276,7 @@ impl CreateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_license::CreateLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_license::CreateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_license::CreateLicenseInput {
             license_name: self.license_name,
             product_name: self.product_name,

@@ -44,9 +44,7 @@ impl ExportToS3Task {
 
 /// A builder for [`ExportToS3Task`](crate::types::ExportToS3Task).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportToS3TaskBuilder {
     pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
@@ -60,10 +58,7 @@ impl ExportToS3TaskBuilder {
         self
     }
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn set_container_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerFormat>,
-    ) -> Self {
+    pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
         self.container_format = input;
         self
     }
@@ -77,10 +72,7 @@ impl ExportToS3TaskBuilder {
         self
     }
     /// <p>The format for the exported image.</p>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.disk_image_format = input;
         self
     }

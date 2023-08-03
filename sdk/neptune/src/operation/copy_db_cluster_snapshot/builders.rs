@@ -38,10 +38,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         }
     }
     /// Access the CopyDBClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
             crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
             crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -131,13 +117,8 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn source_db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .source_db_cluster_snapshot_identifier(input.into());
+    pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_db_cluster_snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
@@ -147,10 +128,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn set_source_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_cluster_snapshot_identifier(input);
         self
     }
@@ -161,9 +139,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn get_source_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_snapshot_identifier()
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
@@ -174,13 +150,8 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn target_db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_cluster_snapshot_identifier(input.into());
+    pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_cluster_snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
@@ -191,10 +162,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn set_target_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_cluster_snapshot_identifier(input);
         self
     }
@@ -206,9 +174,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
-    pub fn get_target_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_cluster_snapshot_identifier()
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
@@ -238,18 +204,12 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>Not currently supported.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pre_signed_url(input.into());
         self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }
@@ -281,10 +241,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

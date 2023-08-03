@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`is_data_partial(Option<String>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::is_data_partial): <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
     ///   - [`value(Option<String>)`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileOutput::value): <p>The value of the calculated attribute.</p>
     /// - On failure, responds with [`SdkError<GetCalculatedAttributeForProfileError>`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileError)
-    pub fn get_calculated_attribute_for_profile(&self) -> crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileFluentBuilder{
+    pub fn get_calculated_attribute_for_profile(
+        &self,
+    ) -> crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileFluentBuilder {
         crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileFluentBuilder::new(self.handle.clone())
     }
 }

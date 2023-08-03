@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteRepositoryPermissionsPolicyOutput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput::policy): <p> Information about the deleted policy after processing the request. </p>
     /// - On failure, responds with [`SdkError<DeleteRepositoryPermissionsPolicyError>`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError)
-    pub fn delete_repository_permissions_policy(&self) -> crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyFluentBuilder{
+    pub fn delete_repository_permissions_policy(
+        &self,
+    ) -> crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyFluentBuilder {
         crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

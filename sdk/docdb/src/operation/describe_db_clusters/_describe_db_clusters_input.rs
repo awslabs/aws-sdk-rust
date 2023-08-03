@@ -57,17 +57,14 @@ impl DescribeDbClustersInput {
 }
 impl DescribeDbClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
+    pub fn builder() -> crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
         crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClustersInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -80,10 +77,7 @@ impl DescribeDbClustersInputBuilder {
     /// <ul>
     /// <li> <p>If provided, must match an existing <code>DBClusterIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -92,10 +86,7 @@ impl DescribeDbClustersInputBuilder {
     /// <ul>
     /// <li> <p>If provided, must match an existing <code>DBClusterIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -127,10 +118,7 @@ impl DescribeDbClustersInputBuilder {
     /// <ul>
     /// <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list only includes information about the clusters identified by these ARNs.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -179,17 +167,12 @@ impl DescribeDbClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_clusters::DescribeDbClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_clusters::DescribeDbClustersInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_clusters::DescribeDbClustersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_db_clusters::DescribeDbClustersInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

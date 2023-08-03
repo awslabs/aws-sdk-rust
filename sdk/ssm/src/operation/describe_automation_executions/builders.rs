@@ -26,7 +26,7 @@ impl DescribeAutomationExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutomationExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder,
+    inner: crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder,
 }
 impl DescribeAutomationExecutionsFluentBuilder {
     /// Creates a new `DescribeAutomationExecutions`.
@@ -37,7 +37,7 @@ impl DescribeAutomationExecutionsFluentBuilder {
         }
     }
     /// Access the DescribeAutomationExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAutomationExecutionsFluentBuilder {
             crate::operation::describe_automation_executions::DescribeAutomationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_automation_executions::DescribeAutomationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_automation_executions::DescribeAutomationExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAutomationExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAutomationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_automation_executions::DescribeAutomationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_automation_executions::DescribeAutomationExecutionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAutomationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_automation_executions::DescribeAutomationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_automation_executions::DescribeAutomationExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeAutomationExecutionsFluentBuilder {
             crate::operation::describe_automation_executions::DescribeAutomationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_automation_executions::DescribeAutomationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_automation_executions::DescribeAutomationExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_automation_executions::paginator::DescribeAutomationExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_automation_executions::paginator::DescribeAutomationExecutionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_automation_executions::paginator::DescribeAutomationExecutionsPaginator {
         crate::operation::describe_automation_executions::paginator::DescribeAutomationExecutionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -136,17 +125,12 @@ impl DescribeAutomationExecutionsFluentBuilder {
         self
     }
     /// <p>Filters used to limit the scope of executions that are requested.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters used to limit the scope of executions that are requested.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

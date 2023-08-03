@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateProductFromPortfolioOutpu
 }
 impl DisassociateProductFromPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateProductFromPortfolioOutput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput).
-    pub fn builder() -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioOutputBuilder {
         crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateProductFromPortfolioOutput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateProductFromPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateProductFromPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateProductFromPortfolioOutput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput {
         crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput {
             _request_id: self._request_id,
         }

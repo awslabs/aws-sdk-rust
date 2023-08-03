@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::start_application_refresh::StartApplicationRefreshOutput::operation_id): <p>The ID of the operation.</p>
     /// - On failure, responds with [`SdkError<StartApplicationRefreshError>`](crate::operation::start_application_refresh::StartApplicationRefreshError)
-    pub fn start_application_refresh(
-        &self,
-    ) -> crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder
-    {
+    pub fn start_application_refresh(&self) -> crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder {
         crate::operation::start_application_refresh::builders::StartApplicationRefreshFluentBuilder::new(self.handle.clone())
     }
 }

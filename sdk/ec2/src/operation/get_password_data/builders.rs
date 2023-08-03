@@ -10,10 +10,7 @@ impl GetPasswordDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_password_data::GetPasswordDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_password_data::GetPasswordDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_password_data::GetPasswordDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_password_data();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetPasswordDataFluentBuilder {
         }
     }
     /// Access the GetPasswordData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_password_data::builders::GetPasswordDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_password_data::builders::GetPasswordDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetPasswordDataFluentBuilder {
             crate::operation::get_password_data::GetPasswordData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_password_data::GetPasswordDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_password_data::GetPasswordDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetPasswordDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetPasswordDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_password_data::GetPasswordDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_password_data::GetPasswordDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_password_data::GetPasswordDataError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetPasswordDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_password_data::GetPasswordDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_password_data::GetPasswordDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_password_data::GetPasswordDataError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl GetPasswordDataFluentBuilder {
             crate::operation::get_password_data::GetPasswordData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_password_data::GetPasswordDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_password_data::GetPasswordDataError>,
     > {
         self.customize_middleware().await
     }

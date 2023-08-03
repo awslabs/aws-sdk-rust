@@ -39,9 +39,7 @@ impl DeleteProjectVersionFluentBuilder {
         }
     }
     /// Access the DeleteProjectVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_project_version::builders::DeleteProjectVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_project_version::builders::DeleteProjectVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteProjectVersionFluentBuilder {
             crate::operation::delete_project_version::DeleteProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_project_version::DeleteProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_project_version::DeleteProjectVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteProjectVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_project_version::DeleteProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_project_version::DeleteProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_project_version::DeleteProjectVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_project_version::DeleteProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_project_version::DeleteProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_project_version::DeleteProjectVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl DeleteProjectVersionFluentBuilder {
             crate::operation::delete_project_version::DeleteProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_project_version::DeleteProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_project_version::DeleteProjectVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }

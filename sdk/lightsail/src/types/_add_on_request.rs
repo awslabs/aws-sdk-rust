@@ -16,8 +16,7 @@ pub struct AddOnRequest {
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
     #[doc(hidden)]
-    pub stop_instance_on_idle_request:
-        ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
+    pub stop_instance_on_idle_request: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
 }
 impl AddOnRequest {
     /// <p>The add-on type.</p>
@@ -25,17 +24,13 @@ impl AddOnRequest {
         self.add_on_type.as_ref()
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    pub fn auto_snapshot_add_on_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoSnapshotAddOnRequest> {
+    pub fn auto_snapshot_add_on_request(&self) -> ::std::option::Option<&crate::types::AutoSnapshotAddOnRequest> {
         self.auto_snapshot_add_on_request.as_ref()
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn stop_instance_on_idle_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StopInstanceOnIdleRequest> {
+    pub fn stop_instance_on_idle_request(&self) -> ::std::option::Option<&crate::types::StopInstanceOnIdleRequest> {
         self.stop_instance_on_idle_request.as_ref()
     }
 }
@@ -48,15 +43,11 @@ impl AddOnRequest {
 
 /// A builder for [`AddOnRequest`](crate::types::AddOnRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddOnRequestBuilder {
     pub(crate) add_on_type: ::std::option::Option<crate::types::AddOnType>,
-    pub(crate) auto_snapshot_add_on_request:
-        ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,
-    pub(crate) stop_instance_on_idle_request:
-        ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
+    pub(crate) auto_snapshot_add_on_request: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,
+    pub(crate) stop_instance_on_idle_request: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
 }
 impl AddOnRequestBuilder {
     /// <p>The add-on type.</p>
@@ -65,10 +56,7 @@ impl AddOnRequestBuilder {
         self
     }
     /// <p>The add-on type.</p>
-    pub fn set_add_on_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddOnType>,
-    ) -> Self {
+    pub fn set_add_on_type(mut self, input: ::std::option::Option<crate::types::AddOnType>) -> Self {
         self.add_on_type = input;
         self
     }
@@ -77,53 +65,37 @@ impl AddOnRequestBuilder {
         &self.add_on_type
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    pub fn auto_snapshot_add_on_request(
-        mut self,
-        input: crate::types::AutoSnapshotAddOnRequest,
-    ) -> Self {
+    pub fn auto_snapshot_add_on_request(mut self, input: crate::types::AutoSnapshotAddOnRequest) -> Self {
         self.auto_snapshot_add_on_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    pub fn set_auto_snapshot_add_on_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,
-    ) -> Self {
+    pub fn set_auto_snapshot_add_on_request(mut self, input: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>) -> Self {
         self.auto_snapshot_add_on_request = input;
         self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the automatic snapshot add-on.</p>
-    pub fn get_auto_snapshot_add_on_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoSnapshotAddOnRequest> {
+    pub fn get_auto_snapshot_add_on_request(&self) -> &::std::option::Option<crate::types::AutoSnapshotAddOnRequest> {
         &self.auto_snapshot_add_on_request
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn stop_instance_on_idle_request(
-        mut self,
-        input: crate::types::StopInstanceOnIdleRequest,
-    ) -> Self {
+    pub fn stop_instance_on_idle_request(mut self, input: crate::types::StopInstanceOnIdleRequest) -> Self {
         self.stop_instance_on_idle_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_stop_instance_on_idle_request(
-        mut self,
-        input: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>,
-    ) -> Self {
+    pub fn set_stop_instance_on_idle_request(mut self, input: ::std::option::Option<crate::types::StopInstanceOnIdleRequest>) -> Self {
         self.stop_instance_on_idle_request = input;
         self
     }
     /// <p>An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code> add-on.</p> <important>
     /// <p>This object only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn get_stop_instance_on_idle_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::StopInstanceOnIdleRequest> {
+    pub fn get_stop_instance_on_idle_request(&self) -> &::std::option::Option<crate::types::StopInstanceOnIdleRequest> {
         &self.stop_instance_on_idle_request
     }
     /// Consumes the builder and constructs a [`AddOnRequest`](crate::types::AddOnRequest).

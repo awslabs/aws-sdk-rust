@@ -58,9 +58,7 @@ impl CredentialSummary {
 
 /// A builder for [`CredentialSummary`](crate::types::CredentialSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CredentialSummaryBuilder {
     pub(crate) seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl CredentialSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn set_seen_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_seen_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.seen_at = input;
         self
     }
@@ -88,18 +83,12 @@ impl CredentialSummaryBuilder {
         &self.seen_at
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -136,18 +125,12 @@ impl CredentialSummaryBuilder {
         &self.enabled
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn x509_certificate_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x509_certificate_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x509_certificate_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn set_x509_certificate_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_x509_certificate_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x509_certificate_data = input;
         self
     }

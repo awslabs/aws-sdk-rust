@@ -35,23 +35,18 @@ impl ::aws_http::request_id::RequestId for BatchImportFindingsOutput {
 }
 impl BatchImportFindingsOutput {
     /// Creates a new builder-style object to manufacture [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_import_findings::builders::BatchImportFindingsOutputBuilder {
-        crate::operation::batch_import_findings::builders::BatchImportFindingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_import_findings::builders::BatchImportFindingsOutputBuilder {
+        crate::operation::batch_import_findings::builders::BatchImportFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportFindingsOutputBuilder {
     pub(crate) failed_count: ::std::option::Option<i32>,
     pub(crate) success_count: ::std::option::Option<i32>,
-    pub(crate) failed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
+    pub(crate) failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
     _request_id: Option<String>,
 }
 impl BatchImportFindingsOutputBuilder {
@@ -95,17 +90,12 @@ impl BatchImportFindingsOutputBuilder {
         self
     }
     /// <p>The list of findings that failed to import.</p>
-    pub fn set_failed_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
-    ) -> Self {
+    pub fn set_failed_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>) -> Self {
         self.failed_findings = input;
         self
     }
     /// <p>The list of findings that failed to import.</p>
-    pub fn get_failed_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>> {
+    pub fn get_failed_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>> {
         &self.failed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

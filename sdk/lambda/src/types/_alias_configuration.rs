@@ -41,9 +41,7 @@ impl AliasConfiguration {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
@@ -60,9 +58,7 @@ impl AliasConfiguration {
 
 /// A builder for [`AliasConfiguration`](crate::types::AliasConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AliasConfigurationBuilder {
     pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -101,18 +97,12 @@ impl AliasConfigurationBuilder {
         &self.name
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn set_function_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_version = input;
         self
     }
@@ -140,17 +130,12 @@ impl AliasConfigurationBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AliasRoutingConfiguration>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::AliasRoutingConfiguration>) -> Self {
         self.routing_config = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn get_routing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
         &self.routing_config
     }
     /// <p>A unique identifier that changes when you update the alias.</p>

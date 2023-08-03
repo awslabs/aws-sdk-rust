@@ -18,9 +18,7 @@ pub fn body_is_error(body: &[u8]) -> Result<bool, XmlDecodeError> {
     Ok(scoped.start_el().matches("Error"))
 }
 
-pub fn error_scope<'a, 'b>(
-    doc: &'a mut Document<'b>,
-) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
+pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
     let scoped = doc.root_element()?;
     if !scoped.start_el().matches("Error") {
         return Err(XmlDecodeError::custom("expected error as root"));

@@ -12,10 +12,7 @@ pub fn ser_create_analyzer_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_inline_archive_rule::ser_inline_archive_rule(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_inline_archive_rule::ser_inline_archive_rule(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

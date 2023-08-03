@@ -29,18 +29,14 @@ impl UpdateStandardsControlInput {
 }
 impl UpdateStandardsControlInput {
     /// Creates a new builder-style object to manufacture [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
-    pub fn builder(
-    ) -> crate::operation::update_standards_control::builders::UpdateStandardsControlInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_standards_control::builders::UpdateStandardsControlInputBuilder {
         crate::operation::update_standards_control::builders::UpdateStandardsControlInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStandardsControlInputBuilder {
     pub(crate) standards_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) control_status: ::std::option::Option<crate::types::ControlStatus>,
@@ -48,18 +44,12 @@ pub struct UpdateStandardsControlInputBuilder {
 }
 impl UpdateStandardsControlInputBuilder {
     /// <p>The ARN of the security standard control to enable or disable.</p>
-    pub fn standards_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the security standard control to enable or disable.</p>
-    pub fn set_standards_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_control_arn = input;
         self
     }
@@ -73,10 +63,7 @@ impl UpdateStandardsControlInputBuilder {
         self
     }
     /// <p>The updated status of the security standard control.</p>
-    pub fn set_control_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlStatus>,
-    ) -> Self {
+    pub fn set_control_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
         self.control_status = input;
         self
     }
@@ -85,18 +72,12 @@ impl UpdateStandardsControlInputBuilder {
         &self.control_status
     }
     /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
-    pub fn disabled_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disabled_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disabled_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
-    pub fn set_disabled_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disabled_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disabled_reason = input;
         self
     }
@@ -107,16 +88,12 @@ impl UpdateStandardsControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_standards_control::UpdateStandardsControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_standards_control::UpdateStandardsControlInput {
-                standards_control_arn: self.standards_control_arn,
-                control_status: self.control_status,
-                disabled_reason: self.disabled_reason,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_standards_control::UpdateStandardsControlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_standards_control::UpdateStandardsControlInput {
+            standards_control_arn: self.standards_control_arn,
+            control_status: self.control_status,
+            disabled_reason: self.disabled_reason,
+        })
     }
 }

@@ -15,34 +15,25 @@ impl DeleteScheduledQueryInput {
 }
 impl DeleteScheduledQueryInput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledQueryInput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder {
+    pub fn builder() -> crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder {
         crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScheduledQueryInput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduledQueryInputBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledQueryInputBuilder {
     /// <p>The ARN of the scheduled query. </p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scheduled query. </p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteScheduledQueryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduledQueryInput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_scheduled_query::DeleteScheduledQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryInput {
-                scheduled_query_arn: self.scheduled_query_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_scheduled_query::DeleteScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_scheduled_query::DeleteScheduledQueryInput {
+            scheduled_query_arn: self.scheduled_query_arn,
+        })
     }
 }

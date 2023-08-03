@@ -51,9 +51,7 @@ impl AssetInfo {
 
 /// A builder for [`AssetInfo`](crate::types::AssetInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetInfoBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) rack_id: ::std::option::Option<::std::string::String>,
@@ -110,17 +108,12 @@ impl AssetInfoBuilder {
         self
     }
     /// <p> Information about compute hardware assets. </p>
-    pub fn set_compute_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeAttributes>,
-    ) -> Self {
+    pub fn set_compute_attributes(mut self, input: ::std::option::Option<crate::types::ComputeAttributes>) -> Self {
         self.compute_attributes = input;
         self
     }
     /// <p> Information about compute hardware assets. </p>
-    pub fn get_compute_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputeAttributes> {
+    pub fn get_compute_attributes(&self) -> &::std::option::Option<crate::types::ComputeAttributes> {
         &self.compute_attributes
     }
     /// <p> The position of an asset in a rack. </p>
@@ -129,10 +122,7 @@ impl AssetInfoBuilder {
         self
     }
     /// <p> The position of an asset in a rack. </p>
-    pub fn set_asset_location(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetLocation>,
-    ) -> Self {
+    pub fn set_asset_location(mut self, input: ::std::option::Option<crate::types::AssetLocation>) -> Self {
         self.asset_location = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`sns_topic(impl ::std::convert::Into<String>)`](crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicFluentBuilder::sns_topic) / [`set_sns_topic(Option<String>)`](crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicFluentBuilder::set_sns_topic): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     /// - On success, responds with [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput)
     /// - On failure, responds with [`SdkError<SetIdentityNotificationTopicError>`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError)
-    pub fn set_identity_notification_topic(&self) -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicFluentBuilder{
+    pub fn set_identity_notification_topic(
+        &self,
+    ) -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicFluentBuilder {
         crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicFluentBuilder::new(self.handle.clone())
     }
 }

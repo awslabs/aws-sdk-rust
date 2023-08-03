@@ -84,9 +84,7 @@ impl BatchInferenceJob {
         self.job_output.as_ref()
     }
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
-    pub fn batch_inference_job_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchInferenceJobConfig> {
+    pub fn batch_inference_job_config(&self) -> ::std::option::Option<&crate::types::BatchInferenceJobConfig> {
         self.batch_inference_job_config.as_ref()
     }
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
@@ -121,9 +119,7 @@ impl BatchInferenceJob {
 
 /// A builder for [`BatchInferenceJob`](crate::types::BatchInferenceJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchInferenceJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) batch_inference_job_arn: ::std::option::Option<::std::string::String>,
@@ -133,8 +129,7 @@ pub struct BatchInferenceJobBuilder {
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) job_input: ::std::option::Option<crate::types::BatchInferenceJobInput>,
     pub(crate) job_output: ::std::option::Option<crate::types::BatchInferenceJobOutput>,
-    pub(crate) batch_inference_job_config:
-        ::std::option::Option<crate::types::BatchInferenceJobConfig>,
+    pub(crate) batch_inference_job_config: ::std::option::Option<crate::types::BatchInferenceJobConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -156,18 +151,12 @@ impl BatchInferenceJobBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-    pub fn batch_inference_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_inference_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_inference_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
-    pub fn set_batch_inference_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_inference_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_inference_job_arn = input;
         self
     }
@@ -190,18 +179,12 @@ impl BatchInferenceJobBuilder {
         &self.filter_arn
     }
     /// <p>If the batch inference job failed, the reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the batch inference job failed, the reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -210,18 +193,12 @@ impl BatchInferenceJobBuilder {
         &self.failure_reason
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference job was created.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
@@ -249,10 +226,7 @@ impl BatchInferenceJobBuilder {
         self
     }
     /// <p>The Amazon S3 path that leads to the input data used to generate the batch inference job.</p>
-    pub fn set_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchInferenceJobInput>,
-    ) -> Self {
+    pub fn set_job_input(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobInput>) -> Self {
         self.job_input = input;
         self
     }
@@ -266,10 +240,7 @@ impl BatchInferenceJobBuilder {
         self
     }
     /// <p>The Amazon S3 bucket that contains the output data generated by the batch inference job.</p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchInferenceJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobOutput>) -> Self {
         self.job_output = input;
         self
     }
@@ -278,25 +249,17 @@ impl BatchInferenceJobBuilder {
         &self.job_output
     }
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
-    pub fn batch_inference_job_config(
-        mut self,
-        input: crate::types::BatchInferenceJobConfig,
-    ) -> Self {
+    pub fn batch_inference_job_config(mut self, input: crate::types::BatchInferenceJobConfig) -> Self {
         self.batch_inference_job_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
-    pub fn set_batch_inference_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchInferenceJobConfig>,
-    ) -> Self {
+    pub fn set_batch_inference_job_config(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobConfig>) -> Self {
         self.batch_inference_job_config = input;
         self
     }
     /// <p>A string to string map of the configuration details of a batch inference job.</p>
-    pub fn get_batch_inference_job_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchInferenceJobConfig> {
+    pub fn get_batch_inference_job_config(&self) -> &::std::option::Option<crate::types::BatchInferenceJobConfig> {
         &self.batch_inference_job_config
     }
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
@@ -351,10 +314,7 @@ impl BatchInferenceJobBuilder {
         self
     }
     /// <p>The time at which the batch inference job was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -368,17 +328,12 @@ impl BatchInferenceJobBuilder {
         self
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The time at which the batch inference job was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`BatchInferenceJob`](crate::types::BatchInferenceJob).

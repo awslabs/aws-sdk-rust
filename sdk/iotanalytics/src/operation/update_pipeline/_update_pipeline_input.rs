@@ -33,28 +33,19 @@ impl UpdatePipelineInput {
 
 /// A builder for [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_activities:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
+    pub(crate) pipeline_activities: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline to update.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -78,28 +69,20 @@ impl UpdatePipelineInputBuilder {
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
-    pub fn set_pipeline_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
-    ) -> Self {
+    pub fn set_pipeline_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>) -> Self {
         self.pipeline_activities = input;
         self
     }
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
-    pub fn get_pipeline_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
+    pub fn get_pipeline_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
         &self.pipeline_activities
     }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipeline::UpdatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_pipeline::UpdatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipeline::UpdatePipelineInput {
             pipeline_name: self.pipeline_name,
             pipeline_activities: self.pipeline_activities,

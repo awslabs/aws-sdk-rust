@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`application_instances(Option<Vec<ApplicationInstance>>)`](crate::operation::list_application_instances::ListApplicationInstancesOutput::application_instances): <p>A list of application instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instances::ListApplicationInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListApplicationInstancesError>`](crate::operation::list_application_instances::ListApplicationInstancesError)
-    pub fn list_application_instances(
-        &self,
-    ) -> crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder
-    {
+    pub fn list_application_instances(&self) -> crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder {
         crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::new(self.handle.clone())
     }
 }

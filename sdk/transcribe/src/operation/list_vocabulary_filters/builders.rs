@@ -38,10 +38,7 @@ impl ListVocabularyFiltersFluentBuilder {
         }
     }
     /// Access the ListVocabularyFilters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListVocabularyFiltersFluentBuilder {
             crate::operation::list_vocabulary_filters::ListVocabularyFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabulary_filters::ListVocabularyFiltersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListVocabularyFiltersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListVocabularyFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabulary_filters::ListVocabularyFiltersError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListVocabularyFiltersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabulary_filters::ListVocabularyFiltersError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListVocabularyFiltersFluentBuilder {
             crate::operation::list_vocabulary_filters::ListVocabularyFilters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabulary_filters::ListVocabularyFiltersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabulary_filters::ListVocabularyFiltersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_vocabulary_filters::paginator::ListVocabularyFiltersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_vocabulary_filters::paginator::ListVocabularyFiltersPaginator {
-        crate::operation::list_vocabulary_filters::paginator::ListVocabularyFiltersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_vocabulary_filters::paginator::ListVocabularyFiltersPaginator {
+        crate::operation::list_vocabulary_filters::paginator::ListVocabularyFiltersPaginator::new(self.handle, self.inner)
     }
     /// <p>If your <code>ListVocabularyFilters</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,18 +145,12 @@ impl ListVocabularyFiltersFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Returns only the custom vocabulary filters that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Returns only the custom vocabulary filters that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

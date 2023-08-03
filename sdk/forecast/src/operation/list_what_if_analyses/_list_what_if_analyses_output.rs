@@ -5,8 +5,7 @@
 pub struct ListWhatIfAnalysesOutput {
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
     #[doc(hidden)]
-    pub what_if_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
+    pub what_if_analyses: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWhatIfAnalysesOutput {
 }
 impl ListWhatIfAnalysesOutput {
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
-    pub fn what_if_analyses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WhatIfAnalysisSummary]> {
+    pub fn what_if_analyses(&self) -> ::std::option::Option<&[crate::types::WhatIfAnalysisSummary]> {
         self.what_if_analyses.as_deref()
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWhatIfAnalysesOutput {
 }
 impl ListWhatIfAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`ListWhatIfAnalysesOutput`](crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesOutputBuilder {
-        crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesOutputBuilder {
+        crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWhatIfAnalysesOutput`](crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWhatIfAnalysesOutputBuilder {
-    pub(crate) what_if_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
+    pub(crate) what_if_analyses: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListWhatIfAnalysesOutputBuilder {
         self
     }
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
-    pub fn set_what_if_analyses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
-    ) -> Self {
+    pub fn set_what_if_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>) -> Self {
         self.what_if_analyses = input;
         self
     }
     /// <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.</p>
-    pub fn get_what_if_analyses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>> {
+    pub fn get_what_if_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>> {
         &self.what_if_analyses
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>

@@ -5,8 +5,7 @@
 pub struct SearchDataSourcesOutput {
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
     #[doc(hidden)]
-    pub data_source_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
+    pub data_source_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct SearchDataSourcesOutput {
 }
 impl SearchDataSourcesOutput {
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-    pub fn data_source_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSourceSummary]> {
+    pub fn data_source_summaries(&self) -> ::std::option::Option<&[crate::types::DataSourceSummary]> {
         self.data_source_summaries.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for SearchDataSourcesOutput {
 }
 impl SearchDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`SearchDataSourcesOutput`](crate::operation::search_data_sources::SearchDataSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_data_sources::builders::SearchDataSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::search_data_sources::builders::SearchDataSourcesOutputBuilder {
         crate::operation::search_data_sources::builders::SearchDataSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchDataSourcesOutput`](crate::operation::search_data_sources::SearchDataSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDataSourcesOutputBuilder {
-    pub(crate) data_source_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
+    pub(crate) data_source_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -77,17 +70,12 @@ impl SearchDataSourcesOutputBuilder {
         self
     }
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-    pub fn set_data_source_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
-    ) -> Self {
+    pub fn set_data_source_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>) -> Self {
         self.data_source_summaries = input;
         self
     }
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-    pub fn get_data_source_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
+    pub fn get_data_source_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
         &self.data_source_summaries
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>

@@ -86,9 +86,7 @@ impl ColumnInfo {
 
 /// A builder for [`ColumnInfo`](crate::types::ColumnInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnInfoBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -220,10 +218,7 @@ impl ColumnInfoBuilder {
         self
     }
     /// <p>Indicates the column's nullable status.</p>
-    pub fn set_nullable(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnNullable>,
-    ) -> Self {
+    pub fn set_nullable(mut self, input: ::std::option::Option<crate::types::ColumnNullable>) -> Self {
         self.nullable = input;
         self
     }

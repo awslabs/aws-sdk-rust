@@ -17,10 +17,7 @@ impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
 }
 impl ::std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
-        )?;
+        ::std::write!(f, "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,33 +27,27 @@ impl ::std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptio
     }
 }
 impl ::std::error::Error for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
-    pub fn builder() -> crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder{
+    pub fn builder() -> crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder {
         crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder::default()
     }
 }
 
 /// A builder for [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,17 +74,12 @@ impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
-    pub fn build(
-        self,
-    ) -> crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
+    pub fn build(self) -> crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
         crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
             message: self.message,
             meta: self.meta.unwrap_or_default(),

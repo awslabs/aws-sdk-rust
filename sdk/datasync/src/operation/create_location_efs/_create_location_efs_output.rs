@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationEfsOutput {
 }
 impl CreateLocationEfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationEfsOutput`](crate::operation::create_location_efs::CreateLocationEfsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_efs::builders::CreateLocationEfsOutputBuilder {
+    pub fn builder() -> crate::operation::create_location_efs::builders::CreateLocationEfsOutputBuilder {
         crate::operation::create_location_efs::builders::CreateLocationEfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationEfsOutput`](crate::operation::create_location_efs::CreateLocationEfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationEfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

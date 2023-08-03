@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`duration_millis(i64)`](crate::operation::update_program::UpdateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::update_program::UpdateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
     /// - On failure, responds with [`SdkError<UpdateProgramError>`](crate::operation::update_program::UpdateProgramError)
-    pub fn update_program(
-        &self,
-    ) -> crate::operation::update_program::builders::UpdateProgramFluentBuilder {
-        crate::operation::update_program::builders::UpdateProgramFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_program(&self) -> crate::operation::update_program::builders::UpdateProgramFluentBuilder {
+        crate::operation::update_program::builders::UpdateProgramFluentBuilder::new(self.handle.clone())
     }
 }

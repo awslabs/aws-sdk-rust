@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`origin(impl ::std::convert::Into<String>)`](crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginFluentBuilder::origin) / [`set_origin(Option<String>)`](crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginFluentBuilder::set_origin): <p>The domain URL of the integrated application.</p>
     /// - On success, responds with [`DisassociateApprovedOriginOutput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginOutput)
     /// - On failure, responds with [`SdkError<DisassociateApprovedOriginError>`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginError)
-    pub fn disassociate_approved_origin(&self) -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginFluentBuilder{
+    pub fn disassociate_approved_origin(&self) -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginFluentBuilder {
         crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginFluentBuilder::new(self.handle.clone())
     }
 }

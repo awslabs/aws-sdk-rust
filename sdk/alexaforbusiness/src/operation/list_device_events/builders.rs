@@ -10,10 +10,7 @@ impl ListDeviceEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_device_events();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListDeviceEventsFluentBuilder {
         }
     }
     /// Access the ListDeviceEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListDeviceEventsFluentBuilder {
             crate::operation::list_device_events::ListDeviceEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListDeviceEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListDeviceEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListDeviceEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_events::ListDeviceEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListDeviceEventsFluentBuilder {
             crate::operation::list_device_events::ListDeviceEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_events::ListDeviceEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_events::ListDeviceEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
-        crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
+        crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of a device.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +133,7 @@ impl ListDeviceEventsFluentBuilder {
         self
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::DeviceEventType>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }

@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`permission_set_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder::set_permission_set_arn): <p>The ARN of the <code>PermissionSet</code>.</p>
     /// - On success, responds with [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput)
     /// - On failure, responds with [`SdkError<DeletePermissionsBoundaryFromPermissionSetError>`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError)
-    pub fn delete_permissions_boundary_from_permission_set(&self) -> crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder{
-        crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn delete_permissions_boundary_from_permission_set(
+        &self,
+    ) -> crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder {
+        crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

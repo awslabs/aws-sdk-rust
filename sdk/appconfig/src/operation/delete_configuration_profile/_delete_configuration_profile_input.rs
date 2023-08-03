@@ -22,34 +22,26 @@ impl DeleteConfigurationProfileInput {
 }
 impl DeleteConfigurationProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationProfileInput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput).
-    pub fn builder() -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder {
         crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationProfileInput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationProfileInputBuilder {
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DeleteConfigurationProfileInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the configuration profile you want to delete.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the configuration profile you want to delete.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl DeleteConfigurationProfileInputBuilder {
         crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput {
+            application_id: self.application_id,
+            configuration_profile_id: self.configuration_profile_id,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
         &self.tags
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>

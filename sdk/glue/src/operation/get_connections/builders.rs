@@ -10,10 +10,7 @@ impl GetConnectionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_connections::GetConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connections::GetConnectionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connections::GetConnectionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_connections();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetConnectionsFluentBuilder {
         }
     }
     /// Access the GetConnections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connections::builders::GetConnectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_connections::builders::GetConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetConnectionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_connections::paginator::GetConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_connections::paginator::GetConnectionsPaginator {
-        crate::operation::get_connections::paginator::GetConnectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_connections::paginator::GetConnectionsPaginator {
+        crate::operation::get_connections::paginator::GetConnectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,10 +132,7 @@ impl GetConnectionsFluentBuilder {
         self
     }
     /// <p>A filter that controls which connections are returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::GetConnectionsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::GetConnectionsFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

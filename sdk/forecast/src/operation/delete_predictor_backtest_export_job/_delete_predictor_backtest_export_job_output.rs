@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePredictorBacktestExportJobOutpu
 }
 impl DeletePredictorBacktestExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
-    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder {
         crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePredictorBacktestExportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeletePredictorBacktestExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
-    pub fn build(self) -> crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput{
+    pub fn build(self) -> crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput {
         crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput {
             _request_id: self._request_id,
         }

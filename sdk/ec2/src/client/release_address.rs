@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::release_address::builders::ReleaseAddressFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::release_address::builders::ReleaseAddressFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`ReleaseAddressOutput`](crate::operation::release_address::ReleaseAddressOutput)
     /// - On failure, responds with [`SdkError<ReleaseAddressError>`](crate::operation::release_address::ReleaseAddressError)
-    pub fn release_address(
-        &self,
-    ) -> crate::operation::release_address::builders::ReleaseAddressFluentBuilder {
-        crate::operation::release_address::builders::ReleaseAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn release_address(&self) -> crate::operation::release_address::builders::ReleaseAddressFluentBuilder {
+        crate::operation::release_address::builders::ReleaseAddressFluentBuilder::new(self.handle.clone())
     }
 }

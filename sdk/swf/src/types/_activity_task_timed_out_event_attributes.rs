@@ -44,9 +44,7 @@ impl ActivityTaskTimedOutEventAttributes {
 
 /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::types::ActivityTaskTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTaskTimedOutEventAttributesBuilder {
     pub(crate) timeout_type: ::std::option::Option<crate::types::ActivityTaskTimeoutType>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
@@ -60,17 +58,12 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn set_timeout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityTaskTimeoutType>,
-    ) -> Self {
+    pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::ActivityTaskTimeoutType>) -> Self {
         self.timeout_type = input;
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn get_timeout_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActivityTaskTimeoutType> {
+    pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::ActivityTaskTimeoutType> {
         &self.timeout_type
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>

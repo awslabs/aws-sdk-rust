@@ -74,18 +74,14 @@ impl ::aws_http::request_id::RequestId for GetConfigurationProfileOutput {
 }
 impl GetConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationProfileOutput`](crate::operation::get_configuration_profile::GetConfigurationProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::get_configuration_profile::builders::GetConfigurationProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration_profile::builders::GetConfigurationProfileOutputBuilder {
         crate::operation::get_configuration_profile::builders::GetConfigurationProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationProfileOutput`](crate::operation::get_configuration_profile::GetConfigurationProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationProfileOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -99,18 +95,12 @@ pub struct GetConfigurationProfileOutputBuilder {
 }
 impl GetConfigurationProfileOutputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -175,18 +165,12 @@ impl GetConfigurationProfileOutputBuilder {
         &self.location_uri
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn set_retrieval_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_role_arn = input;
         self
     }
@@ -206,17 +190,12 @@ impl GetConfigurationProfileOutputBuilder {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    ) -> Self {
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
         self.validators = input;
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
         &self.validators
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -249,9 +228,7 @@ impl GetConfigurationProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetConfigurationProfileOutput`](crate::operation::get_configuration_profile::GetConfigurationProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_configuration_profile::GetConfigurationProfileOutput {
+    pub fn build(self) -> crate::operation::get_configuration_profile::GetConfigurationProfileOutput {
         crate::operation::get_configuration_profile::GetConfigurationProfileOutput {
             application_id: self.application_id,
             id: self.id,

@@ -30,9 +30,7 @@ impl ImageFile {
 
 /// A builder for [`ImageFile`](crate::types::ImageFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageFileBuilder {
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) r#type: ::std::option::Option<crate::types::ImageFileType>,

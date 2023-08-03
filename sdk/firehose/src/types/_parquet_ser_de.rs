@@ -58,9 +58,7 @@ impl ParquetSerDe {
 
 /// A builder for [`ParquetSerDe`](crate::types::ParquetSerDe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParquetSerDeBuilder {
     pub(crate) block_size_bytes: ::std::option::Option<i32>,
     pub(crate) page_size_bytes: ::std::option::Option<i32>,
@@ -104,10 +102,7 @@ impl ParquetSerDeBuilder {
         self
     }
     /// <p>The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.</p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetCompression>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::ParquetCompression>) -> Self {
         self.compression = input;
         self
     }
@@ -149,10 +144,7 @@ impl ParquetSerDeBuilder {
         self
     }
     /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
-    pub fn set_writer_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetWriterVersion>,
-    ) -> Self {
+    pub fn set_writer_version(mut self, input: ::std::option::Option<crate::types::ParquetWriterVersion>) -> Self {
         self.writer_version = input;
         self
     }

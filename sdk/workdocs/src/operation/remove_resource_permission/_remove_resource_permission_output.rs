@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveResourcePermissionOutput {
 }
 impl RemoveResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionOutput`](crate::operation::remove_resource_permission::RemoveResourcePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionOutputBuilder {
         crate::operation::remove_resource_permission::builders::RemoveResourcePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveResourcePermissionOutput`](crate::operation::remove_resource_permission::RemoveResourcePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveResourcePermissionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl RemoveResourcePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveResourcePermissionOutput`](crate::operation::remove_resource_permission::RemoveResourcePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_resource_permission::RemoveResourcePermissionOutput {
+    pub fn build(self) -> crate::operation::remove_resource_permission::RemoveResourcePermissionOutput {
         crate::operation::remove_resource_permission::RemoveResourcePermissionOutput {
             _request_id: self._request_id,
         }

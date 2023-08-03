@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`groups(Option<Vec<GroupMetadata>>)`](crate::operation::describe_groups::DescribeGroupsOutput::groups): <p>The list of groups.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_groups::DescribeGroupsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupsError>`](crate::operation::describe_groups::DescribeGroupsError)
-    pub fn describe_groups(
-        &self,
-    ) -> crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder {
-        crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_groups(&self) -> crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder {
+        crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::new(self.handle.clone())
     }
 }

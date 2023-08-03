@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetIncidentRecordOutput {
 }
 impl GetIncidentRecordOutput {
     /// Creates a new builder-style object to manufacture [`GetIncidentRecordOutput`](crate::operation::get_incident_record::GetIncidentRecordOutput).
-    pub fn builder(
-    ) -> crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder {
+    pub fn builder() -> crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder {
         crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIncidentRecordOutput`](crate::operation::get_incident_record::GetIncidentRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIncidentRecordOutputBuilder {
     pub(crate) incident_record: ::std::option::Option<crate::types::IncidentRecord>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetIncidentRecordOutputBuilder {
         self
     }
     /// <p>Details the structure of the incident record.</p>
-    pub fn set_incident_record(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentRecord>,
-    ) -> Self {
+    pub fn set_incident_record(mut self, input: ::std::option::Option<crate::types::IncidentRecord>) -> Self {
         self.incident_record = input;
         self
     }

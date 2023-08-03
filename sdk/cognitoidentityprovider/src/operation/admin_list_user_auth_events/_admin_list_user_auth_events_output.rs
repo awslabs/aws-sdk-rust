@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AdminListUserAuthEventsOutput {
 }
 impl AdminListUserAuthEventsOutput {
     /// Creates a new builder-style object to manufacture [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder {
         crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminListUserAuthEventsOutputBuilder {
     pub(crate) auth_events: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl AdminListUserAuthEventsOutputBuilder {
         self
     }
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
-    pub fn set_auth_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
-    ) -> Self {
+    pub fn set_auth_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>) -> Self {
         self.auth_events = input;
         self
     }
     /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
-    pub fn get_auth_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
+    pub fn get_auth_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
         &self.auth_events
     }
     /// <p>A pagination token.</p>
@@ -95,9 +86,7 @@ impl AdminListUserAuthEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
+    pub fn build(self) -> crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
         crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput {
             auth_events: self.auth_events,
             next_token: self.next_token,

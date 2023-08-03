@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExplicitAuthFlowsType {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for ExplicitAuthFlowsType {
             "ALLOW_USER_SRP_AUTH" => ExplicitAuthFlowsType::AllowUserSrpAuth,
             "CUSTOM_AUTH_FLOW_ONLY" => ExplicitAuthFlowsType::CustomAuthFlowOnly,
             "USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::UserPasswordAuth,
-            other => ExplicitAuthFlowsType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExplicitAuthFlowsType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

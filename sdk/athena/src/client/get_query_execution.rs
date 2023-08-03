@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput) with field(s):
     ///   - [`query_execution(Option<QueryExecution>)`](crate::operation::get_query_execution::GetQueryExecutionOutput::query_execution): <p>Information about the query execution.</p>
     /// - On failure, responds with [`SdkError<GetQueryExecutionError>`](crate::operation::get_query_execution::GetQueryExecutionError)
-    pub fn get_query_execution(
-        &self,
-    ) -> crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder {
-        crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_execution(&self) -> crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder {
+        crate::operation::get_query_execution::builders::GetQueryExecutionFluentBuilder::new(self.handle.clone())
     }
 }

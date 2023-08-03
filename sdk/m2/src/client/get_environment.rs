@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`pending_maintenance(Option<PendingMaintenance>)`](crate::operation::get_environment::GetEnvironmentOutput::pending_maintenance): <p>Indicates the pending maintenance scheduled on this environment.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
-    pub fn get_environment(
-        &self,
-    ) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
-        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
+        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

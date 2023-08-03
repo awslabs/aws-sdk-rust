@@ -29,18 +29,14 @@ impl ResetAddressAttributeInput {
 }
 impl ResetAddressAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder {
         crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetAddressAttributeInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute: ::std::option::Option<crate::types::AddressAttributeName>,
@@ -48,18 +44,12 @@ pub struct ResetAddressAttributeInputBuilder {
 }
 impl ResetAddressAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -73,10 +63,7 @@ impl ResetAddressAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::AddressAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -101,16 +88,12 @@ impl ResetAddressAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_address_attribute::ResetAddressAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_address_attribute::ResetAddressAttributeInput {
-                allocation_id: self.allocation_id,
-                attribute: self.attribute,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_address_attribute::ResetAddressAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_address_attribute::ResetAddressAttributeInput {
+            allocation_id: self.allocation_id,
+            attribute: self.attribute,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl ReservedInstanceReservationValue {
 
 /// A builder for [`ReservedInstanceReservationValue`](crate::types::ReservedInstanceReservationValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstanceReservationValueBuilder {
     pub(crate) reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     pub(crate) reserved_instance_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ReservedInstanceReservationValueBuilder {
         self
     }
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn set_reservation_value(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationValue>,
-    ) -> Self {
+    pub fn set_reservation_value(mut self, input: ::std::option::Option<crate::types::ReservationValue>) -> Self {
         self.reservation_value = input;
         self
     }
@@ -56,18 +51,12 @@ impl ReservedInstanceReservationValueBuilder {
         &self.reservation_value
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reserved_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn set_reserved_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instance_id = input;
         self
     }

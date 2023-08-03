@@ -10,10 +10,7 @@ impl UpdateTimeToLiveInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_time_to_live::UpdateTimeToLiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_time_to_live::UpdateTimeToLiveError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_time_to_live::UpdateTimeToLiveError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_time_to_live();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl UpdateTimeToLiveFluentBuilder {
         }
     }
     /// Access the UpdateTimeToLive as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_time_to_live::builders::UpdateTimeToLiveInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_time_to_live::builders::UpdateTimeToLiveInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl UpdateTimeToLiveFluentBuilder {
             crate::operation::update_time_to_live::UpdateTimeToLive,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_time_to_live::UpdateTimeToLiveError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_time_to_live::UpdateTimeToLiveError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl UpdateTimeToLiveFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl UpdateTimeToLiveFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_time_to_live::UpdateTimeToLiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_time_to_live::UpdateTimeToLiveError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_time_to_live::UpdateTimeToLiveError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl UpdateTimeToLiveFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_time_to_live::UpdateTimeToLiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_time_to_live::UpdateTimeToLiveError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_time_to_live::UpdateTimeToLiveError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl UpdateTimeToLiveFluentBuilder {
             crate::operation::update_time_to_live::UpdateTimeToLive,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_time_to_live::UpdateTimeToLiveError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_time_to_live::UpdateTimeToLiveError>,
     > {
         self.customize_middleware().await
     }
@@ -145,25 +129,17 @@ impl UpdateTimeToLiveFluentBuilder {
         self.inner.get_table_name()
     }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
-    pub fn time_to_live_specification(
-        mut self,
-        input: crate::types::TimeToLiveSpecification,
-    ) -> Self {
+    pub fn time_to_live_specification(mut self, input: crate::types::TimeToLiveSpecification) -> Self {
         self.inner = self.inner.time_to_live_specification(input);
         self
     }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
-    pub fn set_time_to_live_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeToLiveSpecification>,
-    ) -> Self {
+    pub fn set_time_to_live_specification(mut self, input: ::std::option::Option<crate::types::TimeToLiveSpecification>) -> Self {
         self.inner = self.inner.set_time_to_live_specification(input);
         self
     }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
-    pub fn get_time_to_live_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
+    pub fn get_time_to_live_specification(&self) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
         self.inner.get_time_to_live_specification()
     }
 }

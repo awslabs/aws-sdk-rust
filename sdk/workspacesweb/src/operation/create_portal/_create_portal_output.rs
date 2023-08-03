@@ -35,9 +35,7 @@ impl CreatePortalOutput {
 
 /// A builder for [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePortalOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) portal_endpoint: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl CreatePortalOutputBuilder {
         &self.portal_arn
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    pub fn portal_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    pub fn set_portal_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_endpoint = input;
         self
     }

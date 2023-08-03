@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::set_resource_arn): <p>The ARN of the canary that you want to remove from the specified group.</p>
     /// - On success, responds with [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput)
     /// - On failure, responds with [`SdkError<DisassociateResourceError>`](crate::operation::disassociate_resource::DisassociateResourceError)
-    pub fn disassociate_resource(
-        &self,
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder {
-        crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_resource(&self) -> crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder {
+        crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

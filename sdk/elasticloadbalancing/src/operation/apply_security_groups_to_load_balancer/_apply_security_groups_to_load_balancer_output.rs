@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for ApplySecurityGroupsToLoadBalancerOutp
 }
 impl ApplySecurityGroupsToLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerOutput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput).
-    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerOutputBuilder {
         crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`ApplySecurityGroupsToLoadBalancerOutput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerOutputBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -42,27 +40,19 @@ impl ApplySecurityGroupsToLoadBalancerOutputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups associated with the load balancer.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +65,9 @@ impl ApplySecurityGroupsToLoadBalancerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerOutput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput).
-    pub fn build(self) -> crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput{
+    pub fn build(self) -> crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput {
         crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput {
-            security_groups: self.security_groups
-            ,
+            security_groups: self.security_groups,
             _request_id: self._request_id,
         }
     }

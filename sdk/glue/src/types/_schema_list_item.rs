@@ -65,9 +65,7 @@ impl SchemaListItem {
 
 /// A builder for [`SchemaListItem`](crate::types::SchemaListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaListItemBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct SchemaListItemBuilder {
 }
 impl SchemaListItemBuilder {
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -146,10 +138,7 @@ impl SchemaListItemBuilder {
         self
     }
     /// <p>The status of the schema.</p>
-    pub fn set_schema_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaStatus>,
-    ) -> Self {
+    pub fn set_schema_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.schema_status = input;
         self
     }

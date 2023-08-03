@@ -37,9 +37,7 @@ impl ComponentVersionListItem {
 
 /// A builder for [`ComponentVersionListItem`](crate::types::ComponentVersionListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentVersionListItemBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_version: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ComponentVersionListItemBuilder {
 }
 impl ComponentVersionListItemBuilder {
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl ComponentVersionListItemBuilder {
         &self.component_name
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version = input;
         self
     }

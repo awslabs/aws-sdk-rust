@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationOutput {
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
         crate::operation::update_application::builders::UpdateApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

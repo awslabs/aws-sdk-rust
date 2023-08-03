@@ -10,10 +10,7 @@ impl StopDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_db_cluster::StopDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_cluster::StopDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_cluster::StopDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_db_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopDBClusterFluentBuilder {
         }
     }
     /// Access the StopDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_db_cluster::builders::StopDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_db_cluster::builders::StopDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StopDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl StopDBClusterFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

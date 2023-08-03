@@ -5,16 +5,16 @@ pub use crate::operation::list_delegated_services_for_account::_list_delegated_s
 
 impl ListDelegatedServicesForAccountInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_delegated_services_for_account();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListDelegatedServicesForAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDelegatedServicesForAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder,
+    inner: crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder,
 }
 impl ListDelegatedServicesForAccountFluentBuilder {
     /// Creates a new `ListDelegatedServicesForAccount`.
@@ -38,15 +38,20 @@ impl ListDelegatedServicesForAccountFluentBuilder {
         }
     }
     /// Access the ListDelegatedServicesForAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccount,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListDelegatedServicesForAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,23 +88,32 @@ impl ListDelegatedServicesForAccountFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccount,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_services_for_account::paginator::ListDelegatedServicesForAccountPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_delegated_services_for_account::paginator::ListDelegatedServicesForAccountPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_delegated_services_for_account::paginator::ListDelegatedServicesForAccountPaginator {
         crate::operation::list_delegated_services_for_account::paginator::ListDelegatedServicesForAccountPaginator::new(self.handle, self.inner)
     }
     /// <p>The account ID number of a delegated administrator account in the organization.</p>

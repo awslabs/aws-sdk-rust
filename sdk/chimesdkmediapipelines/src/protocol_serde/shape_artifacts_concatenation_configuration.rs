@@ -30,19 +30,28 @@ pub fn ser_artifacts_concatenation_configuration(
     if let Some(var_9) = &input.transcription_messages {
         #[allow(unused_mut)]
         let mut object_10 = object.key("TranscriptionMessages").start_object();
-        crate::protocol_serde::shape_transcription_messages_concatenation_configuration::ser_transcription_messages_concatenation_configuration(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_transcription_messages_concatenation_configuration::ser_transcription_messages_concatenation_configuration(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.meeting_events {
         #[allow(unused_mut)]
         let mut object_12 = object.key("MeetingEvents").start_object();
-        crate::protocol_serde::shape_meeting_events_concatenation_configuration::ser_meeting_events_concatenation_configuration(&mut object_12, var_11)?;
+        crate::protocol_serde::shape_meeting_events_concatenation_configuration::ser_meeting_events_concatenation_configuration(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.composited_video {
         #[allow(unused_mut)]
         let mut object_14 = object.key("CompositedVideo").start_object();
-        crate::protocol_serde::shape_composited_video_concatenation_configuration::ser_composited_video_concatenation_configuration(&mut object_14, var_13)?;
+        crate::protocol_serde::shape_composited_video_concatenation_configuration::ser_composited_video_concatenation_configuration(
+            &mut object_14,
+            var_13,
+        )?;
         object_14.finish();
     }
     Ok(())
@@ -50,24 +59,15 @@ pub fn ser_artifacts_concatenation_configuration(
 
 pub(crate) fn de_artifacts_concatenation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ArtifactsConcatenationConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ArtifactsConcatenationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ArtifactsConcatenationConfigurationBuilder::default();
+            let mut builder = crate::types::builders::ArtifactsConcatenationConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,17 +75,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Audio" => {
                                 builder = builder.set_audio(
-                                    crate::protocol_serde::shape_audio_concatenation_configuration::de_audio_concatenation_configuration(tokens)?
+                                    crate::protocol_serde::shape_audio_concatenation_configuration::de_audio_concatenation_configuration(tokens)?,
                                 );
                             }
                             "Video" => {
                                 builder = builder.set_video(
-                                    crate::protocol_serde::shape_video_concatenation_configuration::de_video_concatenation_configuration(tokens)?
+                                    crate::protocol_serde::shape_video_concatenation_configuration::de_video_concatenation_configuration(tokens)?,
                                 );
                             }
                             "Content" => {
                                 builder = builder.set_content(
-                                    crate::protocol_serde::shape_content_concatenation_configuration::de_content_concatenation_configuration(tokens)?
+                                    crate::protocol_serde::shape_content_concatenation_configuration::de_content_concatenation_configuration(tokens)?,
                                 );
                             }
                             "DataChannel" => {
@@ -112,20 +112,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -10,10 +10,7 @@ impl DeleteAccessPointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point::DeleteAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point::DeleteAccessPointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point::DeleteAccessPointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_access_point();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DeleteAccessPointFluentBuilder {
         }
     }
     /// Access the DeleteAccessPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DeleteAccessPointFluentBuilder {
             crate::operation::delete_access_point::DeleteAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point::DeleteAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point::DeleteAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DeleteAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DeleteAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point::DeleteAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point::DeleteAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point::DeleteAccessPointError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DeleteAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point::DeleteAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point::DeleteAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point::DeleteAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl DeleteAccessPointFluentBuilder {
             crate::operation::delete_access_point::DeleteAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point::DeleteAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point::DeleteAccessPointError>,
     > {
         self.customize_middleware().await
     }

@@ -13,9 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAddonOutput`](crate::operation::update_addon::UpdateAddonOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::update_addon::UpdateAddonOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<UpdateAddonError>`](crate::operation::update_addon::UpdateAddonError)
-    pub fn update_addon(
-        &self,
-    ) -> crate::operation::update_addon::builders::UpdateAddonFluentBuilder {
+    pub fn update_addon(&self) -> crate::operation::update_addon::builders::UpdateAddonFluentBuilder {
         crate::operation::update_addon::builders::UpdateAddonFluentBuilder::new(self.handle.clone())
     }
 }

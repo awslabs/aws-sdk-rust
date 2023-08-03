@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceHealthOutput {
 }
 impl DescribeInstanceHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder {
         crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceHealthOutputBuilder {
     pub(crate) instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeInstanceHealthOutputBuilder {
         self
     }
     /// <p>Information about the health of the instances.</p>
-    pub fn set_instance_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
-    ) -> Self {
+    pub fn set_instance_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>) -> Self {
         self.instance_states = input;
         self
     }
     /// <p>Information about the health of the instances.</p>
-    pub fn get_instance_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
+    pub fn get_instance_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
         &self.instance_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

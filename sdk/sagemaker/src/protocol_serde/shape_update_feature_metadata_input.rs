@@ -18,10 +18,7 @@ pub fn ser_update_feature_metadata_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_feature_parameter::ser_feature_parameter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_feature_parameter::ser_feature_parameter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

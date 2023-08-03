@@ -27,7 +27,7 @@ impl DescribeAcceleratorOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder,
+    inner: crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder,
 }
 impl DescribeAcceleratorOfferingsFluentBuilder {
     /// Creates a new `DescribeAcceleratorOfferings`.
@@ -38,7 +38,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeAcceleratorOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
             crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
             crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self
     }
     /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.inner = self.inner.set_location_type(input);
         self
     }
@@ -143,25 +129,17 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
     /// <p> The list of accelerator types to describe. </p>
-    pub fn accelerator_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_types(input.into());
         self
     }
     /// <p> The list of accelerator types to describe. </p>
-    pub fn set_accelerator_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
     /// <p> The list of accelerator types to describe. </p>
-    pub fn get_accelerator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accelerator_types()
     }
 }

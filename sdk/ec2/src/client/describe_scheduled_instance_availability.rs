@@ -16,7 +16,11 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput::next_token): <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`scheduled_instance_availability_set(Option<Vec<ScheduledInstanceAvailability>>)`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput::scheduled_instance_availability_set): <p>Information about the available Scheduled Instances.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduledInstanceAvailabilityError>`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError)
-    pub fn describe_scheduled_instance_availability(&self) -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityFluentBuilder{
-        crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityFluentBuilder::new(self.handle.clone())
+    pub fn describe_scheduled_instance_availability(
+        &self,
+    ) -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityFluentBuilder {
+        crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

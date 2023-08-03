@@ -36,12 +36,9 @@ impl ListWorkloadsOutput {
 
 /// A builder for [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkloadsOutputBuilder {
-    pub(crate) workload_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>>,
+    pub(crate) workload_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +55,12 @@ impl ListWorkloadsOutputBuilder {
         self
     }
     /// <p>A list of workload summaries.</p>
-    pub fn set_workload_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>>,
-    ) -> Self {
+    pub fn set_workload_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>>) -> Self {
         self.workload_summaries = input;
         self
     }
     /// <p>A list of workload summaries.</p>
-    pub fn get_workload_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>> {
+    pub fn get_workload_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>> {
         &self.workload_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

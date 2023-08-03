@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBgpPeerOutput`](crate::operation::delete_bgp_peer::DeleteBgpPeerOutput) with field(s):
     ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::operation::delete_bgp_peer::DeleteBgpPeerOutput::virtual_interface): <p>The virtual interface.</p>
     /// - On failure, responds with [`SdkError<DeleteBGPPeerError>`](crate::operation::delete_bgp_peer::DeleteBGPPeerError)
-    pub fn delete_bgp_peer(
-        &self,
-    ) -> crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder {
-        crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bgp_peer(&self) -> crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder {
+        crate::operation::delete_bgp_peer::builders::DeleteBGPPeerFluentBuilder::new(self.handle.clone())
     }
 }

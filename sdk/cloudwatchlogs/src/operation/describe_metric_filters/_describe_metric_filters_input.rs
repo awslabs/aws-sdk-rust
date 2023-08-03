@@ -50,18 +50,14 @@ impl DescribeMetricFiltersInput {
 }
 impl DescribeMetricFiltersInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder {
         crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricFiltersInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name_prefix: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct DescribeMetricFiltersInputBuilder {
 }
 impl DescribeMetricFiltersInputBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -92,18 +82,12 @@ impl DescribeMetricFiltersInputBuilder {
         &self.log_group_name
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn filter_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    pub fn set_filter_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name_prefix = input;
         self
     }
@@ -154,18 +138,12 @@ impl DescribeMetricFiltersInputBuilder {
         &self.metric_name
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    pub fn metric_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    pub fn set_metric_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_namespace = input;
         self
     }
@@ -176,19 +154,15 @@ impl DescribeMetricFiltersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_metric_filters::DescribeMetricFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_metric_filters::DescribeMetricFiltersInput {
-                log_group_name: self.log_group_name,
-                filter_name_prefix: self.filter_name_prefix,
-                next_token: self.next_token,
-                limit: self.limit,
-                metric_name: self.metric_name,
-                metric_namespace: self.metric_namespace,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_metric_filters::DescribeMetricFiltersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_metric_filters::DescribeMetricFiltersInput {
+            log_group_name: self.log_group_name,
+            filter_name_prefix: self.filter_name_prefix,
+            next_token: self.next_token,
+            limit: self.limit,
+            metric_name: self.metric_name,
+            metric_namespace: self.metric_namespace,
+        })
     }
 }

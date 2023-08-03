@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`state(Option<CapacityReservationState>)`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput::state): <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>  <ul>   <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>   <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>   <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>   <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>   <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>  </ul>
     ///   - [`instance_usages(Option<Vec<InstanceUsage>>)`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput::instance_usages): <p>Information about the Capacity Reservation usage.</p>
     /// - On failure, responds with [`SdkError<GetCapacityReservationUsageError>`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError)
-    pub fn get_capacity_reservation_usage(&self) -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageFluentBuilder{
+    pub fn get_capacity_reservation_usage(
+        &self,
+    ) -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageFluentBuilder {
         crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageFluentBuilder::new(self.handle.clone())
     }
 }

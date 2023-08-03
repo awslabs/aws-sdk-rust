@@ -62,7 +62,7 @@ impl ::std::fmt::Debug for ImportHypervisorConfigurationInput {
 }
 impl ImportHypervisorConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
-    pub fn builder() -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder {
         crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::default()
     }
 }
@@ -161,10 +161,7 @@ impl ImportHypervisorConfigurationInputBuilder {
         self
     }
     /// <p>The tags of the hypervisor configuration to import.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -179,16 +176,14 @@ impl ImportHypervisorConfigurationInputBuilder {
         crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput {
-                name: self.name,
-                host: self.host,
-                username: self.username,
-                password: self.password,
-                kms_key_arn: self.kms_key_arn,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput {
+            name: self.name,
+            host: self.host,
+            username: self.username,
+            password: self.password,
+            kms_key_arn: self.kms_key_arn,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportHypervisorConfigurationInputBuilder {

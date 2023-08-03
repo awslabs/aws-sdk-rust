@@ -37,10 +37,7 @@ impl DeleteRegexPatternSetFluentBuilder {
         }
     }
     /// Access the DeleteRegexPatternSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteRegexPatternSetFluentBuilder {
             crate::operation::delete_regex_pattern_set::DeleteRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteRegexPatternSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteRegexPatternSetFluentBuilder {
             crate::operation::delete_regex_pattern_set::DeleteRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError>,
     > {
         self.customize_middleware().await
     }

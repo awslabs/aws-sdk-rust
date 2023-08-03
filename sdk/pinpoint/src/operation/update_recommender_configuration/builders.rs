@@ -26,7 +26,7 @@ impl UpdateRecommenderConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRecommenderConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationInputBuilder,
+    inner: crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationInputBuilder,
 }
 impl UpdateRecommenderConfigurationFluentBuilder {
     /// Creates a new `UpdateRecommenderConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateRecommenderConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateRecommenderConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateRecommenderConfigurationFluentBuilder {
             crate::operation::update_recommender_configuration::UpdateRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateRecommenderConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateRecommenderConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateRecommenderConfigurationFluentBuilder {
             crate::operation::update_recommender_configuration::UpdateRecommenderConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommender_id(input.into());
         self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_recommender_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommender_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl UpdateRecommenderConfigurationFluentBuilder {
         self.inner.get_recommender_id()
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn update_recommender_configuration(
-        mut self,
-        input: crate::types::UpdateRecommenderConfigurationShape,
-    ) -> Self {
+    pub fn update_recommender_configuration(mut self, input: crate::types::UpdateRecommenderConfigurationShape) -> Self {
         self.inner = self.inner.update_recommender_configuration(input);
         self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn set_update_recommender_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateRecommenderConfigurationShape>,
-    ) -> Self {
+    pub fn set_update_recommender_configuration(mut self, input: ::std::option::Option<crate::types::UpdateRecommenderConfigurationShape>) -> Self {
         self.inner = self.inner.set_update_recommender_configuration(input);
         self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn get_update_recommender_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateRecommenderConfigurationShape> {
+    pub fn get_update_recommender_configuration(&self) -> &::std::option::Option<crate::types::UpdateRecommenderConfigurationShape> {
         self.inner.get_update_recommender_configuration()
     }
 }

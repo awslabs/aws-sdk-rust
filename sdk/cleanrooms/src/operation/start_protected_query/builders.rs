@@ -37,9 +37,7 @@ impl StartProtectedQueryFluentBuilder {
         }
     }
     /// Access the StartProtectedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartProtectedQueryFluentBuilder {
             crate::operation::start_protected_query::StartProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_protected_query::StartProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_protected_query::StartProtectedQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartProtectedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_protected_query::StartProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_protected_query::StartProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_protected_query::StartProtectedQueryError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_protected_query::StartProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_protected_query::StartProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_protected_query::StartProtectedQueryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StartProtectedQueryFluentBuilder {
             crate::operation::start_protected_query::StartProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_protected_query::StartProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_protected_query::StartProtectedQueryError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl StartProtectedQueryFluentBuilder {
         self
     }
     /// <p>The type of the protected query to be started.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProtectedQueryType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -140,18 +124,12 @@ impl StartProtectedQueryFluentBuilder {
         self.inner.get_type()
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -165,39 +143,26 @@ impl StartProtectedQueryFluentBuilder {
         self
     }
     /// <p>The protected SQL query parameters.</p>
-    pub fn set_sql_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
-    ) -> Self {
+    pub fn set_sql_parameters(mut self, input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>) -> Self {
         self.inner = self.inner.set_sql_parameters(input);
         self
     }
     /// <p>The protected SQL query parameters.</p>
-    pub fn get_sql_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+    pub fn get_sql_parameters(&self) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
         self.inner.get_sql_parameters()
     }
     /// <p>The details needed to write the query results.</p>
-    pub fn result_configuration(
-        mut self,
-        input: crate::types::ProtectedQueryResultConfiguration,
-    ) -> Self {
+    pub fn result_configuration(mut self, input: crate::types::ProtectedQueryResultConfiguration) -> Self {
         self.inner = self.inner.result_configuration(input);
         self
     }
     /// <p>The details needed to write the query results.</p>
-    pub fn set_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
-    ) -> Self {
+    pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>) -> Self {
         self.inner = self.inner.set_result_configuration(input);
         self
     }
     /// <p>The details needed to write the query results.</p>
-    pub fn get_result_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
+    pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
         self.inner.get_result_configuration()
     }
 }

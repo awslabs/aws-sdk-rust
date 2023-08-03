@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`application_maintenance_configuration_description(Option<ApplicationMaintenanceConfigurationDescription>)`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput::application_maintenance_configuration_description): <p>The application maintenance configuration description after the update.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationMaintenanceConfigurationError>`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError)
-    pub fn update_application_maintenance_configuration(&self) -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationFluentBuilder{
-        crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn update_application_maintenance_configuration(
+        &self,
+    ) -> crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationFluentBuilder {
+        crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

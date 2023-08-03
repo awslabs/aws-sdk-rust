@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`delete_scheduled_audits(bool)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::delete_scheduled_audits) / [`set_delete_scheduled_audits(Option<bool>)`](crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::set_delete_scheduled_audits): <p>If true, all scheduled audits are deleted.</p>
     /// - On success, responds with [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountAuditConfigurationError>`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationError)
-    pub fn delete_account_audit_configuration(&self) -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder{
+    pub fn delete_account_audit_configuration(
+        &self,
+    ) -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder {
         crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

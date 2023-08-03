@@ -5,16 +5,16 @@ pub use crate::operation::set_identity_feedback_forwarding_enabled::_set_identit
 
 impl SetIdentityFeedbackForwardingEnabledInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.set_identity_feedback_forwarding_enabled();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder,
+    inner: crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder,
 }
 impl SetIdentityFeedbackForwardingEnabledFluentBuilder {
     /// Creates a new `SetIdentityFeedbackForwardingEnabled`.
@@ -41,15 +41,22 @@ impl SetIdentityFeedbackForwardingEnabledFluentBuilder {
         }
     }
     /// Access the SetIdentityFeedbackForwardingEnabled as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabled,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +65,17 @@ impl SetIdentityFeedbackForwardingEnabledFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,17 +93,26 @@ impl SetIdentityFeedbackForwardingEnabledFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabled,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>

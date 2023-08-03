@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkInsightsAccessScopeOutpu
 }
 impl DeleteNetworkInsightsAccessScopeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput).
-    pub fn builder() -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder {
         crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAccessScopeOutputBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteNetworkInsightsAccessScopeOutputBuilder {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn get_network_insights_access_scope_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,9 @@ impl DeleteNetworkInsightsAccessScopeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput).
-    pub fn build(self) -> crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput{
+    pub fn build(self) -> crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput {
         crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput {
-            network_insights_access_scope_id: self.network_insights_access_scope_id
-            ,
+            network_insights_access_scope_id: self.network_insights_access_scope_id,
             _request_id: self._request_id,
         }
     }

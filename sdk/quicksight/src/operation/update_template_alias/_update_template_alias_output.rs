@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateTemplateAliasOutput {
 }
 impl UpdateTemplateAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateAliasOutput`](crate::operation::update_template_alias::UpdateTemplateAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::update_template_alias::builders::UpdateTemplateAliasOutputBuilder {
-        crate::operation::update_template_alias::builders::UpdateTemplateAliasOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_template_alias::builders::UpdateTemplateAliasOutputBuilder {
+        crate::operation::update_template_alias::builders::UpdateTemplateAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTemplateAliasOutput`](crate::operation::update_template_alias::UpdateTemplateAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplateAliasOutputBuilder {
     pub(crate) template_alias: ::std::option::Option<crate::types::TemplateAlias>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -60,10 +56,7 @@ impl UpdateTemplateAliasOutputBuilder {
         self
     }
     /// <p>The template alias.</p>
-    pub fn set_template_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateAlias>,
-    ) -> Self {
+    pub fn set_template_alias(mut self, input: ::std::option::Option<crate::types::TemplateAlias>) -> Self {
         self.template_alias = input;
         self
     }

@@ -42,9 +42,7 @@ impl SearchDevicesOutput {
 
 /// A builder for [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesOutputBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl SearchDevicesOutputBuilder {
         self
     }
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>) -> Self {
         self.devices = input;
         self
     }

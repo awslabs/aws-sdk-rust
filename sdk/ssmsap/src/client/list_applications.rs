@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>The applications registered with AWS Systems Manager for SAP.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,10 +24,7 @@ pub fn ser_create_impersonation_role_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_impersonation_rule::ser_impersonation_rule(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_impersonation_rule::ser_impersonation_rule(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

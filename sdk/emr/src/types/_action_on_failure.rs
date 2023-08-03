@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionOnFailure {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ActionOnFailure {
             "CONTINUE" => ActionOnFailure::Continue,
             "TERMINATE_CLUSTER" => ActionOnFailure::TerminateCluster,
             "TERMINATE_JOB_FLOW" => ActionOnFailure::TerminateJobFlow,
-            other => {
-                ActionOnFailure::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionOnFailure::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ActionOnFailure {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCEL_AND_WAIT",
-            "CONTINUE",
-            "TERMINATE_CLUSTER",
-            "TERMINATE_JOB_FLOW",
-        ]
+        &["CANCEL_AND_WAIT", "CONTINUE", "TERMINATE_CLUSTER", "TERMINATE_JOB_FLOW"]
     }
 }
 impl ::std::convert::AsRef<str> for ActionOnFailure {

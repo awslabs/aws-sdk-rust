@@ -30,9 +30,7 @@ impl S3Retention {
 
 /// A builder for [`S3Retention`](crate::types::S3Retention).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3RetentionBuilder {
     pub(crate) retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) mode: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
@@ -44,10 +42,7 @@ impl S3RetentionBuilder {
         self
     }
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub fn set_retain_until_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_retain_until_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.retain_until_date = input;
         self
     }
@@ -61,10 +56,7 @@ impl S3RetentionBuilder {
         self
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>) -> Self {
         self.mode = input;
         self
     }

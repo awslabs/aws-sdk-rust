@@ -12,8 +12,7 @@ pub struct EventTypeFilter {
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     #[doc(hidden)]
-    pub event_type_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
 }
 impl EventTypeFilter {
     /// <p>A list of event type codes.</p>
@@ -25,9 +24,7 @@ impl EventTypeFilter {
         self.services.as_deref()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn event_type_categories(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventTypeCategory]> {
+    pub fn event_type_categories(&self) -> ::std::option::Option<&[crate::types::EventTypeCategory]> {
         self.event_type_categories.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl EventTypeFilter {
 
 /// A builder for [`EventTypeFilter`](crate::types::EventTypeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTypeFilterBuilder {
     pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) event_type_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
 }
 impl EventTypeFilterBuilder {
     /// Appends an item to `event_type_codes`.
@@ -55,27 +49,19 @@ impl EventTypeFilterBuilder {
     /// To override the contents of this collection use [`set_event_type_codes`](Self::set_event_type_codes).
     ///
     /// <p>A list of event type codes.</p>
-    pub fn event_type_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_type_codes.unwrap_or_default();
         v.push(input.into());
         self.event_type_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of event type codes.</p>
-    pub fn set_event_type_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_type_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_type_codes = input;
         self
     }
     /// <p>A list of event type codes.</p>
-    pub fn get_event_type_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_type_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_type_codes
     }
     /// Appends an item to `services`.
@@ -90,10 +76,7 @@ impl EventTypeFilterBuilder {
         self
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.services = input;
         self
     }
@@ -113,17 +96,12 @@ impl EventTypeFilterBuilder {
         self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn set_event_type_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    ) -> Self {
+    pub fn set_event_type_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>) -> Self {
         self.event_type_categories = input;
         self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn get_event_type_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
+    pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
         &self.event_type_categories
     }
     /// Consumes the builder and constructs a [`EventTypeFilter`](crate::types::EventTypeFilter).

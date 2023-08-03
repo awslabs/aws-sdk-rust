@@ -23,26 +23,18 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionBuilder {
     pub(crate) expression_string: ::std::option::Option<::std::string::String>,
 }
 impl ConditionBuilder {
     /// <p>The expression string that is evaluated. </p>
-    pub fn expression_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression string that is evaluated. </p>
-    pub fn set_expression_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expression_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression_string = input;
         self
     }

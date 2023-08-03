@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`export_error_details(Option<ExportErrorDetails>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::export_error_details): <p>Details about the errors generated during ExportEarthObservationJob.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<GetEarthObservationJobError>`](crate::operation::get_earth_observation_job::GetEarthObservationJobError)
-    pub fn get_earth_observation_job(
-        &self,
-    ) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder
-    {
+    pub fn get_earth_observation_job(&self) -> crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder {
         crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::new(self.handle.clone())
     }
 }

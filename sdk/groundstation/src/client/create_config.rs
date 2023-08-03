@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::create_config::CreateConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_arn(Option<String>)`](crate::operation::create_config::CreateConfigOutput::config_arn): <p>ARN of a <code>Config</code>.</p>
     /// - On failure, responds with [`SdkError<CreateConfigError>`](crate::operation::create_config::CreateConfigError)
-    pub fn create_config(
-        &self,
-    ) -> crate::operation::create_config::builders::CreateConfigFluentBuilder {
-        crate::operation::create_config::builders::CreateConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_config(&self) -> crate::operation::create_config::builders::CreateConfigFluentBuilder {
+        crate::operation::create_config::builders::CreateConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -119,10 +119,7 @@ impl InstanceAccessBuilder {
         self
     }
     /// <p>Operating system that is running on the instance.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -136,10 +133,7 @@ impl InstanceAccessBuilder {
         self
     }
     /// <p>Credentials required to access the instance.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::InstanceCredentials>) -> Self {
         self.credentials = input;
         self
     }

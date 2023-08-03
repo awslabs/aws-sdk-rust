@@ -37,10 +37,7 @@ impl StartDataIngestionJobFluentBuilder {
         }
     }
     /// Access the StartDataIngestionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartDataIngestionJobFluentBuilder {
             crate::operation::start_data_ingestion_job::StartDataIngestionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_ingestion_job::StartDataIngestionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_ingestion_job::StartDataIngestionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartDataIngestionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartDataIngestionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_ingestion_job::StartDataIngestionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_ingestion_job::StartDataIngestionJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartDataIngestionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_ingestion_job::StartDataIngestionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_ingestion_job::StartDataIngestionJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartDataIngestionJobFluentBuilder {
             crate::operation::start_data_ingestion_job::StartDataIngestionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_data_ingestion_job::StartDataIngestionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_ingestion_job::StartDataIngestionJobError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +124,17 @@ impl StartDataIngestionJobFluentBuilder {
         self.inner.get_dataset_name()
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.inner = self.inner.ingestion_input_configuration(input);
         self
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
         self.inner = self.inner.set_ingestion_input_configuration(input);
         self
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn get_ingestion_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
         self.inner.get_ingestion_input_configuration()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>

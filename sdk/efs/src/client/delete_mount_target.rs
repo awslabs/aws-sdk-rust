@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`mount_target_id(impl ::std::convert::Into<String>)`](crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder::set_mount_target_id): <p>The ID of the mount target to delete (String).</p>
     /// - On success, responds with [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput)
     /// - On failure, responds with [`SdkError<DeleteMountTargetError>`](crate::operation::delete_mount_target::DeleteMountTargetError)
-    pub fn delete_mount_target(
-        &self,
-    ) -> crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder {
-        crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_mount_target(&self) -> crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder {
+        crate::operation::delete_mount_target::builders::DeleteMountTargetFluentBuilder::new(self.handle.clone())
     }
 }

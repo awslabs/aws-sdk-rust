@@ -37,9 +37,7 @@ impl ListCampaignsInput {
 
 /// A builder for [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCampaignsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ListCampaignsInputBuilder {
         self
     }
     /// Filter model by type
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::CampaignFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -94,10 +89,7 @@ impl ListCampaignsInputBuilder {
     /// Consumes the builder and constructs a [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_campaigns::ListCampaignsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_campaigns::ListCampaignsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_campaigns::ListCampaignsInput {
             max_results: self.max_results,
             next_token: self.next_token,

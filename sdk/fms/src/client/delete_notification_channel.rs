@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_notification_channel::builders::DeleteNotificationChannelFluentBuilder::send) it.
     /// - On success, responds with [`DeleteNotificationChannelOutput`](crate::operation::delete_notification_channel::DeleteNotificationChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteNotificationChannelError>`](crate::operation::delete_notification_channel::DeleteNotificationChannelError)
-    pub fn delete_notification_channel(&self) -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelFluentBuilder{
+    pub fn delete_notification_channel(&self) -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelFluentBuilder {
         crate::operation::delete_notification_channel::builders::DeleteNotificationChannelFluentBuilder::new(self.handle.clone())
     }
 }

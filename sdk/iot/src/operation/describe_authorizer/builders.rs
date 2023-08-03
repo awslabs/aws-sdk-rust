@@ -10,10 +10,7 @@ impl DescribeAuthorizerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_authorizer::DescribeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authorizer::DescribeAuthorizerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authorizer::DescribeAuthorizerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_authorizer();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeAuthorizerFluentBuilder {
         }
     }
     /// Access the DescribeAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_authorizer::builders::DescribeAuthorizerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_authorizer::builders::DescribeAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeAuthorizerFluentBuilder {
             crate::operation::describe_authorizer::DescribeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authorizer::DescribeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authorizer::DescribeAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_authorizer::DescribeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authorizer::DescribeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authorizer::DescribeAuthorizerError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_authorizer::DescribeAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authorizer::DescribeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authorizer::DescribeAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DescribeAuthorizerFluentBuilder {
             crate::operation::describe_authorizer::DescribeAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authorizer::DescribeAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authorizer::DescribeAuthorizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the authorizer to describe.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
         self
     }
     /// <p>The name of the authorizer to describe.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_name(input);
         self
     }

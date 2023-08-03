@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSolutionOutput`](crate::operation::create_solution::CreateSolutionOutput) with field(s):
     ///   - [`solution_arn(Option<String>)`](crate::operation::create_solution::CreateSolutionOutput::solution_arn): <p>The ARN of the solution.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionError>`](crate::operation::create_solution::CreateSolutionError)
-    pub fn create_solution(
-        &self,
-    ) -> crate::operation::create_solution::builders::CreateSolutionFluentBuilder {
-        crate::operation::create_solution::builders::CreateSolutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_solution(&self) -> crate::operation::create_solution::builders::CreateSolutionFluentBuilder {
+        crate::operation::create_solution::builders::CreateSolutionFluentBuilder::new(self.handle.clone())
     }
 }

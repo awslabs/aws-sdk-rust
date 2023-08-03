@@ -10,10 +10,7 @@ impl CreatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pipeline::CreatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pipeline::CreatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePipelineFluentBuilder {
         }
     }
     /// Access the CreatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreatePipelineFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl CreatePipelineFluentBuilder {
         self.inner.get_pipeline_name()
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_display_name(input.into());
         self
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn set_pipeline_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_display_name(input);
         self
     }
@@ -155,18 +135,12 @@ impl CreatePipelineFluentBuilder {
         self.inner.get_pipeline_display_name()
     }
     /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
-    pub fn pipeline_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_definition(input.into());
         self
     }
     /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
-    pub fn set_pipeline_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_definition(input);
         self
     }
@@ -175,40 +149,26 @@ impl CreatePipelineFluentBuilder {
         self.inner.get_pipeline_definition()
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn pipeline_definition_s3_location(
-        mut self,
-        input: crate::types::PipelineDefinitionS3Location,
-    ) -> Self {
+    pub fn pipeline_definition_s3_location(mut self, input: crate::types::PipelineDefinitionS3Location) -> Self {
         self.inner = self.inner.pipeline_definition_s3_location(input);
         self
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn set_pipeline_definition_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
-    ) -> Self {
+    pub fn set_pipeline_definition_s3_location(mut self, input: ::std::option::Option<crate::types::PipelineDefinitionS3Location>) -> Self {
         self.inner = self.inner.set_pipeline_definition_s3_location(input);
         self
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn get_pipeline_definition_s3_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
+    pub fn get_pipeline_definition_s3_location(&self) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
         self.inner.get_pipeline_definition_s3_location()
     }
     /// <p>A description of the pipeline.</p>
-    pub fn pipeline_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_description(input.into());
         self
     }
     /// <p>A description of the pipeline.</p>
-    pub fn set_pipeline_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_description(input);
         self
     }
@@ -217,18 +177,12 @@ impl CreatePipelineFluentBuilder {
         self.inner.get_pipeline_description()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -260,10 +214,7 @@ impl CreatePipelineFluentBuilder {
         self
     }
     /// <p>A list of tags to apply to the created pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -272,25 +223,17 @@ impl CreatePipelineFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.inner = self.inner.parallelism_configuration(input);
         self
     }
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
     }
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
 }

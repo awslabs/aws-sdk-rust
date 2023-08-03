@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`dialer_config(DialerConfig)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::dialer_config) / [`set_dialer_config(Option<DialerConfig>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::set_dialer_config): The possible types of dialer config parameters
     /// - On success, responds with [`UpdateCampaignDialerConfigOutput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateCampaignDialerConfigError>`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError)
-    pub fn update_campaign_dialer_config(&self) -> crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder{
+    pub fn update_campaign_dialer_config(
+        &self,
+    ) -> crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder {
         crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::new(self.handle.clone())
     }
 }

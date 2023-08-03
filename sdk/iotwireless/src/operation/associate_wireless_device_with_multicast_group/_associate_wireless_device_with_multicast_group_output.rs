@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AssociateWirelessDeviceWithMulticastG
 }
 impl AssociateWirelessDeviceWithMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder() -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupOutputBuilder {
         crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AssociateWirelessDeviceWithMulticastGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn build(self) -> crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput{
+    pub fn build(self) -> crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput {
         crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput {
             _request_id: self._request_id,
         }

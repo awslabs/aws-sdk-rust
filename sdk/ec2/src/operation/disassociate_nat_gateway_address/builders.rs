@@ -28,7 +28,7 @@ impl DisassociateNatGatewayAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder,
+    inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder,
 }
 impl DisassociateNatGatewayAddressFluentBuilder {
     /// Creates a new `DisassociateNatGatewayAddress`.
@@ -39,7 +39,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         }
     }
     /// Access the DisassociateNatGatewayAddress as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
             crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DisassociateNatGatewayAddressFluentBuilder {
             crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
@@ -147,25 +130,17 @@ impl DisassociateNatGatewayAddressFluentBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_ids(input.into());
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_association_ids()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>

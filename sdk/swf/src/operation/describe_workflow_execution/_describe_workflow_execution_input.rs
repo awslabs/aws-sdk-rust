@@ -22,16 +22,14 @@ impl DescribeWorkflowExecutionInput {
 }
 impl DescribeWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
-    pub fn builder() -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder{
+    pub fn builder() -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder {
         crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,
@@ -57,10 +55,7 @@ impl DescribeWorkflowExecutionInputBuilder {
         self
     }
     /// <p>The workflow execution to describe.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -75,11 +70,9 @@ impl DescribeWorkflowExecutionInputBuilder {
         crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput {
-                domain: self.domain,
-                execution: self.execution,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput {
+            domain: self.domain,
+            execution: self.execution,
+        })
     }
 }

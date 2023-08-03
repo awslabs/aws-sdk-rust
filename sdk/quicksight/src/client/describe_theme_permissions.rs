@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeThemePermissionsError>`](crate::operation::describe_theme_permissions::DescribeThemePermissionsError)
-    pub fn describe_theme_permissions(
-        &self,
-    ) -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsFluentBuilder
-    {
+    pub fn describe_theme_permissions(&self) -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsFluentBuilder {
         crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

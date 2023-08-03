@@ -5,8 +5,7 @@
 pub struct UpdateFieldLevelEncryptionProfileOutput {
     /// <p>Return the results of updating the profile.</p>
     #[doc(hidden)]
-    pub field_level_encryption_profile:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
+    pub field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     /// <p>The result of the field-level encryption profile request.</p>
     #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct UpdateFieldLevelEncryptionProfileOutput {
 }
 impl UpdateFieldLevelEncryptionProfileOutput {
     /// <p>Return the results of updating the profile.</p>
-    pub fn field_level_encryption_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfile> {
+    pub fn field_level_encryption_profile(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfile> {
         self.field_level_encryption_profile.as_ref()
     }
     /// <p>The result of the field-level encryption profile request.</p>
@@ -31,43 +28,32 @@ impl ::aws_http::request_id::RequestId for UpdateFieldLevelEncryptionProfileOutp
 }
 impl UpdateFieldLevelEncryptionProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionProfileOutput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput).
-    pub fn builder() -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileOutputBuilder{
+    pub fn builder() -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileOutputBuilder {
         crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFieldLevelEncryptionProfileOutput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileOutputBuilder {
-    pub(crate) field_level_encryption_profile:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
+    pub(crate) field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateFieldLevelEncryptionProfileOutputBuilder {
     /// <p>Return the results of updating the profile.</p>
-    pub fn field_level_encryption_profile(
-        mut self,
-        input: crate::types::FieldLevelEncryptionProfile,
-    ) -> Self {
+    pub fn field_level_encryption_profile(mut self, input: crate::types::FieldLevelEncryptionProfile) -> Self {
         self.field_level_encryption_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>Return the results of updating the profile.</p>
-    pub fn set_field_level_encryption_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
-    ) -> Self {
+    pub fn set_field_level_encryption_profile(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>) -> Self {
         self.field_level_encryption_profile = input;
         self
     }
     /// <p>Return the results of updating the profile.</p>
-    pub fn get_field_level_encryption_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfile> {
+    pub fn get_field_level_encryption_profile(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfile> {
         &self.field_level_encryption_profile
     }
     /// <p>The result of the field-level encryption profile request.</p>
@@ -94,12 +80,10 @@ impl UpdateFieldLevelEncryptionProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionProfileOutput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput).
-    pub fn build(self) -> crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput{
+    pub fn build(self) -> crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput {
         crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput {
-            field_level_encryption_profile: self.field_level_encryption_profile
-            ,
-            e_tag: self.e_tag
-            ,
+            field_level_encryption_profile: self.field_level_encryption_profile,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

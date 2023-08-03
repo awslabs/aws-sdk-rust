@@ -12,14 +12,10 @@ pub struct SolutionConfig {
     pub hpo_config: ::std::option::Option<crate::types::HpoConfig>,
     /// <p>Lists the hyperparameter names and ranges.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Lists the feature transformation parameters.</p>
     #[doc(hidden)]
-    pub feature_transformation_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     #[doc(hidden)]
     pub auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
@@ -40,19 +36,13 @@ impl SolutionConfig {
         self.hpo_config.as_ref()
     }
     /// <p>Lists the hyperparameter names and ranges.</p>
-    pub fn algorithm_hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn algorithm_hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.algorithm_hyper_parameters.as_ref()
     }
     /// <p>Lists the feature transformation parameters.</p>
     pub fn feature_transformation_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.feature_transformation_parameters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
@@ -60,9 +50,7 @@ impl SolutionConfig {
         self.auto_ml_config.as_ref()
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-    pub fn optimization_objective(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OptimizationObjective> {
+    pub fn optimization_objective(&self) -> ::std::option::Option<&crate::types::OptimizationObjective> {
         self.optimization_objective.as_ref()
     }
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
@@ -79,36 +67,24 @@ impl SolutionConfig {
 
 /// A builder for [`SolutionConfig`](crate::types::SolutionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SolutionConfigBuilder {
     pub(crate) event_value_threshold: ::std::option::Option<::std::string::String>,
     pub(crate) hpo_config: ::std::option::Option<crate::types::HpoConfig>,
-    pub(crate) algorithm_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) feature_transformation_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     pub(crate) optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
 }
 impl SolutionConfigBuilder {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    pub fn event_value_threshold(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_value_threshold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_value_threshold = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    pub fn set_event_value_threshold(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_value_threshold(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_value_threshold = input;
         self
     }
@@ -148,9 +124,7 @@ impl SolutionConfigBuilder {
     /// <p>Lists the hyperparameter names and ranges.</p>
     pub fn set_algorithm_hyper_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.algorithm_hyper_parameters = input;
         self
@@ -158,9 +132,7 @@ impl SolutionConfigBuilder {
     /// <p>Lists the hyperparameter names and ranges.</p>
     pub fn get_algorithm_hyper_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.algorithm_hyper_parameters
     }
     /// Adds a key-value pair to `feature_transformation_parameters`.
@@ -181,9 +153,7 @@ impl SolutionConfigBuilder {
     /// <p>Lists the feature transformation parameters.</p>
     pub fn set_feature_transformation_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.feature_transformation_parameters = input;
         self
@@ -191,9 +161,7 @@ impl SolutionConfigBuilder {
     /// <p>Lists the feature transformation parameters.</p>
     pub fn get_feature_transformation_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.feature_transformation_parameters
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
@@ -202,10 +170,7 @@ impl SolutionConfigBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
-    pub fn set_auto_ml_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlConfig>,
-    ) -> Self {
+    pub fn set_auto_ml_config(mut self, input: ::std::option::Option<crate::types::AutoMlConfig>) -> Self {
         self.auto_ml_config = input;
         self
     }
@@ -219,17 +184,12 @@ impl SolutionConfigBuilder {
         self
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-    pub fn set_optimization_objective(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizationObjective>,
-    ) -> Self {
+    pub fn set_optimization_objective(mut self, input: ::std::option::Option<crate::types::OptimizationObjective>) -> Self {
         self.optimization_objective = input;
         self
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
-    pub fn get_optimization_objective(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizationObjective> {
+    pub fn get_optimization_objective(&self) -> &::std::option::Option<crate::types::OptimizationObjective> {
         &self.optimization_objective
     }
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
@@ -238,17 +198,12 @@ impl SolutionConfigBuilder {
         self
     }
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
-    pub fn set_training_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingDataConfig>,
-    ) -> Self {
+    pub fn set_training_data_config(mut self, input: ::std::option::Option<crate::types::TrainingDataConfig>) -> Self {
         self.training_data_config = input;
         self
     }
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
-    pub fn get_training_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingDataConfig> {
+    pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }
     /// Consumes the builder and constructs a [`SolutionConfig`](crate::types::SolutionConfig).

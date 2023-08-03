@@ -10,10 +10,7 @@ impl UpdateAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_analysis::UpdateAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_analysis::UpdateAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_analysis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAnalysisFluentBuilder {
         }
     }
     /// Access the UpdateAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_analysis::builders::UpdateAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_analysis::builders::UpdateAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateAnalysisFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -168,10 +154,7 @@ impl UpdateAnalysisFluentBuilder {
         self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::Parameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -185,10 +168,7 @@ impl UpdateAnalysisFluentBuilder {
         self
     }
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    pub fn set_source_entity(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    ) -> Self {
+    pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
@@ -218,10 +198,7 @@ impl UpdateAnalysisFluentBuilder {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

@@ -30,27 +30,19 @@ impl ThirdPartyFirewallFirewallPolicy {
 
 /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::types::ThirdPartyFirewallFirewallPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallFirewallPolicyBuilder {
     pub(crate) firewall_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallFirewallPolicyBuilder {
     /// <p>The ID of the specified firewall policy.</p>
-    pub fn firewall_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specified firewall policy.</p>
-    pub fn set_firewall_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl ThirdPartyFirewallFirewallPolicyBuilder {
         &self.firewall_policy_id
     }
     /// <p>The name of the specified firewall policy.</p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the specified firewall policy.</p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }

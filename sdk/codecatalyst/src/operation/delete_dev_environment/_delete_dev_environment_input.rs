@@ -29,17 +29,14 @@ impl DeleteDevEnvironmentInput {
 }
 impl DeleteDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
         crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DeleteDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dev_environment::DeleteDevEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_dev_environment::DeleteDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_dev_environment::DeleteDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_dev_environment::DeleteDevEnvironmentInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+        })
     }
 }

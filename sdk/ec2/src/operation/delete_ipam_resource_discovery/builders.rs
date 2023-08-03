@@ -26,7 +26,7 @@ impl DeleteIpamResourceDiscoveryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIpamResourceDiscoveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryInputBuilder,
+    inner: crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryInputBuilder,
 }
 impl DeleteIpamResourceDiscoveryFluentBuilder {
     /// Creates a new `DeleteIpamResourceDiscovery`.
@@ -37,7 +37,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
         }
     }
     /// Access the DeleteIpamResourceDiscovery as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
             crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
             crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscovery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteIpamResourceDiscoveryFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The IPAM resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_resource_discovery_id(input.into());
         self
     }
     /// <p>The IPAM resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }

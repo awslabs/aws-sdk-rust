@@ -10,10 +10,7 @@ impl UpdateMembershipInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_membership::UpdateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_membership::UpdateMembershipError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_membership::UpdateMembershipError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_membership();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateMembershipFluentBuilder {
         }
     }
     /// Access the UpdateMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_membership::builders::UpdateMembershipInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_membership::builders::UpdateMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateMembershipFluentBuilder {
             crate::operation::update_membership::UpdateMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_membership::UpdateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_membership::UpdateMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_membership::UpdateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_membership::UpdateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_membership::UpdateMembershipError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_membership::UpdateMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_membership::UpdateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_membership::UpdateMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateMembershipFluentBuilder {
             crate::operation::update_membership::UpdateMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_membership::UpdateMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_membership::UpdateMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the membership.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the membership.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdateMembershipFluentBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
-    ) -> Self {
+    pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn get_query_log_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
+    pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         self.inner.get_query_log_status()
     }
 }

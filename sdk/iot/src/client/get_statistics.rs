@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetStatisticsOutput`](crate::operation::get_statistics::GetStatisticsOutput) with field(s):
     ///   - [`statistics(Option<Statistics>)`](crate::operation::get_statistics::GetStatisticsOutput::statistics): <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     /// - On failure, responds with [`SdkError<GetStatisticsError>`](crate::operation::get_statistics::GetStatisticsError)
-    pub fn get_statistics(
-        &self,
-    ) -> crate::operation::get_statistics::builders::GetStatisticsFluentBuilder {
-        crate::operation::get_statistics::builders::GetStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_statistics(&self) -> crate::operation::get_statistics::builders::GetStatisticsFluentBuilder {
+        crate::operation::get_statistics::builders::GetStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

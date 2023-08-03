@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWirelessGatewayOutput {
 }
 impl DeleteWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayOutputBuilder {
         crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWirelessGatewayOutput`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWirelessGatewayOutputBuilder {
     _request_id: Option<String>,
 }

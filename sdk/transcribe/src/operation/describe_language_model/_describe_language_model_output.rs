@@ -25,18 +25,14 @@ impl ::aws_http::request_id::RequestId for DescribeLanguageModelOutput {
 }
 impl DescribeLanguageModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLanguageModelOutput`](crate::operation::describe_language_model::DescribeLanguageModelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_language_model::builders::DescribeLanguageModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_language_model::builders::DescribeLanguageModelOutputBuilder {
         crate::operation::describe_language_model::builders::DescribeLanguageModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLanguageModelOutput`](crate::operation::describe_language_model::DescribeLanguageModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLanguageModelOutputBuilder {
     pub(crate) language_model: ::std::option::Option<crate::types::LanguageModel>,
     _request_id: Option<String>,
@@ -52,10 +48,7 @@ impl DescribeLanguageModelOutputBuilder {
     /// <p>Provides information about the specified custom language model.</p>
     /// <p>This parameter also shows if the base language model you used to create your custom language model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the updated base model.</p>
     /// <p>If you tried to create a new custom language model and the request wasn't successful, you can use this <code>DescribeLanguageModel</code> to help identify the reason for this failure.</p>
-    pub fn set_language_model(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageModel>,
-    ) -> Self {
+    pub fn set_language_model(mut self, input: ::std::option::Option<crate::types::LanguageModel>) -> Self {
         self.language_model = input;
         self
     }

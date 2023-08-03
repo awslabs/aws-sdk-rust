@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`status(Option<GrantStatus>)`](crate::operation::create_grant::CreateGrantOutput::status): <p>Grant status.</p>
     ///   - [`version(Option<String>)`](crate::operation::create_grant::CreateGrantOutput::version): <p>Grant version.</p>
     /// - On failure, responds with [`SdkError<CreateGrantError>`](crate::operation::create_grant::CreateGrantError)
-    pub fn create_grant(
-        &self,
-    ) -> crate::operation::create_grant::builders::CreateGrantFluentBuilder {
+    pub fn create_grant(&self) -> crate::operation::create_grant::builders::CreateGrantFluentBuilder {
         crate::operation::create_grant::builders::CreateGrantFluentBuilder::new(self.handle.clone())
     }
 }

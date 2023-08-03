@@ -30,9 +30,7 @@ impl DeploymentComponentUpdatePolicy {
     /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
-    pub fn action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentComponentUpdatePolicyAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::DeploymentComponentUpdatePolicyAction> {
         self.action.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl DeploymentComponentUpdatePolicy {
 
 /// A builder for [`DeploymentComponentUpdatePolicy`](crate::types::DeploymentComponentUpdatePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentComponentUpdatePolicyBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) action: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>,
@@ -86,10 +82,7 @@ impl DeploymentComponentUpdatePolicyBuilder {
     /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>) -> Self {
         self.action = input;
         self
     }
@@ -99,9 +92,7 @@ impl DeploymentComponentUpdatePolicyBuilder {
     /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction> {
         &self.action
     }
     /// Consumes the builder and constructs a [`DeploymentComponentUpdatePolicy`](crate::types::DeploymentComponentUpdatePolicy).

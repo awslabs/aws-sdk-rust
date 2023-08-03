@@ -29,9 +29,7 @@ impl DescribeAddonInput {
 
 /// A builder for [`DescribeAddonInput`](crate::operation::describe_addon::DescribeAddonInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeAddonInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddonInput`](crate::operation::describe_addon::DescribeAddonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addon::DescribeAddonInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_addon::DescribeAddonInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_addon::DescribeAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

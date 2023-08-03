@@ -93,9 +93,7 @@ impl FirewallRuleGroup {
 
 /// A builder for [`FirewallRuleGroup`](crate::types::FirewallRuleGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallRuleGroupBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -172,10 +170,7 @@ impl FirewallRuleGroupBuilder {
         self
     }
     /// <p>The status of the domain list. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -184,18 +179,12 @@ impl FirewallRuleGroupBuilder {
         &self.status
     }
     /// <p>Additional information about the status of the rule group, if available.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the status of the rule group, if available.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -218,18 +207,12 @@ impl FirewallRuleGroupBuilder {
         &self.owner_id
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -243,10 +226,7 @@ impl FirewallRuleGroupBuilder {
         self
     }
     /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn set_share_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareStatus>,
-    ) -> Self {
+    pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.share_status = input;
         self
     }
@@ -255,18 +235,12 @@ impl FirewallRuleGroupBuilder {
         &self.share_status
     }
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -275,18 +249,12 @@ impl FirewallRuleGroupBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn modification_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the rule group was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_modification_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modification_time = input;
         self
     }

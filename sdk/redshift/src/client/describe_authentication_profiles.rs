@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAuthenticationProfilesOutput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput) with field(s):
     ///   - [`authentication_profiles(Option<Vec<AuthenticationProfile>>)`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput::authentication_profiles): <p>The list of authentication profiles.</p>
     /// - On failure, responds with [`SdkError<DescribeAuthenticationProfilesError>`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError)
-    pub fn describe_authentication_profiles(&self) -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesFluentBuilder{
+    pub fn describe_authentication_profiles(
+        &self,
+    ) -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesFluentBuilder {
         crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesFluentBuilder::new(self.handle.clone())
     }
 }

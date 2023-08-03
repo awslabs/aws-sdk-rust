@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateTargetGroupOutput {
 }
 impl CreateTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateTargetGroupOutput`](crate::operation::create_target_group::CreateTargetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder {
         crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTargetGroupOutput`](crate::operation::create_target_group::CreateTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTargetGroupOutputBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl CreateTargetGroupOutputBuilder {
         self
     }
     /// <p>Information about the target group.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p>Information about the target group.</p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
         &self.target_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

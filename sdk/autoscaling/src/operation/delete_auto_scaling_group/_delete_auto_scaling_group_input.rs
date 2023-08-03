@@ -22,36 +22,26 @@ impl DeleteAutoScalingGroupInput {
 }
 impl DeleteAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingGroupInput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder {
         crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAutoScalingGroupInput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAutoScalingGroupInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DeleteAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteAutoScalingGroupInputBuilder {
         crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                force_delete: self.force_delete,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            force_delete: self.force_delete,
+        })
     }
 }

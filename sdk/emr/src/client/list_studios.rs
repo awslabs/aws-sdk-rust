@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`studios(Option<Vec<StudioSummary>>)`](crate::operation::list_studios::ListStudiosOutput::studios): <p>The list of Studio summary objects.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_studios::ListStudiosOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::operation::list_studios::ListStudiosError)
-    pub fn list_studios(
-        &self,
-    ) -> crate::operation::list_studios::builders::ListStudiosFluentBuilder {
+    pub fn list_studios(&self) -> crate::operation::list_studios::builders::ListStudiosFluentBuilder {
         crate::operation::list_studios::builders::ListStudiosFluentBuilder::new(self.handle.clone())
     }
 }

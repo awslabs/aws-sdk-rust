@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateBackupSelectionOutput {
 }
 impl CreateBackupSelectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupSelectionOutput`](crate::operation::create_backup_selection::CreateBackupSelectionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_backup_selection::builders::CreateBackupSelectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_backup_selection::builders::CreateBackupSelectionOutputBuilder {
         crate::operation::create_backup_selection::builders::CreateBackupSelectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackupSelectionOutput`](crate::operation::create_backup_selection::CreateBackupSelectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackupSelectionOutputBuilder {
     pub(crate) selection_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl CreateBackupSelectionOutputBuilder {
         &self.selection_id
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -94,10 +84,7 @@ impl CreateBackupSelectionOutputBuilder {
         self
     }
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

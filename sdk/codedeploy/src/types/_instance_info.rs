@@ -65,9 +65,7 @@ impl InstanceInfo {
 
 /// A builder for [`InstanceInfo`](crate::types::InstanceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceInfoBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_session_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct InstanceInfoBuilder {
 }
 impl InstanceInfoBuilder {
     /// <p>The name of the on-premises instance.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the on-premises instance.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl InstanceInfoBuilder {
         &self.instance_name
     }
     /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
-    pub fn iam_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
-    pub fn set_iam_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_session_arn = input;
         self
     }
@@ -152,10 +138,7 @@ impl InstanceInfoBuilder {
         self
     }
     /// <p>The time at which the on-premises instance was registered.</p>
-    pub fn set_register_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_register_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.register_time = input;
         self
     }
@@ -169,10 +152,7 @@ impl InstanceInfoBuilder {
         self
     }
     /// <p>If the on-premises instance was deregistered, the time at which the on-premises instance was deregistered.</p>
-    pub fn set_deregister_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deregister_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deregister_time = input;
         self
     }
@@ -192,10 +172,7 @@ impl InstanceInfoBuilder {
         self
     }
     /// <p>The tags currently associated with the on-premises instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

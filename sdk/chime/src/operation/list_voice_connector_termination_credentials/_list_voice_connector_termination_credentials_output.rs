@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for ListVoiceConnectorTerminationCredenti
 }
 impl ListVoiceConnectorTerminationCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput).
-    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder
+    {
         crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsOutputBuilder {
     pub(crate) usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -48,10 +47,7 @@ impl ListVoiceConnectorTerminationCredentialsOutputBuilder {
         self
     }
     /// <p>A list of user names.</p>
-    pub fn set_usernames(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_usernames(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.usernames = input;
         self
     }
@@ -69,10 +65,9 @@ impl ListVoiceConnectorTerminationCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput).
-    pub fn build(self) -> crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput{
+    pub fn build(self) -> crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput {
         crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput {
-            usernames: self.usernames
-            ,
+            usernames: self.usernames,
             _request_id: self._request_id,
         }
     }

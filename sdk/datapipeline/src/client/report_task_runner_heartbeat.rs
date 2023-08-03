@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput) with field(s):
     ///   - [`terminate(bool)`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput::terminate): <p>Indicates whether the calling task runner should terminate.</p>
     /// - On failure, responds with [`SdkError<ReportTaskRunnerHeartbeatError>`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError)
-    pub fn report_task_runner_heartbeat(&self) -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatFluentBuilder{
+    pub fn report_task_runner_heartbeat(&self) -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatFluentBuilder {
         crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatFluentBuilder::new(self.handle.clone())
     }
 }

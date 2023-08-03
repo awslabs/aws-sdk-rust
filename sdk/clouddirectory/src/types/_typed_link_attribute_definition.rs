@@ -18,9 +18,7 @@ pub struct TypedLinkAttributeDefinition {
     pub is_immutable: bool,
     /// <p>Validation rules that are attached to the attribute definition.</p>
     #[doc(hidden)]
-    pub rules: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
-    >,
+    pub rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
     #[doc(hidden)]
     pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
@@ -43,17 +41,11 @@ impl TypedLinkAttributeDefinition {
         self.is_immutable
     }
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    pub fn rules(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Rule>,
-    > {
+    pub fn rules(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Rule>> {
         self.rules.as_ref()
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub fn required_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequiredAttributeBehavior> {
+    pub fn required_behavior(&self) -> ::std::option::Option<&crate::types::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
     }
 }
@@ -66,17 +58,13 @@ impl TypedLinkAttributeDefinition {
 
 /// A builder for [`TypedLinkAttributeDefinition`](crate::types::TypedLinkAttributeDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypedLinkAttributeDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::FacetAttributeType>,
     pub(crate) default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     pub(crate) is_immutable: ::std::option::Option<bool>,
-    pub(crate) rules: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
-    >,
+    pub(crate) rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
     pub(crate) required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
 impl TypedLinkAttributeDefinitionBuilder {
@@ -100,10 +88,7 @@ impl TypedLinkAttributeDefinitionBuilder {
         self
     }
     /// <p>The type of the attribute.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FacetAttributeType>) -> Self {
         self.r#type = input;
         self
     }
@@ -117,10 +102,7 @@ impl TypedLinkAttributeDefinitionBuilder {
         self
     }
     /// <p>The default value of the attribute (if configured).</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
         self.default_value = input;
         self
     }
@@ -147,32 +129,19 @@ impl TypedLinkAttributeDefinitionBuilder {
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    pub fn rules(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Rule,
-    ) -> Self {
+    pub fn rules(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Rule) -> Self {
         let mut hash_map = self.rules.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.rules = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
-        >,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Rule>,
-    > {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>> {
         &self.rules
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
@@ -181,17 +150,12 @@ impl TypedLinkAttributeDefinitionBuilder {
         self
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub fn set_required_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
-    ) -> Self {
+    pub fn set_required_behavior(mut self, input: ::std::option::Option<crate::types::RequiredAttributeBehavior>) -> Self {
         self.required_behavior = input;
         self
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub fn get_required_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequiredAttributeBehavior> {
+    pub fn get_required_behavior(&self) -> &::std::option::Option<crate::types::RequiredAttributeBehavior> {
         &self.required_behavior
     }
     /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::types::TypedLinkAttributeDefinition).

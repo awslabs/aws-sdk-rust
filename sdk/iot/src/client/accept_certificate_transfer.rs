@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`set_as_active(bool)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::set_set_as_active): <p>Specifies whether the certificate is active.</p>
     /// - On success, responds with [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput)
     /// - On failure, responds with [`SdkError<AcceptCertificateTransferError>`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferError)
-    pub fn accept_certificate_transfer(&self) -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder{
+    pub fn accept_certificate_transfer(&self) -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder {
         crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferFluentBuilder::new(self.handle.clone())
     }
 }

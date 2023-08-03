@@ -10,10 +10,7 @@ impl ListAlertsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_alerts::ListAlertsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alerts::ListAlertsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alerts::ListAlertsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_alerts();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListAlertsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_alerts::ListAlerts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_alerts::ListAlerts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_alerts::ListAlertsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListAlertsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListAlertsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_alerts::ListAlerts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_alerts::ListAlerts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_alerts::ListAlertsError>,
     > {
         self.customize_middleware().await
@@ -120,18 +108,12 @@ impl ListAlertsFluentBuilder {
         crate::operation::list_alerts::paginator::ListAlertsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the alert's detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The ARN of the alert's detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }

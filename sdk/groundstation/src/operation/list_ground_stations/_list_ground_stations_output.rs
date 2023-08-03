@@ -9,8 +9,7 @@ pub struct ListGroundStationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of ground stations.</p>
     #[doc(hidden)]
-    pub ground_station_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>,
+    pub ground_station_list: ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>,
     _request_id: Option<String>,
 }
 impl ListGroundStationsOutput {
@@ -30,21 +29,17 @@ impl ::aws_http::request_id::RequestId for ListGroundStationsOutput {
 }
 impl ListGroundStationsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroundStationsOutput`](crate::operation::list_ground_stations::ListGroundStationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_ground_stations::builders::ListGroundStationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_ground_stations::builders::ListGroundStationsOutputBuilder {
         crate::operation::list_ground_stations::builders::ListGroundStationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroundStationsOutput`](crate::operation::list_ground_stations::ListGroundStationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroundStationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) ground_station_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>,
+    pub(crate) ground_station_list: ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>,
     _request_id: Option<String>,
 }
 impl ListGroundStationsOutputBuilder {
@@ -74,17 +69,12 @@ impl ListGroundStationsOutputBuilder {
         self
     }
     /// <p>List of ground stations.</p>
-    pub fn set_ground_station_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>,
-    ) -> Self {
+    pub fn set_ground_station_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>>) -> Self {
         self.ground_station_list = input;
         self
     }
     /// <p>List of ground stations.</p>
-    pub fn get_ground_station_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>> {
+    pub fn get_ground_station_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>> {
         &self.ground_station_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

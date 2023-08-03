@@ -24,8 +24,7 @@ pub struct ImprovementSummary {
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan details.</p>
     #[doc(hidden)]
-    pub improvement_plans:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    pub improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummary {
     /// <p>The ID of the question.</p>
@@ -52,9 +51,7 @@ impl ImprovementSummary {
         self.improvement_plan_url.as_deref()
     }
     /// <p>The improvement plan details.</p>
-    pub fn improvement_plans(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChoiceImprovementPlan]> {
+    pub fn improvement_plans(&self) -> ::std::option::Option<&[crate::types::ChoiceImprovementPlan]> {
         self.improvement_plans.as_deref()
     }
 }
@@ -67,17 +64,14 @@ impl ImprovementSummary {
 
 /// A builder for [`ImprovementSummary`](crate::types::ImprovementSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImprovementSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) improvement_plan_url: ::std::option::Option<::std::string::String>,
-    pub(crate) improvement_plans:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    pub(crate) improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -112,18 +106,12 @@ impl ImprovementSummaryBuilder {
         &self.pillar_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_title = input;
         self
     }
@@ -148,20 +136,14 @@ impl ImprovementSummaryBuilder {
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn improvement_plan_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn improvement_plan_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.improvement_plan_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn set_improvement_plan_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_improvement_plan_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.improvement_plan_url = input;
         self
     }
@@ -183,17 +165,12 @@ impl ImprovementSummaryBuilder {
         self
     }
     /// <p>The improvement plan details.</p>
-    pub fn set_improvement_plans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
-    ) -> Self {
+    pub fn set_improvement_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>) -> Self {
         self.improvement_plans = input;
         self
     }
     /// <p>The improvement plan details.</p>
-    pub fn get_improvement_plans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
+    pub fn get_improvement_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
         &self.improvement_plans
     }
     /// Consumes the builder and constructs a [`ImprovementSummary`](crate::types::ImprovementSummary).

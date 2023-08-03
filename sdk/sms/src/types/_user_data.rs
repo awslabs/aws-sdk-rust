@@ -23,9 +23,7 @@ impl UserData {
 
 /// A builder for [`UserData`](crate::types::UserData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDataBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
@@ -36,10 +34,7 @@ impl UserDataBuilder {
         self
     }
     /// <p>Amazon S3 location of the user-data script.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_location = input;
         self
     }

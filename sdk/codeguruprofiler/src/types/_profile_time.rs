@@ -23,9 +23,7 @@ impl ProfileTime {
 
 /// A builder for [`ProfileTime`](crate::types::ProfileTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileTimeBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }

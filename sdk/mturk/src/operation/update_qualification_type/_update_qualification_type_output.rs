@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateQualificationTypeOutput {
 }
 impl UpdateQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeOutput`](crate::operation::update_qualification_type::UpdateQualificationTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeOutputBuilder {
         crate::operation::update_qualification_type::builders::UpdateQualificationTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQualificationTypeOutput`](crate::operation::update_qualification_type::UpdateQualificationTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQualificationTypeOutputBuilder {
     pub(crate) qualification_type: ::std::option::Option<crate::types::QualificationType>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateQualificationTypeOutputBuilder {
         self
     }
     /// <p> Contains a QualificationType data structure.</p>
-    pub fn set_qualification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationType>,
-    ) -> Self {
+    pub fn set_qualification_type(mut self, input: ::std::option::Option<crate::types::QualificationType>) -> Self {
         self.qualification_type = input;
         self
     }
     /// <p> Contains a QualificationType data structure.</p>
-    pub fn get_qualification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationType> {
+    pub fn get_qualification_type(&self) -> &::std::option::Option<crate::types::QualificationType> {
         &self.qualification_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateQualificationTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQualificationTypeOutput`](crate::operation::update_qualification_type::UpdateQualificationTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_qualification_type::UpdateQualificationTypeOutput {
+    pub fn build(self) -> crate::operation::update_qualification_type::UpdateQualificationTypeOutput {
         crate::operation::update_qualification_type::UpdateQualificationTypeOutput {
             qualification_type: self.qualification_type,
             _request_id: self._request_id,

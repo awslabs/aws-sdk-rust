@@ -37,9 +37,7 @@ impl ListedGateway {
 
 /// A builder for [`ListedGateway`](crate::types::ListedGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedGatewayBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_state: ::std::option::Option<crate::types::GatewayState>,
@@ -66,10 +64,7 @@ impl ListedGatewayBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_gateway_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayState>,
-    ) -> Self {
+    pub fn set_gateway_state(mut self, input: ::std::option::Option<crate::types::GatewayState>) -> Self {
         self.gateway_state = input;
         self
     }

@@ -29,9 +29,7 @@ pub struct CreateAppVersionResourceInput {
     pub app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Currently, there is no supported additional information for resources.</p>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -72,9 +70,7 @@ impl CreateAppVersionResourceInput {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn additional_info(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.additional_info.as_ref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -84,18 +80,14 @@ impl CreateAppVersionResourceInput {
 }
 impl CreateAppVersionResourceInput {
     /// Creates a new builder-style object to manufacture [`CreateAppVersionResourceInput`](crate::operation::create_app_version_resource::CreateAppVersionResourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder {
         crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppVersionResourceInput`](crate::operation::create_app_version_resource::CreateAppVersionResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppVersionResourceInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
@@ -105,9 +97,7 @@ pub struct CreateAppVersionResourceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppVersionResourceInputBuilder {
@@ -126,18 +116,12 @@ impl CreateAppVersionResourceInputBuilder {
         &self.app_arn
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -151,32 +135,21 @@ impl CreateAppVersionResourceInputBuilder {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalResourceId>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn get_logical_resource_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         &self.logical_resource_id
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -199,18 +172,12 @@ impl CreateAppVersionResourceInputBuilder {
         &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -219,18 +186,12 @@ impl CreateAppVersionResourceInputBuilder {
         &self.aws_account_id
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -243,27 +204,19 @@ impl CreateAppVersionResourceInputBuilder {
     /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
     ///
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn app_components(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.app_components.unwrap_or_default();
         v.push(input.into());
         self.app_components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn set_app_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.app_components = input;
         self
     }
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn get_app_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.app_components
     }
     /// Adds a key-value pair to `additional_info`.
@@ -271,11 +224,7 @@ impl CreateAppVersionResourceInputBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_info = ::std::option::Option::Some(hash_map);
@@ -284,12 +233,7 @@ impl CreateAppVersionResourceInputBuilder {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.additional_info = input;
         self
@@ -297,9 +241,7 @@ impl CreateAppVersionResourceInputBuilder {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.additional_info
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -323,19 +265,17 @@ impl CreateAppVersionResourceInputBuilder {
         crate::operation::create_app_version_resource::CreateAppVersionResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_version_resource::CreateAppVersionResourceInput {
-                app_arn: self.app_arn,
-                resource_name: self.resource_name,
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-                aws_region: self.aws_region,
-                aws_account_id: self.aws_account_id,
-                resource_type: self.resource_type,
-                app_components: self.app_components,
-                additional_info: self.additional_info,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_app_version_resource::CreateAppVersionResourceInput {
+            app_arn: self.app_arn,
+            resource_name: self.resource_name,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+            aws_region: self.aws_region,
+            aws_account_id: self.aws_account_id,
+            resource_type: self.resource_type,
+            app_components: self.app_components,
+            additional_info: self.additional_info,
+            client_token: self.client_token,
+        })
     }
 }

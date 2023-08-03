@@ -9,234 +9,235 @@ pub fn de_create_load_balancer_http_error(
     crate::operation::create_load_balancer::CreateLoadBalancerError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AllocationIdNotFound" => crate::operation::create_load_balancer::CreateLoadBalancerError::AllocationIdNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AllocationIdNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_allocation_id_not_found_exception::de_allocation_id_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AllocationIdNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_allocation_id_not_found_exception::de_allocation_id_not_found_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "AvailabilityZoneNotSupported" => crate::operation::create_load_balancer::CreateLoadBalancerError::AvailabilityZoneNotSupportedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_availability_zone_not_supported_exception::de_availability_zone_not_supported_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_availability_zone_not_supported_exception::de_availability_zone_not_supported_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DuplicateLoadBalancerName" => crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateLoadBalancerNameException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DuplicateLoadBalancerNameExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_duplicate_load_balancer_name_exception::de_duplicate_load_balancer_name_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DuplicateLoadBalancerNameExceptionBuilder::default();
+                output = crate::protocol_serde::shape_duplicate_load_balancer_name_exception::de_duplicate_load_balancer_name_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DuplicateTagKeys" => crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateTagKeysException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
+                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidConfigurationRequest" => crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidConfigurationRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidScheme" => crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSchemeException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSchemeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_scheme_exception::de_invalid_scheme_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSchemeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_scheme_exception::de_invalid_scheme_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSecurityGroup" => crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSecurityGroupException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSecurityGroupExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_security_group_exception::de_invalid_security_group_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecurityGroupExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_security_group_exception::de_invalid_security_group_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSubnet" => crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSubnetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSubnetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSubnetExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "OperationNotPermitted" => crate::operation::create_load_balancer::CreateLoadBalancerError::OperationNotPermittedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceInUse" => crate::operation::create_load_balancer::CreateLoadBalancerError::ResourceInUseException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SubnetNotFound" => crate::operation::create_load_balancer::CreateLoadBalancerError::SubnetNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SubnetNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_subnet_not_found_exception::de_subnet_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubnetNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_subnet_not_found_exception::de_subnet_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyLoadBalancers" => crate::operation::create_load_balancer::CreateLoadBalancerError::TooManyLoadBalancersException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyLoadBalancersExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_load_balancers_exception::de_too_many_load_balancers_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyLoadBalancersExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_load_balancers_exception::de_too_many_load_balancers_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyTags" => crate::operation::create_load_balancer::CreateLoadBalancerError::TooManyTagsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(_response_body, output).map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_load_balancer::CreateLoadBalancerError::generic(generic)
+        _ => crate::operation::create_load_balancer::CreateLoadBalancerError::generic(generic),
     })
 }
 
@@ -252,14 +253,9 @@ pub fn de_create_load_balancer_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_load_balancer::de_create_load_balancer(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_load_balancer::de_create_load_balancer(_response_body, output)
+            .map_err(crate::operation::create_load_balancer::CreateLoadBalancerError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -268,10 +264,7 @@ pub fn de_create_load_balancer_http_response_with_props(
 pub fn de_create_load_balancer(
     inp: &[u8],
     mut builder: crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder,
-) -> Result<
-    crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -308,9 +301,7 @@ pub fn de_create_load_balancer(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreateLoadBalancerResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateLoadBalancerResult tag"));
     };
     Ok(builder)
 }

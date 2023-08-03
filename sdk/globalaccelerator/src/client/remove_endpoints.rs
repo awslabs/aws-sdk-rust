@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     /// - On success, responds with [`RemoveEndpointsOutput`](crate::operation::remove_endpoints::RemoveEndpointsOutput)
     /// - On failure, responds with [`SdkError<RemoveEndpointsError>`](crate::operation::remove_endpoints::RemoveEndpointsError)
-    pub fn remove_endpoints(
-        &self,
-    ) -> crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder {
-        crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_endpoints(&self) -> crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder {
+        crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

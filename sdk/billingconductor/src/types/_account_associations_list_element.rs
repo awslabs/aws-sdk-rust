@@ -77,18 +77,12 @@ impl AccountAssociationsListElementBuilder {
         &self.account_id
     }
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -111,18 +105,12 @@ impl AccountAssociationsListElementBuilder {
         &self.account_name
     }
     /// <p>The Amazon Web Services account email.</p>
-    pub fn account_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account email.</p>
-    pub fn set_account_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_email = input;
         self
     }

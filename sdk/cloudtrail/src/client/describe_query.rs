@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`delivery_s3_uri(Option<String>)`](crate::operation::describe_query::DescribeQueryOutput::delivery_s3_uri): <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
     ///   - [`delivery_status(Option<DeliveryStatus>)`](crate::operation::describe_query::DescribeQueryOutput::delivery_status): <p>The delivery status.</p>
     /// - On failure, responds with [`SdkError<DescribeQueryError>`](crate::operation::describe_query::DescribeQueryError)
-    pub fn describe_query(
-        &self,
-    ) -> crate::operation::describe_query::builders::DescribeQueryFluentBuilder {
-        crate::operation::describe_query::builders::DescribeQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_query(&self) -> crate::operation::describe_query::builders::DescribeQueryFluentBuilder {
+        crate::operation::describe_query::builders::DescribeQueryFluentBuilder::new(self.handle.clone())
     }
 }

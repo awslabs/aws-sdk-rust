@@ -72,9 +72,7 @@ impl MediaStream {
 
 /// A builder for [`MediaStream`](crate::types::MediaStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaStreamBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::MediaStreamAttributes>,
     pub(crate) clock_rate: ::std::option::Option<i32>,
@@ -92,10 +90,7 @@ impl MediaStreamBuilder {
         self
     }
     /// Attributes that are related to the media stream.
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamAttributes>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::MediaStreamAttributes>) -> Self {
         self.attributes = input;
         self
     }
@@ -160,18 +155,12 @@ impl MediaStreamBuilder {
         &self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_stream_name = input;
         self
     }
@@ -185,10 +174,7 @@ impl MediaStreamBuilder {
         self
     }
     /// The type of media stream.
-    pub fn set_media_stream_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamType>,
-    ) -> Self {
+    pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
         self.media_stream_type = input;
         self
     }

@@ -37,10 +37,7 @@ impl ListTestGridProjectsFluentBuilder {
         }
     }
     /// Access the ListTestGridProjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListTestGridProjectsFluentBuilder {
             crate::operation::list_test_grid_projects::ListTestGridProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_projects::ListTestGridProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_projects::ListTestGridProjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListTestGridProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListTestGridProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_projects::ListTestGridProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_projects::ListTestGridProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_projects::ListTestGridProjectsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListTestGridProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_projects::ListTestGridProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_projects::ListTestGridProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_projects::ListTestGridProjectsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListTestGridProjectsFluentBuilder {
             crate::operation::list_test_grid_projects::ListTestGridProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_projects::ListTestGridProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_projects::ListTestGridProjectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator {
-        crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator {
+        crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::new(self.handle, self.inner)
     }
     /// <p>Return no more than this number of results.</p>
     pub fn max_result(mut self, input: i32) -> Self {

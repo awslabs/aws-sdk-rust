@@ -5,16 +5,16 @@ pub use crate::operation::get_health_check_last_failure_reason::_get_health_chec
 
 impl GetHealthCheckLastFailureReasonInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_health_check_last_failure_reason();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetHealthCheckLastFailureReasonInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonInputBuilder,
+    inner: crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonInputBuilder,
 }
 impl GetHealthCheckLastFailureReasonFluentBuilder {
     /// Creates a new `GetHealthCheckLastFailureReason`.
@@ -37,15 +37,20 @@ impl GetHealthCheckLastFailureReasonFluentBuilder {
         }
     }
     /// Access the GetHealthCheckLastFailureReason as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetHealthCheckLastFailureReasonFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,36 +87,39 @@ impl GetHealthCheckLastFailureReasonFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
     /// </note>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_id(input.into());
         self
     }
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
     /// </note>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_id(input);
         self
     }

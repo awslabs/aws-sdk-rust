@@ -37,9 +37,7 @@ impl GetRotationOverrideFluentBuilder {
         }
     }
     /// Access the GetRotationOverride as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetRotationOverrideFluentBuilder {
             crate::operation::get_rotation_override::GetRotationOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rotation_override::GetRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rotation_override::GetRotationOverrideError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetRotationOverrideFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetRotationOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rotation_override::GetRotationOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rotation_override::GetRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rotation_override::GetRotationOverrideError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetRotationOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rotation_override::GetRotationOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rotation_override::GetRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rotation_override::GetRotationOverrideError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetRotationOverrideFluentBuilder {
             crate::operation::get_rotation_override::GetRotationOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_rotation_override::GetRotationOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rotation_override::GetRotationOverrideError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl GetRotationOverrideFluentBuilder {
         self.inner.get_rotation_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn rotation_override_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rotation_override_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn set_rotation_override_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_override_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rotation_override_id(input);
         self
     }

@@ -35,9 +35,7 @@ impl ListEulasOutput {
 
 /// A builder for [`ListEulasOutput`](crate::operation::list_eulas::ListEulasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEulasOutputBuilder {
     pub(crate) eulas: ::std::option::Option<::std::vec::Vec<crate::types::Eula>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListEulasOutputBuilder {
         self
     }
     /// <p>A collection of EULA resources.</p>
-    pub fn set_eulas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Eula>>,
-    ) -> Self {
+    pub fn set_eulas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Eula>>) -> Self {
         self.eulas = input;
         self
     }

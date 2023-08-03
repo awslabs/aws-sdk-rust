@@ -41,7 +41,7 @@ impl CountOpenWorkflowExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder,
+    inner: crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder,
 }
 impl CountOpenWorkflowExecutionsFluentBuilder {
     /// Creates a new `CountOpenWorkflowExecutions`.
@@ -52,7 +52,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         }
     }
     /// Access the CountOpenWorkflowExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
             crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -129,9 +120,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
             crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError>,
     > {
         self.customize_middleware().await
     }
@@ -155,17 +144,12 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
         self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_start_time_filter()
     }
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
@@ -178,10 +162,7 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
     }
@@ -221,19 +202,14 @@ impl CountOpenWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
     }
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         self.inner.get_execution_filter()
     }
 }

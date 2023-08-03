@@ -30,9 +30,7 @@ impl MinBottomRenditionSize {
 
 /// A builder for [`MinBottomRenditionSize`](crate::types::MinBottomRenditionSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MinBottomRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`triggers(Option<Vec<Trigger>>)`](crate::operation::batch_get_triggers::BatchGetTriggersOutput::triggers): <p>A list of trigger definitions.</p>
     ///   - [`triggers_not_found(Option<Vec<String>>)`](crate::operation::batch_get_triggers::BatchGetTriggersOutput::triggers_not_found): <p>A list of names of triggers not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetTriggersError>`](crate::operation::batch_get_triggers::BatchGetTriggersError)
-    pub fn batch_get_triggers(
-        &self,
-    ) -> crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder {
-        crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_triggers(&self) -> crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder {
+        crate::operation::batch_get_triggers::builders::BatchGetTriggersFluentBuilder::new(self.handle.clone())
     }
 }

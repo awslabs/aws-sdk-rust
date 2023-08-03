@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAssessmentFrameworkOutput {
 }
 impl GetAssessmentFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkOutputBuilder {
         crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentFrameworkOutputBuilder {
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,

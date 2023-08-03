@@ -28,7 +28,7 @@ impl CreateResolverQueryLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder,
+    inner: crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder,
 }
 impl CreateResolverQueryLogConfigFluentBuilder {
     /// Creates a new `CreateResolverQueryLogConfig`.
@@ -39,7 +39,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         }
     }
     /// Access the CreateResolverQueryLogConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
             crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
             crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +131,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
@@ -155,10 +141,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     /// <li> <p> <b>CloudWatch Logs log group</b>: </p> <p> <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code> </p> </li>
     /// <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p> <code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code> </p> </li>
     /// </ul>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -172,18 +155,12 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self.inner.get_destination_arn()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -201,10 +178,7 @@ impl CreateResolverQueryLogConfigFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the query logging configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

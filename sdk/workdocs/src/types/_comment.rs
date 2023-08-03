@@ -183,10 +183,7 @@ impl CommentBuilder {
         self
     }
     /// <p>The time that the comment was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -200,10 +197,7 @@ impl CommentBuilder {
         self
     }
     /// <p>The status of the comment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CommentStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -217,10 +211,7 @@ impl CommentBuilder {
         self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentVisibilityType>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::CommentVisibilityType>) -> Self {
         self.visibility = input;
         self
     }

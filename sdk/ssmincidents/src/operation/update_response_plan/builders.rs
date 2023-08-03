@@ -10,10 +10,7 @@ impl UpdateResponsePlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_response_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateResponsePlanFluentBuilder {
         }
     }
     /// Access the UpdateResponsePlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateResponsePlanFluentBuilder {
             crate::operation::update_response_plan::UpdateResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateResponsePlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateResponsePlanFluentBuilder {
             crate::operation::update_response_plan::UpdateResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +149,12 @@ impl UpdateResponsePlanFluentBuilder {
         self.inner.get_display_name()
     }
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
-    pub fn incident_template_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_template_title(input.into());
         self
     }
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
-    pub fn set_incident_template_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_template_title(input);
         self
     }
@@ -223,18 +201,12 @@ impl UpdateResponsePlanFluentBuilder {
         self.inner.get_incident_template_impact()
     }
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    pub fn incident_template_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_template_summary(input.into());
         self
     }
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    pub fn set_incident_template_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_template_summary(input);
         self
     }
@@ -243,25 +215,17 @@ impl UpdateResponsePlanFluentBuilder {
         self.inner.get_incident_template_summary()
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn incident_template_dedupe_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_dedupe_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_template_dedupe_string(input.into());
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn set_incident_template_dedupe_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_dedupe_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_template_dedupe_string(input);
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn get_incident_template_dedupe_string(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_incident_template_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_incident_template_dedupe_string()
     }
     /// Appends an item to `incidentTemplateNotificationTargets`.
@@ -269,10 +233,7 @@ impl UpdateResponsePlanFluentBuilder {
     /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
     ///
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn incident_template_notification_targets(
-        mut self,
-        input: crate::types::NotificationTargetItem,
-    ) -> Self {
+    pub fn incident_template_notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
         self.inner = self.inner.incident_template_notification_targets(input);
         self
     }
@@ -285,9 +246,7 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn get_incident_template_notification_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_incident_template_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
         self.inner.get_incident_template_notification_targets()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
@@ -298,10 +257,7 @@ impl UpdateResponsePlanFluentBuilder {
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.inner = self.inner.set_chat_channel(input);
         self
     }
@@ -320,17 +276,12 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_engagements(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_engagements()
     }
     /// Appends an item to `actions`.
@@ -343,10 +294,7 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -370,19 +318,13 @@ impl UpdateResponsePlanFluentBuilder {
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     pub fn set_incident_template_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_incident_template_tags(input);
         self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn get_incident_template_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_incident_template_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_incident_template_tags()
     }
     /// Appends an item to `integrations`.
@@ -395,17 +337,12 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
         self.inner = self.inner.set_integrations(input);
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
         self.inner.get_integrations()
     }
 }

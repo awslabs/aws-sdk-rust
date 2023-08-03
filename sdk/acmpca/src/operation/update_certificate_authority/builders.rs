@@ -28,7 +28,7 @@ impl UpdateCertificateAuthorityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCertificateAuthorityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder,
+    inner: crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder,
 }
 impl UpdateCertificateAuthorityFluentBuilder {
     /// Creates a new `UpdateCertificateAuthority`.
@@ -39,7 +39,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
         }
     }
     /// Access the UpdateCertificateAuthority as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
             crate::operation::update_certificate_authority::UpdateCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_authority::UpdateCertificateAuthorityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_authority::UpdateCertificateAuthorityError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_authority::UpdateCertificateAuthorityError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +107,19 @@ impl UpdateCertificateAuthorityFluentBuilder {
             crate::operation::update_certificate_authority::UpdateCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate_authority::UpdateCertificateAuthorityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -154,10 +137,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn revocation_configuration(
-        mut self,
-        input: crate::types::RevocationConfiguration,
-    ) -> Self {
+    pub fn revocation_configuration(mut self, input: crate::types::RevocationConfiguration) -> Self {
         self.inner = self.inner.revocation_configuration(input);
         self
     }
@@ -170,10 +150,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_revocation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevocationConfiguration>,
-    ) -> Self {
+    pub fn set_revocation_configuration(mut self, input: ::std::option::Option<crate::types::RevocationConfiguration>) -> Self {
         self.inner = self.inner.set_revocation_configuration(input);
         self
     }
@@ -186,9 +163,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_revocation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RevocationConfiguration> {
+    pub fn get_revocation_configuration(&self) -> &::std::option::Option<crate::types::RevocationConfiguration> {
         self.inner.get_revocation_configuration()
     }
     /// <p>Status of your private CA.</p>
@@ -197,10 +172,7 @@ impl UpdateCertificateAuthorityFluentBuilder {
         self
     }
     /// <p>Status of your private CA.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

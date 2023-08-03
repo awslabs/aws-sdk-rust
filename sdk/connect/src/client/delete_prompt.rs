@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`prompt_id(impl ::std::convert::Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_id) / [`set_prompt_id(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_id): <p>A unique identifier for the prompt.</p>
     /// - On success, responds with [`DeletePromptOutput`](crate::operation::delete_prompt::DeletePromptOutput)
     /// - On failure, responds with [`SdkError<DeletePromptError>`](crate::operation::delete_prompt::DeletePromptError)
-    pub fn delete_prompt(
-        &self,
-    ) -> crate::operation::delete_prompt::builders::DeletePromptFluentBuilder {
-        crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_prompt(&self) -> crate::operation::delete_prompt::builders::DeletePromptFluentBuilder {
+        crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::new(self.handle.clone())
     }
 }

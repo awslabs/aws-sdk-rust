@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`source(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::source): <p>The event source of the channel that was updated.</p>
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::update_channel::UpdateChannelOutput::destinations): <p>The event data stores that log events arriving through the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
-    pub fn update_channel(
-        &self,
-    ) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
-        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
+        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())
     }
 }

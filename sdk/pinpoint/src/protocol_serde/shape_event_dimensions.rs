@@ -10,10 +10,7 @@ pub fn ser_event_dimensions(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_dimension::ser_attribute_dimension(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_attribute_dimension::ser_attribute_dimension(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }
@@ -32,10 +29,7 @@ pub fn ser_event_dimensions(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(
-                    &mut object_12,
-                    value_11,
-                )?;
+                crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_12, value_11)?;
                 object_12.finish();
             }
         }
@@ -46,17 +40,9 @@ pub fn ser_event_dimensions(
 
 pub(crate) fn de_event_dimensions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EventDimensions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EventDimensions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -66,43 +52,32 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Attributes" => {
-                                builder = builder.set_attributes(
-                                    crate::protocol_serde::shape_map_of_attribute_dimension::de_map_of_attribute_dimension(tokens)?
-                                );
-                            }
-                            "EventType" => {
-                                builder = builder.set_event_type(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Metrics" => {
-                                builder = builder.set_metrics(
-                                    crate::protocol_serde::shape_map_of_metric_dimension::de_map_of_metric_dimension(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Attributes" => {
+                            builder = builder.set_attributes(crate::protocol_serde::shape_map_of_attribute_dimension::de_map_of_attribute_dimension(
+                                tokens,
+                            )?);
                         }
-                    }
+                        "EventType" => {
+                            builder = builder.set_event_type(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        "Metrics" => {
+                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of_metric_dimension::de_map_of_metric_dimension(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -6,10 +6,7 @@ pub fn ser_redshift_data_spec(
     if let Some(var_1) = &input.database_information {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DatabaseInformation").start_object();
-        crate::protocol_serde::shape_redshift_database::ser_redshift_database(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_redshift_database::ser_redshift_database(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.select_sql_query {

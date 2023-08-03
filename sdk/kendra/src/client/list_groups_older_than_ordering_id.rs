@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`groups_summaries(Option<Vec<GroupSummary>>)`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput::groups_summaries): <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput::next_token): <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     /// - On failure, responds with [`SdkError<ListGroupsOlderThanOrderingIdError>`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError)
-    pub fn list_groups_older_than_ordering_id(&self) -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder{
+    pub fn list_groups_older_than_ordering_id(
+        &self,
+    ) -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder {
         crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::new(self.handle.clone())
     }
 }

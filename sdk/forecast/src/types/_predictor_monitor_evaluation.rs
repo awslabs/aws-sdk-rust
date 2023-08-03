@@ -93,9 +93,7 @@ impl PredictorMonitorEvaluation {
 
 /// A builder for [`PredictorMonitorEvaluation`](crate::types::PredictorMonitorEvaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorMonitorEvaluationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -144,10 +142,7 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
-    pub fn set_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.evaluation_time = input;
         self
     }
@@ -156,18 +151,12 @@ impl PredictorMonitorEvaluationBuilder {
         &self.evaluation_time
     }
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    pub fn evaluation_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    pub fn set_evaluation_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_state = input;
         self
     }
@@ -181,17 +170,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
-    pub fn set_window_start_datetime(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_window_start_datetime(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.window_start_datetime = input;
         self
     }
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
-    pub fn get_window_start_datetime(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_window_start_datetime(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.window_start_datetime
     }
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
@@ -200,10 +184,7 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
-    pub fn set_window_end_datetime(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_window_end_datetime(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.window_end_datetime = input;
         self
     }
@@ -217,10 +198,7 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>Provides details about a predictor event, such as a retraining.</p>
-    pub fn set_predictor_event(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictorEvent>,
-    ) -> Self {
+    pub fn set_predictor_event(mut self, input: ::std::option::Option<crate::types::PredictorEvent>) -> Self {
         self.predictor_event = input;
         self
     }
@@ -234,17 +212,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
-    pub fn set_monitor_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorDataSource>,
-    ) -> Self {
+    pub fn set_monitor_data_source(mut self, input: ::std::option::Option<crate::types::MonitorDataSource>) -> Self {
         self.monitor_data_source = input;
         self
     }
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
-    pub fn get_monitor_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitorDataSource> {
+    pub fn get_monitor_data_source(&self) -> &::std::option::Option<crate::types::MonitorDataSource> {
         &self.monitor_data_source
     }
     /// Appends an item to `metric_results`.
@@ -259,17 +232,12 @@ impl PredictorMonitorEvaluationBuilder {
         self
     }
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    pub fn set_metric_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResult>>,
-    ) -> Self {
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResult>>) -> Self {
         self.metric_results = input;
         self
     }
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    pub fn get_metric_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResult>> {
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResult>> {
         &self.metric_results
     }
     /// <p>The number of items considered during the evaluation.</p>

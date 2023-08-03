@@ -81,9 +81,7 @@ impl UploadConfiguration {
 
 /// A builder for [`UploadConfiguration`](crate::types::UploadConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
@@ -175,10 +173,7 @@ impl UploadConfigurationBuilder {
     /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
-    pub fn set_upload_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::UploadBehavior>,
-    ) -> Self {
+    pub fn set_upload_behavior(mut self, input: ::std::option::Option<crate::types::UploadBehavior>) -> Self {
         self.upload_behavior = input;
         self
     }

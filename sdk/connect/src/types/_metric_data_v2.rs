@@ -30,9 +30,7 @@ impl MetricDataV2 {
 
 /// A builder for [`MetricDataV2`](crate::types::MetricDataV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDataV2Builder {
     pub(crate) metric: ::std::option::Option<crate::types::MetricV2>,
     pub(crate) value: ::std::option::Option<f64>,

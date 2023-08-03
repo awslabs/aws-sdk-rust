@@ -5,8 +5,7 @@
 pub struct ListAccessPoliciesOutput {
     /// <p>Details about the requested access policies.</p>
     #[doc(hidden)]
-    pub access_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
+    pub access_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAccessPoliciesOutput {
 }
 impl ListAccessPoliciesOutput {
     /// <p>Details about the requested access policies.</p>
-    pub fn access_policy_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccessPolicySummary]> {
+    pub fn access_policy_summaries(&self) -> ::std::option::Option<&[crate::types::AccessPolicySummary]> {
         self.access_policy_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccessPoliciesOutput {
 }
 impl ListAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesOutputBuilder {
-    pub(crate) access_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
+    pub(crate) access_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListAccessPoliciesOutputBuilder {
         self
     }
     /// <p>Details about the requested access policies.</p>
-    pub fn set_access_policy_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>,
-    ) -> Self {
+    pub fn set_access_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>>) -> Self {
         self.access_policy_summaries = input;
         self
     }
     /// <p>Details about the requested access policies.</p>
-    pub fn get_access_policy_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
+    pub fn get_access_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
         &self.access_policy_summaries
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

@@ -9,9 +9,7 @@ pub struct ValidationException {
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The exception context.</p>
     #[doc(hidden)]
-    pub context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A human-readable description of the error.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -23,11 +21,7 @@ impl ValidationException {
         self.code.as_deref()
     }
     /// <p>The exception context.</p>
-    pub fn context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
 }
@@ -69,14 +63,10 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
-    pub(crate) context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -100,32 +90,19 @@ impl ValidationExceptionBuilder {
     /// To override the contents of this collection use [`set_context`](Self::set_context).
     ///
     /// <p>The exception context.</p>
-    pub fn context(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.context = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The exception context.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.context = input;
         self
     }
     /// <p>The exception context.</p>
-    pub fn get_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context
     }
     /// <p>A human-readable description of the error.</p>
@@ -149,10 +126,7 @@ impl ValidationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

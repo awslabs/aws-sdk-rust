@@ -51,9 +51,7 @@ impl DataCaptureConfigSummary {
 
 /// A builder for [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCaptureConfigSummaryBuilder {
     pub(crate) enable_capture: ::std::option::Option<bool>,
     pub(crate) capture_status: ::std::option::Option<crate::types::CaptureStatus>,
@@ -82,10 +80,7 @@ impl DataCaptureConfigSummaryBuilder {
         self
     }
     /// <p>Whether data capture is currently functional.</p>
-    pub fn set_capture_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureStatus>,
-    ) -> Self {
+    pub fn set_capture_status(mut self, input: ::std::option::Option<crate::types::CaptureStatus>) -> Self {
         self.capture_status = input;
         self
     }
@@ -108,18 +103,12 @@ impl DataCaptureConfigSummaryBuilder {
         &self.current_sampling_percentage
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn set_destination_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_s3_uri = input;
         self
     }

@@ -44,9 +44,7 @@ impl TemplateParameter {
 
 /// A builder for [`TemplateParameter`](crate::types::TemplateParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateParameterBuilder {
     pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct TemplateParameterBuilder {
 }
 impl TemplateParameterBuilder {
     /// <p>The name associated with the parameter.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with the parameter.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_key = input;
         self
     }
@@ -75,18 +67,12 @@ impl TemplateParameterBuilder {
         &self.parameter_key
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

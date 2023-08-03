@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`suppressions(Option<Vec<AuditSuppression>>)`](crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput::suppressions): <p> List of audit suppressions. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     /// - On failure, responds with [`SdkError<ListAuditSuppressionsError>`](crate::operation::list_audit_suppressions::ListAuditSuppressionsError)
-    pub fn list_audit_suppressions(
-        &self,
-    ) -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsFluentBuilder
-    {
-        crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_audit_suppressions(&self) -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsFluentBuilder {
+        crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsFluentBuilder::new(self.handle.clone())
     }
 }

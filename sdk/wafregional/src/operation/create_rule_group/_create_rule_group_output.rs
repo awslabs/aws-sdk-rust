@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRuleGroupOutput {
 }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
-    pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
         crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleGroupOutputBuilder {
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

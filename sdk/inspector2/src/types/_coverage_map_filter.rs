@@ -37,9 +37,7 @@ impl CoverageMapFilter {
 
 /// A builder for [`CoverageMapFilter`](crate::types::CoverageMapFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageMapFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CoverageMapComparison>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl CoverageMapFilterBuilder {
         self
     }
     /// <p>The operator to compare coverage on.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageMapComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CoverageMapComparison>) -> Self {
         self.comparison = input;
         self
     }

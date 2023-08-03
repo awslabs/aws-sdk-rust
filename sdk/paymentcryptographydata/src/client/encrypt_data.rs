@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`key_check_value(Option<String>)`](crate::operation::encrypt_data::EncryptDataOutput::key_check_value): <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     ///   - [`cipher_text(Option<String>)`](crate::operation::encrypt_data::EncryptDataOutput::cipher_text): <p>The encrypted ciphertext.</p>
     /// - On failure, responds with [`SdkError<EncryptDataError>`](crate::operation::encrypt_data::EncryptDataError)
-    pub fn encrypt_data(
-        &self,
-    ) -> crate::operation::encrypt_data::builders::EncryptDataFluentBuilder {
+    pub fn encrypt_data(&self) -> crate::operation::encrypt_data::builders::EncryptDataFluentBuilder {
         crate::operation::encrypt_data::builders::EncryptDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateFileSystemOutput`](crate::operation::associate_file_system::AssociateFileSystemOutput) with field(s):
     ///   - [`file_system_association_arn(Option<String>)`](crate::operation::associate_file_system::AssociateFileSystemOutput::file_system_association_arn): <p>The ARN of the newly created file system association.</p>
     /// - On failure, responds with [`SdkError<AssociateFileSystemError>`](crate::operation::associate_file_system::AssociateFileSystemError)
-    pub fn associate_file_system(
-        &self,
-    ) -> crate::operation::associate_file_system::builders::AssociateFileSystemFluentBuilder {
-        crate::operation::associate_file_system::builders::AssociateFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_file_system(&self) -> crate::operation::associate_file_system::builders::AssociateFileSystemFluentBuilder {
+        crate::operation::associate_file_system::builders::AssociateFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

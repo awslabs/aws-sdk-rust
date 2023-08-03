@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`snapshot_download_url(Option<String>)`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput::snapshot_download_url): <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
     ///   - [`product(Option<String>)`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput::product): <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     /// - On failure, responds with [`SdkError<GetDeployablePatchSnapshotForInstanceError>`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError)
-    pub fn get_deployable_patch_snapshot_for_instance(&self) -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceFluentBuilder{
-        crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceFluentBuilder::new(self.handle.clone())
+    pub fn get_deployable_patch_snapshot_for_instance(
+        &self,
+    ) -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceFluentBuilder {
+        crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

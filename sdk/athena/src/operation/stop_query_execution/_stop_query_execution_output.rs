@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopQueryExecutionOutput {
 }
 impl StopQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopQueryExecutionOutput`](crate::operation::stop_query_execution::StopQueryExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_query_execution::builders::StopQueryExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::stop_query_execution::builders::StopQueryExecutionOutputBuilder {
         crate::operation::stop_query_execution::builders::StopQueryExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopQueryExecutionOutput`](crate::operation::stop_query_execution::StopQueryExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopQueryExecutionOutputBuilder {
     _request_id: Option<String>,
 }

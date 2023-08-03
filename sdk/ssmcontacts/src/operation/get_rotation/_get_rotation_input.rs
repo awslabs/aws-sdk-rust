@@ -22,9 +22,7 @@ impl GetRotationInput {
 
 /// A builder for [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetRotationInputBuilder {
         &self.rotation_id
     }
     /// Consumes the builder and constructs a [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rotation::GetRotationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationInput {
             rotation_id: self.rotation_id,
         })

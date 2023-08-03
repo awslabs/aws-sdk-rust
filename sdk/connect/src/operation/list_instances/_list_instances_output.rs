@@ -5,8 +5,7 @@
 pub struct ListInstancesOutput {
     /// <p>Information about the instances.</p>
     #[doc(hidden)]
-    pub instance_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub instance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListInstancesOutput {
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
-    pub(crate) instance_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListInstancesOutputBuilder {
         self
     }
     /// <p>Information about the instances.</p>
-    pub fn set_instance_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
-    ) -> Self {
+    pub fn set_instance_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
         self.instance_summary_list = input;
         self
     }
     /// <p>Information about the instances.</p>
-    pub fn get_instance_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instance_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
         &self.instance_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

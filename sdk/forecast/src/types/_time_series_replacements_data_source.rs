@@ -44,9 +44,7 @@ impl TimeSeriesReplacementsDataSource {
 
 /// A builder for [`TimeSeriesReplacementsDataSource`](crate::types::TimeSeriesReplacementsDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesReplacementsDataSourceBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
@@ -97,18 +95,12 @@ impl TimeSeriesReplacementsDataSourceBuilder {
         &self.format
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn timestamp_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn set_timestamp_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_format = input;
         self
     }

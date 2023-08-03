@@ -16,34 +16,25 @@ impl DescribeIdentityPoolInput {
 }
 impl DescribeIdentityPoolInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
-    pub fn builder(
-    ) -> crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder {
+    pub fn builder() -> crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder {
         crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityPoolInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -54,14 +45,10 @@ impl DescribeIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity_pool::DescribeIdentityPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
-                identity_pool_id: self.identity_pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
+            identity_pool_id: self.identity_pool_id,
+        })
     }
 }

@@ -9,10 +9,7 @@ pub fn ser_create_device_profile_input(
     if let Some(var_2) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_3 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_device_profile::ser_lo_ra_wan_device_profile(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_lo_ra_wan_device_profile::ser_lo_ra_wan_device_profile(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.name {

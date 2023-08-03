@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`execution_infos(Option<Vec<WorkflowExecutionInfo>>)`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput::execution_infos): <p>The list of workflow information structures.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     /// - On failure, responds with [`SdkError<ListClosedWorkflowExecutionsError>`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError)
-    pub fn list_closed_workflow_executions(&self) -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsFluentBuilder{
+    pub fn list_closed_workflow_executions(
+        &self,
+    ) -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsFluentBuilder {
         crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl ExecuteCoreNetworkChangeSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteCoreNetworkChangeSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder,
+    inner: crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder,
 }
 impl ExecuteCoreNetworkChangeSetFluentBuilder {
     /// Creates a new `ExecuteCoreNetworkChangeSet`.
@@ -37,7 +37,7 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
         }
     }
     /// Access the ExecuteCoreNetworkChangeSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
             crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ExecuteCoreNetworkChangeSetFluentBuilder {
             crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }

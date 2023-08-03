@@ -37,9 +37,7 @@ impl SpotPlacementScore {
 
 /// A builder for [`SpotPlacementScore`](crate::types::SpotPlacementScore).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotPlacementScoreBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl SpotPlacementScoreBuilder {
         &self.region
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }

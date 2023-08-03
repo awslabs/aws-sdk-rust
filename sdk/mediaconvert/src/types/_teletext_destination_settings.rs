@@ -30,9 +30,7 @@ impl TeletextDestinationSettings {
 
 /// A builder for [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TeletextDestinationSettingsBuilder {
     pub(crate) page_number: ::std::option::Option<::std::string::String>,
     pub(crate) page_types: ::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>>,
@@ -64,17 +62,12 @@ impl TeletextDestinationSettingsBuilder {
         self
     }
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    pub fn set_page_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>>,
-    ) -> Self {
+    pub fn set_page_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>>) -> Self {
         self.page_types = input;
         self
     }
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    pub fn get_page_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>> {
+    pub fn get_page_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>> {
         &self.page_types
     }
     /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).

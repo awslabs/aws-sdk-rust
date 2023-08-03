@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`protocol(Option<FsxProtocol>)`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput::protocol): <p>The type of protocol that DataSync uses to access your file system.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput::creation_time): <p>The time that the FSx for OpenZFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationFsxOpenZfsError>`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsError)
-    pub fn describe_location_fsx_open_zfs(&self) -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsFluentBuilder{
+    pub fn describe_location_fsx_open_zfs(
+        &self,
+    ) -> crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsFluentBuilder {
         crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsFluentBuilder::new(self.handle.clone())
     }
 }

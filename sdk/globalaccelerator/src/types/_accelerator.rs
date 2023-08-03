@@ -107,9 +107,7 @@ impl Accelerator {
 
 /// A builder for [`Accelerator`](crate::types::Accelerator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceleratorBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -125,18 +123,12 @@ pub struct AcceleratorBuilder {
 }
 impl AcceleratorBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -164,10 +156,7 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -204,10 +193,7 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    pub fn set_ip_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpSet>>,
-    ) -> Self {
+    pub fn set_ip_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSet>>) -> Self {
         self.ip_sets = input;
         self
     }
@@ -244,10 +230,7 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>Describes the deployment status of the accelerator.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AcceleratorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AcceleratorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -261,10 +244,7 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -278,10 +258,7 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -293,10 +270,7 @@ impl AcceleratorBuilder {
     /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
     /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn dual_stack_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dual_stack_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dual_stack_dns_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -304,10 +278,7 @@ impl AcceleratorBuilder {
     /// <p>The naming convention for the dual-stack DNS name is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com. For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.</p>
     /// <p>Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to your accelerator that points just to the static IPv4 addresses. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"> Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_dual_stack_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dual_stack_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dual_stack_dns_name = input;
         self
     }
@@ -330,17 +301,12 @@ impl AcceleratorBuilder {
         self
     }
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`Accelerator`](crate::types::Accelerator).

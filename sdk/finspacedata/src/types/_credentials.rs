@@ -37,9 +37,7 @@ impl Credentials {
 
 /// A builder for [`Credentials`](crate::types::Credentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CredentialsBuilder {
 }
 impl CredentialsBuilder {
     /// <p>The access key identifier.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key identifier.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl CredentialsBuilder {
         &self.access_key_id
     }
     /// <p>The access key.</p>
-    pub fn secret_access_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_access_key = input;
         self
     }
@@ -87,18 +73,12 @@ impl CredentialsBuilder {
         &self.secret_access_key
     }
     /// <p>The session token.</p>
-    pub fn session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session token.</p>
-    pub fn set_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_token = input;
         self
     }

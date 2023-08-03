@@ -23,17 +23,14 @@ impl DeregisterEventTopicInput {
 }
 impl DeregisterEventTopicInput {
     /// Creates a new builder-style object to manufacture [`DeregisterEventTopicInput`](crate::operation::deregister_event_topic::DeregisterEventTopicInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder {
+    pub fn builder() -> crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder {
         crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterEventTopicInput`](crate::operation::deregister_event_topic::DeregisterEventTopicInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterEventTopicInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl DeregisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterEventTopicInput`](crate::operation::deregister_event_topic::DeregisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_event_topic::DeregisterEventTopicInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_event_topic::DeregisterEventTopicInput {
-                directory_id: self.directory_id,
-                topic_name: self.topic_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_event_topic::DeregisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deregister_event_topic::DeregisterEventTopicInput {
+            directory_id: self.directory_id,
+            topic_name: self.topic_name,
+        })
     }
 }

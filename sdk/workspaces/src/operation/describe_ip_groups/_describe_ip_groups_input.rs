@@ -29,17 +29,14 @@ impl DescribeIpGroupsInput {
 }
 impl DescribeIpGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
-    pub fn builder() -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder {
         crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpGroupsInputBuilder {
     pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl DescribeIpGroupsInputBuilder {
         self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_ids = input;
         self
     }
@@ -100,16 +94,11 @@ impl DescribeIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ip_groups::DescribeIpGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ip_groups::DescribeIpGroupsInput {
-                group_ids: self.group_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ip_groups::DescribeIpGroupsInput {
+            group_ids: self.group_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

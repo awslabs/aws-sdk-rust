@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetDirectoryLimitsOutput`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput) with field(s):
     ///   - [`directory_limits(Option<DirectoryLimits>)`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput::directory_limits): <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     /// - On failure, responds with [`SdkError<GetDirectoryLimitsError>`](crate::operation::get_directory_limits::GetDirectoryLimitsError)
-    pub fn get_directory_limits(
-        &self,
-    ) -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsFluentBuilder {
-        crate::operation::get_directory_limits::builders::GetDirectoryLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_directory_limits(&self) -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsFluentBuilder {
+        crate::operation::get_directory_limits::builders::GetDirectoryLimitsFluentBuilder::new(self.handle.clone())
     }
 }

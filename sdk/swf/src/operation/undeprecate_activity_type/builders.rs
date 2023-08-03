@@ -40,8 +40,7 @@ impl UndeprecateActivityTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UndeprecateActivityTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder,
+    inner: crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder,
 }
 impl UndeprecateActivityTypeFluentBuilder {
     /// Creates a new `UndeprecateActivityType`.
@@ -52,10 +51,7 @@ impl UndeprecateActivityTypeFluentBuilder {
         }
     }
     /// Access the UndeprecateActivityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +63,7 @@ impl UndeprecateActivityTypeFluentBuilder {
             crate::operation::undeprecate_activity_type::UndeprecateActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +73,7 @@ impl UndeprecateActivityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +82,7 @@ impl UndeprecateActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError>,
     > {
         let op = self
             .inner
@@ -116,9 +105,7 @@ impl UndeprecateActivityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -132,9 +119,7 @@ impl UndeprecateActivityTypeFluentBuilder {
             crate::operation::undeprecate_activity_type::UndeprecateActivityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +143,7 @@ impl UndeprecateActivityTypeFluentBuilder {
         self
     }
     /// <p>The activity type to undeprecate.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.inner = self.inner.set_activity_type(input);
         self
     }

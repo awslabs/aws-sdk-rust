@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`rum_events(Vec<RumEvent>)`](crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder::rum_events) / [`set_rum_events(Option<Vec<RumEvent>>)`](crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder::set_rum_events): <p>An array of structures that contain the telemetry event data.</p>
     /// - On success, responds with [`PutRumEventsOutput`](crate::operation::put_rum_events::PutRumEventsOutput)
     /// - On failure, responds with [`SdkError<PutRumEventsError>`](crate::operation::put_rum_events::PutRumEventsError)
-    pub fn put_rum_events(
-        &self,
-    ) -> crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder {
-        crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_rum_events(&self) -> crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder {
+        crate::operation::put_rum_events::builders::PutRumEventsFluentBuilder::new(self.handle.clone())
     }
 }

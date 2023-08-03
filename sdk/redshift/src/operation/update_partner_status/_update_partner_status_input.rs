@@ -50,18 +50,14 @@ impl UpdatePartnerStatusInput {
 }
 impl UpdatePartnerStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
-        crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder {
+        crate::operation::update_partner_status::builders::UpdatePartnerStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePartnerStatusInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ impl UpdatePartnerStatusInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -106,18 +96,12 @@ impl UpdatePartnerStatusInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -145,10 +129,7 @@ impl UpdatePartnerStatusInputBuilder {
         self
     }
     /// <p>The value of the updated status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PartnerIntegrationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -157,18 +138,12 @@ impl UpdatePartnerStatusInputBuilder {
         &self.status
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -179,19 +154,15 @@ impl UpdatePartnerStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_partner_status::UpdatePartnerStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_partner_status::UpdatePartnerStatusInput {
-                account_id: self.account_id,
-                cluster_identifier: self.cluster_identifier,
-                database_name: self.database_name,
-                partner_name: self.partner_name,
-                status: self.status,
-                status_message: self.status_message,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_partner_status::UpdatePartnerStatusInput {
+            account_id: self.account_id,
+            cluster_identifier: self.cluster_identifier,
+            database_name: self.database_name,
+            partner_name: self.partner_name,
+            status: self.status,
+            status_message: self.status_message,
+        })
     }
 }

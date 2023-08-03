@@ -15,9 +15,7 @@ pub struct CreateResourceSetInput {
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>A tag to associate with the parameters for a resource set.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResourceSetInput {
     /// <p>The name of the resource set to create.</p>
@@ -34,49 +32,34 @@ impl CreateResourceSetInput {
         self.resources.as_deref()
     }
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateResourceSetInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_set::builders::CreateResourceSetInputBuilder {
+    pub fn builder() -> crate::operation::create_resource_set::builders::CreateResourceSetInputBuilder {
         crate::operation::create_resource_set::builders::CreateResourceSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceSetInputBuilder {
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResourceSetInputBuilder {
     /// <p>The name of the resource set to create.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource set to create.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_name = input;
         self
     }
@@ -86,19 +69,13 @@ impl CreateResourceSetInputBuilder {
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn set_resource_set_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_type = input;
         self
     }
@@ -119,10 +96,7 @@ impl CreateResourceSetInputBuilder {
         self
     }
     /// <p>A list of resource objects in the resource set.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -135,48 +109,30 @@ impl CreateResourceSetInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag to associate with the parameters for a resource set.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resource_set::CreateResourceSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resource_set::CreateResourceSetInput {
-                resource_set_name: self.resource_set_name,
-                resource_set_type: self.resource_set_type,
-                resources: self.resources,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_resource_set::CreateResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_resource_set::CreateResourceSetInput {
+            resource_set_name: self.resource_set_name,
+            resource_set_type: self.resource_set_type,
+            resources: self.resources,
+            tags: self.tags,
+        })
     }
 }

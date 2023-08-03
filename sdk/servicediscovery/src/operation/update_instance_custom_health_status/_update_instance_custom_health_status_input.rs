@@ -29,16 +29,14 @@ impl UpdateInstanceCustomHealthStatusInput {
 }
 impl UpdateInstanceCustomHealthStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
-    pub fn builder() -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder{
+    pub fn builder() -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder {
         crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceCustomHealthStatusInputBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
         self
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomHealthStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomHealthStatus>) -> Self {
         self.status = input;
         self
     }
@@ -91,16 +86,18 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput {
-                service_id: self.service_id
-                ,
-                instance_id: self.instance_id
-                ,
-                status: self.status
-                ,
-            }
+                service_id: self.service_id,
+                instance_id: self.instance_id,
+                status: self.status,
+            },
         )
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`principal_resource_permissions(Option<Vec<PrincipalResourcePermissions>>)`](crate::operation::list_permissions::ListPermissionsOutput::principal_resource_permissions): <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
     /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
-    pub fn list_permissions(
-        &self,
-    ) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
-        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
+        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

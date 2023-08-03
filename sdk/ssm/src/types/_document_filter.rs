@@ -30,9 +30,7 @@ impl DocumentFilter {
 
 /// A builder for [`DocumentFilter`](crate::types::DocumentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::DocumentFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DocumentFilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::DocumentFilterKey>) -> Self {
         self.key = input;
         self
     }

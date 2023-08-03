@@ -37,10 +37,7 @@ impl GetApplicationRevisionFluentBuilder {
         }
     }
     /// Access the GetApplicationRevision as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_application_revision::builders::GetApplicationRevisionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_application_revision::builders::GetApplicationRevisionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetApplicationRevisionFluentBuilder {
             crate::operation::get_application_revision::GetApplicationRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_revision::GetApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_revision::GetApplicationRevisionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetApplicationRevisionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetApplicationRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_revision::GetApplicationRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_revision::GetApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_revision::GetApplicationRevisionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetApplicationRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_revision::GetApplicationRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_revision::GetApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_revision::GetApplicationRevisionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetApplicationRevisionFluentBuilder {
             crate::operation::get_application_revision::GetApplicationRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_revision::GetApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_revision::GetApplicationRevisionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl GetApplicationRevisionFluentBuilder {
         self
     }
     /// <p>Information about the application revision to get, including type and location.</p>
-    pub fn set_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocation>,
-    ) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
         self.inner = self.inner.set_revision(input);
         self
     }

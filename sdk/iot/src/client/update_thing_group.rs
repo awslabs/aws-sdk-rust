@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateThingGroupOutput`](crate::operation::update_thing_group::UpdateThingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::operation::update_thing_group::UpdateThingGroupOutput::version): <p>The version of the updated thing group.</p>
     /// - On failure, responds with [`SdkError<UpdateThingGroupError>`](crate::operation::update_thing_group::UpdateThingGroupError)
-    pub fn update_thing_group(
-        &self,
-    ) -> crate::operation::update_thing_group::builders::UpdateThingGroupFluentBuilder {
-        crate::operation::update_thing_group::builders::UpdateThingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_thing_group(&self) -> crate::operation::update_thing_group::builders::UpdateThingGroupFluentBuilder {
+        crate::operation::update_thing_group::builders::UpdateThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

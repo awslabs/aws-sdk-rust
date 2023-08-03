@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBulkDeploymentsOutput {
 }
 impl ListBulkDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentsOutput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder {
-        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder {
+        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkDeploymentsOutput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentsOutputBuilder {
-    pub(crate) bulk_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>>,
+    pub(crate) bulk_deployments: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListBulkDeploymentsOutputBuilder {
         self
     }
     /// A list of bulk deployments.
-    pub fn set_bulk_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>>,
-    ) -> Self {
+    pub fn set_bulk_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>>) -> Self {
         self.bulk_deployments = input;
         self
     }
     /// A list of bulk deployments.
-    pub fn get_bulk_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>> {
+    pub fn get_bulk_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkDeployment>> {
         &self.bulk_deployments
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

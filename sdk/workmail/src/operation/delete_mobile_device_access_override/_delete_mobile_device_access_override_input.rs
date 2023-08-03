@@ -39,16 +39,14 @@ impl DeleteMobileDeviceAccessOverrideInput {
 }
 impl DeleteMobileDeviceAccessOverrideInput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder{
+    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder {
         crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverrideInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct DeleteMobileDeviceAccessOverrideInputBuilder {
 }
 impl DeleteMobileDeviceAccessOverrideInputBuilder {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -119,16 +111,18 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput {
-                organization_id: self.organization_id
-                ,
-                user_id: self.user_id
-                ,
-                device_id: self.device_id
-                ,
-            }
+                organization_id: self.organization_id,
+                user_id: self.user_id,
+                device_id: self.device_id,
+            },
         )
     }
 }

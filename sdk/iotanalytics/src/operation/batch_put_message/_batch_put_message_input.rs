@@ -49,9 +49,7 @@ impl BatchPutMessageInput {
 
 /// A builder for [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMessageInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
@@ -103,10 +101,7 @@ impl BatchPutMessageInputBuilder {
     /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
     /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -127,10 +122,7 @@ impl BatchPutMessageInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_message::BatchPutMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput {
             channel_name: self.channel_name,
             messages: self.messages,

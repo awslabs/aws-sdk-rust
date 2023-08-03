@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PolicyTypeValues {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for PolicyTypeValues {
             "EBS_SNAPSHOT_MANAGEMENT" => PolicyTypeValues::EbsSnapshotManagement,
             "EVENT_BASED_POLICY" => PolicyTypeValues::EventBasedPolicy,
             "IMAGE_MANAGEMENT" => PolicyTypeValues::ImageManagement,
-            other => {
-                PolicyTypeValues::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PolicyTypeValues::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl PolicyTypeValues {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EBS_SNAPSHOT_MANAGEMENT",
-            "EVENT_BASED_POLICY",
-            "IMAGE_MANAGEMENT",
-        ]
+        &["EBS_SNAPSHOT_MANAGEMENT", "EVENT_BASED_POLICY", "IMAGE_MANAGEMENT"]
     }
 }
 impl ::std::convert::AsRef<str> for PolicyTypeValues {

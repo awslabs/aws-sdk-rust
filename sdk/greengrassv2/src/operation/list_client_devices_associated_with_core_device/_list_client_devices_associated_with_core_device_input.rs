@@ -29,16 +29,15 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
 }
 impl ListClientDevicesAssociatedWithCoreDeviceInput {
     /// Creates a new builder-style object to manufacture [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput).
-    pub fn builder() -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
         crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +45,12 @@ pub struct ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
 }
 impl ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_device_thing_name = input;
         self
     }
@@ -94,16 +87,18 @@ impl ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput {
-                core_device_thing_name: self.core_device_thing_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                core_device_thing_name: self.core_device_thing_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

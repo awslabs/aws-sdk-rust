@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`fleet_id(Option<String>)`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput::fleet_id): <p>The ID of the EC2 Fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetInstancesError>`](crate::operation::describe_fleet_instances::DescribeFleetInstancesError)
-    pub fn describe_fleet_instances(
-        &self,
-    ) -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesFluentBuilder
-    {
+    pub fn describe_fleet_instances(&self) -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesFluentBuilder {
         crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesFluentBuilder::new(self.handle.clone())
     }
 }

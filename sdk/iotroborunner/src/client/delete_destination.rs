@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::set_id): Destination ARN.
     /// - On success, responds with [`DeleteDestinationOutput`](crate::operation::delete_destination::DeleteDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::operation::delete_destination::DeleteDestinationError)
-    pub fn delete_destination(
-        &self,
-    ) -> crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder {
-        crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_destination(&self) -> crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder {
+        crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::new(self.handle.clone())
     }
 }

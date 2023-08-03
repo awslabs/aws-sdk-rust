@@ -43,9 +43,7 @@ impl CreateVpnConnectionFluentBuilder {
         }
     }
     /// Access the CreateVpnConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpn_connection::builders::CreateVpnConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl CreateVpnConnectionFluentBuilder {
             crate::operation::create_vpn_connection::CreateVpnConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_connection::CreateVpnConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_connection::CreateVpnConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl CreateVpnConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl CreateVpnConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_connection::CreateVpnConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_connection::CreateVpnConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_connection::CreateVpnConnectionError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl CreateVpnConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_connection::CreateVpnConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_connection::CreateVpnConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_connection::CreateVpnConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +111,17 @@ impl CreateVpnConnectionFluentBuilder {
             crate::operation::create_vpn_connection::CreateVpnConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_connection::CreateVpnConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_connection::CreateVpnConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_gateway_id(input.into());
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_gateway_id(input);
         self
     }
@@ -163,18 +144,12 @@ impl CreateVpnConnectionFluentBuilder {
         self.inner.get_type()
     }
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_gateway_id(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_gateway_id(input);
         self
     }
@@ -183,18 +158,12 @@ impl CreateVpnConnectionFluentBuilder {
         self.inner.get_vpn_gateway_id()
     }
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -222,17 +191,12 @@ impl CreateVpnConnectionFluentBuilder {
         self
     }
     /// <p>The options for the VPN connection.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>The options for the VPN connection.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpnConnectionOptionsSpecification> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::VpnConnectionOptionsSpecification> {
         self.inner.get_options()
     }
     /// Appends an item to `TagSpecifications`.
@@ -245,17 +209,12 @@ impl CreateVpnConnectionFluentBuilder {
         self
     }
     /// <p>The tags to apply to the VPN connection.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the VPN connection.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

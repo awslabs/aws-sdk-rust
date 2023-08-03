@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_channel_ban::CreateChannelBanOutput::channel_arn): <p>The ARN of the response to the ban request.</p>
     ///   - [`member(Option<Identity>)`](crate::operation::create_channel_ban::CreateChannelBanOutput::member): <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     /// - On failure, responds with [`SdkError<CreateChannelBanError>`](crate::operation::create_channel_ban::CreateChannelBanError)
-    pub fn create_channel_ban(
-        &self,
-    ) -> crate::operation::create_channel_ban::builders::CreateChannelBanFluentBuilder {
-        crate::operation::create_channel_ban::builders::CreateChannelBanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel_ban(&self) -> crate::operation::create_channel_ban::builders::CreateChannelBanFluentBuilder {
+        crate::operation::create_channel_ban::builders::CreateChannelBanFluentBuilder::new(self.handle.clone())
     }
 }

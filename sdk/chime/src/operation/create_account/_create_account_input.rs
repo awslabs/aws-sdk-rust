@@ -22,9 +22,7 @@ impl CreateAccountInput {
 
 /// A builder for [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccountInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl CreateAccountInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_account::CreateAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_account::CreateAccountInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::create_account::CreateAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_account::CreateAccountInput { name: self.name })
     }
 }

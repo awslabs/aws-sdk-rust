@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     ///   - [`connectors(Option<Vec<ListedConnector>>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>Returns an array, where each item contains the details of a connector.</p>
     /// - On failure, responds with [`SdkError<ListConnectorsError>`](crate::operation::list_connectors::ListConnectorsError)
-    pub fn list_connectors(
-        &self,
-    ) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
-        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_connectors(&self) -> crate::operation::list_connectors::builders::ListConnectorsFluentBuilder {
+        crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

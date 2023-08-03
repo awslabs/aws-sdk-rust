@@ -39,19 +39,14 @@ impl ::std::fmt::Debug for PutEventsConfigurationInput {
         let mut formatter = f.debug_struct("PutEventsConfigurationInput");
         formatter.field("account_id", &self.account_id);
         formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "outbound_events_https_endpoint",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("outbound_events_https_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl PutEventsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutEventsConfigurationInput`](crate::operation::put_events_configuration::PutEventsConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder {
         crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder::default()
     }
 }
@@ -95,40 +90,26 @@ impl PutEventsConfigurationInputBuilder {
         &self.bot_id
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn outbound_events_https_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_events_https_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outbound_events_https_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn set_outbound_events_https_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_events_https_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_events_https_endpoint = input;
         self
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn get_outbound_events_https_endpoint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_outbound_events_https_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.outbound_events_https_endpoint
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
@@ -139,18 +120,14 @@ impl PutEventsConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`PutEventsConfigurationInput`](crate::operation::put_events_configuration::PutEventsConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_events_configuration::PutEventsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_events_configuration::PutEventsConfigurationInput {
-                account_id: self.account_id,
-                bot_id: self.bot_id,
-                outbound_events_https_endpoint: self.outbound_events_https_endpoint,
-                lambda_function_arn: self.lambda_function_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_events_configuration::PutEventsConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_events_configuration::PutEventsConfigurationInput {
+            account_id: self.account_id,
+            bot_id: self.bot_id,
+            outbound_events_https_endpoint: self.outbound_events_https_endpoint,
+            lambda_function_arn: self.lambda_function_arn,
+        })
     }
 }
 impl ::std::fmt::Debug for PutEventsConfigurationInputBuilder {
@@ -158,10 +135,7 @@ impl ::std::fmt::Debug for PutEventsConfigurationInputBuilder {
         let mut formatter = f.debug_struct("PutEventsConfigurationInputBuilder");
         formatter.field("account_id", &self.account_id);
         formatter.field("bot_id", &self.bot_id);
-        formatter.field(
-            "outbound_events_https_endpoint",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("outbound_events_https_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

@@ -26,7 +26,7 @@ impl ListProvisioningArtifactsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProvisioningArtifactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder,
+    inner: crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder,
 }
 impl ListProvisioningArtifactsFluentBuilder {
     /// Creates a new `ListProvisioningArtifacts`.
@@ -37,7 +37,7 @@ impl ListProvisioningArtifactsFluentBuilder {
         }
     }
     /// Access the ListProvisioningArtifacts as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListProvisioningArtifactsFluentBuilder {
             crate::operation::list_provisioning_artifacts::ListProvisioningArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListProvisioningArtifactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListProvisioningArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListProvisioningArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListProvisioningArtifactsFluentBuilder {
             crate::operation::list_provisioning_artifacts::ListProvisioningArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError>,
     > {
         self.customize_middleware().await
     }
@@ -125,10 +114,7 @@ impl ListProvisioningArtifactsFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -137,10 +123,7 @@ impl ListProvisioningArtifactsFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

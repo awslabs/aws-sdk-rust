@@ -29,16 +29,14 @@ impl ListEdgeAgentConfigurationsInput {
 }
 impl ListEdgeAgentConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListEdgeAgentConfigurationsInput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput).
-    pub fn builder() -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder {
         crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEdgeAgentConfigurationsInput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsInputBuilder {
     pub(crate) hub_device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListEdgeAgentConfigurationsInputBuilder {
 }
 impl ListEdgeAgentConfigurationsInputBuilder {
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    pub fn hub_device_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_device_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    pub fn set_hub_device_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_device_arn = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListEdgeAgentConfigurationsInputBuilder {
         crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput {
-                hub_device_arn: self.hub_device_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput {
+            hub_device_arn: self.hub_device_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

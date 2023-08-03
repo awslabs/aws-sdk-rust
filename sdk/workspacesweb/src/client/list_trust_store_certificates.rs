@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`trust_store_arn(Option<String>)`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput::trust_store_arn): <p>The ARN of the trust store.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
     /// - On failure, responds with [`SdkError<ListTrustStoreCertificatesError>`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesError)
-    pub fn list_trust_store_certificates(&self) -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder{
+    pub fn list_trust_store_certificates(
+        &self,
+    ) -> crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder {
         crate::operation::list_trust_store_certificates::builders::ListTrustStoreCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

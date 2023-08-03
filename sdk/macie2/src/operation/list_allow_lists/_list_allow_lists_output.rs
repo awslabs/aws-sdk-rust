@@ -35,9 +35,7 @@ impl ListAllowListsOutput {
 
 /// A builder for [`ListAllowListsOutput`](crate::operation::list_allow_lists::ListAllowListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowListsOutputBuilder {
     pub(crate) allow_lists: ::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAllowListsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each allow list.</p>
-    pub fn set_allow_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>>,
-    ) -> Self {
+    pub fn set_allow_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>>) -> Self {
         self.allow_lists = input;
         self
     }
     /// <p>An array of objects, one for each allow list.</p>
-    pub fn get_allow_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>> {
+    pub fn get_allow_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowListSummary>> {
         &self.allow_lists
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

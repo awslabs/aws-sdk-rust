@@ -10,10 +10,7 @@ impl StartWorkflowRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_workflow_run::StartWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow_run::StartWorkflowRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow_run::StartWorkflowRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_workflow_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartWorkflowRunFluentBuilder {
         }
     }
     /// Access the StartWorkflowRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartWorkflowRunFluentBuilder {
             crate::operation::start_workflow_run::StartWorkflowRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow_run::StartWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow_run::StartWorkflowRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartWorkflowRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartWorkflowRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_workflow_run::StartWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow_run::StartWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow_run::StartWorkflowRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartWorkflowRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_workflow_run::StartWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow_run::StartWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow_run::StartWorkflowRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartWorkflowRunFluentBuilder {
             crate::operation::start_workflow_run::StartWorkflowRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow_run::StartWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow_run::StartWorkflowRunError>,
     > {
         self.customize_middleware().await
     }
@@ -152,19 +136,13 @@ impl StartWorkflowRunFluentBuilder {
     /// <p>The workflow run properties for the new workflow run.</p>
     pub fn set_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_run_properties(input);
         self
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn get_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_run_properties()
     }
 }

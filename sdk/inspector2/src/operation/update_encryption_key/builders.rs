@@ -37,9 +37,7 @@ impl UpdateEncryptionKeyFluentBuilder {
         }
     }
     /// Access the UpdateEncryptionKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateEncryptionKeyFluentBuilder {
             crate::operation::update_encryption_key::UpdateEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_encryption_key::UpdateEncryptionKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateEncryptionKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_encryption_key::UpdateEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_encryption_key::UpdateEncryptionKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_encryption_key::UpdateEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_encryption_key::UpdateEncryptionKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateEncryptionKeyFluentBuilder {
             crate::operation::update_encryption_key::UpdateEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_encryption_key::UpdateEncryptionKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +143,7 @@ impl UpdateEncryptionKeyFluentBuilder {
         self
     }
     /// <p>The resource type for the encryption key.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

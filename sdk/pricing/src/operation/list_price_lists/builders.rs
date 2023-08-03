@@ -10,10 +10,7 @@ impl ListPriceListsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_price_lists::ListPriceListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_price_lists();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListPriceListsFluentBuilder {
         }
     }
     /// Access the ListPriceLists as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_price_lists::builders::ListPriceListsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_price_lists::builders::ListPriceListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListPriceListsFluentBuilder {
             crate::operation::list_price_lists::ListPriceLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListPriceListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListPriceListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_price_lists::ListPriceListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListPriceListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_price_lists::ListPriceListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListPriceListsFluentBuilder {
             crate::operation::list_price_lists::ListPriceLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_price_lists::paginator::ListPriceListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_price_lists::paginator::ListPriceListsPaginator {
-        crate::operation::list_price_lists::paginator::ListPriceListsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_price_lists::paginator::ListPriceListsPaginator {
+        crate::operation::list_price_lists::paginator::ListPriceListsPaginator::new(self.handle, self.inner)
     }
     /// <p>The service code or the Savings Plan service code for the attributes that you want to retrieve. For example, to get the list of applicable Amazon EC2 price lists, use <code>AmazonEC2</code>. For a full list of service codes containing On-Demand and Reserved Instance (RI) pricing, use the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion"> <code>DescribeServices</code> </a> API.</p>
     /// <p>To retrieve the Compute Savings Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine Learning Savings Plans price lists, use <code>MachineLearningSavingsPlans</code>. </p>
@@ -157,10 +136,7 @@ impl ListPriceListsFluentBuilder {
         self
     }
     /// <p>The date that the Price List file prices are effective from. </p>
-    pub fn set_effective_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_effective_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_effective_date(input);
         self
     }
@@ -183,18 +159,12 @@ impl ListPriceListsFluentBuilder {
         self.inner.get_region_code()
     }
     /// <p>The three alphabetical character ISO-4217 currency code that the Price List files are denominated in. </p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.currency_code(input.into());
         self
     }
     /// <p>The three alphabetical character ISO-4217 currency code that the Price List files are denominated in. </p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_currency_code(input);
         self
     }

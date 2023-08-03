@@ -20,7 +20,11 @@ impl super::Client {
     ///   - [`owner_information(Option<String>)`](crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationOutput::owner_information): <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
     ///   - [`window_target_id(Option<String>)`](crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationOutput::window_target_id): <p>The maintenance window target ID.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionTaskInvocationError>`](crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationError)
-    pub fn get_maintenance_window_execution_task_invocation(&self) -> crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationFluentBuilder{
-        crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationFluentBuilder::new(self.handle.clone())
+    pub fn get_maintenance_window_execution_task_invocation(
+        &self,
+    ) -> crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationFluentBuilder {
+        crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

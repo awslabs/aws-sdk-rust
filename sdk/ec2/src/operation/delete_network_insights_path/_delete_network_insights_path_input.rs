@@ -22,16 +22,14 @@ impl DeleteNetworkInsightsPathInput {
 }
 impl DeleteNetworkInsightsPathInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsPathInput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput).
-    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder {
         crate::operation::delete_network_insights_path::builders::DeleteNetworkInsightsPathInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInsightsPathInput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsPathInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteNetworkInsightsPathInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_path_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteNetworkInsightsPathInputBuilder {
         crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput {
-                dry_run: self.dry_run,
-                network_insights_path_id: self.network_insights_path_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathInput {
+            dry_run: self.dry_run,
+            network_insights_path_id: self.network_insights_path_id,
+        })
     }
 }

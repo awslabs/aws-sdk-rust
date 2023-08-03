@@ -29,16 +29,14 @@ impl ListInfrastructureConfigurationsInput {
 }
 impl ListInfrastructureConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
-    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder {
         crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInfrastructureConfigurationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl ListInfrastructureConfigurationsInputBuilder {
         self
     }
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,13 +100,10 @@ impl ListInfrastructureConfigurationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

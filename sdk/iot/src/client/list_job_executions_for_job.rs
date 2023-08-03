@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`execution_summaries(Option<Vec<JobExecutionSummaryForJob>>)`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput::execution_summaries): <p>A list of job execution summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput::next_token): <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListJobExecutionsForJobError>`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError)
-    pub fn list_job_executions_for_job(
-        &self,
-    ) -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobFluentBuilder
-    {
+    pub fn list_job_executions_for_job(&self) -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobFluentBuilder {
         crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobFluentBuilder::new(self.handle.clone())
     }
 }

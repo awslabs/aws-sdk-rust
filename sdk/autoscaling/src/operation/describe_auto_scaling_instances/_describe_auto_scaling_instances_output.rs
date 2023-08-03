@@ -5,8 +5,7 @@
 pub struct DescribeAutoScalingInstancesOutput {
     /// <p>The instances.</p>
     #[doc(hidden)]
-    pub auto_scaling_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
+    pub auto_scaling_instances: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAutoScalingInstancesOutput {
 }
 impl DescribeAutoScalingInstancesOutput {
     /// <p>The instances.</p>
-    pub fn auto_scaling_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoScalingInstanceDetails]> {
+    pub fn auto_scaling_instances(&self) -> ::std::option::Option<&[crate::types::AutoScalingInstanceDetails]> {
         self.auto_scaling_instances.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAutoScalingInstancesOutput {
 }
 impl DescribeAutoScalingInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingInstancesOutput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesOutputBuilder {
         crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingInstancesOutput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesOutputBuilder {
-    pub(crate) auto_scaling_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
+    pub(crate) auto_scaling_instances: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeAutoScalingInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_instances`](Self::set_auto_scaling_instances).
     ///
     /// <p>The instances.</p>
-    pub fn auto_scaling_instances(
-        mut self,
-        input: crate::types::AutoScalingInstanceDetails,
-    ) -> Self {
+    pub fn auto_scaling_instances(mut self, input: crate::types::AutoScalingInstanceDetails) -> Self {
         let mut v = self.auto_scaling_instances.unwrap_or_default();
         v.push(input);
         self.auto_scaling_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instances.</p>
-    pub fn set_auto_scaling_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
-    ) -> Self {
+    pub fn set_auto_scaling_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>) -> Self {
         self.auto_scaling_instances = input;
         self
     }
     /// <p>The instances.</p>
-    pub fn get_auto_scaling_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>> {
+    pub fn get_auto_scaling_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>> {
         &self.auto_scaling_instances
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -100,9 +86,7 @@ impl DescribeAutoScalingInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingInstancesOutput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput {
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput {
             auto_scaling_instances: self.auto_scaling_instances,
             next_token: self.next_token,

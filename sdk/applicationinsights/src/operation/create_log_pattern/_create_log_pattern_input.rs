@@ -43,17 +43,14 @@ impl CreateLogPatternInput {
 }
 impl CreateLogPatternInput {
     /// Creates a new builder-style object to manufacture [`CreateLogPatternInput`](crate::operation::create_log_pattern::CreateLogPatternInput).
-    pub fn builder() -> crate::operation::create_log_pattern::builders::CreateLogPatternInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_log_pattern::builders::CreateLogPatternInputBuilder {
         crate::operation::create_log_pattern::builders::CreateLogPatternInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLogPatternInput`](crate::operation::create_log_pattern::CreateLogPatternInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLogPatternInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_set_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct CreateLogPatternInputBuilder {
 }
 impl CreateLogPatternInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -83,18 +74,12 @@ impl CreateLogPatternInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn pattern_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pattern_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn set_pattern_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pattern_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern_set_name = input;
         self
     }
@@ -147,18 +132,13 @@ impl CreateLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogPatternInput`](crate::operation::create_log_pattern::CreateLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_log_pattern::CreateLogPatternInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_log_pattern::CreateLogPatternInput {
-                resource_group_name: self.resource_group_name,
-                pattern_set_name: self.pattern_set_name,
-                pattern_name: self.pattern_name,
-                pattern: self.pattern,
-                rank: self.rank.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_log_pattern::CreateLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_log_pattern::CreateLogPatternInput {
+            resource_group_name: self.resource_group_name,
+            pattern_set_name: self.pattern_set_name,
+            pattern_name: self.pattern_name,
+            pattern: self.pattern,
+            rank: self.rank.unwrap_or_default(),
+        })
     }
 }

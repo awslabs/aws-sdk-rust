@@ -28,9 +28,7 @@ impl DeleteAclOutput {
 
 /// A builder for [`DeleteAclOutput`](crate::operation::delete_acl::DeleteAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAclOutputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::Acl>,
     _request_id: Option<String>,

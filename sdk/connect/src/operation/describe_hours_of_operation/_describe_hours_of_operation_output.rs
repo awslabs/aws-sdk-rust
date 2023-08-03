@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeHoursOfOperationOutput {
 }
 impl DescribeHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
-    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder {
         crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHoursOfOperationOutputBuilder {
     pub(crate) hours_of_operation: ::std::option::Option<crate::types::HoursOfOperation>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeHoursOfOperationOutputBuilder {
         self
     }
     /// <p>The hours of operation.</p>
-    pub fn set_hours_of_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::HoursOfOperation>,
-    ) -> Self {
+    pub fn set_hours_of_operation(mut self, input: ::std::option::Option<crate::types::HoursOfOperation>) -> Self {
         self.hours_of_operation = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeHoursOfOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
+    pub fn build(self) -> crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
         crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
             hours_of_operation: self.hours_of_operation,
             _request_id: self._request_id,

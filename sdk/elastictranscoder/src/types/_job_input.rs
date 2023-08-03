@@ -120,9 +120,7 @@ impl JobInput {
 
 /// A builder for [`JobInput`](crate::types::JobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) frame_rate: ::std::option::Option<::std::string::String>,
@@ -250,10 +248,7 @@ impl JobInputBuilder {
         self
     }
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -299,10 +294,7 @@ impl JobInputBuilder {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    pub fn set_input_captions(
-        mut self,
-        input: ::std::option::Option<crate::types::InputCaptions>,
-    ) -> Self {
+    pub fn set_input_captions(mut self, input: ::std::option::Option<crate::types::InputCaptions>) -> Self {
         self.input_captions = input;
         self
     }
@@ -325,17 +317,12 @@ impl JobInputBuilder {
         self
     }
     /// <p>The detected properties of the input file.</p>
-    pub fn set_detected_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedProperties>,
-    ) -> Self {
+    pub fn set_detected_properties(mut self, input: ::std::option::Option<crate::types::DetectedProperties>) -> Self {
         self.detected_properties = input;
         self
     }
     /// <p>The detected properties of the input file.</p>
-    pub fn get_detected_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectedProperties> {
+    pub fn get_detected_properties(&self) -> &::std::option::Option<crate::types::DetectedProperties> {
         &self.detected_properties
     }
     /// Consumes the builder and constructs a [`JobInput`](crate::types::JobInput).

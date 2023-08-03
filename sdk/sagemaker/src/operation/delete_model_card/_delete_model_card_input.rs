@@ -22,26 +22,18 @@ impl DeleteModelCardInput {
 
 /// A builder for [`DeleteModelCardInput`](crate::operation::delete_model_card::DeleteModelCardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelCardInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelCardInputBuilder {
     /// <p>The name of the model card to delete.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card to delete.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteModelCardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelCardInput`](crate::operation::delete_model_card::DeleteModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_card::DeleteModelCardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_model_card::DeleteModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_model_card::DeleteModelCardInput {
             model_card_name: self.model_card_name,
         })

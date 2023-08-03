@@ -67,15 +67,11 @@ impl DescribeAppOutput {
         self.status.as_ref()
     }
     /// <p>The timestamp of the last health check.</p>
-    pub fn last_health_check_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_health_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_health_check_timestamp.as_ref()
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    pub fn last_user_activity_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_user_activity_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_user_activity_timestamp.as_ref()
     }
     /// <p>The creation time.</p>
@@ -109,9 +105,7 @@ impl DescribeAppOutput {
 
 /// A builder for [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
@@ -185,18 +179,12 @@ impl DescribeAppOutputBuilder {
         &self.domain_id
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -224,17 +212,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The timestamp of the last health check.</p>
-    pub fn set_last_health_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_health_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_health_check_timestamp = input;
         self
     }
     /// <p>The timestamp of the last health check.</p>
-    pub fn get_last_health_check_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_health_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_health_check_timestamp
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
@@ -243,17 +226,12 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    pub fn set_last_user_activity_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_user_activity_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_user_activity_timestamp = input;
         self
     }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
-    pub fn get_last_user_activity_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_user_activity_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_user_activity_timestamp
     }
     /// <p>The creation time.</p>
@@ -262,10 +240,7 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -274,18 +249,12 @@ impl DescribeAppOutputBuilder {
         &self.creation_time
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -299,10 +268,7 @@ impl DescribeAppOutputBuilder {
         self
     }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn set_resource_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
+    pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.resource_spec = input;
         self
     }

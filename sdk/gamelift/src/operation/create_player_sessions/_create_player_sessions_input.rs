@@ -11,9 +11,7 @@ pub struct CreatePlayerSessionsInput {
     pub player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     #[doc(hidden)]
-    pub player_data_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub player_data_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlayerSessionsInput {
     /// <p>A unique identifier for the game session to add players to.</p>
@@ -25,48 +23,33 @@ impl CreatePlayerSessionsInput {
         self.player_ids.as_deref()
     }
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
-    pub fn player_data_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn player_data_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.player_data_map.as_ref()
     }
 }
 impl CreatePlayerSessionsInput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionsInput`](crate::operation::create_player_sessions::CreatePlayerSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
+    pub fn builder() -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
         crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlayerSessionsInput`](crate::operation::create_player_sessions::CreatePlayerSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionsInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) player_data_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) player_data_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlayerSessionsInputBuilder {
     /// <p>A unique identifier for the game session to add players to.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to add players to.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -86,10 +69,7 @@ impl CreatePlayerSessionsInputBuilder {
         self
     }
     /// <p>List of unique identifiers for the players to be added.</p>
-    pub fn set_player_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_player_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.player_ids = input;
         self
     }
@@ -115,34 +95,24 @@ impl CreatePlayerSessionsInputBuilder {
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub fn set_player_data_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.player_data_map = input;
         self
     }
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
-    pub fn get_player_data_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_player_data_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.player_data_map
     }
     /// Consumes the builder and constructs a [`CreatePlayerSessionsInput`](crate::operation::create_player_sessions::CreatePlayerSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_player_sessions::CreatePlayerSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_player_sessions::CreatePlayerSessionsInput {
-                game_session_id: self.game_session_id,
-                player_ids: self.player_ids,
-                player_data_map: self.player_data_map,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_player_sessions::CreatePlayerSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_player_sessions::CreatePlayerSessionsInput {
+            game_session_id: self.game_session_id,
+            player_ids: self.player_ids,
+            player_data_map: self.player_data_map,
+        })
     }
 }

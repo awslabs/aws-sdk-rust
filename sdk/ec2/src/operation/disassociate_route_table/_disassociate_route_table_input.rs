@@ -22,36 +22,26 @@ impl DisassociateRouteTableInput {
 }
 impl DisassociateRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder {
         crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRouteTableInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateRouteTableInputBuilder {
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DisassociateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_route_table::DisassociateRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_route_table::DisassociateRouteTableInput {
-                association_id: self.association_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_route_table::DisassociateRouteTableInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_route_table::DisassociateRouteTableInput {
+            association_id: self.association_id,
+            dry_run: self.dry_run,
+        })
     }
 }

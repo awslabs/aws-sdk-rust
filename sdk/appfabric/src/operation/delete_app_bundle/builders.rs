@@ -10,10 +10,7 @@ impl DeleteAppBundleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_app_bundle::DeleteAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_bundle::DeleteAppBundleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_bundle::DeleteAppBundleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_app_bundle();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAppBundleFluentBuilder {
         }
     }
     /// Access the DeleteAppBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_bundle::builders::DeleteAppBundleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_app_bundle::builders::DeleteAppBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAppBundleFluentBuilder {
             crate::operation::delete_app_bundle::DeleteAppBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_bundle::DeleteAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_bundle::DeleteAppBundleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAppBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAppBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_bundle::DeleteAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_bundle::DeleteAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_bundle::DeleteAppBundleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAppBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_bundle::DeleteAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_bundle::DeleteAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_bundle::DeleteAppBundleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteAppBundleFluentBuilder {
             crate::operation::delete_app_bundle::DeleteAppBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_bundle::DeleteAppBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_bundle::DeleteAppBundleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }

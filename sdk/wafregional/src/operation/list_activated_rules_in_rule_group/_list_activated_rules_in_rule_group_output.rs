@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListActivatedRulesInRuleGroupOutput {
 }
 impl ListActivatedRulesInRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupOutput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput).
-    pub fn builder() -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupOutputBuilder {
         crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListActivatedRulesInRuleGroupOutput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) activated_rules: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
@@ -70,17 +68,12 @@ impl ListActivatedRulesInRuleGroupOutputBuilder {
         self
     }
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
-    pub fn set_activated_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
-    ) -> Self {
+    pub fn set_activated_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>) -> Self {
         self.activated_rules = input;
         self
     }
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
-    pub fn get_activated_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>> {
+    pub fn get_activated_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>> {
         &self.activated_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,10 +86,7 @@ impl ListActivatedRulesInRuleGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListActivatedRulesInRuleGroupOutput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput
-    {
+    pub fn build(self) -> crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput {
         crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput {
             next_marker: self.next_marker,
             activated_rules: self.activated_rules,

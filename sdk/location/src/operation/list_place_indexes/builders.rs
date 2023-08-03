@@ -10,10 +10,7 @@ impl ListPlaceIndexesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_place_indexes::ListPlaceIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_place_indexes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPlaceIndexesFluentBuilder {
         }
     }
     /// Access the ListPlaceIndexes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_place_indexes::builders::ListPlaceIndexesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_place_indexes::builders::ListPlaceIndexesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPlaceIndexesFluentBuilder {
             crate::operation::list_place_indexes::ListPlaceIndexes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPlaceIndexesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPlaceIndexesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_place_indexes::ListPlaceIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPlaceIndexesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_place_indexes::ListPlaceIndexesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListPlaceIndexesFluentBuilder {
             crate::operation::list_place_indexes::ListPlaceIndexes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_place_indexes::ListPlaceIndexesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_place_indexes::ListPlaceIndexesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_place_indexes::paginator::ListPlaceIndexesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_place_indexes::paginator::ListPlaceIndexesPaginator {
-        crate::operation::list_place_indexes::paginator::ListPlaceIndexesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_place_indexes::paginator::ListPlaceIndexesPaginator {
+        crate::operation::list_place_indexes::paginator::ListPlaceIndexesPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>

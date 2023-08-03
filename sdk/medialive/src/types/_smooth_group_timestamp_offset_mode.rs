@@ -38,13 +38,7 @@
 /// Smooth Group Timestamp Offset Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SmoothGroupTimestampOffsetMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SmoothGroupTimestampOffsetMode {
         match s {
             "USE_CONFIGURED_OFFSET" => SmoothGroupTimestampOffsetMode::UseConfiguredOffset,
             "USE_EVENT_START_DATE" => SmoothGroupTimestampOffsetMode::UseEventStartDate,
-            other => SmoothGroupTimestampOffsetMode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SmoothGroupTimestampOffsetMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

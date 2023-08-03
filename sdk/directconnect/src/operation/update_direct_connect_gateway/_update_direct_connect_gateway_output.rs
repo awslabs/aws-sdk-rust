@@ -10,9 +10,7 @@ pub struct UpdateDirectConnectGatewayOutput {
 }
 impl UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-    pub fn direct_connect_gateway(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
+    pub fn direct_connect_gateway(&self) -> ::std::option::Option<&crate::types::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDirectConnectGatewayOutput {
 }
 impl UpdateDirectConnectGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput).
-    pub fn builder() -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayOutputBuilder{
+    pub fn builder() -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayOutputBuilder {
         crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayOutputBuilder {
     pub(crate) direct_connect_gateway: ::std::option::Option<crate::types::DirectConnectGateway>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateDirectConnectGatewayOutputBuilder {
         self
     }
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-    pub fn set_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectConnectGateway>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway(mut self, input: ::std::option::Option<crate::types::DirectConnectGateway>) -> Self {
         self.direct_connect_gateway = input;
         self
     }
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-    pub fn get_direct_connect_gateway(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGateway> {
+    pub fn get_direct_connect_gateway(&self) -> &::std::option::Option<crate::types::DirectConnectGateway> {
         &self.direct_connect_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateDirectConnectGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput {
+    pub fn build(self) -> crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput {
         crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput {
             direct_connect_gateway: self.direct_connect_gateway,
             _request_id: self._request_id,

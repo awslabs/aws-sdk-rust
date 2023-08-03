@@ -37,10 +37,7 @@ impl DeleteInternetGatewayFluentBuilder {
         }
     }
     /// Access the DeleteInternetGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteInternetGatewayFluentBuilder {
             crate::operation::delete_internet_gateway::DeleteInternetGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_internet_gateway::DeleteInternetGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_internet_gateway::DeleteInternetGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteInternetGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteInternetGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_internet_gateway::DeleteInternetGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_internet_gateway::DeleteInternetGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteInternetGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_internet_gateway::DeleteInternetGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_internet_gateway::DeleteInternetGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteInternetGatewayFluentBuilder {
             crate::operation::delete_internet_gateway::DeleteInternetGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_internet_gateway::DeleteInternetGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_internet_gateway::DeleteInternetGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteInternetGatewayFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.internet_gateway_id(input.into());
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn set_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_internet_gateway_id(input);
         self
     }

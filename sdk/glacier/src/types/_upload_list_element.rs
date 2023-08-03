@@ -51,9 +51,7 @@ impl UploadListElement {
 
 /// A builder for [`UploadListElement`](crate::types::UploadListElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadListElementBuilder {
     pub(crate) multipart_upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct UploadListElementBuilder {
 }
 impl UploadListElementBuilder {
     /// <p>The ID of a multipart upload.</p>
-    pub fn multipart_upload_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multipart_upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multipart_upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a multipart upload.</p>
-    pub fn set_multipart_upload_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multipart_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multipart_upload_id = input;
         self
     }
@@ -97,18 +89,12 @@ impl UploadListElementBuilder {
         &self.vault_arn
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_description = input;
         self
     }
@@ -131,18 +117,12 @@ impl UploadListElementBuilder {
         &self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }

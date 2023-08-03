@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketPolicyOutput`](crate::operation::put_bucket_policy::PutBucketPolicyOutput)
     /// - On failure, responds with [`SdkError<PutBucketPolicyError>`](crate::operation::put_bucket_policy::PutBucketPolicyError)
-    pub fn put_bucket_policy(
-        &self,
-    ) -> crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder {
-        crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_policy(&self) -> crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder {
+        crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::new(self.handle.clone())
     }
 }

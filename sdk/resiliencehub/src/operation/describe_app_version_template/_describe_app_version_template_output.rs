@@ -165,16 +165,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppVersionTemplateOutput {
 }
 impl DescribeAppVersionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
-    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder {
         crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionTemplateOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -276,10 +274,7 @@ impl DescribeAppVersionTemplateOutputBuilder {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub fn app_template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_template_body = ::std::option::Option::Some(input.into());
         self
     }
@@ -349,10 +344,7 @@ impl DescribeAppVersionTemplateOutputBuilder {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub fn set_app_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_template_body = input;
         self
     }
@@ -435,9 +427,7 @@ impl DescribeAppVersionTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
+    pub fn build(self) -> crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

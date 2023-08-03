@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryFluentBuilder::set_tags): <p>The tags associated with the directory.</p>
     /// - On success, responds with [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput)
     /// - On failure, responds with [`SdkError<RegisterWorkspaceDirectoryError>`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError)
-    pub fn register_workspace_directory(&self) -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryFluentBuilder{
+    pub fn register_workspace_directory(&self) -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryFluentBuilder {
         crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

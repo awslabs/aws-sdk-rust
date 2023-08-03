@@ -10,10 +10,7 @@ impl SearchResourceTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_resource_tags::SearchResourceTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resource_tags::SearchResourceTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resource_tags::SearchResourceTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_resource_tags();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchResourceTagsFluentBuilder {
         }
     }
     /// Access the SearchResourceTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_resource_tags::builders::SearchResourceTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchResourceTagsFluentBuilder {
             crate::operation::search_resource_tags::SearchResourceTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resource_tags::SearchResourceTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resource_tags::SearchResourceTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchResourceTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchResourceTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resource_tags::SearchResourceTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resource_tags::SearchResourceTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resource_tags::SearchResourceTagsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchResourceTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resource_tags::SearchResourceTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resource_tags::SearchResourceTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resource_tags::SearchResourceTagsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl SearchResourceTagsFluentBuilder {
             crate::operation::search_resource_tags::SearchResourceTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resource_tags::SearchResourceTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resource_tags::SearchResourceTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_resource_tags::paginator::SearchResourceTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_resource_tags::paginator::SearchResourceTagsPaginator {
-        crate::operation::search_resource_tags::paginator::SearchResourceTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_resource_tags::paginator::SearchResourceTagsPaginator {
+        crate::operation::search_resource_tags::paginator::SearchResourceTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,25 +131,17 @@ impl SearchResourceTagsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_types(input.into());
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_types()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -207,17 +178,12 @@ impl SearchResourceTagsFluentBuilder {
         self
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::ResourceTagsSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::ResourceTagsSearchCriteria> {
         self.inner.get_search_criteria()
     }
 }

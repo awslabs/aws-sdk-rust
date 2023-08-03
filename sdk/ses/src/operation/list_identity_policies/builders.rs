@@ -41,9 +41,7 @@ impl ListIdentityPoliciesFluentBuilder {
         }
     }
     /// Access the ListIdentityPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl ListIdentityPoliciesFluentBuilder {
             crate::operation::list_identity_policies::ListIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_policies::ListIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_policies::ListIdentityPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl ListIdentityPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl ListIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_policies::ListIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_policies::ListIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_policies::ListIdentityPoliciesError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl ListIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_policies::ListIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_policies::ListIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_policies::ListIdentityPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl ListIdentityPoliciesFluentBuilder {
             crate::operation::list_identity_policies::ListIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_policies::ListIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_policies::ListIdentityPoliciesError>,
     > {
         self.customize_middleware().await
     }

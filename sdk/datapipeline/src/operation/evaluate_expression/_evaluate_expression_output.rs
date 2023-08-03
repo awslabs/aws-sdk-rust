@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for EvaluateExpressionOutput {
 }
 impl EvaluateExpressionOutput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
-    pub fn builder(
-    ) -> crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder {
+    pub fn builder() -> crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder {
         crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder::default()
     }
 }
 
 /// A builder for [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateExpressionOutputBuilder {
     pub(crate) evaluated_expression: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EvaluateExpressionOutputBuilder {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluated_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluated_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The evaluated expression.</p>
-    pub fn set_evaluated_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluated_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluated_expression = input;
         self
     }

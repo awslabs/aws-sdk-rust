@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`documents(Option<Vec<DocumentMetadata>>)`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput::documents): <p>The documents in the specified folder.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeFolderContentsError>`](crate::operation::describe_folder_contents::DescribeFolderContentsError)
-    pub fn describe_folder_contents(
-        &self,
-    ) -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsFluentBuilder
-    {
+    pub fn describe_folder_contents(&self) -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsFluentBuilder {
         crate::operation::describe_folder_contents::builders::DescribeFolderContentsFluentBuilder::new(self.handle.clone())
     }
 }

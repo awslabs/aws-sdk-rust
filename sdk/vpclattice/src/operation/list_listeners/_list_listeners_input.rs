@@ -36,9 +36,7 @@ impl ListListenersInput {
 
 /// A builder for [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListListenersInputBuilder {
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListListenersInputBuilder {
 }
 impl ListListenersInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_identifier = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListListenersInputBuilder {
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_listeners::ListListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
             service_identifier: self.service_identifier,
             max_results: self.max_results,

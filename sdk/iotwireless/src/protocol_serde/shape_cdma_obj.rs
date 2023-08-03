@@ -57,10 +57,7 @@ pub fn ser_cdma_obj(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_cdma_nmr_obj::ser_cdma_nmr_obj(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_cdma_nmr_obj::ser_cdma_nmr_obj(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

@@ -89,8 +89,7 @@ impl DescribePatchPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePatchPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
+    inner: crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
 }
 impl DescribePatchPropertiesFluentBuilder {
     /// Creates a new `DescribePatchProperties`.
@@ -101,10 +100,7 @@ impl DescribePatchPropertiesFluentBuilder {
         }
     }
     /// Access the DescribePatchProperties as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -116,9 +112,7 @@ impl DescribePatchPropertiesFluentBuilder {
             crate::operation::describe_patch_properties::DescribePatchProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -128,10 +122,7 @@ impl DescribePatchPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -140,9 +131,7 @@ impl DescribePatchPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
     > {
         let op = self
             .inner
@@ -165,9 +154,7 @@ impl DescribePatchPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -181,19 +168,14 @@ impl DescribePatchPropertiesFluentBuilder {
             crate::operation::describe_patch_properties::DescribePatchProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator {
         crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The operating system type for which to list patches.</p>
@@ -202,10 +184,7 @@ impl DescribePatchPropertiesFluentBuilder {
         self
     }
     /// <p>The operating system type for which to list patches.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
@@ -219,10 +198,7 @@ impl DescribePatchPropertiesFluentBuilder {
         self
     }
     /// <p>The patch property for which you want to view patch details. </p>
-    pub fn set_property(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchProperty>,
-    ) -> Self {
+    pub fn set_property(mut self, input: ::std::option::Option<crate::types::PatchProperty>) -> Self {
         self.inner = self.inner.set_property(input);
         self
     }

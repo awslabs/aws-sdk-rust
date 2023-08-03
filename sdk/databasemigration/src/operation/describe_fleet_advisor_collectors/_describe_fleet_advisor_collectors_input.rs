@@ -39,16 +39,14 @@ impl DescribeFleetAdvisorCollectorsInput {
 }
 impl DescribeFleetAdvisorCollectorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsInput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder {
         crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorCollectorsInput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -77,10 +75,7 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
     /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -128,15 +123,10 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
         crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput {
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

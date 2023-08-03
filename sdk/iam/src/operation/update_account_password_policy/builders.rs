@@ -29,7 +29,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountPasswordPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder,
+    inner: crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder,
 }
 impl UpdateAccountPasswordPolicyFluentBuilder {
     /// Creates a new `UpdateAccountPasswordPolicy`.
@@ -40,7 +40,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
         }
     }
     /// Access the UpdateAccountPasswordPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_account_password_policy::builders::UpdateAccountPasswordPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
             crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
             crate::operation::update_account_password_policy::UpdateAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -219,10 +208,7 @@ impl UpdateAccountPasswordPolicyFluentBuilder {
     }
     /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
-    pub fn set_allow_users_to_change_password(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_users_to_change_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_users_to_change_password(input);
         self
     }

@@ -101,17 +101,14 @@ impl GetResourceMetricsInput {
 }
 impl GetResourceMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {
         crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceMetricsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -138,10 +135,7 @@ impl GetResourceMetricsInputBuilder {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -182,17 +176,12 @@ impl GetResourceMetricsInputBuilder {
         self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn set_metric_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>,
-    ) -> Self {
+    pub fn set_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>) -> Self {
         self.metric_queries = input;
         self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn get_metric_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
+    pub fn get_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
         &self.metric_queries
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
@@ -203,10 +192,7 @@ impl GetResourceMetricsInputBuilder {
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -223,10 +209,7 @@ impl GetResourceMetricsInputBuilder {
     }
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -307,10 +290,7 @@ impl GetResourceMetricsInputBuilder {
         self
     }
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
-    pub fn set_period_alignment(
-        mut self,
-        input: ::std::option::Option<crate::types::PeriodAlignment>,
-    ) -> Self {
+    pub fn set_period_alignment(mut self, input: ::std::option::Option<crate::types::PeriodAlignment>) -> Self {
         self.period_alignment = input;
         self
     }
@@ -321,22 +301,17 @@ impl GetResourceMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_metrics::GetResourceMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_metrics::GetResourceMetricsInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                metric_queries: self.metric_queries,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period_in_seconds: self.period_in_seconds,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                period_alignment: self.period_alignment,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_metrics::GetResourceMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_resource_metrics::GetResourceMetricsInput {
+            service_type: self.service_type,
+            identifier: self.identifier,
+            metric_queries: self.metric_queries,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            period_in_seconds: self.period_in_seconds,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            period_alignment: self.period_alignment,
+        })
     }
 }

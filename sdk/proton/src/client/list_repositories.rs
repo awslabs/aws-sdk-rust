@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>An array of repository links.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
-    pub fn list_repositories(
-        &self,
-    ) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
-        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
+        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

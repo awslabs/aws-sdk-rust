@@ -15,18 +15,14 @@ impl StartAppReplicationInput {
 }
 impl StartAppReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder {
-        crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder {
+        crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAppReplicationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl StartAppReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_app_replication::StartAppReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_app_replication::StartAppReplicationInput {
-                app_id: self.app_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_app_replication::StartAppReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_app_replication::StartAppReplicationInput { app_id: self.app_id })
     }
 }

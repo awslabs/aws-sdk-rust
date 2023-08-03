@@ -36,16 +36,14 @@ impl DescribeCreateCaseOptionsInput {
 }
 impl DescribeCreateCaseOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
-    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder {
         crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsInputBuilder {
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl DescribeCreateCaseOptionsInputBuilder {
         &self.language
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_code = input;
         self
     }
@@ -122,13 +114,11 @@ impl DescribeCreateCaseOptionsInputBuilder {
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput {
-                issue_type: self.issue_type,
-                service_code: self.service_code,
-                language: self.language,
-                category_code: self.category_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput {
+            issue_type: self.issue_type,
+            service_code: self.service_code,
+            language: self.language,
+            category_code: self.category_code,
+        })
     }
 }

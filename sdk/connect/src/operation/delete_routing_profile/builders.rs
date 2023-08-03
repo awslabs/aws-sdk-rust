@@ -37,9 +37,7 @@ impl DeleteRoutingProfileFluentBuilder {
         }
     }
     /// Access the DeleteRoutingProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_routing_profile::builders::DeleteRoutingProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_routing_profile::builders::DeleteRoutingProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRoutingProfileFluentBuilder {
             crate::operation::delete_routing_profile::DeleteRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_profile::DeleteRoutingProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRoutingProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_routing_profile::DeleteRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_profile::DeleteRoutingProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRoutingProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_routing_profile::DeleteRoutingProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_profile::DeleteRoutingProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteRoutingProfileFluentBuilder {
             crate::operation::delete_routing_profile::DeleteRoutingProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_profile::DeleteRoutingProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteRoutingProfileFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }

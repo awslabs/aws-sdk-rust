@@ -30,9 +30,7 @@ impl SessionContextAttributes {
 
 /// A builder for [`SessionContextAttributes`](crate::types::SessionContextAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionContextAttributesBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) mfa_authenticated: ::std::option::Option<bool>,
@@ -44,10 +42,7 @@ impl SessionContextAttributesBuilder {
         self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

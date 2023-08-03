@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCacheClusterOutput {
 }
 impl DeleteCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheClusterOutput`](crate::operation::delete_cache_cluster::DeleteCacheClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterOutputBuilder {
+    pub fn builder() -> crate::operation::delete_cache_cluster::builders::DeleteCacheClusterOutputBuilder {
         crate::operation::delete_cache_cluster::builders::DeleteCacheClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCacheClusterOutput`](crate::operation::delete_cache_cluster::DeleteCacheClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCacheClusterOutputBuilder {
     pub(crate) cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteCacheClusterOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn set_cache_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheCluster>,
-    ) -> Self {
+    pub fn set_cache_cluster(mut self, input: ::std::option::Option<crate::types::CacheCluster>) -> Self {
         self.cache_cluster = input;
         self
     }

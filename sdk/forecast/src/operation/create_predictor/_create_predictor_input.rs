@@ -51,9 +51,7 @@ pub struct CreatePredictorInput {
     pub perform_hpo: ::std::option::Option<bool>,
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
     #[doc(hidden)]
-    pub training_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
     #[doc(hidden)]
     pub evaluation_parameters: ::std::option::Option<crate::types::EvaluationParameters>,
@@ -127,9 +125,7 @@ impl CreatePredictorInput {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn auto_ml_override_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlOverrideStrategy> {
+    pub fn auto_ml_override_strategy(&self) -> ::std::option::Option<&crate::types::AutoMlOverrideStrategy> {
         self.auto_ml_override_strategy.as_ref()
     }
     /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
@@ -144,24 +140,16 @@ impl CreatePredictorInput {
         self.perform_hpo
     }
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
-    pub fn training_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn training_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.training_parameters.as_ref()
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    pub fn evaluation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationParameters> {
+    pub fn evaluation_parameters(&self) -> ::std::option::Option<&crate::types::EvaluationParameters> {
         self.evaluation_parameters.as_ref()
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    pub fn hpo_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConfig> {
+    pub fn hpo_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConfig> {
         self.hpo_config.as_ref()
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
@@ -169,9 +157,7 @@ impl CreatePredictorInput {
         self.input_data_config.as_ref()
     }
     /// <p>The featurization configuration.</p>
-    pub fn featurization_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FeaturizationConfig> {
+    pub fn featurization_config(&self) -> ::std::option::Option<&crate::types::FeaturizationConfig> {
         self.featurization_config.as_ref()
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
@@ -206,21 +192,16 @@ impl CreatePredictorInput {
 
 /// A builder for [`CreatePredictorInput`](crate::operation::create_predictor::CreatePredictorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePredictorInputBuilder {
     pub(crate) predictor_name: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_horizon: ::std::option::Option<i32>,
     pub(crate) forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) perform_auto_ml: ::std::option::Option<bool>,
-    pub(crate) auto_ml_override_strategy:
-        ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
+    pub(crate) auto_ml_override_strategy: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
     pub(crate) perform_hpo: ::std::option::Option<bool>,
-    pub(crate) training_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) evaluation_parameters: ::std::option::Option<crate::types::EvaluationParameters>,
     pub(crate) hpo_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
@@ -231,18 +212,12 @@ pub struct CreatePredictorInputBuilder {
 }
 impl CreatePredictorInputBuilder {
     /// <p>A name for the predictor.</p>
-    pub fn predictor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the predictor.</p>
-    pub fn set_predictor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_name = input;
         self
     }
@@ -260,10 +235,7 @@ impl CreatePredictorInputBuilder {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
-    pub fn algorithm_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -277,10 +249,7 @@ impl CreatePredictorInputBuilder {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
-    pub fn set_algorithm_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_arn = input;
         self
     }
@@ -323,10 +292,7 @@ impl CreatePredictorInputBuilder {
     ///
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn forecast_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = ::std::option::Option::Some(v);
@@ -334,18 +300,13 @@ impl CreatePredictorInputBuilder {
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn set_forecast_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn get_forecast_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
@@ -373,10 +334,7 @@ impl CreatePredictorInputBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn auto_ml_override_strategy(
-        mut self,
-        input: crate::types::AutoMlOverrideStrategy,
-    ) -> Self {
+    pub fn auto_ml_override_strategy(mut self, input: crate::types::AutoMlOverrideStrategy) -> Self {
         self.auto_ml_override_strategy = ::std::option::Option::Some(input);
         self
     }
@@ -385,10 +343,7 @@ impl CreatePredictorInputBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn set_auto_ml_override_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
-    ) -> Self {
+    pub fn set_auto_ml_override_strategy(mut self, input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>) -> Self {
         self.auto_ml_override_strategy = input;
         self
     }
@@ -397,9 +352,7 @@ impl CreatePredictorInputBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn get_auto_ml_override_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
+    pub fn get_auto_ml_override_strategy(&self) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
         &self.auto_ml_override_strategy
     }
     /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
@@ -455,19 +408,13 @@ impl CreatePredictorInputBuilder {
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub fn set_training_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.training_parameters = input;
         self
     }
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
-    pub fn get_training_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_training_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.training_parameters
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
@@ -476,17 +423,12 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    pub fn set_evaluation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationParameters>,
-    ) -> Self {
+    pub fn set_evaluation_parameters(mut self, input: ::std::option::Option<crate::types::EvaluationParameters>) -> Self {
         self.evaluation_parameters = input;
         self
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    pub fn get_evaluation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationParameters> {
+    pub fn get_evaluation_parameters(&self) -> &::std::option::Option<crate::types::EvaluationParameters> {
         &self.evaluation_parameters
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
@@ -497,18 +439,13 @@ impl CreatePredictorInputBuilder {
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    pub fn set_hpo_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
-    ) -> Self {
+    pub fn set_hpo_config(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>) -> Self {
         self.hpo_config = input;
         self
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    pub fn get_hpo_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
+    pub fn get_hpo_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
         &self.hpo_config
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
@@ -517,10 +454,7 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -534,17 +468,12 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>The featurization configuration.</p>
-    pub fn set_featurization_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturizationConfig>,
-    ) -> Self {
+    pub fn set_featurization_config(mut self, input: ::std::option::Option<crate::types::FeaturizationConfig>) -> Self {
         self.featurization_config = input;
         self
     }
     /// <p>The featurization configuration.</p>
-    pub fn get_featurization_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeaturizationConfig> {
+    pub fn get_featurization_config(&self) -> &::std::option::Option<crate::types::FeaturizationConfig> {
         &self.featurization_config
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
@@ -553,10 +482,7 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -596,10 +522,7 @@ impl CreatePredictorInputBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -623,26 +546,18 @@ impl CreatePredictorInputBuilder {
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn set_optimization_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizationMetric>,
-    ) -> Self {
+    pub fn set_optimization_metric(mut self, input: ::std::option::Option<crate::types::OptimizationMetric>) -> Self {
         self.optimization_metric = input;
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn get_optimization_metric(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizationMetric> {
+    pub fn get_optimization_metric(&self) -> &::std::option::Option<crate::types::OptimizationMetric> {
         &self.optimization_metric
     }
     /// Consumes the builder and constructs a [`CreatePredictorInput`](crate::operation::create_predictor::CreatePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_predictor::CreatePredictorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_predictor::CreatePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_predictor::CreatePredictorInput {
             predictor_name: self.predictor_name,
             algorithm_arn: self.algorithm_arn,

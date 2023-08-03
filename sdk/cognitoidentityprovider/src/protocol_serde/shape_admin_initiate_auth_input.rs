@@ -35,19 +35,13 @@ pub fn ser_admin_initiate_auth_input(
     if let Some(var_12) = &input.analytics_metadata {
         #[allow(unused_mut)]
         let mut object_13 = object.key("AnalyticsMetadata").start_object();
-        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.context_data {
         #[allow(unused_mut)]
         let mut object_15 = object.key("ContextData").start_object();
-        crate::protocol_serde::shape_context_data_type::ser_context_data_type(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_context_data_type::ser_context_data_type(&mut object_15, var_14)?;
         object_15.finish();
     }
     Ok(())

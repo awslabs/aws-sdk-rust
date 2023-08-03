@@ -27,9 +27,7 @@ impl AwsWafv2RulesActionDetails {
         self.block.as_ref()
     }
     /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
-    pub fn captcha(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2RulesActionCaptchaDetails> {
+    pub fn captcha(&self) -> ::std::option::Option<&crate::types::AwsWafv2RulesActionCaptchaDetails> {
         self.captcha.as_ref()
     }
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
@@ -46,9 +44,7 @@ impl AwsWafv2RulesActionDetails {
 
 /// A builder for [`AwsWafv2RulesActionDetails`](crate::types::AwsWafv2RulesActionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2RulesActionDetailsBuilder {
     pub(crate) allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     pub(crate) block: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
@@ -62,10 +58,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self
     }
     /// <p> Instructs WAF to allow the web request. </p>
-    pub fn set_allow(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
-    ) -> Self {
+    pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>) -> Self {
         self.allow = input;
         self
     }
@@ -79,10 +72,7 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self
     }
     /// <p> Instructs WAF to block the web request. </p>
-    pub fn set_block(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
-    ) -> Self {
+    pub fn set_block(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>) -> Self {
         self.block = input;
         self
     }
@@ -96,17 +86,12 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self
     }
     /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
-    pub fn set_captcha(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails>,
-    ) -> Self {
+    pub fn set_captcha(mut self, input: ::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails>) -> Self {
         self.captcha = input;
         self
     }
     /// <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
-    pub fn get_captcha(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails> {
+    pub fn get_captcha(&self) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCaptchaDetails> {
         &self.captcha
     }
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
@@ -115,17 +100,12 @@ impl AwsWafv2RulesActionDetailsBuilder {
         self
     }
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
-    pub fn set_count(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails>,
-    ) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails>) -> Self {
         self.count = input;
         self
     }
     /// <p> Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL. </p>
-    pub fn get_count(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails> {
+    pub fn get_count(&self) -> &::std::option::Option<crate::types::AwsWafv2RulesActionCountDetails> {
         &self.count
     }
     /// Consumes the builder and constructs a [`AwsWafv2RulesActionDetails`](crate::types::AwsWafv2RulesActionDetails).

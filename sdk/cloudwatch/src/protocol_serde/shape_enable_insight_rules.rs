@@ -9,74 +9,69 @@ pub fn de_enable_insight_rules_http_error(
     crate::operation::enable_insight_rules::EnableInsightRulesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValue" => crate::operation::enable_insight_rules::EnableInsightRulesError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceededException" => crate::operation::enable_insight_rules::EnableInsightRulesError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MissingParameter" => crate::operation::enable_insight_rules::EnableInsightRulesError::MissingRequiredParameterException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(_response_body, output).map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::enable_insight_rules::EnableInsightRulesError::generic(generic)
+        _ => crate::operation::enable_insight_rules::EnableInsightRulesError::generic(generic),
     })
 }
 
@@ -92,14 +87,9 @@ pub fn de_enable_insight_rules_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder::default();
-        output = crate::protocol_serde::shape_enable_insight_rules::de_enable_insight_rules(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_enable_insight_rules::de_enable_insight_rules(_response_body, output)
+            .map_err(crate::operation::enable_insight_rules::EnableInsightRulesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -108,10 +98,7 @@ pub fn de_enable_insight_rules_http_response_with_props(
 pub fn de_enable_insight_rules(
     inp: &[u8],
     mut builder: crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder,
-) -> Result<
-    crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::enable_insight_rules::builders::EnableInsightRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -148,9 +135,7 @@ pub fn de_enable_insight_rules(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected EnableInsightRulesResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected EnableInsightRulesResult tag"));
     };
     Ok(builder)
 }

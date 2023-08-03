@@ -10,10 +10,7 @@ impl DeprecateDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::deprecate_domain::DeprecateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_domain::DeprecateDomainError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_domain::DeprecateDomainError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.deprecate_domain();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl DeprecateDomainFluentBuilder {
         }
     }
     /// Access the DeprecateDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprecate_domain::builders::DeprecateDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deprecate_domain::builders::DeprecateDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl DeprecateDomainFluentBuilder {
             crate::operation::deprecate_domain::DeprecateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_domain::DeprecateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_domain::DeprecateDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl DeprecateDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl DeprecateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_domain::DeprecateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_domain::DeprecateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_domain::DeprecateDomainError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl DeprecateDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_domain::DeprecateDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_domain::DeprecateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_domain::DeprecateDomainError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl DeprecateDomainFluentBuilder {
             crate::operation::deprecate_domain::DeprecateDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_domain::DeprecateDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_domain::DeprecateDomainError>,
     > {
         self.customize_middleware().await
     }

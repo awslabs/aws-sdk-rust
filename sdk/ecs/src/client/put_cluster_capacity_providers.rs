@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`PutClusterCapacityProvidersOutput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput::cluster): <p>Details about the cluster.</p>
     /// - On failure, responds with [`SdkError<PutClusterCapacityProvidersError>`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError)
-    pub fn put_cluster_capacity_providers(&self) -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersFluentBuilder{
+    pub fn put_cluster_capacity_providers(
+        &self,
+    ) -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersFluentBuilder {
         crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersFluentBuilder::new(self.handle.clone())
     }
 }

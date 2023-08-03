@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartFailbackLaunchOutput`](crate::operation::start_failback_launch::StartFailbackLaunchOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_failback_launch::StartFailbackLaunchOutput::job): <p>The failback launch Job.</p>
     /// - On failure, responds with [`SdkError<StartFailbackLaunchError>`](crate::operation::start_failback_launch::StartFailbackLaunchError)
-    pub fn start_failback_launch(
-        &self,
-    ) -> crate::operation::start_failback_launch::builders::StartFailbackLaunchFluentBuilder {
-        crate::operation::start_failback_launch::builders::StartFailbackLaunchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_failback_launch(&self) -> crate::operation::start_failback_launch::builders::StartFailbackLaunchFluentBuilder {
+        crate::operation::start_failback_launch::builders::StartFailbackLaunchFluentBuilder::new(self.handle.clone())
     }
 }

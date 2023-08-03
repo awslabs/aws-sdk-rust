@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateBridgeStateOutput {
 }
 impl UpdateBridgeStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder {
+    pub fn builder() -> crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder {
         crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
@@ -65,10 +62,7 @@ impl UpdateBridgeStateOutputBuilder {
         self
     }
     /// The state of the bridge. ACTIVE or STANDBY.
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.desired_state = input;
         self
     }

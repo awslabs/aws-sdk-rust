@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DomainName>>)`](crate::operation::get_domain_names::GetDomainNamesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_domain_names::GetDomainNamesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetDomainNamesError>`](crate::operation::get_domain_names::GetDomainNamesError)
-    pub fn get_domain_names(
-        &self,
-    ) -> crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder {
-        crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_names(&self) -> crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder {
+        crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::new(self.handle.clone())
     }
 }

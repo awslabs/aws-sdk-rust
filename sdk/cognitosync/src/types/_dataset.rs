@@ -65,9 +65,7 @@ impl Dataset {
 
 /// A builder for [`Dataset`](crate::types::Dataset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl DatasetBuilder {
         self
     }
     /// Date on which the dataset was created.
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -129,10 +124,7 @@ impl DatasetBuilder {
         self
     }
     /// Date when the dataset was last modified.
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -141,18 +133,12 @@ impl DatasetBuilder {
         &self.last_modified_date
     }
     /// The device that made the last change to this dataset.
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// The device that made the last change to this dataset.
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }

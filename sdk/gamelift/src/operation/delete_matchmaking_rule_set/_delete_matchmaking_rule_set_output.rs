@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMatchmakingRuleSetOutput {
 }
 impl DeleteMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingRuleSetOutput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput).
-    pub fn builder() -> crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetOutputBuilder {
         crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMatchmakingRuleSetOutput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteMatchmakingRuleSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMatchmakingRuleSetOutput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput {
+    pub fn build(self) -> crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput {
         crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput {
             _request_id: self._request_id,
         }

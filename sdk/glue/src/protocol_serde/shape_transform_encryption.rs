@@ -6,33 +6,20 @@ pub fn ser_transform_encryption(
     if let Some(var_1) = &input.ml_user_data_encryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("MlUserDataEncryption").start_object();
-        crate::protocol_serde::shape_ml_user_data_encryption::ser_ml_user_data_encryption(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_ml_user_data_encryption::ser_ml_user_data_encryption(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.task_run_security_configuration_name {
-        object
-            .key("TaskRunSecurityConfigurationName")
-            .string(var_3.as_str());
+        object.key("TaskRunSecurityConfigurationName").string(var_3.as_str());
     }
     Ok(())
 }
 
 pub(crate) fn de_transform_encryption<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TransformEncryption>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TransformEncryption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -42,40 +29,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MlUserDataEncryption" => {
-                                builder = builder.set_ml_user_data_encryption(
-                                    crate::protocol_serde::shape_ml_user_data_encryption::de_ml_user_data_encryption(tokens)?
-                                );
-                            }
-                            "TaskRunSecurityConfigurationName" => {
-                                builder = builder.set_task_run_security_configuration_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MlUserDataEncryption" => {
+                            builder = builder.set_ml_user_data_encryption(
+                                crate::protocol_serde::shape_ml_user_data_encryption::de_ml_user_data_encryption(tokens)?,
+                            );
+                        }
+                        "TaskRunSecurityConfigurationName" => {
+                            builder = builder.set_task_run_security_configuration_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

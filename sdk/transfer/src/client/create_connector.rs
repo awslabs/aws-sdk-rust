@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput) with field(s):
     ///   - [`connector_id(Option<String>)`](crate::operation::create_connector::CreateConnectorOutput::connector_id): <p>The unique identifier for the connector, returned after the API call succeeds.</p>
     /// - On failure, responds with [`SdkError<CreateConnectorError>`](crate::operation::create_connector::CreateConnectorError)
-    pub fn create_connector(
-        &self,
-    ) -> crate::operation::create_connector::builders::CreateConnectorFluentBuilder {
-        crate::operation::create_connector::builders::CreateConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connector(&self) -> crate::operation::create_connector::builders::CreateConnectorFluentBuilder {
+        crate::operation::create_connector::builders::CreateConnectorFluentBuilder::new(self.handle.clone())
     }
 }

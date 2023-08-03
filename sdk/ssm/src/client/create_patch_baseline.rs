@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePatchBaselineOutput`](crate::operation::create_patch_baseline::CreatePatchBaselineOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::operation::create_patch_baseline::CreatePatchBaselineOutput::baseline_id): <p>The ID of the created patch baseline.</p>
     /// - On failure, responds with [`SdkError<CreatePatchBaselineError>`](crate::operation::create_patch_baseline::CreatePatchBaselineError)
-    pub fn create_patch_baseline(
-        &self,
-    ) -> crate::operation::create_patch_baseline::builders::CreatePatchBaselineFluentBuilder {
-        crate::operation::create_patch_baseline::builders::CreatePatchBaselineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_patch_baseline(&self) -> crate::operation::create_patch_baseline::builders::CreatePatchBaselineFluentBuilder {
+        crate::operation::create_patch_baseline::builders::CreatePatchBaselineFluentBuilder::new(self.handle.clone())
     }
 }

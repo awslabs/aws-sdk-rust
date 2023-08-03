@@ -29,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeHsmConfigurationsOutput {
 }
 impl DescribeHsmConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHsmConfigurationsOutput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsOutputBuilder {
         crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHsmConfigurationsOutput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHsmConfigurationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) hsm_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>,
+    pub(crate) hsm_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmConfigurationsOutputBuilder {
@@ -72,17 +69,12 @@ impl DescribeHsmConfigurationsOutputBuilder {
         self
     }
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    pub fn set_hsm_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>,
-    ) -> Self {
+    pub fn set_hsm_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>>) -> Self {
         self.hsm_configurations = input;
         self
     }
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-    pub fn get_hsm_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>> {
+    pub fn get_hsm_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmConfiguration>> {
         &self.hsm_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +87,7 @@ impl DescribeHsmConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHsmConfigurationsOutput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput {
+    pub fn build(self) -> crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput {
         crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput {
             marker: self.marker,
             hsm_configurations: self.hsm_configurations,

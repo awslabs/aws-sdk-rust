@@ -49,9 +49,7 @@ impl StartSuiteRunOutput {
 
 /// A builder for [`StartSuiteRunOutput`](crate::operation::start_suite_run::StartSuiteRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSuiteRunOutputBuilder {
     pub(crate) suite_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_run_arn: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartSuiteRunOutputBuilder {
         &self.suite_run_id
     }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
-    pub fn suite_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
-    pub fn set_suite_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_run_arn = input;
         self
     }
@@ -100,10 +92,7 @@ impl StartSuiteRunOutputBuilder {
         self
     }
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

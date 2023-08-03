@@ -10,10 +10,7 @@ impl GetServiceGraphInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_service_graph::GetServiceGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_graph::GetServiceGraphError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_graph::GetServiceGraphError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_service_graph();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetServiceGraphFluentBuilder {
         }
     }
     /// Access the GetServiceGraph as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_service_graph::builders::GetServiceGraphInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_service_graph::builders::GetServiceGraphInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetServiceGraphFluentBuilder {
             crate::operation::get_service_graph::GetServiceGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_graph::GetServiceGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_graph::GetServiceGraphError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetServiceGraphFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetServiceGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_graph::GetServiceGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_graph::GetServiceGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_graph::GetServiceGraphError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetServiceGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_graph::GetServiceGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_graph::GetServiceGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_graph::GetServiceGraphError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetServiceGraphFluentBuilder {
             crate::operation::get_service_graph::GetServiceGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_graph::GetServiceGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_graph::GetServiceGraphError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_service_graph::paginator::GetServiceGraphPaginator {
-        crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_service_graph::paginator::GetServiceGraphPaginator {
+        crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::new(self.handle, self.inner)
     }
     /// <p>The start of the time frame for which to generate a graph.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +118,7 @@ impl GetServiceGraphFluentBuilder {
         self
     }
     /// <p>The start of the time frame for which to generate a graph.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -156,10 +132,7 @@ impl GetServiceGraphFluentBuilder {
         self
     }
     /// <p>The end of the timeframe for which to generate a graph.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

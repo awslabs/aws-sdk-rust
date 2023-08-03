@@ -15,18 +15,14 @@ impl DeleteCorsConfigurationInput {
 }
 impl DeleteCorsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsConfigurationInput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder {
         crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCorsConfigurationInput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCorsConfigurationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteCorsConfigurationInputBuilder {
         crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput {
-                api_id: self.api_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput { api_id: self.api_id })
     }
 }

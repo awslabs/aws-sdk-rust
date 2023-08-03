@@ -79,9 +79,7 @@ impl CloudWatchAlarmDefinition {
 
 /// A builder for [`CloudWatchAlarmDefinition`](crate::types::CloudWatchAlarmDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchAlarmDefinitionBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) evaluation_periods: ::std::option::Option<i32>,
@@ -100,17 +98,12 @@ impl CloudWatchAlarmDefinitionBuilder {
         self
     }
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
@@ -223,17 +216,12 @@ impl CloudWatchAlarmDefinitionBuilder {
         self
     }
     /// <p>A CloudWatch metric dimension.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>A CloudWatch metric dimension.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`CloudWatchAlarmDefinition`](crate::types::CloudWatchAlarmDefinition).

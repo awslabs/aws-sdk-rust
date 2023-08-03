@@ -64,18 +64,14 @@ impl CreateBatchSegmentJobInput {
 }
 impl CreateBatchSegmentJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchSegmentJobInput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder {
         crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchSegmentJobInput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchSegmentJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
@@ -102,18 +98,12 @@ impl CreateBatchSegmentJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
@@ -155,10 +145,7 @@ impl CreateBatchSegmentJobInputBuilder {
         self
     }
     /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
-    pub fn set_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchSegmentJobInput>,
-    ) -> Self {
+    pub fn set_job_input(mut self, input: ::std::option::Option<crate::types::BatchSegmentJobInput>) -> Self {
         self.job_input = input;
         self
     }
@@ -172,10 +159,7 @@ impl CreateBatchSegmentJobInputBuilder {
         self
     }
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchSegmentJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::BatchSegmentJobOutput>) -> Self {
         self.job_output = input;
         self
     }
@@ -209,10 +193,7 @@ impl CreateBatchSegmentJobInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -223,21 +204,17 @@ impl CreateBatchSegmentJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchSegmentJobInput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput {
-                job_name: self.job_name,
-                solution_version_arn: self.solution_version_arn,
-                filter_arn: self.filter_arn,
-                num_results: self.num_results,
-                job_input: self.job_input,
-                job_output: self.job_output,
-                role_arn: self.role_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput {
+            job_name: self.job_name,
+            solution_version_arn: self.solution_version_arn,
+            filter_arn: self.filter_arn,
+            num_results: self.num_results,
+            job_input: self.job_input,
+            job_output: self.job_output,
+            role_arn: self.role_arn,
+            tags: self.tags,
+        })
     }
 }

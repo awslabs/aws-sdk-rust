@@ -35,9 +35,7 @@ impl ExportLensInput {
 
 /// A builder for [`ExportLensInput`](crate::operation::export_lens::ExportLensInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportLensInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,
@@ -81,12 +79,7 @@ impl ExportLensInputBuilder {
         &self.lens_version
     }
     /// Consumes the builder and constructs a [`ExportLensInput`](crate::operation::export_lens::ExportLensInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_lens::ExportLensInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_lens::ExportLensInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_lens::ExportLensInput {
             lens_alias: self.lens_alias,
             lens_version: self.lens_version,

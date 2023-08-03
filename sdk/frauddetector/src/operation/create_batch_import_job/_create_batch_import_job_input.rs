@@ -52,17 +52,14 @@ impl CreateBatchImportJobInput {
 }
 impl CreateBatchImportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder {
+    pub fn builder() -> crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder {
         crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBatchImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_path: ::std::option::Option<::std::string::String>,
@@ -115,18 +112,12 @@ impl CreateBatchImportJobInputBuilder {
         &self.output_path
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -163,10 +154,7 @@ impl CreateBatchImportJobInputBuilder {
         self
     }
     /// <p>A collection of key-value pairs associated with this request. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -177,19 +165,15 @@ impl CreateBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_batch_import_job::CreateBatchImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_batch_import_job::CreateBatchImportJobInput {
-                job_id: self.job_id,
-                input_path: self.input_path,
-                output_path: self.output_path,
-                event_type_name: self.event_type_name,
-                iam_role_arn: self.iam_role_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_batch_import_job::CreateBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_batch_import_job::CreateBatchImportJobInput {
+            job_id: self.job_id,
+            input_path: self.input_path,
+            output_path: self.output_path,
+            event_type_name: self.event_type_name,
+            iam_role_arn: self.iam_role_arn,
+            tags: self.tags,
+        })
     }
 }

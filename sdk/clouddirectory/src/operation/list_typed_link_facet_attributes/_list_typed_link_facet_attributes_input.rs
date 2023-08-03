@@ -36,16 +36,14 @@ impl ListTypedLinkFacetAttributesInput {
 }
 impl ListTypedLinkFacetAttributesInput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetAttributesInput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput).
-    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder{
+    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder {
         crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypedLinkFacetAttributesInput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -116,13 +114,11 @@ impl ListTypedLinkFacetAttributesInputBuilder {
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput {
-                schema_arn: self.schema_arn,
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput {
+            schema_arn: self.schema_arn,
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

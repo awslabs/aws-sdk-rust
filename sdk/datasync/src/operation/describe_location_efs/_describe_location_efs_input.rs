@@ -16,18 +16,14 @@ impl DescribeLocationEfsInput {
 }
 impl DescribeLocationEfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
-        crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
+        crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationEfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl DescribeLocationEfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_location_efs::DescribeLocationEfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_efs::DescribeLocationEfsInput {
-                location_arn: self.location_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_location_efs::DescribeLocationEfsInput {
+            location_arn: self.location_arn,
+        })
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFeedbackOutput`](crate::operation::describe_feedback::DescribeFeedbackOutput) with field(s):
     ///   - [`insight_feedback(Option<InsightFeedback>)`](crate::operation::describe_feedback::DescribeFeedbackOutput::insight_feedback): <p> Information about insight feedback received from a customer. </p>
     /// - On failure, responds with [`SdkError<DescribeFeedbackError>`](crate::operation::describe_feedback::DescribeFeedbackError)
-    pub fn describe_feedback(
-        &self,
-    ) -> crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder {
-        crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_feedback(&self) -> crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder {
+        crate::operation::describe_feedback::builders::DescribeFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

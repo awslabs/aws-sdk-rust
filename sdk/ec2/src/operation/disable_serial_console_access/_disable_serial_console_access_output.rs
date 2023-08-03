@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableSerialConsoleAccessOutput {
 }
 impl DisableSerialConsoleAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableSerialConsoleAccessOutput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput).
-    pub fn builder() -> crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder{
+    pub fn builder() -> crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder {
         crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableSerialConsoleAccessOutput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableSerialConsoleAccessOutputBuilder {
     pub(crate) serial_console_access_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl DisableSerialConsoleAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableSerialConsoleAccessOutput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput {
+    pub fn build(self) -> crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput {
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput {
             serial_console_access_enabled: self.serial_console_access_enabled,
             _request_id: self._request_id,

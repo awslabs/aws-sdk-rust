@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`metadata(Option<DocumentMetadataResponseInfo>)`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput::metadata): <p>Information about the response to the change template approval request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput::next_token): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDocumentMetadataHistoryError>`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError)
-    pub fn list_document_metadata_history(&self) -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryFluentBuilder{
+    pub fn list_document_metadata_history(
+        &self,
+    ) -> crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryFluentBuilder {
         crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryFluentBuilder::new(self.handle.clone())
     }
 }

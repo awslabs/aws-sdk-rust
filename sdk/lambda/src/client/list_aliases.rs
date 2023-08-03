@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`aliases(Option<Vec<AliasConfiguration>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>A list of aliases.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
-    pub fn list_aliases(
-        &self,
-    ) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
+    pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())
     }
 }

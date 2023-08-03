@@ -43,9 +43,7 @@ impl CreateChannelInput {
 
 /// A builder for [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_storage: ::std::option::Option<crate::types::ChannelStorage>,
@@ -73,10 +71,7 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    pub fn set_channel_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelStorage>,
-    ) -> Self {
+    pub fn set_channel_storage(mut self, input: ::std::option::Option<crate::types::ChannelStorage>) -> Self {
         self.channel_storage = input;
         self
     }
@@ -90,10 +85,7 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
@@ -113,10 +105,7 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the channel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -127,10 +116,7 @@ impl CreateChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_channel::CreateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             channel_name: self.channel_name,
             channel_storage: self.channel_storage,

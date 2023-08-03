@@ -58,9 +58,7 @@ impl ListJobsInput {
 
 /// A builder for [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -155,12 +153,7 @@ impl ListJobsInputBuilder {
         &self.completed
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_jobs::ListJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

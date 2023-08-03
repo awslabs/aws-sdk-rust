@@ -31,9 +31,7 @@ impl SecretsManagerSecretConfiguration {
 
 /// A builder for [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretsManagerSecretConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_policy: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl SecretsManagerSecretConfigurationBuilder {
         &self.kms_key_id
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-    pub fn secret_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-    pub fn set_secret_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_policy = input;
         self
     }

@@ -12,22 +12,25 @@ pub fn ser_update_resource_event_configuration_input(
     if let Some(var_3) = &input.device_registration_state {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DeviceRegistrationState").start_object();
-        crate::protocol_serde::shape_device_registration_state_event_configuration::ser_device_registration_state_event_configuration(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_device_registration_state_event_configuration::ser_device_registration_state_event_configuration(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.join {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Join").start_object();
-        crate::protocol_serde::shape_join_event_configuration::ser_join_event_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_join_event_configuration::ser_join_event_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.message_delivery_status {
         #[allow(unused_mut)]
         let mut object_8 = object.key("MessageDeliveryStatus").start_object();
-        crate::protocol_serde::shape_message_delivery_status_event_configuration::ser_message_delivery_status_event_configuration(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_message_delivery_status_event_configuration::ser_message_delivery_status_event_configuration(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.proximity {

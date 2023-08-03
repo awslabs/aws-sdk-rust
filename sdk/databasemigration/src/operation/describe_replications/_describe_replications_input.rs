@@ -30,18 +30,14 @@ impl DescribeReplicationsInput {
 }
 impl DescribeReplicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationsInput`](crate::operation::describe_replications::DescribeReplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder {
-        crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder {
+        crate::operation::describe_replications::builders::DescribeReplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationsInput`](crate::operation::describe_replications::DescribeReplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -60,10 +56,7 @@ impl DescribeReplicationsInputBuilder {
         self
     }
     /// <p>Filters applied to the replications.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -102,16 +95,12 @@ impl DescribeReplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReplicationsInput`](crate::operation::describe_replications::DescribeReplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_replications::DescribeReplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_replications::DescribeReplicationsInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_replications::DescribeReplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_replications::DescribeReplicationsInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

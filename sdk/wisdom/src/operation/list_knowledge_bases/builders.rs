@@ -10,10 +10,7 @@ impl ListKnowledgeBasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_knowledge_bases::ListKnowledgeBasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_knowledge_bases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListKnowledgeBasesFluentBuilder {
         }
     }
     /// Access the ListKnowledgeBases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListKnowledgeBasesFluentBuilder {
             crate::operation::list_knowledge_bases::ListKnowledgeBases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_knowledge_bases::ListKnowledgeBasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListKnowledgeBasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListKnowledgeBasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_knowledge_bases::ListKnowledgeBasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListKnowledgeBasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_knowledge_bases::ListKnowledgeBasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListKnowledgeBasesFluentBuilder {
             crate::operation::list_knowledge_bases::ListKnowledgeBases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_knowledge_bases::ListKnowledgeBasesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator {
-        crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator {
+        crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

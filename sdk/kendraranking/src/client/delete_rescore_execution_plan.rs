@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::set_id): <p>The identifier of the rescore execution plan that you want to delete.</p>
     /// - On success, responds with [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteRescoreExecutionPlanError>`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError)
-    pub fn delete_rescore_execution_plan(&self) -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder{
+    pub fn delete_rescore_execution_plan(
+        &self,
+    ) -> crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder {
         crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl CalculationResult {
 
 /// A builder for [`CalculationResult`](crate::types::CalculationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculationResultBuilder {
     pub(crate) std_out_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) std_error_s3_uri: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct CalculationResultBuilder {
 }
 impl CalculationResultBuilder {
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
-    pub fn std_out_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn std_out_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.std_out_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the <code>stdout</code> file for the calculation.</p>
-    pub fn set_std_out_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_std_out_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.std_out_s3_uri = input;
         self
     }
@@ -75,18 +67,12 @@ impl CalculationResultBuilder {
         &self.std_out_s3_uri
     }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
-    pub fn std_error_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn std_error_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.std_error_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.</p>
-    pub fn set_std_error_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_std_error_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.std_error_s3_uri = input;
         self
     }
@@ -95,18 +81,12 @@ impl CalculationResultBuilder {
         &self.std_error_s3_uri
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
-    pub fn result_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn result_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the folder for the calculation results.</p>
-    pub fn set_result_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_result_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_s3_uri = input;
         self
     }

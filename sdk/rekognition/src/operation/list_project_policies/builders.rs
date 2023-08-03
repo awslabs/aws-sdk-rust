@@ -39,9 +39,7 @@ impl ListProjectPoliciesFluentBuilder {
         }
     }
     /// Access the ListProjectPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListProjectPoliciesFluentBuilder {
             crate::operation::list_project_policies::ListProjectPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_project_policies::ListProjectPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_project_policies::ListProjectPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListProjectPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListProjectPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_project_policies::ListProjectPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_project_policies::ListProjectPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_project_policies::ListProjectPoliciesError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListProjectPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_project_policies::ListProjectPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_project_policies::ListProjectPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_project_policies::ListProjectPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl ListProjectPoliciesFluentBuilder {
             crate::operation::list_project_policies::ListProjectPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_project_policies::ListProjectPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_project_policies::ListProjectPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_project_policies::paginator::ListProjectPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_project_policies::paginator::ListProjectPoliciesPaginator {
-        crate::operation::list_project_policies::paginator::ListProjectPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_project_policies::paginator::ListProjectPoliciesPaginator {
+        crate::operation::list_project_policies::paginator::ListProjectPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the project for which you want to list the project policies.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

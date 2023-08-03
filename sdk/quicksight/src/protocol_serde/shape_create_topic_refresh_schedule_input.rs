@@ -12,10 +12,7 @@ pub fn ser_create_topic_refresh_schedule_input(
     if let Some(var_3) = &input.refresh_schedule {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RefreshSchedule").start_object();
-        crate::protocol_serde::shape_topic_refresh_schedule::ser_topic_refresh_schedule(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_topic_refresh_schedule::ser_topic_refresh_schedule(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

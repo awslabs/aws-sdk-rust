@@ -37,10 +37,7 @@ impl CreateCustomLineItemFluentBuilder {
         }
     }
     /// Access the CreateCustomLineItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateCustomLineItemFluentBuilder {
             crate::operation::create_custom_line_item::CreateCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateCustomLineItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_line_item::CreateCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_line_item::CreateCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateCustomLineItemFluentBuilder {
             crate::operation::create_custom_line_item::CreateCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_line_item::CreateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_line_item::CreateCustomLineItemError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_arn(input);
         self
     }
@@ -186,25 +166,17 @@ impl CreateCustomLineItemFluentBuilder {
         self.inner.get_billing_group_arn()
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.inner = self.inner.billing_period_range(input);
         self
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
     }
     /// <p> A time range for which the custom line item is effective. </p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         self.inner.get_billing_period_range()
     }
     /// Adds a key-value pair to `Tags`.
@@ -212,30 +184,17 @@ impl CreateCustomLineItemFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
@@ -244,17 +203,12 @@ impl CreateCustomLineItemFluentBuilder {
         self
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn set_charge_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
-    ) -> Self {
+    pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::CustomLineItemChargeDetails>) -> Self {
         self.inner = self.inner.set_charge_details(input);
         self
     }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
-    pub fn get_charge_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
+    pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
         self.inner.get_charge_details()
     }
 }

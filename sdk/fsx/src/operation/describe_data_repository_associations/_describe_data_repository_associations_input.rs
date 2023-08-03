@@ -36,16 +36,14 @@ impl DescribeDataRepositoryAssociationsInput {
 }
 impl DescribeDataRepositoryAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsInput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput).
-    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder {
         crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataRepositoryAssociationsInput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsInputBuilder {
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -58,27 +56,19 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
         v.push(input.into());
         self.association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.association_ids = input;
         self
     }
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.association_ids
     }
     /// Appends an item to `filters`.
@@ -93,10 +83,7 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
         self
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -133,18 +120,19 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsInput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput {
-                association_ids: self.association_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                association_ids: self.association_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

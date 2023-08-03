@@ -43,9 +43,7 @@ impl CreateConfigOutput {
 
 /// A builder for [`CreateConfigOutput`](crate::operation::create_config::CreateConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigOutputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
@@ -73,10 +71,7 @@ impl CreateConfigOutputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.config_type = input;
         self
     }

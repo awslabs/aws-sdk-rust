@@ -5,16 +5,16 @@ pub use crate::operation::update_dashboard_published_version::_update_dashboard_
 
 impl UpdateDashboardPublishedVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_dashboard_published_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateDashboardPublishedVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder,
+    inner: crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder,
 }
 impl UpdateDashboardPublishedVersionFluentBuilder {
     /// Creates a new `UpdateDashboardPublishedVersion`.
@@ -37,15 +37,20 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
         }
     }
     /// Access the UpdateDashboardPublishedVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

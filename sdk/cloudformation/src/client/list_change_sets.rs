@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<ChangeSetSummary>>)`](crate::operation::list_change_sets::ListChangeSetsOutput::summaries): <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_change_sets::ListChangeSetsOutput::next_token): <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListChangeSetsError>`](crate::operation::list_change_sets::ListChangeSetsError)
-    pub fn list_change_sets(
-        &self,
-    ) -> crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder {
-        crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_change_sets(&self) -> crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder {
+        crate::operation::list_change_sets::builders::ListChangeSetsFluentBuilder::new(self.handle.clone())
     }
 }

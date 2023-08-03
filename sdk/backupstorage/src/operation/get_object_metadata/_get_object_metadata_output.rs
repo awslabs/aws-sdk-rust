@@ -16,8 +16,7 @@ pub struct GetObjectMetadataOutput {
     pub metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm.
     #[doc(hidden)]
-    pub metadata_blob_checksum_algorithm:
-        ::std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl GetObjectMetadataOutput {
@@ -38,9 +37,7 @@ impl GetObjectMetadataOutput {
         self.metadata_blob_checksum.as_deref()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn metadata_blob_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
@@ -51,8 +48,7 @@ impl ::aws_http::request_id::RequestId for GetObjectMetadataOutput {
 }
 impl GetObjectMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder {
         crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder::default()
     }
 }
@@ -65,24 +61,17 @@ pub struct GetObjectMetadataOutputBuilder {
     pub(crate) metadata_blob: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     pub(crate) metadata_blob_length: ::std::option::Option<i64>,
     pub(crate) metadata_blob_checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata_blob_checksum_algorithm:
-        ::std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub(crate) metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl GetObjectMetadataOutputBuilder {
     /// Metadata string.
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Metadata string.
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_string = input;
         self
     }
@@ -96,17 +85,12 @@ impl GetObjectMetadataOutputBuilder {
         self
     }
     /// Metadata blob.
-    pub fn set_metadata_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.metadata_blob = input;
         self
     }
     /// Metadata blob.
-    pub fn get_metadata_blob(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -124,18 +108,12 @@ impl GetObjectMetadataOutputBuilder {
         &self.metadata_blob_length
     }
     /// MetadataBlob checksum.
-    pub fn metadata_blob_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_blob_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_blob_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// MetadataBlob checksum.
-    pub fn set_metadata_blob_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_blob_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_blob_checksum = input;
         self
     }
@@ -144,25 +122,17 @@ impl GetObjectMetadataOutputBuilder {
         &self.metadata_blob_checksum
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(
-        mut self,
-        input: crate::types::DataChecksumAlgorithm,
-    ) -> Self {
+    pub fn metadata_blob_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.metadata_blob_checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Checksum algorithm.
-    pub fn set_metadata_blob_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_metadata_blob_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.metadata_blob_checksum_algorithm = input;
         self
     }
     /// Checksum algorithm.
-    pub fn get_metadata_blob_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_metadata_blob_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.metadata_blob_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

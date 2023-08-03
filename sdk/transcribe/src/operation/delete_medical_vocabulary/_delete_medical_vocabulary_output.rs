@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMedicalVocabularyOutput {
 }
 impl DeleteMedicalVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyOutputBuilder {
         crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteMedicalVocabularyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput {
+    pub fn build(self) -> crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput {
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput {
             _request_id: self._request_id,
         }

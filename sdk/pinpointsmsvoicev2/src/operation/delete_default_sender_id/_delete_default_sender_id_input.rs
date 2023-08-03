@@ -15,35 +15,25 @@ impl DeleteDefaultSenderIdInput {
 }
 impl DeleteDefaultSenderIdInput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
-    pub fn builder(
-    ) -> crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder {
         crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDefaultSenderIdInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDefaultSenderIdInputBuilder {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteDefaultSenderIdInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput {
-                configuration_set_name: self.configuration_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput {
+            configuration_set_name: self.configuration_set_name,
+        })
     }
 }

@@ -6,10 +6,7 @@ pub fn ser_update_place_index_input(
     if let Some(var_1) = &input.data_source_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataSourceConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.description {

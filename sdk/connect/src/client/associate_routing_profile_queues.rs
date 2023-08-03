@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesFluentBuilder::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesFluentBuilder::set_queue_configs): <p>The queues to associate with this routing profile.</p>
     /// - On success, responds with [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput)
     /// - On failure, responds with [`SdkError<AssociateRoutingProfileQueuesError>`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesError)
-    pub fn associate_routing_profile_queues(&self) -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesFluentBuilder{
+    pub fn associate_routing_profile_queues(
+        &self,
+    ) -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesFluentBuilder {
         crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesFluentBuilder::new(self.handle.clone())
     }
 }

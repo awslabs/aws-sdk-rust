@@ -9,369 +9,418 @@ pub fn de_restore_db_instance_from_db_snapshot_http_error(
     crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationNotFound" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::AuthorizationNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AuthorizationNotFound" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::AuthorizationNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "BackupPolicyNotFoundFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::BackupPolicyNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BackupPolicyNotFoundFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::BackupPolicyNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BackupPolicyNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_backup_policy_not_found_fault::de_backup_policy_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_backup_policy_not_found_fault::de_backup_policy_not_found_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBClusterSnapshotNotFoundFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbClusterSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbClusterSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBInstanceAlreadyExists" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbInstanceAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBInstanceAlreadyExists" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbInstanceAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBParameterGroupNotFound" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupNotFound" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBSecurityGroupNotFound" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSecurityGroupNotFound" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSecurityGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBSnapshotNotFound" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSnapshotNotFound" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSubnetGroupDoesNotCoverEnoughAZs({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSubnetGroupDoesNotCoverEnoughAZs({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
                     output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBSubnetGroupNotFoundFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSubnetGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSubnetGroupNotFoundFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbSubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "DomainNotFoundFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DomainNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DomainNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_domain_not_found_fault::de_domain_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DomainNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_domain_not_found_fault::de_domain_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InstanceQuotaExceeded" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InstanceQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InstanceQuotaExceeded" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InstanceQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InsufficientDBInstanceCapacity" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InsufficientDbInstanceCapacityFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InsufficientDBInstanceCapacity" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InsufficientDbInstanceCapacityFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidDBSnapshotState" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidDbSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBSnapshotState" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidDbSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDbSnapshotStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidRestoreFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidRestoreFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRestoreFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_restore_fault::de_invalid_restore_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRestoreFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_restore_fault::de_invalid_restore_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSubnet" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidSubnet({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(_response_body, output)
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidVPCNetworkStateFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidVPCNetworkStateFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "KMSKeyNotAccessibleFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::KmsKeyNotAccessibleFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::KmsKeyNotAccessibleFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "NetworkTypeNotSupported" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::NetworkTypeNotSupported({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NetworkTypeNotSupported" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::NetworkTypeNotSupported({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
-                    output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                        .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "OptionGroupNotFoundFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::OptionGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "OptionGroupNotFoundFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::OptionGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ProvisionedIopsNotAvailableInAZFault" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::ProvisionedIopsNotAvailableInAzFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ProvisionedIopsNotAvailableInAZFault" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::ProvisionedIopsNotAvailableInAzFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProvisionedIopsNotAvailableInAzFaultBuilder::default();
                     output = crate::protocol_serde::shape_provisioned_iops_not_available_in_az_fault::de_provisioned_iops_not_available_in_az_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "StorageQuotaExceeded" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::StorageQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "StorageQuotaExceeded" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::StorageQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "StorageTypeNotSupported" => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::StorageTypeNotSupportedFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "StorageTypeNotSupported" => {
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::StorageTypeNotSupportedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::generic(generic),
     })
 }
 
@@ -387,16 +436,21 @@ pub fn de_restore_db_instance_from_db_snapshot_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder::default();
-        output = crate::protocol_serde::shape_restore_db_instance_from_db_snapshot::de_restore_db_instance_from_db_snapshot(_response_body, output).map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_restore_db_instance_from_db_snapshot::de_restore_db_instance_from_db_snapshot(_response_body, output)
+            .map_err(crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_restore_db_instance_from_db_snapshot(inp: &[u8], mut builder: crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder) -> Result<crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_restore_db_instance_from_db_snapshot(
+    inp: &[u8],
+    mut builder: crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder,
+) -> Result<
+    crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

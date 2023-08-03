@@ -9,9 +9,7 @@ pub struct EntityPropertyReference {
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
     #[doc(hidden)]
-    pub external_id_property: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub external_id_property: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the entity.</p>
     #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
@@ -25,11 +23,7 @@ impl EntityPropertyReference {
         self.component_name.as_deref()
     }
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    pub fn external_id_property(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn external_id_property(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.external_id_property.as_ref()
     }
     /// <p>The ID of the entity.</p>
@@ -50,31 +44,21 @@ impl EntityPropertyReference {
 
 /// A builder for [`EntityPropertyReference`](crate::types::EntityPropertyReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityPropertyReferenceBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
-    pub(crate) external_id_property: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) external_id_property: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_name: ::std::option::Option<::std::string::String>,
 }
 impl EntityPropertyReferenceBuilder {
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -100,19 +84,13 @@ impl EntityPropertyReferenceBuilder {
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
     pub fn set_external_id_property(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.external_id_property = input;
         self
     }
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    pub fn get_external_id_property(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_external_id_property(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.external_id_property
     }
     /// <p>The ID of the entity.</p>
@@ -130,18 +108,12 @@ impl EntityPropertyReferenceBuilder {
         &self.entity_id
     }
     /// <p>The name of the property.</p>
-    pub fn property_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the property.</p>
-    pub fn set_property_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_name = input;
         self
     }

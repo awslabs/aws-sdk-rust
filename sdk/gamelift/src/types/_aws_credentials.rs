@@ -54,18 +54,12 @@ pub struct AwsCredentialsBuilder {
 }
 impl AwsCredentialsBuilder {
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -74,18 +68,12 @@ impl AwsCredentialsBuilder {
         &self.access_key_id
     }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn secret_access_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_access_key = input;
         self
     }
@@ -94,18 +82,12 @@ impl AwsCredentialsBuilder {
         &self.secret_access_key
     }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
-    pub fn session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
-    pub fn set_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_token = input;
         self
     }

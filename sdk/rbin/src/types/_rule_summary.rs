@@ -56,9 +56,7 @@ impl RuleSummary {
 
 /// A builder for [`RuleSummary`](crate::types::RuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleSummaryBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -100,10 +98,7 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }

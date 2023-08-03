@@ -19,9 +19,7 @@ impl PutItemsOutput {
 
 /// A builder for [`PutItemsOutput`](crate::operation::put_items::PutItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutItemsOutputBuilder {
     _request_id: Option<String>,
 }

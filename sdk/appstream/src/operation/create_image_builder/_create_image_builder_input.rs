@@ -78,9 +78,7 @@ pub struct CreateImageBuilderInput {
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
@@ -171,11 +169,7 @@ impl CreateImageBuilderInput {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
@@ -185,17 +179,14 @@ impl CreateImageBuilderInput {
 }
 impl CreateImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder {
+    pub fn builder() -> crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder {
         crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
@@ -208,11 +199,8 @@ pub struct CreateImageBuilderInputBuilder {
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl CreateImageBuilderInputBuilder {
     /// <p>A unique name for the image builder.</p>
@@ -293,10 +281,7 @@ impl CreateImageBuilderInputBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -336,10 +321,7 @@ impl CreateImageBuilderInputBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -447,10 +429,7 @@ impl CreateImageBuilderInputBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_default_internet_access = input;
         self
     }
@@ -464,10 +443,7 @@ impl CreateImageBuilderInputBuilder {
         self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    pub fn set_domain_join_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainJoinInfo>,
-    ) -> Self {
+    pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.domain_join_info = input;
         self
     }
@@ -476,18 +452,12 @@ impl CreateImageBuilderInputBuilder {
         &self.domain_join_info
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn appstream_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
@@ -504,11 +474,7 @@ impl CreateImageBuilderInputBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -519,12 +485,7 @@ impl CreateImageBuilderInputBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -533,11 +494,7 @@ impl CreateImageBuilderInputBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `access_endpoints`.
@@ -552,42 +509,32 @@ impl CreateImageBuilderInputBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.access_endpoints = input;
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_image_builder::CreateImageBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_image_builder::CreateImageBuilderInput {
-                name: self.name,
-                image_name: self.image_name,
-                image_arn: self.image_arn,
-                instance_type: self.instance_type,
-                description: self.description,
-                display_name: self.display_name,
-                vpc_config: self.vpc_config,
-                iam_role_arn: self.iam_role_arn,
-                enable_default_internet_access: self.enable_default_internet_access,
-                domain_join_info: self.domain_join_info,
-                appstream_agent_version: self.appstream_agent_version,
-                tags: self.tags,
-                access_endpoints: self.access_endpoints,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_image_builder::CreateImageBuilderInput {
+            name: self.name,
+            image_name: self.image_name,
+            image_arn: self.image_arn,
+            instance_type: self.instance_type,
+            description: self.description,
+            display_name: self.display_name,
+            vpc_config: self.vpc_config,
+            iam_role_arn: self.iam_role_arn,
+            enable_default_internet_access: self.enable_default_internet_access,
+            domain_join_info: self.domain_join_info,
+            appstream_agent_version: self.appstream_agent_version,
+            tags: self.tags,
+            access_endpoints: self.access_endpoints,
+        })
     }
 }

@@ -59,17 +59,9 @@ pub fn ser_container_settings(
 
 pub(crate) fn de_container_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ContainerSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ContainerSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,85 +71,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cmfcSettings" => {
-                            builder = builder.set_cmfc_settings(
-                                crate::protocol_serde::shape_cmfc_settings::de_cmfc_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_cmfc_settings(crate::protocol_serde::shape_cmfc_settings::de_cmfc_settings(tokens)?);
                         }
                         "container" => {
                             builder = builder.set_container(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::ContainerType::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContainerType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "f4vSettings" => {
-                            builder = builder.set_f4v_settings(
-                                crate::protocol_serde::shape_f4v_settings::de_f4v_settings(tokens)?,
-                            );
+                            builder = builder.set_f4v_settings(crate::protocol_serde::shape_f4v_settings::de_f4v_settings(tokens)?);
                         }
                         "m2tsSettings" => {
-                            builder = builder.set_m2ts_settings(
-                                crate::protocol_serde::shape_m2ts_settings::de_m2ts_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_m2ts_settings(crate::protocol_serde::shape_m2ts_settings::de_m2ts_settings(tokens)?);
                         }
                         "m3u8Settings" => {
-                            builder = builder.set_m3u8_settings(
-                                crate::protocol_serde::shape_m3u8_settings::de_m3u8_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_m3u8_settings(crate::protocol_serde::shape_m3u8_settings::de_m3u8_settings(tokens)?);
                         }
                         "movSettings" => {
-                            builder = builder.set_mov_settings(
-                                crate::protocol_serde::shape_mov_settings::de_mov_settings(tokens)?,
-                            );
+                            builder = builder.set_mov_settings(crate::protocol_serde::shape_mov_settings::de_mov_settings(tokens)?);
                         }
                         "mp4Settings" => {
-                            builder = builder.set_mp4_settings(
-                                crate::protocol_serde::shape_mp4_settings::de_mp4_settings(tokens)?,
-                            );
+                            builder = builder.set_mp4_settings(crate::protocol_serde::shape_mp4_settings::de_mp4_settings(tokens)?);
                         }
                         "mpdSettings" => {
-                            builder = builder.set_mpd_settings(
-                                crate::protocol_serde::shape_mpd_settings::de_mpd_settings(tokens)?,
-                            );
+                            builder = builder.set_mpd_settings(crate::protocol_serde::shape_mpd_settings::de_mpd_settings(tokens)?);
                         }
                         "mxfSettings" => {
-                            builder = builder.set_mxf_settings(
-                                crate::protocol_serde::shape_mxf_settings::de_mxf_settings(tokens)?,
-                            );
+                            builder = builder.set_mxf_settings(crate::protocol_serde::shape_mxf_settings::de_mxf_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

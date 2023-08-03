@@ -26,7 +26,7 @@ impl GetResolverQueryLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder,
+    inner: crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder,
 }
 impl GetResolverQueryLogConfigFluentBuilder {
     /// Creates a new `GetResolverQueryLogConfig`.
@@ -37,7 +37,7 @@ impl GetResolverQueryLogConfigFluentBuilder {
         }
     }
     /// Access the GetResolverQueryLogConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResolverQueryLogConfigFluentBuilder {
             crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResolverQueryLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl GetResolverQueryLogConfigFluentBuilder {
             crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
-    pub fn resolver_query_log_config_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_query_log_config_id(input.into());
         self
     }
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
-    pub fn set_resolver_query_log_config_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_query_log_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_query_log_config_id(input);
         self
     }
     /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
-    pub fn get_resolver_query_log_config_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_query_log_config_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resolver_query_log_config_id()
     }
 }

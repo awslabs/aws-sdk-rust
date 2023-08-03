@@ -10,10 +10,7 @@ impl SendMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_message::SendMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_message::SendMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_message();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl SendMessageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_message::SendMessage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_message::SendMessage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl SendMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl SendMessageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_message::SendMessage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_message::SendMessage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError>,
     > {
         self.customize_middleware().await
@@ -173,18 +161,12 @@ impl SendMessageFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

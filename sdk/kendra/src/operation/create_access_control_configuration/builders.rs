@@ -5,16 +5,16 @@ pub use crate::operation::create_access_control_configuration::_create_access_co
 
 impl CreateAccessControlConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_access_control_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl CreateAccessControlConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessControlConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder,
+    inner: crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder,
 }
 impl CreateAccessControlConfigurationFluentBuilder {
     /// Creates a new `CreateAccessControlConfiguration`.
@@ -39,15 +39,20 @@ impl CreateAccessControlConfigurationFluentBuilder {
         }
     }
     /// Access the CreateAccessControlConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_access_control_configuration::CreateAccessControlConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_access_control_configuration::CreateAccessControlConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl CreateAccessControlConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl CreateAccessControlConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_access_control_configuration::CreateAccessControlConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_access_control_configuration::CreateAccessControlConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the index to create an access control configuration for your documents.</p>
@@ -148,17 +163,12 @@ impl CreateAccessControlConfigurationFluentBuilder {
         self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.inner = self.inner.set_access_control_list(input);
         self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn get_access_control_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         self.inner.get_access_control_list()
     }
     /// Appends an item to `HierarchicalAccessControlList`.
@@ -166,10 +176,7 @@ impl CreateAccessControlConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
     ///
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(
-        mut self,
-        input: crate::types::HierarchicalPrincipal,
-    ) -> Self {
+    pub fn hierarchical_access_control_list(mut self, input: crate::types::HierarchicalPrincipal) -> Self {
         self.inner = self.inner.hierarchical_access_control_list(input);
         self
     }
@@ -182,9 +189,7 @@ impl CreateAccessControlConfigurationFluentBuilder {
         self
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn get_hierarchical_access_control_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
         self.inner.get_hierarchical_access_control_list()
     }
     /// <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>

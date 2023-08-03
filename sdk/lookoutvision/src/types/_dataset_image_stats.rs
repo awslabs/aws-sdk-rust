@@ -44,9 +44,7 @@ impl DatasetImageStats {
 
 /// A builder for [`DatasetImageStats`](crate::types::DatasetImageStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetImageStatsBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) labeled: ::std::option::Option<i32>,

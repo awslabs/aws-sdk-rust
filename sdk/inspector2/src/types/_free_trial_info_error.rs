@@ -37,9 +37,7 @@ impl FreeTrialInfoError {
 
 /// A builder for [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeTrialInfoErrorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
@@ -66,10 +64,7 @@ impl FreeTrialInfoErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>) -> Self {
         self.code = input;
         self
     }

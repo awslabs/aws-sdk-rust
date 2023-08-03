@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyIpamScopeOutput`](crate::operation::modify_ipam_scope::ModifyIpamScopeOutput) with field(s):
     ///   - [`ipam_scope(Option<IpamScope>)`](crate::operation::modify_ipam_scope::ModifyIpamScopeOutput::ipam_scope): <p>The results of the modification.</p>
     /// - On failure, responds with [`SdkError<ModifyIpamScopeError>`](crate::operation::modify_ipam_scope::ModifyIpamScopeError)
-    pub fn modify_ipam_scope(
-        &self,
-    ) -> crate::operation::modify_ipam_scope::builders::ModifyIpamScopeFluentBuilder {
-        crate::operation::modify_ipam_scope::builders::ModifyIpamScopeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_ipam_scope(&self) -> crate::operation::modify_ipam_scope::builders::ModifyIpamScopeFluentBuilder {
+        crate::operation::modify_ipam_scope::builders::ModifyIpamScopeFluentBuilder::new(self.handle.clone())
     }
 }

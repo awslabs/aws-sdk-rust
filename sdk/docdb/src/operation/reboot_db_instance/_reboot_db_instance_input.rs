@@ -33,17 +33,14 @@ impl RebootDbInstanceInput {
 }
 impl RebootDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceInput`](crate::operation::reboot_db_instance::RebootDbInstanceInput).
-    pub fn builder() -> crate::operation::reboot_db_instance::builders::RebootDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::reboot_db_instance::builders::RebootDbInstanceInputBuilder {
         crate::operation::reboot_db_instance::builders::RebootDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`RebootDbInstanceInput`](crate::operation::reboot_db_instance::RebootDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) force_failover: ::std::option::Option<bool>,
@@ -54,10 +51,7 @@ impl RebootDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +60,7 @@ impl RebootDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -101,15 +92,10 @@ impl RebootDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RebootDbInstanceInput`](crate::operation::reboot_db_instance::RebootDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_db_instance::RebootDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reboot_db_instance::RebootDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-                force_failover: self.force_failover,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reboot_db_instance::RebootDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reboot_db_instance::RebootDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+            force_failover: self.force_failover,
+        })
     }
 }

@@ -29,17 +29,14 @@ impl UpdateNetworkSiteInput {
 }
 impl UpdateNetworkSiteInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteInput`](crate::operation::update_network_site::UpdateNetworkSiteInput).
-    pub fn builder(
-    ) -> crate::operation::update_network_site::builders::UpdateNetworkSiteInputBuilder {
+    pub fn builder() -> crate::operation::update_network_site::builders::UpdateNetworkSiteInputBuilder {
         crate::operation::update_network_site::builders::UpdateNetworkSiteInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkSiteInput`](crate::operation::update_network_site::UpdateNetworkSiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkSiteInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpdateNetworkSiteInputBuilder {
 }
 impl UpdateNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -97,16 +88,11 @@ impl UpdateNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSiteInput`](crate::operation::update_network_site::UpdateNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_network_site::UpdateNetworkSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_network_site::UpdateNetworkSiteInput {
-                network_site_arn: self.network_site_arn,
-                client_token: self.client_token,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_network_site::UpdateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_network_site::UpdateNetworkSiteInput {
+            network_site_arn: self.network_site_arn,
+            client_token: self.client_token,
+            description: self.description,
+        })
     }
 }

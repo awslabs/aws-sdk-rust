@@ -54,18 +54,12 @@ pub struct ApplicationCredentialBuilder {
 }
 impl ApplicationCredentialBuilder {
     /// <p>The name of the SAP HANA database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SAP HANA database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -79,10 +73,7 @@ impl ApplicationCredentialBuilder {
         self
     }
     /// <p>The type of the application credentials. </p>
-    pub fn set_credential_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CredentialType>,
-    ) -> Self {
+    pub fn set_credential_type(mut self, input: ::std::option::Option<crate::types::CredentialType>) -> Self {
         self.credential_type = input;
         self
     }

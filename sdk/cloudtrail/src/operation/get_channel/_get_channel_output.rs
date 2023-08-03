@@ -63,9 +63,7 @@ impl GetChannelOutput {
 
 /// A builder for [`GetChannelOutput`](crate::operation::get_channel::GetChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl GetChannelOutputBuilder {
         self
     }
     /// <p> Provides information about the advanced event selectors configured for the channel, and whether the channel applies to all Regions or a single Region. </p>
-    pub fn set_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfig>,
-    ) -> Self {
+    pub fn set_source_config(mut self, input: ::std::option::Option<crate::types::SourceConfig>) -> Self {
         self.source_config = input;
         self
     }
@@ -147,17 +142,12 @@ impl GetChannelOutputBuilder {
         self
     }
     /// <p>The destinations for the channel. For channels created for integrations, the destinations are the event data stores that log events arriving through the channel. For service-linked channels, the destination is the Amazon Web Services service that created the service-linked channel to receive events.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>The destinations for the channel. For channels created for integrations, the destinations are the event data stores that log events arriving through the channel. For service-linked channels, the destination is the Amazon Web Services service that created the service-linked channel to receive events.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
     /// <p>A table showing information about the most recent successful and failed attempts to ingest events.</p>
@@ -166,10 +156,7 @@ impl GetChannelOutputBuilder {
         self
     }
     /// <p>A table showing information about the most recent successful and failed attempts to ingest events.</p>
-    pub fn set_ingestion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionStatus>,
-    ) -> Self {
+    pub fn set_ingestion_status(mut self, input: ::std::option::Option<crate::types::IngestionStatus>) -> Self {
         self.ingestion_status = input;
         self
     }

@@ -10,10 +10,7 @@ impl BatchGetStreamKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_stream_key::BatchGetStreamKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_stream_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetStreamKeyFluentBuilder {
         }
     }
     /// Access the BatchGetStreamKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetStreamKeyFluentBuilder {
             crate::operation::batch_get_stream_key::BatchGetStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_stream_key::BatchGetStreamKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetStreamKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_stream_key::BatchGetStreamKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_stream_key::BatchGetStreamKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetStreamKeyFluentBuilder {
             crate::operation::batch_get_stream_key::BatchGetStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_stream_key::BatchGetStreamKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetStreamKeyFluentBuilder {
         self
     }
     /// <p>Array of ARNs, one per stream key.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_arns(input);
         self
     }

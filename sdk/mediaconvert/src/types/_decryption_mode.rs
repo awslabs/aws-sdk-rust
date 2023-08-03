@@ -39,13 +39,7 @@
 /// Specify the encryption mode that you used to encrypt your input files.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DecryptionMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DecryptionMode {
             "AES_CBC" => DecryptionMode::AesCbc,
             "AES_CTR" => DecryptionMode::AesCtr,
             "AES_GCM" => DecryptionMode::AesGcm,
-            other => {
-                DecryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DecryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

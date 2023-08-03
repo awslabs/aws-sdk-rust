@@ -10,10 +10,7 @@ impl UpdateProxySessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_proxy_session::UpdateProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_proxy_session::UpdateProxySessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_proxy_session::UpdateProxySessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_proxy_session();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateProxySessionFluentBuilder {
         }
     }
     /// Access the UpdateProxySession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl UpdateProxySessionFluentBuilder {
             crate::operation::update_proxy_session::UpdateProxySession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_proxy_session::UpdateProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_proxy_session::UpdateProxySessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl UpdateProxySessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl UpdateProxySessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_proxy_session::UpdateProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_proxy_session::UpdateProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_proxy_session::UpdateProxySessionError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl UpdateProxySessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_proxy_session::UpdateProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_proxy_session::UpdateProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_proxy_session::UpdateProxySessionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl UpdateProxySessionFluentBuilder {
             crate::operation::update_proxy_session::UpdateProxySession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_proxy_session::UpdateProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_proxy_session::UpdateProxySessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -147,18 +125,12 @@ impl UpdateProxySessionFluentBuilder {
         self.inner.get_voice_connector_id()
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proxy_session_id(input.into());
         self
     }
     /// <p>The proxy session ID.</p>
-    pub fn set_proxy_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self
     }
@@ -176,17 +148,12 @@ impl UpdateProxySessionFluentBuilder {
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         self.inner.get_capabilities()
     }
     /// <p>The number of minutes allowed for the proxy session.</p>

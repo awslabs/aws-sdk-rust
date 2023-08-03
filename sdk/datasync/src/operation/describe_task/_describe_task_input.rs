@@ -23,9 +23,7 @@ impl DescribeTaskInput {
 
 /// A builder for [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DescribeTaskInputBuilder {
         &self.task_arn
     }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_task::DescribeTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput {
-            task_arn: self.task_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput { task_arn: self.task_arn })
     }
 }

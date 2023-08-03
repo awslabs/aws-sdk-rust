@@ -37,9 +37,7 @@ impl SnowflakeSource {
 
 /// A builder for [`SnowflakeSource`](crate::types::SnowflakeSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnowflakeSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::SnowflakeNodeData>,
@@ -66,10 +64,7 @@ impl SnowflakeSourceBuilder {
         self
     }
     /// <p>Configuration for the Snowflake data source.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowflakeNodeData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::SnowflakeNodeData>) -> Self {
         self.data = input;
         self
     }
@@ -89,17 +84,12 @@ impl SnowflakeSourceBuilder {
         self
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SnowflakeSource`](crate::types::SnowflakeSource).

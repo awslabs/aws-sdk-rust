@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::set_id): <p>The ID for the API key.</p>
     /// - On success, responds with [`DeleteApiKeyOutput`](crate::operation::delete_api_key::DeleteApiKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteApiKeyError>`](crate::operation::delete_api_key::DeleteApiKeyError)
-    pub fn delete_api_key(
-        &self,
-    ) -> crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder {
-        crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_api_key(&self) -> crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder {
+        crate::operation::delete_api_key::builders::DeleteApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

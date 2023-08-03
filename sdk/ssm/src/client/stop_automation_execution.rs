@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`r#type(StopType)`](crate::operation::stop_automation_execution::builders::StopAutomationExecutionFluentBuilder::type) / [`set_type(Option<StopType>)`](crate::operation::stop_automation_execution::builders::StopAutomationExecutionFluentBuilder::set_type): <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
     /// - On success, responds with [`StopAutomationExecutionOutput`](crate::operation::stop_automation_execution::StopAutomationExecutionOutput)
     /// - On failure, responds with [`SdkError<StopAutomationExecutionError>`](crate::operation::stop_automation_execution::StopAutomationExecutionError)
-    pub fn stop_automation_execution(
-        &self,
-    ) -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionFluentBuilder
-    {
+    pub fn stop_automation_execution(&self) -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionFluentBuilder {
         crate::operation::stop_automation_execution::builders::StopAutomationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

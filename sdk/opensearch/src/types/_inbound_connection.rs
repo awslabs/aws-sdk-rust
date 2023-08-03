@@ -22,15 +22,11 @@ pub struct InboundConnection {
 }
 impl InboundConnection {
     /// <p>Information about the source (local) domain.</p>
-    pub fn local_domain_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
+    pub fn local_domain_info(&self) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
         self.local_domain_info.as_ref()
     }
     /// <p>Information about the destination (remote) domain.</p>
-    pub fn remote_domain_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
+    pub fn remote_domain_info(&self) -> ::std::option::Option<&crate::types::DomainInformationContainer> {
         self.remote_domain_info.as_ref()
     }
     /// <p>The unique identifier of the connection.</p>
@@ -38,9 +34,7 @@ impl InboundConnection {
         self.connection_id.as_deref()
     }
     /// <p>The current status of the connection.</p>
-    pub fn connection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InboundConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::InboundConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The connection mode.</p>
@@ -57,9 +51,7 @@ impl InboundConnection {
 
 /// A builder for [`InboundConnection`](crate::types::InboundConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InboundConnectionBuilder {
     pub(crate) local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     pub(crate) remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
@@ -74,17 +66,12 @@ impl InboundConnectionBuilder {
         self
     }
     /// <p>Information about the source (local) domain.</p>
-    pub fn set_local_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformationContainer>,
-    ) -> Self {
+    pub fn set_local_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
         self.local_domain_info = input;
         self
     }
     /// <p>Information about the source (local) domain.</p>
-    pub fn get_local_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+    pub fn get_local_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
         &self.local_domain_info
     }
     /// <p>Information about the destination (remote) domain.</p>
@@ -93,32 +80,21 @@ impl InboundConnectionBuilder {
         self
     }
     /// <p>Information about the destination (remote) domain.</p>
-    pub fn set_remote_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformationContainer>,
-    ) -> Self {
+    pub fn set_remote_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformationContainer>) -> Self {
         self.remote_domain_info = input;
         self
     }
     /// <p>Information about the destination (remote) domain.</p>
-    pub fn get_remote_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformationContainer> {
+    pub fn get_remote_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformationContainer> {
         &self.remote_domain_info
     }
     /// <p>The unique identifier of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -132,17 +108,12 @@ impl InboundConnectionBuilder {
         self
     }
     /// <p>The current status of the connection.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InboundConnectionStatus>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::InboundConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
     /// <p>The current status of the connection.</p>
-    pub fn get_connection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::InboundConnectionStatus> {
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::InboundConnectionStatus> {
         &self.connection_status
     }
     /// <p>The connection mode.</p>
@@ -151,10 +122,7 @@ impl InboundConnectionBuilder {
         self
     }
     /// <p>The connection mode.</p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }

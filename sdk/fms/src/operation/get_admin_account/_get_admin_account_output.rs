@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAdminAccountOutput {
 }
 impl GetAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdminAccountOutput`](crate::operation::get_admin_account::GetAdminAccountOutput).
-    pub fn builder() -> crate::operation::get_admin_account::builders::GetAdminAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_admin_account::builders::GetAdminAccountOutputBuilder {
         crate::operation::get_admin_account::builders::GetAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAdminAccountOutput`](crate::operation::get_admin_account::GetAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdminAccountOutputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
     pub(crate) role_status: ::std::option::Option<crate::types::AccountRoleStatus>,
@@ -46,18 +43,12 @@ pub struct GetAdminAccountOutputBuilder {
 }
 impl GetAdminAccountOutputBuilder {
     /// <p>The account that is set as the Firewall Manager default administrator.</p>
-    pub fn admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account that is set as the Firewall Manager default administrator.</p>
-    pub fn set_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account = input;
         self
     }
@@ -71,10 +62,7 @@ impl GetAdminAccountOutputBuilder {
         self
     }
     /// <p>The status of the account that you set as the Firewall Manager default administrator.</p>
-    pub fn set_role_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountRoleStatus>,
-    ) -> Self {
+    pub fn set_role_status(mut self, input: ::std::option::Option<crate::types::AccountRoleStatus>) -> Self {
         self.role_status = input;
         self
     }

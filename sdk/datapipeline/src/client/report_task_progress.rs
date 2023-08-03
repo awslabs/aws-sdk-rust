@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput) with field(s):
     ///   - [`canceled(bool)`](crate::operation::report_task_progress::ReportTaskProgressOutput::canceled): <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     /// - On failure, responds with [`SdkError<ReportTaskProgressError>`](crate::operation::report_task_progress::ReportTaskProgressError)
-    pub fn report_task_progress(
-        &self,
-    ) -> crate::operation::report_task_progress::builders::ReportTaskProgressFluentBuilder {
-        crate::operation::report_task_progress::builders::ReportTaskProgressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn report_task_progress(&self) -> crate::operation::report_task_progress::builders::ReportTaskProgressFluentBuilder {
+        crate::operation::report_task_progress::builders::ReportTaskProgressFluentBuilder::new(self.handle.clone())
     }
 }

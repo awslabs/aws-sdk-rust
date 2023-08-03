@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput::created_at): <p>The date and time, in JavaScript date format, when the pull through cache rule was created.</p>
     ///   - [`registry_id(Option<String>)`](crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput::registry_id): <p>The registry ID associated with the request.</p>
     /// - On failure, responds with [`SdkError<CreatePullThroughCacheRuleError>`](crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError)
-    pub fn create_pull_through_cache_rule(&self) -> crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleFluentBuilder{
+    pub fn create_pull_through_cache_rule(
+        &self,
+    ) -> crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleFluentBuilder {
         crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleFluentBuilder::new(self.handle.clone())
     }
 }

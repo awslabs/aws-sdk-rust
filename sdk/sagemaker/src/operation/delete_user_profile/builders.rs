@@ -10,10 +10,7 @@ impl DeleteUserProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_user_profile::DeleteUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_profile::DeleteUserProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_profile::DeleteUserProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_user_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteUserProfileFluentBuilder {
         }
     }
     /// Access the DeleteUserProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteUserProfileFluentBuilder {
             crate::operation::delete_user_profile::DeleteUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_profile::DeleteUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_profile::DeleteUserProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteUserProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_profile::DeleteUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_profile::DeleteUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_profile::DeleteUserProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_profile::DeleteUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_profile::DeleteUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_profile::DeleteUserProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteUserProfileFluentBuilder {
             crate::operation::delete_user_profile::DeleteUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_profile::DeleteUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_profile::DeleteUserProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteUserProfileFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }

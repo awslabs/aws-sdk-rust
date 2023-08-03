@@ -5,16 +5,16 @@ pub use crate::operation::describe_configuration_aggregator_sources_status::_des
 
 impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_configuration_aggregator_sources_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder,
+    inner: crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder,
 }
 impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     /// Creates a new `DescribeConfigurationAggregatorSourcesStatus`.
@@ -37,15 +37,24 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationAggregatorSourcesStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,45 +93,55 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator{
-        crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator {
+        crate::operation::describe_configuration_aggregator_sources_status::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
     /// Appends an item to `UpdateStatus`.
@@ -142,10 +164,7 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>) -> Self {
         self.inner = self.inner.set_update_status(input);
         self
     }
@@ -155,9 +174,7 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn get_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
+    pub fn get_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
         self.inner.get_update_status()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>

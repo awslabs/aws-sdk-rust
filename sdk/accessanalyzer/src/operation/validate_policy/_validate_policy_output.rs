@@ -35,12 +35,9 @@ impl ValidatePolicyOutput {
 
 /// A builder for [`ValidatePolicyOutput`](crate::operation::validate_policy::ValidatePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePolicyOutputBuilder {
-    pub(crate) findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ValidatePolicyOutputBuilder {
         self
     }
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>> {
         &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>

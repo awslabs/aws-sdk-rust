@@ -37,10 +37,7 @@ impl DescribeEvaluationFormFluentBuilder {
         }
     }
     /// Access the DescribeEvaluationForm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEvaluationFormFluentBuilder {
             crate::operation::describe_evaluation_form::DescribeEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluation_form::DescribeEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluation_form::DescribeEvaluationFormError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEvaluationFormFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluation_form::DescribeEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluation_form::DescribeEvaluationFormError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluation_form::DescribeEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluation_form::DescribeEvaluationFormError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeEvaluationFormFluentBuilder {
             crate::operation::describe_evaluation_form::DescribeEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_evaluation_form::DescribeEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_evaluation_form::DescribeEvaluationFormError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribeEvaluationFormFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_form_id(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }

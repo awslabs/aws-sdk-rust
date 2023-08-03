@@ -23,9 +23,7 @@ impl InstanceStatusReason {
 
 /// A builder for [`InstanceStatusReason`](crate::types::InstanceStatusReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStatusReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl InstanceStatusReasonBuilder {
     }
     /// Consumes the builder and constructs a [`InstanceStatusReason`](crate::types::InstanceStatusReason).
     pub fn build(self) -> crate::types::InstanceStatusReason {
-        crate::types::InstanceStatusReason {
-            message: self.message,
-        }
+        crate::types::InstanceStatusReason { message: self.message }
     }
 }

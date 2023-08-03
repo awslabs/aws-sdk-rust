@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for ContinueUpdateRollbackOutput {
 }
 impl ContinueUpdateRollbackOutput {
     /// Creates a new builder-style object to manufacture [`ContinueUpdateRollbackOutput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput).
-    pub fn builder(
-    ) -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackOutputBuilder {
         crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`ContinueUpdateRollbackOutput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinueUpdateRollbackOutputBuilder {
     _request_id: Option<String>,
 }

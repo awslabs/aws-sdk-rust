@@ -43,9 +43,7 @@ impl ReputationOptions {
 
 /// A builder for [`ReputationOptions`](crate::types::ReputationOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReputationOptionsBuilder {
     pub(crate) sending_enabled: ::std::option::Option<bool>,
     pub(crate) reputation_metrics_enabled: ::std::option::Option<bool>,
@@ -93,10 +91,7 @@ impl ReputationOptionsBuilder {
     /// <p>The date and time at which the reputation metrics for the configuration set were last reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
     /// <p>When you disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code> and later re-enable it, the reputation metrics for the configuration set (but not for the entire Amazon SES account) are reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
-    pub fn set_last_fresh_start(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_fresh_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_fresh_start = input;
         self
     }

@@ -36,9 +36,7 @@ impl ModifyHapgInput {
 
 /// A builder for [`ModifyHapgInput`](crate::operation::modify_hapg::ModifyHapgInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyHapgInputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -78,36 +76,23 @@ impl ModifyHapgInputBuilder {
     /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
     ///
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn partition_serial_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_serial_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_serial_list.unwrap_or_default();
         v.push(input.into());
         self.partition_serial_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn set_partition_serial_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_serial_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_serial_list = input;
         self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn get_partition_serial_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_serial_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_serial_list
     }
     /// Consumes the builder and constructs a [`ModifyHapgInput`](crate::operation::modify_hapg::ModifyHapgInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_hapg::ModifyHapgInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hapg::ModifyHapgInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hapg::ModifyHapgInput {
             hapg_arn: self.hapg_arn,
             label: self.label,

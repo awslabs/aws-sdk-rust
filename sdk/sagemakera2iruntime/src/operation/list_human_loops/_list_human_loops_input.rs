@@ -57,9 +57,7 @@ impl ListHumanLoopsInput {
 
 /// A builder for [`ListHumanLoopsInput`](crate::operation::list_human_loops::ListHumanLoopsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHumanLoopsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,10 +73,7 @@ impl ListHumanLoopsInputBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -92,10 +87,7 @@ impl ListHumanLoopsInputBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -104,18 +96,12 @@ impl ListHumanLoopsInputBuilder {
         &self.creation_time_before
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_definition_arn = input;
         self
     }
@@ -168,10 +154,7 @@ impl ListHumanLoopsInputBuilder {
     /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::operation::list_human_loops::ListHumanLoopsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_human_loops::ListHumanLoopsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_human_loops::ListHumanLoopsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_human_loops::ListHumanLoopsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

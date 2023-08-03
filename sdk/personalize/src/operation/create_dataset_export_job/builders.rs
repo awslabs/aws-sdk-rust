@@ -32,8 +32,7 @@ impl CreateDatasetExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatasetExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder,
+    inner: crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder,
 }
 impl CreateDatasetExportJobFluentBuilder {
     /// Creates a new `CreateDatasetExportJob`.
@@ -44,10 +43,7 @@ impl CreateDatasetExportJobFluentBuilder {
         }
     }
     /// Access the CreateDatasetExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +55,7 @@ impl CreateDatasetExportJobFluentBuilder {
             crate::operation::create_dataset_export_job::CreateDatasetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_export_job::CreateDatasetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_export_job::CreateDatasetExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +65,7 @@ impl CreateDatasetExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +74,7 @@ impl CreateDatasetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_export_job::CreateDatasetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_export_job::CreateDatasetExportJobError>,
     > {
         let op = self
             .inner
@@ -108,9 +97,7 @@ impl CreateDatasetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_export_job::CreateDatasetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_export_job::CreateDatasetExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +111,7 @@ impl CreateDatasetExportJobFluentBuilder {
             crate::operation::create_dataset_export_job::CreateDatasetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_export_job::CreateDatasetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_export_job::CreateDatasetExportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -164,10 +149,7 @@ impl CreateDatasetExportJobFluentBuilder {
         self
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
-    pub fn set_ingestion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionMode>,
-    ) -> Self {
+    pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
         self.inner = self.inner.set_ingestion_mode(input);
         self
     }
@@ -195,10 +177,7 @@ impl CreateDatasetExportJobFluentBuilder {
         self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
-    pub fn set_job_output(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetExportJobOutput>,
-    ) -> Self {
+    pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::DatasetExportJobOutput>) -> Self {
         self.inner = self.inner.set_job_output(input);
         self
     }
@@ -216,10 +195,7 @@ impl CreateDatasetExportJobFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset export job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

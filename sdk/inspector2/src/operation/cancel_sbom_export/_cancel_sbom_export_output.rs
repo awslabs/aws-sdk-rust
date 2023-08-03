@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelSbomExportOutput {
 }
 impl CancelSbomExportOutput {
     /// Creates a new builder-style object to manufacture [`CancelSbomExportOutput`](crate::operation::cancel_sbom_export::CancelSbomExportOutput).
-    pub fn builder() -> crate::operation::cancel_sbom_export::builders::CancelSbomExportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_sbom_export::builders::CancelSbomExportOutputBuilder {
         crate::operation::cancel_sbom_export::builders::CancelSbomExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSbomExportOutput`](crate::operation::cancel_sbom_export::CancelSbomExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSbomExportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

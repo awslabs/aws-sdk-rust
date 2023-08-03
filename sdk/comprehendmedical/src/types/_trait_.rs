@@ -30,9 +30,7 @@ impl Trait {
 
 /// A builder for [`Trait`](crate::types::Trait).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AttributeName>,
     pub(crate) score: ::std::option::Option<f32>,

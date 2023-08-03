@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`event_data_store(impl ::std::convert::Into<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
     /// - On success, responds with [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput)
     /// - On failure, responds with [`SdkError<StopEventDataStoreIngestionError>`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError)
-    pub fn stop_event_data_store_ingestion(&self) -> crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder{
+    pub fn stop_event_data_store_ingestion(
+        &self,
+    ) -> crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder {
         crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,8 +6,7 @@
 pub struct ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     #[doc(hidden)]
-    pub stack_resource_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
+    pub stack_resource_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListStackResourcesOutput {
 }
 impl ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-    pub fn stack_resource_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StackResourceSummary]> {
+    pub fn stack_resource_summaries(&self) -> ::std::option::Option<&[crate::types::StackResourceSummary]> {
         self.stack_resource_summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
@@ -32,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListStackResourcesOutput {
 }
 impl ListStackResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListStackResourcesOutput`](crate::operation::list_stack_resources::ListStackResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder {
         crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackResourcesOutput`](crate::operation::list_stack_resources::ListStackResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackResourcesOutputBuilder {
-    pub(crate) stack_resource_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
+    pub(crate) stack_resource_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +55,12 @@ impl ListStackResourcesOutputBuilder {
         self
     }
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-    pub fn set_stack_resource_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
-    ) -> Self {
+    pub fn set_stack_resource_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>) -> Self {
         self.stack_resource_summaries = input;
         self
     }
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-    pub fn get_stack_resource_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>> {
+    pub fn get_stack_resource_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>> {
         &self.stack_resource_summaries
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>

@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetLendingAnalysisSummaryOutput {
 }
 impl GetLendingAnalysisSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
-    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder {
         crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisSummaryOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,10 +80,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -113,10 +108,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// <p> Contains summary information for documents grouped by type.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::LendingSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::LendingSummary>) -> Self {
         self.summary = input;
         self
     }
@@ -136,10 +128,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }
@@ -148,18 +137,12 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         &self.warnings
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -168,25 +151,17 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         &self.status_message
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyze_lending_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_lending_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn set_analyze_lending_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyze_lending_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyze_lending_model_version = input;
         self
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn get_analyze_lending_model_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_analyze_lending_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_lending_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -199,9 +174,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
+    pub fn build(self) -> crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
             document_metadata: self.document_metadata,
             job_status: self.job_status,

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`image_builders(Option<Vec<ImageBuilder>>)`](crate::operation::describe_image_builders::DescribeImageBuildersOutput::image_builders): <p>Information about the image builders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_image_builders::DescribeImageBuildersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeImageBuildersError>`](crate::operation::describe_image_builders::DescribeImageBuildersError)
-    pub fn describe_image_builders(
-        &self,
-    ) -> crate::operation::describe_image_builders::builders::DescribeImageBuildersFluentBuilder
-    {
-        crate::operation::describe_image_builders::builders::DescribeImageBuildersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_image_builders(&self) -> crate::operation::describe_image_builders::builders::DescribeImageBuildersFluentBuilder {
+        crate::operation::describe_image_builders::builders::DescribeImageBuildersFluentBuilder::new(self.handle.clone())
     }
 }

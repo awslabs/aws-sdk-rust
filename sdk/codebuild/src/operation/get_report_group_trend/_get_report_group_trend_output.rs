@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetReportGroupTrendOutput {
 }
 impl GetReportGroupTrendOutput {
     /// Creates a new builder-style object to manufacture [`GetReportGroupTrendOutput`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput).
-    pub fn builder(
-    ) -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder {
+    pub fn builder() -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder {
         crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReportGroupTrendOutput`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReportGroupTrendOutputBuilder {
     pub(crate) stats: ::std::option::Option<crate::types::ReportGroupTrendStats>,
     pub(crate) raw_data: ::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>>,
@@ -51,10 +48,7 @@ impl GetReportGroupTrendOutputBuilder {
         self
     }
     /// <p>Contains the accumulated trend data.</p>
-    pub fn set_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupTrendStats>,
-    ) -> Self {
+    pub fn set_stats(mut self, input: ::std::option::Option<crate::types::ReportGroupTrendStats>) -> Self {
         self.stats = input;
         self
     }
@@ -74,17 +68,12 @@ impl GetReportGroupTrendOutputBuilder {
         self
     }
     /// <p>An array that contains the raw data for each report.</p>
-    pub fn set_raw_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>>,
-    ) -> Self {
+    pub fn set_raw_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>>) -> Self {
         self.raw_data = input;
         self
     }
     /// <p>An array that contains the raw data for each report.</p>
-    pub fn get_raw_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>> {
+    pub fn get_raw_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>> {
         &self.raw_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

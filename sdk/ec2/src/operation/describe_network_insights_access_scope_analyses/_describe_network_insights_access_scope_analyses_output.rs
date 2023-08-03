@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsAccessScopeAnalysesOutput {
     /// <p>The Network Access Scope analyses.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>,
+    pub network_insights_access_scope_analyses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesOutput {
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
     /// <p>The Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analyses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkInsightsAccessScopeAnalysis]> {
+    pub fn network_insights_access_scope_analyses(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsAccessScopeAnalysis]> {
         self.network_insights_access_scope_analyses.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,18 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInsightsAccessScopeAna
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput).
-    pub fn builder() -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder{
-        crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
+        crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
-    pub(crate) network_insights_access_scope_analyses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>,
+    pub(crate) network_insights_access_scope_analyses: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +49,8 @@ impl DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
     /// To override the contents of this collection use [`set_network_insights_access_scope_analyses`](Self::set_network_insights_access_scope_analyses).
     ///
     /// <p>The Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analyses(
-        mut self,
-        input: crate::types::NetworkInsightsAccessScopeAnalysis,
-    ) -> Self {
-        let mut v = self
-            .network_insights_access_scope_analyses
-            .unwrap_or_default();
+    pub fn network_insights_access_scope_analyses(mut self, input: crate::types::NetworkInsightsAccessScopeAnalysis) -> Self {
+        let mut v = self.network_insights_access_scope_analyses.unwrap_or_default();
         v.push(input);
         self.network_insights_access_scope_analyses = ::std::option::Option::Some(v);
         self
@@ -67,9 +58,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
     /// <p>The Network Access Scope analyses.</p>
     pub fn set_network_insights_access_scope_analyses(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>,
     ) -> Self {
         self.network_insights_access_scope_analyses = input;
         self
@@ -77,8 +66,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
     /// <p>The Network Access Scope analyses.</p>
     pub fn get_network_insights_access_scope_analyses(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsAccessScopeAnalysis>> {
         &self.network_insights_access_scope_analyses
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -105,12 +93,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput).
-    pub fn build(self) -> crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput{
+    pub fn build(self) -> crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput {
         crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesOutput {
-            network_insights_access_scope_analyses: self.network_insights_access_scope_analyses
-            ,
-            next_token: self.next_token
-            ,
+            network_insights_access_scope_analyses: self.network_insights_access_scope_analyses,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

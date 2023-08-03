@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl EventType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "origin-request",
-            "origin-response",
-            "viewer-request",
-            "viewer-response",
-        ]
+        &["origin-request", "origin-response", "viewer-request", "viewer-response"]
     }
 }
 impl ::std::convert::AsRef<str> for EventType {

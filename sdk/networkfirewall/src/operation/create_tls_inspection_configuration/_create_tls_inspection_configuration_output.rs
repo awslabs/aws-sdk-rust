@@ -9,8 +9,7 @@ pub struct CreateTlsInspectionConfigurationOutput {
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
     #[doc(hidden)]
-    pub tls_inspection_configuration_response:
-        ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
+    pub tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,
 }
 impl CreateTlsInspectionConfigurationOutput {
@@ -20,9 +19,7 @@ impl CreateTlsInspectionConfigurationOutput {
         self.update_token.as_deref()
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
-    pub fn tls_inspection_configuration_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TlsInspectionConfigurationResponse> {
+    pub fn tls_inspection_configuration_response(&self) -> ::std::option::Option<&crate::types::TlsInspectionConfigurationResponse> {
         self.tls_inspection_configuration_response.as_ref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for CreateTlsInspectionConfigurationOutpu
 }
 impl CreateTlsInspectionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateTlsInspectionConfigurationOutput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput).
-    pub fn builder() -> crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationOutputBuilder {
         crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTlsInspectionConfigurationOutput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTlsInspectionConfigurationOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tls_inspection_configuration_response:
-        ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
+    pub(crate) tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,
 }
 impl CreateTlsInspectionConfigurationOutputBuilder {
@@ -68,10 +62,7 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
         &self.update_token
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
-    pub fn tls_inspection_configuration_response(
-        mut self,
-        input: crate::types::TlsInspectionConfigurationResponse,
-    ) -> Self {
+    pub fn tls_inspection_configuration_response(mut self, input: crate::types::TlsInspectionConfigurationResponse) -> Self {
         self.tls_inspection_configuration_response = ::std::option::Option::Some(input);
         self
     }
@@ -84,9 +75,7 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
         self
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
-    pub fn get_tls_inspection_configuration_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
+    pub fn get_tls_inspection_configuration_response(&self) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
         &self.tls_inspection_configuration_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,15 +88,10 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTlsInspectionConfigurationOutput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput {
         crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput {
-            update_token: self.update_token
-            ,
-            tls_inspection_configuration_response: self.tls_inspection_configuration_response
-            ,
+            update_token: self.update_token,
+            tls_inspection_configuration_response: self.tls_inspection_configuration_response,
             _request_id: self._request_id,
         }
     }

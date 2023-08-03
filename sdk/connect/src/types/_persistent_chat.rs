@@ -40,9 +40,7 @@ impl PersistentChat {
 
 /// A builder for [`PersistentChat`](crate::types::PersistentChat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PersistentChatBuilder {
     pub(crate) rehydration_type: ::std::option::Option<crate::types::RehydrationType>,
     pub(crate) source_contact_id: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl PersistentChatBuilder {
     /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
-    pub fn set_rehydration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RehydrationType>,
-    ) -> Self {
+    pub fn set_rehydration_type(mut self, input: ::std::option::Option<crate::types::RehydrationType>) -> Self {
         self.rehydration_type = input;
         self
     }
@@ -81,18 +76,12 @@ impl PersistentChatBuilder {
         &self.rehydration_type
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    pub fn source_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    pub fn set_source_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_contact_id = input;
         self
     }

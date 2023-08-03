@@ -17,10 +17,7 @@ impl DbClusterEndpointAlreadyExistsFault {
 }
 impl ::std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
-        )?;
+        ::std::write!(f, "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,17 +27,13 @@ impl ::std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
     }
 }
 impl ::std::error::Error for DbClusterEndpointAlreadyExistsFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::DbClusterEndpointAlreadyExistsFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::DbClusterEndpointAlreadyExistsFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DbClusterEndpointAlreadyExistsFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DbClusterEndpointAlreadyExistsFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -54,9 +47,7 @@ impl DbClusterEndpointAlreadyExistsFault {
 
 /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::types::error::DbClusterEndpointAlreadyExistsFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterEndpointAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,10 +74,7 @@ impl DbClusterEndpointAlreadyExistsFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

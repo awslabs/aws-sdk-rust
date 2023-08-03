@@ -7,24 +7,18 @@
 pub struct TableFieldWells {
     /// <p>The aggregated field well for the table.</p>
     #[doc(hidden)]
-    pub table_aggregated_field_wells:
-        ::std::option::Option<crate::types::TableAggregatedFieldWells>,
+    pub table_aggregated_field_wells: ::std::option::Option<crate::types::TableAggregatedFieldWells>,
     /// <p>The unaggregated field well for the table.</p>
     #[doc(hidden)]
-    pub table_unaggregated_field_wells:
-        ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
+    pub table_unaggregated_field_wells: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
 }
 impl TableFieldWells {
     /// <p>The aggregated field well for the table.</p>
-    pub fn table_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableAggregatedFieldWells> {
+    pub fn table_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::TableAggregatedFieldWells> {
         self.table_aggregated_field_wells.as_ref()
     }
     /// <p>The unaggregated field well for the table.</p>
-    pub fn table_unaggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableUnaggregatedFieldWells> {
+    pub fn table_unaggregated_field_wells(&self) -> ::std::option::Option<&crate::types::TableUnaggregatedFieldWells> {
         self.table_unaggregated_field_wells.as_ref()
     }
 }
@@ -37,58 +31,38 @@ impl TableFieldWells {
 
 /// A builder for [`TableFieldWells`](crate::types::TableFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableFieldWellsBuilder {
-    pub(crate) table_aggregated_field_wells:
-        ::std::option::Option<crate::types::TableAggregatedFieldWells>,
-    pub(crate) table_unaggregated_field_wells:
-        ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
+    pub(crate) table_aggregated_field_wells: ::std::option::Option<crate::types::TableAggregatedFieldWells>,
+    pub(crate) table_unaggregated_field_wells: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
 }
 impl TableFieldWellsBuilder {
     /// <p>The aggregated field well for the table.</p>
-    pub fn table_aggregated_field_wells(
-        mut self,
-        input: crate::types::TableAggregatedFieldWells,
-    ) -> Self {
+    pub fn table_aggregated_field_wells(mut self, input: crate::types::TableAggregatedFieldWells) -> Self {
         self.table_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field well for the table.</p>
-    pub fn set_table_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::TableAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_table_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::TableAggregatedFieldWells>) -> Self {
         self.table_aggregated_field_wells = input;
         self
     }
     /// <p>The aggregated field well for the table.</p>
-    pub fn get_table_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableAggregatedFieldWells> {
+    pub fn get_table_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::TableAggregatedFieldWells> {
         &self.table_aggregated_field_wells
     }
     /// <p>The unaggregated field well for the table.</p>
-    pub fn table_unaggregated_field_wells(
-        mut self,
-        input: crate::types::TableUnaggregatedFieldWells,
-    ) -> Self {
+    pub fn table_unaggregated_field_wells(mut self, input: crate::types::TableUnaggregatedFieldWells) -> Self {
         self.table_unaggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unaggregated field well for the table.</p>
-    pub fn set_table_unaggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_table_unaggregated_field_wells(mut self, input: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>) -> Self {
         self.table_unaggregated_field_wells = input;
         self
     }
     /// <p>The unaggregated field well for the table.</p>
-    pub fn get_table_unaggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableUnaggregatedFieldWells> {
+    pub fn get_table_unaggregated_field_wells(&self) -> &::std::option::Option<crate::types::TableUnaggregatedFieldWells> {
         &self.table_unaggregated_field_wells
     }
     /// Consumes the builder and constructs a [`TableFieldWells`](crate::types::TableFieldWells).

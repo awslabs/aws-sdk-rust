@@ -30,9 +30,7 @@ impl AggregateColumn {
 
 /// A builder for [`AggregateColumn`](crate::types::AggregateColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateColumnBuilder {
     pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) function: ::std::option::Option<crate::types::AggregateFunctionName>,
@@ -50,17 +48,12 @@ impl AggregateColumnBuilder {
         self
     }
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn set_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_names = input;
         self
     }
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn get_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.column_names
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
@@ -69,10 +62,7 @@ impl AggregateColumnBuilder {
         self
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    pub fn set_function(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregateFunctionName>,
-    ) -> Self {
+    pub fn set_function(mut self, input: ::std::option::Option<crate::types::AggregateFunctionName>) -> Self {
         self.function = input;
         self
     }

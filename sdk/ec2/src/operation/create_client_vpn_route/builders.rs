@@ -37,10 +37,7 @@ impl CreateClientVpnRouteFluentBuilder {
         }
     }
     /// Access the CreateClientVpnRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateClientVpnRouteFluentBuilder {
             crate::operation::create_client_vpn_route::CreateClientVpnRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_client_vpn_route::CreateClientVpnRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateClientVpnRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_client_vpn_route::CreateClientVpnRouteError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_client_vpn_route::CreateClientVpnRouteError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateClientVpnRouteFluentBuilder {
             crate::operation::create_client_vpn_route::CreateClientVpnRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_client_vpn_route::CreateClientVpnRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -150,10 +130,7 @@ impl CreateClientVpnRouteFluentBuilder {
     /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
     /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
@@ -164,10 +141,7 @@ impl CreateClientVpnRouteFluentBuilder {
     /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
     /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -183,19 +157,13 @@ impl CreateClientVpnRouteFluentBuilder {
     }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn target_vpc_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_vpc_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_vpc_subnet_id(input.into());
         self
     }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn set_target_vpc_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_vpc_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_vpc_subnet_id(input);
         self
     }

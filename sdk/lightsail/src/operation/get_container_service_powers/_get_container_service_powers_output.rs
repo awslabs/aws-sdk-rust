@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetContainerServicePowersOutput {
 }
 impl GetContainerServicePowersOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
-    pub fn builder() -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersOutputBuilder{
+    pub fn builder() -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersOutputBuilder {
         crate::operation::get_container_service_powers::builders::GetContainerServicePowersOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServicePowersOutputBuilder {
     pub(crate) powers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetContainerServicePowersOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn set_powers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
-    ) -> Self {
+    pub fn set_powers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>) -> Self {
         self.powers = input;
         self
     }
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn get_powers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>> {
+    pub fn get_powers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>> {
         &self.powers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl GetContainerServicePowersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_container_service_powers::GetContainerServicePowersOutput {
+    pub fn build(self) -> crate::operation::get_container_service_powers::GetContainerServicePowersOutput {
         crate::operation::get_container_service_powers::GetContainerServicePowersOutput {
             powers: self.powers,
             _request_id: self._request_id,

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<JobLog>>)`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput::items): <p>Request to describe Job log response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput::next_token): <p>Request to describe Job log response next token.</p>
     /// - On failure, responds with [`SdkError<DescribeJobLogItemsError>`](crate::operation::describe_job_log_items::DescribeJobLogItemsError)
-    pub fn describe_job_log_items(
-        &self,
-    ) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder {
-        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_log_items(&self) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder {
+        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsFluentBuilder::new(self.handle.clone())
     }
 }

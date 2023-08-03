@@ -30,27 +30,19 @@ impl DimensionFilter {
 
 /// A builder for [`DimensionFilter`](crate::types::DimensionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionFilterBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DimensionFilterBuilder {
     /// <p>The name of the dimension to filter on.</p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dimension to filter on.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
         self
     }
@@ -63,27 +55,19 @@ impl DimensionFilterBuilder {
     /// To override the contents of this collection use [`set_dimension_value_list`](Self::set_dimension_value_list).
     ///
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn dimension_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_value_list.unwrap_or_default();
         v.push(input.into());
         self.dimension_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn set_dimension_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimension_value_list = input;
         self
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn get_dimension_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dimension_value_list
     }
     /// Consumes the builder and constructs a [`DimensionFilter`](crate::types::DimensionFilter).

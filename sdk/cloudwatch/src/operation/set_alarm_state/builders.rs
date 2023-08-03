@@ -10,10 +10,7 @@ impl SetAlarmStateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_alarm_state::SetAlarmStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_alarm_state::SetAlarmStateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_alarm_state();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl SetAlarmStateFluentBuilder {
         }
     }
     /// Access the SetAlarmState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_alarm_state::builders::SetAlarmStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_alarm_state::builders::SetAlarmStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl SetAlarmStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -137,10 +129,7 @@ impl SetAlarmStateFluentBuilder {
         self
     }
     /// <p>The value of the state.</p>
-    pub fn set_state_value(
-        mut self,
-        input: ::std::option::Option<crate::types::StateValue>,
-    ) -> Self {
+    pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
         self.inner = self.inner.set_state_value(input);
         self
     }
@@ -164,19 +153,13 @@ impl SetAlarmStateFluentBuilder {
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn state_reason_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_reason_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_reason_data(input.into());
         self
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn set_state_reason_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_reason_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_reason_data(input);
         self
     }

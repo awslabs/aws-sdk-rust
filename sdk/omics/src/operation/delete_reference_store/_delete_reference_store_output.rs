@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteReferenceStoreOutput {
 }
 impl DeleteReferenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReferenceStoreOutput`](crate::operation::delete_reference_store::DeleteReferenceStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreOutputBuilder {
+    pub fn builder() -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreOutputBuilder {
         crate::operation::delete_reference_store::builders::DeleteReferenceStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReferenceStoreOutput`](crate::operation::delete_reference_store::DeleteReferenceStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReferenceStoreOutputBuilder {
     _request_id: Option<String>,
 }

@@ -30,9 +30,7 @@ impl UpdateProgramScheduleConfiguration {
 
 /// A builder for [`UpdateProgramScheduleConfiguration`](crate::types::UpdateProgramScheduleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProgramScheduleConfigurationBuilder {
     pub(crate) transition: ::std::option::Option<crate::types::UpdateProgramTransition>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,
@@ -44,10 +42,7 @@ impl UpdateProgramScheduleConfigurationBuilder {
         self
     }
     /// <p>Program transition configuration.</p>
-    pub fn set_transition(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateProgramTransition>,
-    ) -> Self {
+    pub fn set_transition(mut self, input: ::std::option::Option<crate::types::UpdateProgramTransition>) -> Self {
         self.transition = input;
         self
     }

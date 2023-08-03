@@ -12,10 +12,7 @@ pub fn ser_sub_slot_value_elicitation_setting(
     if let Some(var_3) = &input.prompt_specification {
         #[allow(unused_mut)]
         let mut object_4 = object.key("promptSpecification").start_object();
-        crate::protocol_serde::shape_prompt_specification::ser_prompt_specification(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_prompt_specification::ser_prompt_specification(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.sample_utterances {
@@ -24,10 +21,7 @@ pub fn ser_sub_slot_value_elicitation_setting(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -44,67 +38,51 @@ pub fn ser_sub_slot_value_elicitation_setting(
 
 pub(crate) fn de_sub_slot_value_elicitation_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SubSlotValueElicitationSetting>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SubSlotValueElicitationSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::SubSlotValueElicitationSettingBuilder::default();
+            let mut builder = crate::types::builders::SubSlotValueElicitationSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "defaultValueSpecification" => {
-                                builder = builder.set_default_value_specification(
-                                    crate::protocol_serde::shape_slot_default_value_specification::de_slot_default_value_specification(tokens)?
-                                );
-                            }
-                            "promptSpecification" => {
-                                builder = builder.set_prompt_specification(
-                                    crate::protocol_serde::shape_prompt_specification::de_prompt_specification(tokens)?
-                                );
-                            }
-                            "sampleUtterances" => {
-                                builder = builder.set_sample_utterances(
-                                    crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(tokens)?
-                                );
-                            }
-                            "waitAndContinueSpecification" => {
-                                builder = builder.set_wait_and_continue_specification(
-                                    crate::protocol_serde::shape_wait_and_continue_specification::de_wait_and_continue_specification(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "defaultValueSpecification" => {
+                            builder = builder.set_default_value_specification(
+                                crate::protocol_serde::shape_slot_default_value_specification::de_slot_default_value_specification(tokens)?,
+                            );
                         }
-                    }
+                        "promptSpecification" => {
+                            builder =
+                                builder.set_prompt_specification(crate::protocol_serde::shape_prompt_specification::de_prompt_specification(tokens)?);
+                        }
+                        "sampleUtterances" => {
+                            builder = builder
+                                .set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(tokens)?);
+                        }
+                        "waitAndContinueSpecification" => {
+                            builder = builder.set_wait_and_continue_specification(
+                                crate::protocol_serde::shape_wait_and_continue_specification::de_wait_and_continue_specification(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

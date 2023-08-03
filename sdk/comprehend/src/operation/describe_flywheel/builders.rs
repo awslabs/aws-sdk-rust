@@ -10,10 +10,7 @@ impl DescribeFlywheelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel::DescribeFlywheelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel::DescribeFlywheelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel::DescribeFlywheelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_flywheel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeFlywheelFluentBuilder {
         }
     }
     /// Access the DescribeFlywheel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeFlywheelFluentBuilder {
             crate::operation::describe_flywheel::DescribeFlywheel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel::DescribeFlywheelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel::DescribeFlywheelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeFlywheelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeFlywheelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel::DescribeFlywheelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel::DescribeFlywheelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel::DescribeFlywheelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeFlywheelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel::DescribeFlywheelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel::DescribeFlywheelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel::DescribeFlywheelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeFlywheelFluentBuilder {
             crate::operation::describe_flywheel::DescribeFlywheel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel::DescribeFlywheelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel::DescribeFlywheelError>,
     > {
         self.customize_middleware().await
     }

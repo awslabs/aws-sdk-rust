@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`aggregate_evaluation_results(Option<Vec<AggregateEvaluationResult>>)`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput::aggregate_evaluation_results): <p>Returns an AggregateEvaluationResults object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetAggregateComplianceDetailsByConfigRuleError>`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError)
-    pub fn get_aggregate_compliance_details_by_config_rule(&self) -> crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleFluentBuilder{
-        crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleFluentBuilder::new(self.handle.clone())
+    pub fn get_aggregate_compliance_details_by_config_rule(
+        &self,
+    ) -> crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleFluentBuilder {
+        crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -44,9 +44,7 @@ impl LastDeploymentInfo {
 
 /// A builder for [`LastDeploymentInfo`](crate::types::LastDeploymentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastDeploymentInfoBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
@@ -55,18 +53,12 @@ pub struct LastDeploymentInfoBuilder {
 }
 impl LastDeploymentInfoBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -80,10 +72,7 @@ impl LastDeploymentInfoBuilder {
         self
     }
     /// <p>The status of the most recent deployment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -97,10 +86,7 @@ impl LastDeploymentInfoBuilder {
         self
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -114,10 +100,7 @@ impl LastDeploymentInfoBuilder {
         self
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

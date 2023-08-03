@@ -61,14 +61,11 @@ impl StorageType {
 
 /// A builder for [`StorageType`](crate::types::StorageType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageTypeBuilder {
     pub(crate) storage_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_type_limits:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
+    pub(crate) storage_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
 }
 impl StorageTypeBuilder {
     /// <p> Type of the storage. List of available storage options: </p>
@@ -77,10 +74,7 @@ impl StorageTypeBuilder {
     /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
     /// </ol>
     /// <p></p>
-    pub fn storage_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -90,10 +84,7 @@ impl StorageTypeBuilder {
     /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
     /// </ol>
     /// <p></p>
-    pub fn set_storage_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type_name = input;
         self
     }
@@ -114,10 +105,7 @@ impl StorageTypeBuilder {
     /// <li>io1</li>
     /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
-    pub fn storage_sub_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_sub_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_sub_type_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -129,10 +117,7 @@ impl StorageTypeBuilder {
     /// <li>io1</li>
     /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
-    pub fn set_storage_sub_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_sub_type_name = input;
         self
     }
@@ -159,17 +144,12 @@ impl StorageTypeBuilder {
         self
     }
     /// <p>List of limits that are applicable for given storage type. </p>
-    pub fn set_storage_type_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
-    ) -> Self {
+    pub fn set_storage_type_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>) -> Self {
         self.storage_type_limits = input;
         self
     }
     /// <p>List of limits that are applicable for given storage type. </p>
-    pub fn get_storage_type_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
+    pub fn get_storage_type_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>> {
         &self.storage_type_limits
     }
     /// Consumes the builder and constructs a [`StorageType`](crate::types::StorageType).

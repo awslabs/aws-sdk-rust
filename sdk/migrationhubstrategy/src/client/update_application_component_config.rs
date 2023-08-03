@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`app_type(AppType)`](crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigFluentBuilder::app_type) / [`set_app_type(Option<AppType>)`](crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigFluentBuilder::set_app_type): <p>The type of known component.</p>
     /// - On success, responds with [`UpdateApplicationComponentConfigOutput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateApplicationComponentConfigError>`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigError)
-    pub fn update_application_component_config(&self) -> crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigFluentBuilder{
+    pub fn update_application_component_config(
+        &self,
+    ) -> crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigFluentBuilder {
         crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigFluentBuilder::new(self.handle.clone())
     }
 }

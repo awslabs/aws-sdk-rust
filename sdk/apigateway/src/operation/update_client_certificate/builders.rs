@@ -26,8 +26,7 @@ impl UpdateClientCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClientCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder,
+    inner: crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder,
 }
 impl UpdateClientCertificateFluentBuilder {
     /// Creates a new `UpdateClientCertificate`.
@@ -38,10 +37,7 @@ impl UpdateClientCertificateFluentBuilder {
         }
     }
     /// Access the UpdateClientCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateClientCertificateFluentBuilder {
             crate::operation::update_client_certificate::UpdateClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_client_certificate::UpdateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_client_certificate::UpdateClientCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateClientCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_client_certificate::UpdateClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_client_certificate::UpdateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_client_certificate::UpdateClientCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_client_certificate::UpdateClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_client_certificate::UpdateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_client_certificate::UpdateClientCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateClientCertificateFluentBuilder {
             crate::operation::update_client_certificate::UpdateClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_client_certificate::UpdateClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_client_certificate::UpdateClientCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_certificate_id(input.into());
         self
     }
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
     }
@@ -154,17 +133,12 @@ impl UpdateClientCertificateFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

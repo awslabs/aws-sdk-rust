@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`managed_credentials_action(ManagedCredentialsAction)`](crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::managed_credentials_action) / [`set_managed_credentials_action(Option<ManagedCredentialsAction>)`](crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::set_managed_credentials_action): <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>  <ul>   <li> <p> <code>ENABLE</code> </p> </li>   <li> <p> <code>DISABLE</code> </p> </li>  </ul> <note>   <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>  </note>
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput)
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
-    pub fn update_environment(
-        &self,
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
-        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
+        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

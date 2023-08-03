@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteExplainabilityExportOutput {
 }
 impl DeleteExplainabilityExportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExplainabilityExportOutput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput).
-    pub fn builder() -> crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportOutputBuilder{
+    pub fn builder() -> crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportOutputBuilder {
         crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExplainabilityExportOutput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExplainabilityExportOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteExplainabilityExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteExplainabilityExportOutput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput {
+    pub fn build(self) -> crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput {
         crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput {
             _request_id: self._request_id,
         }

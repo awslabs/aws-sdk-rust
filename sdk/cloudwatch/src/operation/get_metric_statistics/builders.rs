@@ -55,9 +55,7 @@ impl GetMetricStatisticsFluentBuilder {
         }
     }
     /// Access the GetMetricStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_metric_statistics::builders::GetMetricStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_metric_statistics::builders::GetMetricStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +67,7 @@ impl GetMetricStatisticsFluentBuilder {
             crate::operation::get_metric_statistics::GetMetricStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_statistics::GetMetricStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_statistics::GetMetricStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +77,7 @@ impl GetMetricStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +86,7 @@ impl GetMetricStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_statistics::GetMetricStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_statistics::GetMetricStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_statistics::GetMetricStatisticsError>,
     > {
         let op = self
             .inner
@@ -118,9 +109,7 @@ impl GetMetricStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_statistics::GetMetricStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_statistics::GetMetricStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_statistics::GetMetricStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -134,9 +123,7 @@ impl GetMetricStatisticsFluentBuilder {
             crate::operation::get_metric_statistics::GetMetricStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_statistics::GetMetricStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_statistics::GetMetricStatisticsError>,
     > {
         self.customize_middleware().await
     }
@@ -178,17 +165,12 @@ impl GetMetricStatisticsFluentBuilder {
         self
     }
     /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
@@ -213,10 +195,7 @@ impl GetMetricStatisticsFluentBuilder {
     /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
     /// </ul>
     /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -240,10 +219,7 @@ impl GetMetricStatisticsFluentBuilder {
     }
     /// <p>The time stamp that determines the last data point to return.</p>
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -294,17 +270,12 @@ impl GetMetricStatisticsFluentBuilder {
         self
     }
     /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Statistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Statistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
     /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Statistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Statistic>> {
         self.inner.get_statistics()
     }
     /// Appends an item to `ExtendedStatistics`.
@@ -312,25 +283,17 @@ impl GetMetricStatisticsFluentBuilder {
     /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
     ///
     /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-    pub fn extended_statistics(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extended_statistics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extended_statistics(input.into());
         self
     }
     /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-    pub fn set_extended_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_extended_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_extended_statistics(input);
         self
     }
     /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-    pub fn get_extended_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_extended_statistics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_extended_statistics()
     }
     /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>

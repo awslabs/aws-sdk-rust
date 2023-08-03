@@ -22,18 +22,14 @@ impl ListAssessmentReportsInput {
 }
 impl ListAssessmentReportsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentReportsInput`](crate::operation::list_assessment_reports::ListAssessmentReportsInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_reports::builders::ListAssessmentReportsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_reports::builders::ListAssessmentReportsInputBuilder {
         crate::operation::list_assessment_reports::builders::ListAssessmentReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentReportsInput`](crate::operation::list_assessment_reports::ListAssessmentReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentReportsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListAssessmentReportsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssessmentReportsInput`](crate::operation::list_assessment_reports::ListAssessmentReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessment_reports::ListAssessmentReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assessment_reports::ListAssessmentReportsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_assessment_reports::ListAssessmentReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_assessment_reports::ListAssessmentReportsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

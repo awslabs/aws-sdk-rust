@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_template_aliases::ListTemplateAliasesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_aliases::ListTemplateAliasesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListTemplateAliasesError>`](crate::operation::list_template_aliases::ListTemplateAliasesError)
-    pub fn list_template_aliases(
-        &self,
-    ) -> crate::operation::list_template_aliases::builders::ListTemplateAliasesFluentBuilder {
-        crate::operation::list_template_aliases::builders::ListTemplateAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_template_aliases(&self) -> crate::operation::list_template_aliases::builders::ListTemplateAliasesFluentBuilder {
+        crate::operation::list_template_aliases::builders::ListTemplateAliasesFluentBuilder::new(self.handle.clone())
     }
 }

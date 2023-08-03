@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
     /// - On failure, responds with [`SdkError<PutRuleGroupsNamespaceError>`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError)
-    pub fn put_rule_groups_namespace(
-        &self,
-    ) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceFluentBuilder
-    {
+    pub fn put_rule_groups_namespace(&self) -> crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceFluentBuilder {
         crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

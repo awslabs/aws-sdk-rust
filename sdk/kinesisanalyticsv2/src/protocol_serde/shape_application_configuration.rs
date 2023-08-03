@@ -18,10 +18,7 @@ pub fn ser_application_configuration(
     if let Some(var_5) = &input.environment_properties {
         #[allow(unused_mut)]
         let mut object_6 = object.key("EnvironmentProperties").start_object();
-        crate::protocol_serde::shape_environment_properties::ser_environment_properties(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_environment_properties::ser_environment_properties(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.application_code_configuration {
@@ -32,9 +29,7 @@ pub fn ser_application_configuration(
     }
     if let Some(var_9) = &input.application_snapshot_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object
-            .key("ApplicationSnapshotConfiguration")
-            .start_object();
+        let mut object_10 = object.key("ApplicationSnapshotConfiguration").start_object();
         crate::protocol_serde::shape_application_snapshot_configuration::ser_application_snapshot_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
@@ -44,10 +39,7 @@ pub fn ser_application_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -55,9 +47,7 @@ pub fn ser_application_configuration(
     }
     if let Some(var_15) = &input.zeppelin_application_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object
-            .key("ZeppelinApplicationConfiguration")
-            .start_object();
+        let mut object_16 = object.key("ZeppelinApplicationConfiguration").start_object();
         crate::protocol_serde::shape_zeppelin_application_configuration::ser_zeppelin_application_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }

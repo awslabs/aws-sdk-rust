@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_report_groups::ListReportGroupsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     ///   - [`report_groups(Option<Vec<String>>)`](crate::operation::list_report_groups::ListReportGroupsOutput::report_groups): <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
     /// - On failure, responds with [`SdkError<ListReportGroupsError>`](crate::operation::list_report_groups::ListReportGroupsError)
-    pub fn list_report_groups(
-        &self,
-    ) -> crate::operation::list_report_groups::builders::ListReportGroupsFluentBuilder {
-        crate::operation::list_report_groups::builders::ListReportGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_report_groups(&self) -> crate::operation::list_report_groups::builders::ListReportGroupsFluentBuilder {
+        crate::operation::list_report_groups::builders::ListReportGroupsFluentBuilder::new(self.handle.clone())
     }
 }

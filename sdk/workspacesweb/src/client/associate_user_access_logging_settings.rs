@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`user_access_logging_settings_arn(Option<String>)`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput::user_access_logging_settings_arn): <p>The ARN of the user access logging settings.</p>
     /// - On failure, responds with [`SdkError<AssociateUserAccessLoggingSettingsError>`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError)
-    pub fn associate_user_access_logging_settings(&self) -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsFluentBuilder{
+    pub fn associate_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsFluentBuilder {
         crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

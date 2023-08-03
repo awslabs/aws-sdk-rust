@@ -37,10 +37,7 @@ impl ListTypeRegistrationsFluentBuilder {
         }
     }
     /// Access the ListTypeRegistrations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListTypeRegistrationsFluentBuilder {
             crate::operation::list_type_registrations::ListTypeRegistrations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_registrations::ListTypeRegistrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_registrations::ListTypeRegistrationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListTypeRegistrationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListTypeRegistrationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_type_registrations::ListTypeRegistrationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_registrations::ListTypeRegistrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_registrations::ListTypeRegistrationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListTypeRegistrationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_type_registrations::ListTypeRegistrationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_registrations::ListTypeRegistrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_registrations::ListTypeRegistrationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListTypeRegistrationsFluentBuilder {
             crate::operation::list_type_registrations::ListTypeRegistrations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_registrations::ListTypeRegistrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_registrations::ListTypeRegistrationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator {
-        crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator {
+        crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The kind of extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -193,18 +174,13 @@ impl ListTypeRegistrationsFluentBuilder {
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn set_registration_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status_filter(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.inner = self.inner.set_registration_status_filter(input);
         self
     }
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
-    pub fn get_registration_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status_filter(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status_filter()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>

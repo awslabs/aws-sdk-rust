@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListImpersonationRolesOutput {
 }
 impl ListImpersonationRolesOutput {
     /// Creates a new builder-style object to manufacture [`ListImpersonationRolesOutput`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_impersonation_roles::builders::ListImpersonationRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_impersonation_roles::builders::ListImpersonationRolesOutputBuilder {
         crate::operation::list_impersonation_roles::builders::ListImpersonationRolesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImpersonationRolesOutput`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImpersonationRolesOutputBuilder {
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListImpersonationRolesOutputBuilder {
         self
     }
     /// <p>The list of impersonation roles under the given WorkMail organization.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>>) -> Self {
         self.roles = input;
         self
     }
     /// <p>The list of impersonation roles under the given WorkMail organization.</p>
-    pub fn get_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>> {
         &self.roles
     }
     /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>

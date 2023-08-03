@@ -111,9 +111,7 @@ impl AwsEc2VolumeDetails {
 
 /// A builder for [`AwsEc2VolumeDetails`](crate::types::AwsEc2VolumeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VolumeDetailsBuilder {
     pub(crate) create_time: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
@@ -122,8 +120,7 @@ pub struct AwsEc2VolumeDetailsBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_type: ::std::option::Option<::std::string::String>,
     pub(crate) volume_scan_status: ::std::option::Option<::std::string::String>,
@@ -266,17 +263,12 @@ impl AwsEc2VolumeDetailsBuilder {
         self
     }
     /// <p>The volume attachments.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>The volume attachments.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>> {
         &self.attachments
     }
     /// <p>The ID of the volume. </p>
@@ -308,18 +300,12 @@ impl AwsEc2VolumeDetailsBuilder {
         &self.volume_type
     }
     /// <p>Indicates whether the volume was scanned or skipped. </p>
-    pub fn volume_scan_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_scan_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_scan_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether the volume was scanned or skipped. </p>
-    pub fn set_volume_scan_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_scan_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_scan_status = input;
         self
     }

@@ -32,17 +32,14 @@ impl GetDecryptedApiKeyInput {
 }
 impl GetDecryptedApiKeyInput {
     /// Creates a new builder-style object to manufacture [`GetDecryptedApiKeyInput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput).
-    pub fn builder(
-    ) -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder {
+    pub fn builder() -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder {
         crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDecryptedApiKeyInput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDecryptedApiKeyInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
@@ -94,15 +91,11 @@ impl GetDecryptedApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetDecryptedApiKeyInput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput {
-                scope: self.scope,
-                api_key: self.api_key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput {
+            scope: self.scope,
+            api_key: self.api_key,
+        })
     }
 }

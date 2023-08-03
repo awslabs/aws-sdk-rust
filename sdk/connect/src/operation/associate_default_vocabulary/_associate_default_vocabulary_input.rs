@@ -29,16 +29,14 @@ impl AssociateDefaultVocabularyInput {
 }
 impl AssociateDefaultVocabularyInput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyInput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput).
-    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder{
+    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder {
         crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDefaultVocabularyInput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDefaultVocabularyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
@@ -65,32 +63,21 @@ impl AssociateDefaultVocabularyInputBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         &self.language_code
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_id = input;
         self
     }
@@ -105,12 +92,10 @@ impl AssociateDefaultVocabularyInputBuilder {
         crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput {
-                instance_id: self.instance_id,
-                language_code: self.language_code,
-                vocabulary_id: self.vocabulary_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput {
+            instance_id: self.instance_id,
+            language_code: self.language_code,
+            vocabulary_id: self.vocabulary_id,
+        })
     }
 }

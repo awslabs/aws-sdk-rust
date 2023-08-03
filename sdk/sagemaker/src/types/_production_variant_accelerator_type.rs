@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProductionVariantAcceleratorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ProductionVariantAcceleratorType {
             "ml.eia2.large" => ProductionVariantAcceleratorType::MlEia2Large,
             "ml.eia2.medium" => ProductionVariantAcceleratorType::MlEia2Medium,
             "ml.eia2.xlarge" => ProductionVariantAcceleratorType::MlEia2Xlarge,
-            other => ProductionVariantAcceleratorType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ProductionVariantAcceleratorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

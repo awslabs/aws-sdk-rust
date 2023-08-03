@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDataQualityRulesetOutput {
 }
 impl CreateDataQualityRulesetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetOutput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput).
-    pub fn builder() -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetOutputBuilder{
+    pub fn builder() -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetOutputBuilder {
         crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataQualityRulesetOutput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataQualityRulesetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateDataQualityRulesetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataQualityRulesetOutput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput {
+    pub fn build(self) -> crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput {
         crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput {
             name: self.name,
             _request_id: self._request_id,

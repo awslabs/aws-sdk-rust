@@ -5,16 +5,16 @@ pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_fr
 
 impl RestoreTableFromClusterSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.restore_table_from_cluster_snapshot();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableFromClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder,
+    inner: crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder,
 }
 impl RestoreTableFromClusterSnapshotFluentBuilder {
     /// Creates a new `RestoreTableFromClusterSnapshot`.
@@ -39,15 +39,20 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         }
     }
     /// Access the RestoreTableFromClusterSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshot,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshot,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -117,18 +126,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -137,18 +140,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_snapshot_identifier()
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
-    pub fn source_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_database_name(input.into());
         self
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
-    pub fn set_source_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_database_name(input);
         self
     }
@@ -157,18 +154,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_source_database_name()
     }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
-    pub fn source_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_schema_name(input.into());
         self
     }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
-    pub fn set_source_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_schema_name(input);
         self
     }
@@ -177,18 +168,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_source_schema_name()
     }
     /// <p>The name of the source table to restore from.</p>
-    pub fn source_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_table_name(input.into());
         self
     }
     /// <p>The name of the source table to restore from.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_table_name(input);
         self
     }
@@ -197,18 +182,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_source_table_name()
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn target_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_database_name(input.into());
         self
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_database_name(input);
         self
     }
@@ -217,18 +196,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_target_database_name()
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn target_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_schema_name(input.into());
         self
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn set_target_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_schema_name(input);
         self
     }
@@ -237,18 +210,12 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self.inner.get_target_schema_name()
     }
     /// <p>The name of the table to create as a result of the current request.</p>
-    pub fn new_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_table_name(input.into());
         self
     }
     /// <p>The name of the table to create as a result of the current request.</p>
-    pub fn set_new_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_table_name(input);
         self
     }
@@ -262,10 +229,7 @@ impl RestoreTableFromClusterSnapshotFluentBuilder {
         self
     }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
-    pub fn set_enable_case_sensitive_identifier(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_case_sensitive_identifier(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_case_sensitive_identifier(input);
         self
     }

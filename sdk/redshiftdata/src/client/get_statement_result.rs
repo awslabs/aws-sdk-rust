@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`total_num_rows(i64)`](crate::operation::get_statement_result::GetStatementResultOutput::total_num_rows): <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_statement_result::GetStatementResultOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<GetStatementResultError>`](crate::operation::get_statement_result::GetStatementResultError)
-    pub fn get_statement_result(
-        &self,
-    ) -> crate::operation::get_statement_result::builders::GetStatementResultFluentBuilder {
-        crate::operation::get_statement_result::builders::GetStatementResultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_statement_result(&self) -> crate::operation::get_statement_result::builders::GetStatementResultFluentBuilder {
+        crate::operation::get_statement_result::builders::GetStatementResultFluentBuilder::new(self.handle.clone())
     }
 }

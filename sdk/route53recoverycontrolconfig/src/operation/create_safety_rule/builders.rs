@@ -10,10 +10,7 @@ impl CreateSafetyRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_safety_rule::CreateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_safety_rule::CreateSafetyRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_safety_rule::CreateSafetyRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_safety_rule();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateSafetyRuleFluentBuilder {
         }
     }
     /// Access the CreateSafetyRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateSafetyRuleFluentBuilder {
             crate::operation::create_safety_rule::CreateSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_safety_rule::CreateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_safety_rule::CreateSafetyRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateSafetyRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_safety_rule::CreateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_safety_rule::CreateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_safety_rule::CreateSafetyRuleError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_safety_rule::CreateSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_safety_rule::CreateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_safety_rule::CreateSafetyRuleError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CreateSafetyRuleFluentBuilder {
             crate::operation::create_safety_rule::CreateSafetyRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_safety_rule::CreateSafetyRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_safety_rule::CreateSafetyRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl CreateSafetyRuleFluentBuilder {
         self
     }
     /// <p>The assertion rule requested.</p>
-    pub fn set_assertion_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::NewAssertionRule>,
-    ) -> Self {
+    pub fn set_assertion_rule(mut self, input: ::std::option::Option<crate::types::NewAssertionRule>) -> Self {
         self.inner = self.inner.set_assertion_rule(input);
         self
     }
@@ -163,10 +144,7 @@ impl CreateSafetyRuleFluentBuilder {
         self
     }
     /// <p>The gating rule requested.</p>
-    pub fn set_gating_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::NewGatingRule>,
-    ) -> Self {
+    pub fn set_gating_rule(mut self, input: ::std::option::Option<crate::types::NewGatingRule>) -> Self {
         self.inner = self.inner.set_gating_rule(input);
         self
     }
@@ -179,30 +157,17 @@ impl CreateSafetyRuleFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the safety rule.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags associated with the safety rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags associated with the safety rule.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

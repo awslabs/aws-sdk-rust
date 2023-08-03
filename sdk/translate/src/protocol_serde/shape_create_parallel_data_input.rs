@@ -12,10 +12,7 @@ pub fn ser_create_parallel_data_input(
     if let Some(var_3) = &input.parallel_data_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ParallelDataConfig").start_object();
-        crate::protocol_serde::shape_parallel_data_config::ser_parallel_data_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_parallel_data_config::ser_parallel_data_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.encryption_key {

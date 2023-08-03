@@ -23,9 +23,7 @@ impl DeleteApiKeyInput {
 
 /// A builder for [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApiKeyInputBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DeleteApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_api_key::DeleteApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_api_key::DeleteApiKeyInput {
-            api_key: self.api_key,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_api_key::DeleteApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_api_key::DeleteApiKeyInput { api_key: self.api_key })
     }
 }

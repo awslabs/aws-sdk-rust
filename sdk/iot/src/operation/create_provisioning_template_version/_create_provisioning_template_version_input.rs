@@ -29,16 +29,14 @@ impl CreateProvisioningTemplateVersionInput {
 }
 impl CreateProvisioningTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
-    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder {
         crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateVersionInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateProvisioningTemplateVersionInputBuilder {
 }
 impl CreateProvisioningTemplateVersionInputBuilder {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -100,16 +86,18 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         &self.set_as_default
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput {
-                template_name: self.template_name
-                ,
-                template_body: self.template_body
-                ,
-                set_as_default: self.set_as_default
-                ,
-            }
+                template_name: self.template_name,
+                template_body: self.template_body,
+                set_as_default: self.set_as_default,
+            },
         )
     }
 }

@@ -51,9 +51,7 @@ impl ConnectPeerAssociation {
 
 /// A builder for [`ConnectPeerAssociation`](crate::types::ConnectPeerAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectPeerAssociationBuilder {
     pub(crate) connect_peer_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ConnectPeerAssociationBuilder {
 }
 impl ConnectPeerAssociationBuilder {
     /// <p>The ID of the Connect peer.</p>
-    pub fn connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_peer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn set_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connect_peer_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl ConnectPeerAssociationBuilder {
         &self.connect_peer_id
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -136,10 +122,7 @@ impl ConnectPeerAssociationBuilder {
         self
     }
     /// <p>The state of the Connect peer association.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectPeerAssociationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConnectPeerAssociationState>) -> Self {
         self.state = input;
         self
     }

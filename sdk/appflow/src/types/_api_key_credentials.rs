@@ -59,18 +59,12 @@ impl ApiKeyCredentialsBuilder {
         &self.api_key
     }
     /// <p>The API secret key required for API key authentication.</p>
-    pub fn api_secret_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API secret key required for API key authentication.</p>
-    pub fn set_api_secret_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_secret_key = input;
         self
     }

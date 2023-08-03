@@ -26,7 +26,7 @@ impl CreatePackagingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePackagingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder,
+    inner: crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder,
 }
 impl CreatePackagingConfigurationFluentBuilder {
     /// Creates a new `CreatePackagingConfiguration`.
@@ -37,7 +37,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         }
     }
     /// Access the CreatePackagingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePackagingConfigurationFluentBuilder {
             crate::operation::create_packaging_configuration::CreatePackagingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_configuration::CreatePackagingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePackagingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_configuration::CreatePackagingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_configuration::CreatePackagingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreatePackagingConfigurationFluentBuilder {
             crate::operation::create_packaging_configuration::CreatePackagingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_packaging_configuration::CreatePackagingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// A CMAF packaging configuration.
-    pub fn set_cmaf_package(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafPackage>,
-    ) -> Self {
+    pub fn set_cmaf_package(mut self, input: ::std::option::Option<crate::types::CmafPackage>) -> Self {
         self.inner = self.inner.set_cmaf_package(input);
         self
     }
@@ -143,10 +129,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn set_dash_package(
-        mut self,
-        input: ::std::option::Option<crate::types::DashPackage>,
-    ) -> Self {
+    pub fn set_dash_package(mut self, input: ::std::option::Option<crate::types::DashPackage>) -> Self {
         self.inner = self.inner.set_dash_package(input);
         self
     }
@@ -160,10 +143,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn set_hls_package(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsPackage>,
-    ) -> Self {
+    pub fn set_hls_package(mut self, input: ::std::option::Option<crate::types::HlsPackage>) -> Self {
         self.inner = self.inner.set_hls_package(input);
         self
     }
@@ -191,10 +171,7 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn set_mss_package(
-        mut self,
-        input: ::std::option::Option<crate::types::MssPackage>,
-    ) -> Self {
+    pub fn set_mss_package(mut self, input: ::std::option::Option<crate::types::MssPackage>) -> Self {
         self.inner = self.inner.set_mss_package(input);
         self
     }
@@ -203,18 +180,12 @@ impl CreatePackagingConfigurationFluentBuilder {
         self.inner.get_mss_package()
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.packaging_group_id(input.into());
         self
     }
     /// The ID of a PackagingGroup.
-    pub fn set_packaging_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_packaging_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_packaging_group_id(input);
         self
     }
@@ -227,30 +198,17 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

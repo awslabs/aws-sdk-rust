@@ -30,18 +30,14 @@ impl ::aws_http::request_id::RequestId for ListDataLakeExceptionsOutput {
 }
 impl ListDataLakeExceptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataLakeExceptionsOutput`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsOutputBuilder {
         crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataLakeExceptionsOutput`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataLakeExceptionsOutputBuilder {
     pub(crate) exceptions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +56,12 @@ impl ListDataLakeExceptionsOutputBuilder {
         self
     }
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
-    pub fn set_exceptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>,
-    ) -> Self {
+    pub fn set_exceptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>>) -> Self {
         self.exceptions = input;
         self
     }
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
-    pub fn get_exceptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>> {
+    pub fn get_exceptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeException>> {
         &self.exceptions
     }
     /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -100,9 +91,7 @@ impl ListDataLakeExceptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataLakeExceptionsOutput`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput {
+    pub fn build(self) -> crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput {
         crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput {
             exceptions: self.exceptions,
             next_token: self.next_token,

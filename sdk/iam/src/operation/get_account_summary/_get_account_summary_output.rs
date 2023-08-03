@@ -6,16 +6,12 @@
 pub struct GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
     #[doc(hidden)]
-    pub summary_map:
-        ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
+    pub summary_map: ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
     _request_id: Option<String>,
 }
 impl GetAccountSummaryOutput {
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-    pub fn summary_map(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::SummaryKeyType, i32>>
-    {
+    pub fn summary_map(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::SummaryKeyType, i32>> {
         self.summary_map.as_ref()
     }
 }
@@ -26,20 +22,16 @@ impl ::aws_http::request_id::RequestId for GetAccountSummaryOutput {
 }
 impl GetAccountSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSummaryOutput`](crate::operation::get_account_summary::GetAccountSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder {
         crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSummaryOutput`](crate::operation::get_account_summary::GetAccountSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSummaryOutputBuilder {
-    pub(crate) summary_map:
-        ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
+    pub(crate) summary_map: ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
     _request_id: Option<String>,
 }
 impl GetAccountSummaryOutputBuilder {
@@ -55,20 +47,12 @@ impl GetAccountSummaryOutputBuilder {
         self
     }
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-    pub fn set_summary_map(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::SummaryKeyType, i32>,
-        >,
-    ) -> Self {
+    pub fn set_summary_map(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>) -> Self {
         self.summary_map = input;
         self
     }
     /// <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
-    pub fn get_summary_map(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>
-    {
+    pub fn get_summary_map(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>> {
         &self.summary_map
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

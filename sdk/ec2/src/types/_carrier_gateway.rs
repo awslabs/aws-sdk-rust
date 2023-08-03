@@ -51,9 +51,7 @@ impl CarrierGateway {
 
 /// A builder for [`CarrierGateway`](crate::types::CarrierGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CarrierGatewayBuilder {
     pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct CarrierGatewayBuilder {
 }
 impl CarrierGatewayBuilder {
     /// <p>The ID of the carrier gateway.</p>
-    pub fn carrier_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_gateway_id = input;
         self
     }
@@ -102,10 +94,7 @@ impl CarrierGatewayBuilder {
         self
     }
     /// <p>The state of the carrier gateway.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CarrierGatewayState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CarrierGatewayState>) -> Self {
         self.state = input;
         self
     }
@@ -139,10 +128,7 @@ impl CarrierGatewayBuilder {
         self
     }
     /// <p>The tags assigned to the carrier gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

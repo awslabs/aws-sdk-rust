@@ -42,10 +42,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbClusterFromS3Output`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output::db_cluster): <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>  <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>  <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>  <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>  <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromS3Error>`](crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error)
-    pub fn restore_db_cluster_from_s3(
-        &self,
-    ) -> crate::operation::restore_db_cluster_from_s3::builders::RestoreDBClusterFromS3FluentBuilder
-    {
+    pub fn restore_db_cluster_from_s3(&self) -> crate::operation::restore_db_cluster_from_s3::builders::RestoreDBClusterFromS3FluentBuilder {
         crate::operation::restore_db_cluster_from_s3::builders::RestoreDBClusterFromS3FluentBuilder::new(self.handle.clone())
     }
 }

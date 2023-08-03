@@ -70,16 +70,14 @@ impl ::aws_http::request_id::RequestId for PostCommentForPullRequestOutput {
 }
 impl PostCommentForPullRequestOutput {
     /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
-    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder{
+    pub fn builder() -> crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder {
         crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCommentForPullRequestOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ pub struct PostCommentForPullRequestOutputBuilder {
 }
 impl PostCommentForPullRequestOutputBuilder {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -113,18 +105,12 @@ impl PostCommentForPullRequestOutputBuilder {
         &self.repository_name
     }
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. </p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -133,18 +119,12 @@ impl PostCommentForPullRequestOutputBuilder {
         &self.pull_request_id
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -153,18 +133,12 @@ impl PostCommentForPullRequestOutputBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -173,18 +147,12 @@ impl PostCommentForPullRequestOutputBuilder {
         &self.after_commit_id
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
-    pub fn before_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
-    pub fn set_before_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_blob_id = input;
         self
     }
@@ -193,18 +161,12 @@ impl PostCommentForPullRequestOutputBuilder {
         &self.before_blob_id
     }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
-    pub fn after_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
-    pub fn set_after_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_blob_id = input;
         self
     }
@@ -250,9 +212,7 @@ impl PostCommentForPullRequestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
+    pub fn build(self) -> crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput {
             repository_name: self.repository_name,
             pull_request_id: self.pull_request_id,

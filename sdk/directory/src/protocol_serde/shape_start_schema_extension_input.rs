@@ -7,9 +7,7 @@ pub fn ser_start_schema_extension_input(
         object.key("DirectoryId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.create_snapshot_before_schema_extension {
-        object
-            .key("CreateSnapshotBeforeSchemaExtension")
-            .boolean(*var_2);
+        object.key("CreateSnapshotBeforeSchemaExtension").boolean(*var_2);
     }
     if let Some(var_3) = &input.ldif_content {
         object.key("LdifContent").string(var_3.as_str());

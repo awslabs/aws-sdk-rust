@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::delete_application_output::DeleteApplicationOutputOutput::application_arn): <p>The application Amazon Resource Name (ARN).</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_output::DeleteApplicationOutputOutput::application_version_id): <p>The current application version ID.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationOutputError>`](crate::operation::delete_application_output::DeleteApplicationOutputError)
-    pub fn delete_application_output(
-        &self,
-    ) -> crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder
-    {
+    pub fn delete_application_output(&self) -> crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder {
         crate::operation::delete_application_output::builders::DeleteApplicationOutputFluentBuilder::new(self.handle.clone())
     }
 }

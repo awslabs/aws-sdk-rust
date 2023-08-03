@@ -30,9 +30,7 @@ impl TrialMinutes {
 
 /// A builder for [`TrialMinutes`](crate::types::TrialMinutes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialMinutesBuilder {
     pub(crate) total: ::std::option::Option<f64>,
     pub(crate) remaining: ::std::option::Option<f64>,

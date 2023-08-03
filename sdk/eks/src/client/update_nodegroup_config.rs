@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNodegroupConfigOutput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<UpdateNodegroupConfigError>`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigError)
-    pub fn update_nodegroup_config(
-        &self,
-    ) -> crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigFluentBuilder
-    {
-        crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_nodegroup_config(&self) -> crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigFluentBuilder {
+        crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigFluentBuilder::new(self.handle.clone())
     }
 }

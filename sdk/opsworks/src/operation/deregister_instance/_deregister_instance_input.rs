@@ -15,17 +15,14 @@ impl DeregisterInstanceInput {
 }
 impl DeregisterInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder {
+    pub fn builder() -> crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder {
         crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DeregisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterInstanceInput`](crate::operation::deregister_instance::DeregisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_instance::DeregisterInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_instance::DeregisterInstanceInput {
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_instance::DeregisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deregister_instance::DeregisterInstanceInput {
+            instance_id: self.instance_id,
+        })
     }
 }

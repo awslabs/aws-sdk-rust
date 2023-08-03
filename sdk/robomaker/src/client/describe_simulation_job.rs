@@ -27,12 +27,7 @@ impl super::Client {
     ///   - [`network_interface(Option<NetworkInterface>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::network_interface): <p>The network interface information for the simulation job.</p>
     ///   - [`compute(Option<ComputeResponse>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::compute): <p>Compute information for the simulation job.</p>
     /// - On failure, responds with [`SdkError<DescribeSimulationJobError>`](crate::operation::describe_simulation_job::DescribeSimulationJobError)
-    pub fn describe_simulation_job(
-        &self,
-    ) -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder
-    {
-        crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_simulation_job(&self) -> crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder {
+        crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::new(self.handle.clone())
     }
 }

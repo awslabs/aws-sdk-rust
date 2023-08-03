@@ -37,9 +37,7 @@ impl CodeConfiguration {
 
 /// A builder for [`CodeConfiguration`](crate::types::CodeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeConfigurationBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CodeConfigurationBuilder {
         &self.s3_key
     }
     /// <p>The version of an S3 object.</p>
-    pub fn s3_object_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of an S3 object.</p>
-    pub fn set_s3_object_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_version = input;
         self
     }

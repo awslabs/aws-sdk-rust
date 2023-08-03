@@ -15,10 +15,7 @@ pub fn ser_batch_add_facet_to_object(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_attribute_key_and_value::ser_attribute_key_and_value(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

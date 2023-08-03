@@ -42,9 +42,7 @@ impl SearchQueuesOutput {
 
 /// A builder for [`SearchQueuesOutput`](crate::operation::search_queues::SearchQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQueuesOutputBuilder {
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl SearchQueuesOutputBuilder {
         self
     }
     /// <p>Information about the queues.</p>
-    pub fn set_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
-    ) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>) -> Self {
         self.queues = input;
         self
     }

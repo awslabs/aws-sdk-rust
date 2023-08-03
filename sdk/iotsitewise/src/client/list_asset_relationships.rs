@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`asset_relationship_summaries(Option<Vec<AssetRelationshipSummary>>)`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput::asset_relationship_summaries): <p>A list that summarizes each asset relationship.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAssetRelationshipsError>`](crate::operation::list_asset_relationships::ListAssetRelationshipsError)
-    pub fn list_asset_relationships(
-        &self,
-    ) -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsFluentBuilder
-    {
+    pub fn list_asset_relationships(&self) -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsFluentBuilder {
         crate::operation::list_asset_relationships::builders::ListAssetRelationshipsFluentBuilder::new(self.handle.clone())
     }
 }

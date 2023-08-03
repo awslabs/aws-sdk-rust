@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput) with field(s):
     ///   - [`placement_group(Option<PlacementGroup>)`](crate::operation::create_placement_group::CreatePlacementGroupOutput::placement_group): <p>Information about the placement group.</p>
     /// - On failure, responds with [`SdkError<CreatePlacementGroupError>`](crate::operation::create_placement_group::CreatePlacementGroupError)
-    pub fn create_placement_group(
-        &self,
-    ) -> crate::operation::create_placement_group::builders::CreatePlacementGroupFluentBuilder {
-        crate::operation::create_placement_group::builders::CreatePlacementGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_placement_group(&self) -> crate::operation::create_placement_group::builders::CreatePlacementGroupFluentBuilder {
+        crate::operation::create_placement_group::builders::CreatePlacementGroupFluentBuilder::new(self.handle.clone())
     }
 }

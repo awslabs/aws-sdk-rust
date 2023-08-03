@@ -23,26 +23,18 @@ impl AnalyticsUtteranceAttributeResult {
 
 /// A builder for [`AnalyticsUtteranceAttributeResult`](crate::types::AnalyticsUtteranceAttributeResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceAttributeResultBuilder {
     pub(crate) last_used_intent: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsUtteranceAttributeResultBuilder {
     /// <p>The intent that the bot mapped the utterance to.</p>
-    pub fn last_used_intent(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_used_intent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_used_intent = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The intent that the bot mapped the utterance to.</p>
-    pub fn set_last_used_intent(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_used_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_used_intent = input;
         self
     }

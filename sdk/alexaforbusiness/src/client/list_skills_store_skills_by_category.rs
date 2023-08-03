@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput::next_token): <p>The tokens used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListSkillsStoreSkillsByCategoryError>`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_skills_store_skills_by_category(&self) -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder{
+    pub fn list_skills_store_skills_by_category(
+        &self,
+    ) -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder {
         crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::new(self.handle.clone())
     }
 }

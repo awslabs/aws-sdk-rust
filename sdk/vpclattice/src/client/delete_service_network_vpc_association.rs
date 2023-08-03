@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`status(Option<ServiceNetworkVpcAssociationStatus>)`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput::status): <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput::arn): <p>The Amazon Resource Name (ARN) of the association.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceNetworkVpcAssociationError>`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationError)
-    pub fn delete_service_network_vpc_association(&self) -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationFluentBuilder{
+    pub fn delete_service_network_vpc_association(
+        &self,
+    ) -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationFluentBuilder {
         crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationFluentBuilder::new(self.handle.clone())
     }
 }

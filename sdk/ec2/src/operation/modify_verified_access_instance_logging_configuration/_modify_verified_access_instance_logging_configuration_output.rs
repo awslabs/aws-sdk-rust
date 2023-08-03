@@ -5,15 +5,12 @@
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
     /// <p>The logging configuration for the Verified Access instance.</p>
     #[doc(hidden)]
-    pub logging_configuration:
-        ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
+    pub logging_configuration: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
     /// <p>The logging configuration for the Verified Access instance.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessInstanceLoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstanceLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
@@ -31,35 +28,24 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
 
 /// A builder for [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
-    pub(crate) logging_configuration:
-        ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
     /// <p>The logging configuration for the Verified Access instance.</p>
-    pub fn logging_configuration(
-        mut self,
-        input: crate::types::VerifiedAccessInstanceLoggingConfiguration,
-    ) -> Self {
+    pub fn logging_configuration(mut self, input: crate::types::VerifiedAccessInstanceLoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logging configuration for the Verified Access instance.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The logging configuration for the Verified Access instance.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration> {
         &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,11 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
-    pub fn build(self) -> crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
         crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
-            logging_configuration: self.logging_configuration
-            ,
+            logging_configuration: self.logging_configuration,
             _request_id: self._request_id,
         }
     }

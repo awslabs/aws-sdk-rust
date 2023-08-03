@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`instance_id(Option<String>)`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput::instance_id): <p>The ID of the instance.</p>
     ///   - [`instance_metadata_options(Option<InstanceMetadataOptionsResponse>)`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput::instance_metadata_options): <p>The metadata options for the instance.</p>
     /// - On failure, responds with [`SdkError<ModifyInstanceMetadataOptionsError>`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsError)
-    pub fn modify_instance_metadata_options(&self) -> crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsFluentBuilder{
+    pub fn modify_instance_metadata_options(
+        &self,
+    ) -> crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsFluentBuilder {
         crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -73,12 +73,7 @@ impl ForgetDeviceInputBuilder {
         &self.device_key
     }
     /// Consumes the builder and constructs a [`ForgetDeviceInput`](crate::operation::forget_device::ForgetDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::forget_device::ForgetDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::forget_device::ForgetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::forget_device::ForgetDeviceInput {
             access_token: self.access_token,
             device_key: self.device_key,

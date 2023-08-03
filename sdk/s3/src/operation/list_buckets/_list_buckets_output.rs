@@ -41,9 +41,7 @@ impl ListBucketsOutput {
 
 /// A builder for [`ListBucketsOutput`](crate::operation::list_buckets::ListBucketsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
@@ -63,10 +61,7 @@ impl ListBucketsOutputBuilder {
         self
     }
     /// <p>The list of buckets owned by the requester.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
         self.buckets = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListBucketsOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

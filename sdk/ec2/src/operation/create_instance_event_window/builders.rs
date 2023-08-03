@@ -37,7 +37,7 @@ impl CreateInstanceEventWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceEventWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder,
+    inner: crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder,
 }
 impl CreateInstanceEventWindowFluentBuilder {
     /// Creates a new `CreateInstanceEventWindow`.
@@ -48,7 +48,7 @@ impl CreateInstanceEventWindowFluentBuilder {
         }
     }
     /// Access the CreateInstanceEventWindow as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl CreateInstanceEventWindowFluentBuilder {
             crate::operation::create_instance_event_window::CreateInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_event_window::CreateInstanceEventWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl CreateInstanceEventWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl CreateInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_event_window::CreateInstanceEventWindowError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl CreateInstanceEventWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_event_window::CreateInstanceEventWindowError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +116,7 @@ impl CreateInstanceEventWindowFluentBuilder {
             crate::operation::create_instance_event_window::CreateInstanceEventWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_event_window::CreateInstanceEventWindowError>,
     > {
         self.customize_middleware().await
     }
@@ -169,20 +158,12 @@ impl CreateInstanceEventWindowFluentBuilder {
         self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn set_time_ranges(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>,
-        >,
-    ) -> Self {
+    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
         self.inner = self.inner.set_time_ranges(input);
         self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn get_time_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>
-    {
+    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>> {
         self.inner.get_time_ranges()
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
@@ -196,10 +177,7 @@ impl CreateInstanceEventWindowFluentBuilder {
     /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn cron_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cron_expression(input.into());
         self
     }
@@ -214,10 +192,7 @@ impl CreateInstanceEventWindowFluentBuilder {
     /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn set_cron_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cron_expression(input);
         self
     }
@@ -245,17 +220,12 @@ impl CreateInstanceEventWindowFluentBuilder {
         self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

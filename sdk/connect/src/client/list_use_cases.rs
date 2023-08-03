@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`use_case_summary_list(Option<Vec<UseCase>>)`](crate::operation::list_use_cases::ListUseCasesOutput::use_case_summary_list): <p>The use cases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_use_cases::ListUseCasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListUseCasesError>`](crate::operation::list_use_cases::ListUseCasesError)
-    pub fn list_use_cases(
-        &self,
-    ) -> crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder {
-        crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_use_cases(&self) -> crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder {
+        crate::operation::list_use_cases::builders::ListUseCasesFluentBuilder::new(self.handle.clone())
     }
 }

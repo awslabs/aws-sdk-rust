@@ -19,9 +19,7 @@ impl CheckInLicenseOutput {
 
 /// A builder for [`CheckInLicenseOutput`](crate::operation::check_in_license::CheckInLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckInLicenseOutputBuilder {
     _request_id: Option<String>,
 }

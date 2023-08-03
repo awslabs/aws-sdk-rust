@@ -10,9 +10,7 @@ pub struct CreateNetworkInsightsPathOutput {
 }
 impl CreateNetworkInsightsPathOutput {
     /// <p>Information about the path.</p>
-    pub fn network_insights_path(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInsightsPath> {
+    pub fn network_insights_path(&self) -> ::std::option::Option<&crate::types::NetworkInsightsPath> {
         self.network_insights_path.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateNetworkInsightsPathOutput {
 }
 impl CreateNetworkInsightsPathOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsPathOutput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput).
-    pub fn builder() -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathOutputBuilder{
+    pub fn builder() -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathOutputBuilder {
         crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkInsightsPathOutput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathOutputBuilder {
     pub(crate) network_insights_path: ::std::option::Option<crate::types::NetworkInsightsPath>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateNetworkInsightsPathOutputBuilder {
         self
     }
     /// <p>Information about the path.</p>
-    pub fn set_network_insights_path(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInsightsPath>,
-    ) -> Self {
+    pub fn set_network_insights_path(mut self, input: ::std::option::Option<crate::types::NetworkInsightsPath>) -> Self {
         self.network_insights_path = input;
         self
     }
     /// <p>Information about the path.</p>
-    pub fn get_network_insights_path(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInsightsPath> {
+    pub fn get_network_insights_path(&self) -> &::std::option::Option<crate::types::NetworkInsightsPath> {
         &self.network_insights_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateNetworkInsightsPathOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsPathOutput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput {
+    pub fn build(self) -> crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput {
         crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput {
             network_insights_path: self.network_insights_path,
             _request_id: self._request_id,

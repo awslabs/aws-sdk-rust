@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput::arn): <p>The ARN of the schema to update.</p>
     /// - On failure, responds with [`SdkError<PutSchemaFromJsonError>`](crate::operation::put_schema_from_json::PutSchemaFromJsonError)
-    pub fn put_schema_from_json(
-        &self,
-    ) -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder {
-        crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_schema_from_json(&self) -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder {
+        crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::new(self.handle.clone())
     }
 }

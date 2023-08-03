@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`bot_aliases(Option<Vec<BotAliasMetadata>>)`](crate::operation::get_bot_aliases::GetBotAliasesOutput::bot_aliases): <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bot_aliases::GetBotAliasesOutput::next_token): <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
     /// - On failure, responds with [`SdkError<GetBotAliasesError>`](crate::operation::get_bot_aliases::GetBotAliasesError)
-    pub fn get_bot_aliases(
-        &self,
-    ) -> crate::operation::get_bot_aliases::builders::GetBotAliasesFluentBuilder {
-        crate::operation::get_bot_aliases::builders::GetBotAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bot_aliases(&self) -> crate::operation::get_bot_aliases::builders::GetBotAliasesFluentBuilder {
+        crate::operation::get_bot_aliases::builders::GetBotAliasesFluentBuilder::new(self.handle.clone())
     }
 }

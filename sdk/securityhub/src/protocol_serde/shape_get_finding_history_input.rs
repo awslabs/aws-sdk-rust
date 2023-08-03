@@ -4,9 +4,7 @@ pub fn ser_get_finding_history_input(
     input: &crate::operation::get_finding_history::GetFindingHistoryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.end_time {
-        object
-            .key("EndTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
+        object.key("EndTime").date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_2) = &input.finding_identifier {
         #[allow(unused_mut)]

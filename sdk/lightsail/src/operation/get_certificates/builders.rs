@@ -10,10 +10,7 @@ impl GetCertificatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_certificates::GetCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_certificates();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetCertificatesFluentBuilder {
         }
     }
     /// Access the GetCertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_certificates::builders::GetCertificatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_certificates::builders::GetCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetCertificatesFluentBuilder {
             crate::operation::get_certificates::GetCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_certificates::GetCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_certificates::GetCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetCertificatesFluentBuilder {
             crate::operation::get_certificates::GetCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_certificates::GetCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
     > {
         self.customize_middleware().await
     }
@@ -138,19 +122,14 @@ impl GetCertificatesFluentBuilder {
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn set_certificate_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
-    ) -> Self {
+    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>) -> Self {
         self.inner = self.inner.set_certificate_statuses(input);
         self
     }
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn get_certificate_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
         self.inner.get_certificate_statuses()
     }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
@@ -172,19 +151,13 @@ impl GetCertificatesFluentBuilder {
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }

@@ -30,9 +30,7 @@ impl CanaryRunTimeline {
 
 /// A builder for [`CanaryRunTimeline`](crate::types::CanaryRunTimeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanaryRunTimelineBuilder {
     pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl CanaryRunTimelineBuilder {
         self
     }
     /// <p>The start time of the run.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started = input;
         self
     }
@@ -61,10 +56,7 @@ impl CanaryRunTimelineBuilder {
         self
     }
     /// <p>The end time of the run.</p>
-    pub fn set_completed(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed = input;
         self
     }

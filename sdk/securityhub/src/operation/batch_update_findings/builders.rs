@@ -51,9 +51,7 @@ impl BatchUpdateFindingsFluentBuilder {
         }
     }
     /// Access the BatchUpdateFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +63,7 @@ impl BatchUpdateFindingsFluentBuilder {
             crate::operation::batch_update_findings::BatchUpdateFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_findings::BatchUpdateFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_findings::BatchUpdateFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +73,7 @@ impl BatchUpdateFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +82,7 @@ impl BatchUpdateFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_findings::BatchUpdateFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_findings::BatchUpdateFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_findings::BatchUpdateFindingsError>,
     > {
         let op = self
             .inner
@@ -114,9 +105,7 @@ impl BatchUpdateFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_findings::BatchUpdateFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_findings::BatchUpdateFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_findings::BatchUpdateFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +119,7 @@ impl BatchUpdateFindingsFluentBuilder {
             crate::operation::batch_update_findings::BatchUpdateFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_findings::BatchUpdateFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_findings::BatchUpdateFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,27 +129,19 @@ impl BatchUpdateFindingsFluentBuilder {
     ///
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn finding_identifiers(
-        mut self,
-        input: crate::types::AwsSecurityFindingIdentifier,
-    ) -> Self {
+    pub fn finding_identifiers(mut self, input: crate::types::AwsSecurityFindingIdentifier) -> Self {
         self.inner = self.inner.finding_identifiers(input);
         self
     }
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn set_finding_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
-    ) -> Self {
+    pub fn set_finding_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>) -> Self {
         self.inner = self.inner.set_finding_identifiers(input);
         self
     }
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn get_finding_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
+    pub fn get_finding_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
         self.inner.get_finding_identifiers()
     }
     /// <p>The updated note.</p>
@@ -185,10 +164,7 @@ impl BatchUpdateFindingsFluentBuilder {
         self
     }
     /// <p>Used to update the finding severity.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityUpdate>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::SeverityUpdate>) -> Self {
         self.inner = self.inner.set_severity(input);
         self
     }
@@ -216,10 +192,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
     /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
     }
@@ -231,9 +204,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
     /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         self.inner.get_verification_state()
     }
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
@@ -296,10 +267,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <li> <p>Unusual Behaviors</p> </li>
     /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
@@ -331,19 +299,13 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn set_user_defined_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_user_defined_fields(input);
         self
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
-    pub fn get_user_defined_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_user_defined_fields()
     }
     /// <p>Used to update the workflow status of a finding.</p>
@@ -354,10 +316,7 @@ impl BatchUpdateFindingsFluentBuilder {
     }
     /// <p>Used to update the workflow status of a finding.</p>
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
-    pub fn set_workflow(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowUpdate>,
-    ) -> Self {
+    pub fn set_workflow(mut self, input: ::std::option::Option<crate::types::WorkflowUpdate>) -> Self {
         self.inner = self.inner.set_workflow(input);
         self
     }
@@ -376,17 +335,12 @@ impl BatchUpdateFindingsFluentBuilder {
         self
     }
     /// <p>A list of findings that are related to the updated findings.</p>
-    pub fn set_related_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
-    ) -> Self {
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
         self.inner = self.inner.set_related_findings(input);
         self
     }
     /// <p>A list of findings that are related to the updated findings.</p>
-    pub fn get_related_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
         self.inner.get_related_findings()
     }
 }

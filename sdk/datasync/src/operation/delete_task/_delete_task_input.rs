@@ -23,9 +23,7 @@ impl DeleteTaskInput {
 
 /// A builder for [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DeleteTaskInputBuilder {
         &self.task_arn
     }
     /// Consumes the builder and constructs a [`DeleteTaskInput`](crate::operation::delete_task::DeleteTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_task::DeleteTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_task::DeleteTaskInput {
-            task_arn: self.task_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task::DeleteTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_task::DeleteTaskInput { task_arn: self.task_arn })
     }
 }

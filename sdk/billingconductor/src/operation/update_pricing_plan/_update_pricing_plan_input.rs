@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for UpdatePricingPlanInput {
 }
 impl UpdatePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder::default()
     }
 }
@@ -98,17 +97,12 @@ impl UpdatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pricing_plan::UpdatePricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePricingPlanInputBuilder {

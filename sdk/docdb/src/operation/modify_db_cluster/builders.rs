@@ -10,10 +10,7 @@ impl ModifyDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_db_cluster::ModifyDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_cluster::ModifyDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster::ModifyDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_db_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyDBClusterFluentBuilder {
         }
     }
     /// Access the ModifyDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_db_cluster::builders::ModifyDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_db_cluster::builders::ModifyDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyDBClusterFluentBuilder {
             crate::operation::modify_db_cluster::ModifyDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_cluster::ModifyDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster::ModifyDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_cluster::ModifyDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_cluster::ModifyDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster::ModifyDBClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_cluster::ModifyDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_cluster::ModifyDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster::ModifyDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ModifyDBClusterFluentBuilder {
             crate::operation::modify_db_cluster::ModifyDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_db_cluster::ModifyDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster::ModifyDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +111,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -139,10 +120,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -162,10 +140,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn new_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_db_cluster_identifier(input.into());
         self
     }
@@ -177,10 +152,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn set_new_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_db_cluster_identifier(input);
         self
     }
@@ -245,25 +217,17 @@ impl ModifyDBClusterFluentBuilder {
         self.inner.get_backup_retention_period()
     }
     /// <p>The name of the cluster parameter group to use for the cluster.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cluster parameter group to use for the cluster.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
     /// <p>The name of the cluster parameter group to use for the cluster.</p>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
@@ -271,25 +235,17 @@ impl ModifyDBClusterFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>The port number on which the cluster accepts connections.</p>
@@ -314,19 +270,13 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p>Constraints: Must contain from 8 to 100 characters.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
@@ -344,10 +294,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -360,10 +307,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
@@ -384,10 +328,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -396,10 +337,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -408,50 +346,34 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
-    pub fn cloudwatch_logs_export_configuration(
-        mut self,
-        input: crate::types::CloudwatchLogsExportConfiguration,
-    ) -> Self {
+    pub fn cloudwatch_logs_export_configuration(mut self, input: crate::types::CloudwatchLogsExportConfiguration) -> Self {
         self.inner = self.inner.cloudwatch_logs_export_configuration(input);
         self
     }
     /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
-    pub fn set_cloudwatch_logs_export_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
-    ) -> Self {
+    pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
     }
     /// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
-    pub fn get_cloudwatch_logs_export_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
+    pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
         self.inner.get_cloudwatch_logs_export_configuration()
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
     /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p>
     /// <p> <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }

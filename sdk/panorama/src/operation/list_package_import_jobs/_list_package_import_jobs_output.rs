@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPackageImportJobsOutput {
 }
 impl ListPackageImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder {
         crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageImportJobsOutputBuilder {
-    pub(crate) package_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>,
+    pub(crate) package_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPackageImportJobsOutputBuilder {
         self
     }
     /// <p>A list of package import jobs.</p>
-    pub fn set_package_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>,
-    ) -> Self {
+    pub fn set_package_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>) -> Self {
         self.package_import_jobs = input;
         self
     }
     /// <p>A list of package import jobs.</p>
-    pub fn get_package_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>> {
+    pub fn get_package_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>> {
         &self.package_import_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>

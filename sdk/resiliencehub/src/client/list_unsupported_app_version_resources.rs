@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`resolution_id(Option<String>)`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput::resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListUnsupportedAppVersionResourcesError>`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError)
-    pub fn list_unsupported_app_version_resources(&self) -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder{
+    pub fn list_unsupported_app_version_resources(
+        &self,
+    ) -> crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder {
         crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesFluentBuilder::new(self.handle.clone())
     }
 }

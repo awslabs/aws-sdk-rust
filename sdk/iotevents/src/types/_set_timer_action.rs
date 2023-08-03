@@ -53,9 +53,7 @@ impl SetTimerAction {
 
 /// A builder for [`SetTimerAction`](crate::types::SetTimerAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTimerActionBuilder {
     pub(crate) timer_name: ::std::option::Option<::std::string::String>,
     pub(crate) seconds: ::std::option::Option<i32>,
@@ -105,10 +103,7 @@ impl SetTimerActionBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
-    pub fn duration_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn duration_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -118,10 +113,7 @@ impl SetTimerActionBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
-    pub fn set_duration_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_duration_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration_expression = input;
         self
     }

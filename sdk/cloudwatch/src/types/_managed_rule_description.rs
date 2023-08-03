@@ -37,9 +37,7 @@ impl ManagedRuleDescription {
 
 /// A builder for [`ManagedRuleDescription`](crate::types::ManagedRuleDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleDescriptionBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ManagedRuleDescriptionBuilder {
 }
 impl ManagedRuleDescriptionBuilder {
     /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -86,10 +78,7 @@ impl ManagedRuleDescriptionBuilder {
         self
     }
     /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
-    pub fn set_rule_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedRuleState>,
-    ) -> Self {
+    pub fn set_rule_state(mut self, input: ::std::option::Option<crate::types::ManagedRuleState>) -> Self {
         self.rule_state = input;
         self
     }

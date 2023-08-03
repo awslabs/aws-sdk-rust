@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIncidentRecordOutput {
 }
 impl DeleteIncidentRecordOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIncidentRecordOutput`](crate::operation::delete_incident_record::DeleteIncidentRecordOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordOutputBuilder {
+    pub fn builder() -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordOutputBuilder {
         crate::operation::delete_incident_record::builders::DeleteIncidentRecordOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIncidentRecordOutput`](crate::operation::delete_incident_record::DeleteIncidentRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIncidentRecordOutputBuilder {
     _request_id: Option<String>,
 }

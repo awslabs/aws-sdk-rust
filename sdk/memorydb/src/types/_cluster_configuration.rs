@@ -114,9 +114,7 @@ impl ClusterConfiguration {
 
 /// A builder for [`ClusterConfiguration`](crate::types::ClusterConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -177,18 +175,12 @@ impl ClusterConfigurationBuilder {
         &self.node_type
     }
     /// <p>The Redis engine version used by the cluster</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redis engine version used by the cluster</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -197,18 +189,12 @@ impl ClusterConfigurationBuilder {
         &self.engine_version
     }
     /// <p>The specified maintenance window for the cluster</p>
-    pub fn maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified maintenance window for the cluster</p>
-    pub fn set_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_window = input;
         self
     }
@@ -245,18 +231,12 @@ impl ClusterConfigurationBuilder {
         &self.port
     }
     /// <p>The name of parameter group used by the cluster</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of parameter group used by the cluster</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -265,18 +245,12 @@ impl ClusterConfigurationBuilder {
         &self.parameter_group_name
     }
     /// <p>The name of the subnet group used by the cluster</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group used by the cluster</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -313,18 +287,12 @@ impl ClusterConfigurationBuilder {
         &self.snapshot_retention_limit
     }
     /// <p>The snapshot window set by the cluster</p>
-    pub fn snapshot_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot window set by the cluster</p>
-    pub fn set_snapshot_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
@@ -358,10 +326,7 @@ impl ClusterConfigurationBuilder {
         self
     }
     /// <p>The list of shards in the cluster</p>
-    pub fn set_shards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>>,
-    ) -> Self {
+    pub fn set_shards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>>) -> Self {
         self.shards = input;
         self
     }

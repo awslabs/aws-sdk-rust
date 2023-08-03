@@ -42,13 +42,7 @@
 /// <p>The type of entity that performed the action on the affected resource. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserIdentityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for UserIdentityType {
             "FederatedUser" => UserIdentityType::FederatedUser,
             "IAMUser" => UserIdentityType::IamUser,
             "Root" => UserIdentityType::Root,
-            other => {
-                UserIdentityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => UserIdentityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl UserIdentityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWSAccount",
-            "AWSService",
-            "AssumedRole",
-            "FederatedUser",
-            "IAMUser",
-            "Root",
-        ]
+        &["AWSAccount", "AWSService", "AssumedRole", "FederatedUser", "IAMUser", "Root"]
     }
 }
 impl ::std::convert::AsRef<str> for UserIdentityType {

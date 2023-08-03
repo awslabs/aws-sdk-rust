@@ -35,21 +35,17 @@ impl ::aws_http::request_id::RequestId for ListImagePipelinesOutput {
 }
 impl ListImagePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListImagePipelinesOutput`](crate::operation::list_image_pipelines::ListImagePipelinesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder {
+    pub fn builder() -> crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder {
         crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagePipelinesOutput`](crate::operation::list_image_pipelines::ListImagePipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagePipelinesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_pipeline_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>>,
+    pub(crate) image_pipeline_list: ::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,17 +76,12 @@ impl ListImagePipelinesOutputBuilder {
         self
     }
     /// <p>The list of image pipelines.</p>
-    pub fn set_image_pipeline_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>>,
-    ) -> Self {
+    pub fn set_image_pipeline_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>>) -> Self {
         self.image_pipeline_list = input;
         self
     }
     /// <p>The list of image pipelines.</p>
-    pub fn get_image_pipeline_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>> {
+    pub fn get_image_pipeline_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePipeline>> {
         &self.image_pipeline_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>

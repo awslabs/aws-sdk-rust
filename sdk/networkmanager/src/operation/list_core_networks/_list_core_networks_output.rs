@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCoreNetworksOutput {
 }
 impl ListCoreNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput).
-    pub fn builder() -> crate::operation::list_core_networks::builders::ListCoreNetworksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_core_networks::builders::ListCoreNetworksOutputBuilder {
         crate::operation::list_core_networks::builders::ListCoreNetworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreNetworksOutputBuilder {
-    pub(crate) core_networks:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>>,
+    pub(crate) core_networks: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListCoreNetworksOutputBuilder {
         self
     }
     /// <p>Describes the list of core networks.</p>
-    pub fn set_core_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>>,
-    ) -> Self {
+    pub fn set_core_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>>) -> Self {
         self.core_networks = input;
         self
     }
     /// <p>Describes the list of core networks.</p>
-    pub fn get_core_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>> {
+    pub fn get_core_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>> {
         &self.core_networks
     }
     /// <p>The token for the next page of results.</p>

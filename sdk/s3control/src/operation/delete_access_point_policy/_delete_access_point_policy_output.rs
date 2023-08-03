@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessPointPolicyOutput {
 }
 impl DeleteAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyOutputBuilder {
         crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointPolicyOutput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteAccessPointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointPolicyOutput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput {
         crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput {
             _request_id: self._request_id,
         }

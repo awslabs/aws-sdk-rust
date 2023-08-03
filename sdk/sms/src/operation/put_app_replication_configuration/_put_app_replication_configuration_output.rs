@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAppReplicationConfigurationOutput 
 }
 impl PutAppReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutAppReplicationConfigurationOutput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationOutputBuilder {
         crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppReplicationConfigurationOutput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppReplicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutAppReplicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutAppReplicationConfigurationOutput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput {
         crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput {
             _request_id: self._request_id,
         }

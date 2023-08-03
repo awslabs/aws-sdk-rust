@@ -29,17 +29,14 @@ impl ListVpcEndpointsInput {
 }
 impl ListVpcEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder {
         crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsInputBuilder {
     pub(crate) vpc_endpoint_filters: ::std::option::Option<crate::types::VpcEndpointFilters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,12 @@ impl ListVpcEndpointsInputBuilder {
         self
     }
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
-    pub fn set_vpc_endpoint_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointFilters>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_filters(mut self, input: ::std::option::Option<crate::types::VpcEndpointFilters>) -> Self {
         self.vpc_endpoint_filters = input;
         self
     }
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
-    pub fn get_vpc_endpoint_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcEndpointFilters> {
+    pub fn get_vpc_endpoint_filters(&self) -> &::std::option::Option<crate::types::VpcEndpointFilters> {
         &self.vpc_endpoint_filters
     }
     /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page. </p>
@@ -96,16 +88,11 @@ impl ListVpcEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_endpoints::ListVpcEndpointsInput {
-                vpc_endpoint_filters: self.vpc_endpoint_filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoints::ListVpcEndpointsInput {
+            vpc_endpoint_filters: self.vpc_endpoint_filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

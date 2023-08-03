@@ -26,7 +26,7 @@ impl ListCustomDataIdentifiersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomDataIdentifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder,
+    inner: crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder,
 }
 impl ListCustomDataIdentifiersFluentBuilder {
     /// Creates a new `ListCustomDataIdentifiers`.
@@ -37,7 +37,7 @@ impl ListCustomDataIdentifiersFluentBuilder {
         }
     }
     /// Access the ListCustomDataIdentifiers as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCustomDataIdentifiersFluentBuilder {
             crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCustomDataIdentifiersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCustomDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCustomDataIdentifiersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListCustomDataIdentifiersFluentBuilder {
             crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator {
         crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to include in each page of the response.</p>

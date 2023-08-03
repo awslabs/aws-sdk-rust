@@ -5,15 +5,12 @@
 pub struct StartDataCollectionByAgentIdsOutput {
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
     #[doc(hidden)]
-    pub agents_configuration_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
+    pub agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }
 impl StartDataCollectionByAgentIdsOutput {
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn agents_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AgentConfigurationStatus]> {
+    pub fn agents_configuration_status(&self) -> ::std::option::Option<&[crate::types::AgentConfigurationStatus]> {
         self.agents_configuration_status.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for StartDataCollectionByAgentIdsOutput {
 }
 impl StartDataCollectionByAgentIdsOutput {
     /// Creates a new builder-style object to manufacture [`StartDataCollectionByAgentIdsOutput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput).
-    pub fn builder() -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsOutputBuilder{
+    pub fn builder() -> crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsOutputBuilder {
         crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataCollectionByAgentIdsOutput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataCollectionByAgentIdsOutputBuilder {
-    pub(crate) agents_configuration_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
+    pub(crate) agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,
 }
 impl StartDataCollectionByAgentIdsOutputBuilder {
@@ -45,27 +39,19 @@ impl StartDataCollectionByAgentIdsOutputBuilder {
     /// To override the contents of this collection use [`set_agents_configuration_status`](Self::set_agents_configuration_status).
     ///
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn agents_configuration_status(
-        mut self,
-        input: crate::types::AgentConfigurationStatus,
-    ) -> Self {
+    pub fn agents_configuration_status(mut self, input: crate::types::AgentConfigurationStatus) -> Self {
         let mut v = self.agents_configuration_status.unwrap_or_default();
         v.push(input);
         self.agents_configuration_status = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn set_agents_configuration_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
-    ) -> Self {
+    pub fn set_agents_configuration_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>) -> Self {
         self.agents_configuration_status = input;
         self
     }
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn get_agents_configuration_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>> {
+    pub fn get_agents_configuration_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>> {
         &self.agents_configuration_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,10 +64,7 @@ impl StartDataCollectionByAgentIdsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDataCollectionByAgentIdsOutput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput
-    {
+    pub fn build(self) -> crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput {
         crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput {
             agents_configuration_status: self.agents_configuration_status,
             _request_id: self._request_id,

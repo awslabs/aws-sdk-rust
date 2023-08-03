@@ -40,28 +40,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_query::CancelQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -71,53 +59,25 @@ where
 impl From<crate::operation::cancel_query::CancelQueryError> for Error {
     fn from(err: crate::operation::cancel_query::CancelQueryError) -> Self {
         match err {
-            crate::operation::cancel_query::CancelQueryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::cancel_query::CancelQueryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::cancel_query::CancelQueryError::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::operation::cancel_query::CancelQueryError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::cancel_query::CancelQueryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::cancel_query::CancelQueryError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::cancel_query::CancelQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_query::CancelQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_query::CancelQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::cancel_query::CancelQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_query::CancelQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_query::CancelQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_query::CreateScheduledQueryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_query::CreateScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scheduled_query::CreateScheduledQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_scheduled_query::CreateScheduledQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -129,41 +89,31 @@ impl From<crate::operation::create_scheduled_query::CreateScheduledQueryError> f
         match err {
             crate::operation::create_scheduled_query::CreateScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_scheduled_query::CreateScheduledQueryError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_scheduled_query::CreateScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_scheduled_query::CreateScheduledQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::create_scheduled_query::CreateScheduledQueryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_scheduled_query::CreateScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_scheduled_query::CreateScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_scheduled_query::CreateScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -174,41 +124,31 @@ impl From<crate::operation::delete_scheduled_query::DeleteScheduledQueryError> f
     fn from(err: crate::operation::delete_scheduled_query::DeleteScheduledQueryError) -> Self {
         match err {
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoints::DescribeEndpointsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoints::DescribeEndpointsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -225,32 +165,16 @@ impl From<crate::operation::describe_endpoints::DescribeEndpointsError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -260,42 +184,34 @@ where
 impl From<crate::operation::describe_scheduled_query::DescribeScheduledQueryError> for Error {
     fn from(err: crate::operation::describe_scheduled_query::DescribeScheduledQueryError) -> Self {
         match err {
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::describe_scheduled_query::DescribeScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_scheduled_query::DescribeScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_scheduled_query::DescribeScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_scheduled_query::DescribeScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -305,42 +221,34 @@ where
 impl From<crate::operation::execute_scheduled_query::ExecuteScheduledQueryError> for Error {
     fn from(err: crate::operation::execute_scheduled_query::ExecuteScheduledQueryError) -> Self {
         match err {
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::execute_scheduled_query::ExecuteScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -351,40 +259,28 @@ impl From<crate::operation::list_scheduled_queries::ListScheduledQueriesError> f
     fn from(err: crate::operation::list_scheduled_queries::ListScheduledQueriesError) -> Self {
         match err {
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_scheduled_queries::ListScheduledQueriesError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -394,36 +290,28 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::prepare_query::PrepareQueryError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::prepare_query::PrepareQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::prepare_query::PrepareQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::prepare_query::PrepareQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -433,24 +321,12 @@ where
 impl From<crate::operation::prepare_query::PrepareQueryError> for Error {
     fn from(err: crate::operation::prepare_query::PrepareQueryError) -> Self {
         match err {
-            crate::operation::prepare_query::PrepareQueryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::prepare_query::PrepareQueryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::prepare_query::PrepareQueryError::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::operation::prepare_query::PrepareQueryError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::prepare_query::PrepareQueryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::prepare_query::PrepareQueryError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::prepare_query::PrepareQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::prepare_query::PrepareQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::prepare_query::PrepareQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::prepare_query::PrepareQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::prepare_query::PrepareQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::prepare_query::PrepareQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -458,19 +334,12 @@ impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::query::QueryE
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -480,53 +349,27 @@ where
 impl From<crate::operation::query::QueryError> for Error {
     fn from(err: crate::operation::query::QueryError) -> Self {
         match err {
-            crate::operation::query::QueryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::query::QueryError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::query::QueryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::query::QueryError::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::operation::query::QueryError::QueryExecutionException(inner) => {
-                Error::QueryExecutionException(inner)
-            }
-            crate::operation::query::QueryError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::query::QueryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::query::QueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::query::QueryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::query::QueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::query::QueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::query::QueryError::QueryExecutionException(inner) => Error::QueryExecutionException(inner),
+            crate::operation::query::QueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::query::QueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::query::QueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -536,53 +379,25 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -592,50 +407,24 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InvalidEndpointException(
-                inner,
-            ) => Error::InvalidEndpointException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -646,9 +435,15 @@ impl From<crate::operation::update_scheduled_query::UpdateScheduledQueryError> f
     fn from(err: crate::operation::update_scheduled_query::UpdateScheduledQueryError) -> Self {
         match err {
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_scheduled_query::UpdateScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),

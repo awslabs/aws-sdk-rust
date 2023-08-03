@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`intelligent_tiering_configuration(IntelligentTieringConfiguration)`](crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder::intelligent_tiering_configuration) / [`set_intelligent_tiering_configuration(Option<IntelligentTieringConfiguration>)`](crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder::set_intelligent_tiering_configuration): <p>Container for S3 Intelligent-Tiering configuration.</p>
     /// - On success, responds with [`PutBucketIntelligentTieringConfigurationOutput`](crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutBucketIntelligentTieringConfigurationError>`](crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError)
-    pub fn put_bucket_intelligent_tiering_configuration(&self) -> crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder{
-        crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn put_bucket_intelligent_tiering_configuration(
+        &self,
+    ) -> crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder {
+        crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

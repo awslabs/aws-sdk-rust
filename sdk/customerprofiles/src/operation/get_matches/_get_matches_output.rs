@@ -49,9 +49,7 @@ impl GetMatchesOutput {
 
 /// A builder for [`GetMatchesOutput`](crate::operation::get_matches::GetMatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) match_generation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,17 +78,12 @@ impl GetMatchesOutputBuilder {
         self
     }
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub fn set_match_generation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_match_generation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.match_generation_date = input;
         self
     }
     /// <p>The timestamp this version of Match Result generated.</p>
-    pub fn get_match_generation_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_match_generation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.match_generation_date
     }
     /// <p>The number of potential matches found.</p>
@@ -119,10 +112,7 @@ impl GetMatchesOutputBuilder {
         self
     }
     /// <p>The list of matched profiles for this instance.</p>
-    pub fn set_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchItem>>,
-    ) -> Self {
+    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchItem>>) -> Self {
         self.matches = input;
         self
     }

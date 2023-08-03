@@ -44,13 +44,7 @@
 /// Changeset Error Category
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorCategory {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for ErrorCategory {
             "THROTTLING" => ErrorCategory::Throttling,
             "USER_RECOVERABLE" => ErrorCategory::UserRecoverable,
             "VALIDATION" => ErrorCategory::Validation,
-            other => {
-                ErrorCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ErrorCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

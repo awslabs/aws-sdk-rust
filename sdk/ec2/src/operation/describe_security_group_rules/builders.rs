@@ -26,7 +26,7 @@ impl DescribeSecurityGroupRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder,
+    inner: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder,
 }
 impl DescribeSecurityGroupRulesFluentBuilder {
     /// Creates a new `DescribeSecurityGroupRules`.
@@ -37,7 +37,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
         }
     }
     /// Access the DescribeSecurityGroupRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
             crate::operation::describe_security_group_rules::DescribeSecurityGroupRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeSecurityGroupRulesFluentBuilder {
             crate::operation::describe_security_group_rules::DescribeSecurityGroupRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator {
         crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -158,10 +147,7 @@ impl DescribeSecurityGroupRulesFluentBuilder {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -185,25 +171,17 @@ impl DescribeSecurityGroupRulesFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).
     ///
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_rule_ids(input.into());
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_rule_ids(input);
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn get_security_group_rule_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_rule_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

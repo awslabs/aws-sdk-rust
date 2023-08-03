@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput) with field(s):
     ///   - [`metrics_summary(Option<MetricsSummary>)`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput::metrics_summary): <p>The summary metrics from the specified date.</p>
     /// - On failure, responds with [`SdkError<GetMetricsSummaryError>`](crate::operation::get_metrics_summary::GetMetricsSummaryError)
-    pub fn get_metrics_summary(
-        &self,
-    ) -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryFluentBuilder {
-        crate::operation::get_metrics_summary::builders::GetMetricsSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metrics_summary(&self) -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryFluentBuilder {
+        crate::operation::get_metrics_summary::builders::GetMetricsSummaryFluentBuilder::new(self.handle.clone())
     }
 }

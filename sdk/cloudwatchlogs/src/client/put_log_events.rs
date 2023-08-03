@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_sequence_token(Option<String>)`](crate::operation::put_log_events::PutLogEventsOutput::next_sequence_token): <p>The next sequence token.</p> <important>   <p>This field has been deprecated.</p>   <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.</p>  </important>
     ///   - [`rejected_log_events_info(Option<RejectedLogEventsInfo>)`](crate::operation::put_log_events::PutLogEventsOutput::rejected_log_events_info): <p>The rejected events.</p>
     /// - On failure, responds with [`SdkError<PutLogEventsError>`](crate::operation::put_log_events::PutLogEventsError)
-    pub fn put_log_events(
-        &self,
-    ) -> crate::operation::put_log_events::builders::PutLogEventsFluentBuilder {
-        crate::operation::put_log_events::builders::PutLogEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_log_events(&self) -> crate::operation::put_log_events::builders::PutLogEventsFluentBuilder {
+        crate::operation::put_log_events::builders::PutLogEventsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,10 +38,7 @@ impl CreateClusterSnapshotFluentBuilder {
         }
     }
     /// Access the CreateClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateClusterSnapshotFluentBuilder {
             crate::operation::create_cluster_snapshot::CreateClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateClusterSnapshotFluentBuilder {
             crate::operation::create_cluster_snapshot::CreateClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_snapshot::CreateClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
@@ -149,10 +132,7 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -169,18 +149,12 @@ impl CreateClusterSnapshotFluentBuilder {
         self.inner.get_snapshot_identifier()
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -198,10 +172,7 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }
@@ -221,10 +192,7 @@ impl CreateClusterSnapshotFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

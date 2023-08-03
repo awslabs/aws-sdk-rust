@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>Returns a list of summary details for all the applications in a runtime environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all applications.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl UpdateFormOutput {
 
 /// A builder for [`UpdateFormOutput`](crate::operation::update_form::UpdateFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFormOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,

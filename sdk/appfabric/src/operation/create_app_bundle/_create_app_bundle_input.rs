@@ -40,9 +40,7 @@ impl CreateAppBundleInput {
 
 /// A builder for [`CreateAppBundleInput`](crate::operation::create_app_bundle::CreateAppBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBundleInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) customer_managed_key_identifier: ::std::option::Option<::std::string::String>,
@@ -70,25 +68,17 @@ impl CreateAppBundleInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn customer_managed_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_managed_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn set_customer_managed_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_managed_key_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to use to encrypt the application data. If this is not specified, an Amazon Web Services owned key is used for encryption.</p>
-    pub fn get_customer_managed_key_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_customer_managed_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_managed_key_identifier
     }
     /// Appends an item to `tags`.
@@ -103,10 +93,7 @@ impl CreateAppBundleInputBuilder {
         self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -117,10 +104,7 @@ impl CreateAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppBundleInput`](crate::operation::create_app_bundle::CreateAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_bundle::CreateAppBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_app_bundle::CreateAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_bundle::CreateAppBundleInput {
             client_token: self.client_token,
             customer_managed_key_identifier: self.customer_managed_key_identifier,

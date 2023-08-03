@@ -15,18 +15,14 @@ impl RemoveBackendConfigInput {
 }
 impl RemoveBackendConfigInput {
     /// Creates a new builder-style object to manufacture [`RemoveBackendConfigInput`](crate::operation::remove_backend_config::RemoveBackendConfigInput).
-    pub fn builder(
-    ) -> crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder {
-        crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder {
+        crate::operation::remove_backend_config::builders::RemoveBackendConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveBackendConfigInput`](crate::operation::remove_backend_config::RemoveBackendConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveBackendConfigInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl RemoveBackendConfigInputBuilder {
     /// Consumes the builder and constructs a [`RemoveBackendConfigInput`](crate::operation::remove_backend_config::RemoveBackendConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_backend_config::RemoveBackendConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_backend_config::RemoveBackendConfigInput {
-                app_id: self.app_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_backend_config::RemoveBackendConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_backend_config::RemoveBackendConfigInput { app_id: self.app_id })
     }
 }

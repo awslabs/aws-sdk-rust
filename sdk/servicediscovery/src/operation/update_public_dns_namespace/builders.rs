@@ -26,7 +26,7 @@ impl UpdatePublicDnsNamespaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePublicDnsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder,
+    inner: crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder,
 }
 impl UpdatePublicDnsNamespaceFluentBuilder {
     /// Creates a new `UpdatePublicDnsNamespace`.
@@ -37,7 +37,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         }
     }
     /// Access the UpdatePublicDnsNamespace as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
             crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
             crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self.inner.get_id()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updater_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.updater_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_updater_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updater_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_updater_request_id(input);
         self
     }
@@ -160,10 +143,7 @@ impl UpdatePublicDnsNamespaceFluentBuilder {
         self
     }
     /// <p>Updated properties for the public DNS namespace.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicDnsNamespaceChange>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::PublicDnsNamespaceChange>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }

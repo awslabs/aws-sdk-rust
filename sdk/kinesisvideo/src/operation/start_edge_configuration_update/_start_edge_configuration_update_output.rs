@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for StartEdgeConfigurationUpdateOutput {
 }
 impl StartEdgeConfigurationUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartEdgeConfigurationUpdateOutput`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput).
-    pub fn builder() -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateOutputBuilder {
         crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartEdgeConfigurationUpdateOutput`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdateOutputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self
     }
     /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -135,10 +130,7 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self
     }
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -152,10 +144,7 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self
     }
     /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
-    pub fn set_sync_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncStatus>,
-    ) -> Self {
+    pub fn set_sync_status(mut self, input: ::std::option::Option<crate::types::SyncStatus>) -> Self {
         self.sync_status = input;
         self
     }
@@ -164,18 +153,12 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         &self.sync_status
     }
     /// <p>A description of the generated failure status.</p>
-    pub fn failed_status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failed_status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failed_status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the generated failure status.</p>
-    pub fn set_failed_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failed_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failed_status_details = input;
         self
     }
@@ -189,10 +172,7 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    pub fn set_edge_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeConfig>,
-    ) -> Self {
+    pub fn set_edge_config(mut self, input: ::std::option::Option<crate::types::EdgeConfig>) -> Self {
         self.edge_config = input;
         self
     }
@@ -210,9 +190,7 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEdgeConfigurationUpdateOutput`](crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput {
+    pub fn build(self) -> crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput {
         crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

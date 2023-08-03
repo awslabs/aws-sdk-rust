@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeGroupMembershipOutput {
 }
 impl DescribeGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipOutputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ pub struct DescribeGroupMembershipOutputBuilder {
 }
 impl DescribeGroupMembershipOutputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -83,18 +73,12 @@ impl DescribeGroupMembershipOutputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_id = input;
         self
     }
@@ -140,9 +124,7 @@ impl DescribeGroupMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
+    pub fn build(self) -> crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
         crate::operation::describe_group_membership::DescribeGroupMembershipOutput {
             identity_store_id: self.identity_store_id,
             membership_id: self.membership_id,

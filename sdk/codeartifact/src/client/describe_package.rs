@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput) with field(s):
     ///   - [`package(Option<PackageDescription>)`](crate::operation::describe_package::DescribePackageOutput::package): <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
     /// - On failure, responds with [`SdkError<DescribePackageError>`](crate::operation::describe_package::DescribePackageError)
-    pub fn describe_package(
-        &self,
-    ) -> crate::operation::describe_package::builders::DescribePackageFluentBuilder {
-        crate::operation::describe_package::builders::DescribePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_package(&self) -> crate::operation::describe_package::builders::DescribePackageFluentBuilder {
+        crate::operation::describe_package::builders::DescribePackageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl OrganizationAdditionalConfiguration {
 
 /// A builder for [`OrganizationAdditionalConfiguration`](crate::types::OrganizationAdditionalConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationAdditionalConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
@@ -44,17 +42,12 @@ impl OrganizationAdditionalConfigurationBuilder {
         self
     }
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
@@ -63,10 +56,7 @@ impl OrganizationAdditionalConfigurationBuilder {
         self
     }
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureStatus>,
-    ) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
         self.auto_enable = input;
         self
     }

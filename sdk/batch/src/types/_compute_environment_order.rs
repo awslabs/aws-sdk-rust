@@ -32,9 +32,7 @@ impl ComputeEnvironmentOrder {
 
 /// A builder for [`ComputeEnvironmentOrder`](crate::types::ComputeEnvironmentOrder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeEnvironmentOrderBuilder {
     pub(crate) order: ::std::option::Option<i32>,
     pub(crate) compute_environment: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ impl ComputeEnvironmentOrderBuilder {
         &self.order
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn set_compute_environment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_environment = input;
         self
     }

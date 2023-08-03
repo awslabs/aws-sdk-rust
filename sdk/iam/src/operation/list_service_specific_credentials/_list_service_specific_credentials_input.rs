@@ -24,16 +24,14 @@ impl ListServiceSpecificCredentialsInput {
 }
 impl ListServiceSpecificCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceSpecificCredentialsInput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput).
-    pub fn builder() -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder {
         crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceSpecificCredentialsInput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -77,13 +75,9 @@ impl ListServiceSpecificCredentialsInputBuilder {
         crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput {
-                user_name: self.user_name
-                ,
-                service_name: self.service_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsInput {
+            user_name: self.user_name,
+            service_name: self.service_name,
+        })
     }
 }

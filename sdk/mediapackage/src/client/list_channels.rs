@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`channels(Option<Vec<Channel>>)`](crate::operation::list_channels::ListChannelsOutput::channels): A list of Channel records.
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
-    pub fn list_channels(
-        &self,
-    ) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
-        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
+        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
     }
 }

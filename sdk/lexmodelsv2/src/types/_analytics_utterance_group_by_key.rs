@@ -30,9 +30,7 @@ impl AnalyticsUtteranceGroupByKey {
 
 /// A builder for [`AnalyticsUtteranceGroupByKey`](crate::types::AnalyticsUtteranceGroupByKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AnalyticsUtteranceGroupByKeyBuilder {
         self
     }
     /// <p>The category by which the utterance analytics were grouped.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceField>) -> Self {
         self.name = input;
         self
     }

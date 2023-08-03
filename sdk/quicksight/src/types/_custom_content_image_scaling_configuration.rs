@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CustomContentImageScalingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for CustomContentImageScalingConfiguration {
             "FIT_TO_HEIGHT" => CustomContentImageScalingConfiguration::FitToHeight,
             "FIT_TO_WIDTH" => CustomContentImageScalingConfiguration::FitToWidth,
             "SCALE_TO_VISUAL" => CustomContentImageScalingConfiguration::ScaleToVisual,
-            other => CustomContentImageScalingConfiguration::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CustomContentImageScalingConfiguration::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl CustomContentImageScalingConfiguration {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DO_NOT_SCALE",
-            "FIT_TO_HEIGHT",
-            "FIT_TO_WIDTH",
-            "SCALE_TO_VISUAL",
-        ]
+        &["DO_NOT_SCALE", "FIT_TO_HEIGHT", "FIT_TO_WIDTH", "SCALE_TO_VISUAL"]
     }
 }
 impl ::std::convert::AsRef<str> for CustomContentImageScalingConfiguration {

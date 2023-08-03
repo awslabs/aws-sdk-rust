@@ -22,16 +22,14 @@ impl UpdateDevicePolicyConfigurationInput {
 }
 impl UpdateDevicePolicyConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
-    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder {
         crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevicePolicyConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_ca_certificate: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn device_ca_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_ca_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn set_device_ca_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_ca_certificate = input;
         self
     }
@@ -80,11 +72,9 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-                device_ca_certificate: self.device_ca_certificate
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                device_ca_certificate: self.device_ca_certificate,
+            },
         )
     }
 }

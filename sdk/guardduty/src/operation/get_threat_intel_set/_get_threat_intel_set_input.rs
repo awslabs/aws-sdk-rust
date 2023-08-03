@@ -22,17 +22,14 @@ impl GetThreatIntelSetInput {
 }
 impl GetThreatIntelSetInput {
     /// Creates a new builder-style object to manufacture [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_threat_intel_set::builders::GetThreatIntelSetInputBuilder {
+    pub fn builder() -> crate::operation::get_threat_intel_set::builders::GetThreatIntelSetInputBuilder {
         crate::operation::get_threat_intel_set::builders::GetThreatIntelSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThreatIntelSetInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) threat_intel_set_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl GetThreatIntelSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
-    pub fn threat_intel_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
-    pub fn set_threat_intel_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threat_intel_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threat_intel_set_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_threat_intel_set::GetThreatIntelSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_threat_intel_set::GetThreatIntelSetInput {
-                detector_id: self.detector_id,
-                threat_intel_set_id: self.threat_intel_set_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_threat_intel_set::GetThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_threat_intel_set::GetThreatIntelSetInput {
+            detector_id: self.detector_id,
+            threat_intel_set_id: self.threat_intel_set_id,
+        })
     }
 }

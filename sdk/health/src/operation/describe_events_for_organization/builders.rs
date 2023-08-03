@@ -36,7 +36,7 @@ impl DescribeEventsForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder,
+    inner: crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder,
 }
 impl DescribeEventsForOrganizationFluentBuilder {
     /// Creates a new `DescribeEventsForOrganization`.
@@ -47,7 +47,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
         }
     }
     /// Access the DescribeEventsForOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +59,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
             crate::operation::describe_events_for_organization::DescribeEventsForOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +69,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>,
     > {
         let op = self
             .inner
@@ -108,9 +101,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -124,16 +115,14 @@ impl DescribeEventsForOrganizationFluentBuilder {
             crate::operation::describe_events_for_organization::DescribeEventsForOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator {
         crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
     }
     /// <p>Values to narrow the results returned.</p>
@@ -142,10 +131,7 @@ impl DescribeEventsForOrganizationFluentBuilder {
         self
     }
     /// <p>Values to narrow the results returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationEventFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OrganizationEventFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

@@ -26,17 +26,10 @@ pub struct GetProfileObjectTypeOutput {
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     #[doc(hidden)]
-    pub keys: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    >,
+    pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,9 +38,7 @@ pub struct GetProfileObjectTypeOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetProfileObjectTypeOutput {
@@ -80,22 +71,11 @@ impl GetProfileObjectTypeOutput {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    > {
+    pub fn keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -107,11 +87,7 @@ impl GetProfileObjectTypeOutput {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -122,18 +98,14 @@ impl ::aws_http::request_id::RequestId for GetProfileObjectTypeOutput {
 }
 impl GetProfileObjectTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeOutput`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder {
         crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProfileObjectTypeOutput`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeOutputBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -142,36 +114,21 @@ pub struct GetProfileObjectTypeOutputBuilder {
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) allow_profile_creation: ::std::option::Option<bool>,
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    >,
-    pub(crate) keys: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
+    pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetProfileObjectTypeOutputBuilder {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type_name = input;
         self
     }
@@ -222,18 +179,12 @@ impl GetProfileObjectTypeOutputBuilder {
         &self.expiration_days
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -256,25 +207,17 @@ impl GetProfileObjectTypeOutputBuilder {
         &self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn source_last_updated_timestamp_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_last_updated_timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn set_source_last_updated_timestamp_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = input;
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn get_source_last_updated_timestamp_format(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_last_updated_timestamp_format
     }
     /// Adds a key-value pair to `fields`.
@@ -282,11 +225,7 @@ impl GetProfileObjectTypeOutputBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ObjectTypeField,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ObjectTypeField) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
@@ -295,19 +234,13 @@ impl GetProfileObjectTypeOutputBuilder {
     /// <p>A map of the name and ObjectType field.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         &self.fields
     }
     /// Adds a key-value pair to `keys`.
@@ -315,11 +248,7 @@ impl GetProfileObjectTypeOutputBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::ObjectTypeKey>,
-    ) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
         let mut hash_map = self.keys.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.keys = ::std::option::Option::Some(hash_map);
@@ -328,12 +257,7 @@ impl GetProfileObjectTypeOutputBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn set_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ObjectTypeKey>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     ) -> Self {
         self.keys = input;
         self
@@ -341,12 +265,7 @@ impl GetProfileObjectTypeOutputBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn get_keys(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
         &self.keys
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -355,10 +274,7 @@ impl GetProfileObjectTypeOutputBuilder {
         self
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -372,10 +288,7 @@ impl GetProfileObjectTypeOutputBuilder {
         self
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -388,32 +301,19 @@ impl GetProfileObjectTypeOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

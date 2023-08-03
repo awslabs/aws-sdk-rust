@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::start_table_data_import_job::StartTableDataImportJobOutput::job_id): <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
     ///   - [`job_status(Option<TableDataImportJobStatus>)`](crate::operation::start_table_data_import_job::StartTableDataImportJobOutput::job_status): <p> The status of the import job immediately after submitting the request. </p>
     /// - On failure, responds with [`SdkError<StartTableDataImportJobError>`](crate::operation::start_table_data_import_job::StartTableDataImportJobError)
-    pub fn start_table_data_import_job(
-        &self,
-    ) -> crate::operation::start_table_data_import_job::builders::StartTableDataImportJobFluentBuilder
-    {
+    pub fn start_table_data_import_job(&self) -> crate::operation::start_table_data_import_job::builders::StartTableDataImportJobFluentBuilder {
         crate::operation::start_table_data_import_job::builders::StartTableDataImportJobFluentBuilder::new(self.handle.clone())
     }
 }

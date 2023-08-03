@@ -26,8 +26,7 @@ impl DeleteIpAccessSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder,
+    inner: crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder,
 }
 impl DeleteIpAccessSettingsFluentBuilder {
     /// Creates a new `DeleteIpAccessSettings`.
@@ -38,10 +37,7 @@ impl DeleteIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the DeleteIpAccessSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteIpAccessSettingsFluentBuilder {
             crate::operation::delete_ip_access_settings::DeleteIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteIpAccessSettingsFluentBuilder {
             crate::operation::delete_ip_access_settings::DeleteIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_access_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_access_settings_arn(input);
         self
     }

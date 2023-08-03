@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`classification_scopes(Option<Vec<ClassificationScopeSummary>>)`](crate::operation::list_classification_scopes::ListClassificationScopesOutput::classification_scopes): <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_classification_scopes::ListClassificationScopesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListClassificationScopesError>`](crate::operation::list_classification_scopes::ListClassificationScopesError)
-    pub fn list_classification_scopes(
-        &self,
-    ) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder
-    {
+    pub fn list_classification_scopes(&self) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder {
         crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`completed_on(Option<DateTime>)`](crate::operation::get_ml_task_run::GetMlTaskRunOutput::completed_on): <p>The date and time when this task run was completed.</p>
     ///   - [`execution_time(i32)`](crate::operation::get_ml_task_run::GetMlTaskRunOutput::execution_time): <p>The amount of time (in seconds) that the task run consumed resources.</p>
     /// - On failure, responds with [`SdkError<GetMLTaskRunError>`](crate::operation::get_ml_task_run::GetMLTaskRunError)
-    pub fn get_ml_task_run(
-        &self,
-    ) -> crate::operation::get_ml_task_run::builders::GetMLTaskRunFluentBuilder {
-        crate::operation::get_ml_task_run::builders::GetMLTaskRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ml_task_run(&self) -> crate::operation::get_ml_task_run::builders::GetMLTaskRunFluentBuilder {
+        crate::operation::get_ml_task_run::builders::GetMLTaskRunFluentBuilder::new(self.handle.clone())
     }
 }

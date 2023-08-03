@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`provisioned_concurrency_configs(Option<Vec<ProvisionedConcurrencyConfigListItem>>)`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput::provisioned_concurrency_configs): <p>A list of provisioned concurrency configurations.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListProvisionedConcurrencyConfigsError>`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError)
-    pub fn list_provisioned_concurrency_configs(&self) -> crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsFluentBuilder{
+    pub fn list_provisioned_concurrency_configs(
+        &self,
+    ) -> crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsFluentBuilder {
         crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsFluentBuilder::new(self.handle.clone())
     }
 }

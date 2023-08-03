@@ -58,9 +58,7 @@ impl BundleDetails {
 
 /// A builder for [`BundleDetails`](crate::types::BundleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleDetailsBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -152,17 +150,12 @@ impl BundleDetailsBuilder {
         self
     }
     /// <p> Developer desktop or mobile app or website platforms. </p>
-    pub fn set_available_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>,
-    ) -> Self {
+    pub fn set_available_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>) -> Self {
         self.available_platforms = input;
         self
     }
     /// <p> Developer desktop or mobile app or website platforms. </p>
-    pub fn get_available_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Platform>> {
+    pub fn get_available_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Platform>> {
         &self.available_platforms
     }
     /// Consumes the builder and constructs a [`BundleDetails`](crate::types::BundleDetails).

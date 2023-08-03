@@ -117,8 +117,7 @@ pub struct UpdateHealthCheckInput {
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub insufficient_data_health_status:
-        ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
+    pub insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
     /// <p>A complex type that contains one <code>ResettableElementName</code> element for each element that you want to reset to the default value. Valid values for <code>ResettableElementName</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>ChildHealthChecks</code>: Amazon Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ChildHealthChecks">ChildHealthChecks</a> to null.</p> </li>
@@ -257,9 +256,7 @@ impl UpdateHealthCheckInput {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn insufficient_data_health_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InsufficientDataHealthStatus> {
+    pub fn insufficient_data_health_status(&self) -> ::std::option::Option<&crate::types::InsufficientDataHealthStatus> {
         self.insufficient_data_health_status.as_ref()
     }
     /// <p>A complex type that contains one <code>ResettableElementName</code> element for each element that you want to reset to the default value. Valid values for <code>ResettableElementName</code> include the following:</p>
@@ -275,17 +272,14 @@ impl UpdateHealthCheckInput {
 }
 impl UpdateHealthCheckInput {
     /// Creates a new builder-style object to manufacture [`UpdateHealthCheckInput`](crate::operation::update_health_check::UpdateHealthCheckInput).
-    pub fn builder(
-    ) -> crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder {
+    pub fn builder() -> crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder {
         crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHealthCheckInput`](crate::operation::update_health_check::UpdateHealthCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHealthCheckInputBuilder {
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_version: ::std::option::Option<i64>,
@@ -302,25 +296,17 @@ pub struct UpdateHealthCheckInputBuilder {
     pub(crate) enable_sni: ::std::option::Option<bool>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
     pub(crate) alarm_identifier: ::std::option::Option<crate::types::AlarmIdentifier>,
-    pub(crate) insufficient_data_health_status:
-        ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
-    pub(crate) reset_elements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>>,
+    pub(crate) insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
+    pub(crate) reset_elements: ::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>>,
 }
 impl UpdateHealthCheckInputBuilder {
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_id = input;
         self
     }
@@ -450,19 +436,13 @@ impl UpdateHealthCheckInputBuilder {
     }
     /// <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
     /// <p>Specify this value only if you want to change it.</p>
-    pub fn resource_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
     /// <p>Specify this value only if you want to change it.</p>
-    pub fn set_resource_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_path = input;
         self
     }
@@ -491,10 +471,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <p>In this configuration, if the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value of <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn fully_qualified_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_domain_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -518,10 +495,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <p>In this configuration, if the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value of <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn set_fully_qualified_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_domain_name = input;
         self
     }
@@ -549,18 +523,12 @@ impl UpdateHealthCheckInputBuilder {
         &self.fully_qualified_domain_name
     }
     /// <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_string = input;
         self
     }
@@ -668,27 +636,19 @@ impl UpdateHealthCheckInputBuilder {
     /// To override the contents of this collection use [`set_child_health_checks`](Self::set_child_health_checks).
     ///
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn child_health_checks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_health_checks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.child_health_checks.unwrap_or_default();
         v.push(input.into());
         self.child_health_checks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn set_child_health_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.child_health_checks = input;
         self
     }
     /// <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn get_child_health_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.child_health_checks
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during <code>TLS</code> negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
@@ -723,17 +683,12 @@ impl UpdateHealthCheckInputBuilder {
         self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>) -> Self {
         self.regions = input;
         self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
-    pub fn get_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
         &self.regions
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
@@ -742,10 +697,7 @@ impl UpdateHealthCheckInputBuilder {
         self
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
-    pub fn set_alarm_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmIdentifier>,
-    ) -> Self {
+    pub fn set_alarm_identifier(mut self, input: ::std::option::Option<crate::types::AlarmIdentifier>) -> Self {
         self.alarm_identifier = input;
         self
     }
@@ -759,10 +711,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn insufficient_data_health_status(
-        mut self,
-        input: crate::types::InsufficientDataHealthStatus,
-    ) -> Self {
+    pub fn insufficient_data_health_status(mut self, input: crate::types::InsufficientDataHealthStatus) -> Self {
         self.insufficient_data_health_status = ::std::option::Option::Some(input);
         self
     }
@@ -772,10 +721,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn set_insufficient_data_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
-    ) -> Self {
+    pub fn set_insufficient_data_health_status(mut self, input: ::std::option::Option<crate::types::InsufficientDataHealthStatus>) -> Self {
         self.insufficient_data_health_status = input;
         self
     }
@@ -785,9 +731,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn get_insufficient_data_health_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::InsufficientDataHealthStatus> {
+    pub fn get_insufficient_data_health_status(&self) -> &::std::option::Option<crate::types::InsufficientDataHealthStatus> {
         &self.insufficient_data_health_status
     }
     /// Appends an item to `reset_elements`.
@@ -814,10 +758,7 @@ impl UpdateHealthCheckInputBuilder {
     /// <li> <p> <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a> list to the default set of regions. </p> </li>
     /// <li> <p> <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p> </li>
     /// </ul>
-    pub fn set_reset_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>>,
-    ) -> Self {
+    pub fn set_reset_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>>) -> Self {
         self.reset_elements = input;
         self
     }
@@ -828,38 +769,31 @@ impl UpdateHealthCheckInputBuilder {
     /// <li> <p> <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a> list to the default set of regions. </p> </li>
     /// <li> <p> <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p> </li>
     /// </ul>
-    pub fn get_reset_elements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>> {
+    pub fn get_reset_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>> {
         &self.reset_elements
     }
     /// Consumes the builder and constructs a [`UpdateHealthCheckInput`](crate::operation::update_health_check::UpdateHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_health_check::UpdateHealthCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_health_check::UpdateHealthCheckInput {
-                health_check_id: self.health_check_id,
-                health_check_version: self.health_check_version,
-                ip_address: self.ip_address,
-                port: self.port,
-                resource_path: self.resource_path,
-                fully_qualified_domain_name: self.fully_qualified_domain_name,
-                search_string: self.search_string,
-                failure_threshold: self.failure_threshold,
-                inverted: self.inverted,
-                disabled: self.disabled,
-                health_threshold: self.health_threshold,
-                child_health_checks: self.child_health_checks,
-                enable_sni: self.enable_sni,
-                regions: self.regions,
-                alarm_identifier: self.alarm_identifier,
-                insufficient_data_health_status: self.insufficient_data_health_status,
-                reset_elements: self.reset_elements,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_health_check::UpdateHealthCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_health_check::UpdateHealthCheckInput {
+            health_check_id: self.health_check_id,
+            health_check_version: self.health_check_version,
+            ip_address: self.ip_address,
+            port: self.port,
+            resource_path: self.resource_path,
+            fully_qualified_domain_name: self.fully_qualified_domain_name,
+            search_string: self.search_string,
+            failure_threshold: self.failure_threshold,
+            inverted: self.inverted,
+            disabled: self.disabled,
+            health_threshold: self.health_threshold,
+            child_health_checks: self.child_health_checks,
+            enable_sni: self.enable_sni,
+            regions: self.regions,
+            alarm_identifier: self.alarm_identifier,
+            insufficient_data_health_status: self.insufficient_data_health_status,
+            reset_elements: self.reset_elements,
+        })
     }
 }

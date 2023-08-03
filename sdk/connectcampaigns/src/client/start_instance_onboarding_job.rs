@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`StartInstanceOnboardingJobOutput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput) with field(s):
     ///   - [`connect_instance_onboarding_job_status(Option<InstanceOnboardingJobStatus>)`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput::connect_instance_onboarding_job_status): Instance onboarding job status object
     /// - On failure, responds with [`SdkError<StartInstanceOnboardingJobError>`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError)
-    pub fn start_instance_onboarding_job(&self) -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobFluentBuilder{
+    pub fn start_instance_onboarding_job(
+        &self,
+    ) -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobFluentBuilder {
         crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobFluentBuilder::new(self.handle.clone())
     }
 }

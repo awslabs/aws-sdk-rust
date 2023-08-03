@@ -43,9 +43,7 @@ impl GetDocumentInput {
 
 /// A builder for [`GetDocumentInput`](crate::operation::get_document::GetDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl GetDocumentInputBuilder {
         &self.version_name
     }
     /// <p>The document version for which you want information.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version for which you want information.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -107,10 +99,7 @@ impl GetDocumentInputBuilder {
         self
     }
     /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -119,12 +108,7 @@ impl GetDocumentInputBuilder {
         &self.document_format
     }
     /// Consumes the builder and constructs a [`GetDocumentInput`](crate::operation::get_document::GetDocumentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_document::GetDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_document::GetDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_document::GetDocumentInput {
             name: self.name,
             version_name: self.version_name,

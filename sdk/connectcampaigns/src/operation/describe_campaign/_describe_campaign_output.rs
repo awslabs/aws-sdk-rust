@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeCampaignOutput {
 }
 impl DescribeCampaignOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
-    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder {
         crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutputBuilder {
     pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,

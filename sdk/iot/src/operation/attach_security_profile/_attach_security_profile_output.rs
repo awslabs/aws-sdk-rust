@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachSecurityProfileOutput {
 }
 impl AttachSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`AttachSecurityProfileOutput`](crate::operation::attach_security_profile::AttachSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_security_profile::builders::AttachSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_security_profile::builders::AttachSecurityProfileOutputBuilder {
         crate::operation::attach_security_profile::builders::AttachSecurityProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachSecurityProfileOutput`](crate::operation::attach_security_profile::AttachSecurityProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

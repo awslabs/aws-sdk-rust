@@ -5,16 +5,16 @@ pub use crate::operation::create_network_analyzer_configuration::_create_network
 
 impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_network_analyzer_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder,
+    inner: crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder,
 }
 impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     /// Creates a new `CreateNetworkAnalyzerConfiguration`.
@@ -37,15 +37,20 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         }
     }
     /// Access the CreateNetworkAnalyzerConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Name of the network analyzer configuration.</p>
@@ -114,10 +129,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn set_trace_content(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceContent>,
-    ) -> Self {
+    pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
     }
@@ -130,25 +142,17 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
     ///
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_devices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.wireless_devices(input.into());
         self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_devices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_wireless_devices(input);
         self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_devices()
     }
     /// Appends an item to `WirelessGateways`.
@@ -156,25 +160,17 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
     ///
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateways(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.wireless_gateways(input.into());
         self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_wireless_gateways(input);
         self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_gateways()
     }
     /// <p>The description of the new resource.</p>
@@ -201,10 +197,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -213,18 +206,12 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -237,25 +224,17 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
     ///
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn multicast_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multicast_groups(input.into());
         self
     }
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn set_multicast_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_multicast_groups(input);
         self
     }
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn get_multicast_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_multicast_groups()
     }
 }

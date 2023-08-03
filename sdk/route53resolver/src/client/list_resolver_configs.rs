@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_resolver_configs::ListResolverConfigsOutput::next_token): <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>  <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     ///   - [`resolver_configs(Option<Vec<ResolverConfig>>)`](crate::operation::list_resolver_configs::ListResolverConfigsOutput::resolver_configs): <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<ListResolverConfigsError>`](crate::operation::list_resolver_configs::ListResolverConfigsError)
-    pub fn list_resolver_configs(
-        &self,
-    ) -> crate::operation::list_resolver_configs::builders::ListResolverConfigsFluentBuilder {
-        crate::operation::list_resolver_configs::builders::ListResolverConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resolver_configs(&self) -> crate::operation::list_resolver_configs::builders::ListResolverConfigsFluentBuilder {
+        crate::operation::list_resolver_configs::builders::ListResolverConfigsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -79,9 +79,7 @@ impl ProjectBuildBatchConfig {
 
 /// A builder for [`ProjectBuildBatchConfig`](crate::types::ProjectBuildBatchConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectBuildBatchConfigBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) combine_artifacts: ::std::option::Option<bool>,
@@ -124,10 +122,7 @@ impl ProjectBuildBatchConfigBuilder {
         self
     }
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
-    pub fn set_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchRestrictions>,
-    ) -> Self {
+    pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::BatchRestrictions>) -> Self {
         self.restrictions = input;
         self
     }
@@ -183,10 +178,7 @@ impl ProjectBuildBatchConfigBuilder {
     /// <p>Send a separate status report for each individual build.</p>
     /// </dd>
     /// </dl>
-    pub fn set_batch_report_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchReportModeType>,
-    ) -> Self {
+    pub fn set_batch_report_mode(mut self, input: ::std::option::Option<crate::types::BatchReportModeType>) -> Self {
         self.batch_report_mode = input;
         self
     }
@@ -205,9 +197,7 @@ impl ProjectBuildBatchConfigBuilder {
     /// <p>Send a separate status report for each individual build.</p>
     /// </dd>
     /// </dl>
-    pub fn get_batch_report_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchReportModeType> {
+    pub fn get_batch_report_mode(&self) -> &::std::option::Option<crate::types::BatchReportModeType> {
         &self.batch_report_mode
     }
     /// Consumes the builder and constructs a [`ProjectBuildBatchConfig`](crate::types::ProjectBuildBatchConfig).

@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`CreateModelBiasJobDefinitionOutput`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     /// - On failure, responds with [`SdkError<CreateModelBiasJobDefinitionError>`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError)
-    pub fn create_model_bias_job_definition(&self) -> crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionFluentBuilder{
+    pub fn create_model_bias_job_definition(
+        &self,
+    ) -> crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionFluentBuilder {
         crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,12 +28,9 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsOutputBuilder {
-    pub(crate) tag_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
+    pub(crate) tag_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutputBuilder {
@@ -49,17 +46,12 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// <p>Information about the tags.</p>
-    pub fn set_tag_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
-    ) -> Self {
+    pub fn set_tag_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>) -> Self {
         self.tag_descriptions = input;
         self
     }
     /// <p>Information about the tags.</p>
-    pub fn get_tag_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
+    pub fn get_tag_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
         &self.tag_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

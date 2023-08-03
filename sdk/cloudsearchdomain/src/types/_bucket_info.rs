@@ -23,9 +23,7 @@ impl BucketInfo {
 
 /// A builder for [`BucketInfo`](crate::types::BucketInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketInfoBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
 }
@@ -42,10 +40,7 @@ impl BucketInfoBuilder {
         self
     }
     /// <p>A list of the calculated facet values and counts.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
         self.buckets = input;
         self
     }
@@ -55,8 +50,6 @@ impl BucketInfoBuilder {
     }
     /// Consumes the builder and constructs a [`BucketInfo`](crate::types::BucketInfo).
     pub fn build(self) -> crate::types::BucketInfo {
-        crate::types::BucketInfo {
-            buckets: self.buckets,
-        }
+        crate::types::BucketInfo { buckets: self.buckets }
     }
 }

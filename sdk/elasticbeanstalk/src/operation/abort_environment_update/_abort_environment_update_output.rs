@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AbortEnvironmentUpdateOutput {
 }
 impl AbortEnvironmentUpdateOutput {
     /// Creates a new builder-style object to manufacture [`AbortEnvironmentUpdateOutput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput).
-    pub fn builder(
-    ) -> crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateOutputBuilder {
         crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateOutputBuilder::default()
     }
 }
 
 /// A builder for [`AbortEnvironmentUpdateOutput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateOutputBuilder {
     _request_id: Option<String>,
 }

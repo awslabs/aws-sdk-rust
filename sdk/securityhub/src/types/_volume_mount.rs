@@ -30,9 +30,7 @@ impl VolumeMount {
 
 /// A builder for [`VolumeMount`](crate::types::VolumeMount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeMountBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) mount_path: ::std::option::Option<::std::string::String>,

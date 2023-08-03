@@ -18,10 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMaintenanceWindowOutput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput) with field(s):
     ///   - [`window_id(Option<String>)`](crate::operation::create_maintenance_window::CreateMaintenanceWindowOutput::window_id): <p>The ID of the created maintenance window.</p>
     /// - On failure, responds with [`SdkError<CreateMaintenanceWindowError>`](crate::operation::create_maintenance_window::CreateMaintenanceWindowError)
-    pub fn create_maintenance_window(
-        &self,
-    ) -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowFluentBuilder
-    {
+    pub fn create_maintenance_window(&self) -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowFluentBuilder {
         crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

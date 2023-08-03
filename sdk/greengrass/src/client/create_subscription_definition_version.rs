@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateSubscriptionDefinitionVersionError>`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionError)
-    pub fn create_subscription_definition_version(&self) -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionFluentBuilder{
+    pub fn create_subscription_definition_version(
+        &self,
+    ) -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionFluentBuilder {
         crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

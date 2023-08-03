@@ -35,9 +35,7 @@ impl ListWorkforcesOutput {
 
 /// A builder for [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkforcesOutputBuilder {
     pub(crate) workforces: ::std::option::Option<::std::vec::Vec<crate::types::Workforce>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListWorkforcesOutputBuilder {
         self
     }
     /// <p>A list containing information about your workforce.</p>
-    pub fn set_workforces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workforce>>,
-    ) -> Self {
+    pub fn set_workforces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workforce>>) -> Self {
         self.workforces = input;
         self
     }
     /// <p>A list containing information about your workforce.</p>
-    pub fn get_workforces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workforce>> {
+    pub fn get_workforces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workforce>> {
         &self.workforces
     }
     /// <p>A token to resume pagination.</p>

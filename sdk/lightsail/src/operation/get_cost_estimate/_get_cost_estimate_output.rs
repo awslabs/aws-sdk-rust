@@ -5,15 +5,12 @@
 pub struct GetCostEstimateOutput {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
     #[doc(hidden)]
-    pub resources_budget_estimate:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
+    pub resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,
 }
 impl GetCostEstimateOutput {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn resources_budget_estimate(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceBudgetEstimate]> {
+    pub fn resources_budget_estimate(&self) -> ::std::option::Option<&[crate::types::ResourceBudgetEstimate]> {
         self.resources_budget_estimate.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetCostEstimateOutput {
 }
 impl GetCostEstimateOutput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput).
-    pub fn builder() -> crate::operation::get_cost_estimate::builders::GetCostEstimateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cost_estimate::builders::GetCostEstimateOutputBuilder {
         crate::operation::get_cost_estimate::builders::GetCostEstimateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostEstimateOutputBuilder {
-    pub(crate) resources_budget_estimate:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
+    pub(crate) resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,
 }
 impl GetCostEstimateOutputBuilder {
@@ -46,27 +39,19 @@ impl GetCostEstimateOutputBuilder {
     /// To override the contents of this collection use [`set_resources_budget_estimate`](Self::set_resources_budget_estimate).
     ///
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn resources_budget_estimate(
-        mut self,
-        input: crate::types::ResourceBudgetEstimate,
-    ) -> Self {
+    pub fn resources_budget_estimate(mut self, input: crate::types::ResourceBudgetEstimate) -> Self {
         let mut v = self.resources_budget_estimate.unwrap_or_default();
         v.push(input);
         self.resources_budget_estimate = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn set_resources_budget_estimate(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
-    ) -> Self {
+    pub fn set_resources_budget_estimate(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>) -> Self {
         self.resources_budget_estimate = input;
         self
     }
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn get_resources_budget_estimate(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>> {
+    pub fn get_resources_budget_estimate(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>> {
         &self.resources_budget_estimate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

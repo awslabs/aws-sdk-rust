@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMultiplexProgramOutput`](crate::operation::create_multiplex_program::CreateMultiplexProgramOutput) with field(s):
     ///   - [`multiplex_program(Option<MultiplexProgram>)`](crate::operation::create_multiplex_program::CreateMultiplexProgramOutput::multiplex_program): The newly created multiplex program.
     /// - On failure, responds with [`SdkError<CreateMultiplexProgramError>`](crate::operation::create_multiplex_program::CreateMultiplexProgramError)
-    pub fn create_multiplex_program(
-        &self,
-    ) -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramFluentBuilder
-    {
+    pub fn create_multiplex_program(&self) -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramFluentBuilder {
         crate::operation::create_multiplex_program::builders::CreateMultiplexProgramFluentBuilder::new(self.handle.clone())
     }
 }

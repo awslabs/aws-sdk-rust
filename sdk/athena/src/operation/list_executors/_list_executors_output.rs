@@ -42,14 +42,11 @@ impl ListExecutorsOutput {
 
 /// A builder for [`ListExecutorsOutput`](crate::operation::list_executors::ListExecutorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutorsOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) executors_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>>,
+    pub(crate) executors_summary: ::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>>,
     _request_id: Option<String>,
 }
 impl ListExecutorsOutputBuilder {
@@ -93,17 +90,12 @@ impl ListExecutorsOutputBuilder {
         self
     }
     /// <p>Contains summary information about the executor.</p>
-    pub fn set_executors_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>>,
-    ) -> Self {
+    pub fn set_executors_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>>) -> Self {
         self.executors_summary = input;
         self
     }
     /// <p>Contains summary information about the executor.</p>
-    pub fn get_executors_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>> {
+    pub fn get_executors_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutorsSummary>> {
         &self.executors_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

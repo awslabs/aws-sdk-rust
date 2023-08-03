@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateEdgeDeploymentStageOutput {
 }
 impl CreateEdgeDeploymentStageOutput {
     /// Creates a new builder-style object to manufacture [`CreateEdgeDeploymentStageOutput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput).
-    pub fn builder() -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageOutputBuilder{
+    pub fn builder() -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageOutputBuilder {
         crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgeDeploymentStageOutput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentStageOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateEdgeDeploymentStageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageOutput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput {
+    pub fn build(self) -> crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput {
         crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput {
             _request_id: self._request_id,
         }

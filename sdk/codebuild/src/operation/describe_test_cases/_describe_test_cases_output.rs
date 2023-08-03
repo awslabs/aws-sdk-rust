@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeTestCasesOutput {
 }
 impl DescribeTestCasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestCasesOutput`](crate::operation::describe_test_cases::DescribeTestCasesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_test_cases::builders::DescribeTestCasesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_test_cases::builders::DescribeTestCasesOutputBuilder {
         crate::operation::describe_test_cases::builders::DescribeTestCasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestCasesOutput`](crate::operation::describe_test_cases::DescribeTestCasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestCasesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) test_cases: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>,
@@ -71,17 +68,12 @@ impl DescribeTestCasesOutputBuilder {
         self
     }
     /// <p> The returned list of test cases. </p>
-    pub fn set_test_cases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>,
-    ) -> Self {
+    pub fn set_test_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestCase>>) -> Self {
         self.test_cases = input;
         self
     }
     /// <p> The returned list of test cases. </p>
-    pub fn get_test_cases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCase>> {
+    pub fn get_test_cases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCase>> {
         &self.test_cases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

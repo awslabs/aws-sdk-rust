@@ -22,36 +22,26 @@ impl UpdateFunctionDefinitionInput {
 }
 impl UpdateFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionDefinitionInput`](crate::operation::update_function_definition::UpdateFunctionDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder {
         crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFunctionDefinitionInput`](crate::operation::update_function_definition::UpdateFunctionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFunctionDefinitionInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_definition_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl UpdateFunctionDefinitionInputBuilder {
         crate::operation::update_function_definition::UpdateFunctionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_function_definition::UpdateFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_function_definition::UpdateFunctionDefinitionInput {
+            function_definition_id: self.function_definition_id,
+            name: self.name,
+        })
     }
 }

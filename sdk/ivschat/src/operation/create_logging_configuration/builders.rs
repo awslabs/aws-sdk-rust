@@ -26,7 +26,7 @@ impl CreateLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder,
+    inner: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder,
 }
 impl CreateLoggingConfigurationFluentBuilder {
     /// Creates a new `CreateLoggingConfiguration`.
@@ -37,7 +37,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the CreateLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             crate::operation::create_logging_configuration::CreateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             crate::operation::create_logging_configuration::CreateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,25 +124,17 @@ impl CreateLoggingConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         self.inner.get_destination_configuration()
     }
     /// Adds a key-value pair to `tags`.
@@ -161,30 +142,17 @@ impl CreateLoggingConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

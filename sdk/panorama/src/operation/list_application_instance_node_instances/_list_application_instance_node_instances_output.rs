@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationInstanceNodeInstancesO
 }
 impl ListApplicationInstanceNodeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
-    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder {
         crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstanceNodeInstancesOutputBuilder {
     pub(crate) node_instances: ::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListApplicationInstanceNodeInstancesOutputBuilder {
         self
     }
     /// <p>A list of node instances.</p>
-    pub fn set_node_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>>,
-    ) -> Self {
+    pub fn set_node_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>>) -> Self {
         self.node_instances = input;
         self
     }
     /// <p>A list of node instances.</p>
-    pub fn get_node_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>> {
+    pub fn get_node_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>> {
         &self.node_instances
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -93,12 +86,10 @@ impl ListApplicationInstanceNodeInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
-    pub fn build(self) -> crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput{
+    pub fn build(self) -> crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput {
         crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput {
-            node_instances: self.node_instances
-            ,
-            next_token: self.next_token
-            ,
+            node_instances: self.node_instances,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

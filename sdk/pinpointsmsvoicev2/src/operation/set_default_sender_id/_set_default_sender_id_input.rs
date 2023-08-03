@@ -22,35 +22,26 @@ impl SetDefaultSenderIdInput {
 }
 impl SetDefaultSenderIdInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultSenderIdInput`](crate::operation::set_default_sender_id::SetDefaultSenderIdInput).
-    pub fn builder(
-    ) -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder {
+    pub fn builder() -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder {
         crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultSenderIdInput`](crate::operation::set_default_sender_id::SetDefaultSenderIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultSenderIdInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
 }
 impl SetDefaultSenderIdInputBuilder {
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -75,15 +66,11 @@ impl SetDefaultSenderIdInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultSenderIdInput`](crate::operation::set_default_sender_id::SetDefaultSenderIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_default_sender_id::SetDefaultSenderIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_default_sender_id::SetDefaultSenderIdInput {
-                configuration_set_name: self.configuration_set_name,
-                sender_id: self.sender_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_default_sender_id::SetDefaultSenderIdInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_default_sender_id::SetDefaultSenderIdInput {
+            configuration_set_name: self.configuration_set_name,
+            sender_id: self.sender_id,
+        })
     }
 }

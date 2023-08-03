@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEndpointAccessOutput`](crate::operation::get_endpoint_access::GetEndpointAccessOutput) with field(s):
     ///   - [`endpoint(Option<EndpointAccess>)`](crate::operation::get_endpoint_access::GetEndpointAccessOutput::endpoint): <p>The returned VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointAccessError>`](crate::operation::get_endpoint_access::GetEndpointAccessError)
-    pub fn get_endpoint_access(
-        &self,
-    ) -> crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder {
-        crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_endpoint_access(&self) -> crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder {
+        crate::operation::get_endpoint_access::builders::GetEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

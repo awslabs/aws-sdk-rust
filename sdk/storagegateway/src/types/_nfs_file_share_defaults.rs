@@ -44,9 +44,7 @@ impl NfsFileShareDefaults {
 
 /// A builder for [`NfsFileShareDefaults`](crate::types::NfsFileShareDefaults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NfsFileShareDefaultsBuilder {
     pub(crate) file_mode: ::std::option::Option<::std::string::String>,
     pub(crate) directory_mode: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl NfsFileShareDefaultsBuilder {
         &self.file_mode
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-    pub fn directory_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-    pub fn set_directory_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_mode = input;
         self
     }

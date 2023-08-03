@@ -44,9 +44,7 @@ impl BucketCountByEffectivePermission {
 
 /// A builder for [`BucketCountByEffectivePermission`](crate::types::BucketCountByEffectivePermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketCountByEffectivePermissionBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<i64>,
     pub(crate) publicly_readable: ::std::option::Option<i64>,

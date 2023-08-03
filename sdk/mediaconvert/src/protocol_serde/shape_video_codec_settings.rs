@@ -12,10 +12,7 @@ pub fn ser_video_codec_settings(
     if let Some(var_3) = &input.avc_intra_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("avcIntraSettings").start_object();
-        crate::protocol_serde::shape_avc_intra_settings::ser_avc_intra_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_avc_intra_settings::ser_avc_intra_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.codec {
@@ -24,10 +21,7 @@ pub fn ser_video_codec_settings(
     if let Some(var_6) = &input.frame_capture_settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("frameCaptureSettings").start_object();
-        crate::protocol_serde::shape_frame_capture_settings::ser_frame_capture_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_frame_capture_settings::ser_frame_capture_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.h264_settings {
@@ -83,17 +77,9 @@ pub fn ser_video_codec_settings(
 
 pub(crate) fn de_video_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VideoCodecSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VideoCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -103,104 +89,62 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "av1Settings" => {
-                            builder = builder.set_av1_settings(
-                                crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens)?,
-                            );
+                            builder = builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens)?);
                         }
                         "avcIntraSettings" => {
-                            builder = builder.set_avc_intra_settings(
-                                    crate::protocol_serde::shape_avc_intra_settings::de_avc_intra_settings(tokens)?
-                                );
+                            builder = builder.set_avc_intra_settings(crate::protocol_serde::shape_avc_intra_settings::de_avc_intra_settings(tokens)?);
                         }
                         "codec" => {
                             builder = builder.set_codec(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::VideoCodec::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoCodec::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "frameCaptureSettings" => {
-                            builder = builder.set_frame_capture_settings(
-                                    crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens)?
-                                );
+                            builder = builder
+                                .set_frame_capture_settings(crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens)?);
                         }
                         "h264Settings" => {
-                            builder = builder.set_h264_settings(
-                                crate::protocol_serde::shape_h264_settings::de_h264_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens)?);
                         }
                         "h265Settings" => {
-                            builder = builder.set_h265_settings(
-                                crate::protocol_serde::shape_h265_settings::de_h265_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens)?);
                         }
                         "mpeg2Settings" => {
-                            builder = builder.set_mpeg2_settings(
-                                crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens)?);
                         }
                         "proresSettings" => {
-                            builder = builder.set_prores_settings(
-                                crate::protocol_serde::shape_prores_settings::de_prores_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_prores_settings(crate::protocol_serde::shape_prores_settings::de_prores_settings(tokens)?);
                         }
                         "vc3Settings" => {
-                            builder = builder.set_vc3_settings(
-                                crate::protocol_serde::shape_vc3_settings::de_vc3_settings(tokens)?,
-                            );
+                            builder = builder.set_vc3_settings(crate::protocol_serde::shape_vc3_settings::de_vc3_settings(tokens)?);
                         }
                         "vp8Settings" => {
-                            builder = builder.set_vp8_settings(
-                                crate::protocol_serde::shape_vp8_settings::de_vp8_settings(tokens)?,
-                            );
+                            builder = builder.set_vp8_settings(crate::protocol_serde::shape_vp8_settings::de_vp8_settings(tokens)?);
                         }
                         "vp9Settings" => {
-                            builder = builder.set_vp9_settings(
-                                crate::protocol_serde::shape_vp9_settings::de_vp9_settings(tokens)?,
-                            );
+                            builder = builder.set_vp9_settings(crate::protocol_serde::shape_vp9_settings::de_vp9_settings(tokens)?);
                         }
                         "xavcSettings" => {
-                            builder = builder.set_xavc_settings(
-                                crate::protocol_serde::shape_xavc_settings::de_xavc_settings(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_xavc_settings(crate::protocol_serde::shape_xavc_settings::de_xavc_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

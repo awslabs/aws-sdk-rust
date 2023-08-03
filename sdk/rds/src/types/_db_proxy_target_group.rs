@@ -22,8 +22,7 @@ pub struct DbProxyTargetGroup {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     #[doc(hidden)]
-    pub connection_pool_config:
-        ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
+    pub connection_pool_config: ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
     /// <p>The date and time when the target group was first created.</p>
     #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,9 +52,7 @@ impl DbProxyTargetGroup {
         self.status.as_deref()
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn connection_pool_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionPoolConfigurationInfo> {
+    pub fn connection_pool_config(&self) -> ::std::option::Option<&crate::types::ConnectionPoolConfigurationInfo> {
         self.connection_pool_config.as_ref()
     }
     /// <p>The date and time when the target group was first created.</p>
@@ -76,34 +73,25 @@ impl DbProxyTargetGroup {
 
 /// A builder for [`DbProxyTargetGroup`](crate::types::DbProxyTargetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbProxyTargetGroupBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_pool_config:
-        ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
+    pub(crate) connection_pool_config: ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DbProxyTargetGroupBuilder {
     /// <p>The identifier for the RDS proxy associated with this target group.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the RDS proxy associated with this target group.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -112,18 +100,12 @@ impl DbProxyTargetGroupBuilder {
         &self.db_proxy_name
     }
     /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_name = input;
         self
     }
@@ -132,18 +114,12 @@ impl DbProxyTargetGroupBuilder {
         &self.target_group_name
     }
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
@@ -180,25 +156,17 @@ impl DbProxyTargetGroupBuilder {
         &self.status
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn connection_pool_config(
-        mut self,
-        input: crate::types::ConnectionPoolConfigurationInfo,
-    ) -> Self {
+    pub fn connection_pool_config(mut self, input: crate::types::ConnectionPoolConfigurationInfo) -> Self {
         self.connection_pool_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn set_connection_pool_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>,
-    ) -> Self {
+    pub fn set_connection_pool_config(mut self, input: ::std::option::Option<crate::types::ConnectionPoolConfigurationInfo>) -> Self {
         self.connection_pool_config = input;
         self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn get_connection_pool_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionPoolConfigurationInfo> {
+    pub fn get_connection_pool_config(&self) -> &::std::option::Option<crate::types::ConnectionPoolConfigurationInfo> {
         &self.connection_pool_config
     }
     /// <p>The date and time when the target group was first created.</p>
@@ -207,10 +175,7 @@ impl DbProxyTargetGroupBuilder {
         self
     }
     /// <p>The date and time when the target group was first created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -224,10 +189,7 @@ impl DbProxyTargetGroupBuilder {
         self
     }
     /// <p>The date and time when the target group was last updated.</p>
-    pub fn set_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_date = input;
         self
     }

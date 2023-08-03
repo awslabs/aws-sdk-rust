@@ -23,9 +23,7 @@ impl DataLakeEncryptionConfiguration {
 
 /// A builder for [`DataLakeEncryptionConfiguration`](crate::types::DataLakeEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeEncryptionConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DataLakeEncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`DataLakeEncryptionConfiguration`](crate::types::DataLakeEncryptionConfiguration).
     pub fn build(self) -> crate::types::DataLakeEncryptionConfiguration {
-        crate::types::DataLakeEncryptionConfiguration {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::DataLakeEncryptionConfiguration { kms_key_id: self.kms_key_id }
     }
 }

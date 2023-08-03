@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSignalCatalogNodesOutput {
 }
 impl ListSignalCatalogNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListSignalCatalogNodesOutput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesOutputBuilder {
         crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSignalCatalogNodesOutput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalCatalogNodesOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListSignalCatalogNodesOutputBuilder {
         self
     }
     /// <p> A list of information about nodes. </p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes = input;
         self
     }
@@ -93,9 +86,7 @@ impl ListSignalCatalogNodesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSignalCatalogNodesOutput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput {
+    pub fn build(self) -> crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput {
         crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput {
             nodes: self.nodes,
             next_token: self.next_token,

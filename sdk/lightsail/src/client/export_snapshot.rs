@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ExportSnapshotOutput`](crate::operation::export_snapshot::ExportSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::export_snapshot::ExportSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<ExportSnapshotError>`](crate::operation::export_snapshot::ExportSnapshotError)
-    pub fn export_snapshot(
-        &self,
-    ) -> crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder {
-        crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_snapshot(&self) -> crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder {
+        crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
     #[doc(hidden)]
-    pub entity_recognizer_summaries_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>>,
+    pub entity_recognizer_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEntityRecognizerSummariesOutput {
 }
 impl ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
-    pub fn entity_recognizer_summaries_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EntityRecognizerSummary]> {
+    pub fn entity_recognizer_summaries_list(&self) -> ::std::option::Option<&[crate::types::EntityRecognizerSummary]> {
         self.entity_recognizer_summaries_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEntityRecognizerSummariesOutput {
 }
 impl ListEntityRecognizerSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesOutput`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput).
-    pub fn builder() -> crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesOutputBuilder {
         crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntityRecognizerSummariesOutput`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityRecognizerSummariesOutputBuilder {
-    pub(crate) entity_recognizer_summaries_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>>,
+    pub(crate) entity_recognizer_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListEntityRecognizerSummariesOutputBuilder {
     /// To override the contents of this collection use [`set_entity_recognizer_summaries_list`](Self::set_entity_recognizer_summaries_list).
     ///
     /// <p>The list entity recognizer summaries.</p>
-    pub fn entity_recognizer_summaries_list(
-        mut self,
-        input: crate::types::EntityRecognizerSummary,
-    ) -> Self {
+    pub fn entity_recognizer_summaries_list(mut self, input: crate::types::EntityRecognizerSummary) -> Self {
         let mut v = self.entity_recognizer_summaries_list.unwrap_or_default();
         v.push(input);
         self.entity_recognizer_summaries_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListEntityRecognizerSummariesOutputBuilder {
         self
     }
     /// <p>The list entity recognizer summaries.</p>
-    pub fn get_entity_recognizer_summaries_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>> {
+    pub fn get_entity_recognizer_summaries_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>> {
         &self.entity_recognizer_summaries_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -100,10 +89,7 @@ impl ListEntityRecognizerSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEntityRecognizerSummariesOutput`](crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput
-    {
+    pub fn build(self) -> crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput {
         crate::operation::list_entity_recognizer_summaries::ListEntityRecognizerSummariesOutput {
             entity_recognizer_summaries_list: self.entity_recognizer_summaries_list,
             next_token: self.next_token,

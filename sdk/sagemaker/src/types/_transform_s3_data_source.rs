@@ -44,9 +44,7 @@ impl TransformS3DataSource {
 
 /// A builder for [`TransformS3DataSource`](crate::types::TransformS3DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformS3DataSourceBuilder {
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3DataType>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl TransformS3DataSourceBuilder {
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform. </p>
     /// <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code> </p>
     /// <p>The following value is not compatible: <code>AugmentedManifestFile</code> </p>
-    pub fn set_s3_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataType>,
-    ) -> Self {
+    pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::S3DataType>) -> Self {
         self.s3_data_type = input;
         self
     }

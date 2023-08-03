@@ -59,9 +59,7 @@ impl PeriodToDateComputation {
 
 /// A builder for [`PeriodToDateComputation`](crate::types::PeriodToDateComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PeriodToDateComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct PeriodToDateComputationBuilder {
 }
 impl PeriodToDateComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computation_id = input;
         self
     }
@@ -146,10 +138,7 @@ impl PeriodToDateComputationBuilder {
     /// <li> <p>YEAR: Year to date.</p> </li>
     /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
-    pub fn set_period_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_period_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.period_time_granularity = input;
         self
     }
@@ -158,9 +147,7 @@ impl PeriodToDateComputationBuilder {
     /// <li> <p>YEAR: Year to date.</p> </li>
     /// <li> <p>MONTH: Month to date.</p> </li>
     /// </ul>
-    pub fn get_period_time_granularity(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeGranularity> {
+    pub fn get_period_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
         &self.period_time_granularity
     }
     /// Consumes the builder and constructs a [`PeriodToDateComputation`](crate::types::PeriodToDateComputation).

@@ -37,9 +37,7 @@ impl TargetHealthDescription {
 
 /// A builder for [`TargetHealthDescription`](crate::types::TargetHealthDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetHealthDescriptionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::TargetDescription>,
     pub(crate) health_check_port: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl TargetHealthDescriptionBuilder {
         self
     }
     /// <p>The description of the target.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDescription>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TargetDescription>) -> Self {
         self.target = input;
         self
     }
@@ -64,18 +59,12 @@ impl TargetHealthDescriptionBuilder {
         &self.target
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_port = input;
         self
     }
@@ -89,10 +78,7 @@ impl TargetHealthDescriptionBuilder {
         self
     }
     /// <p>The health information for the target.</p>
-    pub fn set_target_health(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetHealth>,
-    ) -> Self {
+    pub fn set_target_health(mut self, input: ::std::option::Option<crate::types::TargetHealth>) -> Self {
         self.target_health = input;
         self
     }

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`verified_access_groups(Option<Vec<VerifiedAccessGroup>>)`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput::verified_access_groups): <p>The ID of the Verified Access group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVerifiedAccessGroupsError>`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError)
-    pub fn describe_verified_access_groups(&self) -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder{
+    pub fn describe_verified_access_groups(
+        &self,
+    ) -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder {
         crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsFluentBuilder::new(self.handle.clone())
     }
 }

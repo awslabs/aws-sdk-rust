@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCodeReviewOutput`](crate::operation::describe_code_review::DescribeCodeReviewOutput) with field(s):
     ///   - [`code_review(Option<CodeReview>)`](crate::operation::describe_code_review::DescribeCodeReviewOutput::code_review): <p>Information about the code review.</p>
     /// - On failure, responds with [`SdkError<DescribeCodeReviewError>`](crate::operation::describe_code_review::DescribeCodeReviewError)
-    pub fn describe_code_review(
-        &self,
-    ) -> crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder {
-        crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_code_review(&self) -> crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder {
+        crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::new(self.handle.clone())
     }
 }

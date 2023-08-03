@@ -22,10 +22,7 @@ pub fn ser_export_journal_to_s3_input(
     if let Some(var_5) = &input.s3_export_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("S3ExportConfiguration").start_object();
-        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

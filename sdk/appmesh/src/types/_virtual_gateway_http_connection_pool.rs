@@ -30,9 +30,7 @@ impl VirtualGatewayHttpConnectionPool {
 
 /// A builder for [`VirtualGatewayHttpConnectionPool`](crate::types::VirtualGatewayHttpConnectionPool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayHttpConnectionPoolBuilder {
     pub(crate) max_connections: ::std::option::Option<i32>,
     pub(crate) max_pending_requests: ::std::option::Option<i32>,

@@ -44,16 +44,14 @@ impl ApplyPendingMaintenanceActionInput {
 }
 impl ApplyPendingMaintenanceActionInput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
-    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder{
+    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder {
         crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) apply_action: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct ApplyPendingMaintenanceActionInputBuilder {
 }
 impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -136,15 +128,10 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
-                replication_instance_arn: self.replication_instance_arn
-                ,
-                apply_action: self.apply_action
-                ,
-                opt_in_type: self.opt_in_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
+            replication_instance_arn: self.replication_instance_arn,
+            apply_action: self.apply_action,
+            opt_in_type: self.opt_in_type,
+        })
     }
 }

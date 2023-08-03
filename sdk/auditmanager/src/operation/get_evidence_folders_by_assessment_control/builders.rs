@@ -5,16 +5,16 @@ pub use crate::operation::get_evidence_folders_by_assessment_control::_get_evide
 
 impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_evidence_folders_by_assessment_control();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder,
+    inner: crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder,
 }
 impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
     /// Creates a new `GetEvidenceFoldersByAssessmentControl`.
@@ -37,15 +37,22 @@ impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
         }
     }
     /// Access the GetEvidenceFoldersByAssessmentControl as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControl, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControl,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +89,46 @@ impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControl, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControl,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_evidence_folders_by_assessment_control::paginator::GetEvidenceFoldersByAssessmentControlPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_evidence_folders_by_assessment_control::paginator::GetEvidenceFoldersByAssessmentControlPaginator{
-        crate::operation::get_evidence_folders_by_assessment_control::paginator::GetEvidenceFoldersByAssessmentControlPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_evidence_folders_by_assessment_control::paginator::GetEvidenceFoldersByAssessmentControlPaginator {
+        crate::operation::get_evidence_folders_by_assessment_control::paginator::GetEvidenceFoldersByAssessmentControlPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -121,18 +137,12 @@ impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }

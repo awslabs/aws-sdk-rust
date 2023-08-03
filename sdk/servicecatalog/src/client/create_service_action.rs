@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceActionOutput`](crate::operation::create_service_action::CreateServiceActionOutput) with field(s):
     ///   - [`service_action_detail(Option<ServiceActionDetail>)`](crate::operation::create_service_action::CreateServiceActionOutput::service_action_detail): <p>An object containing information about the self-service action.</p>
     /// - On failure, responds with [`SdkError<CreateServiceActionError>`](crate::operation::create_service_action::CreateServiceActionError)
-    pub fn create_service_action(
-        &self,
-    ) -> crate::operation::create_service_action::builders::CreateServiceActionFluentBuilder {
-        crate::operation::create_service_action::builders::CreateServiceActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service_action(&self) -> crate::operation::create_service_action::builders::CreateServiceActionFluentBuilder {
+        crate::operation::create_service_action::builders::CreateServiceActionFluentBuilder::new(self.handle.clone())
     }
 }

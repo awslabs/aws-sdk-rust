@@ -35,7 +35,7 @@ impl ListAggregatedUtterancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAggregatedUtterancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder,
+    inner: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder,
 }
 impl ListAggregatedUtterancesFluentBuilder {
     /// Creates a new `ListAggregatedUtterances`.
@@ -46,10 +46,7 @@ impl ListAggregatedUtterancesFluentBuilder {
         }
     }
     /// Access the ListAggregatedUtterances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +58,7 @@ impl ListAggregatedUtterancesFluentBuilder {
             crate::operation::list_aggregated_utterances::ListAggregatedUtterances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +68,7 @@ impl ListAggregatedUtterancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +77,7 @@ impl ListAggregatedUtterancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>,
     > {
         let op = self
             .inner
@@ -110,9 +100,7 @@ impl ListAggregatedUtterancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>,
     > {
         self.send_middleware().await
     }
@@ -126,19 +114,14 @@ impl ListAggregatedUtterancesFluentBuilder {
             crate::operation::list_aggregated_utterances::ListAggregatedUtterances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator {
         crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the bot associated with this request.</p>
@@ -198,25 +181,17 @@ impl ListAggregatedUtterancesFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn aggregation_duration(
-        mut self,
-        input: crate::types::UtteranceAggregationDuration,
-    ) -> Self {
+    pub fn aggregation_duration(mut self, input: crate::types::UtteranceAggregationDuration) -> Self {
         self.inner = self.inner.aggregation_duration(input);
         self
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn set_aggregation_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
-    ) -> Self {
+    pub fn set_aggregation_duration(mut self, input: ::std::option::Option<crate::types::UtteranceAggregationDuration>) -> Self {
         self.inner = self.inner.set_aggregation_duration(input);
         self
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn get_aggregation_duration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
+    pub fn get_aggregation_duration(&self) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
         self.inner.get_aggregation_duration()
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
@@ -225,10 +200,7 @@ impl ListAggregatedUtterancesFluentBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedUtterancesSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -246,17 +218,12 @@ impl ListAggregatedUtterancesFluentBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>

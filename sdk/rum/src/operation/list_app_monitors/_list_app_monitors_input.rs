@@ -29,9 +29,7 @@ impl ListAppMonitorsInput {
 
 /// A builder for [`ListAppMonitorsInput`](crate::operation::list_app_monitors::ListAppMonitorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppMonitorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ListAppMonitorsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppMonitorsInput`](crate::operation::list_app_monitors::ListAppMonitorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_monitors::ListAppMonitorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_app_monitors::ListAppMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_app_monitors::ListAppMonitorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

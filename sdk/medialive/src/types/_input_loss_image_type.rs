@@ -38,13 +38,7 @@
 /// Input Loss Image Type
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputLossImageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputLossImageType {
         match s {
             "COLOR" => InputLossImageType::Color,
             "SLATE" => InputLossImageType::Slate,
-            other => InputLossImageType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputLossImageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

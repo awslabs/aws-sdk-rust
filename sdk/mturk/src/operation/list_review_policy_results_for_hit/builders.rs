@@ -5,16 +5,16 @@ pub use crate::operation::list_review_policy_results_for_hit::_list_review_polic
 
 impl ListReviewPolicyResultsForHitInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_review_policy_results_for_hit();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListReviewPolicyResultsForHitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder,
+    inner: crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder,
 }
 impl ListReviewPolicyResultsForHITFluentBuilder {
     /// Creates a new `ListReviewPolicyResultsForHIT`.
@@ -37,15 +37,20 @@ impl ListReviewPolicyResultsForHITFluentBuilder {
         }
     }
     /// Access the ListReviewPolicyResultsForHIT as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHIT,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListReviewPolicyResultsForHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl ListReviewPolicyResultsForHITFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHIT,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator {
         crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
@@ -124,17 +139,12 @@ impl ListReviewPolicyResultsForHITFluentBuilder {
         self
     }
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    pub fn set_policy_levels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
-    ) -> Self {
+    pub fn set_policy_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>) -> Self {
         self.inner = self.inner.set_policy_levels(input);
         self
     }
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    pub fn get_policy_levels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
+    pub fn get_policy_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
         self.inner.get_policy_levels()
     }
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>

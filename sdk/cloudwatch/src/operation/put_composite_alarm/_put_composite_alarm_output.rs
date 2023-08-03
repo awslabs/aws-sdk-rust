@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutCompositeAlarmOutput {
 }
 impl PutCompositeAlarmOutput {
     /// Creates a new builder-style object to manufacture [`PutCompositeAlarmOutput`](crate::operation::put_composite_alarm::PutCompositeAlarmOutput).
-    pub fn builder(
-    ) -> crate::operation::put_composite_alarm::builders::PutCompositeAlarmOutputBuilder {
+    pub fn builder() -> crate::operation::put_composite_alarm::builders::PutCompositeAlarmOutputBuilder {
         crate::operation::put_composite_alarm::builders::PutCompositeAlarmOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutCompositeAlarmOutput`](crate::operation::put_composite_alarm::PutCompositeAlarmOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCompositeAlarmOutputBuilder {
     _request_id: Option<String>,
 }

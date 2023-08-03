@@ -29,16 +29,14 @@ impl CreateDataLakeExceptionSubscriptionInput {
 }
 impl CreateDataLakeExceptionSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateDataLakeExceptionSubscriptionInput`](crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput).
-    pub fn builder() -> crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder {
         crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataLakeExceptionSubscriptionInput`](crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataLakeExceptionSubscriptionInputBuilder {
     pub(crate) subscription_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) notification_endpoint: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateDataLakeExceptionSubscriptionInputBuilder {
 }
 impl CreateDataLakeExceptionSubscriptionInputBuilder {
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn subscription_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn set_subscription_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_protocol = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         &self.subscription_protocol
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn notification_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn set_notification_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_endpoint = input;
         self
     }
@@ -100,16 +86,18 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
         &self.exception_time_to_live
     }
     /// Consumes the builder and constructs a [`CreateDataLakeExceptionSubscriptionInput`](crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput {
-                subscription_protocol: self.subscription_protocol
-                ,
-                notification_endpoint: self.notification_endpoint
-                ,
-                exception_time_to_live: self.exception_time_to_live
-                ,
-            }
+                subscription_protocol: self.subscription_protocol,
+                notification_endpoint: self.notification_endpoint,
+                exception_time_to_live: self.exception_time_to_live,
+            },
         )
     }
 }

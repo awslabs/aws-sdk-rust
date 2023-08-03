@@ -30,16 +30,14 @@ impl CreateSpotDatafeedSubscriptionInput {
 }
 impl CreateSpotDatafeedSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateSpotDatafeedSubscriptionInput`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput).
-    pub fn builder() -> crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder {
         crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSpotDatafeedSubscriptionInput`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSpotDatafeedSubscriptionInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -95,15 +93,10 @@ impl CreateSpotDatafeedSubscriptionInputBuilder {
         crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput {
-                bucket: self.bucket
-                ,
-                dry_run: self.dry_run
-                ,
-                prefix: self.prefix
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput {
+            bucket: self.bucket,
+            dry_run: self.dry_run,
+            prefix: self.prefix,
+        })
     }
 }

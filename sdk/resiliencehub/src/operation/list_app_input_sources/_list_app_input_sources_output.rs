@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppInputSourcesOutput {
 }
 impl ListAppInputSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder {
         crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppInputSourcesOutputBuilder {
-    pub(crate) app_input_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>,
+    pub(crate) app_input_sources: ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListAppInputSourcesOutputBuilder {
         self
     }
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub fn set_app_input_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>,
-    ) -> Self {
+    pub fn set_app_input_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>) -> Self {
         self.app_input_sources = input;
         self
     }
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub fn get_app_input_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>> {
+    pub fn get_app_input_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>> {
         &self.app_input_sources
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

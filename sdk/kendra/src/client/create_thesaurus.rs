@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateThesaurusOutput`](crate::operation::create_thesaurus::CreateThesaurusOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_thesaurus::CreateThesaurusOutput::id): <p>The identifier of the thesaurus. </p>
     /// - On failure, responds with [`SdkError<CreateThesaurusError>`](crate::operation::create_thesaurus::CreateThesaurusError)
-    pub fn create_thesaurus(
-        &self,
-    ) -> crate::operation::create_thesaurus::builders::CreateThesaurusFluentBuilder {
-        crate::operation::create_thesaurus::builders::CreateThesaurusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_thesaurus(&self) -> crate::operation::create_thesaurus::builders::CreateThesaurusFluentBuilder {
+        crate::operation::create_thesaurus::builders::CreateThesaurusFluentBuilder::new(self.handle.clone())
     }
 }

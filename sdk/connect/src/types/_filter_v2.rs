@@ -30,9 +30,7 @@ impl FilterV2 {
 
 /// A builder for [`FilterV2`](crate::types::FilterV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterV2Builder {
     pub(crate) filter_key: ::std::option::Option<::std::string::String>,
     pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl FilterV2Builder {
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn filter_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
         self.filter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn set_filter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn get_filter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }
     /// Consumes the builder and constructs a [`FilterV2`](crate::types::FilterV2).

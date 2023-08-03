@@ -5,8 +5,7 @@
 pub struct ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub repository_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>>,
+    pub repository_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRepositoryAssociationsOutput {
 }
 impl ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
-    pub fn repository_association_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RepositoryAssociationSummary]> {
+    pub fn repository_association_summaries(&self) -> ::std::option::Option<&[crate::types::RepositoryAssociationSummary]> {
         self.repository_association_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRepositoryAssociationsOutput {
 }
 impl ListRepositoryAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsOutput`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput).
-    pub fn builder() -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsOutputBuilder {
         crate::operation::list_repository_associations::builders::ListRepositoryAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoryAssociationsOutput`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoryAssociationsOutputBuilder {
-    pub(crate) repository_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>>,
+    pub(crate) repository_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListRepositoryAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_repository_association_summaries`](Self::set_repository_association_summaries).
     ///
     /// <p>A list of repository associations that meet the criteria of the request.</p>
-    pub fn repository_association_summaries(
-        mut self,
-        input: crate::types::RepositoryAssociationSummary,
-    ) -> Self {
+    pub fn repository_association_summaries(mut self, input: crate::types::RepositoryAssociationSummary) -> Self {
         let mut v = self.repository_association_summaries.unwrap_or_default();
         v.push(input);
         self.repository_association_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListRepositoryAssociationsOutputBuilder {
         self
     }
     /// <p>A list of repository associations that meet the criteria of the request.</p>
-    pub fn get_repository_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>> {
+    pub fn get_repository_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>> {
         &self.repository_association_summaries
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -100,9 +89,7 @@ impl ListRepositoryAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRepositoryAssociationsOutput`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_repository_associations::ListRepositoryAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_repository_associations::ListRepositoryAssociationsOutput {
         crate::operation::list_repository_associations::ListRepositoryAssociationsOutput {
             repository_association_summaries: self.repository_association_summaries,
             next_token: self.next_token,

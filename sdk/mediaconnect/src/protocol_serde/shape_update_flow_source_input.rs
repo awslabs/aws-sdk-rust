@@ -6,10 +6,7 @@ pub fn ser_update_flow_source_input(
     if let Some(var_1) = &input.decryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("decryption").start_object();
-        crate::protocol_serde::shape_update_encryption::ser_update_encryption(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_update_encryption::ser_update_encryption(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.description {
@@ -54,7 +51,10 @@ pub fn ser_update_flow_source_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_media_stream_source_configuration_request::ser_media_stream_source_configuration_request(&mut object_14, item_13)?;
+                crate::protocol_serde::shape_media_stream_source_configuration_request::ser_media_stream_source_configuration_request(
+                    &mut object_14,
+                    item_13,
+                )?;
                 object_14.finish();
             }
         }

@@ -5,8 +5,7 @@
 pub struct ListEnvironmentsOutput {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
     #[doc(hidden)]
-    pub environment_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
+    pub environment_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-    pub fn environment_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnvironmentSummary]> {
+    pub fn environment_summary_list(&self) -> ::std::option::Option<&[crate::types::EnvironmentSummary]> {
         self.environment_summary_list.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutputBuilder {
-    pub(crate) environment_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
+    pub(crate) environment_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListEnvironmentsOutputBuilder {
         self
     }
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-    pub fn set_environment_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
-    ) -> Self {
+    pub fn set_environment_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>) -> Self {
         self.environment_summary_list = input;
         self
     }
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-    pub fn get_environment_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
+    pub fn get_environment_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
         &self.environment_summary_list
     }
     /// <p>The token for the next page of results.</p>

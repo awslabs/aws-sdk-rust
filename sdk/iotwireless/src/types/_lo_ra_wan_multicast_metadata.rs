@@ -23,9 +23,7 @@ impl LoRaWanMulticastMetadata {
 
 /// A builder for [`LoRaWanMulticastMetadata`](crate::types::LoRaWanMulticastMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastMetadataBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
 }
@@ -46,8 +44,6 @@ impl LoRaWanMulticastMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`LoRaWanMulticastMetadata`](crate::types::LoRaWanMulticastMetadata).
     pub fn build(self) -> crate::types::LoRaWanMulticastMetadata {
-        crate::types::LoRaWanMulticastMetadata {
-            f_port: self.f_port,
-        }
+        crate::types::LoRaWanMulticastMetadata { f_port: self.f_port }
     }
 }

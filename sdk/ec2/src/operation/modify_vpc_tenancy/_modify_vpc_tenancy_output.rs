@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpcTenancyOutput {
 }
 impl ModifyVpcTenancyOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcTenancyOutput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput).
-    pub fn builder() -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyOutputBuilder {
         crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcTenancyOutput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcTenancyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

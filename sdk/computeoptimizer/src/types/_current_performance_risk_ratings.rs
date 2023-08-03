@@ -45,9 +45,7 @@ impl CurrentPerformanceRiskRatings {
 
 /// A builder for [`CurrentPerformanceRiskRatings`](crate::types::CurrentPerformanceRiskRatings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentPerformanceRiskRatingsBuilder {
     pub(crate) high: ::std::option::Option<i64>,
     pub(crate) medium: ::std::option::Option<i64>,

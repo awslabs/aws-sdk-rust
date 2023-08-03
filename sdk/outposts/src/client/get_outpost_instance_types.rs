@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`outpost_id(Option<String>)`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput::outpost_id): <p> The ID of the Outpost. </p>
     ///   - [`outpost_arn(Option<String>)`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput::outpost_arn): <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     /// - On failure, responds with [`SdkError<GetOutpostInstanceTypesError>`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError)
-    pub fn get_outpost_instance_types(
-        &self,
-    ) -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesFluentBuilder
-    {
+    pub fn get_outpost_instance_types(&self) -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesFluentBuilder {
         crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesFluentBuilder::new(self.handle.clone())
     }
 }

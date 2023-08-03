@@ -15,17 +15,14 @@ impl EnableInsightRulesInput {
 }
 impl EnableInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::enable_insight_rules::builders::EnableInsightRulesInputBuilder {
+    pub fn builder() -> crate::operation::enable_insight_rules::builders::EnableInsightRulesInputBuilder {
         crate::operation::enable_insight_rules::builders::EnableInsightRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableInsightRulesInputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl EnableInsightRulesInputBuilder {
         self
     }
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_names = input;
         self
     }
@@ -56,14 +50,7 @@ impl EnableInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_insight_rules::EnableInsightRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_insight_rules::EnableInsightRulesInput {
-                rule_names: self.rule_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::enable_insight_rules::EnableInsightRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::enable_insight_rules::EnableInsightRulesInput { rule_names: self.rule_names })
     }
 }

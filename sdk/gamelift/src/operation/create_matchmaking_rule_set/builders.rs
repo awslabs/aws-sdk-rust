@@ -34,7 +34,7 @@ impl CreateMatchmakingRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMatchmakingRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder,
+    inner: crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder,
 }
 impl CreateMatchmakingRuleSetFluentBuilder {
     /// Creates a new `CreateMatchmakingRuleSet`.
@@ -45,7 +45,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         }
     }
     /// Access the CreateMatchmakingRuleSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_matchmaking_rule_set::builders::CreateMatchmakingRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
             crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
             crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +132,12 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_body(input.into());
         self
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn set_rule_set_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_body(input);
         self
     }
@@ -172,10 +155,7 @@ impl CreateMatchmakingRuleSetFluentBuilder {
         self
     }
     /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

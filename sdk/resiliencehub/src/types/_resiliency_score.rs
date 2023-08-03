@@ -9,8 +9,7 @@ pub struct ResiliencyScore {
     pub score: f64,
     /// <p>The disruption score for a valid key.</p>
     #[doc(hidden)]
-    pub disruption_score:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
+    pub disruption_score: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
 }
 impl ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
@@ -18,10 +17,7 @@ impl ResiliencyScore {
         self.score
     }
     /// <p>The disruption score for a valid key.</p>
-    pub fn disruption_score(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, f64>>
-    {
+    pub fn disruption_score(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, f64>> {
         self.disruption_score.as_ref()
     }
 }
@@ -34,13 +30,10 @@ impl ResiliencyScore {
 
 /// A builder for [`ResiliencyScore`](crate::types::ResiliencyScore).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResiliencyScoreBuilder {
     pub(crate) score: ::std::option::Option<f64>,
-    pub(crate) disruption_score:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
+    pub(crate) disruption_score: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
 }
 impl ResiliencyScoreBuilder {
     /// <p>The outage score for a valid key.</p>
@@ -69,20 +62,12 @@ impl ResiliencyScoreBuilder {
         self
     }
     /// <p>The disruption score for a valid key.</p>
-    pub fn set_disruption_score(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DisruptionType, f64>,
-        >,
-    ) -> Self {
+    pub fn set_disruption_score(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>) -> Self {
         self.disruption_score = input;
         self
     }
     /// <p>The disruption score for a valid key.</p>
-    pub fn get_disruption_score(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>
-    {
+    pub fn get_disruption_score(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>> {
         &self.disruption_score
     }
     /// Consumes the builder and constructs a [`ResiliencyScore`](crate::types::ResiliencyScore).

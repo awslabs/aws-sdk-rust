@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccountRoleStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AccountRoleStatus {
             "DELETING" => AccountRoleStatus::Deleting,
             "PENDING_DELETION" => AccountRoleStatus::PendingDeletion,
             "READY" => AccountRoleStatus::Ready,
-            other => {
-                AccountRoleStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccountRoleStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl AccountRoleStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATING",
-            "DELETED",
-            "DELETING",
-            "PENDING_DELETION",
-            "READY",
-        ]
+        &["CREATING", "DELETED", "DELETING", "PENDING_DELETION", "READY"]
     }
 }
 impl ::std::convert::AsRef<str> for AccountRoleStatus {

@@ -5,15 +5,12 @@
 pub struct GetAppValidationOutputOutput {
     /// <p>The validation output.</p>
     #[doc(hidden)]
-    pub validation_output_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
+    pub validation_output_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
     _request_id: Option<String>,
 }
 impl GetAppValidationOutputOutput {
     /// <p>The validation output.</p>
-    pub fn validation_output_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationOutput]> {
+    pub fn validation_output_list(&self) -> ::std::option::Option<&[crate::types::ValidationOutput]> {
         self.validation_output_list.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetAppValidationOutputOutput {
 }
 impl GetAppValidationOutputOutput {
     /// Creates a new builder-style object to manufacture [`GetAppValidationOutputOutput`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput).
-    pub fn builder(
-    ) -> crate::operation::get_app_validation_output::builders::GetAppValidationOutputOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_app_validation_output::builders::GetAppValidationOutputOutputBuilder {
         crate::operation::get_app_validation_output::builders::GetAppValidationOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppValidationOutputOutput`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppValidationOutputOutputBuilder {
-    pub(crate) validation_output_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
+    pub(crate) validation_output_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
     _request_id: Option<String>,
 }
 impl GetAppValidationOutputOutputBuilder {
@@ -54,17 +46,12 @@ impl GetAppValidationOutputOutputBuilder {
         self
     }
     /// <p>The validation output.</p>
-    pub fn set_validation_output_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>,
-    ) -> Self {
+    pub fn set_validation_output_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>>) -> Self {
         self.validation_output_list = input;
         self
     }
     /// <p>The validation output.</p>
-    pub fn get_validation_output_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>> {
+    pub fn get_validation_output_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationOutput>> {
         &self.validation_output_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +64,7 @@ impl GetAppValidationOutputOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAppValidationOutputOutput`](crate::operation::get_app_validation_output::GetAppValidationOutputOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_app_validation_output::GetAppValidationOutputOutput {
+    pub fn build(self) -> crate::operation::get_app_validation_output::GetAppValidationOutputOutput {
         crate::operation::get_app_validation_output::GetAppValidationOutputOutput {
             validation_output_list: self.validation_output_list,
             _request_id: self._request_id,

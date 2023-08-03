@@ -27,27 +27,16 @@ impl PutInsightSelectorsInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::put_insight_selectors::PutInsightSelectorsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl PutInsightSelectorsInput {
             fn update_http_builder(
                 input: &crate::operation::put_insight_selectors::PutInsightSelectorsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,17 +61,11 @@ impl PutInsightSelectorsInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_put_insight_selectors::ser_put_insight_selectors_input(
-                &self,
-            )?,
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_put_insight_selectors::ser_put_insight_selectors_input(
+            &self,
+        )?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -101,10 +77,8 @@ impl PutInsightSelectorsInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -113,29 +87,16 @@ impl PutInsightSelectorsInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::put_insight_selectors::PutInsightSelectors::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "PutInsightSelectors",
-            "cloudtrail",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::put_insight_selectors::PutInsightSelectors::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("PutInsightSelectors", "cloudtrail"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -162,9 +123,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for PutInsightSelectors {
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
-            crate::protocol_serde::shape_put_insight_selectors::de_put_insight_selectors_http_error(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_insight_selectors::de_put_insight_selectors_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_put_insight_selectors::de_put_insight_selectors_http_response_with_props(status, headers, body)
         }
@@ -189,9 +148,7 @@ pub enum PutInsightSelectorsError {
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
-    InsufficientEncryptionPolicyException(
-        crate::types::error::InsufficientEncryptionPolicyException,
-    ),
+    InsufficientEncryptionPolicyException(crate::types::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::types::error::InsufficientS3BucketPolicyException),
     /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
@@ -210,13 +167,9 @@ pub enum PutInsightSelectorsError {
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>
     KmsException(crate::types::error::KmsException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
-    NoManagementAccountSlrExistsException(
-        crate::types::error::NoManagementAccountSlrExistsException,
-    ),
+    NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
-    NotOrganizationMasterAccountException(
-        crate::types::error::NotOrganizationMasterAccountException,
-    ),
+    NotOrganizationMasterAccountException(crate::types::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
@@ -230,9 +183,7 @@ pub enum PutInsightSelectorsError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for PutInsightSelectorsError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -265,54 +216,24 @@ impl ::std::fmt::Display for PutInsightSelectorsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutInsightSelectorsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CloudTrailArnInvalidException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InsufficientEncryptionPolicyException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InsufficientS3BucketPolicyException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidHomeRegionException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInsightSelectorsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTrailNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::KmsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoManagementAccountSlrExistsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NotOrganizationMasterAccountException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::OperationNotPermittedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::S3BucketDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TrailNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedOperationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::CloudTrailArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientEncryptionPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientS3BucketPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidHomeRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidInsightSelectorsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotOrganizationMasterAccountException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::S3BucketDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TrailNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::put_insight_selectors::PutInsightSelectorsError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::put_insight_selectors::PutInsightSelectorsError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -328,27 +249,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutInsightSelectorsError {
 impl PutInsightSelectorsError {
     /// Creates the `PutInsightSelectorsError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `PutInsightSelectorsError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -430,22 +338,14 @@ impl ::std::error::Error for PutInsightSelectorsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InsufficientEncryptionPolicyException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InsufficientS3BucketPolicyException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InsufficientEncryptionPolicyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InsufficientS3BucketPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidHomeRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInsightSelectorsException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsException(_inner) => ::std::option::Option::Some(_inner),
-            Self::NoManagementAccountSlrExistsException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::NotOrganizationMasterAccountException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NotOrganizationMasterAccountException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3BucketDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailNotFoundException(_inner) => ::std::option::Option::Some(_inner),

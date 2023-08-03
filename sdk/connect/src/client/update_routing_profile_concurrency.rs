@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`media_concurrencies(Vec<MediaConcurrency>)`](crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyFluentBuilder::media_concurrencies) / [`set_media_concurrencies(Option<Vec<MediaConcurrency>>)`](crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyFluentBuilder::set_media_concurrencies): <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     /// - On success, responds with [`UpdateRoutingProfileConcurrencyOutput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput)
     /// - On failure, responds with [`SdkError<UpdateRoutingProfileConcurrencyError>`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyError)
-    pub fn update_routing_profile_concurrency(&self) -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyFluentBuilder{
+    pub fn update_routing_profile_concurrency(
+        &self,
+    ) -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyFluentBuilder {
         crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -79,9 +79,7 @@ impl ReservedNodeExchangeStatus {
 
 /// A builder for [`ReservedNodeExchangeStatus`](crate::types::ReservedNodeExchangeStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedNodeExchangeStatusBuilder {
     pub(crate) reserved_node_exchange_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReservedNodeExchangeStatusType>,
@@ -95,25 +93,17 @@ pub struct ReservedNodeExchangeStatusBuilder {
 }
 impl ReservedNodeExchangeStatusBuilder {
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn reserved_node_exchange_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_exchange_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_exchange_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn set_reserved_node_exchange_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_exchange_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_exchange_request_id = input;
         self
     }
     /// <p>The identifier of the reserved-node exchange request.</p>
-    pub fn get_reserved_node_exchange_request_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_node_exchange_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_node_exchange_request_id
     }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
@@ -122,17 +112,12 @@ impl ReservedNodeExchangeStatusBuilder {
         self
     }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNodeExchangeStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReservedNodeExchangeStatusType>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedNodeExchangeStatusType> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReservedNodeExchangeStatusType> {
         &self.status
     }
     /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
@@ -141,10 +126,7 @@ impl ReservedNodeExchangeStatusBuilder {
         self
     }
     /// <p>A date and time that indicate when the reserved-node exchange was requested.</p>
-    pub fn set_request_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.request_time = input;
         self
     }
@@ -153,18 +135,12 @@ impl ReservedNodeExchangeStatusBuilder {
         &self.request_time
     }
     /// <p>The identifier of the source reserved node.</p>
-    pub fn source_reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source reserved node.</p>
-    pub fn set_source_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_reserved_node_id = input;
         self
     }
@@ -173,18 +149,12 @@ impl ReservedNodeExchangeStatusBuilder {
         &self.source_reserved_node_id
     }
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
-    pub fn source_reserved_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_reserved_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reserved_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
-    pub fn set_source_reserved_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_reserved_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_reserved_node_type = input;
         self
     }
@@ -207,40 +177,26 @@ impl ReservedNodeExchangeStatusBuilder {
         &self.source_reserved_node_count
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = input;
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
-    pub fn target_reserved_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
-    pub fn set_target_reserved_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_type = input;
         self
     }

@@ -50,9 +50,7 @@ impl ListRoutesInput {
 
 /// A builder for [`ListRoutesInput`](crate::operation::list_routes::ListRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutesInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ListRoutesInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router to list routes in.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router to list routes in.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -138,12 +130,7 @@ impl ListRoutesInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`ListRoutesInput`](crate::operation::list_routes::ListRoutesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_routes::ListRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_routes::ListRoutesInput {
             mesh_name: self.mesh_name,
             virtual_router_name: self.virtual_router_name,

@@ -26,7 +26,7 @@ impl DescribeLocationFsxLustreInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder,
+    inner: crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder,
 }
 impl DescribeLocationFsxLustreFluentBuilder {
     /// Creates a new `DescribeLocationFsxLustre`.
@@ -37,7 +37,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
         }
     }
     /// Access the DescribeLocationFsxLustre as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
             crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustre,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeLocationFsxLustreFluentBuilder {
             crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustre,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError>,
     > {
         self.customize_middleware().await
     }

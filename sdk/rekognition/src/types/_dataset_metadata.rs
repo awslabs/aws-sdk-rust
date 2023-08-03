@@ -45,9 +45,7 @@ impl DatasetMetadata {
         self.status_message.as_deref()
     }
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    pub fn status_message_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatasetStatusMessageCode> {
+    pub fn status_message_code(&self) -> ::std::option::Option<&crate::types::DatasetStatusMessageCode> {
         self.status_message_code.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl DatasetMetadata {
 
 /// A builder for [`DatasetMetadata`](crate::types::DatasetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetMetadataBuilder {
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,
@@ -78,10 +74,7 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p> The Unix timestamp for the date and time that the dataset was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -95,10 +88,7 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p> The type of the dataset. </p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -135,18 +125,12 @@ impl DatasetMetadataBuilder {
         &self.status
     }
     /// <p> The status message for the dataset. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status message for the dataset. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -160,17 +144,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    pub fn set_status_message_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetStatusMessageCode>,
-    ) -> Self {
+    pub fn set_status_message_code(mut self, input: ::std::option::Option<crate::types::DatasetStatusMessageCode>) -> Self {
         self.status_message_code = input;
         self
     }
     /// <p> The status message code for the dataset operation. If a service error occurs, try the API call again later. If a client error occurs, check the input parameters to the dataset API call that failed. </p>
-    pub fn get_status_message_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetStatusMessageCode> {
+    pub fn get_status_message_code(&self) -> &::std::option::Option<crate::types::DatasetStatusMessageCode> {
         &self.status_message_code
     }
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).

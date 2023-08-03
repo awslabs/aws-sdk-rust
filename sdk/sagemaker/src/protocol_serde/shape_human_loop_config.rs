@@ -45,10 +45,7 @@ pub fn ser_human_loop_config(
     if let Some(var_11) = &input.public_workforce_task_price {
         #[allow(unused_mut)]
         let mut object_12 = object.key("PublicWorkforceTaskPrice").start_object();
-        crate::protocol_serde::shape_public_workforce_task_price::ser_public_workforce_task_price(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_public_workforce_task_price::ser_public_workforce_task_price(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())
@@ -56,17 +53,9 @@ pub fn ser_human_loop_config(
 
 pub(crate) fn de_human_loop_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HumanLoopConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HumanLoopConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,99 +65,80 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "WorkteamArn" => {
-                                builder = builder.set_workteam_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "WorkteamArn" => {
+                            builder = builder.set_workteam_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "HumanTaskUiArn" => {
-                                builder = builder.set_human_task_ui_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskTitle" => {
-                                builder = builder.set_task_title(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskDescription" => {
-                                builder = builder.set_task_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskCount" => {
-                                builder = builder.set_task_count(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskAvailabilityLifetimeInSeconds" => {
-                                builder = builder.set_task_availability_lifetime_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskTimeLimitInSeconds" => {
-                                builder = builder.set_task_time_limit_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "TaskKeywords" => {
-                                builder = builder.set_task_keywords(
-                                    crate::protocol_serde::shape_flow_definition_task_keywords::de_flow_definition_task_keywords(tokens)?
-                                );
-                            }
-                            "PublicWorkforceTaskPrice" => {
-                                builder = builder.set_public_workforce_task_price(
-                                    crate::protocol_serde::shape_public_workforce_task_price::de_public_workforce_task_price(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "HumanTaskUiArn" => {
+                            builder = builder.set_human_task_ui_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskTitle" => {
+                            builder = builder.set_task_title(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskDescription" => {
+                            builder = builder.set_task_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskCount" => {
+                            builder = builder.set_task_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskAvailabilityLifetimeInSeconds" => {
+                            builder = builder.set_task_availability_lifetime_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskTimeLimitInSeconds" => {
+                            builder = builder.set_task_time_limit_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TaskKeywords" => {
+                            builder = builder.set_task_keywords(
+                                crate::protocol_serde::shape_flow_definition_task_keywords::de_flow_definition_task_keywords(tokens)?,
+                            );
+                        }
+                        "PublicWorkforceTaskPrice" => {
+                            builder = builder.set_public_workforce_task_price(
+                                crate::protocol_serde::shape_public_workforce_task_price::de_public_workforce_task_price(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

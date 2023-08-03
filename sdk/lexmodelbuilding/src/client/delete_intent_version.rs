@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`version(impl ::std::convert::Into<String>)`](crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder::set_version): <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
     /// - On success, responds with [`DeleteIntentVersionOutput`](crate::operation::delete_intent_version::DeleteIntentVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteIntentVersionError>`](crate::operation::delete_intent_version::DeleteIntentVersionError)
-    pub fn delete_intent_version(
-        &self,
-    ) -> crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder {
-        crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_intent_version(&self) -> crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder {
+        crate::operation::delete_intent_version::builders::DeleteIntentVersionFluentBuilder::new(self.handle.clone())
     }
 }

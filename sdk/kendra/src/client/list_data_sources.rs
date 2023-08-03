@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`summary_items(Option<Vec<DataSourceSummary>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
     /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
-    pub fn list_data_sources(
-        &self,
-    ) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
-        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
+        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,18 +36,14 @@ impl ListRoutingProfileQueuesInput {
 }
 impl ListRoutingProfileQueuesInput {
     /// Creates a new builder-style object to manufacture [`ListRoutingProfileQueuesInput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder {
         crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingProfileQueuesInput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl ListRoutingProfileQueuesInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }
@@ -124,13 +114,11 @@ impl ListRoutingProfileQueuesInputBuilder {
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput {
-                instance_id: self.instance_id,
-                routing_profile_id: self.routing_profile_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput {
+            instance_id: self.instance_id,
+            routing_profile_id: self.routing_profile_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`object_checksum(Option<String>)`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput::object_checksum): Object checksum
     ///   - [`object_checksum_algorithm(Option<SummaryChecksumAlgorithm>)`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput::object_checksum_algorithm): Checksum algorithm
     /// - On failure, responds with [`SdkError<NotifyObjectCompleteError>`](crate::operation::notify_object_complete::NotifyObjectCompleteError)
-    pub fn notify_object_complete(
-        &self,
-    ) -> crate::operation::notify_object_complete::builders::NotifyObjectCompleteFluentBuilder {
-        crate::operation::notify_object_complete::builders::NotifyObjectCompleteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn notify_object_complete(&self) -> crate::operation::notify_object_complete::builders::NotifyObjectCompleteFluentBuilder {
+        crate::operation::notify_object_complete::builders::NotifyObjectCompleteFluentBuilder::new(self.handle.clone())
     }
 }

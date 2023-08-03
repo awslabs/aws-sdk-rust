@@ -4,9 +4,7 @@ pub fn ser_oidc_identity_provider_config_request(
     input: &crate::types::OidcIdentityProviderConfigRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.identity_provider_config_name {
-        object
-            .key("identityProviderConfigName")
-            .string(var_1.as_str());
+        object.key("identityProviderConfigName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.issuer_url {
         object.key("issuerUrl").string(var_2.as_str());

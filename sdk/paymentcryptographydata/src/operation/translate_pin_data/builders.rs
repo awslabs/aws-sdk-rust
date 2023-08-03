@@ -10,10 +10,7 @@ impl TranslatePinDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::translate_pin_data::TranslatePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.translate_pin_data();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl TranslatePinDataFluentBuilder {
         }
     }
     /// Access the TranslatePinData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::translate_pin_data::builders::TranslatePinDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::translate_pin_data::builders::TranslatePinDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl TranslatePinDataFluentBuilder {
             crate::operation::translate_pin_data::TranslatePinData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl TranslatePinDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl TranslatePinDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::translate_pin_data::TranslatePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl TranslatePinDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::translate_pin_data::TranslatePinDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl TranslatePinDataFluentBuilder {
             crate::operation::translate_pin_data::TranslatePinData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::translate_pin_data::TranslatePinDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    pub fn incoming_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incoming_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    pub fn set_incoming_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incoming_key_identifier(input);
         self
     }
@@ -154,18 +132,12 @@ impl TranslatePinDataFluentBuilder {
         self.inner.get_incoming_key_identifier()
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
-    pub fn outgoing_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outgoing_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
-    pub fn set_outgoing_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outgoing_key_identifier(input);
         self
     }
@@ -174,62 +146,40 @@ impl TranslatePinDataFluentBuilder {
         self.inner.get_outgoing_key_identifier()
     }
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
-    pub fn incoming_translation_attributes(
-        mut self,
-        input: crate::types::TranslationIsoFormats,
-    ) -> Self {
+    pub fn incoming_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.inner = self.inner.incoming_translation_attributes(input);
         self
     }
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_incoming_translation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslationIsoFormats>,
-    ) -> Self {
+    pub fn set_incoming_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
         self.inner = self.inner.set_incoming_translation_attributes(input);
         self
     }
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
-    pub fn get_incoming_translation_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
+    pub fn get_incoming_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
         self.inner.get_incoming_translation_attributes()
     }
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_translation_attributes(
-        mut self,
-        input: crate::types::TranslationIsoFormats,
-    ) -> Self {
+    pub fn outgoing_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.inner = self.inner.outgoing_translation_attributes(input);
         self
     }
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
-    pub fn set_outgoing_translation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslationIsoFormats>,
-    ) -> Self {
+    pub fn set_outgoing_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
         self.inner = self.inner.set_outgoing_translation_attributes(input);
         self
     }
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
-    pub fn get_outgoing_translation_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
+    pub fn get_outgoing_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
         self.inner.get_outgoing_translation_attributes()
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
-    pub fn encrypted_pin_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encrypted_pin_block(input.into());
         self
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
-    pub fn set_encrypted_pin_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encrypted_pin_block(input);
         self
     }
@@ -238,47 +188,31 @@ impl TranslatePinDataFluentBuilder {
         self.inner.get_encrypted_pin_block()
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
-    pub fn incoming_dukpt_attributes(
-        mut self,
-        input: crate::types::DukptDerivationAttributes,
-    ) -> Self {
+    pub fn incoming_dukpt_attributes(mut self, input: crate::types::DukptDerivationAttributes) -> Self {
         self.inner = self.inner.incoming_dukpt_attributes(input);
         self
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
-    pub fn set_incoming_dukpt_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptDerivationAttributes>,
-    ) -> Self {
+    pub fn set_incoming_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptDerivationAttributes>) -> Self {
         self.inner = self.inner.set_incoming_dukpt_attributes(input);
         self
     }
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
-    pub fn get_incoming_dukpt_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
+    pub fn get_incoming_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         self.inner.get_incoming_dukpt_attributes()
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
-    pub fn outgoing_dukpt_attributes(
-        mut self,
-        input: crate::types::DukptDerivationAttributes,
-    ) -> Self {
+    pub fn outgoing_dukpt_attributes(mut self, input: crate::types::DukptDerivationAttributes) -> Self {
         self.inner = self.inner.outgoing_dukpt_attributes(input);
         self
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
-    pub fn set_outgoing_dukpt_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptDerivationAttributes>,
-    ) -> Self {
+    pub fn set_outgoing_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptDerivationAttributes>) -> Self {
         self.inner = self.inner.set_outgoing_dukpt_attributes(input);
         self
     }
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
-    pub fn get_outgoing_dukpt_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
+    pub fn get_outgoing_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         self.inner.get_outgoing_dukpt_attributes()
     }
 }

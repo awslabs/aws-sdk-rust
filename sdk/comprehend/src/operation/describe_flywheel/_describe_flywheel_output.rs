@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFlywheelOutput {
 }
 impl DescribeFlywheelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelOutput`](crate::operation::describe_flywheel::DescribeFlywheelOutput).
-    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelOutputBuilder {
         crate::operation::describe_flywheel::builders::DescribeFlywheelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlywheelOutput`](crate::operation::describe_flywheel::DescribeFlywheelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlywheelOutputBuilder {
     pub(crate) flywheel_properties: ::std::option::Option<crate::types::FlywheelProperties>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl DescribeFlywheelOutputBuilder {
         self
     }
     /// <p>The flywheel properties.</p>
-    pub fn set_flywheel_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelProperties>,
-    ) -> Self {
+    pub fn set_flywheel_properties(mut self, input: ::std::option::Option<crate::types::FlywheelProperties>) -> Self {
         self.flywheel_properties = input;
         self
     }
     /// <p>The flywheel properties.</p>
-    pub fn get_flywheel_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlywheelProperties> {
+    pub fn get_flywheel_properties(&self) -> &::std::option::Option<crate::types::FlywheelProperties> {
         &self.flywheel_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

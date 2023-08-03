@@ -30,17 +30,14 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 }
 impl BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// Creates a new builder-style object to manufacture [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads).
-    pub fn builder(
-    ) -> crate::types::builders::BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
+    pub fn builder() -> crate::types::builders::BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
         crate::types::builders::BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder::default()
     }
 }
 
 /// A builder for [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
     pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<i64>,
     pub(crate) denies_unencrypted_object_uploads: ::std::option::Option<i64>,
@@ -53,10 +50,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
         self
     }
     /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
-    pub fn set_allows_unencrypted_object_uploads(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_allows_unencrypted_object_uploads(mut self, input: ::std::option::Option<i64>) -> Self {
         self.allows_unencrypted_object_uploads = input;
         self
     }
@@ -70,10 +64,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
         self
     }
     /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
-    pub fn set_denies_unencrypted_object_uploads(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_denies_unencrypted_object_uploads(mut self, input: ::std::option::Option<i64>) -> Self {
         self.denies_unencrypted_object_uploads = input;
         self
     }

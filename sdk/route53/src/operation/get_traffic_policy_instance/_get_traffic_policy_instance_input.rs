@@ -16,18 +16,14 @@ impl GetTrafficPolicyInstanceInput {
 }
 impl GetTrafficPolicyInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceInput`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder {
         crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficPolicyInstanceInput`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl GetTrafficPolicyInstanceInputBuilder {
         crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceInput { id: self.id })
     }
 }

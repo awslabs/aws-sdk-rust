@@ -26,7 +26,7 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder,
+    inner: crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder,
 }
 impl ListCustomRoutingAcceleratorsFluentBuilder {
     /// Creates a new `ListCustomRoutingAccelerators`.
@@ -37,7 +37,7 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
         }
     }
     /// Access the ListCustomRoutingAccelerators as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
             crate::operation::list_custom_routing_accelerators::ListCustomRoutingAccelerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListCustomRoutingAcceleratorsFluentBuilder {
             crate::operation::list_custom_routing_accelerators::ListCustomRoutingAccelerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_accelerators::paginator::ListCustomRoutingAcceleratorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_custom_routing_accelerators::paginator::ListCustomRoutingAcceleratorsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_custom_routing_accelerators::paginator::ListCustomRoutingAcceleratorsPaginator {
         crate::operation::list_custom_routing_accelerators::paginator::ListCustomRoutingAcceleratorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>

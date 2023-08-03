@@ -36,9 +36,7 @@ impl NotifyWorkersInput {
 
 /// A builder for [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyWorkersInputBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) message_text: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl NotifyWorkersInputBuilder {
         self
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn set_worker_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worker_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.worker_ids = input;
         self
     }
@@ -99,10 +94,7 @@ impl NotifyWorkersInputBuilder {
     /// Consumes the builder and constructs a [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_workers::NotifyWorkersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::notify_workers::NotifyWorkersInput {
             subject: self.subject,
             message_text: self.message_text,

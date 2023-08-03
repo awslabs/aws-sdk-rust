@@ -53,17 +53,14 @@ impl PutResourcePolicyInput {
 }
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInputBuilder {
     pub(crate) policy_in_json: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -73,18 +70,12 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>Contains the policy document to set, in JSON format.</p>
-    pub fn policy_in_json(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_in_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_in_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the policy document to set, in JSON format.</p>
-    pub fn set_policy_in_json(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_in_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_in_json = input;
         self
     }
@@ -107,18 +98,12 @@ impl PutResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    pub fn policy_hash_condition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_hash_condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash_condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    pub fn set_policy_hash_condition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_hash_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash_condition = input;
         self
     }
@@ -132,17 +117,12 @@ impl PutResourcePolicyInputBuilder {
         self
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    pub fn set_policy_exists_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::ExistCondition>,
-    ) -> Self {
+    pub fn set_policy_exists_condition(mut self, input: ::std::option::Option<crate::types::ExistCondition>) -> Self {
         self.policy_exists_condition = input;
         self
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    pub fn get_policy_exists_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExistCondition> {
+    pub fn get_policy_exists_condition(&self) -> &::std::option::Option<crate::types::ExistCondition> {
         &self.policy_exists_condition
     }
     /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
@@ -161,10 +141,7 @@ impl PutResourcePolicyInputBuilder {
     /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
     /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-    pub fn set_enable_hybrid(
-        mut self,
-        input: ::std::option::Option<crate::types::EnableHybridValues>,
-    ) -> Self {
+    pub fn set_enable_hybrid(mut self, input: ::std::option::Option<crate::types::EnableHybridValues>) -> Self {
         self.enable_hybrid = input;
         self
     }
@@ -180,18 +157,13 @@ impl PutResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resource_policy::PutResourcePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_resource_policy::PutResourcePolicyInput {
-                policy_in_json: self.policy_in_json,
-                resource_arn: self.resource_arn,
-                policy_hash_condition: self.policy_hash_condition,
-                policy_exists_condition: self.policy_exists_condition,
-                enable_hybrid: self.enable_hybrid,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
+            policy_in_json: self.policy_in_json,
+            resource_arn: self.resource_arn,
+            policy_hash_condition: self.policy_hash_condition,
+            policy_exists_condition: self.policy_exists_condition,
+            enable_hybrid: self.enable_hybrid,
+        })
     }
 }

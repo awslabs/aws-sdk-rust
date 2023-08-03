@@ -6,8 +6,7 @@
 pub struct ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub traffic_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
+    pub traffic_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -21,9 +20,7 @@ pub struct ListTrafficPoliciesOutput {
 }
 impl ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    pub fn traffic_policy_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficPolicySummary]> {
+    pub fn traffic_policy_summaries(&self) -> ::std::option::Option<&[crate::types::TrafficPolicySummary]> {
         self.traffic_policy_summaries.as_deref()
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
@@ -46,21 +43,16 @@ impl ::aws_http::request_id::RequestId for ListTrafficPoliciesOutput {
 }
 impl ListTrafficPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder {
-        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder {
+        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficPoliciesOutputBuilder {
-    pub(crate) traffic_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
+    pub(crate) traffic_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) traffic_policy_id_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -79,17 +71,12 @@ impl ListTrafficPoliciesOutputBuilder {
         self
     }
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    pub fn set_traffic_policy_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
-    ) -> Self {
+    pub fn set_traffic_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>) -> Self {
         self.traffic_policy_summaries = input;
         self
     }
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    pub fn get_traffic_policy_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>> {
+    pub fn get_traffic_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>> {
         &self.traffic_policy_summaries
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
@@ -107,18 +94,12 @@ impl ListTrafficPoliciesOutputBuilder {
         &self.is_truncated
     }
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
-    pub fn traffic_policy_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
-    pub fn set_traffic_policy_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_id_marker = input;
         self
     }

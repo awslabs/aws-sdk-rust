@@ -10,10 +10,7 @@ impl CreateJobTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_job_template::CreateJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_template::CreateJobTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_template::CreateJobTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_job_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateJobTemplateFluentBuilder {
         }
     }
     /// Access the CreateJobTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateJobTemplateFluentBuilder {
             crate::operation::create_job_template::CreateJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_template::CreateJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_template::CreateJobTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateJobTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_job_template::CreateJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_template::CreateJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_template::CreateJobTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_job_template::CreateJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_template::CreateJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_template::CreateJobTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateJobTemplateFluentBuilder {
             crate::operation::create_job_template::CreateJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_template::CreateJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_template::CreateJobTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
-    pub fn job_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_template_id(input.into());
         self
     }
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
-    pub fn set_job_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_template_id(input);
         self
     }
@@ -163,10 +141,7 @@ impl CreateJobTemplateFluentBuilder {
     /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
-    pub fn document_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_source(input.into());
         self
     }
@@ -176,10 +151,7 @@ impl CreateJobTemplateFluentBuilder {
     /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
-    pub fn set_document_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_source(input);
         self
     }
@@ -226,39 +198,26 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
+    pub fn set_presigned_url_config(mut self, input: ::std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
         self.inner = self.inner.set_presigned_url_config(input);
         self
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn get_presigned_url_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+    pub fn get_presigned_url_config(&self) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
         self.inner.get_presigned_url_config()
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.inner = self.inner.job_executions_rollout_config(input);
         self
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
+    pub fn set_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
         self.inner = self.inner.set_job_executions_rollout_config(input);
         self
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn get_job_executions_rollout_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+    pub fn get_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
         self.inner.get_job_executions_rollout_config()
     }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
@@ -267,10 +226,7 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
+    pub fn set_abort_config(mut self, input: ::std::option::Option<crate::types::AbortConfig>) -> Self {
         self.inner = self.inner.set_abort_config(input);
         self
     }
@@ -284,10 +240,7 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
     }
@@ -305,10 +258,7 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the job template.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -317,25 +267,17 @@ impl CreateJobTemplateFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.inner = self.inner.job_executions_retry_config(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
+    pub fn set_job_executions_retry_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
         self.inner = self.inner.set_job_executions_retry_config(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn get_job_executions_retry_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+    pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
         self.inner.get_job_executions_retry_config()
     }
     /// Appends an item to `maintenanceWindows`.
@@ -348,17 +290,12 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn set_maintenance_windows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
-    ) -> Self {
+    pub fn set_maintenance_windows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>) -> Self {
         self.inner = self.inner.set_maintenance_windows(input);
         self
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn get_maintenance_windows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+    pub fn get_maintenance_windows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
         self.inner.get_maintenance_windows()
     }
     /// Appends an item to `destinationPackageVersions`.
@@ -367,27 +304,19 @@ impl CreateJobTemplateFluentBuilder {
     ///
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn destination_package_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_package_versions(input.into());
         self
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn set_destination_package_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_package_versions(input);
         self
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn get_destination_package_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_package_versions()
     }
 }

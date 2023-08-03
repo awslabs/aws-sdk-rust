@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDimensionKeyDetailsOutput {
 }
 impl GetDimensionKeyDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder {
         crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsOutputBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl GetDimensionKeyDetailsOutputBuilder {
         self
     }
     /// <p>The details for the requested dimensions.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The details for the requested dimensions.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>> {
         &self.dimensions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl GetDimensionKeyDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
+    pub fn build(self) -> crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
             dimensions: self.dimensions,
             _request_id: self._request_id,

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`discoverers(Option<Vec<DiscovererSummary>>)`](crate::operation::list_discoverers::ListDiscoverersOutput::discoverers): <p>An array of DiscovererSummary information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_discoverers::ListDiscoverersOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     /// - On failure, responds with [`SdkError<ListDiscoverersError>`](crate::operation::list_discoverers::ListDiscoverersError)
-    pub fn list_discoverers(
-        &self,
-    ) -> crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder {
-        crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_discoverers(&self) -> crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder {
+        crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl ListAccessPreviewsInput {
 }
 impl ListAccessPreviewsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewsInput`](crate::operation::list_access_previews::ListAccessPreviewsInput).
-    pub fn builder(
-    ) -> crate::operation::list_access_previews::builders::ListAccessPreviewsInputBuilder {
+    pub fn builder() -> crate::operation::list_access_previews::builders::ListAccessPreviewsInputBuilder {
         crate::operation::list_access_previews::builders::ListAccessPreviewsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPreviewsInput`](crate::operation::list_access_previews::ListAccessPreviewsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewsInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListAccessPreviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPreviewsInput`](crate::operation::list_access_previews::ListAccessPreviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_previews::ListAccessPreviewsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_access_previews::ListAccessPreviewsInput {
-                analyzer_arn: self.analyzer_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_access_previews::ListAccessPreviewsInput {
+            analyzer_arn: self.analyzer_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

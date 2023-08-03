@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`grant_token(Option<String>)`](crate::operation::create_grant::CreateGrantOutput::grant_token): <p>The grant token.</p>  <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     ///   - [`grant_id(Option<String>)`](crate::operation::create_grant::CreateGrantOutput::grant_id): <p>The unique identifier for the grant.</p>  <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
     /// - On failure, responds with [`SdkError<CreateGrantError>`](crate::operation::create_grant::CreateGrantError)
-    pub fn create_grant(
-        &self,
-    ) -> crate::operation::create_grant::builders::CreateGrantFluentBuilder {
+    pub fn create_grant(&self) -> crate::operation::create_grant::builders::CreateGrantFluentBuilder {
         crate::operation::create_grant::builders::CreateGrantFluentBuilder::new(self.handle.clone())
     }
 }

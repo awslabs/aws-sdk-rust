@@ -10,9 +10,7 @@ pub struct ModifyDbProxyTargetGroupOutput {
 }
 impl ModifyDbProxyTargetGroupOutput {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-    pub fn db_proxy_target_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DbProxyTargetGroup> {
+    pub fn db_proxy_target_group(&self) -> ::std::option::Option<&crate::types::DbProxyTargetGroup> {
         self.db_proxy_target_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyDbProxyTargetGroupOutput {
 }
 impl ModifyDbProxyTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyTargetGroupOutput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput).
-    pub fn builder() -> crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder{
+    pub fn builder() -> crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder {
         crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbProxyTargetGroupOutput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbProxyTargetGroupOutputBuilder {
     pub(crate) db_proxy_target_group: ::std::option::Option<crate::types::DbProxyTargetGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl ModifyDbProxyTargetGroupOutputBuilder {
         self
     }
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-    pub fn set_db_proxy_target_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyTargetGroup>,
-    ) -> Self {
+    pub fn set_db_proxy_target_group(mut self, input: ::std::option::Option<crate::types::DbProxyTargetGroup>) -> Self {
         self.db_proxy_target_group = input;
         self
     }
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-    pub fn get_db_proxy_target_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbProxyTargetGroup> {
+    pub fn get_db_proxy_target_group(&self) -> &::std::option::Option<crate::types::DbProxyTargetGroup> {
         &self.db_proxy_target_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl ModifyDbProxyTargetGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyTargetGroupOutput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput {
+    pub fn build(self) -> crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput {
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput {
             db_proxy_target_group: self.db_proxy_target_group,
             _request_id: self._request_id,

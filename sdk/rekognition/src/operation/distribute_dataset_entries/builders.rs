@@ -29,7 +29,7 @@ impl DistributeDatasetEntriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder,
+    inner: crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder,
 }
 impl DistributeDatasetEntriesFluentBuilder {
     /// Creates a new `DistributeDatasetEntries`.
@@ -40,10 +40,7 @@ impl DistributeDatasetEntriesFluentBuilder {
         }
     }
     /// Access the DistributeDatasetEntries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DistributeDatasetEntriesFluentBuilder {
             crate::operation::distribute_dataset_entries::DistributeDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DistributeDatasetEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DistributeDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DistributeDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DistributeDatasetEntriesFluentBuilder {
             crate::operation::distribute_dataset_entries::DistributeDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError>,
     > {
         self.customize_middleware().await
     }
@@ -136,17 +122,12 @@ impl DistributeDatasetEntriesFluentBuilder {
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn set_datasets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
-    ) -> Self {
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
         self.inner = self.inner.set_datasets(input);
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn get_datasets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
         self.inner.get_datasets()
     }
 }

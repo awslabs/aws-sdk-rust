@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateFleetOutput {
 }
 impl DisassociateFleetOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFleetOutput`](crate::operation::disassociate_fleet::DisassociateFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_fleet::builders::DisassociateFleetOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_fleet::builders::DisassociateFleetOutputBuilder {
         crate::operation::disassociate_fleet::builders::DisassociateFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFleetOutput`](crate::operation::disassociate_fleet::DisassociateFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFleetOutputBuilder {
     _request_id: Option<String>,
 }

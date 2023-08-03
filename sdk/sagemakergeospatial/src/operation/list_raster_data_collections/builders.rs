@@ -26,7 +26,7 @@ impl ListRasterDataCollectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRasterDataCollectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder,
+    inner: crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder,
 }
 impl ListRasterDataCollectionsFluentBuilder {
     /// Creates a new `ListRasterDataCollections`.
@@ -37,7 +37,7 @@ impl ListRasterDataCollectionsFluentBuilder {
         }
     }
     /// Access the ListRasterDataCollections as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRasterDataCollectionsFluentBuilder {
             crate::operation::list_raster_data_collections::ListRasterDataCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRasterDataCollectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRasterDataCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRasterDataCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListRasterDataCollectionsFluentBuilder {
             crate::operation::list_raster_data_collections::ListRasterDataCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_raster_data_collections::ListRasterDataCollectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_raster_data_collections::paginator::ListRasterDataCollectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_raster_data_collections::paginator::ListRasterDataCollectionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_raster_data_collections::paginator::ListRasterDataCollectionsPaginator {
         crate::operation::list_raster_data_collections::paginator::ListRasterDataCollectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>

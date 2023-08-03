@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput) with field(s):
     ///   - [`errors(Option<Vec<ColumnStatisticsError>>)`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput::errors): <p>List of ColumnStatisticsErrors.</p>
     /// - On failure, responds with [`SdkError<UpdateColumnStatisticsForTableError>`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableError)
-    pub fn update_column_statistics_for_table(&self) -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableFluentBuilder{
+    pub fn update_column_statistics_for_table(
+        &self,
+    ) -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableFluentBuilder {
         crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableFluentBuilder::new(self.handle.clone())
     }
 }

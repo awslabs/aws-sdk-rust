@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`component_compliances(Option<Vec<AppComponentCompliance>>)`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput::component_compliances): <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppComponentCompliancesError>`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesError)
-    pub fn list_app_component_compliances(&self) -> crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesFluentBuilder{
+    pub fn list_app_component_compliances(
+        &self,
+    ) -> crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesFluentBuilder {
         crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesFluentBuilder::new(self.handle.clone())
     }
 }

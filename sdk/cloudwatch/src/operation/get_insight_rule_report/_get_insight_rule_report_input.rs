@@ -75,17 +75,14 @@ impl GetInsightRuleReportInput {
 }
 impl GetInsightRuleReportInput {
     /// Creates a new builder-style object to manufacture [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportInputBuilder {
+    pub fn builder() -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportInputBuilder {
         crate::operation::get_insight_rule_report::builders::GetInsightRuleReportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightRuleReportInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -116,10 +113,7 @@ impl GetInsightRuleReportInputBuilder {
         self
     }
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -133,10 +127,7 @@ impl GetInsightRuleReportInputBuilder {
         self
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -202,10 +193,7 @@ impl GetInsightRuleReportInputBuilder {
     /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
     /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metrics = input;
         self
     }
@@ -239,20 +227,16 @@ impl GetInsightRuleReportInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_rule_report::GetInsightRuleReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_rule_report::GetInsightRuleReportInput {
-                rule_name: self.rule_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                max_contributor_count: self.max_contributor_count,
-                metrics: self.metrics,
-                order_by: self.order_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_rule_report::GetInsightRuleReportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_insight_rule_report::GetInsightRuleReportInput {
+            rule_name: self.rule_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            period: self.period,
+            max_contributor_count: self.max_contributor_count,
+            metrics: self.metrics,
+            order_by: self.order_by,
+        })
     }
 }

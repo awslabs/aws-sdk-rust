@@ -31,9 +31,7 @@ impl ListDatastoresInput {
 
 /// A builder for [`ListDatastoresInput`](crate::operation::list_datastores::ListDatastoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatastoresInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -73,10 +71,7 @@ impl ListDatastoresInputBuilder {
     /// Consumes the builder and constructs a [`ListDatastoresInput`](crate::operation::list_datastores::ListDatastoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_datastores::ListDatastoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_datastores::ListDatastoresInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_datastores::ListDatastoresInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -136,18 +136,14 @@ impl DescribeScalingPoliciesInput {
 }
 impl DescribeScalingPoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder {
         crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPoliciesInputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
@@ -169,17 +165,12 @@ impl DescribeScalingPoliciesInputBuilder {
         self
     }
     /// <p>The names of the scaling policies to describe.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The names of the scaling policies to describe.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
@@ -188,10 +179,7 @@ impl DescribeScalingPoliciesInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -322,10 +310,7 @@ impl DescribeScalingPoliciesInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -353,9 +338,7 @@ impl DescribeScalingPoliciesInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.</p>
@@ -396,15 +379,13 @@ impl DescribeScalingPoliciesInputBuilder {
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
-                policy_names: self.policy_names,
-                service_namespace: self.service_namespace,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
+            policy_names: self.policy_names,
+            service_namespace: self.service_namespace,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

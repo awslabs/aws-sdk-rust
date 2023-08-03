@@ -36,9 +36,7 @@ impl DescribeBudgetsOutput {
 
 /// A builder for [`DescribeBudgetsOutput`](crate::operation::describe_budgets::DescribeBudgetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetsOutputBuilder {
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DescribeBudgetsOutputBuilder {
         self
     }
     /// <p>A list of budgets.</p>
-    pub fn set_budgets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
-    ) -> Self {
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>) -> Self {
         self.budgets = input;
         self
     }

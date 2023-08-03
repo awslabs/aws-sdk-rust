@@ -85,9 +85,7 @@ impl KeyPairInfo {
 
 /// A builder for [`KeyPairInfo`](crate::types::KeyPairInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyPairInfoBuilder {
     pub(crate) key_pair_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
@@ -122,10 +120,7 @@ impl KeyPairInfoBuilder {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
@@ -139,10 +134,7 @@ impl KeyPairInfoBuilder {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_fingerprint = input;
         self
     }
@@ -199,10 +191,7 @@ impl KeyPairInfoBuilder {
         self
     }
     /// <p>Any tags applied to the key pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -232,10 +221,7 @@ impl KeyPairInfoBuilder {
     }
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

@@ -20,8 +20,7 @@ pub struct Application {
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
@@ -30,9 +29,7 @@ pub struct Application {
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
@@ -59,9 +56,7 @@ impl Application {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> ::std::option::Option<&crate::types::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
@@ -73,11 +68,7 @@ impl Application {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
@@ -93,10 +84,7 @@ impl ::std::fmt::Debug for Application {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -120,29 +108,20 @@ pub struct ApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) is_archived: ::std::option::Option<bool>,
-    pub(crate) application_aggregated_status:
-        ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
+    pub(crate) application_aggregated_status: ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationBuilder {
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -207,40 +186,26 @@ impl ApplicationBuilder {
         &self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        mut self,
-        input: crate::types::ApplicationAggregatedStatus,
-    ) -> Self {
+    pub fn application_aggregated_status(mut self, input: crate::types::ApplicationAggregatedStatus) -> Self {
         self.application_aggregated_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Application aggregated status.</p>
-    pub fn set_application_aggregated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
-    ) -> Self {
+    pub fn set_application_aggregated_status(mut self, input: ::std::option::Option<crate::types::ApplicationAggregatedStatus>) -> Self {
         self.application_aggregated_status = input;
         self
     }
     /// <p>Application aggregated status.</p>
-    pub fn get_application_aggregated_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationAggregatedStatus> {
+    pub fn get_application_aggregated_status(&self) -> &::std::option::Option<crate::types::ApplicationAggregatedStatus> {
         &self.application_aggregated_status
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application creation dateTime.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -249,18 +214,12 @@ impl ApplicationBuilder {
         &self.creation_date_time
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn set_last_modified_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date_time = input;
         self
     }
@@ -273,32 +232,19 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Application tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Application tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Application tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Application wave ID.</p>
@@ -339,10 +285,7 @@ impl ::std::fmt::Debug for ApplicationBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");

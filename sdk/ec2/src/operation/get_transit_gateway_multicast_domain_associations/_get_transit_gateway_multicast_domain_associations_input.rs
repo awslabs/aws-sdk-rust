@@ -57,16 +57,15 @@ impl GetTransitGatewayMulticastDomainAssociationsInput {
 }
 impl GetTransitGatewayMulticastDomainAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayMulticastDomainAssociationsInput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsInputBuilder {
         crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayMulticastDomainAssociationsInput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayMulticastDomainAssociationsInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -76,25 +75,17 @@ pub struct GetTransitGatewayMulticastDomainAssociationsInputBuilder {
 }
 impl GetTransitGatewayMulticastDomainAssociationsInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn get_transit_gateway_multicast_domain_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_id
     }
     /// Appends an item to `filters`.
@@ -123,10 +114,7 @@ impl GetTransitGatewayMulticastDomainAssociationsInputBuilder {
     /// <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li>
     /// <li> <p> <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -184,20 +172,20 @@ impl GetTransitGatewayMulticastDomainAssociationsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayMulticastDomainAssociationsInput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsInput {
-                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

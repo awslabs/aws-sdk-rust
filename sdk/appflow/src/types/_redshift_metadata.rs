@@ -13,9 +13,7 @@ impl RedshiftMetadata {
 
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftMetadataBuilder {}
 impl RedshiftMetadataBuilder {
     /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::types::RedshiftMetadata).

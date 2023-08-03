@@ -44,17 +44,14 @@ impl ListSnapshotBlocksInput {
 }
 impl ListSnapshotBlocksInput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksInput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput).
-    pub fn builder(
-    ) -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksInputBuilder {
+    pub fn builder() -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksInputBuilder {
         crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSnapshotBlocksInput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotBlocksInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -133,17 +130,12 @@ impl ListSnapshotBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListSnapshotBlocksInput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput {
-                snapshot_id: self.snapshot_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                starting_block_index: self.starting_block_index,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput {
+            snapshot_id: self.snapshot_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            starting_block_index: self.starting_block_index,
+        })
     }
 }

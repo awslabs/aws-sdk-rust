@@ -10,10 +10,7 @@ pub fn ser_create_entity_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_component_request::ser_component_request(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_component_request::ser_component_request(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }

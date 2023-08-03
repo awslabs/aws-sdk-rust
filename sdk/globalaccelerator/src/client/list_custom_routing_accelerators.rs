@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`accelerators(Option<Vec<CustomRoutingAccelerator>>)`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput::accelerators): <p>The list of custom routing accelerators for a customer account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListCustomRoutingAcceleratorsError>`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError)
-    pub fn list_custom_routing_accelerators(&self) -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder{
+    pub fn list_custom_routing_accelerators(
+        &self,
+    ) -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder {
         crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::new(self.handle.clone())
     }
 }

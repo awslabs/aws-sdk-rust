@@ -22,36 +22,26 @@ impl UntagDeliveryStreamInput {
 }
 impl UntagDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
-    pub fn builder(
-    ) -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
-        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
+        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
@@ -71,10 +61,7 @@ impl UntagDeliveryStreamInputBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -85,15 +72,11 @@ impl UntagDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_delivery_stream::UntagDeliveryStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::untag_delivery_stream::UntagDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                tag_keys: self.tag_keys,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::untag_delivery_stream::UntagDeliveryStreamInput {
+            delivery_stream_name: self.delivery_stream_name,
+            tag_keys: self.tag_keys,
+        })
     }
 }

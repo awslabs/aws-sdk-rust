@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_core_definitions::ListCoreDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_definitions::ListCoreDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListCoreDefinitionsError>`](crate::operation::list_core_definitions::ListCoreDefinitionsError)
-    pub fn list_core_definitions(
-        &self,
-    ) -> crate::operation::list_core_definitions::builders::ListCoreDefinitionsFluentBuilder {
-        crate::operation::list_core_definitions::builders::ListCoreDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_core_definitions(&self) -> crate::operation::list_core_definitions::builders::ListCoreDefinitionsFluentBuilder {
+        crate::operation::list_core_definitions::builders::ListCoreDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

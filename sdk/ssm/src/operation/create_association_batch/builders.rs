@@ -39,10 +39,7 @@ impl CreateAssociationBatchFluentBuilder {
         }
     }
     /// Access the CreateAssociationBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateAssociationBatchFluentBuilder {
             crate::operation::create_association_batch::CreateAssociationBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_association_batch::CreateAssociationBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_association_batch::CreateAssociationBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateAssociationBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateAssociationBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_association_batch::CreateAssociationBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_association_batch::CreateAssociationBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_association_batch::CreateAssociationBatchError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateAssociationBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_association_batch::CreateAssociationBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_association_batch::CreateAssociationBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_association_batch::CreateAssociationBatchError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateAssociationBatchFluentBuilder {
             crate::operation::create_association_batch::CreateAssociationBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_association_batch::CreateAssociationBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_association_batch::CreateAssociationBatchError>,
     > {
         self.customize_middleware().await
     }
@@ -135,20 +121,12 @@ impl CreateAssociationBatchFluentBuilder {
         self
     }
     /// <p>One or more associations.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>One or more associations.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>> {
         self.inner.get_entries()
     }
 }

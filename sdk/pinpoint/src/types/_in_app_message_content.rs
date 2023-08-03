@@ -58,9 +58,7 @@ impl InAppMessageContent {
 
 /// A builder for [`InAppMessageContent`](crate::types::InAppMessageContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppMessageContentBuilder {
     pub(crate) background_color: ::std::option::Option<::std::string::String>,
     pub(crate) body_config: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
@@ -71,18 +69,12 @@ pub struct InAppMessageContentBuilder {
 }
 impl InAppMessageContentBuilder {
     /// <p>The background color for the message.</p>
-    pub fn background_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn background_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The background color for the message.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.background_color = input;
         self
     }
@@ -96,10 +88,7 @@ impl InAppMessageContentBuilder {
         self
     }
     /// <p>The configuration for the message body.</p>
-    pub fn set_body_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
-    ) -> Self {
+    pub fn set_body_config(mut self, input: ::std::option::Option<crate::types::InAppMessageBodyConfig>) -> Self {
         self.body_config = input;
         self
     }
@@ -113,17 +102,12 @@ impl InAppMessageContentBuilder {
         self
     }
     /// <p>The configuration for the message header.</p>
-    pub fn set_header_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessageHeaderConfig>,
-    ) -> Self {
+    pub fn set_header_config(mut self, input: ::std::option::Option<crate::types::InAppMessageHeaderConfig>) -> Self {
         self.header_config = input;
         self
     }
     /// <p>The configuration for the message header.</p>
-    pub fn get_header_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InAppMessageHeaderConfig> {
+    pub fn get_header_config(&self) -> &::std::option::Option<crate::types::InAppMessageHeaderConfig> {
         &self.header_config
     }
     /// <p>The image url for the background of message.</p>
@@ -146,10 +130,7 @@ impl InAppMessageContentBuilder {
         self
     }
     /// <p>The first button inside the message.</p>
-    pub fn set_primary_btn(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessageButton>,
-    ) -> Self {
+    pub fn set_primary_btn(mut self, input: ::std::option::Option<crate::types::InAppMessageButton>) -> Self {
         self.primary_btn = input;
         self
     }
@@ -163,10 +144,7 @@ impl InAppMessageContentBuilder {
         self
     }
     /// <p>The second button inside message.</p>
-    pub fn set_secondary_btn(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessageButton>,
-    ) -> Self {
+    pub fn set_secondary_btn(mut self, input: ::std::option::Option<crate::types::InAppMessageButton>) -> Self {
         self.secondary_btn = input;
         self
     }

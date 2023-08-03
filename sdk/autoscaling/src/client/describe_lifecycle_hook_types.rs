@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeLifecycleHookTypesOutput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput) with field(s):
     ///   - [`lifecycle_hook_types(Option<Vec<String>>)`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput::lifecycle_hook_types): <p>The lifecycle hook types.</p>
     /// - On failure, responds with [`SdkError<DescribeLifecycleHookTypesError>`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError)
-    pub fn describe_lifecycle_hook_types(&self) -> crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesFluentBuilder{
+    pub fn describe_lifecycle_hook_types(
+        &self,
+    ) -> crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesFluentBuilder {
         crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl PutStoredQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_stored_query::PutStoredQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_stored_query::PutStoredQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_stored_query();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl PutStoredQueryFluentBuilder {
         }
     }
     /// Access the PutStoredQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl PutStoredQueryFluentBuilder {
             crate::operation::put_stored_query::PutStoredQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_stored_query::PutStoredQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl PutStoredQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl PutStoredQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_stored_query::PutStoredQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_stored_query::PutStoredQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl PutStoredQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_stored_query::PutStoredQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_stored_query::PutStoredQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl PutStoredQueryFluentBuilder {
             crate::operation::put_stored_query::PutStoredQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_stored_query::PutStoredQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_stored_query::PutStoredQueryError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +118,7 @@ impl PutStoredQueryFluentBuilder {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
-    pub fn set_stored_query(
-        mut self,
-        input: ::std::option::Option<crate::types::StoredQuery>,
-    ) -> Self {
+    pub fn set_stored_query(mut self, input: ::std::option::Option<crate::types::StoredQuery>) -> Self {
         self.inner = self.inner.set_stored_query(input);
         self
     }
@@ -157,10 +138,7 @@ impl PutStoredQueryFluentBuilder {
         self
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDelegateFromResourceOutpu
 }
 impl DisassociateDelegateFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDelegateFromResourceOutput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput).
-    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceOutputBuilder {
         crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDelegateFromResourceOutput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateDelegateFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateDelegateFromResourceOutput`](crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput {
         crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceOutput {
             _request_id: self._request_id,
         }

@@ -22,16 +22,14 @@ impl RotateIngestEndpointCredentialsInput {
 }
 impl RotateIngestEndpointCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
-    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder {
         crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentialsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl RotateIngestEndpointCredentialsInputBuilder {
         &self.id
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn ingest_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingest_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingest_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The id of the IngestEndpoint whose credentials should be rotated
-    pub fn set_ingest_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingest_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingest_endpoint_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl RotateIngestEndpointCredentialsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput {
-                id: self.id
-                ,
-                ingest_endpoint_id: self.ingest_endpoint_id
-                ,
-            }
+                id: self.id,
+                ingest_endpoint_id: self.ingest_endpoint_id,
+            },
         )
     }
 }

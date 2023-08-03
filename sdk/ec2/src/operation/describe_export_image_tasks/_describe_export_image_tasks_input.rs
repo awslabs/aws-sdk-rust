@@ -43,18 +43,14 @@ impl DescribeExportImageTasksInput {
 }
 impl DescribeExportImageTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeExportImageTasksInput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksInputBuilder {
         crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportImageTasksInput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportImageTasksInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -89,10 +85,7 @@ impl DescribeExportImageTasksInputBuilder {
         self
     }
     /// <p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,27 +98,19 @@ impl DescribeExportImageTasksInputBuilder {
     /// To override the contents of this collection use [`set_export_image_task_ids`](Self::set_export_image_task_ids).
     ///
     /// <p>The IDs of the export image tasks.</p>
-    pub fn export_image_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_image_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.export_image_task_ids.unwrap_or_default();
         v.push(input.into());
         self.export_image_task_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the export image tasks.</p>
-    pub fn set_export_image_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_image_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_image_task_ids = input;
         self
     }
     /// <p>The IDs of the export image tasks.</p>
-    pub fn get_export_image_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_image_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.export_image_task_ids
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -163,14 +148,12 @@ impl DescribeExportImageTasksInputBuilder {
         crate::operation::describe_export_image_tasks::DescribeExportImageTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_export_image_tasks::DescribeExportImageTasksInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                export_image_task_ids: self.export_image_task_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_export_image_tasks::DescribeExportImageTasksInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            export_image_task_ids: self.export_image_task_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl CustomLineItemPercentageChargeDetails {
 
 /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetailsBuilder {
     pub(crate) percentage_value: ::std::option::Option<f64>,
     pub(crate) associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
     /// To override the contents of this collection use [`set_associated_values`](Self::set_associated_values).
     ///
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
-    pub fn associated_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_values.unwrap_or_default();
         v.push(input.into());
         self.associated_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
-    pub fn set_associated_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_associated_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_values = input;
         self
     }
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
-    pub fn get_associated_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_values
     }
     /// Consumes the builder and constructs a [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).

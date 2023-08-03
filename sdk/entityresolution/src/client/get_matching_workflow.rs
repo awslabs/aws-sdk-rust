@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to access resources on your behalf.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetMatchingWorkflowError>`](crate::operation::get_matching_workflow::GetMatchingWorkflowError)
-    pub fn get_matching_workflow(
-        &self,
-    ) -> crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder {
-        crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_matching_workflow(&self) -> crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder {
+        crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

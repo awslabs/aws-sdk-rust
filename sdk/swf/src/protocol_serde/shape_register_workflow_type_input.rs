@@ -16,14 +16,10 @@ pub fn ser_register_workflow_type_input(
         object.key("description").string(var_4.as_str());
     }
     if let Some(var_5) = &input.default_task_start_to_close_timeout {
-        object
-            .key("defaultTaskStartToCloseTimeout")
-            .string(var_5.as_str());
+        object.key("defaultTaskStartToCloseTimeout").string(var_5.as_str());
     }
     if let Some(var_6) = &input.default_execution_start_to_close_timeout {
-        object
-            .key("defaultExecutionStartToCloseTimeout")
-            .string(var_6.as_str());
+        object.key("defaultExecutionStartToCloseTimeout").string(var_6.as_str());
     }
     if let Some(var_7) = &input.default_task_list {
         #[allow(unused_mut)]

@@ -9,8 +9,7 @@ pub struct InstanceEventWindow {
     pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more time ranges defined for the event window.</p>
     #[doc(hidden)]
-    pub time_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
+    pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
     /// <p>The name of the event window.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,8 +18,7 @@ pub struct InstanceEventWindow {
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more targets associated with the event window.</p>
     #[doc(hidden)]
-    pub association_target:
-        ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
+    pub association_target: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
     /// <p>The current state of the event window.</p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceEventWindowState>,
@@ -34,9 +32,7 @@ impl InstanceEventWindow {
         self.instance_event_window_id.as_deref()
     }
     /// <p>One or more time ranges defined for the event window.</p>
-    pub fn time_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRange]> {
+    pub fn time_ranges(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRange]> {
         self.time_ranges.as_deref()
     }
     /// <p>The name of the event window.</p>
@@ -48,9 +44,7 @@ impl InstanceEventWindow {
         self.cron_expression.as_deref()
     }
     /// <p>One or more targets associated with the event window.</p>
-    pub fn association_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceEventWindowAssociationTarget> {
+    pub fn association_target(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowAssociationTarget> {
         self.association_target.as_ref()
     }
     /// <p>The current state of the event window.</p>
@@ -71,34 +65,24 @@ impl InstanceEventWindow {
 
 /// A builder for [`InstanceEventWindow`](crate::types::InstanceEventWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceEventWindowBuilder {
     pub(crate) instance_event_window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) time_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
+    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) association_target:
-        ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
+    pub(crate) association_target: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
     pub(crate) state: ::std::option::Option<crate::types::InstanceEventWindowState>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceEventWindowBuilder {
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
-    pub fn set_instance_event_window_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_event_window_id = input;
         self
     }
@@ -118,17 +102,12 @@ impl InstanceEventWindowBuilder {
         self
     }
     /// <p>One or more time ranges defined for the event window.</p>
-    pub fn set_time_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
-    ) -> Self {
+    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>) -> Self {
         self.time_ranges = input;
         self
     }
     /// <p>One or more time ranges defined for the event window.</p>
-    pub fn get_time_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>> {
+    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>> {
         &self.time_ranges
     }
     /// <p>The name of the event window.</p>
@@ -146,18 +125,12 @@ impl InstanceEventWindowBuilder {
         &self.name
     }
     /// <p>The cron expression defined for the event window.</p>
-    pub fn cron_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cron_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cron expression defined for the event window.</p>
-    pub fn set_cron_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cron_expression = input;
         self
     }
@@ -166,25 +139,17 @@ impl InstanceEventWindowBuilder {
         &self.cron_expression
     }
     /// <p>One or more targets associated with the event window.</p>
-    pub fn association_target(
-        mut self,
-        input: crate::types::InstanceEventWindowAssociationTarget,
-    ) -> Self {
+    pub fn association_target(mut self, input: crate::types::InstanceEventWindowAssociationTarget) -> Self {
         self.association_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more targets associated with the event window.</p>
-    pub fn set_association_target(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
-    ) -> Self {
+    pub fn set_association_target(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>) -> Self {
         self.association_target = input;
         self
     }
     /// <p>One or more targets associated with the event window.</p>
-    pub fn get_association_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationTarget> {
+    pub fn get_association_target(&self) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationTarget> {
         &self.association_target
     }
     /// <p>The current state of the event window.</p>
@@ -193,10 +158,7 @@ impl InstanceEventWindowBuilder {
         self
     }
     /// <p>The current state of the event window.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceEventWindowState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowState>) -> Self {
         self.state = input;
         self
     }
@@ -216,10 +178,7 @@ impl InstanceEventWindowBuilder {
         self
     }
     /// <p>The instance tags associated with the event window.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

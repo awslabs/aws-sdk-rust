@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`workload_id(Option<String>)`](crate::operation::get_milestone::GetMilestoneOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone(Option<Milestone>)`](crate::operation::get_milestone::GetMilestoneOutput::milestone): <p>A milestone return object.</p>
     /// - On failure, responds with [`SdkError<GetMilestoneError>`](crate::operation::get_milestone::GetMilestoneError)
-    pub fn get_milestone(
-        &self,
-    ) -> crate::operation::get_milestone::builders::GetMilestoneFluentBuilder {
-        crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_milestone(&self) -> crate::operation::get_milestone::builders::GetMilestoneFluentBuilder {
+        crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::new(self.handle.clone())
     }
 }

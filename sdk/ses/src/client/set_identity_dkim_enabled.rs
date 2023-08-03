@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`dkim_enabled(bool)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::dkim_enabled) / [`set_dkim_enabled(bool)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::set_dkim_enabled): <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     /// - On success, responds with [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput)
     /// - On failure, responds with [`SdkError<SetIdentityDkimEnabledError>`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError)
-    pub fn set_identity_dkim_enabled(
-        &self,
-    ) -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder
-    {
+    pub fn set_identity_dkim_enabled(&self) -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder {
         crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::new(self.handle.clone())
     }
 }

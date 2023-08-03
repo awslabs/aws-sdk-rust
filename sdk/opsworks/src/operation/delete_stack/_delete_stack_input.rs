@@ -22,9 +22,7 @@ impl DeleteStackInput {
 
 /// A builder for [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteStackInputBuilder {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stack::DeleteStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_stack::DeleteStackInput {
-            stack_id: self.stack_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stack::DeleteStackInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_stack::DeleteStackInput { stack_id: self.stack_id })
     }
 }

@@ -32,9 +32,7 @@ impl AmazonOpenSearchServerlessBufferingHints {
 
 /// A builder for [`AmazonOpenSearchServerlessBufferingHints`](crate::types::AmazonOpenSearchServerlessBufferingHints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessBufferingHintsBuilder {
     pub(crate) interval_in_seconds: ::std::option::Option<i32>,
     pub(crate) size_in_m_bs: ::std::option::Option<i32>,

@@ -22,41 +22,31 @@ impl DeleteTransitGatewayConnectPeerInput {
 }
 impl DeleteTransitGatewayConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayConnectPeerInput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerInputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerInputBuilder {
         crate::operation::delete_transit_gateway_connect_peer::builders::DeleteTransitGatewayConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayConnectPeerInput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayConnectPeerInputBuilder {
     pub(crate) transit_gateway_connect_peer_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the Connect peer.</p>
-    pub fn transit_gateway_connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_id = input;
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn get_transit_gateway_connect_peer_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_connect_peer_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -82,11 +72,9 @@ impl DeleteTransitGatewayConnectPeerInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerInput {
-                transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

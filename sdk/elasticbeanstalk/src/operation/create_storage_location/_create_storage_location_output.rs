@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateStorageLocationOutput {
 }
 impl CreateStorageLocationOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder {
         crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStorageLocationOutputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -5,16 +5,16 @@ pub use crate::operation::describe_network_interface_attribute::_describe_networ
 
 impl DescribeNetworkInterfaceAttributeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_network_interface_attribute();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder,
+    inner: crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder,
 }
 impl DescribeNetworkInterfaceAttributeFluentBuilder {
     /// Creates a new `DescribeNetworkInterfaceAttribute`.
@@ -37,15 +37,20 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
         }
     }
     /// Access the DescribeNetworkInterfaceAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The attribute of the network interface. This parameter is required.</p>
@@ -100,10 +115,7 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -126,18 +138,12 @@ impl DescribeNetworkInterfaceAttributeFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }

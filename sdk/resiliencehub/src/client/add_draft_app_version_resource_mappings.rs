@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput::app_version): <p>The version of the application.</p>
     ///   - [`resource_mappings(Option<Vec<ResourceMapping>>)`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput::resource_mappings): <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     /// - On failure, responds with [`SdkError<AddDraftAppVersionResourceMappingsError>`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError)
-    pub fn add_draft_app_version_resource_mappings(&self) -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsFluentBuilder{
+    pub fn add_draft_app_version_resource_mappings(
+        &self,
+    ) -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsFluentBuilder {
         crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsFluentBuilder::new(self.handle.clone())
     }
 }

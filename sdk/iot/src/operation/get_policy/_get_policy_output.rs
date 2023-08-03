@@ -71,9 +71,7 @@ impl GetPolicyOutput {
 
 /// A builder for [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPolicyOutputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
@@ -114,18 +112,12 @@ impl GetPolicyOutputBuilder {
         &self.policy_arn
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -134,18 +126,12 @@ impl GetPolicyOutputBuilder {
         &self.policy_document
     }
     /// <p>The default policy version ID.</p>
-    pub fn default_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default policy version ID.</p>
-    pub fn set_default_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_id = input;
         self
     }
@@ -159,10 +145,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The date the policy was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -176,10 +159,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The date the policy was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -188,18 +168,12 @@ impl GetPolicyOutputBuilder {
         &self.last_modified_date
     }
     /// <p>The generation ID of the policy.</p>
-    pub fn generation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The generation ID of the policy.</p>
-    pub fn set_generation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_id = input;
         self
     }

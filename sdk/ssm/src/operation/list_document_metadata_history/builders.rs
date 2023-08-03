@@ -26,7 +26,7 @@ impl ListDocumentMetadataHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder,
+    inner: crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder,
 }
 impl ListDocumentMetadataHistoryFluentBuilder {
     /// Creates a new `ListDocumentMetadataHistory`.
@@ -37,7 +37,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
         }
     }
     /// Access the ListDocumentMetadataHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
             crate::operation::list_document_metadata_history::ListDocumentMetadataHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
             crate::operation::list_document_metadata_history::ListDocumentMetadataHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl ListDocumentMetadataHistoryFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the change template.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of the change template.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -160,10 +143,7 @@ impl ListDocumentMetadataHistoryFluentBuilder {
         self
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadataEnum>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadataEnum>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }

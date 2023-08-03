@@ -10,10 +10,7 @@ impl DisableProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_profile::DisableProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_profile::DisableProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_profile::DisableProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_profile();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DisableProfileFluentBuilder {
         }
     }
     /// Access the DisableProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_profile::builders::DisableProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_profile::builders::DisableProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DisableProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

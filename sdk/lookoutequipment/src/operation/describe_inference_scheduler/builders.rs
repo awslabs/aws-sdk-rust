@@ -26,7 +26,7 @@ impl DescribeInferenceSchedulerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder,
+    inner: crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder,
 }
 impl DescribeInferenceSchedulerFluentBuilder {
     /// Creates a new `DescribeInferenceScheduler`.
@@ -37,7 +37,7 @@ impl DescribeInferenceSchedulerFluentBuilder {
         }
     }
     /// Access the DescribeInferenceScheduler as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInferenceSchedulerFluentBuilder {
             crate::operation::describe_inference_scheduler::DescribeInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInferenceSchedulerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeInferenceSchedulerFluentBuilder {
             crate::operation::describe_inference_scheduler::DescribeInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }

@@ -37,9 +37,7 @@ impl ScheduledActionType {
 
 /// A builder for [`ScheduledActionType`](crate::types::ScheduledActionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledActionTypeBuilder {
     pub(crate) resize_cluster: ::std::option::Option<crate::types::ResizeClusterMessage>,
     pub(crate) pause_cluster: ::std::option::Option<crate::types::PauseClusterMessage>,
@@ -52,10 +50,7 @@ impl ScheduledActionTypeBuilder {
         self
     }
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
-    pub fn set_resize_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::ResizeClusterMessage>,
-    ) -> Self {
+    pub fn set_resize_cluster(mut self, input: ::std::option::Option<crate::types::ResizeClusterMessage>) -> Self {
         self.resize_cluster = input;
         self
     }
@@ -69,10 +64,7 @@ impl ScheduledActionTypeBuilder {
         self
     }
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
-    pub fn set_pause_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::PauseClusterMessage>,
-    ) -> Self {
+    pub fn set_pause_cluster(mut self, input: ::std::option::Option<crate::types::PauseClusterMessage>) -> Self {
         self.pause_cluster = input;
         self
     }
@@ -86,10 +78,7 @@ impl ScheduledActionTypeBuilder {
         self
     }
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
-    pub fn set_resume_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::ResumeClusterMessage>,
-    ) -> Self {
+    pub fn set_resume_cluster(mut self, input: ::std::option::Option<crate::types::ResumeClusterMessage>) -> Self {
         self.resume_cluster = input;
         self
     }

@@ -59,9 +59,7 @@ impl ListEdgePackagingJobsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
@@ -87,18 +85,14 @@ impl ListEdgePackagingJobsInput {
 }
 impl ListEdgePackagingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListEdgePackagingJobsInput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder {
         crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEdgePackagingJobsInput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEdgePackagingJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -147,10 +141,7 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was created after specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -164,10 +155,7 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was created before specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -181,17 +169,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>Select jobs where the job was updated after specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
@@ -200,32 +183,21 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>Select jobs where the job was updated before specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for jobs containing this name in their packaging job name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -234,18 +206,12 @@ impl ListEdgePackagingJobsInputBuilder {
         &self.name_contains
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn model_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for jobs where the model name contains this string.</p>
-    pub fn set_model_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name_contains = input;
         self
     }
@@ -259,17 +225,12 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
     /// <p>The job status to filter for.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
         &self.status_equals
     }
     /// <p>Use to specify what column to sort by.</p>
@@ -278,10 +239,7 @@ impl ListEdgePackagingJobsInputBuilder {
         self
     }
     /// <p>Use to specify what column to sort by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListEdgePackagingJobsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListEdgePackagingJobsSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -306,24 +264,20 @@ impl ListEdgePackagingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListEdgePackagingJobsInput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                name_contains: self.name_contains,
-                model_name_contains: self.model_name_contains,
-                status_equals: self.status_equals,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            name_contains: self.name_contains,
+            model_name_contains: self.model_name_contains,
+            status_equals: self.status_equals,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

@@ -15,9 +15,7 @@ pub struct ListModelMetadataInput {
 }
 impl ListModelMetadataInput {
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    pub fn search_expression(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelMetadataSearchExpression> {
+    pub fn search_expression(&self) -> ::std::option::Option<&crate::types::ModelMetadataSearchExpression> {
         self.search_expression.as_ref()
     }
     /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
@@ -31,20 +29,16 @@ impl ListModelMetadataInput {
 }
 impl ListModelMetadataInput {
     /// Creates a new builder-style object to manufacture [`ListModelMetadataInput`](crate::operation::list_model_metadata::ListModelMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder {
+    pub fn builder() -> crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder {
         crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelMetadataInput`](crate::operation::list_model_metadata::ListModelMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelMetadataInputBuilder {
-    pub(crate) search_expression:
-        ::std::option::Option<crate::types::ModelMetadataSearchExpression>,
+    pub(crate) search_expression: ::std::option::Option<crate::types::ModelMetadataSearchExpression>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -55,17 +49,12 @@ impl ListModelMetadataInputBuilder {
         self
     }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelMetadataSearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::ModelMetadataSearchExpression>) -> Self {
         self.search_expression = input;
         self
     }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
-    pub fn get_search_expression(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelMetadataSearchExpression> {
+    pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::ModelMetadataSearchExpression> {
         &self.search_expression
     }
     /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
@@ -99,16 +88,11 @@ impl ListModelMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListModelMetadataInput`](crate::operation::list_model_metadata::ListModelMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_model_metadata::ListModelMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_metadata::ListModelMetadataInput {
-                search_expression: self.search_expression,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_model_metadata::ListModelMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_model_metadata::ListModelMetadataInput {
+            search_expression: self.search_expression,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

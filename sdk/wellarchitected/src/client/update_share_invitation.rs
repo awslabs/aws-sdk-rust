@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateShareInvitationOutput`](crate::operation::update_share_invitation::UpdateShareInvitationOutput) with field(s):
     ///   - [`share_invitation(Option<ShareInvitation>)`](crate::operation::update_share_invitation::UpdateShareInvitationOutput::share_invitation): <p>The updated workload or custom lens share invitation.</p>
     /// - On failure, responds with [`SdkError<UpdateShareInvitationError>`](crate::operation::update_share_invitation::UpdateShareInvitationError)
-    pub fn update_share_invitation(
-        &self,
-    ) -> crate::operation::update_share_invitation::builders::UpdateShareInvitationFluentBuilder
-    {
-        crate::operation::update_share_invitation::builders::UpdateShareInvitationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_share_invitation(&self) -> crate::operation::update_share_invitation::builders::UpdateShareInvitationFluentBuilder {
+        crate::operation::update_share_invitation::builders::UpdateShareInvitationFluentBuilder::new(self.handle.clone())
     }
 }

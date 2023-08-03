@@ -50,22 +50,17 @@ impl DescribeInstancePatchesInput {
 }
 impl DescribeInstancePatchesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder {
         crate::operation::describe_instance_patches::builders::DescribeInstancePatchesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -110,10 +105,7 @@ impl DescribeInstancePatchesInputBuilder {
     /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
     /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -125,9 +117,7 @@ impl DescribeInstancePatchesInputBuilder {
     /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
     /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -165,13 +155,11 @@ impl DescribeInstancePatchesInputBuilder {
         crate::operation::describe_instance_patches::DescribeInstancePatchesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_patches::DescribeInstancePatchesInput {
-                instance_id: self.instance_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_patches::DescribeInstancePatchesInput {
+            instance_id: self.instance_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

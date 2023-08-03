@@ -22,17 +22,14 @@ impl ListImportFileTaskInput {
 }
 impl ListImportFileTaskInput {
     /// Creates a new builder-style object to manufacture [`ListImportFileTaskInput`](crate::operation::list_import_file_task::ListImportFileTaskInput).
-    pub fn builder(
-    ) -> crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder {
+    pub fn builder() -> crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder {
         crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportFileTaskInput`](crate::operation::list_import_file_task::ListImportFileTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportFileTaskInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl ListImportFileTaskInputBuilder {
     /// Consumes the builder and constructs a [`ListImportFileTaskInput`](crate::operation::list_import_file_task::ListImportFileTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_import_file_task::ListImportFileTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_import_file_task::ListImportFileTaskInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_import_file_task::ListImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_import_file_task::ListImportFileTaskInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

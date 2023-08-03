@@ -19,9 +19,7 @@ impl DeleteRouteOutput {
 
 /// A builder for [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteOutputBuilder {
     _request_id: Option<String>,
 }

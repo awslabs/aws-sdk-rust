@@ -23,9 +23,7 @@ impl DestinationConfiguration {
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationConfigurationBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
@@ -36,10 +34,7 @@ impl DestinationConfigurationBuilder {
         self
     }
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3 = input;
         self
     }

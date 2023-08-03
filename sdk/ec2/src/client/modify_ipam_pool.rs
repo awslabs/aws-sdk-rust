@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyIpamPoolOutput`](crate::operation::modify_ipam_pool::ModifyIpamPoolOutput) with field(s):
     ///   - [`ipam_pool(Option<IpamPool>)`](crate::operation::modify_ipam_pool::ModifyIpamPoolOutput::ipam_pool): <p>The results of the modification.</p>
     /// - On failure, responds with [`SdkError<ModifyIpamPoolError>`](crate::operation::modify_ipam_pool::ModifyIpamPoolError)
-    pub fn modify_ipam_pool(
-        &self,
-    ) -> crate::operation::modify_ipam_pool::builders::ModifyIpamPoolFluentBuilder {
-        crate::operation::modify_ipam_pool::builders::ModifyIpamPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_ipam_pool(&self) -> crate::operation::modify_ipam_pool::builders::ModifyIpamPoolFluentBuilder {
+        crate::operation::modify_ipam_pool::builders::ModifyIpamPoolFluentBuilder::new(self.handle.clone())
     }
 }

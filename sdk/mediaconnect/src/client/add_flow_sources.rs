@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::flow_arn): The ARN of the flow that these sources were added to.
     ///   - [`sources(Option<Vec<Source>>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::sources): The details of the newly added sources.
     /// - On failure, responds with [`SdkError<AddFlowSourcesError>`](crate::operation::add_flow_sources::AddFlowSourcesError)
-    pub fn add_flow_sources(
-        &self,
-    ) -> crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder {
-        crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_flow_sources(&self) -> crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder {
+        crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::new(self.handle.clone())
     }
 }

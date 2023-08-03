@@ -23,9 +23,7 @@ impl TransitGatewayPeeringAttachmentOptions {
 
 /// A builder for [`TransitGatewayPeeringAttachmentOptions`](crate::types::TransitGatewayPeeringAttachmentOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPeeringAttachmentOptionsBuilder {
     pub(crate) dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
@@ -36,10 +34,7 @@ impl TransitGatewayPeeringAttachmentOptionsBuilder {
         self
     }
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
-    pub fn set_dynamic_routing(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamicRoutingValue>,
-    ) -> Self {
+    pub fn set_dynamic_routing(mut self, input: ::std::option::Option<crate::types::DynamicRoutingValue>) -> Self {
         self.dynamic_routing = input;
         self
     }

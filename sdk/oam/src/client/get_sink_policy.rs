@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`sink_id(Option<String>)`](crate::operation::get_sink_policy::GetSinkPolicyOutput::sink_id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_sink_policy::GetSinkPolicyOutput::policy): <p>The policy that you specified, in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetSinkPolicyError>`](crate::operation::get_sink_policy::GetSinkPolicyError)
-    pub fn get_sink_policy(
-        &self,
-    ) -> crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder {
-        crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sink_policy(&self) -> crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder {
+        crate::operation::get_sink_policy::builders::GetSinkPolicyFluentBuilder::new(self.handle.clone())
     }
 }

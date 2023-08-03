@@ -39,9 +39,7 @@ impl BatchDeleteGeofenceFluentBuilder {
         }
     }
     /// Access the BatchDeleteGeofence as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl BatchDeleteGeofenceFluentBuilder {
             crate::operation::batch_delete_geofence::BatchDeleteGeofence,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl BatchDeleteGeofenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl BatchDeleteGeofenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl BatchDeleteGeofenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl BatchDeleteGeofenceFluentBuilder {
             crate::operation::batch_delete_geofence::BatchDeleteGeofence,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_geofence::BatchDeleteGeofenceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -154,17 +135,12 @@ impl BatchDeleteGeofenceFluentBuilder {
         self
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn set_geofence_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_geofence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_geofence_ids(input);
         self
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn get_geofence_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_geofence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_geofence_ids()
     }
 }

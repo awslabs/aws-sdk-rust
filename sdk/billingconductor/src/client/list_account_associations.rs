@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`linked_accounts(Option<Vec<AccountAssociationsListElement>>)`](crate::operation::list_account_associations::ListAccountAssociationsOutput::linked_accounts): <p> The list of linked accounts in the payer account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_associations::ListAccountAssociationsOutput::next_token): <p> The pagination token that's used on subsequent calls to get accounts. </p>
     /// - On failure, responds with [`SdkError<ListAccountAssociationsError>`](crate::operation::list_account_associations::ListAccountAssociationsError)
-    pub fn list_account_associations(
-        &self,
-    ) -> crate::operation::list_account_associations::builders::ListAccountAssociationsFluentBuilder
-    {
+    pub fn list_account_associations(&self) -> crate::operation::list_account_associations::builders::ListAccountAssociationsFluentBuilder {
         crate::operation::list_account_associations::builders::ListAccountAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

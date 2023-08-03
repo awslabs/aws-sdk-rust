@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for GetDeviceProfileOutput {
 }
 impl GetDeviceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::operation::get_device_profile::GetDeviceProfileOutput).
-    pub fn builder() -> crate::operation::get_device_profile::builders::GetDeviceProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_profile::builders::GetDeviceProfileOutputBuilder {
         crate::operation::get_device_profile::builders::GetDeviceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceProfileOutput`](crate::operation::get_device_profile::GetDeviceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceProfileOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -117,10 +114,7 @@ impl GetDeviceProfileOutputBuilder {
         self
     }
     /// <p>Information about the device profile.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanDeviceProfile>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanDeviceProfile>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -134,10 +128,7 @@ impl GetDeviceProfileOutputBuilder {
         self
     }
     /// <p>Information about the Sidewalk parameters in the device profile.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkGetDeviceProfile>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkGetDeviceProfile>) -> Self {
         self.sidewalk = input;
         self
     }

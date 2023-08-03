@@ -19,9 +19,7 @@ impl DeleteFeatureOutput {
 
 /// A builder for [`DeleteFeatureOutput`](crate::operation::delete_feature::DeleteFeatureOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFeatureOutputBuilder {
     _request_id: Option<String>,
 }

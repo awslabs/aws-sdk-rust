@@ -20,9 +20,7 @@ pub struct AdditionalInstanceConfiguration {
 }
 impl AdditionalInstanceConfiguration {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    pub fn systems_manager_agent(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SystemsManagerAgent> {
+    pub fn systems_manager_agent(&self) -> ::std::option::Option<&crate::types::SystemsManagerAgent> {
         self.systems_manager_agent.as_ref()
     }
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
@@ -45,9 +43,7 @@ impl AdditionalInstanceConfiguration {
 
 /// A builder for [`AdditionalInstanceConfiguration`](crate::types::AdditionalInstanceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalInstanceConfigurationBuilder {
     pub(crate) systems_manager_agent: ::std::option::Option<crate::types::SystemsManagerAgent>,
     pub(crate) user_data_override: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl AdditionalInstanceConfigurationBuilder {
         self
     }
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    pub fn set_systems_manager_agent(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemsManagerAgent>,
-    ) -> Self {
+    pub fn set_systems_manager_agent(mut self, input: ::std::option::Option<crate::types::SystemsManagerAgent>) -> Self {
         self.systems_manager_agent = input;
         self
     }
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    pub fn get_systems_manager_agent(
-        &self,
-    ) -> &::std::option::Option<crate::types::SystemsManagerAgent> {
+    pub fn get_systems_manager_agent(&self) -> &::std::option::Option<crate::types::SystemsManagerAgent> {
         &self.systems_manager_agent
     }
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
@@ -79,10 +70,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
-    pub fn user_data_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_data_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data_override = ::std::option::Option::Some(input.into());
         self
     }
@@ -93,10 +81,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
-    pub fn set_user_data_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_data_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data_override = input;
         self
     }

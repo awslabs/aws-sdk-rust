@@ -3,12 +3,7 @@ pub(crate) fn de_audit_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::AuditImage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,44 +13,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Bytes" => {
-                            builder = builder.set_bytes(
-                                ::aws_smithy_json::deserialize::token::expect_blob_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_bytes(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                         }
                         "S3Object" => {
-                            builder = builder.set_s3_object(
-                                crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?,
-                            );
+                            builder = builder.set_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
                         }
                         "BoundingBox" => {
-                            builder = builder.set_bounding_box(
-                                crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens)?,
-                            );
+                            builder = builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

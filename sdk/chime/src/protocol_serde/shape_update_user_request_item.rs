@@ -15,10 +15,7 @@ pub fn ser_update_user_request_item(
     if let Some(var_4) = &input.alexa_for_business_metadata {
         #[allow(unused_mut)]
         let mut object_5 = object.key("AlexaForBusinessMetadata").start_object();
-        crate::protocol_serde::shape_alexa_for_business_metadata::ser_alexa_for_business_metadata(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_alexa_for_business_metadata::ser_alexa_for_business_metadata(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

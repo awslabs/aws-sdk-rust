@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`anomaly_group_statistics(Option<AnomalyGroupStatistics>)`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput::anomaly_group_statistics): <p>Aggregated details about the anomaly groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAnomalyGroupSummariesError>`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesError)
-    pub fn list_anomaly_group_summaries(&self) -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder{
+    pub fn list_anomaly_group_summaries(&self) -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder {
         crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StartDashboardSnapshotJobOutput {
 }
 impl StartDashboardSnapshotJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
-    pub fn builder() -> crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobOutputBuilder {
         crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_job_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartDashboardSnapshotJobOutputBuilder {
         &self.arn
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_job_id = input;
         self
     }
@@ -132,9 +124,7 @@ impl StartDashboardSnapshotJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput {
+    pub fn build(self) -> crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput {
         crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput {
             arn: self.arn,
             snapshot_job_id: self.snapshot_job_id,

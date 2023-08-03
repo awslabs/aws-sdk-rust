@@ -32,9 +32,7 @@ impl RetainRule {
         self.interval
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
-    pub fn interval_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -47,9 +45,7 @@ impl RetainRule {
 
 /// A builder for [`RetainRule`](crate::types::RetainRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetainRuleBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -90,17 +86,12 @@ impl RetainRuleBuilder {
         self
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
+    pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
         self.interval_unit = input;
         self
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
-    pub fn get_interval_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
         &self.interval_unit
     }
     /// Consumes the builder and constructs a [`RetainRule`](crate::types::RetainRule).

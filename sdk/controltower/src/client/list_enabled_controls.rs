@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`enabled_controls(Option<Vec<EnabledControlSummary>>)`](crate::operation::list_enabled_controls::ListEnabledControlsOutput::enabled_controls): <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_enabled_controls::ListEnabledControlsOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     /// - On failure, responds with [`SdkError<ListEnabledControlsError>`](crate::operation::list_enabled_controls::ListEnabledControlsError)
-    pub fn list_enabled_controls(
-        &self,
-    ) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder {
-        crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_enabled_controls(&self) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder {
+        crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`iam_role(Option<String>)`](crate::operation::describe_world_export_job::DescribeWorldExportJobOutput::iam_role): <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world_export_job::DescribeWorldExportJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldExportJobError>`](crate::operation::describe_world_export_job::DescribeWorldExportJobError)
-    pub fn describe_world_export_job(
-        &self,
-    ) -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobFluentBuilder
-    {
+    pub fn describe_world_export_job(&self) -> crate::operation::describe_world_export_job::builders::DescribeWorldExportJobFluentBuilder {
         crate::operation::describe_world_export_job::builders::DescribeWorldExportJobFluentBuilder::new(self.handle.clone())
     }
 }

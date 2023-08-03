@@ -30,27 +30,19 @@ impl SamlIdp {
 
 /// A builder for [`SamlIdp`](crate::types::SamlIdp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SamlIdpBuilder {
     pub(crate) metadata_content: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
 }
 impl SamlIdpBuilder {
     /// <p>The metadata of the SAML application, in XML format.</p>
-    pub fn metadata_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metadata of the SAML application, in XML format.</p>
-    pub fn set_metadata_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_content = input;
         self
     }

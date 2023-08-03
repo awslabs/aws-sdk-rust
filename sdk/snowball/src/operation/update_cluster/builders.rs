@@ -10,10 +10,7 @@ impl UpdateClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_cluster::UpdateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster::UpdateClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster::UpdateClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateClusterFluentBuilder {
         }
     }
     /// Access the UpdateCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -162,10 +154,7 @@ impl UpdateClusterFluentBuilder {
         self
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::JobResource>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
@@ -174,25 +163,17 @@ impl UpdateClusterFluentBuilder {
         self.inner.get_resources()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(
-        mut self,
-        input: crate::types::OnDeviceServiceConfiguration,
-    ) -> Self {
+    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
         self.inner = self.inner.on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn set_on_device_service_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
-    ) -> Self {
+    pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn get_on_device_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+    pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
         self.inner.get_on_device_service_configuration()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
@@ -215,10 +196,7 @@ impl UpdateClusterFluentBuilder {
         self
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
@@ -232,10 +210,7 @@ impl UpdateClusterFluentBuilder {
         self
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
@@ -244,18 +219,12 @@ impl UpdateClusterFluentBuilder {
         self.inner.get_notification()
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forwarding_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forwarding_address_id(input.into());
         self
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }

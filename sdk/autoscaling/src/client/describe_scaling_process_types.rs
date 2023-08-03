@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput) with field(s):
     ///   - [`processes(Option<Vec<ProcessType>>)`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput::processes): <p>The names of the process types.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingProcessTypesError>`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError)
-    pub fn describe_scaling_process_types(&self) -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesFluentBuilder{
+    pub fn describe_scaling_process_types(
+        &self,
+    ) -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesFluentBuilder {
         crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesFluentBuilder::new(self.handle.clone())
     }
 }

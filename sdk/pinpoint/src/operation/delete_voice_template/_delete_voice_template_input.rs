@@ -38,36 +38,26 @@ impl DeleteVoiceTemplateInput {
 }
 impl DeleteVoiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceTemplateInput`](crate::operation::delete_voice_template::DeleteVoiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder {
-        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder {
+        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceTemplateInput`](crate::operation::delete_voice_template::DeleteVoiceTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceTemplateInputBuilder {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -116,15 +106,11 @@ impl DeleteVoiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceTemplateInput`](crate::operation::delete_voice_template::DeleteVoiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_voice_template::DeleteVoiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_voice_template::DeleteVoiceTemplateInput {
-                template_name: self.template_name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_voice_template::DeleteVoiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_voice_template::DeleteVoiceTemplateInput {
+            template_name: self.template_name,
+            version: self.version,
+        })
     }
 }

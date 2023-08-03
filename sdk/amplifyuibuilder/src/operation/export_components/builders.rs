@@ -10,10 +10,7 @@ impl ExportComponentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_components::ExportComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_components::ExportComponentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_components::ExportComponentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_components();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ExportComponentsFluentBuilder {
         }
     }
     /// Access the ExportComponents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::export_components::builders::ExportComponentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::export_components::builders::ExportComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ExportComponentsFluentBuilder {
             crate::operation::export_components::ExportComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_components::ExportComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_components::ExportComponentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ExportComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ExportComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_components::ExportComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_components::ExportComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_components::ExportComponentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ExportComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_components::ExportComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_components::ExportComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_components::ExportComponentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ExportComponentsFluentBuilder {
             crate::operation::export_components::ExportComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_components::ExportComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_components::ExportComponentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::export_components::paginator::ExportComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::export_components::paginator::ExportComponentsPaginator {
-        crate::operation::export_components::paginator::ExportComponentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::export_components::paginator::ExportComponentsPaginator {
+        crate::operation::export_components::paginator::ExportComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID of the Amplify app to export components to.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ExportComponentsFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

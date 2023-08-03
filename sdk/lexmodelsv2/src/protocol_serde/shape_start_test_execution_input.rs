@@ -9,10 +9,7 @@ pub fn ser_start_test_execution_input(
     if let Some(var_2) = &input.target {
         #[allow(unused_mut)]
         let mut object_3 = object.key("target").start_object();
-        crate::protocol_serde::shape_test_execution_target::ser_test_execution_target(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_test_execution_target::ser_test_execution_target(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.test_execution_modality {

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>  <p>This parameter requires a JSON text string argument.</p>  <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
-    pub fn untag_resource(
-        &self,
-    ) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
-        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
+        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(self.handle.clone())
     }
 }

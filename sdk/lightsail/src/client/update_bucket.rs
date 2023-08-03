@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`bucket(Option<Bucket>)`](crate::operation::update_bucket::UpdateBucketOutput::bucket): <p>An object that describes the bucket that is updated.</p>
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_bucket::UpdateBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateBucketError>`](crate::operation::update_bucket::UpdateBucketError)
-    pub fn update_bucket(
-        &self,
-    ) -> crate::operation::update_bucket::builders::UpdateBucketFluentBuilder {
-        crate::operation::update_bucket::builders::UpdateBucketFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bucket(&self) -> crate::operation::update_bucket::builders::UpdateBucketFluentBuilder {
+        crate::operation::update_bucket::builders::UpdateBucketFluentBuilder::new(self.handle.clone())
     }
 }

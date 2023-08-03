@@ -10,10 +10,7 @@ impl StopRecommenderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_recommender::StopRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_recommender::StopRecommenderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_recommender::StopRecommenderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_recommender();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopRecommenderFluentBuilder {
         }
     }
     /// Access the StopRecommender as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_recommender::builders::StopRecommenderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_recommender::builders::StopRecommenderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StopRecommenderFluentBuilder {
             crate::operation::stop_recommender::StopRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_recommender::StopRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_recommender::StopRecommenderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StopRecommenderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StopRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_recommender::StopRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_recommender::StopRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_recommender::StopRecommenderError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StopRecommenderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_recommender::StopRecommenderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_recommender::StopRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_recommender::StopRecommenderError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StopRecommenderFluentBuilder {
             crate::operation::stop_recommender::StopRecommender,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_recommender::StopRecommenderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_recommender::StopRecommenderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommender_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommender_arn(input);
         self
     }

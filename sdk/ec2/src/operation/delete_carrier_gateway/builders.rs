@@ -39,9 +39,7 @@ impl DeleteCarrierGatewayFluentBuilder {
         }
     }
     /// Access the DeleteCarrierGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteCarrierGatewayFluentBuilder {
             crate::operation::delete_carrier_gateway::DeleteCarrierGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteCarrierGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteCarrierGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteCarrierGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl DeleteCarrierGatewayFluentBuilder {
             crate::operation::delete_carrier_gateway::DeleteCarrierGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn carrier_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.carrier_gateway_id(input.into());
         self
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_carrier_gateway_id(input);
         self
     }

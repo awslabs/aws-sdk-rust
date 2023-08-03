@@ -10,10 +10,7 @@ impl UpdateInputInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_input::UpdateInputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_input::UpdateInputError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_input();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateInputFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_input::UpdateInput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_input::UpdateInput, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateInputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateInputFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_input::UpdateInput,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_input::UpdateInput, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl UpdateInputFluentBuilder {
         self.inner.get_input_name()
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_description(input.into());
         self
     }
     /// <p>A brief description of the input.</p>
-    pub fn set_input_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_description(input);
         self
     }
@@ -152,10 +134,7 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// <p>The definition of the input.</p>
-    pub fn set_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDefinition>,
-    ) -> Self {
+    pub fn set_input_definition(mut self, input: ::std::option::Option<crate::types::InputDefinition>) -> Self {
         self.inner = self.inner.set_input_definition(input);
         self
     }

@@ -37,9 +37,7 @@ impl EngineDefaults {
 
 /// A builder for [`EngineDefaults`](crate::types::EngineDefaults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EngineDefaultsBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct EngineDefaultsBuilder {
 }
 impl EngineDefaultsBuilder {
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -92,17 +84,12 @@ impl EngineDefaultsBuilder {
         self
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Contains a list of engine default parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`EngineDefaults`](crate::types::EngineDefaults).

@@ -27,7 +27,7 @@ impl DisassociateLambdaFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateLambdaFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder,
+    inner: crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder,
 }
 impl DisassociateLambdaFunctionFluentBuilder {
     /// Creates a new `DisassociateLambdaFunction`.
@@ -38,7 +38,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
         }
     }
     /// Access the DisassociateLambdaFunction as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
             crate::operation::disassociate_lambda_function::DisassociateLambdaFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DisassociateLambdaFunctionFluentBuilder {
             crate::operation::disassociate_lambda_function::DisassociateLambdaFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError>,
     > {
         self.customize_middleware().await
     }

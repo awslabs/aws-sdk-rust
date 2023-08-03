@@ -39,16 +39,14 @@ impl ListLoggingConfigurationsInput {
 }
 impl ListLoggingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -119,12 +117,10 @@ impl ListLoggingConfigurationsInputBuilder {
         crate::operation::list_logging_configurations::ListLoggingConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsInput {
-                scope: self.scope,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_logging_configurations::ListLoggingConfigurationsInput {
+            scope: self.scope,
+            next_marker: self.next_marker,
+            limit: self.limit,
+        })
     }
 }

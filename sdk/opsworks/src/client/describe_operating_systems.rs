@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput) with field(s):
     ///   - [`operating_systems(Option<Vec<OperatingSystem>>)`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput::operating_systems): <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeOperatingSystemsError>`](crate::operation::describe_operating_systems::DescribeOperatingSystemsError)
-    pub fn describe_operating_systems(
-        &self,
-    ) -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsFluentBuilder
-    {
+    pub fn describe_operating_systems(&self) -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsFluentBuilder {
         crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsFluentBuilder::new(self.handle.clone())
     }
 }

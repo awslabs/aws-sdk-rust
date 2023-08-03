@@ -11,9 +11,7 @@ pub struct CreateGroupOutput {
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     /// <p>The tags associated with the group.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
@@ -29,11 +27,7 @@ impl CreateGroupOutput {
         self.resource_query.as_ref()
     }
     /// <p>The tags associated with the group.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
@@ -55,15 +49,11 @@ impl CreateGroupOutput {
 
 /// A builder for [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGroupOutputBuilder {
     pub(crate) group: ::std::option::Option<crate::types::Group>,
     pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,
 }
@@ -88,10 +78,7 @@ impl CreateGroupOutputBuilder {
         self
     }
     /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
-    pub fn set_resource_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.resource_query = input;
         self
     }
@@ -104,32 +91,19 @@ impl CreateGroupOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags associated with the group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
@@ -138,17 +112,12 @@ impl CreateGroupOutputBuilder {
         self
     }
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    pub fn set_group_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupConfiguration>,
-    ) -> Self {
+    pub fn set_group_configuration(mut self, input: ::std::option::Option<crate::types::GroupConfiguration>) -> Self {
         self.group_configuration = input;
         self
     }
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    pub fn get_group_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupConfiguration> {
+    pub fn get_group_configuration(&self) -> &::std::option::Option<crate::types::GroupConfiguration> {
         &self.group_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

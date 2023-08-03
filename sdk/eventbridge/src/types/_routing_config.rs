@@ -23,9 +23,7 @@ impl RoutingConfig {
 
 /// A builder for [`RoutingConfig`](crate::types::RoutingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingConfigBuilder {
     pub(crate) failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
@@ -36,10 +34,7 @@ impl RoutingConfigBuilder {
         self
     }
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    pub fn set_failover_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FailoverConfig>,
-    ) -> Self {
+    pub fn set_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
         self.failover_config = input;
         self
     }

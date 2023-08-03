@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for GetCalculationExecutionOutput {
 }
 impl GetCalculationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionOutput`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionOutputBuilder {
         crate::operation::get_calculation_execution::builders::GetCalculationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCalculationExecutionOutput`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionOutputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -87,18 +83,12 @@ pub struct GetCalculationExecutionOutputBuilder {
 }
 impl GetCalculationExecutionOutputBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculation_execution_id = input;
         self
     }
@@ -135,18 +125,12 @@ impl GetCalculationExecutionOutputBuilder {
         &self.description
     }
     /// <p>The Amazon S3 location in which calculation results are stored.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location in which calculation results are stored.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -160,10 +144,7 @@ impl GetCalculationExecutionOutputBuilder {
         self
     }
     /// <p>Contains information about the status of the calculation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CalculationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -177,10 +158,7 @@ impl GetCalculationExecutionOutputBuilder {
         self
     }
     /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::CalculationStatistics>) -> Self {
         self.statistics = input;
         self
     }
@@ -194,10 +172,7 @@ impl GetCalculationExecutionOutputBuilder {
         self
     }
     /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::CalculationResult>) -> Self {
         self.result = input;
         self
     }
@@ -215,9 +190,7 @@ impl GetCalculationExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCalculationExecutionOutput`](crate::operation::get_calculation_execution::GetCalculationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_calculation_execution::GetCalculationExecutionOutput {
+    pub fn build(self) -> crate::operation::get_calculation_execution::GetCalculationExecutionOutput {
         crate::operation::get_calculation_execution::GetCalculationExecutionOutput {
             calculation_execution_id: self.calculation_execution_id,
             session_id: self.session_id,

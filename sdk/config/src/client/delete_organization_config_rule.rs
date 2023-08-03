@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`organization_config_rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::set_organization_config_rule_name): <p>The name of organization Config rule that you want to delete.</p>
     /// - On success, responds with [`DeleteOrganizationConfigRuleOutput`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteOrganizationConfigRuleError>`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError)
-    pub fn delete_organization_config_rule(&self) -> crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder{
+    pub fn delete_organization_config_rule(
+        &self,
+    ) -> crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder {
         crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::new(self.handle.clone())
     }
 }

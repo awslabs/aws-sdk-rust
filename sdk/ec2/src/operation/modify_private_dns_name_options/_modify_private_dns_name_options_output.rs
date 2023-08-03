@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyPrivateDnsNameOptionsOutput {
 }
 impl ModifyPrivateDnsNameOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
-    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder {
         crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyPrivateDnsNameOptionsOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ModifyPrivateDnsNameOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
+    pub fn build(self) -> crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

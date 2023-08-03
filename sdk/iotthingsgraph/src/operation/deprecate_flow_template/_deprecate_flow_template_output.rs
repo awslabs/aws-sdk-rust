@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeprecateFlowTemplateOutput {
 }
 impl DeprecateFlowTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder {
         crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateFlowTemplateOutputBuilder {
     _request_id: Option<String>,
 }

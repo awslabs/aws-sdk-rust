@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`pricing_rules(Option<Vec<PricingRuleListElement>>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::pricing_rules): <p> A list containing the described pricing rules. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::next_token): <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     /// - On failure, responds with [`SdkError<ListPricingRulesError>`](crate::operation::list_pricing_rules::ListPricingRulesError)
-    pub fn list_pricing_rules(
-        &self,
-    ) -> crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder {
-        crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pricing_rules(&self) -> crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder {
+        crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_batch_get_document_status_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_document_info::ser_document_info(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_document_info::ser_document_info(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

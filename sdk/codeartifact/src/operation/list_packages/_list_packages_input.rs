@@ -99,9 +99,7 @@ impl ListPackagesInput {
 
 /// A builder for [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -207,18 +205,12 @@ impl ListPackagesInputBuilder {
         &self.namespace
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn package_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
-    pub fn set_package_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_prefix = input;
         self
     }
@@ -274,10 +266,7 @@ impl ListPackagesInputBuilder {
         self
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
-    pub fn set_upstream(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowUpstream>,
-    ) -> Self {
+    pub fn set_upstream(mut self, input: ::std::option::Option<crate::types::AllowUpstream>) -> Self {
         self.upstream = input;
         self
     }
@@ -286,12 +275,7 @@ impl ListPackagesInputBuilder {
         &self.upstream
     }
     /// Consumes the builder and constructs a [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_packages::ListPackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_packages::ListPackagesInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

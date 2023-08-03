@@ -37,9 +37,7 @@ impl InAppCampaignSchedule {
 
 /// A builder for [`InAppCampaignSchedule`](crate::types::InAppCampaignSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppCampaignScheduleBuilder {
     pub(crate) end_date: ::std::option::Option<::std::string::String>,
     pub(crate) event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
@@ -66,10 +64,7 @@ impl InAppCampaignScheduleBuilder {
         self
     }
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignEventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::CampaignEventFilter>) -> Self {
         self.event_filter = input;
         self
     }

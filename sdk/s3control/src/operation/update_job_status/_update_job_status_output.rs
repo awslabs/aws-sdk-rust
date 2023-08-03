@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateJobStatusOutput {
 }
 impl UpdateJobStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::operation::update_job_status::UpdateJobStatusOutput).
-    pub fn builder() -> crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder {
         crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobStatusOutput`](crate::operation::update_job_status::UpdateJobStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobStatusOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,18 +79,12 @@ impl UpdateJobStatusOutputBuilder {
         &self.status
     }
     /// <p>The reason that the specified job's status was updated.</p>
-    pub fn status_update_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_update_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_update_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the specified job's status was updated.</p>
-    pub fn set_status_update_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_update_reason = input;
         self
     }

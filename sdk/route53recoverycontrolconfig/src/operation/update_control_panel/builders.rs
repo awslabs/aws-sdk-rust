@@ -10,10 +10,7 @@ impl UpdateControlPanelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_control_panel::UpdateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_control_panel::UpdateControlPanelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_control_panel::UpdateControlPanelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_control_panel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateControlPanelFluentBuilder {
         }
     }
     /// Access the UpdateControlPanel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_control_panel::builders::UpdateControlPanelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateControlPanelFluentBuilder {
             crate::operation::update_control_panel::UpdateControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_control_panel::UpdateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_control_panel::UpdateControlPanelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateControlPanelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_control_panel::UpdateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_control_panel::UpdateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_control_panel::UpdateControlPanelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateControlPanelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_control_panel::UpdateControlPanelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_control_panel::UpdateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_control_panel::UpdateControlPanelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateControlPanelFluentBuilder {
             crate::operation::update_control_panel::UpdateControlPanel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_control_panel::UpdateControlPanelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_control_panel::UpdateControlPanelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateControlPanelFluentBuilder {
         self.inner.get_control_panel_arn()
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_name(input.into());
         self
     }
     /// <p>The name of the control panel.</p>
-    pub fn set_control_panel_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_name(input);
         self
     }

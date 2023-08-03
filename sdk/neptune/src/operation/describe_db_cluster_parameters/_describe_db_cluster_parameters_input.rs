@@ -55,16 +55,14 @@ impl DescribeDbClusterParametersInput {
 }
 impl DescribeDbClusterParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersInput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder {
         crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterParametersInput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParametersInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -78,10 +76,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -90,10 +85,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
@@ -102,9 +94,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
@@ -133,10 +123,7 @@ impl DescribeDbClusterParametersInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -185,14 +172,12 @@ impl DescribeDbClusterParametersInputBuilder {
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
-                source: self.source,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput {
+            db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+            source: self.source,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

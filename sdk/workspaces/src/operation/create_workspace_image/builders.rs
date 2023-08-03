@@ -37,9 +37,7 @@ impl CreateWorkspaceImageFluentBuilder {
         }
     }
     /// Access the CreateWorkspaceImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workspace_image::builders::CreateWorkspaceImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workspace_image::builders::CreateWorkspaceImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateWorkspaceImageFluentBuilder {
             crate::operation::create_workspace_image::CreateWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_image::CreateWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_image::CreateWorkspaceImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateWorkspaceImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_image::CreateWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_image::CreateWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_image::CreateWorkspaceImageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_image::CreateWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_image::CreateWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_image::CreateWorkspaceImageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateWorkspaceImageFluentBuilder {
             crate::operation::create_workspace_image::CreateWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_image::CreateWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_image::CreateWorkspaceImageError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +161,7 @@ impl CreateWorkspaceImageFluentBuilder {
         self
     }
     /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

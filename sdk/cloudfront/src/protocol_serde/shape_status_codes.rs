@@ -14,8 +14,7 @@ pub fn ser_status_codes(
         for list_item_3 in var_2 {
             {
                 let mut inner_writer = inner_writer.start_el("StatusCode").finish();
-                inner_writer
-                    .data(::aws_smithy_types::primitive::Encoder::from(*list_item_3).encode());
+                inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*list_item_3).encode());
             }
         }
     }

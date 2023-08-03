@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMlModelOutput`](crate::operation::update_ml_model::UpdateMlModelOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::update_ml_model::UpdateMlModelOutput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateMLModelError>`](crate::operation::update_ml_model::UpdateMLModelError)
-    pub fn update_ml_model(
-        &self,
-    ) -> crate::operation::update_ml_model::builders::UpdateMLModelFluentBuilder {
-        crate::operation::update_ml_model::builders::UpdateMLModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ml_model(&self) -> crate::operation::update_ml_model::builders::UpdateMLModelFluentBuilder {
+        crate::operation::update_ml_model::builders::UpdateMLModelFluentBuilder::new(self.handle.clone())
     }
 }

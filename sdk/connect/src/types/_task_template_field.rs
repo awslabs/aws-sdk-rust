@@ -44,9 +44,7 @@ impl TaskTemplateField {
 
 /// A builder for [`TaskTemplateField`](crate::types::TaskTemplateField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskTemplateFieldBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl TaskTemplateFieldBuilder {
         self
     }
     /// <p>The unique identifier for the field.</p>
-    pub fn set_id(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
-    ) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>) -> Self {
         self.id = input;
         self
     }
@@ -91,10 +86,7 @@ impl TaskTemplateFieldBuilder {
         self
     }
     /// <p>Indicates the type of field.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateFieldType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TaskTemplateFieldType>) -> Self {
         self.r#type = input;
         self
     }
@@ -107,27 +99,19 @@ impl TaskTemplateFieldBuilder {
     /// To override the contents of this collection use [`set_single_select_options`](Self::set_single_select_options).
     ///
     /// <p>A list of options for a single select field.</p>
-    pub fn single_select_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn single_select_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.single_select_options.unwrap_or_default();
         v.push(input.into());
         self.single_select_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of options for a single select field.</p>
-    pub fn set_single_select_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_single_select_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.single_select_options = input;
         self
     }
     /// <p>A list of options for a single select field.</p>
-    pub fn get_single_select_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_single_select_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.single_select_options
     }
     /// Consumes the builder and constructs a [`TaskTemplateField`](crate::types::TaskTemplateField).

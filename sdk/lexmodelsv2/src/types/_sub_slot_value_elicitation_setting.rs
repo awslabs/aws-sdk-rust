@@ -8,8 +8,7 @@
 pub struct SubSlotValueElicitationSetting {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
     #[doc(hidden)]
-    pub default_value_specification:
-        ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
+    pub default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
     #[doc(hidden)]
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
@@ -18,20 +17,15 @@ pub struct SubSlotValueElicitationSetting {
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
     #[doc(hidden)]
-    pub wait_and_continue_specification:
-        ::std::option::Option<crate::types::WaitAndContinueSpecification>,
+    pub wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
 }
 impl SubSlotValueElicitationSetting {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    pub fn default_value_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotDefaultValueSpecification> {
+    pub fn default_value_specification(&self) -> ::std::option::Option<&crate::types::SlotDefaultValueSpecification> {
         self.default_value_specification.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-    pub fn prompt_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PromptSpecification> {
+    pub fn prompt_specification(&self) -> ::std::option::Option<&crate::types::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
@@ -39,9 +33,7 @@ impl SubSlotValueElicitationSetting {
         self.sample_utterances.as_deref()
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn wait_and_continue_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WaitAndContinueSpecification> {
+    pub fn wait_and_continue_specification(&self) -> ::std::option::Option<&crate::types::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
     }
 }
@@ -54,39 +46,26 @@ impl SubSlotValueElicitationSetting {
 
 /// A builder for [`SubSlotValueElicitationSetting`](crate::types::SubSlotValueElicitationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubSlotValueElicitationSettingBuilder {
-    pub(crate) default_value_specification:
-        ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
+    pub(crate) default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     pub(crate) prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
-    pub(crate) sample_utterances:
-        ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
-    pub(crate) wait_and_continue_specification:
-        ::std::option::Option<crate::types::WaitAndContinueSpecification>,
+    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
+    pub(crate) wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
 }
 impl SubSlotValueElicitationSettingBuilder {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    pub fn default_value_specification(
-        mut self,
-        input: crate::types::SlotDefaultValueSpecification,
-    ) -> Self {
+    pub fn default_value_specification(mut self, input: crate::types::SlotDefaultValueSpecification) -> Self {
         self.default_value_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    pub fn set_default_value_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
-    ) -> Self {
+    pub fn set_default_value_specification(mut self, input: ::std::option::Option<crate::types::SlotDefaultValueSpecification>) -> Self {
         self.default_value_specification = input;
         self
     }
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
-    pub fn get_default_value_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotDefaultValueSpecification> {
+    pub fn get_default_value_specification(&self) -> &::std::option::Option<crate::types::SlotDefaultValueSpecification> {
         &self.default_value_specification
     }
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
@@ -95,17 +74,12 @@ impl SubSlotValueElicitationSettingBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-    pub fn set_prompt_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSpecification>,
-    ) -> Self {
+    pub fn set_prompt_specification(mut self, input: ::std::option::Option<crate::types::PromptSpecification>) -> Self {
         self.prompt_specification = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
-    pub fn get_prompt_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PromptSpecification> {
+    pub fn get_prompt_specification(&self) -> &::std::option::Option<crate::types::PromptSpecification> {
         &self.prompt_specification
     }
     /// Appends an item to `sample_utterances`.
@@ -120,39 +94,26 @@ impl SubSlotValueElicitationSettingBuilder {
         self
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
-    pub fn set_sample_utterances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
-    ) -> Self {
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
         self.sample_utterances = input;
         self
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a sub slot value, you can provide those utterances to improve accuracy. This is optional. In most cases Amazon Lex is capable of understanding user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
-    pub fn get_sample_utterances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
         &self.sample_utterances
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn wait_and_continue_specification(
-        mut self,
-        input: crate::types::WaitAndContinueSpecification,
-    ) -> Self {
+    pub fn wait_and_continue_specification(mut self, input: crate::types::WaitAndContinueSpecification) -> Self {
         self.wait_and_continue_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn set_wait_and_continue_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
-    ) -> Self {
+    pub fn set_wait_and_continue_specification(mut self, input: ::std::option::Option<crate::types::WaitAndContinueSpecification>) -> Self {
         self.wait_and_continue_specification = input;
         self
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
-    pub fn get_wait_and_continue_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::WaitAndContinueSpecification> {
+    pub fn get_wait_and_continue_specification(&self) -> &::std::option::Option<crate::types::WaitAndContinueSpecification> {
         &self.wait_and_continue_specification
     }
     /// Consumes the builder and constructs a [`SubSlotValueElicitationSetting`](crate::types::SubSlotValueElicitationSetting).

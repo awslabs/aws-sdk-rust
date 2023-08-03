@@ -25,9 +25,7 @@ impl CreateInstanceExportTaskInput {
         self.description.as_deref()
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn export_to_s3_task(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportToS3TaskSpecification> {
+    pub fn export_to_s3_task(&self) -> ::std::option::Option<&crate::types::ExportToS3TaskSpecification> {
         self.export_to_s3_task.as_ref()
     }
     /// <p>The ID of the instance.</p>
@@ -45,25 +43,20 @@ impl CreateInstanceExportTaskInput {
 }
 impl CreateInstanceExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceExportTaskInput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder {
         crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceExportTaskInput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) export_to_s3_task: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateInstanceExportTaskInputBuilder {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
@@ -86,17 +79,12 @@ impl CreateInstanceExportTaskInputBuilder {
         self
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn set_export_to_s3_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,
-    ) -> Self {
+    pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>) -> Self {
         self.export_to_s3_task = input;
         self
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn get_export_to_s3_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
+    pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
         &self.export_to_s3_task
     }
     /// <p>The ID of the instance.</p>
@@ -119,17 +107,12 @@ impl CreateInstanceExportTaskInputBuilder {
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn set_target_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportEnvironment>,
-    ) -> Self {
+    pub fn set_target_environment(mut self, input: ::std::option::Option<crate::types::ExportEnvironment>) -> Self {
         self.target_environment = input;
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn get_target_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportEnvironment> {
+    pub fn get_target_environment(&self) -> &::std::option::Option<crate::types::ExportEnvironment> {
         &self.target_environment
     }
     /// Appends an item to `tag_specifications`.
@@ -144,17 +127,12 @@ impl CreateInstanceExportTaskInputBuilder {
         self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceExportTaskInput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskInput).
@@ -164,14 +142,12 @@ impl CreateInstanceExportTaskInputBuilder {
         crate::operation::create_instance_export_task::CreateInstanceExportTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_export_task::CreateInstanceExportTaskInput {
-                description: self.description,
-                export_to_s3_task: self.export_to_s3_task,
-                instance_id: self.instance_id,
-                target_environment: self.target_environment,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_instance_export_task::CreateInstanceExportTaskInput {
+            description: self.description,
+            export_to_s3_task: self.export_to_s3_task,
+            instance_id: self.instance_id,
+            target_environment: self.target_environment,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

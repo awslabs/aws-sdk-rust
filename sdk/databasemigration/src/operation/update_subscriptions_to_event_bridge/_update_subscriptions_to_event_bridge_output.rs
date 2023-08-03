@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateSubscriptionsToEventBridgeOutpu
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
-    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder{
+    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder {
         crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,10 +59,9 @@ impl UpdateSubscriptionsToEventBridgeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
-    pub fn build(self) -> crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput{
+    pub fn build(self) -> crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput {
         crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput {
-            result: self.result
-            ,
+            result: self.result,
             _request_id: self._request_id,
         }
     }

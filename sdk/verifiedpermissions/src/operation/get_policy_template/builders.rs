@@ -10,10 +10,7 @@ impl GetPolicyTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_policy_template::GetPolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_policy_template::GetPolicyTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_policy_template::GetPolicyTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_policy_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetPolicyTemplateFluentBuilder {
         }
     }
     /// Access the GetPolicyTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_policy_template::builders::GetPolicyTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_policy_template::builders::GetPolicyTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetPolicyTemplateFluentBuilder {
             crate::operation::get_policy_template::GetPolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_policy_template::GetPolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_policy_template::GetPolicyTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetPolicyTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetPolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_policy_template::GetPolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_policy_template::GetPolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_policy_template::GetPolicyTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetPolicyTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_policy_template::GetPolicyTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_policy_template::GetPolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_policy_template::GetPolicyTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetPolicyTemplateFluentBuilder {
             crate::operation::get_policy_template::GetPolicyTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_policy_template::GetPolicyTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_policy_template::GetPolicyTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetPolicyTemplateFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the policy template that you want information about.</p>
-    pub fn policy_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_template_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy template that you want information about.</p>
-    pub fn set_policy_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_template_id(input);
         self
     }

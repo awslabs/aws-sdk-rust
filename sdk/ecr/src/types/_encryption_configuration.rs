@@ -36,9 +36,7 @@ impl EncryptionConfiguration {
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
@@ -54,10 +52,7 @@ impl EncryptionConfigurationBuilder {
     /// <p>The encryption type to use.</p>
     /// <p>If you use the <code>KMS</code> encryption type, the contents of the repository will be encrypted using server-side encryption with Key Management Service key stored in KMS. When you use KMS to encrypt your data, you can either use the default Amazon Web Services managed KMS key for Amazon ECR, or specify your own KMS key, which you already created. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting data using server-side encryption with an KMS key stored in Key Management Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
     /// <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts the images in the repository using an AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting data using server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer Guide</i>.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

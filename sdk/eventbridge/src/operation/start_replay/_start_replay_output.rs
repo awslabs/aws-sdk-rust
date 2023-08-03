@@ -49,9 +49,7 @@ impl StartReplayOutput {
 
 /// A builder for [`StartReplayOutput`](crate::operation::start_replay::StartReplayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplayOutputBuilder {
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,
@@ -108,10 +106,7 @@ impl StartReplayOutputBuilder {
         self
     }
     /// <p>The time at which the replay started.</p>
-    pub fn set_replay_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_replay_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.replay_start_time = input;
         self
     }

@@ -38,18 +38,14 @@ impl PutResolverRulePolicyInput {
 }
 impl PutResolverRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {
         crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_rule_policy: ::std::option::Option<::std::string::String>,
@@ -78,10 +74,7 @@ impl PutResolverRulePolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn resolver_rule_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -94,10 +87,7 @@ impl PutResolverRulePolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn set_resolver_rule_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_rule_policy = input;
         self
     }
@@ -116,15 +106,11 @@ impl PutResolverRulePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput {
-                arn: self.arn,
-                resolver_rule_policy: self.resolver_rule_policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput {
+            arn: self.arn,
+            resolver_rule_policy: self.resolver_rule_policy,
+        })
     }
 }

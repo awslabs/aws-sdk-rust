@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_pipeline::GetImagePipelineOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_pipeline(Option<ImagePipeline>)`](crate::operation::get_image_pipeline::GetImagePipelineOutput::image_pipeline): <p>The image pipeline object.</p>
     /// - On failure, responds with [`SdkError<GetImagePipelineError>`](crate::operation::get_image_pipeline::GetImagePipelineError)
-    pub fn get_image_pipeline(
-        &self,
-    ) -> crate::operation::get_image_pipeline::builders::GetImagePipelineFluentBuilder {
-        crate::operation::get_image_pipeline::builders::GetImagePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_image_pipeline(&self) -> crate::operation::get_image_pipeline::builders::GetImagePipelineFluentBuilder {
+        crate::operation::get_image_pipeline::builders::GetImagePipelineFluentBuilder::new(self.handle.clone())
     }
 }

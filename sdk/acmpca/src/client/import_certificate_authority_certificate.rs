@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`certificate_chain(Blob)`](crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder::certificate_chain) / [`set_certificate_chain(Option<Blob>)`](crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder::set_certificate_chain): <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your Amazon Web Services Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>  <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
     /// - On success, responds with [`ImportCertificateAuthorityCertificateOutput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput)
     /// - On failure, responds with [`SdkError<ImportCertificateAuthorityCertificateError>`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError)
-    pub fn import_certificate_authority_certificate(&self) -> crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder{
-        crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder::new(self.handle.clone())
+    pub fn import_certificate_authority_certificate(
+        &self,
+    ) -> crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder {
+        crate::operation::import_certificate_authority_certificate::builders::ImportCertificateAuthorityCertificateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CancelImageCreationOutput {
 }
 impl CancelImageCreationOutput {
     /// Creates a new builder-style object to manufacture [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder {
-        crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder {
+        crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelImageCreationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -83,18 +79,12 @@ impl CancelImageCreationOutputBuilder {
         &self.client_token
     }
     /// <p>The ARN of the image whose creation this request canceled.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the image whose creation this request canceled.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }

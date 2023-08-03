@@ -23,9 +23,7 @@ impl ResourceDefinitionVersion {
 
 /// A builder for [`ResourceDefinitionVersion`](crate::types::ResourceDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDefinitionVersionBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
@@ -42,10 +40,7 @@ impl ResourceDefinitionVersionBuilder {
         self
     }
     /// A list of resources.
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -55,8 +50,6 @@ impl ResourceDefinitionVersionBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceDefinitionVersion`](crate::types::ResourceDefinitionVersion).
     pub fn build(self) -> crate::types::ResourceDefinitionVersion {
-        crate::types::ResourceDefinitionVersion {
-            resources: self.resources,
-        }
+        crate::types::ResourceDefinitionVersion { resources: self.resources }
     }
 }

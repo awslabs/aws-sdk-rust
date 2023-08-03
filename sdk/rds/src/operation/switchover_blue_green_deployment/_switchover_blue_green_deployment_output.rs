@@ -12,9 +12,7 @@ pub struct SwitchoverBlueGreenDeploymentOutput {
 impl SwitchoverBlueGreenDeploymentOutput {
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn blue_green_deployment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlueGreenDeployment> {
+    pub fn blue_green_deployment(&self) -> ::std::option::Option<&crate::types::BlueGreenDeployment> {
         self.blue_green_deployment.as_ref()
     }
 }
@@ -25,16 +23,14 @@ impl ::aws_http::request_id::RequestId for SwitchoverBlueGreenDeploymentOutput {
 }
 impl SwitchoverBlueGreenDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentOutput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput).
-    pub fn builder() -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder {
         crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`SwitchoverBlueGreenDeploymentOutput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwitchoverBlueGreenDeploymentOutputBuilder {
     pub(crate) blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,
@@ -48,18 +44,13 @@ impl SwitchoverBlueGreenDeploymentOutputBuilder {
     }
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_blue_green_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueGreenDeployment>,
-    ) -> Self {
+    pub fn set_blue_green_deployment(mut self, input: ::std::option::Option<crate::types::BlueGreenDeployment>) -> Self {
         self.blue_green_deployment = input;
         self
     }
     /// <p>Details about a blue/green deployment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_blue_green_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlueGreenDeployment> {
+    pub fn get_blue_green_deployment(&self) -> &::std::option::Option<crate::types::BlueGreenDeployment> {
         &self.blue_green_deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,7 @@ impl SwitchoverBlueGreenDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SwitchoverBlueGreenDeploymentOutput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput
-    {
+    pub fn build(self) -> crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput {
         crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput {
             blue_green_deployment: self.blue_green_deployment,
             _request_id: self._request_id,

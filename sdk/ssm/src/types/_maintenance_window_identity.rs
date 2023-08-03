@@ -233,18 +233,12 @@ impl MaintenanceWindowIdentityBuilder {
         &self.schedule
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_timezone = input;
         self
     }
@@ -295,18 +289,12 @@ impl MaintenanceWindowIdentityBuilder {
         &self.start_date
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn next_execution_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_execution_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_execution_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn set_next_execution_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_execution_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_execution_time = input;
         self
     }

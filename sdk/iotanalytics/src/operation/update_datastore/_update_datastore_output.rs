@@ -19,9 +19,7 @@ impl UpdateDatastoreOutput {
 
 /// A builder for [`UpdateDatastoreOutput`](crate::operation::update_datastore::UpdateDatastoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatastoreOutputBuilder {
     _request_id: Option<String>,
 }

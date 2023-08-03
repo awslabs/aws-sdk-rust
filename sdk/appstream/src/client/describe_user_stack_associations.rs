@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`user_stack_associations(Option<Vec<UserStackAssociation>>)`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput::user_stack_associations): <p>The UserStackAssociation objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeUserStackAssociationsError>`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError)
-    pub fn describe_user_stack_associations(&self) -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsFluentBuilder{
+    pub fn describe_user_stack_associations(
+        &self,
+    ) -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsFluentBuilder {
         crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

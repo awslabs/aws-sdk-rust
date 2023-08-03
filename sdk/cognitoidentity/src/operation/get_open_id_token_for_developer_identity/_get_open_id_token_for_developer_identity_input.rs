@@ -12,14 +12,10 @@ pub struct GetOpenIdTokenForDeveloperIdentityInput {
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
     #[doc(hidden)]
-    pub logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
     #[doc(hidden)]
-    pub principal_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
     /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
@@ -36,19 +32,11 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         self.identity_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn logins(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn logins(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.logins.as_ref()
     }
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-    pub fn principal_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn principal_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.principal_tags.as_ref()
     }
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
@@ -60,41 +48,29 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
 }
 impl GetOpenIdTokenForDeveloperIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdTokenForDeveloperIdentityInput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput).
-    pub fn builder() -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder{
+    pub fn builder() -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder {
         crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOpenIdTokenForDeveloperIdentityInput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
-    pub(crate) logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) principal_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) token_duration: ::std::option::Option<i64>,
 }
 impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -121,32 +97,19 @@ impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
     ///
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn logins(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.logins.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.logins = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.logins = input;
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn get_logins(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.logins
     }
     /// Adds a key-value pair to `principal_tags`.
@@ -167,19 +130,13 @@ impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
     pub fn set_principal_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.principal_tags = input;
         self
     }
     /// <p>Use this operation to configure attribute mappings for custom providers. </p>
-    pub fn get_principal_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.principal_tags
     }
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
@@ -203,20 +160,20 @@ impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
         &self.token_duration
     }
     /// Consumes the builder and constructs a [`GetOpenIdTokenForDeveloperIdentityInput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput {
-                identity_pool_id: self.identity_pool_id
-                ,
-                identity_id: self.identity_id
-                ,
-                logins: self.logins
-                ,
-                principal_tags: self.principal_tags
-                ,
-                token_duration: self.token_duration
-                ,
-            }
+                identity_pool_id: self.identity_pool_id,
+                identity_id: self.identity_id,
+                logins: self.logins,
+                principal_tags: self.principal_tags,
+                token_duration: self.token_duration,
+            },
         )
     }
 }

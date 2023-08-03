@@ -23,15 +23,11 @@ impl GetPoliciesStatsOutput {
         self.access_policy_stats.as_ref()
     }
     /// <p>Information about the security policies in your account.</p>
-    pub fn security_policy_stats(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecurityPolicyStats> {
+    pub fn security_policy_stats(&self) -> ::std::option::Option<&crate::types::SecurityPolicyStats> {
         self.security_policy_stats.as_ref()
     }
     /// <p>Information about the security configurations in your account.</p>
-    pub fn security_config_stats(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecurityConfigStats> {
+    pub fn security_config_stats(&self) -> ::std::option::Option<&crate::types::SecurityConfigStats> {
         self.security_config_stats.as_ref()
     }
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
@@ -46,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetPoliciesStatsOutput {
 }
 impl GetPoliciesStatsOutput {
     /// Creates a new builder-style object to manufacture [`GetPoliciesStatsOutput`](crate::operation::get_policies_stats::GetPoliciesStatsOutput).
-    pub fn builder() -> crate::operation::get_policies_stats::builders::GetPoliciesStatsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_policies_stats::builders::GetPoliciesStatsOutputBuilder {
         crate::operation::get_policies_stats::builders::GetPoliciesStatsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPoliciesStatsOutput`](crate::operation::get_policies_stats::GetPoliciesStatsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPoliciesStatsOutputBuilder {
     pub(crate) access_policy_stats: ::std::option::Option<crate::types::AccessPolicyStats>,
     pub(crate) security_policy_stats: ::std::option::Option<crate::types::SecurityPolicyStats>,
@@ -71,17 +64,12 @@ impl GetPoliciesStatsOutputBuilder {
         self
     }
     /// <p>Information about the data access policies in your account.</p>
-    pub fn set_access_policy_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyStats>,
-    ) -> Self {
+    pub fn set_access_policy_stats(mut self, input: ::std::option::Option<crate::types::AccessPolicyStats>) -> Self {
         self.access_policy_stats = input;
         self
     }
     /// <p>Information about the data access policies in your account.</p>
-    pub fn get_access_policy_stats(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessPolicyStats> {
+    pub fn get_access_policy_stats(&self) -> &::std::option::Option<crate::types::AccessPolicyStats> {
         &self.access_policy_stats
     }
     /// <p>Information about the security policies in your account.</p>
@@ -90,17 +78,12 @@ impl GetPoliciesStatsOutputBuilder {
         self
     }
     /// <p>Information about the security policies in your account.</p>
-    pub fn set_security_policy_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyStats>,
-    ) -> Self {
+    pub fn set_security_policy_stats(mut self, input: ::std::option::Option<crate::types::SecurityPolicyStats>) -> Self {
         self.security_policy_stats = input;
         self
     }
     /// <p>Information about the security policies in your account.</p>
-    pub fn get_security_policy_stats(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecurityPolicyStats> {
+    pub fn get_security_policy_stats(&self) -> &::std::option::Option<crate::types::SecurityPolicyStats> {
         &self.security_policy_stats
     }
     /// <p>Information about the security configurations in your account.</p>
@@ -109,17 +92,12 @@ impl GetPoliciesStatsOutputBuilder {
         self
     }
     /// <p>Information about the security configurations in your account.</p>
-    pub fn set_security_config_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigStats>,
-    ) -> Self {
+    pub fn set_security_config_stats(mut self, input: ::std::option::Option<crate::types::SecurityConfigStats>) -> Self {
         self.security_config_stats = input;
         self
     }
     /// <p>Information about the security configurations in your account.</p>
-    pub fn get_security_config_stats(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecurityConfigStats> {
+    pub fn get_security_config_stats(&self) -> &::std::option::Option<crate::types::SecurityConfigStats> {
         &self.security_config_stats
     }
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>

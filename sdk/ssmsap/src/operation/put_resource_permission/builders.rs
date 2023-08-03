@@ -37,10 +37,7 @@ impl PutResourcePermissionFluentBuilder {
         }
     }
     /// Access the PutResourcePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutResourcePermissionFluentBuilder {
             crate::operation::put_resource_permission::PutResourcePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutResourcePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutResourcePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_permission::PutResourcePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutResourcePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_permission::PutResourcePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl PutResourcePermissionFluentBuilder {
             crate::operation::put_resource_permission::PutResourcePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl PutResourcePermissionFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::PermissionActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
@@ -141,18 +124,12 @@ impl PutResourcePermissionFluentBuilder {
         self.inner.get_action_type()
     }
     /// <p></p>
-    pub fn source_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_resource_arn(input.into());
         self
     }
     /// <p></p>
-    pub fn set_source_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_resource_arn(input);
         self
     }

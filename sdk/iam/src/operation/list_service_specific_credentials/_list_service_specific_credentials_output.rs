@@ -5,15 +5,12 @@
 pub struct ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
     #[doc(hidden)]
-    pub service_specific_credentials:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
+    pub service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
     _request_id: Option<String>,
 }
 impl ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    pub fn service_specific_credentials(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceSpecificCredentialMetadata]> {
+    pub fn service_specific_credentials(&self) -> ::std::option::Option<&[crate::types::ServiceSpecificCredentialMetadata]> {
         self.service_specific_credentials.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ListServiceSpecificCredentialsOutput 
 }
 impl ListServiceSpecificCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceSpecificCredentialsOutput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput).
-    pub fn builder() -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsOutputBuilder {
         crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceSpecificCredentialsOutput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsOutputBuilder {
-    pub(crate) service_specific_credentials:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
+    pub(crate) service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
     _request_id: Option<String>,
 }
 impl ListServiceSpecificCredentialsOutputBuilder {
@@ -45,10 +39,7 @@ impl ListServiceSpecificCredentialsOutputBuilder {
     /// To override the contents of this collection use [`set_service_specific_credentials`](Self::set_service_specific_credentials).
     ///
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    pub fn service_specific_credentials(
-        mut self,
-        input: crate::types::ServiceSpecificCredentialMetadata,
-    ) -> Self {
+    pub fn service_specific_credentials(mut self, input: crate::types::ServiceSpecificCredentialMetadata) -> Self {
         let mut v = self.service_specific_credentials.unwrap_or_default();
         v.push(input);
         self.service_specific_credentials = ::std::option::Option::Some(v);
@@ -57,18 +48,13 @@ impl ListServiceSpecificCredentialsOutputBuilder {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
     pub fn set_service_specific_credentials(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
     ) -> Self {
         self.service_specific_credentials = input;
         self
     }
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    pub fn get_service_specific_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>
-    {
+    pub fn get_service_specific_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>> {
         &self.service_specific_credentials
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -81,10 +67,7 @@ impl ListServiceSpecificCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceSpecificCredentialsOutput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput
-    {
+    pub fn build(self) -> crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput {
         crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput {
             service_specific_credentials: self.service_specific_credentials,
             _request_id: self._request_id,

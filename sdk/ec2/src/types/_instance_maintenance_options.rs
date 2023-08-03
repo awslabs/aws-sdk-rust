@@ -23,9 +23,7 @@ impl InstanceMaintenanceOptions {
 
 /// A builder for [`InstanceMaintenanceOptions`](crate::types::InstanceMaintenanceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceMaintenanceOptionsBuilder {
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }
@@ -36,17 +34,12 @@ impl InstanceMaintenanceOptionsBuilder {
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
         self.auto_recovery = input;
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
     /// Consumes the builder and constructs a [`InstanceMaintenanceOptions`](crate::types::InstanceMaintenanceOptions).

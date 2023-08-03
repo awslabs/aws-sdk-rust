@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput) with field(s):
     ///   - [`diff(Option<String>)`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput::diff): <p>The difference between schemas as a string in JsonPatch format.</p>
     /// - On failure, responds with [`SdkError<GetSchemaVersionsDiffError>`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffError)
-    pub fn get_schema_versions_diff(
-        &self,
-    ) -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffFluentBuilder
-    {
+    pub fn get_schema_versions_diff(&self) -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffFluentBuilder {
         crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffFluentBuilder::new(self.handle.clone())
     }
 }

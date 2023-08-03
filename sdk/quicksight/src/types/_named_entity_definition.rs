@@ -51,9 +51,7 @@ impl NamedEntityDefinition {
 
 /// A builder for [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamedEntityDefinitionBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) property_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl NamedEntityDefinitionBuilder {
         &self.field_name
     }
     /// <p>The property name to be used for the named entity.</p>
-    pub fn property_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property name to be used for the named entity.</p>
-    pub fn set_property_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_name = input;
         self
     }
@@ -102,10 +94,7 @@ impl NamedEntityDefinitionBuilder {
         self
     }
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
-    pub fn set_property_role(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyRole>,
-    ) -> Self {
+    pub fn set_property_role(mut self, input: ::std::option::Option<crate::types::PropertyRole>) -> Self {
         self.property_role = input;
         self
     }
@@ -119,10 +108,7 @@ impl NamedEntityDefinitionBuilder {
         self
     }
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
-    pub fn set_property_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyUsage>,
-    ) -> Self {
+    pub fn set_property_usage(mut self, input: ::std::option::Option<crate::types::PropertyUsage>) -> Self {
         self.property_usage = input;
         self
     }
@@ -136,10 +122,7 @@ impl NamedEntityDefinitionBuilder {
         self
     }
     /// <p>The definition of a metric.</p>
-    pub fn set_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
-    ) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>) -> Self {
         self.metric = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateByteMatchSetOutput`](crate::operation::update_byte_match_set::UpdateByteMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_byte_match_set::UpdateByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateByteMatchSetError>`](crate::operation::update_byte_match_set::UpdateByteMatchSetError)
-    pub fn update_byte_match_set(
-        &self,
-    ) -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetFluentBuilder {
-        crate::operation::update_byte_match_set::builders::UpdateByteMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_byte_match_set(&self) -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetFluentBuilder {
+        crate::operation::update_byte_match_set::builders::UpdateByteMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

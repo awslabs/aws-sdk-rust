@@ -66,9 +66,7 @@ impl LaunchTemplateOverrides {
     /// <p>The instance requirements. When you specify instance requirements, Amazon EC2 will identify instance types with the provided requirements, and then use your On-Demand and Spot allocation strategies to launch instances from these instance types, in the same way as when you specify a list of instance types.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirements> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
 }
@@ -81,9 +79,7 @@ impl LaunchTemplateOverrides {
 
 /// A builder for [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateOverridesBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
@@ -100,10 +96,7 @@ impl LaunchTemplateOverridesBuilder {
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -146,18 +139,12 @@ impl LaunchTemplateOverridesBuilder {
         &self.subnet_id
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -212,19 +199,14 @@ impl LaunchTemplateOverridesBuilder {
     /// <p>The instance requirements. When you specify instance requirements, Amazon EC2 will identify instance types with the provided requirements, and then use your On-Demand and Spot allocation strategies to launch instances from these instance types, in the same way as when you specify a list of instance types.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn set_instance_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRequirements>,
-    ) -> Self {
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirements>) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p>The instance requirements. When you specify instance requirements, Amazon EC2 will identify instance types with the provided requirements, and then use your On-Demand and Spot allocation strategies to launch instances from these instance types, in the same way as when you specify a list of instance types.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
     /// Consumes the builder and constructs a [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).

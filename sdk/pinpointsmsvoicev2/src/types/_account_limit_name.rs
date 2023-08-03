@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccountLimitName {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AccountLimitName {
             "OPT_OUT_LISTS" => AccountLimitName::OptOutLists,
             "PHONE_NUMBERS" => AccountLimitName::PhoneNumbers,
             "POOLS" => AccountLimitName::Pools,
-            other => {
-                AccountLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccountLimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AccountLimitName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFIGURATION_SETS",
-            "OPT_OUT_LISTS",
-            "PHONE_NUMBERS",
-            "POOLS",
-        ]
+        &["CONFIGURATION_SETS", "OPT_OUT_LISTS", "PHONE_NUMBERS", "POOLS"]
     }
 }
 impl ::std::convert::AsRef<str> for AccountLimitName {

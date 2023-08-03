@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`networks(Option<Vec<Network>>)`](crate::operation::list_networks::ListNetworksOutput::networks): <p>The networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_networks::ListNetworksOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListNetworksError>`](crate::operation::list_networks::ListNetworksError)
-    pub fn list_networks(
-        &self,
-    ) -> crate::operation::list_networks::builders::ListNetworksFluentBuilder {
-        crate::operation::list_networks::builders::ListNetworksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_networks(&self) -> crate::operation::list_networks::builders::ListNetworksFluentBuilder {
+        crate::operation::list_networks::builders::ListNetworksFluentBuilder::new(self.handle.clone())
     }
 }

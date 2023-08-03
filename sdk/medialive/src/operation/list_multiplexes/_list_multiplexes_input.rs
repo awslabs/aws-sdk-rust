@@ -30,9 +30,7 @@ impl ListMultiplexesInput {
 
 /// A builder for [`ListMultiplexesInput`](crate::operation::list_multiplexes::ListMultiplexesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiplexesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl ListMultiplexesInputBuilder {
     /// Consumes the builder and constructs a [`ListMultiplexesInput`](crate::operation::list_multiplexes::ListMultiplexesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multiplexes::ListMultiplexesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_multiplexes::ListMultiplexesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_multiplexes::ListMultiplexesInput {
             max_results: self.max_results,
             next_token: self.next_token,

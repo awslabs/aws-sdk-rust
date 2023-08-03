@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput::start_time): <p>The time the maintenance window started running.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput::end_time): <p>The time the maintenance window finished running.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionError>`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionError)
-    pub fn get_maintenance_window_execution(&self) -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder{
+    pub fn get_maintenance_window_execution(
+        &self,
+    ) -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder {
         crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder::new(self.handle.clone())
     }
 }

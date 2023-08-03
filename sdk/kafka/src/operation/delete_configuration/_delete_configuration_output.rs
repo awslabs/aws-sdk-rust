@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationOutput {
 }
 impl DeleteConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationOutput`](crate::operation::delete_configuration::DeleteConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder {
-        crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder {
+        crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationOutput`](crate::operation::delete_configuration::DeleteConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ConfigurationState>,
@@ -66,10 +62,7 @@ impl DeleteConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
         self.state = input;
         self
     }

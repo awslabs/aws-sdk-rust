@@ -46,9 +46,7 @@ impl GetIpSetInput {
 
 /// A builder for [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -113,12 +111,7 @@ impl GetIpSetInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ip_set::GetIpSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ip_set::GetIpSetInput {
             name: self.name,
             scope: self.scope,

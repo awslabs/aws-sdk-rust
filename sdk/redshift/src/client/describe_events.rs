@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p>A list of <code>Event</code> instances. </p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
-    pub fn describe_events(
-        &self,
-    ) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
+        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
     }
 }

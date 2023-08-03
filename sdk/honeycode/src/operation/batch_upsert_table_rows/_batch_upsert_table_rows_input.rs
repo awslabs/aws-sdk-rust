@@ -44,17 +44,14 @@ impl BatchUpsertTableRowsInput {
 }
 impl BatchUpsertTableRowsInput {
     /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsInput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsInputBuilder {
+    pub fn builder() -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsInputBuilder {
         crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpsertTableRowsInput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
@@ -110,35 +107,24 @@ impl BatchUpsertTableRowsInputBuilder {
     }
     /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn set_rows_to_upsert(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>>,
-    ) -> Self {
+    pub fn set_rows_to_upsert(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>>) -> Self {
         self.rows_to_upsert = input;
         self
     }
     /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
     /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn get_rows_to_upsert(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>> {
+    pub fn get_rows_to_upsert(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>> {
         &self.rows_to_upsert
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -150,17 +136,13 @@ impl BatchUpsertTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpsertTableRowsInput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput {
-                workbook_id: self.workbook_id,
-                table_id: self.table_id,
-                rows_to_upsert: self.rows_to_upsert,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput {
+            workbook_id: self.workbook_id,
+            table_id: self.table_id,
+            rows_to_upsert: self.rows_to_upsert,
+            client_request_token: self.client_request_token,
+        })
     }
 }

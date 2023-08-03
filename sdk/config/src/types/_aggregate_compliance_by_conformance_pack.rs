@@ -24,9 +24,7 @@ impl AggregateComplianceByConformancePack {
         self.conformance_pack_name.as_deref()
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn compliance(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregateConformancePackCompliance> {
+    pub fn compliance(&self) -> ::std::option::Option<&crate::types::AggregateConformancePackCompliance> {
         self.compliance.as_ref()
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
@@ -47,9 +45,7 @@ impl AggregateComplianceByConformancePack {
 
 /// A builder for [`AggregateComplianceByConformancePack`](crate::types::AggregateComplianceByConformancePack).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateComplianceByConformancePackBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance: ::std::option::Option<crate::types::AggregateConformancePackCompliance>,
@@ -58,18 +54,12 @@ pub struct AggregateComplianceByConformancePackBuilder {
 }
 impl AggregateComplianceByConformancePackBuilder {
     /// <p>The name of the conformance pack.</p>
-    pub fn conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the conformance pack.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conformance_pack_name = input;
         self
     }
@@ -83,17 +73,12 @@ impl AggregateComplianceByConformancePackBuilder {
         self
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn set_compliance(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregateConformancePackCompliance>,
-    ) -> Self {
+    pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::AggregateConformancePackCompliance>) -> Self {
         self.compliance = input;
         self
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn get_compliance(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregateConformancePackCompliance> {
+    pub fn get_compliance(&self) -> &::std::option::Option<crate::types::AggregateConformancePackCompliance> {
         &self.compliance
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>

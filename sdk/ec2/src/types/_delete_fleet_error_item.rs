@@ -30,9 +30,7 @@ impl DeleteFleetErrorItem {
 
 /// A builder for [`DeleteFleetErrorItem`](crate::types::DeleteFleetErrorItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetErrorItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DeleteFleetError>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DeleteFleetErrorItemBuilder {
         self
     }
     /// <p>The error.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteFleetError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::DeleteFleetError>) -> Self {
         self.error = input;
         self
     }

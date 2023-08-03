@@ -22,36 +22,26 @@ impl DescribeLifecycleHooksInput {
 }
 impl DescribeLifecycleHooksInput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder {
         crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHooksInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_hook_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeLifecycleHooksInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -64,41 +54,29 @@ impl DescribeLifecycleHooksInputBuilder {
     /// To override the contents of this collection use [`set_lifecycle_hook_names`](Self::set_lifecycle_hook_names).
     ///
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn lifecycle_hook_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_hook_names.unwrap_or_default();
         v.push(input.into());
         self.lifecycle_hook_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn set_lifecycle_hook_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lifecycle_hook_names = input;
         self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn get_lifecycle_hook_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_hook_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lifecycle_hook_names
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                lifecycle_hook_names: self.lifecycle_hook_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            lifecycle_hook_names: self.lifecycle_hook_names,
+        })
     }
 }

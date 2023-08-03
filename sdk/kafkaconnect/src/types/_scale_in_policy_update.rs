@@ -23,9 +23,7 @@ impl ScaleInPolicyUpdate {
 
 /// A builder for [`ScaleInPolicyUpdate`](crate::types::ScaleInPolicyUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScaleInPolicyUpdateBuilder {
     pub(crate) cpu_utilization_percentage: ::std::option::Option<i32>,
 }

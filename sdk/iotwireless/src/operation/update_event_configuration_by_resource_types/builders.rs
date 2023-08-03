@@ -5,16 +5,16 @@ pub use crate::operation::update_event_configuration_by_resource_types::_update_
 
 impl UpdateEventConfigurationByResourceTypesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_event_configuration_by_resource_types();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder,
+    inner: crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder,
 }
 impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// Creates a new `UpdateEventConfigurationByResourceTypes`.
@@ -37,15 +37,24 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
         }
     }
     /// Access the UpdateEventConfigurationByResourceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,64 +93,61 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn device_registration_state(
-        mut self,
-        input: crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn device_registration_state(mut self, input: crate::types::DeviceRegistrationStateResourceTypeEventConfiguration) -> Self {
         self.inner = self.inner.device_registration_state(input);
         self
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_device_registration_state(
         mut self,
-        input: ::std::option::Option<
-            crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_device_registration_state(input);
         self
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn get_device_registration_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>
-    {
+    pub fn get_device_registration_state(&self) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
         self.inner.get_device_registration_state()
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn proximity(
-        mut self,
-        input: crate::types::ProximityResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn proximity(mut self, input: crate::types::ProximityResourceTypeEventConfiguration) -> Self {
         self.inner = self.inner.proximity(input);
         self
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn set_proximity(
-        mut self,
-        input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_proximity(mut self, input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>) -> Self {
         self.inner = self.inner.set_proximity(input);
         self
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn get_proximity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
+    pub fn get_proximity(&self) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
         self.inner.get_proximity()
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
@@ -147,64 +156,43 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
         self
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn set_join(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_join(mut self, input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>) -> Self {
         self.inner = self.inner.set_join(input);
         self
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn get_join(
-        &self,
-    ) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
         self.inner.get_join()
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn connection_status(
-        mut self,
-        input: crate::types::ConnectionStatusResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn connection_status(mut self, input: crate::types::ConnectionStatusResourceTypeEventConfiguration) -> Self {
         self.inner = self.inner.connection_status(input);
         self
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>) -> Self {
         self.inner = self.inner.set_connection_status(input);
         self
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn get_connection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
         self.inner.get_connection_status()
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn message_delivery_status(
-        mut self,
-        input: crate::types::MessageDeliveryStatusResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn message_delivery_status(mut self, input: crate::types::MessageDeliveryStatusResourceTypeEventConfiguration) -> Self {
         self.inner = self.inner.message_delivery_status(input);
         self
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn set_message_delivery_status(
         mut self,
-        input: ::std::option::Option<
-            crate::types::MessageDeliveryStatusResourceTypeEventConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_message_delivery_status(input);
         self
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn get_message_delivery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>
-    {
+    pub fn get_message_delivery_status(&self) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
         self.inner.get_message_delivery_status()
     }
 }

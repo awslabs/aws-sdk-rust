@@ -30,9 +30,7 @@ impl ChannelNameCondition {
 
 /// A builder for [`ChannelNameCondition`](crate::types::ChannelNameCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelNameConditionBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) comparison_value: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl ChannelNameConditionBuilder {
         self
     }
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn comparison_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value to compare.</p>
-    pub fn set_comparison_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_comparison_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comparison_value = input;
         self
     }

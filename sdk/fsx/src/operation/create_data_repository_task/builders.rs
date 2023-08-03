@@ -26,7 +26,7 @@ impl CreateDataRepositoryTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder,
+    inner: crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder,
 }
 impl CreateDataRepositoryTaskFluentBuilder {
     /// Creates a new `CreateDataRepositoryTask`.
@@ -37,7 +37,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         }
     }
     /// Access the CreateDataRepositoryTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
             crate::operation::create_data_repository_task::CreateDataRepositoryTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_repository_task::CreateDataRepositoryTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_repository_task::CreateDataRepositoryTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_repository_task::CreateDataRepositoryTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
             crate::operation::create_data_repository_task::CreateDataRepositoryTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_repository_task::CreateDataRepositoryTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self
     }
     /// <p>Specifies the type of data repository task to create.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryTaskType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -155,10 +141,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
     /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
     /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
     /// </ul>
-    pub fn set_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_paths(input);
         self
     }
@@ -171,18 +154,12 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self.inner.get_paths()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -196,10 +173,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-    pub fn set_report(
-        mut self,
-        input: ::std::option::Option<crate::types::CompletionReport>,
-    ) -> Self {
+    pub fn set_report(mut self, input: ::std::option::Option<crate::types::CompletionReport>) -> Self {
         self.inner = self.inner.set_report(input);
         self
     }
@@ -208,18 +182,12 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self.inner.get_report()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -237,10 +205,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

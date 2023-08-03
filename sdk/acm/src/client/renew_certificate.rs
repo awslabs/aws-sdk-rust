@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`certificate_arn(impl ::std::convert::Into<String>)`](crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder::set_certificate_arn): <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     /// - On success, responds with [`RenewCertificateOutput`](crate::operation::renew_certificate::RenewCertificateOutput)
     /// - On failure, responds with [`SdkError<RenewCertificateError>`](crate::operation::renew_certificate::RenewCertificateError)
-    pub fn renew_certificate(
-        &self,
-    ) -> crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder {
-        crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn renew_certificate(&self) -> crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder {
+        crate::operation::renew_certificate::builders::RenewCertificateFluentBuilder::new(self.handle.clone())
     }
 }

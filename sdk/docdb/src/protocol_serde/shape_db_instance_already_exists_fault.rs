@@ -3,10 +3,7 @@
 pub fn de_db_instance_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder,
-) -> Result<
-    crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

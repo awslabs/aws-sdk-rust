@@ -14,10 +14,7 @@ pub fn ser_code_content_update(
     if let Some(var_3) = &input.s3_content_location_update {
         #[allow(unused_mut)]
         let mut object_4 = object.key("S3ContentLocationUpdate").start_object();
-        crate::protocol_serde::shape_s3_content_location_update::ser_s3_content_location_update(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_s3_content_location_update::ser_s3_content_location_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

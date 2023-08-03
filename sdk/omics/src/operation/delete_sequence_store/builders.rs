@@ -37,9 +37,7 @@ impl DeleteSequenceStoreFluentBuilder {
         }
     }
     /// Access the DeleteSequenceStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_sequence_store::builders::DeleteSequenceStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSequenceStoreFluentBuilder {
             crate::operation::delete_sequence_store::DeleteSequenceStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sequence_store::DeleteSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sequence_store::DeleteSequenceStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSequenceStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSequenceStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sequence_store::DeleteSequenceStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sequence_store::DeleteSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sequence_store::DeleteSequenceStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSequenceStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sequence_store::DeleteSequenceStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sequence_store::DeleteSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sequence_store::DeleteSequenceStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteSequenceStoreFluentBuilder {
             crate::operation::delete_sequence_store::DeleteSequenceStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sequence_store::DeleteSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sequence_store::DeleteSequenceStoreError>,
     > {
         self.customize_middleware().await
     }

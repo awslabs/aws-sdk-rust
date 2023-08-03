@@ -5,8 +5,7 @@
 pub struct ListExperienceEntitiesOutput {
     /// <p>An array of summary information for one or more users or groups.</p>
     #[doc(hidden)]
-    pub summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
+    pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListExperienceEntitiesOutput {
 }
 impl ListExperienceEntitiesOutput {
     /// <p>An array of summary information for one or more users or groups.</p>
-    pub fn summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExperienceEntitiesSummary]> {
+    pub fn summary_items(&self) -> ::std::option::Option<&[crate::types::ExperienceEntitiesSummary]> {
         self.summary_items.as_deref()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListExperienceEntitiesOutput {
 }
 impl ListExperienceEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListExperienceEntitiesOutput`](crate::operation::list_experience_entities::ListExperienceEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_experience_entities::builders::ListExperienceEntitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_experience_entities::builders::ListExperienceEntitiesOutputBuilder {
         crate::operation::list_experience_entities::builders::ListExperienceEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListExperienceEntitiesOutput`](crate::operation::list_experience_entities::ListExperienceEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperienceEntitiesOutputBuilder {
-    pub(crate) summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListExperienceEntitiesOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more users or groups.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>An array of summary information for one or more users or groups.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>

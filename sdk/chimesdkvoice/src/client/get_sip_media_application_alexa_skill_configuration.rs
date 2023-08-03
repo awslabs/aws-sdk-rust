@@ -7,7 +7,10 @@ impl super::Client {
     /// - On success, responds with [`GetSipMediaApplicationAlexaSkillConfigurationOutput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationOutput) with field(s):
     ///   - [`sip_media_application_alexa_skill_configuration(Option<SipMediaApplicationAlexaSkillConfiguration>)`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationOutput::sip_media_application_alexa_skill_configuration): <p>Returns the Alexa Skill configuration.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationAlexaSkillConfigurationError>`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError)
-    pub fn get_sip_media_application_alexa_skill_configuration(&self) -> crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder{
+    pub fn get_sip_media_application_alexa_skill_configuration(
+        &self,
+    ) -> crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder
+    {
         crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

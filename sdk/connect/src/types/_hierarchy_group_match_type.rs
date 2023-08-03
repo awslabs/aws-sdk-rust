@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HierarchyGroupMatchType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HierarchyGroupMatchType {
         match s {
             "EXACT" => HierarchyGroupMatchType::Exact,
             "WITH_CHILD_GROUPS" => HierarchyGroupMatchType::WithChildGroups,
-            other => HierarchyGroupMatchType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HierarchyGroupMatchType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

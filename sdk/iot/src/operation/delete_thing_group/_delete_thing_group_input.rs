@@ -22,35 +22,26 @@ impl DeleteThingGroupInput {
 }
 impl DeleteThingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
-    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder {
         crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,
 }
 impl DeleteThingGroupInputBuilder {
     /// <p>The name of the thing group to delete.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing group to delete.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thing_group::DeleteThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_thing_group::DeleteThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                expected_version: self.expected_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_thing_group::DeleteThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_thing_group::DeleteThingGroupInput {
+            thing_group_name: self.thing_group_name,
+            expected_version: self.expected_version,
+        })
     }
 }

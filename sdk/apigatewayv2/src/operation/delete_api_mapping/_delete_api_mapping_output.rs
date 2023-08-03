@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApiMappingOutput {
 }
 impl DeleteApiMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApiMappingOutput`](crate::operation::delete_api_mapping::DeleteApiMappingOutput).
-    pub fn builder() -> crate::operation::delete_api_mapping::builders::DeleteApiMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_api_mapping::builders::DeleteApiMappingOutputBuilder {
         crate::operation::delete_api_mapping::builders::DeleteApiMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApiMappingOutput`](crate::operation::delete_api_mapping::DeleteApiMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApiMappingOutputBuilder {
     _request_id: Option<String>,
 }

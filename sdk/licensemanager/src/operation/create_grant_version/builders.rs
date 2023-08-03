@@ -10,10 +10,7 @@ impl CreateGrantVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_grant_version::CreateGrantVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_grant_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateGrantVersionFluentBuilder {
         }
     }
     /// Access the CreateGrantVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_grant_version::builders::CreateGrantVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_grant_version::builders::CreateGrantVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateGrantVersionFluentBuilder {
             crate::operation::create_grant_version::CreateGrantVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateGrantVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateGrantVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_grant_version::CreateGrantVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateGrantVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_grant_version::CreateGrantVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateGrantVersionFluentBuilder {
             crate::operation::create_grant_version::CreateGrantVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_grant_version::CreateGrantVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_grant_version::CreateGrantVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -174,17 +158,12 @@ impl CreateGrantVersionFluentBuilder {
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn set_allowed_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
-    ) -> Self {
+    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
         self.inner = self.inner.set_allowed_operations(input);
         self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn get_allowed_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         self.inner.get_allowed_operations()
     }
     /// <p>Grant status.</p>
@@ -202,18 +181,12 @@ impl CreateGrantVersionFluentBuilder {
         self.inner.get_status()
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_reason(input.into());
         self
     }
     /// <p>Grant status reason.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_reason(input);
         self
     }
@@ -222,18 +195,12 @@ impl CreateGrantVersionFluentBuilder {
         self.inner.get_status_reason()
     }
     /// <p>Current version of the grant.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>Current version of the grant.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }

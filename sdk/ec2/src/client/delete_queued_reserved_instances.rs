@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`successful_queued_purchase_deletions(Option<Vec<SuccessfulQueuedPurchaseDeletion>>)`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput::successful_queued_purchase_deletions): <p>Information about the queued purchases that were successfully deleted.</p>
     ///   - [`failed_queued_purchase_deletions(Option<Vec<FailedQueuedPurchaseDeletion>>)`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput::failed_queued_purchase_deletions): <p>Information about the queued purchases that could not be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteQueuedReservedInstancesError>`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError)
-    pub fn delete_queued_reserved_instances(&self) -> crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesFluentBuilder{
+    pub fn delete_queued_reserved_instances(
+        &self,
+    ) -> crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesFluentBuilder {
         crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesFluentBuilder::new(self.handle.clone())
     }
 }

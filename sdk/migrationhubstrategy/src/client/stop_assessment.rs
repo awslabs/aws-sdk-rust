@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`assessment_id(impl ::std::convert::Into<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::set_assessment_id): <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     /// - On success, responds with [`StopAssessmentOutput`](crate::operation::stop_assessment::StopAssessmentOutput)
     /// - On failure, responds with [`SdkError<StopAssessmentError>`](crate::operation::stop_assessment::StopAssessmentError)
-    pub fn stop_assessment(
-        &self,
-    ) -> crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder {
-        crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_assessment(&self) -> crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder {
+        crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

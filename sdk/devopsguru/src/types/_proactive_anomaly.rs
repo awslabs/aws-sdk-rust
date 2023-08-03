@@ -69,15 +69,11 @@ impl ProactiveAnomaly {
         self.anomaly_time_range.as_ref()
     }
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
-    pub fn anomaly_reported_time_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyReportedTimeRange> {
+    pub fn anomaly_reported_time_range(&self) -> ::std::option::Option<&crate::types::AnomalyReportedTimeRange> {
         self.anomaly_reported_time_range.as_ref()
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    pub fn prediction_time_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictionTimeRange> {
+    pub fn prediction_time_range(&self) -> ::std::option::Option<&crate::types::PredictionTimeRange> {
         self.prediction_time_range.as_ref()
     }
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
@@ -118,25 +114,21 @@ impl ProactiveAnomaly {
 
 /// A builder for [`ProactiveAnomaly`](crate::types::ProactiveAnomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProactiveAnomalyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::AnomalySeverity>,
     pub(crate) status: ::std::option::Option<crate::types::AnomalyStatus>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) anomaly_time_range: ::std::option::Option<crate::types::AnomalyTimeRange>,
-    pub(crate) anomaly_reported_time_range:
-        ::std::option::Option<crate::types::AnomalyReportedTimeRange>,
+    pub(crate) anomaly_reported_time_range: ::std::option::Option<crate::types::AnomalyReportedTimeRange>,
     pub(crate) prediction_time_range: ::std::option::Option<crate::types::PredictionTimeRange>,
     pub(crate) source_details: ::std::option::Option<crate::types::AnomalySourceDetails>,
     pub(crate) associated_insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     pub(crate) limit: ::std::option::Option<f64>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::AnomalySourceMetadata>,
-    pub(crate) anomaly_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>>,
+    pub(crate) anomaly_resources: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ProactiveAnomalyBuilder {
@@ -160,10 +152,7 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p>The severity of the anomaly. The severity of anomalies that generate an insight determine that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::AnomalySeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -191,10 +180,7 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p> The time of the anomaly's most recent update. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -208,10 +194,7 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
-    pub fn set_anomaly_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyTimeRange>,
-    ) -> Self {
+    pub fn set_anomaly_time_range(mut self, input: ::std::option::Option<crate::types::AnomalyTimeRange>) -> Self {
         self.anomaly_time_range = input;
         self
     }
@@ -220,25 +203,17 @@ impl ProactiveAnomalyBuilder {
         &self.anomaly_time_range
     }
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
-    pub fn anomaly_reported_time_range(
-        mut self,
-        input: crate::types::AnomalyReportedTimeRange,
-    ) -> Self {
+    pub fn anomaly_reported_time_range(mut self, input: crate::types::AnomalyReportedTimeRange) -> Self {
         self.anomaly_reported_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
-    pub fn set_anomaly_reported_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyReportedTimeRange>,
-    ) -> Self {
+    pub fn set_anomaly_reported_time_range(mut self, input: ::std::option::Option<crate::types::AnomalyReportedTimeRange>) -> Self {
         self.anomaly_reported_time_range = input;
         self
     }
     /// <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>
-    pub fn get_anomaly_reported_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyReportedTimeRange> {
+    pub fn get_anomaly_reported_time_range(&self) -> &::std::option::Option<crate::types::AnomalyReportedTimeRange> {
         &self.anomaly_reported_time_range
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
@@ -247,17 +222,12 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    pub fn set_prediction_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictionTimeRange>,
-    ) -> Self {
+    pub fn set_prediction_time_range(mut self, input: ::std::option::Option<crate::types::PredictionTimeRange>) -> Self {
         self.prediction_time_range = input;
         self
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    pub fn get_prediction_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+    pub fn get_prediction_time_range(&self) -> &::std::option::Option<crate::types::PredictionTimeRange> {
         &self.prediction_time_range
     }
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
@@ -266,10 +236,7 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>
-    pub fn set_source_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySourceDetails>,
-    ) -> Self {
+    pub fn set_source_details(mut self, input: ::std::option::Option<crate::types::AnomalySourceDetails>) -> Self {
         self.source_details = input;
         self
     }
@@ -278,18 +245,12 @@ impl ProactiveAnomalyBuilder {
         &self.source_details
     }
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
-    pub fn associated_insight_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_insight_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the insight that contains this anomaly. An insight is composed of related anomalies. </p>
-    pub fn set_associated_insight_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_insight_id = input;
         self
     }
@@ -303,17 +264,12 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::ResourceCollection>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::ResourceCollection> {
         &self.resource_collection
     }
     /// <p> A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold is related to the anomalous behavior that generated this anomaly. </p>
@@ -336,17 +292,12 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p>The metadata for the anomaly.</p>
-    pub fn set_source_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySourceMetadata>,
-    ) -> Self {
+    pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::AnomalySourceMetadata>) -> Self {
         self.source_metadata = input;
         self
     }
     /// <p>The metadata for the anomaly.</p>
-    pub fn get_source_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalySourceMetadata> {
+    pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::AnomalySourceMetadata> {
         &self.source_metadata
     }
     /// Appends an item to `anomaly_resources`.
@@ -361,17 +312,12 @@ impl ProactiveAnomalyBuilder {
         self
     }
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
-    pub fn set_anomaly_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>>,
-    ) -> Self {
+    pub fn set_anomaly_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>>) -> Self {
         self.anomaly_resources = input;
         self
     }
     /// <p>Information about a resource in which DevOps Guru detected anomalous behavior.</p>
-    pub fn get_anomaly_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>> {
+    pub fn get_anomaly_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyResource>> {
         &self.anomaly_resources
     }
     /// <p> A description of the proactive anomaly. </p>

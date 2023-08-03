@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTransformJobOutput`](crate::operation::create_transform_job::CreateTransformJobOutput) with field(s):
     ///   - [`transform_job_arn(Option<String>)`](crate::operation::create_transform_job::CreateTransformJobOutput::transform_job_arn): <p>The Amazon Resource Name (ARN) of the transform job.</p>
     /// - On failure, responds with [`SdkError<CreateTransformJobError>`](crate::operation::create_transform_job::CreateTransformJobError)
-    pub fn create_transform_job(
-        &self,
-    ) -> crate::operation::create_transform_job::builders::CreateTransformJobFluentBuilder {
-        crate::operation::create_transform_job::builders::CreateTransformJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_transform_job(&self) -> crate::operation::create_transform_job::builders::CreateTransformJobFluentBuilder {
+        crate::operation::create_transform_job::builders::CreateTransformJobFluentBuilder::new(self.handle.clone())
     }
 }

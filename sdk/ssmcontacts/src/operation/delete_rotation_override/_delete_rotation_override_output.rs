@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRotationOverrideOutput {
 }
 impl DeleteRotationOverrideOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRotationOverrideOutput`](crate::operation::delete_rotation_override::DeleteRotationOverrideOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_rotation_override::builders::DeleteRotationOverrideOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_rotation_override::builders::DeleteRotationOverrideOutputBuilder {
         crate::operation::delete_rotation_override::builders::DeleteRotationOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRotationOverrideOutput`](crate::operation::delete_rotation_override::DeleteRotationOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRotationOverrideOutputBuilder {
     _request_id: Option<String>,
 }

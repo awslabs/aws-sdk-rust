@@ -10,10 +10,7 @@ impl DeclineHandshakeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::decline_handshake::DeclineHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_handshake::DeclineHandshakeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_handshake::DeclineHandshakeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.decline_handshake();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeclineHandshakeFluentBuilder {
         }
     }
     /// Access the DeclineHandshake as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeclineHandshakeFluentBuilder {
             crate::operation::decline_handshake::DeclineHandshake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_handshake::DeclineHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_handshake::DeclineHandshakeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeclineHandshakeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeclineHandshakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decline_handshake::DeclineHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_handshake::DeclineHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_handshake::DeclineHandshakeError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeclineHandshakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decline_handshake::DeclineHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_handshake::DeclineHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_handshake::DeclineHandshakeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeclineHandshakeFluentBuilder {
             crate::operation::decline_handshake::DeclineHandshake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decline_handshake::DeclineHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decline_handshake::DeclineHandshakeError>,
     > {
         self.customize_middleware().await
     }

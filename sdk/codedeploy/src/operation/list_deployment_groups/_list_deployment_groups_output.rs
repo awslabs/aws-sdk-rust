@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for ListDeploymentGroupsOutput {
 }
 impl ListDeploymentGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentGroupsOutput`](crate::operation::list_deployment_groups::ListDeploymentGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsOutputBuilder {
         crate::operation::list_deployment_groups::builders::ListDeploymentGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentGroupsOutput`](crate::operation::list_deployment_groups::ListDeploymentGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentGroupsOutputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,18 +52,12 @@ pub struct ListDeploymentGroupsOutputBuilder {
 }
 impl ListDeploymentGroupsOutputBuilder {
     /// <p>The application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -79,27 +70,19 @@ impl ListDeploymentGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
     ///
     /// <p>A list of deployment group names.</p>
-    pub fn deployment_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_groups.unwrap_or_default();
         v.push(input.into());
         self.deployment_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of deployment group names.</p>
-    pub fn set_deployment_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_groups = input;
         self
     }
     /// <p>A list of deployment group names.</p>
-    pub fn get_deployment_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_groups
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>

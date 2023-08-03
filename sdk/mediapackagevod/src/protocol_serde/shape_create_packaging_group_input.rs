@@ -12,10 +12,7 @@ pub fn ser_create_packaging_group_input(
     if let Some(var_3) = &input.egress_access_logs {
         #[allow(unused_mut)]
         let mut object_4 = object.key("egressAccessLogs").start_object();
-        crate::protocol_serde::shape_egress_access_logs::ser_egress_access_logs(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_egress_access_logs::ser_egress_access_logs(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.id {

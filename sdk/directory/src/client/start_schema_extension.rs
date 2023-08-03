@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput) with field(s):
     ///   - [`schema_extension_id(Option<String>)`](crate::operation::start_schema_extension::StartSchemaExtensionOutput::schema_extension_id): <p>The identifier of the schema extension that will be applied.</p>
     /// - On failure, responds with [`SdkError<StartSchemaExtensionError>`](crate::operation::start_schema_extension::StartSchemaExtensionError)
-    pub fn start_schema_extension(
-        &self,
-    ) -> crate::operation::start_schema_extension::builders::StartSchemaExtensionFluentBuilder {
-        crate::operation::start_schema_extension::builders::StartSchemaExtensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_schema_extension(&self) -> crate::operation::start_schema_extension::builders::StartSchemaExtensionFluentBuilder {
+        crate::operation::start_schema_extension::builders::StartSchemaExtensionFluentBuilder::new(self.handle.clone())
     }
 }

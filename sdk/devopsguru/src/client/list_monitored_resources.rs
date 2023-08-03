@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`monitored_resource_identifiers(Option<Vec<MonitoredResourceIdentifier>>)`](crate::operation::list_monitored_resources::ListMonitoredResourcesOutput::monitored_resource_identifiers): <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitored_resources::ListMonitoredResourcesOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListMonitoredResourcesError>`](crate::operation::list_monitored_resources::ListMonitoredResourcesError)
-    pub fn list_monitored_resources(
-        &self,
-    ) -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesFluentBuilder
-    {
+    pub fn list_monitored_resources(&self) -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesFluentBuilder {
         crate::operation::list_monitored_resources::builders::ListMonitoredResourcesFluentBuilder::new(self.handle.clone())
     }
 }

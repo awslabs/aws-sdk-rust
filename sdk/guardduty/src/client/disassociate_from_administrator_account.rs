@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
     /// - On success, responds with [`DisassociateFromAdministratorAccountOutput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateFromAdministratorAccountError>`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountError)
-    pub fn disassociate_from_administrator_account(&self) -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder{
-        crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_from_administrator_account(
+        &self,
+    ) -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder {
+        crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

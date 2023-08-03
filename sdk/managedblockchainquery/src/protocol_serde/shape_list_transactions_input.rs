@@ -9,10 +9,7 @@ pub fn ser_list_transactions_input(
     if let Some(var_2) = &input.from_blockchain_instant {
         #[allow(unused_mut)]
         let mut object_3 = object.key("fromBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.max_results {
@@ -30,19 +27,13 @@ pub fn ser_list_transactions_input(
     if let Some(var_7) = &input.sort {
         #[allow(unused_mut)]
         let mut object_8 = object.key("sort").start_object();
-        crate::protocol_serde::shape_list_transactions_sort::ser_list_transactions_sort(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_list_transactions_sort::ser_list_transactions_sort(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.to_blockchain_instant {
         #[allow(unused_mut)]
         let mut object_10 = object.key("toBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

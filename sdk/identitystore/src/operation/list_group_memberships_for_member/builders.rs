@@ -26,7 +26,7 @@ impl ListGroupMembershipsForMemberInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsForMemberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder,
+    inner: crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder,
 }
 impl ListGroupMembershipsForMemberFluentBuilder {
     /// Creates a new `ListGroupMembershipsForMember`.
@@ -37,7 +37,7 @@ impl ListGroupMembershipsForMemberFluentBuilder {
         }
     }
     /// Access the ListGroupMembershipsForMember as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListGroupMembershipsForMemberFluentBuilder {
             crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListGroupMembershipsForMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListGroupMembershipsForMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListGroupMembershipsForMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListGroupMembershipsForMemberFluentBuilder {
             crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator {
         crate::operation::list_group_memberships_for_member::paginator::ListGroupMembershipsForMemberPaginator::new(self.handle, self.inner)
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }

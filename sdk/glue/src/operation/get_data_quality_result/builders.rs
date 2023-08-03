@@ -37,10 +37,7 @@ impl GetDataQualityResultFluentBuilder {
         }
     }
     /// Access the GetDataQualityResult as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_data_quality_result::builders::GetDataQualityResultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetDataQualityResultFluentBuilder {
             crate::operation::get_data_quality_result::GetDataQualityResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_quality_result::GetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_result::GetDataQualityResultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetDataQualityResultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetDataQualityResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_quality_result::GetDataQualityResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_quality_result::GetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_result::GetDataQualityResultError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetDataQualityResultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_quality_result::GetDataQualityResultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_quality_result::GetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_result::GetDataQualityResultError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetDataQualityResultFluentBuilder {
             crate::operation::get_data_quality_result::GetDataQualityResult,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_quality_result::GetDataQualityResultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_quality_result::GetDataQualityResultError>,
     > {
         self.customize_middleware().await
     }

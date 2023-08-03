@@ -26,7 +26,7 @@ impl DeleteDataflowEndpointGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder,
+    inner: crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder,
 }
 impl DeleteDataflowEndpointGroupFluentBuilder {
     /// Creates a new `DeleteDataflowEndpointGroup`.
@@ -37,7 +37,7 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
         }
     }
     /// Access the DeleteDataflowEndpointGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
             crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteDataflowEndpointGroupFluentBuilder {
             crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataflow_endpoint_group_id(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataflow_endpoint_group_id(input);
         self
     }

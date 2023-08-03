@@ -10,10 +10,7 @@ impl GetTraceGraphInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_trace_graph::GetTraceGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trace_graph::GetTraceGraphError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trace_graph::GetTraceGraphError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_trace_graph();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTraceGraphFluentBuilder {
         }
     }
     /// Access the GetTraceGraph as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_trace_graph::builders::GetTraceGraphInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_trace_graph::builders::GetTraceGraphInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetTraceGraphFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetTraceGraphFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator {
-        crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator {
+        crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TraceIds`.
     ///
@@ -135,10 +122,7 @@ impl GetTraceGraphFluentBuilder {
         self
     }
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
-    pub fn set_trace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trace_ids(input);
         self
     }

@@ -23,34 +23,26 @@ impl UpdateConfigurationSetEventDestinationInput {
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn builder() -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder {
         crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination: ::std::option::Option<crate::types::EventDestination>,
 }
 impl UpdateConfigurationSetEventDestinationInputBuilder {
     /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -64,10 +56,7 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// <p>The event destination object that you want to apply to the specified configuration set.</p>
-    pub fn set_event_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDestination>,
-    ) -> Self {
+    pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestination>) -> Self {
         self.event_destination = input;
         self
     }
@@ -76,14 +65,17 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         &self.event_destination
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name
-                ,
-                event_destination: self.event_destination
-                ,
-            }
+                configuration_set_name: self.configuration_set_name,
+                event_destination: self.event_destination,
+            },
         )
     }
 }

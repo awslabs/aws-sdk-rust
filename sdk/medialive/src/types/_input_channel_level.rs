@@ -30,9 +30,7 @@ impl InputChannelLevel {
 
 /// A builder for [`InputChannelLevel`](crate::types::InputChannelLevel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputChannelLevelBuilder {
     pub(crate) gain: ::std::option::Option<i32>,
     pub(crate) input_channel: ::std::option::Option<i32>,

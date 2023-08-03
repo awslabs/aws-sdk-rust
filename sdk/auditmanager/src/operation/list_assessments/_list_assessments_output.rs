@@ -5,8 +5,7 @@
 pub struct ListAssessmentsOutput {
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
     #[doc(hidden)]
-    pub assessment_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
+    pub assessment_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssessmentsOutput {
 }
 impl ListAssessmentsOutput {
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
-    pub fn assessment_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentMetadataItem]> {
+    pub fn assessment_metadata(&self) -> ::std::option::Option<&[crate::types::AssessmentMetadataItem]> {
         self.assessment_metadata.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -38,12 +35,9 @@ impl ListAssessmentsOutput {
 
 /// A builder for [`ListAssessmentsOutput`](crate::operation::list_assessments::ListAssessmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentsOutputBuilder {
-    pub(crate) assessment_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
+    pub(crate) assessment_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAssessmentsOutputBuilder {
         self
     }
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
-    pub fn set_assessment_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
-    ) -> Self {
+    pub fn set_assessment_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>) -> Self {
         self.assessment_metadata = input;
         self
     }
     /// <p>The metadata that the <code>ListAssessments</code> API returns for each assessment.</p>
-    pub fn get_assessment_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>> {
+    pub fn get_assessment_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>> {
         &self.assessment_metadata
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>

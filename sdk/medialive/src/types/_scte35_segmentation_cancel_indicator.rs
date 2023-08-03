@@ -38,13 +38,7 @@
 /// Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35SegmentationCancelIndicator {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum Scte35SegmentationCancelIndicator {
 impl ::std::convert::From<&str> for Scte35SegmentationCancelIndicator {
     fn from(s: &str) -> Self {
         match s {
-            "SEGMENTATION_EVENT_CANCELED" => {
-                Scte35SegmentationCancelIndicator::SegmentationEventCanceled
-            }
-            "SEGMENTATION_EVENT_NOT_CANCELED" => {
-                Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled
-            }
-            other => Scte35SegmentationCancelIndicator::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SEGMENTATION_EVENT_CANCELED" => Scte35SegmentationCancelIndicator::SegmentationEventCanceled,
+            "SEGMENTATION_EVENT_NOT_CANCELED" => Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled,
+            other => Scte35SegmentationCancelIndicator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl Scte35SegmentationCancelIndicator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            Scte35SegmentationCancelIndicator::SegmentationEventCanceled => {
-                "SEGMENTATION_EVENT_CANCELED"
-            }
-            Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled => {
-                "SEGMENTATION_EVENT_NOT_CANCELED"
-            }
+            Scte35SegmentationCancelIndicator::SegmentationEventCanceled => "SEGMENTATION_EVENT_CANCELED",
+            Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled => "SEGMENTATION_EVENT_NOT_CANCELED",
             Scte35SegmentationCancelIndicator::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "SEGMENTATION_EVENT_CANCELED",
-            "SEGMENTATION_EVENT_NOT_CANCELED",
-        ]
+        &["SEGMENTATION_EVENT_CANCELED", "SEGMENTATION_EVENT_NOT_CANCELED"]
     }
 }
 impl ::std::convert::AsRef<str> for Scte35SegmentationCancelIndicator {

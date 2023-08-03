@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`activity_type(ActivityType)`](crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder::activity_type) / [`set_activity_type(Option<ActivityType>)`](crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder::set_activity_type): <p>The activity type to deprecate.</p>
     /// - On success, responds with [`DeprecateActivityTypeOutput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput)
     /// - On failure, responds with [`SdkError<DeprecateActivityTypeError>`](crate::operation::deprecate_activity_type::DeprecateActivityTypeError)
-    pub fn deprecate_activity_type(
-        &self,
-    ) -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder
-    {
-        crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deprecate_activity_type(&self) -> crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder {
+        crate::operation::deprecate_activity_type::builders::DeprecateActivityTypeFluentBuilder::new(self.handle.clone())
     }
 }

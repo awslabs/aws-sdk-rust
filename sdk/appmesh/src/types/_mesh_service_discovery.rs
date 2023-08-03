@@ -23,9 +23,7 @@ impl MeshServiceDiscovery {
 
 /// A builder for [`MeshServiceDiscovery`](crate::types::MeshServiceDiscovery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeshServiceDiscoveryBuilder {
     pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
@@ -36,10 +34,7 @@ impl MeshServiceDiscoveryBuilder {
         self
     }
     /// <p>The IP version to use to control traffic within the mesh.</p>
-    pub fn set_ip_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::IpPreference>,
-    ) -> Self {
+    pub fn set_ip_preference(mut self, input: ::std::option::Option<crate::types::IpPreference>) -> Self {
         self.ip_preference = input;
         self
     }

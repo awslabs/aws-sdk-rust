@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`r#return(Option<bool>)`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     /// - On failure, responds with [`SdkError<DisassociateTrunkInterfaceError>`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError)
-    pub fn disassociate_trunk_interface(&self) -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceFluentBuilder{
+    pub fn disassociate_trunk_interface(&self) -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceFluentBuilder {
         crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

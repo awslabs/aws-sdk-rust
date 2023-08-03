@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_template_alias::DescribeTemplateAliasOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_template_alias::DescribeTemplateAliasOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeTemplateAliasError>`](crate::operation::describe_template_alias::DescribeTemplateAliasError)
-    pub fn describe_template_alias(
-        &self,
-    ) -> crate::operation::describe_template_alias::builders::DescribeTemplateAliasFluentBuilder
-    {
-        crate::operation::describe_template_alias::builders::DescribeTemplateAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_template_alias(&self) -> crate::operation::describe_template_alias::builders::DescribeTemplateAliasFluentBuilder {
+        crate::operation::describe_template_alias::builders::DescribeTemplateAliasFluentBuilder::new(self.handle.clone())
     }
 }

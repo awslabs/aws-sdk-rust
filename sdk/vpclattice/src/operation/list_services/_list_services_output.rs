@@ -35,9 +35,7 @@ impl ListServicesOutput {
 
 /// A builder for [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListServicesOutputBuilder {
         self
     }
     /// <p>The services.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The services.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>

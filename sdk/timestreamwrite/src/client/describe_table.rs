@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput) with field(s):
     ///   - [`table(Option<Table>)`](crate::operation::describe_table::DescribeTableOutput::table): <p>The Timestream table.</p>
     /// - On failure, responds with [`SdkError<DescribeTableError>`](crate::operation::describe_table::DescribeTableError)
-    pub fn describe_table(
-        &self,
-    ) -> crate::operation::describe_table::builders::DescribeTableFluentBuilder {
-        crate::operation::describe_table::builders::DescribeTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_table(&self) -> crate::operation::describe_table::builders::DescribeTableFluentBuilder {
+        crate::operation::describe_table::builders::DescribeTableFluentBuilder::new(self.handle.clone())
     }
 }

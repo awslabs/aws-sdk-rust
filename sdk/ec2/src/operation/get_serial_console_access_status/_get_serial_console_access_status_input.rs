@@ -15,16 +15,14 @@ impl GetSerialConsoleAccessStatusInput {
 }
 impl GetSerialConsoleAccessStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSerialConsoleAccessStatusInput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput).
-    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder {
         crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSerialConsoleAccessStatusInput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSerialConsoleAccessStatusInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -50,10 +48,6 @@ impl GetSerialConsoleAccessStatusInputBuilder {
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput {
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput { dry_run: self.dry_run })
     }
 }

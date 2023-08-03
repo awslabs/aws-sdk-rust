@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFlowLogsIntegrationTemplateOutput 
 }
 impl GetFlowLogsIntegrationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
-    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder {
         crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowLogsIntegrationTemplateOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl GetFlowLogsIntegrationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput
-    {
+    pub fn build(self) -> crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput {
         crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput {
             result: self.result,
             _request_id: self._request_id,

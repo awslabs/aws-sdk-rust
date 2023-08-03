@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`savings_plans_coverages(Option<Vec<SavingsPlansCoverage>>)`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput::savings_plans_coverages): <p>The amount of spend that your Savings Plans covered.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput::next_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     /// - On failure, responds with [`SdkError<GetSavingsPlansCoverageError>`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError)
-    pub fn get_savings_plans_coverage(
-        &self,
-    ) -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageFluentBuilder
-    {
+    pub fn get_savings_plans_coverage(&self) -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageFluentBuilder {
         crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageFluentBuilder::new(self.handle.clone())
     }
 }

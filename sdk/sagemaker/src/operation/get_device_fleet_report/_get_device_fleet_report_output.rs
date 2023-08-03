@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for GetDeviceFleetReportOutput {
 }
 impl GetDeviceFleetReportOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceFleetReportOutput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder {
         crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceFleetReportOutput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceFleetReportOutputBuilder {
     pub(crate) device_fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ pub struct GetDeviceFleetReportOutputBuilder {
 }
 impl GetDeviceFleetReportOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn device_fleet_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn set_device_fleet_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_arn = input;
         self
     }
@@ -115,18 +105,12 @@ impl GetDeviceFleetReportOutputBuilder {
         &self.device_fleet_arn
     }
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -140,10 +124,7 @@ impl GetDeviceFleetReportOutputBuilder {
         self
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -171,10 +152,7 @@ impl GetDeviceFleetReportOutputBuilder {
         self
     }
     /// <p>Timestamp of when the report was generated.</p>
-    pub fn set_report_generated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_report_generated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.report_generated = input;
         self
     }
@@ -188,10 +166,7 @@ impl GetDeviceFleetReportOutputBuilder {
         self
     }
     /// <p>Status of devices.</p>
-    pub fn set_device_stats(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStats>,
-    ) -> Self {
+    pub fn set_device_stats(mut self, input: ::std::option::Option<crate::types::DeviceStats>) -> Self {
         self.device_stats = input;
         self
     }
@@ -211,17 +186,12 @@ impl GetDeviceFleetReportOutputBuilder {
         self
     }
     /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
-    pub fn set_agent_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
-    ) -> Self {
+    pub fn set_agent_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>) -> Self {
         self.agent_versions = input;
         self
     }
     /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
-    pub fn get_agent_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
+    pub fn get_agent_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
         &self.agent_versions
     }
     /// Appends an item to `model_stats`.
@@ -236,17 +206,12 @@ impl GetDeviceFleetReportOutputBuilder {
         self
     }
     /// <p>Status of model on device.</p>
-    pub fn set_model_stats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>>,
-    ) -> Self {
+    pub fn set_model_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>>) -> Self {
         self.model_stats = input;
         self
     }
     /// <p>Status of model on device.</p>
-    pub fn get_model_stats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>> {
+    pub fn get_model_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>> {
         &self.model_stats
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

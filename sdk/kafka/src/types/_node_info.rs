@@ -58,9 +58,7 @@ impl NodeInfo {
 
 /// A builder for [`NodeInfo`](crate::types::NodeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeInfoBuilder {
     pub(crate) added_to_cluster_time: ::std::option::Option<::std::string::String>,
     pub(crate) broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
@@ -71,18 +69,12 @@ pub struct NodeInfoBuilder {
 }
 impl NodeInfoBuilder {
     /// <p>The start time.</p>
-    pub fn added_to_cluster_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn added_to_cluster_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.added_to_cluster_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start time.</p>
-    pub fn set_added_to_cluster_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_added_to_cluster_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.added_to_cluster_time = input;
         self
     }
@@ -96,10 +88,7 @@ impl NodeInfoBuilder {
         self
     }
     /// <p>The broker node info.</p>
-    pub fn set_broker_node_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerNodeInfo>,
-    ) -> Self {
+    pub fn set_broker_node_info(mut self, input: ::std::option::Option<crate::types::BrokerNodeInfo>) -> Self {
         self.broker_node_info = input;
         self
     }
@@ -108,18 +97,12 @@ impl NodeInfoBuilder {
         &self.broker_node_info
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -161,17 +144,12 @@ impl NodeInfoBuilder {
         self
     }
     /// <p>The ZookeeperNodeInfo.</p>
-    pub fn set_zookeeper_node_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ZookeeperNodeInfo>,
-    ) -> Self {
+    pub fn set_zookeeper_node_info(mut self, input: ::std::option::Option<crate::types::ZookeeperNodeInfo>) -> Self {
         self.zookeeper_node_info = input;
         self
     }
     /// <p>The ZookeeperNodeInfo.</p>
-    pub fn get_zookeeper_node_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ZookeeperNodeInfo> {
+    pub fn get_zookeeper_node_info(&self) -> &::std::option::Option<crate::types::ZookeeperNodeInfo> {
         &self.zookeeper_node_info
     }
     /// Consumes the builder and constructs a [`NodeInfo`](crate::types::NodeInfo).

@@ -30,9 +30,7 @@ impl ListChangeSetsInput {
 
 /// A builder for [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangeSetsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl ListChangeSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_change_sets::ListChangeSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_change_sets::ListChangeSetsInput {
             stack_name: self.stack_name,
             next_token: self.next_token,

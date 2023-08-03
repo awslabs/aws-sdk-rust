@@ -5,8 +5,7 @@
 pub struct CreateContinuousDeploymentPolicyOutput {
     /// <p>A continuous deployment policy.</p>
     #[doc(hidden)]
-    pub continuous_deployment_policy:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    pub continuous_deployment_policy: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
     /// <p>The location of the continuous deployment policy.</p>
     #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct CreateContinuousDeploymentPolicyOutput {
 }
 impl CreateContinuousDeploymentPolicyOutput {
     /// <p>A continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicy> {
+    pub fn continuous_deployment_policy(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicy> {
         self.continuous_deployment_policy.as_ref()
     }
     /// <p>The location of the continuous deployment policy.</p>
@@ -38,44 +35,33 @@ impl ::aws_http::request_id::RequestId for CreateContinuousDeploymentPolicyOutpu
 }
 impl CreateContinuousDeploymentPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateContinuousDeploymentPolicyOutput`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput).
-    pub fn builder() -> crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyOutputBuilder {
         crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContinuousDeploymentPolicyOutput`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContinuousDeploymentPolicyOutputBuilder {
-    pub(crate) continuous_deployment_policy:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    pub(crate) continuous_deployment_policy: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateContinuousDeploymentPolicyOutputBuilder {
     /// <p>A continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicy,
-    ) -> Self {
+    pub fn continuous_deployment_policy(mut self, input: crate::types::ContinuousDeploymentPolicy) -> Self {
         self.continuous_deployment_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A continuous deployment policy.</p>
-    pub fn set_continuous_deployment_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>) -> Self {
         self.continuous_deployment_policy = input;
         self
     }
     /// <p>A continuous deployment policy.</p>
-    pub fn get_continuous_deployment_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicy> {
+    pub fn get_continuous_deployment_policy(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicy> {
         &self.continuous_deployment_policy
     }
     /// <p>The location of the continuous deployment policy.</p>
@@ -116,17 +102,11 @@ impl CreateContinuousDeploymentPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateContinuousDeploymentPolicyOutput`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput {
         crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput {
-            continuous_deployment_policy: self.continuous_deployment_policy
-            ,
-            location: self.location
-            ,
-            e_tag: self.e_tag
-            ,
+            continuous_deployment_policy: self.continuous_deployment_policy,
+            location: self.location,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

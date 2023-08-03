@@ -27,9 +27,7 @@ impl UpdateLoadBalancerAttributeInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the attribute you want to update.</p>
-    pub fn attribute_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancerAttributeName> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::LoadBalancerAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The value that you want to specify for the attribute name.</p>
@@ -47,16 +45,14 @@ impl UpdateLoadBalancerAttributeInput {
 }
 impl UpdateLoadBalancerAttributeInput {
     /// Creates a new builder-style object to manufacture [`UpdateLoadBalancerAttributeInput`](crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput).
-    pub fn builder() -> crate::operation::update_load_balancer_attribute::builders::UpdateLoadBalancerAttributeInputBuilder{
+    pub fn builder() -> crate::operation::update_load_balancer_attribute::builders::UpdateLoadBalancerAttributeInputBuilder {
         crate::operation::update_load_balancer_attribute::builders::UpdateLoadBalancerAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoadBalancerAttributeInput`](crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoadBalancerAttributeInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<crate::types::LoadBalancerAttributeName>,
@@ -64,18 +60,12 @@ pub struct UpdateLoadBalancerAttributeInputBuilder {
 }
 impl UpdateLoadBalancerAttributeInputBuilder {
     /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -89,17 +79,12 @@ impl UpdateLoadBalancerAttributeInputBuilder {
         self
     }
     /// <p>The name of the attribute you want to update.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerAttributeName>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::LoadBalancerAttributeName>) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The name of the attribute you want to update.</p>
-    pub fn get_attribute_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerAttributeName> {
+    pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::LoadBalancerAttributeName> {
         &self.attribute_name
     }
     /// <p>The value that you want to specify for the attribute name.</p>
@@ -111,10 +96,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.</p> </li>
     /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p> <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p> </li>
     /// </ul>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
@@ -127,10 +109,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.</p> </li>
     /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p> <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p> </li>
     /// </ul>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
@@ -153,12 +132,10 @@ impl UpdateLoadBalancerAttributeInputBuilder {
         crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput {
-                load_balancer_name: self.load_balancer_name,
-                attribute_name: self.attribute_name,
-                attribute_value: self.attribute_value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput {
+            load_balancer_name: self.load_balancer_name,
+            attribute_name: self.attribute_name,
+            attribute_value: self.attribute_value,
+        })
     }
 }

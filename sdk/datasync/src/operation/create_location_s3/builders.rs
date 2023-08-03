@@ -10,10 +10,7 @@ impl CreateLocationS3InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_location_s3::CreateLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_s3::CreateLocationS3Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_s3::CreateLocationS3Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_location_s3();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateLocationS3FluentBuilder {
         }
     }
     /// Access the CreateLocationS3 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateLocationS3FluentBuilder {
             crate::operation::create_location_s3::CreateLocationS3,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_s3::CreateLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_s3::CreateLocationS3Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateLocationS3FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateLocationS3FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_s3::CreateLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_s3::CreateLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_s3::CreateLocationS3Error>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateLocationS3FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_s3::CreateLocationS3Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_s3::CreateLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_s3::CreateLocationS3Error>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl CreateLocationS3FluentBuilder {
             crate::operation::create_location_s3::CreateLocationS3,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_s3::CreateLocationS3Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_s3::CreateLocationS3Error>,
     > {
         self.customize_middleware().await
     }
@@ -144,18 +128,12 @@ impl CreateLocationS3FluentBuilder {
         self.inner.get_subdirectory()
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_arn(input.into());
         self
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_arn(input);
         self
     }
@@ -171,10 +149,7 @@ impl CreateLocationS3FluentBuilder {
     }
     /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    pub fn set_s3_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::S3StorageClass>,
-    ) -> Self {
+    pub fn set_s3_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
         self.inner = self.inner.set_s3_storage_class(input);
         self
     }
@@ -210,10 +185,7 @@ impl CreateLocationS3FluentBuilder {
         self
     }
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -231,10 +203,7 @@ impl CreateLocationS3FluentBuilder {
         self
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -15,8 +15,7 @@ pub struct AmazonOpenSearchServerlessDestinationConfiguration {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
     #[doc(hidden)]
-    pub buffering_hints:
-        ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
+    pub buffering_hints: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
@@ -50,39 +49,27 @@ impl AmazonOpenSearchServerlessDestinationConfiguration {
         self.index_name.as_deref()
     }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
-    pub fn buffering_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn retry_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.</p>
-    pub fn s3_backup_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
@@ -92,32 +79,24 @@ impl AmazonOpenSearchServerlessDestinationConfiguration {
 }
 impl AmazonOpenSearchServerlessDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::types::AmazonOpenSearchServerlessDestinationConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::types::AmazonOpenSearchServerlessDestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessDestinationConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collection_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) buffering_hints:
-        ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
-    pub(crate) retry_options:
-        ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
-    pub(crate) s3_backup_mode:
-        ::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
+    pub(crate) buffering_hints: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
+    pub(crate) retry_options: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
+    pub(crate) s3_backup_mode: ::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
@@ -136,18 +115,12 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         &self.role_arn
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn collection_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn set_collection_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_endpoint = input;
         self
     }
@@ -170,69 +143,45 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         &self.index_name
     }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
-    pub fn buffering_hints(
-        mut self,
-        input: crate::types::AmazonOpenSearchServerlessBufferingHints,
-    ) -> Self {
+    pub fn buffering_hints(mut self, input: crate::types::AmazonOpenSearchServerlessBufferingHints) -> Self {
         self.buffering_hints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used.</p>
-    pub fn get_buffering_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints> {
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints> {
         &self.buffering_hints
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn retry_options(
-        mut self,
-        input: crate::types::AmazonOpenSearchServerlessRetryOptions,
-    ) -> Self {
+    pub fn retry_options(mut self, input: crate::types::AmazonOpenSearchServerlessRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn get_retry_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions> {
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions> {
         &self.retry_options
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.</p>
-    pub fn s3_backup_mode(
-        mut self,
-        input: crate::types::AmazonOpenSearchServerlessS3BackupMode,
-    ) -> Self {
+    pub fn s3_backup_mode(mut self, input: crate::types::AmazonOpenSearchServerlessS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.</p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.</p>
-    pub fn get_s3_backup_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode> {
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode> {
         &self.s3_backup_mode
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
@@ -241,61 +190,40 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         self
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3_configuration = input;
         self
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    pub fn get_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_configuration
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
@@ -304,10 +232,7 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }

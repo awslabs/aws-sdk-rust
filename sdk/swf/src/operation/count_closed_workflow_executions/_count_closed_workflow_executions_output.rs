@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
 }
 impl CountClosedWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
-    pub fn builder() -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsOutputBuilder {
         crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutionsOutputBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) truncated: ::std::option::Option<bool>,
@@ -83,10 +81,7 @@ impl CountClosedWorkflowExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput
-    {
+    pub fn build(self) -> crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput {
         crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput {
             count: self.count.unwrap_or_default(),
             truncated: self.truncated.unwrap_or_default(),

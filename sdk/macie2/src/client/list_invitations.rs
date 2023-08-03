@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`invitations(Option<Vec<Invitation>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>An array of objects, one for each invitation that was received by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::operation::list_invitations::ListInvitationsError)
-    pub fn list_invitations(
-        &self,
-    ) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
-        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_invitations(&self) -> crate::operation::list_invitations::builders::ListInvitationsFluentBuilder {
+        crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

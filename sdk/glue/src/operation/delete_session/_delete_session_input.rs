@@ -29,9 +29,7 @@ impl DeleteSessionInput {
 
 /// A builder for [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteSessionInputBuilder {
         &self.id
     }
     /// <p>The name of the origin of the delete session request.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the origin of the delete session request.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_session::DeleteSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
             id: self.id,
             request_origin: self.request_origin,

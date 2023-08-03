@@ -23,9 +23,7 @@ impl EnvironmentProperties {
 
 /// A builder for [`EnvironmentProperties`](crate::types::EnvironmentProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentPropertiesBuilder {
     pub(crate) property_groups: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
 }
@@ -42,17 +40,12 @@ impl EnvironmentPropertiesBuilder {
         self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn set_property_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
-    ) -> Self {
+    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>) -> Self {
         self.property_groups = input;
         self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn get_property_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
+    pub fn get_property_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
         &self.property_groups
     }
     /// Consumes the builder and constructs a [`EnvironmentProperties`](crate::types::EnvironmentProperties).

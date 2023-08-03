@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`pricing_rule_arns(Option<Vec<String>>)`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput::pricing_rule_arns): <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput::next_token): <p> The pagination token to be used on subsequent calls. </p>
     /// - On failure, responds with [`SdkError<ListPricingRulesAssociatedToPricingPlanError>`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError)
-    pub fn list_pricing_rules_associated_to_pricing_plan(&self) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanFluentBuilder{
-        crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanFluentBuilder::new(self.handle.clone())
+    pub fn list_pricing_rules_associated_to_pricing_plan(
+        &self,
+    ) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanFluentBuilder {
+        crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -10,10 +10,7 @@ impl DisassociateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user::DisassociateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_user();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisassociateUserFluentBuilder {
         }
     }
     /// Access the DisassociateUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_user::builders::DisassociateUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_user::builders::DisassociateUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisassociateUserFluentBuilder {
             crate::operation::disassociate_user::DisassociateUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisassociateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisassociateUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user::DisassociateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisassociateUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user::DisassociateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DisassociateUserFluentBuilder {
             crate::operation::disassociate_user::DisassociateUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl DisassociateUserFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }

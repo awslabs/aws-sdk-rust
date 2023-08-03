@@ -23,9 +23,7 @@ impl EncryptionConfiguration {
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl EncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
-        crate::types::EncryptionConfiguration {
-            kms_key: self.kms_key,
-        }
+        crate::types::EncryptionConfiguration { kms_key: self.kms_key }
     }
 }

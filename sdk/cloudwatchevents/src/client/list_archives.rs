@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`archives(Option<Vec<Archive>>)`](crate::operation::list_archives::ListArchivesOutput::archives): <p>An array of <code>Archive</code> objects that include details about an archive.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_archives::ListArchivesOutput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListArchivesError>`](crate::operation::list_archives::ListArchivesError)
-    pub fn list_archives(
-        &self,
-    ) -> crate::operation::list_archives::builders::ListArchivesFluentBuilder {
-        crate::operation::list_archives::builders::ListArchivesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_archives(&self) -> crate::operation::list_archives::builders::ListArchivesFluentBuilder {
+        crate::operation::list_archives::builders::ListArchivesFluentBuilder::new(self.handle.clone())
     }
 }

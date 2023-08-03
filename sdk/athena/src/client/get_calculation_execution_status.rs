@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(Option<CalculationStatus>)`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput::status): <p>Contains information about the calculation execution status.</p>
     ///   - [`statistics(Option<CalculationStatistics>)`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput::statistics): <p>Contains information about the DPU execution time and progress.</p>
     /// - On failure, responds with [`SdkError<GetCalculationExecutionStatusError>`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError)
-    pub fn get_calculation_execution_status(&self) -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder{
+    pub fn get_calculation_execution_status(
+        &self,
+    ) -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder {
         crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusFluentBuilder::new(self.handle.clone())
     }
 }

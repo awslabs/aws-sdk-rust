@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdateStandardsControlAssociationsOutput`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput) with field(s):
     ///   - [`unprocessed_association_updates(Option<Vec<UnprocessedStandardsControlAssociationUpdate>>)`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput::unprocessed_association_updates): <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
     /// - On failure, responds with [`SdkError<BatchUpdateStandardsControlAssociationsError>`](crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError)
-    pub fn batch_update_standards_control_associations(&self) -> crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsFluentBuilder{
-        crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn batch_update_standards_control_associations(
+        &self,
+    ) -> crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsFluentBuilder {
+        crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

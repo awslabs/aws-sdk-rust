@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVoiceChannelOutput`](crate::operation::delete_voice_channel::DeleteVoiceChannelOutput) with field(s):
     ///   - [`voice_channel_response(Option<VoiceChannelResponse>)`](crate::operation::delete_voice_channel::DeleteVoiceChannelOutput::voice_channel_response): <p>Provides information about the status and settings of the voice channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceChannelError>`](crate::operation::delete_voice_channel::DeleteVoiceChannelError)
-    pub fn delete_voice_channel(
-        &self,
-    ) -> crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder {
-        crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_voice_channel(&self) -> crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder {
+        crate::operation::delete_voice_channel::builders::DeleteVoiceChannelFluentBuilder::new(self.handle.clone())
     }
 }

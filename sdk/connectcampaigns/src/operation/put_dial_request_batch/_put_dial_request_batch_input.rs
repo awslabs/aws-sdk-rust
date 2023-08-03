@@ -23,18 +23,14 @@ impl PutDialRequestBatchInput {
 }
 impl PutDialRequestBatchInput {
     /// Creates a new builder-style object to manufacture [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
-    pub fn builder(
-    ) -> crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
-        crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
+        crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
@@ -66,31 +62,22 @@ impl PutDialRequestBatchInputBuilder {
         self
     }
     /// A list of dial requests.
-    pub fn set_dial_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
-    ) -> Self {
+    pub fn set_dial_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>) -> Self {
         self.dial_requests = input;
         self
     }
     /// A list of dial requests.
-    pub fn get_dial_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
+    pub fn get_dial_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
         &self.dial_requests
     }
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_dial_request_batch::PutDialRequestBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
-                id: self.id,
-                dial_requests: self.dial_requests,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
+            id: self.id,
+            dial_requests: self.dial_requests,
+        })
     }
 }

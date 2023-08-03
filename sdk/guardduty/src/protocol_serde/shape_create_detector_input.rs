@@ -9,10 +9,7 @@ pub fn ser_create_detector_input(
     if let Some(var_2) = &input.data_sources {
         #[allow(unused_mut)]
         let mut object_3 = object.key("dataSources").start_object();
-        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.enable {
@@ -31,9 +28,7 @@ pub fn ser_create_detector_input(
         array_6.finish();
     }
     if let Some(var_9) = &input.finding_publishing_frequency {
-        object
-            .key("findingPublishingFrequency")
-            .string(var_9.as_str());
+        object.key("findingPublishingFrequency").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]

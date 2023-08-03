@@ -10,10 +10,7 @@ impl AddFlowSourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_flow_sources::AddFlowSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_sources::AddFlowSourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_sources::AddFlowSourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_flow_sources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddFlowSourcesFluentBuilder {
         }
     }
     /// Access the AddFlowSources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_flow_sources::builders::AddFlowSourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_flow_sources::builders::AddFlowSourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddFlowSourcesFluentBuilder {
             crate::operation::add_flow_sources::AddFlowSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_sources::AddFlowSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_sources::AddFlowSourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddFlowSourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddFlowSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_sources::AddFlowSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_sources::AddFlowSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_sources::AddFlowSourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddFlowSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_sources::AddFlowSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_sources::AddFlowSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_sources::AddFlowSourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddFlowSourcesFluentBuilder {
             crate::operation::add_flow_sources::AddFlowSources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_sources::AddFlowSourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_sources::AddFlowSourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AddFlowSourcesFluentBuilder {
         self
     }
     /// A list of sources that you want to add.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// A list of sources that you want to add.
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }
 }

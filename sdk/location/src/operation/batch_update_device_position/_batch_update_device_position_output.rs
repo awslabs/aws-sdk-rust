@@ -5,8 +5,7 @@
 pub struct BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutput {
@@ -22,19 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchUpdateDevicePositionOutput {
 }
 impl BatchUpdateDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder{
+    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder {
         crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutputBuilder {
@@ -50,17 +46,12 @@ impl BatchUpdateDevicePositionOutputBuilder {
         self
     }
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl BatchUpdateDevicePositionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
+    pub fn build(self) -> crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
             errors: self.errors,
             _request_id: self._request_id,

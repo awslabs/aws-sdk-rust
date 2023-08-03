@@ -13,9 +13,7 @@ pub fn ser_create_storedi_scsi_volume_input(
         object.key("SnapshotId").string(var_3.as_str());
     }
     {
-        object
-            .key("PreserveExistingData")
-            .boolean(input.preserve_existing_data);
+        object.key("PreserveExistingData").boolean(input.preserve_existing_data);
     }
     if let Some(var_4) = &input.target_name {
         object.key("TargetName").string(var_4.as_str());

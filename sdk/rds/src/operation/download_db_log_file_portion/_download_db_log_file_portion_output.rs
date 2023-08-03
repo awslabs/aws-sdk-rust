@@ -36,16 +36,14 @@ impl ::aws_http::request_id::RequestId for DownloadDbLogFilePortionOutput {
 }
 impl DownloadDbLogFilePortionOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-    pub fn builder() -> crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder{
+    pub fn builder() -> crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder {
         crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DownloadDbLogFilePortionOutputBuilder {
     pub(crate) log_file_data: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DownloadDbLogFilePortionOutputBuilder {
 }
 impl DownloadDbLogFilePortionOutputBuilder {
     /// <p>Entries from the specified log file.</p>
-    pub fn log_file_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_file_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Entries from the specified log file.</p>
-    pub fn set_log_file_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_file_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_file_data = input;
         self
     }
@@ -111,9 +103,7 @@ impl DownloadDbLogFilePortionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
+    pub fn build(self) -> crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
             log_file_data: self.log_file_data,
             marker: self.marker,

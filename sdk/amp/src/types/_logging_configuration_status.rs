@@ -13,9 +13,7 @@ pub struct LoggingConfigurationStatus {
 }
 impl LoggingConfigurationStatus {
     /// Status code of the logging configuration.
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfigurationStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::LoggingConfigurationStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
@@ -32,9 +30,7 @@ impl LoggingConfigurationStatus {
 
 /// A builder for [`LoggingConfigurationStatus`](crate::types::LoggingConfigurationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -46,32 +42,21 @@ impl LoggingConfigurationStatusBuilder {
         self
     }
     /// Status code of the logging configuration.
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// Status code of the logging configuration.
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfigurationStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::LoggingConfigurationStatusCode> {
         &self.status_code
     }
     /// The reason for failure if any.
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// The reason for failure if any.
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

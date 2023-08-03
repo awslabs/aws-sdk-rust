@@ -24,8 +24,7 @@ pub struct Instance {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>The time that the instance was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
@@ -174,9 +173,7 @@ impl Instance {
         self.availability_zone.as_deref()
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The time that the instance was created.</p>
@@ -344,9 +341,7 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,
@@ -354,8 +349,7 @@ pub struct InstanceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
@@ -393,18 +387,12 @@ pub struct InstanceBuilder {
 }
 impl InstanceBuilder {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
@@ -432,10 +420,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The instance architecture: "i386" or "x86_64".</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -463,10 +448,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>For load-based or time-based instances, the type.</p>
-    pub fn set_auto_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingType>,
-    ) -> Self {
+    pub fn set_auto_scaling_type(mut self, input: ::std::option::Option<crate::types::AutoScalingType>) -> Self {
         self.auto_scaling_type = input;
         self
     }
@@ -475,18 +457,12 @@ impl InstanceBuilder {
         &self.auto_scaling_type
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -506,17 +482,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>The time that the instance was created.</p>
@@ -548,18 +519,12 @@ impl InstanceBuilder {
         &self.ebs_optimized
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }
@@ -568,18 +533,12 @@ impl InstanceBuilder {
         &self.ec2_instance_id
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecs_cluster_arn = input;
         self
     }
@@ -588,18 +547,12 @@ impl InstanceBuilder {
         &self.ecs_cluster_arn
     }
     /// <p>For container instances, the instance's ARN.</p>
-    pub fn ecs_container_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_container_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_container_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For container instances, the instance's ARN.</p>
-    pub fn set_ecs_container_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecs_container_instance_arn = input;
         self
     }
@@ -636,18 +589,12 @@ impl InstanceBuilder {
         &self.hostname
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-    pub fn infrastructure_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn infrastructure_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-    pub fn set_infrastructure_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_infrastructure_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_class = input;
         self
     }
@@ -690,18 +637,12 @@ impl InstanceBuilder {
         &self.instance_id
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_arn = input;
         self
     }
@@ -710,18 +651,12 @@ impl InstanceBuilder {
         &self.instance_profile_arn
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -730,18 +665,12 @@ impl InstanceBuilder {
         &self.instance_type
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-    pub fn last_service_error_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_service_error_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_service_error_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-    pub fn set_last_service_error_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_service_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_service_error_id = input;
         self
     }
@@ -761,10 +690,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>An array containing the instance layer IDs.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_ids = input;
         self
     }
@@ -857,18 +783,12 @@ impl InstanceBuilder {
         &self.public_ip
     }
     /// <p>For registered instances, who performed the registration.</p>
-    pub fn registered_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For registered instances, who performed the registration.</p>
-    pub fn set_registered_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_by = input;
         self
     }
@@ -877,18 +797,12 @@ impl InstanceBuilder {
         &self.registered_by
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-    pub fn reported_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reported_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reported_agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-    pub fn set_reported_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reported_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reported_agent_version = input;
         self
     }
@@ -902,10 +816,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>For registered instances, the reported operating system.</p>
-    pub fn set_reported_os(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportedOs>,
-    ) -> Self {
+    pub fn set_reported_os(mut self, input: ::std::option::Option<crate::types::ReportedOs>) -> Self {
         self.reported_os = input;
         self
     }
@@ -919,10 +830,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn set_root_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDeviceType>,
-    ) -> Self {
+    pub fn set_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
         self.root_device_type = input;
         self
     }
@@ -931,18 +839,12 @@ impl InstanceBuilder {
         &self.root_device_type
     }
     /// <p>The root device volume ID.</p>
-    pub fn root_device_volume_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_device_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_device_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The root device volume ID.</p>
-    pub fn set_root_device_volume_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_device_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_device_volume_id = input;
         self
     }
@@ -955,71 +857,47 @@ impl InstanceBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    pub fn ssh_host_dsa_key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_host_dsa_key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_host_dsa_key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    pub fn set_ssh_host_dsa_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_host_dsa_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_host_dsa_key_fingerprint = input;
         self
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    pub fn get_ssh_host_dsa_key_fingerprint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ssh_host_dsa_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssh_host_dsa_key_fingerprint
     }
     /// <p>The SSH key's RSA fingerprint.</p>
-    pub fn ssh_host_rsa_key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_host_rsa_key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_host_rsa_key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SSH key's RSA fingerprint.</p>
-    pub fn set_ssh_host_rsa_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_host_rsa_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_host_rsa_key_fingerprint = input;
         self
     }
     /// <p>The SSH key's RSA fingerprint.</p>
-    pub fn get_ssh_host_rsa_key_fingerprint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ssh_host_rsa_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssh_host_rsa_key_fingerprint
     }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
@@ -1149,17 +1027,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-    pub fn set_virtualization_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualizationType>,
-    ) -> Self {
+    pub fn set_virtualization_type(mut self, input: ::std::option::Option<crate::types::VirtualizationType>) -> Self {
         self.virtualization_type = input;
         self
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-    pub fn get_virtualization_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualizationType> {
+    pub fn get_virtualization_type(&self) -> &::std::option::Option<crate::types::VirtualizationType> {
         &self.virtualization_type
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).

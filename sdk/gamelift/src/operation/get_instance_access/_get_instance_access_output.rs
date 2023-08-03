@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInstanceAccessOutput {
 }
 impl GetInstanceAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder {
+    pub fn builder() -> crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder {
         crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceAccessOutputBuilder {
     pub(crate) instance_access: ::std::option::Option<crate::types::InstanceAccess>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetInstanceAccessOutputBuilder {
         self
     }
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-    pub fn set_instance_access(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAccess>,
-    ) -> Self {
+    pub fn set_instance_access(mut self, input: ::std::option::Option<crate::types::InstanceAccess>) -> Self {
         self.instance_access = input;
         self
     }

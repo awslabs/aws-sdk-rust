@@ -9,8 +9,7 @@ pub struct DescribeClusterSubnetGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     #[doc(hidden)]
-    pub cluster_subnet_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+    pub cluster_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSubnetGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeClusterSubnetGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
-    pub fn cluster_subnet_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterSubnetGroup]> {
+    pub fn cluster_subnet_groups(&self) -> ::std::option::Option<&[crate::types::ClusterSubnetGroup]> {
         self.cluster_subnet_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
 }
 impl DescribeClusterSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder {
         crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_subnet_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+    pub(crate) cluster_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSubnetGroupsOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeClusterSubnetGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
-    pub fn set_cluster_subnet_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
-    ) -> Self {
+    pub fn set_cluster_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>) -> Self {
         self.cluster_subnet_groups = input;
         self
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
-    pub fn get_cluster_subnet_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>> {
+    pub fn get_cluster_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>> {
         &self.cluster_subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeClusterSubnetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput {
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput {
             marker: self.marker,
             cluster_subnet_groups: self.cluster_subnet_groups,

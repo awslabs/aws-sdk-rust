@@ -6,10 +6,7 @@ pub fn ser_list_anomalies_for_insight_filters(
     if let Some(var_1) = &input.service_collection {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ServiceCollection").start_object();
-        crate::protocol_serde::shape_service_collection::ser_service_collection(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_service_collection::ser_service_collection(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

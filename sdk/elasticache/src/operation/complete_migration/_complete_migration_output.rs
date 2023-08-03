@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CompleteMigrationOutput {
 }
 impl CompleteMigrationOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMigrationOutput`](crate::operation::complete_migration::CompleteMigrationOutput).
-    pub fn builder(
-    ) -> crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder {
+    pub fn builder() -> crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder {
         crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMigrationOutput`](crate::operation::complete_migration::CompleteMigrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMigrationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CompleteMigrationOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

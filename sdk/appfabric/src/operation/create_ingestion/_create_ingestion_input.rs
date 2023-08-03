@@ -91,9 +91,7 @@ impl CreateIngestionInput {
 
 /// A builder for [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIngestionInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ pub struct CreateIngestionInputBuilder {
 }
 impl CreateIngestionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -202,10 +194,7 @@ impl CreateIngestionInputBuilder {
         self
     }
     /// <p>The ingestion type.</p>
-    pub fn set_ingestion_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionType>,
-    ) -> Self {
+    pub fn set_ingestion_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
         self.ingestion_type = input;
         self
     }
@@ -245,10 +234,7 @@ impl CreateIngestionInputBuilder {
         self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -259,10 +245,7 @@ impl CreateIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ingestion::CreateIngestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
             app_bundle_identifier: self.app_bundle_identifier,
             app: self.app,

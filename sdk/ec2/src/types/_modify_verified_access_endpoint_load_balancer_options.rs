@@ -30,17 +30,14 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
-    pub fn builder(
-    ) -> crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
+    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
@@ -59,10 +56,7 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -76,17 +70,12 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn get_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
         &self.protocol
     }
     /// <p>The IP port number.</p>

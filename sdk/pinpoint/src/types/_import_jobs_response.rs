@@ -30,9 +30,7 @@ impl ImportJobsResponse {
 
 /// A builder for [`ImportJobsResponse`](crate::types::ImportJobsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportJobsResponseBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl ImportJobsResponseBuilder {
         self
     }
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>) -> Self {
         self.item = input;
         self
     }
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
-    pub fn get_item(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>> {
         &self.item
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

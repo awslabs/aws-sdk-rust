@@ -36,8 +36,7 @@ pub struct NetworkInsightsAnalysis {
     pub network_path_found: ::std::option::Option<bool>,
     /// <p>The components in the path from source to destination.</p>
     #[doc(hidden)]
-    pub forward_path_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub forward_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
     /// <p>The components in the path from destination to source.</p>
     #[doc(hidden)]
     pub return_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
@@ -46,8 +45,7 @@ pub struct NetworkInsightsAnalysis {
     pub explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
     /// <p>Potential intermediate components.</p>
     #[doc(hidden)]
-    pub alternate_path_hints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
+    pub alternate_path_hints: ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
     /// <p>Potential intermediate accounts.</p>
     #[doc(hidden)]
     pub suggested_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -109,9 +107,7 @@ impl NetworkInsightsAnalysis {
         self.explanations.as_deref()
     }
     /// <p>Potential intermediate components.</p>
-    pub fn alternate_path_hints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlternatePathHint]> {
+    pub fn alternate_path_hints(&self) -> ::std::option::Option<&[crate::types::AlternatePathHint]> {
         self.alternate_path_hints.as_deref()
     }
     /// <p>Potential intermediate accounts.</p>
@@ -132,9 +128,7 @@ impl NetworkInsightsAnalysis {
 
 /// A builder for [`NetworkInsightsAnalysis`](crate::types::NetworkInsightsAnalysis).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInsightsAnalysisBuilder {
     pub(crate) network_insights_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_insights_analysis_arn: ::std::option::Option<::std::string::String>,
@@ -146,74 +140,49 @@ pub struct NetworkInsightsAnalysisBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) warning_message: ::std::option::Option<::std::string::String>,
     pub(crate) network_path_found: ::std::option::Option<bool>,
-    pub(crate) forward_path_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
-    pub(crate) return_path_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub(crate) forward_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub(crate) return_path_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
     pub(crate) explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
-    pub(crate) alternate_path_hints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
+    pub(crate) alternate_path_hints: ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
     pub(crate) suggested_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl NetworkInsightsAnalysisBuilder {
     /// <p>The ID of the network insights analysis.</p>
-    pub fn network_insights_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn set_network_insights_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_analysis_id = input;
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn get_network_insights_analysis_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_analysis_id
     }
     /// <p>The Amazon Resource Name (ARN) of the network insights analysis.</p>
-    pub fn network_insights_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_analysis_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network insights analysis.</p>
-    pub fn set_network_insights_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_analysis_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network insights analysis.</p>
-    pub fn get_network_insights_analysis_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_analysis_arn
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_path_id = input;
         self
     }
@@ -226,27 +195,19 @@ impl NetworkInsightsAnalysisBuilder {
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
     ///
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn additional_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_accounts.unwrap_or_default();
         v.push(input.into());
         self.additional_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn set_additional_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_accounts = input;
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn get_additional_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_accounts
     }
     /// Appends an item to `filter_in_arns`.
@@ -254,27 +215,19 @@ impl NetworkInsightsAnalysisBuilder {
     /// To override the contents of this collection use [`set_filter_in_arns`](Self::set_filter_in_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn filter_in_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_in_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_in_arns.unwrap_or_default();
         v.push(input.into());
         self.filter_in_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn set_filter_in_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_in_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_in_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn get_filter_in_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_in_arns
     }
     /// <p>The time the analysis started.</p>
@@ -283,10 +236,7 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The time the analysis started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -300,10 +250,7 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The status of the network insights analysis.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatus>) -> Self {
         self.status = input;
         self
     }
@@ -312,18 +259,12 @@ impl NetworkInsightsAnalysisBuilder {
         &self.status
     }
     /// <p>The status message, if the status is <code>failed</code>.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message, if the status is <code>failed</code>.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -332,18 +273,12 @@ impl NetworkInsightsAnalysisBuilder {
         &self.status_message
     }
     /// <p>The warning message.</p>
-    pub fn warning_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn warning_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warning_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The warning message.</p>
-    pub fn set_warning_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_warning_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning_message = input;
         self
     }
@@ -377,17 +312,12 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The components in the path from source to destination.</p>
-    pub fn set_forward_path_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
-    ) -> Self {
+    pub fn set_forward_path_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>) -> Self {
         self.forward_path_components = input;
         self
     }
     /// <p>The components in the path from source to destination.</p>
-    pub fn get_forward_path_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+    pub fn get_forward_path_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
         &self.forward_path_components
     }
     /// Appends an item to `return_path_components`.
@@ -402,17 +332,12 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The components in the path from destination to source.</p>
-    pub fn set_return_path_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
-    ) -> Self {
+    pub fn set_return_path_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>) -> Self {
         self.return_path_components = input;
         self
     }
     /// <p>The components in the path from destination to source.</p>
-    pub fn get_return_path_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+    pub fn get_return_path_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
         &self.return_path_components
     }
     /// Appends an item to `explanations`.
@@ -427,17 +352,12 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The explanations. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability Analyzer explanation codes</a>.</p>
-    pub fn set_explanations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
-    ) -> Self {
+    pub fn set_explanations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>) -> Self {
         self.explanations = input;
         self
     }
     /// <p>The explanations. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability Analyzer explanation codes</a>.</p>
-    pub fn get_explanations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Explanation>> {
+    pub fn get_explanations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Explanation>> {
         &self.explanations
     }
     /// Appends an item to `alternate_path_hints`.
@@ -452,17 +372,12 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>Potential intermediate components.</p>
-    pub fn set_alternate_path_hints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>,
-    ) -> Self {
+    pub fn set_alternate_path_hints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>>) -> Self {
         self.alternate_path_hints = input;
         self
     }
     /// <p>Potential intermediate components.</p>
-    pub fn get_alternate_path_hints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>> {
+    pub fn get_alternate_path_hints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternatePathHint>> {
         &self.alternate_path_hints
     }
     /// Appends an item to `suggested_accounts`.
@@ -470,27 +385,19 @@ impl NetworkInsightsAnalysisBuilder {
     /// To override the contents of this collection use [`set_suggested_accounts`](Self::set_suggested_accounts).
     ///
     /// <p>Potential intermediate accounts.</p>
-    pub fn suggested_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggested_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.suggested_accounts.unwrap_or_default();
         v.push(input.into());
         self.suggested_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>Potential intermediate accounts.</p>
-    pub fn set_suggested_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_suggested_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.suggested_accounts = input;
         self
     }
     /// <p>Potential intermediate accounts.</p>
-    pub fn get_suggested_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_suggested_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.suggested_accounts
     }
     /// Appends an item to `tags`.
@@ -505,10 +412,7 @@ impl NetworkInsightsAnalysisBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

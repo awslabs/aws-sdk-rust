@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`collection_summaries(Option<Vec<CollectionSummary>>)`](crate::operation::list_collections::ListCollectionsOutput::collection_summaries): <p>Details about each collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_collections::ListCollectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::operation::list_collections::ListCollectionsError)
-    pub fn list_collections(
-        &self,
-    ) -> crate::operation::list_collections::builders::ListCollectionsFluentBuilder {
-        crate::operation::list_collections::builders::ListCollectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_collections(&self) -> crate::operation::list_collections::builders::ListCollectionsFluentBuilder {
+        crate::operation::list_collections::builders::ListCollectionsFluentBuilder::new(self.handle.clone())
     }
 }

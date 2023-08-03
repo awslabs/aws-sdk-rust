@@ -4,111 +4,97 @@ pub fn de_attach_group_policy_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_group_policy::AttachGroupPolicyOutput,
-    crate::operation::attach_group_policy::AttachGroupPolicyError,
-> {
+) -> std::result::Result<crate::operation::attach_group_policy::AttachGroupPolicyOutput, crate::operation::attach_group_policy::AttachGroupPolicyError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::operation::attach_group_policy::AttachGroupPolicyError::InvalidInputException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output).map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceeded" => crate::operation::attach_group_policy::AttachGroupPolicyError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchEntity" => crate::operation::attach_group_policy::AttachGroupPolicyError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "PolicyNotAttachable" => crate::operation::attach_group_policy::AttachGroupPolicyError::PolicyNotAttachableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PolicyNotAttachableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_policy_not_attachable_exception::de_policy_not_attachable_exception_xml_err(_response_body, output).map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PolicyNotAttachableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_policy_not_attachable_exception::de_policy_not_attachable_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceFailure" => crate::operation::attach_group_policy::AttachGroupPolicyError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::attach_group_policy::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::attach_group_policy::AttachGroupPolicyError::generic(generic)
+        _ => crate::operation::attach_group_policy::AttachGroupPolicyError::generic(generic),
     })
 }
 
@@ -117,16 +103,12 @@ pub fn de_attach_group_policy_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::attach_group_policy::AttachGroupPolicyOutput,
-    crate::operation::attach_group_policy::AttachGroupPolicyError,
-> {
+) -> std::result::Result<crate::operation::attach_group_policy::AttachGroupPolicyOutput, crate::operation::attach_group_policy::AttachGroupPolicyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::attach_group_policy::builders::AttachGroupPolicyOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

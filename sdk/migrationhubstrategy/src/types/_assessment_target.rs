@@ -37,9 +37,7 @@ impl AssessmentTarget {
 
 /// A builder for [`AssessmentTarget`](crate::types::AssessmentTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentTargetBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>Values of an assessment.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -30,9 +30,7 @@ impl ThemeError {
 
 /// A builder for [`ThemeError`](crate::types::ThemeError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThemeErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ThemeErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

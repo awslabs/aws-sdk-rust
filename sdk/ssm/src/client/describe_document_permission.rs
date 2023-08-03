@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`account_sharing_info_list(Option<Vec<AccountSharingInfo>>)`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput::account_sharing_info_list): <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeDocumentPermissionError>`](crate::operation::describe_document_permission::DescribeDocumentPermissionError)
-    pub fn describe_document_permission(&self) -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionFluentBuilder{
+    pub fn describe_document_permission(&self) -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionFluentBuilder {
         crate::operation::describe_document_permission::builders::DescribeDocumentPermissionFluentBuilder::new(self.handle.clone())
     }
 }

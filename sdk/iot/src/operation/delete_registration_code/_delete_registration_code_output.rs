@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteRegistrationCodeOutput {
 }
 impl DeleteRegistrationCodeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder {
         crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegistrationCodeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,42 +21,31 @@ impl ::aws_http::request_id::RequestId for ReverseReplicationOutput {
 }
 impl ReverseReplicationOutput {
     /// Creates a new builder-style object to manufacture [`ReverseReplicationOutput`](crate::operation::reverse_replication::ReverseReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::reverse_replication::builders::ReverseReplicationOutputBuilder {
+    pub fn builder() -> crate::operation::reverse_replication::builders::ReverseReplicationOutputBuilder {
         crate::operation::reverse_replication::builders::ReverseReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReverseReplicationOutput`](crate::operation::reverse_replication::ReverseReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReverseReplicationOutputBuilder {
     pub(crate) reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ReverseReplicationOutputBuilder {
     /// <p>ARN of created SourceServer.</p>
-    pub fn reversed_direction_source_server_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reversed_direction_source_server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reversed_direction_source_server_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of created SourceServer.</p>
-    pub fn set_reversed_direction_source_server_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reversed_direction_source_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reversed_direction_source_server_arn = input;
         self
     }
     /// <p>ARN of created SourceServer.</p>
-    pub fn get_reversed_direction_source_server_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reversed_direction_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reversed_direction_source_server_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

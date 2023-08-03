@@ -64,9 +64,7 @@ impl PutBucketReplicationFluentBuilder {
         }
     }
     /// Access the PutBucketReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_replication::builders::PutBucketReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_replication::builders::PutBucketReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +76,7 @@ impl PutBucketReplicationFluentBuilder {
             crate::operation::put_bucket_replication::PutBucketReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_replication::PutBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_replication::PutBucketReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -90,10 +86,7 @@ impl PutBucketReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -102,9 +95,7 @@ impl PutBucketReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_replication::PutBucketReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_replication::PutBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_replication::PutBucketReplicationError>,
     > {
         let op = self
             .inner
@@ -127,9 +118,7 @@ impl PutBucketReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_replication::PutBucketReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_replication::PutBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_replication::PutBucketReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -143,9 +132,7 @@ impl PutBucketReplicationFluentBuilder {
             crate::operation::put_bucket_replication::PutBucketReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_replication::PutBucketReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_replication::PutBucketReplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -214,25 +201,17 @@ impl PutBucketReplicationFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p></p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::ReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.inner = self.inner.replication_configuration(input);
         self
     }
     /// <p></p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
         self.inner = self.inner.set_replication_configuration(input);
         self
     }
     /// <p></p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         self.inner.get_replication_configuration()
     }
 }

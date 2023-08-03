@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`evidence_folders(Option<Vec<AssessmentEvidenceFolder>>)`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput::evidence_folders): <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<GetEvidenceFoldersByAssessmentControlError>`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError)
-    pub fn get_evidence_folders_by_assessment_control(&self) -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlFluentBuilder{
-        crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlFluentBuilder::new(self.handle.clone())
+    pub fn get_evidence_folders_by_assessment_control(
+        &self,
+    ) -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlFluentBuilder {
+        crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

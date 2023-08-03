@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkspaceStatus {
     /// Workspace is active.
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for WorkspaceStatus {
             "UPGRADING" => WorkspaceStatus::Upgrading,
             "VERSION_UPDATE_FAILED" => WorkspaceStatus::VersionUpdateFailed,
             "VERSION_UPDATING" => WorkspaceStatus::VersionUpdating,
-            other => {
-                WorkspaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WorkspaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

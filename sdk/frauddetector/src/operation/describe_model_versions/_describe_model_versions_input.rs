@@ -43,18 +43,14 @@ impl DescribeModelVersionsInput {
 }
 impl DescribeModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder {
         crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelVersionsInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_version_number: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl DescribeModelVersionsInputBuilder {
         &self.model_id
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version number.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version_number = input;
         self
     }
@@ -103,10 +93,7 @@ impl DescribeModelVersionsInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
@@ -145,18 +132,14 @@ impl DescribeModelVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelVersionsInput`](crate::operation::describe_model_versions::DescribeModelVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model_versions::DescribeModelVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_versions::DescribeModelVersionsInput {
-                model_id: self.model_id,
-                model_version_number: self.model_version_number,
-                model_type: self.model_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_model_versions::DescribeModelVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_model_versions::DescribeModelVersionsInput {
+            model_id: self.model_id,
+            model_version_number: self.model_version_number,
+            model_type: self.model_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

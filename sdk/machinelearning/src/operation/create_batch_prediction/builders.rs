@@ -39,10 +39,7 @@ impl CreateBatchPredictionFluentBuilder {
         }
     }
     /// Access the CreateBatchPrediction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateBatchPredictionFluentBuilder {
             crate::operation::create_batch_prediction::CreateBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction::CreateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction::CreateBatchPredictionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateBatchPredictionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction::CreateBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction::CreateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction::CreateBatchPredictionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction::CreateBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction::CreateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction::CreateBatchPredictionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl CreateBatchPredictionFluentBuilder {
             crate::operation::create_batch_prediction::CreateBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction::CreateBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction::CreateBatchPredictionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }
@@ -146,18 +126,12 @@ impl CreateBatchPredictionFluentBuilder {
         self.inner.get_batch_prediction_id()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn batch_prediction_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_name(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn set_batch_prediction_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_name(input);
         self
     }
@@ -180,25 +154,17 @@ impl CreateBatchPredictionFluentBuilder {
         self.inner.get_ml_model_id()
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn batch_prediction_data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_data_source_id(input.into());
         self
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn set_batch_prediction_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_data_source_id(input);
         self
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn get_batch_prediction_data_source_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_batch_prediction_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_batch_prediction_data_source_id()
     }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>

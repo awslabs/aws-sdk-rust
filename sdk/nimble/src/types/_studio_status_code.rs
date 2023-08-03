@@ -55,13 +55,7 @@
 /// <p>The status code.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StudioStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -110,9 +104,7 @@ impl ::std::convert::From<&str> for StudioStatusCode {
         match s {
             "AWS_SSO_ACCESS_DENIED" => StudioStatusCode::AwsSsoAccessDenied,
             "AWS_SSO_CONFIGURATION_REPAIRED" => StudioStatusCode::AwsSsoConfigurationRepaired,
-            "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => {
-                StudioStatusCode::AwsSsoConfigurationRepairInProgress
-            }
+            "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS" => StudioStatusCode::AwsSsoConfigurationRepairInProgress,
             "AWS_SSO_NOT_ENABLED" => StudioStatusCode::AwsSsoNotEnabled,
             "AWS_STS_REGION_DISABLED" => StudioStatusCode::AwsStsRegionDisabled,
             "ENCRYPTION_KEY_ACCESS_DENIED" => StudioStatusCode::EncryptionKeyAccessDenied,
@@ -126,18 +118,10 @@ impl ::std::convert::From<&str> for StudioStatusCode {
             "STUDIO_DELETE_IN_PROGRESS" => StudioStatusCode::StudioDeleteInProgress,
             "STUDIO_UPDATED" => StudioStatusCode::StudioUpdated,
             "STUDIO_UPDATE_IN_PROGRESS" => StudioStatusCode::StudioUpdateInProgress,
-            "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => {
-                StudioStatusCode::StudioWithLaunchProfilesNotDeleted
-            }
-            "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => {
-                StudioStatusCode::StudioWithStreamingImagesNotDeleted
-            }
-            "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => {
-                StudioStatusCode::StudioWithStudioComponentsNotDeleted
-            }
-            other => {
-                StudioStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED" => StudioStatusCode::StudioWithLaunchProfilesNotDeleted,
+            "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED" => StudioStatusCode::StudioWithStreamingImagesNotDeleted,
+            "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED" => StudioStatusCode::StudioWithStudioComponentsNotDeleted,
+            other => StudioStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -154,9 +138,7 @@ impl StudioStatusCode {
         match self {
             StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
             StudioStatusCode::AwsSsoConfigurationRepaired => "AWS_SSO_CONFIGURATION_REPAIRED",
-            StudioStatusCode::AwsSsoConfigurationRepairInProgress => {
-                "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS"
-            }
+            StudioStatusCode::AwsSsoConfigurationRepairInProgress => "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS",
             StudioStatusCode::AwsSsoNotEnabled => "AWS_SSO_NOT_ENABLED",
             StudioStatusCode::AwsStsRegionDisabled => "AWS_STS_REGION_DISABLED",
             StudioStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
@@ -170,15 +152,9 @@ impl StudioStatusCode {
             StudioStatusCode::StudioDeleteInProgress => "STUDIO_DELETE_IN_PROGRESS",
             StudioStatusCode::StudioUpdated => "STUDIO_UPDATED",
             StudioStatusCode::StudioUpdateInProgress => "STUDIO_UPDATE_IN_PROGRESS",
-            StudioStatusCode::StudioWithLaunchProfilesNotDeleted => {
-                "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED"
-            }
-            StudioStatusCode::StudioWithStreamingImagesNotDeleted => {
-                "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED"
-            }
-            StudioStatusCode::StudioWithStudioComponentsNotDeleted => {
-                "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"
-            }
+            StudioStatusCode::StudioWithLaunchProfilesNotDeleted => "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED",
+            StudioStatusCode::StudioWithStreamingImagesNotDeleted => "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED",
+            StudioStatusCode::StudioWithStudioComponentsNotDeleted => "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED",
             StudioStatusCode::Unknown(value) => value.as_str(),
         }
     }

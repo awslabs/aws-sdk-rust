@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRegexPatternSetOutput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRegexPatternSetError>`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError)
-    pub fn update_regex_pattern_set(
-        &self,
-    ) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder
-    {
+    pub fn update_regex_pattern_set(&self) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder {
         crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

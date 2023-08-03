@@ -8,9 +8,7 @@ pub struct BatchCreateTableRowsOutput {
     pub workbook_cursor: i64,
     /// <p>The map of batch item id to the row id that was created for that item.</p>
     #[doc(hidden)]
-    pub created_rows: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub created_rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     #[doc(hidden)]
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
@@ -22,11 +20,7 @@ impl BatchCreateTableRowsOutput {
         self.workbook_cursor
     }
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub fn created_rows(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn created_rows(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.created_rows.as_ref()
     }
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
@@ -41,25 +35,18 @@ impl ::aws_http::request_id::RequestId for BatchCreateTableRowsOutput {
 }
 impl BatchCreateTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsOutput`](crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder {
         crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateTableRowsOutput`](crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateTableRowsOutputBuilder {
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
-    pub(crate) created_rows: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) failed_batch_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub(crate) created_rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchCreateTableRowsOutputBuilder {
@@ -82,11 +69,7 @@ impl BatchCreateTableRowsOutputBuilder {
     /// To override the contents of this collection use [`set_created_rows`](Self::set_created_rows).
     ///
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub fn created_rows(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_rows(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.created_rows.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.created_rows = ::std::option::Option::Some(hash_map);
@@ -95,19 +78,13 @@ impl BatchCreateTableRowsOutputBuilder {
     /// <p>The map of batch item id to the row id that was created for that item.</p>
     pub fn set_created_rows(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.created_rows = input;
         self
     }
     /// <p>The map of batch item id to the row id that was created for that item.</p>
-    pub fn get_created_rows(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_created_rows(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.created_rows
     }
     /// Appends an item to `failed_batch_items`.
@@ -122,17 +99,12 @@ impl BatchCreateTableRowsOutputBuilder {
         self
     }
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    pub fn set_failed_batch_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
-    ) -> Self {
+    pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    pub fn get_failed_batch_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
+    pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

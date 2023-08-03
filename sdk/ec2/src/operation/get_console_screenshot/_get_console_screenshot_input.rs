@@ -29,17 +29,14 @@ impl GetConsoleScreenshotInput {
 }
 impl GetConsoleScreenshotInput {
     /// Creates a new builder-style object to manufacture [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
-    pub fn builder(
-    ) -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder {
+    pub fn builder() -> crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder {
         crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsoleScreenshotInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl GetConsoleScreenshotInputBuilder {
     /// Consumes the builder and constructs a [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_console_screenshot::GetConsoleScreenshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_console_screenshot::GetConsoleScreenshotInput {
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-                wake_up: self.wake_up,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_console_screenshot::GetConsoleScreenshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_console_screenshot::GetConsoleScreenshotInput {
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+            wake_up: self.wake_up,
+        })
     }
 }

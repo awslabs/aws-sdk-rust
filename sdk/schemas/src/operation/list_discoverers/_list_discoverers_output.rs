@@ -35,9 +35,7 @@ impl ListDiscoverersOutput {
 
 /// A builder for [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoverersOutputBuilder {
     pub(crate) discoverers: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDiscoverersOutputBuilder {
         self
     }
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn set_discoverers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>,
-    ) -> Self {
+    pub fn set_discoverers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>) -> Self {
         self.discoverers = input;
         self
     }
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn get_discoverers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>> {
+    pub fn get_discoverers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>> {
         &self.discoverers
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>

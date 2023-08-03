@@ -5,8 +5,7 @@
 pub struct DescribeAggregationAuthorizationsOutput {
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
     #[doc(hidden)]
-    pub aggregation_authorizations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
+    pub aggregation_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAggregationAuthorizationsOutput {
 }
 impl DescribeAggregationAuthorizationsOutput {
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
-    pub fn aggregation_authorizations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregationAuthorization]> {
+    pub fn aggregation_authorizations(&self) -> ::std::option::Option<&[crate::types::AggregationAuthorization]> {
         self.aggregation_authorizations.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAggregationAuthorizationsOutp
 }
 impl DescribeAggregationAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregationAuthorizationsOutput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput).
-    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsOutputBuilder {
         crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAggregationAuthorizationsOutput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizationsOutputBuilder {
-    pub(crate) aggregation_authorizations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
+    pub(crate) aggregation_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeAggregationAuthorizationsOutputBuilder {
     /// To override the contents of this collection use [`set_aggregation_authorizations`](Self::set_aggregation_authorizations).
     ///
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
-    pub fn aggregation_authorizations(
-        mut self,
-        input: crate::types::AggregationAuthorization,
-    ) -> Self {
+    pub fn aggregation_authorizations(mut self, input: crate::types::AggregationAuthorization) -> Self {
         let mut v = self.aggregation_authorizations.unwrap_or_default();
         v.push(input);
         self.aggregation_authorizations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
-    pub fn set_aggregation_authorizations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
-    ) -> Self {
+    pub fn set_aggregation_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>) -> Self {
         self.aggregation_authorizations = input;
         self
     }
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
-    pub fn get_aggregation_authorizations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>> {
+    pub fn get_aggregation_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>> {
         &self.aggregation_authorizations
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -100,12 +86,10 @@ impl DescribeAggregationAuthorizationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAggregationAuthorizationsOutput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput).
-    pub fn build(self) -> crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput{
+    pub fn build(self) -> crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput {
         crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput {
-            aggregation_authorizations: self.aggregation_authorizations
-            ,
-            next_token: self.next_token
-            ,
+            aggregation_authorizations: self.aggregation_authorizations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

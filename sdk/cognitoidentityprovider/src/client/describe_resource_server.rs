@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeResourceServerOutput`](crate::operation::describe_resource_server::DescribeResourceServerOutput) with field(s):
     ///   - [`resource_server(Option<ResourceServerType>)`](crate::operation::describe_resource_server::DescribeResourceServerOutput::resource_server): <p>The resource server.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceServerError>`](crate::operation::describe_resource_server::DescribeResourceServerError)
-    pub fn describe_resource_server(
-        &self,
-    ) -> crate::operation::describe_resource_server::builders::DescribeResourceServerFluentBuilder
-    {
+    pub fn describe_resource_server(&self) -> crate::operation::describe_resource_server::builders::DescribeResourceServerFluentBuilder {
         crate::operation::describe_resource_server::builders::DescribeResourceServerFluentBuilder::new(self.handle.clone())
     }
 }

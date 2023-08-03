@@ -35,12 +35,9 @@ impl ListSyncJobsOutput {
 
 /// A builder for [`ListSyncJobsOutput`](crate::operation::list_sync_jobs::ListSyncJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSyncJobsOutputBuilder {
-    pub(crate) sync_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>>,
+    pub(crate) sync_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSyncJobsOutputBuilder {
         self
     }
     /// <p>The listed SyncJob summaries.</p>
-    pub fn set_sync_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>>,
-    ) -> Self {
+    pub fn set_sync_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>>) -> Self {
         self.sync_job_summaries = input;
         self
     }
     /// <p>The listed SyncJob summaries.</p>
-    pub fn get_sync_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>> {
+    pub fn get_sync_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncJobSummary>> {
         &self.sync_job_summaries
     }
     /// <p>The string that specifies the next page of results.</p>

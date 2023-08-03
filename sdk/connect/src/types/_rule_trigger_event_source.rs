@@ -30,9 +30,7 @@ impl RuleTriggerEventSource {
 
 /// A builder for [`RuleTriggerEventSource`](crate::types::RuleTriggerEventSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleTriggerEventSourceBuilder {
     pub(crate) event_source_name: ::std::option::Option<crate::types::EventSourceName>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl RuleTriggerEventSourceBuilder {
         self
     }
     /// <p>The name of the event source.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceName>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
         self.event_source_name = input;
         self
     }
@@ -56,18 +51,12 @@ impl RuleTriggerEventSourceBuilder {
         &self.event_source_name
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }

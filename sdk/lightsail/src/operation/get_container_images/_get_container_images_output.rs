@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetContainerImagesOutput {
 }
 impl GetContainerImagesOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder {
         crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerImagesOutputBuilder {
-    pub(crate) container_images:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>>,
+    pub(crate) container_images: ::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>>,
     _request_id: Option<String>,
 }
 impl GetContainerImagesOutputBuilder {
@@ -50,17 +46,12 @@ impl GetContainerImagesOutputBuilder {
         self
     }
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn set_container_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>>,
-    ) -> Self {
+    pub fn set_container_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>>) -> Self {
         self.container_images = input;
         self
     }
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn get_container_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>> {
+    pub fn get_container_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>> {
         &self.container_images
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

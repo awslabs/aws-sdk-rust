@@ -9,23 +9,16 @@ pub struct InputTemplate {
     pub advanced_input_filter: ::std::option::Option<crate::types::AdvancedInputFilter>,
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
     #[doc(hidden)]
-    pub advanced_input_filter_settings:
-        ::std::option::Option<crate::types::AdvancedInputFilterSettings>,
+    pub advanced_input_filter_settings: ::std::option::Option<crate::types::AdvancedInputFilterSettings>,
     /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
     #[doc(hidden)]
-    pub audio_selector_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
-    >,
+    pub audio_selector_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>>,
     /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
     #[doc(hidden)]
-    pub audio_selectors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
-    >,
+    pub audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
     /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
     #[doc(hidden)]
-    pub caption_selectors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
-    >,
+    pub caption_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>>,
     /// Use Cropping selection to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection.
     #[doc(hidden)]
     pub crop: ::std::option::Option<crate::types::Rectangle>,
@@ -74,39 +67,25 @@ pub struct InputTemplate {
 }
 impl InputTemplate {
     /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
-    pub fn advanced_input_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedInputFilter> {
+    pub fn advanced_input_filter(&self) -> ::std::option::Option<&crate::types::AdvancedInputFilter> {
         self.advanced_input_filter.as_ref()
     }
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
-    pub fn advanced_input_filter_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedInputFilterSettings> {
+    pub fn advanced_input_filter_settings(&self) -> ::std::option::Option<&crate::types::AdvancedInputFilterSettings> {
         self.advanced_input_filter_settings.as_ref()
     }
     /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
     pub fn audio_selector_groups(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>> {
         self.audio_selector_groups.as_ref()
     }
     /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
-    pub fn audio_selectors(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
-    > {
+    pub fn audio_selectors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>> {
         self.audio_selectors.as_ref()
     }
     /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
-    pub fn caption_selectors(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
-    > {
+    pub fn caption_selectors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>> {
         self.caption_selectors.as_ref()
     }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection.
@@ -179,22 +158,13 @@ impl InputTemplate {
 
 /// A builder for [`InputTemplate`](crate::types::InputTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputTemplateBuilder {
     pub(crate) advanced_input_filter: ::std::option::Option<crate::types::AdvancedInputFilter>,
-    pub(crate) advanced_input_filter_settings:
-        ::std::option::Option<crate::types::AdvancedInputFilterSettings>,
-    pub(crate) audio_selector_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
-    >,
-    pub(crate) audio_selectors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
-    >,
-    pub(crate) caption_selectors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
-    >,
+    pub(crate) advanced_input_filter_settings: ::std::option::Option<crate::types::AdvancedInputFilterSettings>,
+    pub(crate) audio_selector_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>>,
+    pub(crate) audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
+    pub(crate) caption_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>>,
     pub(crate) crop: ::std::option::Option<crate::types::Rectangle>,
     pub(crate) deblock_filter: ::std::option::Option<crate::types::InputDeblockFilter>,
     pub(crate) denoise_filter: ::std::option::Option<crate::types::InputDenoiseFilter>,
@@ -218,39 +188,26 @@ impl InputTemplateBuilder {
         self
     }
     /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
-    pub fn set_advanced_input_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedInputFilter>,
-    ) -> Self {
+    pub fn set_advanced_input_filter(mut self, input: ::std::option::Option<crate::types::AdvancedInputFilter>) -> Self {
         self.advanced_input_filter = input;
         self
     }
     /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
-    pub fn get_advanced_input_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedInputFilter> {
+    pub fn get_advanced_input_filter(&self) -> &::std::option::Option<crate::types::AdvancedInputFilter> {
         &self.advanced_input_filter
     }
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
-    pub fn advanced_input_filter_settings(
-        mut self,
-        input: crate::types::AdvancedInputFilterSettings,
-    ) -> Self {
+    pub fn advanced_input_filter_settings(mut self, input: crate::types::AdvancedInputFilterSettings) -> Self {
         self.advanced_input_filter_settings = ::std::option::Option::Some(input);
         self
     }
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
-    pub fn set_advanced_input_filter_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedInputFilterSettings>,
-    ) -> Self {
+    pub fn set_advanced_input_filter_settings(mut self, input: ::std::option::Option<crate::types::AdvancedInputFilterSettings>) -> Self {
         self.advanced_input_filter_settings = input;
         self
     }
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
-    pub fn get_advanced_input_filter_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedInputFilterSettings> {
+    pub fn get_advanced_input_filter_settings(&self) -> &::std::option::Option<crate::types::AdvancedInputFilterSettings> {
         &self.advanced_input_filter_settings
     }
     /// Adds a key-value pair to `audio_selector_groups`.
@@ -258,11 +215,7 @@ impl InputTemplateBuilder {
     /// To override the contents of this collection use [`set_audio_selector_groups`](Self::set_audio_selector_groups).
     ///
     /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
-    pub fn audio_selector_groups(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AudioSelectorGroup,
-    ) -> Self {
+    pub fn audio_selector_groups(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AudioSelectorGroup) -> Self {
         let mut hash_map = self.audio_selector_groups.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.audio_selector_groups = ::std::option::Option::Some(hash_map);
@@ -271,9 +224,7 @@ impl InputTemplateBuilder {
     /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
     pub fn set_audio_selector_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>>,
     ) -> Self {
         self.audio_selector_groups = input;
         self
@@ -281,9 +232,7 @@ impl InputTemplateBuilder {
     /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
     pub fn get_audio_selector_groups(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>> {
         &self.audio_selector_groups
     }
     /// Adds a key-value pair to `audio_selectors`.
@@ -291,11 +240,7 @@ impl InputTemplateBuilder {
     /// To override the contents of this collection use [`set_audio_selectors`](Self::set_audio_selectors).
     ///
     /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
-    pub fn audio_selectors(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AudioSelector,
-    ) -> Self {
+    pub fn audio_selectors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AudioSelector) -> Self {
         let mut hash_map = self.audio_selectors.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.audio_selectors = ::std::option::Option::Some(hash_map);
@@ -304,19 +249,13 @@ impl InputTemplateBuilder {
     /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
     pub fn set_audio_selectors(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
     ) -> Self {
         self.audio_selectors = input;
         self
     }
     /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
-    pub fn get_audio_selectors(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
-    > {
+    pub fn get_audio_selectors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>> {
         &self.audio_selectors
     }
     /// Adds a key-value pair to `caption_selectors`.
@@ -324,11 +263,7 @@ impl InputTemplateBuilder {
     /// To override the contents of this collection use [`set_caption_selectors`](Self::set_caption_selectors).
     ///
     /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
-    pub fn caption_selectors(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CaptionSelector,
-    ) -> Self {
+    pub fn caption_selectors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CaptionSelector) -> Self {
         let mut hash_map = self.caption_selectors.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.caption_selectors = ::std::option::Option::Some(hash_map);
@@ -337,19 +272,13 @@ impl InputTemplateBuilder {
     /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
     pub fn set_caption_selectors(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>>,
     ) -> Self {
         self.caption_selectors = input;
         self
     }
     /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
-    pub fn get_caption_selectors(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
-    > {
+    pub fn get_caption_selectors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>> {
         &self.caption_selectors
     }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection.
@@ -372,10 +301,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
-    pub fn set_deblock_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDeblockFilter>,
-    ) -> Self {
+    pub fn set_deblock_filter(mut self, input: ::std::option::Option<crate::types::InputDeblockFilter>) -> Self {
         self.deblock_filter = input;
         self
     }
@@ -389,10 +315,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
-    pub fn set_denoise_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDenoiseFilter>,
-    ) -> Self {
+    pub fn set_denoise_filter(mut self, input: ::std::option::Option<crate::types::InputDenoiseFilter>) -> Self {
         self.denoise_filter = input;
         self
     }
@@ -401,18 +324,12 @@ impl InputTemplateBuilder {
         &self.denoise_filter
     }
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
-    pub fn dolby_vision_metadata_xml(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dolby_vision_metadata_xml(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dolby_vision_metadata_xml = ::std::option::Option::Some(input.into());
         self
     }
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
-    pub fn set_dolby_vision_metadata_xml(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dolby_vision_metadata_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dolby_vision_metadata_xml = input;
         self
     }
@@ -426,10 +343,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
-    pub fn set_filter_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFilterEnable>,
-    ) -> Self {
+    pub fn set_filter_enable(mut self, input: ::std::option::Option<crate::types::InputFilterEnable>) -> Self {
         self.filter_enable = input;
         self
     }
@@ -457,10 +371,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
-    pub fn set_image_inserter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageInserter>,
-    ) -> Self {
+    pub fn set_image_inserter(mut self, input: ::std::option::Option<crate::types::ImageInserter>) -> Self {
         self.image_inserter = input;
         self
     }
@@ -480,17 +391,12 @@ impl InputTemplateBuilder {
         self
     }
     /// Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-    pub fn set_input_clippings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputClipping>>,
-    ) -> Self {
+    pub fn set_input_clippings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputClipping>>) -> Self {
         self.input_clippings = input;
         self
     }
     /// Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-    pub fn get_input_clippings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputClipping>> {
+    pub fn get_input_clippings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputClipping>> {
         &self.input_clippings
     }
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
@@ -499,10 +405,7 @@ impl InputTemplateBuilder {
         self
     }
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
-    pub fn set_input_scan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputScanType>,
-    ) -> Self {
+    pub fn set_input_scan_type(mut self, input: ::std::option::Option<crate::types::InputScanType>) -> Self {
         self.input_scan_type = input;
         self
     }
@@ -544,10 +447,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Set PSI control for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
-    pub fn set_psi_control(
-        mut self,
-        input: ::std::option::Option<crate::types::InputPsiControl>,
-    ) -> Self {
+    pub fn set_psi_control(mut self, input: ::std::option::Option<crate::types::InputPsiControl>) -> Self {
         self.psi_control = input;
         self
     }
@@ -561,10 +461,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
-    pub fn set_timecode_source(
-        mut self,
-        input: ::std::option::Option<crate::types::InputTimecodeSource>,
-    ) -> Self {
+    pub fn set_timecode_source(mut self, input: ::std::option::Option<crate::types::InputTimecodeSource>) -> Self {
         self.timecode_source = input;
         self
     }
@@ -573,18 +470,12 @@ impl InputTemplateBuilder {
         &self.timecode_source
     }
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings, to Specified start. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
-    pub fn timecode_start(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timecode_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timecode_start = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings, to Specified start. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
-    pub fn set_timecode_start(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timecode_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timecode_start = input;
         self
     }
@@ -598,10 +489,7 @@ impl InputTemplateBuilder {
         self
     }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
-    pub fn set_video_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoSelector>,
-    ) -> Self {
+    pub fn set_video_selector(mut self, input: ::std::option::Option<crate::types::VideoSelector>) -> Self {
         self.video_selector = input;
         self
     }

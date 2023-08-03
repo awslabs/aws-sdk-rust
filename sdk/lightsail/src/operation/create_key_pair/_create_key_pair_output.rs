@@ -49,9 +49,7 @@ impl CreateKeyPairOutput {
 
 /// A builder for [`CreateKeyPairOutput`](crate::operation::create_key_pair::CreateKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyPairOutputBuilder {
     pub(crate) key_pair: ::std::option::Option<crate::types::KeyPair>,
     pub(crate) public_key_base64: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateKeyPairOutputBuilder {
         &self.key_pair
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_base64 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key_base64 = input;
         self
     }
@@ -95,18 +87,12 @@ impl CreateKeyPairOutputBuilder {
         &self.public_key_base64
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key_base64 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn set_private_key_base64(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_key_base64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key_base64 = input;
         self
     }

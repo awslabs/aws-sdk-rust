@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput::status): <p>The HTTP status of the request. </p>
     /// - On failure, responds with [`SdkError<UpdateIpRestrictionError>`](crate::operation::update_ip_restriction::UpdateIpRestrictionError)
-    pub fn update_ip_restriction(
-        &self,
-    ) -> crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder {
-        crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ip_restriction(&self) -> crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder {
+        crate::operation::update_ip_restriction::builders::UpdateIpRestrictionFluentBuilder::new(self.handle.clone())
     }
 }

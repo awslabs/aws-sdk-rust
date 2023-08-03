@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for RetrieveTapeArchiveOutput {
 }
 impl RetrieveTapeArchiveOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveTapeArchiveOutput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput).
-    pub fn builder(
-    ) -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveOutputBuilder {
-        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveOutputBuilder {
+        crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveOutputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveTapeArchiveOutput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveTapeArchiveOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -23,9 +23,7 @@ impl SourceConnectionParameters {
 
 /// A builder for [`SourceConnectionParameters`](crate::types::SourceConnectionParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConnectionParametersBuilder {
     pub(crate) code_star: ::std::option::Option<crate::types::CodeStarParameters>,
 }
@@ -36,10 +34,7 @@ impl SourceConnectionParametersBuilder {
         self
     }
     /// <p>Provides <code>ConnectionType</code> details.</p>
-    pub fn set_code_star(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeStarParameters>,
-    ) -> Self {
+    pub fn set_code_star(mut self, input: ::std::option::Option<crate::types::CodeStarParameters>) -> Self {
         self.code_star = input;
         self
     }
@@ -49,8 +44,6 @@ impl SourceConnectionParametersBuilder {
     }
     /// Consumes the builder and constructs a [`SourceConnectionParameters`](crate::types::SourceConnectionParameters).
     pub fn build(self) -> crate::types::SourceConnectionParameters {
-        crate::types::SourceConnectionParameters {
-            code_star: self.code_star,
-        }
+        crate::types::SourceConnectionParameters { code_star: self.code_star }
     }
 }

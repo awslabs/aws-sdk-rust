@@ -37,9 +37,7 @@ impl RepositoryBranchInput {
 
 /// A builder for [`RepositoryBranchInput`](crate::types::RepositoryBranchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryBranchInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl RepositoryBranchInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.provider = input;
         self
     }

@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`StartTaskContactOutput`](crate::operation::start_task_contact::StartTaskContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::start_task_contact::StartTaskContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance.</p>
     /// - On failure, responds with [`SdkError<StartTaskContactError>`](crate::operation::start_task_contact::StartTaskContactError)
-    pub fn start_task_contact(
-        &self,
-    ) -> crate::operation::start_task_contact::builders::StartTaskContactFluentBuilder {
-        crate::operation::start_task_contact::builders::StartTaskContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_task_contact(&self) -> crate::operation::start_task_contact::builders::StartTaskContactFluentBuilder {
+        crate::operation::start_task_contact::builders::StartTaskContactFluentBuilder::new(self.handle.clone())
     }
 }

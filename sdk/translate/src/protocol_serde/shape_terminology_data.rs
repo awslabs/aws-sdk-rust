@@ -4,9 +4,7 @@ pub fn ser_terminology_data(
     input: &crate::types::TerminologyData,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file {
-        object
-            .key("File")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("File").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.format {
         object.key("Format").string(var_2.as_str());

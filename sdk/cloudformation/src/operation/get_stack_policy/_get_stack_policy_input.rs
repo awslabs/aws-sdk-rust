@@ -23,9 +23,7 @@ impl GetStackPolicyInput {
 
 /// A builder for [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStackPolicyInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl GetStackPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stack_policy::GetStackPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_stack_policy::GetStackPolicyInput {
-            stack_name: self.stack_name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_stack_policy::GetStackPolicyInput { stack_name: self.stack_name })
     }
 }

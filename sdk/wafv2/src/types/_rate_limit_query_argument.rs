@@ -9,8 +9,7 @@ pub struct RateLimitQueryArgument {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     #[doc(hidden)]
-    pub text_transformations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RateLimitQueryArgument {
     /// <p>The name of the query argument to use. </p>
@@ -18,9 +17,7 @@ impl RateLimitQueryArgument {
         self.name.as_deref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn text_transformations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TextTransformation]> {
+    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl RateLimitQueryArgument {
 
 /// A builder for [`RateLimitQueryArgument`](crate::types::RateLimitQueryArgument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateLimitQueryArgumentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) text_transformations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RateLimitQueryArgumentBuilder {
     /// <p>The name of the query argument to use. </p>
@@ -68,17 +62,12 @@ impl RateLimitQueryArgumentBuilder {
         self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn set_text_transformations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
-    ) -> Self {
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
         self.text_transformations = input;
         self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn get_text_transformations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RateLimitQueryArgument`](crate::types::RateLimitQueryArgument).

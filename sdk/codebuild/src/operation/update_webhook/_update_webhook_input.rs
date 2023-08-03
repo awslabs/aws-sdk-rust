@@ -16,8 +16,7 @@ pub struct UpdateWebhookInput {
     pub rotate_secret: bool,
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
     #[doc(hidden)]
-    pub filter_groups:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     #[doc(hidden)]
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
@@ -38,9 +37,7 @@ impl UpdateWebhookInput {
         self.rotate_secret
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn filter_groups(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<crate::types::WebhookFilter>]> {
+    pub fn filter_groups(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::WebhookFilter>]> {
         self.filter_groups.as_deref()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -57,15 +54,12 @@ impl UpdateWebhookInput {
 
 /// A builder for [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWebhookInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_filter: ::std::option::Option<::std::string::String>,
     pub(crate) rotate_secret: ::std::option::Option<bool>,
-    pub(crate) filter_groups:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
 }
 impl UpdateWebhookInputBuilder {
@@ -86,20 +80,14 @@ impl UpdateWebhookInputBuilder {
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn branch_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn branch_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn set_branch_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_filter = input;
         self
     }
@@ -135,17 +123,12 @@ impl UpdateWebhookInputBuilder {
         self
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn set_filter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
-    ) -> Self {
+    pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>) -> Self {
         self.filter_groups = input;
         self
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn get_filter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
+    pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
         &self.filter_groups
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -154,10 +137,7 @@ impl UpdateWebhookInputBuilder {
         self
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn set_build_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookBuildType>,
-    ) -> Self {
+    pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::WebhookBuildType>) -> Self {
         self.build_type = input;
         self
     }
@@ -168,10 +148,7 @@ impl UpdateWebhookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_webhook::UpdateWebhookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_webhook::UpdateWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_webhook::UpdateWebhookInput {
             project_name: self.project_name,
             branch_filter: self.branch_filter,

@@ -9,9 +9,7 @@ pub struct AssetBundleExportJobVpcConnectionOverrideProperties {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>,
-    >,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>>,
 }
 impl AssetBundleExportJobVpcConnectionOverrideProperties {
     /// <p>The ARN of the specific <code>VPCConnection</code> resource whose override properties are configured in this structure.</p>
@@ -19,32 +17,23 @@ impl AssetBundleExportJobVpcConnectionOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride]>
-    {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride]> {
         self.properties.as_deref()
     }
 }
 impl AssetBundleExportJobVpcConnectionOverrideProperties {
     /// Creates a new builder-style object to manufacture [`AssetBundleExportJobVpcConnectionOverrideProperties`](crate::types::AssetBundleExportJobVpcConnectionOverrideProperties).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
-        crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
+        crate::types::builders::AssetBundleExportJobVpcConnectionOverridePropertiesBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleExportJobVpcConnectionOverrideProperties`](crate::types::AssetBundleExportJobVpcConnectionOverrideProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>>,
 }
 impl AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
     /// <p>The ARN of the specific <code>VPCConnection</code> resource whose override properties are configured in this structure.</p>
@@ -66,10 +55,7 @@ impl AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        mut self,
-        input: crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride,
-    ) -> Self {
+    pub fn properties(mut self, input: crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
         self.properties = ::std::option::Option::Some(v);
@@ -78,19 +64,13 @@ impl AssetBundleExportJobVpcConnectionOverridePropertiesBuilder {
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of <code>VPCConnection</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionPropertyToOverride>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobVpcConnectionOverrideProperties`](crate::types::AssetBundleExportJobVpcConnectionOverrideProperties).

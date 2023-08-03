@@ -15,16 +15,14 @@ impl DeleteBusinessReportScheduleInput {
 }
 impl DeleteBusinessReportScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeleteBusinessReportScheduleInput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput).
-    pub fn builder() -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder{
+    pub fn builder() -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder {
         crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBusinessReportScheduleInput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBusinessReportScheduleInputBuilder {
     pub(crate) schedule_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DeleteBusinessReportScheduleInputBuilder {
         crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput {
-                schedule_arn: self.schedule_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput {
+            schedule_arn: self.schedule_arn,
+        })
     }
 }

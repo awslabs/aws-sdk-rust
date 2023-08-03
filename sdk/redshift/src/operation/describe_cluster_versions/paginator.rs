@@ -2,8 +2,7 @@
 /// Paginator for [`DescribeClusterVersions`](crate::operation::describe_cluster_versions::DescribeClusterVersions)
 pub struct DescribeClusterVersionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder,
+    builder: crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,10 +31,7 @@ impl DescribeClusterVersionsPaginator {
     ///
     /// This paginator automatically flattens results using `cluster_versions`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginatorItems
-    {
+    pub fn items(self) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginatorItems {
         crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginatorItems(self)
     }
 
@@ -59,9 +55,7 @@ impl DescribeClusterVersionsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -71,10 +65,7 @@ impl DescribeClusterVersionsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -99,13 +90,9 @@ impl DescribeClusterVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_describe_cluster_versions_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_cluster_versions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -143,9 +130,7 @@ impl DescribeClusterVersionsPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::ClusterVersion,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

@@ -10,10 +10,7 @@ impl GetWorkgroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_workgroup::GetWorkgroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workgroup::GetWorkgroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workgroup::GetWorkgroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_workgroup();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetWorkgroupFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_workgroup::GetWorkgroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_workgroup::GetWorkgroup, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_workgroup::GetWorkgroupError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetWorkgroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl GetWorkgroupFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_workgroup::GetWorkgroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_workgroup::GetWorkgroup, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_workgroup::GetWorkgroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the workgroup to return information for.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the workgroup to return information for.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

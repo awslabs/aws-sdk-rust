@@ -5,16 +5,16 @@ pub use crate::operation::get_savings_plans_utilization_details::_get_savings_pl
 
 impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_savings_plans_utilization_details();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl GetSavingsPlansUtilizationDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
+    inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
 }
 impl GetSavingsPlansUtilizationDetailsFluentBuilder {
     /// Creates a new `GetSavingsPlansUtilizationDetails`.
@@ -39,15 +39,20 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         }
     }
     /// Access the GetSavingsPlansUtilizationDetails as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,23 +89,32 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
         crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -108,10 +123,7 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -167,17 +179,12 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self
     }
     /// <p>The data type.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>) -> Self {
         self.inner = self.inner.set_data_type(input);
         self
     }
     /// <p>The data type.</p>
-    pub fn get_data_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
         self.inner.get_data_type()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -236,10 +243,7 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

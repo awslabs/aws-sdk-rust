@@ -40,13 +40,7 @@
 /// Specifies the type of the audio selector.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AudioSelectorType {
             "LANGUAGE_CODE" => AudioSelectorType::LanguageCode,
             "PID" => AudioSelectorType::Pid,
             "TRACK" => AudioSelectorType::Track,
-            other => {
-                AudioSelectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AudioSelectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

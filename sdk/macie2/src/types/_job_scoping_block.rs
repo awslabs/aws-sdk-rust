@@ -23,9 +23,7 @@ impl JobScopingBlock {
 
 /// A builder for [`JobScopingBlock`](crate::types::JobScopingBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobScopingBlockBuilder {
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
 }
@@ -42,10 +40,7 @@ impl JobScopingBlockBuilder {
         self
     }
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>) -> Self {
         self.and = input;
         self
     }

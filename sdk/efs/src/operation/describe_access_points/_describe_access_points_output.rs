@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAccessPointsOutput {
 }
 impl DescribeAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPointsOutput`](crate::operation::describe_access_points::DescribeAccessPointsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder {
         crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccessPointsOutput`](crate::operation::describe_access_points::DescribeAccessPointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccessPointsOutputBuilder {
-    pub(crate) access_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>,
+    pub(crate) access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeAccessPointsOutputBuilder {
         self
     }
     /// <p>An array of access point descriptions.</p>
-    pub fn set_access_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>,
-    ) -> Self {
+    pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>) -> Self {
         self.access_points = input;
         self
     }
     /// <p>An array of access point descriptions.</p>
-    pub fn get_access_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>> {
+    pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>> {
         &self.access_points
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>

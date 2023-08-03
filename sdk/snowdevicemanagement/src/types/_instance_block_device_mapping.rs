@@ -30,9 +30,7 @@ impl InstanceBlockDeviceMapping {
 
 /// A builder for [`InstanceBlockDeviceMapping`](crate::types::InstanceBlockDeviceMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMappingBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
@@ -58,10 +56,7 @@ impl InstanceBlockDeviceMappingBuilder {
         self
     }
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::EbsInstanceBlockDevice>) -> Self {
         self.ebs = input;
         self
     }

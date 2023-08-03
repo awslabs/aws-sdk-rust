@@ -6,28 +6,19 @@ pub fn ser_provisioned_request(
     if let Some(var_1) = &input.broker_node_group_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("brokerNodeGroupInfo").start_object();
-        crate::protocol_serde::shape_broker_node_group_info::ser_broker_node_group_info(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_broker_node_group_info::ser_broker_node_group_info(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.client_authentication {
         #[allow(unused_mut)]
         let mut object_4 = object.key("clientAuthentication").start_object();
-        crate::protocol_serde::shape_client_authentication::ser_client_authentication(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_client_authentication::ser_client_authentication(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.configuration_info {
         #[allow(unused_mut)]
         let mut object_6 = object.key("configurationInfo").start_object();
-        crate::protocol_serde::shape_configuration_info::ser_configuration_info(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_configuration_info::ser_configuration_info(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.encryption_info {
@@ -42,10 +33,7 @@ pub fn ser_provisioned_request(
     if let Some(var_10) = &input.open_monitoring {
         #[allow(unused_mut)]
         let mut object_11 = object.key("openMonitoring").start_object();
-        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.kafka_version {

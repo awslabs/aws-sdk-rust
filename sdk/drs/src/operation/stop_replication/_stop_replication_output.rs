@@ -28,9 +28,7 @@ impl StopReplicationOutput {
 
 /// A builder for [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationOutputBuilder {
     pub(crate) source_server: ::std::option::Option<crate::types::SourceServer>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopReplicationOutputBuilder {
         self
     }
     /// <p>The Source Server that this action was targeted on.</p>
-    pub fn set_source_server(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceServer>,
-    ) -> Self {
+    pub fn set_source_server(mut self, input: ::std::option::Option<crate::types::SourceServer>) -> Self {
         self.source_server = input;
         self
     }

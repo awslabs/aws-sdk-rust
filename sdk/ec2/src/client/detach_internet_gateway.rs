@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`vpc_id(impl ::std::convert::Into<String>)`](crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder::set_vpc_id): <p>The ID of the VPC.</p>
     /// - On success, responds with [`DetachInternetGatewayOutput`](crate::operation::detach_internet_gateway::DetachInternetGatewayOutput)
     /// - On failure, responds with [`SdkError<DetachInternetGatewayError>`](crate::operation::detach_internet_gateway::DetachInternetGatewayError)
-    pub fn detach_internet_gateway(
-        &self,
-    ) -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder
-    {
-        crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_internet_gateway(&self) -> crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder {
+        crate::operation::detach_internet_gateway::builders::DetachInternetGatewayFluentBuilder::new(self.handle.clone())
     }
 }

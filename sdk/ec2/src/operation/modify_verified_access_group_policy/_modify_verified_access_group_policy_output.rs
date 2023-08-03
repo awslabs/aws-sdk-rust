@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ModifyVerifiedAccessGroupPolicyOutput
 }
 impl ModifyVerifiedAccessGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessGroupPolicyOutput`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput).
-    pub fn builder() -> crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyOutputBuilder {
         crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessGroupPolicyOutput`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessGroupPolicyOutputBuilder {
     pub(crate) policy_enabled: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl ModifyVerifiedAccessGroupPolicyOutputBuilder {
         &self.policy_enabled
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -88,15 +80,10 @@ impl ModifyVerifiedAccessGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessGroupPolicyOutput`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput {
         crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput {
-            policy_enabled: self.policy_enabled
-            ,
-            policy_document: self.policy_document
-            ,
+            policy_enabled: self.policy_enabled,
+            policy_document: self.policy_document,
             _request_id: self._request_id,
         }
     }

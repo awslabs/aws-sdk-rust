@@ -6,10 +6,7 @@ pub fn ser_lock_rule_input(
     if let Some(var_1) = &input.lock_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LockConfiguration").start_object();
-        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -10,10 +10,7 @@ impl ListAssetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_assets::ListAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assets::ListAssetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_assets();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         self.customize_middleware().await
@@ -147,18 +135,12 @@ impl ListAssetsFluentBuilder {
         self.inner.get_next_token()
     }
     /// Returns Assets associated with the specified PackagingGroup.
-    pub fn packaging_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.packaging_group_id(input.into());
         self
     }
     /// Returns Assets associated with the specified PackagingGroup.
-    pub fn set_packaging_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_packaging_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_packaging_group_id(input);
         self
     }

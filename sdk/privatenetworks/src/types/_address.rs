@@ -210,18 +210,12 @@ impl AddressBuilder {
         &self.postal_code
     }
     /// <p>The state or province for this address.</p>
-    pub fn state_or_province(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_or_province(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_province = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state or province for this address.</p>
-    pub fn set_state_or_province(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_or_province(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_or_province = input;
         self
     }
@@ -272,18 +266,12 @@ impl AddressBuilder {
         &self.street3
     }
     /// <p>The recipient's email address.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recipient's email address.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }

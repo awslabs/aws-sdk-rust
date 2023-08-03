@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateJobPriorityOutput {
 }
 impl UpdateJobPriorityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
-    pub fn builder(
-    ) -> crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder {
+    pub fn builder() -> crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder {
         crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobPriorityOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,

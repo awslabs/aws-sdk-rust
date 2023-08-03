@@ -33,16 +33,14 @@ impl UpdateWorkspaceConfigurationInput {
 }
 impl UpdateWorkspaceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
-    pub fn builder() -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder {
         crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
@@ -50,18 +48,12 @@ pub struct UpdateWorkspaceConfigurationInputBuilder {
 }
 impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -86,20 +78,14 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-    pub fn grafana_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-    pub fn set_grafana_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_version = input;
         self
     }
@@ -116,12 +102,10 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
-                configuration: self.configuration,
-                workspace_id: self.workspace_id,
-                grafana_version: self.grafana_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
+            configuration: self.configuration,
+            workspace_id: self.workspace_id,
+            grafana_version: self.grafana_version,
+        })
     }
 }

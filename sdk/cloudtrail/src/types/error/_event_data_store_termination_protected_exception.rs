@@ -27,34 +27,27 @@ impl ::std::fmt::Display for EventDataStoreTerminationProtectedException {
     }
 }
 impl ::std::error::Error for EventDataStoreTerminationProtectedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::EventDataStoreTerminationProtectedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::EventDataStoreTerminationProtectedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for EventDataStoreTerminationProtectedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EventDataStoreTerminationProtectedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl EventDataStoreTerminationProtectedException {
     /// Creates a new builder-style object to manufacture [`EventDataStoreTerminationProtectedException`](crate::types::error::EventDataStoreTerminationProtectedException).
-    pub fn builder(
-    ) -> crate::types::error::builders::EventDataStoreTerminationProtectedExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::EventDataStoreTerminationProtectedExceptionBuilder {
         crate::types::error::builders::EventDataStoreTerminationProtectedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`EventDataStoreTerminationProtectedException`](crate::types::error::EventDataStoreTerminationProtectedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDataStoreTerminationProtectedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl EventDataStoreTerminationProtectedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

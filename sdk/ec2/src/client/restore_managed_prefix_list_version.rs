@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreManagedPrefixListVersionOutput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput) with field(s):
     ///   - [`prefix_list(Option<ManagedPrefixList>)`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput::prefix_list): <p>Information about the prefix list.</p>
     /// - On failure, responds with [`SdkError<RestoreManagedPrefixListVersionError>`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError)
-    pub fn restore_managed_prefix_list_version(&self) -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionFluentBuilder{
+    pub fn restore_managed_prefix_list_version(
+        &self,
+    ) -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionFluentBuilder {
         crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionFluentBuilder::new(self.handle.clone())
     }
 }

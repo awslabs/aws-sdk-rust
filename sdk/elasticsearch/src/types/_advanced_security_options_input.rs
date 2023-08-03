@@ -51,9 +51,7 @@ impl AdvancedSecurityOptionsInput {
 
 /// A builder for [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) internal_user_database_enabled: ::std::option::Option<bool>,
@@ -82,10 +80,7 @@ impl AdvancedSecurityOptionsInputBuilder {
         self
     }
     /// <p>True if the internal user database is enabled.</p>
-    pub fn set_internal_user_database_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_internal_user_database_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.internal_user_database_enabled = input;
         self
     }
@@ -99,17 +94,12 @@ impl AdvancedSecurityOptionsInputBuilder {
         self
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
-    pub fn set_master_user_options(
-        mut self,
-        input: ::std::option::Option<crate::types::MasterUserOptions>,
-    ) -> Self {
+    pub fn set_master_user_options(mut self, input: ::std::option::Option<crate::types::MasterUserOptions>) -> Self {
         self.master_user_options = input;
         self
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
-    pub fn get_master_user_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::MasterUserOptions> {
+    pub fn get_master_user_options(&self) -> &::std::option::Option<crate::types::MasterUserOptions> {
         &self.master_user_options
     }
     /// <p>Specifies the SAML application configuration for the domain.</p>
@@ -118,10 +108,7 @@ impl AdvancedSecurityOptionsInputBuilder {
         self
     }
     /// <p>Specifies the SAML application configuration for the domain.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlOptionsInput>,
-    ) -> Self {
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlOptionsInput>) -> Self {
         self.saml_options = input;
         self
     }

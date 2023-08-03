@@ -5,15 +5,12 @@
 pub struct GetUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
     #[doc(hidden)]
-    pub user_access_logging_settings:
-        ::std::option::Option<crate::types::UserAccessLoggingSettings>,
+    pub user_access_logging_settings: ::std::option::Option<crate::types::UserAccessLoggingSettings>,
     _request_id: Option<String>,
 }
 impl GetUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserAccessLoggingSettings> {
+    pub fn user_access_logging_settings(&self) -> ::std::option::Option<&crate::types::UserAccessLoggingSettings> {
         self.user_access_logging_settings.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetUserAccessLoggingSettingsOutput {
 }
 impl GetUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsOutput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsOutputBuilder {
         crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserAccessLoggingSettingsOutput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserAccessLoggingSettingsOutputBuilder {
-    pub(crate) user_access_logging_settings:
-        ::std::option::Option<crate::types::UserAccessLoggingSettings>,
+    pub(crate) user_access_logging_settings: ::std::option::Option<crate::types::UserAccessLoggingSettings>,
     _request_id: Option<String>,
 }
 impl GetUserAccessLoggingSettingsOutputBuilder {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(
-        mut self,
-        input: crate::types::UserAccessLoggingSettings,
-    ) -> Self {
+    pub fn user_access_logging_settings(mut self, input: crate::types::UserAccessLoggingSettings) -> Self {
         self.user_access_logging_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user access logging settings.</p>
-    pub fn set_user_access_logging_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserAccessLoggingSettings>,
-    ) -> Self {
+    pub fn set_user_access_logging_settings(mut self, input: ::std::option::Option<crate::types::UserAccessLoggingSettings>) -> Self {
         self.user_access_logging_settings = input;
         self
     }
     /// <p>The user access logging settings.</p>
-    pub fn get_user_access_logging_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserAccessLoggingSettings> {
+    pub fn get_user_access_logging_settings(&self) -> &::std::option::Option<crate::types::UserAccessLoggingSettings> {
         &self.user_access_logging_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl GetUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUserAccessLoggingSettingsOutput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput {
         crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput {
             user_access_logging_settings: self.user_access_logging_settings,
             _request_id: self._request_id,

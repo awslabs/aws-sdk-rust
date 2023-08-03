@@ -26,7 +26,7 @@ impl DescribeServiceIntegrationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServiceIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder,
+    inner: crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder,
 }
 impl DescribeServiceIntegrationFluentBuilder {
     /// Creates a new `DescribeServiceIntegration`.
@@ -37,7 +37,7 @@ impl DescribeServiceIntegrationFluentBuilder {
         }
     }
     /// Access the DescribeServiceIntegration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeServiceIntegrationFluentBuilder {
             crate::operation::describe_service_integration::DescribeServiceIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_integration::DescribeServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_integration::DescribeServiceIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeServiceIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeServiceIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_integration::DescribeServiceIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_integration::DescribeServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_integration::DescribeServiceIntegrationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeServiceIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_integration::DescribeServiceIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_integration::DescribeServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_integration::DescribeServiceIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeServiceIntegrationFluentBuilder {
             crate::operation::describe_service_integration::DescribeServiceIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_integration::DescribeServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_integration::DescribeServiceIntegrationError>,
     > {
         self.customize_middleware().await
     }

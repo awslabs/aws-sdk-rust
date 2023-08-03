@@ -62,9 +62,7 @@ impl ::std::fmt::Debug for UpdateNotificationRuleInput {
 }
 impl UpdateNotificationRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleInput`](crate::operation::update_notification_rule::UpdateNotificationRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_notification_rule::builders::UpdateNotificationRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_notification_rule::builders::UpdateNotificationRuleInputBuilder {
         crate::operation::update_notification_rule::builders::UpdateNotificationRuleInputBuilder::default()
     }
 }
@@ -115,10 +113,7 @@ impl UpdateNotificationRuleInputBuilder {
         self
     }
     /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotificationRuleStatus>) -> Self {
         self.status = input;
         self
     }
@@ -131,27 +126,19 @@ impl UpdateNotificationRuleInputBuilder {
     /// To override the contents of this collection use [`set_event_type_ids`](Self::set_event_type_ids).
     ///
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_type_ids.unwrap_or_default();
         v.push(input.into());
         self.event_type_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn set_event_type_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_type_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_type_ids = input;
         self
     }
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn get_event_type_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_type_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_type_ids
     }
     /// Appends an item to `targets`.
@@ -166,10 +153,7 @@ impl UpdateNotificationRuleInputBuilder {
         self
     }
     /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -183,10 +167,7 @@ impl UpdateNotificationRuleInputBuilder {
         self
     }
     /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    pub fn set_detail_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DetailType>,
-    ) -> Self {
+    pub fn set_detail_type(mut self, input: ::std::option::Option<crate::types::DetailType>) -> Self {
         self.detail_type = input;
         self
     }
@@ -197,20 +178,16 @@ impl UpdateNotificationRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNotificationRuleInput`](crate::operation::update_notification_rule::UpdateNotificationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_notification_rule::UpdateNotificationRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_notification_rule::UpdateNotificationRuleInput {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                event_type_ids: self.event_type_ids,
-                targets: self.targets,
-                detail_type: self.detail_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_notification_rule::UpdateNotificationRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_notification_rule::UpdateNotificationRuleInput {
+            arn: self.arn,
+            name: self.name,
+            status: self.status,
+            event_type_ids: self.event_type_ids,
+            targets: self.targets,
+            detail_type: self.detail_type,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateNotificationRuleInputBuilder {

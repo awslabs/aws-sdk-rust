@@ -5,8 +5,7 @@
 pub struct ListEdgePackagingJobsOutput {
     /// <p>Summaries of edge packaging jobs.</p>
     #[doc(hidden)]
-    pub edge_packaging_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
+    pub edge_packaging_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
     /// <p>Token to use when calling the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEdgePackagingJobsOutput {
 }
 impl ListEdgePackagingJobsOutput {
     /// <p>Summaries of edge packaging jobs.</p>
-    pub fn edge_packaging_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EdgePackagingJobSummary]> {
+    pub fn edge_packaging_job_summaries(&self) -> ::std::option::Option<&[crate::types::EdgePackagingJobSummary]> {
         self.edge_packaging_job_summaries.as_deref()
     }
     /// <p>Token to use when calling the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEdgePackagingJobsOutput {
 }
 impl ListEdgePackagingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEdgePackagingJobsOutput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsOutputBuilder {
         crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEdgePackagingJobsOutput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEdgePackagingJobsOutputBuilder {
-    pub(crate) edge_packaging_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
+    pub(crate) edge_packaging_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListEdgePackagingJobsOutputBuilder {
     /// To override the contents of this collection use [`set_edge_packaging_job_summaries`](Self::set_edge_packaging_job_summaries).
     ///
     /// <p>Summaries of edge packaging jobs.</p>
-    pub fn edge_packaging_job_summaries(
-        mut self,
-        input: crate::types::EdgePackagingJobSummary,
-    ) -> Self {
+    pub fn edge_packaging_job_summaries(mut self, input: crate::types::EdgePackagingJobSummary) -> Self {
         let mut v = self.edge_packaging_job_summaries.unwrap_or_default();
         v.push(input);
         self.edge_packaging_job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Summaries of edge packaging jobs.</p>
-    pub fn set_edge_packaging_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>) -> Self {
         self.edge_packaging_job_summaries = input;
         self
     }
     /// <p>Summaries of edge packaging jobs.</p>
-    pub fn get_edge_packaging_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>> {
+    pub fn get_edge_packaging_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>> {
         &self.edge_packaging_job_summaries
     }
     /// <p>Token to use when calling the next page of results.</p>

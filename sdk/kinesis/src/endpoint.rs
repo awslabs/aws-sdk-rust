@@ -16,8 +16,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.af-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.af-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -38,8 +37,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.ap-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -60,8 +58,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-northeast-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-northeast-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -82,8 +79,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-northeast-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-northeast-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -104,8 +100,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-northeast-3.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-northeast-3.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -126,8 +121,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.ap-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -148,8 +142,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-southeast-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-southeast-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -170,8 +163,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-southeast-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-southeast-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -192,8 +184,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.ap-southeast-3.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ap-southeast-3.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -214,8 +205,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.ca-central-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.ca-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -236,8 +226,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-central-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -258,8 +247,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-north-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-north-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -280,8 +268,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -302,8 +289,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -324,8 +310,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -346,8 +331,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-3.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.eu-west-3.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -368,8 +352,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.me-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.me-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -390,8 +373,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.sa-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.sa-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -412,8 +394,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -434,8 +415,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -456,8 +436,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -478,8 +457,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -500,8 +478,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -522,8 +499,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -544,8 +520,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -566,8 +541,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -588,8 +562,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -610,8 +583,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -632,8 +604,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -654,8 +625,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.cn-northwest-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.cn-northwest-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -676,9 +646,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://kinesis-fips.cn-north-1.api.amazonwebservices.com.cn",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -699,8 +667,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -721,9 +688,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://kinesis.cn-north-1.api.amazonwebservices.com.cn",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -744,8 +709,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -766,8 +730,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -788,8 +751,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -810,8 +772,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -832,8 +793,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -854,8 +814,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -876,8 +835,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -898,8 +856,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -939,8 +896,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -962,10 +918,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
     }
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
@@ -980,8 +933,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1021,8 +973,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1044,10 +995,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
     }
 
     /// For custom endpoint with region set and fips disabled and dualstack disabled
@@ -1066,9 +1014,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -1087,9 +1033,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -1107,10 +1051,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled and dualstack disabled]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: FIPS and custom endpoint are not supported"
-        )
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
     }
 
     /// For custom endpoint with fips disabled and dualstack enabled
@@ -1137,17 +1078,11 @@ mod test {
     #[test]
     fn test_53() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .build()
-            .expect("invalid params");
+        let params = crate::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint
-            .expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: Missing Region"
-        )
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
     }
 
     /// Invalid ARN: Failed to parse ARN.
@@ -1163,9 +1098,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Failed to parse ARN. [Invalid ARN: Failed to parse ARN.]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Failed to parse ARN. [Invalid ARN: Failed to parse ARN.]");
         assert_eq!(format!("{}", error), "Invalid ARN: Failed to parse ARN.")
     }
 
@@ -1199,7 +1132,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [Invalid ARN: partitions mismatch.]");
+        let error = endpoint
+            .expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [Invalid ARN: partitions mismatch.]");
         assert_eq!(
             format!("{}", error),
             "Partition: aws from ARN doesn't match with partition name: aws-us-gov."
@@ -1219,11 +1153,9 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [Invalid ARN: Not Kinesis]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: The ARN was not for the Kinesis service, found: s3."
-        )
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [Invalid ARN: Not Kinesis]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: s3.")
     }
 
     /// Invalid ARN: Region is missing in ARN
@@ -1239,9 +1171,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid region. [Invalid ARN: Region is missing in ARN]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid region. [Invalid ARN: Region is missing in ARN]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
     }
 
@@ -1276,9 +1206,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
     }
 
@@ -1296,9 +1224,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
     }
 
@@ -1316,10 +1242,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types. [Invalid ARN: Kinesis ARNs only support stream arn types]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types."
-        )
+        assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
     /// Dual Stack not supported region.
@@ -1330,15 +1253,15 @@ mod test {
             .region("us-iso-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .stream_arn(
-                "arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream".to_string(),
-            )
+            .stream_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream".to_string())
             .operation_type("control".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]");
+        let error = endpoint.expect_err(
+            "expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]",
+        );
         assert_eq!(
             format!("{}", error),
             "FIPS and DualStack are enabled, but this partition does not support one or both"
@@ -1358,7 +1281,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [OperationType not set]");
+        let error =
+            endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [OperationType not set]");
         assert_eq!(
             format!("{}", error),
             "Operation Type is not set. Please contact service team for resolution."
@@ -1383,9 +1307,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -1403,8 +1325,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1427,8 +1348,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1451,9 +1371,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1476,9 +1394,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1501,8 +1417,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1525,8 +1440,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1549,8 +1463,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1573,8 +1486,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1643,8 +1555,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1667,8 +1578,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1691,8 +1601,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1715,8 +1624,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1739,8 +1647,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -1771,11 +1678,12 @@ mod test {
     fn test_82() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: Failed to parse ARN. [Invalid ConsumerARN: partition missing from ARN.]");
@@ -1787,14 +1695,16 @@ mod test {
     fn test_83() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-gov-west-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [Invalid ARN: partitions mismatch.]");
+        let error = endpoint
+            .expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [Invalid ARN: partitions mismatch.]");
         assert_eq!(
             format!("{}", error),
             "Partition: aws from ARN doesn't match with partition name: aws-us-gov."
@@ -1806,18 +1716,17 @@ mod test {
     fn test_84() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [Invalid ARN: Not Kinesis]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: The ARN was not for the Kinesis service, found: s3."
-        )
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [Invalid ARN: Not Kinesis]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: s3.")
     }
 
     /// Invalid ARN: Region is missing in ARN
@@ -1828,17 +1737,12 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .consumer_arn(
-                "arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737"
-                    .to_string(),
-            )
+            .consumer_arn("arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid region. [Invalid ARN: Region is missing in ARN]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid region. [Invalid ARN: Region is missing in ARN]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
     }
 
@@ -1847,11 +1751,12 @@ mod test {
     fn test_86() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: Invalid region. [Invalid ARN: Region is empty string in ARN]");
@@ -1866,18 +1771,13 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .consumer_arn(
-                "arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737"
-                    .to_string(),
-            )
+            .consumer_arn("arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
     }
 
@@ -1889,18 +1789,13 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .consumer_arn(
-                "arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737"
-                    .to_string(),
-            )
+            .consumer_arn("arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]",
-        );
+        let error = endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [Invalid ARN: Invalid account id]");
         assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
     }
 
@@ -1909,18 +1804,16 @@ mod test {
     fn test_89() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types. [Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types."
-        )
+        assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
     /// Dual Stack not supported region.
@@ -1928,15 +1821,18 @@ mod test {
     fn test_90() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-iso-west-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(true)
-    .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .operation_type("control".to_string())
-    .build().expect("invalid params");
+            .region("us-iso-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]");
+        let error = endpoint.expect_err(
+            "expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]",
+        );
         assert_eq!(
             format!("{}", error),
             "FIPS and DualStack are enabled, but this partition does not support one or both"
@@ -1948,14 +1844,16 @@ mod test {
     fn test_91() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .consumer_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .consumer_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [OperationType not set]");
+        let error =
+            endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [OperationType not set]");
         assert_eq!(
             format!("{}", error),
             "Operation Type is not set. Please contact service team for resolution."
@@ -1967,21 +1865,20 @@ mod test {
     fn test_92() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .endpoint("https://example.com".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -1990,16 +1887,16 @@ mod test {
     fn test_93() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2013,16 +1910,16 @@ mod test {
     fn test_94() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2036,17 +1933,16 @@ mod test {
     fn test_95() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2060,17 +1956,16 @@ mod test {
     fn test_96() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2084,16 +1979,16 @@ mod test {
     fn test_97() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(true)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2107,16 +2002,16 @@ mod test {
     fn test_98() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-west-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(true)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2130,16 +2025,16 @@ mod test {
     fn test_99() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-west-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2157,16 +2052,12 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .operation_type("data".to_string())
-            .consumer_arn(
-                "arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737"
-                    .to_string(),
-            )
+            .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2180,12 +2071,13 @@ mod test {
     fn test_101() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("cn-northwest-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn");
@@ -2202,12 +2094,13 @@ mod test {
     fn test_102() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("cn-northwest-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(true)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn");
@@ -2224,16 +2117,16 @@ mod test {
     fn test_103() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-iso-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2247,16 +2140,16 @@ mod test {
     fn test_104() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-iso-west-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-iso-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2270,16 +2163,16 @@ mod test {
     fn test_105() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-isob-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2293,16 +2186,16 @@ mod test {
     fn test_106() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-iso-east-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(false)
-    .operation_type("control".to_string())
-    .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2316,16 +2209,16 @@ mod test {
     fn test_107() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-isob-east-1".to_string())
-    .use_fips(true)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-isob-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2339,17 +2232,16 @@ mod test {
     fn test_108() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://123456789123.data-kinesis.us-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2363,17 +2255,17 @@ mod test {
     fn test_109() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
-    .region("us-east-1".to_string())
-    .use_fips(false)
-    .use_dual_stack(false)
-    .operation_type("data".to_string())
-    .stream_arn("arn:aws:kinesis:us-east-1:123:stream/foobar".to_string())
-    .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
-    .build().expect("invalid params");
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/foobar".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2453,19 +2345,13 @@ impl DefaultResolver {
 impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
     fn resolve_endpoint(&self, params: &Params) -> ::aws_smithy_http::endpoint::Result {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        crate::endpoint::internals::resolve_endpoint(
-            params,
-            &mut diagnostic_collector,
-            &self.partition_resolver,
-        )
-        .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
+        crate::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
+            .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
     }
 }
 
 /// Builder for [`Params`]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
     region: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<bool>,
@@ -2477,9 +2363,7 @@ pub struct ParamsBuilder {
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
+    pub fn build(self) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {
@@ -2619,9 +2503,7 @@ pub struct InvalidParams {
 impl InvalidParams {
     #[allow(dead_code)]
     fn missing(field: &'static str) -> Self {
-        Self {
-            field: field.into(),
-        }
+        Self { field: field.into() }
     }
 }
 

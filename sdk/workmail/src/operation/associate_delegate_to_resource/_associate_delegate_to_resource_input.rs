@@ -29,16 +29,14 @@ impl AssociateDelegateToResourceInput {
 }
 impl AssociateDelegateToResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
-    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder {
         crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDelegateToResourceInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct AssociateDelegateToResourceInputBuilder {
 }
 impl AssociateDelegateToResourceInputBuilder {
     /// <p>The organization under which the resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization under which the resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl AssociateDelegateToResourceInputBuilder {
         crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput {
-                organization_id: self.organization_id,
-                resource_id: self.resource_id,
-                entity_id: self.entity_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput {
+            organization_id: self.organization_id,
+            resource_id: self.resource_id,
+            entity_id: self.entity_id,
+        })
     }
 }

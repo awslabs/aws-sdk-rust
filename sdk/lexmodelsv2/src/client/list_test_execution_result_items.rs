@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`test_execution_results(Option<TestExecutionResultItems>)`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput::test_execution_results): <p>The list of results from the test execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListTestExecutionResultItems</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListTestExecutionResultItems</code> operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTestExecutionResultItemsError>`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError)
-    pub fn list_test_execution_result_items(&self) -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder{
+    pub fn list_test_execution_result_items(
+        &self,
+    ) -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder {
         crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::new(self.handle.clone())
     }
 }

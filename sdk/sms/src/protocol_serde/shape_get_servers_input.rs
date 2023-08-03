@@ -18,10 +18,7 @@ pub fn ser_get_servers_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_vm_server_address::ser_vm_server_address(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_vm_server_address::ser_vm_server_address(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

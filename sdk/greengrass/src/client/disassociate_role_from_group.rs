@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateRoleFromGroupOutput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput) with field(s):
     ///   - [`disassociated_at(Option<String>)`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput::disassociated_at): The time, in milliseconds since the epoch, when the role was disassociated from the group.
     /// - On failure, responds with [`SdkError<DisassociateRoleFromGroupError>`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError)
-    pub fn disassociate_role_from_group(&self) -> crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder{
+    pub fn disassociate_role_from_group(&self) -> crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder {
         crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupFluentBuilder::new(self.handle.clone())
     }
 }

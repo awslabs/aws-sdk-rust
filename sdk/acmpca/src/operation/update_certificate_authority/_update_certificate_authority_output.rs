@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCertificateAuthorityOutput {
 }
 impl UpdateCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityOutput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityOutputBuilder {
         crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateAuthorityOutput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCertificateAuthorityOutput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput {
         crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput {
             _request_id: self._request_id,
         }

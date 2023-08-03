@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSourceOutput {
 }
 impl DescribeDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder {
         crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSourceOutputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>The information on the data source.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }

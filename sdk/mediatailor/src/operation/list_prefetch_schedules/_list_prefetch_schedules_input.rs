@@ -42,18 +42,14 @@ impl ListPrefetchSchedulesInput {
 }
 impl ListPrefetchSchedulesInput {
     /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder {
         crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrefetchSchedulesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -99,18 +95,12 @@ impl ListPrefetchSchedulesInputBuilder {
         &self.next_token
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_name = input;
         self
     }
@@ -135,17 +125,13 @@ impl ListPrefetchSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                playback_configuration_name: self.playback_configuration_name,
-                stream_id: self.stream_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            playback_configuration_name: self.playback_configuration_name,
+            stream_id: self.stream_id,
+        })
     }
 }

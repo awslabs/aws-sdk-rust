@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccountSettingsOutput {
 }
 impl ListAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountSettingsOutput`](crate::operation::list_account_settings::ListAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder {
-        crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder {
+        crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountSettingsOutput`](crate::operation::list_account_settings::ListAccountSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountSettingsOutputBuilder {
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListAccountSettingsOutputBuilder {
         self
     }
     /// <p>The account settings for the resource.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>) -> Self {
         self.settings = input;
         self
     }

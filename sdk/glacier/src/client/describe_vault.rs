@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`number_of_archives(i64)`](crate::operation::describe_vault::DescribeVaultOutput::number_of_archives): <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     ///   - [`size_in_bytes(i64)`](crate::operation::describe_vault::DescribeVaultOutput::size_in_bytes): <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     /// - On failure, responds with [`SdkError<DescribeVaultError>`](crate::operation::describe_vault::DescribeVaultError)
-    pub fn describe_vault(
-        &self,
-    ) -> crate::operation::describe_vault::builders::DescribeVaultFluentBuilder {
-        crate::operation::describe_vault::builders::DescribeVaultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vault(&self) -> crate::operation::describe_vault::builders::DescribeVaultFluentBuilder {
+        crate::operation::describe_vault::builders::DescribeVaultFluentBuilder::new(self.handle.clone())
     }
 }

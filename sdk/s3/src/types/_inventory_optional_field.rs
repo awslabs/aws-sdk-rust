@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InventoryOptionalField {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for InventoryOptionalField {
             "ReplicationStatus" => InventoryOptionalField::ReplicationStatus,
             "Size" => InventoryOptionalField::Size,
             "StorageClass" => InventoryOptionalField::StorageClass,
-            other => InventoryOptionalField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InventoryOptionalField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

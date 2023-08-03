@@ -6,15 +6,12 @@
 pub struct CancelStepsOutput {
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
     #[doc(hidden)]
-    pub cancel_steps_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
+    pub cancel_steps_info_list: ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
     _request_id: Option<String>,
 }
 impl CancelStepsOutput {
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    pub fn cancel_steps_info_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CancelStepsInfo]> {
+    pub fn cancel_steps_info_list(&self) -> ::std::option::Option<&[crate::types::CancelStepsInfo]> {
         self.cancel_steps_info_list.as_deref()
     }
 }
@@ -32,12 +29,9 @@ impl CancelStepsOutput {
 
 /// A builder for [`CancelStepsOutput`](crate::operation::cancel_steps::CancelStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelStepsOutputBuilder {
-    pub(crate) cancel_steps_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
+    pub(crate) cancel_steps_info_list: ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
     _request_id: Option<String>,
 }
 impl CancelStepsOutputBuilder {
@@ -53,17 +47,12 @@ impl CancelStepsOutputBuilder {
         self
     }
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    pub fn set_cancel_steps_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>,
-    ) -> Self {
+    pub fn set_cancel_steps_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>>) -> Self {
         self.cancel_steps_info_list = input;
         self
     }
     /// <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    pub fn get_cancel_steps_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>> {
+    pub fn get_cancel_steps_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelStepsInfo>> {
         &self.cancel_steps_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -36,9 +36,7 @@ impl AttachPolicyInput {
 
 /// A builder for [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachPolicyInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -46,18 +44,12 @@ pub struct AttachPolicyInputBuilder {
 }
 impl AttachPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -71,10 +63,7 @@ impl AttachPolicyInputBuilder {
         self
     }
     /// <p>The reference that is associated with the policy object.</p>
-    pub fn set_policy_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_policy_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.policy_reference = input;
         self
     }
@@ -88,10 +77,7 @@ impl AttachPolicyInputBuilder {
         self
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -100,12 +86,7 @@ impl AttachPolicyInputBuilder {
         &self.object_reference
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_policy::AttachPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_policy::AttachPolicyInput {
             directory_arn: self.directory_arn,
             policy_reference: self.policy_reference,

@@ -4,9 +4,7 @@ pub fn ser_get_resolver_query_log_config_association_input(
     input: &crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.resolver_query_log_config_association_id {
-        object
-            .key("ResolverQueryLogConfigAssociationId")
-            .string(var_1.as_str());
+        object.key("ResolverQueryLogConfigAssociationId").string(var_1.as_str());
     }
     Ok(())
 }

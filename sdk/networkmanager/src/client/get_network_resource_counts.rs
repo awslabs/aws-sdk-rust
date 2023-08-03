@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`network_resource_counts(Option<Vec<NetworkResourceCount>>)`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput::network_resource_counts): <p>The count of resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetNetworkResourceCountsError>`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsError)
-    pub fn get_network_resource_counts(&self) -> crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder{
+    pub fn get_network_resource_counts(&self) -> crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder {
         crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsFluentBuilder::new(self.handle.clone())
     }
 }

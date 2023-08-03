@@ -31,9 +31,7 @@ impl DelimitedTextImportOptions {
         self.ignore_empty_rows
     }
     /// <p>The encoding of the data in the input file.</p>
-    pub fn data_character_encoding(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportDataCharacterEncoding> {
+    pub fn data_character_encoding(&self) -> ::std::option::Option<&crate::types::ImportDataCharacterEncoding> {
         self.data_character_encoding.as_ref()
     }
 }
@@ -46,15 +44,12 @@ impl DelimitedTextImportOptions {
 
 /// A builder for [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelimitedTextImportOptionsBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) has_header_row: ::std::option::Option<bool>,
     pub(crate) ignore_empty_rows: ::std::option::Option<bool>,
-    pub(crate) data_character_encoding:
-        ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
+    pub(crate) data_character_encoding: ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
 }
 impl DelimitedTextImportOptionsBuilder {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
@@ -100,25 +95,17 @@ impl DelimitedTextImportOptionsBuilder {
         &self.ignore_empty_rows
     }
     /// <p>The encoding of the data in the input file.</p>
-    pub fn data_character_encoding(
-        mut self,
-        input: crate::types::ImportDataCharacterEncoding,
-    ) -> Self {
+    pub fn data_character_encoding(mut self, input: crate::types::ImportDataCharacterEncoding) -> Self {
         self.data_character_encoding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encoding of the data in the input file.</p>
-    pub fn set_data_character_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
-    ) -> Self {
+    pub fn set_data_character_encoding(mut self, input: ::std::option::Option<crate::types::ImportDataCharacterEncoding>) -> Self {
         self.data_character_encoding = input;
         self
     }
     /// <p>The encoding of the data in the input file.</p>
-    pub fn get_data_character_encoding(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportDataCharacterEncoding> {
+    pub fn get_data_character_encoding(&self) -> &::std::option::Option<crate::types::ImportDataCharacterEncoding> {
         &self.data_character_encoding
     }
     /// Consumes the builder and constructs a [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).

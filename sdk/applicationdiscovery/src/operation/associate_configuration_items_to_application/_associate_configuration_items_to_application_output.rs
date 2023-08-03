@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AssociateConfigurationItemsToApplicat
 }
 impl AssociateConfigurationItemsToApplicationOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput).
-    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder
+    {
         crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConfigurationItemsToApplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AssociateConfigurationItemsToApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput).
-    pub fn build(self) -> crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput{
+    pub fn build(self) -> crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput {
         crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput {
             _request_id: self._request_id,
         }

@@ -30,9 +30,7 @@ impl ExasolParameters {
 
 /// A builder for [`ExasolParameters`](crate::types::ExasolParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExasolParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

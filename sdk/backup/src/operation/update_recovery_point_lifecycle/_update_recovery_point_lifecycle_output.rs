@@ -35,9 +35,7 @@ impl UpdateRecoveryPointLifecycleOutput {
         self.lifecycle.as_ref()
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    pub fn calculated_lifecycle(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CalculatedLifecycle> {
+    pub fn calculated_lifecycle(&self) -> ::std::option::Option<&crate::types::CalculatedLifecycle> {
         self.calculated_lifecycle.as_ref()
     }
 }
@@ -48,16 +46,14 @@ impl ::aws_http::request_id::RequestId for UpdateRecoveryPointLifecycleOutput {
 }
 impl UpdateRecoveryPointLifecycleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
-    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder{
+    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder {
         crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecoveryPointLifecycleOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -67,18 +63,12 @@ pub struct UpdateRecoveryPointLifecycleOutputBuilder {
 }
 impl UpdateRecoveryPointLifecycleOutputBuilder {
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn set_backup_vault_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_arn = input;
         self
     }
@@ -87,18 +77,12 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
         &self.backup_vault_arn
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
@@ -132,17 +116,12 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
         self
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    pub fn set_calculated_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculatedLifecycle>,
-    ) -> Self {
+    pub fn set_calculated_lifecycle(mut self, input: ::std::option::Option<crate::types::CalculatedLifecycle>) -> Self {
         self.calculated_lifecycle = input;
         self
     }
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    pub fn get_calculated_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculatedLifecycle> {
+    pub fn get_calculated_lifecycle(&self) -> &::std::option::Option<crate::types::CalculatedLifecycle> {
         &self.calculated_lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -155,9 +134,7 @@ impl UpdateRecoveryPointLifecycleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput {
+    pub fn build(self) -> crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput {
         crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput {
             backup_vault_arn: self.backup_vault_arn,
             recovery_point_arn: self.recovery_point_arn,

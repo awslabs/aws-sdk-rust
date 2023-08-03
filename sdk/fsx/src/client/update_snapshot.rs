@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSnapshotOutput`](crate::operation::update_snapshot::UpdateSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::update_snapshot::UpdateSnapshotOutput::snapshot): <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateSnapshotError>`](crate::operation::update_snapshot::UpdateSnapshotError)
-    pub fn update_snapshot(
-        &self,
-    ) -> crate::operation::update_snapshot::builders::UpdateSnapshotFluentBuilder {
-        crate::operation::update_snapshot::builders::UpdateSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_snapshot(&self) -> crate::operation::update_snapshot::builders::UpdateSnapshotFluentBuilder {
+        crate::operation::update_snapshot::builders::UpdateSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

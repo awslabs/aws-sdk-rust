@@ -28,9 +28,7 @@ impl CreateSipRuleOutput {
 
 /// A builder for [`CreateSipRuleOutput`](crate::operation::create_sip_rule::CreateSipRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSipRuleOutputBuilder {
     pub(crate) sip_rule: ::std::option::Option<crate::types::SipRule>,
     _request_id: Option<String>,

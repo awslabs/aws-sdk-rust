@@ -26,7 +26,7 @@ impl UpdateEnvironmentTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder,
+    inner: crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder,
 }
 impl UpdateEnvironmentTemplateFluentBuilder {
     /// Creates a new `UpdateEnvironmentTemplate`.
@@ -37,7 +37,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
         }
     }
     /// Access the UpdateEnvironmentTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
             crate::operation::update_environment_template::UpdateEnvironmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_template::UpdateEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template::UpdateEnvironmentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_template::UpdateEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_template::UpdateEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template::UpdateEnvironmentTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_template::UpdateEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_template::UpdateEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template::UpdateEnvironmentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateEnvironmentTemplateFluentBuilder {
             crate::operation::update_environment_template::UpdateEnvironmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_template::UpdateEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template::UpdateEnvironmentTemplateError>,
     > {
         self.customize_middleware().await
     }

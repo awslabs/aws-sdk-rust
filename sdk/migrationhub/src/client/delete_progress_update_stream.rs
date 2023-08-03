@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`DeleteProgressUpdateStreamOutput`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteProgressUpdateStreamError>`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError)
-    pub fn delete_progress_update_stream(&self) -> crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamFluentBuilder{
+    pub fn delete_progress_update_stream(
+        &self,
+    ) -> crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamFluentBuilder {
         crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamFluentBuilder::new(self.handle.clone())
     }
 }

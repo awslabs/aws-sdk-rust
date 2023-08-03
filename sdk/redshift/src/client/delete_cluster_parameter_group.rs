@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`parameter_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupFluentBuilder::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupFluentBuilder::set_parameter_group_name): <p>The name of the parameter group to be deleted.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing cluster parameter group.</p> </li>   <li> <p>Cannot delete a default cluster parameter group.</p> </li>  </ul>
     /// - On success, responds with [`DeleteClusterParameterGroupOutput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteClusterParameterGroupError>`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError)
-    pub fn delete_cluster_parameter_group(&self) -> crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupFluentBuilder{
+    pub fn delete_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupFluentBuilder {
         crate::operation::delete_cluster_parameter_group::builders::DeleteClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,26 +23,18 @@ impl SelfManagedKafkaEventSourceConfig {
 
 /// A builder for [`SelfManagedKafkaEventSourceConfig`](crate::types::SelfManagedKafkaEventSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManagedKafkaEventSourceConfigBuilder {
     pub(crate) consumer_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedKafkaEventSourceConfigBuilder {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-    pub fn consumer_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-    pub fn set_consumer_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_group_id = input;
         self
     }

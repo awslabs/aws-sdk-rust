@@ -29,9 +29,7 @@ impl GetDeploymentsInput {
 
 /// A builder for [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentsInputBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetDeploymentsInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployments::GetDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_deployments::GetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployments::GetDeploymentsInput {
             device_name: self.device_name,
             device_fleet_name: self.device_fleet_name,

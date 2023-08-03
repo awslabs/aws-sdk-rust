@@ -23,26 +23,18 @@ impl BotVersionLocaleDetails {
 
 /// A builder for [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotVersionLocaleDetailsBuilder {
     pub(crate) source_bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotVersionLocaleDetailsBuilder {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn set_source_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_bot_version = input;
         self
     }

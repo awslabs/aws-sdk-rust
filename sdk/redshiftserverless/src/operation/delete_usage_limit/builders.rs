@@ -10,10 +10,7 @@ impl DeleteUsageLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_usage_limit::DeleteUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_limit::DeleteUsageLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_limit::DeleteUsageLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_usage_limit();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteUsageLimitFluentBuilder {
         }
     }
     /// Access the DeleteUsageLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_usage_limit::builders::DeleteUsageLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_usage_limit::builders::DeleteUsageLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteUsageLimitFluentBuilder {
             crate::operation::delete_usage_limit::DeleteUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_limit::DeleteUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_limit::DeleteUsageLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteUsageLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_usage_limit::DeleteUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_limit::DeleteUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_limit::DeleteUsageLimitError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_usage_limit::DeleteUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_limit::DeleteUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_limit::DeleteUsageLimitError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteUsageLimitFluentBuilder {
             crate::operation::delete_usage_limit::DeleteUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_usage_limit::DeleteUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_usage_limit::DeleteUsageLimitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the usage limit to delete.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_limit_id(input.into());
         self
     }
     /// <p>The unique identifier of the usage limit to delete.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }

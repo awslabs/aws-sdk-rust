@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteUserByPrincipalIdError>`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError)
-    pub fn delete_user_by_principal_id(
-        &self,
-    ) -> crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdFluentBuilder
-    {
+    pub fn delete_user_by_principal_id(&self) -> crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdFluentBuilder {
         crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdFluentBuilder::new(self.handle.clone())
     }
 }

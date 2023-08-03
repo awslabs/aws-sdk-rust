@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_folder_members::ListFolderMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_folder_members::ListFolderMembersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListFolderMembersError>`](crate::operation::list_folder_members::ListFolderMembersError)
-    pub fn list_folder_members(
-        &self,
-    ) -> crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder {
-        crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_folder_members(&self) -> crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder {
+        crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::new(self.handle.clone())
     }
 }

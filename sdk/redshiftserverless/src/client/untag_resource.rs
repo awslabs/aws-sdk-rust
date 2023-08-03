@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>The tag or set of tags to remove from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
-    pub fn untag_resource(
-        &self,
-    ) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
-        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {
+        crate::operation::untag_resource::builders::UntagResourceFluentBuilder::new(self.handle.clone())
     }
 }

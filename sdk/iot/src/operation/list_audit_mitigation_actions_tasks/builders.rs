@@ -5,16 +5,16 @@ pub use crate::operation::list_audit_mitigation_actions_tasks::_list_audit_mitig
 
 impl ListAuditMitigationActionsTasksInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_audit_mitigation_actions_tasks();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder,
+    inner: crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder,
 }
 impl ListAuditMitigationActionsTasksFluentBuilder {
     /// Creates a new `ListAuditMitigationActionsTasks`.
@@ -38,15 +38,20 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         }
     }
     /// Access the ListAuditMitigationActionsTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasks, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasks,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,38 +88,41 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasks, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasks,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator {
         crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    pub fn audit_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_task_id(input.into());
         self
     }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    pub fn set_audit_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_task_id(input);
         self
     }
@@ -141,17 +150,12 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
         self.inner = self.inner.set_task_status(input);
         self
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn get_task_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
         self.inner.get_task_status()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -188,10 +192,7 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -205,10 +206,7 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

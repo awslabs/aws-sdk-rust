@@ -9,10 +9,7 @@ pub fn ser_set_gateway_bridge_source_request(
     if let Some(var_2) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
         let mut object_3 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

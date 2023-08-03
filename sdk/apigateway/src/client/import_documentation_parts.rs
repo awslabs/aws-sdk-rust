@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`ids(Option<Vec<String>>)`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput::ids): <p>A list of the returned documentation part identifiers.</p>
     ///   - [`warnings(Option<Vec<String>>)`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput::warnings): <p>A list of warning messages reported during import of documentation parts.</p>
     /// - On failure, responds with [`SdkError<ImportDocumentationPartsError>`](crate::operation::import_documentation_parts::ImportDocumentationPartsError)
-    pub fn import_documentation_parts(
-        &self,
-    ) -> crate::operation::import_documentation_parts::builders::ImportDocumentationPartsFluentBuilder
-    {
+    pub fn import_documentation_parts(&self) -> crate::operation::import_documentation_parts::builders::ImportDocumentationPartsFluentBuilder {
         crate::operation::import_documentation_parts::builders::ImportDocumentationPartsFluentBuilder::new(self.handle.clone())
     }
 }

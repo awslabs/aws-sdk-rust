@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSubnetGroupsOutput {
 }
 impl DescribeSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsOutput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsOutputBuilder {
         crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubnetGroupsOutput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
@@ -71,17 +68,12 @@ impl DescribeSubnetGroupsOutputBuilder {
         self
     }
     /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn set_subnet_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
-    ) -> Self {
+    pub fn set_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>) -> Self {
         self.subnet_groups = input;
         self
     }
     /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn get_subnet_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>> {
+    pub fn get_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>> {
         &self.subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

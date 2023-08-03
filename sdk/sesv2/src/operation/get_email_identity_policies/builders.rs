@@ -30,7 +30,7 @@ impl GetEmailIdentityPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEmailIdentityPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesInputBuilder,
+    inner: crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesInputBuilder,
 }
 impl GetEmailIdentityPoliciesFluentBuilder {
     /// Creates a new `GetEmailIdentityPolicies`.
@@ -41,7 +41,7 @@ impl GetEmailIdentityPoliciesFluentBuilder {
         }
     }
     /// Access the GetEmailIdentityPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl GetEmailIdentityPoliciesFluentBuilder {
             crate::operation::get_email_identity_policies::GetEmailIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl GetEmailIdentityPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl GetEmailIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl GetEmailIdentityPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl GetEmailIdentityPoliciesFluentBuilder {
             crate::operation::get_email_identity_policies::GetEmailIdentityPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email identity.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email identity.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }

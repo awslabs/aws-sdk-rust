@@ -26,7 +26,7 @@ impl ListApplicationInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder,
+    inner: crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder,
 }
 impl ListApplicationInstancesFluentBuilder {
     /// Creates a new `ListApplicationInstances`.
@@ -37,10 +37,7 @@ impl ListApplicationInstancesFluentBuilder {
         }
     }
     /// Access the ListApplicationInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListApplicationInstancesFluentBuilder {
             crate::operation::list_application_instances::ListApplicationInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListApplicationInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListApplicationInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_instances::ListApplicationInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListApplicationInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_instances::ListApplicationInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListApplicationInstancesFluentBuilder {
             crate::operation::list_application_instances::ListApplicationInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_instances::ListApplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_instances::ListApplicationInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_application_instances::paginator::ListApplicationInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_instances::paginator::ListApplicationInstancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_application_instances::paginator::ListApplicationInstancesPaginator {
         crate::operation::list_application_instances::paginator::ListApplicationInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The application instances' device ID.</p>
@@ -152,10 +135,7 @@ impl ListApplicationInstancesFluentBuilder {
         self
     }
     /// <p>Only include instances with a specific status.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::StatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }

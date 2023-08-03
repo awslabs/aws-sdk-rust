@@ -41,13 +41,7 @@
 /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WirelessDeviceEvent {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for WirelessDeviceEvent {
             "Registration" => WirelessDeviceEvent::Registration,
             "Rejoin" => WirelessDeviceEvent::Rejoin,
             "Uplink_Data" => WirelessDeviceEvent::UplinkData,
-            other => WirelessDeviceEvent::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessDeviceEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl WirelessDeviceEvent {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Downlink_Data",
-            "Join",
-            "Registration",
-            "Rejoin",
-            "Uplink_Data",
-        ]
+        &["Downlink_Data", "Join", "Registration", "Rejoin", "Uplink_Data"]
     }
 }
 impl ::std::convert::AsRef<str> for WirelessDeviceEvent {

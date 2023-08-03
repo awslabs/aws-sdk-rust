@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`test_sets(Option<Vec<TestSetSummary>>)`](crate::operation::list_test_sets::ListTestSetsOutput::test_sets): <p>The selected test sets in a list of test sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_sets::ListTestSetsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the ListTestSets operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSets operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListTestSetsError>`](crate::operation::list_test_sets::ListTestSetsError)
-    pub fn list_test_sets(
-        &self,
-    ) -> crate::operation::list_test_sets::builders::ListTestSetsFluentBuilder {
-        crate::operation::list_test_sets::builders::ListTestSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_test_sets(&self) -> crate::operation::list_test_sets::builders::ListTestSetsFluentBuilder {
+        crate::operation::list_test_sets::builders::ListTestSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CancelMlTaskRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ml_task_run::CancelMLTaskRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_ml_task_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelMLTaskRunFluentBuilder {
         }
     }
     /// Access the CancelMLTaskRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelMLTaskRunFluentBuilder {
             crate::operation::cancel_ml_task_run::CancelMLTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ml_task_run::CancelMLTaskRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelMLTaskRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelMLTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ml_task_run::CancelMLTaskRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelMLTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ml_task_run::CancelMLTaskRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CancelMLTaskRunFluentBuilder {
             crate::operation::cancel_ml_task_run::CancelMLTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ml_task_run::CancelMLTaskRunError>,
     > {
         self.customize_middleware().await
     }

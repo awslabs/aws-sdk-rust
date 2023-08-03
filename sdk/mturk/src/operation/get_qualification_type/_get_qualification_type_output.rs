@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetQualificationTypeOutput {
 }
 impl GetQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetQualificationTypeOutput`](crate::operation::get_qualification_type::GetQualificationTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_qualification_type::builders::GetQualificationTypeOutputBuilder {
+    pub fn builder() -> crate::operation::get_qualification_type::builders::GetQualificationTypeOutputBuilder {
         crate::operation::get_qualification_type::builders::GetQualificationTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQualificationTypeOutput`](crate::operation::get_qualification_type::GetQualificationTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQualificationTypeOutputBuilder {
     pub(crate) qualification_type: ::std::option::Option<crate::types::QualificationType>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetQualificationTypeOutputBuilder {
         self
     }
     /// <p> The returned Qualification Type</p>
-    pub fn set_qualification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationType>,
-    ) -> Self {
+    pub fn set_qualification_type(mut self, input: ::std::option::Option<crate::types::QualificationType>) -> Self {
         self.qualification_type = input;
         self
     }
     /// <p> The returned Qualification Type</p>
-    pub fn get_qualification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationType> {
+    pub fn get_qualification_type(&self) -> &::std::option::Option<crate::types::QualificationType> {
         &self.qualification_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

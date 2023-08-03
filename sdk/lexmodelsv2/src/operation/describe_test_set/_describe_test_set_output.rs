@@ -84,17 +84,14 @@ impl ::aws_http::request_id::RequestId for DescribeTestSetOutput {
 }
 impl DescribeTestSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestSetOutput`](crate::operation::describe_test_set::DescribeTestSetOutput).
-    pub fn builder() -> crate::operation::describe_test_set::builders::DescribeTestSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_test_set::builders::DescribeTestSetOutputBuilder {
         crate::operation::describe_test_set::builders::DescribeTestSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestSetOutput`](crate::operation::describe_test_set::DescribeTestSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestSetOutputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_set_name: ::std::option::Option<::std::string::String>,
@@ -124,18 +121,12 @@ impl DescribeTestSetOutputBuilder {
         &self.test_set_id
     }
     /// <p>The test set name of the test set.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The test set name of the test set.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_name = input;
         self
     }
@@ -163,10 +154,7 @@ impl DescribeTestSetOutputBuilder {
         self
     }
     /// <p>Indicates whether the test set is audio or text data.</p>
-    pub fn set_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetModality>,
-    ) -> Self {
+    pub fn set_modality(mut self, input: ::std::option::Option<crate::types::TestSetModality>) -> Self {
         self.modality = input;
         self
     }
@@ -222,17 +210,12 @@ impl DescribeTestSetOutputBuilder {
         self
     }
     /// <p>The Amazon S3 storage location for the test set data.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetStorageLocation>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::TestSetStorageLocation>) -> Self {
         self.storage_location = input;
         self
     }
     /// <p>The Amazon S3 storage location for the test set data.</p>
-    pub fn get_storage_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
         &self.storage_location
     }
     /// <p>The creation date and time for the test set data.</p>
@@ -241,10 +224,7 @@ impl DescribeTestSetOutputBuilder {
         self
     }
     /// <p>The creation date and time for the test set data.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -258,17 +238,12 @@ impl DescribeTestSetOutputBuilder {
         self
     }
     /// <p>The date and time for the last update of the test set data.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time for the last update of the test set data.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

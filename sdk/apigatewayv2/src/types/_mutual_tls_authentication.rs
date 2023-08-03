@@ -44,9 +44,7 @@ impl MutualTlsAuthentication {
 
 /// A builder for [`MutualTlsAuthentication`](crate::types::MutualTlsAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MutualTlsAuthenticationBuilder {
     pub(crate) truststore_uri: ::std::option::Option<::std::string::String>,
     pub(crate) truststore_version: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl MutualTlsAuthenticationBuilder {
     /// </replaceable>/<replaceable>
     /// key-name
     /// </replaceable>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
-    pub fn truststore_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn truststore_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.truststore_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +65,7 @@ impl MutualTlsAuthenticationBuilder {
     /// </replaceable>/<replaceable>
     /// key-name
     /// </replaceable>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
-    pub fn set_truststore_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_truststore_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.truststore_uri = input;
         self
     }
@@ -86,18 +78,12 @@ impl MutualTlsAuthenticationBuilder {
         &self.truststore_uri
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
-    pub fn truststore_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn truststore_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.truststore_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
-    pub fn set_truststore_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_truststore_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.truststore_version = input;
         self
     }
@@ -110,27 +96,19 @@ impl MutualTlsAuthenticationBuilder {
     /// To override the contents of this collection use [`set_truststore_warnings`](Self::set_truststore_warnings).
     ///
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn truststore_warnings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn truststore_warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.truststore_warnings.unwrap_or_default();
         v.push(input.into());
         self.truststore_warnings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn set_truststore_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_truststore_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.truststore_warnings = input;
         self
     }
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn get_truststore_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_truststore_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.truststore_warnings
     }
     /// Consumes the builder and constructs a [`MutualTlsAuthentication`](crate::types::MutualTlsAuthentication).

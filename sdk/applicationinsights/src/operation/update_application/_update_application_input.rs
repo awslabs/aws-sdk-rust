@@ -50,17 +50,14 @@ impl UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
@@ -71,18 +68,12 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -119,18 +110,12 @@ impl UpdateApplicationInputBuilder {
         &self.cwe_monitor_enabled
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
@@ -169,19 +154,14 @@ impl UpdateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_application::UpdateApplicationInput {
-                resource_group_name: self.resource_group_name,
-                ops_center_enabled: self.ops_center_enabled,
-                cwe_monitor_enabled: self.cwe_monitor_enabled,
-                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-                remove_sns_topic: self.remove_sns_topic,
-                auto_config_enabled: self.auto_config_enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
+            resource_group_name: self.resource_group_name,
+            ops_center_enabled: self.ops_center_enabled,
+            cwe_monitor_enabled: self.cwe_monitor_enabled,
+            ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
+            remove_sns_topic: self.remove_sns_topic,
+            auto_config_enabled: self.auto_config_enabled,
+        })
     }
 }

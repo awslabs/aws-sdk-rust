@@ -27,7 +27,7 @@ impl StartEdgeConfigurationUpdateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder,
+    inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder,
 }
 impl StartEdgeConfigurationUpdateFluentBuilder {
     /// Creates a new `StartEdgeConfigurationUpdate`.
@@ -38,7 +38,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         }
     }
     /// Access the StartEdgeConfigurationUpdate as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
             crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
             crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError>,
     > {
         self.customize_middleware().await
     }
@@ -155,10 +144,7 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         self
     }
     /// <p>The edge configuration details required to invoke the update process.</p>
-    pub fn set_edge_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeConfig>,
-    ) -> Self {
+    pub fn set_edge_config(mut self, input: ::std::option::Option<crate::types::EdgeConfig>) -> Self {
         self.inner = self.inner.set_edge_config(input);
         self
     }

@@ -36,9 +36,7 @@ impl DescribeTagsInput {
 
 /// A builder for [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl DescribeTagsInputBuilder {
         self
     }
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -97,12 +92,7 @@ impl DescribeTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tags::DescribeTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             filters: self.filters,
             max_results: self.max_results,

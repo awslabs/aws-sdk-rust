@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainNameserversOutput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainNameserversError>`](crate::operation::update_domain_nameservers::UpdateDomainNameserversError)
-    pub fn update_domain_nameservers(
-        &self,
-    ) -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversFluentBuilder
-    {
+    pub fn update_domain_nameservers(&self) -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversFluentBuilder {
         crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversFluentBuilder::new(self.handle.clone())
     }
 }

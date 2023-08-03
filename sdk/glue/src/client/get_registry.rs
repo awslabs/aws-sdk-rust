@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`created_time(Option<String>)`](crate::operation::get_registry::GetRegistryOutput::created_time): <p>The date and time the registry was created.</p>
     ///   - [`updated_time(Option<String>)`](crate::operation::get_registry::GetRegistryOutput::updated_time): <p>The date and time the registry was updated.</p>
     /// - On failure, responds with [`SdkError<GetRegistryError>`](crate::operation::get_registry::GetRegistryError)
-    pub fn get_registry(
-        &self,
-    ) -> crate::operation::get_registry::builders::GetRegistryFluentBuilder {
+    pub fn get_registry(&self) -> crate::operation::get_registry::builders::GetRegistryFluentBuilder {
         crate::operation::get_registry::builders::GetRegistryFluentBuilder::new(self.handle.clone())
     }
 }

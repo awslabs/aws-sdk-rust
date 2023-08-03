@@ -30,9 +30,7 @@ impl GetMinuteUsageInput {
 
 /// A builder for [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMinuteUsageInputBuilder {
     pub(crate) month: ::std::option::Option<i32>,
     pub(crate) year: ::std::option::Option<i32>,
@@ -69,10 +67,7 @@ impl GetMinuteUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_minute_usage::GetMinuteUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_minute_usage::GetMinuteUsageInput {
             month: self.month,
             year: self.year,

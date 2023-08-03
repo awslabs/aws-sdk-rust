@@ -28,9 +28,7 @@ impl DescribeStreamOutput {
 
 /// A builder for [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamOutputBuilder {
     pub(crate) stream_info: ::std::option::Option<crate::types::StreamInfo>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeStreamOutputBuilder {
         self
     }
     /// <p>Information about the stream.</p>
-    pub fn set_stream_info(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamInfo>,
-    ) -> Self {
+    pub fn set_stream_info(mut self, input: ::std::option::Option<crate::types::StreamInfo>) -> Self {
         self.stream_info = input;
         self
     }

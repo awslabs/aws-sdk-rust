@@ -22,9 +22,7 @@ impl GetStreamInput {
 
 /// A builder for [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetStreamInputBuilder {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stream::GetStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stream::GetStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream::GetStreamInput {
             channel_arn: self.channel_arn,
         })

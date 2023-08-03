@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`trust_store_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
     /// - On success, responds with [`DeleteTrustStoreOutput`](crate::operation::delete_trust_store::DeleteTrustStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteTrustStoreError>`](crate::operation::delete_trust_store::DeleteTrustStoreError)
-    pub fn delete_trust_store(
-        &self,
-    ) -> crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder {
-        crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_trust_store(&self) -> crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder {
+        crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::new(self.handle.clone())
     }
 }

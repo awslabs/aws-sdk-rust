@@ -44,9 +44,7 @@ impl WorkflowStepOutput {
 
 /// A builder for [`WorkflowStepOutput`](crate::types::WorkflowStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
@@ -102,10 +100,7 @@ impl WorkflowStepOutputBuilder {
         self
     }
     /// <p>The value of the output.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepOutputUnion>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::WorkflowStepOutputUnion>) -> Self {
         self.value = input;
         self
     }

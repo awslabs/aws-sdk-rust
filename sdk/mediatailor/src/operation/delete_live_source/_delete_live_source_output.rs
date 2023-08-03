@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLiveSourceOutput {
 }
 impl DeleteLiveSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLiveSourceOutput`](crate::operation::delete_live_source::DeleteLiveSourceOutput).
-    pub fn builder() -> crate::operation::delete_live_source::builders::DeleteLiveSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_live_source::builders::DeleteLiveSourceOutputBuilder {
         crate::operation::delete_live_source::builders::DeleteLiveSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLiveSourceOutput`](crate::operation::delete_live_source::DeleteLiveSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLiveSourceOutputBuilder {
     _request_id: Option<String>,
 }

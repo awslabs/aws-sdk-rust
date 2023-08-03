@@ -23,9 +23,7 @@ impl DataRepositoryTaskFailureDetails {
 
 /// A builder for [`DataRepositoryTaskFailureDetails`](crate::types::DataRepositoryTaskFailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskFailureDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DataRepositoryTaskFailureDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`DataRepositoryTaskFailureDetails`](crate::types::DataRepositoryTaskFailureDetails).
     pub fn build(self) -> crate::types::DataRepositoryTaskFailureDetails {
-        crate::types::DataRepositoryTaskFailureDetails {
-            message: self.message,
-        }
+        crate::types::DataRepositoryTaskFailureDetails { message: self.message }
     }
 }

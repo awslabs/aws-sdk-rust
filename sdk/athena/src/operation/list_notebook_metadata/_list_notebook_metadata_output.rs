@@ -8,8 +8,7 @@ pub struct ListNotebookMetadataOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of notebook metadata for the specified workgroup.</p>
     #[doc(hidden)]
-    pub notebook_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>,
+    pub notebook_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>,
     _request_id: Option<String>,
 }
 impl ListNotebookMetadataOutput {
@@ -18,9 +17,7 @@ impl ListNotebookMetadataOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of notebook metadata for the specified workgroup.</p>
-    pub fn notebook_metadata_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookMetadata]> {
+    pub fn notebook_metadata_list(&self) -> ::std::option::Option<&[crate::types::NotebookMetadata]> {
         self.notebook_metadata_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListNotebookMetadataOutput {
 }
 impl ListNotebookMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookMetadataOutput`](crate::operation::list_notebook_metadata::ListNotebookMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notebook_metadata::builders::ListNotebookMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::list_notebook_metadata::builders::ListNotebookMetadataOutputBuilder {
         crate::operation::list_notebook_metadata::builders::ListNotebookMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotebookMetadataOutput`](crate::operation::list_notebook_metadata::ListNotebookMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotebookMetadataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) notebook_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>,
+    pub(crate) notebook_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>,
     _request_id: Option<String>,
 }
 impl ListNotebookMetadataOutputBuilder {
@@ -75,17 +68,12 @@ impl ListNotebookMetadataOutputBuilder {
         self
     }
     /// <p>The list of notebook metadata for the specified workgroup.</p>
-    pub fn set_notebook_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>,
-    ) -> Self {
+    pub fn set_notebook_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>>) -> Self {
         self.notebook_metadata_list = input;
         self
     }
     /// <p>The list of notebook metadata for the specified workgroup.</p>
-    pub fn get_notebook_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>> {
+    pub fn get_notebook_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookMetadata>> {
         &self.notebook_metadata_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

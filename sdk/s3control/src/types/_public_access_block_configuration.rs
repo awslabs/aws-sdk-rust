@@ -71,9 +71,7 @@ impl PublicAccessBlockConfiguration {
 
 /// A builder for [`PublicAccessBlockConfiguration`](crate::types::PublicAccessBlockConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicAccessBlockConfigurationBuilder {
     pub(crate) block_public_acls: ::std::option::Option<bool>,
     pub(crate) ignore_public_acls: ::std::option::Option<bool>,

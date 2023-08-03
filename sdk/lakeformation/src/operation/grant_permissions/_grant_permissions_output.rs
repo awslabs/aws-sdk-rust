@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for GrantPermissionsOutput {
 }
 impl GrantPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`GrantPermissionsOutput`](crate::operation::grant_permissions::GrantPermissionsOutput).
-    pub fn builder() -> crate::operation::grant_permissions::builders::GrantPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::grant_permissions::builders::GrantPermissionsOutputBuilder {
         crate::operation::grant_permissions::builders::GrantPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GrantPermissionsOutput`](crate::operation::grant_permissions::GrantPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantPermissionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,8 +5,7 @@
 pub struct GetTransitGatewayConnectPeerAssociationsOutput {
     /// <p>Information about the transit gateway Connect peer associations.</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peer_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
+    pub transit_gateway_connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     /// <p>The token to use for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetTransitGatewayConnectPeerAssociationsOutput {
 }
 impl GetTransitGatewayConnectPeerAssociationsOutput {
     /// <p>Information about the transit gateway Connect peer associations.</p>
-    pub fn transit_gateway_connect_peer_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayConnectPeerAssociation]> {
+    pub fn transit_gateway_connect_peer_associations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayConnectPeerAssociation]> {
         self.transit_gateway_connect_peer_associations.as_deref()
     }
     /// <p>The token to use for the next page of results.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for GetTransitGatewayConnectPeerAssociati
 }
 impl GetTransitGatewayConnectPeerAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput).
-    pub fn builder() -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder {
         crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayConnectPeerAssociationsOutputBuilder {
-    pub(crate) transit_gateway_connect_peer_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
+    pub(crate) transit_gateway_connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +48,8 @@ impl GetTransitGatewayConnectPeerAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_connect_peer_associations`](Self::set_transit_gateway_connect_peer_associations).
     ///
     /// <p>Information about the transit gateway Connect peer associations.</p>
-    pub fn transit_gateway_connect_peer_associations(
-        mut self,
-        input: crate::types::TransitGatewayConnectPeerAssociation,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_connect_peer_associations
-            .unwrap_or_default();
+    pub fn transit_gateway_connect_peer_associations(mut self, input: crate::types::TransitGatewayConnectPeerAssociation) -> Self {
+        let mut v = self.transit_gateway_connect_peer_associations.unwrap_or_default();
         v.push(input);
         self.transit_gateway_connect_peer_associations = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl GetTransitGatewayConnectPeerAssociationsOutputBuilder {
     /// <p>Information about the transit gateway Connect peer associations.</p>
     pub fn set_transit_gateway_connect_peer_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     ) -> Self {
         self.transit_gateway_connect_peer_associations = input;
         self
@@ -77,8 +65,7 @@ impl GetTransitGatewayConnectPeerAssociationsOutputBuilder {
     /// <p>Information about the transit gateway Connect peer associations.</p>
     pub fn get_transit_gateway_connect_peer_associations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>> {
         &self.transit_gateway_connect_peer_associations
     }
     /// <p>The token to use for the next page of results.</p>
@@ -105,12 +92,10 @@ impl GetTransitGatewayConnectPeerAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput).
-    pub fn build(self) -> crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput{
+    pub fn build(self) -> crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput {
         crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput {
-            transit_gateway_connect_peer_associations: self.transit_gateway_connect_peer_associations
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_connect_peer_associations: self.transit_gateway_connect_peer_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

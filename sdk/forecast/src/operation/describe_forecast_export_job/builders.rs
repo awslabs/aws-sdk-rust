@@ -33,7 +33,7 @@ impl DescribeForecastExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeForecastExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder,
+    inner: crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder,
 }
 impl DescribeForecastExportJobFluentBuilder {
     /// Creates a new `DescribeForecastExportJob`.
@@ -44,7 +44,7 @@ impl DescribeForecastExportJobFluentBuilder {
         }
     }
     /// Access the DescribeForecastExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl DescribeForecastExportJobFluentBuilder {
             crate::operation::describe_forecast_export_job::DescribeForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast_export_job::DescribeForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast_export_job::DescribeForecastExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl DescribeForecastExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl DescribeForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast_export_job::DescribeForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast_export_job::DescribeForecastExportJobError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl DescribeForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast_export_job::DescribeForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast_export_job::DescribeForecastExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl DescribeForecastExportJobFluentBuilder {
             crate::operation::describe_forecast_export_job::DescribeForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast_export_job::DescribeForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast_export_job::DescribeForecastExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn forecast_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_export_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn set_forecast_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_export_job_arn(input);
         self
     }

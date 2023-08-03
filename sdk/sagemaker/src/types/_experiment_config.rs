@@ -49,9 +49,7 @@ impl ExperimentConfig {
 
 /// A builder for [`ExperimentConfig`](crate::types::ExperimentConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentConfigBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ pub struct ExperimentConfigBuilder {
 }
 impl ExperimentConfigBuilder {
     /// <p>The name of an existing experiment to associate with the trial component.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing experiment to associate with the trial component.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -94,25 +86,17 @@ impl ExperimentConfigBuilder {
         &self.trial_name
     }
     /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
-    pub fn trial_component_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
-    pub fn set_trial_component_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_display_name = input;
         self
     }
     /// <p>The display name for the trial component. If this key isn't specified, the display name is the trial component name.</p>
-    pub fn get_trial_component_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_trial_component_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_display_name
     }
     /// <p>The name of the experiment run to associate with the trial component.</p>

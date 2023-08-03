@@ -19,9 +19,7 @@ impl DeletePortfolioOutput {
 
 /// A builder for [`DeletePortfolioOutput`](crate::operation::delete_portfolio::DeletePortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePortfolioOutputBuilder {
     _request_id: Option<String>,
 }

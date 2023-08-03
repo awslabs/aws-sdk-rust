@@ -40,9 +40,7 @@ impl ServiceSyncBlockerSummary {
 
 /// A builder for [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSyncBlockerSummaryBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl ServiceSyncBlockerSummaryBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -98,17 +90,12 @@ impl ServiceSyncBlockerSummaryBuilder {
         self
     }
     /// <p>The latest active blockers for the synced service.</p>
-    pub fn set_latest_blockers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
-    ) -> Self {
+    pub fn set_latest_blockers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>) -> Self {
         self.latest_blockers = input;
         self
     }
     /// <p>The latest active blockers for the synced service.</p>
-    pub fn get_latest_blockers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>> {
+    pub fn get_latest_blockers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>> {
         &self.latest_blockers
     }
     /// Consumes the builder and constructs a [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).

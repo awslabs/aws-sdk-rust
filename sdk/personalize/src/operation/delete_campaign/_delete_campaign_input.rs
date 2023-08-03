@@ -22,9 +22,7 @@ impl DeleteCampaignInput {
 
 /// A builder for [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCampaignInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteCampaignInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_campaign::DeleteCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput {
             campaign_arn: self.campaign_arn,
         })

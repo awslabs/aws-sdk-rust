@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<AffectedEntity>>)`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput::entities): <p>The entities that match the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesError>`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesError)
-    pub fn describe_affected_entities(
-        &self,
-    ) -> crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder
-    {
+    pub fn describe_affected_entities(&self) -> crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder {
         crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

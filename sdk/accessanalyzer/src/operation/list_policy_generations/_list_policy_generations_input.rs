@@ -29,18 +29,14 @@ impl ListPolicyGenerationsInput {
 }
 impl ListPolicyGenerationsInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsInput`](crate::operation::list_policy_generations::ListPolicyGenerationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsInputBuilder {
         crate::operation::list_policy_generations::builders::ListPolicyGenerationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyGenerationsInput`](crate::operation::list_policy_generations::ListPolicyGenerationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyGenerationsInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct ListPolicyGenerationsInputBuilder {
 }
 impl ListPolicyGenerationsInputBuilder {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListPolicyGenerationsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyGenerationsInput`](crate::operation::list_policy_generations::ListPolicyGenerationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policy_generations::ListPolicyGenerationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policy_generations::ListPolicyGenerationsInput {
-                principal_arn: self.principal_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_policy_generations::ListPolicyGenerationsInput {
+            principal_arn: self.principal_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

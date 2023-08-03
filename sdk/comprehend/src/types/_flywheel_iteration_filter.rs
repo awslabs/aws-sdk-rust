@@ -30,9 +30,7 @@ impl FlywheelIterationFilter {
 
 /// A builder for [`FlywheelIterationFilter`](crate::types::FlywheelIterationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlywheelIterationFilterBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl FlywheelIterationFilterBuilder {
         self
     }
     /// <p>Filter the flywheel iterations to include iterations created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -61,10 +56,7 @@ impl FlywheelIterationFilterBuilder {
         self
     }
     /// <p>Filter the flywheel iterations to include iterations created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }

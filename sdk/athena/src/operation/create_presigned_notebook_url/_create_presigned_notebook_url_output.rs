@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreatePresignedNotebookUrlOutput {
 }
 impl CreatePresignedNotebookUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder {
         crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlOutputBuilder {
     pub(crate) notebook_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_token: ::std::option::Option<::std::string::String>,
@@ -104,9 +102,7 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
+    pub fn build(self) -> crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
             notebook_url: self.notebook_url,
             auth_token: self.auth_token,

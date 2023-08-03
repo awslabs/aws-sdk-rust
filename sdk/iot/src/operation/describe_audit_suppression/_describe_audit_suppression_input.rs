@@ -22,18 +22,14 @@ impl DescribeAuditSuppressionInput {
 }
 impl DescribeAuditSuppressionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditSuppressionInput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder {
         crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditSuppressionInput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditSuppressionInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -59,17 +55,12 @@ impl DescribeAuditSuppressionInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`DescribeAuditSuppressionInput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput).
@@ -79,11 +70,9 @@ impl DescribeAuditSuppressionInputBuilder {
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput {
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput {
+            check_name: self.check_name,
+            resource_identifier: self.resource_identifier,
+        })
     }
 }

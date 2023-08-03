@@ -133,9 +133,7 @@ impl WebhookFilter {
 
 /// A builder for [`WebhookFilter`](crate::types::WebhookFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebhookFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WebhookFilterType>,
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
@@ -242,10 +240,7 @@ impl WebhookFilterBuilder {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WebhookFilterType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WebhookFilterType>) -> Self {
         self.r#type = input;
         self
     }

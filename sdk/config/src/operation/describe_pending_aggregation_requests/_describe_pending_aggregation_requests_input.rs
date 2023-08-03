@@ -22,16 +22,14 @@ impl DescribePendingAggregationRequestsInput {
 }
 impl DescribePendingAggregationRequestsInput {
     /// Creates a new builder-style object to manufacture [`DescribePendingAggregationRequestsInput`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput).
-    pub fn builder() -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder{
+    pub fn builder() -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder {
         crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePendingAggregationRequestsInput`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePendingAggregationRequestsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribePendingAggregationRequestsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribePendingAggregationRequestsInput`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsInput {
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

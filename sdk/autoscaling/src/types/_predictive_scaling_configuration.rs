@@ -7,8 +7,7 @@ pub struct PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
     #[doc(hidden)]
-    pub metric_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
+    pub metric_specifications: ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
@@ -23,8 +22,7 @@ pub struct PredictiveScalingConfiguration {
     /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub max_capacity_breach_behavior:
-        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
+    pub max_capacity_breach_behavior: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
@@ -34,9 +32,7 @@ pub struct PredictiveScalingConfiguration {
 impl PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
-    pub fn metric_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PredictiveScalingMetricSpecification]> {
+    pub fn metric_specifications(&self) -> ::std::option::Option<&[crate::types::PredictiveScalingMetricSpecification]> {
         self.metric_specifications.as_deref()
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
@@ -54,9 +50,7 @@ impl PredictiveScalingConfiguration {
     /// <li> <p> <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit. </p> </li>
     /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
     /// </ul>
-    pub fn max_capacity_breach_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
+    pub fn max_capacity_breach_behavior(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
         self.max_capacity_breach_behavior.as_ref()
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
@@ -75,16 +69,12 @@ impl PredictiveScalingConfiguration {
 
 /// A builder for [`PredictiveScalingConfiguration`](crate::types::PredictiveScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveScalingConfigurationBuilder {
-    pub(crate) metric_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
+    pub(crate) metric_specifications: ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
     pub(crate) mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
     pub(crate) scheduling_buffer_time: ::std::option::Option<i32>,
-    pub(crate) max_capacity_breach_behavior:
-        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
+    pub(crate) max_capacity_breach_behavior: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
     pub(crate) max_capacity_buffer: ::std::option::Option<i32>,
 }
 impl PredictiveScalingConfigurationBuilder {
@@ -94,10 +84,7 @@ impl PredictiveScalingConfigurationBuilder {
     ///
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
-    pub fn metric_specifications(
-        mut self,
-        input: crate::types::PredictiveScalingMetricSpecification,
-    ) -> Self {
+    pub fn metric_specifications(mut self, input: crate::types::PredictiveScalingMetricSpecification) -> Self {
         let mut v = self.metric_specifications.unwrap_or_default();
         v.push(input);
         self.metric_specifications = ::std::option::Option::Some(v);
@@ -107,19 +94,14 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
     pub fn set_metric_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
     ) -> Self {
         self.metric_specifications = input;
         self
     }
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
-    pub fn get_metric_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>
-    {
+    pub fn get_metric_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>> {
         &self.metric_specifications
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
@@ -128,10 +110,7 @@ impl PredictiveScalingConfigurationBuilder {
         self
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictiveScalingMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PredictiveScalingMode>) -> Self {
         self.mode = input;
         self
     }
@@ -162,10 +141,7 @@ impl PredictiveScalingConfigurationBuilder {
     /// <li> <p> <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit. </p> </li>
     /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
     /// </ul>
-    pub fn max_capacity_breach_behavior(
-        mut self,
-        input: crate::types::PredictiveScalingMaxCapacityBreachBehavior,
-    ) -> Self {
+    pub fn max_capacity_breach_behavior(mut self, input: crate::types::PredictiveScalingMaxCapacityBreachBehavior) -> Self {
         self.max_capacity_breach_behavior = ::std::option::Option::Some(input);
         self
     }
@@ -188,9 +164,7 @@ impl PredictiveScalingConfigurationBuilder {
     /// <li> <p> <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit. </p> </li>
     /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
     /// </ul>
-    pub fn get_max_capacity_breach_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
+    pub fn get_max_capacity_breach_behavior(&self) -> &::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
         &self.max_capacity_breach_behavior
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>

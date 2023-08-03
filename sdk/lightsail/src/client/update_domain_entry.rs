@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainEntryOutput`](crate::operation::update_domain_entry::UpdateDomainEntryOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_domain_entry::UpdateDomainEntryOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainEntryError>`](crate::operation::update_domain_entry::UpdateDomainEntryError)
-    pub fn update_domain_entry(
-        &self,
-    ) -> crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder {
-        crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_domain_entry(&self) -> crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder {
+        crate::operation::update_domain_entry::builders::UpdateDomainEntryFluentBuilder::new(self.handle.clone())
     }
 }

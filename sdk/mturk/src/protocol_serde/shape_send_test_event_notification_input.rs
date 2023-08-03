@@ -6,10 +6,7 @@ pub fn ser_send_test_event_notification_input(
     if let Some(var_1) = &input.notification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Notification").start_object();
-        crate::protocol_serde::shape_notification_specification::ser_notification_specification(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_notification_specification::ser_notification_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.test_event_type {

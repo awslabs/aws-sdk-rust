@@ -26,8 +26,7 @@ impl ModifyEventSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder,
+    inner: crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder,
 }
 impl ModifyEventSubscriptionFluentBuilder {
     /// Creates a new `ModifyEventSubscription`.
@@ -38,10 +37,7 @@ impl ModifyEventSubscriptionFluentBuilder {
         }
     }
     /// Access the ModifyEventSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ModifyEventSubscriptionFluentBuilder {
             crate::operation::modify_event_subscription::ModifyEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ModifyEventSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ModifyEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ModifyEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ModifyEventSubscriptionFluentBuilder {
             crate::operation::modify_event_subscription::ModifyEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_event_subscription::ModifyEventSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -145,18 +124,12 @@ impl ModifyEventSubscriptionFluentBuilder {
         self.inner.get_subscription_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -195,10 +168,7 @@ impl ModifyEventSubscriptionFluentBuilder {
     /// <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>
     /// <p>Example: my-cluster-1, my-cluster-2</p>
     /// <p>Example: my-snapshot-20131010</p>
-    pub fn set_source_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_ids(input);
         self
     }
@@ -214,27 +184,19 @@ impl ModifyEventSubscriptionFluentBuilder {
     ///
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
     /// <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
     /// <p>Values: configuration, management, monitoring, security, pending</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
     /// <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>

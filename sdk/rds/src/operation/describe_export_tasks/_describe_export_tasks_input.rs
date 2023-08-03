@@ -84,18 +84,14 @@ impl DescribeExportTasksInput {
 }
 impl DescribeExportTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportTasksInputBuilder {
     pub(crate) export_task_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
@@ -106,18 +102,12 @@ pub struct DescribeExportTasksInputBuilder {
 }
 impl DescribeExportTasksInputBuilder {
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn export_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_identifier = input;
         self
     }
@@ -181,10 +171,7 @@ impl DescribeExportTasksInputBuilder {
     /// <li> <p> <code>starting</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -247,10 +234,7 @@ impl DescribeExportTasksInputBuilder {
         self
     }
     /// <p>The type of source for the export.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -261,19 +245,15 @@ impl DescribeExportTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_export_tasks::DescribeExportTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_export_tasks::DescribeExportTasksInput {
-                export_task_identifier: self.export_task_identifier,
-                source_arn: self.source_arn,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-                source_type: self.source_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
+            export_task_identifier: self.export_task_identifier,
+            source_arn: self.source_arn,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+            source_type: self.source_type,
+        })
     }
 }

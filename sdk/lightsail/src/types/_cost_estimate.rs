@@ -30,13 +30,10 @@ impl CostEstimate {
 
 /// A builder for [`CostEstimate`](crate::types::CostEstimate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostEstimateBuilder {
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) results_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
+    pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
 }
 impl CostEstimateBuilder {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
@@ -65,17 +62,12 @@ impl CostEstimateBuilder {
         self
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn set_results_by_time(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
-    ) -> Self {
+    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>) -> Self {
         self.results_by_time = input;
         self
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn get_results_by_time(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>> {
+    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>> {
         &self.results_by_time
     }
     /// Consumes the builder and constructs a [`CostEstimate`](crate::types::CostEstimate).

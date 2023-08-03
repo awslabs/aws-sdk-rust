@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserHierarchyGroupOutput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput) with field(s):
     ///   - [`hierarchy_group(Option<HierarchyGroup>)`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput::hierarchy_group): <p>Information about the hierarchy group.</p>
     /// - On failure, responds with [`SdkError<DescribeUserHierarchyGroupError>`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupError)
-    pub fn describe_user_hierarchy_group(&self) -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupFluentBuilder{
+    pub fn describe_user_hierarchy_group(
+        &self,
+    ) -> crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupFluentBuilder {
         crate::operation::describe_user_hierarchy_group::builders::DescribeUserHierarchyGroupFluentBuilder::new(self.handle.clone())
     }
 }

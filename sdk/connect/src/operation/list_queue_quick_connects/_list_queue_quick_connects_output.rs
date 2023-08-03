@@ -8,8 +8,7 @@ pub struct ListQueueQuickConnectsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quick connects.</p>
     #[doc(hidden)]
-    pub quick_connect_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
+    pub quick_connect_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
     _request_id: Option<String>,
 }
 impl ListQueueQuickConnectsOutput {
@@ -18,9 +17,7 @@ impl ListQueueQuickConnectsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the quick connects.</p>
-    pub fn quick_connect_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QuickConnectSummary]> {
+    pub fn quick_connect_summary_list(&self) -> ::std::option::Option<&[crate::types::QuickConnectSummary]> {
         self.quick_connect_summary_list.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListQueueQuickConnectsOutput {
 }
 impl ListQueueQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsOutputBuilder {
         crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueueQuickConnectsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) quick_connect_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
+    pub(crate) quick_connect_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
     _request_id: Option<String>,
 }
 impl ListQueueQuickConnectsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListQueueQuickConnectsOutputBuilder {
         self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn set_quick_connect_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
-    ) -> Self {
+    pub fn set_quick_connect_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>) -> Self {
         self.quick_connect_summary_list = input;
         self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn get_quick_connect_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
+    pub fn get_quick_connect_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
         &self.quick_connect_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListQueueQuickConnectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput {
+    pub fn build(self) -> crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput {
         crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput {
             next_token: self.next_token,
             quick_connect_summary_list: self.quick_connect_summary_list,

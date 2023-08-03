@@ -23,9 +23,7 @@ impl ListExportsRequestFilters {
 
 /// A builder for [`ListExportsRequestFilters`](crate::types::ListExportsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExportsRequestFiltersBuilder {
     pub(crate) export_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl ListExportsRequestFiltersBuilder {
         self
     }
     /// <p>List exports request filters export ids.</p>
-    pub fn set_export_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_i_ds = input;
         self
     }
     /// <p>List exports request filters export ids.</p>
-    pub fn get_export_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.export_i_ds
     }
     /// Consumes the builder and constructs a [`ListExportsRequestFilters`](crate::types::ListExportsRequestFilters).

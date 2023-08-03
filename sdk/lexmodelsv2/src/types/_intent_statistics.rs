@@ -23,9 +23,7 @@ impl IntentStatistics {
 
 /// A builder for [`IntentStatistics`](crate::types::IntentStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentStatisticsBuilder {
     pub(crate) discovered_intent_count: ::std::option::Option<i32>,
 }

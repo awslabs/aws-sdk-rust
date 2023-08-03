@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`total_number_of_users(Option<i64>)`](crate::operation::describe_users::DescribeUsersOutput::total_number_of_users): <p>The total number of users included in the results.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_users::DescribeUsersOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::operation::describe_users::DescribeUsersError)
-    pub fn describe_users(
-        &self,
-    ) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
-        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_users(&self) -> crate::operation::describe_users::builders::DescribeUsersFluentBuilder {
+        crate::operation::describe_users::builders::DescribeUsersFluentBuilder::new(self.handle.clone())
     }
 }

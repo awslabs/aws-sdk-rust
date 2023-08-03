@@ -46,20 +46,16 @@ impl ::aws_http::request_id::RequestId for GetQueryResultsOutput {
 }
 impl GetQueryResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
-    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder {
         crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutputBuilder {
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
     pub(crate) statistics: ::std::option::Option<crate::types::QueryStatistics>,
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
@@ -80,18 +76,13 @@ impl GetQueryResultsOutputBuilder {
     }
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>) -> Self {
         self.results = input;
         self
     }
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>> {
         &self.results
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
@@ -100,10 +91,7 @@ impl GetQueryResultsOutputBuilder {
         self
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::QueryStatistics>) -> Self {
         self.statistics = input;
         self
     }
@@ -129,18 +117,12 @@ impl GetQueryResultsOutputBuilder {
         &self.status
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }

@@ -10,10 +10,7 @@ impl AddFacetToObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_facet_to_object::AddFacetToObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_facet_to_object::AddFacetToObjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_facet_to_object();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddFacetToObjectFluentBuilder {
         }
     }
     /// Access the AddFacetToObject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_facet_to_object::builders::AddFacetToObjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_facet_to_object::builders::AddFacetToObjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddFacetToObjectFluentBuilder {
             crate::operation::add_facet_to_object::AddFacetToObject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_facet_to_object::AddFacetToObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddFacetToObjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddFacetToObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_facet_to_object::AddFacetToObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_facet_to_object::AddFacetToObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddFacetToObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_facet_to_object::AddFacetToObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_facet_to_object::AddFacetToObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl AddFacetToObjectFluentBuilder {
             crate::operation::add_facet_to_object::AddFacetToObject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_facet_to_object::AddFacetToObjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl AddFacetToObjectFluentBuilder {
         self
     }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.inner = self.inner.set_schema_facet(input);
         self
     }
@@ -169,17 +144,12 @@ impl AddFacetToObjectFluentBuilder {
         self
     }
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    pub fn set_object_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.inner = self.inner.set_object_attribute_list(input);
         self
     }
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    pub fn get_object_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         self.inner.get_object_attribute_list()
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
@@ -188,10 +158,7 @@ impl AddFacetToObjectFluentBuilder {
         self
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }

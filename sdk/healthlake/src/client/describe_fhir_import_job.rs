@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput) with field(s):
     ///   - [`import_job_properties(Option<ImportJobProperties>)`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput::import_job_properties): <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
     /// - On failure, responds with [`SdkError<DescribeFHIRImportJobError>`](crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError)
-    pub fn describe_fhir_import_job(
-        &self,
-    ) -> crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder
-    {
+    pub fn describe_fhir_import_job(&self) -> crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder {
         crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::new(self.handle.clone())
     }
 }

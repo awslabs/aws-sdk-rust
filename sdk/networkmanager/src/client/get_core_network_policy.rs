@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCoreNetworkPolicyOutput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput) with field(s):
     ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput::core_network_policy): <p>The details about a core network policy.</p>
     /// - On failure, responds with [`SdkError<GetCoreNetworkPolicyError>`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyError)
-    pub fn get_core_network_policy(
-        &self,
-    ) -> crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder
-    {
-        crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_core_network_policy(&self) -> crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder {
+        crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyFluentBuilder::new(self.handle.clone())
     }
 }

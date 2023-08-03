@@ -30,9 +30,7 @@ impl VirtualGatewayPortMapping {
 
 /// A builder for [`VirtualGatewayPortMapping`](crate::types::VirtualGatewayPortMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayPortMappingBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>,
@@ -58,10 +56,7 @@ impl VirtualGatewayPortMappingBuilder {
         self
     }
     /// <p>The protocol used for the port mapping.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>) -> Self {
         self.protocol = input;
         self
     }

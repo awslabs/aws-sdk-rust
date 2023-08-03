@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteV2LoggingLevelOutput {
 }
 impl DeleteV2LoggingLevelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteV2LoggingLevelOutput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelOutputBuilder {
         crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteV2LoggingLevelOutput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteV2LoggingLevelOutputBuilder {
     _request_id: Option<String>,
 }

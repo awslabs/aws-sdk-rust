@@ -13,26 +13,20 @@ impl PutLoggingConfigurationInput {
     /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
     /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 impl PutLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder {
         crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLoggingConfigurationInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
 }
@@ -47,19 +41,14 @@ impl PutLoggingConfigurationInputBuilder {
     /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
     /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
     /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// Consumes the builder and constructs a [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
@@ -69,10 +58,8 @@ impl PutLoggingConfigurationInputBuilder {
         crate::operation::put_logging_configuration::PutLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_logging_configuration::PutLoggingConfigurationInput {
-                logging_configuration: self.logging_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_logging_configuration::PutLoggingConfigurationInput {
+            logging_configuration: self.logging_configuration,
+        })
     }
 }

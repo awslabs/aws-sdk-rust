@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`keywords(Option<Vec<String>>)`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput::keywords): <p> The list of keywords for the event mapping source. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListKeywordsForDataSourceError>`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError)
-    pub fn list_keywords_for_data_source(&self) -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceFluentBuilder{
+    pub fn list_keywords_for_data_source(&self) -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceFluentBuilder {
         crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

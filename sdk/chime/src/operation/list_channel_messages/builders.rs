@@ -44,9 +44,7 @@ impl ListChannelMessagesFluentBuilder {
         }
     }
     /// Access the ListChannelMessages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl ListChannelMessagesFluentBuilder {
             crate::operation::list_channel_messages::ListChannelMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_messages::ListChannelMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl ListChannelMessagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl ListChannelMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_messages::ListChannelMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_messages::ListChannelMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl ListChannelMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_messages::ListChannelMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_messages::ListChannelMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +112,15 @@ impl ListChannelMessagesFluentBuilder {
             crate::operation::list_channel_messages::ListChannelMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_messages::ListChannelMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
-        crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
+        crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,10 +156,7 @@ impl ListChannelMessagesFluentBuilder {
         self
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_not_before(input);
         self
     }
@@ -191,10 +170,7 @@ impl ListChannelMessagesFluentBuilder {
         self
     }
     /// <p>The final or ending time stamp for your requested messages.</p>
-    pub fn set_not_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_not_after(input);
         self
     }

@@ -5,10 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disassociate_default_view::builders::DisassociateDefaultViewFluentBuilder::send) it.
     /// - On success, responds with [`DisassociateDefaultViewOutput`](crate::operation::disassociate_default_view::DisassociateDefaultViewOutput)
     /// - On failure, responds with [`SdkError<DisassociateDefaultViewError>`](crate::operation::disassociate_default_view::DisassociateDefaultViewError)
-    pub fn disassociate_default_view(
-        &self,
-    ) -> crate::operation::disassociate_default_view::builders::DisassociateDefaultViewFluentBuilder
-    {
+    pub fn disassociate_default_view(&self) -> crate::operation::disassociate_default_view::builders::DisassociateDefaultViewFluentBuilder {
         crate::operation::disassociate_default_view::builders::DisassociateDefaultViewFluentBuilder::new(self.handle.clone())
     }
 }

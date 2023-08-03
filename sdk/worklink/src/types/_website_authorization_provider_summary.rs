@@ -23,9 +23,7 @@ impl WebsiteAuthorizationProviderSummary {
         self.authorization_provider_id.as_deref()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthorizationProviderType> {
+    pub fn authorization_provider_type(&self) -> ::std::option::Option<&crate::types::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
@@ -46,30 +44,21 @@ impl WebsiteAuthorizationProviderSummary {
 
 /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebsiteAuthorizationProviderSummaryBuilder {
     pub(crate) authorization_provider_id: ::std::option::Option<::std::string::String>,
-    pub(crate) authorization_provider_type:
-        ::std::option::Option<crate::types::AuthorizationProviderType>,
+    pub(crate) authorization_provider_type: ::std::option::Option<crate::types::AuthorizationProviderType>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WebsiteAuthorizationProviderSummaryBuilder {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_provider_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn set_authorization_provider_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_provider_id = input;
         self
     }
@@ -78,25 +67,17 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         &self.authorization_provider_id
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        mut self,
-        input: crate::types::AuthorizationProviderType,
-    ) -> Self {
+    pub fn authorization_provider_type(mut self, input: crate::types::AuthorizationProviderType) -> Self {
         self.authorization_provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authorization provider type.</p>
-    pub fn set_authorization_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationProviderType>,
-    ) -> Self {
+    pub fn set_authorization_provider_type(mut self, input: ::std::option::Option<crate::types::AuthorizationProviderType>) -> Self {
         self.authorization_provider_type = input;
         self
     }
     /// <p>The authorization provider type.</p>
-    pub fn get_authorization_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
+    pub fn get_authorization_provider_type(&self) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
         &self.authorization_provider_type
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
@@ -119,10 +100,7 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         self
     }
     /// <p>The time of creation.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

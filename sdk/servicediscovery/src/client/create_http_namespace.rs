@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHttpNamespaceOutput`](crate::operation::create_http_namespace::CreateHttpNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::create_http_namespace::CreateHttpNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<CreateHttpNamespaceError>`](crate::operation::create_http_namespace::CreateHttpNamespaceError)
-    pub fn create_http_namespace(
-        &self,
-    ) -> crate::operation::create_http_namespace::builders::CreateHttpNamespaceFluentBuilder {
-        crate::operation::create_http_namespace::builders::CreateHttpNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_http_namespace(&self) -> crate::operation::create_http_namespace::builders::CreateHttpNamespaceFluentBuilder {
+        crate::operation::create_http_namespace::builders::CreateHttpNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

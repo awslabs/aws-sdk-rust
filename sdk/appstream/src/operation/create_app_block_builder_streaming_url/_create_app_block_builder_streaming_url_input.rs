@@ -22,34 +22,26 @@ impl CreateAppBlockBuilderStreamingUrlInput {
 }
 impl CreateAppBlockBuilderStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
-    pub fn builder() -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlInputBuilder {
         crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBlockBuilderStreamingUrlInputBuilder {
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<i64>,
 }
 impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the app block builder.</p>
-    pub fn set_app_block_builder_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_builder_name = input;
         self
     }
@@ -72,14 +64,17 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
         &self.validity
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput {
-                app_block_builder_name: self.app_block_builder_name
-                ,
-                validity: self.validity
-                ,
-            }
+                app_block_builder_name: self.app_block_builder_name,
+                validity: self.validity,
+            },
         )
     }
 }

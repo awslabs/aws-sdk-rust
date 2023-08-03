@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for InvokeDeviceMethodOutput {
 }
 impl InvokeDeviceMethodOutput {
     /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput).
-    pub fn builder(
-    ) -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodOutputBuilder {
+    pub fn builder() -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodOutputBuilder {
         crate::operation::invoke_device_method::builders::InvokeDeviceMethodOutputBuilder::default()
     }
 }
 
 /// A builder for [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeDeviceMethodOutputBuilder {
     pub(crate) device_method_response: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeDeviceMethodOutputBuilder {
     /// <p>A JSON encoded string containing the device method response.</p>
-    pub fn device_method_response(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_method_response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_method_response = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON encoded string containing the device method response.</p>
-    pub fn set_device_method_response(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_method_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_method_response = input;
         self
     }

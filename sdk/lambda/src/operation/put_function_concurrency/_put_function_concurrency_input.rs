@@ -36,18 +36,14 @@ impl PutFunctionConcurrencyInput {
 }
 impl PutFunctionConcurrencyInput {
     /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
-    pub fn builder(
-    ) -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder {
         crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFunctionConcurrencyInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_concurrent_executions: ::std::option::Option<i32>,
@@ -61,10 +57,7 @@ impl PutFunctionConcurrencyInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -76,10 +69,7 @@ impl PutFunctionConcurrencyInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -111,15 +101,11 @@ impl PutFunctionConcurrencyInputBuilder {
     /// Consumes the builder and constructs a [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_function_concurrency::PutFunctionConcurrencyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_function_concurrency::PutFunctionConcurrencyInput {
-                function_name: self.function_name,
-                reserved_concurrent_executions: self.reserved_concurrent_executions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_function_concurrency::PutFunctionConcurrencyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_function_concurrency::PutFunctionConcurrencyInput {
+            function_name: self.function_name,
+            reserved_concurrent_executions: self.reserved_concurrent_executions,
+        })
     }
 }

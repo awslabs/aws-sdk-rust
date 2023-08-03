@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLensShareOutput`](crate::operation::create_lens_share::CreateLensShareOutput) with field(s):
     ///   - [`share_id(Option<String>)`](crate::operation::create_lens_share::CreateLensShareOutput::share_id): <p>The ID associated with the share.</p>
     /// - On failure, responds with [`SdkError<CreateLensShareError>`](crate::operation::create_lens_share::CreateLensShareError)
-    pub fn create_lens_share(
-        &self,
-    ) -> crate::operation::create_lens_share::builders::CreateLensShareFluentBuilder {
-        crate::operation::create_lens_share::builders::CreateLensShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_lens_share(&self) -> crate::operation::create_lens_share::builders::CreateLensShareFluentBuilder {
+        crate::operation::create_lens_share::builders::CreateLensShareFluentBuilder::new(self.handle.clone())
     }
 }

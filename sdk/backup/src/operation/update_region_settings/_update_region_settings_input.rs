@@ -5,45 +5,34 @@
 pub struct UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     #[doc(hidden)]
-    pub resource_type_opt_in_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     #[doc(hidden)]
-    pub resource_type_management_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    pub fn resource_type_opt_in_preference(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn resource_type_opt_in_preference(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
-    pub fn resource_type_management_preference(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn resource_type_management_preference(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.resource_type_management_preference.as_ref()
     }
 }
 impl UpdateRegionSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegionSettingsInput`](crate::operation::update_region_settings::UpdateRegionSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
         crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRegionSettingsInput`](crate::operation::update_region_settings::UpdateRegionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegionSettingsInputBuilder {
-    pub(crate) resource_type_opt_in_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
-    pub(crate) resource_type_management_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl UpdateRegionSettingsInputBuilder {
     /// Adds a key-value pair to `resource_type_opt_in_preference`.
@@ -51,11 +40,7 @@ impl UpdateRegionSettingsInputBuilder {
     /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
     ///
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    pub fn resource_type_opt_in_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_opt_in_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.resource_type_opt_in_preference.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.resource_type_opt_in_preference = ::std::option::Option::Some(hash_map);
@@ -70,9 +55,7 @@ impl UpdateRegionSettingsInputBuilder {
         self
     }
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
-    pub fn get_resource_type_opt_in_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_opt_in_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.resource_type_opt_in_preference
     }
     /// Adds a key-value pair to `resource_type_management_preference`.
@@ -80,11 +63,7 @@ impl UpdateRegionSettingsInputBuilder {
     /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
     ///
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
-    pub fn resource_type_management_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_management_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.resource_type_management_preference = ::std::option::Option::Some(hash_map);
@@ -99,23 +78,17 @@ impl UpdateRegionSettingsInputBuilder {
         self
     }
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
-    pub fn get_resource_type_management_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_management_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.resource_type_management_preference
     }
     /// Consumes the builder and constructs a [`UpdateRegionSettingsInput`](crate::operation::update_region_settings::UpdateRegionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_region_settings::UpdateRegionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_region_settings::UpdateRegionSettingsInput {
-                resource_type_opt_in_preference: self.resource_type_opt_in_preference,
-                resource_type_management_preference: self.resource_type_management_preference,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_region_settings::UpdateRegionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_region_settings::UpdateRegionSettingsInput {
+            resource_type_opt_in_preference: self.resource_type_opt_in_preference,
+            resource_type_management_preference: self.resource_type_management_preference,
+        })
     }
 }

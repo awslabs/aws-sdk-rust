@@ -10,10 +10,7 @@ impl GenerateAccessLogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_access_logs::GenerateAccessLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_access_logs::GenerateAccessLogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_access_logs::GenerateAccessLogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.generate_access_logs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GenerateAccessLogsFluentBuilder {
         }
     }
     /// Access the GenerateAccessLogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GenerateAccessLogsFluentBuilder {
             crate::operation::generate_access_logs::GenerateAccessLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_access_logs::GenerateAccessLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_access_logs::GenerateAccessLogsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GenerateAccessLogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GenerateAccessLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_access_logs::GenerateAccessLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_access_logs::GenerateAccessLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_access_logs::GenerateAccessLogsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GenerateAccessLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_access_logs::GenerateAccessLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_access_logs::GenerateAccessLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_access_logs::GenerateAccessLogsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GenerateAccessLogsFluentBuilder {
             crate::operation::generate_access_logs::GenerateAccessLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_access_logs::GenerateAccessLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_access_logs::GenerateAccessLogsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl GenerateAccessLogsFluentBuilder {
         self
     }
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -145,10 +126,7 @@ impl GenerateAccessLogsFluentBuilder {
         self
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

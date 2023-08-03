@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput) with field(s):
     ///   - [`errors(Option<Vec<ColumnStatisticsError>>)`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput::errors): <p>Error occurred during updating column statistics data.</p>
     /// - On failure, responds with [`SdkError<UpdateColumnStatisticsForPartitionError>`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionError)
-    pub fn update_column_statistics_for_partition(&self) -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionFluentBuilder{
+    pub fn update_column_statistics_for_partition(
+        &self,
+    ) -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionFluentBuilder {
         crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionFluentBuilder::new(self.handle.clone())
     }
 }

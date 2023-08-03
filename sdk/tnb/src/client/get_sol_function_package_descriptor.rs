@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`content_type(Option<DescriptorContentType>)`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput::content_type): <p>Indicates the media type of the resource.</p>
     ///   - [`vnfd(Option<Blob>)`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput::vnfd): <p>Contents of the function package descriptor.</p>
     /// - On failure, responds with [`SdkError<GetSolFunctionPackageDescriptorError>`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError)
-    pub fn get_sol_function_package_descriptor(&self) -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorFluentBuilder{
+    pub fn get_sol_function_package_descriptor(
+        &self,
+    ) -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorFluentBuilder {
         crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorFluentBuilder::new(self.handle.clone())
     }
 }

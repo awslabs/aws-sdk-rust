@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutomationExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -108,30 +102,22 @@ impl ::std::convert::From<&str> for AutomationExecutionStatus {
             "Approved" => AutomationExecutionStatus::Approved,
             "Cancelled" => AutomationExecutionStatus::Cancelled,
             "Cancelling" => AutomationExecutionStatus::Cancelling,
-            "ChangeCalendarOverrideApproved" => {
-                AutomationExecutionStatus::ChangeCalendarOverrideApproved
-            }
-            "ChangeCalendarOverrideRejected" => {
-                AutomationExecutionStatus::ChangeCalendarOverrideRejected
-            }
+            "ChangeCalendarOverrideApproved" => AutomationExecutionStatus::ChangeCalendarOverrideApproved,
+            "ChangeCalendarOverrideRejected" => AutomationExecutionStatus::ChangeCalendarOverrideRejected,
             "CompletedWithFailure" => AutomationExecutionStatus::CompletedWithFailure,
             "CompletedWithSuccess" => AutomationExecutionStatus::CompletedWithSuccess,
             "Failed" => AutomationExecutionStatus::Failed,
             "InProgress" => AutomationExecutionStatus::Inprogress,
             "Pending" => AutomationExecutionStatus::Pending,
             "PendingApproval" => AutomationExecutionStatus::PendingApproval,
-            "PendingChangeCalendarOverride" => {
-                AutomationExecutionStatus::PendingChangeCalendarOverride
-            }
+            "PendingChangeCalendarOverride" => AutomationExecutionStatus::PendingChangeCalendarOverride,
             "Rejected" => AutomationExecutionStatus::Rejected,
             "RunbookInProgress" => AutomationExecutionStatus::RunbookInprogress,
             "Scheduled" => AutomationExecutionStatus::Scheduled,
             "Success" => AutomationExecutionStatus::Success,
             "TimedOut" => AutomationExecutionStatus::Timedout,
             "Waiting" => AutomationExecutionStatus::Waiting,
-            other => AutomationExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AutomationExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -149,21 +135,15 @@ impl AutomationExecutionStatus {
             AutomationExecutionStatus::Approved => "Approved",
             AutomationExecutionStatus::Cancelled => "Cancelled",
             AutomationExecutionStatus::Cancelling => "Cancelling",
-            AutomationExecutionStatus::ChangeCalendarOverrideApproved => {
-                "ChangeCalendarOverrideApproved"
-            }
-            AutomationExecutionStatus::ChangeCalendarOverrideRejected => {
-                "ChangeCalendarOverrideRejected"
-            }
+            AutomationExecutionStatus::ChangeCalendarOverrideApproved => "ChangeCalendarOverrideApproved",
+            AutomationExecutionStatus::ChangeCalendarOverrideRejected => "ChangeCalendarOverrideRejected",
             AutomationExecutionStatus::CompletedWithFailure => "CompletedWithFailure",
             AutomationExecutionStatus::CompletedWithSuccess => "CompletedWithSuccess",
             AutomationExecutionStatus::Failed => "Failed",
             AutomationExecutionStatus::Inprogress => "InProgress",
             AutomationExecutionStatus::Pending => "Pending",
             AutomationExecutionStatus::PendingApproval => "PendingApproval",
-            AutomationExecutionStatus::PendingChangeCalendarOverride => {
-                "PendingChangeCalendarOverride"
-            }
+            AutomationExecutionStatus::PendingChangeCalendarOverride => "PendingChangeCalendarOverride",
             AutomationExecutionStatus::Rejected => "Rejected",
             AutomationExecutionStatus::RunbookInprogress => "RunbookInProgress",
             AutomationExecutionStatus::Scheduled => "Scheduled",

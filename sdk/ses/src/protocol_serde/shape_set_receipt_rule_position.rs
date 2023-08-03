@@ -9,59 +9,55 @@ pub fn de_set_receipt_rule_position_http_error(
     crate::operation::set_receipt_rule_position::SetReceiptRulePositionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "RuleDoesNotExist" => crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::RuleDoesNotExistException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RuleDoesNotExistExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_rule_does_not_exist_exception::de_rule_does_not_exist_exception_xml_err(_response_body, output).map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RuleDoesNotExistExceptionBuilder::default();
+                output = crate::protocol_serde::shape_rule_does_not_exist_exception::de_rule_does_not_exist_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RuleSetDoesNotExist" => crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::RuleSetDoesNotExistException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(_response_body, output).map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder::default();
+                output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::generic(generic)
+        _ => crate::operation::set_receipt_rule_position::SetReceiptRulePositionError::generic(generic),
     })
 }
 
@@ -77,9 +73,7 @@ pub fn de_set_receipt_rule_position_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

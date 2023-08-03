@@ -37,10 +37,7 @@ impl GetApplicationVersionFluentBuilder {
         }
     }
     /// Access the GetApplicationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetApplicationVersionFluentBuilder {
             crate::operation::get_application_version::GetApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_version::GetApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_version::GetApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_version::GetApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_version::GetApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_version::GetApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_version::GetApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_version::GetApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_version::GetApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetApplicationVersionFluentBuilder {
             crate::operation::get_application_version::GetApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_version::GetApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_version::GetApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

@@ -10,9 +10,7 @@ pub struct UpdateIdentityProviderSettingsOutput {
 }
 impl UpdateIdentityProviderSettingsOutput {
     /// <p>Describes an identity provider.</p>
-    pub fn identity_provider_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderSummary> {
+    pub fn identity_provider_summary(&self) -> ::std::option::Option<&crate::types::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateIdentityProviderSettingsOutput 
 }
 impl UpdateIdentityProviderSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsOutput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput).
-    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsOutputBuilder {
         crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIdentityProviderSettingsOutput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsOutputBuilder {
-    pub(crate) identity_provider_summary:
-        ::std::option::Option<crate::types::IdentityProviderSummary>,
+    pub(crate) identity_provider_summary: ::std::option::Option<crate::types::IdentityProviderSummary>,
     _request_id: Option<String>,
 }
 impl UpdateIdentityProviderSettingsOutputBuilder {
     /// <p>Describes an identity provider.</p>
-    pub fn identity_provider_summary(
-        mut self,
-        input: crate::types::IdentityProviderSummary,
-    ) -> Self {
+    pub fn identity_provider_summary(mut self, input: crate::types::IdentityProviderSummary) -> Self {
         self.identity_provider_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes an identity provider.</p>
-    pub fn set_identity_provider_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderSummary>,
-    ) -> Self {
+    pub fn set_identity_provider_summary(mut self, input: ::std::option::Option<crate::types::IdentityProviderSummary>) -> Self {
         self.identity_provider_summary = input;
         self
     }
     /// <p>Describes an identity provider.</p>
-    pub fn get_identity_provider_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderSummary> {
+    pub fn get_identity_provider_summary(&self) -> &::std::option::Option<crate::types::IdentityProviderSummary> {
         &self.identity_provider_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,7 @@ impl UpdateIdentityProviderSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsOutput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput {
         crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput {
             identity_provider_summary: self.identity_provider_summary,
             _request_id: self._request_id,

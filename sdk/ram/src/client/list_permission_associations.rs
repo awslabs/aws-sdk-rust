@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<AssociatedPermission>>)`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput::permissions): <p>A structure with information about this customer managed permission.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_associations::ListPermissionAssociationsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListPermissionAssociationsError>`](crate::operation::list_permission_associations::ListPermissionAssociationsError)
-    pub fn list_permission_associations(&self) -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsFluentBuilder{
+    pub fn list_permission_associations(&self) -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsFluentBuilder {
         crate::operation::list_permission_associations::builders::ListPermissionAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

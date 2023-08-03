@@ -50,17 +50,14 @@ impl ListUserProfilesInput {
 }
 impl ListUserProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
-    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
         crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserProfilesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -118,10 +115,7 @@ impl ListUserProfilesInputBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserProfileSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::UserProfileSortKey>) -> Self {
         self.sort_by = input;
         self
     }
@@ -130,18 +124,12 @@ impl ListUserProfilesInputBuilder {
         &self.sort_by
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id_equals = input;
         self
     }
@@ -150,18 +138,12 @@ impl ListUserProfilesInputBuilder {
         &self.domain_id_equals
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn user_profile_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_user_profile_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name_contains = input;
         self
     }
@@ -172,19 +154,14 @@ impl ListUserProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_user_profiles::ListUserProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_profiles::ListUserProfilesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                domain_id_equals: self.domain_id_equals,
-                user_profile_name_contains: self.user_profile_name_contains,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_user_profiles::ListUserProfilesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            domain_id_equals: self.domain_id_equals,
+            user_profile_name_contains: self.user_profile_name_contains,
+        })
     }
 }

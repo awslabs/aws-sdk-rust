@@ -44,9 +44,7 @@ impl VideoAttribute {
 
 /// A builder for [`VideoAttribute`](crate::types::VideoAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoAttributeBuilder {
     pub(crate) corner_radius: ::std::option::Option<i32>,
     pub(crate) border_color: ::std::option::Option<crate::types::BorderColor>,
@@ -74,10 +72,7 @@ impl VideoAttributeBuilder {
         self
     }
     /// <p>Defines the border color of all video tiles.</p>
-    pub fn set_border_color(
-        mut self,
-        input: ::std::option::Option<crate::types::BorderColor>,
-    ) -> Self {
+    pub fn set_border_color(mut self, input: ::std::option::Option<crate::types::BorderColor>) -> Self {
         self.border_color = input;
         self
     }
@@ -91,10 +86,7 @@ impl VideoAttributeBuilder {
         self
     }
     /// <p>Defines the highlight color for the active video tile.</p>
-    pub fn set_highlight_color(
-        mut self,
-        input: ::std::option::Option<crate::types::HighlightColor>,
-    ) -> Self {
+    pub fn set_highlight_color(mut self, input: ::std::option::Option<crate::types::HighlightColor>) -> Self {
         self.highlight_color = input;
         self
     }

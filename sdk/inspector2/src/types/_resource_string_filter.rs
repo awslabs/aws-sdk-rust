@@ -30,9 +30,7 @@ impl ResourceStringFilter {
 
 /// A builder for [`ResourceStringFilter`](crate::types::ResourceStringFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceStringFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::ResourceStringComparison>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ResourceStringFilterBuilder {
         self
     }
     /// <p>The filter's comparison.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStringComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::ResourceStringComparison>) -> Self {
         self.comparison = input;
         self
     }

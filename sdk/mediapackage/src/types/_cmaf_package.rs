@@ -51,9 +51,7 @@ impl CmafPackage {
 
 /// A builder for [`CmafPackage`](crate::types::CmafPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CmafPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::CmafEncryption>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
@@ -68,10 +66,7 @@ impl CmafPackageBuilder {
         self
     }
     /// A Common Media Application Format (CMAF) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::CmafEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -91,17 +86,12 @@ impl CmafPackageBuilder {
         self
     }
     /// A list of HLS manifest configurations
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// A list of HLS manifest configurations
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
         &self.hls_manifests
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
@@ -119,18 +109,12 @@ impl CmafPackageBuilder {
         &self.segment_duration_seconds
     }
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    pub fn segment_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segment_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    pub fn set_segment_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segment_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_prefix = input;
         self
     }
@@ -144,10 +128,7 @@ impl CmafPackageBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSelection>,
-    ) -> Self {
+    pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
         self.stream_selection = input;
         self
     }

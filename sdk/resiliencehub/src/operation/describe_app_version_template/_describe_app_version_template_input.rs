@@ -22,16 +22,14 @@ impl DescribeAppVersionTemplateInput {
 }
 impl DescribeAppVersionTemplateInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateInput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput).
-    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder{
+    pub fn builder() -> crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder {
         crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionTemplateInput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionTemplateInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DescribeAppVersionTemplateInputBuilder {
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput {
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+        })
     }
 }

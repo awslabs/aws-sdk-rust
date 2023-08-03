@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_detector::GetDetectorOutput::tags): <p>The tags of the detector resource.</p>
     ///   - [`features(Option<Vec<DetectorFeatureConfigurationResult>>)`](crate::operation::get_detector::GetDetectorOutput::features): <p>Describes the features that have been enabled for the detector.</p>
     /// - On failure, responds with [`SdkError<GetDetectorError>`](crate::operation::get_detector::GetDetectorError)
-    pub fn get_detector(
-        &self,
-    ) -> crate::operation::get_detector::builders::GetDetectorFluentBuilder {
+    pub fn get_detector(&self) -> crate::operation::get_detector::builders::GetDetectorFluentBuilder {
         crate::operation::get_detector::builders::GetDetectorFluentBuilder::new(self.handle.clone())
     }
 }

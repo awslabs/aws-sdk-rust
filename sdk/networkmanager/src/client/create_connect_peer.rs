@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectPeerOutput`](crate::operation::create_connect_peer::CreateConnectPeerOutput) with field(s):
     ///   - [`connect_peer(Option<ConnectPeer>)`](crate::operation::create_connect_peer::CreateConnectPeerOutput::connect_peer): <p>The response to the request.</p>
     /// - On failure, responds with [`SdkError<CreateConnectPeerError>`](crate::operation::create_connect_peer::CreateConnectPeerError)
-    pub fn create_connect_peer(
-        &self,
-    ) -> crate::operation::create_connect_peer::builders::CreateConnectPeerFluentBuilder {
-        crate::operation::create_connect_peer::builders::CreateConnectPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connect_peer(&self) -> crate::operation::create_connect_peer::builders::CreateConnectPeerFluentBuilder {
+        crate::operation::create_connect_peer::builders::CreateConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

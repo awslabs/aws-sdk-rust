@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetDefaultCreditSpecificationOutput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput) with field(s):
     ///   - [`instance_family_credit_specification(Option<InstanceFamilyCreditSpecification>)`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput::instance_family_credit_specification): <p>The default credit option for CPU usage of the instance family.</p>
     /// - On failure, responds with [`SdkError<GetDefaultCreditSpecificationError>`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError)
-    pub fn get_default_credit_specification(&self) -> crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationFluentBuilder{
+    pub fn get_default_credit_specification(
+        &self,
+    ) -> crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationFluentBuilder {
         crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationFluentBuilder::new(self.handle.clone())
     }
 }

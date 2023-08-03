@@ -51,9 +51,7 @@ impl Room {
 
 /// A builder for [`Room`](crate::types::Room).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoomBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_name: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl RoomBuilder {
         &self.description
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn provider_calendar_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_calendar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_calendar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn set_provider_calendar_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_calendar_id = input;
         self
     }

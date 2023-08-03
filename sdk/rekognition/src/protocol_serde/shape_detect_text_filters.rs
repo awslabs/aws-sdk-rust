@@ -15,10 +15,7 @@ pub fn ser_detect_text_filters(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

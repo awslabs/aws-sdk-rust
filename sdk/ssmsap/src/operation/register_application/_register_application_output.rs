@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RegisterApplicationOutput {
 }
 impl RegisterApplicationOutput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationOutput`](crate::operation::register_application::RegisterApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::register_application::builders::RegisterApplicationOutputBuilder {
-        crate::operation::register_application::builders::RegisterApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::register_application::builders::RegisterApplicationOutputBuilder {
+        crate::operation::register_application::builders::RegisterApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterApplicationOutput`](crate::operation::register_application::RegisterApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::Application>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl RegisterApplicationOutputBuilder {
         self
     }
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
-    pub fn set_application(
-        mut self,
-        input: ::std::option::Option<crate::types::Application>,
-    ) -> Self {
+    pub fn set_application(mut self, input: ::std::option::Option<crate::types::Application>) -> Self {
         self.application = input;
         self
     }

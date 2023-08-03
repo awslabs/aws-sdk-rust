@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyLaunchTemplateOutput {
 }
 impl ModifyLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLaunchTemplateOutput`](crate::operation::modify_launch_template::ModifyLaunchTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateOutputBuilder {
         crate::operation::modify_launch_template::builders::ModifyLaunchTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLaunchTemplateOutput`](crate::operation::modify_launch_template::ModifyLaunchTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLaunchTemplateOutputBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ModifyLaunchTemplateOutputBuilder {
         self
     }
     /// <p>Information about the launch template.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplate>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplate>) -> Self {
         self.launch_template = input;
         self
     }

@@ -23,17 +23,14 @@ impl DeleteAnalysisSchemeInput {
 }
 impl DeleteAnalysisSchemeInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
+    pub fn builder() -> crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder {
         crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_scheme_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl DeleteAnalysisSchemeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn analysis_scheme_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analysis_scheme_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_scheme_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
-    pub fn set_analysis_scheme_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analysis_scheme_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_scheme_name = input;
         self
     }
@@ -76,15 +67,11 @@ impl DeleteAnalysisSchemeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput {
-                domain_name: self.domain_name,
-                analysis_scheme_name: self.analysis_scheme_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput {
+            domain_name: self.domain_name,
+            analysis_scheme_name: self.analysis_scheme_name,
+        })
     }
 }

@@ -72,18 +72,14 @@ impl SimulationJobSummary {
 
 /// A builder for [`SimulationJobSummary`](crate::types::SimulationJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationJobSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SimulationJobStatus>,
-    pub(crate) simulation_application_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) robot_application_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) simulation_application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) robot_application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
 }
@@ -108,10 +104,7 @@ impl SimulationJobSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -139,10 +132,7 @@ impl SimulationJobSummaryBuilder {
         self
     }
     /// <p>The status of the simulation job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -155,27 +145,19 @@ impl SimulationJobSummaryBuilder {
     /// To override the contents of this collection use [`set_simulation_application_names`](Self::set_simulation_application_names).
     ///
     /// <p>A list of simulation job simulation application names.</p>
-    pub fn simulation_application_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn simulation_application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.simulation_application_names.unwrap_or_default();
         v.push(input.into());
         self.simulation_application_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of simulation job simulation application names.</p>
-    pub fn set_simulation_application_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_simulation_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.simulation_application_names = input;
         self
     }
     /// <p>A list of simulation job simulation application names.</p>
-    pub fn get_simulation_application_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_simulation_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.simulation_application_names
     }
     /// Appends an item to `robot_application_names`.
@@ -183,27 +165,19 @@ impl SimulationJobSummaryBuilder {
     /// To override the contents of this collection use [`set_robot_application_names`](Self::set_robot_application_names).
     ///
     /// <p>A list of simulation job robot application names.</p>
-    pub fn robot_application_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn robot_application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.robot_application_names.unwrap_or_default();
         v.push(input.into());
         self.robot_application_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of simulation job robot application names.</p>
-    pub fn set_robot_application_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_robot_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.robot_application_names = input;
         self
     }
     /// <p>A list of simulation job robot application names.</p>
-    pub fn get_robot_application_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_robot_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.robot_application_names
     }
     /// Appends an item to `data_source_names`.
@@ -211,27 +185,19 @@ impl SimulationJobSummaryBuilder {
     /// To override the contents of this collection use [`set_data_source_names`](Self::set_data_source_names).
     ///
     /// <p>The names of the data sources.</p>
-    pub fn data_source_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_source_names.unwrap_or_default();
         v.push(input.into());
         self.data_source_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the data sources.</p>
-    pub fn set_data_source_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_source_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_source_names = input;
         self
     }
     /// <p>The names of the data sources.</p>
-    pub fn get_data_source_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_source_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_source_names
     }
     /// <p>The compute type for the simulation job summary.</p>
@@ -240,10 +206,7 @@ impl SimulationJobSummaryBuilder {
         self
     }
     /// <p>The compute type for the simulation job summary.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }

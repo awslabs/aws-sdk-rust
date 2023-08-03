@@ -5,16 +5,16 @@ pub use crate::operation::failover_global_replication_group::_failover_global_re
 
 impl FailoverGlobalReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.failover_global_replication_group();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct FailoverGlobalReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder,
+    inner: crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder,
 }
 impl FailoverGlobalReplicationGroupFluentBuilder {
     /// Creates a new `FailoverGlobalReplicationGroup`.
@@ -37,15 +37,20 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
         }
     }
     /// Access the FailoverGlobalReplicationGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
@@ -115,18 +124,12 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
         self.inner.get_global_replication_group_id()
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_region(input.into());
         self
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_region(input);
         self
     }
@@ -135,25 +138,17 @@ impl FailoverGlobalReplicationGroupFluentBuilder {
         self.inner.get_primary_region()
     }
     /// <p>The name of the primary replication group</p>
-    pub fn primary_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_replication_group_id(input.into());
         self
     }
     /// <p>The name of the primary replication group</p>
-    pub fn set_primary_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_replication_group_id(input);
         self
     }
     /// <p>The name of the primary replication group</p>
-    pub fn get_primary_replication_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_primary_replication_group_id()
     }
 }

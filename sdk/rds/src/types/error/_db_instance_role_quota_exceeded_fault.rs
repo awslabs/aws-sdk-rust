@@ -17,10 +17,7 @@ impl DbInstanceRoleQuotaExceededFault {
 }
 impl ::std::fmt::Display for DbInstanceRoleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]"
-        )?;
+        ::std::write!(f, "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -36,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::DbInstanceRoleQu
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DbInstanceRoleQuotaExceededFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DbInstanceRoleQuotaExceededFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -52,9 +47,7 @@ impl DbInstanceRoleQuotaExceededFault {
 
 /// A builder for [`DbInstanceRoleQuotaExceededFault`](crate::types::error::DbInstanceRoleQuotaExceededFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbInstanceRoleQuotaExceededFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl DbInstanceRoleQuotaExceededFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

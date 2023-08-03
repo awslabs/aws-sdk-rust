@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeInterconnectLoaOutput {
 }
 impl DescribeInterconnectLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaOutputBuilder {
         crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInterconnectLoaOutput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInterconnectLoaOutputBuilder {
     pub(crate) loa: ::std::option::Option<crate::types::Loa>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DescribeInterconnectLoaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInterconnectLoaOutput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput {
+    pub fn build(self) -> crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput {
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput {
             loa: self.loa,
             _request_id: self._request_id,

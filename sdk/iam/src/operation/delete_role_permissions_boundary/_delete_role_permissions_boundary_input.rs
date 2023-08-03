@@ -15,16 +15,14 @@ impl DeleteRolePermissionsBoundaryInput {
 }
 impl DeleteRolePermissionsBoundaryInput {
     /// Creates a new builder-style object to manufacture [`DeleteRolePermissionsBoundaryInput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput).
-    pub fn builder() -> crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryInputBuilder{
+    pub fn builder() -> crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryInputBuilder {
         crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRolePermissionsBoundaryInput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRolePermissionsBoundaryInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl DeleteRolePermissionsBoundaryInputBuilder {
         crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput {
-                role_name: self.role_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput {
+            role_name: self.role_name,
+        })
     }
 }

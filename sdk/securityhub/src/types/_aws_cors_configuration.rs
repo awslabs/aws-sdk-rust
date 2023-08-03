@@ -58,9 +58,7 @@ impl AwsCorsConfiguration {
 
 /// A builder for [`AwsCorsConfiguration`](crate::types::AwsCorsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCorsConfigurationBuilder {
     pub(crate) allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allow_credentials: ::std::option::Option<bool>,
@@ -75,27 +73,19 @@ impl AwsCorsConfigurationBuilder {
     /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
     ///
     /// <p>The allowed origins for CORS requests.</p>
-    pub fn allow_origins(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_origins.unwrap_or_default();
         v.push(input.into());
         self.allow_origins = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allowed origins for CORS requests.</p>
-    pub fn set_allow_origins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_origins = input;
         self
     }
     /// <p>The allowed origins for CORS requests.</p>
-    pub fn get_allow_origins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_origins
     }
     /// <p>Indicates whether the CORS request includes credentials.</p>
@@ -117,27 +107,19 @@ impl AwsCorsConfigurationBuilder {
     /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
     ///
     /// <p>The exposed headers for CORS requests.</p>
-    pub fn expose_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
         v.push(input.into());
         self.expose_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The exposed headers for CORS requests.</p>
-    pub fn set_expose_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.expose_headers = input;
         self
     }
     /// <p>The exposed headers for CORS requests.</p>
-    pub fn get_expose_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.expose_headers
     }
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
@@ -159,27 +141,19 @@ impl AwsCorsConfigurationBuilder {
     /// To override the contents of this collection use [`set_allow_methods`](Self::set_allow_methods).
     ///
     /// <p>The allowed methods for CORS requests.</p>
-    pub fn allow_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_methods.unwrap_or_default();
         v.push(input.into());
         self.allow_methods = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allowed methods for CORS requests.</p>
-    pub fn set_allow_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_methods(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_methods = input;
         self
     }
     /// <p>The allowed methods for CORS requests.</p>
-    pub fn get_allow_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_methods(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_methods
     }
     /// Appends an item to `allow_headers`.
@@ -187,27 +161,19 @@ impl AwsCorsConfigurationBuilder {
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
     ///
     /// <p>The allowed headers for CORS requests.</p>
-    pub fn allow_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_headers.unwrap_or_default();
         v.push(input.into());
         self.allow_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allowed headers for CORS requests.</p>
-    pub fn set_allow_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_headers = input;
         self
     }
     /// <p>The allowed headers for CORS requests.</p>
-    pub fn get_allow_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_headers
     }
     /// Consumes the builder and constructs a [`AwsCorsConfiguration`](crate::types::AwsCorsConfiguration).

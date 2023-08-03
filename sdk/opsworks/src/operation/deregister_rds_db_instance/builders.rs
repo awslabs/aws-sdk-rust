@@ -27,8 +27,7 @@ impl DeregisterRdsDbInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder,
+    inner: crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder,
 }
 impl DeregisterRdsDbInstanceFluentBuilder {
     /// Creates a new `DeregisterRdsDbInstance`.
@@ -39,10 +38,7 @@ impl DeregisterRdsDbInstanceFluentBuilder {
         }
     }
     /// Access the DeregisterRdsDbInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeregisterRdsDbInstanceFluentBuilder {
             crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeregisterRdsDbInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeregisterRdsDbInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeregisterRdsDbInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DeregisterRdsDbInstanceFluentBuilder {
             crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rds_db_instance_arn(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rds_db_instance_arn(input);
         self
     }

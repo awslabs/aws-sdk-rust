@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`thing_type_arn(Option<String>)`](crate::operation::create_thing_type::CreateThingTypeOutput::thing_type_arn): <p>The Amazon Resource Name (ARN) of the thing type.</p>
     ///   - [`thing_type_id(Option<String>)`](crate::operation::create_thing_type::CreateThingTypeOutput::thing_type_id): <p>The thing type ID.</p>
     /// - On failure, responds with [`SdkError<CreateThingTypeError>`](crate::operation::create_thing_type::CreateThingTypeError)
-    pub fn create_thing_type(
-        &self,
-    ) -> crate::operation::create_thing_type::builders::CreateThingTypeFluentBuilder {
-        crate::operation::create_thing_type::builders::CreateThingTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_thing_type(&self) -> crate::operation::create_thing_type::builders::CreateThingTypeFluentBuilder {
+        crate::operation::create_thing_type::builders::CreateThingTypeFluentBuilder::new(self.handle.clone())
     }
 }

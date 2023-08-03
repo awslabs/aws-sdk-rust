@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token MFA configuration.</p>
     ///   - [`mfa_configuration(Option<UserPoolMfaType>)`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput::mfa_configuration): <p>The MFA configuration. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<SetUserPoolMfaConfigError>`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError)
-    pub fn set_user_pool_mfa_config(
-        &self,
-    ) -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigFluentBuilder
-    {
-        crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_user_pool_mfa_config(&self) -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigFluentBuilder {
+        crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigFluentBuilder::new(self.handle.clone())
     }
 }

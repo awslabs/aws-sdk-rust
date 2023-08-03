@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`network_insights_access_scope(Option<NetworkInsightsAccessScope>)`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeOutput::network_insights_access_scope): <p>The Network Access Scope.</p>
     ///   - [`network_insights_access_scope_content(Option<NetworkInsightsAccessScopeContent>)`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeOutput::network_insights_access_scope_content): <p>The Network Access Scope content.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkInsightsAccessScopeError>`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeError)
-    pub fn create_network_insights_access_scope(&self) -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeFluentBuilder{
+    pub fn create_network_insights_access_scope(
+        &self,
+    ) -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeFluentBuilder {
         crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeFluentBuilder::new(self.handle.clone())
     }
 }

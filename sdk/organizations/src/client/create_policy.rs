@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::create_policy::CreatePolicyOutput::policy): <p>A structure that contains details about the newly created policy.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyError>`](crate::operation::create_policy::CreatePolicyError)
-    pub fn create_policy(
-        &self,
-    ) -> crate::operation::create_policy::builders::CreatePolicyFluentBuilder {
-        crate::operation::create_policy::builders::CreatePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_policy(&self) -> crate::operation::create_policy::builders::CreatePolicyFluentBuilder {
+        crate::operation::create_policy::builders::CreatePolicyFluentBuilder::new(self.handle.clone())
     }
 }

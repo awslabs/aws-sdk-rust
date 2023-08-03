@@ -5,8 +5,7 @@
 pub struct DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     #[doc(hidden)]
-    pub client_authentication_settings_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
+    pub client_authentication_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeClientAuthenticationSettingsOutput {
 }
 impl DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
-    pub fn client_authentication_settings_info(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClientAuthenticationSettingInfo]> {
+    pub fn client_authentication_settings_info(&self) -> ::std::option::Option<&[crate::types::ClientAuthenticationSettingInfo]> {
         self.client_authentication_settings_info.as_deref()
     }
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClientAuthenticationSettingsO
 }
 impl DescribeClientAuthenticationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsOutput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput).
-    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsOutputBuilder {
         crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientAuthenticationSettingsOutput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsOutputBuilder {
-    pub(crate) client_authentication_settings_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
+    pub(crate) client_authentication_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeClientAuthenticationSettingsOutputBuilder {
     /// To override the contents of this collection use [`set_client_authentication_settings_info`](Self::set_client_authentication_settings_info).
     ///
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
-    pub fn client_authentication_settings_info(
-        mut self,
-        input: crate::types::ClientAuthenticationSettingInfo,
-    ) -> Self {
+    pub fn client_authentication_settings_info(mut self, input: crate::types::ClientAuthenticationSettingInfo) -> Self {
         let mut v = self.client_authentication_settings_info.unwrap_or_default();
         v.push(input);
         self.client_authentication_settings_info = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl DescribeClientAuthenticationSettingsOutputBuilder {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
     pub fn set_client_authentication_settings_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
     ) -> Self {
         self.client_authentication_settings_info = input;
         self
     }
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
-    pub fn get_client_authentication_settings_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>
-    {
+    pub fn get_client_authentication_settings_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>> {
         &self.client_authentication_settings_info
     }
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
@@ -103,12 +89,10 @@ impl DescribeClientAuthenticationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsOutput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput).
-    pub fn build(self) -> crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput{
+    pub fn build(self) -> crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput {
         crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput {
-            client_authentication_settings_info: self.client_authentication_settings_info
-            ,
-            next_token: self.next_token
-            ,
+            client_authentication_settings_info: self.client_authentication_settings_info,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

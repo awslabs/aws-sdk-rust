@@ -30,9 +30,7 @@ impl UsageAccountResult {
 
 /// A builder for [`UsageAccountResult`](crate::types::UsageAccountResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageAccountResultBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,

@@ -23,12 +23,8 @@ pub struct BatchGetFrameMetricDataOutput {
     pub end_times: ::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>>,
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     #[doc(hidden)]
-    pub unprocessed_end_times: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::TimestampStructure>,
-        >,
-    >,
+    pub unprocessed_end_times:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>>,
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     #[doc(hidden)]
     pub frame_metric_data: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>>,
@@ -59,12 +55,7 @@ impl BatchGetFrameMetricDataOutput {
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     pub fn unprocessed_end_times(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::TimestampStructure>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>> {
         self.unprocessed_end_times.as_ref()
     }
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
@@ -79,31 +70,22 @@ impl ::aws_http::request_id::RequestId for BatchGetFrameMetricDataOutput {
 }
 impl BatchGetFrameMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFrameMetricDataOutput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder {
         crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetFrameMetricDataOutput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resolution: ::std::option::Option<crate::types::AggregationPeriod>,
     pub(crate) end_times: ::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>>,
-    pub(crate) unprocessed_end_times: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::TimestampStructure>,
-        >,
-    >,
-    pub(crate) frame_metric_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>>,
+    pub(crate) unprocessed_end_times:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>>,
+    pub(crate) frame_metric_data: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>>,
     _request_id: Option<String>,
 }
 impl BatchGetFrameMetricDataOutputBuilder {
@@ -113,10 +95,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self
     }
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -130,10 +109,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self
     }
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -157,10 +133,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.resolution = input;
         self
     }
@@ -185,17 +158,12 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self
     }
     /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
-    pub fn set_end_times(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>>,
-    ) -> Self {
+    pub fn set_end_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>>) -> Self {
         self.end_times = input;
         self
     }
     /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
-    pub fn get_end_times(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>> {
+    pub fn get_end_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>> {
         &self.end_times
     }
     /// Adds a key-value pair to `unprocessed_end_times`.
@@ -216,12 +184,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     pub fn set_unprocessed_end_times(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::TimestampStructure>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>>,
     ) -> Self {
         self.unprocessed_end_times = input;
         self
@@ -229,12 +192,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     pub fn get_unprocessed_end_times(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::TimestampStructure>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>> {
         &self.unprocessed_end_times
     }
     /// Appends an item to `frame_metric_data`.
@@ -249,17 +207,12 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self
     }
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn set_frame_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>>,
-    ) -> Self {
+    pub fn set_frame_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>>) -> Self {
         self.frame_metric_data = input;
         self
     }
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn get_frame_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>> {
+    pub fn get_frame_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricDatum>> {
         &self.frame_metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -272,9 +225,7 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetFrameMetricDataOutput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput {
+    pub fn build(self) -> crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput {
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput {
             start_time: self.start_time,
             end_time: self.end_time,

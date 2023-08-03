@@ -43,9 +43,7 @@ impl InviteMembersInput {
 
 /// A builder for [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,17 +77,12 @@ impl InviteMembersInputBuilder {
         self
     }
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
@@ -123,10 +116,7 @@ impl InviteMembersInputBuilder {
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invite_members::InviteMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_members::InviteMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,

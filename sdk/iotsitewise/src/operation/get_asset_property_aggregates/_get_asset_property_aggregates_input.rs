@@ -95,16 +95,14 @@ impl GetAssetPropertyAggregatesInput {
 }
 impl GetAssetPropertyAggregatesInput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyAggregatesInput`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput).
-    pub fn builder() -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder{
+    pub fn builder() -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder {
         crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssetPropertyAggregatesInput`](crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
@@ -148,18 +146,12 @@ impl GetAssetPropertyAggregatesInputBuilder {
         &self.property_id
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_alias = input;
         self
     }
@@ -179,17 +171,12 @@ impl GetAssetPropertyAggregatesInputBuilder {
         self
     }
     /// <p>The data aggregating function.</p>
-    pub fn set_aggregate_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateType>>,
-    ) -> Self {
+    pub fn set_aggregate_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateType>>) -> Self {
         self.aggregate_types = input;
         self
     }
     /// <p>The data aggregating function.</p>
-    pub fn get_aggregate_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateType>> {
+    pub fn get_aggregate_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateType>> {
         &self.aggregate_types
     }
     /// <p>The time interval over which to aggregate data.</p>
@@ -218,10 +205,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         self
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn set_qualities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
-    ) -> Self {
+    pub fn set_qualities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>) -> Self {
         self.qualities = input;
         self
     }
@@ -235,10 +219,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         self
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -252,10 +233,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         self
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -271,10 +249,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
     }
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
-    pub fn set_time_ordering(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeOrdering>,
-    ) -> Self {
+    pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.time_ordering = input;
         self
     }
@@ -330,20 +305,18 @@ impl GetAssetPropertyAggregatesInputBuilder {
         crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput {
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-                property_alias: self.property_alias,
-                aggregate_types: self.aggregate_types,
-                resolution: self.resolution,
-                qualities: self.qualities,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                time_ordering: self.time_ordering,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput {
+            asset_id: self.asset_id,
+            property_id: self.property_id,
+            property_alias: self.property_alias,
+            aggregate_types: self.aggregate_types,
+            resolution: self.resolution,
+            qualities: self.qualities,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            time_ordering: self.time_ordering,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

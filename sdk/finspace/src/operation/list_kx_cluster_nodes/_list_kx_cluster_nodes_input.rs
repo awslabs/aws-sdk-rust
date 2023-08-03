@@ -36,17 +36,14 @@ impl ListKxClusterNodesInput {
 }
 impl ListKxClusterNodesInput {
     /// Creates a new builder-style object to manufacture [`ListKxClusterNodesInput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput).
-    pub fn builder(
-    ) -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesInputBuilder {
+    pub fn builder() -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesInputBuilder {
         crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxClusterNodesInput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxClusterNodesInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListKxClusterNodesInputBuilder {
 }
 impl ListKxClusterNodesInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl ListKxClusterNodesInputBuilder {
     /// Consumes the builder and constructs a [`ListKxClusterNodesInput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput {
-                environment_id: self.environment_id,
-                cluster_name: self.cluster_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput {
+            environment_id: self.environment_id,
+            cluster_name: self.cluster_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

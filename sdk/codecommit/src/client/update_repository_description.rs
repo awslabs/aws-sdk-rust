@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`repository_description(impl ::std::convert::Into<String>)`](crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionFluentBuilder::repository_description) / [`set_repository_description(Option<String>)`](crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionFluentBuilder::set_repository_description): <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     /// - On success, responds with [`UpdateRepositoryDescriptionOutput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput)
     /// - On failure, responds with [`SdkError<UpdateRepositoryDescriptionError>`](crate::operation::update_repository_description::UpdateRepositoryDescriptionError)
-    pub fn update_repository_description(&self) -> crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionFluentBuilder{
+    pub fn update_repository_description(
+        &self,
+    ) -> crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionFluentBuilder {
         crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionFluentBuilder::new(self.handle.clone())
     }
 }

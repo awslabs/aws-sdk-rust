@@ -4,96 +4,85 @@ pub fn de_assume_role_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::assume_role::AssumeRoleOutput,
-    crate::operation::assume_role::AssumeRoleError,
-> {
+) -> std::result::Result<crate::operation::assume_role::AssumeRoleOutput, crate::operation::assume_role::AssumeRoleError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::assume_role::AssumeRoleError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::assume_role::AssumeRoleError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredTokenException" => {
-            crate::operation::assume_role::AssumeRoleError::ExpiredTokenException({
+        "ExpiredTokenException" => crate::operation::assume_role::AssumeRoleError::ExpiredTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ExpiredTokenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MalformedPolicyDocument" => {
-            crate::operation::assume_role::AssumeRoleError::MalformedPolicyDocumentException({
+                let mut output = crate::types::error::builders::ExpiredTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MalformedPolicyDocument" => crate::operation::assume_role::AssumeRoleError::MalformedPolicyDocumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PackedPolicyTooLarge" => {
-            crate::operation::assume_role::AssumeRoleError::PackedPolicyTooLargeException({
+                let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PackedPolicyTooLarge" => crate::operation::assume_role::AssumeRoleError::PackedPolicyTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RegionDisabledException" => {
-            crate::operation::assume_role::AssumeRoleError::RegionDisabledException({
+                let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RegionDisabledException" => crate::operation::assume_role::AssumeRoleError::RegionDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::RegionDisabledExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output).map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::assume_role::AssumeRoleError::generic(generic),
     })
 }
@@ -103,19 +92,13 @@ pub fn de_assume_role_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::assume_role::AssumeRoleOutput,
-    crate::operation::assume_role::AssumeRoleError,
-> {
+) -> std::result::Result<crate::operation::assume_role::AssumeRoleOutput, crate::operation::assume_role::AssumeRoleError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::assume_role::builders::AssumeRoleOutputBuilder::default();
+        let mut output = crate::operation::assume_role::builders::AssumeRoleOutputBuilder::default();
         output = crate::protocol_serde::shape_assume_role::de_assume_role(_response_body, output)
             .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -124,10 +107,7 @@ pub fn de_assume_role_http_response_with_props(
 pub fn de_assume_role(
     inp: &[u8],
     mut builder: crate::operation::assume_role::builders::AssumeRoleOutputBuilder,
-) -> Result<
-    crate::operation::assume_role::builders::AssumeRoleOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::assume_role::builders::AssumeRoleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -202,9 +182,7 @@ pub fn de_assume_role(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected AssumeRoleResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected AssumeRoleResult tag"));
     };
     Ok(builder)
 }

@@ -90,9 +90,7 @@ impl PublishPackageVersionInput {
 }
 impl PublishPackageVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishPackageVersionInput`](crate::operation::publish_package_version::PublishPackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder {
         crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder::default()
     }
 }
@@ -202,18 +200,12 @@ impl PublishPackageVersionInputBuilder {
         &self.package
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -227,17 +219,12 @@ impl PublishPackageVersionInputBuilder {
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn set_asset_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.asset_content = input;
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn get_asset_content(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.asset_content
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
@@ -291,24 +278,20 @@ impl PublishPackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishPackageVersionInput`](crate::operation::publish_package_version::PublishPackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_package_version::PublishPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::publish_package_version::PublishPackageVersionInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                repository: self.repository,
-                format: self.format,
-                namespace: self.namespace,
-                package: self.package,
-                package_version: self.package_version,
-                asset_content: self.asset_content.unwrap_or_default(),
-                asset_name: self.asset_name,
-                asset_sha256: self.asset_sha256,
-                unfinished: self.unfinished,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::publish_package_version::PublishPackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::publish_package_version::PublishPackageVersionInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            package_version: self.package_version,
+            asset_content: self.asset_content.unwrap_or_default(),
+            asset_name: self.asset_name,
+            asset_sha256: self.asset_sha256,
+            unfinished: self.unfinished,
+        })
     }
 }

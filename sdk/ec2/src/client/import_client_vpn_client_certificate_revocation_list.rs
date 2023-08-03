@@ -9,7 +9,10 @@ impl super::Client {
     /// - On success, responds with [`ImportClientVpnClientCertificateRevocationListOutput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ImportClientVpnClientCertificateRevocationListError>`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListError)
-    pub fn import_client_vpn_client_certificate_revocation_list(&self) -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListFluentBuilder{
+    pub fn import_client_vpn_client_certificate_revocation_list(
+        &self,
+    ) -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListFluentBuilder
+    {
         crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListFluentBuilder::new(self.handle.clone())
     }
 }

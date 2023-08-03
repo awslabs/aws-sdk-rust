@@ -10,10 +10,7 @@ impl UpdateWorkGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_work_group::UpdateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_work_group::UpdateWorkGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_work_group::UpdateWorkGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_work_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateWorkGroupFluentBuilder {
         }
     }
     /// Access the UpdateWorkGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateWorkGroupFluentBuilder {
             crate::operation::update_work_group::UpdateWorkGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_work_group::UpdateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_work_group::UpdateWorkGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateWorkGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateWorkGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_work_group::UpdateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_work_group::UpdateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_work_group::UpdateWorkGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateWorkGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_work_group::UpdateWorkGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_work_group::UpdateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_work_group::UpdateWorkGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateWorkGroupFluentBuilder {
             crate::operation::update_work_group::UpdateWorkGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_work_group::UpdateWorkGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_work_group::UpdateWorkGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -151,25 +135,17 @@ impl UpdateWorkGroupFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn configuration_updates(
-        mut self,
-        input: crate::types::WorkGroupConfigurationUpdates,
-    ) -> Self {
+    pub fn configuration_updates(mut self, input: crate::types::WorkGroupConfigurationUpdates) -> Self {
         self.inner = self.inner.configuration_updates(input);
         self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn set_configuration_updates(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
-    ) -> Self {
+    pub fn set_configuration_updates(mut self, input: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>) -> Self {
         self.inner = self.inner.set_configuration_updates(input);
         self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn get_configuration_updates(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
+    pub fn get_configuration_updates(&self) -> &::std::option::Option<crate::types::WorkGroupConfigurationUpdates> {
         self.inner.get_configuration_updates()
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>

@@ -9,97 +9,96 @@ pub fn de_get_log_levels_by_resource_types_http_error(
     crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceNotFoundException" => {
+            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::generic(generic)
+        _ => crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::generic(generic),
     })
 }
 
@@ -115,66 +114,58 @@ pub fn de_get_log_levels_by_resource_types_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_log_levels_by_resource_types::de_get_log_levels_by_resource_types(_response_body, output).map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_log_levels_by_resource_types::de_get_log_levels_by_resource_types(_response_body, output)
+            .map_err(crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_get_log_levels_by_resource_types(value: &[u8], mut builder: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder) -> Result<crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_get_log_levels_by_resource_types(
+    value: &[u8],
+    mut builder: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder,
+) -> Result<
+    crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "DefaultLogLevel" => {
-                        builder = builder.set_default_log_level(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::LogLevel::from(u.as_ref()))
-                            })
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "DefaultLogLevel" => {
+                    builder = builder.set_default_log_level(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::LogLevel::from(u.as_ref())))
                             .transpose()?,
-                        );
-                    }
-                    "WirelessDeviceLogOptions" => {
-                        builder = builder.set_wireless_device_log_options(
-                            crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens)?
-                        );
-                    }
-                    "WirelessGatewayLogOptions" => {
-                        builder = builder.set_wireless_gateway_log_options(
-                            crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "WirelessDeviceLogOptions" => {
+                    builder = builder.set_wireless_device_log_options(
+                        crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens)?,
+                    );
+                }
+                "WirelessGatewayLogOptions" => {
+                    builder = builder.set_wireless_gateway_log_options(
+                        crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(tokens)?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

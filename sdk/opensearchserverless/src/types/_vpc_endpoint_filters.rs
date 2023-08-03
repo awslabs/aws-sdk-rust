@@ -23,9 +23,7 @@ impl VpcEndpointFilters {
 
 /// A builder for [`VpcEndpointFilters`](crate::types::VpcEndpointFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcEndpointFiltersBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
@@ -36,10 +34,7 @@ impl VpcEndpointFiltersBuilder {
         self
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl VpcEndpointFiltersBuilder {
     }
     /// Consumes the builder and constructs a [`VpcEndpointFilters`](crate::types::VpcEndpointFilters).
     pub fn build(self) -> crate::types::VpcEndpointFilters {
-        crate::types::VpcEndpointFilters {
-            status: self.status,
-        }
+        crate::types::VpcEndpointFilters { status: self.status }
     }
 }

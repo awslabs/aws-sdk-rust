@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResolverRuleOutput`](crate::operation::create_resolver_rule::CreateResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::create_resolver_rule::CreateResolverRuleOutput::resolver_rule): <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateResolverRuleError>`](crate::operation::create_resolver_rule::CreateResolverRuleError)
-    pub fn create_resolver_rule(
-        &self,
-    ) -> crate::operation::create_resolver_rule::builders::CreateResolverRuleFluentBuilder {
-        crate::operation::create_resolver_rule::builders::CreateResolverRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resolver_rule(&self) -> crate::operation::create_resolver_rule::builders::CreateResolverRuleFluentBuilder {
+        crate::operation::create_resolver_rule::builders::CreateResolverRuleFluentBuilder::new(self.handle.clone())
     }
 }

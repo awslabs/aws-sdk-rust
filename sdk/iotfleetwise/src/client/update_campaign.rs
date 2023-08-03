@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_campaign::UpdateCampaignOutput::name): <p>The name of the updated campaign.</p>
     ///   - [`status(Option<CampaignStatus>)`](crate::operation::update_campaign::UpdateCampaignOutput::status): <p>The state of a campaign. The status can be one of:</p>  <ul>   <li> <p> <code>CREATING</code> - Amazon Web Services IoT FleetWise is processing your request to create the campaign. </p> </li>   <li> <p> <code>WAITING_FOR_APPROVAL</code> - After a campaign is created, it enters the <code>WAITING_FOR_APPROVAL</code> state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target vehicle or fleet, use the API operation to approve the campaign. </p> </li>   <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>   <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<UpdateCampaignError>`](crate::operation::update_campaign::UpdateCampaignError)
-    pub fn update_campaign(
-        &self,
-    ) -> crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder {
-        crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_campaign(&self) -> crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder {
+        crate::operation::update_campaign::builders::UpdateCampaignFluentBuilder::new(self.handle.clone())
     }
 }

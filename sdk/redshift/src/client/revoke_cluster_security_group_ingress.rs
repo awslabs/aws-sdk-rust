@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`RevokeClusterSecurityGroupIngressOutput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput) with field(s):
     ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput::cluster_security_group): <p>Describes a security group.</p>
     /// - On failure, responds with [`SdkError<RevokeClusterSecurityGroupIngressError>`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError)
-    pub fn revoke_cluster_security_group_ingress(&self) -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressFluentBuilder{
+    pub fn revoke_cluster_security_group_ingress(
+        &self,
+    ) -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressFluentBuilder {
         crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressFluentBuilder::new(self.handle.clone())
     }
 }

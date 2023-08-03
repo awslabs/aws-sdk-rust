@@ -48,9 +48,7 @@ impl LambdaContainerParams {
 
 /// A builder for [`LambdaContainerParams`](crate::types::LambdaContainerParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaContainerParamsBuilder {
     pub(crate) memory_size_in_kb: ::std::option::Option<i32>,
     pub(crate) mount_ro_sysfs: ::std::option::Option<bool>,
@@ -104,17 +102,12 @@ impl LambdaContainerParamsBuilder {
         self
     }
     /// <p>The list of volumes that the container can access.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>) -> Self {
         self.volumes = input;
         self
     }
     /// <p>The list of volumes that the container can access.</p>
-    pub fn get_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>> {
         &self.volumes
     }
     /// Appends an item to `devices`.
@@ -129,17 +122,12 @@ impl LambdaContainerParamsBuilder {
         self
     }
     /// <p>The list of system devices that the container can access.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>) -> Self {
         self.devices = input;
         self
     }
     /// <p>The list of system devices that the container can access.</p>
-    pub fn get_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>> {
         &self.devices
     }
     /// Consumes the builder and constructs a [`LambdaContainerParams`](crate::types::LambdaContainerParams).

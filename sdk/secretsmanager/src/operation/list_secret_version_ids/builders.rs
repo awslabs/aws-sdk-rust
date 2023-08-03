@@ -40,10 +40,7 @@ impl ListSecretVersionIdsFluentBuilder {
         }
     }
     /// Access the ListSecretVersionIds as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ListSecretVersionIdsFluentBuilder {
             crate::operation::list_secret_version_ids::ListSecretVersionIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_secret_version_ids::ListSecretVersionIdsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ListSecretVersionIdsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ListSecretVersionIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_secret_version_ids::ListSecretVersionIdsError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ListSecretVersionIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_secret_version_ids::ListSecretVersionIdsError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +108,15 @@ impl ListSecretVersionIdsFluentBuilder {
             crate::operation::list_secret_version_ids::ListSecretVersionIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_secret_version_ids::ListSecretVersionIdsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator {
-        crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator {
+        crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN or name of the secret whose versions you want to list.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>

@@ -10,10 +10,7 @@ impl UpdateThingShadowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_thing_shadow::UpdateThingShadowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_shadow::UpdateThingShadowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_shadow::UpdateThingShadowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_thing_shadow();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateThingShadowFluentBuilder {
         }
     }
     /// Access the UpdateThingShadow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateThingShadowFluentBuilder {
             crate::operation::update_thing_shadow::UpdateThingShadow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_shadow::UpdateThingShadowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_shadow::UpdateThingShadowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateThingShadowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateThingShadowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_shadow::UpdateThingShadowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_shadow::UpdateThingShadowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_shadow::UpdateThingShadowError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateThingShadowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thing_shadow::UpdateThingShadowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_shadow::UpdateThingShadowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_shadow::UpdateThingShadowError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl UpdateThingShadowFluentBuilder {
             crate::operation::update_thing_shadow::UpdateThingShadow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thing_shadow::UpdateThingShadowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thing_shadow::UpdateThingShadowError>,
     > {
         self.customize_middleware().await
     }

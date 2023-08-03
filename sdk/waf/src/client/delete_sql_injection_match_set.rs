@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteSqlInjectionMatchSetOutput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteSqlInjectionMatchSetError>`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError)
-    pub fn delete_sql_injection_match_set(&self) -> crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetFluentBuilder{
+    pub fn delete_sql_injection_match_set(
+        &self,
+    ) -> crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetFluentBuilder {
         crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

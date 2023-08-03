@@ -29,18 +29,14 @@ impl ModifyAddressAttributeInput {
 }
 impl ModifyAddressAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyAddressAttributeInput`](crate::operation::modify_address_attribute::ModifyAddressAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder {
         crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAddressAttributeInput`](crate::operation::modify_address_attribute::ModifyAddressAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAddressAttributeInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ModifyAddressAttributeInputBuilder {
 }
 impl ModifyAddressAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl ModifyAddressAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyAddressAttributeInput`](crate::operation::modify_address_attribute::ModifyAddressAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_address_attribute::ModifyAddressAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_address_attribute::ModifyAddressAttributeInput {
-                allocation_id: self.allocation_id,
-                domain_name: self.domain_name,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_address_attribute::ModifyAddressAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_address_attribute::ModifyAddressAttributeInput {
+            allocation_id: self.allocation_id,
+            domain_name: self.domain_name,
+            dry_run: self.dry_run,
+        })
     }
 }

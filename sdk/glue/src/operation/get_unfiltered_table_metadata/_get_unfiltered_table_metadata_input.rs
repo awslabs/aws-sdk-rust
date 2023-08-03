@@ -17,8 +17,7 @@ pub struct GetUnfilteredTableMetadataInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types. </p>
     #[doc(hidden)]
-    pub supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInput {
     /// <p>The catalog ID where the table resides.</p>
@@ -38,31 +37,26 @@ impl GetUnfilteredTableMetadataInput {
         self.audit_context.as_ref()
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn supported_permission_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionType]> {
+    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
 }
 impl GetUnfilteredTableMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
-    pub fn builder() -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder{
+    pub fn builder() -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder {
         crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInputBuilder {
     /// <p>The catalog ID where the table resides.</p>
@@ -80,18 +74,12 @@ impl GetUnfilteredTableMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -119,10 +107,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
         self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.audit_context = input;
         self
     }
@@ -142,17 +127,12 @@ impl GetUnfilteredTableMetadataInputBuilder {
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// Consumes the builder and constructs a [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
@@ -162,14 +142,12 @@ impl GetUnfilteredTableMetadataInputBuilder {
         crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                name: self.name,
-                audit_context: self.audit_context,
-                supported_permission_types: self.supported_permission_types,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            name: self.name,
+            audit_context: self.audit_context,
+            supported_permission_types: self.supported_permission_types,
+        })
     }
 }

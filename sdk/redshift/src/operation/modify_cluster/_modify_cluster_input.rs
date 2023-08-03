@@ -299,18 +299,14 @@ impl ModifyClusterInput {
 
 /// A builder for [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
-    pub(crate) cluster_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
@@ -334,19 +330,13 @@ pub struct ModifyClusterInputBuilder {
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -427,10 +417,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cluster_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
         v.push(input.into());
         self.cluster_security_groups = ::std::option::Option::Some(v);
@@ -444,10 +431,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_cluster_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_security_groups = input;
         self
     }
@@ -459,9 +443,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_cluster_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -469,27 +451,19 @@ impl ModifyClusterInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
@@ -504,10 +478,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>Must contain one number.</p> </li>
     /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
@@ -523,10 +494,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>Must contain one number.</p> </li>
     /// <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p> </li>
     /// </ul>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -548,29 +516,21 @@ impl ModifyClusterInputBuilder {
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
-    pub fn cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
-    pub fn set_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = input;
         self
     }
     /// <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
-    pub fn get_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_name
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
@@ -587,10 +547,7 @@ impl ModifyClusterInputBuilder {
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
-    pub fn set_automated_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
@@ -612,10 +569,7 @@ impl ModifyClusterInputBuilder {
     /// <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -631,10 +585,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -644,10 +595,7 @@ impl ModifyClusterInputBuilder {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -657,28 +605,20 @@ impl ModifyClusterInputBuilder {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
     /// <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -706,47 +646,31 @@ impl ModifyClusterInputBuilder {
         &self.allow_version_upgrade
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn hsm_client_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn set_hsm_client_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = input;
         self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn get_hsm_client_certificate_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_client_certificate_identifier
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = input;
         self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_configuration_identifier
     }
     /// <p>The new identifier for the cluster.</p>
@@ -759,10 +683,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn new_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -776,10 +697,7 @@ impl ModifyClusterInputBuilder {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_new_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_cluster_identifier = input;
         self
     }
@@ -848,18 +766,12 @@ impl ModifyClusterInputBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -913,18 +825,12 @@ impl ModifyClusterInputBuilder {
         &self.availability_zone_relocation
     }
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -949,10 +855,7 @@ impl ModifyClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster::ModifyClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,

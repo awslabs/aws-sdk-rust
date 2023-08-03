@@ -5,8 +5,7 @@
 pub struct ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
     #[doc(hidden)]
-    pub world_generation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
+    pub world_generation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWorldGenerationJobsOutput {
 }
 impl ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
-    pub fn world_generation_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorldGenerationJobSummary]> {
+    pub fn world_generation_job_summaries(&self) -> ::std::option::Option<&[crate::types::WorldGenerationJobSummary]> {
         self.world_generation_job_summaries.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWorldGenerationJobsOutput {
 }
 impl ListWorldGenerationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsOutput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsOutputBuilder {
         crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldGenerationJobsOutput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldGenerationJobsOutputBuilder {
-    pub(crate) world_generation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
+    pub(crate) world_generation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListWorldGenerationJobsOutputBuilder {
     /// To override the contents of this collection use [`set_world_generation_job_summaries`](Self::set_world_generation_job_summaries).
     ///
     /// <p>Summary information for world generator jobs.</p>
-    pub fn world_generation_job_summaries(
-        mut self,
-        input: crate::types::WorldGenerationJobSummary,
-    ) -> Self {
+    pub fn world_generation_job_summaries(mut self, input: crate::types::WorldGenerationJobSummary) -> Self {
         let mut v = self.world_generation_job_summaries.unwrap_or_default();
         v.push(input);
         self.world_generation_job_summaries = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListWorldGenerationJobsOutputBuilder {
         self
     }
     /// <p>Summary information for world generator jobs.</p>
-    pub fn get_world_generation_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>> {
+    pub fn get_world_generation_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>> {
         &self.world_generation_job_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -102,9 +89,7 @@ impl ListWorldGenerationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorldGenerationJobsOutput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
+    pub fn build(self) -> crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
             world_generation_job_summaries: self.world_generation_job_summaries,
             next_token: self.next_token,

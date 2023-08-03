@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`vote(VoteValue)`](crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder::vote) / [`set_vote(Option<VoteValue>)`](crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder::set_vote): <p> The value of the vote. </p>
     /// - On success, responds with [`VoteOnProposalOutput`](crate::operation::vote_on_proposal::VoteOnProposalOutput)
     /// - On failure, responds with [`SdkError<VoteOnProposalError>`](crate::operation::vote_on_proposal::VoteOnProposalError)
-    pub fn vote_on_proposal(
-        &self,
-    ) -> crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder {
-        crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn vote_on_proposal(&self) -> crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder {
+        crate::operation::vote_on_proposal::builders::VoteOnProposalFluentBuilder::new(self.handle.clone())
     }
 }

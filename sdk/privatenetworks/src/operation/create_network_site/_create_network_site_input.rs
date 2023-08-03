@@ -26,9 +26,7 @@ pub struct CreateNetworkSiteInput {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p> The tags to apply to the network site. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkSiteInput {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
@@ -60,11 +58,7 @@ impl CreateNetworkSiteInput {
         self.availability_zone_id.as_deref()
     }
     /// <p> The tags to apply to the network site. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -84,8 +78,7 @@ impl ::std::fmt::Debug for CreateNetworkSiteInput {
 }
 impl CreateNetworkSiteInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSiteInput`](crate::operation::create_network_site::CreateNetworkSiteInput).
-    pub fn builder(
-    ) -> crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder {
+    pub fn builder() -> crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder {
         crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder::default()
     }
 }
@@ -101,24 +94,16 @@ pub struct CreateNetworkSiteInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkSiteInputBuilder {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub fn network_site_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub fn set_network_site_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_name = input;
         self
     }
@@ -160,10 +145,7 @@ impl CreateNetworkSiteInputBuilder {
         self
     }
     /// <p>Information about the pending plan for this site.</p>
-    pub fn set_pending_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
+    pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
         self.pending_plan = input;
         self
     }
@@ -186,18 +168,12 @@ impl CreateNetworkSiteInputBuilder {
         &self.client_token
     }
     /// <p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -206,18 +182,12 @@ impl CreateNetworkSiteInputBuilder {
         &self.availability_zone
     }
     /// <p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -230,53 +200,35 @@ impl CreateNetworkSiteInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags to apply to the network site. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The tags to apply to the network site. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> The tags to apply to the network site. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNetworkSiteInput`](crate::operation::create_network_site::CreateNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network_site::CreateNetworkSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_site::CreateNetworkSiteInput {
-                network_site_name: self.network_site_name,
-                description: self.description,
-                network_arn: self.network_arn,
-                pending_plan: self.pending_plan,
-                client_token: self.client_token,
-                availability_zone: self.availability_zone,
-                availability_zone_id: self.availability_zone_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_network_site::CreateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_network_site::CreateNetworkSiteInput {
+            network_site_name: self.network_site_name,
+            description: self.description,
+            network_arn: self.network_arn,
+            pending_plan: self.pending_plan,
+            client_token: self.client_token,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateNetworkSiteInputBuilder {

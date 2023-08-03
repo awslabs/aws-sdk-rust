@@ -37,9 +37,7 @@ impl Artifact {
 
 /// A builder for [`Artifact`](crate::types::Artifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ArtifactBuilder {
         self
     }
     /// <p>The location of an artifact.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ArtifactLocation>) -> Self {
         self.location = input;
         self
     }

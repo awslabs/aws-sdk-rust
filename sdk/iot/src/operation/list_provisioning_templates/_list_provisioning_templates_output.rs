@@ -5,8 +5,7 @@
 pub struct ListProvisioningTemplatesOutput {
     /// <p>A list of provisioning templates</p>
     #[doc(hidden)]
-    pub templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
+    pub templates: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProvisioningTemplatesOutput {
 }
 impl ListProvisioningTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput).
-    pub fn builder() -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesOutputBuilder {
         crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisioningTemplatesOutputBuilder {
-    pub(crate) templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
+    pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListProvisioningTemplatesOutputBuilder {
         self
     }
     /// <p>A list of provisioning templates</p>
-    pub fn set_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
-    ) -> Self {
+    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>) -> Self {
         self.templates = input;
         self
     }
     /// <p>A list of provisioning templates</p>
-    pub fn get_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>> {
+    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>> {
         &self.templates
     }
     /// <p>A token to retrieve the next set of results.</p>
@@ -95,9 +86,7 @@ impl ListProvisioningTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput {
         crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput {
             templates: self.templates,
             next_token: self.next_token,

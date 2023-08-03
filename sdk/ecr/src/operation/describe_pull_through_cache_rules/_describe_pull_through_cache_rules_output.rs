@@ -5,8 +5,7 @@
 pub struct DescribePullThroughCacheRulesOutput {
     /// <p>The details of the pull through cache rules.</p>
     #[doc(hidden)]
-    pub pull_through_cache_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
+    pub pull_through_cache_rules: ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribePullThroughCacheRulesOutput {
 }
 impl DescribePullThroughCacheRulesOutput {
     /// <p>The details of the pull through cache rules.</p>
-    pub fn pull_through_cache_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PullThroughCacheRule]> {
+    pub fn pull_through_cache_rules(&self) -> ::std::option::Option<&[crate::types::PullThroughCacheRule]> {
         self.pull_through_cache_rules.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePullThroughCacheRulesOutput {
 }
 impl DescribePullThroughCacheRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesOutput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput).
-    pub fn builder() -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesOutputBuilder {
         crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePullThroughCacheRulesOutputBuilder {
-    pub(crate) pull_through_cache_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
+    pub(crate) pull_through_cache_rules: ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribePullThroughCacheRulesOutputBuilder {
         self
     }
     /// <p>The details of the pull through cache rules.</p>
-    pub fn set_pull_through_cache_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
-    ) -> Self {
+    pub fn set_pull_through_cache_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>) -> Self {
         self.pull_through_cache_rules = input;
         self
     }
     /// <p>The details of the pull through cache rules.</p>
-    pub fn get_pull_through_cache_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>> {
+    pub fn get_pull_through_cache_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>> {
         &self.pull_through_cache_rules
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -97,10 +86,7 @@ impl DescribePullThroughCacheRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePullThroughCacheRulesOutput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput {
         crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput {
             pull_through_cache_rules: self.pull_through_cache_rules,
             next_token: self.next_token,

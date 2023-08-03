@@ -9,10 +9,7 @@ pub fn ser_stop_product_subscription_input(
     if let Some(var_2) = &input.identity_provider {
         #[allow(unused_mut)]
         let mut object_3 = object.key("IdentityProvider").start_object();
-        crate::protocol_serde::shape_identity_provider::ser_identity_provider(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.product {

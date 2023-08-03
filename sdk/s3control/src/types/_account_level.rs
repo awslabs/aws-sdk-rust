@@ -13,16 +13,13 @@ pub struct AccountLevel {
     pub bucket_level: ::std::option::Option<crate::types::BucketLevel>,
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
     #[doc(hidden)]
-    pub advanced_cost_optimization_metrics:
-        ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
+    pub advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
     #[doc(hidden)]
-    pub advanced_data_protection_metrics:
-        ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
+    pub advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
     /// <p>A container for detailed status code metrics. </p>
     #[doc(hidden)]
-    pub detailed_status_codes_metrics:
-        ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
+    pub detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
 }
 impl AccountLevel {
     /// <p>A container for S3 Storage Lens activity metrics.</p>
@@ -34,21 +31,15 @@ impl AccountLevel {
         self.bucket_level.as_ref()
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    pub fn advanced_cost_optimization_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedCostOptimizationMetrics> {
+    pub fn advanced_cost_optimization_metrics(&self) -> ::std::option::Option<&crate::types::AdvancedCostOptimizationMetrics> {
         self.advanced_cost_optimization_metrics.as_ref()
     }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    pub fn advanced_data_protection_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedDataProtectionMetrics> {
+    pub fn advanced_data_protection_metrics(&self) -> ::std::option::Option<&crate::types::AdvancedDataProtectionMetrics> {
         self.advanced_data_protection_metrics.as_ref()
     }
     /// <p>A container for detailed status code metrics. </p>
-    pub fn detailed_status_codes_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetailedStatusCodesMetrics> {
+    pub fn detailed_status_codes_metrics(&self) -> ::std::option::Option<&crate::types::DetailedStatusCodesMetrics> {
         self.detailed_status_codes_metrics.as_ref()
     }
 }
@@ -61,18 +52,13 @@ impl AccountLevel {
 
 /// A builder for [`AccountLevel`](crate::types::AccountLevel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountLevelBuilder {
     pub(crate) activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
     pub(crate) bucket_level: ::std::option::Option<crate::types::BucketLevel>,
-    pub(crate) advanced_cost_optimization_metrics:
-        ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
-    pub(crate) advanced_data_protection_metrics:
-        ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
-    pub(crate) detailed_status_codes_metrics:
-        ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
+    pub(crate) advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
+    pub(crate) advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
+    pub(crate) detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
 }
 impl AccountLevelBuilder {
     /// <p>A container for S3 Storage Lens activity metrics.</p>
@@ -81,10 +67,7 @@ impl AccountLevelBuilder {
         self
     }
     /// <p>A container for S3 Storage Lens activity metrics.</p>
-    pub fn set_activity_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityMetrics>,
-    ) -> Self {
+    pub fn set_activity_metrics(mut self, input: ::std::option::Option<crate::types::ActivityMetrics>) -> Self {
         self.activity_metrics = input;
         self
     }
@@ -98,10 +81,7 @@ impl AccountLevelBuilder {
         self
     }
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
-    pub fn set_bucket_level(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketLevel>,
-    ) -> Self {
+    pub fn set_bucket_level(mut self, input: ::std::option::Option<crate::types::BucketLevel>) -> Self {
         self.bucket_level = input;
         self
     }
@@ -110,69 +90,45 @@ impl AccountLevelBuilder {
         &self.bucket_level
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    pub fn advanced_cost_optimization_metrics(
-        mut self,
-        input: crate::types::AdvancedCostOptimizationMetrics,
-    ) -> Self {
+    pub fn advanced_cost_optimization_metrics(mut self, input: crate::types::AdvancedCostOptimizationMetrics) -> Self {
         self.advanced_cost_optimization_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    pub fn set_advanced_cost_optimization_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
-    ) -> Self {
+    pub fn set_advanced_cost_optimization_metrics(mut self, input: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>) -> Self {
         self.advanced_cost_optimization_metrics = input;
         self
     }
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    pub fn get_advanced_cost_optimization_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedCostOptimizationMetrics> {
+    pub fn get_advanced_cost_optimization_metrics(&self) -> &::std::option::Option<crate::types::AdvancedCostOptimizationMetrics> {
         &self.advanced_cost_optimization_metrics
     }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    pub fn advanced_data_protection_metrics(
-        mut self,
-        input: crate::types::AdvancedDataProtectionMetrics,
-    ) -> Self {
+    pub fn advanced_data_protection_metrics(mut self, input: crate::types::AdvancedDataProtectionMetrics) -> Self {
         self.advanced_data_protection_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    pub fn set_advanced_data_protection_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
-    ) -> Self {
+    pub fn set_advanced_data_protection_metrics(mut self, input: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>) -> Self {
         self.advanced_data_protection_metrics = input;
         self
     }
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    pub fn get_advanced_data_protection_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedDataProtectionMetrics> {
+    pub fn get_advanced_data_protection_metrics(&self) -> &::std::option::Option<crate::types::AdvancedDataProtectionMetrics> {
         &self.advanced_data_protection_metrics
     }
     /// <p>A container for detailed status code metrics. </p>
-    pub fn detailed_status_codes_metrics(
-        mut self,
-        input: crate::types::DetailedStatusCodesMetrics,
-    ) -> Self {
+    pub fn detailed_status_codes_metrics(mut self, input: crate::types::DetailedStatusCodesMetrics) -> Self {
         self.detailed_status_codes_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for detailed status code metrics. </p>
-    pub fn set_detailed_status_codes_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
-    ) -> Self {
+    pub fn set_detailed_status_codes_metrics(mut self, input: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>) -> Self {
         self.detailed_status_codes_metrics = input;
         self
     }
     /// <p>A container for detailed status code metrics. </p>
-    pub fn get_detailed_status_codes_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetailedStatusCodesMetrics> {
+    pub fn get_detailed_status_codes_metrics(&self) -> &::std::option::Option<crate::types::DetailedStatusCodesMetrics> {
         &self.detailed_status_codes_metrics
     }
     /// Consumes the builder and constructs a [`AccountLevel`](crate::types::AccountLevel).

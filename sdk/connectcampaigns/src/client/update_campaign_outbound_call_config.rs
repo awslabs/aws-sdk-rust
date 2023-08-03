@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`answer_machine_detection_config(AnswerMachineDetectionConfig)`](crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigFluentBuilder::answer_machine_detection_config) / [`set_answer_machine_detection_config(Option<AnswerMachineDetectionConfig>)`](crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigFluentBuilder::set_answer_machine_detection_config): Answering Machine Detection config
     /// - On success, responds with [`UpdateCampaignOutboundCallConfigOutput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateCampaignOutboundCallConfigError>`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigError)
-    pub fn update_campaign_outbound_call_config(&self) -> crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigFluentBuilder{
+    pub fn update_campaign_outbound_call_config(
+        &self,
+    ) -> crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigFluentBuilder {
         crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigFluentBuilder::new(self.handle.clone())
     }
 }

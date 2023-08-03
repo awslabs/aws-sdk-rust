@@ -33,9 +33,7 @@ impl PutStoredQueryInput {
 
 /// A builder for [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStoredQueryInputBuilder {
     pub(crate) stored_query: ::std::option::Option<crate::types::StoredQuery>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -51,10 +49,7 @@ impl PutStoredQueryInputBuilder {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
-    pub fn set_stored_query(
-        mut self,
-        input: ::std::option::Option<crate::types::StoredQuery>,
-    ) -> Self {
+    pub fn set_stored_query(mut self, input: ::std::option::Option<crate::types::StoredQuery>) -> Self {
         self.stored_query = input;
         self
     }
@@ -76,10 +71,7 @@ impl PutStoredQueryInputBuilder {
         self
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -90,10 +82,7 @@ impl PutStoredQueryInputBuilder {
     /// Consumes the builder and constructs a [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_stored_query::PutStoredQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_stored_query::PutStoredQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_stored_query::PutStoredQueryInput {
             stored_query: self.stored_query,
             tags: self.tags,

@@ -29,7 +29,7 @@ impl ModifyCustomDbEngineVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCustomDBEngineVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder,
+    inner: crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder,
 }
 impl ModifyCustomDBEngineVersionFluentBuilder {
     /// Creates a new `ModifyCustomDBEngineVersion`.
@@ -40,7 +40,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         }
     }
     /// Access the ModifyCustomDBEngineVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
             crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
             crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self.inner.get_engine()
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -207,10 +190,7 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEngineVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomEngineVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

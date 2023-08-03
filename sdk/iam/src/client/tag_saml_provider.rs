@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder::set_tags): <p>The list of tags that you want to attach to the SAML identity provider in IAM. Each tag consists of a key name and an associated value.</p>
     /// - On success, responds with [`TagSamlProviderOutput`](crate::operation::tag_saml_provider::TagSamlProviderOutput)
     /// - On failure, responds with [`SdkError<TagSAMLProviderError>`](crate::operation::tag_saml_provider::TagSAMLProviderError)
-    pub fn tag_saml_provider(
-        &self,
-    ) -> crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder {
-        crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_saml_provider(&self) -> crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder {
+        crate::operation::tag_saml_provider::builders::TagSAMLProviderFluentBuilder::new(self.handle.clone())
     }
 }

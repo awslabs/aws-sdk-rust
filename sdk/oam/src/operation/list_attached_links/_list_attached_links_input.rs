@@ -29,17 +29,14 @@ impl ListAttachedLinksInput {
 }
 impl ListAttachedLinksInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
+    pub fn builder() -> crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
         crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedLinksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -75,18 +72,12 @@ impl ListAttachedLinksInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    pub fn sink_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    pub fn set_sink_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sink_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sink_identifier = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListAttachedLinksInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attached_links::ListAttachedLinksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_attached_links::ListAttachedLinksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sink_identifier: self.sink_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_attached_links::ListAttachedLinksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_attached_links::ListAttachedLinksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sink_identifier: self.sink_identifier,
+        })
     }
 }

@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<MlModel>>)`](crate::operation::describe_ml_models::DescribeMlModelsOutput::results): <p>A list of <code>MLModel</code> that meet the search criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ml_models::DescribeMlModelsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     /// - On failure, responds with [`SdkError<DescribeMLModelsError>`](crate::operation::describe_ml_models::DescribeMLModelsError)
-    pub fn describe_ml_models(
-        &self,
-    ) -> crate::operation::describe_ml_models::builders::DescribeMLModelsFluentBuilder {
-        crate::operation::describe_ml_models::builders::DescribeMLModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ml_models(&self) -> crate::operation::describe_ml_models::builders::DescribeMLModelsFluentBuilder {
+        crate::operation::describe_ml_models::builders::DescribeMLModelsFluentBuilder::new(self.handle.clone())
     }
 }

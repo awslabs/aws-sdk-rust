@@ -30,9 +30,7 @@ impl FaceRecord {
 
 /// A builder for [`FaceRecord`](crate::types::FaceRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceRecordBuilder {
     pub(crate) face: ::std::option::Option<crate::types::Face>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
@@ -58,10 +56,7 @@ impl FaceRecordBuilder {
         self
     }
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
-    pub fn set_face_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceDetail>,
-    ) -> Self {
+    pub fn set_face_detail(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face_detail = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListConferenceProvidersOutput {
     /// <p>The conference providers.</p>
     #[doc(hidden)]
-    pub conference_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>,
+    pub conference_providers: ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>,
     /// <p>The tokens used for pagination.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListConferenceProvidersOutput {
 }
 impl ListConferenceProvidersOutput {
     /// <p>The conference providers.</p>
-    pub fn conference_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConferenceProvider]> {
+    pub fn conference_providers(&self) -> ::std::option::Option<&[crate::types::ConferenceProvider]> {
         self.conference_providers.as_deref()
     }
     /// <p>The tokens used for pagination.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListConferenceProvidersOutput {
 }
 impl ListConferenceProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListConferenceProvidersOutput`](crate::operation::list_conference_providers::ListConferenceProvidersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_conference_providers::builders::ListConferenceProvidersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_conference_providers::builders::ListConferenceProvidersOutputBuilder {
         crate::operation::list_conference_providers::builders::ListConferenceProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConferenceProvidersOutput`](crate::operation::list_conference_providers::ListConferenceProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConferenceProvidersOutputBuilder {
-    pub(crate) conference_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>,
+    pub(crate) conference_providers: ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListConferenceProvidersOutputBuilder {
         self
     }
     /// <p>The conference providers.</p>
-    pub fn set_conference_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>,
-    ) -> Self {
+    pub fn set_conference_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>>) -> Self {
         self.conference_providers = input;
         self
     }
     /// <p>The conference providers.</p>
-    pub fn get_conference_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>> {
+    pub fn get_conference_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConferenceProvider>> {
         &self.conference_providers
     }
     /// <p>The tokens used for pagination.</p>
@@ -99,9 +86,7 @@ impl ListConferenceProvidersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConferenceProvidersOutput`](crate::operation::list_conference_providers::ListConferenceProvidersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_conference_providers::ListConferenceProvidersOutput {
+    pub fn build(self) -> crate::operation::list_conference_providers::ListConferenceProvidersOutput {
         crate::operation::list_conference_providers::ListConferenceProvidersOutput {
             conference_providers: self.conference_providers,
             next_token: self.next_token,

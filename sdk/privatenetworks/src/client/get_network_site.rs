@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::get_network_site::GetNetworkSiteOutput::network_site): <p>Information about the network site.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_network_site::GetNetworkSiteOutput::tags): <p> The network site tags. </p>
     /// - On failure, responds with [`SdkError<GetNetworkSiteError>`](crate::operation::get_network_site::GetNetworkSiteError)
-    pub fn get_network_site(
-        &self,
-    ) -> crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder {
-        crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_site(&self) -> crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder {
+        crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`application_info_list(Option<Vec<ApplicationInfo>>)`](crate::operation::list_applications::ListApplicationsOutput::application_info_list): <p>The list of applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

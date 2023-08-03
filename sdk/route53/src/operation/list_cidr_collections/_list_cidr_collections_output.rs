@@ -30,22 +30,17 @@ impl ::aws_http::request_id::RequestId for ListCidrCollectionsOutput {
 }
 impl ListCidrCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCidrCollectionsOutput`](crate::operation::list_cidr_collections::ListCidrCollectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cidr_collections::builders::ListCidrCollectionsOutputBuilder {
-        crate::operation::list_cidr_collections::builders::ListCidrCollectionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_cidr_collections::builders::ListCidrCollectionsOutputBuilder {
+        crate::operation::list_cidr_collections::builders::ListCidrCollectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCidrCollectionsOutput`](crate::operation::list_cidr_collections::ListCidrCollectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCidrCollectionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_collections:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
+    pub(crate) cidr_collections: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
     _request_id: Option<String>,
 }
 impl ListCidrCollectionsOutputBuilder {
@@ -78,17 +73,12 @@ impl ListCidrCollectionsOutputBuilder {
         self
     }
     /// <p>A complex type with information about the CIDR collection.</p>
-    pub fn set_cidr_collections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
-    ) -> Self {
+    pub fn set_cidr_collections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>) -> Self {
         self.cidr_collections = input;
         self
     }
     /// <p>A complex type with information about the CIDR collection.</p>
-    pub fn get_cidr_collections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
+    pub fn get_cidr_collections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
         &self.cidr_collections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

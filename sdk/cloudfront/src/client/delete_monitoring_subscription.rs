@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`distribution_id(impl ::std::convert::Into<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::set_distribution_id): <p>The ID of the distribution that you are disabling metrics for.</p>
     /// - On success, responds with [`DeleteMonitoringSubscriptionOutput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteMonitoringSubscriptionError>`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError)
-    pub fn delete_monitoring_subscription(&self) -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder{
+    pub fn delete_monitoring_subscription(
+        &self,
+    ) -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder {
         crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

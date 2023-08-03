@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput) with field(s):
     ///   - [`classifier(Option<Classifier>)`](crate::operation::get_classifier::GetClassifierOutput::classifier): <p>The requested classifier.</p>
     /// - On failure, responds with [`SdkError<GetClassifierError>`](crate::operation::get_classifier::GetClassifierError)
-    pub fn get_classifier(
-        &self,
-    ) -> crate::operation::get_classifier::builders::GetClassifierFluentBuilder {
-        crate::operation::get_classifier::builders::GetClassifierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_classifier(&self) -> crate::operation::get_classifier::builders::GetClassifierFluentBuilder {
+        crate::operation::get_classifier::builders::GetClassifierFluentBuilder::new(self.handle.clone())
     }
 }

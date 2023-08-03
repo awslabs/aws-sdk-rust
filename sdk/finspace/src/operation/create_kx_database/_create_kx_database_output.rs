@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateKxDatabaseOutput {
 }
 impl CreateKxDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateKxDatabaseOutput`](crate::operation::create_kx_database::CreateKxDatabaseOutput).
-    pub fn builder() -> crate::operation::create_kx_database::builders::CreateKxDatabaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_kx_database::builders::CreateKxDatabaseOutputBuilder {
         crate::operation::create_kx_database::builders::CreateKxDatabaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKxDatabaseOutput`](crate::operation::create_kx_database::CreateKxDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKxDatabaseOutputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ pub struct CreateKxDatabaseOutputBuilder {
 }
 impl CreateKxDatabaseOutputBuilder {
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -112,18 +103,12 @@ impl CreateKxDatabaseOutputBuilder {
         &self.database_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -151,10 +136,7 @@ impl CreateKxDatabaseOutputBuilder {
         self
     }
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -168,17 +150,12 @@ impl CreateKxDatabaseOutputBuilder {
         self
     }
     /// <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The last time that the database was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

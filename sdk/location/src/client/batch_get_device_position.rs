@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`errors(Option<Vec<BatchGetDevicePositionError>>)`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput::errors): <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     ///   - [`device_positions(Option<Vec<DevicePosition>>)`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput::device_positions): <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     /// - On failure, responds with [`SdkError<BatchGetDevicePositionError>`](crate::operation::batch_get_device_position::BatchGetDevicePositionError)
-    pub fn batch_get_device_position(
-        &self,
-    ) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionFluentBuilder
-    {
+    pub fn batch_get_device_position(&self) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionFluentBuilder {
         crate::operation::batch_get_device_position::builders::BatchGetDevicePositionFluentBuilder::new(self.handle.clone())
     }
 }

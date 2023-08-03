@@ -14,8 +14,7 @@ pub fn ser_ipv4_prefix_specification_request(
 
 pub fn de_ipv4_prefix_specification_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Ipv4PrefixSpecificationRequest, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::Ipv4PrefixSpecificationRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Ipv4PrefixSpecificationRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

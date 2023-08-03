@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DetectAnomaliesOutput`](crate::operation::detect_anomalies::DetectAnomaliesOutput) with field(s):
     ///   - [`detect_anomaly_result(Option<DetectAnomalyResult>)`](crate::operation::detect_anomalies::DetectAnomaliesOutput::detect_anomaly_result): <p>The results of the <code>DetectAnomalies</code> operation.</p>
     /// - On failure, responds with [`SdkError<DetectAnomaliesError>`](crate::operation::detect_anomalies::DetectAnomaliesError)
-    pub fn detect_anomalies(
-        &self,
-    ) -> crate::operation::detect_anomalies::builders::DetectAnomaliesFluentBuilder {
-        crate::operation::detect_anomalies::builders::DetectAnomaliesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_anomalies(&self) -> crate::operation::detect_anomalies::builders::DetectAnomaliesFluentBuilder {
+        crate::operation::detect_anomalies::builders::DetectAnomaliesFluentBuilder::new(self.handle.clone())
     }
 }

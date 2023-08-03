@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`proactive_anomaly(Option<ProactiveAnomaly>)`](crate::operation::describe_anomaly::DescribeAnomalyOutput::proactive_anomaly): <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     ///   - [`reactive_anomaly(Option<ReactiveAnomaly>)`](crate::operation::describe_anomaly::DescribeAnomalyOutput::reactive_anomaly): <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
     /// - On failure, responds with [`SdkError<DescribeAnomalyError>`](crate::operation::describe_anomaly::DescribeAnomalyError)
-    pub fn describe_anomaly(
-        &self,
-    ) -> crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder {
-        crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_anomaly(&self) -> crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder {
+        crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::new(self.handle.clone())
     }
 }

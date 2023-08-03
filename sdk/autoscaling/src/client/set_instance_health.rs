@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`should_respect_grace_period(bool)`](crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder::should_respect_grace_period) / [`set_should_respect_grace_period(Option<bool>)`](crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder::set_should_respect_grace_period): <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>  <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// - On success, responds with [`SetInstanceHealthOutput`](crate::operation::set_instance_health::SetInstanceHealthOutput)
     /// - On failure, responds with [`SdkError<SetInstanceHealthError>`](crate::operation::set_instance_health::SetInstanceHealthError)
-    pub fn set_instance_health(
-        &self,
-    ) -> crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder {
-        crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_instance_health(&self) -> crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder {
+        crate::operation::set_instance_health::builders::SetInstanceHealthFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_account::CreateAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account::CreateAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account::CreateAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_account();
         fluent_builder.inner = self;
@@ -55,9 +52,7 @@ impl CreateAccountFluentBuilder {
         }
     }
     /// Access the CreateAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_account::builders::CreateAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_account::builders::CreateAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -79,10 +74,7 @@ impl CreateAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -233,27 +225,19 @@ impl CreateAccountFluentBuilder {
     }
     /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn iam_user_access_to_billing(
-        mut self,
-        input: crate::types::IamUserAccessToBilling,
-    ) -> Self {
+    pub fn iam_user_access_to_billing(mut self, input: crate::types::IamUserAccessToBilling) -> Self {
         self.inner = self.inner.iam_user_access_to_billing(input);
         self
     }
     /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn set_iam_user_access_to_billing(
-        mut self,
-        input: ::std::option::Option<crate::types::IamUserAccessToBilling>,
-    ) -> Self {
+    pub fn set_iam_user_access_to_billing(mut self, input: ::std::option::Option<crate::types::IamUserAccessToBilling>) -> Self {
         self.inner = self.inner.set_iam_user_access_to_billing(input);
         self
     }
     /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn get_iam_user_access_to_billing(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
+    pub fn get_iam_user_access_to_billing(&self) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
         self.inner.get_iam_user_access_to_billing()
     }
     /// Appends an item to `Tags`.
@@ -270,10 +254,7 @@ impl CreateAccountFluentBuilder {
     /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

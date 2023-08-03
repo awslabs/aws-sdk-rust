@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSourceNetworksOutput {
 }
 impl DescribeSourceNetworksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceNetworksOutput`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksOutputBuilder {
         crate::operation::describe_source_networks::builders::DescribeSourceNetworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceNetworksOutput`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeSourceNetworksOutputBuilder {
         self
     }
     /// <p>An array of Source Networks.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of Source Networks.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>> {
         &self.items
     }
     /// <p>The token of the next Source Networks to retrieve.</p>

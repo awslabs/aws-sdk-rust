@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppInstanceUserOutput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user(Option<AppInstanceUser>)`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput::app_instance_user): <p>The name of the <code>AppInstanceUser</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceUserError>`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserError)
-    pub fn describe_app_instance_user(
-        &self,
-    ) -> crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder
-    {
+    pub fn describe_app_instance_user(&self) -> crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder {
         crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder::new(self.handle.clone())
     }
 }

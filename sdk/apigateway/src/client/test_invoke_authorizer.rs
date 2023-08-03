@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`authorization(Option<HashMap<String, Vec<String>>>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::authorization): <p>The authorization response.</p>
     ///   - [`claims(Option<HashMap<String, String>>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::claims): <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
     /// - On failure, responds with [`SdkError<TestInvokeAuthorizerError>`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError)
-    pub fn test_invoke_authorizer(
-        &self,
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder {
-        crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_invoke_authorizer(&self) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder {
+        crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

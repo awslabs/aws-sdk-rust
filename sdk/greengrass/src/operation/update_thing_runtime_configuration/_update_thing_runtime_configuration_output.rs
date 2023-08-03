@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateThingRuntimeConfigurationOutput
 }
 impl UpdateThingRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingRuntimeConfigurationOutput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput).
-    pub fn builder() -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationOutputBuilder {
         crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingRuntimeConfigurationOutput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingRuntimeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateThingRuntimeConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateThingRuntimeConfigurationOutput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput {
         crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput {
             _request_id: self._request_id,
         }

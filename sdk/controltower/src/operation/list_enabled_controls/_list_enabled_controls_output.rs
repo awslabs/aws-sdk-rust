@@ -5,8 +5,7 @@
 pub struct ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
     #[doc(hidden)]
-    pub enabled_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
+    pub enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEnabledControlsOutput {
 }
 impl ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn enabled_controls(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnabledControlSummary]> {
+    pub fn enabled_controls(&self) -> ::std::option::Option<&[crate::types::EnabledControlSummary]> {
         self.enabled_controls.as_deref()
     }
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEnabledControlsOutput {
 }
 impl ListEnabledControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder {
-        crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder {
+        crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnabledControlsOutputBuilder {
-    pub(crate) enabled_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
+    pub(crate) enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListEnabledControlsOutputBuilder {
         self
     }
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn set_enabled_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
-    ) -> Self {
+    pub fn set_enabled_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>) -> Self {
         self.enabled_controls = input;
         self
     }
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    pub fn get_enabled_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
+    pub fn get_enabled_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
         &self.enabled_controls
     }
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>

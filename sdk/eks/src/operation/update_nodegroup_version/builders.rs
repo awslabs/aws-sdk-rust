@@ -41,10 +41,7 @@ impl UpdateNodegroupVersionFluentBuilder {
         }
     }
     /// Access the UpdateNodegroupVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl UpdateNodegroupVersionFluentBuilder {
             crate::operation::update_nodegroup_version::UpdateNodegroupVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_version::UpdateNodegroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_version::UpdateNodegroupVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl UpdateNodegroupVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl UpdateNodegroupVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_version::UpdateNodegroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_version::UpdateNodegroupVersionError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl UpdateNodegroupVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_version::UpdateNodegroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_version::UpdateNodegroupVersionError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl UpdateNodegroupVersionFluentBuilder {
             crate::operation::update_nodegroup_version::UpdateNodegroupVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_version::UpdateNodegroupVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_version::UpdateNodegroupVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,18 +128,12 @@ impl UpdateNodegroupVersionFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodegroup_name(input.into());
         self
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
     }
@@ -177,19 +157,13 @@ impl UpdateNodegroupVersionFluentBuilder {
     }
     /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn release_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_version(input.into());
         self
     }
     /// <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_release_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_version(input);
         self
     }
@@ -204,17 +178,12 @@ impl UpdateNodegroupVersionFluentBuilder {
         self
     }
     /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
     /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
-    pub fn get_launch_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+    pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         self.inner.get_launch_template()
     }
     /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
@@ -232,18 +201,12 @@ impl UpdateNodegroupVersionFluentBuilder {
         self.inner.get_force()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

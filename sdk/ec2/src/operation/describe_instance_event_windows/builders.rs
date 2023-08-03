@@ -28,7 +28,7 @@ impl DescribeInstanceEventWindowsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceEventWindowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder,
+    inner: crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder,
 }
 impl DescribeInstanceEventWindowsFluentBuilder {
     /// Creates a new `DescribeInstanceEventWindows`.
@@ -39,7 +39,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         }
     }
     /// Access the DescribeInstanceEventWindows as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
             crate::operation::describe_instance_event_windows::DescribeInstanceEventWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl DescribeInstanceEventWindowsFluentBuilder {
             crate::operation::describe_instance_event_windows::DescribeInstanceEventWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_event_windows::paginator::DescribeInstanceEventWindowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_instance_event_windows::paginator::DescribeInstanceEventWindowsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_instance_event_windows::paginator::DescribeInstanceEventWindowsPaginator {
         crate::operation::describe_instance_event_windows::paginator::DescribeInstanceEventWindowsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -147,25 +136,17 @@ impl DescribeInstanceEventWindowsFluentBuilder {
     /// To override the contents of this collection use [`set_instance_event_window_ids`](Self::set_instance_event_window_ids).
     ///
     /// <p>The IDs of the event windows.</p>
-    pub fn instance_event_window_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_event_window_ids(input.into());
         self
     }
     /// <p>The IDs of the event windows.</p>
-    pub fn set_instance_event_window_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_event_window_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_event_window_ids(input);
         self
     }
     /// <p>The IDs of the event windows.</p>
-    pub fn get_instance_event_window_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_event_window_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_event_window_ids()
     }
     /// Appends an item to `Filters`.
@@ -202,10 +183,7 @@ impl DescribeInstanceEventWindowsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific key, regardless of the tag value. </p> </li>
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the event window. Use this filter to find all event windows that have a tag with a specific value, regardless of the tag key. </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

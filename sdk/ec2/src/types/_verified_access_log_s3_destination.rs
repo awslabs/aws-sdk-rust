@@ -26,9 +26,7 @@ impl VerifiedAccessLogS3Destination {
         self.enabled
     }
     /// <p>The delivery status.</p>
-    pub fn delivery_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn delivery_status(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The bucket name.</p>
@@ -53,13 +51,10 @@ impl VerifiedAccessLogS3Destination {
 
 /// A builder for [`VerifiedAccessLogS3Destination`](crate::types::VerifiedAccessLogS3Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogS3DestinationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) delivery_status:
-        ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    pub(crate) delivery_status: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_owner: ::std::option::Option<::std::string::String>,
@@ -85,17 +80,12 @@ impl VerifiedAccessLogS3DestinationBuilder {
         self
     }
     /// <p>The delivery status.</p>
-    pub fn set_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
-    ) -> Self {
+    pub fn set_delivery_status(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>) -> Self {
         self.delivery_status = input;
         self
     }
     /// <p>The delivery status.</p>
-    pub fn get_delivery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn get_delivery_status(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus> {
         &self.delivery_status
     }
     /// <p>The bucket name.</p>

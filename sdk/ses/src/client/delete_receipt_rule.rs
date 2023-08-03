@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder::set_rule_name): <p>The name of the receipt rule to delete.</p>
     /// - On success, responds with [`DeleteReceiptRuleOutput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteReceiptRuleError>`](crate::operation::delete_receipt_rule::DeleteReceiptRuleError)
-    pub fn delete_receipt_rule(
-        &self,
-    ) -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder {
-        crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_receipt_rule(&self) -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder {
+        crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleFluentBuilder::new(self.handle.clone())
     }
 }

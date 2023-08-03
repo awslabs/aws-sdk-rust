@@ -24,10 +24,7 @@ pub fn ser_search_quick_connects_input(
     if let Some(var_6) = &input.search_filter {
         #[allow(unused_mut)]
         let mut object_7 = object.key("SearchFilter").start_object();
-        crate::protocol_serde::shape_quick_connect_search_filter::ser_quick_connect_search_filter(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_quick_connect_search_filter::ser_quick_connect_search_filter(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

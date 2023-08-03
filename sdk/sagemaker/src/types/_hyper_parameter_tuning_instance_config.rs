@@ -37,9 +37,7 @@ impl HyperParameterTuningInstanceConfig {
 
 /// A builder for [`HyperParameterTuningInstanceConfig`](crate::types::HyperParameterTuningInstanceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningInstanceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl HyperParameterTuningInstanceConfigBuilder {
         self
     }
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TrainingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }

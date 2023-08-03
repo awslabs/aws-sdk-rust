@@ -22,26 +22,18 @@ impl GetDiskSnapshotInput {
 
 /// A builder for [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiskSnapshotInputBuilder {
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskSnapshotInputBuilder {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_disk_snapshot::GetDiskSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_disk_snapshot::GetDiskSnapshotInput {
             disk_snapshot_name: self.disk_snapshot_name,
         })

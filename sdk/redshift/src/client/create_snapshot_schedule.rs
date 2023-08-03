@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`associated_cluster_count(Option<i32>)`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput::associated_cluster_count): <p>The number of clusters associated with the schedule.</p>
     ///   - [`associated_clusters(Option<Vec<ClusterAssociatedToSchedule>>)`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput::associated_clusters): <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotScheduleError>`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError)
-    pub fn create_snapshot_schedule(
-        &self,
-    ) -> crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleFluentBuilder
-    {
+    pub fn create_snapshot_schedule(&self) -> crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleFluentBuilder {
         crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleFluentBuilder::new(self.handle.clone())
     }
 }

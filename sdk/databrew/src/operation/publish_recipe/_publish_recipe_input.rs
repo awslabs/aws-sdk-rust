@@ -29,9 +29,7 @@ impl PublishRecipeInput {
 
 /// A builder for [`PublishRecipeInput`](crate::operation::publish_recipe::PublishRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishRecipeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl PublishRecipeInputBuilder {
     /// Consumes the builder and constructs a [`PublishRecipeInput`](crate::operation::publish_recipe::PublishRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_recipe::PublishRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish_recipe::PublishRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_recipe::PublishRecipeInput {
             description: self.description,
             name: self.name,

@@ -20,8 +20,7 @@ pub struct Featurization {
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     #[doc(hidden)]
-    pub featurization_pipeline:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
+    pub featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
@@ -29,9 +28,7 @@ impl Featurization {
         self.attribute_name.as_deref()
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn featurization_pipeline(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FeaturizationMethod]> {
+    pub fn featurization_pipeline(&self) -> ::std::option::Option<&[crate::types::FeaturizationMethod]> {
         self.featurization_pipeline.as_deref()
     }
 }
@@ -44,28 +41,19 @@ impl Featurization {
 
 /// A builder for [`Featurization`](crate::types::Featurization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturizationBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) featurization_pipeline:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
+    pub(crate) featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl FeaturizationBuilder {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -85,17 +73,12 @@ impl FeaturizationBuilder {
         self
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn set_featurization_pipeline(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
-    ) -> Self {
+    pub fn set_featurization_pipeline(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>) -> Self {
         self.featurization_pipeline = input;
         self
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn get_featurization_pipeline(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>> {
+    pub fn get_featurization_pipeline(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>> {
         &self.featurization_pipeline
     }
     /// Consumes the builder and constructs a [`Featurization`](crate::types::Featurization).

@@ -14,9 +14,7 @@ pub struct CreateSubscriptionDefinitionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) to add to the new resource.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSubscriptionDefinitionInput {
     /// A client token used to correlate requests and responses.
@@ -24,9 +22,7 @@ impl CreateSubscriptionDefinitionInput {
         self.amzn_client_token.as_deref()
     }
     /// Information about the initial version of the subscription definition.
-    pub fn initial_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubscriptionDefinitionVersion> {
+    pub fn initial_version(&self) -> ::std::option::Option<&crate::types::SubscriptionDefinitionVersion> {
         self.initial_version.as_ref()
     }
     /// The name of the subscription definition.
@@ -34,48 +30,34 @@ impl CreateSubscriptionDefinitionInput {
         self.name.as_deref()
     }
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateSubscriptionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionInput`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput).
-    pub fn builder() -> crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionInputBuilder {
         crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriptionDefinitionInput`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) initial_version: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSubscriptionDefinitionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -89,17 +71,12 @@ impl CreateSubscriptionDefinitionInputBuilder {
         self
     }
     /// Information about the initial version of the subscription definition.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>) -> Self {
         self.initial_version = input;
         self
     }
     /// Information about the initial version of the subscription definition.
-    pub fn get_initial_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscriptionDefinitionVersion> {
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::SubscriptionDefinitionVersion> {
         &self.initial_version
     }
     /// The name of the subscription definition.
@@ -121,32 +98,19 @@ impl CreateSubscriptionDefinitionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionInput`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput).
@@ -156,13 +120,11 @@ impl CreateSubscriptionDefinitionInputBuilder {
         crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput {
-                amzn_client_token: self.amzn_client_token,
-                initial_version: self.initial_version,
-                name: self.name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput {
+            amzn_client_token: self.amzn_client_token,
+            initial_version: self.initial_version,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl ListControlsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_controls::ListControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_controls::ListControlsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_controls::ListControlsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_controls();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListControlsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_controls::ListControls,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_controls::ListControls, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_controls::ListControlsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListControlsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_controls::ListControls,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_controls::ListControls, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_controls::ListControlsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListControlsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_controls::paginator::ListControlsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_controls::paginator::ListControlsPaginator {
-        crate::operation::list_controls::paginator::ListControlsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_controls::paginator::ListControlsPaginator {
+        crate::operation::list_controls::paginator::ListControlsPaginator::new(self.handle, self.inner)
     }
     /// <p> The type of control, such as a standard control or a custom control. </p>
     pub fn control_type(mut self, input: crate::types::ControlType) -> Self {
@@ -129,10 +112,7 @@ impl ListControlsFluentBuilder {
         self
     }
     /// <p> The type of control, such as a standard control or a custom control. </p>
-    pub fn set_control_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlType>,
-    ) -> Self {
+    pub fn set_control_type(mut self, input: ::std::option::Option<crate::types::ControlType>) -> Self {
         self.inner = self.inner.set_control_type(input);
         self
     }

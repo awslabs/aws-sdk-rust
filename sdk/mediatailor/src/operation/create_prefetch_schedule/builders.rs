@@ -37,10 +37,7 @@ impl CreatePrefetchScheduleFluentBuilder {
         }
     }
     /// Access the CreatePrefetchSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreatePrefetchScheduleFluentBuilder {
             crate::operation::create_prefetch_schedule::CreatePrefetchSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreatePrefetchScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreatePrefetchScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreatePrefetchScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreatePrefetchScheduleFluentBuilder {
             crate::operation::create_prefetch_schedule::CreatePrefetchSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl CreatePrefetchScheduleFluentBuilder {
         self
     }
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn set_consumption(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchConsumption>,
-    ) -> Self {
+    pub fn set_consumption(mut self, input: ::std::option::Option<crate::types::PrefetchConsumption>) -> Self {
         self.inner = self.inner.set_consumption(input);
         self
     }
@@ -155,18 +138,12 @@ impl CreatePrefetchScheduleFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.playback_configuration_name(input.into());
         self
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
     }
@@ -180,10 +157,7 @@ impl CreatePrefetchScheduleFluentBuilder {
         self
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn set_retrieval(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefetchRetrieval>,
-    ) -> Self {
+    pub fn set_retrieval(mut self, input: ::std::option::Option<crate::types::PrefetchRetrieval>) -> Self {
         self.inner = self.inner.set_retrieval(input);
         self
     }

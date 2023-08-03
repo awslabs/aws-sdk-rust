@@ -104,15 +104,11 @@ impl ImportTableDescription {
         self.input_format_options.as_ref()
     }
     /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
-    pub fn input_compression_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputCompressionType> {
+    pub fn input_compression_type(&self) -> ::std::option::Option<&crate::types::InputCompressionType> {
         self.input_compression_type.as_ref()
     }
     /// <p> The parameters for the new table that is being imported into. </p>
-    pub fn table_creation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableCreationParameters> {
+    pub fn table_creation_parameters(&self) -> ::std::option::Option<&crate::types::TableCreationParameters> {
         self.table_creation_parameters.as_ref()
     }
     /// <p> The time when this import task started. </p>
@@ -153,9 +149,7 @@ impl ImportTableDescription {
 
 /// A builder for [`ImportTableDescription`](crate::types::ImportTableDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTableDescriptionBuilder {
     pub(crate) import_arn: ::std::option::Option<::std::string::String>,
     pub(crate) import_status: ::std::option::Option<crate::types::ImportStatus>,
@@ -168,8 +162,7 @@ pub struct ImportTableDescriptionBuilder {
     pub(crate) input_format: ::std::option::Option<crate::types::InputFormat>,
     pub(crate) input_format_options: ::std::option::Option<crate::types::InputFormatOptions>,
     pub(crate) input_compression_type: ::std::option::Option<crate::types::InputCompressionType>,
-    pub(crate) table_creation_parameters:
-        ::std::option::Option<crate::types::TableCreationParameters>,
+    pub(crate) table_creation_parameters: ::std::option::Option<crate::types::TableCreationParameters>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) processed_size_bytes: ::std::option::Option<i64>,
@@ -199,10 +192,7 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The status of the import. </p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }
@@ -258,10 +248,7 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> Values for the S3 bucket the source file is imported from. Includes bucket name (required), key prefix (optional) and bucket account owner ID (optional). </p>
-    pub fn set_s3_bucket_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketSource>,
-    ) -> Self {
+    pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
         self.s3_bucket_source = input;
         self
     }
@@ -284,18 +271,12 @@ impl ImportTableDescriptionBuilder {
         &self.error_count
     }
     /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with the target table. </p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
@@ -309,10 +290,7 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The format of the source data going into the target table. </p>
-    pub fn set_input_format(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFormat>,
-    ) -> Self {
+    pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.input_format = input;
         self
     }
@@ -326,17 +304,12 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
-    pub fn set_input_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFormatOptions>,
-    ) -> Self {
+    pub fn set_input_format_options(mut self, input: ::std::option::Option<crate::types::InputFormatOptions>) -> Self {
         self.input_format_options = input;
         self
     }
     /// <p> The format options for the data that was imported into the target table. There is one value, CsvOption. </p>
-    pub fn get_input_format_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputFormatOptions> {
+    pub fn get_input_format_options(&self) -> &::std::option::Option<crate::types::InputFormatOptions> {
         &self.input_format_options
     }
     /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
@@ -345,39 +318,26 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
-    pub fn set_input_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputCompressionType>,
-    ) -> Self {
+    pub fn set_input_compression_type(mut self, input: ::std::option::Option<crate::types::InputCompressionType>) -> Self {
         self.input_compression_type = input;
         self
     }
     /// <p> The compression options for the data that has been imported into the target table. The values are NONE, GZIP, or ZSTD. </p>
-    pub fn get_input_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputCompressionType> {
+    pub fn get_input_compression_type(&self) -> &::std::option::Option<crate::types::InputCompressionType> {
         &self.input_compression_type
     }
     /// <p> The parameters for the new table that is being imported into. </p>
-    pub fn table_creation_parameters(
-        mut self,
-        input: crate::types::TableCreationParameters,
-    ) -> Self {
+    pub fn table_creation_parameters(mut self, input: crate::types::TableCreationParameters) -> Self {
         self.table_creation_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p> The parameters for the new table that is being imported into. </p>
-    pub fn set_table_creation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCreationParameters>,
-    ) -> Self {
+    pub fn set_table_creation_parameters(mut self, input: ::std::option::Option<crate::types::TableCreationParameters>) -> Self {
         self.table_creation_parameters = input;
         self
     }
     /// <p> The parameters for the new table that is being imported into. </p>
-    pub fn get_table_creation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableCreationParameters> {
+    pub fn get_table_creation_parameters(&self) -> &::std::option::Option<crate::types::TableCreationParameters> {
         &self.table_creation_parameters
     }
     /// <p> The time when this import task started. </p>
@@ -386,10 +346,7 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The time when this import task started. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -403,10 +360,7 @@ impl ImportTableDescriptionBuilder {
         self
     }
     /// <p> The time at which the creation of the table associated with this import task completed. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -471,18 +425,12 @@ impl ImportTableDescriptionBuilder {
         &self.failure_code
     }
     /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error message corresponding to the failure that the import job ran into during execution. </p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }

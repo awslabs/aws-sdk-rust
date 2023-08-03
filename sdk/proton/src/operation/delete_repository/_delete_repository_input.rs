@@ -22,17 +22,14 @@ impl DeleteRepositoryInput {
 }
 impl DeleteRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder {
         crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRepositoryInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -44,10 +41,7 @@ impl DeleteRepositoryInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -72,10 +66,7 @@ impl DeleteRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_repository::DeleteRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
             provider: self.provider,
             name: self.name,

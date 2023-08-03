@@ -5,8 +5,7 @@
 pub struct GetRelationalDatabasesOutput {
     /// <p>An object describing the result of your get relational databases request.</p>
     #[doc(hidden)]
-    pub relational_databases:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>,
+    pub relational_databases: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetRelationalDatabasesOutput {
 }
 impl GetRelationalDatabasesOutput {
     /// <p>An object describing the result of your get relational databases request.</p>
-    pub fn relational_databases(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelationalDatabase]> {
+    pub fn relational_databases(&self) -> ::std::option::Option<&[crate::types::RelationalDatabase]> {
         self.relational_databases.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,21 +32,16 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabasesOutput {
 }
 impl GetRelationalDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabasesOutput`](crate::operation::get_relational_databases::GetRelationalDatabasesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_relational_databases::builders::GetRelationalDatabasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_relational_databases::builders::GetRelationalDatabasesOutputBuilder {
         crate::operation::get_relational_databases::builders::GetRelationalDatabasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabasesOutput`](crate::operation::get_relational_databases::GetRelationalDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabasesOutputBuilder {
-    pub(crate) relational_databases:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>,
+    pub(crate) relational_databases: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,36 +58,25 @@ impl GetRelationalDatabasesOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational databases request.</p>
-    pub fn set_relational_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>,
-    ) -> Self {
+    pub fn set_relational_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>>) -> Self {
         self.relational_databases = input;
         self
     }
     /// <p>An object describing the result of your get relational databases request.</p>
-    pub fn get_relational_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>> {
+    pub fn get_relational_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabase>> {
         &self.relational_databases
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

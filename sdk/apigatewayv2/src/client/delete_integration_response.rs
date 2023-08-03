@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`integration_response_id(impl ::std::convert::Into<String>)`](crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::integration_response_id) / [`set_integration_response_id(Option<String>)`](crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::set_integration_response_id): <p>The integration response ID.</p>
     /// - On success, responds with [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationResponseError>`](crate::operation::delete_integration_response::DeleteIntegrationResponseError)
-    pub fn delete_integration_response(&self) -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder{
+    pub fn delete_integration_response(&self) -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl ImageScanningConfiguration {
 
 /// A builder for [`ImageScanningConfiguration`](crate::types::ImageScanningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageScanningConfigurationBuilder {
     pub(crate) scan_on_push: ::std::option::Option<bool>,
 }

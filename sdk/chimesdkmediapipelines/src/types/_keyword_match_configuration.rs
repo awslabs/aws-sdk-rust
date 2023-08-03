@@ -37,9 +37,7 @@ impl KeywordMatchConfiguration {
 
 /// A builder for [`KeywordMatchConfiguration`](crate::types::KeywordMatchConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeywordMatchConfigurationBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl KeywordMatchConfigurationBuilder {
         self
     }
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }

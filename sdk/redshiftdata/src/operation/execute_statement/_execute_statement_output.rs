@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
-    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder {
         crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -105,10 +102,7 @@ impl ExecuteStatementOutputBuilder {
         self
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -117,18 +111,12 @@ impl ExecuteStatementOutputBuilder {
         &self.created_at
     }
     /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. This element is not returned when connecting to a serverless workgroup. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -179,18 +167,12 @@ impl ExecuteStatementOutputBuilder {
         &self.secret_arn
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }

@@ -51,9 +51,7 @@ impl SecretVersionsListEntry {
 
 /// A builder for [`SecretVersionsListEntry`](crate::types::SecretVersionsListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretVersionsListEntryBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,27 +79,19 @@ impl SecretVersionsListEntryBuilder {
     /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
     ///
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn version_stages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
         v.push(input.into());
         self.version_stages = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn set_version_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.version_stages = input;
         self
     }
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    pub fn get_version_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.version_stages
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
@@ -110,10 +100,7 @@ impl SecretVersionsListEntryBuilder {
         self
     }
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
-    pub fn set_last_accessed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_accessed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed_date = input;
         self
     }
@@ -127,10 +114,7 @@ impl SecretVersionsListEntryBuilder {
         self
     }
     /// <p>The date and time this version of the secret was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -150,17 +134,12 @@ impl SecretVersionsListEntryBuilder {
         self
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    pub fn set_kms_key_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_kms_key_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.kms_key_ids = input;
         self
     }
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    pub fn get_kms_key_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_kms_key_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.kms_key_ids
     }
     /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::types::SecretVersionsListEntry).

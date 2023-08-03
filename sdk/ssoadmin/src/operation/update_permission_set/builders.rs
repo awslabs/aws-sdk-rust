@@ -37,9 +37,7 @@ impl UpdatePermissionSetFluentBuilder {
         }
     }
     /// Access the UpdatePermissionSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdatePermissionSetFluentBuilder {
             crate::operation::update_permission_set::UpdatePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_set::UpdatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdatePermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdatePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permission_set::UpdatePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_set::UpdatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdatePermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permission_set::UpdatePermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_set::UpdatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdatePermissionSetFluentBuilder {
             crate::operation::update_permission_set::UpdatePermissionSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permission_set::UpdatePermissionSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdatePermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -171,18 +152,12 @@ impl UpdatePermissionSetFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_duration(input.into());
         self
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn set_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_duration(input);
         self
     }

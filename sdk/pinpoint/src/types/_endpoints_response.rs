@@ -23,9 +23,7 @@ impl EndpointsResponse {
 
 /// A builder for [`EndpointsResponse`](crate::types::EndpointsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointsResponseBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
 }
@@ -42,17 +40,12 @@ impl EndpointsResponseBuilder {
         self
     }
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>) -> Self {
         self.item = input;
         self
     }
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub fn get_item(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>> {
         &self.item
     }
     /// Consumes the builder and constructs a [`EndpointsResponse`](crate::types::EndpointsResponse).

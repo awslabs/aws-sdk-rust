@@ -37,9 +37,7 @@ impl DocumentDefaultVersionDescription {
 
 /// A builder for [`DocumentDefaultVersionDescription`](crate::types::DocumentDefaultVersionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentDefaultVersionDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DocumentDefaultVersionDescriptionBuilder {
         &self.name
     }
     /// <p>The default version of the document.</p>
-    pub fn default_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default version of the document.</p>
-    pub fn set_default_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version = input;
         self
     }
@@ -81,18 +73,12 @@ impl DocumentDefaultVersionDescriptionBuilder {
         &self.default_version
     }
     /// <p>The default version of the artifact associated with the document.</p>
-    pub fn default_version_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default version of the artifact associated with the document.</p>
-    pub fn set_default_version_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_name = input;
         self
     }

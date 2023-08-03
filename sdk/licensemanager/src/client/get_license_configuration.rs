@@ -23,10 +23,7 @@ impl super::Client {
     ///   - [`automated_discovery_information(Option<AutomatedDiscoveryInformation>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::automated_discovery_information): <p>Automated discovery information.</p>
     ///   - [`disassociate_when_not_found(Option<bool>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
     /// - On failure, responds with [`SdkError<GetLicenseConfigurationError>`](crate::operation::get_license_configuration::GetLicenseConfigurationError)
-    pub fn get_license_configuration(
-        &self,
-    ) -> crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder
-    {
+    pub fn get_license_configuration(&self) -> crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder {
         crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

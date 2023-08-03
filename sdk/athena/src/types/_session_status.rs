@@ -74,9 +74,7 @@ impl SessionStatus {
 
 /// A builder for [`SessionStatus`](crate::types::SessionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionStatusBuilder {
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -92,10 +90,7 @@ impl SessionStatusBuilder {
         self
     }
     /// <p>The date and time that the session started.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -109,17 +104,12 @@ impl SessionStatusBuilder {
         self
     }
     /// <p>The most recent date and time that the session was modified.</p>
-    pub fn set_last_modified_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date_time = input;
         self
     }
     /// <p>The most recent date and time that the session was modified.</p>
-    pub fn get_last_modified_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date_time
     }
     /// <p>The date and time that the session ended.</p>
@@ -128,10 +118,7 @@ impl SessionStatusBuilder {
         self
     }
     /// <p>The date and time that the session ended.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -145,10 +132,7 @@ impl SessionStatusBuilder {
         self
     }
     /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
-    pub fn set_idle_since_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_idle_since_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.idle_since_date_time = input;
         self
     }
@@ -195,18 +179,12 @@ impl SessionStatusBuilder {
         &self.state
     }
     /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
-    pub fn state_change_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_change_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_change_reason = input;
         self
     }

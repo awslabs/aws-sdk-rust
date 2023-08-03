@@ -3,10 +3,7 @@
 pub fn de_no_such_realtime_log_config_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchRealtimeLogConfigBuilder,
-) -> Result<
-    crate::types::error::builders::NoSuchRealtimeLogConfigBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::NoSuchRealtimeLogConfigBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

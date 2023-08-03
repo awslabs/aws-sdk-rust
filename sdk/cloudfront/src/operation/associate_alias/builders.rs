@@ -10,10 +10,7 @@ impl AssociateAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_alias::AssociateAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_alias::AssociateAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_alias::AssociateAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_alias();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl AssociateAliasFluentBuilder {
         }
     }
     /// Access the AssociateAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_alias::builders::AssociateAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_alias::builders::AssociateAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl AssociateAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl AssociateAliasFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    pub fn target_distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_distribution_id(input.into());
         self
     }
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    pub fn set_target_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_distribution_id(input);
         self
     }

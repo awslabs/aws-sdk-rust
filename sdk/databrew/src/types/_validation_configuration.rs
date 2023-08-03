@@ -30,9 +30,7 @@ impl ValidationConfiguration {
 
 /// A builder for [`ValidationConfiguration`](crate::types::ValidationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationConfigurationBuilder {
     pub(crate) ruleset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
@@ -58,10 +56,7 @@ impl ValidationConfigurationBuilder {
         self
     }
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
-    pub fn set_validation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationMode>,
-    ) -> Self {
+    pub fn set_validation_mode(mut self, input: ::std::option::Option<crate::types::ValidationMode>) -> Self {
         self.validation_mode = input;
         self
     }

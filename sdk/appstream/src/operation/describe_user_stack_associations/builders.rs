@@ -30,7 +30,7 @@ impl DescribeUserStackAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUserStackAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder,
+    inner: crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder,
 }
 impl DescribeUserStackAssociationsFluentBuilder {
     /// Creates a new `DescribeUserStackAssociations`.
@@ -41,7 +41,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
         }
     }
     /// Access the DescribeUserStackAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
             crate::operation::describe_user_stack_associations::DescribeUserStackAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl DescribeUserStackAssociationsFluentBuilder {
             crate::operation::describe_user_stack_associations::DescribeUserStackAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError>,
     > {
         self.customize_middleware().await
     }
@@ -164,17 +153,12 @@ impl DescribeUserStackAssociationsFluentBuilder {
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
     }
     /// <p>The maximum size of each page of results.</p>

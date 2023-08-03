@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`connection_input(ConnectionInput)`](crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::connection_input) / [`set_connection_input(Option<ConnectionInput>)`](crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::set_connection_input): <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     /// - On success, responds with [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput)
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::operation::update_connection::UpdateConnectionError)
-    pub fn update_connection(
-        &self,
-    ) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
-        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connection(&self) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
+        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

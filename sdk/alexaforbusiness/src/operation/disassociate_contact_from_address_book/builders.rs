@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_contact_from_address_book::_disassociate_
 
 impl DisassociateContactFromAddressBookInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_contact_from_address_book();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DisassociateContactFromAddressBookInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder,
+    inner: crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder,
 }
 impl DisassociateContactFromAddressBookFluentBuilder {
     /// Creates a new `DisassociateContactFromAddressBook`.
@@ -38,15 +38,20 @@ impl DisassociateContactFromAddressBookFluentBuilder {
         }
     }
     /// Access the DisassociateContactFromAddressBook as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBook, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBook,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DisassociateContactFromAddressBookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl DisassociateContactFromAddressBookFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBook, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBook,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the contact to disassociate from an address book.</p>
@@ -110,18 +125,12 @@ impl DisassociateContactFromAddressBookFluentBuilder {
         self.inner.get_contact_arn()
     }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_book_arn(input.into());
         self
     }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_book_arn(input);
         self
     }

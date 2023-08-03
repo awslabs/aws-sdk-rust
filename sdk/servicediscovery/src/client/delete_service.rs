@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_id): <p>The ID of the service that you want to delete.</p>
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
-    pub fn delete_service(
-        &self,
-    ) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
-        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
+        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }
 }

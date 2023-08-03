@@ -10,10 +10,7 @@ impl UpdateAcceleratorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator::UpdateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator::UpdateAcceleratorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator::UpdateAcceleratorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_accelerator();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateAcceleratorFluentBuilder {
         }
     }
     /// Access the UpdateAccelerator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_accelerator::builders::UpdateAcceleratorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_accelerator::builders::UpdateAcceleratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateAcceleratorFluentBuilder {
             crate::operation::update_accelerator::UpdateAccelerator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator::UpdateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator::UpdateAcceleratorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateAcceleratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateAcceleratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator::UpdateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator::UpdateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator::UpdateAcceleratorError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateAcceleratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_accelerator::UpdateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator::UpdateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator::UpdateAcceleratorError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl UpdateAcceleratorFluentBuilder {
             crate::operation::update_accelerator::UpdateAccelerator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_accelerator::UpdateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_accelerator::UpdateAcceleratorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
@@ -164,10 +142,7 @@ impl UpdateAcceleratorFluentBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }

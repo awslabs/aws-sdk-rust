@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`hours_of_operation_id(impl ::std::convert::Into<String>)`](crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationFluentBuilder::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationFluentBuilder::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
     /// - On success, responds with [`UpdateQueueHoursOfOperationOutput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationOutput)
     /// - On failure, responds with [`SdkError<UpdateQueueHoursOfOperationError>`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationError)
-    pub fn update_queue_hours_of_operation(&self) -> crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationFluentBuilder{
+    pub fn update_queue_hours_of_operation(
+        &self,
+    ) -> crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationFluentBuilder {
         crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHoursOfOperationFluentBuilder::new(self.handle.clone())
     }
 }

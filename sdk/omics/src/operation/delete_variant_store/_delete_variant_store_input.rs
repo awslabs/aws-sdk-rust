@@ -22,17 +22,14 @@ impl DeleteVariantStoreInput {
 }
 impl DeleteVariantStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder {
         crate::operation::delete_variant_store::builders::DeleteVariantStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -69,15 +66,10 @@ impl DeleteVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_variant_store::DeleteVariantStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_variant_store::DeleteVariantStoreInput {
-                name: self.name,
-                force: self.force,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_variant_store::DeleteVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_variant_store::DeleteVariantStoreInput {
+            name: self.name,
+            force: self.force,
+        })
     }
 }

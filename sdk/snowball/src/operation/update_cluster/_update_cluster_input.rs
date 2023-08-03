@@ -17,8 +17,7 @@ pub struct UpdateClusterInput {
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     #[doc(hidden)]
-    pub on_device_service_configuration:
-        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <code>Address</code> object.</p>
     #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
@@ -50,9 +49,7 @@ impl UpdateClusterInput {
         self.resources.as_ref()
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(&self) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
@@ -81,16 +78,13 @@ impl UpdateClusterInput {
 
 /// A builder for [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) resources: ::std::option::Option<crate::types::JobResource>,
-    pub(crate) on_device_service_configuration:
-        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub(crate) on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     pub(crate) address_id: ::std::option::Option<::std::string::String>,
     pub(crate) shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     pub(crate) notification: ::std::option::Option<crate::types::Notification>,
@@ -145,10 +139,7 @@ impl UpdateClusterInputBuilder {
         self
     }
     /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::JobResource>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.resources = input;
         self
     }
@@ -157,25 +148,17 @@ impl UpdateClusterInputBuilder {
         &self.resources
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(
-        mut self,
-        input: crate::types::OnDeviceServiceConfiguration,
-    ) -> Self {
+    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
         self.on_device_service_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn set_on_device_service_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
-    ) -> Self {
+    pub fn set_on_device_service_configuration(mut self, input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
         self.on_device_service_configuration = input;
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn get_on_device_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
+    pub fn get_on_device_service_configuration(&self) -> &::std::option::Option<crate::types::OnDeviceServiceConfiguration> {
         &self.on_device_service_configuration
     }
     /// <p>The ID of the updated <code>Address</code> object.</p>
@@ -198,10 +181,7 @@ impl UpdateClusterInputBuilder {
         self
     }
     /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
         self
     }
@@ -215,10 +195,7 @@ impl UpdateClusterInputBuilder {
         self
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -227,18 +204,12 @@ impl UpdateClusterInputBuilder {
         &self.notification
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forwarding_address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forwarding_address_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forwarding_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forwarding_address_id = input;
         self
     }
@@ -249,10 +220,7 @@ impl UpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster::UpdateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
             cluster_id: self.cluster_id,
             role_arn: self.role_arn,

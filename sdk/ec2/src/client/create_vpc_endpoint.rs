@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput::vpc_endpoint): <p>Information about the endpoint.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On failure, responds with [`SdkError<CreateVpcEndpointError>`](crate::operation::create_vpc_endpoint::CreateVpcEndpointError)
-    pub fn create_vpc_endpoint(
-        &self,
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder {
-        crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpc_endpoint(&self) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder {
+        crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder::new(self.handle.clone())
     }
 }

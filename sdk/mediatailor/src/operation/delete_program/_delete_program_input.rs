@@ -29,9 +29,7 @@ impl DeleteProgramInput {
 
 /// A builder for [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProgramInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteProgramInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_program::DeleteProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_program::DeleteProgramInput {
             channel_name: self.channel_name,
             program_name: self.program_name,

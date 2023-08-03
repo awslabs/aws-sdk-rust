@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeHumanTaskUiOutput {
 }
 impl DescribeHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanTaskUiOutput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiOutputBuilder {
+    pub fn builder() -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiOutputBuilder {
         crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHumanTaskUiOutput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHumanTaskUiOutputBuilder {
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ pub struct DescribeHumanTaskUiOutputBuilder {
 }
 impl DescribeHumanTaskUiOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
-    pub fn human_task_ui_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface (worker task template).</p>
-    pub fn set_human_task_ui_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_arn = input;
         self
     }
@@ -90,18 +81,12 @@ impl DescribeHumanTaskUiOutputBuilder {
         &self.human_task_ui_arn
     }
     /// <p>The name of the human task user interface (worker task template).</p>
-    pub fn human_task_ui_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human task user interface (worker task template).</p>
-    pub fn set_human_task_ui_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_name = input;
         self
     }
@@ -115,17 +100,12 @@ impl DescribeHumanTaskUiOutputBuilder {
         self
     }
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
-    pub fn set_human_task_ui_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanTaskUiStatus>,
-    ) -> Self {
+    pub fn set_human_task_ui_status(mut self, input: ::std::option::Option<crate::types::HumanTaskUiStatus>) -> Self {
         self.human_task_ui_status = input;
         self
     }
     /// <p>The status of the human task user interface (worker task template). Valid values are listed below.</p>
-    pub fn get_human_task_ui_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::HumanTaskUiStatus> {
+    pub fn get_human_task_ui_status(&self) -> &::std::option::Option<crate::types::HumanTaskUiStatus> {
         &self.human_task_ui_status
     }
     /// <p>The timestamp when the human task user interface was created.</p>
@@ -134,10 +114,7 @@ impl DescribeHumanTaskUiOutputBuilder {
         self
     }
     /// <p>The timestamp when the human task user interface was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -151,10 +128,7 @@ impl DescribeHumanTaskUiOutputBuilder {
         self
     }
     /// <p>Container for user interface template information.</p>
-    pub fn set_ui_template(
-        mut self,
-        input: ::std::option::Option<crate::types::UiTemplateInfo>,
-    ) -> Self {
+    pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplateInfo>) -> Self {
         self.ui_template = input;
         self
     }

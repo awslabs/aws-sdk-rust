@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`resource_identifiers(Option<Vec<ResourceIdentifier>>)`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput::resource_identifiers): <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::operation::list_discovered_resources::ListDiscoveredResourcesError)
-    pub fn list_discovered_resources(
-        &self,
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder
-    {
+    pub fn list_discovered_resources(&self) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesFluentBuilder::new(self.handle.clone())
     }
 }

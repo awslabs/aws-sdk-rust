@@ -11,8 +11,7 @@ pub struct BatchDeleteDocumentInput {
     pub document_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maps a particular data source sync job to a particular data source.</p>
     #[doc(hidden)]
-    pub data_source_sync_job_metric_target:
-        ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
+    pub data_source_sync_job_metric_target: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInput {
     /// <p>The identifier of the index that contains the documents to delete.</p>
@@ -24,31 +23,24 @@ impl BatchDeleteDocumentInput {
         self.document_id_list.as_deref()
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn data_source_sync_job_metric_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceSyncJobMetricTarget> {
+    pub fn data_source_sync_job_metric_target(&self) -> ::std::option::Option<&crate::types::DataSourceSyncJobMetricTarget> {
         self.data_source_sync_job_metric_target.as_ref()
     }
 }
 impl BatchDeleteDocumentInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
-        crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
+        crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) data_source_sync_job_metric_target:
-        ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
+    pub(crate) data_source_sync_job_metric_target: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInputBuilder {
     /// <p>The identifier of the index that contains the documents to delete.</p>
@@ -70,64 +62,44 @@ impl BatchDeleteDocumentInputBuilder {
     /// To override the contents of this collection use [`set_document_id_list`](Self::set_document_id_list).
     ///
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn document_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.document_id_list.unwrap_or_default();
         v.push(input.into());
         self.document_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn set_document_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_document_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.document_id_list = input;
         self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn get_document_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_document_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.document_id_list
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn data_source_sync_job_metric_target(
-        mut self,
-        input: crate::types::DataSourceSyncJobMetricTarget,
-    ) -> Self {
+    pub fn data_source_sync_job_metric_target(mut self, input: crate::types::DataSourceSyncJobMetricTarget) -> Self {
         self.data_source_sync_job_metric_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn set_data_source_sync_job_metric_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
-    ) -> Self {
+    pub fn set_data_source_sync_job_metric_target(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>) -> Self {
         self.data_source_sync_job_metric_target = input;
         self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn get_data_source_sync_job_metric_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceSyncJobMetricTarget> {
+    pub fn get_data_source_sync_job_metric_target(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobMetricTarget> {
         &self.data_source_sync_job_metric_target
     }
     /// Consumes the builder and constructs a [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_document::BatchDeleteDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_document::BatchDeleteDocumentInput {
-                index_id: self.index_id,
-                document_id_list: self.document_id_list,
-                data_source_sync_job_metric_target: self.data_source_sync_job_metric_target,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_delete_document::BatchDeleteDocumentInput {
+            index_id: self.index_id,
+            document_id_list: self.document_id_list,
+            data_source_sync_job_metric_target: self.data_source_sync_job_metric_target,
+        })
     }
 }

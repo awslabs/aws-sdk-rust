@@ -36,16 +36,14 @@ impl ListCalculatedAttributesForProfileInput {
 }
 impl ListCalculatedAttributesForProfileInput {
     /// Creates a new builder-style object to manufacture [`ListCalculatedAttributesForProfileInput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput).
-    pub fn builder() -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileInputBuilder{
+    pub fn builder() -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileInputBuilder {
         crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculatedAttributesForProfileInput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributesForProfileInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,18 +108,19 @@ impl ListCalculatedAttributesForProfileInputBuilder {
         &self.profile_id
     }
     /// Consumes the builder and constructs a [`ListCalculatedAttributesForProfileInput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                domain_name: self.domain_name
-                ,
-                profile_id: self.profile_id
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                domain_name: self.domain_name,
+                profile_id: self.profile_id,
+            },
         )
     }
 }

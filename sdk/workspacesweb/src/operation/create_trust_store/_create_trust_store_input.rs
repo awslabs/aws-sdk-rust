@@ -31,17 +31,14 @@ impl CreateTrustStoreInput {
 }
 impl CreateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
-    pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder {
         crate::operation::create_trust_store::builders::CreateTrustStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrustStoreInputBuilder {
     pub(crate) certificate_list: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -60,17 +57,12 @@ impl CreateTrustStoreInputBuilder {
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn set_certificate_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_certificate_list(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.certificate_list = input;
         self
     }
     /// <p>A list of CA certificates to be added to the trust store.</p>
-    pub fn get_certificate_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_certificate_list(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.certificate_list
     }
     /// Appends an item to `tags`.
@@ -85,10 +77,7 @@ impl CreateTrustStoreInputBuilder {
         self
     }
     /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -116,16 +105,11 @@ impl CreateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_trust_store::CreateTrustStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_trust_store::CreateTrustStoreInput {
-                certificate_list: self.certificate_list,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_trust_store::CreateTrustStoreInput {
+            certificate_list: self.certificate_list,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

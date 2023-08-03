@@ -17,18 +17,14 @@ impl GetExportSnapshotRecordsInput {
 }
 impl GetExportSnapshotRecordsInput {
     /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsInput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput).
-    pub fn builder(
-    ) -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder {
         crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExportSnapshotRecordsInput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportSnapshotRecordsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,10 +53,6 @@ impl GetExportSnapshotRecordsInputBuilder {
         crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput {
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput { page_token: self.page_token })
     }
 }

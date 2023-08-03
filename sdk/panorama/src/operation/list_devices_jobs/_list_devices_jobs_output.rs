@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDevicesJobsOutput {
 }
 impl ListDevicesJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicesJobsOutput`](crate::operation::list_devices_jobs::ListDevicesJobsOutput).
-    pub fn builder() -> crate::operation::list_devices_jobs::builders::ListDevicesJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_devices_jobs::builders::ListDevicesJobsOutputBuilder {
         crate::operation::list_devices_jobs::builders::ListDevicesJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevicesJobsOutput`](crate::operation::list_devices_jobs::ListDevicesJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesJobsOutputBuilder {
     pub(crate) device_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListDevicesJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_device_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>>,
-    ) -> Self {
+    pub fn set_device_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>>) -> Self {
         self.device_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_device_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>> {
+    pub fn get_device_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>> {
         &self.device_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>

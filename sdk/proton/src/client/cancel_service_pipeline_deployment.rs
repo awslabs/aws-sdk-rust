@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput) with field(s):
     ///   - [`pipeline(Option<ServicePipeline>)`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput::pipeline): <p>The service pipeline detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelServicePipelineDeploymentError>`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError)
-    pub fn cancel_service_pipeline_deployment(&self) -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder{
+    pub fn cancel_service_pipeline_deployment(
+        &self,
+    ) -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder {
         crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetIdentitySourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_identity_source::GetIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_source::GetIdentitySourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_source::GetIdentitySourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_identity_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetIdentitySourceFluentBuilder {
         }
     }
     /// Access the GetIdentitySource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_identity_source::builders::GetIdentitySourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetIdentitySourceFluentBuilder {
             crate::operation::get_identity_source::GetIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_source::GetIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_source::GetIdentitySourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetIdentitySourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_source::GetIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_source::GetIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_source::GetIdentitySourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_source::GetIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_source::GetIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_source::GetIdentitySourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetIdentitySourceFluentBuilder {
             crate::operation::get_identity_source::GetIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_source::GetIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_source::GetIdentitySourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source you want information about.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetIdentitySourceFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the identity source you want information about.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_source_id(input.into());
         self
     }
     /// <p>Specifies the ID of the identity source you want information about.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_source_id(input);
         self
     }

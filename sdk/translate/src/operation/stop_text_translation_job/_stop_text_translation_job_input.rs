@@ -15,18 +15,14 @@ impl StopTextTranslationJobInput {
 }
 impl StopTextTranslationJobInput {
     /// Creates a new builder-style object to manufacture [`StopTextTranslationJobInput`](crate::operation::stop_text_translation_job::StopTextTranslationJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder {
         crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopTextTranslationJobInput`](crate::operation::stop_text_translation_job::StopTextTranslationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTextTranslationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopTextTranslationJobInputBuilder {
         crate::operation::stop_text_translation_job::StopTextTranslationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_text_translation_job::StopTextTranslationJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_text_translation_job::StopTextTranslationJobInput { job_id: self.job_id })
     }
 }

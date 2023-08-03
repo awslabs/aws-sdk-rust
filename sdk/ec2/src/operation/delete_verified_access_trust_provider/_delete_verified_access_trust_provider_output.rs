@@ -5,15 +5,12 @@
 pub struct DeleteVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub verified_access_trust_provider:
-        ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    pub verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessTrustProvider> {
+    pub fn verified_access_trust_provider(&self) -> ::std::option::Option<&crate::types::VerifiedAccessTrustProvider> {
         self.verified_access_trust_provider.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteVerifiedAccessTrustProviderOutp
 }
 impl DeleteVerifiedAccessTrustProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessTrustProviderOutput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput).
-    pub fn builder() -> crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderOutputBuilder {
         crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedAccessTrustProviderOutput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessTrustProviderOutputBuilder {
-    pub(crate) verified_access_trust_provider:
-        ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    pub(crate) verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessTrustProviderOutputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(
-        mut self,
-        input: crate::types::VerifiedAccessTrustProvider,
-    ) -> Self {
+    pub fn verified_access_trust_provider(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
         self.verified_access_trust_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn set_verified_access_trust_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
-    ) -> Self {
+    pub fn set_verified_access_trust_provider(mut self, input: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>) -> Self {
         self.verified_access_trust_provider = input;
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn get_verified_access_trust_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessTrustProvider> {
+    pub fn get_verified_access_trust_provider(&self) -> &::std::option::Option<crate::types::VerifiedAccessTrustProvider> {
         &self.verified_access_trust_provider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl DeleteVerifiedAccessTrustProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessTrustProviderOutput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput).
-    pub fn build(self) -> crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput{
+    pub fn build(self) -> crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput {
         crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput {
-            verified_access_trust_provider: self.verified_access_trust_provider
-            ,
+            verified_access_trust_provider: self.verified_access_trust_provider,
             _request_id: self._request_id,
         }
     }

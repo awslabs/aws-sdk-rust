@@ -47,16 +47,14 @@ impl DescribeDbProxyTargetGroupsInput {
 }
 impl DescribeDbProxyTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsInput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput).
-    pub fn builder() -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder {
         crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxyTargetGroupsInput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxyTargetGroupsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct DescribeDbProxyTargetGroupsInputBuilder {
 }
 impl DescribeDbProxyTargetGroupsInputBuilder {
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -86,18 +78,12 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-    pub fn target_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_name = input;
         self
     }
@@ -117,10 +103,7 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -169,14 +152,12 @@ impl DescribeDbProxyTargetGroupsInputBuilder {
         crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput {
-                db_proxy_name: self.db_proxy_name,
-                target_group_name: self.target_group_name,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsInput {
+            db_proxy_name: self.db_proxy_name,
+            target_group_name: self.target_group_name,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

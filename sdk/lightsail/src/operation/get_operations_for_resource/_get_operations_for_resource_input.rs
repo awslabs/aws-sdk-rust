@@ -24,36 +24,26 @@ impl GetOperationsForResourceInput {
 }
 impl GetOperationsForResourceInput {
     /// Creates a new builder-style object to manufacture [`GetOperationsForResourceInput`](crate::operation::get_operations_for_resource::GetOperationsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceInputBuilder {
         crate::operation::get_operations_for_resource::builders::GetOperationsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOperationsForResourceInput`](crate::operation::get_operations_for_resource::GetOperationsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOperationsForResourceInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOperationsForResourceInputBuilder {
     /// <p>The name of the resource for which you are requesting information.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource for which you are requesting information.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -85,11 +75,9 @@ impl GetOperationsForResourceInputBuilder {
         crate::operation::get_operations_for_resource::GetOperationsForResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_operations_for_resource::GetOperationsForResourceInput {
-                resource_name: self.resource_name,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_operations_for_resource::GetOperationsForResourceInput {
+            resource_name: self.resource_name,
+            page_token: self.page_token,
+        })
     }
 }

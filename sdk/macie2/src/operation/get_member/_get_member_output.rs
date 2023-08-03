@@ -26,9 +26,7 @@ pub struct GetMemberOutput {
     pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,11 +62,7 @@ impl GetMemberOutput {
         self.relationship_status.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
@@ -90,9 +84,7 @@ impl GetMemberOutput {
 
 /// A builder for [`GetMemberOutput`](crate::operation::get_member::GetMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) administrator_account_id: ::std::option::Option<::std::string::String>,
@@ -101,9 +93,7 @@ pub struct GetMemberOutputBuilder {
     pub(crate) invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) master_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -123,18 +113,12 @@ impl GetMemberOutputBuilder {
         &self.account_id
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    pub fn administrator_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    pub fn set_administrator_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_account_id = input;
         self
     }
@@ -176,10 +160,7 @@ impl GetMemberOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
-    pub fn set_invited_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invited_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invited_at = input;
         self
     }
@@ -188,18 +169,12 @@ impl GetMemberOutputBuilder {
         &self.invited_at
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn set_master_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_account_id = input;
         self
     }
@@ -213,17 +188,12 @@ impl GetMemberOutputBuilder {
         self
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipStatus>,
-    ) -> Self {
+    pub fn set_relationship_status(mut self, input: ::std::option::Option<crate::types::RelationshipStatus>) -> Self {
         self.relationship_status = input;
         self
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    pub fn get_relationship_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationshipStatus> {
+    pub fn get_relationship_status(&self) -> &::std::option::Option<crate::types::RelationshipStatus> {
         &self.relationship_status
     }
     /// Adds a key-value pair to `tags`.
@@ -231,32 +201,19 @@ impl GetMemberOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
@@ -265,10 +222,7 @@ impl GetMemberOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

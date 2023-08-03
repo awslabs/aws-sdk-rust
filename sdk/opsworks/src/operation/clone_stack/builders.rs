@@ -10,10 +10,7 @@ impl CloneStackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::clone_stack::CloneStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clone_stack::CloneStackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clone_stack::CloneStackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.clone_stack();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CloneStackFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::clone_stack::CloneStack,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::clone_stack::CloneStack, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::clone_stack::CloneStackError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CloneStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl CloneStackFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::clone_stack::CloneStack,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::clone_stack::CloneStack, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::clone_stack::CloneStackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The source stack ID.</p>
-    pub fn source_stack_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_stack_id(input.into());
         self
     }
     /// <p>The source stack ID.</p>
-    pub fn set_source_stack_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_stack_id(input);
         self
     }
@@ -213,49 +195,33 @@ impl CloneStackFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::StackAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::StackAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
     }
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -266,25 +232,17 @@ impl CloneStackFluentBuilder {
         self.inner.get_service_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_instance_profile_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_default_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_instance_profile_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn get_default_instance_profile_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_instance_profile_arn()
     }
     /// <p>The stack's operating system, which must be set to one of the following.</p>
@@ -349,10 +307,7 @@ impl CloneStackFluentBuilder {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn hostname_theme(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hostname_theme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname_theme(input.into());
         self
     }
@@ -371,10 +326,7 @@ impl CloneStackFluentBuilder {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn set_hostname_theme(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hostname_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname_theme(input);
         self
     }
@@ -397,18 +349,12 @@ impl CloneStackFluentBuilder {
         self.inner.get_hostname_theme()
     }
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
-    pub fn default_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_availability_zone(input.into());
         self
     }
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
-    pub fn set_default_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_availability_zone(input);
         self
     }
@@ -417,18 +363,12 @@ impl CloneStackFluentBuilder {
         self.inner.get_default_availability_zone()
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
-    pub fn default_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_subnet_id(input.into());
         self
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
-    pub fn set_default_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_subnet_id(input);
         self
     }
@@ -462,17 +402,12 @@ impl CloneStackFluentBuilder {
         self
     }
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
-    pub fn set_configuration_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::StackConfigurationManager>,
-    ) -> Self {
+    pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
         self.inner = self.inner.set_configuration_manager(input);
         self
     }
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
-    pub fn get_configuration_manager(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+    pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         self.inner.get_configuration_manager()
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
@@ -481,17 +416,12 @@ impl CloneStackFluentBuilder {
         self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn set_chef_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChefConfiguration>,
-    ) -> Self {
+    pub fn set_chef_configuration(mut self, input: ::std::option::Option<crate::types::ChefConfiguration>) -> Self {
         self.inner = self.inner.set_chef_configuration(input);
         self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn get_chef_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChefConfiguration> {
+    pub fn get_chef_configuration(&self) -> &::std::option::Option<crate::types::ChefConfiguration> {
         self.inner.get_chef_configuration()
     }
     /// <p>Whether to use custom cookbooks.</p>
@@ -546,10 +476,7 @@ impl CloneStackFluentBuilder {
         self
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-    pub fn set_custom_cookbooks_source(
-        mut self,
-        input: ::std::option::Option<crate::types::Source>,
-    ) -> Self {
+    pub fn set_custom_cookbooks_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.inner = self.inner.set_custom_cookbooks_source(input);
         self
     }
@@ -558,18 +485,12 @@ impl CloneStackFluentBuilder {
         self.inner.get_custom_cookbooks_source()
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
-    pub fn default_ssh_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_ssh_key_name(input.into());
         self
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
-    pub fn set_default_ssh_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_ssh_key_name(input);
         self
     }
@@ -596,25 +517,17 @@ impl CloneStackFluentBuilder {
     /// To override the contents of this collection use [`set_clone_app_ids`](Self::set_clone_app_ids).
     ///
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn clone_app_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn clone_app_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.clone_app_ids(input.into());
         self
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn set_clone_app_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_clone_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_clone_app_ids(input);
         self
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn get_clone_app_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_clone_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_clone_app_ids()
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
@@ -623,17 +536,12 @@ impl CloneStackFluentBuilder {
         self
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn set_default_root_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDeviceType>,
-    ) -> Self {
+    pub fn set_default_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
         self.inner = self.inner.set_default_root_device_type(input);
         self
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn get_default_root_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RootDeviceType> {
+    pub fn get_default_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
         self.inner.get_default_root_device_type()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -644,10 +552,7 @@ impl CloneStackFluentBuilder {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
@@ -659,10 +564,7 @@ impl CloneStackFluentBuilder {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }

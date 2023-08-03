@@ -37,9 +37,7 @@ impl DescribeSourceServersRequestFilters {
 
 /// A builder for [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFiltersBuilder {
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hardware_id: ::std::option::Option<::std::string::String>,
@@ -51,27 +49,19 @@ impl DescribeSourceServersRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
         v.push(input.into());
         self.source_server_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_server_i_ds = input;
         self
     }
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_server_i_ds
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
@@ -93,27 +83,19 @@ impl DescribeSourceServersRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_staging_account_i_ds`](Self::set_staging_account_i_ds).
     ///
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn staging_account_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_account_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.staging_account_i_ds.unwrap_or_default();
         v.push(input.into());
         self.staging_account_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn set_staging_account_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_staging_account_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.staging_account_i_ds = input;
         self
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn get_staging_account_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_staging_account_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.staging_account_i_ds
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).

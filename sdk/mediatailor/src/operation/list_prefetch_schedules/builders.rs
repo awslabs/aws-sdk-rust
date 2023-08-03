@@ -37,10 +37,7 @@ impl ListPrefetchSchedulesFluentBuilder {
         }
     }
     /// Access the ListPrefetchSchedules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPrefetchSchedulesFluentBuilder {
             crate::operation::list_prefetch_schedules::ListPrefetchSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPrefetchSchedulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPrefetchSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPrefetchSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListPrefetchSchedulesFluentBuilder {
             crate::operation::list_prefetch_schedules::ListPrefetchSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_prefetch_schedules::paginator::ListPrefetchSchedulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_prefetch_schedules::paginator::ListPrefetchSchedulesPaginator {
-        crate::operation::list_prefetch_schedules::paginator::ListPrefetchSchedulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_prefetch_schedules::paginator::ListPrefetchSchedulesPaginator {
+        crate::operation::list_prefetch_schedules::paginator::ListPrefetchSchedulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -172,18 +153,12 @@ impl ListPrefetchSchedulesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.playback_configuration_name(input.into());
         self
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateFpgaImageOutput {
 }
 impl CreateFpgaImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateFpgaImageOutput`](crate::operation::create_fpga_image::CreateFpgaImageOutput).
-    pub fn builder() -> crate::operation::create_fpga_image::builders::CreateFpgaImageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_fpga_image::builders::CreateFpgaImageOutputBuilder {
         crate::operation::create_fpga_image::builders::CreateFpgaImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFpgaImageOutput`](crate::operation::create_fpga_image::CreateFpgaImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFpgaImageOutputBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fpga_image_global_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateFpgaImageOutputBuilder {
 }
 impl CreateFpgaImageOutputBuilder {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateFpgaImageOutputBuilder {
         &self.fpga_image_id
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn fpga_image_global_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_global_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_global_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn set_fpga_image_global_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_global_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_global_id = input;
         self
     }

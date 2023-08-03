@@ -23,26 +23,18 @@ impl EntitledApplication {
 
 /// A builder for [`EntitledApplication`](crate::types::EntitledApplication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitledApplicationBuilder {
     pub(crate) application_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EntitledApplicationBuilder {
     /// <p>The identifier of the application.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }

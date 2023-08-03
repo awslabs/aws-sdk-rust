@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetFederationTokenOutput {
 }
 impl GetFederationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder {
+    pub fn builder() -> crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder {
         crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFederationTokenOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) sign_in_url: ::std::option::Option<::std::string::String>,
@@ -67,10 +64,7 @@ impl GetFederationTokenOutputBuilder {
         self
     }
     /// <p>The credentials to use for federation.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }

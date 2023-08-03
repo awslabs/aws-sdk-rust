@@ -23,9 +23,7 @@ impl ListTagsInput {
 
 /// A builder for [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl ListTagsInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags::ListTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput { arn: self.arn })
     }
 }

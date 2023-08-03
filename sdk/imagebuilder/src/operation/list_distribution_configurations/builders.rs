@@ -26,7 +26,7 @@ impl ListDistributionConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDistributionConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder,
+    inner: crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder,
 }
 impl ListDistributionConfigurationsFluentBuilder {
     /// Creates a new `ListDistributionConfigurations`.
@@ -37,7 +37,7 @@ impl ListDistributionConfigurationsFluentBuilder {
         }
     }
     /// Access the ListDistributionConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDistributionConfigurationsFluentBuilder {
             crate::operation::list_distribution_configurations::ListDistributionConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDistributionConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDistributionConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDistributionConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListDistributionConfigurationsFluentBuilder {
             crate::operation::list_distribution_configurations::ListDistributionConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_distribution_configurations::paginator::ListDistributionConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_distribution_configurations::paginator::ListDistributionConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_distribution_configurations::paginator::ListDistributionConfigurationsPaginator {
         crate::operation::list_distribution_configurations::paginator::ListDistributionConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
@@ -136,10 +125,7 @@ impl ListDistributionConfigurationsFluentBuilder {
         self
     }
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

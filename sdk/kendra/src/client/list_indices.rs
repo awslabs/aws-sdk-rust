@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`index_configuration_summary_items(Option<Vec<IndexConfigurationSummary>>)`](crate::operation::list_indices::ListIndicesOutput::index_configuration_summary_items): <p>An array of summary information on the configuration of one or more indexes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_indices::ListIndicesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::operation::list_indices::ListIndicesError)
-    pub fn list_indices(
-        &self,
-    ) -> crate::operation::list_indices::builders::ListIndicesFluentBuilder {
+    pub fn list_indices(&self) -> crate::operation::list_indices::builders::ListIndicesFluentBuilder {
         crate::operation::list_indices::builders::ListIndicesFluentBuilder::new(self.handle.clone())
     }
 }

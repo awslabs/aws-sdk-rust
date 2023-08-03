@@ -48,9 +48,7 @@ impl ListRetirableGrantsFluentBuilder {
         }
     }
     /// Access the ListRetirableGrants as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_retirable_grants::builders::ListRetirableGrantsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_retirable_grants::builders::ListRetirableGrantsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +60,7 @@ impl ListRetirableGrantsFluentBuilder {
             crate::operation::list_retirable_grants::ListRetirableGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_retirable_grants::ListRetirableGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_retirable_grants::ListRetirableGrantsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +70,7 @@ impl ListRetirableGrantsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +79,7 @@ impl ListRetirableGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_retirable_grants::ListRetirableGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_retirable_grants::ListRetirableGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_retirable_grants::ListRetirableGrantsError>,
     > {
         let op = self
             .inner
@@ -111,9 +102,7 @@ impl ListRetirableGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_retirable_grants::ListRetirableGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_retirable_grants::ListRetirableGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_retirable_grants::ListRetirableGrantsError>,
     > {
         self.send_middleware().await
     }
@@ -127,22 +116,15 @@ impl ListRetirableGrantsFluentBuilder {
             crate::operation::list_retirable_grants::ListRetirableGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_retirable_grants::ListRetirableGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_retirable_grants::ListRetirableGrantsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator {
-        crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator {
+        crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -177,19 +159,13 @@ impl ListRetirableGrantsFluentBuilder {
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    pub fn retiring_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retiring_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retiring_principal(input.into());
         self
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
-    pub fn set_retiring_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retiring_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retiring_principal(input);
         self
     }

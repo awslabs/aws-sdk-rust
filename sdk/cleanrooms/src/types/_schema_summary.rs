@@ -79,9 +79,7 @@ impl SchemaSummary {
 
 /// A builder for [`SchemaSummary`](crate::types::SchemaSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaType>,
@@ -90,8 +88,7 @@ pub struct SchemaSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) analysis_rule_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
 impl SchemaSummaryBuilder {
@@ -124,18 +121,12 @@ impl SchemaSummaryBuilder {
         &self.r#type
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    pub fn creator_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    pub fn set_creator_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_account_id = input;
         self
     }
@@ -149,10 +140,7 @@ impl SchemaSummaryBuilder {
         self
     }
     /// <p>The time the schema object was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -166,10 +154,7 @@ impl SchemaSummaryBuilder {
         self
     }
     /// <p>The time the schema object was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -178,18 +163,12 @@ impl SchemaSummaryBuilder {
         &self.update_time
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    pub fn set_collaboration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_id = input;
         self
     }
@@ -198,18 +177,12 @@ impl SchemaSummaryBuilder {
         &self.collaboration_id
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn collaboration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    pub fn set_collaboration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_arn = input;
         self
     }
@@ -229,17 +202,12 @@ impl SchemaSummaryBuilder {
         self
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn set_analysis_rule_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
-    ) -> Self {
+    pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
     /// <p>The types of analysis rules that are associated with this schema object.</p>
-    pub fn get_analysis_rule_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
         &self.analysis_rule_types
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -248,10 +216,7 @@ impl SchemaSummaryBuilder {
         self
     }
     /// <p>The analysis method for the associated schema. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisMethod>,
-    ) -> Self {
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }

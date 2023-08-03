@@ -29,16 +29,14 @@ impl ListAssistantAssociationsInput {
 }
 impl ListAssistantAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
-    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder {
         crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssistantAssociationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListAssistantAssociationsInputBuilder {
         crate::operation::list_assistant_associations::ListAssistantAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assistant_associations::ListAssistantAssociationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                assistant_id: self.assistant_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_assistant_associations::ListAssistantAssociationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            assistant_id: self.assistant_id,
+        })
     }
 }

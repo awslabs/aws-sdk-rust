@@ -45,9 +45,7 @@ impl ListRoutingControlsFluentBuilder {
         }
     }
     /// Access the ListRoutingControls as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +57,7 @@ impl ListRoutingControlsFluentBuilder {
             crate::operation::list_routing_controls::ListRoutingControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +67,7 @@ impl ListRoutingControlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +76,7 @@ impl ListRoutingControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_routing_controls::ListRoutingControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError>,
     > {
         let op = self
             .inner
@@ -108,9 +99,7 @@ impl ListRoutingControlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_routing_controls::ListRoutingControlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError>,
     > {
         self.send_middleware().await
     }
@@ -124,36 +113,23 @@ impl ListRoutingControlsFluentBuilder {
             crate::operation::list_routing_controls::ListRoutingControls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator {
-        crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator {
+        crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
     }

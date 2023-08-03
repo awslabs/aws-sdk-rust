@@ -36,9 +36,7 @@ impl ListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`File`](crate::types::ListenerTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::types::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
         if let ListenerTlsCertificate::File(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

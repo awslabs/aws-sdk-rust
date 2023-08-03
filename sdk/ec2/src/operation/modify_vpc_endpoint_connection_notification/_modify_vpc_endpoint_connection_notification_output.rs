@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for ModifyVpcEndpointConnectionNotificati
 }
 impl ModifyVpcEndpointConnectionNotificationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointConnectionNotificationOutput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationOutputBuilder
+    {
         crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointConnectionNotificationOutput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointConnectionNotificationOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +59,9 @@ impl ModifyVpcEndpointConnectionNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointConnectionNotificationOutput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput).
-    pub fn build(self) -> crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput{
+    pub fn build(self) -> crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput {
         crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput {
-            return_value: self.return_value
-            ,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

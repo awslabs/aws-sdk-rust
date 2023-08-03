@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWhatIfAnalysisOutput {
 }
 impl DeleteWhatIfAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder {
         crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWhatIfAnalysisOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWebAclOutput`](crate::operation::delete_web_acl::DeleteWebAclOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_web_acl::DeleteWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteWebACLError>`](crate::operation::delete_web_acl::DeleteWebACLError)
-    pub fn delete_web_acl(
-        &self,
-    ) -> crate::operation::delete_web_acl::builders::DeleteWebACLFluentBuilder {
-        crate::operation::delete_web_acl::builders::DeleteWebACLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_web_acl(&self) -> crate::operation::delete_web_acl::builders::DeleteWebACLFluentBuilder {
+        crate::operation::delete_web_acl::builders::DeleteWebACLFluentBuilder::new(self.handle.clone())
     }
 }

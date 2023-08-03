@@ -16,8 +16,7 @@ pub struct OutboundCrossClusterSearchConnectionStatus {
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
     #[doc(hidden)]
-    pub status_code:
-        ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
     /// <p>Specifies verbose information for the outbound connection status.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl OutboundCrossClusterSearchConnectionStatus {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Specifies verbose information for the outbound connection status.</p>
@@ -53,12 +50,9 @@ impl OutboundCrossClusterSearchConnectionStatus {
 
 /// A builder for [`OutboundCrossClusterSearchConnectionStatus`](crate::types::OutboundCrossClusterSearchConnectionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutboundCrossClusterSearchConnectionStatusBuilder {
-    pub(crate) status_code:
-        ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
+    pub(crate) status_code: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl OutboundCrossClusterSearchConnectionStatusBuilder {
@@ -73,10 +67,7 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    pub fn status_code(
-        mut self,
-        input: crate::types::OutboundCrossClusterSearchConnectionStatusCode,
-    ) -> Self {
+    pub fn status_code(mut self, input: crate::types::OutboundCrossClusterSearchConnectionStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
     }
@@ -91,10 +82,7 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -109,9 +97,7 @@ impl OutboundCrossClusterSearchConnectionStatusBuilder {
     /// <li>DELETING: Outbound connection deletion is in progress.</li>
     /// <li>DELETED: Outbound connection is deleted and cannot be used further.</li>
     /// </ul>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatusCode> {
         &self.status_code
     }
     /// <p>Specifies verbose information for the outbound connection status.</p>

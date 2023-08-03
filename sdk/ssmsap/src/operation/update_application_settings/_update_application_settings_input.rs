@@ -8,12 +8,10 @@ pub struct UpdateApplicationSettingsInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials to be added or updated.</p>
     #[doc(hidden)]
-    pub credentials_to_add_or_update:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The credentials to be removed.</p>
     #[doc(hidden)]
-    pub credentials_to_remove:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     #[doc(hidden)]
     pub backint: ::std::option::Option<crate::types::BackintConfig>,
@@ -24,15 +22,11 @@ impl UpdateApplicationSettingsInput {
         self.application_id.as_deref()
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn credentials_to_add_or_update(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
+    pub fn credentials_to_add_or_update(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
         self.credentials_to_add_or_update.as_deref()
     }
     /// <p>The credentials to be removed.</p>
-    pub fn credentials_to_remove(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
+    pub fn credentials_to_remove(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
         self.credentials_to_remove.as_deref()
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
@@ -42,38 +36,28 @@ impl UpdateApplicationSettingsInput {
 }
 impl UpdateApplicationSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder {
         crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) credentials_to_add_or_update:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    pub(crate) credentials_to_remove:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) backint: ::std::option::Option<crate::types::BackintConfig>,
 }
 impl UpdateApplicationSettingsInputBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -86,27 +70,19 @@ impl UpdateApplicationSettingsInputBuilder {
     /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
     ///
     /// <p>The credentials to be added or updated.</p>
-    pub fn credentials_to_add_or_update(
-        mut self,
-        input: crate::types::ApplicationCredential,
-    ) -> Self {
+    pub fn credentials_to_add_or_update(mut self, input: crate::types::ApplicationCredential) -> Self {
         let mut v = self.credentials_to_add_or_update.unwrap_or_default();
         v.push(input);
         self.credentials_to_add_or_update = ::std::option::Option::Some(v);
         self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn set_credentials_to_add_or_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials_to_add_or_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.credentials_to_add_or_update = input;
         self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn get_credentials_to_add_or_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_add_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials_to_add_or_update
     }
     /// Appends an item to `credentials_to_remove`.
@@ -121,17 +97,12 @@ impl UpdateApplicationSettingsInputBuilder {
         self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn set_credentials_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.credentials_to_remove = input;
         self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn get_credentials_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials_to_remove
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
@@ -140,10 +111,7 @@ impl UpdateApplicationSettingsInputBuilder {
         self
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
-    pub fn set_backint(
-        mut self,
-        input: ::std::option::Option<crate::types::BackintConfig>,
-    ) -> Self {
+    pub fn set_backint(mut self, input: ::std::option::Option<crate::types::BackintConfig>) -> Self {
         self.backint = input;
         self
     }
@@ -158,13 +126,11 @@ impl UpdateApplicationSettingsInputBuilder {
         crate::operation::update_application_settings::UpdateApplicationSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-                application_id: self.application_id,
-                credentials_to_add_or_update: self.credentials_to_add_or_update,
-                credentials_to_remove: self.credentials_to_remove,
-                backint: self.backint,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
+            application_id: self.application_id,
+            credentials_to_add_or_update: self.credentials_to_add_or_update,
+            credentials_to_remove: self.credentials_to_remove,
+            backint: self.backint,
+        })
     }
 }

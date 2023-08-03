@@ -28,9 +28,7 @@ impl GetDeploymentOutput {
 
 /// A builder for [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentOutputBuilder {
     pub(crate) deployment: ::std::option::Option<crate::types::Deployment>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The detailed data of the requested deployment.</p>
-    pub fn set_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::Deployment>,
-    ) -> Self {
+    pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::Deployment>) -> Self {
         self.deployment = input;
         self
     }

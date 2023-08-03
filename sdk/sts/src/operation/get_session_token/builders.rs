@@ -10,10 +10,7 @@ impl GetSessionTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_session_token::GetSessionTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_token::GetSessionTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_token::GetSessionTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_session_token();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl GetSessionTokenFluentBuilder {
         }
     }
     /// Access the GetSessionToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_session_token::builders::GetSessionTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_session_token::builders::GetSessionTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl GetSessionTokenFluentBuilder {
             crate::operation::get_session_token::GetSessionToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_token::GetSessionTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_token::GetSessionTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl GetSessionTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl GetSessionTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_token::GetSessionTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_token::GetSessionTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_token::GetSessionTokenError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl GetSessionTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_token::GetSessionTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_token::GetSessionTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_token::GetSessionTokenError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +117,7 @@ impl GetSessionTokenFluentBuilder {
             crate::operation::get_session_token::GetSessionToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_token::GetSessionTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_token::GetSessionTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -153,19 +137,13 @@ impl GetSessionTokenFluentBuilder {
     }
     /// <p>The identification number of the MFA device that is associated with the IAM user who is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a policy that requires MFA authentication. The value is either the serial number for a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security credentials. </p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>The identification number of the MFA device that is associated with the IAM user who is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a policy that requires MFA authentication. The value is either the serial number for a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security credentials. </p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }

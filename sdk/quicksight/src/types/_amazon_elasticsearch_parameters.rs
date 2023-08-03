@@ -23,9 +23,7 @@ impl AmazonElasticsearchParameters {
 
 /// A builder for [`AmazonElasticsearchParameters`](crate::types::AmazonElasticsearchParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonElasticsearchParametersBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AmazonElasticsearchParametersBuilder {
     }
     /// Consumes the builder and constructs a [`AmazonElasticsearchParameters`](crate::types::AmazonElasticsearchParameters).
     pub fn build(self) -> crate::types::AmazonElasticsearchParameters {
-        crate::types::AmazonElasticsearchParameters {
-            domain: self.domain,
-        }
+        crate::types::AmazonElasticsearchParameters { domain: self.domain }
     }
 }

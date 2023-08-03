@@ -10,10 +10,7 @@ impl CreateBucketInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_bucket::CreateBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bucket::CreateBucketError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_bucket();
         fluent_builder.inner = self;
@@ -71,10 +68,7 @@ impl CreateBucketFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
     > {
         let handle = self.handle.clone();
@@ -85,10 +79,7 @@ impl CreateBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,10 +121,7 @@ impl CreateBucketFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bucket::CreateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_bucket::CreateBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError>,
     > {
         self.customize_middleware().await
@@ -167,40 +155,26 @@ impl CreateBucketFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The configuration information for the bucket.</p>
-    pub fn create_bucket_configuration(
-        mut self,
-        input: crate::types::CreateBucketConfiguration,
-    ) -> Self {
+    pub fn create_bucket_configuration(mut self, input: crate::types::CreateBucketConfiguration) -> Self {
         self.inner = self.inner.create_bucket_configuration(input);
         self
     }
     /// <p>The configuration information for the bucket.</p>
-    pub fn set_create_bucket_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateBucketConfiguration>,
-    ) -> Self {
+    pub fn set_create_bucket_configuration(mut self, input: ::std::option::Option<crate::types::CreateBucketConfiguration>) -> Self {
         self.inner = self.inner.set_create_bucket_configuration(input);
         self
     }
     /// <p>The configuration information for the bucket.</p>
-    pub fn get_create_bucket_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
+    pub fn get_create_bucket_configuration(&self) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
         self.inner.get_create_bucket_configuration()
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn grant_full_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_full_control(input.into());
         self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn set_grant_full_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_full_control(input);
         self
     }
@@ -223,18 +197,12 @@ impl CreateBucketFluentBuilder {
         self.inner.get_grant_read()
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn grant_read_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_read_acp(input.into());
         self
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn set_grant_read_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read_acp(input);
         self
     }
@@ -260,18 +228,12 @@ impl CreateBucketFluentBuilder {
         self.inner.get_grant_write()
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn grant_write_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write_acp(input.into());
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn set_grant_write_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write_acp(input);
         self
     }
@@ -285,10 +247,7 @@ impl CreateBucketFluentBuilder {
         self
     }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
-    pub fn set_object_lock_enabled_for_bucket(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_object_lock_enabled_for_bucket(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_object_lock_enabled_for_bucket(input);
         self
     }
@@ -308,10 +267,7 @@ impl CreateBucketFluentBuilder {
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
-    pub fn set_object_ownership(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectOwnership>,
-    ) -> Self {
+    pub fn set_object_ownership(mut self, input: ::std::option::Option<crate::types::ObjectOwnership>) -> Self {
         self.inner = self.inner.set_object_ownership(input);
         self
     }

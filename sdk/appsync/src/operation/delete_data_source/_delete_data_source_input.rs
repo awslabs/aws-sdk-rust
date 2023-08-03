@@ -22,17 +22,14 @@ impl DeleteDataSourceInput {
 }
 impl DeleteDataSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder {
         crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataSourceInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_data_source::DeleteDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_data_source::DeleteDataSourceInput {
-                api_id: self.api_id,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceInput {
+            api_id: self.api_id,
+            name: self.name,
+        })
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSolFunctionPackageDescriptorOutput
 }
 impl GetSolFunctionPackageDescriptorOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageDescriptorOutput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput).
-    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorOutputBuilder{
+    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorOutputBuilder {
         crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionPackageDescriptorOutput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageDescriptorOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::DescriptorContentType>,
     pub(crate) vnfd: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -50,10 +48,7 @@ impl GetSolFunctionPackageDescriptorOutputBuilder {
         self
     }
     /// <p>Indicates the media type of the resource.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DescriptorContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::DescriptorContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -85,15 +80,10 @@ impl GetSolFunctionPackageDescriptorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageDescriptorOutput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput
-    {
+    pub fn build(self) -> crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput {
         crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput {
-            content_type: self.content_type
-            ,
-            vnfd: self.vnfd
-            ,
+            content_type: self.content_type,
+            vnfd: self.vnfd,
             _request_id: self._request_id,
         }
     }

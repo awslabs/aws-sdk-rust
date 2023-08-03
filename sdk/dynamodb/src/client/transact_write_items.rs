@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`consumed_capacity(Option<Vec<ConsumedCapacity>>)`](crate::operation::transact_write_items::TransactWriteItemsOutput::consumed_capacity): <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
     ///   - [`item_collection_metrics(Option<HashMap<String, Vec<ItemCollectionMetrics>>>)`](crate::operation::transact_write_items::TransactWriteItemsOutput::item_collection_metrics): <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     /// - On failure, responds with [`SdkError<TransactWriteItemsError>`](crate::operation::transact_write_items::TransactWriteItemsError)
-    pub fn transact_write_items(
-        &self,
-    ) -> crate::operation::transact_write_items::builders::TransactWriteItemsFluentBuilder {
-        crate::operation::transact_write_items::builders::TransactWriteItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn transact_write_items(&self) -> crate::operation::transact_write_items::builders::TransactWriteItemsFluentBuilder {
+        crate::operation::transact_write_items::builders::TransactWriteItemsFluentBuilder::new(self.handle.clone())
     }
 }

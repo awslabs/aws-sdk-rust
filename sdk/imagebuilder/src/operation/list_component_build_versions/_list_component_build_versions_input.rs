@@ -29,16 +29,14 @@ impl ListComponentBuildVersionsInput {
 }
 impl ListComponentBuildVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentBuildVersionsInput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsInput).
-    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder {
         crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentBuildVersionsInput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsInputBuilder {
     pub(crate) component_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListComponentBuildVersionsInputBuilder {
 }
 impl ListComponentBuildVersionsInputBuilder {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn component_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn set_component_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version_arn = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListComponentBuildVersionsInputBuilder {
         crate::operation::list_component_build_versions::ListComponentBuildVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsInput {
-                component_version_arn: self.component_version_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_component_build_versions::ListComponentBuildVersionsInput {
+            component_version_arn: self.component_version_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

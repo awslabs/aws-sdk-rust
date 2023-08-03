@@ -26,7 +26,7 @@ impl UpdateTemplateActiveVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTemplateActiveVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder,
+    inner: crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder,
 }
 impl UpdateTemplateActiveVersionFluentBuilder {
     /// Creates a new `UpdateTemplateActiveVersion`.
@@ -37,7 +37,7 @@ impl UpdateTemplateActiveVersionFluentBuilder {
         }
     }
     /// Access the UpdateTemplateActiveVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateTemplateActiveVersionFluentBuilder {
             crate::operation::update_template_active_version::UpdateTemplateActiveVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateTemplateActiveVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateTemplateActiveVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateTemplateActiveVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,47 +105,31 @@ impl UpdateTemplateActiveVersionFluentBuilder {
             crate::operation::update_template_active_version::UpdateTemplateActiveVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn template_active_version_request(
-        mut self,
-        input: crate::types::TemplateActiveVersionRequest,
-    ) -> Self {
+    pub fn template_active_version_request(mut self, input: crate::types::TemplateActiveVersionRequest) -> Self {
         self.inner = self.inner.template_active_version_request(input);
         self
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn set_template_active_version_request(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateActiveVersionRequest>,
-    ) -> Self {
+    pub fn set_template_active_version_request(mut self, input: ::std::option::Option<crate::types::TemplateActiveVersionRequest>) -> Self {
         self.inner = self.inner.set_template_active_version_request(input);
         self
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn get_template_active_version_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateActiveVersionRequest> {
+    pub fn get_template_active_version_request(&self) -> &::std::option::Option<crate::types::TemplateActiveVersionRequest> {
         self.inner.get_template_active_version_request()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -163,18 +138,12 @@ impl UpdateTemplateActiveVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn template_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_type(input.into());
         self
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }

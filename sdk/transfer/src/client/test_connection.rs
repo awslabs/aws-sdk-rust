@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status(Option<String>)`](crate::operation::test_connection::TestConnectionOutput::status): <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::test_connection::TestConnectionOutput::status_message): <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides the details for some error messages and troubleshooting steps for each.</p>  <ul>   <li> <p> <b>Unable to access secrets manager</b>: Verify that your secret name aligns with the one in Transfer Role permissions.</p> </li>   <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p> </li>   <li> <p> <b>Private key not found</b>: Verify that the secret exists and is formatted correctly.</p> </li>   <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<TestConnectionError>`](crate::operation::test_connection::TestConnectionError)
-    pub fn test_connection(
-        &self,
-    ) -> crate::operation::test_connection::builders::TestConnectionFluentBuilder {
-        crate::operation::test_connection::builders::TestConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_connection(&self) -> crate::operation::test_connection::builders::TestConnectionFluentBuilder {
+        crate::operation::test_connection::builders::TestConnectionFluentBuilder::new(self.handle.clone())
     }
 }

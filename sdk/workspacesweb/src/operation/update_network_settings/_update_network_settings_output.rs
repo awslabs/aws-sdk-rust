@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateNetworkSettingsOutput {
 }
 impl UpdateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSettingsOutput`](crate::operation::update_network_settings::UpdateNetworkSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_network_settings::builders::UpdateNetworkSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_network_settings::builders::UpdateNetworkSettingsOutputBuilder {
         crate::operation::update_network_settings::builders::UpdateNetworkSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkSettingsOutput`](crate::operation::update_network_settings::UpdateNetworkSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkSettingsOutputBuilder {
     pub(crate) network_settings: ::std::option::Option<crate::types::NetworkSettings>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateNetworkSettingsOutputBuilder {
         self
     }
     /// <p>The network settings.</p>
-    pub fn set_network_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSettings>,
-    ) -> Self {
+    pub fn set_network_settings(mut self, input: ::std::option::Option<crate::types::NetworkSettings>) -> Self {
         self.network_settings = input;
         self
     }

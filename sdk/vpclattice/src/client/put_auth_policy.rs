@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::put_auth_policy::PutAuthPolicyOutput::policy): <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     ///   - [`state(Option<AuthPolicyState>)`](crate::operation::put_auth_policy::PutAuthPolicyOutput::state): <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<PutAuthPolicyError>`](crate::operation::put_auth_policy::PutAuthPolicyError)
-    pub fn put_auth_policy(
-        &self,
-    ) -> crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder {
-        crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_auth_policy(&self) -> crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder {
+        crate::operation::put_auth_policy::builders::PutAuthPolicyFluentBuilder::new(self.handle.clone())
     }
 }

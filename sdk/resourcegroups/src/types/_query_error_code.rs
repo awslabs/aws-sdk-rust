@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QueryErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,12 +56,8 @@ impl ::std::convert::From<&str> for QueryErrorCode {
         match s {
             "CLOUDFORMATION_STACK_INACTIVE" => QueryErrorCode::CloudformationStackInactive,
             "CLOUDFORMATION_STACK_NOT_EXISTING" => QueryErrorCode::CloudformationStackNotExisting,
-            "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE" => {
-                QueryErrorCode::CloudformationStackUnassumableRole
-            }
-            other => {
-                QueryErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE" => QueryErrorCode::CloudformationStackUnassumableRole,
+            other => QueryErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,9 +74,7 @@ impl QueryErrorCode {
         match self {
             QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
             QueryErrorCode::CloudformationStackNotExisting => "CLOUDFORMATION_STACK_NOT_EXISTING",
-            QueryErrorCode::CloudformationStackUnassumableRole => {
-                "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"
-            }
+            QueryErrorCode::CloudformationStackUnassumableRole => "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE",
             QueryErrorCode::Unknown(value) => value.as_str(),
         }
     }

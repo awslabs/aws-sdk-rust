@@ -31,11 +31,7 @@ impl super::Client {
     ///   - [`sample_payload_url(Option<String>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::sample_payload_url): <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
     ///   - [`additional_inference_specifications(Option<Vec<AdditionalInferenceSpecificationDefinition>>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::additional_inference_specifications): <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     /// - On failure, responds with [`SdkError<DescribeModelPackageError>`](crate::operation::describe_model_package::DescribeModelPackageError)
-    pub fn describe_model_package(
-        &self,
-    ) -> crate::operation::describe_model_package::builders::DescribeModelPackageFluentBuilder {
-        crate::operation::describe_model_package::builders::DescribeModelPackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model_package(&self) -> crate::operation::describe_model_package::builders::DescribeModelPackageFluentBuilder {
+        crate::operation::describe_model_package::builders::DescribeModelPackageFluentBuilder::new(self.handle.clone())
     }
 }

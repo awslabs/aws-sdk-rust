@@ -3,10 +3,7 @@
 pub fn de_health_check_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::HealthCheckInUseBuilder,
-) -> Result<
-    crate::types::error::builders::HealthCheckInUseBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::HealthCheckInUseBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

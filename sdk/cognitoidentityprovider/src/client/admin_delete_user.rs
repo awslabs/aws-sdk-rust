@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder::set_username): <p>The user name of the user you want to delete.</p>
     /// - On success, responds with [`AdminDeleteUserOutput`](crate::operation::admin_delete_user::AdminDeleteUserOutput)
     /// - On failure, responds with [`SdkError<AdminDeleteUserError>`](crate::operation::admin_delete_user::AdminDeleteUserError)
-    pub fn admin_delete_user(
-        &self,
-    ) -> crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder {
-        crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_delete_user(&self) -> crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder {
+        crate::operation::admin_delete_user::builders::AdminDeleteUserFluentBuilder::new(self.handle.clone())
     }
 }

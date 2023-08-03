@@ -38,9 +38,7 @@ impl CreateContactMethodFluentBuilder {
         }
     }
     /// Access the CreateContactMethod as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreateContactMethodFluentBuilder {
             crate::operation::create_contact_method::CreateContactMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_method::CreateContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreateContactMethodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreateContactMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_method::CreateContactMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_method::CreateContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreateContactMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_method::CreateContactMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_method::CreateContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl CreateContactMethodFluentBuilder {
             crate::operation::create_contact_method::CreateContactMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_method::CreateContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +138,7 @@ impl CreateContactMethodFluentBuilder {
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -175,19 +159,13 @@ impl CreateContactMethodFluentBuilder {
     }
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-    pub fn contact_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_endpoint(input.into());
         self
     }
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-    pub fn set_contact_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_endpoint(input);
         self
     }

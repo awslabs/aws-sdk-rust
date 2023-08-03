@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`locations(Option<Vec<LocationModel>>)`](crate::operation::list_locations::ListLocationsOutput::locations): <p>A collection of locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_locations::ListLocationsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<ListLocationsError>`](crate::operation::list_locations::ListLocationsError)
-    pub fn list_locations(
-        &self,
-    ) -> crate::operation::list_locations::builders::ListLocationsFluentBuilder {
-        crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_locations(&self) -> crate::operation::list_locations::builders::ListLocationsFluentBuilder {
+        crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(self.handle.clone())
     }
 }

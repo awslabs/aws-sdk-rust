@@ -41,9 +41,7 @@ impl AwsLambdaLayerVersionDetails {
 
 /// A builder for [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaLayerVersionDetailsBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     ///
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
-    pub fn compatible_runtimes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compatible_runtimes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
         v.push(input.into());
         self.compatible_runtimes = ::std::option::Option::Some(v);
@@ -81,18 +76,13 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     }
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
-    pub fn set_compatible_runtimes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_compatible_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.compatible_runtimes = input;
         self
     }
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
-    pub fn get_compatible_runtimes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compatible_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.compatible_runtimes
     }
     /// <p>Indicates when the version was created.</p>

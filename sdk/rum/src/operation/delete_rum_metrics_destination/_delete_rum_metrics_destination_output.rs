@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRumMetricsDestinationOutput {
 }
 impl DeleteRumMetricsDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationOutput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput).
-    pub fn builder() -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationOutputBuilder {
         crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRumMetricsDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRumMetricsDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationOutput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput {
+    pub fn build(self) -> crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput {
         crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput {
             _request_id: self._request_id,
         }

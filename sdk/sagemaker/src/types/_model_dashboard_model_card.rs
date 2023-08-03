@@ -100,9 +100,7 @@ impl ModelDashboardModelCard {
 
 /// A builder for [`ModelDashboardModelCard`](crate::types::ModelDashboardModelCard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelDashboardModelCardBuilder {
     pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ pub struct ModelDashboardModelCardBuilder {
 }
 impl ModelDashboardModelCardBuilder {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }
@@ -139,18 +131,12 @@ impl ModelDashboardModelCardBuilder {
         &self.model_card_arn
     }
     /// <p>The name of a model card.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a model card.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -178,10 +164,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>The model card status.</p>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -195,17 +178,12 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
-    ) -> Self {
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
         self.security_config = input;
         self
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
-    pub fn get_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
         &self.security_config
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
@@ -214,10 +192,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -231,10 +206,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -248,10 +220,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -265,10 +234,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -288,10 +254,7 @@ impl ModelDashboardModelCardBuilder {
         self
     }
     /// <p>The tags associated with a model card.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

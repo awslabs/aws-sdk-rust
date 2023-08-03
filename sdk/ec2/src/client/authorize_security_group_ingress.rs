@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`r#return(Option<bool>)`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     ///   - [`security_group_rules(Option<Vec<SecurityGroupRule>>)`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput::security_group_rules): <p>Information about the inbound (ingress) security group rules that were added.</p>
     /// - On failure, responds with [`SdkError<AuthorizeSecurityGroupIngressError>`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError)
-    pub fn authorize_security_group_ingress(&self) -> crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressFluentBuilder{
+    pub fn authorize_security_group_ingress(
+        &self,
+    ) -> crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressFluentBuilder {
         crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressFluentBuilder::new(self.handle.clone())
     }
 }

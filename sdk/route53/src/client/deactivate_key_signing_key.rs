@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeactivateKeySigningKeyOutput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<DeactivateKeySigningKeyError>`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError)
-    pub fn deactivate_key_signing_key(
-        &self,
-    ) -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyFluentBuilder
-    {
+    pub fn deactivate_key_signing_key(&self) -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyFluentBuilder {
         crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TransitGatewayConnectPeerAssociationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TransitGatewayConnectPeerAssociationState {
             "DELETED" => TransitGatewayConnectPeerAssociationState::Deleted,
             "DELETING" => TransitGatewayConnectPeerAssociationState::Deleting,
             "PENDING" => TransitGatewayConnectPeerAssociationState::Pending,
-            other => TransitGatewayConnectPeerAssociationState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => TransitGatewayConnectPeerAssociationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

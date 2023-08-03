@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateTimeSeriesToAssetPropertyOut
 }
 impl AssociateTimeSeriesToAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
-    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyOutputBuilder{
+    pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyOutputBuilder {
         crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTimeSeriesToAssetPropertyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateTimeSeriesToAssetPropertyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
-    pub fn build(self) -> crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput{
+    pub fn build(self) -> crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput {
         crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput {
             _request_id: self._request_id,
         }

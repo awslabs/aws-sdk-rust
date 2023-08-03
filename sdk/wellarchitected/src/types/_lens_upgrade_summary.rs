@@ -66,9 +66,7 @@ impl LensUpgradeSummary {
 
 /// A builder for [`LensUpgradeSummary`](crate::types::LensUpgradeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensUpgradeSummaryBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
@@ -94,19 +92,13 @@ impl LensUpgradeSummaryBuilder {
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
@@ -153,18 +145,12 @@ impl LensUpgradeSummaryBuilder {
         &self.lens_arn
     }
     /// <p>The current version of the lens.</p>
-    pub fn current_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_lens_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the lens.</p>
-    pub fn set_current_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_lens_version = input;
         self
     }
@@ -173,18 +159,12 @@ impl LensUpgradeSummaryBuilder {
         &self.current_lens_version
     }
     /// <p>The latest version of the lens.</p>
-    pub fn latest_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_lens_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest version of the lens.</p>
-    pub fn set_latest_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_lens_version = input;
         self
     }

@@ -15,16 +15,14 @@ impl BatchGetCustomDataIdentifiersInput {
 }
 impl BatchGetCustomDataIdentifiersInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
-    pub fn builder() -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder {
         crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
         self
     }
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -59,11 +54,6 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
         crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput {
-                ids: self.ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput { ids: self.ids })
     }
 }

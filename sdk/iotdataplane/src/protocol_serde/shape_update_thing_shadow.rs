@@ -4,175 +4,166 @@ pub fn de_update_thing_shadow_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_thing_shadow::UpdateThingShadowOutput,
-    crate::operation::update_thing_shadow::UpdateThingShadowError,
-> {
+) -> std::result::Result<crate::operation::update_thing_shadow::UpdateThingShadowOutput, crate::operation::update_thing_shadow::UpdateThingShadowError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => crate::operation::update_thing_shadow::UpdateThingShadowError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalFailureException" => crate::operation::update_thing_shadow::UpdateThingShadowError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::update_thing_shadow::UpdateThingShadowError::InvalidRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MethodNotAllowedException" => crate::operation::update_thing_shadow::UpdateThingShadowError::MethodNotAllowedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RequestEntityTooLargeException" => crate::operation::update_thing_shadow::UpdateThingShadowError::RequestEntityTooLargeException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RequestEntityTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_request_entity_too_large_exception::de_request_entity_too_large_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestEntityTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_entity_too_large_exception::de_request_entity_too_large_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_thing_shadow::UpdateThingShadowError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_thing_shadow::UpdateThingShadowError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::update_thing_shadow::UpdateThingShadowError::UnauthorizedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "UnsupportedDocumentEncodingException" => crate::operation::update_thing_shadow::UpdateThingShadowError::UnsupportedDocumentEncodingException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "UnsupportedDocumentEncodingException" => {
+            crate::operation::update_thing_shadow::UpdateThingShadowError::UnsupportedDocumentEncodingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedDocumentEncodingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_document_encoding_exception::de_unsupported_document_encoding_exception_json_err(_response_body, output).map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_unsupported_document_encoding_exception::de_unsupported_document_encoding_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::update_thing_shadow::UpdateThingShadowError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::update_thing_shadow::UpdateThingShadowError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::update_thing_shadow::UpdateThingShadowError::generic(generic),
     })
 }
 
@@ -181,21 +172,15 @@ pub fn de_update_thing_shadow_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_thing_shadow::UpdateThingShadowOutput,
-    crate::operation::update_thing_shadow::UpdateThingShadowError,
-> {
+) -> std::result::Result<crate::operation::update_thing_shadow::UpdateThingShadowOutput, crate::operation::update_thing_shadow::UpdateThingShadowError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder::default();
-        output = output.set_payload(
-            crate::protocol_serde::shape_update_thing_shadow_output::de_payload_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = output.set_payload(crate::protocol_serde::shape_update_thing_shadow_output::de_payload_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateQueryLoggingConfigOutput {
 }
 impl CreateQueryLoggingConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigOutput`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput).
-    pub fn builder() -> crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigOutputBuilder{
+    pub fn builder() -> crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigOutputBuilder {
         crate::operation::create_query_logging_config::builders::CreateQueryLoggingConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQueryLoggingConfigOutput`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQueryLoggingConfigOutputBuilder {
     pub(crate) query_logging_config: ::std::option::Option<crate::types::QueryLoggingConfig>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl CreateQueryLoggingConfigOutputBuilder {
         self
     }
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
-    pub fn set_query_logging_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryLoggingConfig>,
-    ) -> Self {
+    pub fn set_query_logging_config(mut self, input: ::std::option::Option<crate::types::QueryLoggingConfig>) -> Self {
         self.query_logging_config = input;
         self
     }
     /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
-    pub fn get_query_logging_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
+    pub fn get_query_logging_config(&self) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
         &self.query_logging_config
     }
     /// <p>The unique URL representing the new query logging configuration.</p>
@@ -87,9 +80,7 @@ impl CreateQueryLoggingConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateQueryLoggingConfigOutput`](crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
+    pub fn build(self) -> crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
         crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
             query_logging_config: self.query_logging_config,
             location: self.location,

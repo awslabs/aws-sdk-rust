@@ -13,9 +13,7 @@ pub struct FailedQueuedPurchaseDeletion {
 }
 impl FailedQueuedPurchaseDeletion {
     /// <p>The error.</p>
-    pub fn error(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeleteQueuedReservedInstancesError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::DeleteQueuedReservedInstancesError> {
         self.error.as_ref()
     }
     /// <p>The ID of the Reserved Instance.</p>
@@ -32,9 +30,7 @@ impl FailedQueuedPurchaseDeletion {
 
 /// A builder for [`FailedQueuedPurchaseDeletion`](crate::types::FailedQueuedPurchaseDeletion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedQueuedPurchaseDeletionBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
@@ -46,32 +42,21 @@ impl FailedQueuedPurchaseDeletionBuilder {
         self
     }
     /// <p>The error.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>) -> Self {
         self.error = input;
         self
     }
     /// <p>The error.</p>
-    pub fn get_error(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteQueuedReservedInstancesError> {
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::DeleteQueuedReservedInstancesError> {
         &self.error
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_id = input;
         self
     }

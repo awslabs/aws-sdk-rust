@@ -70,26 +70,18 @@ impl SetUserSettingsInputBuilder {
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.mfa_options = input;
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// Consumes the builder and constructs a [`SetUserSettingsInput`](crate::operation::set_user_settings::SetUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_settings::SetUserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::set_user_settings::SetUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_user_settings::SetUserSettingsInput {
             access_token: self.access_token,
             mfa_options: self.mfa_options,

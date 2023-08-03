@@ -65,9 +65,7 @@ impl AppDetails {
 
 /// A builder for [`AppDetails`](crate::types::AppDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppDetailsBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl AppDetailsBuilder {
         &self.domain_id
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -160,10 +152,7 @@ impl AppDetailsBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

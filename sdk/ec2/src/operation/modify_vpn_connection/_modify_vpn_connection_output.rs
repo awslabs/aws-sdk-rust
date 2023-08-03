@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpnConnectionOutput {
 }
 impl ModifyVpnConnectionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnConnectionOutput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder {
-        crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder {
+        crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnConnectionOutput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyVpnConnectionOutputBuilder {
         self
     }
     /// <p>Information about the VPN connection.</p>
-    pub fn set_vpn_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnection>,
-    ) -> Self {
+    pub fn set_vpn_connection(mut self, input: ::std::option::Option<crate::types::VpnConnection>) -> Self {
         self.vpn_connection = input;
         self
     }

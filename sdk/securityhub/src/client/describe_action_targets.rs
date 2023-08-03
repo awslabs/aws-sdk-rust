@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`action_targets(Option<Vec<ActionTarget>>)`](crate::operation::describe_action_targets::DescribeActionTargetsOutput::action_targets): <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_action_targets::DescribeActionTargetsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeActionTargetsError>`](crate::operation::describe_action_targets::DescribeActionTargetsError)
-    pub fn describe_action_targets(
-        &self,
-    ) -> crate::operation::describe_action_targets::builders::DescribeActionTargetsFluentBuilder
-    {
-        crate::operation::describe_action_targets::builders::DescribeActionTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_action_targets(&self) -> crate::operation::describe_action_targets::builders::DescribeActionTargetsFluentBuilder {
+        crate::operation::describe_action_targets::builders::DescribeActionTargetsFluentBuilder::new(self.handle.clone())
     }
 }

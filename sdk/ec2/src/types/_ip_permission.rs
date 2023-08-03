@@ -67,9 +67,7 @@ impl IpPermission {
 
 /// A builder for [`IpPermission`](crate::types::IpPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
@@ -77,8 +75,7 @@ pub struct IpPermissionBuilder {
     pub(crate) ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
     pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) user_id_group_pairs:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
+    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
 }
 impl IpPermissionBuilder {
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
@@ -124,10 +121,7 @@ impl IpPermissionBuilder {
         self
     }
     /// <p>The IPv4 ranges.</p>
-    pub fn set_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
-    ) -> Self {
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>) -> Self {
         self.ip_ranges = input;
         self
     }
@@ -147,17 +141,12 @@ impl IpPermissionBuilder {
         self
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn set_ipv6_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
-    ) -> Self {
+    pub fn set_ipv6_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>) -> Self {
         self.ipv6_ranges = input;
         self
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn get_ipv6_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>> {
+    pub fn get_ipv6_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>> {
         &self.ipv6_ranges
     }
     /// Appends an item to `prefix_list_ids`.
@@ -172,17 +161,12 @@ impl IpPermissionBuilder {
         self
     }
     /// <p>The prefix list IDs.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,
-    ) -> Self {
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>) -> Self {
         self.prefix_list_ids = input;
         self
     }
     /// <p>The prefix list IDs.</p>
-    pub fn get_prefix_list_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>> {
         &self.prefix_list_ids
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
@@ -211,17 +195,12 @@ impl IpPermissionBuilder {
         self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn set_user_id_group_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
-    ) -> Self {
+    pub fn set_user_id_group_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>) -> Self {
         self.user_id_group_pairs = input;
         self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn get_user_id_group_pairs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
+    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
         &self.user_id_group_pairs
     }
     /// Consumes the builder and constructs a [`IpPermission`](crate::types::IpPermission).

@@ -2,8 +2,7 @@
 pub fn ser_create_job_headers(
     input: &crate::operation::create_job::CreateJobInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_create_job_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -25,8 +21,7 @@ pub fn ser_create_job_headers(
 
 pub fn ser_create_job_op_input(
     input: &crate::operation::create_job::CreateJobInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -44,98 +39,79 @@ pub fn de_create_job_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_job::CreateJobOutput,
-    crate::operation::create_job::CreateJobError,
-> {
+) -> std::result::Result<crate::operation::create_job::CreateJobOutput, crate::operation::create_job::CreateJobError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::create_job::CreateJobError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::create_job::CreateJobError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::operation::create_job::CreateJobError::BadRequestException({
+        "BadRequestException" => crate::operation::create_job::CreateJobError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_xml_err(_response_body, output).map_err(crate::operation::create_job::CreateJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IdempotencyException" => {
-            crate::operation::create_job::CreateJobError::IdempotencyException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "IdempotencyException" => crate::operation::create_job::CreateJobError::IdempotencyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::IdempotencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_idempotency_exception::de_idempotency_exception_xml_err(_response_body, output).map_err(crate::operation::create_job::CreateJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServiceException" => {
-            crate::operation::create_job::CreateJobError::InternalServiceException({
+                let mut output = crate::types::error::builders::IdempotencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_idempotency_exception::de_idempotency_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceException" => crate::operation::create_job::CreateJobError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output).map_err(crate::operation::create_job::CreateJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::operation::create_job::CreateJobError::TooManyRequestsException({
+                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::create_job::CreateJobError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_xml_err(_response_body, output).map_err(crate::operation::create_job::CreateJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_job::CreateJobError::generic(generic),
     })
 }
@@ -145,18 +121,13 @@ pub fn de_create_job_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_job::CreateJobOutput,
-    crate::operation::create_job::CreateJobError,
-> {
+) -> std::result::Result<crate::operation::create_job::CreateJobOutput, crate::operation::create_job::CreateJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_job::builders::CreateJobOutputBuilder::default();
         output = crate::protocol_serde::shape_create_job::de_create_job(_response_body, output)
             .map_err(crate::operation::create_job::CreateJobError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -165,10 +136,7 @@ pub fn de_create_job_http_response_with_props(
 pub fn de_create_job(
     inp: &[u8],
     mut builder: crate::operation::create_job::builders::CreateJobOutputBuilder,
-) -> Result<
-    crate::operation::create_job::builders::CreateJobOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_job::builders::CreateJobOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -176,11 +144,10 @@ pub fn de_create_job(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("CreateJobResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected CreateJobResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected CreateJobResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

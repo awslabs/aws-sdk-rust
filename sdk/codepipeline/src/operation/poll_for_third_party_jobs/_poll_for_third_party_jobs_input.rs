@@ -23,18 +23,14 @@ impl PollForThirdPartyJobsInput {
 }
 impl PollForThirdPartyJobsInput {
     /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder {
         crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsInputBuilder {
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) max_batch_size: ::std::option::Option<i32>,
@@ -46,10 +42,7 @@ impl PollForThirdPartyJobsInputBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
+    pub fn set_action_type_id(mut self, input: ::std::option::Option<crate::types::ActionTypeId>) -> Self {
         self.action_type_id = input;
         self
     }
@@ -74,15 +67,11 @@ impl PollForThirdPartyJobsInputBuilder {
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput {
-                action_type_id: self.action_type_id,
-                max_batch_size: self.max_batch_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput {
+            action_type_id: self.action_type_id,
+            max_batch_size: self.max_batch_size,
+        })
     }
 }

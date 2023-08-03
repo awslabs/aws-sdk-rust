@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`api_mapping_key(Option<String>)`](crate::operation::create_api_mapping::CreateApiMappingOutput::api_mapping_key): <p>The API mapping key.</p>
     ///   - [`stage(Option<String>)`](crate::operation::create_api_mapping::CreateApiMappingOutput::stage): <p>The API stage.</p>
     /// - On failure, responds with [`SdkError<CreateApiMappingError>`](crate::operation::create_api_mapping::CreateApiMappingError)
-    pub fn create_api_mapping(
-        &self,
-    ) -> crate::operation::create_api_mapping::builders::CreateApiMappingFluentBuilder {
-        crate::operation::create_api_mapping::builders::CreateApiMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_api_mapping(&self) -> crate::operation::create_api_mapping::builders::CreateApiMappingFluentBuilder {
+        crate::operation::create_api_mapping::builders::CreateApiMappingFluentBuilder::new(self.handle.clone())
     }
 }

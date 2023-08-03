@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyCacheSubnetGroupOutput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput) with field(s):
     ///   - [`cache_subnet_group(Option<CacheSubnetGroup>)`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput::cache_subnet_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>   <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<ModifyCacheSubnetGroupError>`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupError)
-    pub fn modify_cache_subnet_group(
-        &self,
-    ) -> crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupFluentBuilder
-    {
+    pub fn modify_cache_subnet_group(&self) -> crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupFluentBuilder {
         crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

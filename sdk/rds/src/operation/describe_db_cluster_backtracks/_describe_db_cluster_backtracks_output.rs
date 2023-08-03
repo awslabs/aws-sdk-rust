@@ -9,8 +9,7 @@ pub struct DescribeDbClusterBacktracksOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of backtracks for the user.</p>
     #[doc(hidden)]
-    pub db_cluster_backtracks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
+    pub db_cluster_backtracks: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterBacktracksOutput {
@@ -19,9 +18,7 @@ impl DescribeDbClusterBacktracksOutput {
         self.marker.as_deref()
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn db_cluster_backtracks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbClusterBacktrack]> {
+    pub fn db_cluster_backtracks(&self) -> ::std::option::Option<&[crate::types::DbClusterBacktrack]> {
         self.db_cluster_backtracks.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbClusterBacktracksOutput {
 }
 impl DescribeDbClusterBacktracksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder {
         crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterBacktracksOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_backtracks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
+    pub(crate) db_cluster_backtracks: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterBacktracksOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeDbClusterBacktracksOutputBuilder {
         self
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn set_db_cluster_backtracks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
-    ) -> Self {
+    pub fn set_db_cluster_backtracks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>) -> Self {
         self.db_cluster_backtracks = input;
         self
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn get_db_cluster_backtracks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>> {
+    pub fn get_db_cluster_backtracks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>> {
         &self.db_cluster_backtracks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeDbClusterBacktracksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
+    pub fn build(self) -> crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput {
             marker: self.marker,
             db_cluster_backtracks: self.db_cluster_backtracks,

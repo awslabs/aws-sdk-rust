@@ -26,7 +26,7 @@ impl GetServiceRoleForAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceRoleForAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder,
+    inner: crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder,
 }
 impl GetServiceRoleForAccountFluentBuilder {
     /// Creates a new `GetServiceRoleForAccount`.
@@ -37,7 +37,7 @@ impl GetServiceRoleForAccountFluentBuilder {
         }
     }
     /// Access the GetServiceRoleForAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetServiceRoleForAccountFluentBuilder {
             crate::operation::get_service_role_for_account::GetServiceRoleForAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_role_for_account::GetServiceRoleForAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_role_for_account::GetServiceRoleForAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetServiceRoleForAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetServiceRoleForAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_role_for_account::GetServiceRoleForAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_role_for_account::GetServiceRoleForAccountError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetServiceRoleForAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_role_for_account::GetServiceRoleForAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_role_for_account::GetServiceRoleForAccountError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetServiceRoleForAccountFluentBuilder {
             crate::operation::get_service_role_for_account::GetServiceRoleForAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_role_for_account::GetServiceRoleForAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_role_for_account::GetServiceRoleForAccountError>,
     > {
         self.customize_middleware().await
     }

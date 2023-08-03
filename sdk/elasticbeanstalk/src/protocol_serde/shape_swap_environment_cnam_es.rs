@@ -9,12 +9,8 @@ pub fn de_swap_environment_cnam_es_http_error(
     crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::generic(generic))
@@ -32,9 +28,7 @@ pub fn de_swap_environment_cnam_es_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

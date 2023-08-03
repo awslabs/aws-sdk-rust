@@ -51,9 +51,7 @@ impl HsmConfiguration {
 
 /// A builder for [`HsmConfiguration`](crate::types::HsmConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HsmConfigurationBuilder {
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -63,25 +61,17 @@ pub struct HsmConfigurationBuilder {
 }
 impl HsmConfigurationBuilder {
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = input;
         self
     }
     /// <p>The name of the Amazon Redshift HSM configuration.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_configuration_identifier
     }
     /// <p>A text description of the HSM configuration.</p>
@@ -99,18 +89,12 @@ impl HsmConfigurationBuilder {
         &self.description
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn hsm_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-    pub fn set_hsm_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_ip_address = input;
         self
     }
@@ -119,18 +103,12 @@ impl HsmConfigurationBuilder {
         &self.hsm_ip_address
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn hsm_partition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_partition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_partition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
-    pub fn set_hsm_partition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_partition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_partition_name = input;
         self
     }
@@ -150,10 +128,7 @@ impl HsmConfigurationBuilder {
         self
     }
     /// <p>The list of tags for the HSM configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

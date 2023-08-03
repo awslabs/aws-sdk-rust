@@ -23,9 +23,7 @@ impl ScheduledJobRollout {
 
 /// A builder for [`ScheduledJobRollout`](crate::types::ScheduledJobRollout).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledJobRolloutBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ScheduledJobRolloutBuilder {
     }
     /// Consumes the builder and constructs a [`ScheduledJobRollout`](crate::types::ScheduledJobRollout).
     pub fn build(self) -> crate::types::ScheduledJobRollout {
-        crate::types::ScheduledJobRollout {
-            start_time: self.start_time,
-        }
+        crate::types::ScheduledJobRollout { start_time: self.start_time }
     }
 }

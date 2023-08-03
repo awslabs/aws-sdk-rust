@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListStudioMembersOutput {
 }
 impl ListStudioMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioMembersOutput`](crate::operation::list_studio_members::ListStudioMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_studio_members::builders::ListStudioMembersOutputBuilder {
+    pub fn builder() -> crate::operation::list_studio_members::builders::ListStudioMembersOutputBuilder {
         crate::operation::list_studio_members::builders::ListStudioMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioMembersOutput`](crate::operation::list_studio_members::ListStudioMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioMembersOutputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::StudioMembership>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListStudioMembersOutputBuilder {
         self
     }
     /// <p>A list of admin members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioMembership>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioMembership>>) -> Self {
         self.members = input;
         self
     }
     /// <p>A list of admin members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioMembership>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioMembership>> {
         &self.members
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisablePolicyTypeOutput`](crate::operation::disable_policy_type::DisablePolicyTypeOutput) with field(s):
     ///   - [`root(Option<Root>)`](crate::operation::disable_policy_type::DisablePolicyTypeOutput::root): <p>A structure that shows the root with the updated list of enabled policy types.</p>
     /// - On failure, responds with [`SdkError<DisablePolicyTypeError>`](crate::operation::disable_policy_type::DisablePolicyTypeError)
-    pub fn disable_policy_type(
-        &self,
-    ) -> crate::operation::disable_policy_type::builders::DisablePolicyTypeFluentBuilder {
-        crate::operation::disable_policy_type::builders::DisablePolicyTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_policy_type(&self) -> crate::operation::disable_policy_type::builders::DisablePolicyTypeFluentBuilder {
+        crate::operation::disable_policy_type::builders::DisablePolicyTypeFluentBuilder::new(self.handle.clone())
     }
 }

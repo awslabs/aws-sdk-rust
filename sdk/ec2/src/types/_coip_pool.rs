@@ -51,9 +51,7 @@ impl CoipPool {
 
 /// A builder for [`CoipPool`](crate::types::CoipPool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoipPoolBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -88,10 +86,7 @@ impl CoipPoolBuilder {
         self
     }
     /// <p>The address ranges of the address pool.</p>
-    pub fn set_pool_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_cidrs = input;
         self
     }
@@ -100,25 +95,17 @@ impl CoipPoolBuilder {
         &self.pool_cidrs
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// Appends an item to `tags`.
@@ -133,10 +120,7 @@ impl CoipPoolBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

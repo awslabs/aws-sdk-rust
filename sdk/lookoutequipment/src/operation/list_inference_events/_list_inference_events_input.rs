@@ -43,18 +43,14 @@ impl ListInferenceEventsInput {
 }
 impl ListInferenceEventsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceEventsInput`](crate::operation::list_inference_events::ListInferenceEventsInput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_events::builders::ListInferenceEventsInputBuilder {
-        crate::operation::list_inference_events::builders::ListInferenceEventsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_inference_events::builders::ListInferenceEventsInputBuilder {
+        crate::operation::list_inference_events::builders::ListInferenceEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceEventsInput`](crate::operation::list_inference_events::ListInferenceEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,18 +88,12 @@ impl ListInferenceEventsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the inference scheduler for the inference events listed. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler for the inference events listed. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -117,10 +107,7 @@ impl ListInferenceEventsInputBuilder {
         self
     }
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
-    pub fn set_interval_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_interval_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.interval_start_time = input;
         self
     }
@@ -134,10 +121,7 @@ impl ListInferenceEventsInputBuilder {
         self
     }
     /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
-    pub fn set_interval_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_interval_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.interval_end_time = input;
         self
     }
@@ -148,18 +132,14 @@ impl ListInferenceEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListInferenceEventsInput`](crate::operation::list_inference_events::ListInferenceEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inference_events::ListInferenceEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_inference_events::ListInferenceEventsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                inference_scheduler_name: self.inference_scheduler_name,
-                interval_start_time: self.interval_start_time,
-                interval_end_time: self.interval_end_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_inference_events::ListInferenceEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_inference_events::ListInferenceEventsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            inference_scheduler_name: self.inference_scheduler_name,
+            interval_start_time: self.interval_start_time,
+            interval_end_time: self.interval_end_time,
+        })
     }
 }

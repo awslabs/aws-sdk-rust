@@ -25,17 +25,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationOutput {
 }
 impl DescribeOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
         crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOutputBuilder {
     pub(crate) organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
@@ -51,10 +48,7 @@ impl DescribeOrganizationOutputBuilder {
     /// <p>A structure that contains information about the organization.</p> <important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
-    pub fn set_organization(
-        mut self,
-        input: ::std::option::Option<crate::types::Organization>,
-    ) -> Self {
+    pub fn set_organization(mut self, input: ::std::option::Option<crate::types::Organization>) -> Self {
         self.organization = input;
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTokenBalancesOutput {
 }
 impl ListTokenBalancesOutput {
     /// Creates a new builder-style object to manufacture [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder {
+    pub fn builder() -> crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder {
         crate::operation::list_token_balances::builders::ListTokenBalancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTokenBalancesOutputBuilder {
     pub(crate) token_balances: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListTokenBalancesOutputBuilder {
         self
     }
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub fn set_token_balances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>,
-    ) -> Self {
+    pub fn set_token_balances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>) -> Self {
         self.token_balances = input;
         self
     }
     /// <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
-    pub fn get_token_balances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>> {
+    pub fn get_token_balances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>> {
         &self.token_balances
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

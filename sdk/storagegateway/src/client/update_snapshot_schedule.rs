@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSnapshotScheduleOutput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput) with field(s):
     ///   - [`volume_arn(Option<String>)`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     /// - On failure, responds with [`SdkError<UpdateSnapshotScheduleError>`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleError)
-    pub fn update_snapshot_schedule(
-        &self,
-    ) -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleFluentBuilder
-    {
+    pub fn update_snapshot_schedule(&self) -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleFluentBuilder {
         crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleFluentBuilder::new(self.handle.clone())
     }
 }

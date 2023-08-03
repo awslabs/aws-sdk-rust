@@ -15,33 +15,27 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn builder() -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder
+    {
         crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -50,12 +44,16 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+            },
         )
     }
 }

@@ -26,7 +26,7 @@ impl DescribeResourcePoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResourcePoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder,
+    inner: crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder,
 }
 impl DescribeResourcePoliciesFluentBuilder {
     /// Creates a new `DescribeResourcePolicies`.
@@ -37,10 +37,7 @@ impl DescribeResourcePoliciesFluentBuilder {
         }
     }
     /// Access the DescribeResourcePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeResourcePoliciesFluentBuilder {
             crate::operation::describe_resource_policies::DescribeResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_policies::DescribeResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_policies::DescribeResourcePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeResourcePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_policies::DescribeResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_policies::DescribeResourcePoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_policies::DescribeResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_policies::DescribeResourcePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeResourcePoliciesFluentBuilder {
             crate::operation::describe_resource_policies::DescribeResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_policies::DescribeResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_policies::DescribeResourcePoliciesError>,
     > {
         self.customize_middleware().await
     }

@@ -26,7 +26,7 @@ impl ListAnnotationImportJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsInputBuilder,
+    inner: crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsInputBuilder,
 }
 impl ListAnnotationImportJobsFluentBuilder {
     /// Creates a new `ListAnnotationImportJobs`.
@@ -37,7 +37,7 @@ impl ListAnnotationImportJobsFluentBuilder {
         }
     }
     /// Access the ListAnnotationImportJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAnnotationImportJobsFluentBuilder {
             crate::operation::list_annotation_import_jobs::ListAnnotationImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAnnotationImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAnnotationImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAnnotationImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListAnnotationImportJobsFluentBuilder {
             crate::operation::list_annotation_import_jobs::ListAnnotationImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_annotation_import_jobs::paginator::ListAnnotationImportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_annotation_import_jobs::paginator::ListAnnotationImportJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_annotation_import_jobs::paginator::ListAnnotationImportJobsPaginator {
         crate::operation::list_annotation_import_jobs::paginator::ListAnnotationImportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
@@ -153,10 +139,7 @@ impl ListAnnotationImportJobsFluentBuilder {
         self
     }
     /// <p>IDs of annotation import jobs to retrieve.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }
@@ -184,17 +167,12 @@ impl ListAnnotationImportJobsFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAnnotationImportJobsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAnnotationImportJobsFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAnnotationImportJobsFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAnnotationImportJobsFilter> {
         self.inner.get_filter()
     }
 }

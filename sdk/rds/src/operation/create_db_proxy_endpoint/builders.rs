@@ -37,10 +37,7 @@ impl CreateDBProxyEndpointFluentBuilder {
         }
     }
     /// Access the CreateDBProxyEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateDBProxyEndpointFluentBuilder {
             crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateDBProxyEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateDBProxyEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateDBProxyEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateDBProxyEndpointFluentBuilder {
             crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateDBProxyEndpointFluentBuilder {
         self.inner.get_db_proxy_name()
     }
     /// <p>The name of the DB proxy endpoint to create.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_endpoint_name(input.into());
         self
     }
     /// <p>The name of the DB proxy endpoint to create.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_endpoint_name(input);
         self
     }
@@ -168,25 +142,17 @@ impl CreateDBProxyEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_subnet_ids`](Self::set_vpc_subnet_ids).
     ///
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn vpc_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_subnet_ids(input.into());
         self
     }
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn set_vpc_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_subnet_ids(input);
         self
     }
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn get_vpc_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_subnet_ids()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
@@ -194,25 +160,17 @@ impl CreateDBProxyEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
@@ -221,17 +179,12 @@ impl CreateDBProxyEndpointFluentBuilder {
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
-    pub fn set_target_role(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
-    ) -> Self {
+    pub fn set_target_role(mut self, input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>) -> Self {
         self.inner = self.inner.set_target_role(input);
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
-    pub fn get_target_role(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
+    pub fn get_target_role(&self) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
         self.inner.get_target_role()
     }
     /// Appends an item to `Tags`.
@@ -244,10 +197,7 @@ impl CreateDBProxyEndpointFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

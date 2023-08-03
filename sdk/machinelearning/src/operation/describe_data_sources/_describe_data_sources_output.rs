@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSourcesOutput {
 }
 impl DescribeDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder {
-        crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder {
+        crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSourcesOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl DescribeDataSourcesOutputBuilder {
         self
     }
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.results = input;
         self
     }

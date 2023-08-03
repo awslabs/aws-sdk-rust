@@ -32,9 +32,7 @@ impl Websocket {
 
 /// A builder for [`Websocket`](crate::types::Websocket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebsocketBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) connection_expiry: ::std::option::Option<::std::string::String>,
@@ -56,19 +54,13 @@ impl WebsocketBuilder {
     }
     /// <p>The URL expiration timestamp in ISO date format.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn connection_expiry(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_expiry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL expiration timestamp in ISO date format.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_connection_expiry(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_expiry = input;
         self
     }

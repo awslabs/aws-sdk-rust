@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartRxNormInferenceJobOutput`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput::job_id): <p>The identifier of the job.</p>
     /// - On failure, responds with [`SdkError<StartRxNormInferenceJobError>`](crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError)
-    pub fn start_rx_norm_inference_job(
-        &self,
-    ) -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobFluentBuilder
-    {
+    pub fn start_rx_norm_inference_job(&self) -> crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobFluentBuilder {
         crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

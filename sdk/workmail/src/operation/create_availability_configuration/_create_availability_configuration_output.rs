@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateAvailabilityConfigurationOutput
 }
 impl CreateAvailabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAvailabilityConfigurationOutput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationOutputBuilder {
         crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAvailabilityConfigurationOutput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAvailabilityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl CreateAvailabilityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAvailabilityConfigurationOutput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput {
         crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput {
             _request_id: self._request_id,
         }

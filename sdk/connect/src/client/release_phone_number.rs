@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// - On success, responds with [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput)
     /// - On failure, responds with [`SdkError<ReleasePhoneNumberError>`](crate::operation::release_phone_number::ReleasePhoneNumberError)
-    pub fn release_phone_number(
-        &self,
-    ) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder {
-        crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn release_phone_number(&self) -> crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder {
+        crate::operation::release_phone_number::builders::ReleasePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

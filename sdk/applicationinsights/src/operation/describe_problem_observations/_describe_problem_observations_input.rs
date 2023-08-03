@@ -15,16 +15,14 @@ impl DescribeProblemObservationsInput {
 }
 impl DescribeProblemObservationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProblemObservationsInput`](crate::operation::describe_problem_observations::DescribeProblemObservationsInput).
-    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder {
         crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProblemObservationsInput`](crate::operation::describe_problem_observations::DescribeProblemObservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProblemObservationsInputBuilder {
     pub(crate) problem_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeProblemObservationsInputBuilder {
         crate::operation::describe_problem_observations::DescribeProblemObservationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_problem_observations::DescribeProblemObservationsInput {
-                problem_id: self.problem_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_problem_observations::DescribeProblemObservationsInput { problem_id: self.problem_id })
     }
 }

@@ -27,9 +27,7 @@ impl CreateBackendStorageInput {
         self.backend_environment_name.as_deref()
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn resource_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateBackendStorageResourceConfig> {
+    pub fn resource_config(&self) -> ::std::option::Option<&crate::types::CreateBackendStorageResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of the storage resource.</p>
@@ -39,22 +37,18 @@ impl CreateBackendStorageInput {
 }
 impl CreateBackendStorageInput {
     /// Creates a new builder-style object to manufacture [`CreateBackendStorageInput`](crate::operation::create_backend_storage::CreateBackendStorageInput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder {
+    pub fn builder() -> crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder {
         crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackendStorageInput`](crate::operation::create_backend_storage::CreateBackendStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendStorageInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_config:
-        ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>,
+    pub(crate) resource_config: ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackendStorageInputBuilder {
@@ -73,18 +67,12 @@ impl CreateBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -93,40 +81,26 @@ impl CreateBackendStorageInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn resource_config(
-        mut self,
-        input: crate::types::CreateBackendStorageResourceConfig,
-    ) -> Self {
+    pub fn resource_config(mut self, input: crate::types::CreateBackendStorageResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::CreateBackendStorageResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
     /// <p>The resource configuration for creating backend storage.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
         &self.resource_config
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the storage resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -137,17 +111,13 @@ impl CreateBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackendStorageInput`](crate::operation::create_backend_storage::CreateBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_backend_storage::CreateBackendStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_backend_storage::CreateBackendStorageInput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                resource_config: self.resource_config,
-                resource_name: self.resource_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_backend_storage::CreateBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_backend_storage::CreateBackendStorageInput {
+            app_id: self.app_id,
+            backend_environment_name: self.backend_environment_name,
+            resource_config: self.resource_config,
+            resource_name: self.resource_name,
+        })
     }
 }

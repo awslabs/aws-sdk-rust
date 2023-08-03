@@ -10,10 +10,7 @@ impl GetWorkflowStepInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step::GetWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step::GetWorkflowStepError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step::GetWorkflowStepError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_workflow_step();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetWorkflowStepFluentBuilder {
         }
     }
     /// Access the GetWorkflowStep as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_workflow_step::builders::GetWorkflowStepInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_workflow_step::builders::GetWorkflowStepInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetWorkflowStepFluentBuilder {
             crate::operation::get_workflow_step::GetWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step::GetWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step::GetWorkflowStepError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetWorkflowStepFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step::GetWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step::GetWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step::GetWorkflowStepError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetWorkflowStepFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_step::GetWorkflowStepOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step::GetWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step::GetWorkflowStepError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetWorkflowStepFluentBuilder {
             crate::operation::get_workflow_step::GetWorkflowStep,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step::GetWorkflowStepError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step::GetWorkflowStepError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetWorkflowStepFluentBuilder {
         self.inner.get_workflow_id()
     }
     /// <p>desThe ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_group_id(input.into());
         self
     }
     /// <p>desThe ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
     }

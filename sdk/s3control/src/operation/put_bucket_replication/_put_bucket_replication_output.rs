@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutBucketReplicationOutput {
 }
 impl PutBucketReplicationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketReplicationOutput`](crate::operation::put_bucket_replication::PutBucketReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_bucket_replication::builders::PutBucketReplicationOutputBuilder {
+    pub fn builder() -> crate::operation::put_bucket_replication::builders::PutBucketReplicationOutputBuilder {
         crate::operation::put_bucket_replication::builders::PutBucketReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketReplicationOutput`](crate::operation::put_bucket_replication::PutBucketReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketReplicationOutputBuilder {
     _request_id: Option<String>,
 }

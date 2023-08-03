@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`execution_context(impl ::std::convert::Into<String>)`](crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedFluentBuilder::execution_context) / [`set_execution_context(Option<String>)`](crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedFluentBuilder::set_execution_context): <p>User defined context to add to workflow execution.</p>
     /// - On success, responds with [`RespondDecisionTaskCompletedOutput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput)
     /// - On failure, responds with [`SdkError<RespondDecisionTaskCompletedError>`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError)
-    pub fn respond_decision_task_completed(&self) -> crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedFluentBuilder{
+    pub fn respond_decision_task_completed(
+        &self,
+    ) -> crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedFluentBuilder {
         crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedFluentBuilder::new(self.handle.clone())
     }
 }

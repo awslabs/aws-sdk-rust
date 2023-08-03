@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipam_pools(Option<Vec<IpamPool>>)`](crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput::ipam_pools): <p>Information about the IPAM pools.</p>
     /// - On failure, responds with [`SdkError<DescribeIpamPoolsError>`](crate::operation::describe_ipam_pools::DescribeIpamPoolsError)
-    pub fn describe_ipam_pools(
-        &self,
-    ) -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder {
-        crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ipam_pools(&self) -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder {
+        crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsFluentBuilder::new(self.handle.clone())
     }
 }

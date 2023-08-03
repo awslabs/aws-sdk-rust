@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWirelessDeviceImportTaskOutput 
 }
 impl UpdateWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceImportTaskOutput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskOutputBuilder {
         crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWirelessDeviceImportTaskOutput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWirelessDeviceImportTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWirelessDeviceImportTaskOutput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput
-    {
+    pub fn build(self) -> crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput {
         crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput {
             _request_id: self._request_id,
         }

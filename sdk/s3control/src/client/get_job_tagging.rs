@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobTaggingOutput`](crate::operation::get_job_tagging::GetJobTaggingOutput) with field(s):
     ///   - [`tags(Option<Vec<S3Tag>>)`](crate::operation::get_job_tagging::GetJobTaggingOutput::tags): <p>The set of tags associated with the S3 Batch Operations job.</p>
     /// - On failure, responds with [`SdkError<GetJobTaggingError>`](crate::operation::get_job_tagging::GetJobTaggingError)
-    pub fn get_job_tagging(
-        &self,
-    ) -> crate::operation::get_job_tagging::builders::GetJobTaggingFluentBuilder {
-        crate::operation::get_job_tagging::builders::GetJobTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_tagging(&self) -> crate::operation::get_job_tagging::builders::GetJobTaggingFluentBuilder {
+        crate::operation::get_job_tagging::builders::GetJobTaggingFluentBuilder::new(self.handle.clone())
     }
 }

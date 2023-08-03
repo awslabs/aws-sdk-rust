@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteGeofenceCollectionOutput {
 }
 impl DeleteGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGeofenceCollectionOutput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionOutputBuilder {
         crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGeofenceCollectionOutput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGeofenceCollectionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteGeofenceCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteGeofenceCollectionOutput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput {
+    pub fn build(self) -> crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput {
         crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput {
             _request_id: self._request_id,
         }

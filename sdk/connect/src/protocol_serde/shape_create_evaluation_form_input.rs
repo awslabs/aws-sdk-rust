@@ -15,10 +15,7 @@ pub fn ser_create_evaluation_form_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

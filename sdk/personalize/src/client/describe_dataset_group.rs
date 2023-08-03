@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput) with field(s):
     ///   - [`dataset_group(Option<DatasetGroup>)`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput::dataset_group): <p>A listing of the dataset group's properties.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetGroupError>`](crate::operation::describe_dataset_group::DescribeDatasetGroupError)
-    pub fn describe_dataset_group(
-        &self,
-    ) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder {
-        crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset_group(&self) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder {
+        crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::new(self.handle.clone())
     }
 }

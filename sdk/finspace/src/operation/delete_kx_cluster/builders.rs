@@ -10,10 +10,7 @@ impl DeleteKxClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_cluster::DeleteKxClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_kx_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteKxClusterFluentBuilder {
         }
     }
     /// Access the DeleteKxCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_kx_cluster::builders::DeleteKxClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_kx_cluster::builders::DeleteKxClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteKxClusterFluentBuilder {
             crate::operation::delete_kx_cluster::DeleteKxCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteKxClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteKxClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_cluster::DeleteKxClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteKxClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_kx_cluster::DeleteKxClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteKxClusterFluentBuilder {
             crate::operation::delete_kx_cluster::DeleteKxCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

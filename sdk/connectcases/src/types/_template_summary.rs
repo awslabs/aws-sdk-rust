@@ -44,9 +44,7 @@ impl TemplateSummary {
 
 /// A builder for [`TemplateSummary`](crate::types::TemplateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateSummaryBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl TemplateSummaryBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
         self.status = input;
         self
     }

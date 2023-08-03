@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCoverageStatisticsOutput {
 }
 impl GetCoverageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder {
         crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsOutputBuilder {
     pub(crate) coverage_statistics: ::std::option::Option<crate::types::CoverageStatistics>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetCoverageStatisticsOutputBuilder {
         self
     }
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
-    pub fn set_coverage_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageStatistics>,
-    ) -> Self {
+    pub fn set_coverage_statistics(mut self, input: ::std::option::Option<crate::types::CoverageStatistics>) -> Self {
         self.coverage_statistics = input;
         self
     }
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
-    pub fn get_coverage_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageStatistics> {
+    pub fn get_coverage_statistics(&self) -> &::std::option::Option<crate::types::CoverageStatistics> {
         &self.coverage_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

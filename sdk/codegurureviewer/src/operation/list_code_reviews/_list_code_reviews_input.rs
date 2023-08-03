@@ -71,9 +71,7 @@ impl ListCodeReviewsInput {
 
 /// A builder for [`ListCodeReviewsInput`](crate::operation::list_code_reviews::ListCodeReviewsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeReviewsInputBuilder {
     pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
@@ -95,17 +93,12 @@ impl ListCodeReviewsInputBuilder {
         self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn set_provider_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    ) -> Self {
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
         self.provider_types = input;
         self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn get_provider_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         &self.provider_types
     }
     /// Appends an item to `states`.
@@ -134,10 +127,7 @@ impl ListCodeReviewsInputBuilder {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
         self.states = input;
         self
     }
@@ -157,27 +147,19 @@ impl ListCodeReviewsInputBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
         v.push(input.into());
         self.repository_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repository_names
     }
     /// <p>The type of code reviews to list in the response.</p>
@@ -225,10 +207,7 @@ impl ListCodeReviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListCodeReviewsInput`](crate::operation::list_code_reviews::ListCodeReviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_code_reviews::ListCodeReviewsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_code_reviews::ListCodeReviewsInput {
             provider_types: self.provider_types,
             states: self.states,

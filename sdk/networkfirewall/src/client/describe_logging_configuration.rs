@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`firewall_arn(Option<String>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::firewall_arn): <p>The Amazon Resource Name (ARN) of the firewall.</p>
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError)
-    pub fn describe_logging_configuration(&self) -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder{
+    pub fn describe_logging_configuration(
+        &self,
+    ) -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,10 +41,7 @@ impl DeleteResolverEndpointFluentBuilder {
         }
     }
     /// Access the DeleteResolverEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DeleteResolverEndpointFluentBuilder {
             crate::operation::delete_resolver_endpoint::DeleteResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DeleteResolverEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DeleteResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DeleteResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl DeleteResolverEndpointFluentBuilder {
             crate::operation::delete_resolver_endpoint::DeleteResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }

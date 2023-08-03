@@ -44,9 +44,7 @@ impl AccountAggregation {
 
 /// A builder for [`AccountAggregation`](crate::types::AccountAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAggregationBuilder {
     pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
@@ -60,10 +58,7 @@ impl AccountAggregationBuilder {
         self
     }
     /// <p>The type of finding.</p>
-    pub fn set_finding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFindingType>,
-    ) -> Self {
+    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
         self.finding_type = input;
         self
     }
@@ -77,17 +72,12 @@ impl AccountAggregationBuilder {
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
         &self.resource_type
     }
     /// <p>The sort order (ascending or descending).</p>
@@ -110,10 +100,7 @@ impl AccountAggregationBuilder {
         self
     }
     /// <p>The value to sort by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AccountSortBy>) -> Self {
         self.sort_by = input;
         self
     }

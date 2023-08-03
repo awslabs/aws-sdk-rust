@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`relational_database_snapshots(Option<Vec<RelationalDatabaseSnapshot>>)`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput::relational_database_snapshots): <p>An object describing the result of your get relational database snapshots request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseSnapshotsError>`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError)
-    pub fn get_relational_database_snapshots(&self) -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsFluentBuilder{
+    pub fn get_relational_database_snapshots(
+        &self,
+    ) -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsFluentBuilder {
         crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

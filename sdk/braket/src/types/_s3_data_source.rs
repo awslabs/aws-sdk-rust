@@ -23,9 +23,7 @@ impl S3DataSource {
 
 /// A builder for [`S3DataSource`](crate::types::S3DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataSourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl S3DataSourceBuilder {
     }
     /// Consumes the builder and constructs a [`S3DataSource`](crate::types::S3DataSource).
     pub fn build(self) -> crate::types::S3DataSource {
-        crate::types::S3DataSource {
-            s3_uri: self.s3_uri,
-        }
+        crate::types::S3DataSource { s3_uri: self.s3_uri }
     }
 }

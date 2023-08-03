@@ -2,8 +2,7 @@
 /// Paginator for [`GetCellReadinessSummary`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummary)
 pub struct GetCellReadinessSummaryPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder,
+    builder: crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,7 +31,7 @@ impl GetCellReadinessSummaryPaginator {
     ///
     /// This paginator automatically flattens results using `readiness_checks`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(self) -> crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginatorItems{
+    pub fn items(self) -> crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginatorItems {
         crate::operation::get_cell_readiness_summary::paginator::GetCellReadinessSummaryPaginatorItems(self)
     }
 
@@ -56,9 +55,7 @@ impl GetCellReadinessSummaryPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -68,10 +65,7 @@ impl GetCellReadinessSummaryPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -96,15 +90,9 @@ impl GetCellReadinessSummaryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_get_cell_readiness_summary_output_next_token(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_get_cell_readiness_summary_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -142,9 +130,7 @@ impl GetCellReadinessSummaryPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::ReadinessCheckSummary,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

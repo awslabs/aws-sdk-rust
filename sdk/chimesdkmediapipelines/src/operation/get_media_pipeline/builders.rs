@@ -10,10 +10,7 @@ impl GetMediaPipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_media_pipeline::GetMediaPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_pipeline::GetMediaPipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_pipeline::GetMediaPipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_media_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMediaPipelineFluentBuilder {
         }
     }
     /// Access the GetMediaPipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_media_pipeline::builders::GetMediaPipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMediaPipelineFluentBuilder {
             crate::operation::get_media_pipeline::GetMediaPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_pipeline::GetMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_pipeline::GetMediaPipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMediaPipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMediaPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_pipeline::GetMediaPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_pipeline::GetMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_pipeline::GetMediaPipelineError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMediaPipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_pipeline::GetMediaPipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_pipeline::GetMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_pipeline::GetMediaPipelineError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetMediaPipelineFluentBuilder {
             crate::operation::get_media_pipeline::GetMediaPipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media_pipeline::GetMediaPipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media_pipeline::GetMediaPipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_pipeline_id(input.into());
         self
     }
     /// <p>The ID of the pipeline that you want to get.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
     }

@@ -119,9 +119,7 @@ impl Namespace {
 
 /// A builder for [`Namespace`](crate::types::Namespace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamespaceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -284,10 +282,7 @@ impl NamespaceBuilder {
         self
     }
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::NamespaceProperties>) -> Self {
         self.properties = input;
         self
     }
@@ -301,10 +296,7 @@ impl NamespaceBuilder {
         self
     }
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -313,18 +305,12 @@ impl NamespaceBuilder {
         &self.create_date
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }

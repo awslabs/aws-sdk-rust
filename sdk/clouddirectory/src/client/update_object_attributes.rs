@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput::object_identifier): <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     /// - On failure, responds with [`SdkError<UpdateObjectAttributesError>`](crate::operation::update_object_attributes::UpdateObjectAttributesError)
-    pub fn update_object_attributes(
-        &self,
-    ) -> crate::operation::update_object_attributes::builders::UpdateObjectAttributesFluentBuilder
-    {
+    pub fn update_object_attributes(&self) -> crate::operation::update_object_attributes::builders::UpdateObjectAttributesFluentBuilder {
         crate::operation::update_object_attributes::builders::UpdateObjectAttributesFluentBuilder::new(self.handle.clone())
     }
 }

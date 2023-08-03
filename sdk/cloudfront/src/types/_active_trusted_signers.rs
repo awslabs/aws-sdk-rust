@@ -37,9 +37,7 @@ impl ActiveTrustedSigners {
 
 /// A builder for [`ActiveTrustedSigners`](crate::types::ActiveTrustedSigners).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveTrustedSignersBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -86,10 +84,7 @@ impl ActiveTrustedSignersBuilder {
         self
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Signer>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Signer>>) -> Self {
         self.items = input;
         self
     }

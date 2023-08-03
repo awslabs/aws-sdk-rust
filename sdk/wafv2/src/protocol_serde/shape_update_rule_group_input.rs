@@ -30,10 +30,7 @@ pub fn ser_update_rule_group_input(
     if let Some(var_9) = &input.visibility_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_visibility_config::ser_visibility_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_visibility_config::ser_visibility_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.lock_token {
@@ -46,10 +43,7 @@ pub fn ser_update_rule_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(
-                    &mut object_16,
-                    value_15,
-                )?;
+                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_16, value_15)?;
                 object_16.finish();
             }
         }

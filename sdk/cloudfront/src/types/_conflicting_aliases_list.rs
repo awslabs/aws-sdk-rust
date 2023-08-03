@@ -44,9 +44,7 @@ impl ConflictingAliasesList {
 
 /// A builder for [`ConflictingAliasesList`](crate::types::ConflictingAliasesList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictingAliasesListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl ConflictingAliasesListBuilder {
         self
     }
     /// <p>Contains the conflicting aliases in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingAlias>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingAlias>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains the conflicting aliases in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingAlias>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingAlias>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ConflictingAliasesList`](crate::types::ConflictingAliasesList).

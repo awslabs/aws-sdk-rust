@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`contact_id(impl ::std::convert::Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::operation::delete_contact::DeleteContactOutput)
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::operation::delete_contact::DeleteContactError)
-    pub fn delete_contact(
-        &self,
-    ) -> crate::operation::delete_contact::builders::DeleteContactFluentBuilder {
-        crate::operation::delete_contact::builders::DeleteContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_contact(&self) -> crate::operation::delete_contact::builders::DeleteContactFluentBuilder {
+        crate::operation::delete_contact::builders::DeleteContactFluentBuilder::new(self.handle.clone())
     }
 }

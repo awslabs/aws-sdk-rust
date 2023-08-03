@@ -10,10 +10,7 @@ impl ListServiceQuotasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_service_quotas::ListServiceQuotasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_quotas::ListServiceQuotasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_quotas::ListServiceQuotasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_service_quotas();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListServiceQuotasFluentBuilder {
         }
     }
     /// Access the ListServiceQuotas as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_service_quotas::builders::ListServiceQuotasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListServiceQuotasFluentBuilder {
             crate::operation::list_service_quotas::ListServiceQuotas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_quotas::ListServiceQuotasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_quotas::ListServiceQuotasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListServiceQuotasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListServiceQuotasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_quotas::ListServiceQuotasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_quotas::ListServiceQuotasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_quotas::ListServiceQuotasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListServiceQuotasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_quotas::ListServiceQuotasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_quotas::ListServiceQuotasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_quotas::ListServiceQuotasError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListServiceQuotasFluentBuilder {
             crate::operation::list_service_quotas::ListServiceQuotas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_quotas::ListServiceQuotasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_quotas::ListServiceQuotasError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator {
-        crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator {
+        crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator::new(self.handle, self.inner)
     }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

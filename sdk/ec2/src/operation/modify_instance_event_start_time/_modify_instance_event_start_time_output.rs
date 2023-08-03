@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceEventStartTimeOutput {
 }
 impl ModifyInstanceEventStartTimeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceEventStartTimeOutput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput).
-    pub fn builder() -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeOutputBuilder {
         crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceEventStartTimeOutput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceEventStartTimeOutputBuilder {
     pub(crate) event: ::std::option::Option<crate::types::InstanceStatusEvent>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ModifyInstanceEventStartTimeOutputBuilder {
         self
     }
     /// <p>Information about the event.</p>
-    pub fn set_event(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatusEvent>,
-    ) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::InstanceStatusEvent>) -> Self {
         self.event = input;
         self
     }
@@ -63,10 +58,7 @@ impl ModifyInstanceEventStartTimeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyInstanceEventStartTimeOutput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput
-    {
+    pub fn build(self) -> crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput {
         crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput {
             event: self.event,
             _request_id: self._request_id,

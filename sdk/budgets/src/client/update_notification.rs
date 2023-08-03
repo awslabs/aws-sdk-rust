@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`new_notification(Notification)`](crate::operation::update_notification::builders::UpdateNotificationFluentBuilder::new_notification) / [`set_new_notification(Option<Notification>)`](crate::operation::update_notification::builders::UpdateNotificationFluentBuilder::set_new_notification): <p>The updated notification to be associated with a budget.</p>
     /// - On success, responds with [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput)
     /// - On failure, responds with [`SdkError<UpdateNotificationError>`](crate::operation::update_notification::UpdateNotificationError)
-    pub fn update_notification(
-        &self,
-    ) -> crate::operation::update_notification::builders::UpdateNotificationFluentBuilder {
-        crate::operation::update_notification::builders::UpdateNotificationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_notification(&self) -> crate::operation::update_notification::builders::UpdateNotificationFluentBuilder {
+        crate::operation::update_notification::builders::UpdateNotificationFluentBuilder::new(self.handle.clone())
     }
 }

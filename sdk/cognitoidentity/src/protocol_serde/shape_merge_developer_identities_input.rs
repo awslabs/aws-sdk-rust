@@ -7,9 +7,7 @@ pub fn ser_merge_developer_identities_input(
         object.key("SourceUserIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.destination_user_identifier {
-        object
-            .key("DestinationUserIdentifier")
-            .string(var_2.as_str());
+        object.key("DestinationUserIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.developer_provider_name {
         object.key("DeveloperProviderName").string(var_3.as_str());

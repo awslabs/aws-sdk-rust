@@ -67,9 +67,7 @@ impl MetricCollectionType {
 
 /// A builder for [`MetricCollectionType`](crate::types::MetricCollectionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricCollectionTypeBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
 }
@@ -156,8 +154,6 @@ impl MetricCollectionTypeBuilder {
     }
     /// Consumes the builder and constructs a [`MetricCollectionType`](crate::types::MetricCollectionType).
     pub fn build(self) -> crate::types::MetricCollectionType {
-        crate::types::MetricCollectionType {
-            metric: self.metric,
-        }
+        crate::types::MetricCollectionType { metric: self.metric }
     }
 }

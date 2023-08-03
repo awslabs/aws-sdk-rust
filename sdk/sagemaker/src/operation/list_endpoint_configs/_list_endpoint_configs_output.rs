@@ -5,8 +5,7 @@
 pub struct ListEndpointConfigsOutput {
     /// <p>An array of endpoint configurations.</p>
     #[doc(hidden)]
-    pub endpoint_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
+    pub endpoint_configs: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEndpointConfigsOutput {
 }
 impl ListEndpointConfigsOutput {
     /// <p>An array of endpoint configurations.</p>
-    pub fn endpoint_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EndpointConfigSummary]> {
+    pub fn endpoint_configs(&self) -> ::std::option::Option<&[crate::types::EndpointConfigSummary]> {
         self.endpoint_configs.as_deref()
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEndpointConfigsOutput {
 }
 impl ListEndpointConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointConfigsOutput`](crate::operation::list_endpoint_configs::ListEndpointConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsOutputBuilder {
-        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_endpoint_configs::builders::ListEndpointConfigsOutputBuilder {
+        crate::operation::list_endpoint_configs::builders::ListEndpointConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEndpointConfigsOutput`](crate::operation::list_endpoint_configs::ListEndpointConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointConfigsOutputBuilder {
-    pub(crate) endpoint_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
+    pub(crate) endpoint_configs: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListEndpointConfigsOutputBuilder {
         self
     }
     /// <p>An array of endpoint configurations.</p>
-    pub fn set_endpoint_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
-    ) -> Self {
+    pub fn set_endpoint_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>) -> Self {
         self.endpoint_configs = input;
         self
     }
     /// <p>An array of endpoint configurations.</p>
-    pub fn get_endpoint_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>> {
+    pub fn get_endpoint_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>> {
         &self.endpoint_configs
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of endpoint configurations, use it in the subsequent request </p>

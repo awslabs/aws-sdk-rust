@@ -131,8 +131,7 @@ pub struct HealthCheckConfig {
     /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub insufficient_data_health_status:
-        ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
+    pub insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     #[doc(hidden)]
@@ -281,9 +280,7 @@ impl HealthCheckConfig {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn insufficient_data_health_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InsufficientDataHealthStatus> {
+    pub fn insufficient_data_health_status(&self) -> ::std::option::Option<&crate::types::InsufficientDataHealthStatus> {
         self.insufficient_data_health_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
@@ -301,9 +298,7 @@ impl HealthCheckConfig {
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckConfigBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -321,8 +316,7 @@ pub struct HealthCheckConfigBuilder {
     pub(crate) enable_sni: ::std::option::Option<bool>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
     pub(crate) alarm_identifier: ::std::option::Option<crate::types::AlarmIdentifier>,
-    pub(crate) insufficient_data_health_status:
-        ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
+    pub(crate) insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl HealthCheckConfigBuilder {
@@ -465,18 +459,12 @@ impl HealthCheckConfigBuilder {
         &self.r#type
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
-    pub fn resource_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
-    pub fn set_resource_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_path = input;
         self
     }
@@ -502,10 +490,7 @@ impl HealthCheckConfigBuilder {
     /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn fully_qualified_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_domain_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -527,10 +512,7 @@ impl HealthCheckConfigBuilder {
     /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn set_fully_qualified_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_domain_name = input;
         self
     }
@@ -557,19 +539,13 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_string = input;
         self
     }
@@ -721,27 +697,19 @@ impl HealthCheckConfigBuilder {
     /// To override the contents of this collection use [`set_child_health_checks`](Self::set_child_health_checks).
     ///
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn child_health_checks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_health_checks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.child_health_checks.unwrap_or_default();
         v.push(input.into());
         self.child_health_checks = ::std::option::Option::Some(v);
         self
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn set_child_health_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.child_health_checks = input;
         self
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn get_child_health_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.child_health_checks
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
@@ -780,19 +748,14 @@ impl HealthCheckConfigBuilder {
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>) -> Self {
         self.regions = input;
         self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
-    pub fn get_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
         &self.regions
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
@@ -801,10 +764,7 @@ impl HealthCheckConfigBuilder {
         self
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
-    pub fn set_alarm_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmIdentifier>,
-    ) -> Self {
+    pub fn set_alarm_identifier(mut self, input: ::std::option::Option<crate::types::AlarmIdentifier>) -> Self {
         self.alarm_identifier = input;
         self
     }
@@ -818,10 +778,7 @@ impl HealthCheckConfigBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn insufficient_data_health_status(
-        mut self,
-        input: crate::types::InsufficientDataHealthStatus,
-    ) -> Self {
+    pub fn insufficient_data_health_status(mut self, input: crate::types::InsufficientDataHealthStatus) -> Self {
         self.insufficient_data_health_status = ::std::option::Option::Some(input);
         self
     }
@@ -831,10 +788,7 @@ impl HealthCheckConfigBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn set_insufficient_data_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
-    ) -> Self {
+    pub fn set_insufficient_data_health_status(mut self, input: ::std::option::Option<crate::types::InsufficientDataHealthStatus>) -> Self {
         self.insufficient_data_health_status = input;
         self
     }
@@ -844,26 +798,18 @@ impl HealthCheckConfigBuilder {
     /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
     /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
     /// </ul>
-    pub fn get_insufficient_data_health_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::InsufficientDataHealthStatus> {
+    pub fn get_insufficient_data_health_status(&self) -> &::std::option::Option<crate::types::InsufficientDataHealthStatus> {
         &self.insufficient_data_health_status
     }
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }

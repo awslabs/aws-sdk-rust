@@ -43,18 +43,14 @@ impl UpdateRobotApplicationInput {
 }
 impl UpdateRobotApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder {
         crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRobotApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
@@ -89,17 +85,12 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
         &self.sources
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
@@ -108,32 +99,21 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_revision_id = input;
         self
     }
@@ -147,10 +127,7 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }
@@ -161,18 +138,14 @@ impl UpdateRobotApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_robot_application::UpdateRobotApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_robot_application::UpdateRobotApplicationInput {
-                application: self.application,
-                sources: self.sources,
-                robot_software_suite: self.robot_software_suite,
-                current_revision_id: self.current_revision_id,
-                environment: self.environment,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_robot_application::UpdateRobotApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_robot_application::UpdateRobotApplicationInput {
+            application: self.application,
+            sources: self.sources,
+            robot_software_suite: self.robot_software_suite,
+            current_revision_id: self.current_revision_id,
+            environment: self.environment,
+        })
     }
 }

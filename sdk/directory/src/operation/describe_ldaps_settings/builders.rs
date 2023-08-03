@@ -37,10 +37,7 @@ impl DescribeLDAPSSettingsFluentBuilder {
         }
     }
     /// Access the DescribeLDAPSSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeLDAPSSettingsFluentBuilder {
             crate::operation::describe_ldaps_settings::DescribeLDAPSSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeLDAPSSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeLDAPSSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeLDAPSSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeLDAPSSettingsFluentBuilder {
             crate::operation::describe_ldaps_settings::DescribeLDAPSSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ldaps_settings::paginator::DescribeLdapsSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ldaps_settings::paginator::DescribeLdapsSettingsPaginator {
-        crate::operation::describe_ldaps_settings::paginator::DescribeLdapsSettingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ldaps_settings::paginator::DescribeLdapsSettingsPaginator {
+        crate::operation::describe_ldaps_settings::paginator::DescribeLdapsSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the directory.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

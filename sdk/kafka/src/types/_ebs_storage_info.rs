@@ -13,9 +13,7 @@ pub struct EbsStorageInfo {
 }
 impl EbsStorageInfo {
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
@@ -32,9 +30,7 @@ impl EbsStorageInfo {
 
 /// A builder for [`EbsStorageInfo`](crate::types::EbsStorageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsStorageInfoBuilder {
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) volume_size: ::std::option::Option<i32>,
@@ -46,17 +42,12 @@ impl EbsStorageInfoBuilder {
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>

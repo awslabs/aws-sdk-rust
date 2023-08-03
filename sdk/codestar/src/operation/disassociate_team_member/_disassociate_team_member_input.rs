@@ -22,18 +22,14 @@ impl DisassociateTeamMemberInput {
 }
 impl DisassociateTeamMemberInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder {
         crate::operation::disassociate_team_member::builders::DisassociateTeamMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTeamMemberInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DisassociateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_team_member::DisassociateTeamMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_team_member::DisassociateTeamMemberInput {
-                project_id: self.project_id,
-                user_arn: self.user_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_team_member::DisassociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_team_member::DisassociateTeamMemberInput {
+            project_id: self.project_id,
+            user_arn: self.user_arn,
+        })
     }
 }

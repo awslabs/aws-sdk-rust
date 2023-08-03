@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPermissionGroupOutput`](crate::operation::get_permission_group::GetPermissionGroupOutput) with field(s):
     ///   - [`permission_group(Option<PermissionGroup>)`](crate::operation::get_permission_group::GetPermissionGroupOutput::permission_group): <p>The structure for a permission group.</p>
     /// - On failure, responds with [`SdkError<GetPermissionGroupError>`](crate::operation::get_permission_group::GetPermissionGroupError)
-    pub fn get_permission_group(
-        &self,
-    ) -> crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder {
-        crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_permission_group(&self) -> crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder {
+        crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::new(self.handle.clone())
     }
 }

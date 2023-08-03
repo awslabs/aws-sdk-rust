@@ -47,9 +47,7 @@ impl AttachmentsSource {
 
 /// A builder for [`AttachmentsSource`](crate::types::AttachmentsSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentsSourceBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AttachmentsSourceKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,10 +60,7 @@ impl AttachmentsSourceBuilder {
         self
     }
     /// <p>The key of a key-value pair that identifies the location of an attachment to a document.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentsSourceKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::AttachmentsSourceKey>) -> Self {
         self.key = input;
         self
     }
@@ -95,10 +90,7 @@ impl AttachmentsSourceBuilder {
     /// <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> </p> </li>
     /// <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code> </p> </li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

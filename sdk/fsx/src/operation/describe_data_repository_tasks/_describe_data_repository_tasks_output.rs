@@ -5,8 +5,7 @@
 pub struct DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
     #[doc(hidden)]
-    pub data_repository_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
+    pub data_repository_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeDataRepositoryTasksOutput {
 }
 impl DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
-    pub fn data_repository_tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataRepositoryTask]> {
+    pub fn data_repository_tasks(&self) -> ::std::option::Option<&[crate::types::DataRepositoryTask]> {
         self.data_repository_tasks.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDataRepositoryTasksOutput {
 }
 impl DescribeDataRepositoryTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksOutput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput).
-    pub fn builder() -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksOutputBuilder {
         crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataRepositoryTasksOutput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksOutputBuilder {
-    pub(crate) data_repository_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
+    pub(crate) data_repository_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeDataRepositoryTasksOutputBuilder {
         self
     }
     /// <p>The collection of data repository task descriptions returned.</p>
-    pub fn set_data_repository_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>,
-    ) -> Self {
+    pub fn set_data_repository_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>>) -> Self {
         self.data_repository_tasks = input;
         self
     }
     /// <p>The collection of data repository task descriptions returned.</p>
-    pub fn get_data_repository_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>> {
+    pub fn get_data_repository_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTask>> {
         &self.data_repository_tasks
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -97,9 +86,7 @@ impl DescribeDataRepositoryTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryTasksOutput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput {
+    pub fn build(self) -> crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput {
         crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput {
             data_repository_tasks: self.data_repository_tasks,
             next_token: self.next_token,

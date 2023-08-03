@@ -15,18 +15,13 @@ pub struct Algorithm {
     pub algorithm_image: ::std::option::Option<crate::types::AlgorithmImage>,
     /// <p>Specifies the default hyperparameters.</p>
     #[doc(hidden)]
-    pub default_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
     #[doc(hidden)]
-    pub default_hyper_parameter_ranges:
-        ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
+    pub default_hyper_parameter_ranges: ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     #[doc(hidden)]
-    pub default_resource_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_resource_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The training input mode.</p>
     #[doc(hidden)]
     pub training_input_mode: ::std::option::Option<::std::string::String>,
@@ -54,25 +49,15 @@ impl Algorithm {
         self.algorithm_image.as_ref()
     }
     /// <p>Specifies the default hyperparameters.</p>
-    pub fn default_hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_hyper_parameters.as_ref()
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    pub fn default_hyper_parameter_ranges(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultHyperParameterRanges> {
+    pub fn default_hyper_parameter_ranges(&self) -> ::std::option::Option<&crate::types::DefaultHyperParameterRanges> {
         self.default_hyper_parameter_ranges.as_ref()
     }
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-    pub fn default_resource_config(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_resource_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_resource_config.as_ref()
     }
     /// <p>The training input mode.</p>
@@ -101,21 +86,14 @@ impl Algorithm {
 
 /// A builder for [`Algorithm`](crate::types::Algorithm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlgorithmBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_image: ::std::option::Option<crate::types::AlgorithmImage>,
-    pub(crate) default_hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) default_hyper_parameter_ranges:
-        ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
-    pub(crate) default_resource_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) default_hyper_parameter_ranges: ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
+    pub(crate) default_resource_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) training_input_mode: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -137,18 +115,12 @@ impl AlgorithmBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn set_algorithm_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_arn = input;
         self
     }
@@ -162,10 +134,7 @@ impl AlgorithmBuilder {
         self
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn set_algorithm_image(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmImage>,
-    ) -> Self {
+    pub fn set_algorithm_image(mut self, input: ::std::option::Option<crate::types::AlgorithmImage>) -> Self {
         self.algorithm_image = input;
         self
     }
@@ -191,41 +160,27 @@ impl AlgorithmBuilder {
     /// <p>Specifies the default hyperparameters.</p>
     pub fn set_default_hyper_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_hyper_parameters = input;
         self
     }
     /// <p>Specifies the default hyperparameters.</p>
-    pub fn get_default_hyper_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_hyper_parameters
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    pub fn default_hyper_parameter_ranges(
-        mut self,
-        input: crate::types::DefaultHyperParameterRanges,
-    ) -> Self {
+    pub fn default_hyper_parameter_ranges(mut self, input: crate::types::DefaultHyperParameterRanges) -> Self {
         self.default_hyper_parameter_ranges = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    pub fn set_default_hyper_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
-    ) -> Self {
+    pub fn set_default_hyper_parameter_ranges(mut self, input: ::std::option::Option<crate::types::DefaultHyperParameterRanges>) -> Self {
         self.default_hyper_parameter_ranges = input;
         self
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
-    pub fn get_default_hyper_parameter_ranges(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultHyperParameterRanges> {
+    pub fn get_default_hyper_parameter_ranges(&self) -> &::std::option::Option<crate::types::DefaultHyperParameterRanges> {
         &self.default_hyper_parameter_ranges
     }
     /// Adds a key-value pair to `default_resource_config`.
@@ -246,34 +201,22 @@ impl AlgorithmBuilder {
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     pub fn set_default_resource_config(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_resource_config = input;
         self
     }
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
-    pub fn get_default_resource_config(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_resource_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_resource_config
     }
     /// <p>The training input mode.</p>
-    pub fn training_input_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_input_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_input_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The training input mode.</p>
-    pub fn set_training_input_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_input_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_input_mode = input;
         self
     }
@@ -301,10 +244,7 @@ impl AlgorithmBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -318,17 +258,12 @@ impl AlgorithmBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`Algorithm`](crate::types::Algorithm).

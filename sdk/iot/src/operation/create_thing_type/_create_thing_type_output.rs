@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for CreateThingTypeOutput {
 }
 impl CreateThingTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateThingTypeOutput`](crate::operation::create_thing_type::CreateThingTypeOutput).
-    pub fn builder() -> crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder {
         crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateThingTypeOutput`](crate::operation::create_thing_type::CreateThingTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateThingTypeOutputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct CreateThingTypeOutputBuilder {
 }
 impl CreateThingTypeOutputBuilder {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -75,18 +66,12 @@ impl CreateThingTypeOutputBuilder {
         &self.thing_type_name
     }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
-    pub fn thing_type_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
-    pub fn set_thing_type_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_arn = input;
         self
     }
@@ -95,18 +80,12 @@ impl CreateThingTypeOutputBuilder {
         &self.thing_type_arn
     }
     /// <p>The thing type ID.</p>
-    pub fn thing_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing type ID.</p>
-    pub fn set_thing_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_id = input;
         self
     }

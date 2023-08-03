@@ -27,7 +27,7 @@ impl ListDistributionsByKeyGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder,
+    inner: crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder,
 }
 impl ListDistributionsByKeyGroupFluentBuilder {
     /// Creates a new `ListDistributionsByKeyGroup`.
@@ -38,7 +38,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
         }
     }
     /// Access the ListDistributionsByKeyGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
             crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ListDistributionsByKeyGroupFluentBuilder {
             crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError>,
     > {
         self.customize_middleware().await
     }

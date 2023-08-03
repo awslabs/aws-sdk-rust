@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ChangeCidrCollectionOutput {
 }
 impl ChangeCidrCollectionOutput {
     /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder {
         crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

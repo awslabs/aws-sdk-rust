@@ -10,10 +10,7 @@ impl ReEncryptDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::re_encrypt_data::ReEncryptDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::re_encrypt_data::ReEncryptDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::re_encrypt_data::ReEncryptDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.re_encrypt_data();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl ReEncryptDataFluentBuilder {
         }
     }
     /// Access the ReEncryptData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::re_encrypt_data::builders::ReEncryptDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::re_encrypt_data::builders::ReEncryptDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,10 +67,7 @@ impl ReEncryptDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -126,18 +118,12 @@ impl ReEncryptDataFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    pub fn incoming_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incoming_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    pub fn set_incoming_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incoming_key_identifier(input);
         self
     }
@@ -146,18 +132,12 @@ impl ReEncryptDataFluentBuilder {
         self.inner.get_incoming_key_identifier()
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outgoing_key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn set_outgoing_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outgoing_key_identifier(input);
         self
     }
@@ -180,47 +160,31 @@ impl ReEncryptDataFluentBuilder {
         self.inner.get_cipher_text()
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn incoming_encryption_attributes(
-        mut self,
-        input: crate::types::ReEncryptionAttributes,
-    ) -> Self {
+    pub fn incoming_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.inner = self.inner.incoming_encryption_attributes(input);
         self
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn set_incoming_encryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ReEncryptionAttributes>,
-    ) -> Self {
+    pub fn set_incoming_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
         self.inner = self.inner.set_incoming_encryption_attributes(input);
         self
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn get_incoming_encryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
+    pub fn get_incoming_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         self.inner.get_incoming_encryption_attributes()
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_encryption_attributes(
-        mut self,
-        input: crate::types::ReEncryptionAttributes,
-    ) -> Self {
+    pub fn outgoing_encryption_attributes(mut self, input: crate::types::ReEncryptionAttributes) -> Self {
         self.inner = self.inner.outgoing_encryption_attributes(input);
         self
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn set_outgoing_encryption_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ReEncryptionAttributes>,
-    ) -> Self {
+    pub fn set_outgoing_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
         self.inner = self.inner.set_outgoing_encryption_attributes(input);
         self
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn get_outgoing_encryption_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
+    pub fn get_outgoing_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         self.inner.get_outgoing_encryption_attributes()
     }
 }

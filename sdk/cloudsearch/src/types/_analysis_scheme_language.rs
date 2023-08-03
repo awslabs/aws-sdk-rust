@@ -71,13 +71,7 @@
 /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
@@ -191,9 +185,7 @@ impl ::std::convert::From<&str> for AnalysisSchemeLanguage {
             "tr" => AnalysisSchemeLanguage::Tr,
             "zh-Hans" => AnalysisSchemeLanguage::ZhHans,
             "zh-Hant" => AnalysisSchemeLanguage::ZhHant,
-            other => AnalysisSchemeLanguage::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnalysisSchemeLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -249,9 +241,8 @@ impl AnalysisSchemeLanguage {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",
-            "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt",
-            "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant",
+            "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga", "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko",
+            "lv", "mul", "nl", "no", "pt", "ro", "ru", "sv", "th", "tr", "zh-Hans", "zh-Hant",
         ]
     }
 }

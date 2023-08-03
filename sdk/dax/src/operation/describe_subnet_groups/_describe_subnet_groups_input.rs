@@ -31,17 +31,14 @@ impl DescribeSubnetGroupsInput {
 }
 impl DescribeSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
         crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsInputBuilder {
     pub(crate) subnet_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,27 +50,19 @@ impl DescribeSubnetGroupsInputBuilder {
     /// To override the contents of this collection use [`set_subnet_group_names`](Self::set_subnet_group_names).
     ///
     /// <p>The name of the subnet group.</p>
-    pub fn subnet_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_group_names.unwrap_or_default();
         v.push(input.into());
         self.subnet_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the subnet group.</p>
-    pub fn set_subnet_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_group_names = input;
         self
     }
     /// <p>The name of the subnet group.</p>
-    pub fn get_subnet_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_group_names
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -110,16 +99,12 @@ impl DescribeSubnetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
-                subnet_group_names: self.subnet_group_names,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
+            subnet_group_names: self.subnet_group_names,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

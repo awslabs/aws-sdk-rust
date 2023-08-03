@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetProposalOutput`](crate::operation::get_proposal::GetProposalOutput) with field(s):
     ///   - [`proposal(Option<Proposal>)`](crate::operation::get_proposal::GetProposalOutput::proposal): <p>Information about a proposal.</p>
     /// - On failure, responds with [`SdkError<GetProposalError>`](crate::operation::get_proposal::GetProposalError)
-    pub fn get_proposal(
-        &self,
-    ) -> crate::operation::get_proposal::builders::GetProposalFluentBuilder {
+    pub fn get_proposal(&self) -> crate::operation::get_proposal::builders::GetProposalFluentBuilder {
         crate::operation::get_proposal::builders::GetProposalFluentBuilder::new(self.handle.clone())
     }
 }

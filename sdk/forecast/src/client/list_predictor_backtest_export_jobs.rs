@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`predictor_backtest_export_jobs(Option<Vec<PredictorBacktestExportJobSummary>>)`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput::predictor_backtest_export_jobs): <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput::next_token): <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPredictorBacktestExportJobsError>`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError)
-    pub fn list_predictor_backtest_export_jobs(&self) -> crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsFluentBuilder{
+    pub fn list_predictor_backtest_export_jobs(
+        &self,
+    ) -> crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsFluentBuilder {
         crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

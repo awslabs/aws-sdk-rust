@@ -37,9 +37,7 @@ impl ProvisioningTemplateVersionSummary {
 
 /// A builder for [`ProvisioningTemplateVersionSummary`](crate::types::ProvisioningTemplateVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningTemplateVersionSummaryBuilder {
     pub(crate) version_id: ::std::option::Option<i32>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl ProvisioningTemplateVersionSummaryBuilder {
         self
     }
     /// <p>The date when the provisioning template version was created</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<ResultData>>)`](crate::operation::query_assistant::QueryAssistantOutput::results): <p>The results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_assistant::QueryAssistantOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::operation::query_assistant::QueryAssistantError)
-    pub fn query_assistant(
-        &self,
-    ) -> crate::operation::query_assistant::builders::QueryAssistantFluentBuilder {
-        crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_assistant(&self) -> crate::operation::query_assistant::builders::QueryAssistantFluentBuilder {
+        crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::new(self.handle.clone())
     }
 }

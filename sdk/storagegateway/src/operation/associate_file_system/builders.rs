@@ -37,9 +37,7 @@ impl AssociateFileSystemFluentBuilder {
         }
     }
     /// Access the AssociateFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AssociateFileSystemFluentBuilder {
             crate::operation::associate_file_system::AssociateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system::AssociateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system::AssociateFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AssociateFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AssociateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_file_system::AssociateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system::AssociateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system::AssociateFileSystemError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AssociateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_file_system::AssociateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system::AssociateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system::AssociateFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AssociateFileSystemFluentBuilder {
             crate::operation::associate_file_system::AssociateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system::AssociateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system::AssociateFileSystemError>,
     > {
         self.customize_middleware().await
     }
@@ -202,10 +189,7 @@ impl AssociateFileSystemFluentBuilder {
         self
     }
     /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -214,18 +198,12 @@ impl AssociateFileSystemFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }
@@ -239,10 +217,7 @@ impl AssociateFileSystemFluentBuilder {
         self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
     }
@@ -253,29 +228,21 @@ impl AssociateFileSystemFluentBuilder {
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn endpoint_network_configuration(
-        mut self,
-        input: crate::types::EndpointNetworkConfiguration,
-    ) -> Self {
+    pub fn endpoint_network_configuration(mut self, input: crate::types::EndpointNetworkConfiguration) -> Self {
         self.inner = self.inner.endpoint_network_configuration(input);
         self
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn set_endpoint_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_network_configuration(mut self, input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>) -> Self {
         self.inner = self.inner.set_endpoint_network_configuration(input);
         self
     }
     /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    pub fn get_endpoint_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
+    pub fn get_endpoint_network_configuration(&self) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {
         self.inner.get_endpoint_network_configuration()
     }
 }

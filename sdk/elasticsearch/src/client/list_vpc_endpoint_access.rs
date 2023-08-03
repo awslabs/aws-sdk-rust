@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`authorized_principal_list(Option<Vec<AuthorizedPrincipal>>)`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput::authorized_principal_list): <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     /// - On failure, responds with [`SdkError<ListVpcEndpointAccessError>`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError)
-    pub fn list_vpc_endpoint_access(
-        &self,
-    ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder
-    {
+    pub fn list_vpc_endpoint_access(&self) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder {
         crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

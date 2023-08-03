@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountCustomizationError>`](crate::operation::describe_account_customization::DescribeAccountCustomizationError)
-    pub fn describe_account_customization(&self) -> crate::operation::describe_account_customization::builders::DescribeAccountCustomizationFluentBuilder{
+    pub fn describe_account_customization(
+        &self,
+    ) -> crate::operation::describe_account_customization::builders::DescribeAccountCustomizationFluentBuilder {
         crate::operation::describe_account_customization::builders::DescribeAccountCustomizationFluentBuilder::new(self.handle.clone())
     }
 }

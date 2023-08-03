@@ -43,18 +43,14 @@ impl ListAuditSuppressionsInput {
 }
 impl ListAuditSuppressionsInput {
     /// Creates a new builder-style object to manufacture [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder {
         crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditSuppressionsInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -83,17 +79,12 @@ impl ListAuditSuppressionsInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
@@ -141,18 +132,14 @@ impl ListAuditSuppressionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audit_suppressions::ListAuditSuppressionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_audit_suppressions::ListAuditSuppressionsInput {
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-                ascending_order: self.ascending_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_audit_suppressions::ListAuditSuppressionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_audit_suppressions::ListAuditSuppressionsInput {
+            check_name: self.check_name,
+            resource_identifier: self.resource_identifier,
+            ascending_order: self.ascending_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

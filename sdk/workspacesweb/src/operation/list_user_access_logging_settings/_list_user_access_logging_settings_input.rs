@@ -22,16 +22,14 @@ impl ListUserAccessLoggingSettingsInput {
 }
 impl ListUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsInput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder {
         crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserAccessLoggingSettingsInput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserAccessLoggingSettingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,13 +70,9 @@ impl ListUserAccessLoggingSettingsInputBuilder {
         crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

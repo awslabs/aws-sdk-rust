@@ -8,8 +8,7 @@ pub struct ListSensitivityInspectionTemplatesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
     #[doc(hidden)]
-    pub sensitivity_inspection_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
+    pub sensitivity_inspection_templates: ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     _request_id: Option<String>,
 }
 impl ListSensitivityInspectionTemplatesOutput {
@@ -18,9 +17,7 @@ impl ListSensitivityInspectionTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SensitivityInspectionTemplatesEntry]> {
+    pub fn sensitivity_inspection_templates(&self) -> ::std::option::Option<&[crate::types::SensitivityInspectionTemplatesEntry]> {
         self.sensitivity_inspection_templates.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSensitivityInspectionTemplatesOut
 }
 impl ListSensitivityInspectionTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
-    pub fn builder() -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder {
         crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSensitivityInspectionTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sensitivity_inspection_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
+    pub(crate) sensitivity_inspection_templates: ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     _request_id: Option<String>,
 }
 impl ListSensitivityInspectionTemplatesOutputBuilder {
@@ -67,10 +61,7 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
     /// To override the contents of this collection use [`set_sensitivity_inspection_templates`](Self::set_sensitivity_inspection_templates).
     ///
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(
-        mut self,
-        input: crate::types::SensitivityInspectionTemplatesEntry,
-    ) -> Self {
+    pub fn sensitivity_inspection_templates(mut self, input: crate::types::SensitivityInspectionTemplatesEntry) -> Self {
         let mut v = self.sensitivity_inspection_templates.unwrap_or_default();
         v.push(input);
         self.sensitivity_inspection_templates = ::std::option::Option::Some(v);
@@ -79,18 +70,13 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
     pub fn set_sensitivity_inspection_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     ) -> Self {
         self.sensitivity_inspection_templates = input;
         self
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn get_sensitivity_inspection_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>
-    {
+    pub fn get_sensitivity_inspection_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>> {
         &self.sensitivity_inspection_templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,12 +89,10 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput{
+    pub fn build(self) -> crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput {
         crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput {
-            next_token: self.next_token
-            ,
-            sensitivity_inspection_templates: self.sensitivity_inspection_templates
-            ,
+            next_token: self.next_token,
+            sensitivity_inspection_templates: self.sensitivity_inspection_templates,
             _request_id: self._request_id,
         }
     }

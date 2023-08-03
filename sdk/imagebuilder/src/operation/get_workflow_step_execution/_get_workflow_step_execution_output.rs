@@ -94,9 +94,7 @@ impl GetWorkflowStepExecutionOutput {
         self.status.as_ref()
     }
     /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
-    pub fn rollback_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
+    pub fn rollback_status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
         self.rollback_status.as_ref()
     }
     /// <p>The output message from the specified runtime instance of the workflow step, if applicable.</p>
@@ -135,16 +133,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowStepExecutionOutput {
 }
 impl GetWorkflowStepExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepExecutionOutput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput).
-    pub fn builder() -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionOutputBuilder {
         crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepExecutionOutput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
@@ -155,8 +151,7 @@ pub struct GetWorkflowStepExecutionOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
-    pub(crate) rollback_status:
-        ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
+    pub(crate) rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::string::String>,
@@ -182,18 +177,12 @@ impl GetWorkflowStepExecutionOutputBuilder {
         &self.request_id
     }
     /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
-    pub fn step_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
-    pub fn set_step_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
@@ -202,18 +191,12 @@ impl GetWorkflowStepExecutionOutputBuilder {
         &self.step_execution_id
     }
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines this workflow step.</p>
-    pub fn workflow_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines this workflow step.</p>
-    pub fn set_workflow_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
@@ -222,18 +205,12 @@ impl GetWorkflowStepExecutionOutputBuilder {
         &self.workflow_build_version_arn
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -242,18 +219,12 @@ impl GetWorkflowStepExecutionOutputBuilder {
         &self.workflow_execution_id
     }
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -309,10 +280,7 @@ impl GetWorkflowStepExecutionOutputBuilder {
         self
     }
     /// <p>The current status for the specified runtime version of the workflow step.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -321,25 +289,17 @@ impl GetWorkflowStepExecutionOutputBuilder {
         &self.status
     }
     /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
-    pub fn rollback_status(
-        mut self,
-        input: crate::types::WorkflowStepExecutionRollbackStatus,
-    ) -> Self {
+    pub fn rollback_status(mut self, input: crate::types::WorkflowStepExecutionRollbackStatus) -> Self {
         self.rollback_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
-    pub fn set_rollback_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
-    ) -> Self {
+    pub fn set_rollback_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>) -> Self {
         self.rollback_status = input;
         self
     }
     /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
-    pub fn get_rollback_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
+    pub fn get_rollback_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
         &self.rollback_status
     }
     /// <p>The output message from the specified runtime instance of the workflow step, if applicable.</p>
@@ -450,9 +410,7 @@ impl GetWorkflowStepExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepExecutionOutput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput {
+    pub fn build(self) -> crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput {
         crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput {
             request_id: self.request_id,
             step_execution_id: self.step_execution_id,

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`total_filtered_count(i32)`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput::total_filtered_count): <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     ///   - [`resolver_query_log_configs(Option<Vec<ResolverQueryLogConfig>>)`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput::resolver_query_log_configs): <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     /// - On failure, responds with [`SdkError<ListResolverQueryLogConfigsError>`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError)
-    pub fn list_resolver_query_log_configs(&self) -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsFluentBuilder{
+    pub fn list_resolver_query_log_configs(
+        &self,
+    ) -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsFluentBuilder {
         crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsFluentBuilder::new(self.handle.clone())
     }
 }

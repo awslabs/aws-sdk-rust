@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeliveryStreamOutput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput) with field(s):
     ///   - [`delivery_stream_description(Option<DeliveryStreamDescription>)`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput::delivery_stream_description): <p>Information about the delivery stream.</p>
     /// - On failure, responds with [`SdkError<DescribeDeliveryStreamError>`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamError)
-    pub fn describe_delivery_stream(
-        &self,
-    ) -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamFluentBuilder
-    {
+    pub fn describe_delivery_stream(&self) -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamFluentBuilder {
         crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamFluentBuilder::new(self.handle.clone())
     }
 }

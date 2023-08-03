@@ -10,10 +10,7 @@ impl LeaveOrganizationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::leave_organization::LeaveOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::leave_organization::LeaveOrganizationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::leave_organization::LeaveOrganizationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.leave_organization();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl LeaveOrganizationFluentBuilder {
         }
     }
     /// Access the LeaveOrganization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl LeaveOrganizationFluentBuilder {
             crate::operation::leave_organization::LeaveOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::leave_organization::LeaveOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::leave_organization::LeaveOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl LeaveOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl LeaveOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::leave_organization::LeaveOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::leave_organization::LeaveOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::leave_organization::LeaveOrganizationError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl LeaveOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::leave_organization::LeaveOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::leave_organization::LeaveOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::leave_organization::LeaveOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +117,7 @@ impl LeaveOrganizationFluentBuilder {
             crate::operation::leave_organization::LeaveOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::leave_organization::LeaveOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::leave_organization::LeaveOrganizationError>,
     > {
         self.customize_middleware().await
     }

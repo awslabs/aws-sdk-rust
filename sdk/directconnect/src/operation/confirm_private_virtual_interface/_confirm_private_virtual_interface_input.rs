@@ -29,16 +29,14 @@ impl ConfirmPrivateVirtualInterfaceInput {
 }
 impl ConfirmPrivateVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceInput`](crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder {
         crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmPrivateVirtualInterfaceInput`](crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ConfirmPrivateVirtualInterfaceInputBuilder {
 }
 impl ConfirmPrivateVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         &self.virtual_interface_id
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_id = input;
         self
     }
@@ -86,18 +72,12 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         &self.virtual_gateway_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -112,15 +92,10 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput {
-                virtual_interface_id: self.virtual_interface_id
-                ,
-                virtual_gateway_id: self.virtual_gateway_id
-                ,
-                direct_connect_gateway_id: self.direct_connect_gateway_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput {
+            virtual_interface_id: self.virtual_interface_id,
+            virtual_gateway_id: self.virtual_gateway_id,
+            direct_connect_gateway_id: self.direct_connect_gateway_id,
+        })
     }
 }

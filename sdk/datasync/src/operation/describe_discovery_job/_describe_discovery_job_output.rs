@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeDiscoveryJobOutput {
 }
 impl DescribeDiscoveryJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDiscoveryJobOutput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobOutputBuilder {
         crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDiscoveryJobOutput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDiscoveryJobOutputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ pub struct DescribeDiscoveryJobOutputBuilder {
 }
 impl DescribeDiscoveryJobOutputBuilder {
     /// <p>The ARN of the on-premises storage system you're running the discovery job on.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the on-premises storage system you're running the discovery job on.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }
@@ -98,18 +89,12 @@ impl DescribeDiscoveryJobOutputBuilder {
         &self.storage_system_arn
     }
     /// <p>The ARN of the discovery job.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the discovery job.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }
@@ -137,10 +122,7 @@ impl DescribeDiscoveryJobOutputBuilder {
         self
     }
     /// <p>Indicates the status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DiscoveryJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -154,10 +136,7 @@ impl DescribeDiscoveryJobOutputBuilder {
         self
     }
     /// <p>The time when the discovery job started.</p>
-    pub fn set_job_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_start_time = input;
         self
     }
@@ -171,10 +150,7 @@ impl DescribeDiscoveryJobOutputBuilder {
         self
     }
     /// <p>The time when the discovery job ended.</p>
-    pub fn set_job_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_end_time = input;
         self
     }

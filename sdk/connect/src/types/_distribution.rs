@@ -30,9 +30,7 @@ impl Distribution {
 
 /// A builder for [`Distribution`](crate::types::Distribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributionBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) percentage: ::std::option::Option<i32>,

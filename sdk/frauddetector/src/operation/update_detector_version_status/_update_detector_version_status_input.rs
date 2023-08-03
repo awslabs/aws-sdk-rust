@@ -31,16 +31,14 @@ impl UpdateDetectorVersionStatusInput {
 }
 impl UpdateDetectorVersionStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
-    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder{
+    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder {
         crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ impl UpdateDetectorVersionStatusInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID. </p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -89,10 +81,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -108,12 +97,10 @@ impl UpdateDetectorVersionStatusInputBuilder {
         crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput {
+            detector_id: self.detector_id,
+            detector_version_id: self.detector_version_id,
+            status: self.status,
+        })
     }
 }

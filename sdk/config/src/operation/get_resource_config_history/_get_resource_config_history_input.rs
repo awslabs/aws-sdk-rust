@@ -58,18 +58,14 @@ impl GetResourceConfigHistoryInput {
 }
 impl GetResourceConfigHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetResourceConfigHistoryInput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder {
         crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceConfigHistoryInput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +82,7 @@ impl GetResourceConfigHistoryInputBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -117,10 +110,7 @@ impl GetResourceConfigHistoryInputBuilder {
         self
     }
     /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
-    pub fn set_later_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_later_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.later_time = input;
         self
     }
@@ -134,10 +124,7 @@ impl GetResourceConfigHistoryInputBuilder {
         self
     }
     /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
-    pub fn set_earlier_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_earlier_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.earlier_time = input;
         self
     }
@@ -151,17 +138,12 @@ impl GetResourceConfigHistoryInputBuilder {
         self
     }
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
-    pub fn set_chronological_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ChronologicalOrder>,
-    ) -> Self {
+    pub fn set_chronological_order(mut self, input: ::std::option::Option<crate::types::ChronologicalOrder>) -> Self {
         self.chronological_order = input;
         self
     }
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
-    pub fn get_chronological_order(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChronologicalOrder> {
+    pub fn get_chronological_order(&self) -> &::std::option::Option<crate::types::ChronologicalOrder> {
         &self.chronological_order
     }
     /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -199,16 +181,14 @@ impl GetResourceConfigHistoryInputBuilder {
         crate::operation::get_resource_config_history::GetResourceConfigHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_config_history::GetResourceConfigHistoryInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                later_time: self.later_time,
-                earlier_time: self.earlier_time,
-                chronological_order: self.chronological_order,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_config_history::GetResourceConfigHistoryInput {
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            later_time: self.later_time,
+            earlier_time: self.earlier_time,
+            chronological_order: self.chronological_order,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

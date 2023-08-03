@@ -58,9 +58,7 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSettingsBuilder {
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
@@ -99,18 +97,12 @@ impl AccountSettingsBuilder {
         &self.edition
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
-    pub fn default_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
-    pub fn set_default_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_namespace = input;
         self
     }
@@ -119,18 +111,12 @@ impl AccountSettingsBuilder {
         &self.default_namespace
     }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
-    pub fn notification_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
-    pub fn set_notification_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_email = input;
         self
     }
@@ -158,10 +144,7 @@ impl AccountSettingsBuilder {
         self
     }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }

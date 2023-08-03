@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisconnectParticipantOutput {
 }
 impl DisconnectParticipantOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectParticipantOutput`](crate::operation::disconnect_participant::DisconnectParticipantOutput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_participant::builders::DisconnectParticipantOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_participant::builders::DisconnectParticipantOutputBuilder {
         crate::operation::disconnect_participant::builders::DisconnectParticipantOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectParticipantOutput`](crate::operation::disconnect_participant::DisconnectParticipantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectParticipantOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,17 +22,14 @@ impl CreateGeoMatchSetInput {
 }
 impl CreateGeoMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder {
         crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGeoMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl CreateGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_geo_match_set::CreateGeoMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_geo_match_set::CreateGeoMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_geo_match_set::CreateGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_geo_match_set::CreateGeoMatchSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

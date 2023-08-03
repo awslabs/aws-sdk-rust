@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeleteAccessPolicyOutput`](crate::operation::delete_access_policy::DeleteAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessPolicyError>`](crate::operation::delete_access_policy::DeleteAccessPolicyError)
-    pub fn delete_access_policy(
-        &self,
-    ) -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder {
-        crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_access_policy(&self) -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder {
+        crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

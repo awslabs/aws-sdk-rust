@@ -32,9 +32,7 @@ impl StopBuildOutput {
 
 /// A builder for [`StopBuildOutput`](crate::operation::stop_build::StopBuildOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBuildOutputBuilder {
     pub(crate) build_value: ::std::option::Option<crate::types::Build>,
     _request_id: Option<String>,

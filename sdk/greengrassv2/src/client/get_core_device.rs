@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`last_status_update_timestamp(Option<DateTime>)`](crate::operation::get_core_device::GetCoreDeviceOutput::last_status_update_timestamp): <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_core_device::GetCoreDeviceOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetCoreDeviceError>`](crate::operation::get_core_device::GetCoreDeviceError)
-    pub fn get_core_device(
-        &self,
-    ) -> crate::operation::get_core_device::builders::GetCoreDeviceFluentBuilder {
-        crate::operation::get_core_device::builders::GetCoreDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_core_device(&self) -> crate::operation::get_core_device::builders::GetCoreDeviceFluentBuilder {
+        crate::operation::get_core_device::builders::GetCoreDeviceFluentBuilder::new(self.handle.clone())
     }
 }

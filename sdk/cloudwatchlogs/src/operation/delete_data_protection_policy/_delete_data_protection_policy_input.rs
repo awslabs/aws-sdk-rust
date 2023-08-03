@@ -15,33 +15,25 @@ impl DeleteDataProtectionPolicyInput {
 }
 impl DeleteDataProtectionPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataProtectionPolicyInput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput).
-    pub fn builder() -> crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder{
+    pub fn builder() -> crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder {
         crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataProtectionPolicyInput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataProtectionPolicyInputBuilder {
     pub(crate) log_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataProtectionPolicyInputBuilder {
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
-    pub fn log_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_identifier = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteDataProtectionPolicyInputBuilder {
         crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput {
-                log_group_identifier: self.log_group_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput {
+            log_group_identifier: self.log_group_identifier,
+        })
     }
 }

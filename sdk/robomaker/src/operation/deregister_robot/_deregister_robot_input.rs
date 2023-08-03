@@ -32,9 +32,7 @@ impl DeregisterRobotInput {
 
 /// A builder for [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterRobotInputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) robot: ::std::option::Option<::std::string::String>,
@@ -71,10 +69,7 @@ impl DeregisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_robot::DeregisterRobotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::deregister_robot::DeregisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_robot::DeregisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

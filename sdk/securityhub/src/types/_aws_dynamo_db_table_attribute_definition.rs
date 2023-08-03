@@ -30,27 +30,19 @@ impl AwsDynamoDbTableAttributeDefinition {
 
 /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::types::AwsDynamoDbTableAttributeDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableAttributeDefinitionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableAttributeDefinitionBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl AwsDynamoDbTableAttributeDefinitionBuilder {
         &self.attribute_name
     }
     /// <p>The type of the attribute.</p>
-    pub fn attribute_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the attribute.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_type = input;
         self
     }

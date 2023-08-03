@@ -22,18 +22,14 @@ impl DeleteScheduleGroupInput {
 }
 impl DeleteScheduleGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupInput`](crate::operation::delete_schedule_group::DeleteScheduleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupInputBuilder {
-        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupInputBuilder {
+        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScheduleGroupInput`](crate::operation::delete_schedule_group::DeleteScheduleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DeleteScheduleGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduleGroupInput`](crate::operation::delete_schedule_group::DeleteScheduleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_schedule_group::DeleteScheduleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_schedule_group::DeleteScheduleGroupInput {
-                name: self.name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_schedule_group::DeleteScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_schedule_group::DeleteScheduleGroupInput {
+            name: self.name,
+            client_token: self.client_token,
+        })
     }
 }

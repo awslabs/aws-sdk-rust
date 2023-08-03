@@ -37,9 +37,7 @@ impl ListEnvironmentVpcsFluentBuilder {
         }
     }
     /// Access the ListEnvironmentVpcs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListEnvironmentVpcsFluentBuilder {
             crate::operation::list_environment_vpcs::ListEnvironmentVpcs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_vpcs::ListEnvironmentVpcsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListEnvironmentVpcsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListEnvironmentVpcsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_vpcs::ListEnvironmentVpcsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListEnvironmentVpcsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_vpcs::ListEnvironmentVpcsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListEnvironmentVpcsFluentBuilder {
             crate::operation::list_environment_vpcs::ListEnvironmentVpcs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_vpcs::ListEnvironmentVpcsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator {
-        crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator {
+        crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p>The ID of the environment. </p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }

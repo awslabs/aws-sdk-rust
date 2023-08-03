@@ -15,34 +15,25 @@ impl DescribeNamespaceInput {
 }
 impl DescribeNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
-    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder {
         crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNamespaceInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNamespaceInputBuilder {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_namespace::DescribeNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_namespace::DescribeNamespaceInput {
-                namespace_name: self.namespace_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_namespace::DescribeNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_namespace::DescribeNamespaceInput {
+            namespace_name: self.namespace_name,
+        })
     }
 }

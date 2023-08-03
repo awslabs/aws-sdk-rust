@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLoggerDefinitionOutput {
 }
 impl DeleteLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggerDefinitionOutput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionOutputBuilder {
         crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoggerDefinitionOutput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoggerDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

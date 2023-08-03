@@ -29,21 +29,18 @@ impl DisassociateEntitiesFromExperienceInput {
 }
 impl DisassociateEntitiesFromExperienceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateEntitiesFromExperienceInput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput).
-    pub fn builder() -> crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceInputBuilder {
         crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateEntitiesFromExperienceInput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
+    pub(crate) entity_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
 }
 impl DisassociateEntitiesFromExperienceInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -86,30 +83,27 @@ impl DisassociateEntitiesFromExperienceInputBuilder {
         self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn set_entity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
-    ) -> Self {
+    pub fn set_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>) -> Self {
         self.entity_list = input;
         self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn get_entity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
+    pub fn get_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>> {
         &self.entity_list
     }
     /// Consumes the builder and constructs a [`DisassociateEntitiesFromExperienceInput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput {
-                id: self.id
-                ,
-                index_id: self.index_id
-                ,
-                entity_list: self.entity_list
-                ,
-            }
+                id: self.id,
+                index_id: self.index_id,
+                entity_list: self.entity_list,
+            },
         )
     }
 }

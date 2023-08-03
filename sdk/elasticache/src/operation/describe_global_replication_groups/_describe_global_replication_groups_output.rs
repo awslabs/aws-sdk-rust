@@ -8,8 +8,7 @@ pub struct DescribeGlobalReplicationGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
     #[doc(hidden)]
-    pub global_replication_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>,
+    pub global_replication_groups: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeGlobalReplicationGroupsOutput {
@@ -18,9 +17,7 @@ impl DescribeGlobalReplicationGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn global_replication_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GlobalReplicationGroup]> {
+    pub fn global_replication_groups(&self) -> ::std::option::Option<&[crate::types::GlobalReplicationGroup]> {
         self.global_replication_groups.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeGlobalReplicationGroupsOutput
 }
 impl DescribeGlobalReplicationGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsOutput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput).
-    pub fn builder() -> crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsOutputBuilder {
         crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalReplicationGroupsOutput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalReplicationGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) global_replication_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>,
+    pub(crate) global_replication_groups: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeGlobalReplicationGroupsOutputBuilder {
@@ -67,27 +61,19 @@ impl DescribeGlobalReplicationGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_global_replication_groups`](Self::set_global_replication_groups).
     ///
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn global_replication_groups(
-        mut self,
-        input: crate::types::GlobalReplicationGroup,
-    ) -> Self {
+    pub fn global_replication_groups(mut self, input: crate::types::GlobalReplicationGroup) -> Self {
         let mut v = self.global_replication_groups.unwrap_or_default();
         v.push(input);
         self.global_replication_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn set_global_replication_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>,
-    ) -> Self {
+    pub fn set_global_replication_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>>) -> Self {
         self.global_replication_groups = input;
         self
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn get_global_replication_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>> {
+    pub fn get_global_replication_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroup>> {
         &self.global_replication_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,15 +86,10 @@ impl DescribeGlobalReplicationGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGlobalReplicationGroupsOutput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput {
         crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput {
-            marker: self.marker
-            ,
-            global_replication_groups: self.global_replication_groups
-            ,
+            marker: self.marker,
+            global_replication_groups: self.global_replication_groups,
             _request_id: self._request_id,
         }
     }

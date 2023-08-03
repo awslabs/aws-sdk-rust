@@ -30,9 +30,7 @@ impl Cvss3 {
 
 /// A builder for [`Cvss3`](crate::types::Cvss3).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Cvss3Builder {
     pub(crate) base_score: ::std::option::Option<f64>,
     pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl Cvss3Builder {
         &self.base_score
     }
     /// <p>The scoring vector associated with the CVSS v3 score.</p>
-    pub fn scoring_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scoring_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scoring_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scoring vector associated with the CVSS v3 score.</p>
-    pub fn set_scoring_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scoring_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scoring_vector = input;
         self
     }

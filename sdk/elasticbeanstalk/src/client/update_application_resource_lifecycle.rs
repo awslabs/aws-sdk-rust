@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`application_name(Option<String>)`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput::application_name): <p>The name of the application.</p>
     ///   - [`resource_lifecycle_config(Option<ApplicationResourceLifecycleConfig>)`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput::resource_lifecycle_config): <p>The lifecycle configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationResourceLifecycleError>`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError)
-    pub fn update_application_resource_lifecycle(&self) -> crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleFluentBuilder{
+    pub fn update_application_resource_lifecycle(
+        &self,
+    ) -> crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleFluentBuilder {
         crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleFluentBuilder::new(self.handle.clone())
     }
 }

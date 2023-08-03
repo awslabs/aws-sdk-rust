@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_destination::CreateDestinationOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_destination::CreateDestinationOutput::name): <p>The name of the new resource.</p>
     /// - On failure, responds with [`SdkError<CreateDestinationError>`](crate::operation::create_destination::CreateDestinationError)
-    pub fn create_destination(
-        &self,
-    ) -> crate::operation::create_destination::builders::CreateDestinationFluentBuilder {
-        crate::operation::create_destination::builders::CreateDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_destination(&self) -> crate::operation::create_destination::builders::CreateDestinationFluentBuilder {
+        crate::operation::create_destination::builders::CreateDestinationFluentBuilder::new(self.handle.clone())
     }
 }

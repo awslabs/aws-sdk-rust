@@ -29,9 +29,7 @@ impl DeletePortalInput {
 
 /// A builder for [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePortalInputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeletePortalInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_portal::DeletePortalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_portal::DeletePortalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_portal::DeletePortalInput {
             portal_id: self.portal_id,
             client_token: self.client_token,

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListGatewayInstancesOutput {
 }
 impl ListGatewayInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewayInstancesOutput`](crate::operation::list_gateway_instances::ListGatewayInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesOutputBuilder {
         crate::operation::list_gateway_instances::builders::ListGatewayInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGatewayInstancesOutput`](crate::operation::list_gateway_instances::ListGatewayInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewayInstancesOutputBuilder {
-    pub(crate) instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListGatewayInstancesOutputBuilder {
         self
     }
     /// A list of instance summaries.
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// A list of instance summaries.
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>> {
         &self.instances
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput) with field(s):
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
-    pub fn remove_tags_from_resource(
-        &self,
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder
-    {
+    pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::new(self.handle.clone())
     }
 }

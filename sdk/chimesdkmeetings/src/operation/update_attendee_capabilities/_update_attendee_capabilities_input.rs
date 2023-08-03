@@ -29,16 +29,14 @@ impl UpdateAttendeeCapabilitiesInput {
 }
 impl UpdateAttendeeCapabilitiesInput {
     /// Creates a new builder-style object to manufacture [`UpdateAttendeeCapabilitiesInput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput).
-    pub fn builder() -> crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder{
+    pub fn builder() -> crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder {
         crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAttendeeCapabilitiesInput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilitiesInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         self
     }
     /// <p>The capabilities that you want to update.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AttendeeCapabilities>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
         self.capabilities = input;
         self
     }
@@ -97,12 +92,10 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
-                meeting_id: self.meeting_id,
-                attendee_id: self.attendee_id,
-                capabilities: self.capabilities,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
+            meeting_id: self.meeting_id,
+            attendee_id: self.attendee_id,
+            capabilities: self.capabilities,
+        })
     }
 }

@@ -91,9 +91,7 @@ impl GetKxDatabaseOutput {
 
 /// A builder for [`GetKxDatabaseOutput`](crate::operation::get_kx_database::GetKxDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKxDatabaseOutputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ pub struct GetKxDatabaseOutputBuilder {
 }
 impl GetKxDatabaseOutputBuilder {
     /// <p>The name of the kdb database for which the information is retrieved.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database for which the information is retrieved.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -143,18 +135,12 @@ impl GetKxDatabaseOutputBuilder {
         &self.database_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -182,10 +168,7 @@ impl GetKxDatabaseOutputBuilder {
         self
     }
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -199,32 +182,21 @@ impl GetKxDatabaseOutputBuilder {
         self
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     /// <p>A unique identifier for the changeset.</p>
-    pub fn last_completed_changeset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_completed_changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_completed_changeset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the changeset.</p>
-    pub fn set_last_completed_changeset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_completed_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_completed_changeset_id = input;
         self
     }

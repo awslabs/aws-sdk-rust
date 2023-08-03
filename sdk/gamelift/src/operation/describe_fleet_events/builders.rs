@@ -41,9 +41,7 @@ impl DescribeFleetEventsFluentBuilder {
         }
     }
     /// Access the DescribeFleetEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DescribeFleetEventsFluentBuilder {
             crate::operation::describe_fleet_events::DescribeFleetEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_events::DescribeFleetEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DescribeFleetEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DescribeFleetEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_events::DescribeFleetEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_events::DescribeFleetEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DescribeFleetEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_events::DescribeFleetEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_events::DescribeFleetEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +109,15 @@ impl DescribeFleetEventsFluentBuilder {
             crate::operation::describe_fleet_events::DescribeFleetEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_events::DescribeFleetEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator {
-        crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator {
+        crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,10 +139,7 @@ impl DescribeFleetEventsFluentBuilder {
         self
     }
     /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -174,10 +153,7 @@ impl DescribeFleetEventsFluentBuilder {
         self
     }
     /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

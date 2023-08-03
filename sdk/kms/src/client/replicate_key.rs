@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`replica_policy(Option<String>)`](crate::operation::replicate_key::ReplicateKeyOutput::replica_policy): <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
     ///   - [`replica_tags(Option<Vec<Tag>>)`](crate::operation::replicate_key::ReplicateKeyOutput::replica_tags): <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
     /// - On failure, responds with [`SdkError<ReplicateKeyError>`](crate::operation::replicate_key::ReplicateKeyError)
-    pub fn replicate_key(
-        &self,
-    ) -> crate::operation::replicate_key::builders::ReplicateKeyFluentBuilder {
-        crate::operation::replicate_key::builders::ReplicateKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn replicate_key(&self) -> crate::operation::replicate_key::builders::ReplicateKeyFluentBuilder {
+        crate::operation::replicate_key::builders::ReplicateKeyFluentBuilder::new(self.handle.clone())
     }
 }

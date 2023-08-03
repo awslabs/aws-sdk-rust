@@ -10,10 +10,7 @@ impl PutDeliveryChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_delivery_channel::PutDeliveryChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_delivery_channel::PutDeliveryChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_delivery_channel::PutDeliveryChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_delivery_channel();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl PutDeliveryChannelFluentBuilder {
         }
     }
     /// Access the PutDeliveryChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl PutDeliveryChannelFluentBuilder {
             crate::operation::put_delivery_channel::PutDeliveryChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_delivery_channel::PutDeliveryChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_delivery_channel::PutDeliveryChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl PutDeliveryChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl PutDeliveryChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_delivery_channel::PutDeliveryChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_delivery_channel::PutDeliveryChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_delivery_channel::PutDeliveryChannelError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl PutDeliveryChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_delivery_channel::PutDeliveryChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_delivery_channel::PutDeliveryChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_delivery_channel::PutDeliveryChannelError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl PutDeliveryChannelFluentBuilder {
             crate::operation::put_delivery_channel::PutDeliveryChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_delivery_channel::PutDeliveryChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_delivery_channel::PutDeliveryChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl PutDeliveryChannelFluentBuilder {
         self
     }
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-    pub fn set_delivery_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryChannel>,
-    ) -> Self {
+    pub fn set_delivery_channel(mut self, input: ::std::option::Option<crate::types::DeliveryChannel>) -> Self {
         self.inner = self.inner.set_delivery_channel(input);
         self
     }

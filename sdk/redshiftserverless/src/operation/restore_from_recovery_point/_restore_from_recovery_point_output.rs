@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RestoreFromRecoveryPointOutput {
 }
 impl RestoreFromRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
-    pub fn builder() -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder {
         crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreFromRecoveryPointOutputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<crate::types::Namespace>,
@@ -45,18 +43,12 @@ pub struct RestoreFromRecoveryPointOutputBuilder {
 }
 impl RestoreFromRecoveryPointOutputBuilder {
     /// <p>The unique identifier of the recovery point used for the restore.</p>
-    pub fn recovery_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the recovery point used for the restore.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_id = input;
         self
     }
@@ -88,9 +80,7 @@ impl RestoreFromRecoveryPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
+    pub fn build(self) -> crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
             recovery_point_id: self.recovery_point_id,
             namespace: self.namespace,

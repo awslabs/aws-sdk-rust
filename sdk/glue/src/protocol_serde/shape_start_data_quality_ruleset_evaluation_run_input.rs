@@ -30,7 +30,10 @@ pub fn ser_start_data_quality_ruleset_evaluation_run_input(
     if let Some(var_7) = &input.additional_run_options {
         #[allow(unused_mut)]
         let mut object_8 = object.key("AdditionalRunOptions").start_object();
-        crate::protocol_serde::shape_data_quality_evaluation_run_additional_run_options::ser_data_quality_evaluation_run_additional_run_options(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_data_quality_evaluation_run_additional_run_options::ser_data_quality_evaluation_run_additional_run_options(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.ruleset_names {
@@ -49,10 +52,7 @@ pub fn ser_start_data_quality_ruleset_evaluation_run_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_data_source::ser_data_source(
-                    &mut object_16,
-                    value_15,
-                )?;
+                crate::protocol_serde::shape_data_source::ser_data_source(&mut object_16, value_15)?;
                 object_16.finish();
             }
         }

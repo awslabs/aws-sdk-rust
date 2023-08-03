@@ -10,10 +10,7 @@ impl ListResourceTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_resource_types::ListResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_resource_types();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListResourceTypesFluentBuilder {
         }
     }
     /// Access the ListResourceTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListResourceTypesFluentBuilder {
             crate::operation::list_resource_types::ListResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListResourceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_types::ListResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListResourceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_types::ListResourceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListResourceTypesFluentBuilder {
             crate::operation::list_resource_types::ListResourceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_types::paginator::ListResourceTypesPaginator {
-        crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_types::paginator::ListResourceTypesPaginator {
+        crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,10 +158,7 @@ impl ListResourceTypesFluentBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
     }
@@ -193,9 +169,7 @@ impl ListResourceTypesFluentBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
         self.inner.get_resource_region_scope()
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ListAccessControlRulesOutput {
 }
 impl ListAccessControlRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessControlRulesOutput`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_access_control_rules::builders::ListAccessControlRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_access_control_rules::builders::ListAccessControlRulesOutputBuilder {
         crate::operation::list_access_control_rules::builders::ListAccessControlRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessControlRulesOutput`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessControlRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl ListAccessControlRulesOutputBuilder {
         self
     }
     /// <p>The access control rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The access control rules.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl ListAccessControlRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessControlRulesOutput`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_control_rules::ListAccessControlRulesOutput {
+    pub fn build(self) -> crate::operation::list_access_control_rules::ListAccessControlRulesOutput {
         crate::operation::list_access_control_rules::ListAccessControlRulesOutput {
             rules: self.rules,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl CreateConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_configuration::CreateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration::CreateConfigurationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration::CreateConfigurationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_configuration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateConfigurationFluentBuilder {
         }
     }
     /// Access the CreateConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateConfigurationFluentBuilder {
             crate::operation::create_configuration::CreateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration::CreateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration::CreateConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration::CreateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration::CreateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration::CreateConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration::CreateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration::CreateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration::CreateConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateConfigurationFluentBuilder {
             crate::operation::create_configuration::CreateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_configuration::CreateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration::CreateConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +125,17 @@ impl CreateConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
     ///
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kafka_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kafka_versions(input.into());
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_kafka_versions(input);
         self
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn get_kafka_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_kafka_versions()
     }
     /// <p>The name of the configuration.</p>
@@ -190,10 +166,7 @@ impl CreateConfigurationFluentBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_server_properties(input);
         self
     }

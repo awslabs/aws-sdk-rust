@@ -15,34 +15,25 @@ impl DescribeCertificateInput {
 }
 impl DescribeCertificateInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
+    pub fn builder() -> crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
         crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCertificateInputBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_certificate::DescribeCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_certificate::DescribeCertificateInput {
-                certificate_id: self.certificate_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
+            certificate_id: self.certificate_id,
+        })
     }
 }

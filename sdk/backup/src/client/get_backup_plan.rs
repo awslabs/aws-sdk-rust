@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`last_execution_date(Option<DateTime>)`](crate::operation::get_backup_plan::GetBackupPlanOutput::last_execution_date): <p>The last time a job to back up resources was run with this backup plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::operation::get_backup_plan::GetBackupPlanOutput::advanced_backup_settings): <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
     /// - On failure, responds with [`SdkError<GetBackupPlanError>`](crate::operation::get_backup_plan::GetBackupPlanError)
-    pub fn get_backup_plan(
-        &self,
-    ) -> crate::operation::get_backup_plan::builders::GetBackupPlanFluentBuilder {
-        crate::operation::get_backup_plan::builders::GetBackupPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backup_plan(&self) -> crate::operation::get_backup_plan::builders::GetBackupPlanFluentBuilder {
+        crate::operation::get_backup_plan::builders::GetBackupPlanFluentBuilder::new(self.handle.clone())
     }
 }

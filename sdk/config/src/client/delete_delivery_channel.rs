@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`delivery_channel_name(impl ::std::convert::Into<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::delivery_channel_name) / [`set_delivery_channel_name(Option<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::set_delivery_channel_name): <p>The name of the delivery channel to delete.</p>
     /// - On success, responds with [`DeleteDeliveryChannelOutput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteDeliveryChannelError>`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelError)
-    pub fn delete_delivery_channel(
-        &self,
-    ) -> crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder
-    {
-        crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_delivery_channel(&self) -> crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder {
+        crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::new(self.handle.clone())
     }
 }

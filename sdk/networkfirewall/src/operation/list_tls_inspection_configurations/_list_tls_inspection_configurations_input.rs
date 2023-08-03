@@ -22,16 +22,14 @@ impl ListTlsInspectionConfigurationsInput {
 }
 impl ListTlsInspectionConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListTlsInspectionConfigurationsInput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsInput).
-    pub fn builder() -> crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsInputBuilder {
         crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTlsInspectionConfigurationsInput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTlsInspectionConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl ListTlsInspectionConfigurationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

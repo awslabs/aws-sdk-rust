@@ -9,113 +9,118 @@ pub fn de_describe_storage_configuration_http_error(
     crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictingOperationException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ConflictingOperationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConflictingOperationException" => {
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ConflictingOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidRequestException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InvalidRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceededException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceNotFoundException" => {
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::generic(generic)
+        _ => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::generic(generic),
     })
 }
 
@@ -131,94 +136,70 @@ pub fn de_describe_storage_configuration_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_storage_configuration::de_describe_storage_configuration(_response_body, output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_storage_configuration::de_describe_storage_configuration(_response_body, output)
+            .map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_describe_storage_configuration(value: &[u8], mut builder: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder) -> Result<crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_describe_storage_configuration(
+    value: &[u8],
+    mut builder: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder,
+) -> Result<
+    crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "configurationStatus" => {
-                        builder = builder.set_configuration_status(
-                            crate::protocol_serde::shape_configuration_status::de_configuration_status(tokens)?
-                        );
-                    }
-                    "disassociatedDataStorage" => {
-                        builder = builder.set_disassociated_data_storage(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped().map(|u| {
-                                    crate::types::DisassociatedDataStorageState::from(u.as_ref())
-                                })
-                            })
-                            .transpose()?,
-                        );
-                    }
-                    "lastUpdateDate" => {
-                        builder = builder.set_last_update_date(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::EpochSeconds,
-                            )?,
-                        );
-                    }
-                    "multiLayerStorage" => {
-                        builder = builder.set_multi_layer_storage(
-                            crate::protocol_serde::shape_multi_layer_storage::de_multi_layer_storage(tokens)?
-                        );
-                    }
-                    "retentionPeriod" => {
-                        builder = builder.set_retention_period(
-                            crate::protocol_serde::shape_retention_period::de_retention_period(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "storageType" => {
-                        builder = builder.set_storage_type(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::StorageType::from(u.as_ref()))
-                            })
-                            .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "configurationStatus" => {
+                    builder = builder.set_configuration_status(crate::protocol_serde::shape_configuration_status::de_configuration_status(tokens)?);
                 }
-            }
+                "disassociatedDataStorage" => {
+                    builder = builder.set_disassociated_data_storage(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DisassociatedDataStorageState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "lastUpdateDate" => {
+                    builder = builder.set_last_update_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "multiLayerStorage" => {
+                    builder = builder.set_multi_layer_storage(crate::protocol_serde::shape_multi_layer_storage::de_multi_layer_storage(tokens)?);
+                }
+                "retentionPeriod" => {
+                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                }
+                "storageType" => {
+                    builder = builder.set_storage_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::StorageType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

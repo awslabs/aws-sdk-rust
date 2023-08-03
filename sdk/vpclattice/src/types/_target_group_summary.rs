@@ -100,9 +100,7 @@ impl TargetGroupSummary {
 
 /// A builder for [`TargetGroupSummary`](crate::types::TargetGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -180,10 +178,7 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -211,10 +206,7 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The protocol of the target group.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -228,10 +220,7 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -240,18 +229,12 @@ impl TargetGroupSummaryBuilder {
         &self.ip_address_type
     }
     /// <p>The ID of the VPC of the target group.</p>
-    pub fn vpc_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC of the target group.</p>
-    pub fn set_vpc_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
@@ -265,10 +248,7 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -282,10 +262,7 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -305,17 +282,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    pub fn set_service_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_arns = input;
         self
     }
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    pub fn get_service_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_arns
     }
     /// Consumes the builder and constructs a [`TargetGroupSummary`](crate::types::TargetGroupSummary).

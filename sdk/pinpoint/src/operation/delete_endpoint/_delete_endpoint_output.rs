@@ -28,9 +28,7 @@ impl DeleteEndpointOutput {
 
 /// A builder for [`DeleteEndpointOutput`](crate::operation::delete_endpoint::DeleteEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEndpointOutputBuilder {
     pub(crate) endpoint_response: ::std::option::Option<crate::types::EndpointResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteEndpointOutputBuilder {
         self
     }
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    pub fn set_endpoint_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointResponse>,
-    ) -> Self {
+    pub fn set_endpoint_response(mut self, input: ::std::option::Option<crate::types::EndpointResponse>) -> Self {
         self.endpoint_response = input;
         self
     }

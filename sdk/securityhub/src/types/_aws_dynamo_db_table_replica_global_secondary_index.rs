@@ -9,8 +9,7 @@ pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
     #[doc(hidden)]
-    pub provisioned_throughput_override:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+    pub provisioned_throughput_override: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     /// <p>The name of the index.</p>
@@ -18,9 +17,7 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
         self.index_name.as_deref()
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn provisioned_throughput_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
 
 /// A builder for [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_throughput_override:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+    pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     /// <p>The name of the index.</p>
@@ -57,10 +51,7 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
         &self.index_name
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn provisioned_throughput_override(
-        mut self,
-        input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride,
-    ) -> Self {
+    pub fn provisioned_throughput_override(mut self, input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride) -> Self {
         self.provisioned_throughput_override = ::std::option::Option::Some(input);
         self
     }
@@ -73,9 +64,7 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
         self
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn get_provisioned_throughput_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         &self.provisioned_throughput_override
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex).

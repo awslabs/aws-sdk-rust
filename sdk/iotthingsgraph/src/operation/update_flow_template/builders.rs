@@ -10,10 +10,7 @@ impl UpdateFlowTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_flow_template::UpdateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_template::UpdateFlowTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_template::UpdateFlowTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_flow_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateFlowTemplateFluentBuilder {
         }
     }
     /// Access the UpdateFlowTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_flow_template::builders::UpdateFlowTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateFlowTemplateFluentBuilder {
             crate::operation::update_flow_template::UpdateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_template::UpdateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_template::UpdateFlowTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateFlowTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_template::UpdateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_template::UpdateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_template::UpdateFlowTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_template::UpdateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_template::UpdateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_template::UpdateFlowTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateFlowTemplateFluentBuilder {
             crate::operation::update_flow_template::UpdateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_template::UpdateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_template::UpdateFlowTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +133,7 @@ impl UpdateFlowTemplateFluentBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

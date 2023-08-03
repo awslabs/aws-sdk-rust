@@ -43,9 +43,7 @@ impl AssociateDomainInput {
 
 /// A builder for [`AssociateDomainInput`](crate::operation::associate_domain::AssociateDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDomainInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl AssociateDomainInputBuilder {
         &self.display_name
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acm_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acm_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn set_acm_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acm_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acm_certificate_arn = input;
         self
     }
@@ -118,10 +110,7 @@ impl AssociateDomainInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDomainInput`](crate::operation::associate_domain::AssociateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_domain::AssociateDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_domain::AssociateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_domain::AssociateDomainInput {
             fleet_arn: self.fleet_arn,
             domain_name: self.domain_name,

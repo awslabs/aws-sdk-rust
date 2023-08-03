@@ -42,16 +42,14 @@ impl DescribeProvisionedProductInput {
 }
 impl DescribeProvisionedProductInput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisionedProductInput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductInput).
-    pub fn builder() -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder {
         crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProvisionedProductInput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -63,10 +61,7 @@ impl DescribeProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -75,10 +70,7 @@ impl DescribeProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -131,12 +123,10 @@ impl DescribeProvisionedProductInputBuilder {
         crate::operation::describe_provisioned_product::DescribeProvisionedProductInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_provisioned_product::DescribeProvisionedProductInput {
-                accept_language: self.accept_language,
-                id: self.id,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_provisioned_product::DescribeProvisionedProductInput {
+            accept_language: self.accept_language,
+            id: self.id,
+            name: self.name,
+        })
     }
 }

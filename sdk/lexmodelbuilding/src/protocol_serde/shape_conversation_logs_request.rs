@@ -9,10 +9,7 @@ pub fn ser_conversation_logs_request(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_log_settings_request::ser_log_settings_request(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_log_settings_request::ser_log_settings_request(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

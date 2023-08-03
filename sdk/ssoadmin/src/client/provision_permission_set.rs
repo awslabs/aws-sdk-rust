@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ProvisionPermissionSetOutput`](crate::operation::provision_permission_set::ProvisionPermissionSetOutput) with field(s):
     ///   - [`permission_set_provisioning_status(Option<PermissionSetProvisioningStatus>)`](crate::operation::provision_permission_set::ProvisionPermissionSetOutput::permission_set_provisioning_status): <p>The status object for the permission set provisioning operation.</p>
     /// - On failure, responds with [`SdkError<ProvisionPermissionSetError>`](crate::operation::provision_permission_set::ProvisionPermissionSetError)
-    pub fn provision_permission_set(
-        &self,
-    ) -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetFluentBuilder
-    {
+    pub fn provision_permission_set(&self) -> crate::operation::provision_permission_set::builders::ProvisionPermissionSetFluentBuilder {
         crate::operation::provision_permission_set::builders::ProvisionPermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

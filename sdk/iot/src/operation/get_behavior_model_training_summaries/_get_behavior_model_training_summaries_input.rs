@@ -29,16 +29,14 @@ impl GetBehaviorModelTrainingSummariesInput {
 }
 impl GetBehaviorModelTrainingSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
-    pub fn builder() -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder{
+    pub fn builder() -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder {
         crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBehaviorModelTrainingSummariesInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct GetBehaviorModelTrainingSummariesInputBuilder {
 }
 impl GetBehaviorModelTrainingSummariesInputBuilder {
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the security profile. </p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -94,16 +86,18 @@ impl GetBehaviorModelTrainingSummariesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetBehaviorModelTrainingSummariesInput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesInput {
-                security_profile_name: self.security_profile_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

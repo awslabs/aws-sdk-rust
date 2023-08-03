@@ -10,10 +10,7 @@ impl BacktrackDbClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::backtrack_db_cluster::BacktrackDBClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.backtrack_db_cluster();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl BacktrackDBClusterFluentBuilder {
         }
     }
     /// Access the BacktrackDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::backtrack_db_cluster::builders::BacktrackDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::backtrack_db_cluster::builders::BacktrackDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl BacktrackDBClusterFluentBuilder {
             crate::operation::backtrack_db_cluster::BacktrackDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::backtrack_db_cluster::BacktrackDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl BacktrackDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl BacktrackDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::backtrack_db_cluster::BacktrackDBClusterError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl BacktrackDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::backtrack_db_cluster::BacktrackDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl BacktrackDBClusterFluentBuilder {
             crate::operation::backtrack_db_cluster::BacktrackDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::backtrack_db_cluster::BacktrackDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +117,7 @@ impl BacktrackDBClusterFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -148,10 +129,7 @@ impl BacktrackDBClusterFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -188,10 +166,7 @@ impl BacktrackDBClusterFluentBuilder {
     /// <li> <p>Can't contain a timestamp set in the future.</p> </li>
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
-    pub fn set_backtrack_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_backtrack_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_backtrack_to(input);
         self
     }
@@ -223,26 +198,16 @@ impl BacktrackDBClusterFluentBuilder {
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
-        self.inner = self
-            .inner
-            .use_earliest_time_on_point_in_time_unavailable(input);
+        self.inner = self.inner.use_earliest_time_on_point_in_time_unavailable(input);
         self
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
-    pub fn set_use_earliest_time_on_point_in_time_unavailable(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_use_earliest_time_on_point_in_time_unavailable(input);
+    pub fn set_use_earliest_time_on_point_in_time_unavailable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_earliest_time_on_point_in_time_unavailable(input);
         self
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
-    pub fn get_use_earliest_time_on_point_in_time_unavailable(
-        &self,
-    ) -> &::std::option::Option<bool> {
-        self.inner
-            .get_use_earliest_time_on_point_in_time_unavailable()
+    pub fn get_use_earliest_time_on_point_in_time_unavailable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_earliest_time_on_point_in_time_unavailable()
     }
 }

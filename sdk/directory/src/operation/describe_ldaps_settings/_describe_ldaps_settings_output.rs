@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLdapsSettingsOutput {
 }
 impl DescribeLdapsSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsOutputBuilder {
         crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLdapsSettingsOutputBuilder {
-    pub(crate) ldaps_settings_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
+    pub(crate) ldaps_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeLdapsSettingsOutputBuilder {
         self
     }
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub fn set_ldaps_settings_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
-    ) -> Self {
+    pub fn set_ldaps_settings_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>) -> Self {
         self.ldaps_settings_info = input;
         self
     }
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub fn get_ldaps_settings_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>> {
+    pub fn get_ldaps_settings_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>> {
         &self.ldaps_settings_info
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>

@@ -95,18 +95,12 @@ impl ShareResultBuilder {
         &self.principal_id
     }
     /// <p>The ID of the invited user.</p>
-    pub fn invitee_principal_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitee_principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitee_principal_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the invited user.</p>
-    pub fn set_invitee_principal_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitee_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitee_principal_id = input;
         self
     }
@@ -134,10 +128,7 @@ impl ShareResultBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -160,18 +151,12 @@ impl ShareResultBuilder {
         &self.share_id
     }
     /// <p>The status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

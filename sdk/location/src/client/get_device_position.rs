@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`accuracy(Option<PositionalAccuracy>)`](crate::operation::get_device_position::GetDevicePositionOutput::accuracy): <p>The accuracy of the device position.</p>
     ///   - [`position_properties(Option<HashMap<String, String>>)`](crate::operation::get_device_position::GetDevicePositionOutput::position_properties): <p>The properties associated with the position.</p>
     /// - On failure, responds with [`SdkError<GetDevicePositionError>`](crate::operation::get_device_position::GetDevicePositionError)
-    pub fn get_device_position(
-        &self,
-    ) -> crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder {
-        crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_position(&self) -> crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder {
+        crate::operation::get_device_position::builders::GetDevicePositionFluentBuilder::new(self.handle.clone())
     }
 }

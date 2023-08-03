@@ -23,9 +23,7 @@ impl DestinationSchema {
 
 /// A builder for [`DestinationSchema`](crate::types::DestinationSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationSchemaBuilder {
     pub(crate) record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
 }
@@ -36,10 +34,7 @@ impl DestinationSchemaBuilder {
         self
     }
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub fn set_record_format_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordFormatType>,
-    ) -> Self {
+    pub fn set_record_format_type(mut self, input: ::std::option::Option<crate::types::RecordFormatType>) -> Self {
         self.record_format_type = input;
         self
     }

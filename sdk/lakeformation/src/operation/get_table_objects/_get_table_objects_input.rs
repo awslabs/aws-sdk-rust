@@ -81,9 +81,7 @@ impl GetTableObjectsInput {
 
 /// A builder for [`GetTableObjectsInput`](crate::operation::get_table_objects::GetTableObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableObjectsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -110,18 +108,12 @@ impl GetTableObjectsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database containing the governed table.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database containing the governed table.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -144,18 +136,12 @@ impl GetTableObjectsInputBuilder {
         &self.table_name
     }
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -169,10 +155,7 @@ impl GetTableObjectsInputBuilder {
         self
     }
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn set_query_as_of_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_as_of_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.query_as_of_time = input;
         self
     }
@@ -186,10 +169,7 @@ impl GetTableObjectsInputBuilder {
     /// <li> <p>The logical operators supported are: AND</p> </li>
     /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
-    pub fn partition_predicate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_predicate = ::std::option::Option::Some(input.into());
         self
     }
@@ -199,10 +179,7 @@ impl GetTableObjectsInputBuilder {
     /// <li> <p>The logical operators supported are: AND</p> </li>
     /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
-    pub fn set_partition_predicate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partition_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_predicate = input;
         self
     }
@@ -246,10 +223,7 @@ impl GetTableObjectsInputBuilder {
     /// Consumes the builder and constructs a [`GetTableObjectsInput`](crate::operation::get_table_objects::GetTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_objects::GetTableObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_table_objects::GetTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_objects::GetTableObjectsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

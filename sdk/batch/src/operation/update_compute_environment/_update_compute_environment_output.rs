@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateComputeEnvironmentOutput {
 }
 impl UpdateComputeEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComputeEnvironmentOutput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentOutputBuilder {
         crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateComputeEnvironmentOutput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComputeEnvironmentOutputBuilder {
     pub(crate) compute_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_environment_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct UpdateComputeEnvironmentOutputBuilder {
 }
 impl UpdateComputeEnvironmentOutputBuilder {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn compute_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn set_compute_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_environment_name = input;
         self
     }
@@ -67,18 +57,12 @@ impl UpdateComputeEnvironmentOutputBuilder {
         &self.compute_environment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn set_compute_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_environment_arn = input;
         self
     }
@@ -96,9 +80,7 @@ impl UpdateComputeEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateComputeEnvironmentOutput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput {
+    pub fn build(self) -> crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput {
         crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput {
             compute_environment_name: self.compute_environment_name,
             compute_environment_arn: self.compute_environment_arn,

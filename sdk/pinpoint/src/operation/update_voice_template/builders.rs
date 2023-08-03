@@ -37,9 +37,7 @@ impl UpdateVoiceTemplateFluentBuilder {
         }
     }
     /// Access the UpdateVoiceTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_voice_template::builders::UpdateVoiceTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateVoiceTemplateFluentBuilder {
             crate::operation::update_voice_template::UpdateVoiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_template::UpdateVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_template::UpdateVoiceTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateVoiceTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateVoiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_template::UpdateVoiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_template::UpdateVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_template::UpdateVoiceTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateVoiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_template::UpdateVoiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_template::UpdateVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_template::UpdateVoiceTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateVoiceTemplateFluentBuilder {
             crate::operation::update_voice_template::UpdateVoiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_template::UpdateVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_template::UpdateVoiceTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +127,12 @@ impl UpdateVoiceTemplateFluentBuilder {
         self.inner.get_create_new_version()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -203,17 +184,12 @@ impl UpdateVoiceTemplateFluentBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn set_voice_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceTemplateRequest>,
-    ) -> Self {
+    pub fn set_voice_template_request(mut self, input: ::std::option::Option<crate::types::VoiceTemplateRequest>) -> Self {
         self.inner = self.inner.set_voice_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn get_voice_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
+    pub fn get_voice_template_request(&self) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
         self.inner.get_voice_template_request()
     }
 }

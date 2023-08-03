@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`parent_slot_type_signature(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::parent_slot_type_signature): <p>The built-in slot type used as a parent for the slot type.</p>
     ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::operation::get_slot_type::GetSlotTypeOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
     /// - On failure, responds with [`SdkError<GetSlotTypeError>`](crate::operation::get_slot_type::GetSlotTypeError)
-    pub fn get_slot_type(
-        &self,
-    ) -> crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder {
-        crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_slot_type(&self) -> crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder {
+        crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::new(self.handle.clone())
     }
 }

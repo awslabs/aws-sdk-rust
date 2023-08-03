@@ -5,16 +5,16 @@ pub use crate::operation::update_log_levels_by_resource_types::_update_log_level
 
 impl UpdateLogLevelsByResourceTypesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_log_levels_by_resource_types();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateLogLevelsByResourceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder,
+    inner: crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder,
 }
 impl UpdateLogLevelsByResourceTypesFluentBuilder {
     /// Creates a new `UpdateLogLevelsByResourceTypes`.
@@ -37,15 +37,20 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         }
     }
     /// Access the UpdateLogLevelsByResourceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
@@ -100,10 +115,7 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
+    pub fn set_default_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.inner = self.inner.set_default_log_level(input);
         self
     }
@@ -116,25 +128,17 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
     ///
     /// <p>The list of wireless device log options.</p>
-    pub fn wireless_device_log_options(
-        mut self,
-        input: crate::types::WirelessDeviceLogOption,
-    ) -> Self {
+    pub fn wireless_device_log_options(mut self, input: crate::types::WirelessDeviceLogOption) -> Self {
         self.inner = self.inner.wireless_device_log_options(input);
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn set_wireless_device_log_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
-    ) -> Self {
+    pub fn set_wireless_device_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>) -> Self {
         self.inner = self.inner.set_wireless_device_log_options(input);
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn get_wireless_device_log_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
+    pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
         self.inner.get_wireless_device_log_options()
     }
     /// Appends an item to `WirelessGatewayLogOptions`.
@@ -142,25 +146,17 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).
     ///
     /// <p>The list of wireless gateway log options.</p>
-    pub fn wireless_gateway_log_options(
-        mut self,
-        input: crate::types::WirelessGatewayLogOption,
-    ) -> Self {
+    pub fn wireless_gateway_log_options(mut self, input: crate::types::WirelessGatewayLogOption) -> Self {
         self.inner = self.inner.wireless_gateway_log_options(input);
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn set_wireless_gateway_log_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
-    ) -> Self {
+    pub fn set_wireless_gateway_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>) -> Self {
         self.inner = self.inner.set_wireless_gateway_log_options(input);
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn get_wireless_gateway_log_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
+    pub fn get_wireless_gateway_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
         self.inner.get_wireless_gateway_log_options()
     }
 }

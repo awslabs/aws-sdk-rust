@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`endpoint_descriptions(Option<Vec<CustomRoutingEndpointDescription>>)`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput::endpoint_descriptions): <p>The endpoint objects added to the custom routing accelerator.</p>
     ///   - [`endpoint_group_arn(Option<String>)`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     /// - On failure, responds with [`SdkError<AddCustomRoutingEndpointsError>`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError)
-    pub fn add_custom_routing_endpoints(&self) -> crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsFluentBuilder{
+    pub fn add_custom_routing_endpoints(&self) -> crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsFluentBuilder {
         crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

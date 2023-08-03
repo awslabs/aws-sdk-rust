@@ -23,18 +23,14 @@ impl ListManagedAccountsInput {
 }
 impl ListManagedAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedAccountsInput`](crate::operation::list_managed_accounts::ListManagedAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder {
-        crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder {
+        crate::operation::list_managed_accounts::builders::ListManagedAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedAccountsInput`](crate::operation::list_managed_accounts::ListManagedAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedAccountsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -71,15 +67,11 @@ impl ListManagedAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListManagedAccountsInput`](crate::operation::list_managed_accounts::ListManagedAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_accounts::ListManagedAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_accounts::ListManagedAccountsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_accounts::ListManagedAccountsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

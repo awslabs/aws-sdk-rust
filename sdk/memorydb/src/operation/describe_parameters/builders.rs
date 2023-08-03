@@ -10,10 +10,7 @@ impl DescribeParametersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_parameters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeParametersFluentBuilder {
         }
     }
     /// Access the DescribeParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeParametersFluentBuilder {
             crate::operation::describe_parameters::DescribeParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameters::DescribeParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribeParametersFluentBuilder {
             crate::operation::describe_parameters::DescribeParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_parameters::DescribeParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_parameters::DescribeParametersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_parameters::paginator::DescribeParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_parameters::paginator::DescribeParametersPaginator {
-        crate::operation::describe_parameters::paginator::DescribeParametersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_parameters::paginator::DescribeParametersPaginator {
+        crate::operation::describe_parameters::paginator::DescribeParametersPaginator::new(self.handle, self.inner)
     }
     /// <p>he name of a specific parameter group to return details for.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>he name of a specific parameter group to return details for.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }

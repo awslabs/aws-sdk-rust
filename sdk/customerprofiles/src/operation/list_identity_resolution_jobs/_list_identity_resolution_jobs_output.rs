@@ -5,8 +5,7 @@
 pub struct ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
     #[doc(hidden)]
-    pub identity_resolution_jobs_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
+    pub identity_resolution_jobs_list: ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIdentityResolutionJobsOutput {
 }
 impl ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn identity_resolution_jobs_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityResolutionJob]> {
+    pub fn identity_resolution_jobs_list(&self) -> ::std::option::Option<&[crate::types::IdentityResolutionJob]> {
         self.identity_resolution_jobs_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIdentityResolutionJobsOutput {
 }
 impl ListIdentityResolutionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsOutput`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput).
-    pub fn builder() -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsOutputBuilder {
         crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityResolutionJobsOutput`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsOutputBuilder {
-    pub(crate) identity_resolution_jobs_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
+    pub(crate) identity_resolution_jobs_list: ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListIdentityResolutionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_identity_resolution_jobs_list`](Self::set_identity_resolution_jobs_list).
     ///
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn identity_resolution_jobs_list(
-        mut self,
-        input: crate::types::IdentityResolutionJob,
-    ) -> Self {
+    pub fn identity_resolution_jobs_list(mut self, input: crate::types::IdentityResolutionJob) -> Self {
         let mut v = self.identity_resolution_jobs_list.unwrap_or_default();
         v.push(input);
         self.identity_resolution_jobs_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn set_identity_resolution_jobs_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
-    ) -> Self {
+    pub fn set_identity_resolution_jobs_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>) -> Self {
         self.identity_resolution_jobs_list = input;
         self
     }
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn get_identity_resolution_jobs_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>> {
+    pub fn get_identity_resolution_jobs_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>> {
         &self.identity_resolution_jobs_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -100,9 +86,7 @@ impl ListIdentityResolutionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIdentityResolutionJobsOutput`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput {
+    pub fn build(self) -> crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput {
         crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput {
             identity_resolution_jobs_list: self.identity_resolution_jobs_list,
             next_token: self.next_token,

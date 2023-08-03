@@ -20,10 +20,7 @@ pub struct ListPlaceIndexesResponseEntry {
     #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -53,10 +50,7 @@ impl ListPlaceIndexesResponseEntry {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -78,9 +72,7 @@ impl ListPlaceIndexesResponseEntry {
 
 /// A builder for [`ListPlaceIndexesResponseEntry`](crate::types::ListPlaceIndexesResponseEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlaceIndexesResponseEntryBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -151,31 +143,19 @@ impl ListPlaceIndexesResponseEntryBuilder {
         &self.data_source
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pricing_plan
     }
@@ -185,10 +165,7 @@ impl ListPlaceIndexesResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -202,10 +179,7 @@ impl ListPlaceIndexesResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

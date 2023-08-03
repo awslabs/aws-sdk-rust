@@ -35,9 +35,7 @@ impl ListJobRunsOutput {
 
 /// A builder for [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobRunsOutputBuilder {
     pub(crate) job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListJobRunsOutputBuilder {
         self
     }
     /// <p>This output lists information about the specified job runs.</p>
-    pub fn set_job_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
-    ) -> Self {
+    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>) -> Self {
         self.job_runs = input;
         self
     }

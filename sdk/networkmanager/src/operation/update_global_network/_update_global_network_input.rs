@@ -24,36 +24,26 @@ impl UpdateGlobalNetworkInput {
 }
 impl UpdateGlobalNetworkInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder {
-        crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder {
+        crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalNetworkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGlobalNetworkInputBuilder {
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of your global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -81,15 +71,11 @@ impl UpdateGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_network::UpdateGlobalNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_global_network::UpdateGlobalNetworkInput {
-                global_network_id: self.global_network_id,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_global_network::UpdateGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_global_network::UpdateGlobalNetworkInput {
+            global_network_id: self.global_network_id,
+            description: self.description,
+        })
     }
 }

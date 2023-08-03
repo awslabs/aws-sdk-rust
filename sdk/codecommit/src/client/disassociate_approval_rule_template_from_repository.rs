@@ -7,7 +7,10 @@ impl super::Client {
     ///   - [`repository_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder::set_repository_name): <p>The name of the repository you want to disassociate from the template.</p>
     /// - On success, responds with [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput)
     /// - On failure, responds with [`SdkError<DisassociateApprovalRuleTemplateFromRepositoryError>`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError)
-    pub fn disassociate_approval_rule_template_from_repository(&self) -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder{
+    pub fn disassociate_approval_rule_template_from_repository(
+        &self,
+    ) -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder
+    {
         crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

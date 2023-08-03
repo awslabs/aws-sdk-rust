@@ -22,16 +22,14 @@ impl StartMlLabelingSetGenerationTaskRunInput {
 }
 impl StartMlLabelingSetGenerationTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
-    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder {
         crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlLabelingSetGenerationTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_path = input;
         self
     }
@@ -72,14 +64,17 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         &self.output_s3_path
     }
     /// Consumes the builder and constructs a [`StartMlLabelingSetGenerationTaskRunInput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput {
-                transform_id: self.transform_id
-                ,
-                output_s3_path: self.output_s3_path
-                ,
-            }
+                transform_id: self.transform_id,
+                output_s3_path: self.output_s3_path,
+            },
         )
     }
 }

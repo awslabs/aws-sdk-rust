@@ -30,32 +30,25 @@ impl ListContactFlowModulesInput {
         self.max_results
     }
     /// <p>The state of the flow module.</p>
-    pub fn contact_flow_module_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContactFlowModuleState> {
+    pub fn contact_flow_module_state(&self) -> ::std::option::Option<&crate::types::ContactFlowModuleState> {
         self.contact_flow_module_state.as_ref()
     }
 }
 impl ListContactFlowModulesInput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowModulesInput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder {
         crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactFlowModulesInput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactFlowModulesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) contact_flow_module_state:
-        ::std::option::Option<crate::types::ContactFlowModuleState>,
+    pub(crate) contact_flow_module_state: ::std::option::Option<crate::types::ContactFlowModuleState>,
 }
 impl ListContactFlowModulesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -101,25 +94,17 @@ impl ListContactFlowModulesInputBuilder {
         &self.max_results
     }
     /// <p>The state of the flow module.</p>
-    pub fn contact_flow_module_state(
-        mut self,
-        input: crate::types::ContactFlowModuleState,
-    ) -> Self {
+    pub fn contact_flow_module_state(mut self, input: crate::types::ContactFlowModuleState) -> Self {
         self.contact_flow_module_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the flow module.</p>
-    pub fn set_contact_flow_module_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlowModuleState>,
-    ) -> Self {
+    pub fn set_contact_flow_module_state(mut self, input: ::std::option::Option<crate::types::ContactFlowModuleState>) -> Self {
         self.contact_flow_module_state = input;
         self
     }
     /// <p>The state of the flow module.</p>
-    pub fn get_contact_flow_module_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
+    pub fn get_contact_flow_module_state(&self) -> &::std::option::Option<crate::types::ContactFlowModuleState> {
         &self.contact_flow_module_state
     }
     /// Consumes the builder and constructs a [`ListContactFlowModulesInput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesInput).
@@ -129,13 +114,11 @@ impl ListContactFlowModulesInputBuilder {
         crate::operation::list_contact_flow_modules::ListContactFlowModulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_contact_flow_modules::ListContactFlowModulesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                contact_flow_module_state: self.contact_flow_module_state,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_contact_flow_modules::ListContactFlowModulesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            contact_flow_module_state: self.contact_flow_module_state,
+        })
     }
 }

@@ -28,12 +28,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// </ul>
     #[doc(hidden)]
     pub task_parameters: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     >,
     /// <p>The priority of the task.</p>
     #[doc(hidden)]
@@ -61,8 +56,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     _request_id: Option<String>,
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
@@ -96,12 +90,8 @@ impl GetMaintenanceWindowExecutionTaskOutput {
     /// </ul>
     pub fn task_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >],
-    > {
+    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>]>
+    {
         self.task_parameters.as_deref()
     }
     /// <p>The priority of the task.</p>
@@ -137,9 +127,7 @@ impl GetMaintenanceWindowExecutionTaskOutput {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
@@ -172,7 +160,7 @@ impl ::aws_http::request_id::RequestId for GetMaintenanceWindowExecutionTaskOutp
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskOutput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder{
+    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder {
         crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder::default()
     }
 }
@@ -187,12 +175,7 @@ pub struct GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     pub(crate) task_parameters: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     >,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
@@ -202,24 +185,17 @@ pub struct GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     _request_id: Option<String>,
 }
 impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -228,18 +204,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         &self.window_execution_id
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    pub fn task_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    pub fn set_task_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_id = input;
         self
     }
@@ -281,10 +251,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The type of task that was run.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
         self.r#type = input;
         self
     }
@@ -306,10 +273,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     /// </ul>
     pub fn task_parameters(
         mut self,
-        input: ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
+        input: ::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>,
     ) -> Self {
         let mut v = self.task_parameters.unwrap_or_default();
         v.push(input);
@@ -327,12 +291,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub fn set_task_parameters(
         mut self,
         input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    crate::types::MaintenanceWindowTaskParameterValueExpression,
-                >,
-            >,
+            ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
         >,
     ) -> Self {
         self.task_parameters = input;
@@ -349,12 +308,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub fn get_task_parameters(
         &self,
     ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     > {
         &self.task_parameters
     }
@@ -373,18 +327,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         &self.priority
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -412,32 +360,21 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The status of the task.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the task.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -451,10 +388,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The time the task execution started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -468,10 +402,7 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The time the task execution completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -485,17 +416,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
@@ -510,17 +436,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -533,39 +454,23 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskOutput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput).
-    pub fn build(self) -> crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput{
+    pub fn build(self) -> crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput {
         crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput {
-            window_execution_id: self.window_execution_id
-            ,
-            task_execution_id: self.task_execution_id
-            ,
-            task_arn: self.task_arn
-            ,
-            service_role: self.service_role
-            ,
-            r#type: self.r#type
-            ,
-            task_parameters: self.task_parameters
-            ,
-            priority: self.priority
-                .unwrap_or_default()
-            ,
-            max_concurrency: self.max_concurrency
-            ,
-            max_errors: self.max_errors
-            ,
-            status: self.status
-            ,
-            status_details: self.status_details
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            alarm_configuration: self.alarm_configuration
-            ,
-            triggered_alarms: self.triggered_alarms
-            ,
+            window_execution_id: self.window_execution_id,
+            task_execution_id: self.task_execution_id,
+            task_arn: self.task_arn,
+            service_role: self.service_role,
+            r#type: self.r#type,
+            task_parameters: self.task_parameters,
+            priority: self.priority.unwrap_or_default(),
+            max_concurrency: self.max_concurrency,
+            max_errors: self.max_errors,
+            status: self.status,
+            status_details: self.status_details,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            alarm_configuration: self.alarm_configuration,
+            triggered_alarms: self.triggered_alarms,
             _request_id: self._request_id,
         }
     }

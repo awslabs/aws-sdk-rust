@@ -183,10 +183,7 @@ impl BotBuilder {
         self
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -200,10 +197,7 @@ impl BotBuilder {
         self
     }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -226,18 +220,12 @@ impl BotBuilder {
         &self.bot_email
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    pub fn security_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    pub fn set_security_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_token = input;
         self
     }

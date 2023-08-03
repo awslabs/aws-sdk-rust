@@ -10,10 +10,7 @@ impl UpdateBotLocaleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bot_locale::UpdateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bot_locale();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBotLocaleFluentBuilder {
         }
     }
     /// Access the UpdateBotLocale as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bot_locale::builders::UpdateBotLocaleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_bot_locale::builders::UpdateBotLocaleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBotLocaleFluentBuilder {
             crate::operation::update_bot_locale::UpdateBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBotLocaleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_locale::UpdateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_locale::UpdateBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBotLocaleFluentBuilder {
             crate::operation::update_bot_locale::UpdateBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>,
     > {
         self.customize_middleware().await
     }
@@ -184,10 +168,7 @@ impl UpdateBotLocaleFluentBuilder {
         self
     }
     /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
         self
     }
@@ -201,10 +182,7 @@ impl UpdateBotLocaleFluentBuilder {
         self
     }
     /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.inner = self.inner.set_voice_settings(input);
         self
     }

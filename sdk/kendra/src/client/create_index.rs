@@ -16,9 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_index::CreateIndexOutput::id): <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::operation::create_index::CreateIndexError)
-    pub fn create_index(
-        &self,
-    ) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
+    pub fn create_index(&self) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
         crate::operation::create_index::builders::CreateIndexFluentBuilder::new(self.handle.clone())
     }
 }

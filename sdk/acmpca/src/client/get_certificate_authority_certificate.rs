@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`certificate(Option<String>)`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput::certificate): <p>Base64-encoded certificate authority (CA) certificate.</p>
     ///   - [`certificate_chain(Option<String>)`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput::certificate_chain): <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
     /// - On failure, responds with [`SdkError<GetCertificateAuthorityCertificateError>`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError)
-    pub fn get_certificate_authority_certificate(&self) -> crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateFluentBuilder{
+    pub fn get_certificate_authority_certificate(
+        &self,
+    ) -> crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateFluentBuilder {
         crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateFluentBuilder::new(self.handle.clone())
     }
 }

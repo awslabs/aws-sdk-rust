@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DissociatePackageOutput`](crate::operation::dissociate_package::DissociatePackageOutput) with field(s):
     ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::operation::dissociate_package::DissociatePackageOutput::domain_package_details): <p> Information about a package that has been dissociated from the domain.</p>
     /// - On failure, responds with [`SdkError<DissociatePackageError>`](crate::operation::dissociate_package::DissociatePackageError)
-    pub fn dissociate_package(
-        &self,
-    ) -> crate::operation::dissociate_package::builders::DissociatePackageFluentBuilder {
-        crate::operation::dissociate_package::builders::DissociatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn dissociate_package(&self) -> crate::operation::dissociate_package::builders::DissociatePackageFluentBuilder {
+        crate::operation::dissociate_package::builders::DissociatePackageFluentBuilder::new(self.handle.clone())
     }
 }

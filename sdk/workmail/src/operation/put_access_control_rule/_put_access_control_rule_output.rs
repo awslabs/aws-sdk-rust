@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAccessControlRuleOutput {
 }
 impl PutAccessControlRuleOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessControlRuleOutput`](crate::operation::put_access_control_rule::PutAccessControlRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::put_access_control_rule::builders::PutAccessControlRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_access_control_rule::builders::PutAccessControlRuleOutputBuilder {
         crate::operation::put_access_control_rule::builders::PutAccessControlRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccessControlRuleOutput`](crate::operation::put_access_control_rule::PutAccessControlRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessControlRuleOutputBuilder {
     _request_id: Option<String>,
 }

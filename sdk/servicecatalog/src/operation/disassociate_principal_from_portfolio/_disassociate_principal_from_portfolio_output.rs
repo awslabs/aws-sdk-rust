@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociatePrincipalFromPortfolioOut
 }
 impl DisassociatePrincipalFromPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePrincipalFromPortfolioOutput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput).
-    pub fn builder() -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioOutputBuilder {
         crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePrincipalFromPortfolioOutput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePrincipalFromPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociatePrincipalFromPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociatePrincipalFromPortfolioOutput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput).
-    pub fn build(self) -> crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput{
+    pub fn build(self) -> crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput {
         crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl DeleteVolumeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_volume::DeleteVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_volume::DeleteVolumeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_volume();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DeleteVolumeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_volume::DeleteVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_volume::DeleteVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DeleteVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl DeleteVolumeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_volume::DeleteVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_volume::DeleteVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -147,47 +129,31 @@ impl DeleteVolumeFluentBuilder {
         self.inner.get_volume_id()
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::DeleteVolumeOntapConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::DeleteVolumeOntapConfiguration) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::DeleteVolumeOntapConfiguration>) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteVolumeOntapConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::DeleteVolumeOntapConfiguration> {
         self.inner.get_ontap_configuration()
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::DeleteVolumeOpenZfsConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::DeleteVolumeOpenZfsConfiguration) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
     }
 }

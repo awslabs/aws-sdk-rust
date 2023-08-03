@@ -12,10 +12,7 @@ pub fn ser_create_managed_endpoint_input(
     if let Some(var_3) = &input.configuration_overrides {
         #[allow(unused_mut)]
         let mut object_4 = object.key("configurationOverrides").start_object();
-        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.execution_role_arn {

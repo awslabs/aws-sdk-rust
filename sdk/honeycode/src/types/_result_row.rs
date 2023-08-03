@@ -30,9 +30,7 @@ impl ResultRow {
 
 /// A builder for [`ResultRow`](crate::types::ResultRow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultRowBuilder {
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_items: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>,
@@ -64,17 +62,12 @@ impl ResultRowBuilder {
         self
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn set_data_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>,
-    ) -> Self {
+    pub fn set_data_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataItem>>) -> Self {
         self.data_items = input;
         self
     }
     /// <p>List of all the data cells in a row.</p>
-    pub fn get_data_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataItem>> {
+    pub fn get_data_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataItem>> {
         &self.data_items
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).

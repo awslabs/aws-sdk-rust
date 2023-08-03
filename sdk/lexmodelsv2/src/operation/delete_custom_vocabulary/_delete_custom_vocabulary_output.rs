@@ -31,9 +31,7 @@ impl DeleteCustomVocabularyOutput {
         self.locale_id.as_deref()
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn custom_vocabulary_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomVocabularyStatus> {
+    pub fn custom_vocabulary_status(&self) -> ::std::option::Option<&crate::types::CustomVocabularyStatus> {
         self.custom_vocabulary_status.as_ref()
     }
 }
@@ -44,24 +42,19 @@ impl ::aws_http::request_id::RequestId for DeleteCustomVocabularyOutput {
 }
 impl DeleteCustomVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyOutput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder {
         crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomVocabularyOutput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomVocabularyOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_vocabulary_status:
-        ::std::option::Option<crate::types::CustomVocabularyStatus>,
+    pub(crate) custom_vocabulary_status: ::std::option::Option<crate::types::CustomVocabularyStatus>,
     _request_id: Option<String>,
 }
 impl DeleteCustomVocabularyOutputBuilder {
@@ -113,17 +106,12 @@ impl DeleteCustomVocabularyOutputBuilder {
         self
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn set_custom_vocabulary_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomVocabularyStatus>,
-    ) -> Self {
+    pub fn set_custom_vocabulary_status(mut self, input: ::std::option::Option<crate::types::CustomVocabularyStatus>) -> Self {
         self.custom_vocabulary_status = input;
         self
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn get_custom_vocabulary_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomVocabularyStatus> {
+    pub fn get_custom_vocabulary_status(&self) -> &::std::option::Option<crate::types::CustomVocabularyStatus> {
         &self.custom_vocabulary_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

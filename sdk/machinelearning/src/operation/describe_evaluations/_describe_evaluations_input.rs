@@ -68,9 +68,7 @@ impl DescribeEvaluationsInput {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn filter_variable(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvaluationFilterVariable> {
+    pub fn filter_variable(&self) -> ::std::option::Option<&crate::types::EvaluationFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -127,17 +125,14 @@ impl DescribeEvaluationsInput {
 }
 impl DescribeEvaluationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationsInput`](crate::operation::describe_evaluations::DescribeEvaluationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder {
+    pub fn builder() -> crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder {
         crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEvaluationsInput`](crate::operation::describe_evaluations::DescribeEvaluationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEvaluationsInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::EvaluationFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,
@@ -176,10 +171,7 @@ impl DescribeEvaluationsInputBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::EvaluationFilterVariable>) -> Self {
         self.filter_variable = input;
         self
     }
@@ -193,9 +185,7 @@ impl DescribeEvaluationsInputBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
         &self.filter_variable
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -374,24 +364,20 @@ impl DescribeEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEvaluationsInput`](crate::operation::describe_evaluations::DescribeEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_evaluations::DescribeEvaluationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_evaluations::DescribeEvaluationsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_evaluations::DescribeEvaluationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_evaluations::DescribeEvaluationsInput {
+            filter_variable: self.filter_variable,
+            eq: self.eq,
+            gt: self.gt,
+            lt: self.lt,
+            ge: self.ge,
+            le: self.le,
+            ne: self.ne,
+            prefix: self.prefix,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

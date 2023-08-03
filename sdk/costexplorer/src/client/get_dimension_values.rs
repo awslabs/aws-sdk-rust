@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`total_size(Option<i32>)`](crate::operation::get_dimension_values::GetDimensionValuesOutput::total_size): <p>The total number of search results.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_dimension_values::GetDimensionValuesOutput::next_page_token): <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     /// - On failure, responds with [`SdkError<GetDimensionValuesError>`](crate::operation::get_dimension_values::GetDimensionValuesError)
-    pub fn get_dimension_values(
-        &self,
-    ) -> crate::operation::get_dimension_values::builders::GetDimensionValuesFluentBuilder {
-        crate::operation::get_dimension_values::builders::GetDimensionValuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dimension_values(&self) -> crate::operation::get_dimension_values::builders::GetDimensionValuesFluentBuilder {
+        crate::operation::get_dimension_values::builders::GetDimensionValuesFluentBuilder::new(self.handle.clone())
     }
 }

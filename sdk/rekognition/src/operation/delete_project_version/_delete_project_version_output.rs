@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteProjectVersionOutput {
 }
 impl DeleteProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectVersionOutput`](crate::operation::delete_project_version::DeleteProjectVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_project_version::builders::DeleteProjectVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_project_version::builders::DeleteProjectVersionOutputBuilder {
         crate::operation::delete_project_version::builders::DeleteProjectVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProjectVersionOutput`](crate::operation::delete_project_version::DeleteProjectVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectVersionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteProjectVersionOutputBuilder {
         self
     }
     /// <p>The status of the deletion operation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
         self.status = input;
         self
     }

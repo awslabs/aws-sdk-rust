@@ -37,9 +37,7 @@ impl UpdateResourceShareFluentBuilder {
         }
     }
     /// Access the UpdateResourceShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateResourceShareFluentBuilder {
             crate::operation::update_resource_share::UpdateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_share::UpdateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_share::UpdateResourceShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateResourceShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_share::UpdateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_share::UpdateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_share::UpdateResourceShareError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resource_share::UpdateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_share::UpdateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_share::UpdateResourceShareError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateResourceShareFluentBuilder {
             crate::operation::update_resource_share::UpdateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource_share::UpdateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource_share::UpdateResourceShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`baseline_identities(Option<Vec<PatchBaselineIdentity>>)`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput::baseline_identities): <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribePatchBaselinesError>`](crate::operation::describe_patch_baselines::DescribePatchBaselinesError)
-    pub fn describe_patch_baselines(
-        &self,
-    ) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder
-    {
+    pub fn describe_patch_baselines(&self) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder {
         crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::new(self.handle.clone())
     }
 }

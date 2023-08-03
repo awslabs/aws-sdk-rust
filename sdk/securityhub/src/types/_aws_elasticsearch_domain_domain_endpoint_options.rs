@@ -40,9 +40,7 @@ impl AwsElasticsearchDomainDomainEndpointOptions {
 
 /// A builder for [`AwsElasticsearchDomainDomainEndpointOptions`](crate::types::AwsElasticsearchDomainDomainEndpointOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     pub(crate) enforce_https: ::std::option::Option<bool>,
     pub(crate) tls_security_policy: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// <li> <p> <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p> </li>
     /// <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p> </li>
     /// </ul>
-    pub fn tls_security_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tls_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tls_security_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -81,10 +76,7 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// <li> <p> <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p> </li>
     /// <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p> </li>
     /// </ul>
-    pub fn set_tls_security_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tls_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tls_security_policy = input;
         self
     }

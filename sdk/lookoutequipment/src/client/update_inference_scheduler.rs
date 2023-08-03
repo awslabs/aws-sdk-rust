@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::set_role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
     /// - On success, responds with [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput)
     /// - On failure, responds with [`SdkError<UpdateInferenceSchedulerError>`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError)
-    pub fn update_inference_scheduler(
-        &self,
-    ) -> crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder
-    {
+    pub fn update_inference_scheduler(&self) -> crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder {
         crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }
 }

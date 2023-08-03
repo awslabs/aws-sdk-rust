@@ -36,9 +36,7 @@ impl PreviewAgentsInput {
 
 /// A builder for [`PreviewAgentsInput`](crate::operation::preview_agents::PreviewAgentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PreviewAgentsInputBuilder {
     pub(crate) preview_agents_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct PreviewAgentsInputBuilder {
 }
 impl PreviewAgentsInputBuilder {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn preview_agents_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preview_agents_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_agents_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn set_preview_agents_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preview_agents_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preview_agents_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl PreviewAgentsInputBuilder {
     /// Consumes the builder and constructs a [`PreviewAgentsInput`](crate::operation::preview_agents::PreviewAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::preview_agents::PreviewAgentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::preview_agents::PreviewAgentsInput {
             preview_agents_arn: self.preview_agents_arn,
             next_token: self.next_token,

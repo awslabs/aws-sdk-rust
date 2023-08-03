@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInstanceProfileOutput`](crate::operation::create_instance_profile::CreateInstanceProfileOutput) with field(s):
     ///   - [`instance_profile(Option<InstanceProfile>)`](crate::operation::create_instance_profile::CreateInstanceProfileOutput::instance_profile): <p>An object that contains information about your instance profile.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceProfileError>`](crate::operation::create_instance_profile::CreateInstanceProfileError)
-    pub fn create_instance_profile(
-        &self,
-    ) -> crate::operation::create_instance_profile::builders::CreateInstanceProfileFluentBuilder
-    {
-        crate::operation::create_instance_profile::builders::CreateInstanceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_instance_profile(&self) -> crate::operation::create_instance_profile::builders::CreateInstanceProfileFluentBuilder {
+        crate::operation::create_instance_profile::builders::CreateInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

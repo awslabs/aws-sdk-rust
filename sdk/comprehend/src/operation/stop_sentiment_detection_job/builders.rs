@@ -29,7 +29,7 @@ impl StopSentimentDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopSentimentDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder,
+    inner: crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder,
 }
 impl StopSentimentDetectionJobFluentBuilder {
     /// Creates a new `StopSentimentDetectionJob`.
@@ -40,7 +40,7 @@ impl StopSentimentDetectionJobFluentBuilder {
         }
     }
     /// Access the StopSentimentDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StopSentimentDetectionJobFluentBuilder {
             crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StopSentimentDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StopSentimentDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StopSentimentDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StopSentimentDetectionJobFluentBuilder {
             crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError>,
     > {
         self.customize_middleware().await
     }

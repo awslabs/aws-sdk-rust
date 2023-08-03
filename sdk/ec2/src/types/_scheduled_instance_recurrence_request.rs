@@ -51,9 +51,7 @@ impl ScheduledInstanceRecurrenceRequest {
 
 /// A builder for [`ScheduledInstanceRecurrenceRequest`](crate::types::ScheduledInstanceRecurrenceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstanceRecurrenceRequestBuilder {
     pub(crate) frequency: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl ScheduledInstanceRecurrenceRequestBuilder {
         self
     }
     /// <p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday). You can't specify this value with a daily schedule. If the occurrence is relative to the end of the month, you can specify only a single day.</p>
-    pub fn set_occurrence_days(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_occurrence_days(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.occurrence_days = input;
         self
     }
@@ -128,18 +123,12 @@ impl ScheduledInstanceRecurrenceRequestBuilder {
         &self.occurrence_relative_to_end
     }
     /// <p>The unit for <code>OccurrenceDays</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>). This value is required for a monthly schedule. You can't specify <code>DayOfWeek</code> with a weekly schedule. You can't specify this value with a daily schedule.</p>
-    pub fn occurrence_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn occurrence_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.occurrence_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit for <code>OccurrenceDays</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>). This value is required for a monthly schedule. You can't specify <code>DayOfWeek</code> with a weekly schedule. You can't specify this value with a daily schedule.</p>
-    pub fn set_occurrence_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_occurrence_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.occurrence_unit = input;
         self
     }

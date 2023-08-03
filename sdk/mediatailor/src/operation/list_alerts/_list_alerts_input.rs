@@ -36,9 +36,7 @@ impl ListAlertsInput {
 
 /// A builder for [`ListAlertsInput`](crate::operation::list_alerts::ListAlertsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlertsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl ListAlertsInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`ListAlertsInput`](crate::operation::list_alerts::ListAlertsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_alerts::ListAlertsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_alerts::ListAlertsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_alerts::ListAlertsInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

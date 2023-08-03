@@ -15,17 +15,11 @@ pub fn ser_select_object_content_input_input(
     }
     if let Some(var_3) = &input.input_serialization {
         let inner_writer = scope.start_el("InputSerialization");
-        crate::protocol_serde::shape_input_serialization::ser_input_serialization(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_input_serialization::ser_input_serialization(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.output_serialization {
         let inner_writer = scope.start_el("OutputSerialization");
-        crate::protocol_serde::shape_output_serialization::ser_output_serialization(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_output_serialization::ser_output_serialization(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.request_progress {
         let inner_writer = scope.start_el("RequestProgress");

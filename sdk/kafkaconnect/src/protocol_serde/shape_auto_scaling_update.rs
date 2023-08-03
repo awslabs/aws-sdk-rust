@@ -24,19 +24,13 @@ pub fn ser_auto_scaling_update(
     if let Some(var_1) = &input.scale_in_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("scaleInPolicy").start_object();
-        crate::protocol_serde::shape_scale_in_policy_update::ser_scale_in_policy_update(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_scale_in_policy_update::ser_scale_in_policy_update(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.scale_out_policy {
         #[allow(unused_mut)]
         let mut object_4 = object.key("scaleOutPolicy").start_object();
-        crate::protocol_serde::shape_scale_out_policy_update::ser_scale_out_policy_update(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_scale_out_policy_update::ser_scale_out_policy_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

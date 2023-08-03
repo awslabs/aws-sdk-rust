@@ -5,15 +5,12 @@
 pub struct StopWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
     #[doc(hidden)]
-    pub failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,
 }
 impl StopWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
-    pub fn failed_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedWorkspaceChangeRequest]> {
+    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedWorkspaceChangeRequest]> {
         self.failed_requests.as_deref()
     }
 }
@@ -31,12 +28,9 @@ impl StopWorkspacesOutput {
 
 /// A builder for [`StopWorkspacesOutput`](crate::operation::stop_workspaces::StopWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopWorkspacesOutputBuilder {
-    pub(crate) failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,
 }
 impl StopWorkspacesOutputBuilder {
@@ -52,17 +46,12 @@ impl StopWorkspacesOutputBuilder {
         self
     }
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
-    pub fn set_failed_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
-    ) -> Self {
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>) -> Self {
         self.failed_requests = input;
         self
     }
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
-    pub fn get_failed_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>> {
         &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_dataset::DeleteDatasetOutput::name): <p>The name of the dataset that you deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)
-    pub fn delete_dataset(
-        &self,
-    ) -> crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder {
-        crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dataset(&self) -> crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder {
+        crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::new(self.handle.clone())
     }
 }

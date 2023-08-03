@@ -10,10 +10,7 @@ impl GetUsagePlansInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage_plans::GetUsagePlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_plans::GetUsagePlansError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_plans::GetUsagePlansError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage_plans();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetUsagePlansFluentBuilder {
         }
     }
     /// Access the GetUsagePlans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_usage_plans::builders::GetUsagePlansInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_usage_plans::builders::GetUsagePlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetUsagePlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetUsagePlansFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_usage_plans::paginator::GetUsagePlansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_usage_plans::paginator::GetUsagePlansPaginator {
-        crate::operation::get_usage_plans::paginator::GetUsagePlansPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_usage_plans::paginator::GetUsagePlansPaginator {
+        crate::operation::get_usage_plans::paginator::GetUsagePlansPaginator::new(self.handle, self.inner)
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -5,8 +5,7 @@
 pub struct ListTemplatesOutput {
     /// <p>A structure containing information about the templates in the list.</p>
     #[doc(hidden)]
-    pub template_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub template_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -50,12 +49,9 @@ impl ListTemplatesOutput {
 
 /// A builder for [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
-    pub(crate) template_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -74,17 +70,12 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// <p>A structure containing information about the templates in the list.</p>
-    pub fn set_template_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
-    ) -> Self {
+    pub fn set_template_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
         self.template_summary_list = input;
         self
     }
     /// <p>A structure containing information about the templates in the list.</p>
-    pub fn get_template_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
         &self.template_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

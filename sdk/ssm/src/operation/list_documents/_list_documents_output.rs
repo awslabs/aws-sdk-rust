@@ -5,8 +5,7 @@
 pub struct ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
     #[doc(hidden)]
-    pub document_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>,
+    pub document_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDocumentsOutput {
 }
 impl ListDocumentsOutput {
     /// <p>The names of the SSM documents.</p>
-    pub fn document_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentIdentifier]> {
+    pub fn document_identifiers(&self) -> ::std::option::Option<&[crate::types::DocumentIdentifier]> {
         self.document_identifiers.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -38,12 +35,9 @@ impl ListDocumentsOutput {
 
 /// A builder for [`ListDocumentsOutput`](crate::operation::list_documents::ListDocumentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentsOutputBuilder {
-    pub(crate) document_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>,
+    pub(crate) document_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListDocumentsOutputBuilder {
         self
     }
     /// <p>The names of the SSM documents.</p>
-    pub fn set_document_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>,
-    ) -> Self {
+    pub fn set_document_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>>) -> Self {
         self.document_identifiers = input;
         self
     }
     /// <p>The names of the SSM documents.</p>
-    pub fn get_document_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>> {
+    pub fn get_document_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentIdentifier>> {
         &self.document_identifiers
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

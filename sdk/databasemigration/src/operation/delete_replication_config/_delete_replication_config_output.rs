@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteReplicationConfigOutput {
 }
 impl DeleteReplicationConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_config::builders::DeleteReplicationConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_replication_config::builders::DeleteReplicationConfigOutputBuilder {
         crate::operation::delete_replication_config::builders::DeleteReplicationConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigOutputBuilder {
     pub(crate) replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl DeleteReplicationConfigOutputBuilder {
         self
     }
     /// <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Configuration parameters returned for the DMS Serverless replication after it is deleted.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +59,7 @@ impl DeleteReplicationConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_replication_config::DeleteReplicationConfigOutput {
+    pub fn build(self) -> crate::operation::delete_replication_config::DeleteReplicationConfigOutput {
         crate::operation::delete_replication_config::DeleteReplicationConfigOutput {
             replication_config: self.replication_config,
             _request_id: self._request_id,
